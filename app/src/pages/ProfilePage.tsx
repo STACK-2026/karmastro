@@ -56,7 +56,7 @@ const ProfilePage = () => {
           </div>
 
           {numerology.karmicDebts.length > 0 && (
-            <p className="text-xs text-accent mt-3">⚡ Dette karmique : {numerology.karmicDebts.join(", ")}</p>
+            <p className="text-xs text-accent mt-3">Dette karmique : {numerology.karmicDebts.join(", ")}</p>
           )}
           {numerology.northNode && (
             <p className="text-xs text-muted-foreground mt-2">

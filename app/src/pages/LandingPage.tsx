@@ -14,6 +14,36 @@ import Lenis from "lenis";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Typing effect for Oracle preview
+const ORACLE_TEXT = "Ton année personnelle 5 et Jupiter en transit dans ta maison 10 créent un alignement favorable. Calcul : chemin de vie 22 (maître bâtisseur) + année 2026 = 5 (changement). La phase de dernier quartier lunaire invite au bilan avant l'action...";
+
+const OracleTypingPreview = () => {
+  const [displayed, setDisplayed] = useState("");
+  const [done, setDone] = useState(false);
+
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      if (i < ORACLE_TEXT.length) {
+        setDisplayed(ORACLE_TEXT.slice(0, i + 1));
+        i++;
+      } else {
+        setDone(true);
+        clearInterval(interval);
+      }
+    }, 25);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <span>
+      {displayed}
+      {!done && <span className="animate-pulse text-primary">|</span>}
+      {done && <span className="text-primary cursor-pointer"> Lire la suite →</span>}
+    </span>
+  );
+};
+
 const LandingPage = () => {
   const navigate = useNavigate();
   const [birthDate, setBirthDate] = useState("");
@@ -457,15 +487,14 @@ const LandingPage = () => {
           ))}
         </div>
 
-        {/* Chat preview */}
+        {/* Chat preview with typing effect */}
         <div ref={oracleChatRef} className="max-w-md mx-auto border-glow rounded-xl bg-card/60 backdrop-blur-sm p-6 space-y-4">
           <div className="bg-secondary/50 rounded-lg p-3 text-sm max-w-[80%]">
             Est-ce le bon moment pour lancer mon projet ?
           </div>
           <div className="bg-primary/10 border border-primary/20 rounded-lg p-3 text-sm ml-auto max-w-[85%]">
             <p className="text-primary text-xs mb-1 font-medium flex items-center gap-1"><Sparkles className="h-3 w-3" /> L'Oracle</p>
-            Ton année personnelle 1 et Jupiter en transit dans ta maison 10 créent un alignement rare pour l'entrepreneuriat. Calcul : 1+5+0+7+1+9+9+8 = 40 → 4+0 = 4, année perso 2026 = 4+2+0+2+6 = 14 → 1+4 = 5...
-            <span className="text-primary cursor-pointer"> Lire la suite →</span>
+            <OracleTypingPreview />
           </div>
           <div className="flex gap-2 flex-wrap">
             {["Ma compatibilité", "Mercure rétrograde", "Mon chemin de vie", "Mon karma"].map(q => (

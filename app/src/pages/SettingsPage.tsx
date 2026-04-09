@@ -34,7 +34,7 @@ const SettingsPage = () => {
 
         <div className="pt-4">
           <Button variant="outline" className="w-full border-primary text-primary" onClick={() => navigate("/#pricing")}>
-            ⭐ Passer à Premium  -  7,99€/mois
+            Passer à Premium  -  7,99€/mois
           </Button>
         </div>
 

@@ -65,19 +65,19 @@ const CompatibilityPage = () => {
               <summary className="text-sm text-primary cursor-pointer mb-2">Voir l'analyse</summary>
               <div className="space-y-3 mt-3">
                 <div>
-                  <p className="text-xs font-medium text-karmique-earth mb-1">✨ Forces</p>
+                  <p className="text-xs font-medium text-karmique-earth mb-1">Forces</p>
                   {profile.strengths.map((s, i) => (
                     <p key={i} className="text-xs text-muted-foreground mb-1">• {s}</p>
                   ))}
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-destructive mb-1">⚡ Points de friction</p>
+                  <p className="text-xs font-medium text-destructive mb-1">Points de friction</p>
                   {profile.frictions.map((f, i) => (
                     <p key={i} className="text-xs text-muted-foreground mb-1">• {f}</p>
                   ))}
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-accent mb-1">🔮 Guidance karmique</p>
+                  <p className="text-xs font-medium text-accent mb-1">Guidance karmique</p>
                   <p className="text-xs text-muted-foreground">{profile.karmicGuidance}</p>
                 </div>
               </div>

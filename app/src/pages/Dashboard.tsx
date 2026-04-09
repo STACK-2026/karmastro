@@ -127,7 +127,7 @@ const Dashboard = () => {
       <StarField />
 
       <AppHeader
-        title={`Bonjour ${demoProfile.firstName} ✨`}
+        title={`Bonjour ${demoProfile.firstName}`}
         rightContent={
           <div className="text-right">
             <p className="text-xs text-muted-foreground">{demoProfile.astrology.sunSign.symbol} {demoProfile.astrology.moonSign.symbol} {demoProfile.astrology.ascendant.symbol}</p>
@@ -363,12 +363,12 @@ const Dashboard = () => {
               Transits détaillés · Conseils karmiques exclusifs · Oracle illimité · Numérologie dynamique
             </p>
             <div className="flex flex-wrap gap-1.5 justify-center mb-4">
-              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">🔮 Oracle illimité</span>
-              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">📊 Transits complets</span>
-              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">🔢 Numérologie avancée</span>
-              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">💫 Conseils karmiques</span>
-              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">📅 Calendrier détaillé</span>
-              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">❤️ Compatibilité étendue</span>
+              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">Oracle illimité</span>
+              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">Transits complets</span>
+              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">Numérologie avancée</span>
+              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">Conseils karmiques</span>
+              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">Calendrier détaillé</span>
+              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">Compatibilité étendue</span>
             </div>
             <Button className="bg-accent text-accent-foreground hover:bg-accent/90" onClick={() => navigate("/#pricing")}>
               <Star className="h-4 w-4 mr-2" /> Étoile  -  7,99€/mois

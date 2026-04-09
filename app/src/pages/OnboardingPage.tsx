@@ -428,7 +428,7 @@ const OnboardingPage = () => {
               className="w-full"
             >
               <Button onClick={handleFinish} disabled={saving} className="w-full bg-primary hover:bg-primary/90">
-                {saving ? "Enregistrement..." : "Entrer dans mon cosmos ✨"}
+                {saving ? "Enregistrement..." : "Entrer dans mon cosmos"}
               </Button>
             </motion.div>
           )}

@@ -140,7 +140,7 @@ const OraclePage = () => {
     } catch (e: any) {
       toast({ title: "Erreur Oracle", description: e.message, variant: "destructive" });
       if (!assistantSoFar) {
-        setMessages(prev => [...prev, { role: "assistant", content: "Désolé, une erreur est survenue. Réessayez dans un instant. 🌙" }]);
+        setMessages(prev => [...prev, { role: "assistant", content: "Désolé, une erreur est survenue. Réessayez dans un instant." }]);
       }
     } finally {
       setIsLoading(false);
