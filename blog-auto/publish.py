@@ -103,10 +103,19 @@ def now_paris() -> datetime:
 
 def generate_slug(title: str, max_len: int = SLUG_MAX_LEN) -> str:
     """Generate URL-safe slug from title. Max 60 chars, 7 words, no stop words."""
-    slug = unicodedata.normalize("NFKD", title).encode("ascii", "ignore").decode("ascii")
-    slug = slug.lower()
+    slug = title.lower()
+
+    # Clean French contractions BEFORE unicode normalization
+    slug = re.sub(r"qu[''\u2019]est[- ]ce que", "", slug)  # "qu'est-ce que" → removed
+    slug = re.sub(r"[ldsn][''\u2019]", " ", slug)  # l'astrologie → astrologie
+    slug = re.sub(r"aujourd[''\u2019]hui", "aujourdhui", slug)
+
+    # Unicode normalize (accents → ascii)
+    slug = unicodedata.normalize("NFKD", slug).encode("ascii", "ignore").decode("ascii")
     slug = re.sub(r"[^a-z0-9\s]", " ", slug)
-    words = [w for w in slug.split() if w not in STOP_WORDS_FR and len(w) > 1]
+
+    # Filter stop words, keep SEO intent words, min 2 chars
+    words = [w for w in slug.split() if w not in STOP_WORDS_FR and len(w) > 2]
 
     parts = []
     length = 0
