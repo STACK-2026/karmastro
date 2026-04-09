@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none" opacity="0.06">
+  <!-- Constellation lines (thin, connecting stars) -->
+  <g stroke="white" stroke-width="0.5" stroke-linecap="round">
+    <!-- Orion-like pattern top-left -->
+    <line x1="80" y1="120" x2="130" y2="90"/>
+    <line x1="130" y1="90" x2="160" y2="130"/>
+    <line x1="160" y1="130" x2="140" y2="180"/>
+    <line x1="140" y1="180" x2="100" y2="170"/>
+    <line x1="100" y1="170" x2="80" y2="120"/>
+    <line x1="110" y1="150" x2="150" y2="150"/>
+
+    <!-- Cassiopeia-like W pattern top-right -->
+    <line x1="900" y1="80" x2="940" y2="130"/>
+    <line x1="940" y1="130" x2="980" y2="70"/>
+    <line x1="980" y1="70" x2="1020" y2="120"/>
+    <line x1="1020" y1="120" x2="1060" y2="60"/>
+
+    <!-- Triangle pattern center -->
+    <line x1="550" y1="350" x2="620" y2="300"/>
+    <line x1="620" y1="300" x2="650" y2="380"/>
+    <line x1="650" y1="380" x2="550" y2="350"/>
+
+    <!-- Small dipper bottom-left -->
+    <line x1="150" y1="550" x2="200" y2="530"/>
+    <line x1="200" y1="530" x2="230" y2="560"/>
+    <line x1="230" y1="560" x2="210" y2="600"/>
+    <line x1="210" y1="600" x2="260" y2="620"/>
+
+    <!-- Cross pattern bottom-right -->
+    <line x1="1000" y1="500" x2="1050" y2="550"/>
+    <line x1="1050" y1="550" x2="1100" y2="500"/>
+    <line x1="1050" y1="480" x2="1050" y2="580"/>
+  </g>
+
+  <!-- Star dots at constellation vertices -->
+  <g fill="white">
+    <circle cx="80" cy="120" r="1.5"/>
+    <circle cx="130" cy="90" r="2"/>
+    <circle cx="160" cy="130" r="1.5"/>
+    <circle cx="140" cy="180" r="1"/>
+    <circle cx="100" cy="170" r="1.5"/>
+    <circle cx="900" cy="80" r="1.5"/>
+    <circle cx="940" cy="130" r="2"/>
+    <circle cx="980" cy="70" r="1.5"/>
+    <circle cx="1020" cy="120" r="1.5"/>
+    <circle cx="1060" cy="60" r="2"/>
+    <circle cx="550" cy="350" r="1.5"/>
+    <circle cx="620" cy="300" r="2"/>
+    <circle cx="650" cy="380" r="1.5"/>
+    <circle cx="150" cy="550" r="1"/>
+    <circle cx="200" cy="530" r="1.5"/>
+    <circle cx="230" cy="560" r="1"/>
+    <circle cx="210" cy="600" r="1.5"/>
+    <circle cx="260" cy="620" r="1"/>
+    <circle cx="1000" cy="500" r="1.5"/>
+    <circle cx="1050" cy="550" r="2"/>
+    <circle cx="1100" cy="500" r="1.5"/>
+    <circle cx="1050" cy="480" r="1"/>
+    <circle cx="1050" cy="580" r="1"/>
+  </g>
+
+  <!-- Zodiac symbols (very subtle, scattered) -->
+  <g fill="hsl(271 91% 65%)" font-family="serif" font-size="18" opacity="0.5">
+    <!-- Aries -->
+    <text x="300" y="150">&#9800;</text>
+    <!-- Leo -->
+    <text x="750" y="200">&#9804;</text>
+    <!-- Scorpio -->
+    <text x="450" y="650">&#9807;</text>
+    <!-- Pisces -->
+    <text x="1100" y="350">&#9811;</text>
+  </g>
+
+  <!-- Gold zodiac symbols -->
+  <g fill="hsl(43 76% 53%)" font-family="serif" font-size="14" opacity="0.3">
+    <!-- Libra -->
+    <text x="200" y="400">&#9806;</text>
+    <!-- Aquarius -->
+    <text x="850" y="600">&#9810;</text>
+    <!-- Gemini -->
+    <text x="680" y="100">&#9802;</text>
+  </g>
+
+  <!-- Subtle circles (planetary orbits) -->
+  <g stroke="hsl(271 91% 65%)" stroke-width="0.3" fill="none" opacity="0.3">
+    <circle cx="400" cy="250" r="80"/>
+    <circle cx="800" cy="400" r="60"/>
+  </g>
+</svg>
