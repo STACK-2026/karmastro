@@ -52,9 +52,9 @@ export const siteConfig = {
   // Navigation
   navLinks: [
     { label: "Accueil", href: "/" },
-    { label: "Blog", href: "/blog" },
-    { label: "Oracle IA", href: "https://app.karmastro.com/oracle", external: true },
-    { label: "Mon cosmos", href: "https://app.karmastro.com", external: true },
+    { label: "Le Cosmos", href: "/blog" },
+    { label: "L'Oracle", href: "https://app.karmastro.com/oracle", external: true },
+    { label: "Mon profil", href: "https://app.karmastro.com", external: true },
   ],
 
   // Sections landing page

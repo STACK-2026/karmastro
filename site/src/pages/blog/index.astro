@@ -11,23 +11,24 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft))
 
 const breadcrumbs = [
   { name: "Accueil", url: siteConfig.url },
-  { name: "Blog", url: fullUrl("/blog") },
+  { name: "Le Cosmos", url: fullUrl("/blog") },
 ];
 ---
 
 <BaseLayout
-  title={`Blog | ${siteConfig.name}`}
-  description={`Tous les articles du blog ${siteConfig.name}. Guides, conseils et analyses.`}
+  title={`Le Cosmos - Blog ${siteConfig.name}`}
+  description={`Le Cosmos, le blog de ${siteConfig.name}. Astrologie, numerologie, guidance karmique : explore l'univers des astres et des nombres.`}
   jsonLd={[
-    { "@context": "https://schema.org", "@type": "CollectionPage", name: `Blog ${siteConfig.name}`, url: fullUrl("/blog") },
+    { "@context": "https://schema.org", "@type": "CollectionPage", name: `Le Cosmos - Blog ${siteConfig.name}`, url: fullUrl("/blog") },
     jsonLdBreadcrumbs(breadcrumbs),
   ]}
 >
   <div class="max-w-6xl mx-auto px-4 py-12">
-    <h1 class="mb-8">Blog</h1>
+    <h1 class="mb-2">Le Cosmos</h1>
+    <p class="text-gray-400 mb-10 text-lg">Explore l'univers de l'astrologie, de la numerologie et du karma</p>
 
     {posts.length === 0 ? (
-      <p class="text-gray-500 text-lg">Aucun article pour l'instant. Revenez bientot !</p>
+      <p class="text-gray-500 text-lg">Les premiers articles arrivent bientot. Reviens vite !</p>
     ) : (
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
