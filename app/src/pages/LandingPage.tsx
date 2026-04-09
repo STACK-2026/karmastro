@@ -440,13 +440,15 @@ const LandingPage = () => {
         {/* What the Oracle does — 4 points */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-12">
           {[
-            { emoji: "🔢", title: "Calculs précis", desc: "Thème natal, positions planétaires, aspects - du calcul astronomique pur, pas de l'approximation." },
-            { emoji: "🌙", title: "Données en temps réel", desc: "Phase lunaire du jour, rétrogrades en cours, ton jour/mois/année personnel calculés à l'instant." },
-            { emoji: "🔮", title: "Croisement multi-disciplines", desc: "Astrologie + numérologie + karma en une seule réponse. Aucun autre outil ne fait ça." },
-            { emoji: "⏰", title: "Disponible 24/7", desc: "3h du matin et une question te travaille ? L'Oracle est là. Pas d'attente, pas de rendez-vous." },
+            { icon: Hash, title: "Calculs précis", desc: "Thème natal, positions planétaires, aspects - du calcul astronomique pur, pas de l'approximation.", color: "text-primary" },
+            { icon: Moon, title: "Données en temps réel", desc: "Phase lunaire du jour, rétrogrades en cours, ton jour/mois/année personnel calculés à l'instant.", color: "text-accent" },
+            { icon: Sparkles, title: "Croisement multi-disciplines", desc: "Astrologie + numérologie + karma en une seule réponse. Aucun autre outil ne fait ça.", color: "text-primary" },
+            { icon: Zap, title: "Disponible 24/7", desc: "3h du matin et une question te travaille ? L'Oracle est là. Pas d'attente, pas de rendez-vous.", color: "text-accent" },
           ].map((item) => (
             <div key={item.title} className="border-glow rounded-xl bg-card/40 p-4 flex gap-3">
-              <span className="text-2xl">{item.emoji}</span>
+              <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" style={{ background: "hsl(271 91% 65% / 0.1)" }}>
+                <item.icon className={`h-4 w-4 ${item.color}`} />
+              </div>
               <div>
                 <h4 className="text-sm font-semibold text-foreground mb-1">{item.title}</h4>
                 <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
@@ -461,7 +463,7 @@ const LandingPage = () => {
             Est-ce le bon moment pour lancer mon projet ?
           </div>
           <div className="bg-primary/10 border border-primary/20 rounded-lg p-3 text-sm ml-auto max-w-[85%]">
-            <p className="text-primary text-xs mb-1 font-medium">✨ L'Oracle</p>
+            <p className="text-primary text-xs mb-1 font-medium flex items-center gap-1"><Sparkles className="h-3 w-3" /> L'Oracle</p>
             Ton année personnelle 1 et Jupiter en transit dans ta maison 10 créent un alignement rare pour l'entrepreneuriat. Calcul : 1+5+0+7+1+9+9+8 = 40 → 4+0 = 4, année perso 2026 = 4+2+0+2+6 = 14 → 1+4 = 5...
             <span className="text-primary cursor-pointer"> Lire la suite →</span>
           </div>
@@ -534,7 +536,7 @@ const LandingPage = () => {
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {/* Eveil */}
           <div ref={(el) => { pricingCardsRef.current[0] = el; }} className="border-glow rounded-xl bg-card/40 p-6">
-            <h3 className="font-serif text-xl mb-1">Eveil ✨</h3>
+            <h3 className="font-serif text-xl mb-1">Éveil <Sparkles className="h-4 w-4 inline text-primary" /></h3>
             <p className="text-lg font-medium mb-4 text-gradient-gold">Offert par les astres</p>
             <ul className="space-y-2 text-sm text-muted-foreground mb-6">
               {["Profil cosmique complet", "RDV quotidien (court)", "3 messages Oracle/jour", "1 compatibilite", "Guides educatifs"].map(f => (
@@ -550,7 +552,7 @@ const LandingPage = () => {
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full">
               Le plus choisi
             </span>
-            <h3 className="font-serif text-xl mb-1">Etoile ⭐</h3>
+            <h3 className="font-serif text-xl mb-1">Étoile <Star className="h-4 w-4 inline text-accent" /></h3>
             <p className="text-3xl font-bold mb-1">7,99€<span className="text-sm font-normal text-muted-foreground">/mois</span></p>
             <p className="text-xs text-muted-foreground mb-4">ou 59,99€/an</p>
             <ul className="space-y-2 text-sm text-muted-foreground mb-6">
@@ -564,7 +566,7 @@ const LandingPage = () => {
           </div>
           {/* Ame Soeur */}
           <div ref={(el) => { pricingCardsRef.current[2] = el; }} className="border-glow rounded-xl bg-card/40 p-6">
-            <h3 className="font-serif text-xl mb-1">Ame Soeur 💫</h3>
+            <h3 className="font-serif text-xl mb-1">Âme Soeur <Heart className="h-4 w-4 inline text-karmique-fire" /></h3>
             <p className="text-3xl font-bold mb-4">2,99€<span className="text-sm font-normal text-muted-foreground"> rituel unique</span></p>
             <ul className="space-y-2 text-sm text-muted-foreground mb-6">
               {["Rapport compatibilite 15 pages", "Synastrie complete", "Guidance karmique couple", "Export PDF"].map(f => (
