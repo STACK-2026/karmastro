@@ -159,6 +159,35 @@ const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
         66% { transform: translate(-2px, 1px); }
         100% { transform: translate(0, 0); }
       }
+      /* Fade-in on scroll */
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .fade-in-section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
     </style>
+    <script>
+      // IntersectionObserver for fade-in sections
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add("visible");
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll("section, .fade-in-section").forEach(el => {
+        el.classList.add("fade-in-section");
+        obs.observe(el);
+      });
+
+      // Don't fade the first section (hero)
+      const hero = document.querySelector("section");
+      if (hero) { hero.classList.add("visible"); hero.classList.remove("fade-in-section"); }
+    </script>
   </body>
 </html>

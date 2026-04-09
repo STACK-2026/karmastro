@@ -186,7 +186,7 @@ import { siteConfig } from "../../site.config";
   const header = document.getElementById("site-header");
   window.addEventListener("scroll", () => {
     const y = window.scrollY;
-    if (y > 80 && y > lastY) {
+    if (y > 450 && y > lastY) {
       header?.classList.add("-translate-y-[120%]");
     } else {
       header?.classList.remove("-translate-y-[120%]");
