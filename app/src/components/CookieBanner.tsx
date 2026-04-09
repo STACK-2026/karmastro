@@ -39,7 +39,7 @@ const CookieBanner = () => {
             Les astres utilisent des cookies
           </p>
           <p className="text-xs text-muted-foreground">
-            On utilise quelques cookies pour que ton experience cosmique soit fluide. Rien de louche, promis - meme Mercure retrograde ne pourrait pas y acceder.{" "}
+            On utilise quelques cookies pour que ton experience cosmique soit fluide. Rien de louche, promis - meme Mercure en retrograde ne pourrait pas y acceder.{" "}
             <a href="https://karmastro.com/politique-confidentialite" className="underline text-primary hover:text-foreground transition-colors">
               En savoir plus
             </a>
