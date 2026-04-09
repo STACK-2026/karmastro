@@ -12,13 +12,13 @@ Karmastro s'engage a proteger la vie privee de ses utilisateurs. La presente pol
 
 - **Donnees de compte** : adresse email
 - **Donnees de profil cosmique** : date, heure et lieu de naissance (necessaires aux calculs astrologiques et numerologiques)
-- **Donnees d'utilisation** : pages visitees, interactions avec l'Oracle IA
+- **Donnees d'utilisation** : pages visitees, interactions avec L'Oracle
 - **Donnees techniques** : adresse IP, type de navigateur
 
 ## Finalites du traitement
 
 - Calcul du theme natal, profil numerologique et guidance karmique
-- Personnalisation de l'experience (Oracle IA, horoscopes)
+- Personnalisation de l'experience (L'Oracle, horoscopes)
 - Communication relative au compte (emails transactionnels)
 - Amelioration du service
 

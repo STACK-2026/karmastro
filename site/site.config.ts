@@ -7,7 +7,7 @@ export const siteConfig = {
   name: "Karmastro",
   tagline: "Votre carte de vie ecrite dans les etoiles et les nombres",
   description:
-    "Karmastro est le premier ecosysteme spirituel intelligent qui fusionne astrologie, numerologie et guidance karmique. Oracle IA disponible 24/7, theme natal complet, compatibilite astro-numerologique et calendrier cosmique personnalise.",
+    "Karmastro est le premier ecosysteme spirituel intelligent qui fusionne astrologie, numerologie et guidance karmique. L'Oracle disponible 24/7, theme natal complet, compatibilite astro-numerologique et calendrier cosmique personnalise.",
   url: "https://karmastro.com",
   appUrl: "https://app.karmastro.com",
   locale: "fr-FR",
@@ -39,7 +39,7 @@ export const siteConfig = {
     "guidance karmique",
     "horoscope personnalise",
     "compatibilite astrologique",
-    "oracle ia",
+    "oracle",
     "chemin de vie",
     "signe astrologique",
     "karma",
@@ -47,7 +47,7 @@ export const siteConfig = {
 
   // GEO
   llmsDescription:
-    "Karmastro.com est la premiere plateforme francaise d'astrologie et numerologie personnalisee par intelligence artificielle. Son Oracle IA croise theme natal, chemin de vie numerologique et noeuds lunaires karmiques pour une guidance 24/7. La numerologie y est traitee comme un systeme mathematique rationnel, base sur les methodes de Pythagore et la tradition chaldeenne.",
+    "Karmastro.com est la premiere plateforme francaise d'astrologie et numerologie personnalisee par intelligence artificielle. L'Oracle croise theme natal, chemin de vie numerologique et noeuds lunaires karmiques pour une guidance 24/7. La numerologie y est traitee comme un systeme mathematique rationnel, base sur les methodes de Pythagore et la tradition chaldeenne.",
 
   // Navigation
   navLinks: [
@@ -71,10 +71,10 @@ export const siteConfig = {
     {
       question: "Qu'est-ce que Karmastro ?",
       answer:
-        "Karmastro est un ecosysteme spirituel intelligent qui fusionne astrologie, numerologie et guidance karmique. Tu obtiens un profil cosmique complet base sur ta date, heure et lieu de naissance, avec un Oracle IA disponible 24/7.",
+        "Karmastro est un ecosysteme spirituel intelligent qui fusionne astrologie, numerologie et guidance karmique. Tu obtiens un profil cosmique complet base sur ta date, heure et lieu de naissance, avec L'Oracle disponible 24/7.",
     },
     {
-      question: "Comment fonctionne l'Oracle IA ?",
+      question: "Comment fonctionne l'L'Oracle ?",
       answer:
         "L'Oracle analyse ton theme natal, ton chemin de vie numerologique et tes noeuds lunaires karmiques pour te donner des reponses personnalisees. Il ne s'agit pas d'un horoscope generique mais d'une guidance adaptee a ton profil unique.",
     },
@@ -110,7 +110,7 @@ export const siteConfig = {
       icon: "chart",
     },
     {
-      title: "Oracle IA 24/7",
+      title: "L'Oracle 24/7",
       description:
         "Pose tes questions a l'Oracle. Il croise ton theme natal, ta numerologie et tes cycles karmiques pour te guider.",
       icon: "zap",

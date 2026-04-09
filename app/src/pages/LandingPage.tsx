@@ -234,7 +234,7 @@ const LandingPage = () => {
     { icon: Moon, label: "Transits", desc: "Planètes en mouvement" },
     { icon: Heart, label: "Compatibilité", desc: "Synastrie & numérologie" },
     { icon: Sparkles, label: "Karma", desc: "Dettes & leçons" },
-    { icon: MessageCircle, label: "Oracle IA", desc: "Réponses 24/7" },
+    { icon: MessageCircle, label: "L'Oracle", desc: "Réponses 24/7" },
     { icon: BookOpen, label: "Apprendre", desc: "Guides complets" },
   ];
 
@@ -252,7 +252,7 @@ const LandingPage = () => {
       <header className="relative z-10 flex items-center justify-between px-6 py-4">
         <div className="flex items-center gap-2">
           <Sparkles className="h-6 w-6 text-primary" />
-          <span className="font-serif text-2xl font-bold text-foreground">Karmique</span>
+          <span className="font-serif text-2xl font-bold text-foreground">Karmastro</span>
         </div>
         <div className="flex items-center gap-3">
           <Button variant="ghost" size="sm" onClick={() => navigate("/auth")}>
@@ -280,7 +280,7 @@ const LandingPage = () => {
           </h1>
 
           <p className="text-muted-foreground text-lg max-w-xl mb-10 mx-auto">
-            Astrologie + Numérologie + Guidance karmique. Un seul profil. Un rendez-vous quotidien. Un Oracle IA disponible 24/7.
+            Astrologie + Numérologie + Guidance karmique. Un seul profil. Un rendez-vous quotidien. Un L'Oracle disponible 24/7.
           </p>
         </div>
 
@@ -337,7 +337,7 @@ const LandingPage = () => {
           {[
             { icon: Star, title: "Astrologie", desc: "Thème natal complet, transits du jour, rétrogrades, maisons et aspects. Votre carte du ciel, décodée.", color: "text-karmique-blue" },
             { icon: Hash, title: "Numérologie", desc: "Chemin de vie, année/mois/jour personnel, table d'inclusion, cycles, pinnacles. Les nombres qui vous guident.", color: "text-primary" },
-            { icon: Sparkles, title: "Karmique", desc: "Dettes karmiques, noeuds lunaires, leçons de vie, cycles de Saturne. L'histoire de votre âme.", color: "text-accent" },
+            { icon: Sparkles, title: "Karma", desc: "Dettes karmiques, noeuds lunaires, lecons de vie, cycles de Saturne. L'histoire de ton ame.", color: "text-accent" },
           ].map((pillar, i) => (
             <div
               key={pillar.title}
@@ -355,7 +355,7 @@ const LandingPage = () => {
       {/* Oracle preview */}
       <section ref={oracleRef} className="relative z-10 px-6 py-16">
         <h2 className="font-serif text-3xl md:text-4xl text-center mb-4">
-          L'Oracle IA <span className="text-gradient-gold">vous répond</span>
+          L'Oracle <span className="text-gradient-gold">vous répond</span>
         </h2>
         <p className="oracle-subtitle text-muted-foreground text-center mb-10 max-w-lg mx-auto">
           Posez n'importe quelle question. L'Oracle croise astrologie, numérologie et sagesse karmique pour vous guider.
@@ -385,7 +385,7 @@ const LandingPage = () => {
       {/* Features grid */}
       <section ref={featuresRef} className="relative z-10 px-6 py-16">
         <h2 className="font-serif text-3xl md:text-4xl text-center mb-12">
-          Ce que Karmique <span className="text-gradient-violet">calcule pour vous</span>
+          Ce que Karmastro <span className="text-gradient-violet">calcule pour toi</span>
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
           {features.map((f, i) => (
@@ -452,7 +452,7 @@ const LandingPage = () => {
             <p className="text-3xl font-bold mb-1">7,99€<span className="text-sm font-normal text-muted-foreground">/mois</span></p>
             <p className="text-xs text-muted-foreground mb-4">ou 59,99€/an</p>
             <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-              {["RDV quotidien COMPLET", "Oracle IA ILLIMITE", "Calendrier cosmique detaille", "Compatibilites illimitees", "Calculateur timing optimal", "Export PDF", "Zero publicite"].map(f => (
+              {["RDV quotidien COMPLET", "L'Oracle ILLIMITE", "Calendrier cosmique detaille", "Compatibilites illimitees", "Calculateur timing optimal", "Export PDF", "Zero publicite"].map(f => (
                 <li key={f} className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> {f}</li>
               ))}
             </ul>
@@ -480,10 +480,10 @@ const LandingPage = () => {
       <footer className="relative z-10 border-t border-border px-6 py-10 text-center text-sm text-muted-foreground">
         <div className="flex items-center justify-center gap-2 mb-4">
           <Sparkles className="h-5 w-5 text-primary" />
-          <span className="font-serif text-lg text-foreground">Karmique</span>
+          <span className="font-serif text-lg text-foreground">Karmastro</span>
         </div>
         <p>Les astres inclinent, ne déterminent pas.</p>
-        <p className="mt-2">© 2026 Karmique. Tous droits réservés.</p>
+        <p className="mt-2">© 2026 Karmastro. Tous droits reserves.</p>
       </footer>
     </div>
   );

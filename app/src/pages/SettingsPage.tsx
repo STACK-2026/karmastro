@@ -49,7 +49,7 @@ const SettingsPage = () => {
         </div>
 
         <p className="text-[10px] text-muted-foreground text-center pt-6">
-          Karmique v1.0 · Les astres inclinent, ne déterminent pas.
+          Karmastro v1.0 · Les astres inclinent, ne determinent pas.
         </p>
       </div>
 
