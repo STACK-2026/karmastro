@@ -78,11 +78,46 @@ const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
       <script type="application/ld+json" set:html={JSON.stringify(ld)} />
     ))}
   </head>
-  <body class="min-h-screen flex flex-col">
+  <body class="min-h-screen flex flex-col relative">
+    <!-- Animated starfield background (same as app) -->
+    <div id="starfield" class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+      <div class="absolute inset-0" style="background: linear-gradient(to bottom, hsl(271 30% 8%), hsl(260 30% 3%), hsl(260 30% 3%)); opacity: 0.6;"></div>
+    </div>
+
     <Header />
-    <main class="flex-1">
+    <main class="flex-1 relative z-10">
       <slot />
     </main>
     <Footer />
+
+    <script>
+      // Generate twinkling stars (CSS-only animation, no JS per frame)
+      const field = document.getElementById("starfield");
+      if (field) {
+        for (let i = 0; i < 40; i++) {
+          const star = document.createElement("div");
+          const size = Math.random() * 2 + 0.5;
+          star.style.cssText = `
+            position: absolute;
+            left: ${Math.random() * 100}%;
+            top: ${Math.random() * 100}%;
+            width: ${size}px;
+            height: ${size}px;
+            background: white;
+            border-radius: 50%;
+            opacity: ${Math.random() * 0.4 + 0.1};
+            animation: twinkle ${Math.random() * 3 + 2}s ease-in-out ${Math.random() * 5}s infinite;
+            will-change: opacity;
+          `;
+          field.appendChild(star);
+        }
+      }
+    </script>
+    <style>
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.2; }
+        50% { opacity: 0.8; }
+      }
+    </style>
   </body>
 </html>
