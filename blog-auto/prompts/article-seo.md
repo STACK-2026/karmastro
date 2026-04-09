@@ -100,11 +100,34 @@ Place exactement 3 marqueurs d'image dans l'article :
 - `![ALT description SEO 8-12 mots](IMAGE_2)`
 - `![ALT description SEO 8-12 mots](IMAGE_3)`
 
+## Maillage interne (NON NEGOCIABLE)
+
+Integre minimum 3-5 liens internes vers les pages du site :
+- [Glossaire astrologie et numerologie](https://karmastro.com/glossaire) — pour les definitions de termes
+- [Notre precision (Swiss Ephemeris)](https://karmastro.com/precision) — quand tu mentionnes la precision des calculs
+- [Notre histoire](https://karmastro.com/notre-histoire) — quand tu mentionnes l'equipe ou la mission
+- [L'Oracle](https://app.karmastro.com/oracle) — quand tu recommandes de poser une question
+- [Creer mon profil cosmique](https://app.karmastro.com) — CTA principal
+- Autres articles du blog : utilise les slugs existants (ex: `/blog/comment-calculer-chemin-vie-numerologie`)
+
+## Maillage externe (NON NEGOCIABLE)
+
+Integre minimum 2-3 liens externes vers des sources d'autorite :
+- [Wikipedia — Numerologie](https://fr.wikipedia.org/wiki/Num%C3%A9rologie)
+- [Wikipedia — Astrologie](https://fr.wikipedia.org/wiki/Astrologie)
+- [Wikipedia — Pythagore](https://fr.wikipedia.org/wiki/Pythagore)
+- [Swiss Ephemeris (Astrodienst)](https://www.astro.com/swisseph/)
+- [NASA JPL](https://ssd.jpl.nasa.gov/) — pour les ephemerides
+- [INSEE](https://www.insee.fr/) — pour les stats France
+- Wikipedia articles specifiques au sujet (ex: [Mercure retrograde](https://fr.wikipedia.org/wiki/Mouvement_r%C3%A9trograde))
+
+REGLE : chaque lien DOIT etre reel et cliquable. JAMAIS de lien invente.
+
 ## CTA
 
 Integre naturellement 2 CTA :
-1. **Mid-article** (apres le 3eme H2) : "Decouvre ton profil cosmique complet gratuitement sur [Karmastro](https://app.karmastro.com)"
-2. **Conclusion** : invitation a consulter l'Oracle IA ou calculer son theme natal
+1. **Mid-article** (apres le 3eme H2) : "Decouvre ton profil cosmique sur [Karmastro](https://app.karmastro.com)"
+2. **Conclusion** : invitation a consulter l'Oracle ou calculer son theme natal
 
 ## Format de sortie
 
