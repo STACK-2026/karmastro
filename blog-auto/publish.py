@@ -55,15 +55,17 @@ RETRY_BASE_WAIT = 10  # seconds, multiplied by 2^attempt
 # Slug config
 SLUG_MAX_LEN = 60
 SLUG_MAX_WORDS = 7
+# Stop words — GARDER les mots d'intention SEO (comment, pourquoi, prix, guide, meilleur, quel)
 STOP_WORDS_FR = {
     "de", "du", "des", "le", "la", "les", "un", "une", "et", "ou",
-    "a", "au", "aux", "par", "pour", "sur", "avec", "dans", "ne",
+    "a", "au", "aux", "par", "sur", "avec", "dans", "ne",
     "pas", "se", "ce", "que", "qui", "dont", "son", "sa", "ses",
     "vs", "en", "est", "il", "elle", "nous", "vous", "ils", "elles",
     "etre", "avoir", "faire", "dit", "peut", "plus", "moins", "tout",
-    "bien", "mal", "tres", "trop", "quoi", "comment", "pourquoi",
+    "bien", "mal", "tres", "trop", "quoi", "qu",
     "quand", "votre", "notre", "leur", "cette", "ces", "mon", "ton",
 }
+# JAMAIS dans stop words : comment, pourquoi, prix, guide, meilleur, quel, combien, top, avis
 
 # ============================================
 # LOGGING
