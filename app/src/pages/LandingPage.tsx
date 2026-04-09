@@ -296,8 +296,14 @@ const LandingPage = () => {
             <span className="text-gradient-gold">et les nombres.</span>
           </h1>
 
-          <p className="text-muted-foreground text-lg max-w-xl mb-10 mx-auto">
+          <p className="text-muted-foreground text-lg max-w-xl mb-6 mx-auto">
             Astrologie + Numérologie + Guidance karmique. Un seul profil. Un rendez-vous quotidien. L'Oracle disponible 24/7.
+          </p>
+          <p className="mb-10">
+            <a href="https://karmastro.com/precision" className="inline-flex items-center gap-1.5 text-[11px] text-muted-foreground/60 hover:text-muted-foreground transition-colors border border-white/5 rounded-full px-3 py-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-karmique-earth animate-pulse" />
+              Calculs astronomiques précision NASA
+            </a>
           </p>
         </div>
 
@@ -470,6 +476,12 @@ const LandingPage = () => {
           <Button className="w-full bg-primary hover:bg-primary/90" onClick={() => navigate("/onboarding")}>
             <MessageCircle className="h-4 w-4 mr-2" /> Poser ta question à l'Oracle
           </Button>
+        <p className="text-center mt-4">
+            <a href="https://karmastro.com/precision" className="inline-flex items-center gap-1.5 text-[10px] text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+              <span className="w-1 h-1 rounded-full bg-karmique-earth" />
+              Positions planétaires Swiss Ephemeris - précision 0.001"
+            </a>
+          </p>
         </div>
       </section>
 
