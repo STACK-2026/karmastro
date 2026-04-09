@@ -2,7 +2,7 @@
 title: "Qu'est-ce que la numérologie ? Guide complet pour débuter"
 description: "La numérologie est un système mathématique basé sur Pythagore qui analyse votre personnalité via les nombres. Découvrez comment calculer votre chemin de vie."
 date: 2026-04-10
-author: "Auteur"
+author: "Céleste"
 category: "numerologie"
 tags: ["numérologie", "guide complet", "débuter", "mathématiques"]
 keywords: "numérologie, guide complet, débuter, mathématiques"
@@ -22,11 +22,11 @@ draft: false
 
 ## Qu'est-ce que la numérologie ? Définition et origines
 
-La numérologie est un système mathématique d'interprétation des nombres qui analyse la personnalité et le destin d'une personne à partir de sa date de naissance et de son nom complet. Contrairement à l'astrologie qui se base sur les positions planétaires, la numérologie utilise uniquement des calculs arithmétiques reproductibles.
+La [numérologie](https://fr.wikipedia.org/wiki/Num%C3%A9rologie) est un système mathématique d'interprétation des nombres qui analyse la personnalité et le destin d'une personne à partir de sa date de naissance et de son nom complet. Contrairement à l'[astrologie](/glossaire#astrologie) qui se base sur les positions planétaires, la numérologie utilise uniquement des calculs arithmétiques reproductibles. Karmastro calcule ces nombres avec une [précision vérifiable](/precision).
 
-Cette discipline millénaire trouve ses racines dans les travaux de **Pythagore** (vers 580-495 av. J.-C.), le célèbre mathématicien grec qui affirmait que "tout est nombre". Les Babyloniens utilisaient déjà un système numérique basé sur la vibration des nombres il y a plus de 4000 ans.
+Cette discipline millénaire trouve ses racines dans les travaux de **[Pythagore](https://fr.wikipedia.org/wiki/Pythagore)** (vers 580-495 av. J.-C.), le célèbre mathématicien grec qui affirmait que "tout est nombre". Les Babyloniens utilisaient déjà un système numérique basé sur la vibration des nombres il y a plus de 4000 ans.
 
-![Pythagore et les fondements mathématiques de la numérologie antique](IMAGE_1)
+![Anciennes tablettes de mathématiques avec des symboles numériques](https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=450&fit=crop&crop=center&q=80)
 
 La numérologie moderne distingue deux grandes écoles :
 - **La méthode pythagoricienne** : utilise les nombres de 1 à 9 plus les maîtres nombres 11, 22, 33
@@ -96,7 +96,7 @@ Le **chemin de vie** est le calcul le plus fondamental en numérologie. Voici la
 - 33 est un maître nombre : on garde 33
 - Si c'était 34 : 3+4 = 7
 
-![Calcul du chemin de vie étape par étape avec exemples concrets](IMAGE_2)
+![Calcul numerologique avec des chiffres et equations sur fond cosmique](https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=450&fit=crop&crop=center&q=80)
 
 ### Méthode alternative (plus précise)
 
@@ -191,7 +191,7 @@ Le 22 est considéré comme le plus puissant des nombres. Il allie la vision du 
 ### Maître nombre 33 - Le Maître guérisseur
 Le 33 combine les vibrations du 11 et du 22. C'est le nombre de la **compassion universelle** et du service désintéressé. Très rare, il concerne moins de 1% de la population.
 
-![Les trois maîtres nombres et leurs vibrations spirituelles spécifiques](IMAGE_3)
+![Constellation etoiles et nombres sacres dans un ciel cosmique violet](https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&h=450&fit=crop&crop=center&q=80)
 
 **Caractéristiques du 33** :
 - Amour inconditionnel et sacrifice pour autrui
@@ -292,4 +292,6 @@ La numérologie est un système mathématique accessible qui offre une grille de
 
 En maîtrisant les calculs de base et les significations des nombres 1 à 9, tu peux déjà obtenir des insights précieux sur ta personnalité et celle de tes proches. Les maîtres nombres 11, 22 et 33 ajoutent une dimension spirituelle pour ceux qui souhaitent approfondir.
 
-Pour découvrir ton profil numérologique complet et croiser ces données avec ton thème astral, explore gratuitement [l'Oracle IA de Karmastro](https://app.karmastro.com). Cette approche hybride te donnera une vision à 360° de tes potentiels et défis, bien au-delà de ce qu'offre la numérologie seule.
+Pour découvrir ton profil numérologique complet et croiser ces données avec ton [thème astral](/glossaire#thème-natal), explore [l'Oracle de Karmastro](https://app.karmastro.com/oracle). Cette approche hybride te donnera une vision à 360° de tes potentiels et défis, bien au-delà de ce qu'offre la numérologie seule. Consulte aussi notre [glossaire complet](/glossaire) pour approfondir les termes utilisés dans cet article.
+
+*Article rédigé par Céleste, numérologue chez [Karmastro](/notre-histoire). Tous les calculs sont basés sur la méthode pythagoricienne et vérifiables via [Swiss Ephemeris](https://www.astro.com/swisseph/).*
