@@ -40,7 +40,7 @@ SCRIPT_DIR = Path(__file__).parent
 REPO_DIR = SCRIPT_DIR.parent  # Root of the site repo
 ARTICLES_FILE = SCRIPT_DIR / "articles.json"
 PROMPT_FILE = SCRIPT_DIR / "prompts" / "article-seo.md"
-BLOG_DIR = REPO_DIR / "src" / "content" / "blog"
+BLOG_DIR = REPO_DIR / "site" / "src" / "content" / "blog"
 LOG_FILE = SCRIPT_DIR / "logs" / "publications.log"
 
 # Claude API
@@ -331,7 +331,7 @@ def git_push(slug: str) -> bool:
     """Git add, commit and push the new article."""
     try:
         subprocess.run(
-            ["git", "add", f"src/content/blog/{slug}.md"],
+            ["git", "add", f"site/src/content/blog/{slug}.md"],
             cwd=REPO_DIR, check=True, capture_output=True,
         )
         subprocess.run(
