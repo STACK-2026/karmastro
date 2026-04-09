@@ -4,45 +4,38 @@ import { siteConfig } from "../../site.config";
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-gray-900 text-gray-400 mt-auto">
+<footer style="background: hsl(260 25% 5%); border-top: 1px solid hsl(260 20% 16%);" class="mt-auto">
   <div class="max-w-6xl mx-auto px-4 py-12">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- Brand -->
       <div>
-        <p class="text-white font-display font-bold text-lg mb-2">{siteConfig.name}</p>
-        <p class="text-sm">{siteConfig.tagline}</p>
+        <p class="text-white font-bold text-lg mb-2" style="font-family: Outfit, sans-serif;">{siteConfig.name}</p>
+        <p class="text-sm" style="color: hsl(220 9% 64%);">{siteConfig.tagline}</p>
       </div>
 
       <!-- Legal links -->
       <div>
         <p class="text-white font-semibold text-sm mb-3">Informations legales</p>
-        <ul class="space-y-2 text-sm">
+        <ul class="space-y-2 text-sm" style="color: hsl(220 9% 64%);">
           <li><a href="/mentions-legales" class="hover:text-white transition-colors">Mentions legales</a></li>
-          <li><a href="/cgv" class="hover:text-white transition-colors">Conditions generales de vente</a></li>
-          <li><a href="/politique-confidentialite" class="hover:text-white transition-colors">Politique de confidentialite</a></li>
+          <li><a href="/cgv" class="hover:text-white transition-colors">Conditions generales</a></li>
+          <li><a href="/politique-confidentialite" class="hover:text-white transition-colors">Confidentialite</a></li>
         </ul>
       </div>
 
-      <!-- Contact -->
+      <!-- Contact + Links -->
       <div>
-        <p class="text-white font-semibold text-sm mb-3">Contact</p>
-        <p class="text-sm">{siteConfig.legal.companyName}</p>
-        <p class="text-sm">{siteConfig.legal.address}</p>
-        <p class="text-sm mt-2">
-          <a href={`mailto:${siteConfig.legal.email}`} class="hover:text-white transition-colors">
-            {siteConfig.legal.email}
-          </a>
-        </p>
-        {siteConfig.legal.phone && (
-          <p class="text-sm mt-1 phone-obfuscated">
-            <span>{siteConfig.legal.phone.split("").reverse().join("")}</span>
-          </p>
-        )}
+        <p class="text-white font-semibold text-sm mb-3">Explorer</p>
+        <ul class="space-y-2 text-sm" style="color: hsl(220 9% 64%);">
+          <li><a href="/blog" class="hover:text-white transition-colors">Le Cosmos (blog)</a></li>
+          <li><a href={`${siteConfig.appUrl}/oracle`} class="hover:text-white transition-colors">L'Oracle IA</a></li>
+          <li><a href={`mailto:${siteConfig.legal.email}`} class="hover:text-white transition-colors">{siteConfig.legal.email}</a></li>
+        </ul>
       </div>
     </div>
 
-    <div class="border-t border-gray-800 mt-10 pt-6 text-center text-xs">
-      <p>&copy; {currentYear} {siteConfig.legal.companyName}. Tous droits reserves.</p>
+    <div class="mt-10 pt-6 text-center text-xs" style="border-top: 1px solid hsl(260 20% 12%); color: hsl(220 9% 44%);">
+      <p>&copy; {currentYear} {siteConfig.name}. Tous droits reserves.</p>
     </div>
   </div>
 </footer>

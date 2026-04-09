@@ -4,24 +4,26 @@ import { siteConfig } from "../../site.config";
 
 <section class="py-20 px-4">
   <div
-    class="max-w-4xl mx-auto text-center text-white rounded-2xl p-12 md:p-16"
-    style={`background: linear-gradient(135deg, ${siteConfig.colors.primary}, ${siteConfig.colors.secondary});`}
+    class="max-w-4xl mx-auto text-center rounded-2xl p-12 md:p-16 border-glow glow-violet"
+    style="background: hsl(260 25% 8%);"
   >
-    <h2 class="text-white mb-4">Pret a commencer ?</h2>
-    <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">
-      {siteConfig.tagline}
+    <p class="text-sm font-medium uppercase tracking-widest mb-4 text-gradient-gold">Commence gratuitement</p>
+    <h2 class="text-white mb-4">Decouvre ton profil cosmique</h2>
+    <p class="text-lg mb-8 max-w-xl mx-auto" style="color: hsl(220 9% 64%);">
+      Theme natal, chemin de vie, guidance karmique. Tout ca en quelques clics, gratuitement.
     </p>
     {siteConfig.appUrl && (
       <a
         href={siteConfig.appUrl}
-        class="inline-flex items-center gap-2 bg-white font-bold px-8 py-4 rounded-xl text-lg transition-all hover:scale-105 hover:shadow-lg"
-        style={`color: ${siteConfig.colors.primary};`}
+        class="inline-flex items-center gap-2 font-bold px-8 py-4 rounded-xl text-lg transition-all hover:scale-105 text-white glow-violet"
+        style="background: hsl(271 91% 65%);"
       >
-        Acceder a l'outil gratuitement
+        Creer mon profil gratuitement
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
         </svg>
       </a>
     )}
+    <p class="mt-4 text-xs" style="color: hsl(220 9% 44%);">Gratuit - Pas de carte bancaire requise</p>
   </div>
 </section>

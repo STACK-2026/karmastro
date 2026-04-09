@@ -1,12 +1,23 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
-/* === Design Tokens — Karmastro dark cosmic theme === */
+/* === Karmastro — identical to app theme === */
 :root {
   --color-primary: theme("colors.primary");
   --color-secondary: theme("colors.secondary");
   --color-accent: theme("colors.accent");
-  --font-display: "Outfit", system-ui, sans-serif;
-  --font-body: "Figtree", system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-body: "Figtree", sans-serif;
+
+  /* Exact HSL values from app */
+  --bg: hsl(260 30% 3%);
+  --bg-card: hsl(260 25% 8%);
+  --bg-secondary: hsl(260 20% 14%);
+  --border-color: hsl(260 20% 16%);
+  --text-primary: hsl(0 0% 100%);
+  --text-muted: hsl(220 9% 64%);
+  --violet: hsl(271 91% 65%);
+  --gold: hsl(43 76% 53%);
 }
 
 /* === Base === */
@@ -17,59 +28,86 @@ html {
 
 body {
   font-family: var(--font-body);
-  color: #e5e7eb;
-  background: #0a0a0f;
+  color: var(--text-primary);
+  background: var(--bg);
   line-height: 1.7;
 }
 
 /* === Typography === */
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #f3f4f6;
+  color: var(--text-primary);
 }
 
-h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+
+/* === Glow utilities (from app) === */
+.glow-violet {
+  box-shadow: 0 0 20px hsl(271 91% 65% / 0.15), 0 0 40px hsl(271 91% 65% / 0.05);
 }
-h2 {
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
+
+.glow-gold {
+  box-shadow: 0 0 20px hsl(43 76% 53% / 0.15), 0 0 40px hsl(43 76% 53% / 0.05);
 }
-h3 {
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+
+.border-glow {
+  border: 1px solid hsl(271 91% 65% / 0.2);
+}
+
+.text-gradient-violet {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(135deg, hsl(271 91% 65%), hsl(271 91% 80%));
+}
+
+.text-gradient-gold {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(135deg, hsl(43 76% 53%), hsl(43 76% 70%));
+}
+
+.bg-starfield {
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, hsl(0 0% 100% / 0.4), transparent),
+    radial-gradient(1px 1px at 30% 70%, hsl(0 0% 100% / 0.3), transparent),
+    radial-gradient(1px 1px at 50% 10%, hsl(0 0% 100% / 0.5), transparent),
+    radial-gradient(1px 1px at 70% 40%, hsl(0 0% 100% / 0.2), transparent),
+    radial-gradient(1px 1px at 90% 80%, hsl(0 0% 100% / 0.4), transparent),
+    radial-gradient(1.5px 1.5px at 15% 55%, hsl(271 91% 65% / 0.4), transparent),
+    radial-gradient(1.5px 1.5px at 85% 25%, hsl(43 76% 53% / 0.3), transparent),
+    radial-gradient(1px 1px at 25% 90%, hsl(0 0% 100% / 0.3), transparent),
+    radial-gradient(1px 1px at 60% 60%, hsl(0 0% 100% / 0.2), transparent),
+    radial-gradient(1px 1px at 45% 35%, hsl(0 0% 100% / 0.35), transparent);
 }
 
 /* === Blog article prose === */
 .prose h2 {
   margin-top: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--color-primary);
+  color: var(--violet);
 }
 
 .prose h3 {
   margin-top: 2rem;
   margin-bottom: 0.75rem;
-  color: #d1d5db;
+  color: hsl(0 0% 85%);
 }
 
-.prose p {
-  margin-bottom: 1.25rem;
-}
+.prose p { margin-bottom: 1.25rem; }
 
 .prose a {
-  color: var(--color-primary);
+  color: var(--violet);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-
-.prose a:hover {
-  color: var(--color-accent);
-}
+.prose a:hover { color: var(--gold); }
 
 .prose img {
   border-radius: 0.75rem;
@@ -77,56 +115,35 @@ h3 {
 }
 
 .prose blockquote {
-  border-left: 4px solid var(--color-accent);
+  border-left: 4px solid var(--gold);
   padding-left: 1.5rem;
   margin: 1.5rem 0;
   font-style: italic;
-  color: #9ca3af;
+  color: var(--text-muted);
 }
 
-.prose ul,
-.prose ol {
+.prose ul, .prose ol {
   padding-left: 1.5rem;
   margin-bottom: 1.25rem;
 }
-
-.prose li {
-  margin-bottom: 0.5rem;
-}
+.prose li { margin-bottom: 0.5rem; }
 
 .prose table {
   width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
 }
-
-.prose th,
-.prose td {
-  border: 1px solid #374151;
+.prose th, .prose td {
+  border: 1px solid var(--border-color);
   padding: 0.75rem 1rem;
   text-align: left;
 }
-
 .prose th {
-  background: #1f2937;
+  background: var(--bg-secondary);
   font-weight: 600;
-  color: #f3f4f6;
 }
 
-/* === Phone obfuscation === */
-.phone-obfuscated {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.phone-obfuscated span {
-  display: inline-block;
-  unicode-bidi: bidi-override;
-  direction: rtl;
-}
-
-/* === Tailwind custom colors — Karmastro === */
+/* === Tailwind custom colors === */
 @theme {
   --color-primary: #8b5cf6;
   --color-secondary: #6d28d9;

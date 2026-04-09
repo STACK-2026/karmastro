@@ -2,22 +2,23 @@
 import { siteConfig } from "../../site.config";
 ---
 
-<section class="relative overflow-hidden py-20 md:py-32 px-4">
-  <div class="max-w-4xl mx-auto text-center">
-    <h1 class="mb-6" data-speakable>
+<section class="relative overflow-hidden py-20 md:py-32 px-4 bg-starfield">
+  <div class="max-w-4xl mx-auto text-center relative z-10">
+    <p class="text-sm font-medium uppercase tracking-widest mb-4 text-gradient-gold">Astrologie + Numerologie + Karma</p>
+    <h1 class="mb-6 text-gradient-violet" data-speakable>
       {siteConfig.tagline}
     </h1>
-    <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10" data-speakable>
+    <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10" style="color: hsl(220 9% 64%);" data-speakable>
       {siteConfig.description}
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       {siteConfig.appUrl && (
         <a
           href={siteConfig.appUrl}
-          class="inline-flex items-center justify-center gap-2 text-white font-semibold px-8 py-4 rounded-xl text-lg transition-all hover:scale-105 hover:shadow-lg"
-          style={`background: ${siteConfig.colors.primary};`}
+          class="inline-flex items-center justify-center gap-2 text-white font-semibold px-8 py-4 rounded-xl text-lg transition-all hover:scale-105 glow-violet"
+          style="background: hsl(271 91% 65%);"
         >
-          Acceder a l'outil
+          Decouvrir mon profil cosmique
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
@@ -25,10 +26,12 @@ import { siteConfig } from "../../site.config";
       )}
       <a
         href="/blog"
-        class="inline-flex items-center justify-center gap-2 text-gray-300 font-semibold px-8 py-4 rounded-xl text-lg border-2 border-white/20 hover:border-white/40 transition-all"
+        class="inline-flex items-center justify-center gap-2 font-semibold px-8 py-4 rounded-xl text-lg border-glow transition-all hover:border-[hsl(271_91%_65%_/_0.4)]"
+        style="color: hsl(220 9% 64%);"
       >
-        Lire le blog
+        Explorer Le Cosmos
       </a>
     </div>
+    <p class="mt-6 text-xs" style="color: hsl(220 9% 44%);">Gratuit - Theme natal + 3 messages Oracle/jour</p>
   </div>
 </section>

@@ -11,20 +11,21 @@ const iconMap: Record<string, string> = {
 };
 ---
 
-<section class="py-20 px-4 bg-white/5">
+<section class="py-20 px-4" style="background: hsl(260 25% 5%);">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-center mb-12">Pourquoi {siteConfig.name} ?</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <h2 class="text-center mb-4">Pourquoi <span class="text-gradient-violet">{siteConfig.name}</span> ?</h2>
+    <p class="text-center mb-12" style="color: hsl(220 9% 64%);">Un ecosysteme spirituel qui croise 3 disciplines pour une guidance complete</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {siteConfig.features.map((feature) => (
-        <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-colors">
+        <div class="rounded-xl p-8 border-glow transition-all hover:glow-violet" style="background: hsl(260 25% 8%);">
           <div
             class="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-            style={`background: ${siteConfig.colors.primary}15;`}
+            style="background: hsl(271 91% 65% / 0.1);"
           >
             <svg
               class="w-6 h-6"
               fill="none"
-              stroke={siteConfig.colors.primary}
+              stroke="hsl(271 91% 65%)"
               viewBox="0 0 24 24"
               stroke-width="2"
               stroke-linecap="round"
@@ -33,8 +34,8 @@ const iconMap: Record<string, string> = {
               <path d={iconMap[feature.icon] || iconMap.zap} />
             </svg>
           </div>
-          <h3 class="text-lg font-bold mb-2">{feature.title}</h3>
-          <p class="text-gray-400">{feature.description}</p>
+          <h3 class="text-lg font-bold mb-2 text-white">{feature.title}</h3>
+          <p style="color: hsl(220 9% 64%);">{feature.description}</p>
         </div>
       ))}
     </div>
