@@ -1,5 +1,5 @@
 fastapi==0.115.0
 uvicorn==0.34.0
 pyswisseph==2.10.3.2
-kerykeion==4.20.1
+kerykeion==5.12.7
 python-dotenv==1.0.1
