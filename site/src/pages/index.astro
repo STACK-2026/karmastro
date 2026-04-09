@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Features from "../components/Features.astro";
+import FAQ from "../components/FAQ.astro";
+import CTA from "../components/CTA.astro";
+import { siteConfig } from "../../site.config";
+import { jsonLdHomepage } from "../utils/seo";
+---
+
+<BaseLayout
+  title={`${siteConfig.name} - ${siteConfig.tagline}`}
+  description={siteConfig.description}
+  jsonLd={jsonLdHomepage()}
+>
+  {siteConfig.sections.hero && <Hero />}
+  {siteConfig.sections.features && <Features />}
+  {siteConfig.sections.faq && <FAQ />}
+  {siteConfig.sections.cta && <CTA />}
+</BaseLayout>

@@ -1,0 +1,105 @@
+---
+import { siteConfig } from "../../site.config";
+---
+
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0f]/95 backdrop-blur-sm border-b border-white/10 transition-transform duration-500 ease-in-out">
+  <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="font-display font-800 text-xl tracking-tight" style={`color: ${siteConfig.colors.primary};`}>
+      {siteConfig.name}
+    </a>
+
+    <!-- Desktop nav -->
+    <ul class="hidden md:flex items-center gap-8">
+      {siteConfig.navLinks.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="text-sm font-medium text-gray-400 hover:text-white transition-colors"
+            {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          >
+            {link.label}
+            {link.external && <span class="text-xs ml-1">&#8599;</span>}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- CTA desktop -->
+    {siteConfig.appUrl && (
+      <a
+        href={siteConfig.appUrl}
+        class="hidden md:inline-flex items-center gap-2 text-sm font-semibold text-white px-5 py-2.5 rounded-lg transition-opacity hover:opacity-90"
+        style={`background: ${siteConfig.colors.primary};`}
+      >
+        Acceder a l'outil
+      </a>
+    )}
+
+    <!-- Mobile hamburger -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 text-gray-600"
+      aria-label="Menu"
+      aria-expanded="false"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden border-t border-white/10 bg-[#0a0a0f]">
+    <ul class="px-4 py-4 space-y-3">
+      {siteConfig.navLinks.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="block text-gray-300 font-medium py-2"
+            {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+      {siteConfig.appUrl && (
+        <li class="pt-2">
+          <a
+            href={siteConfig.appUrl}
+            class="block text-center text-white font-semibold py-3 rounded-lg"
+            style={`background: ${siteConfig.colors.primary};`}
+          >
+            Acceder a l'outil
+          </a>
+        </li>
+      )}
+    </ul>
+  </div>
+</header>
+
+<!-- Spacer for fixed header -->
+<div class="h-16"></div>
+
+<script>
+  // Mobile menu toggle
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  btn?.addEventListener("click", () => {
+    const open = menu?.classList.toggle("hidden") === false;
+    btn.setAttribute("aria-expanded", String(open));
+  });
+
+  // Header hide/show on scroll (500ms ease-in-out)
+  let lastY = 0;
+  const header = document.getElementById("site-header");
+  window.addEventListener("scroll", () => {
+    const y = window.scrollY;
+    if (y > 80 && y > lastY) {
+      header?.classList.add("-translate-y-full");
+    } else {
+      header?.classList.remove("-translate-y-full");
+    }
+    lastY = y;
+  }, { passive: true });
+</script>

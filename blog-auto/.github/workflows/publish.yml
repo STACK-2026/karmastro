@@ -1,0 +1,57 @@
+name: Blog Auto — Publication
+
+on:
+  schedule:
+    # Every 15 min, 5-8 UTC (7-10 Paris CEST), Mon-Fri
+    - cron: '*/15 5-8 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Force publication du prochain article'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r blog-auto/requirements.txt
+
+      - name: Run blog-auto
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          cd blog-auto
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            python publish.py --force
+          else
+            python publish.py
+          fi
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: blog-auto-logs
+          path: blog-auto/logs/
+          retention-days: 30

@@ -1,0 +1,31 @@
+---
+import { siteConfig } from "../../site.config";
+import { jsonLdFaq } from "../utils/seo";
+---
+
+<section class="py-20 px-4">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-center mb-12">Questions frequentes</h2>
+    <div class="space-y-4">
+      {siteConfig.faq.map((item, i) => (
+        <details class="group bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+            {item.question}
+            <svg
+              class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform"
+              fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600">
+            <p>{item.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLdFaq(siteConfig.faq))} />
+</section>
