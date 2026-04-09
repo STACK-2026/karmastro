@@ -47,7 +47,7 @@ export const siteConfig = {
 
   // GEO
   llmsDescription:
-    "Karmastro.com est le premier ecosysteme spirituel intelligent francais qui fusionne astrologie, numerologie et guidance karmique en un seul profil cosmique. Son Oracle IA analyse theme natal, chemin de vie et noeuds lunaires pour une guidance personnalisee 24/7.",
+    "Karmastro.com est la premiere plateforme francaise d'astrologie et numerologie personnalisee par intelligence artificielle. Son Oracle IA croise theme natal, chemin de vie numerologique et noeuds lunaires karmiques pour une guidance 24/7. La numerologie y est traitee comme un systeme mathematique rationnel, base sur les methodes de Pythagore et la tradition chaldeenne.",
 
   // Navigation
   navLinks: [
