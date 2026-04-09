@@ -113,7 +113,7 @@ const LandingPage = () => {
         });
       }
 
-      // Pillar cards stagger
+      // Pillar cards stagger entrance
       gsap.from(pillarCardsRef.current.filter(Boolean), {
         y: 60,
         opacity: 0,
@@ -125,6 +125,20 @@ const LandingPage = () => {
           start: "top 80%",
           toggleActions: "play none none none",
         },
+      });
+
+      // Subtle parallax on pillar cards (each moves at slightly different speed)
+      pillarCardsRef.current.filter(Boolean).forEach((card, i) => {
+        gsap.to(card, {
+          y: -15 - i * 8, // Each card moves slightly differently
+          ease: "none",
+          scrollTrigger: {
+            trigger: pillarsRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1.5,
+          },
+        });
       });
 
       // Oracle section
