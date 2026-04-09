@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { demoProfile } from "@/lib/demoData";
 import { personalYear, personalDay as calcPD, getNumberKeyword, getNumberColor, getMoonPhase } from "@/lib/numerology";
 import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
+import AppHeader from "@/components/AppHeader";
 
 const CalendarPage = () => {
   const navigate = useNavigate();
@@ -33,12 +34,7 @@ const CalendarPage = () => {
   return (
     <div className="min-h-screen bg-background pb-20 relative">
       <StarField />
-      <header className="relative z-10 flex items-center gap-3 px-5 pt-4 pb-3">
-        <Button variant="ghost" size="icon" onClick={() => navigate("/dashboard")}>
-          <ArrowLeft className="h-5 w-5" />
-        </Button>
-        <h1 className="font-serif text-xl">Calendrier cosmique</h1>
-      </header>
+      <AppHeader title="Calendrier cosmique" showBack />
 
       <div className="relative z-10 px-5 space-y-5">
         {/* Month nav */}

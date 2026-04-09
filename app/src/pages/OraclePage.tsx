@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Send, Sparkles, ArrowLeft } from "lucide-react";
+import AppHeader from "@/components/AppHeader";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
@@ -150,20 +151,7 @@ const OraclePage = () => {
     <div className="min-h-screen bg-background pb-20 flex flex-col relative">
       <StarField />
 
-      <header className="relative z-10 flex items-center gap-3 px-5 pt-4 pb-3 border-b border-border">
-        <Button variant="ghost" size="icon" onClick={() => navigate("/dashboard")}>
-          <ArrowLeft className="h-5 w-5" />
-        </Button>
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-            <Sparkles className="h-4 w-4 text-primary" />
-          </div>
-          <div>
-            <h1 className="font-serif text-lg leading-tight">L'Oracle</h1>
-            <p className="text-[10px] text-muted-foreground">Astrologie · Numérologie · Karma</p>
-          </div>
-        </div>
-      </header>
+      <AppHeader title="L'Oracle" subtitle="Astrologie · Numerologie · Karma" showBack />
 
       <div ref={scrollRef} className="relative z-10 flex-1 overflow-y-auto px-5 py-4 space-y-4">
         {messages.length === 0 && (

@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, Heart, Users, Briefcase, UserPlus } from "lucide-react";
+import { Heart, Users, Briefcase, UserPlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { compatibilityProfiles } from "@/lib/demoData";
 import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
+import AppHeader from "@/components/AppHeader";
 
 const CompatibilityPage = () => {
   const navigate = useNavigate();
@@ -12,12 +13,7 @@ const CompatibilityPage = () => {
   return (
     <div className="min-h-screen bg-background pb-20 relative">
       <StarField />
-      <header className="relative z-10 flex items-center gap-3 px-5 pt-4 pb-3">
-        <Button variant="ghost" size="icon" onClick={() => navigate("/dashboard")}>
-          <ArrowLeft className="h-5 w-5" />
-        </Button>
-        <h1 className="font-serif text-xl">Compatibilité</h1>
-      </header>
+      <AppHeader title="Compatibilite" showBack />
 
       <div className="relative z-10 px-5 space-y-5">
         <Button variant="outline" className="w-full border-primary text-primary">

@@ -248,21 +248,38 @@ const LandingPage = () => {
     <div className="min-h-screen bg-background relative overflow-hidden">
       <StarField />
 
-      {/* Header */}
-      <header className="relative z-10 flex items-center justify-between px-6 py-4">
-        <div className="flex items-center gap-2">
-          <Sparkles className="h-6 w-6 text-primary" />
-          <span className="font-serif text-2xl font-bold text-foreground">Karmastro</span>
+      {/* Glass floating header */}
+      <header
+        className="fixed z-50 flex items-center justify-between"
+        style={{
+          top: 8, left: 8, right: 8,
+          height: 56,
+          padding: "0 16px",
+          background: "rgba(10, 10, 15, 0.75)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          border: "1px solid rgba(139, 92, 246, 0.12)",
+          borderRadius: 16,
+          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
+        }}
+      >
+        <div className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-xl flex items-center justify-center bg-primary">
+            <span className="text-white text-xs font-bold font-serif">K</span>
+          </div>
+          <span className="font-serif text-xl font-bold text-foreground">Karmastro</span>
         </div>
         <div className="flex items-center gap-3">
-          <Button variant="ghost" size="sm" onClick={() => navigate("/auth")}>
+          <Button variant="ghost" size="sm" onClick={() => navigate("/auth")} className="text-muted-foreground hover:text-foreground">
             Connexion
           </Button>
-          <Button size="sm" onClick={() => navigate("/auth")} className="bg-primary hover:bg-primary/90">
+          <Button size="sm" onClick={() => navigate("/auth")} className="bg-primary hover:bg-primary/90" style={{ borderRadius: 12, boxShadow: "0 4px 15px rgba(139, 92, 246, 0.25)" }}>
             Commencer
           </Button>
         </div>
       </header>
+      {/* Spacer */}
+      <div className="h-[72px]" />
 
       {/* Hero */}
       <section ref={heroRef} className="relative z-10 flex flex-col items-center px-6 pt-12 pb-20 text-center">

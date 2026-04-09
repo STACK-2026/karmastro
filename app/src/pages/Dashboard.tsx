@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, ChevronRight, ChevronDown, Moon, Hash, Zap, CheckCircle, XCircle, Star, MessageCircle, Calendar, User, BookOpen, Heart, Lock, Crown, ArrowRight, TrendingUp } from "lucide-react";
+import AppHeader from "@/components/AppHeader";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
@@ -125,17 +126,15 @@ const Dashboard = () => {
     <div className="min-h-screen bg-background pb-20 relative">
       <StarField />
 
-      {/* Header */}
-      <header className="relative z-10 flex items-center justify-between px-5 pt-4 pb-2">
-        <div>
-          <p className="text-sm text-muted-foreground">Bonjour</p>
-          <h1 className="font-serif text-2xl font-bold">{demoProfile.firstName} ✨</h1>
-        </div>
-        <div className="text-right">
-          <p className="text-xs text-muted-foreground">{demoProfile.astrology.sunSign.symbol} {demoProfile.astrology.moonSign.symbol} {demoProfile.astrology.ascendant.symbol}</p>
-          <p className="text-xs font-mono text-primary">CV {demoProfile.numerology.lifePath.number} · AP {demoProfile.numerology.personalYear2026}</p>
-        </div>
-      </header>
+      <AppHeader
+        title={`Bonjour ${demoProfile.firstName} ✨`}
+        rightContent={
+          <div className="text-right">
+            <p className="text-xs text-muted-foreground">{demoProfile.astrology.sunSign.symbol} {demoProfile.astrology.moonSign.symbol} {demoProfile.astrology.ascendant.symbol}</p>
+            <p className="text-xs font-mono text-primary">CV {demoProfile.numerology.lifePath.number} · AP {demoProfile.numerology.personalYear2026}</p>
+          </div>
+        }
+      />
 
       <div className="relative z-10 px-5 space-y-5 pt-2">
         {/* Daily RDV Card */}
