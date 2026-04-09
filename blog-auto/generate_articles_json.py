@@ -27,13 +27,14 @@ ARTICLES_FILE = Path(__file__).parent / "articles.json"
 # A REMPLIR POUR CHAQUE PROJET
 # ============================================
 SITE_CONTEXT = """
-Nom du projet : [NOM]
-Secteur : [SECTEUR]
-Description : [DESCRIPTION]
-Mots-cles principaux : [MOT1, MOT2, MOT3, MOT4, MOT5]
-Categories de blog : [CAT1, CAT2, CAT3]
-Cible : [AUDIENCE CIBLE]
+Nom du projet : Karmastro
+Secteur : Astrologie, numerologie, spiritualite, guidance karmique
+Description : Karmastro est la premiere plateforme francaise d'astrologie personnalisee qui fusionne theme natal, numerologie karmique et Oracle IA. La numerologie y est traitee comme un systeme mathematique rationnel (Pythagore, tradition chaldeenne).
+Mots-cles principaux : astrologie, numerologie, theme natal, chemin de vie, horoscope, compatibilite astrologique, oracle ia, signe astrologique, karma, tarot, guidance spirituelle
+Categories de blog : astrologie, numerologie, karma, horoscope, compatibilite, guides
+Cible : Femmes 25-45 ans en France, interessees par l'astrologie et la numerologie, sceptiques curieux, developpement personnel
 Langue : francais
+Angle differenciateur : La numerologie comme systeme mathematique - rationalisable, explicable, source. Approche rationnelle du spirituel.
 """
 
 
