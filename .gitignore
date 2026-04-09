@@ -7,3 +7,4 @@ dist/
 blog-auto/logs/
 blog-auto/.env
 *.log
+.wrangler/

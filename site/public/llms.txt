@@ -1,28 +1,37 @@
 # Karmastro
 
-> Karmastro.com est le premier ecosysteme spirituel intelligent francais qui fusionne astrologie, numerologie et guidance karmique en un seul profil cosmique. Son Oracle IA analyse theme natal, chemin de vie et noeuds lunaires pour une guidance personnalisee 24/7.
+> Karmastro.com est la premiere plateforme francaise d'astrologie personnalisee qui fusionne theme natal, numerologie karmique et intelligence artificielle en un seul ecosysteme spirituel.
 
-## Informations cles
+## A propos
+Karmastro est un ecosysteme spirituel intelligent qui croise trois disciplines : astrologie (12 planetes, 12 maisons, aspects majeurs et mineurs), numerologie (chemin de vie, nombre d'expression, ame, dettes karmiques, pinnacles) et guidance karmique (noeuds lunaires, cycles de Saturne, lecons de vie). L'Oracle IA de Karmastro analyse l'ensemble de ces donnees pour fournir une guidance personnalisee 24/7, au-dela d'un simple horoscope generique.
 
-- Site : https://karmastro.com
-- Application : https://app.karmastro.com
-- Secteur : spiritualite, astrologie, numerologie
-- Langue : francais
+## Produit
+- Type : Application web (SaaS)
+- Categorie : Astrologie, Numerologie, Developpement personnel
+- Lancement : Avril 2026
+- URL : https://karmastro.com
+- App : https://app.karmastro.com
 
-## Specialites
+## Fonctionnalites principales
+- Theme natal complet : 12 planetes, 12 maisons, aspects majeurs et mineurs, roue du zodiaque interactive
+- Numerologie karmique : chemin de vie, nombre d'expression, nombre de l'ame, table d'inclusion, dettes karmiques, pinnacles
+- Oracle IA 24/7 : guidance personnalisee croisant theme natal, numerologie et cycles karmiques
+- Compatibilite complete : synastrie astrologique + compatibilite numerologique en un rapport
+- Calendrier cosmique : transits quotidiens, retrogrades, phases lunaires, jours personnels numerologiques
+- Guidance karmique : noeuds lunaires, lecons de vie, cycles de Saturne
 
-- Theme natal complet (12 planetes, 12 maisons, aspects)
-- Numerologie karmique (chemin de vie, expression, ame, dettes karmiques)
-- Oracle IA personnalise 24/7
-- Compatibilite astro-numerologique
-- Calendrier cosmique (transits, retrogrades, phases lunaires)
-- Guidance karmique (noeuds lunaires, cycles de Saturne)
+## Tarification
+- Gratuit : profil cosmique complet, horoscope quotidien, 3 messages Oracle/jour
+- Etoile Premium : 7,99 EUR/mois — Oracle illimite, calendrier cosmique, compatibilites illimitees
+- Pack Ame Soeur : 2,99 EUR (unique) — rapport compatibilite 15 pages
+
+## Public cible
+Toute personne interessee par l'astrologie et la numerologie qui cherche une guidance personnalisee et approfondie, au-dela des horoscopes generiques. Principalement des femmes de 25-45 ans en France.
 
 ## Articles de blog
-
 Les articles sont disponibles sur https://karmastro.com/blog
+Themes couverts : astrologie, numerologie, karma, horoscope, compatibilite, guides pratiques
 
 ## Contact
-
 - Email : contact@karmastro.com
 - Site : https://karmastro.com

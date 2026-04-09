@@ -46,41 +46,70 @@ export function generateMeta(props: MetaProps) {
   };
 }
 
-/** JSON-LD for Organization + WebSite (homepage) */
+/** JSON-LD @graph for homepage — GEO-optimized connected entity graph */
 export function jsonLdHomepage() {
-  return [
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
-      description: siteConfig.description,
-      ...(siteConfig.legal.email && {
-        contactPoint: {
-          "@type": "ContactPoint",
-          email: siteConfig.legal.email,
-          contactType: "customer service",
-          availableLanguage: "French",
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${siteConfig.url}/#organization`,
+        name: siteConfig.name,
+        url: siteConfig.url,
+        description: siteConfig.description,
+        foundingDate: "2026-04-09",
+        areaServed: {
+          "@type": "Country",
+          name: "France",
         },
-      }),
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: siteConfig.name,
-      url: siteConfig.url,
-      description: siteConfig.tagline,
-      inLanguage: siteConfig.locale,
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: `${siteConfig.url}/blog?q={search_term_string}`,
-        },
-        "query-input": "required name=search_term_string",
+        knowsAbout: siteConfig.keywords,
+        ...(siteConfig.legal.email && {
+          contactPoint: {
+            "@type": "ContactPoint",
+            email: siteConfig.legal.email,
+            contactType: "customer service",
+            availableLanguage: "French",
+          },
+        }),
+        // sameAs will be populated as external profiles are created
+        sameAs: [],
       },
-    },
-  ];
+      {
+        "@type": "WebSite",
+        "@id": `${siteConfig.url}/#website`,
+        name: siteConfig.name,
+        url: siteConfig.url,
+        publisher: { "@id": `${siteConfig.url}/#organization` },
+        inLanguage: siteConfig.locale,
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `${siteConfig.url}/blog?q={search_term_string}`,
+          },
+          "query-input": "required name=search_term_string",
+        },
+      },
+      ...(siteConfig.appUrl
+        ? [
+            {
+              "@type": "WebApplication",
+              "@id": `${siteConfig.appUrl}/#application`,
+              name: siteConfig.name,
+              url: siteConfig.appUrl,
+              applicationCategory: "LifestyleApplication",
+              operatingSystem: "Web",
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "EUR",
+              },
+              publisher: { "@id": `${siteConfig.url}/#organization` },
+            },
+          ]
+        : []),
+    ],
+  };
 }
 
 /** JSON-LD for Article */
@@ -107,16 +136,8 @@ export function jsonLdArticle(article: {
         ? article.image
         : fullUrl(article.image)
       : undefined,
-    author: {
-      "@type": "Organization",
-      name: article.author || siteConfig.blog.defaultAuthor,
-      url: siteConfig.url,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
+    author: { "@id": `${siteConfig.url}/#organization` },
+    publisher: { "@id": `${siteConfig.url}/#organization` },
     mainEntityOfPage: { "@type": "WebPage", "@id": article.url },
     keywords: article.keywords?.join(", "),
     inLanguage: siteConfig.locale,
