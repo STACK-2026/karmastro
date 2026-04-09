@@ -125,3 +125,8 @@
       radial-gradient(1px 1px at 5% 45%, hsl(0 0% 100% / 0.3), transparent);
   }
 }
+
+@keyframes slide-up {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

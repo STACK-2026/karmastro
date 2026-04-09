@@ -18,6 +18,7 @@ import LearnPage from "./pages/LearnPage.tsx";
 import SettingsPage from "./pages/SettingsPage.tsx";
 import OnboardingPage from "./pages/OnboardingPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import CookieBanner from "./components/CookieBanner.tsx";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +46,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
+        <CookieBanner />
       </TooltipProvider>
     </AuthProvider>
   </QueryClientProvider>

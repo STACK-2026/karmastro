@@ -1,0 +1,90 @@
+---
+import { siteConfig } from "../../site.config";
+---
+
+<!-- Cookie Banner RGPD — Karmastro cosmic theme -->
+<div
+  id="cookie-banner"
+  class="fixed bottom-4 left-4 right-4 z-[60] hidden md:max-w-lg"
+  style="
+    background: rgba(10, 10, 15, 0.92);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: 20px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+  "
+>
+  <div class="flex items-start gap-3 mb-4">
+    <span class="text-2xl">🔮</span>
+    <div>
+      <p class="text-white text-sm font-semibold mb-1" style="font-family: Outfit, sans-serif;">
+        Les astres utilisent des cookies
+      </p>
+      <p class="text-xs" style="color: hsl(220 9% 64%);">
+        On utilise quelques cookies pour que ton experience cosmique soit fluide. Rien de louche, promis - meme Mercure retrograde ne pourrait pas y acceder.
+        <a href="/politique-confidentialite" class="underline hover:text-white transition-colors" style="color: hsl(271 91% 65%);">En savoir plus</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="flex flex-wrap gap-2">
+    <button
+      id="cookie-accept"
+      class="flex-1 min-w-[100px] text-sm font-semibold text-white py-2.5 px-4 rounded-xl transition-all hover:opacity-90"
+      style="background: hsl(271 91% 65%); box-shadow: 0 4px 15px rgba(139, 92, 246, 0.25);"
+    >
+      Accepter tout
+    </button>
+    <button
+      id="cookie-essential"
+      class="flex-1 min-w-[100px] text-sm font-medium py-2.5 px-4 rounded-xl transition-all"
+      style="color: hsl(220 9% 64%); border: 1px solid rgba(139, 92, 246, 0.2);"
+    >
+      Essentiels uniquement
+    </button>
+    <button
+      id="cookie-reject"
+      class="text-xs py-2 px-3 rounded-lg transition-colors"
+      style="color: hsl(220 9% 44%);"
+    >
+      Refuser
+    </button>
+  </div>
+</div>
+
+<script>
+  const banner = document.getElementById("cookie-banner");
+  const acceptBtn = document.getElementById("cookie-accept");
+  const essentialBtn = document.getElementById("cookie-essential");
+  const rejectBtn = document.getElementById("cookie-reject");
+
+  // Show banner if no consent saved
+  if (!localStorage.getItem("cookie-consent")) {
+    setTimeout(() => {
+      banner?.classList.remove("hidden");
+      banner?.classList.add("animate-slide-up");
+    }, 1500); // Delay 1.5s for UX
+  }
+
+  function saveConsent(level: string) {
+    localStorage.setItem("cookie-consent", level);
+    localStorage.setItem("cookie-consent-date", new Date().toISOString());
+    banner?.classList.add("hidden");
+  }
+
+  acceptBtn?.addEventListener("click", () => saveConsent("all"));
+  essentialBtn?.addEventListener("click", () => saveConsent("essential"));
+  rejectBtn?.addEventListener("click", () => saveConsent("none"));
+</script>
+
+<style>
+  @keyframes slide-up {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  .animate-slide-up {
+    animation: slide-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+</style>
