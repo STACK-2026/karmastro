@@ -130,3 +130,28 @@
   from { transform: translateY(100%); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
+
+/* Section dividers — seamless gradient transitions */
+.section-divider {
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, hsl(260 25% 5% / 0.4), transparent);
+  pointer-events: none;
+  position: relative;
+  z-index: 10;
+}
+
+.section-divider-up {
+  height: 60px;
+  background: linear-gradient(to bottom, hsl(260 25% 5% / 0.5), transparent);
+  pointer-events: none;
+  position: relative;
+  z-index: 10;
+}
+
+.section-divider-down {
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, hsl(260 25% 5% / 0.5));
+  pointer-events: none;
+  position: relative;
+  z-index: 10;
+}
