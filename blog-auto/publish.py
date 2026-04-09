@@ -301,18 +301,49 @@ def fetch_unsplash_image(query: str, article_index: int = 0) -> dict | None:
 
 
 # ============================================
+# AUTHORS (rotation)
+# ============================================
+
+AUTHORS = [
+    {"name": "Cassandra", "role": "Astrologue"},
+    {"name": "Nolan", "role": "Développeur"},
+    {"name": "Céleste", "role": "Numérologue"},
+    {"name": "Raphaël", "role": "Rédacteur karmique"},
+]
+
+# Category → preferred author mapping
+AUTHOR_BY_CATEGORY = {
+    "astrologie": "Cassandra",
+    "numerologie": "Céleste",
+    "karma": "Raphaël",
+    "horoscope": "Cassandra",
+    "compatibilite": "Céleste",
+    "guides": "Raphaël",
+}
+
+
+def get_author(article: dict, index: int) -> str:
+    """Get author name based on category or rotation."""
+    category = article.get("category", "")
+    if category in AUTHOR_BY_CATEGORY:
+        return AUTHOR_BY_CATEGORY[category]
+    return AUTHORS[index % len(AUTHORS)]["name"]
+
+
+# ============================================
 # MARKDOWN FILE GENERATION
 # ============================================
 
 def generate_frontmatter(article: dict, generated: dict, image: dict | None) -> str:
     """Generate YAML frontmatter for the markdown file."""
     tags = [t.strip() for t in article.get("keywords", "").split(",") if t.strip()]
+    author = get_author(article, article.get("index", 0))
 
     fm = f"""---
 title: "{generated['title_tag']}"
 description: "{generated['meta_description']}"
 date: {article.get('scheduled_date', datetime.now().strftime('%Y-%m-%d'))}
-author: "{article.get('author', 'Auteur')}"
+author: "{author}"
 category: "{article.get('category', '')}"
 tags: {json.dumps(tags, ensure_ascii=False)}
 keywords: "{article.get('keywords', '')}"

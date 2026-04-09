@@ -48,6 +48,22 @@ Karmastro démocratise l'accès à une guidance de qualité, basée sur des calc
 - **Accessibilité** : la voie Éveil est offerte par les astres. Tout le monde mérite une guidance de qualité
 - **Rationalité** : le spirituel et le rationnel ne sont pas incompatibles. Les mathématiques sont le langage de l'univers
 
+## L'équipe
+
+**Cassandra, 34 ans** - Astrologue & cofondatrice.
+Passionnée d'astrologie depuis l'adolescence, elle a étudié l'astrologie classique et la tradition hellénistique avant de se tourner vers la technologie. C'est elle qui a eu l'idée de croiser Swiss Ephemeris avec un système de guidance conversationnel. Elle supervise la qualité des interprétations astrologiques de l'Oracle.
+
+**Nolan, 38 ans** - Développeur & cofondateur.
+Ingénieur de formation, Nolan est le cerveau technique de Karmastro. C'est lui qui a intégré Swiss Ephemeris et construit le moteur de calcul. Il est convaincu que la technologie peut rendre les arts divinatoires plus accessibles et plus rigoureux. "Les maths ne mentent pas" est son mantra.
+
+**Céleste, 57 ans** - Numérologue.
+Praticienne en numérologie pythagoricienne depuis plus de 25 ans, Céleste a formé des centaines d'élèves. Elle vérifie chaque interprétation numérologique de l'Oracle et s'assure que la tradition est respectée tout en restant accessible. Elle signe une partie des articles du [Cosmos](/blog).
+
+**Raphaël, 44 ans** - Guidance karmique & contenu.
+Ancien professeur de philosophie, Raphaël s'est tourné vers la guidance spirituelle après un premier retour de Saturne transformateur. Il rédige les contenus du blog, les interprétations karmiques et veille à ce que le ton reste humain, chaleureux et jamais prétentieux.
+
+---
+
 ## Rejoins-nous
 
 Que tu sois passionné d'astrologie, curieux de numérologie, ou simplement sceptique mais intrigué - Karmastro est fait pour toi. Les calculs sont exacts. L'interprétation est profonde. Et l'Oracle est disponible 24/7.
