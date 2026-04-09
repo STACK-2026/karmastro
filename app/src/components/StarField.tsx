@@ -5,6 +5,7 @@ const rng = (seed: number) => {
 };
 
 const rand = rng(42);
+const driftClasses = ["animate-drift-1", "animate-drift-2", "animate-drift-3"];
 
 // 3 layers: fond (petites, nombreuses), milieu, premier plan (rares, brillantes)
 const bgStars = Array.from({ length: 60 }, (_, i) => ({
@@ -12,10 +13,12 @@ const bgStars = Array.from({ length: 60 }, (_, i) => ({
   left: `${rand() * 100}%`,
   top: `${rand() * 100}%`,
   size: rand() * 1.2 + 0.3,
-  delay: rand() * 8,
-  duration: rand() * 4 + 3,
+  twinkleDelay: rand() * 8,
+  twinkleDuration: rand() * 4 + 3,
+  driftDelay: rand() * 10,
   opacity: rand() * 0.3 + 0.05,
   color: "white",
+  drift: driftClasses[Math.floor(rand() * 3)],
 }));
 
 const midStars = Array.from({ length: 25 }, (_, i) => ({
@@ -23,11 +26,12 @@ const midStars = Array.from({ length: 25 }, (_, i) => ({
   left: `${rand() * 100}%`,
   top: `${rand() * 100}%`,
   size: rand() * 1.8 + 0.8,
-  delay: rand() * 6,
-  duration: rand() * 3 + 2,
+  twinkleDelay: rand() * 6,
+  twinkleDuration: rand() * 3 + 2,
+  driftDelay: rand() * 8,
   opacity: rand() * 0.4 + 0.15,
-  // Some warm (gold), some cool (blue-white)
   color: rand() > 0.7 ? "hsl(43 76% 80%)" : rand() > 0.4 ? "hsl(220 60% 90%)" : "white",
+  drift: driftClasses[Math.floor(rand() * 3)],
 }));
 
 const brightStars = Array.from({ length: 8 }, (_, i) => ({
@@ -35,18 +39,20 @@ const brightStars = Array.from({ length: 8 }, (_, i) => ({
   left: `${rand() * 100}%`,
   top: `${rand() * 100}%`,
   size: rand() * 1.5 + 2,
-  delay: rand() * 5,
-  duration: rand() * 2.5 + 1.5,
+  twinkleDelay: rand() * 5,
+  twinkleDuration: rand() * 2.5 + 1.5,
+  driftDelay: rand() * 6,
   opacity: rand() * 0.3 + 0.5,
   color: rand() > 0.5 ? "hsl(271 60% 85%)" : "hsl(43 50% 90%)",
+  drift: driftClasses[Math.floor(rand() * 3)],
 }));
 
 const allStars = [...bgStars, ...midStars, ...brightStars];
 
 const StarField = () => {
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-      {/* Nebula gradient — slightly brighter */}
+    <div id="starfield-container" className="fixed inset-0 pointer-events-none overflow-hidden z-0" style={{ willChange: "transform" }}>
+      {/* Nebula gradient */}
       <div
         className="absolute inset-0"
         style={{
@@ -58,7 +64,7 @@ const StarField = () => {
       {allStars.map((star) => (
         <div
           key={star.id}
-          className="absolute rounded-full animate-twinkle"
+          className={`absolute rounded-full ${star.drift}`}
           style={{
             left: star.left,
             top: star.top,
@@ -66,10 +72,8 @@ const StarField = () => {
             height: star.size,
             background: star.color,
             opacity: star.opacity,
-            animationDelay: `${star.delay}s`,
-            animationDuration: `${star.duration}s`,
-            willChange: "opacity",
-            // Glow on bright stars
+            animation: `twinkle ${star.twinkleDuration}s ease-in-out ${star.twinkleDelay}s infinite, ${star.drift.replace("animate-", "")} ${12 + star.driftDelay}s ease-in-out ${star.driftDelay}s infinite`,
+            willChange: "opacity, transform",
             ...(star.size > 2.5 ? { boxShadow: `0 0 ${star.size * 2}px ${star.color}` } : {}),
           }}
         />
@@ -77,5 +81,23 @@ const StarField = () => {
     </div>
   );
 };
+
+// Subtle parallax: stars drift down slightly slower than scroll
+if (typeof window !== "undefined") {
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const el = document.getElementById("starfield-container");
+        if (el) {
+          const y = window.scrollY * 0.15; // 15% of scroll speed
+          el.style.transform = `translateY(${y}px)`;
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+}
 
 export default StarField;
