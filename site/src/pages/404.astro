@@ -3,17 +3,81 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { siteConfig } from "../../site.config";
 ---
 
-<BaseLayout title={`Page introuvable | ${siteConfig.name}`} description="Cette page n'existe pas." noIndex>
-  <div class="max-w-2xl mx-auto px-4 py-32 text-center">
-    <p class="text-8xl font-bold mb-4 text-gradient-violet" style="font-family: Outfit, sans-serif;">404</p>
-    <h1 class="text-2xl mb-4 text-white">Page introuvable</h1>
-    <p class="mb-8" style="color: hsl(220 9% 64%);">La page que tu cherches n'existe pas ou a été déplacée.</p>
+<BaseLayout title={`Page perdue dans les étoiles | ${siteConfig.name}`} description="Cette page s'est égarée dans le cosmos. Mais les astres ont d'autres chemins pour toi." noIndex>
+  <div class="max-w-3xl mx-auto px-4 py-20 text-center relative z-10">
+
+    <!-- Big cosmic 404 -->
+    <div class="mb-8">
+      <p class="text-8xl md:text-9xl font-bold text-gradient-violet mb-2" style="font-family: Outfit, sans-serif; line-height: 1;">4✨4</p>
+      <p class="text-xl md:text-2xl font-semibold text-white mb-2" style="font-family: Outfit, sans-serif;">Cette page s'est perdue dans le cosmos</p>
+      <p class="text-sm" style="color: hsl(220 9% 64%);">
+        Même les étoiles changent de trajectoire parfois. Pas de panique - l'Oracle a d'autres chemins pour toi.
+      </p>
+    </div>
+
+    <!-- Quick links -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+      <a href="/" class="border-glow rounded-xl p-5 text-center transition-all hover:glow-violet" style="background: hsl(260 25% 8%);">
+        <span class="text-2xl mb-2 block">🏠</span>
+        <p class="text-sm font-semibold text-white">Accueil</p>
+        <p class="text-xs" style="color: hsl(220 9% 64%);">Retour aux étoiles</p>
+      </a>
+      <a href="/blog" class="border-glow rounded-xl p-5 text-center transition-all hover:glow-violet" style="background: hsl(260 25% 8%);">
+        <span class="text-2xl mb-2 block">🌌</span>
+        <p class="text-sm font-semibold text-white">Le Cosmos</p>
+        <p class="text-xs" style="color: hsl(220 9% 64%);">Explorer le blog</p>
+      </a>
+      <a href={siteConfig.appUrl + "/oracle"} class="border-glow rounded-xl p-5 text-center transition-all hover:glow-violet" style="background: hsl(260 25% 8%);">
+        <span class="text-2xl mb-2 block">🔮</span>
+        <p class="text-sm font-semibold text-white">L'Oracle</p>
+        <p class="text-xs" style="color: hsl(220 9% 64%);">Poser une question</p>
+      </a>
+    </div>
+
+    <!-- Le saviez-vous -->
+    <div class="border-glow rounded-xl p-6 text-left mb-10" style="background: hsl(260 25% 8%);">
+      <p class="text-sm font-semibold text-gradient-gold mb-3">✨ Le savais-tu ?</p>
+      <p class="text-sm" style="color: hsl(220 9% 64%);">
+        En numérologie, le nombre <strong class="text-white">404</strong> se réduit à <strong class="text-white">4+0+4 = 8</strong>. Le 8 est le nombre de l'abondance, du pouvoir et de l'équilibre cosmique. Tomber sur cette page est peut-être un signe que tu es sur le point de découvrir quelque chose de grand.
+      </p>
+      <p class="text-xs mt-3" style="color: hsl(220 9% 44%);">
+        Selon la tradition pythagoricienne, le 8 représente l'infini couché (∞) - un cycle sans fin de création et de transformation.
+      </p>
+    </div>
+
+    <!-- Explore -->
+    <div class="text-left mb-10">
+      <p class="text-sm font-semibold text-white mb-4" style="font-family: Outfit, sans-serif;">Explorer Karmastro</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <a href="/precision" class="flex items-center gap-3 rounded-xl p-3 transition-colors" style="color: hsl(220 9% 64%); border: 1px solid hsl(260 20% 16%);">
+          <span>🔢</span>
+          <span class="text-sm">Notre précision (niveau NASA)</span>
+        </a>
+        <a href={siteConfig.appUrl} class="flex items-center gap-3 rounded-xl p-3 transition-colors" style="color: hsl(220 9% 64%); border: 1px solid hsl(260 20% 16%);">
+          <span>⭐</span>
+          <span class="text-sm">Créer mon profil cosmique</span>
+        </a>
+        <a href="/cgv" class="flex items-center gap-3 rounded-xl p-3 transition-colors" style="color: hsl(220 9% 64%); border: 1px solid hsl(260 20% 16%);">
+          <span>📜</span>
+          <span class="text-sm">Conditions générales</span>
+        </a>
+        <a href="/politique-confidentialite" class="flex items-center gap-3 rounded-xl p-3 transition-colors" style="color: hsl(220 9% 64%); border: 1px solid hsl(260 20% 16%);">
+          <span>🔒</span>
+          <span class="text-sm">Politique de confidentialité</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA -->
     <a
-      href="/"
-      class="inline-flex items-center gap-2 text-white font-semibold px-6 py-3 rounded-lg glow-violet"
+      href={siteConfig.appUrl}
+      class="inline-flex items-center gap-2 text-white font-semibold px-8 py-4 rounded-xl text-lg glow-violet transition-all hover:scale-105"
       style="background: hsl(271 91% 65%);"
     >
-      Retour à l'accueil
+      Commencer mon éveil cosmique
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+      </svg>
     </a>
   </div>
 </BaseLayout>
