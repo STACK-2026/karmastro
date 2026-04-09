@@ -81,7 +81,7 @@ export const siteConfig = {
     {
       question: "Est-ce que Karmastro est gratuit ?",
       answer:
-        "Oui, le profil cosmique complet, l'horoscope quotidien et 3 messages Oracle par jour sont gratuits. Le plan Etoile Premium a 7,99EUR/mois debloque l'Oracle illimite, le calendrier cosmique detaille et les compatibilites illimitees.",
+        "Oui, la voie Eveil est offerte par les astres : profil cosmique complet, horoscope quotidien et 3 messages Oracle par jour. La voie Etoile a 7,99EUR/mois debloque l'Oracle illimite, le calendrier cosmique detaille et les compatibilites illimitees.",
     },
     {
       question: "Quelle est la difference avec un horoscope classique ?",

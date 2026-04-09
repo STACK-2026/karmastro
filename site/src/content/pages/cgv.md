@@ -10,13 +10,13 @@ Les presentes conditions generales de vente (CGV) regissent l'utilisation du ser
 
 ## Article 2 - Acces au service
 
-L'utilisateur peut creer un compte gratuit pour acceder aux fonctionnalites de base (profil cosmique, horoscope quotidien, 3 messages Oracle/jour).
+L'utilisateur peut creer un compte pour acceder a la voie Eveil (profil cosmique, horoscope quotidien, 3 messages Oracle/jour).
 
 ## Article 3 - Tarification
 
-- **Gratuit** : profil cosmique complet, horoscope quotidien, 3 messages Oracle/jour
-- **Etoile Premium** : 7,99 EUR/mois - Oracle illimite, calendrier cosmique, compatibilites illimitees
-- **Pack Ame Soeur** : 2,99 EUR (paiement unique) - rapport de compatibilite complet
+- **Eveil** (offert) : profil cosmique complet, horoscope quotidien, 3 messages Oracle/jour
+- **Etoile** : 7,99 EUR/mois - Oracle illimite, calendrier cosmique, compatibilites illimitees
+- **Ame Soeur** : 2,99 EUR (rituel unique) - rapport de compatibilite complet
 
 Tous les prix sont indiques en euros TTC.
 

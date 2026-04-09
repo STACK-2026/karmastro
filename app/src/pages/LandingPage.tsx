@@ -430,47 +430,47 @@ const LandingPage = () => {
           Choisissez votre <span className="text-gradient-violet">voie</span>
         </h2>
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          {/* Free */}
+          {/* Eveil */}
           <div ref={(el) => { pricingCardsRef.current[0] = el; }} className="border-glow rounded-xl bg-card/40 p-6">
-            <h3 className="font-serif text-xl mb-1">Gratuit</h3>
-            <p className="text-3xl font-bold mb-4">0€</p>
+            <h3 className="font-serif text-xl mb-1">Eveil ✨</h3>
+            <p className="text-lg font-medium mb-4 text-gradient-gold">Offert par les astres</p>
             <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-              {["Profil cosmique complet", "RDV quotidien (court)", "3 messages Oracle/jour", "1 compatibilité", "Guides éducatifs"].map(f => (
+              {["Profil cosmique complet", "RDV quotidien (court)", "3 messages Oracle/jour", "1 compatibilite", "Guides educatifs"].map(f => (
                 <li key={f} className="flex items-center gap-2"><Check className="h-4 w-4 text-karmique-earth" /> {f}</li>
               ))}
             </ul>
             <Button variant="outline" className="w-full border-primary text-primary" onClick={() => navigate("/onboarding")}>
-              Commencer
+              Commencer mon eveil
             </Button>
           </div>
-          {/* Premium */}
+          {/* Etoile */}
           <div ref={(el) => { pricingCardsRef.current[1] = el; }} className="border-glow-gold glow-violet rounded-xl bg-card/60 p-6 relative">
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full">
-              Populaire
+              Le plus choisi
             </span>
-            <h3 className="font-serif text-xl mb-1">Étoile ⭐</h3>
+            <h3 className="font-serif text-xl mb-1">Etoile ⭐</h3>
             <p className="text-3xl font-bold mb-1">7,99€<span className="text-sm font-normal text-muted-foreground">/mois</span></p>
             <p className="text-xs text-muted-foreground mb-4">ou 59,99€/an</p>
             <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-              {["RDV quotidien COMPLET", "Oracle IA ILLIMITÉ", "Calendrier cosmique détaillé", "Compatibilités illimitées", "Calculateur timing optimal", "Export PDF", "Zéro publicité"].map(f => (
+              {["RDV quotidien COMPLET", "Oracle IA ILLIMITE", "Calendrier cosmique detaille", "Compatibilites illimitees", "Calculateur timing optimal", "Export PDF", "Zero publicite"].map(f => (
                 <li key={f} className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> {f}</li>
               ))}
             </ul>
             <Button className="w-full bg-primary hover:bg-primary/90" onClick={() => navigate("/onboarding")}>
-              Essai gratuit 7 jours
+              7 jours offerts par les astres
             </Button>
           </div>
-          {/* Pack */}
+          {/* Ame Soeur */}
           <div ref={(el) => { pricingCardsRef.current[2] = el; }} className="border-glow rounded-xl bg-card/40 p-6">
-            <h3 className="font-serif text-xl mb-1">Âme Soeur 💫</h3>
-            <p className="text-3xl font-bold mb-4">2,99€<span className="text-sm font-normal text-muted-foreground"> one-shot</span></p>
+            <h3 className="font-serif text-xl mb-1">Ame Soeur 💫</h3>
+            <p className="text-3xl font-bold mb-4">2,99€<span className="text-sm font-normal text-muted-foreground"> rituel unique</span></p>
             <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-              {["Rapport compatibilité 15 pages", "Synastrie complète", "Guidance karmique couple", "Export PDF"].map(f => (
+              {["Rapport compatibilite 15 pages", "Synastrie complete", "Guidance karmique couple", "Export PDF"].map(f => (
                 <li key={f} className="flex items-center gap-2"><Check className="h-4 w-4 text-accent" /> {f}</li>
               ))}
             </ul>
             <Button variant="outline" className="w-full border-accent text-accent" onClick={() => navigate("/onboarding")}>
-              Acheter
+              Recevoir mon rituel
             </Button>
           </div>
         </div>

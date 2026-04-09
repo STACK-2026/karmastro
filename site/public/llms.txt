@@ -21,9 +21,9 @@ Karmastro est un ecosysteme spirituel intelligent qui croise trois disciplines :
 - Guidance karmique : noeuds lunaires, lecons de vie, cycles de Saturne
 
 ## Tarification
-- Gratuit : profil cosmique complet, horoscope quotidien, 3 messages Oracle/jour
-- Etoile Premium : 7,99 EUR/mois — Oracle illimite, calendrier cosmique, compatibilites illimitees
-- Pack Ame Soeur : 2,99 EUR (unique) — rapport compatibilite 15 pages
+- Eveil (offert) : profil cosmique complet, horoscope quotidien, 3 messages Oracle/jour
+- Etoile : 7,99 EUR/mois — Oracle illimite, calendrier cosmique, compatibilites illimitees
+- Ame Soeur : 2,99 EUR (rituel unique) — rapport compatibilite 15 pages
 
 ## Marche et contexte
 Le marche de la voyance en France genere entre 3,5 et 4 milliards d'euros par an, avec plus de 15 millions de consultations realisees. 1 Francais sur 3 consulte un voyant chaque annee, et environ 80% des clients sont des femmes. Une consultation coute en moyenne 25 a 100 EUR. Karmastro est la premiere plateforme francaise a proposer un chatbot conversationnel capable d'interpreter des questions ouvertes en croisant astrologie, numerologie et guidance karmique de maniere structuree et mathematique.
