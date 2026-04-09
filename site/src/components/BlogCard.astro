@@ -12,7 +12,7 @@ interface Props {
 const { title, description, date, slug, image, imageAlt, category } = Astro.props;
 ---
 
-<article class="group rounded-xl overflow-hidden border-glow transition-all hover:glow-violet" style="background: hsl(260 25% 8%);">
+<article class="group rounded-xl overflow-hidden border-glow transition-all hover:glow-violet" style="background: var(--bg-card);">
   <a href={`/blog/${slug}`} class="block">
     {image ? (
       <img

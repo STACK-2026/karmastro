@@ -56,8 +56,8 @@ const StarField = () => {
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(to bottom, hsl(271 30% 10%) 0%, hsl(260 30% 4%) 40%, hsl(260 30% 3%) 100%)",
-          opacity: 0.7,
+          background: "linear-gradient(to bottom, hsl(258 46% 12%) 0%, hsl(258 46% 8%) 40%, hsl(258 46% 6%) 100%)",
+          opacity: 0.5,
         }}
       />
 

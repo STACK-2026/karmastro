@@ -10,7 +10,7 @@ import { siteConfig } from "../../site.config";
     top: 8px; left: 8px; right: 8px;
     height: 56px;
     padding: 0 16px;
-    background: rgba(10, 10, 15, 0.75);
+    background: rgba(15, 10, 30, 0.8);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(139, 92, 246, 0.12);
@@ -32,7 +32,7 @@ import { siteConfig } from "../../site.config";
       <a
         href={link.href}
         class="nav-link text-sm font-medium no-underline relative"
-        style="color: hsl(220 9% 64%);"
+        style="color: var(--text-muted);"
         {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
         {link.label}
@@ -87,7 +87,7 @@ import { siteConfig } from "../../site.config";
   style="
     top: 8px; right: 8px; bottom: 8px;
     width: 280px;
-    background: rgba(10, 10, 15, 0.92);
+    background: rgba(15, 10, 30, 0.92);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border: 1px solid rgba(139, 92, 246, 0.15);
@@ -100,7 +100,7 @@ import { siteConfig } from "../../site.config";
 >
   <div class="flex items-center justify-between p-4" style="border-bottom: 1px solid rgba(139, 92, 246, 0.1);">
     <span class="text-white font-bold" style="font-family: Outfit, sans-serif;">{siteConfig.name}</span>
-    <button id="drawer-close" class="w-8 h-8 flex items-center justify-center rounded-lg" style="color: hsl(220 9% 64%);">
+    <button id="drawer-close" class="w-8 h-8 flex items-center justify-center rounded-lg" style="color: var(--text-muted);">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>

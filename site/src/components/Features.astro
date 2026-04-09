@@ -14,10 +14,10 @@ const iconMap: Record<string, string> = {
 <section class="py-20 px-4 relative" style="background: linear-gradient(to bottom, transparent, hsl(260 25% 5% / 0.6) 15%, hsl(260 25% 5% / 0.6) 85%, transparent);">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-center mb-4">Pourquoi <span class="text-gradient-violet">{siteConfig.name}</span> ?</h2>
-    <p class="text-center mb-12" style="color: hsl(220 9% 64%);">Un ecosysteme spirituel qui croise 3 disciplines pour une guidance complete</p>
+    <p class="text-center mb-12" style="color: var(--text-muted);">Un ecosysteme spirituel qui croise 3 disciplines pour une guidance complete</p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {siteConfig.features.map((feature) => (
-        <div class="rounded-xl p-8 border-glow transition-all hover:glow-violet" style="background: hsl(260 25% 8%);">
+        <div class="rounded-xl p-8 border-glow transition-all hover:glow-violet" style="background: var(--bg-card);">
           <div
             class="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
             style="background: hsl(271 91% 65% / 0.1);"
@@ -35,7 +35,7 @@ const iconMap: Record<string, string> = {
             </svg>
           </div>
           <h3 class="text-lg font-bold mb-2 text-white">{feature.title}</h3>
-          <p style="color: hsl(220 9% 64%);">{feature.description}</p>
+          <p style="color: var(--text-muted);">{feature.description}</p>
         </div>
       ))}
     </div>
