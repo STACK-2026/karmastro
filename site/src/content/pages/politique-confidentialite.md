@@ -1,53 +1,53 @@
 ---
-title: "Politique de confidentialite"
-description: "Politique de confidentialite et protection des donnees personnelles (RGPD) de Karmastro."
+title: "Politique de confidentialité"
+description: "Politique de confidentialité et protection des données personnelles (RGPD) de Karmastro."
 lastUpdated: 2026-04-09
 ---
 
 ## Introduction
 
-Karmastro s'engage a proteger la vie privee de ses utilisateurs. La presente politique decrit les donnees collectees et leur traitement.
+Karmastro s'engage à protéger la vie privée de ses utilisateurs. La présente politique décrit les données collectées et leur traitement.
 
-## Donnees collectees
+## Données collectées
 
-- **Donnees de compte** : adresse email
-- **Donnees de profil cosmique** : date, heure et lieu de naissance (necessaires aux calculs astrologiques et numerologiques)
-- **Donnees d'utilisation** : pages visitees, interactions avec L'Oracle
-- **Donnees techniques** : adresse IP, type de navigateur
+- **Données de compte** : adresse email
+- **Données de profil cosmique** : date, heure et lieu de naissance (nécessaires aux calculs astrologiques et numérologiques)
+- **Données d'utilisation** : pages visitées, interactions avec L'Oracle
+- **Données techniques** : adresse IP, type de navigateur
 
-## Finalites du traitement
+## Finalités du traitement
 
-- Calcul du theme natal, profil numerologique et guidance karmique
-- Personnalisation de l'experience (L'Oracle, horoscopes)
+- Calcul du thème natal, profil numérologique et guidance karmique
+- Personnalisation de l'expérience (L'Oracle, horoscopes)
 - Communication relative au compte (emails transactionnels)
-- Amelioration du service
+- Amélioration du service
 
-## Base legale
+## Base légale
 
-Le traitement est fonde sur le consentement de l'utilisateur et l'execution du contrat de service.
+Le traitement est fondé sur le consentement de l'utilisateur et l'exécution du contrat de service.
 
-## Duree de conservation
+## Durée de conservation
 
-Les donnees personnelles sont conservees pendant la duree de ton compte, puis supprimees dans un delai de 30 jours apres la cloture.
+Les données personnelles sont conservées pendant la durée de ton compte, puis supprimées dans un délai de 30 jours après la clôture.
 
 ## Cookies
 
-Ce site utilise uniquement des cookies techniques necessaires au fonctionnement du service. Aucun cookie publicitaire ou de tracking n'est utilise.
+Ce site utilise uniquement des cookies techniques nécessaires au fonctionnement du service. Aucun cookie publicitaire ou de tracking n'est utilisé.
 
 ## Sous-traitants
 
-- **Cloudflare** (hebergement)
-- **Supabase** (base de donnees)
+- **Cloudflare** (hébergement)
+- **Supabase** (base de données)
 - **Stripe** (paiements)
 - **Resend** (emails)
 
 ## Tes droits
 
-Conformement au RGPD, tu disposes des droits suivants :
-- Droit d'acces a tes donnees
+Conformément au RGPD, tu disposes des droits suivants :
+- Droit d'accès à tes données
 - Droit de rectification
-- Droit a l'effacement
-- Droit a la portabilite
+- Droit à l'effacement
+- Droit à la portabilité
 - Droit d'opposition
 
 Pour exercer ces droits : **contact@karmastro.com**

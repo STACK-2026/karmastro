@@ -17,7 +17,7 @@ const breadcrumbs = [
 
 <BaseLayout
   title={`Le Cosmos - Blog ${siteConfig.name}`}
-  description={`Le Cosmos, le blog de ${siteConfig.name}. Astrologie, numerologie, guidance karmique : explore l'univers des astres et des nombres.`}
+  description={`Le Cosmos, le blog de ${siteConfig.name}. Astrologie, numérologie, guidance karmique : explore l'univers des astres et des nombres.`}
   jsonLd={[
     { "@context": "https://schema.org", "@type": "CollectionPage", name: `Le Cosmos - Blog ${siteConfig.name}`, url: fullUrl("/blog") },
     jsonLdBreadcrumbs(breadcrumbs),
@@ -25,10 +25,10 @@ const breadcrumbs = [
 >
   <div class="max-w-6xl mx-auto px-4 py-12">
     <h1 class="mb-2">Le Cosmos</h1>
-    <p class="text-gray-400 mb-10 text-lg">Explore l'univers de l'astrologie, de la numerologie et du karma</p>
+    <p class="text-gray-400 mb-10 text-lg">Explore l'univers de l'astrologie, de la numérologie et du karma</p>
 
     {posts.length === 0 ? (
-      <p class="text-gray-500 text-lg">Les premiers articles arrivent bientot. Reviens vite !</p>
+      <p class="text-gray-500 text-lg">Les premiers articles arrivent bientôt. Reviens vite !</p>
     ) : (
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (

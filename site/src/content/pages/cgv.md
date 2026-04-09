@@ -1,40 +1,40 @@
 ---
-title: "Conditions generales de vente"
-description: "Conditions generales de vente et d'utilisation du service Karmastro."
+title: "Conditions générales de vente"
+description: "Conditions générales de vente et d'utilisation du service Karmastro."
 lastUpdated: 2026-04-09
 ---
 
 ## Article 1 - Objet
 
-Les presentes conditions generales de vente (CGV) regissent l'utilisation du service accessible a l'adresse **https://app.karmastro.com**.
+Les présentes conditions générales de vente (CGV) régissent l'utilisation du service accessible à l'adresse **https://app.karmastro.com**.
 
-## Article 2 - Acces au service
+## Article 2 - Accès au service
 
-L'utilisateur peut creer un compte pour acceder a la voie Eveil (profil cosmique, horoscope quotidien, 3 messages Oracle/jour).
+L'utilisateur peut créer un compte pour accéder à la voie Éveil (profil cosmique, horoscope quotidien, 3 messages Oracle/jour).
 
 ## Article 3 - Tarification
 
-- **Eveil** (offert) : profil cosmique complet, horoscope quotidien, 3 messages Oracle/jour
-- **Etoile** : 7,99 EUR/mois - Oracle illimite, calendrier cosmique, compatibilites illimitees
-- **Ame Soeur** : 2,99 EUR (rituel unique) - rapport de compatibilite complet
+- **Éveil** (offert) : profil cosmique complet, horoscope quotidien, 3 messages Oracle/jour
+- **Étoile** : 7,99 EUR/mois - Oracle illimité, calendrier cosmique, compatibilités illimitées
+- **Âme Soeur** : 2,99 EUR (rituel unique) - rapport de compatibilité complet
 
-Tous les prix sont indiques en euros TTC.
+Tous les prix sont indiqués en euros TTC.
 
 ## Article 4 - Paiement
 
-Le paiement est effectue par carte bancaire via la plateforme securisee Stripe. Les transactions sont chiffrees.
+Le paiement est effectué par carte bancaire via la plateforme sécurisée Stripe. Les transactions sont chiffrées.
 
-## Article 5 - Droit de retractation
+## Article 5 - Droit de rétractation
 
-Conformement a l'article L221-28 du Code de la consommation, le droit de retractation ne peut etre exerce pour les services pleinement executes avant la fin du delai de retractation.
+Conformément à l'article L221-28 du Code de la consommation, le droit de rétractation ne peut être exercé pour les services pleinement exécutés avant la fin du délai de rétractation.
 
-## Article 6 - Responsabilite
+## Article 6 - Responsabilité
 
-Les informations fournies par Karmastro (astrologie, numerologie, guidance karmique) le sont a titre de divertissement et de developpement personnel. Elles ne constituent en aucun cas un conseil medical, juridique ou financier.
+Les informations fournies par Karmastro (astrologie, numérologie, guidance karmique) le sont à titre de divertissement et de développement personnel. Elles ne constituent en aucun cas un conseil médical, juridique ou financier.
 
-## Article 7 - Donnees personnelles
+## Article 7 - Données personnelles
 
-Les donnees personnelles collectees sont traitees conformement a notre [politique de confidentialite](/politique-confidentialite) et au RGPD.
+Les données personnelles collectées sont traitées conformément à notre [politique de confidentialité](/politique-confidentialite) et au RGPD.
 
 ## Article 8 - Contact
 

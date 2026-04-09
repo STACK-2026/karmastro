@@ -3,11 +3,11 @@
 // ============================================
 
 export const siteConfig = {
-  // Identite
+  // Identité
   name: "Karmastro",
-  tagline: "Votre carte de vie ecrite dans les etoiles et les nombres",
+  tagline: "Votre carte de vie écrite dans les étoiles et les nombres",
   description:
-    "Karmastro est le premier ecosysteme spirituel intelligent qui fusionne astrologie, numerologie et guidance karmique. L'Oracle disponible 24/7, theme natal complet, compatibilite astro-numerologique et calendrier cosmique personnalise.",
+    "Karmastro est le premier écosystème spirituel intelligent qui fusionne astrologie, numérologie et guidance karmique. L'Oracle est disponible 24/7, thème natal complet, compatibilité astro-numérologique et calendrier cosmique personnalisé.",
   url: "https://karmastro.com",
   appUrl: "https://app.karmastro.com",
   locale: "fr-FR",
@@ -24,7 +24,7 @@ export const siteConfig = {
 
   // Typographie
   fonts: {
-    display: "Outfit",  // Titres — elegant, spirituel
+    display: "Outfit",  // Titres — élégant, spirituel
     body: "Figtree",    // Corps — moderne, lisible
   },
 
@@ -34,11 +34,11 @@ export const siteConfig = {
   ogImage: "/og-default.jpg",
   keywords: [
     "astrologie",
-    "numerologie",
-    "theme natal",
+    "numérologie",
+    "thème natal",
     "guidance karmique",
-    "horoscope personnalise",
-    "compatibilite astrologique",
+    "horoscope personnalisé",
+    "compatibilité astrologique",
     "oracle",
     "chemin de vie",
     "signe astrologique",
@@ -47,7 +47,7 @@ export const siteConfig = {
 
   // GEO
   llmsDescription:
-    "Karmastro.com est la premiere plateforme francaise d'astrologie et numerologie personnalisee par intelligence artificielle. L'Oracle croise theme natal, chemin de vie numerologique et noeuds lunaires karmiques pour une guidance 24/7. La numerologie y est traitee comme un systeme mathematique rationnel, base sur les methodes de Pythagore et la tradition chaldeenne.",
+    "Karmastro.com est la première plateforme française d'astrologie et numérologie personnalisée par intelligence artificielle. L'Oracle croise thème natal, chemin de vie numérologique et noeuds lunaires karmiques pour une guidance 24/7. La numérologie y est traitée comme un système mathématique rationnel, basé sur les méthodes de Pythagore et la tradition chaldéenne.",
 
   // Navigation
   navLinks: [
@@ -71,66 +71,66 @@ export const siteConfig = {
     {
       question: "Qu'est-ce que Karmastro ?",
       answer:
-        "Karmastro est un ecosysteme spirituel intelligent qui fusionne astrologie, numerologie et guidance karmique. Tu obtiens un profil cosmique complet base sur ta date, heure et lieu de naissance, avec L'Oracle disponible 24/7.",
+        "Karmastro est un écosystème spirituel intelligent qui fusionne astrologie, numérologie et guidance karmique. Tu obtiens un profil cosmique complet basé sur ta date, heure et lieu de naissance, avec l'Oracle disponible 24/7.",
     },
     {
-      question: "Comment fonctionne l'L'Oracle ?",
+      question: "Comment fonctionne L'Oracle ?",
       answer:
-        "L'Oracle analyse ton theme natal, ton chemin de vie numerologique et tes noeuds lunaires karmiques pour te donner des reponses personnalisees. Il ne s'agit pas d'un horoscope generique mais d'une guidance adaptee a ton profil unique.",
+        "L'Oracle analyse ton thème natal, ton chemin de vie numérologique et tes noeuds lunaires karmiques pour te donner des réponses personnalisées. Il ne s'agit pas d'un horoscope générique mais d'une guidance adaptée à ton profil unique.",
     },
     {
       question: "Est-ce que Karmastro est gratuit ?",
       answer:
-        "Oui, la voie Eveil est offerte par les astres : profil cosmique complet, horoscope quotidien et 3 messages Oracle par jour. La voie Etoile a 7,99EUR/mois debloque l'Oracle illimite, le calendrier cosmique detaille et les compatibilites illimitees.",
+        "Oui, la voie Éveil est offerte par les astres : profil cosmique complet, horoscope quotidien et 3 messages Oracle par jour. La voie Étoile à 7,99EUR/mois débloque l'Oracle illimité, le calendrier cosmique détaillé et les compatibilités illimitées.",
     },
     {
-      question: "Quelle est la difference avec un horoscope classique ?",
+      question: "Quelle est la différence avec un horoscope classique ?",
       answer:
-        "Un horoscope classique se base uniquement sur ton signe solaire. Karmastro croise 3 disciplines : astrologie (12 planetes, 12 maisons, aspects), numerologie (chemin de vie, expression, ame) et guidance karmique (noeuds lunaires, dettes karmiques, cycles de Saturne).",
+        "Un horoscope classique se base uniquement sur ton signe solaire. Karmastro croise 3 disciplines : astrologie (12 planètes, 12 maisons, aspects), numérologie (chemin de vie, expression, âme) et guidance karmique (noeuds lunaires, dettes karmiques, cycles de Saturne).",
     },
     {
-      question: "Mes donnees sont-elles protegees ?",
+      question: "Mes données sont-elles protégées ?",
       answer:
-        "Oui. Tes donnees personnelles et ton profil cosmique sont chiffres et stockes de maniere securisee. Karmastro est conforme au RGPD. Aucune donnee n'est partagee avec des tiers.",
+        "Oui. Tes données personnelles et ton profil cosmique sont chiffrés et stockés de manière sécurisée. Karmastro est conforme au RGPD. Aucune donnée n'est partagée avec des tiers.",
     },
   ],
 
   // Features
   features: [
     {
-      title: "Theme natal complet",
+      title: "Thème natal complet",
       description:
-        "12 planetes, 12 maisons, aspects majeurs et mineurs. Ton ciel de naissance decode en profondeur.",
+        "12 planètes, 12 maisons, aspects majeurs et mineurs. Ton ciel de naissance décodé en profondeur.",
       icon: "star",
     },
     {
-      title: "Numerologie karmique",
+      title: "Numérologie karmique",
       description:
-        "Chemin de vie, nombre d'expression, ame, dettes karmiques et pinnacles. Les nombres revelent ta mission.",
+        "Chemin de vie, nombre d'expression, âme, dettes karmiques et pinnacles. Les nombres révèlent ta mission.",
       icon: "chart",
     },
     {
       title: "L'Oracle 24/7",
       description:
-        "Pose tes questions a l'Oracle. Il croise ton theme natal, ta numerologie et tes cycles karmiques pour te guider.",
+        "Pose tes questions à l'Oracle. Il croise ton thème natal, ta numérologie et tes cycles karmiques pour te guider.",
       icon: "zap",
     },
     {
-      title: "Compatibilite complete",
+      title: "Compatibilité complète",
       description:
-        "Synastrie astrologique + compatibilite numerologique. Decouvre les forces et defis de chaque relation.",
+        "Synastrie astrologique + compatibilité numérologique. Découvre les forces et défis de chaque relation.",
       icon: "users",
     },
     {
       title: "Calendrier cosmique",
       description:
-        "Transits quotidiens, retrogrades, phases lunaires et jours personnels numerologiques. Planifie au bon moment.",
+        "Transits quotidiens, rétrogrades, phases lunaires et jours personnels numérologiques. Planifie au bon moment.",
       icon: "search",
     },
     {
       title: "Guidance karmique",
       description:
-        "Noeuds lunaires, lecons de vie, cycles de Saturne. Comprends d'ou tu viens et ou tu vas.",
+        "Noeuds lunaires, leçons de vie, cycles de Saturne. Comprends d'où tu viens et où tu vas.",
       icon: "shield",
     },
   ],
@@ -142,10 +142,10 @@ export const siteConfig = {
     defaultAuthor: "Karmastro",
     categories: [
       "astrologie",
-      "numerologie",
+      "numérologie",
       "karma",
       "horoscope",
-      "compatibilite",
+      "compatibilité",
       "guides",
     ],
   },
