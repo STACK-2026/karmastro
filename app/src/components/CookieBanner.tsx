@@ -4,15 +4,16 @@ const CookieBanner = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (!localStorage.getItem("cookie-consent")) {
+    const match = document.cookie.match(/(^| )cookie-consent=([^;]+)/);
+    if (!match) {
       const timer = setTimeout(() => setVisible(true), 1500);
       return () => clearTimeout(timer);
     }
   }, []);
 
   const saveConsent = (level: string) => {
-    localStorage.setItem("cookie-consent", level);
-    localStorage.setItem("cookie-consent-date", new Date().toISOString());
+    const expires = new Date(Date.now() + 365 * 86400000).toUTCString();
+    document.cookie = `cookie-consent=${level};expires=${expires};path=/;domain=.karmastro.com;SameSite=Lax`;
     setVisible(false);
   };
 
