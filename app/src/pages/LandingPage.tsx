@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Star, Moon, Hash, Sparkles, MessageCircle, Calendar, Heart, Zap, BookOpen, ChevronRight, Check } from "lucide-react";
+import SmartDateInput from "@/components/SmartDateInput";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
@@ -311,12 +312,10 @@ const LandingPage = () => {
         <div ref={calcRef} className="w-full max-w-lg border-glow rounded-xl bg-card/80 backdrop-blur-sm p-6">
           <p className="text-sm text-muted-foreground mb-4">Découvre ton profil en 10 secondes</p>
           <div className="flex flex-col sm:flex-row gap-3 mb-4">
-            <Input
-              type="date"
+            <SmartDateInput
               value={birthDate}
-              onChange={(e) => setBirthDate(e.target.value)}
-              className="flex-1 bg-secondary border-border"
-              placeholder="Date de naissance"
+              onChange={setBirthDate}
+              className="flex-1"
             />
             <Input
               value={firstName}
