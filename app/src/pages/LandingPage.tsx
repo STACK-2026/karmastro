@@ -228,7 +228,7 @@ const LandingPage = () => {
   };
 
   const features = [
-    { icon: Hash, label: "Chemin de vie", desc: "Votre nombre directeur" },
+    { icon: Hash, label: "Chemin de vie", desc: "Ton nombre directeur" },
     { icon: Star, label: "Thème astral", desc: "Planètes & maisons" },
     { icon: Calendar, label: "Jour personnel", desc: "Guidance quotidienne" },
     { icon: Moon, label: "Transits", desc: "Planètes en mouvement" },
@@ -289,7 +289,7 @@ const LandingPage = () => {
 
         <div ref={heroTextRef}>
           <h1 className="font-serif text-4xl md:text-6xl font-bold mb-4 leading-tight">
-            Votre carte de vie.
+            Ta carte de vie.
             <br />
             <span className="text-gradient-violet">Écrite dans les étoiles</span>
             <br />
@@ -297,13 +297,13 @@ const LandingPage = () => {
           </h1>
 
           <p className="text-muted-foreground text-lg max-w-xl mb-10 mx-auto">
-            Astrologie + Numérologie + Guidance karmique. Un seul profil. Un rendez-vous quotidien. Un L'Oracle disponible 24/7.
+            Astrologie + Numérologie + Guidance karmique. Un seul profil. Un rendez-vous quotidien. L'Oracle disponible 24/7.
           </p>
         </div>
 
         {/* Quick calculator */}
         <div ref={calcRef} className="w-full max-w-lg border-glow rounded-xl bg-card/80 backdrop-blur-sm p-6">
-          <p className="text-sm text-muted-foreground mb-4">Découvrez votre profil en 10 secondes</p>
+          <p className="text-sm text-muted-foreground mb-4">Découvre ton profil en 10 secondes</p>
           <div className="flex flex-col sm:flex-row gap-3 mb-4">
             <Input
               type="date"
@@ -345,56 +345,130 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* 3 Pillars */}
+      {/* 3 Pillars — Flip cards */}
       <section ref={pillarsRef} className="relative z-10 px-6 py-16">
-        <h2 className="font-serif text-3xl md:text-4xl text-center mb-12">
+        <h2 className="font-serif text-3xl md:text-4xl text-center mb-4">
           3 piliers, <span className="text-gradient-violet">1 profil</span>
         </h2>
+        <p className="text-center text-muted-foreground mb-12 text-sm">Clique sur une carte pour en savoir plus</p>
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
-            { icon: Star, title: "Astrologie", desc: "Thème natal complet, transits du jour, rétrogrades, maisons et aspects. Votre carte du ciel, décodée.", color: "text-karmique-blue" },
-            { icon: Hash, title: "Numérologie", desc: "Chemin de vie, année/mois/jour personnel, table d'inclusion, cycles, pinnacles. Les nombres qui vous guident.", color: "text-primary" },
-            { icon: Sparkles, title: "Karma", desc: "Dettes karmiques, noeuds lunaires, lecons de vie, cycles de Saturne. L'histoire de ton ame.", color: "text-accent" },
-          ].map((pillar, i) => (
-            <div
-              key={pillar.title}
-              ref={(el) => { pillarCardsRef.current[i] = el; }}
-              className="border-glow rounded-xl bg-card/60 backdrop-blur-sm p-6 text-center hover:glow-violet transition-shadow"
-            >
-              <pillar.icon className={`h-10 w-10 mx-auto mb-4 ${pillar.color}`} />
-              <h3 className="font-serif text-xl mb-2">{pillar.title}</h3>
-              <p className="text-sm text-muted-foreground">{pillar.desc}</p>
-            </div>
-          ))}
+            {
+              icon: Star,
+              title: "Astrologie",
+              desc: "Thème natal complet, transits du jour, rétrogrades, maisons et aspects. Ta carte du ciel, décodée.",
+              color: "text-karmique-blue",
+              borderColor: "hsl(217 91% 60% / 0.3)",
+              why: "Pourquoi l'astrologie ?",
+              back: "L'astrologie est basée sur les éphémérides - les positions exactes des planètes au moment de ta naissance. Ce ne sont pas des croyances : ce sont des calculs astronomiques précis. Ton thème natal est unique, comme une empreinte digitale cosmique. Karmastro calcule les positions de 12 planètes dans 12 maisons et analyse plus de 40 aspects pour dresser ton portrait céleste.",
+            },
+            {
+              icon: Hash,
+              title: "Numérologie",
+              desc: "Chemin de vie, année/mois/jour personnel, table d'inclusion, cycles, pinnacles. Les nombres qui te guident.",
+              color: "text-primary",
+              borderColor: "hsl(271 91% 65% / 0.3)",
+              why: "Pourquoi la numérologie ?",
+              back: "La numérologie pythagoricienne est un système mathématique pur. A=1, B=2... Z=8. Les calculs sont reproductibles et vérifiables. Ton chemin de vie se calcule en additionnant chaque chiffre de ta date de naissance. Pas de mystère : des maths. Mais ces nombres révèlent des patterns fascinants sur ta personnalité, tes cycles de vie et tes talents naturels.",
+            },
+            {
+              icon: Sparkles,
+              title: "Karma",
+              desc: "Dettes karmiques, noeuds lunaires, leçons de vie, cycles de Saturne. L'histoire de ton âme.",
+              color: "text-accent",
+              borderColor: "hsl(43 76% 53% / 0.3)",
+              why: "Pourquoi le karma ?",
+              back: "Les noeuds lunaires (Nord et Sud) indiquent ta direction de vie et tes acquis passés. Les dettes karmiques (13, 14, 16, 19) apparaissent dans tes calculs numérologies et pointent vers des leçons spécifiques. Le cycle de Saturne (~29,5 ans) marque les grandes transitions. En croisant ces données, on obtient une carte de ton évolution personnelle.",
+            },
+          ].map((pillar, i) => {
+            const [flipped, setFlipped] = useState(false);
+            return (
+              <div
+                key={pillar.title}
+                ref={(el) => { pillarCardsRef.current[i] = el; }}
+                className="cursor-pointer"
+                style={{ perspective: "1000px", minHeight: 260 }}
+                onClick={() => setFlipped(!flipped)}
+              >
+                <div
+                  className="relative w-full h-full transition-transform duration-500"
+                  style={{
+                    transformStyle: "preserve-3d",
+                    transform: flipped ? "rotateY(180deg)" : "rotateY(0)",
+                    minHeight: 260,
+                  }}
+                >
+                  {/* Front */}
+                  <div
+                    className="absolute inset-0 rounded-xl bg-card/60 backdrop-blur-sm p-6 text-center flex flex-col items-center justify-center"
+                    style={{ backfaceVisibility: "hidden", border: `1px solid ${pillar.borderColor}` }}
+                  >
+                    <pillar.icon className={`h-10 w-10 mb-4 ${pillar.color}`} />
+                    <h3 className="font-serif text-xl mb-2">{pillar.title}</h3>
+                    <p className="text-sm text-muted-foreground">{pillar.desc}</p>
+                    <p className="text-[10px] text-muted-foreground/50 mt-3">Clique pour retourner</p>
+                  </div>
+                  {/* Back */}
+                  <div
+                    className="absolute inset-0 rounded-xl bg-card/80 backdrop-blur-sm p-6 flex flex-col justify-center"
+                    style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)", border: `1px solid ${pillar.borderColor}` }}
+                  >
+                    <h4 className={`font-serif text-lg mb-3 ${pillar.color}`}>{pillar.why}</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{pillar.back}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
-      {/* Oracle preview */}
+      {/* Oracle preview — enriched */}
       <section ref={oracleRef} className="relative z-10 px-6 py-16">
         <h2 className="font-serif text-3xl md:text-4xl text-center mb-4">
-          L'Oracle <span className="text-gradient-gold">vous répond</span>
+          L'Oracle <span className="text-gradient-gold">te répond</span>
         </h2>
-        <p className="oracle-subtitle text-muted-foreground text-center mb-10 max-w-lg mx-auto">
-          Posez n'importe quelle question. L'Oracle croise astrologie, numérologie et sagesse karmique pour vous guider.
+        <p className="oracle-subtitle text-muted-foreground text-center mb-12 max-w-lg mx-auto">
+          Pas un horoscope générique. Un guide personnel qui calcule, croise et explique.
         </p>
+
+        {/* What the Oracle does — 4 points */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-12">
+          {[
+            { emoji: "🔢", title: "Calculs précis", desc: "Thème natal, positions planétaires, aspects - du calcul astronomique pur, pas de l'approximation." },
+            { emoji: "🌙", title: "Données en temps réel", desc: "Phase lunaire du jour, rétrogrades en cours, ton jour/mois/année personnel calculés à l'instant." },
+            { emoji: "🔮", title: "Croisement multi-disciplines", desc: "Astrologie + numérologie + karma en une seule réponse. Aucun autre outil ne fait ça." },
+            { emoji: "⏰", title: "Disponible 24/7", desc: "3h du matin et une question te travaille ? L'Oracle est là. Pas d'attente, pas de rendez-vous." },
+          ].map((item) => (
+            <div key={item.title} className="border-glow rounded-xl bg-card/40 p-4 flex gap-3">
+              <span className="text-2xl">{item.emoji}</span>
+              <div>
+                <h4 className="text-sm font-semibold text-foreground mb-1">{item.title}</h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Chat preview */}
         <div ref={oracleChatRef} className="max-w-md mx-auto border-glow rounded-xl bg-card/60 backdrop-blur-sm p-6 space-y-4">
           <div className="bg-secondary/50 rounded-lg p-3 text-sm max-w-[80%]">
-            Est-ce le bon moment pour lancer mon business ?
+            Est-ce le bon moment pour lancer mon projet ?
           </div>
           <div className="bg-primary/10 border border-primary/20 rounded-lg p-3 text-sm ml-auto max-w-[85%]">
-            <p className="text-primary text-xs mb-1 font-medium">✨ Oracle</p>
-            Votre année personnelle 1 et Jupiter en transit dans votre maison 10 créent un alignement rare pour l'entrepreneuriat. Cependant, avec Mercure rétrograde jusqu'au 19 avril...
+            <p className="text-primary text-xs mb-1 font-medium">✨ L'Oracle</p>
+            Ton année personnelle 1 et Jupiter en transit dans ta maison 10 créent un alignement rare pour l'entrepreneuriat. Calcul : 1+5+0+7+1+9+9+8 = 40 → 4+0 = 4, année perso 2026 = 4+2+0+2+6 = 14 → 1+4 = 5...
             <span className="text-primary cursor-pointer"> Lire la suite →</span>
           </div>
           <div className="flex gap-2 flex-wrap">
-            {["Ma compatibilité", "Mercure rétrograde", "Mon karma"].map(q => (
+            {["Ma compatibilité", "Mercure rétrograde", "Mon chemin de vie", "Mon karma"].map(q => (
               <span key={q} className="text-xs border border-primary/30 text-primary rounded-full px-3 py-1 cursor-pointer hover:bg-primary/10 transition-colors">
                 {q}
               </span>
             ))}
           </div>
           <Button className="w-full bg-primary hover:bg-primary/90" onClick={() => navigate("/onboarding")}>
-            <MessageCircle className="h-4 w-4 mr-2" /> Poser votre question
+            <MessageCircle className="h-4 w-4 mr-2" /> Poser ta question à l'Oracle
           </Button>
         </div>
       </section>
@@ -444,7 +518,7 @@ const LandingPage = () => {
       {/* Pricing */}
       <section ref={pricingRef} className="relative z-10 px-6 py-16" id="pricing">
         <h2 className="font-serif text-3xl md:text-4xl text-center mb-12">
-          Choisissez votre <span className="text-gradient-violet">voie</span>
+          Choisis ta <span className="text-gradient-violet">voie</span>
         </h2>
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {/* Eveil */}
