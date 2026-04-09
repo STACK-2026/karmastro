@@ -80,9 +80,9 @@ const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     ))}
   </head>
   <body class="min-h-screen flex flex-col relative">
-    <!-- Animated starfield background (same as app) -->
+    <!-- Starfield — 3 couches identiques a l'app -->
     <div id="starfield" class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-      <div class="absolute inset-0" style="background: linear-gradient(to bottom, hsl(271 30% 8%), hsl(260 30% 3%), hsl(260 30% 3%)); opacity: 0.6;"></div>
+      <div class="absolute inset-0" style="background: linear-gradient(to bottom, hsl(271 30% 10%) 0%, hsl(260 30% 4%) 40%, hsl(260 30% 3%) 100%); opacity: 0.7;"></div>
     </div>
 
     <Header />
@@ -93,32 +93,71 @@ const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     <CookieBanner />
 
     <script>
-      // Generate twinkling stars (CSS-only animation, no JS per frame)
+      // Seeded RNG (same positions every load, matching app)
+      let _s = 42;
+      function rand() { _s = (_s * 16807) % 2147483647; return _s / 2147483647; }
+
+      const driftAnims = ["drift-1", "drift-2", "drift-3"];
       const field = document.getElementById("starfield");
-      if (field) {
-        for (let i = 0; i < 40; i++) {
-          const star = document.createElement("div");
-          const size = Math.random() * 2 + 0.5;
-          star.style.cssText = `
-            position: absolute;
-            left: ${Math.random() * 100}%;
-            top: ${Math.random() * 100}%;
-            width: ${size}px;
-            height: ${size}px;
-            background: white;
-            border-radius: 50%;
-            opacity: ${Math.random() * 0.4 + 0.1};
-            animation: twinkle ${Math.random() * 3 + 2}s ease-in-out ${Math.random() * 5}s infinite;
-            will-change: opacity;
-          `;
-          field.appendChild(star);
-        }
+      if (!field) throw new Error("starfield not found");
+
+      // Background layer (60 small stars)
+      for (let i = 0; i < 60; i++) {
+        const size = rand() * 1.2 + 0.3;
+        const d = rand() * 8, dur = rand() * 4 + 3, dd = rand() * 10;
+        const drift = driftAnims[Math.floor(rand() * 3)];
+        const star = document.createElement("div");
+        star.style.cssText = `position:absolute;border-radius:50%;left:${rand()*100}%;top:${rand()*100}%;width:${size}px;height:${size}px;background:white;opacity:${rand()*0.3+0.05};animation:twinkle ${dur}s ease-in-out ${d}s infinite,${drift} ${12+dd}s ease-in-out ${dd}s infinite;will-change:opacity,transform;`;
+        field.appendChild(star);
+      }
+
+      // Mid layer (25 colored stars)
+      for (let i = 0; i < 25; i++) {
+        const size = rand() * 1.8 + 0.8;
+        const d = rand() * 6, dur = rand() * 3 + 2, dd = rand() * 8;
+        const drift = driftAnims[Math.floor(rand() * 3)];
+        const r = rand();
+        const color = r > 0.7 ? "hsl(43 76% 80%)" : r > 0.4 ? "hsl(220 60% 90%)" : "white";
+        const star = document.createElement("div");
+        star.style.cssText = `position:absolute;border-radius:50%;left:${rand()*100}%;top:${rand()*100}%;width:${size}px;height:${size}px;background:${color};opacity:${rand()*0.4+0.15};animation:twinkle ${dur}s ease-in-out ${d}s infinite,${drift} ${12+dd}s ease-in-out ${dd}s infinite;will-change:opacity,transform;`;
+        field.appendChild(star);
+      }
+
+      // Bright layer (8 glowing stars)
+      for (let i = 0; i < 8; i++) {
+        const size = rand() * 1.5 + 2;
+        const d = rand() * 5, dur = rand() * 2.5 + 1.5, dd = rand() * 6;
+        const drift = driftAnims[Math.floor(rand() * 3)];
+        const color = rand() > 0.5 ? "hsl(271 60% 85%)" : "hsl(43 50% 90%)";
+        const star = document.createElement("div");
+        star.style.cssText = `position:absolute;border-radius:50%;left:${rand()*100}%;top:${rand()*100}%;width:${size}px;height:${size}px;background:${color};opacity:${rand()*0.3+0.5};box-shadow:0 0 ${size*2}px ${color};animation:twinkle ${dur}s ease-in-out ${d}s infinite,${drift} ${12+dd}s ease-in-out ${dd}s infinite;will-change:opacity,transform;`;
+        field.appendChild(star);
       }
     </script>
     <style>
       @keyframes twinkle {
         0%, 100% { opacity: 0.2; }
         50% { opacity: 0.8; }
+      }
+      @keyframes drift-1 {
+        0% { transform: translate(0, 0); }
+        25% { transform: translate(2px, -3px); }
+        50% { transform: translate(-1px, 2px); }
+        75% { transform: translate(3px, 1px); }
+        100% { transform: translate(0, 0); }
+      }
+      @keyframes drift-2 {
+        0% { transform: translate(0, 0); }
+        25% { transform: translate(-3px, 1px); }
+        50% { transform: translate(1px, -2px); }
+        75% { transform: translate(-2px, 3px); }
+        100% { transform: translate(0, 0); }
+      }
+      @keyframes drift-3 {
+        0% { transform: translate(0, 0); }
+        33% { transform: translate(1px, -4px); }
+        66% { transform: translate(-2px, 1px); }
+        100% { transform: translate(0, 0); }
       }
     </style>
   </body>
