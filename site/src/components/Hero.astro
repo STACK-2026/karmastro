@@ -41,9 +41,9 @@ import { siteConfig } from "../../site.config";
       </a>
     </div>
     <p class="mt-4 text-[11px]" style="color: rgba(196, 184, 219, 0.5);">Offert par les astres - Thème natal + 3 messages Oracle/jour</p>
-    <a href="/precision" class="inline-flex items-center gap-1.5 mt-2 text-[10px] md:text-[11px] transition-colors" style="color: rgba(196, 184, 219, 0.4); border: 1px solid rgba(255,255,255,0.05); border-radius: 9999px; padding: 3px 10px;">
-      <span style="width: 5px; height: 5px; border-radius: 50%; background: hsl(142 71% 45%); display: inline-block;"></span>
-      Calculs astronomiques précision NASA
+    <a href="/precision" id="nasa-badge" class="inline-flex items-center gap-1.5 mt-2 text-[10px] md:text-[11px] transition-colors" style="color: rgba(196, 184, 219, 0.4); border: 1px solid rgba(255,255,255,0.05); border-radius: 9999px; padding: 3px 10px;">
+      <span style="width: 5px; height: 5px; border-radius: 50%; background: hsl(142 71% 45%); display: inline-block;" class="animate-pulse"></span>
+      <span id="nasa-text">Calculs astronomiques précision NASA</span>
     </a>
   </div>
 </section>
@@ -71,5 +71,30 @@ import { siteConfig } from "../../site.config";
     el.style.display = "inline-block";
     el.textContent = words[0];
     setInterval(rotateText, 2500);
+  }
+
+  // Dynamic NASA badge — show time + location
+  const nasaText = document.getElementById("nasa-text");
+  if (nasaText) {
+    const now = new Date();
+    const time = now.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+
+    // Get city from timezone (zero API call, instant)
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone; // ex: "Europe/Paris"
+    const cityMap: Record<string, string> = {
+      "Europe/Paris": "Paris", "Europe/London": "Londres", "Europe/Berlin": "Berlin",
+      "Europe/Madrid": "Madrid", "Europe/Rome": "Rome", "Europe/Brussels": "Bruxelles",
+      "Europe/Zurich": "Zurich", "Europe/Amsterdam": "Amsterdam", "Europe/Vienna": "Vienne",
+      "Europe/Lisbon": "Lisbonne", "Europe/Warsaw": "Varsovie", "Europe/Prague": "Prague",
+      "Europe/Stockholm": "Stockholm", "Europe/Helsinki": "Helsinki", "Europe/Athens": "Athènes",
+      "Europe/Bucharest": "Bucarest", "Europe/Dublin": "Dublin", "Europe/Oslo": "Oslo",
+      "America/New_York": "New York", "America/Los_Angeles": "Los Angeles",
+      "America/Chicago": "Chicago", "America/Toronto": "Toronto",
+      "America/Montreal": "Montréal", "Asia/Tokyo": "Tokyo",
+      "Africa/Casablanca": "Casablanca", "Africa/Tunis": "Tunis", "Africa/Algiers": "Alger",
+    };
+    const city = cityMap[tz] || tz.split("/").pop()?.replace(/_/g, " ") || "";
+
+    nasaText.textContent = `Précision NASA · ${time} · ${city}`;
   }
 </script>
