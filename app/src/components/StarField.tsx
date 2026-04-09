@@ -51,7 +51,7 @@ const allStars = [...bgStars, ...midStars, ...brightStars];
 
 const StarField = () => {
   return (
-    <div id="starfield-container" className="fixed inset-0 pointer-events-none overflow-hidden z-0" style={{ willChange: "transform" }}>
+    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
       {/* Nebula gradient */}
       <div
         className="absolute inset-0"
@@ -81,23 +81,5 @@ const StarField = () => {
     </div>
   );
 };
-
-// Subtle parallax: stars drift down slightly slower than scroll
-if (typeof window !== "undefined") {
-  let ticking = false;
-  window.addEventListener("scroll", () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        const el = document.getElementById("starfield-container");
-        if (el) {
-          const y = window.scrollY * 0.15; // 15% of scroll speed
-          el.style.transform = `translateY(${y}px)`;
-        }
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
-}
 
 export default StarField;
