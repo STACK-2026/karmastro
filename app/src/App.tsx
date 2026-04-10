@@ -22,6 +22,7 @@ import PricingPage from "./pages/PricingPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import CookieBanner from "./components/CookieBanner.tsx";
 import { usePageTracking } from "./hooks/usePageTracking";
+import { OnboardingGate } from "./components/OnboardingGate";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <TrackingProvider>
+            <OnboardingGate>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/onboarding" element={<OnboardingPage />} />
@@ -56,6 +58,7 @@ const App = () => (
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
+            </OnboardingGate>
           </TrackingProvider>
         </BrowserRouter>
         <CookieBanner />

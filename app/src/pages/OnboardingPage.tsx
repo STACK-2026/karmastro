@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, Clock, MapPin, User, Sparkles, ChevronRight, ChevronLeft, Heart, BookOpen, Star } from "lucide-react";
+import { Calendar, Clock, MapPin, User, Sparkles, ChevronRight, ChevronLeft, Heart, BookOpen, Star, Check, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +8,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { lifePathNumber, expressionNumber, soulUrgeNumber, personalYear, getZodiacSign, getNumberKeyword, karmicDebts } from "@/lib/numerology";
+import { geocodePlace, createDebouncer, type GeocodeResult } from "@/lib/geocoding";
 import StarField from "@/components/StarField";
 
 const INTERESTS = [
@@ -44,6 +45,8 @@ const OnboardingPage = () => {
   const [birthTime, setBirthTime] = useState("");
   const [knowsBirthTime, setKnowsBirthTime] = useState(true);
   const [birthPlace, setBirthPlace] = useState("");
+  const [geoResult, setGeoResult] = useState<GeocodeResult | null>(null);
+  const [geoLoading, setGeoLoading] = useState(false);
 
   // Step 2: Names
   const [firstName, setFirstName] = useState("");
@@ -62,6 +65,31 @@ const OnboardingPage = () => {
   const toggleInterest = (id: string) => {
     setInterests(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
   };
+
+  // Debounced geocoder — Nominatim query 500ms after last keystroke
+  const debouncedGeocode = useRef(
+    createDebouncer((q: string) => {
+      if (!q || q.length < 3) {
+        setGeoResult(null);
+        setGeoLoading(false);
+        return;
+      }
+      setGeoLoading(true);
+      geocodePlace(q).then((r) => {
+        setGeoResult(r);
+        setGeoLoading(false);
+      });
+    }, 600)
+  ).current;
+
+  const handleBirthPlaceChange = useCallback(
+    (v: string) => {
+      setBirthPlace(v);
+      setGeoResult(null);
+      debouncedGeocode(v);
+    },
+    [debouncedGeocode]
+  );
 
   const canNext = () => {
     if (step === 0) return !!birthDate;
@@ -95,7 +123,7 @@ const OnboardingPage = () => {
 
     setSaving(true);
     try {
-      const { error } = await supabase
+      const { error } = await (supabase as any)
         .from("profiles")
         .update({
           first_name: firstName,
@@ -105,10 +133,15 @@ const OnboardingPage = () => {
           birth_date: birthDate,
           birth_time: knowsBirthTime ? birthTime || null : null,
           knows_birth_time: knowsBirthTime,
-          birth_place: birthPlace || null,
+          birth_place: geoResult?.displayName || birthPlace || null,
+          birth_latitude: geoResult?.latitude ?? null,
+          birth_longitude: geoResult?.longitude ?? null,
           gender: gender || null,
           interests: interests,
           level: level,
+          // Clear cached chart — will be recomputed with new coords on next fetch
+          natal_chart_json: null,
+          natal_chart_computed_at: null,
         })
         .eq("user_id", user.id);
 
@@ -204,8 +237,27 @@ const OnboardingPage = () => {
                   <label className="text-sm text-muted-foreground mb-1 block">Lieu de naissance</label>
                   <div className="relative">
                     <MapPin className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                    <Input placeholder="Paris, Lyon, Marseille..." value={birthPlace} onChange={e => setBirthPlace(e.target.value)} className="pl-10 bg-secondary border-border" />
+                    <Input
+                      placeholder="Paris, Lyon, Marseille..."
+                      value={birthPlace}
+                      onChange={(e) => handleBirthPlaceChange(e.target.value)}
+                      className="pl-10 pr-10 bg-secondary border-border"
+                    />
+                    <div className="absolute right-3 top-3">
+                      {geoLoading && <Loader2 className="h-4 w-4 text-muted-foreground animate-spin" />}
+                      {!geoLoading && geoResult && <Check className="h-4 w-4 text-emerald-400" />}
+                    </div>
                   </div>
+                  {geoResult && (
+                    <p className="text-[10px] text-emerald-400/80 mt-1 truncate">
+                      ✓ {geoResult.displayName}
+                    </p>
+                  )}
+                  {!geoLoading && birthPlace.length >= 3 && !geoResult && (
+                    <p className="text-[10px] text-amber-400/80 mt-1">
+                      Lieu non trouvé, précise ville + pays pour un ascendant exact
+                    </p>
+                  )}
                 </div>
               </div>
             </motion.div>

@@ -317,24 +317,85 @@ serve(async (req) => {
 
       // Full profile context if birth data available
       if (profile?.birthDate) {
-        const [y, m, d] = profile.birthDate.split("-").map(Number);
-        const body: any = { year: y, month: m, day: d };
-        if (profile.birthTime) {
-          const [h, mi] = profile.birthTime.split(":").map(Number);
-          body.hour = h + (mi || 0) / 60;
+        // ─────────────────────────────────────────────────────────
+        // Cache read : try profiles.natal_chart_json first (24h TTL)
+        // ─────────────────────────────────────────────────────────
+        let ctx: any = null;
+        let cacheHit = false;
+
+        if (userId && SERVICE_KEY) {
+          try {
+            const sbCache = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
+            const { data: cached } = await sbCache
+              .from("profiles")
+              .select("natal_chart_json, natal_chart_computed_at, birth_latitude, birth_longitude")
+              .eq("user_id", userId)
+              .maybeSingle();
+
+            if (cached?.natal_chart_json && cached?.natal_chart_computed_at) {
+              const ageMs = Date.now() - new Date(cached.natal_chart_computed_at).getTime();
+              if (ageMs < 24 * 60 * 60 * 1000) {
+                ctx = cached.natal_chart_json;
+                cacheHit = true;
+              }
+            }
+            // Inject lat/long from cached profile if client didn't send
+            if (!profile.latitude && cached?.birth_latitude != null) {
+              profile.latitude = Number(cached.birth_latitude);
+            }
+            if (!profile.longitude && cached?.birth_longitude != null) {
+              profile.longitude = Number(cached.birth_longitude);
+            }
+          } catch (cacheErr) {
+            console.warn("Cache read failed (non-blocking):", cacheErr);
+          }
         }
-        if (profile.latitude) body.latitude = profile.latitude;
-        if (profile.longitude) body.longitude = profile.longitude;
-        if (profile.firstName) body.name = profile.firstName + (profile.lastName ? " " + profile.lastName : "");
 
-        const ctxRes = await fetch(`${ENGINE_URL}/oracle-context`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(body),
-        });
+        // ─────────────────────────────────────────────────────────
+        // Cache miss → call Engine
+        // ─────────────────────────────────────────────────────────
+        if (!ctx) {
+          const [y, m, d] = profile.birthDate.split("-").map(Number);
+          const body: any = { year: y, month: m, day: d };
+          if (profile.birthTime) {
+            const [h, mi] = profile.birthTime.split(":").map(Number);
+            body.hour = h + (mi || 0) / 60;
+          }
+          if (profile.latitude) body.latitude = profile.latitude;
+          if (profile.longitude) body.longitude = profile.longitude;
+          if (profile.firstName) body.name = profile.firstName + (profile.lastName ? " " + profile.lastName : "");
 
-        if (ctxRes.ok) {
-          const ctx = await ctxRes.json();
+          const ctxRes = await fetch(`${ENGINE_URL}/oracle-context`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body),
+          });
+
+          if (ctxRes.ok) {
+            ctx = await ctxRes.json();
+
+            // Persist fresh result to cache (fire-and-forget)
+            if (userId && SERVICE_KEY) {
+              try {
+                const sbSave = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
+                sbSave
+                  .from("profiles")
+                  .update({
+                    natal_chart_json: ctx,
+                    natal_chart_computed_at: new Date().toISOString(),
+                  })
+                  .eq("user_id", userId)
+                  .then(() => {});
+              } catch (saveErr) {
+                console.warn("Cache save failed (non-blocking):", saveErr);
+              }
+            }
+          }
+        }
+
+        console.log(`[oracle-chat] natal chart: ${cacheHit ? "cache hit" : "engine call"}`);
+
+        if (ctx) {
           const n = ctx.numerology;
           const chart = ctx.natal_chart;
 
