@@ -383,7 +383,7 @@ const Dashboard = () => {
               <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">Compatibilité étendue</span>
             </div>
             <Button className="bg-accent text-accent-foreground hover:bg-accent/90" onClick={() => navigate("/#pricing")}>
-              <Star className="h-4 w-4 mr-2" /> Étoile - 5,99€/mois
+              <Star className="h-4 w-4 mr-2" /> Passer en Étoile
             </Button>
           </motion.div>
         )}

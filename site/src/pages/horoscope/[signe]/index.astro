@@ -247,8 +247,20 @@ const jsonLd = {
             <div class="p-6 rounded-2xl border border-white/10 bg-white/[0.02] relative overflow-hidden">
               {tomorrowEntry ? (
                 <>
-                  <div id="tomorrow-content" class="transition-all duration-500 filter blur-sm opacity-60" data-locked="true">
-                    <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-2">Énergie cosmique de demain</p>
+                  {/* Teaser : only the first sentence visible as hook */}
+                  <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-2">Énergie cosmique de demain</p>
+                  <p class="text-base leading-relaxed text-white/80 mb-4 italic">
+                    {tomorrowEntry.intro?.split(/[.!?]/)[0]}...
+                  </p>
+
+                  {/* Heavily blurred content : only Étoile can read */}
+                  <div
+                    id="tomorrow-content"
+                    class="relative transition-all duration-500"
+                    data-locked="true"
+                    style="filter: blur(18px); opacity: 0.35; user-select: none; pointer-events: none;"
+                    aria-hidden="true"
+                  >
                     <p class="text-lg leading-relaxed text-white/90 mb-4">{tomorrowEntry.intro}</p>
                     <div class="grid md:grid-cols-2 gap-3 text-sm">
                       {tomorrowEntry.love && (
@@ -278,27 +290,23 @@ const jsonLd = {
                     </div>
                   </div>
 
-                  {/* Paywall overlay */}
-                  <div id="tomorrow-paywall" class="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b from-transparent via-[#0f0a1e]/80 to-[#0f0a1e]/95 p-6 text-center">
-                    <div class="text-4xl mb-3">✦</div>
-                    <p class="font-serif text-xl mb-2 text-white">L'horoscope de demain t'attend</p>
-                    <p class="text-sm text-white/60 mb-5 max-w-sm">
-                      En avant-première pour les voyageuses et voyageurs Étoile. Accès immédiat dès maintenant, sans attendre minuit.
+                  {/* Paywall CTA (below blurred content, not overlapping) */}
+                  <div id="tomorrow-paywall" class="mt-6 p-5 rounded-xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30 text-center">
+                    <div class="text-3xl mb-2">✦</div>
+                    <p class="font-serif text-lg mb-1 text-white">Accès en avant-première</p>
+                    <p class="text-xs text-white/60 mb-4 max-w-sm mx-auto">
+                      L'horoscope de demain est offert aux voyageuses et voyageurs Étoile. Lis-le dès maintenant, sans attendre minuit.
                     </p>
-                    <div class="flex gap-3 flex-wrap justify-center">
+                    <div class="flex gap-3 flex-wrap justify-center items-center">
                       <a
                         href="https://app.karmastro.com/pricing"
                         class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity text-sm"
                       >
-                        Passer en Étoile · 5,99€/mois
+                        Passer en Étoile
                       </a>
-                      <button
-                        id="tomorrow-countdown-btn"
-                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white/70 hover:border-amber-300/40 hover:text-amber-300 transition-colors text-sm"
-                      >
-                        <span class="opacity-70">Gratuit dans</span>
-                        <span id="countdown-timer" class="font-mono text-amber-300">--:--:--</span>
-                      </button>
+                      <span class="text-xs text-white/50 flex items-center gap-1">
+                        ou disponible dans <span id="countdown-timer" class="font-mono text-amber-300">--:--:--</span>
+                      </span>
                     </div>
                   </div>
                 </>
@@ -315,7 +323,6 @@ const jsonLd = {
         {/* ═══ Premium unlock script ═══ */}
         <script is:inline>
           (function () {
-            // Countdown to next midnight (Paris time)
             function updateCountdown() {
               const el = document.getElementById("countdown-timer");
               if (!el) return;
@@ -332,7 +339,6 @@ const jsonLd = {
             updateCountdown();
             setInterval(updateCountdown, 1000);
 
-            // Unlock for Étoile users : check localStorage key written by the app on login/subscription
             function checkPremium() {
               try {
                 const tier = localStorage.getItem("km_user_tier");
@@ -340,7 +346,11 @@ const jsonLd = {
                   const content = document.getElementById("tomorrow-content");
                   const paywall = document.getElementById("tomorrow-paywall");
                   if (content) {
-                    content.classList.remove("blur-sm", "opacity-60");
+                    content.style.filter = "";
+                    content.style.opacity = "";
+                    content.style.pointerEvents = "";
+                    content.style.userSelect = "";
+                    content.removeAttribute("aria-hidden");
                     content.setAttribute("data-locked", "false");
                   }
                   if (paywall) paywall.style.display = "none";
@@ -348,7 +358,6 @@ const jsonLd = {
               } catch (e) {}
             }
             checkPremium();
-            // Re-check when localStorage changes (cross-tab)
             window.addEventListener("storage", checkPremium);
           })();
         </script>

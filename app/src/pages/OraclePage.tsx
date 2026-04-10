@@ -460,7 +460,7 @@ const OraclePage = () => {
                       onClick={() => navigate("/pricing")}
                       className="flex-1 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity"
                     >
-                      Passer en Étoile · 5,99€/mois
+                      Passer en Étoile
                     </button>
                     <button
                       onClick={() => navigate("/pricing")}
