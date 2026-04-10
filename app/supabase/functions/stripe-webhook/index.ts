@@ -19,6 +19,47 @@ const TIER_BY_PRICE: Record<string, string> = {
   ame_soeur: "ame_soeur",
 };
 
+const PRODUCT_NAMES: Record<string, string> = {
+  etoile_monthly: "Étoile mensuel",
+  etoile_annual: "Étoile annuel",
+  ame_soeur: "Âme Sœur",
+  pack_lune: "Pack Lune",
+  pack_soleil: "Pack Soleil",
+  pack_cosmos: "Pack Cosmos",
+};
+
+const PRICE_AMOUNTS: Record<string, string> = {
+  etoile_monthly: "5,99€",
+  etoile_annual: "49,99€",
+  ame_soeur: "3,99€",
+  pack_lune: "4,99€",
+  pack_soleil: "11,99€",
+  pack_cosmos: "29,99€",
+};
+
+// Helper to trigger email via send-email edge function
+async function triggerEmail(
+  type: string,
+  to: string,
+  data: Record<string, any>
+): Promise<void> {
+  try {
+    const res = await fetch(`${SUPABASE_URL}/functions/v1/send-email`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${SERVICE_KEY}`,
+      },
+      body: JSON.stringify({ type, to, data }),
+    });
+    if (!res.ok) {
+      console.warn("send-email failed:", res.status, await res.text());
+    }
+  } catch (e) {
+    console.warn("triggerEmail error (non-blocking):", e);
+  }
+}
+
 serve(async (req) => {
   if (req.method !== "POST") {
     return new Response("Method not allowed", { status: 405 });
@@ -76,17 +117,20 @@ serve(async (req) => {
 
         if (!userId || !priceKey) break;
 
+        // Fetch profile for email data
+        const { data: profile } = await supabase
+          .from("profiles")
+          .select("credits, first_name")
+          .eq("user_id", userId)
+          .maybeSingle();
+
+        // Get user email from auth
+        const { data: userData } = await supabase.auth.admin.getUserById(userId);
+        const userEmail = userData?.user?.email;
+
         // Credit pack
         if (CREDITS_BY_PRICE[priceKey]) {
           const credits = CREDITS_BY_PRICE[priceKey];
-
-          // Get current balance
-          const { data: profile } = await supabase
-            .from("profiles")
-            .select("credits")
-            .eq("user_id", userId)
-            .maybeSingle();
-
           const newBalance = (profile?.credits || 0) + credits;
 
           await supabase
@@ -104,6 +148,17 @@ serve(async (req) => {
               description: `Achat ${priceKey}`,
               stripe_session_id: session.id,
             });
+
+          // Email: payment success with credits
+          if (userEmail) {
+            await triggerEmail("payment_success", userEmail, {
+              firstName: profile?.first_name,
+              productName: PRODUCT_NAMES[priceKey] || priceKey,
+              amount: PRICE_AMOUNTS[priceKey] || "",
+              isSubscription: false,
+              credits,
+            });
+          }
         }
         // Âme Soeur one-shot : unlock the tier temporarily (metadata flag, no status)
         else if (priceKey === "ame_soeur") {
@@ -112,9 +167,19 @@ serve(async (req) => {
             .update({
               subscription_tier: "ame_soeur",
               subscription_status: "active",
-              subscription_period_end: null, // no expiry for one-shot
+              subscription_period_end: null,
             })
             .eq("user_id", userId);
+
+          // Email: payment success for Âme Sœur
+          if (userEmail) {
+            await triggerEmail("payment_success", userEmail, {
+              firstName: profile?.first_name,
+              productName: PRODUCT_NAMES.ame_soeur,
+              amount: PRICE_AMOUNTS.ame_soeur,
+              isSubscription: false,
+            });
+          }
         }
         // Subscriptions handled by customer.subscription.created/updated
         break;
@@ -133,6 +198,15 @@ serve(async (req) => {
           ? new Date(sub.current_period_end * 1000).toISOString()
           : null;
 
+        // Check if this is a new subscription (status transition to active)
+        const { data: profileBefore } = await supabase
+          .from("profiles")
+          .select("subscription_status, first_name")
+          .eq("user_id", userId)
+          .maybeSingle();
+
+        const wasInactive = profileBefore?.subscription_status !== "active";
+
         await supabase
           .from("profiles")
           .update({
@@ -142,6 +216,20 @@ serve(async (req) => {
             stripe_subscription_id: sub.id,
           })
           .eq("user_id", userId);
+
+        // Email: payment success for new subscription activation
+        if (event.type === "customer.subscription.created" || (wasInactive && sub.status === "active")) {
+          const { data: userData } = await supabase.auth.admin.getUserById(userId);
+          const userEmail = userData?.user?.email;
+          if (userEmail && priceKey) {
+            await triggerEmail("payment_success", userEmail, {
+              firstName: profileBefore?.first_name,
+              productName: PRODUCT_NAMES[priceKey] || "Karmastro Étoile",
+              amount: PRICE_AMOUNTS[priceKey] || "",
+              isSubscription: true,
+            });
+          }
+        }
         break;
       }
 
