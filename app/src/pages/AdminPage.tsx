@@ -199,7 +199,7 @@ const OverviewTab = ({ periodDays }: { periodDays: number }) => {
         <KpiCard
           icon={Sparkles}
           label="Note moyenne"
-          value={kpis.total_feedbacks > 0 ? `${Number(kpis.avg_rating).toFixed(2)}/3` : "—"}
+          value={kpis.total_feedbacks > 0 ? `${Number(kpis.avg_rating).toFixed(2)}/3` : "-"}
           sub={`${kpis.total_feedbacks} retours`}
         />
         <KpiCard icon={Gift} label="Parrainages" value={kpis.total_referrals} />
@@ -350,7 +350,7 @@ const UsersTab = () => {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <p className="text-sm font-medium truncate">{u.first_name || "—"} {u.last_name || ""}</p>
+                      <p className="text-sm font-medium truncate">{u.first_name || "-"} {u.last_name || ""}</p>
                       {u.is_admin && (
                         <Badge variant="outline" className="text-[9px] h-4 px-1 bg-rose-500/20 border-rose-500/40 text-rose-200">
                           ADMIN
@@ -363,7 +363,7 @@ const UsersTab = () => {
                         {TIER_LABELS[u.subscription_tier || "eveil"] || "Éveil"}
                       </Badge>
                     </div>
-                    <p className="text-[11px] text-muted-foreground truncate">{u.email || "—"}</p>
+                    <p className="text-[11px] text-muted-foreground truncate">{u.email || "-"}</p>
                   </div>
                   <div className="flex flex-col items-end text-[10px] text-muted-foreground flex-shrink-0 hidden sm:flex">
                     <span>{u.credits ?? 0} crédits</span>
@@ -382,7 +382,7 @@ const UsersTab = () => {
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-1">
                           <div>
                             <span className="text-muted-foreground">Email : </span>
-                            <span>{detail.email || "—"}</span>
+                            <span>{detail.email || "-"}</span>
                           </div>
                           <div>
                             <span className="text-muted-foreground">Inscrit : </span>
@@ -394,19 +394,19 @@ const UsersTab = () => {
                           </div>
                           <div>
                             <span className="text-muted-foreground">Naissance : </span>
-                            <span>{u.birth_date ? new Date(u.birth_date).toLocaleDateString("fr-FR") : "—"}</span>
+                            <span>{u.birth_date ? new Date(u.birth_date).toLocaleDateString("fr-FR") : "-"}</span>
                           </div>
                           <div>
                             <span className="text-muted-foreground">Lieu : </span>
-                            <span>{u.birth_place || "—"}</span>
+                            <span>{u.birth_place || "-"}</span>
                           </div>
                           <div>
                             <span className="text-muted-foreground">Genre : </span>
-                            <span>{u.gender || "—"}</span>
+                            <span>{u.gender || "-"}</span>
                           </div>
                           <div>
                             <span className="text-muted-foreground">Code parrain : </span>
-                            <span className="font-mono">{u.referral_code || "—"}</span>
+                            <span className="font-mono">{u.referral_code || "-"}</span>
                           </div>
                           <div>
                             <span className="text-muted-foreground">Filleuls : </span>
@@ -414,7 +414,7 @@ const UsersTab = () => {
                           </div>
                           <div>
                             <span className="text-muted-foreground">Abonnement : </span>
-                            <span>{u.subscription_status || "—"}</span>
+                            <span>{u.subscription_status || "-"}</span>
                           </div>
                         </div>
 
@@ -451,7 +451,7 @@ const UsersTab = () => {
                             <div className="space-y-1 max-h-32 overflow-y-auto">
                               {detail.credit_transactions.slice(0, 10).map((t) => (
                                 <div key={t.id} className="flex items-center justify-between text-[10px] bg-background/40 rounded px-2 py-1">
-                                  <span>{t.type} · {t.description || "—"}</span>
+                                  <span>{t.type} · {t.description || "-"}</span>
                                   <span className={t.amount > 0 ? "text-emerald-300" : "text-rose-300"}>
                                     {t.amount > 0 ? "+" : ""}{t.amount}
                                   </span>
@@ -652,13 +652,13 @@ const MonetizationTab = () => {
                 credits.map((t) => (
                   <div key={t.id} className="p-2 rounded bg-background/40 border border-border/30 text-[11px]">
                     <div className="flex items-center justify-between">
-                      <span className="truncate flex-1">{t.user_email || "—"}</span>
+                      <span className="truncate flex-1">{t.user_email || "-"}</span>
                       <span className={t.amount > 0 ? "text-emerald-300" : "text-rose-300"}>
                         {t.amount > 0 ? "+" : ""}{t.amount}
                       </span>
                     </div>
                     <div className="flex items-center justify-between text-[9px] text-muted-foreground">
-                      <span>{t.type} · {t.description || "—"}</span>
+                      <span>{t.type} · {t.description || "-"}</span>
                       <span>{formatRelative(t.created_at)}</span>
                     </div>
                   </div>
@@ -685,7 +685,7 @@ const MonetizationTab = () => {
                       <span className="font-mono">{e.type}</span>
                       <span className="ml-auto text-[9px] text-muted-foreground">{formatRelative(e.created_at)}</span>
                     </div>
-                    <p className="text-[9px] text-muted-foreground truncate">{e.user_email || "—"}</p>
+                    <p className="text-[9px] text-muted-foreground truncate">{e.user_email || "-"}</p>
                     {e.error && <p className="text-[9px] text-rose-300 line-clamp-1">{e.error}</p>}
                   </div>
                 ))
@@ -807,8 +807,8 @@ const ReferralsTab = () => {
                     {i + 1}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs font-medium truncate">{r.first_name || "—"}</p>
-                    <p className="text-[10px] text-muted-foreground truncate">{r.email || "—"}</p>
+                    <p className="text-xs font-medium truncate">{r.first_name || "-"}</p>
+                    <p className="text-[10px] text-muted-foreground truncate">{r.email || "-"}</p>
                   </div>
                   <div className="text-right">
                     <p className="text-sm font-serif text-primary">{r.filleuls_count}</p>
@@ -825,7 +825,7 @@ const ReferralsTab = () => {
 };
 
 // ───────────────────────────────────────────────────────────────
-// Analytics Tab — live visitors, top pages, devices, journeys, channels
+// Analytics Tab - live visitors, top pages, devices, journeys, channels
 // ───────────────────────────────────────────────────────────────
 
 const AnalyticsTab = ({ periodDays }: { periodDays: number }) => {

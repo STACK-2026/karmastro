@@ -1,4 +1,4 @@
-// Admin API client — wraps all admin_* RPCs on Supabase
+// Admin API client - wraps all admin_* RPCs on Supabase
 // All functions require the calling user to have profiles.is_admin = true
 // (enforced server-side via SECURITY DEFINER RPCs).
 
@@ -276,7 +276,7 @@ export const TIER_COLORS: Record<string, string> = {
 };
 
 export function formatRelative(dateStr: string | null | undefined): string {
-  if (!dateStr) return "—";
+  if (!dateStr) return "-";
   const d = new Date(dateStr);
   const now = Date.now();
   const diff = Math.floor((now - d.getTime()) / 1000);
@@ -288,12 +288,12 @@ export function formatRelative(dateStr: string | null | undefined): string {
 }
 
 export function formatDate(dateStr: string | null | undefined): string {
-  if (!dateStr) return "—";
+  if (!dateStr) return "-";
   return new Date(dateStr).toLocaleDateString("fr-FR");
 }
 
 export function formatDateTime(dateStr: string | null | undefined): string {
-  if (!dateStr) return "—";
+  if (!dateStr) return "-";
   return new Date(dateStr).toLocaleString("fr-FR", {
     day: "2-digit",
     month: "2-digit",

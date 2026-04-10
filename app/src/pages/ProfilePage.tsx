@@ -107,11 +107,11 @@ const ProfilePage = () => {
             </div>
             <div className="text-center flex flex-col items-center">
               <ZodiacSymbol sign={astrology.moonSign.sign} size={32} color="#8B5CF6" />
-              <p className="text-[10px] text-muted-foreground">{astrology.moonSign.sign || "—"}</p>
+              <p className="text-[10px] text-muted-foreground">{astrology.moonSign.sign || "-"}</p>
             </div>
             <div className="text-center flex flex-col items-center">
               <ZodiacSymbol sign={astrology.ascendant.sign} size={32} color="#60A5FA" />
-              <p className="text-[10px] text-muted-foreground">Asc. {astrology.ascendant.sign || "—"}</p>
+              <p className="text-[10px] text-muted-foreground">Asc. {astrology.ascendant.sign || "-"}</p>
             </div>
           </div>
 

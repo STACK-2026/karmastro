@@ -34,7 +34,7 @@ const SettingsPage = () => {
 
         <div className="pt-4">
           <Button variant="outline" className="w-full border-primary text-primary" onClick={() => navigate("/#pricing")}>
-            Passer à Premium  -  7,99€/mois
+            Passer à Étoile - 5,99€/mois
           </Button>
         </div>
 
@@ -45,7 +45,7 @@ const SettingsPage = () => {
         </div>
 
         <p className="text-[10px] text-muted-foreground text-center pt-6">
-          Karmastro v1.0 · « Les astres inclinent, mais ne déterminent pas » — Thomas d'Aquin
+          Karmastro v1.0 · « Les astres inclinent, mais ne déterminent pas » - Thomas d'Aquin
         </p>
       </div>
 

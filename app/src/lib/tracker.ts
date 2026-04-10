@@ -72,6 +72,14 @@ const state: PageViewState = {
   lastInsertId: null,
 };
 
+function newUuid(): string {
+  if (typeof crypto !== "undefined" && "randomUUID" in crypto) return (crypto as any).randomUUID();
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+    const r = (Math.random() * 16) | 0;
+    return (c === "x" ? r : (r & 0x3) | 0x8).toString(16);
+  });
+}
+
 export async function trackPageView(path: string, title?: string): Promise<void> {
   if (typeof window === "undefined") return;
   if (!path || path === state.lastPath) return;
@@ -79,14 +87,11 @@ export async function trackPageView(path: string, title?: string): Promise<void>
   // Flush time-on-page for previous view
   if (state.lastInsertId && state.timerStart) {
     const timeMs = Date.now() - state.timerStart;
-    try {
-      await (supabase as any)
-        .from("page_views")
-        .update({ time_on_page_ms: timeMs })
-        .eq("id", state.lastInsertId);
-    } catch (e) {
-      console.warn("[tracker] time update failed", e);
-    }
+    (supabase as any)
+      .from("page_views")
+      .update({ time_on_page_ms: timeMs })
+      .eq("id", state.lastInsertId)
+      .then(() => {});
   }
 
   captureUtmFromUrl();
@@ -95,38 +100,35 @@ export async function trackPageView(path: string, title?: string): Promise<void>
 
   const { data: { user } } = await supabase.auth.getUser();
 
-  try {
-    const { data, error } = await (supabase as any)
-      .from("page_views")
-      .insert({
-        user_id: user?.id || null,
-        session_id: getSessionId(),
-        surface: "app",
-        path,
-        title: title || document.title,
-        referrer,
-        referrer_domain: extractDomain(referrer),
-        utm_source: utm.utm_source || null,
-        utm_medium: utm.utm_medium || null,
-        utm_campaign: utm.utm_campaign || null,
-        utm_term: utm.utm_term || null,
-        utm_content: utm.utm_content || null,
-        user_agent: navigator.userAgent,
-        screen_width: window.innerWidth,
-        screen_height: window.innerHeight,
-        locale: navigator.language?.split("-")[0] || "fr",
-      })
-      .select("id")
-      .single();
+  // Generate client-side UUID (no SELECT grant needed for update later)
+  const newId = newUuid();
 
-    if (!error && data) {
-      state.lastInsertId = data.id;
-      state.timerStart = Date.now();
-      state.lastPath = path;
-    }
-  } catch (e) {
-    console.warn("[tracker] pageview insert failed", e);
-  }
+  (supabase as any)
+    .from("page_views")
+    .insert({
+      id: newId,
+      user_id: user?.id || null,
+      session_id: getSessionId(),
+      surface: "app",
+      path,
+      title: title || document.title,
+      referrer,
+      referrer_domain: extractDomain(referrer),
+      utm_source: utm.utm_source || null,
+      utm_medium: utm.utm_medium || null,
+      utm_campaign: utm.utm_campaign || null,
+      utm_term: utm.utm_term || null,
+      utm_content: utm.utm_content || null,
+      user_agent: navigator.userAgent,
+      screen_width: window.innerWidth,
+      screen_height: window.innerHeight,
+      locale: navigator.language?.split("-")[0] || "fr",
+    })
+    .then(() => {});
+
+  state.lastInsertId = newId;
+  state.timerStart = Date.now();
+  state.lastPath = path;
 }
 
 // ───────────────────────────────────────────────────────────────

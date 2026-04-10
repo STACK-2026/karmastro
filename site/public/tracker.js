@@ -65,6 +65,15 @@
   var lastTimerStart = 0;
   var lastPath = "";
 
+  function uuid() {
+    if (typeof crypto !== "undefined" && crypto.randomUUID) return crypto.randomUUID();
+    // Fallback for old browsers
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+      var r = Math.random() * 16 | 0;
+      return (c === "x" ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+  }
+
   function post(endpoint, body) {
     return fetch(SUPABASE_URL + "/rest/v1/" + endpoint, {
       method: "POST",
@@ -72,7 +81,7 @@
         "Content-Type": "application/json",
         apikey: SUPABASE_KEY,
         Authorization: "Bearer " + SUPABASE_KEY,
-        Prefer: "return=representation",
+        Prefer: "return=minimal",
       },
       body: JSON.stringify(body),
     });
@@ -106,7 +115,11 @@
     var utm = getStoredUtm();
     var referrer = document.referrer || null;
 
+    // Generate client-side UUID so we can update time_on_page later without SELECT grant
+    var newId = uuid();
+
     var payload = {
+      id: newId,
       session_id: getSessionId(),
       surface: "site",
       path: path,
@@ -124,16 +137,13 @@
       locale: getLocale(),
     };
 
-    post("page_views", payload)
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
-        if (Array.isArray(data) && data[0]) {
-          lastInsertId = data[0].id;
-          lastTimerStart = Date.now();
-          lastPath = path;
-        }
-      })
-      .catch(function () {});
+    // Fire-and-forget : with Prefer: return=minimal, status 201 = success
+    post("page_views", payload).catch(function () {});
+
+    // Track locally for time_on_page update
+    lastInsertId = newId;
+    lastTimerStart = Date.now();
+    lastPath = path;
   }
 
   function trackEvent(name, props) {

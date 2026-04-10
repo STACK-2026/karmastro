@@ -118,6 +118,6 @@ Tu remarqueras que beaucoup sont des artistes ou des innovateurs : le Bélier at
 
 ## Calculer ton thème natal complet
 
-Connaître ton signe solaire est un début, pas une fin. Ton [thème natal complet](/blog/theme-natal-gratuit-interpreter-carte-du-ciel) — avec les 10 planètes, les 12 maisons et les aspects majeurs — révèle bien plus que ton seul Soleil. Un Bélier avec Lune en Poissons et Saturne en Scorpion n'a presque rien à voir avec un Bélier Lune en Sagittaire et Vénus en Gémeaux.
+Connaître ton signe solaire est un début, pas une fin. Ton [thème natal complet](/blog/theme-natal-gratuit-interpreter-carte-du-ciel) - avec les 10 planètes, les 12 maisons et les aspects majeurs - révèle bien plus que ton seul Soleil. Un Bélier avec Lune en Poissons et Saturne en Scorpion n'a presque rien à voir avec un Bélier Lune en Sagittaire et Vénus en Gémeaux.
 
 Karmastro calcule ton thème natal gratuitement avec les éphémérides Swiss Ephemeris (précision NASA JPL), en 30 secondes, sans publicité. [Démarre ton analyse](/) pour découvrir toutes tes planètes et comprendre ton architecture cosmique complète.

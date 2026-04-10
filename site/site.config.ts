@@ -1,5 +1,5 @@
 // ============================================
-// KARMASTRO — Site SEO Config
+// KARMASTRO - Site SEO Config
 // ============================================
 
 export const siteConfig = {
@@ -13,7 +13,7 @@ export const siteConfig = {
   locale: "fr-FR",
   language: "fr",
 
-  // Branding — dark spiritual theme (violet + or)
+  // Branding - dark spiritual theme (violet + or)
   colors: {
     primary: "#8B5CF6",    // Violet spirituel
     secondary: "#6D28D9",  // Violet profond
@@ -24,8 +24,8 @@ export const siteConfig = {
 
   // Typographie
   fonts: {
-    display: "Outfit",  // Titres — élégant, spirituel
-    body: "Figtree",    // Corps — moderne, lisible
+    display: "Outfit",  // Titres - élégant, spirituel
+    body: "Figtree",    // Corps - moderne, lisible
   },
 
   // SEO

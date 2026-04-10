@@ -18,7 +18,7 @@ export function getStaticPaths() {
 
   if (files.length === 0) return paths;
 
-  // Skip the latest file — that's the "current" day, handled by /horoscope/[signe]/index.astro
+  // Skip the latest file - that's the "current" day, handled by /horoscope/[signe]/index.astro
   const archiveFiles = files.slice(0, -1);
 
   for (const file of archiveFiles) {

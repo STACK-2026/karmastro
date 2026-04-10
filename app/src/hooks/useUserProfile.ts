@@ -97,7 +97,7 @@ function computeNumerologyFromProfile(
     birthday: bday,
     personalYear2026: py,
     karmicDebts: debts,
-    northNode: { sign: "—", house: 0, lesson: "Calcul du nœud lunaire indisponible sans heure de naissance" },
+    northNode: { sign: "-", house: 0, lesson: "Calcul du nœud lunaire indisponible sans heure de naissance" },
   };
 }
 
@@ -156,20 +156,20 @@ export function useUserProfile(): UserProfileData {
         firstName: profile.first_name,
         lastName: profile.last_name || "",
         birthDate,
-        birthTime: profile.birth_time || "—",
-        birthPlace: profile.birth_place || "—",
+        birthTime: profile.birth_time || "-",
+        birthPlace: profile.birth_place || "-",
         knowsBirthTime: Boolean(profile.knows_birth_time),
-        gender: profile.gender || "—",
+        gender: profile.gender || "-",
         interests: Array.isArray(profile.interests) ? profile.interests : [],
         level: profile.level || "débutant",
         isDemo: false,
         isLoading: false,
         astrology: {
-          sunSign: { ...sunSign, degrees: "—" },
-          moonSign: { sign: "—", symbol: "", element: "", degrees: "" },
+          sunSign: { ...sunSign, degrees: "-" },
+          moonSign: { sign: "-", symbol: "", element: "", degrees: "" },
           ascendant: profile.knows_birth_time
-            ? { sign: "—", symbol: "", element: "", degrees: "" }
-            : { sign: "Inconnu", symbol: "?", element: "—", degrees: "heure manquante" },
+            ? { sign: "-", symbol: "", element: "", degrees: "" }
+            : { sign: "Inconnu", symbol: "?", element: "-", degrees: "heure manquante" },
           planets: [],
           aspects: [],
           houses: [],
@@ -234,7 +234,7 @@ const SIGN_SYMBOLS: Record<string, { symbol: string; element: string }> = {
 };
 
 function signInfo(sign: string | undefined | null, degree?: number, minute?: number) {
-  if (!sign) return { sign: "—", symbol: "", element: "", degrees: "" };
+  if (!sign) return { sign: "-", symbol: "", element: "", degrees: "" };
   const info = SIGN_SYMBOLS[sign] || { symbol: "", element: "" };
   const deg = degree != null && minute != null ? `${degree}°${String(minute).padStart(2, "0")}'` : "";
   return { sign, symbol: info.symbol, element: info.element, degrees: deg };
@@ -268,9 +268,9 @@ function enrichAstrologyFromEngine(
   const planetsList = Object.entries(planets).map(([name, p]: [string, any]) => ({
     name,
     symbol: p.symbol || "",
-    sign: p.sign || "—",
+    sign: p.sign || "-",
     house: p.house || 0,
-    degrees: p.degree != null ? `${p.degree}°${String(p.minute || 0).padStart(2, "0")}'` : "—",
+    degrees: p.degree != null ? `${p.degree}°${String(p.minute || 0).padStart(2, "0")}'` : "-",
     interpretation: p.interpretation || "",
   }));
 
@@ -278,7 +278,7 @@ function enrichAstrologyFromEngine(
   const housesList = Array.isArray(natalChart.houses)
     ? natalChart.houses.map((h: any, i: number) => ({
         house: i + 1,
-        sign: h.sign || "—",
+        sign: h.sign || "-",
         description: h.description || "",
       }))
     : [];
@@ -289,8 +289,8 @@ function enrichAstrologyFromEngine(
         planet1: a.planet1 || a.p1 || "",
         planet2: a.planet2 || a.p2 || "",
         type: a.type || a.aspect || "",
-        orb: a.orb ? `${a.orb}°` : "—",
-        nature: a.nature || "—",
+        orb: a.orb ? `${a.orb}°` : "-",
+        nature: a.nature || "-",
         interpretation: a.interpretation || "",
       }))
     : [];

@@ -1,4 +1,4 @@
-// Zodiac signs configuration — shared between pages and scripts
+// Zodiac signs configuration - shared between pages and scripts
 // Slugs are ASCII (no accents) for URL safety
 
 export type ZodiacSign = {

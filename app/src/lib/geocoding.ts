@@ -43,7 +43,7 @@ export async function geocodePlace(query: string): Promise<GeocodeResult | null>
 }
 
 /**
- * Debounced hook-style wrapper — appelle le callback après delayMs ms d'inactivité.
+ * Debounced hook-style wrapper - appelle le callback après delayMs ms d'inactivité.
  * Usage:
  *   const debounced = useDebounced((q) => geocodePlace(q).then(setGeoResult), 500);
  *   <Input onChange={e => debounced(e.target.value)} />

@@ -46,7 +46,7 @@ export function generateMeta(props: MetaProps) {
   };
 }
 
-/** JSON-LD @graph for homepage — GEO-optimized connected entity graph */
+/** JSON-LD @graph for homepage - GEO-optimized connected entity graph */
 export function jsonLdHomepage() {
   return {
     "@context": "https://schema.org",

@@ -1,4 +1,4 @@
-// Numerology interpretations — reusable across calculators, blog, and app
+// Numerology interpretations - reusable across calculators, blog, and app
 // Based on the Pythagorean tradition
 
 export type NumerologyMeaning = {

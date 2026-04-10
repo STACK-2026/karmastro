@@ -395,7 +395,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* 3 Pillars — Flip cards */}
+      {/* 3 Pillars - Flip cards */}
       <section ref={pillarsRef} className="relative z-10 px-6 py-16">
         <h2 className="font-serif text-3xl md:text-4xl text-center mb-4">
           3 piliers, <span className="text-gradient-violet">1 profil</span>
@@ -487,7 +487,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Oracle preview — enriched */}
+      {/* Oracle preview - enriched */}
       <section ref={oracleRef} className="relative z-10 px-6 py-16">
         <h2 className="font-serif text-3xl md:text-4xl text-center mb-4">
           L'Oracle <span className="text-gradient-gold">te répond</span>
@@ -496,7 +496,7 @@ const LandingPage = () => {
           Pas un horoscope générique. Un guide personnel qui calcule, croise et explique.
         </p>
 
-        {/* What the Oracle does — 4 points */}
+        {/* What the Oracle does - 4 points */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-12">
           {[
             { icon: Hash, title: "Calculs précis", desc: "Thème natal, positions planétaires, aspects - du calcul astronomique pur, pas de l'approximation.", color: "text-primary" },
@@ -592,29 +592,29 @@ const LandingPage = () => {
           Choisis ta <span className="text-gradient-violet">voie</span>
         </h2>
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          {/* Eveil */}
+          {/* Éveil */}
           <div ref={(el) => { pricingCardsRef.current[0] = el; }} className="border-glow rounded-xl bg-card/40 p-6">
             <h3 className="font-serif text-xl mb-1">Éveil <Sparkles className="h-4 w-4 inline text-primary" /></h3>
             <p className="text-lg font-medium mb-4 text-gradient-gold">Offert par les astres</p>
             <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-              {["Profil cosmique complet", "RDV quotidien (court)", "3 messages Oracle/jour", "1 compatibilite", "Guides educatifs"].map(f => (
+              {["Profil cosmique complet", "RDV quotidien (court)", "3 messages Oracle/jour", "1 compatibilité", "Guides éducatifs"].map(f => (
                 <li key={f} className="flex items-center gap-2"><Check className="h-4 w-4 text-karmique-earth" /> {f}</li>
               ))}
             </ul>
             <Button variant="outline" className="w-full border-primary text-primary" onClick={() => navigate("/onboarding")}>
-              Commencer mon eveil
+              Commencer mon éveil
             </Button>
           </div>
-          {/* Etoile */}
+          {/* Étoile */}
           <div ref={(el) => { pricingCardsRef.current[1] = el; }} className="border-glow-gold glow-violet rounded-xl bg-card/60 p-6 relative">
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full">
               Le plus choisi
             </span>
             <h3 className="font-serif text-xl mb-1">Étoile <Star className="h-4 w-4 inline text-accent" /></h3>
-            <p className="text-3xl font-bold mb-1">7,99€<span className="text-sm font-normal text-muted-foreground">/mois</span></p>
-            <p className="text-xs text-muted-foreground mb-4">ou 59,99€/an</p>
+            <p className="text-3xl font-bold mb-1">5,99€<span className="text-sm font-normal text-muted-foreground">/mois</span></p>
+            <p className="text-xs text-muted-foreground mb-4">ou 49,99€/an (2 mois offerts)</p>
             <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-              {["RDV quotidien COMPLET", "L'Oracle ILLIMITE", "Calendrier cosmique detaille", "Compatibilites illimitees", "Calculateur timing optimal", "Export PDF", "Zero publicite"].map(f => (
+              {["RDV quotidien COMPLET", "L'Oracle ILLIMITÉ", "Calendrier cosmique détaillé", "Compatibilités illimitées", "Calculateur timing optimal", "Export PDF", "Zéro publicité"].map(f => (
                 <li key={f} className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> {f}</li>
               ))}
             </ul>
@@ -622,12 +622,12 @@ const LandingPage = () => {
               7 jours offerts par les astres
             </Button>
           </div>
-          {/* Ame Soeur */}
+          {/* Âme Sœur */}
           <div ref={(el) => { pricingCardsRef.current[2] = el; }} className="border-glow rounded-xl bg-card/40 p-6">
-            <h3 className="font-serif text-xl mb-1">Âme Soeur <Heart className="h-4 w-4 inline text-karmique-fire" /></h3>
+            <h3 className="font-serif text-xl mb-1">Âme Sœur <Heart className="h-4 w-4 inline text-karmique-fire" /></h3>
             <p className="text-3xl font-bold mb-4">2,99€<span className="text-sm font-normal text-muted-foreground"> rituel unique</span></p>
             <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-              {["Rapport compatibilite 15 pages", "Synastrie complete", "Guidance karmique couple", "Export PDF"].map(f => (
+              {["Rapport compatibilité 15 pages", "Synastrie complète", "Guidance karmique couple", "Export PDF"].map(f => (
                 <li key={f} className="flex items-center gap-2"><Check className="h-4 w-4 text-accent" /> {f}</li>
               ))}
             </ul>
@@ -644,8 +644,8 @@ const LandingPage = () => {
           <Sparkles className="h-5 w-5 text-primary" />
           <span className="font-serif text-lg text-foreground">Karmastro</span>
         </div>
-        <p>« Les astres inclinent, mais ne déterminent pas » — Thomas d'Aquin</p>
-        <p className="mt-2">© 2026 Karmastro. Tous droits reserves.</p>
+        <p>« Les astres inclinent, mais ne déterminent pas » - Thomas d'Aquin</p>
+        <p className="mt-2">© 2026 Karmastro. Tous droits réservés.</p>
       </footer>
     </div>
   );

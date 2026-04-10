@@ -100,7 +100,7 @@ const hreflangUrls = LOCALES.map((locale) => {
     ))}
   </head>
   <body class="min-h-screen flex flex-col relative">
-    <!-- Starfield — 3 couches identiques a l'app -->
+    <!-- Starfield - 3 couches identiques a l'app -->
     <div id="starfield" class="fixed inset-0 pointer-events-none overflow-hidden z-0">
       <div class="absolute inset-0" style="background: linear-gradient(to bottom, hsl(258 46% 12%) 0%, hsl(258 46% 8%) 40%, hsl(258 46% 6%) 100%); opacity: 0.5;"></div>
     </div>
@@ -179,7 +179,7 @@ const hreflangUrls = LOCALES.map((locale) => {
         66% { transform: translate(-2px, 1px); }
         100% { transform: translate(0, 0); }
       }
-      /* Fade-in on scroll — JS-only, SSR-safe (visible by default for crawlers/no-JS) */
+      /* Fade-in on scroll - JS-only, SSR-safe (visible by default for crawlers/no-JS) */
       .js-fade-in {
         opacity: 0;
         transform: translateY(30px);
@@ -197,7 +197,7 @@ const hreflangUrls = LOCALES.map((locale) => {
       // JS-only fade-in: apply opacity:0 class ONLY if JS runs.
       // This way AI crawlers, SEO bots, and no-JS users see everything immediately.
       const sections = Array.from(document.querySelectorAll("main section"));
-      // Skip the first section (hero) — never fade
+      // Skip the first section (hero) - never fade
       sections.slice(1).forEach(el => el.classList.add("js-fade-in"));
 
       const obs = new IntersectionObserver((entries) => {

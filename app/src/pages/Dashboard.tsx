@@ -136,10 +136,10 @@ const Dashboard = () => {
           <div className="text-right">
             <div className="flex items-center gap-1 justify-end">
               <ZodiacSymbol sign={astrology.sunSign.sign} size={16} color="#D4A017" />
-              {astrology.moonSign.sign && astrology.moonSign.sign !== "—" && (
+              {astrology.moonSign.sign && astrology.moonSign.sign !== "-" && (
                 <ZodiacSymbol sign={astrology.moonSign.sign} size={14} color="#8B5CF6" />
               )}
-              {astrology.ascendant.sign && astrology.ascendant.sign !== "—" && astrology.ascendant.sign !== "Inconnu" && (
+              {astrology.ascendant.sign && astrology.ascendant.sign !== "-" && astrology.ascendant.sign !== "Inconnu" && (
                 <ZodiacSymbol sign={astrology.ascendant.sign} size={14} color="#60A5FA" />
               )}
             </div>
@@ -383,7 +383,7 @@ const Dashboard = () => {
               <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">Compatibilité étendue</span>
             </div>
             <Button className="bg-accent text-accent-foreground hover:bg-accent/90" onClick={() => navigate("/#pricing")}>
-              <Star className="h-4 w-4 mr-2" /> Étoile  -  7,99€/mois
+              <Star className="h-4 w-4 mr-2" /> Étoile - 5,99€/mois
             </Button>
           </motion.div>
         )}

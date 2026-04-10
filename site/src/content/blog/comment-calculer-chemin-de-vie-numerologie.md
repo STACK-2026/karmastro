@@ -140,7 +140,7 @@ Même si la méthode est simple, beaucoup de gens se trompent. Voici les cinq er
 
 ### Erreur 1 : réduire les maîtres nombres
 
-C'est l'erreur la plus commune. Dès qu'on voit un 11, un 22 ou un 33 apparaître dans le calcul final, on s'arrête. Ne jamais réduire 11 à 2, 22 à 4, 33 à 6 au niveau du chemin de vie final. Par contre, dans les étapes intermédiaires, tu peux parfois les réduire pour simplifier — mais le résultat final reste en maître nombre.
+C'est l'erreur la plus commune. Dès qu'on voit un 11, un 22 ou un 33 apparaître dans le calcul final, on s'arrête. Ne jamais réduire 11 à 2, 22 à 4, 33 à 6 au niveau du chemin de vie final. Par contre, dans les étapes intermédiaires, tu peux parfois les réduire pour simplifier - mais le résultat final reste en maître nombre.
 
 ### Erreur 2 : oublier un zéro
 

@@ -57,7 +57,7 @@ ${cta}
 
 <!-- Footer -->
 <tr><td align="center" style="padding:24px;border-top:1px solid ${BRAND_COLORS.border};color:${BRAND_COLORS.muted};font-size:12px;">
-<p style="margin:0 0 8px;">« Les astres inclinent, mais ne déterminent pas » — Thomas d'Aquin</p>
+<p style="margin:0 0 8px;">« Les astres inclinent, mais ne déterminent pas » - Thomas d'Aquin</p>
 <p style="margin:0 0 4px;"><a href="https://karmastro.com" style="color:${BRAND_COLORS.gold};text-decoration:none;">karmastro.com</a> · <a href="https://app.karmastro.com" style="color:${BRAND_COLORS.gold};text-decoration:none;">app.karmastro.com</a></p>
 <p style="margin:0;">Karmastro SAS · contact@karmastro.com</p>
 </td></tr>
@@ -88,7 +88,7 @@ ${referrerLine}
 <p>Voici ce que tu peux faire dès maintenant :</p>
 <ul style="padding-left:20px;color:#E5E7EB;">
 <li><strong>Découvrir ton thème natal</strong> complet (10 planètes, 12 maisons, aspects)</li>
-<li><strong>Poser une question à l'Oracle</strong> — tu as le choix entre 4 guides : Sibylle, Orion, Séléné ou Pythia</li>
+<li><strong>Poser une question à l'Oracle</strong> - tu as le choix entre 4 guides : Sibylle, Orion, Séléné ou Pythia</li>
 <li><strong>Calculer ton chemin de vie</strong> et tes autres nombres numérologiques</li>
 </ul>
 <p>Tu as droit à 3 consultations gratuites par jour avec l'Oracle. C'est parti.</p>
@@ -110,7 +110,7 @@ Tu as 3 consultations gratuites par jour avec l'Oracle.
 
 Ton profil : https://app.karmastro.com/dashboard
 
-« Les astres inclinent, mais ne déterminent pas » — Thomas d'Aquin
+« Les astres inclinent, mais ne déterminent pas » - Thomas d'Aquin
 
 Karmastro · contact@karmastro.com
 `;
@@ -160,7 +160,7 @@ ${credits ? `${credits} crédits cosmiques ont été ajoutés à ton compte. Ils
 
 Ton profil : https://app.karmastro.com/profile
 
-« Les astres inclinent, mais ne déterminent pas » — Thomas d'Aquin
+« Les astres inclinent, mais ne déterminent pas » - Thomas d'Aquin
 `;
 
   return {
@@ -182,7 +182,7 @@ export function badgeUnlockedEmail(firstName: string | null, badgeName: string, 
 <h1 style="color:#fff;font-family:Georgia,serif;font-size:26px;margin:0 0 16px;">${badgeIcon} ${badgeName}</h1>
 <p>Félicitations ${name}. Tu viens de débloquer le badge <strong>${badgeName}</strong> grâce à tes <strong>${filleulsCount} filleuls validés</strong>.</p>
 <p>Ce badge apparaît désormais sur ton profil et dans le <a href="https://karmastro.com/hall-des-constellations" style="color:#D4A017;">Hall des Constellations</a>. Ta constellation grandit.</p>
-<p>Continue de partager — chaque étoile compte dans la carte que nous construisons ensemble.</p>
+<p>Continue de partager - chaque étoile compte dans la carte que nous construisons ensemble.</p>
     `,
     "Voir mon profil",
     "https://app.karmastro.com/profile"
@@ -195,7 +195,7 @@ Félicitations ${name}. Tu viens de débloquer le badge ${badgeName} grâce à t
 Ce badge apparaît sur ton profil et dans le Hall des Constellations.
 https://karmastro.com/hall-des-constellations
 
-« Les astres inclinent, mais ne déterminent pas » — Thomas d'Aquin
+« Les astres inclinent, mais ne déterminent pas » - Thomas d'Aquin
 `;
 
   return {
@@ -232,7 +232,7 @@ Le parrainage sera validé automatiquement dans 7 jours. Ton compteur augmentera
 
 Ma constellation : https://app.karmastro.com/profile
 
-« Les astres inclinent, mais ne déterminent pas » — Thomas d'Aquin
+« Les astres inclinent, mais ne déterminent pas » - Thomas d'Aquin
 `;
 
   return {
@@ -259,7 +259,7 @@ export function firstOracleEmail(firstName: string | null, guideName: string): E
 <li><strong>Essaie un autre guide</strong> : chacun a son style (Sibylle mystique, Orion direct, Séléné relationnelle, Pythia analytique)</li>
 <li><strong>Donne du feedback</strong> : après chaque réponse, les boutons ✨⭐🌑 aident ton guide à affiner son ton au fil du temps</li>
 </ul>
-<p>Si tu veux débloquer l'Oracle illimité (sans la limite de 3/jour), tu peux passer en Étoile pour 5,99€/mois — sans engagement.</p>
+<p>Si tu veux débloquer l'Oracle illimité (sans la limite de 3/jour), tu peux passer en Étoile pour 5,99€/mois - sans engagement.</p>
     `,
     "Retourner à l'Oracle",
     "https://app.karmastro.com/oracle"
@@ -278,7 +278,7 @@ Pour l'Oracle illimité : 5,99€/mois sans engagement.
 
 https://app.karmastro.com/oracle
 
-« Les astres inclinent, mais ne déterminent pas » — Thomas d'Aquin
+« Les astres inclinent, mais ne déterminent pas » - Thomas d'Aquin
 `;
 
   return {

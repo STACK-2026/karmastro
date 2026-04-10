@@ -88,8 +88,8 @@ export function karmicDebts(intermediateNumbers: number[]): number[] {
 
 export function lifeCycles(day: number, month: number, year: number): { cycle: number; period: string; number: number }[] {
   return [
-    { cycle: 1, period: "0 – 28 ans", number: reduceToSingle(month) },
-    { cycle: 2, period: "28 – 56 ans", number: reduceToSingle(day) },
+    { cycle: 1, period: "0 - 28 ans", number: reduceToSingle(month) },
+    { cycle: 2, period: "28 - 56 ans", number: reduceToSingle(day) },
     { cycle: 3, period: "56+ ans", number: reduceToSingle(String(year).split('').reduce((s, c) => s + parseInt(c), 0)) },
   ];
 }
@@ -102,9 +102,9 @@ export function pinnacles(day: number, month: number, year: number): { pinnacle:
   const endFirst = 36 - (lp > 9 ? reduceToSingle(lp, false) : lp);
 
   return [
-    { pinnacle: 1, period: `0 – ${endFirst} ans`, number: reduceToSingle(d + m) },
-    { pinnacle: 2, period: `${endFirst} – ${endFirst + 9} ans`, number: reduceToSingle(d + y) },
-    { pinnacle: 3, period: `${endFirst + 9} – ${endFirst + 18} ans`, number: reduceToSingle(reduceToSingle(d + m) + reduceToSingle(d + y)) },
+    { pinnacle: 1, period: `0 - ${endFirst} ans`, number: reduceToSingle(d + m) },
+    { pinnacle: 2, period: `${endFirst} - ${endFirst + 9} ans`, number: reduceToSingle(d + y) },
+    { pinnacle: 3, period: `${endFirst + 9} - ${endFirst + 18} ans`, number: reduceToSingle(reduceToSingle(d + m) + reduceToSingle(d + y)) },
     { pinnacle: 4, period: `${endFirst + 18}+ ans`, number: reduceToSingle(m + y) },
   ];
 }

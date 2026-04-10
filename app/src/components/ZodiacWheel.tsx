@@ -1,4 +1,4 @@
-// SVG paths for each zodiac sign — clean, geometric, premium
+// SVG paths for each zodiac sign - clean, geometric, premium
 const SIGN_PATHS: { name: string; path: string }[] = [
   { name: "Bélier", path: "M-5 8 C-5-2 0-8 5-8 C10-8 10 0 5 5 M5 8 C5-2 0-8-5-8 C-10-8-10 0-5 5" },
   { name: "Taureau", path: "M0 8 A6 6 0 1 1 0-4 M-6-6 C-6-10 0-12 0-8 C0-12 6-10 6-6" },

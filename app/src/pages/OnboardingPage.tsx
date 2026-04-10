@@ -68,7 +68,7 @@ const OnboardingPage = () => {
     setInterests(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
   };
 
-  // Debounced geocoder — Nominatim query 500ms after last keystroke
+  // Debounced geocoder - Nominatim query 500ms after last keystroke
   const debouncedGeocode = useRef(
     createDebouncer((q: string) => {
       if (!q || q.length < 3) {
@@ -141,7 +141,7 @@ const OnboardingPage = () => {
           gender: gender || null,
           interests: interests,
           level: level,
-          // Clear cached chart — will be recomputed with new coords on next fetch
+          // Clear cached chart - will be recomputed with new coords on next fetch
           natal_chart_json: null,
           natal_chart_computed_at: null,
         })

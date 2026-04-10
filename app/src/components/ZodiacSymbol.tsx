@@ -1,4 +1,4 @@
-// Zodiac SVG symbol — same geometric paths as the ZodiacWheel component
+// Zodiac SVG symbol - same geometric paths as the ZodiacWheel component
 // Replaces Unicode zodiac emoji (♈♉♊...) with clean SVG glyphs
 
 const SIGN_PATHS: Record<string, string> = {

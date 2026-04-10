@@ -31,8 +31,8 @@ const AstralProfile = () => {
             >
               <ZodiacSymbol sign={item.sign} size={36} color={item.color} />
               <p className="text-xs text-muted-foreground mt-2">{item.label}</p>
-              <p className="text-sm font-medium">{item.sign || "—"}</p>
-              <p className="text-[10px] text-muted-foreground">{item.element || "—"}</p>
+              <p className="text-sm font-medium">{item.sign || "-"}</p>
+              <p className="text-[10px] text-muted-foreground">{item.element || "-"}</p>
             </motion.div>
           ))}
         </div>

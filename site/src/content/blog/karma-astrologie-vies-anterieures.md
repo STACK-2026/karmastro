@@ -173,7 +173,7 @@ Le karma te donne le **terrain** sur lequel tu évolues. Une dette karmique 13/4
 
 ### La citation médiévale
 
-La **maxime médiévale attribuée à [Thomas d'Aquin](https://fr.wikipedia.org/wiki/Thomas_d%27Aquin)** (1225-1274) exprime la même idée en latin : *"Astra inclinant, sed non necessitant"* — **"Les astres inclinent, mais ne déterminent pas"**. Les astres (et le karma) te poussent dans une direction. Ils ne t'empêchent pas de choisir une autre direction, au prix d'un effort conscient. La conscience est ton arme contre le karma subi.
+La **maxime médiévale attribuée à [Thomas d'Aquin](https://fr.wikipedia.org/wiki/Thomas_d%27Aquin)** (1225-1274) exprime la même idée en latin : *"Astra inclinant, sed non necessitant"* - **"Les astres inclinent, mais ne déterminent pas"**. Les astres (et le karma) te poussent dans une direction. Ils ne t'empêchent pas de choisir une autre direction, au prix d'un effort conscient. La conscience est ton arme contre le karma subi.
 
 ### L'action vertueuse libère du karma
 
