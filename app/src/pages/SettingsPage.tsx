@@ -45,7 +45,7 @@ const SettingsPage = () => {
         </div>
 
         <p className="text-[10px] text-muted-foreground text-center pt-6">
-          Karmastro v1.0 · Les astres inclinent, ne determinent pas.
+          Karmastro v1.0 · « Les astres inclinent, mais ne déterminent pas » — Thomas d'Aquin
         </p>
       </div>
 

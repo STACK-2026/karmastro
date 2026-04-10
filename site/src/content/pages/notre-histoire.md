@@ -33,7 +33,7 @@ Aucun autre outil ne croise astrologie, numérologie et guidance karmique en une
 
 L'Oracle de Karmastro n'est pas un horoscope automatique. C'est un système de guidance qui croise des milliers de données astronomiques et numérologiques pour te donner des réponses personnalisées, contextualisées et vérifiables.
 
-Il ne prédit pas l'avenir. Il éclaire le présent. Comme le disait l'astrologue André Barbault : "Les astres inclinent, ne déterminent pas."
+Il ne prédit pas l'avenir. Il éclaire le présent. Comme le rappelait la maxime médiévale de Thomas d'Aquin, souvent reprise en astrologie moderne : « Les astres inclinent, mais ne déterminent pas. »
 
 Tu peux même choisir ton guide : **Sibylle** pour une lecture mystique et profonde, **Orion** pour des conseils directs et motivants, **Séléné** pour les questions de cœur et les relations, ou **Pythia** pour la précision analytique et numérique.
 

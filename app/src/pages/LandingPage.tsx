@@ -436,21 +436,29 @@ const LandingPage = () => {
                 key={pillar.title}
                 ref={(el) => { pillarCardsRef.current[i] = el; }}
                 className="cursor-pointer"
-                style={{ perspective: "1000px", minHeight: 260 }}
+                style={{ perspective: "1000px" }}
                 onClick={() => setFlipped(!flipped)}
               >
+                {/* Grid-stack flip card : front and back occupy the same grid cell,
+                    so the container sizes itself to the taller of the two faces.
+                    This prevents the longer back content from overflowing. */}
                 <div
-                  className="relative w-full h-full transition-transform duration-500"
+                  className="relative grid transition-transform duration-500"
                   style={{
                     transformStyle: "preserve-3d",
                     transform: flipped ? "rotateY(180deg)" : "rotateY(0)",
-                    minHeight: 260,
+                    gridTemplateAreas: '"stack"',
                   }}
                 >
                   {/* Front */}
                   <div
-                    className="absolute inset-0 rounded-xl bg-card/60 backdrop-blur-sm p-6 text-center flex flex-col items-center justify-center"
-                    style={{ backfaceVisibility: "hidden", border: `1px solid ${pillar.borderColor}` }}
+                    className="rounded-xl bg-card/60 backdrop-blur-sm p-6 text-center flex flex-col items-center justify-center"
+                    style={{
+                      gridArea: "stack",
+                      backfaceVisibility: "hidden",
+                      WebkitBackfaceVisibility: "hidden",
+                      border: `1px solid ${pillar.borderColor}`,
+                    }}
                   >
                     <pillar.icon className={`h-10 w-10 mb-4 ${pillar.color}`} />
                     <h3 className="font-serif text-xl mb-2">{pillar.title}</h3>
@@ -459,8 +467,14 @@ const LandingPage = () => {
                   </div>
                   {/* Back */}
                   <div
-                    className="absolute inset-0 rounded-xl bg-card/80 backdrop-blur-sm p-6 flex flex-col justify-center"
-                    style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)", border: `1px solid ${pillar.borderColor}` }}
+                    className="rounded-xl bg-card/80 backdrop-blur-sm p-6 flex flex-col justify-center"
+                    style={{
+                      gridArea: "stack",
+                      backfaceVisibility: "hidden",
+                      WebkitBackfaceVisibility: "hidden",
+                      transform: "rotateY(180deg)",
+                      border: `1px solid ${pillar.borderColor}`,
+                    }}
                   >
                     <h4 className={`font-serif text-lg mb-3 ${pillar.color}`}>{pillar.why}</h4>
                     <p className="text-sm text-muted-foreground leading-relaxed">{pillar.back}</p>
@@ -629,7 +643,7 @@ const LandingPage = () => {
           <Sparkles className="h-5 w-5 text-primary" />
           <span className="font-serif text-lg text-foreground">Karmastro</span>
         </div>
-        <p>Les astres inclinent, ne déterminent pas.</p>
+        <p>« Les astres inclinent, mais ne déterminent pas » — Thomas d'Aquin</p>
         <p className="mt-2">© 2026 Karmastro. Tous droits reserves.</p>
       </footer>
     </div>
