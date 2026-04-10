@@ -8,6 +8,7 @@ import StarField from "@/components/StarField";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { trackEvent } from "@/lib/tracker";
 
 const CHECKOUT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/stripe-checkout";
 
@@ -81,11 +82,13 @@ const PricingPage = () => {
 
   const handleCheckout = async (priceKey: string) => {
     if (!user) {
+      trackEvent("checkout_blocked_no_auth", { price_key: priceKey });
       toast({ title: "Connexion requise", description: "Crée un compte pour débloquer cette offre.", variant: "destructive" });
       navigate("/auth");
       return;
     }
 
+    trackEvent("checkout_started", { price_key: priceKey, locale });
     setLoading(priceKey);
     try {
       const { data: { session } } = await supabase.auth.getSession();

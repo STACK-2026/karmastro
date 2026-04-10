@@ -10,6 +10,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { personalYear, personalMonth, personalDay } from "@/lib/numerology";
 import { useToast } from "@/hooks/use-toast";
 import { useUserProfile } from "@/hooks/useUserProfile";
+import { trackEvent } from "@/lib/tracker";
 import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
 import ReactMarkdown from "react-markdown";
@@ -180,6 +181,7 @@ const OraclePage = () => {
       const { error } = await supabase.from("oracle_feedback" as any).insert(payload);
       if (error) throw error;
 
+      trackEvent("oracle_feedback_submitted", { guide: guideKey, rating, has_text: Boolean(text?.trim()) });
       setFeedback((prev) => ({ ...prev, [messageIndex]: { status: "submitted", rating } }));
       if (text?.trim()) {
         toast({ title: "Merci pour ton retour", description: "Ta voix aide " + (currentGuide?.name || "l'Oracle") + " à mieux te guider." });
@@ -245,6 +247,12 @@ const OraclePage = () => {
     setMessages(prev => [...prev, userMsg]);
     setInput("");
     setIsLoading(true);
+
+    trackEvent("oracle_message_sent", {
+      guide: guideKey,
+      message_length: msgText.length,
+      conversation_depth: messages.length,
+    });
 
     let assistantSoFar = "";
 

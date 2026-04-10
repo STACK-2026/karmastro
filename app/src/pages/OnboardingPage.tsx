@@ -9,6 +9,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { lifePathNumber, expressionNumber, soulUrgeNumber, personalYear, getZodiacSign, getNumberKeyword, karmicDebts } from "@/lib/numerology";
 import { geocodePlace, createDebouncer, type GeocodeResult } from "@/lib/geocoding";
+import { trackEvent } from "@/lib/tracker";
 import StarField from "@/components/StarField";
 
 const INTERESTS = [
@@ -146,6 +147,12 @@ const OnboardingPage = () => {
         .eq("user_id", user.id);
 
       if (error) throw error;
+      trackEvent("onboarding_completed", {
+        has_birth_time: knowsBirthTime,
+        has_geolocation: Boolean(geoResult),
+        interests_count: interests.length,
+        level,
+      });
       navigate("/dashboard");
     } catch (e: any) {
       toast({ title: "Erreur", description: e.message, variant: "destructive" });

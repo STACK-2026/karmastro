@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import StarField from "@/components/StarField";
+import { trackEvent } from "@/lib/tracker";
 
 const REFERRAL_STORAGE_KEY = "karmastro_referral_code";
 
@@ -54,6 +55,7 @@ const AuthPage = () => {
       if (isLogin) {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
+        trackEvent("login", { method: "email" });
         navigate("/dashboard");
       } else {
         const { data, error } = await supabase.auth.signUp({
@@ -65,6 +67,11 @@ const AuthPage = () => {
           },
         });
         if (error) throw error;
+
+        trackEvent("signup", {
+          method: "email",
+          has_referral: Boolean(referralCode),
+        });
 
         // If user is immediately available (auto-confirm), attach the referral code to their profile
         if (referralCode && data?.user?.id) {
