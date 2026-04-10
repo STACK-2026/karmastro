@@ -29,6 +29,7 @@ from pathlib import Path
 
 import requests
 from anthropic import Anthropic
+from prompts import PROMPTS, SUPPORTED_LANGS
 
 # ----------------------------------------------------------------------------
 # Config
@@ -165,9 +166,13 @@ Rédige l'horoscope quotidien pour ce signe. Adapte le ton et le contenu aux vra
 # ----------------------------------------------------------------------------
 
 
-def generate_sign(client: Anthropic, sign: dict, cosmic_context: str, date_str: str, retries: int = 3) -> dict | None:
-    """Generate horoscope for one sign."""
-    user_prompt = USER_PROMPT_TEMPLATE.format(
+def generate_sign(client: Anthropic, sign: dict, cosmic_context: str, date_str: str, lang: str = "fr", retries: int = 3) -> dict | None:
+    """Generate horoscope for one sign in the target language."""
+    prompt_pair = PROMPTS.get(lang, PROMPTS["fr"])
+    system_prompt = prompt_pair["system"]
+    user_template = prompt_pair["user"]
+
+    user_prompt = user_template.format(
         date=date_str,
         cosmic=cosmic_context,
         name=sign["name"],
@@ -181,7 +186,7 @@ def generate_sign(client: Anthropic, sign: dict, cosmic_context: str, date_str: 
             response = client.messages.create(
                 model=ANTHROPIC_MODEL,
                 max_tokens=MAX_TOKENS_PER_SIGN,
-                system=SYSTEM_PROMPT,
+                system=system_prompt,
                 messages=[{"role": "user", "content": user_prompt}],
             )
             text = response.content[0].text.strip()
@@ -236,10 +241,49 @@ def generate_sign(client: Anthropic, sign: dict, cosmic_context: str, date_str: 
 # ----------------------------------------------------------------------------
 
 
+def generate_for_language(client: Anthropic, cosmic_context: str, date_str: str, lang: str, output_file: Path, force: bool) -> int:
+    """Generate horoscope for all 12 signs in the target language. Returns exit code."""
+    if output_file.exists() and not force:
+        log.info("[%s] File exists: %s (use --force to overwrite)", lang, output_file.name)
+        return 0
+
+    results: dict[str, dict] = {}
+    failed: list[str] = []
+
+    for sign in ZODIAC_SIGNS:
+        log.info("[%s] Generating %s...", lang, sign["name"])
+        data = generate_sign(client, sign, cosmic_context, date_str, lang=lang)
+        if data:
+            results[sign["slug"]] = data
+        else:
+            failed.append(sign["slug"])
+        time.sleep(0.5)
+
+    if len(results) < 12:
+        log.warning("[%s] Only %d/12 signs generated. Failed: %s", lang, len(results), ", ".join(failed))
+
+    if not results:
+        log.error("[%s] No signs generated, aborting write", lang)
+        return 2
+
+    tmp_file = output_file.with_suffix(".json.tmp")
+    with open(tmp_file, "w", encoding="utf-8") as f:
+        json.dump(results, f, ensure_ascii=False, indent=2)
+    tmp_file.replace(output_file)
+
+    log.info("[%s] Wrote %d signs to %s", lang, len(results), output_file.name)
+    return 0 if len(results) == 12 else 3
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Generate Karmastro daily horoscope")
     parser.add_argument("--date", help="Target date YYYY-MM-DD (default: today)", default=None)
     parser.add_argument("--force", action="store_true", help="Overwrite if file exists")
+    parser.add_argument(
+        "--lang",
+        help=f"Language(s) to generate. Comma-separated or 'all'. Supported: {','.join(SUPPORTED_LANGS)}. Default: fr",
+        default="fr",
+    )
     args = parser.parse_args()
 
     api_key = os.getenv("ANTHROPIC_API_KEY")
@@ -248,47 +292,34 @@ def main() -> int:
         return 1
 
     date_str = args.date or datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    log.info("Generating horoscope for %s", date_str)
+
+    # Parse lang argument
+    if args.lang == "all":
+        langs = SUPPORTED_LANGS
+    else:
+        langs = [l.strip() for l in args.lang.split(",") if l.strip()]
+        for l in langs:
+            if l not in SUPPORTED_LANGS:
+                log.error("Unsupported lang: %s (supported: %s)", l, ",".join(SUPPORTED_LANGS))
+                return 1
+
+    log.info("Generating horoscope for %s in %d language(s): %s", date_str, len(langs), ",".join(langs))
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    output_file = OUTPUT_DIR / f"{date_str}.json"
-
-    if output_file.exists() and not args.force:
-        log.info("File already exists: %s (use --force to overwrite)", output_file)
-        return 0
-
     cosmic = fetch_cosmic_snapshot()
     cosmic_context = format_cosmic_context(cosmic)
-
     client = Anthropic(api_key=api_key)
-    results: dict[str, dict] = {}
-    failed: list[str] = []
 
-    for sign in ZODIAC_SIGNS:
-        log.info("Generating %s...", sign["name"])
-        data = generate_sign(client, sign, cosmic_context, date_str)
-        if data:
-            results[sign["slug"]] = data
-        else:
-            failed.append(sign["slug"])
-        # Small delay to avoid rate limits
-        time.sleep(0.8)
+    exit_codes = []
+    for lang in langs:
+        # FR keeps the legacy YYYY-MM-DD.json filename (backward compat)
+        # Other langs use YYYY-MM-DD-{lang}.json
+        suffix = "" if lang == "fr" else f"-{lang}"
+        output_file = OUTPUT_DIR / f"{date_str}{suffix}.json"
+        code = generate_for_language(client, cosmic_context, date_str, lang, output_file, args.force)
+        exit_codes.append(code)
 
-    if len(results) < 12:
-        log.warning("Only %d/12 signs generated. Failed: %s", len(results), ", ".join(failed))
-
-    if not results:
-        log.error("No signs generated, aborting write")
-        return 2
-
-    # Write atomically
-    tmp_file = output_file.with_suffix(".json.tmp")
-    with open(tmp_file, "w", encoding="utf-8") as f:
-        json.dump(results, f, ensure_ascii=False, indent=2)
-    tmp_file.replace(output_file)
-
-    log.info("Wrote %d signs to %s", len(results), output_file)
-    return 0 if len(results) == 12 else 3
+    return max(exit_codes) if exit_codes else 0
 
 
 if __name__ == "__main__":

@@ -40,13 +40,14 @@ const signNameKeys: Record<string, string> = {
 };
 const localSignName = t(signNameKeys[sign.slug] as any, lang) || sign.name;
 
-// ─── Load horoscope data (fallback to FR) ───
+// ─── Load horoscope data (try localized first, fallback to FR) ───
 const dataDir = path.join(process.cwd(), "src/data/horoscope");
 let entry: any = null;
 let tomorrowEntry: any = null;
 let todayDate = new Date().toISOString().slice(0, 10);
 let tomorrowDate = "";
 let archiveCards: any[] = [];
+let contentLang: string = lang; // language of the loaded content (for lang=.. html attr)
 
 function addDays(dateStr: string, days: number): string {
   const d = new Date(dateStr + "T12:00:00Z");
@@ -54,8 +55,27 @@ function addDays(dateStr: string, days: number): string {
   return d.toISOString().slice(0, 10);
 }
 
+function loadHoroscope(date: string, langCode: string): { data: any; usedLang: string } | null {
+  // Try localized file first (YYYY-MM-DD-{lang}.json)
+  const localized = path.join(dataDir, `${date}-${langCode}.json`);
+  if (langCode !== "fr" && fs.existsSync(localized)) {
+    try {
+      return { data: JSON.parse(fs.readFileSync(localized, "utf-8")), usedLang: langCode };
+    } catch (e) {}
+  }
+  // Fallback to FR (YYYY-MM-DD.json)
+  const frFile = path.join(dataDir, `${date}.json`);
+  if (fs.existsSync(frFile)) {
+    try {
+      return { data: JSON.parse(fs.readFileSync(frFile, "utf-8")), usedLang: "fr" };
+    } catch (e) {}
+  }
+  return null;
+}
+
 try {
   if (fs.existsSync(dataDir)) {
+    // Find all FR-base files (canonical date list)
     const files = fs
       .readdirSync(dataDir)
       .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
@@ -67,15 +87,17 @@ try {
     if (pastFiles.length > 0) {
       const latestFile = pastFiles[pastFiles.length - 1];
       todayDate = latestFile.replace(".json", "");
-      const data = JSON.parse(fs.readFileSync(path.join(dataDir, latestFile), "utf-8"));
-      entry = data[sign.slug];
+      const loaded = loadHoroscope(todayDate, lang);
+      if (loaded) {
+        entry = loaded.data[sign.slug];
+        contentLang = loaded.usedLang;
+      }
     }
 
     tomorrowDate = addDays(todayDate, 1);
-    const tomorrowFile = path.join(dataDir, `${tomorrowDate}.json`);
-    if (fs.existsSync(tomorrowFile)) {
-      const tomorrowData = JSON.parse(fs.readFileSync(tomorrowFile, "utf-8"));
-      tomorrowEntry = tomorrowData[sign.slug];
+    const tomorrowLoaded = loadHoroscope(tomorrowDate, lang);
+    if (tomorrowLoaded) {
+      tomorrowEntry = tomorrowLoaded.data[sign.slug];
     }
 
     const pastArchive = files
@@ -84,18 +106,18 @@ try {
       .slice(0, 14);
 
     for (const f of pastArchive) {
-      try {
-        const archiveData = JSON.parse(fs.readFileSync(path.join(dataDir, f), "utf-8"));
-        const signEntry = archiveData[sign.slug];
-        if (!signEntry) continue;
-        archiveCards.push({
-          date: f.replace(".json", ""),
-          intro: (signEntry.intro || "").slice(0, 110),
-          mantra: signEntry.mantra || null,
-          luckyNumber: signEntry.luckyNumber ?? null,
-          color: signEntry.color || null,
-        });
-      } catch (e) {}
+      const archiveDate = f.replace(".json", "");
+      const archLoaded = loadHoroscope(archiveDate, lang);
+      if (!archLoaded) continue;
+      const signEntry = archLoaded.data[sign.slug];
+      if (!signEntry) continue;
+      archiveCards.push({
+        date: archiveDate,
+        intro: (signEntry.intro || "").slice(0, 110),
+        mantra: signEntry.mantra || null,
+        luckyNumber: signEntry.luckyNumber ?? null,
+        color: signEntry.color || null,
+      });
     }
   }
 } catch (e) {
@@ -191,19 +213,20 @@ const jsonLdArray = [
 
     {entry && (
       <>
-        {/* Small note : content in French, translation coming */}
-        <div lang="fr" class="mb-6 px-4 py-2 rounded-lg bg-white/[0.02] border border-white/10 text-center">
-          <p class="text-[10px] text-white/40">
-            <span class="text-amber-300/60">✦</span> {t("horoscope.fr_translation_note", lang)}
-          </p>
-        </div>
+        {contentLang !== lang && (
+          <div class="mb-6 px-4 py-2 rounded-lg bg-white/[0.02] border border-white/10 text-center">
+            <p class="text-[10px] text-white/40">
+              <span class="text-amber-300/60">✦</span> {t("horoscope.fr_translation_note", lang)}
+            </p>
+          </div>
+        )}
 
-        <div lang="fr" class="p-6 rounded-2xl border border-amber-300/20 bg-amber-300/5 mb-8">
+        <div lang={contentLang} class="p-6 rounded-2xl border border-amber-300/20 bg-amber-300/5 mb-8">
           <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-2">{t("horoscope.cosmic_energy", lang)}</p>
           <p class="text-lg leading-relaxed text-white/90">{entry.intro}</p>
         </div>
 
-        <div lang="fr" class="grid md:grid-cols-2 gap-4 mb-8">
+        <div lang={contentLang} class="grid md:grid-cols-2 gap-4 mb-8">
           {entry.love && (
             <section class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
               <h2 class="font-serif text-xl mb-3 text-pink-300">{t("horoscope.love", lang)}</h2>
@@ -238,13 +261,13 @@ const jsonLdArray = [
             </div>
           )}
           {entry.color && (
-            <div lang="fr" class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+            <div lang={contentLang} class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
               <p class="text-xs text-white/50 uppercase tracking-wider mb-1">{t("horoscope.color", lang)}</p>
               <p class="text-lg text-white/90">{entry.color}</p>
             </div>
           )}
           {entry.mantra && (
-            <div lang="fr" class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+            <div lang={contentLang} class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
               <p class="text-xs text-white/50 uppercase tracking-wider mb-1">{t("horoscope.mantra", lang)}</p>
               <p class="text-sm italic text-white/90">"{entry.mantra}"</p>
             </div>
@@ -281,13 +304,13 @@ const jsonLdArray = [
               {tomorrowEntry ? (
                 <>
                   <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-2">{t("horoscope.cosmic_energy_tomorrow", lang)}</p>
-                  <p lang="fr" class="text-base leading-relaxed text-white/80 mb-4 italic">
+                  <p lang={contentLang} class="text-base leading-relaxed text-white/80 mb-4 italic">
                     {tomorrowEntry.intro?.split(/[.!?]/)[0]}...
                   </p>
 
                   <div
                     id="tomorrow-content"
-                    lang="fr"
+                    lang={contentLang}
                     class="relative transition-all duration-500"
                     data-locked="true"
                     style="filter: blur(18px); opacity: 0.35; user-select: none; pointer-events: none;"
@@ -449,12 +472,12 @@ const jsonLdArray = [
                 )}
               </div>
               {a.intro && (
-                <p lang="fr" class="text-xs text-white/70 leading-relaxed line-clamp-2 mb-2">
+                <p lang={contentLang} class="text-xs text-white/70 leading-relaxed line-clamp-2 mb-2">
                   {a.intro}...
                 </p>
               )}
               {a.mantra && (
-                <p lang="fr" class="text-[10px] text-white/40 italic truncate">"{a.mantra}"</p>
+                <p lang={contentLang} class="text-[10px] text-white/40 italic truncate">"{a.mantra}"</p>
               )}
             </a>
           ))}
