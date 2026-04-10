@@ -1,4 +1,4 @@
-name: Horoscope Auto — Génération quotidienne
+name: Horoscope Auto — Génération quotidienne 11 langues
 
 on:
   schedule:
@@ -10,6 +10,10 @@ on:
         description: 'Régénérer même si le fichier existe'
         type: boolean
         default: false
+      lang:
+        description: "Langues à générer (csv ou 'all')"
+        type: string
+        default: 'all'
 
 permissions:
   contents: write
@@ -17,7 +21,7 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 45
 
     steps:
       - name: Checkout
@@ -39,17 +43,26 @@ jobs:
       - name: Install dependencies
         run: pip install -r horoscope-auto/requirements.txt
 
-      - name: Generate horoscope
+      - name: Generate today in all languages
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ENGINE_URL: http://168.119.229.20:8100
         run: |
           cd horoscope-auto
-          if [ "${{ github.event.inputs.force }}" = "true" ]; then
-            python generate.py --force
-          else
-            python generate.py
-          fi
+          LANG_ARG="${{ github.event.inputs.lang || 'all' }}"
+          FORCE_ARG=""
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then FORCE_ARG="--force"; fi
+          python generate.py --lang "${LANG_ARG}" ${FORCE_ARG}
+
+      - name: Generate tomorrow preview in all languages
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ENGINE_URL: http://168.119.229.20:8100
+        run: |
+          cd horoscope-auto
+          TOMORROW=$(date -u -d tomorrow +%Y-%m-%d 2>/dev/null || date -u -v+1d +%Y-%m-%d)
+          LANG_ARG="${{ github.event.inputs.lang || 'all' }}"
+          python generate.py --date "${TOMORROW}" --lang "${LANG_ARG}"
 
       - name: Commit and push if changed
         run: |
@@ -58,6 +71,6 @@ jobs:
             echo "No horoscope changes to commit"
           else
             DATE=$(date -u +%Y-%m-%d)
-            git commit -m "horoscope: génération quotidienne ${DATE}"
+            git commit -m "horoscope: génération quotidienne ${DATE} (11 langues + J+1)"
             git push
           fi
