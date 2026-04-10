@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -6,6 +7,77 @@ const corsHeaders = {
 };
 
 const ENGINE_URL = "http://168.119.229.20:8100";
+const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "https://nkjbmbdrvejemzrggxvr.supabase.co";
+const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
+
+// ============================================
+// FEEDBACK HISTORY — personalize system prompt based on user's past feedback
+// ============================================
+
+async function buildFeedbackContext(userId: string | null, sessionId: string | null, currentGuide: string): Promise<string> {
+  if (!userId && !sessionId) return "";
+  if (!SERVICE_KEY) return "";
+
+  try {
+    const sb = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
+
+    // Build query filter for user_id or session_id
+    const col = userId ? "user_id" : "session_id";
+    const val = userId || sessionId;
+
+    const { data, error } = await sb
+      .from("oracle_feedback")
+      .select("guide, rating, text, created_at")
+      .eq(col, val)
+      .order("created_at", { ascending: false })
+      .limit(15);
+
+    if (error || !data || data.length === 0) return "";
+
+    const totalCount = data.length;
+    const avgRating = data.reduce((a: number, b: any) => a + b.rating, 0) / totalCount;
+    const positive = data.filter((f: any) => f.rating === 3).length;
+    const negative = data.filter((f: any) => f.rating === 1).length;
+
+    // Per-guide stats
+    const guideStats: Record<string, { total: number; sum: number }> = {};
+    for (const fb of data) {
+      if (!guideStats[fb.guide]) guideStats[fb.guide] = { total: 0, sum: 0 };
+      guideStats[fb.guide].total += 1;
+      guideStats[fb.guide].sum += fb.rating;
+    }
+
+    // Extract user text comments (up to 5 most recent)
+    const recentComments = data
+      .filter((f: any) => f.text && f.text.trim())
+      .slice(0, 5)
+      .map((f: any) => `[${f.guide} - ${f.rating}/3] "${f.text}"`);
+
+    let ctx = `\n\nHISTORIQUE DE FEEDBACK DE CET UTILISATEUR :
+- Il/elle t'a donné ${totalCount} feedbacks récents (moyenne : ${avgRating.toFixed(1)}/3)
+- ${positive} positifs, ${negative} négatifs`;
+
+    if (guideStats[currentGuide]) {
+      const s = guideStats[currentGuide];
+      const avg = (s.sum / s.total).toFixed(1);
+      ctx += `\n- Sur TOI spécifiquement : ${s.total} interactions, moyenne ${avg}/3`;
+    }
+
+    if (recentComments.length > 0) {
+      ctx += `\n\nCOMMENTAIRES RÉCENTS DE CET UTILISATEUR (tiens-en compte pour adapter ton ton) :`;
+      for (const c of recentComments) {
+        ctx += `\n- ${c}`;
+      }
+    }
+
+    ctx += `\n\nINSTRUCTION : Utilise cet historique pour AFFINER ton approche avec cet utilisateur. Si les commentaires révèlent une préférence (plus court, plus direct, plus poétique, plus concret), adapte-toi. Ne mentionne JAMAIS explicitement que tu as lu ce feedback.`;
+
+    return ctx;
+  } catch (e) {
+    console.error("buildFeedbackContext error:", e);
+    return "";
+  }
+}
 
 // ============================================
 // BASE PROMPT — shared methodology for all guides
@@ -163,13 +235,17 @@ serve(async (req) => {
   }
 
   try {
-    const { messages, profile, guide: guideKey } = await req.json();
+    const { messages, profile, guide: guideKey, userId, sessionId } = await req.json();
     const ANTHROPIC_API_KEY = Deno.env.get("ANTHROPIC_API_KEY");
     if (!ANTHROPIC_API_KEY) throw new Error("ANTHROPIC_API_KEY non configurée");
 
     // Select guide (fallback to default if invalid)
     const selectedGuide = GUIDES[guideKey] || GUIDES[DEFAULT_GUIDE];
-    const systemPrompt = selectedGuide.prompt;
+    let systemPrompt = selectedGuide.prompt;
+
+    // Enrich with personalized feedback history (non-blocking)
+    const feedbackContext = await buildFeedbackContext(userId ?? null, sessionId ?? null, guideKey || DEFAULT_GUIDE);
+    systemPrompt += feedbackContext;
 
     // Fetch real-time data from the Engine API
     let engineContext = "";

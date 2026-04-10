@@ -99,6 +99,28 @@ const GUIDES: Record<GuideKey, GuideInfo> = {
 
 const CHAT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/oracle-chat";
 const STORAGE_KEY = "karmastro_oracle_guide";
+const SESSION_KEY = "karmastro_oracle_session";
+
+// Get or create an anonymous session id (for users not signed in)
+function getSessionId(): string {
+  let sid = localStorage.getItem(SESSION_KEY);
+  if (!sid) {
+    sid = crypto.randomUUID();
+    localStorage.setItem(SESSION_KEY, sid);
+  }
+  return sid;
+}
+
+type FeedbackState = {
+  status: "idle" | "expanded" | "submitted";
+  rating?: 1 | 2 | 3;
+};
+
+const FEEDBACK_OPTIONS = [
+  { rating: 3 as const, emoji: "✨", label: "Ça résonne", color: "border-emerald-400/40 hover:bg-emerald-400/10 text-emerald-300" },
+  { rating: 2 as const, emoji: "⭐", label: "Intéressant, dis-m'en plus", color: "border-amber-300/40 hover:bg-amber-300/10 text-amber-300" },
+  { rating: 1 as const, emoji: "🌑", label: "Pas cette fois", color: "border-pink-400/40 hover:bg-pink-400/10 text-pink-300" },
+];
 
 const OraclePage = () => {
   const navigate = useNavigate();
@@ -111,6 +133,8 @@ const OraclePage = () => {
 
   const [guideKey, setGuideKey] = useState<GuideKey | null>(null);
   const [showPicker, setShowPicker] = useState(false);
+  const [feedback, setFeedback] = useState<Record<number, FeedbackState>>({});
+  const [feedbackText, setFeedbackText] = useState<Record<number, string>>({});
 
   // Load saved guide or show picker on first visit
   useEffect(() => {
@@ -131,6 +155,55 @@ const OraclePage = () => {
     localStorage.setItem(STORAGE_KEY, key);
     setShowPicker(false);
     setMessages([]);
+    setFeedback({});
+    setFeedbackText({});
+  };
+
+  // Submit feedback for an assistant message
+  const submitFeedback = async (messageIndex: number, rating: 1 | 2 | 3, text?: string) => {
+    if (!guideKey) return;
+    const assistantMsg = messages[messageIndex];
+    const userMsg = messages[messageIndex - 1];
+    if (!assistantMsg || assistantMsg.role !== "assistant") return;
+
+    try {
+      const payload = {
+        user_id: user?.id ?? null,
+        session_id: user?.id ? null : getSessionId(),
+        guide: guideKey,
+        rating,
+        text: text?.trim() || null,
+        user_message: userMsg?.content?.slice(0, 500) ?? null,
+        assistant_message: assistantMsg.content.slice(0, 2000),
+      };
+      const { error } = await supabase.from("oracle_feedback" as any).insert(payload);
+      if (error) throw error;
+
+      setFeedback((prev) => ({ ...prev, [messageIndex]: { status: "submitted", rating } }));
+      if (text?.trim()) {
+        toast({ title: "Merci pour ton retour", description: "Ta voix aide " + (currentGuide?.name || "l'Oracle") + " à mieux te guider." });
+      }
+    } catch (e: any) {
+      console.error("Feedback submit error:", e);
+      toast({ title: "Retour non enregistré", description: "Réessaie dans un instant.", variant: "destructive" });
+    }
+  };
+
+  const handleFeedbackClick = (messageIndex: number, rating: 1 | 2 | 3) => {
+    // Expand the textarea first if user clicked a rating
+    setFeedback((prev) => ({ ...prev, [messageIndex]: { status: "expanded", rating } }));
+  };
+
+  const handleFeedbackSubmit = (messageIndex: number) => {
+    const state = feedback[messageIndex];
+    if (!state || !state.rating) return;
+    submitFeedback(messageIndex, state.rating, feedbackText[messageIndex]);
+  };
+
+  const handleFeedbackSkip = (messageIndex: number) => {
+    const state = feedback[messageIndex];
+    if (!state || !state.rating) return;
+    submitFeedback(messageIndex, state.rating);
   };
 
   const currentGuide = guideKey ? GUIDES[guideKey] : null;
@@ -184,6 +257,8 @@ const OraclePage = () => {
           messages: [...messages, userMsg].map(m => ({ role: m.role, content: m.content })),
           profile: buildProfileContext(),
           guide: guideKey,
+          userId: user?.id ?? null,
+          sessionId: user?.id ? null : getSessionId(),
         }),
       });
 
@@ -343,33 +418,101 @@ const OraclePage = () => {
           </div>
         )}
 
-        {messages.map((msg, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className={msg.role === "user" ? "flex justify-end" : "flex justify-start"}
-          >
-            <div className={
-              msg.role === "user"
-                ? "bg-secondary rounded-2xl rounded-br-sm px-4 py-3 max-w-[85%]"
-                : "bg-primary/10 border border-primary/20 rounded-2xl rounded-bl-sm px-4 py-3 max-w-[85%]"
-            }>
-              {msg.role === "assistant" && (
-                <p className={`text-xs mb-1 font-medium flex items-center gap-1 ${currentGuide.color}`}>
-                  <Icon className="h-3 w-3" /> {currentGuide.name}
-                </p>
-              )}
-              {msg.role === "assistant" ? (
-                <div className="text-sm prose prose-invert prose-sm max-w-none leading-relaxed [&_p]:my-1 [&_ul]:my-1 [&_li]:my-0">
-                  <ReactMarkdown>{msg.content}</ReactMarkdown>
+        {messages.map((msg, i) => {
+          const fb = feedback[i];
+          const showFeedback =
+            msg.role === "assistant" &&
+            // Only show feedback for completed messages (not the currently streaming one if loading)
+            !(isLoading && i === messages.length - 1);
+
+          return (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className={msg.role === "user" ? "flex justify-end" : "flex justify-start flex-col items-start"}
+            >
+              <div className={
+                msg.role === "user"
+                  ? "bg-secondary rounded-2xl rounded-br-sm px-4 py-3 max-w-[85%]"
+                  : "bg-primary/10 border border-primary/20 rounded-2xl rounded-bl-sm px-4 py-3 max-w-[85%]"
+              }>
+                {msg.role === "assistant" && (
+                  <p className={`text-xs mb-1 font-medium flex items-center gap-1 ${currentGuide.color}`}>
+                    <Icon className="h-3 w-3" /> {currentGuide.name}
+                  </p>
+                )}
+                {msg.role === "assistant" ? (
+                  <div className="text-sm prose prose-invert prose-sm max-w-none leading-relaxed [&_p]:my-1 [&_ul]:my-1 [&_li]:my-0">
+                    <ReactMarkdown>{msg.content}</ReactMarkdown>
+                  </div>
+                ) : (
+                  <p className="text-sm">{msg.content}</p>
+                )}
+              </div>
+
+              {showFeedback && (
+                <div className="mt-2 max-w-[85%] w-full">
+                  {(!fb || fb.status === "idle") && (
+                    <div className="flex flex-wrap gap-1.5">
+                      <span className="text-[10px] text-muted-foreground/60 self-center mr-1">
+                        Cette lecture t'a parlé ?
+                      </span>
+                      {FEEDBACK_OPTIONS.map((opt) => (
+                        <button
+                          key={opt.rating}
+                          onClick={() => handleFeedbackClick(i, opt.rating)}
+                          className={`text-[11px] border rounded-full px-2.5 py-1 transition-colors ${opt.color}`}
+                        >
+                          {opt.emoji} {opt.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+
+                  {fb?.status === "expanded" && (
+                    <div className="p-3 rounded-xl border border-primary/20 bg-primary/5 space-y-2">
+                      <p className="text-xs text-muted-foreground">
+                        {fb.rating === 3 && "Heureux que ça t'ait parlé."}
+                        {fb.rating === 2 && "Dis-moi ce qui manquait, j'affine."}
+                        {fb.rating === 1 && "Explique-moi pour que je fasse mieux."}
+                        <span className="text-muted-foreground/50"> (optionnel)</span>
+                      </p>
+                      <textarea
+                        value={feedbackText[i] || ""}
+                        onChange={(e) => setFeedbackText((prev) => ({ ...prev, [i]: e.target.value }))}
+                        placeholder="Ton retour en quelques mots..."
+                        rows={2}
+                        maxLength={500}
+                        className="w-full text-sm bg-background/50 border border-border rounded-lg px-3 py-2 focus:outline-none focus:border-primary/50 resize-none"
+                      />
+                      <div className="flex gap-2 justify-end">
+                        <button
+                          onClick={() => handleFeedbackSkip(i)}
+                          className="text-xs text-muted-foreground hover:text-foreground px-3 py-1.5"
+                        >
+                          Passer
+                        </button>
+                        <button
+                          onClick={() => handleFeedbackSubmit(i)}
+                          className="text-xs bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg px-3 py-1.5 font-medium"
+                        >
+                          Envoyer
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  {fb?.status === "submitted" && (
+                    <p className="text-[11px] text-muted-foreground/60 italic">
+                      Merci, ton retour a été transmis à {currentGuide.name}.
+                    </p>
+                  )}
                 </div>
-              ) : (
-                <p className="text-sm">{msg.content}</p>
               )}
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          );
+        })}
 
         {isLoading && messages[messages.length - 1]?.role !== "assistant" && (
           <div className="flex justify-start">
