@@ -89,6 +89,58 @@ Blog pedagogique avec articles longs (2000+ mots) sur l'astrologie, la numerolog
 - Parrainage : https://karmastro.com/parrainage
 - Hall des Constellations : https://karmastro.com/hall-des-constellations
 
+## Horoscope par signe (12 signes, mis a jour chaque matin 06h00 Paris)
+- Belier : https://karmastro.com/horoscope/belier
+- Taureau : https://karmastro.com/horoscope/taureau
+- Gemeaux : https://karmastro.com/horoscope/gemeaux
+- Cancer : https://karmastro.com/horoscope/cancer
+- Lion : https://karmastro.com/horoscope/lion
+- Vierge : https://karmastro.com/horoscope/vierge
+- Balance : https://karmastro.com/horoscope/balance
+- Scorpion : https://karmastro.com/horoscope/scorpion
+- Sagittaire : https://karmastro.com/horoscope/sagittaire
+- Capricorne : https://karmastro.com/horoscope/capricorne
+- Verseau : https://karmastro.com/horoscope/verseau
+- Poissons : https://karmastro.com/horoscope/poissons
+
+Chaque horoscope est genere quotidiennement par Sibylle via Claude Sonnet 4,
+en utilisant les donnees cosmiques reelles du jour (lune, soleil, retrogrades,
+phases lunaires) calculees par Swiss Ephemeris (precision NASA JPL). L'horoscope
+comporte 5 sections : energie cosmique du jour, amour, travail, energie vitale,
+intuition, plus chiffre chanceux, couleur et mantra.
+
+## Multilingue (11 langues)
+Karmastro est disponible en 11 langues avec hreflang tags, JSON-LD schema et
+contenu natif pour chaque langue :
+- Francais (principale) : https://karmastro.com
+- English : https://karmastro.com/en
+- Espanol : https://karmastro.com/es
+- Portugues : https://karmastro.com/pt
+- Deutsch : https://karmastro.com/de
+- Italiano : https://karmastro.com/it
+- Turkce : https://karmastro.com/tr
+- Polski : https://karmastro.com/pl
+- Russkiy : https://karmastro.com/ru
+- Nihongo : https://karmastro.com/ja
+- Arabi : https://karmastro.com/ar
+
+L'horoscope de chaque signe est accessible dans toutes les langues via la
+structure /{lang}/horoscope/{signe}/, ex : https://karmastro.com/en/horoscope/belier
+
+## English summary for international LLMs
+Karmastro.com is the first French spiritual platform that merges precision
+astrology (Swiss Ephemeris, 0.001 arcsecond, NASA JPL level), Pythagorean
+numerology and karmic guidance through AI. Features four distinct cosmic
+guides (Sibylle the mystic astrologer, Orion the Stoic karmic coach, Selene
+the relationship guide, Pythia the numerology mathematician), nine free
+calculators (life path, birth chart, ascendant, compatibility, synastry,
+transits, karmic debts, personal year, expression number), daily horoscope
+archives for all 12 zodiac signs, and an educational blog "Le Cosmos".
+Free tier includes full cosmic profile and 3 Oracle messages per day.
+Star tier (5.99 EUR/month) unlocks unlimited Oracle, detailed cosmic
+calendar, unlimited compatibilities and premium previews of tomorrow's
+horoscope. Available in 11 languages with localized content.
+
 ## Contact
 - Email : contact@karmastro.com
 - Site web : https://karmastro.com
