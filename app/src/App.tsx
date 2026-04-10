@@ -18,6 +18,7 @@ import LearnPage from "./pages/LearnPage.tsx";
 import SettingsPage from "./pages/SettingsPage.tsx";
 import OnboardingPage from "./pages/OnboardingPage.tsx";
 import AdminPage from "./pages/AdminPage.tsx";
+import PricingPage from "./pages/PricingPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import CookieBanner from "./components/CookieBanner.tsx";
 
@@ -45,6 +46,7 @@ const App = () => (
             <Route path="/learn" element={<LearnPage />} />
             <Route path="/settings" element={<SettingsPage />} />
             <Route path="/admin" element={<AdminPage />} />
+            <Route path="/pricing" element={<PricingPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

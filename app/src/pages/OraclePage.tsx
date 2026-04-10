@@ -14,7 +14,7 @@ import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
 import ReactMarkdown from "react-markdown";
 
-type Msg = { role: "user" | "assistant"; content: string };
+type Msg = { role: "user" | "assistant" | "paywall"; content: string };
 
 type GuideKey = "sibylle" | "orion" | "selene" | "pythia";
 
@@ -264,6 +264,19 @@ const OraclePage = () => {
 
       if (!resp.ok) {
         const errData = await resp.json().catch(() => ({}));
+
+        // Paywall (402) : show inline CTA instead of toast error
+        if (resp.status === 402 && errData.paywall) {
+          setMessages((prev) => [
+            ...prev,
+            {
+              role: "paywall",
+              content: errData.paywall.message || "Tu as atteint ta limite quotidienne.",
+            },
+          ]);
+          return;
+        }
+
         throw new Error(errData.error || `Erreur ${resp.status}`);
       }
 
@@ -419,6 +432,38 @@ const OraclePage = () => {
         )}
 
         {messages.map((msg, i) => {
+          // Paywall card
+          if (msg.role === "paywall") {
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="flex justify-center"
+              >
+                <div className="w-full max-w-md p-5 rounded-2xl border border-amber-300/30 bg-gradient-to-br from-purple-500/10 to-amber-300/10 text-center">
+                  <Sparkles className="h-8 w-8 text-amber-300 mx-auto mb-2" />
+                  <h3 className="font-serif text-lg mb-2">Les astres ne dorment jamais</h3>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{msg.content}</p>
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <button
+                      onClick={() => navigate("/pricing")}
+                      className="flex-1 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity"
+                    >
+                      Passer en Étoile · 5,99€/mois
+                    </button>
+                    <button
+                      onClick={() => navigate("/pricing")}
+                      className="flex-1 px-4 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 font-medium text-sm hover:bg-amber-300/10 transition-colors"
+                    >
+                      Recharger en crédits
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          }
+
           const fb = feedback[i];
           const showFeedback =
             msg.role === "assistant" &&

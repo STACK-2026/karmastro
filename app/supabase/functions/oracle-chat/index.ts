@@ -239,6 +239,59 @@ serve(async (req) => {
     const ANTHROPIC_API_KEY = Deno.env.get("ANTHROPIC_API_KEY");
     if (!ANTHROPIC_API_KEY) throw new Error("ANTHROPIC_API_KEY non configurée");
 
+    // ============================================
+    // USAGE CHECK : limit to 3 messages/day for free tier
+    // ============================================
+    const FREE_DAILY_LIMIT = 3;
+    if (SERVICE_KEY) {
+      try {
+        const sbCheck = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
+
+        // Increment + check via RPC
+        const { data: usageData, error: usageErr } = await sbCheck.rpc("increment_oracle_usage", {
+          p_user_id: userId ?? null,
+          p_session_id: userId ? null : sessionId ?? null,
+        });
+
+        if (!usageErr && usageData && usageData[0]) {
+          const { message_count, unlimited } = usageData[0];
+
+          if (!unlimited && message_count > FREE_DAILY_LIMIT) {
+            // Try to consume a credit instead
+            let creditConsumed = false;
+            if (userId) {
+              const { data: consumed } = await sbCheck.rpc("consume_credit", {
+                p_user_id: userId,
+                p_description: `Oracle ${guideKey || DEFAULT_GUIDE}`,
+              });
+              creditConsumed = Boolean(consumed);
+            }
+
+            if (!creditConsumed) {
+              return new Response(
+                JSON.stringify({
+                  error: "paywall",
+                  paywall: {
+                    reason: "daily_limit",
+                    message_count,
+                    limit: FREE_DAILY_LIMIT,
+                    message: `Tu as utilisé tes ${FREE_DAILY_LIMIT} messages cosmiques du jour. Les astres ne dorment jamais — passe en mode Étoile pour continuer ou recharge-toi avec un pack de crédits.`,
+                  },
+                }),
+                {
+                  status: 402, // Payment Required
+                  headers: { ...corsHeaders, "Content-Type": "application/json" },
+                }
+              );
+            }
+          }
+        }
+      } catch (usageCheckErr) {
+        console.error("Usage check error (non-blocking):", usageCheckErr);
+        // Don't block chat on usage check failures
+      }
+    }
+
     // Select guide (fallback to default if invalid)
     const selectedGuide = GUIDES[guideKey] || GUIDES[DEFAULT_GUIDE];
     let systemPrompt = selectedGuide.prompt;
