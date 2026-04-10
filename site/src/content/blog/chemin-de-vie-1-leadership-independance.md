@@ -1,7 +1,7 @@
 ---
 title: "Chemin de vie 1 en numérologie : leadership, indépendance et mission d'incarnation"
 description: "Tout sur le chemin de vie 1 en numérologie pythagoricienne : personnalité, mission, forces, pièges et compatibilités. Guide complet du pionnier."
-date: 2026-05-14T08:29:00+02:00
+date: 2026-05-07T08:29:00+02:00
 author: "Pythia"
 category: "numerologie"
 tags: ["chemin de vie 1", "numérologie", "leadership", "pionnier"]

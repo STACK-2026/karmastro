@@ -6,7 +6,9 @@ import { siteConfig } from "../../../site.config";
 import { jsonLdBreadcrumbs } from "../../utils/seo";
 import { fullUrl } from "../../utils/config";
 
-const posts = (await getCollection("blog", ({ data }) => !data.draft))
+// Only show published articles (scheduled date has passed)
+const now = new Date();
+const posts = (await getCollection("blog", ({ data }) => !data.draft && data.date.valueOf() <= now.valueOf()))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const breadcrumbs = [

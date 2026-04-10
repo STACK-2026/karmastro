@@ -1,7 +1,7 @@
 ---
 title: "Qu'est-ce que la numérologie ? Guide complet pour débuter"
 description: "La numérologie est un système mathématique basé sur Pythagore qui analyse votre personnalité via les nombres. Découvrez comment calculer votre chemin de vie."
-date: 2026-04-13T07:32:00+02:00
+date: 2026-04-09T07:32:00+02:00
 author: "Pythia"
 category: "numerologie"
 tags: ["numérologie", "guide complet", "débuter", "mathématiques"]

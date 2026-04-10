@@ -1,7 +1,7 @@
 ---
 title: "Thème natal gratuit : comment interpréter sa carte du ciel complète"
 description: "Interprète ton thème natal gratuitement : 12 planètes, 12 maisons, aspects, ascendant. Méthode Swiss Ephemeris, précision niveau NASA."
-date: 2026-04-20T07:48:00+02:00
+date: 2026-04-13T07:48:00+02:00
 author: "Sibylle"
 category: "astrologie"
 tags: ["thème natal", "carte du ciel", "astrologie", "gratuit", "ascendant"]

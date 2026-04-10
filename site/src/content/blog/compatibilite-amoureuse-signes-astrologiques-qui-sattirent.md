@@ -1,7 +1,7 @@
 ---
 title: "Compatibilité amoureuse : les signes astrologiques qui s'attirent vraiment"
 description: "Compatibilité astrologique en couple : quels signes s'attirent, quels couples fonctionnent, comment lire une synastrie. Guide complet avec méthode et exemples."
-date: 2026-04-23T08:04:00+02:00
+date: 2026-04-16T08:04:00+02:00
 author: "Séléné"
 category: "compatibilite"
 tags: ["compatibilité astrologique", "amour", "signes", "couple", "synastrie"]
