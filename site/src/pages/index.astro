@@ -6,13 +6,20 @@ import StatsSection from "../components/StatsSection.astro";
 import FAQ from "../components/FAQ.astro";
 import CTA from "../components/CTA.astro";
 import { siteConfig } from "../../site.config";
-import { jsonLdHomepage } from "../utils/seo";
+import { jsonLdHomepage, jsonLdFaq } from "../utils/seo";
+import { getContent } from "../i18n/content";
+
+const frContent = getContent("fr");
+const homeJsonLd: object[] = [jsonLdHomepage()];
+if (frContent.faq && frContent.faq.length > 0) {
+  homeJsonLd.push(jsonLdFaq(frContent.faq));
+}
 ---
 
 <BaseLayout
   title={`${siteConfig.name} - ${siteConfig.tagline}`}
   description={siteConfig.description}
-  jsonLd={jsonLdHomepage()}
+  jsonLd={homeJsonLd}
 >
   {siteConfig.sections.hero && <Hero />}
   {siteConfig.sections.features && <Features />}
