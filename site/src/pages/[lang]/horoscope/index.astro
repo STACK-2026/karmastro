@@ -59,7 +59,35 @@ const signNameKeys: Record<string, string> = {
 };
 ---
 
-<BaseLayout title={content.seo.horoscope.title} description={content.seo.horoscope.description}>
+<BaseLayout
+  title={content.seo.horoscope.title}
+  description={content.seo.horoscope.description}
+  jsonLd={[
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: content.seo.horoscope.title,
+      description: content.seo.horoscope.description,
+      inLanguage: lang,
+      url: `https://karmastro.com/${lang}/horoscope`,
+      isPartOf: { "@type": "WebSite", name: "Karmastro", url: "https://karmastro.com" },
+      about: { "@type": "Thing", name: "Horoscope", description: "Daily zodiac horoscope for the 12 signs" },
+      hasPart: ZODIAC_SIGNS.map((sign) => ({
+        "@type": "WebPage",
+        name: t(signNameKeys[sign.slug] as any, lang) || sign.name,
+        url: `https://karmastro.com/${lang}/horoscope/${sign.slug}`,
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Karmastro", item: `https://karmastro.com/${lang}` },
+        { "@type": "ListItem", position: 2, name: t("horoscope.title", lang), item: `https://karmastro.com/${lang}/horoscope` },
+      ],
+    },
+  ]}
+>
   <section class="max-w-6xl mx-auto px-4 py-16">
     <div class="text-center mb-12">
       <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">{t("horoscope.daily", lang)}</p>

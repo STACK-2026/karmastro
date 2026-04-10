@@ -15,7 +15,19 @@ const { lang } = Astro.params as { lang: Locale };
 const content = getContent(lang);
 ---
 
-<BaseLayout title={content.seo.referral.title} description={content.seo.referral.description}>
+<BaseLayout
+  title={content.seo.referral.title}
+  description={content.seo.referral.description}
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: content.seo.referral.title,
+    description: content.seo.referral.description,
+    inLanguage: lang,
+    url: `https://karmastro.com/${lang}/parrainage`,
+    isPartOf: { "@type": "WebSite", name: "Karmastro", url: "https://karmastro.com" },
+  }}
+>
   <section class="max-w-4xl mx-auto px-4 py-16">
     <div class="text-center mb-14">
       <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">{t("nav.referral", lang)}</p>
