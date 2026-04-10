@@ -55,6 +55,7 @@ export const siteConfig = {
     { label: "Horoscope", href: "/horoscope" },
     { label: "Outils", href: "/outils" },
     { label: "Le Cosmos", href: "/blog" },
+    { label: "Parrainage", href: "/parrainage" },
     { label: "L'Oracle", href: "https://app.karmastro.com/oracle", external: true },
   ],
 
