@@ -172,6 +172,15 @@
     }
   });
 
+  // Cross-subdomain tier sync : read the km_user_tier cookie (set by the app)
+  // and mirror it into localStorage so pages can gate premium features.
+  try {
+    var m = document.cookie.match(/(?:^|;\s*)km_user_tier=([^;]+)/);
+    if (m && m[1]) {
+      localStorage.setItem("km_user_tier", m[1]);
+    }
+  } catch (e) {}
+
   // Initial pageview
   trackPageView();
 

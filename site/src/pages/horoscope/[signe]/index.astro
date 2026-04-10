@@ -16,8 +16,16 @@ if (!sign) throw new Error(`Unknown sign: ${signe}`);
 
 const dataDir = path.join(process.cwd(), "src/data/horoscope");
 let entry: any = null;
+let tomorrowEntry: any = null;
 let todayDate = new Date().toISOString().slice(0, 10);
+let tomorrowDate = "";
 let archiveDates: string[] = [];
+
+function addDays(dateStr: string, days: number): string {
+  const d = new Date(dateStr + "T12:00:00Z");
+  d.setUTCDate(d.getUTCDate() + days);
+  return d.toISOString().slice(0, 10);
+}
 
 try {
   if (fs.existsSync(dataDir)) {
@@ -28,16 +36,34 @@ try {
 
     archiveDates = files.map((f) => f.replace(".json", "")).reverse();
 
-    if (files.length > 0) {
+    // "Today" horoscope : most recent file whose date is <= real today
+    const realToday = new Date().toISOString().slice(0, 10);
+    const pastFiles = files.filter((f) => f.replace(".json", "") <= realToday);
+    if (pastFiles.length > 0) {
+      const latestFile = pastFiles[pastFiles.length - 1];
+      todayDate = latestFile.replace(".json", "");
+      const data = JSON.parse(fs.readFileSync(path.join(dataDir, latestFile), "utf-8"));
+      entry = data[sign.slug];
+    } else if (files.length > 0) {
       const latestFile = files[files.length - 1];
       todayDate = latestFile.replace(".json", "");
       const data = JSON.parse(fs.readFileSync(path.join(dataDir, latestFile), "utf-8"));
       entry = data[sign.slug];
     }
+
+    // "Tomorrow" horoscope : premium preview
+    tomorrowDate = addDays(todayDate, 1);
+    const tomorrowFile = path.join(dataDir, `${tomorrowDate}.json`);
+    if (fs.existsSync(tomorrowFile)) {
+      const tomorrowData = JSON.parse(fs.readFileSync(tomorrowFile, "utf-8"));
+      tomorrowEntry = tomorrowData[sign.slug];
+    }
   }
 } catch (e) {
   console.warn("Horoscope data load error:", e);
 }
+
+const tomorrowFormatted = tomorrowDate ? formatFrenchDate(tomorrowDate) : "";
 
 const dateFormatted = formatFrenchDate(todayDate);
 const title = `Horoscope ${sign.name} du ${dateFormatted} - Karmastro`;
@@ -172,6 +198,126 @@ const jsonLd = {
             label="Partager cet horoscope"
           />
         </div>
+
+        {/* ═══ TOMORROW PREVIEW (Premium only) ═══ */}
+        <section class="mb-10">
+          <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+            <h2 class="font-serif text-2xl">Demain, {tomorrowFormatted}</h2>
+            <span class="text-xs px-3 py-1 rounded-full bg-gradient-to-r from-amber-300/20 to-purple-400/20 border border-amber-300/40 text-amber-300">
+              Avant-première Étoile
+            </span>
+          </div>
+
+          <div id="tomorrow-container" class="relative">
+            {/* Teaser visible pour tous */}
+            <div class="p-6 rounded-2xl border border-white/10 bg-white/[0.02] relative overflow-hidden">
+              {tomorrowEntry ? (
+                <>
+                  <div id="tomorrow-content" class="transition-all duration-500 filter blur-sm opacity-60" data-locked="true">
+                    <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-2">Énergie cosmique de demain</p>
+                    <p class="text-lg leading-relaxed text-white/90 mb-4">{tomorrowEntry.intro}</p>
+                    <div class="grid md:grid-cols-2 gap-3 text-sm">
+                      {tomorrowEntry.love && (
+                        <div>
+                          <p class="font-serif text-base text-pink-300 mb-1">Amour</p>
+                          <p class="text-white/80 text-sm">{tomorrowEntry.love}</p>
+                        </div>
+                      )}
+                      {tomorrowEntry.work && (
+                        <div>
+                          <p class="font-serif text-base text-amber-300 mb-1">Travail</p>
+                          <p class="text-white/80 text-sm">{tomorrowEntry.work}</p>
+                        </div>
+                      )}
+                      {tomorrowEntry.energy && (
+                        <div>
+                          <p class="font-serif text-base text-emerald-300 mb-1">Énergie</p>
+                          <p class="text-white/80 text-sm">{tomorrowEntry.energy}</p>
+                        </div>
+                      )}
+                      {tomorrowEntry.intuition && (
+                        <div>
+                          <p class="font-serif text-base text-purple-300 mb-1">Intuition</p>
+                          <p class="text-white/80 text-sm">{tomorrowEntry.intuition}</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Paywall overlay */}
+                  <div id="tomorrow-paywall" class="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b from-transparent via-[#0f0a1e]/80 to-[#0f0a1e]/95 p-6 text-center">
+                    <div class="text-4xl mb-3">✦</div>
+                    <p class="font-serif text-xl mb-2 text-white">L'horoscope de demain t'attend</p>
+                    <p class="text-sm text-white/60 mb-5 max-w-sm">
+                      En avant-première pour les voyageuses et voyageurs Étoile. Accès immédiat dès maintenant, sans attendre minuit.
+                    </p>
+                    <div class="flex gap-3 flex-wrap justify-center">
+                      <a
+                        href="https://app.karmastro.com/pricing"
+                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity text-sm"
+                      >
+                        Passer en Étoile · 5,99€/mois
+                      </a>
+                      <button
+                        id="tomorrow-countdown-btn"
+                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white/70 hover:border-amber-300/40 hover:text-amber-300 transition-colors text-sm"
+                      >
+                        <span class="opacity-70">Gratuit dans</span>
+                        <span id="countdown-timer" class="font-mono text-amber-300">--:--:--</span>
+                      </button>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <div class="text-center py-8">
+                  <p class="text-amber-300/80 text-sm mb-2">Les astres écrivent encore ta lecture de demain</p>
+                  <p class="text-white/50 text-xs">Reviens à partir de minuit pour la découvrir</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ Premium unlock script ═══ */}
+        <script is:inline>
+          (function () {
+            // Countdown to next midnight (Paris time)
+            function updateCountdown() {
+              const el = document.getElementById("countdown-timer");
+              if (!el) return;
+              const now = new Date();
+              const tomorrow = new Date(now);
+              tomorrow.setHours(24, 0, 0, 0);
+              const diff = tomorrow - now;
+              if (diff <= 0) { el.textContent = "00:00:00"; return; }
+              const h = Math.floor(diff / 3600000);
+              const m = Math.floor((diff % 3600000) / 60000);
+              const s = Math.floor((diff % 60000) / 1000);
+              el.textContent = String(h).padStart(2, "0") + ":" + String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
+            }
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            // Unlock for Étoile users : check localStorage key written by the app on login/subscription
+            function checkPremium() {
+              try {
+                const tier = localStorage.getItem("km_user_tier");
+                if (tier === "etoile" || tier === "cosmos") {
+                  const content = document.getElementById("tomorrow-content");
+                  const paywall = document.getElementById("tomorrow-paywall");
+                  if (content) {
+                    content.classList.remove("blur-sm", "opacity-60");
+                    content.setAttribute("data-locked", "false");
+                  }
+                  if (paywall) paywall.style.display = "none";
+                }
+              } catch (e) {}
+            }
+            checkPremium();
+            // Re-check when localStorage changes (cross-tab)
+            window.addEventListener("storage", checkPremium);
+          })();
+        </script>
       </>
     )}
 
