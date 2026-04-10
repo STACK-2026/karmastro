@@ -91,6 +91,9 @@ const hreflangUrls = LOCALES.map((locale) => {
     <!-- Favicon -->
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
+    <!-- Analytics tracker -->
+    <script src="/tracker.js" defer is:inline></script>
+
     <!-- JSON-LD -->
     {jsonLdArray.map((ld) => (
       <script type="application/ld+json" set:html={JSON.stringify(ld)} />
