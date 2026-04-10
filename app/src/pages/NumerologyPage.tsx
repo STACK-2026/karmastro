@@ -2,22 +2,22 @@ import { motion } from "framer-motion";
 import { Hash } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { demoProfile } from "@/lib/demoData";
 import { personalYear, personalMonth, personalDay, inclusionTable, getNumberKeyword, getNumberColor } from "@/lib/numerology";
 import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
 import AppHeader from "@/components/AppHeader";
+import { useUserProfile } from "@/hooks/useUserProfile";
 
 const NumerologyPage = () => {
   const navigate = useNavigate();
-  const { numerology } = demoProfile;
-  const bd = demoProfile.birthDate;
-  
+  const profile = useUserProfile();
+  const { numerology, firstName, lastName, birthDate: bd } = profile;
+
   const now = new Date();
   const py = personalYear(bd.getDate(), bd.getMonth() + 1, now.getFullYear());
   const pm = personalMonth(py, now.getMonth() + 1);
   const pd = personalDay(py, now.getMonth() + 1, now.getDate());
-  const inclusion = inclusionTable("Lea Moreau");
+  const inclusion = inclusionTable(`${firstName} ${lastName}`.trim() || "Utilisateur");
 
   const coreNumbers = [
     { label: "Chemin de vie", number: numerology.lifePath.number, desc: numerology.lifePath.label },

@@ -3,16 +3,16 @@ import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { demoProfile } from "@/lib/demoData";
 import { personalYear, personalDay as calcPD, getNumberKeyword, getNumberColor, getMoonPhase } from "@/lib/numerology";
 import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
 import AppHeader from "@/components/AppHeader";
+import { useUserProfile } from "@/hooks/useUserProfile";
 
 const CalendarPage = () => {
   const navigate = useNavigate();
   const [selectedDay, setSelectedDay] = useState<number | null>(8);
-  const bd = demoProfile.birthDate;
+  const { birthDate: bd } = useUserProfile();
   const py = personalYear(bd.getDate(), bd.getMonth() + 1, 2026);
 
   const daysInMonth = 30; // April 2026

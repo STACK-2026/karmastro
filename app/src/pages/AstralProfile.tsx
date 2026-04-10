@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { demoProfile } from "@/lib/demoData";
 import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
 import AppHeader from "@/components/AppHeader";
+import { useUserProfile } from "@/hooks/useUserProfile";
 
 const AstralProfile = () => {
   const navigate = useNavigate();
-  const { astrology } = demoProfile;
+  const { astrology } = useUserProfile();
 
   return (
     <div className="min-h-screen bg-background pb-20 relative">

@@ -7,9 +7,9 @@ import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
-import { demoProfile } from "@/lib/demoData";
 import { personalYear, personalMonth, personalDay } from "@/lib/numerology";
 import { useToast } from "@/hooks/use-toast";
+import { useUserProfile } from "@/hooks/useUserProfile";
 import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
 import ReactMarkdown from "react-markdown";
@@ -123,6 +123,7 @@ const FEEDBACK_OPTIONS = [
 ];
 
 const OraclePage = () => {
+  const userProfile = useUserProfile();
   const navigate = useNavigate();
   const { user } = useAuth();
   const { toast } = useToast();
@@ -208,30 +209,31 @@ const OraclePage = () => {
 
   const currentGuide = guideKey ? GUIDES[guideKey] : null;
 
-  // Build profile context for the Oracle
+  // Build profile context for the Oracle (uses real user profile from Supabase)
   const buildProfileContext = () => {
-    const bd = demoProfile.birthDate;
+    const bd = userProfile.birthDate;
     const now = new Date();
     const py = personalYear(bd.getDate(), bd.getMonth() + 1, now.getFullYear());
     const pm = personalMonth(py, now.getMonth() + 1);
     const pd = personalDay(py, now.getMonth() + 1, now.getDate());
+    const { astrology: a, numerology: n } = userProfile;
 
     return {
-      firstName: demoProfile.firstName,
-      birthDate: "14/04/1992",
-      birthTime: demoProfile.birthTime,
-      birthPlace: demoProfile.birthPlace,
-      sunSign: `${demoProfile.astrology.sunSign.sign} ${demoProfile.astrology.sunSign.symbol}`,
-      moonSign: `${demoProfile.astrology.moonSign.sign} ${demoProfile.astrology.moonSign.symbol}`,
-      ascendant: `${demoProfile.astrology.ascendant.sign} ${demoProfile.astrology.ascendant.symbol}`,
-      lifePath: `${demoProfile.numerology.lifePath.number} (${demoProfile.numerology.lifePath.label})`,
-      expression: `${demoProfile.numerology.expression.number} (${demoProfile.numerology.expression.label})`,
-      soulUrge: `${demoProfile.numerology.soulUrge.number} (${demoProfile.numerology.soulUrge.label})`,
+      firstName: userProfile.firstName,
+      birthDate: bd.toLocaleDateString("fr-FR"),
+      birthTime: userProfile.birthTime,
+      birthPlace: userProfile.birthPlace,
+      sunSign: `${a.sunSign.sign} ${a.sunSign.symbol}`,
+      moonSign: `${a.moonSign.sign} ${a.moonSign.symbol}`,
+      ascendant: `${a.ascendant.sign} ${a.ascendant.symbol}`,
+      lifePath: `${n.lifePath.number} (${n.lifePath.label})`,
+      expression: `${n.expression.number} (${n.expression.label})`,
+      soulUrge: `${n.soulUrge.number} (${n.soulUrge.label})`,
       personalYear: py,
       personalMonth: pm,
       personalDay: pd,
-      karmicDebts: demoProfile.numerology.karmicDebts.length > 0 ? demoProfile.numerology.karmicDebts.join(", ") : "aucune",
-      northNode: `${demoProfile.numerology.northNode.sign} M${demoProfile.numerology.northNode.house} - ${demoProfile.numerology.northNode.lesson}`,
+      karmicDebts: n.karmicDebts.length > 0 ? n.karmicDebts.join(", ") : "aucune",
+      northNode: `${n.northNode.sign} M${n.northNode.house} - ${n.northNode.lesson}`,
     };
   };
 

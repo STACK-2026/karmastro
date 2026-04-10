@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import { Sparkles, Star, Hash, Moon, Zap, BookOpen, Share2, Copy, Check, Users } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { demoProfile } from "@/lib/demoData";
 import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
 import AppHeader from "@/components/AppHeader";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { useUserProfile } from "@/hooks/useUserProfile";
 
 const ProfilePage = () => {
   const navigate = useNavigate();
-  const { astrology, numerology } = demoProfile;
+  const profile = useUserProfile();
+  const { astrology, numerology, firstName, lastName, birthDate, birthTime, birthPlace } = profile;
   const { user } = useAuth();
   const { toast } = useToast();
 
@@ -93,9 +94,9 @@ const ProfilePage = () => {
           <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-3">
             <Sparkles className="h-8 w-8 text-primary" />
           </div>
-          <h2 className="font-serif text-2xl">{demoProfile.firstName} {demoProfile.lastName}</h2>
+          <h2 className="font-serif text-2xl">{firstName} {lastName}</h2>
           <p className="text-sm text-muted-foreground mt-1">
-            {demoProfile.birthDate.toLocaleDateString("fr-FR")} · {demoProfile.birthTime} · {demoProfile.birthPlace}
+            {birthDate.toLocaleDateString("fr-FR")} · {birthTime} · {birthPlace}
           </p>
 
           <div className="flex justify-center gap-6 mt-4">

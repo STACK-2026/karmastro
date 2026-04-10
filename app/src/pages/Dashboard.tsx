@@ -4,7 +4,8 @@ import AppHeader from "@/components/AppHeader";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
-import { demoProfile, dailyMessages } from "@/lib/demoData";
+import { dailyMessages } from "@/lib/demoData";
+import { useUserProfile } from "@/hooks/useUserProfile";
 import { getPersonalizedHooks, type OracleHook } from "@/lib/oracleHooks";
 import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
@@ -90,9 +91,8 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const [messageExpanded, setMessageExpanded] = useState(false);
   const { user } = useAuth();
-
-  // Real user profile (first_name)
-  const [firstName, setFirstName] = useState<string>(demoProfile.firstName);
+  const userProfile = useUserProfile();
+  const { firstName, astrology, numerology } = userProfile;
 
   // Fetch real conversation titles for personalized hooks
   const [hooks, setHooks] = useState<OracleHook[]>(() => getPersonalizedHooks([], 5));
@@ -100,16 +100,6 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (!user) return;
-    const fetchProfile = async () => {
-      const { data } = await supabase
-        .from("profiles")
-        .select("first_name")
-        .eq("user_id", user.id)
-        .maybeSingle();
-      if (data?.first_name) setFirstName(data.first_name);
-    };
-    fetchProfile();
-
     const fetchConversations = async () => {
       const { data } = await supabase
         .from("oracle_conversations")
@@ -143,8 +133,8 @@ const Dashboard = () => {
         title={`Bonjour ${firstName}`}
         rightContent={
           <div className="text-right">
-            <p className="text-xs text-muted-foreground">{demoProfile.astrology.sunSign.symbol} {demoProfile.astrology.moonSign.symbol} {demoProfile.astrology.ascendant.symbol}</p>
-            <p className="text-xs font-mono text-primary">CV {demoProfile.numerology.lifePath.number} · AP {demoProfile.numerology.personalYear2026}</p>
+            <p className="text-xs text-muted-foreground">{astrology.sunSign.symbol} {astrology.moonSign.symbol || "·"} {astrology.ascendant.symbol || "·"}</p>
+            <p className="text-xs font-mono text-primary">CV {numerology.lifePath.number} · AP {numerology.personalYear2026}</p>
           </div>
         }
       />
