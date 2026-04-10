@@ -1,0 +1,103 @@
+---
+// Language switcher dropdown
+// Shows current language, opens menu with all 11 options
+// Persists choice in a cookie so future visits remember
+
+import { LOCALES, LOCALE_NAMES, LOCALE_FLAGS, DEFAULT_LOCALE, type Locale, extractLocale } from "../i18n/config";
+
+const pathname = Astro.url.pathname;
+const currentLocale = extractLocale(pathname);
+---
+
+<div class="lang-switcher relative inline-block">
+  <button
+    type="button"
+    class="lang-trigger inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm border border-white/10 bg-white/[0.02] hover:border-amber-300/40 transition-colors"
+    aria-label="Language selector"
+    aria-expanded="false"
+  >
+    <span>{LOCALE_FLAGS[currentLocale]}</span>
+    <span class="text-white/80">{LOCALE_NAMES[currentLocale]}</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  </button>
+
+  <div class="lang-menu hidden absolute right-0 top-full mt-2 z-50 min-w-[180px] p-1 rounded-xl border border-white/15 bg-[#0f0a1e]/95 backdrop-blur-xl shadow-2xl max-h-80 overflow-y-auto">
+    {LOCALES.map((locale) => (
+      <a
+        href={`/${locale === DEFAULT_LOCALE ? "" : locale + "/"}`}
+        data-lang={locale}
+        class={`lang-option flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-colors ${
+          locale === currentLocale ? "text-amber-300 bg-amber-300/10" : "text-white/80 hover:bg-white/5"
+        }`}
+      >
+        <span>{LOCALE_FLAGS[locale]}</span>
+        <span>{LOCALE_NAMES[locale]}</span>
+      </a>
+    ))}
+  </div>
+</div>
+
+<script>
+  const LOCALES_CLIENT = ["fr", "en", "es", "pt", "de", "it", "tr", "ar", "ja", "pl", "ru"];
+  const DEFAULT_LOCALE_CLIENT = "fr";
+
+  function setupLanguageSwitchers() {
+    document.querySelectorAll<HTMLElement>(".lang-switcher").forEach((widget) => {
+      if (widget.dataset.initialized === "true") return;
+      widget.dataset.initialized = "true";
+
+      const trigger = widget.querySelector<HTMLButtonElement>(".lang-trigger");
+      const menu = widget.querySelector<HTMLElement>(".lang-menu");
+      if (!trigger || !menu) return;
+
+      trigger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isOpen = !menu.classList.contains("hidden");
+        document.querySelectorAll(".lang-menu").forEach((m) => m.classList.add("hidden"));
+        if (!isOpen) menu.classList.remove("hidden");
+        trigger.setAttribute("aria-expanded", String(!isOpen));
+      });
+
+      // Persist language choice
+      widget.querySelectorAll<HTMLAnchorElement>(".lang-option").forEach((link) => {
+        link.addEventListener("click", () => {
+          const lang = link.dataset.lang;
+          if (lang) {
+            document.cookie = `karmastro_lang=${lang}; path=/; max-age=31536000; SameSite=Lax; Domain=.karmastro.com`;
+          }
+        });
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!widget.contains(e.target as Node)) {
+          menu.classList.add("hidden");
+          trigger.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+  }
+
+  // Auto-detect browser language on first visit
+  function detectAndSuggestLanguage() {
+    if (document.cookie.includes("karmastro_lang=")) return;
+
+    const browserLang = (navigator.language || "fr").slice(0, 2).toLowerCase();
+    if (!LOCALES_CLIENT.includes(browserLang)) return;
+
+    // Get current locale from URL
+    const pathParts = location.pathname.split("/").filter(Boolean);
+    const currentLocale = LOCALES_CLIENT.includes(pathParts[0]) && pathParts[0] !== DEFAULT_LOCALE_CLIENT
+      ? pathParts[0]
+      : DEFAULT_LOCALE_CLIENT;
+
+    if (browserLang === currentLocale) {
+      // Already on the right locale, set cookie
+      document.cookie = `karmastro_lang=${browserLang}; path=/; max-age=31536000; SameSite=Lax`;
+    }
+    // We don't auto-redirect to avoid breaking UX ; user can click the switcher
+  }
+
+  setupLanguageSwitchers();
+  detectAndSuggestLanguage();
+  document.addEventListener("astro:page-load", setupLanguageSwitchers);
+</script>

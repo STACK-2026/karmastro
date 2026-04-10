@@ -4,6 +4,7 @@ import { fontsUrl } from "../utils/config";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import CookieBanner from "../components/CookieBanner.astro";
+import { LOCALES, DEFAULT_LOCALE, extractLocale, stripLocalePrefix, isRTL } from "../i18n/config";
 import "../styles/global.css";
 
 interface Props {
@@ -30,10 +31,24 @@ const {
 
 const imageUrl = ogImage?.startsWith("http") ? ogImage : `${siteConfig.url}${ogImage}`;
 const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+
+// i18n
+const currentLocale = extractLocale(Astro.url.pathname);
+const isRightToLeft = isRTL(currentLocale);
+const pathWithoutLocale = stripLocalePrefix(Astro.url.pathname);
+
+// Build hreflang URLs for all 11 locales
+const hreflangUrls = LOCALES.map((locale) => {
+  const prefix = locale === DEFAULT_LOCALE ? "" : `/${locale}`;
+  return {
+    locale,
+    url: `${siteConfig.url}${prefix}${pathWithoutLocale}`,
+  };
+});
 ---
 
 <!doctype html>
-<html lang={siteConfig.language}>
+<html lang={currentLocale} dir={isRightToLeft ? "rtl" : "ltr"}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -50,9 +65,11 @@ const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     <meta name="keywords" content={siteConfig.keywords.join(", ")} />
     {noIndex && <meta name="robots" content="noindex, nofollow" />}
 
-    <!-- Hreflang -->
-    <link rel="alternate" hreflang={siteConfig.locale} href={canonicalUrl} />
-    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+    <!-- Hreflang tags for all 11 locales -->
+    {hreflangUrls.map(({ locale, url }) => (
+      <link rel="alternate" hreflang={locale} href={url} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={`${siteConfig.url}${pathWithoutLocale}`} />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
