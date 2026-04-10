@@ -1,0 +1,148 @@
+---
+// Newsletter capture widget
+// Auto-detects locale from URL path (fr|en|es|...) and sends to newsletter-subscribe edge function
+// Props :
+//   - sign : optional zodiac sign slug to pre-fill (from horoscope pages)
+//   - variant : "card" (full form) | "inline" (compact, for blog/sidebars)
+//   - source : tracked in DB for analytics
+
+import { extractLocale } from "../i18n/config";
+import { t } from "../i18n/translations";
+
+export interface Props {
+  sign?: string;
+  variant?: "card" | "inline";
+  source?: string;
+}
+
+const { sign, variant = "card", source = "default" } = Astro.props;
+const locale = extractLocale(Astro.url.pathname);
+
+// Minimal i18n labels (fallback FR)
+const LABELS: Record<string, { title: string; sub: string; placeholder: string; cta: string; loading: string; success: string; already: string; error: string; privacy: string }> = {
+  fr: { title: "Reçois ton horoscope chaque matin", sub: "Sibylle l'écrit avec les vraies données cosmiques du jour. Gratuit, sans publicité, désabonnement en un clic.", placeholder: "ton@email.com", cta: "Recevoir mon horoscope", loading: "Envoi...", success: "✦ Check tes emails pour confirmer", already: "Tu es déjà abonné(e) ✦", error: "Une erreur cosmique est survenue", privacy: "On garde ton email pour l'horoscope, rien d'autre. RGPD." },
+  en: { title: "Receive your horoscope every morning", sub: "Sibylle writes it with real cosmic data. Free, no ads, one-click unsubscribe.", placeholder: "your@email.com", cta: "Receive my horoscope", loading: "Sending...", success: "✦ Check your inbox to confirm", already: "You're already subscribed ✦", error: "A cosmic error occurred", privacy: "We keep your email for the horoscope, nothing else. GDPR compliant." },
+  es: { title: "Recibe tu horóscopo cada mañana", sub: "Sibila lo escribe con datos cósmicos reales. Gratis, sin publicidad, darse de baja en un clic.", placeholder: "tu@email.com", cta: "Recibir mi horóscopo", loading: "Enviando...", success: "✦ Revisa tu bandeja para confirmar", already: "Ya estás suscrito(a) ✦", error: "Ocurrió un error cósmico", privacy: "Guardamos tu email solo para el horóscopo. Cumple con el RGPD." },
+  pt: { title: "Recebe o teu horóscopo todas as manhãs", sub: "Sibila escreve-o com dados cósmicos reais. Gratuito, sem publicidade, cancelar com um clique.", placeholder: "o-teu@email.com", cta: "Receber o meu horóscopo", loading: "A enviar...", success: "✦ Verifica a tua caixa para confirmar", already: "Já estás subscrito(a) ✦", error: "Ocorreu um erro cósmico", privacy: "Guardamos o teu email apenas para o horóscopo. Conforme RGPD." },
+  de: { title: "Erhalte dein Horoskop jeden Morgen", sub: "Sibylle schreibt es mit echten kosmischen Daten. Kostenlos, werbefrei, Abmeldung mit einem Klick.", placeholder: "deine@email.com", cta: "Mein Horoskop erhalten", loading: "Wird gesendet...", success: "✦ Prüfe dein Postfach zur Bestätigung", already: "Du bist bereits abonniert ✦", error: "Ein kosmischer Fehler ist aufgetreten", privacy: "Wir speichern deine E-Mail nur für das Horoskop. DSGVO-konform." },
+  it: { title: "Ricevi il tuo oroscopo ogni mattina", sub: "Sibilla lo scrive con veri dati cosmici. Gratuito, senza pubblicità, disiscrizione in un clic.", placeholder: "tua@email.com", cta: "Ricevere il mio oroscopo", loading: "Invio...", success: "✦ Controlla la tua casella per confermare", already: "Sei già iscritta(o) ✦", error: "Si è verificato un errore cosmico", privacy: "Conserviamo la tua email solo per l'oroscopo. Conforme GDPR." },
+  tr: { title: "Burcunu her sabah al", sub: "Sibylle gerçek kozmik verilerle yazar. Ücretsiz, reklamsız, tek tıkla abonelikten çık.", placeholder: "senin@email.com", cta: "Burcumu al", loading: "Gönderiliyor...", success: "✦ Onaylamak için gelen kutunu kontrol et", already: "Zaten abonesin ✦", error: "Kozmik bir hata oluştu", privacy: "E-postanı sadece burç için saklıyoruz. GDPR uyumlu." },
+  pl: { title: "Otrzymuj horoskop każdego ranka", sub: "Sybilla pisze go z prawdziwymi danymi kosmicznymi. Darmowe, bez reklam, wypisanie jednym kliknięciem.", placeholder: "twoj@email.com", cta: "Otrzymuj mój horoskop", loading: "Wysyłanie...", success: "✦ Sprawdź skrzynkę, aby potwierdzić", already: "Jesteś już subskrybowany ✦", error: "Wystąpił kosmiczny błąd", privacy: "Zachowujemy twój email tylko dla horoskopu. Zgodne z RODO." },
+  ru: { title: "Получай гороскоп каждое утро", sub: "Сивилла пишет его с реальными космическими данными. Бесплатно, без рекламы, отписка в один клик.", placeholder: "твой@email.com", cta: "Получать гороскоп", loading: "Отправка...", success: "✦ Проверь почту для подтверждения", already: "Ты уже подписан ✦", error: "Произошла космическая ошибка", privacy: "Мы храним твой email только для гороскопа. Соответствует GDPR." },
+  ja: { title: "毎朝ホロスコープを受け取る", sub: "シビラが本物の宇宙データで書きます。無料、広告なし、ワンクリックで配信停止。", placeholder: "あなたの@email.com", cta: "ホロスコープを受け取る", loading: "送信中...", success: "✦ 確認のため受信箱をチェック", already: "すでに購読済みです ✦", error: "宇宙的なエラーが発生しました", privacy: "メールはホロスコープ専用です。GDPR準拠。" },
+  ar: { title: "استقبل برجك كل صباح", sub: "تكتبه سيبيلا بالبيانات الكونية الحقيقية. مجاني، بدون إعلانات، إلغاء الاشتراك بنقرة واحدة.", placeholder: "بريدك@email.com", cta: "استقبل برجي", loading: "جار الإرسال...", success: "✦ تحقق من بريدك للتأكيد", already: "أنت مشترك بالفعل ✦", error: "حدث خطأ كوني", privacy: "نحتفظ ببريدك للبرج فقط، لا شيء آخر. متوافق مع GDPR." },
+};
+
+const L = LABELS[locale] || LABELS.fr;
+
+// Unique form id to avoid conflicts if multiple widgets on same page
+const formId = `newsletter-${Math.random().toString(36).slice(2, 10)}`;
+---
+
+{variant === "card" ? (
+  <section class={`newsletter-capture not-prose my-8 p-6 rounded-2xl border border-amber-300/30 bg-gradient-to-br from-amber-300/5 to-purple-400/5 text-center`}>
+    <div class="text-4xl mb-3">✦</div>
+    <h2 class="font-serif text-2xl text-white mb-2">{L.title}</h2>
+    <p class="text-sm text-white/70 mb-5 max-w-md mx-auto leading-relaxed">{L.sub}</p>
+    <form id={formId} class="newsletter-form max-w-md mx-auto flex flex-col sm:flex-row gap-2" data-source={source} data-locale={locale} data-sign={sign || ""}>
+      <input
+        type="email"
+        name="email"
+        required
+        placeholder={L.placeholder}
+        class="flex-1 px-4 py-3 rounded-xl bg-white/[0.05] border border-white/15 text-white placeholder:text-white/40 focus:border-amber-300/60 focus:outline-none text-sm"
+      />
+      <button type="submit" class="px-5 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity whitespace-nowrap">
+        {L.cta}
+      </button>
+    </form>
+    <p class="newsletter-message mt-3 text-xs text-white/60 hidden" role="status"></p>
+    <p class="text-[10px] text-white/40 mt-4">{L.privacy}</p>
+  </section>
+) : (
+  <section class={`newsletter-capture not-prose my-6 p-4 rounded-xl border border-white/10 bg-white/[0.02]`}>
+    <p class="text-sm text-white/80 mb-3"><span class="text-amber-300">✦</span> {L.title}</p>
+    <form id={formId} class="newsletter-form flex gap-2" data-source={source} data-locale={locale} data-sign={sign || ""}>
+      <input
+        type="email"
+        name="email"
+        required
+        placeholder={L.placeholder}
+        class="flex-1 px-3 py-2 rounded-lg bg-white/[0.05] border border-white/15 text-white placeholder:text-white/40 focus:border-amber-300/60 focus:outline-none text-xs"
+      />
+      <button type="submit" class="px-3 py-2 rounded-lg bg-amber-300 text-[#0f0a1e] font-semibold text-xs hover:opacity-90 transition-opacity whitespace-nowrap">
+        {L.cta}
+      </button>
+    </form>
+    <p class="newsletter-message mt-2 text-[10px] text-white/60 hidden" role="status"></p>
+  </section>
+)}
+
+<script is:inline define:vars={{ L, formId }}>
+  (function () {
+    const form = document.getElementById(formId);
+    if (!form) return;
+    const msgEl = form.parentElement.querySelector(".newsletter-message");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = form.email.value.trim();
+      const locale = form.dataset.locale || "fr";
+      const sign = form.dataset.sign || null;
+      const source = form.dataset.source || null;
+
+      const btn = form.querySelector("button");
+      const origText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = L.loading;
+      msgEl.classList.add("hidden");
+
+      // Get UTM params from URL
+      const params = new URLSearchParams(location.search);
+
+      try {
+        const resp = await fetch("https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/newsletter-subscribe", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ramJtYmRydmVqZW16cmdneHZyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU3NzE1MjUsImV4cCI6MjA5MTM0NzUyNX0.KYc8rXIC0RPMskW6eJIE_EranUcLK6nckCAWEph-340",
+            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ramJtYmRydmVqZW16cmdneHZyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU3NzE1MjUsImV4cCI6MjA5MTM0NzUyNX0.KYc8rXIC0RPMskW6eJIE_EranUcLK6nckCAWEph-340",
+          },
+          body: JSON.stringify({
+            email,
+            locale,
+            sign_slug: sign || null,
+            source,
+            utm_source: params.get("utm_source"),
+            utm_medium: params.get("utm_medium"),
+            utm_campaign: params.get("utm_campaign"),
+          }),
+        });
+        const data = await resp.json();
+
+        if (resp.ok && data.success) {
+          if (data.status === "already_subscribed") {
+            msgEl.textContent = L.already;
+          } else {
+            msgEl.textContent = L.success;
+          }
+          msgEl.className = "newsletter-message mt-3 text-xs text-emerald-300";
+          form.reset();
+          // Track event
+          if (window.km && window.km.trackEvent) {
+            window.km.trackEvent("newsletter_subscribe", { locale, sign, source, status: data.status });
+          }
+        } else {
+          msgEl.textContent = L.error;
+          msgEl.className = "newsletter-message mt-3 text-xs text-rose-300";
+        }
+      } catch (err) {
+        msgEl.textContent = L.error;
+        msgEl.className = "newsletter-message mt-3 text-xs text-rose-300";
+      } finally {
+        btn.disabled = false;
+        btn.textContent = origText;
+      }
+    });
+  })();
+</script>

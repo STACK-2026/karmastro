@@ -6,22 +6,33 @@ import { ZODIAC_SIGNS, formatFrenchDate } from "../../data/zodiac";
 import fs from "fs";
 import path from "path";
 
-// Load today's horoscope file (latest available in data/horoscope/)
+// Load today's horoscope file (Paris timezone, strictly <= today)
 const dataDir = path.join(process.cwd(), "src/data/horoscope");
 let todayData: Record<string, any> = {};
-let todayDate = new Date().toISOString().slice(0, 10);
+function parisDate(): string {
+  return new Intl.DateTimeFormat("fr-CA", {
+    timeZone: "Europe/Paris",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+}
+let todayDate = parisDate();
 let hasData = false;
 
 try {
   if (fs.existsSync(dataDir)) {
+    const realToday = parisDate();
     const files = fs
       .readdirSync(dataDir)
       .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
       .sort();
-    if (files.length > 0) {
-      const latestFile = files[files.length - 1];
-      todayDate = latestFile.replace(".json", "");
-      todayData = JSON.parse(fs.readFileSync(path.join(dataDir, latestFile), "utf-8"));
+    // Only past-or-today files
+    const pastFiles = files.filter((f) => f.replace(".json", "") <= realToday);
+    const pickFile = pastFiles.length > 0 ? pastFiles[pastFiles.length - 1] : files[files.length - 1];
+    if (pickFile) {
+      todayDate = pickFile.replace(".json", "");
+      todayData = JSON.parse(fs.readFileSync(path.join(dataDir, pickFile), "utf-8"));
       hasData = true;
     }
   }
@@ -58,6 +69,72 @@ const jsonLd = {
       <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
         Lecture cosmique pour les 12 signes, calculée avec Swiss Ephemeris et signée par Sibylle, notre oracle mystique.
       </p>
+
+      {/* Discreet NASA-precision + geo widget */}
+      <div class="mt-6 inline-flex items-center gap-3 px-4 py-2 rounded-full border border-amber-300/20 bg-amber-300/5 text-[11px] text-white/60">
+        <span class="flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-300 animate-pulse"></span>
+          <span id="geo-precision">Précision NASA JPL</span>
+        </span>
+        <span class="text-white/20">·</span>
+        <span id="geo-location" class="tabular-nums">—</span>
+      </div>
+    </div>
+
+    {/* Geo detection script : silent, no user-facing detection message */}
+    <script is:inline>
+      (function () {
+        const locEl = document.getElementById("geo-location");
+        const precEl = document.getElementById("geo-precision");
+        if (!locEl) return;
+
+        // 1. Local time (instant, no permission needed)
+        const updateTime = () => {
+          const now = new Date();
+          const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "Europe/Paris";
+          const timeStr = new Intl.DateTimeFormat("fr-FR", { timeZone: tz, hour: "2-digit", minute: "2-digit" }).format(now);
+          const current = locEl.textContent || "";
+          // Only update the time part, keep city if detected
+          if (current.includes("·")) {
+            const [city] = current.split(" · ");
+            locEl.textContent = `${city} · ${timeStr}`;
+          } else if (current === "—") {
+            locEl.textContent = timeStr;
+          }
+        };
+        updateTime();
+        setInterval(updateTime, 30000);
+
+        // 2. City from IP (cached 24h in localStorage)
+        async function getCity() {
+          try {
+            const cached = localStorage.getItem("km_geo_city");
+            const cachedAt = parseInt(localStorage.getItem("km_geo_city_at") || "0", 10);
+            if (cached && Date.now() - cachedAt < 24 * 3600 * 1000) return cached;
+
+            const resp = await fetch("https://ipapi.co/json/", { cache: "default" });
+            if (!resp.ok) return null;
+            const data = await resp.json();
+            const city = data.city || null;
+            if (city) {
+              localStorage.setItem("km_geo_city", city);
+              localStorage.setItem("km_geo_city_at", String(Date.now()));
+            }
+            return city;
+          } catch {
+            return null;
+          }
+        }
+
+        getCity().then((city) => {
+          if (city) {
+            const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "Europe/Paris";
+            const timeStr = new Intl.DateTimeFormat("fr-FR", { timeZone: tz, hour: "2-digit", minute: "2-digit" }).format(new Date());
+            locEl.textContent = `${city} · ${timeStr}`;
+          }
+        });
+      })();
+    </script>
     </div>
 
     {!hasData && (

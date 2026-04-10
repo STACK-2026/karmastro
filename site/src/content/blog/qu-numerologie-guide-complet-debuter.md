@@ -7,6 +7,8 @@ category: "numerologie"
 tags: ["numérologie", "guide complet", "débuter", "mathématiques"]
 keywords: "numérologie, guide complet, débuter, mathématiques"
 draft: false
+image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&h=630&fit=crop&crop=center&q=80"
+imageAlt: "Équations numérologiques pythagoriciennes sur fond cosmique violet"
 ---
 
 ## Sommaire

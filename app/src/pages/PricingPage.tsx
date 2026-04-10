@@ -9,41 +9,9 @@ import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { trackEvent } from "@/lib/tracker";
+import { detectLocale, formatPrice } from "@/lib/locale";
 
 const CHECKOUT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/stripe-checkout";
-
-// Locale detection from navigator + pricing display per locale
-function detectLocale(): string {
-  if (typeof navigator === "undefined") return "fr";
-  const lang = navigator.language?.slice(0, 2).toLowerCase() || "fr";
-  const supported = ["fr", "en", "es", "pt", "de", "it", "tr", "pl", "ja", "ar", "ru"];
-  return supported.includes(lang) ? lang : "en";
-}
-
-// Currency mapping matches edge function LOCALE_CURRENCY
-const LOCALE_CURRENCY: Record<string, { code: string; symbol: string; symbolBefore: boolean; rate: number; zeroDecimal: boolean }> = {
-  fr: { code: "EUR", symbol: "€", symbolBefore: false, rate: 1, zeroDecimal: false },
-  es: { code: "EUR", symbol: "€", symbolBefore: false, rate: 1, zeroDecimal: false },
-  pt: { code: "EUR", symbol: "€", symbolBefore: false, rate: 1, zeroDecimal: false },
-  de: { code: "EUR", symbol: "€", symbolBefore: false, rate: 1, zeroDecimal: false },
-  it: { code: "EUR", symbol: "€", symbolBefore: false, rate: 1, zeroDecimal: false },
-  en: { code: "USD", symbol: "$", symbolBefore: true, rate: 1.08, zeroDecimal: false },
-  tr: { code: "TRY", symbol: "₺", symbolBefore: false, rate: 37, zeroDecimal: false },
-  pl: { code: "PLN", symbol: "zł", symbolBefore: false, rate: 4.3, zeroDecimal: false },
-  ja: { code: "JPY", symbol: "¥", symbolBefore: true, rate: 165, zeroDecimal: true },
-  ar: { code: "USD", symbol: "$", symbolBefore: true, rate: 1.08, zeroDecimal: false },
-  ru: { code: "USD", symbol: "$", symbolBefore: true, rate: 1.08, zeroDecimal: false },
-};
-
-function formatPrice(eurAmount: number, locale: string): string {
-  const currency = LOCALE_CURRENCY[locale] || LOCALE_CURRENCY.fr;
-  const localAmount = eurAmount * currency.rate;
-  const decimals = currency.zeroDecimal ? 0 : 2;
-  const rounded = localAmount.toFixed(decimals);
-  const [intPart, decPart] = rounded.split(".");
-  const formatted = decPart ? `${intPart},${decPart}` : intPart;
-  return currency.symbolBefore ? `${currency.symbol}${formatted}` : `${formatted}${currency.symbol}`;
-}
 
 type CurrentPlan = {
   tier: string;

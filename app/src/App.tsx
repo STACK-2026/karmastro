@@ -23,11 +23,22 @@ import NotFound from "./pages/NotFound.tsx";
 import CookieBanner from "./components/CookieBanner.tsx";
 import { usePageTracking } from "./hooks/usePageTracking";
 import { OnboardingGate } from "./components/OnboardingGate";
+import { useEffect } from "react";
+import { detectLocale, applyLocaleToDocument } from "./lib/locale";
 
 const queryClient = new QueryClient();
 
 const TrackingProvider = ({ children }: { children: React.ReactNode }) => {
   usePageTracking();
+  return <>{children}</>;
+};
+
+// Apply detected locale to <html lang> on mount so screen readers + SEO
+// pick up the correct language when the user arrives from a non-FR site URL.
+const LocaleInit = ({ children }: { children: React.ReactNode }) => {
+  useEffect(() => {
+    applyLocaleToDocument(detectLocale());
+  }, []);
   return <>{children}</>;
 };
 
@@ -38,6 +49,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <LocaleInit>
           <TrackingProvider>
             <OnboardingGate>
             <Routes>
@@ -60,6 +72,7 @@ const App = () => (
             </Routes>
             </OnboardingGate>
           </TrackingProvider>
+          </LocaleInit>
         </BrowserRouter>
         <CookieBanner />
       </TooltipProvider>

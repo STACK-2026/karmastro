@@ -17,22 +17,35 @@ export function getStaticPaths() {
 const { lang } = Astro.params as { lang: Locale };
 const content = getContent(lang);
 
-// Load today's horoscope data (same as main /horoscope)
+// Load today's horoscope data (Paris timezone, strictly <= today)
 const dataDir = path.join(process.cwd(), "src/data/horoscope");
+function parisDate(): string {
+  return new Intl.DateTimeFormat("fr-CA", {
+    timeZone: "Europe/Paris",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+}
 let todayData: Record<string, any> = {};
-let todayDate = new Date().toISOString().slice(0, 10);
+let todayDate = parisDate();
 let hasData = false;
 
 try {
   if (fs.existsSync(dataDir)) {
+    const realToday = parisDate();
     const files = fs
       .readdirSync(dataDir)
       .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
       .sort();
-    if (files.length > 0) {
-      const latestFile = files[files.length - 1];
-      todayDate = latestFile.replace(".json", "");
-      todayData = JSON.parse(fs.readFileSync(path.join(dataDir, latestFile), "utf-8"));
+    const pastFiles = files.filter((f) => f.replace(".json", "") <= realToday);
+    const pickFile = pastFiles.length > 0 ? pastFiles[pastFiles.length - 1] : files[files.length - 1];
+    if (pickFile) {
+      todayDate = pickFile.replace(".json", "");
+      // Try localized version first
+      const localized = path.join(dataDir, `${todayDate}-${lang}.json`);
+      const src = fs.existsSync(localized) ? localized : path.join(dataDir, pickFile);
+      todayData = JSON.parse(fs.readFileSync(src, "utf-8"));
       hasData = true;
     }
   }
