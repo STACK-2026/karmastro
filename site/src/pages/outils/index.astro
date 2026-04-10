@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ShareButton from "../../components/ShareButton.astro";
+import CounterNumber from "../../components/CounterNumber.astro";
 
 const title = "Calculateurs gratuits d'astrologie et de numérologie - Karmastro";
 const description =
@@ -156,6 +157,33 @@ const jsonLd = {
           </div>
         </a>
       ))}
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
+      <div class="p-5 rounded-2xl border border-white/10 bg-white/[0.02] text-center">
+        <p class="text-4xl font-serif text-amber-300 mb-1">
+          <CounterNumber value={9} duration={1500} />
+        </p>
+        <p class="text-xs text-white/70">Calculateurs gratuits</p>
+      </div>
+      <div class="p-5 rounded-2xl border border-white/10 bg-white/[0.02] text-center">
+        <p class="text-4xl font-serif text-amber-300 mb-1">
+          0<span class="text-2xl">€</span>
+        </p>
+        <p class="text-xs text-white/70">Coût total</p>
+      </div>
+      <div class="p-5 rounded-2xl border border-white/10 bg-white/[0.02] text-center">
+        <p class="text-4xl font-serif text-amber-300 mb-1">
+          <CounterNumber value={100} suffix="%" duration={1500} />
+        </p>
+        <p class="text-xs text-white/70">Sans compte requis</p>
+      </div>
+      <div class="p-5 rounded-2xl border border-white/10 bg-white/[0.02] text-center">
+        <p class="text-4xl font-serif text-amber-300 mb-1">
+          <CounterNumber value={0.001} decimals={3} suffix='"' duration={1500} />
+        </p>
+        <p class="text-xs text-white/70">Précision seconde d'arc</p>
+      </div>
     </div>
 
     <div class="p-8 rounded-3xl border border-purple-400/20 bg-purple-400/5 text-center mb-14">

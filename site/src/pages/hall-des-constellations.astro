@@ -68,7 +68,7 @@ const jsonLd = {
       </p>
     </div>
 
-    {topParrains.length === 0 && (
+    <div id="hall-empty" class={topParrains.length === 0 ? "" : "hidden"}>
       <div class="text-center py-20 border border-amber-300/20 rounded-2xl bg-amber-300/5">
         <div class="text-6xl mb-4">✨</div>
         <h2 class="font-serif text-2xl mb-3">Les premières étoiles attendent</h2>
@@ -82,12 +82,10 @@ const jsonLd = {
           Découvrir le programme de parrainage
         </a>
       </div>
-    )}
+    </div>
 
-    {podium.length > 0 && (
-      <>
-        <div class="grid md:grid-cols-3 gap-4 mb-10">
-          {podium.map((parrain, i) => {
+    <div id="hall-podium" class={`grid md:grid-cols-3 gap-4 mb-10 ${podium.length === 0 ? "hidden" : ""}`}>
+      {podium.length > 0 && podium.map((parrain, i) => {
             const rank = i + 1;
             const rankBg = rank === 1 ? "from-amber-300/20 to-amber-300/5 border-amber-300/50"
               : rank === 2 ? "from-white/10 to-white/5 border-white/30"
@@ -120,14 +118,11 @@ const jsonLd = {
               </div>
             );
           })}
-        </div>
-      </>
-    )}
+    </div>
 
-    {rest.length > 0 && (
-      <div class="mb-10">
-        <h2 class="font-serif text-2xl mb-4 text-center">Les autres bâtisseurs</h2>
-        <div class="rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden">
+    <div id="hall-rest" class={`mb-10 ${rest.length === 0 ? "hidden" : ""}`}>
+      <h2 class="font-serif text-2xl mb-4 text-center">Les autres bâtisseurs</h2>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden">
           <table class="w-full">
             <thead>
               <tr class="border-b border-white/10 text-xs uppercase tracking-wider text-white/50">
@@ -137,30 +132,29 @@ const jsonLd = {
                 <th class="py-3 px-4 text-center hidden md:table-cell">Badges</th>
               </tr>
             </thead>
-            <tbody>
-              {rest.map((parrain, i) => (
-                <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
-                  <td class="py-3 px-4 text-white/60 text-sm">#{i + 4}</td>
-                  <td class="py-3 px-4">{parrain.first_name || "Étoile anonyme"}</td>
-                  <td class="py-3 px-4 text-right font-mono text-amber-300">{parrain.validated_filleuls}</td>
-                  <td class="py-3 px-4 text-center hidden md:table-cell">
-                    {parrain.badges && parrain.badges.length > 0 ? (
-                      parrain.badges.map((b) => {
-                        const meta = BADGE_META[b];
-                        if (!meta) return null;
-                        return <span class={`inline-block text-xs px-1.5 ${meta.color}`}>{meta.icon}</span>;
-                      })
-                    ) : (
-                      <span class="text-white/30 text-xs">-</span>
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+            <tbody id="hall-rest-tbody">
+                {rest.map((parrain, i) => (
+                  <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                    <td class="py-3 px-4 text-white/60 text-sm">#{i + 4}</td>
+                    <td class="py-3 px-4">{parrain.first_name || "Étoile anonyme"}</td>
+                    <td class="py-3 px-4 text-right font-mono text-amber-300">{parrain.validated_filleuls}</td>
+                    <td class="py-3 px-4 text-center hidden md:table-cell">
+                      {parrain.badges && parrain.badges.length > 0 ? (
+                        parrain.badges.map((b) => {
+                          const meta = BADGE_META[b];
+                          if (!meta) return null;
+                          return <span class={`inline-block text-xs px-1.5 ${meta.color}`}>{meta.icon}</span>;
+                        })
+                      ) : (
+                        <span class="text-white/30 text-xs">-</span>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
       </div>
-    )}
 
     <section class="prose prose-invert max-w-3xl mx-auto mb-14">
       <h2 class="font-serif text-3xl mb-4">Les quatre badges cosmiques</h2>
@@ -237,3 +231,143 @@ const jsonLd = {
     </nav>
   </section>
 </BaseLayout>
+
+<script>
+  // Client-side refresh: fetch latest top_parrains to always show fresh data
+  // (the SSG version is frozen at build time)
+  const SUPABASE_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co";
+  const SUPABASE_ANON_KEY =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ramJtYmRydmVqZW16cmdneHZyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU3NzE1MjUsImV4cCI6MjA5MTM0NzUyNX0.KYc8rXIC0RPMskW6eJIE_EranUcLK6nckCAWEph-340";
+
+  const BADGE_META: Record<string, { name: string; icon: string; color: string }> = {
+    eclaireur_cosmique: { name: "Éclaireur Cosmique", icon: "✦", color: "text-amber-300" },
+    guide_des_etoiles: { name: "Guide des Étoiles", icon: "★", color: "text-purple-300" },
+    constellation_vivante: { name: "Constellation Vivante", icon: "✧", color: "text-pink-300" },
+    nebuleuse_maitresse: { name: "Nébuleuse Maîtresse", icon: "❋", color: "text-emerald-300" },
+  };
+
+  type Parrain = {
+    first_name: string | null;
+    referral_code: string;
+    validated_filleuls: number;
+    total_filleuls: number;
+    badges: string[] | null;
+    first_filleul_at: string;
+  };
+
+  function renderBadges(badges: string[] | null, inline = false): string {
+    if (!badges || badges.length === 0) return inline ? '<span class="text-white/30 text-xs">-</span>' : "";
+    return badges
+      .map((b) => {
+        const meta = BADGE_META[b];
+        if (!meta) return "";
+        if (inline) return `<span class="inline-block text-xs px-1.5 ${meta.color}">${meta.icon}</span>`;
+        return `<span class="text-xs px-2 py-0.5 rounded-full border border-white/10 ${meta.color}">${meta.icon}</span>`;
+      })
+      .join("");
+  }
+
+  function escapeHtml(s: string): string {
+    return s.replace(/[&<>"']/g, (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c] || c)
+    );
+  }
+
+  function renderPodium(podium: Parrain[]): string {
+    return podium
+      .map((parrain, i) => {
+        const rank = i + 1;
+        const rankBg =
+          rank === 1
+            ? "from-amber-300/20 to-amber-300/5 border-amber-300/50"
+            : rank === 2
+            ? "from-white/10 to-white/5 border-white/30"
+            : "from-orange-400/15 to-orange-400/5 border-orange-400/30";
+        const rankColor =
+          rank === 1 ? "text-amber-300" : rank === 2 ? "text-white/80" : "text-orange-300";
+        const rankIcon = rank === 1 ? "♔" : rank === 2 ? "♕" : "♖";
+        const orderClass = rank === 1 ? "md:order-2 md:scale-110" : rank === 2 ? "md:order-1" : "md:order-3";
+        const name = escapeHtml(parrain.first_name || "Étoile anonyme");
+        const s = parrain.validated_filleuls > 1 ? "s" : "";
+        return `
+          <div class="p-6 rounded-3xl border-2 bg-gradient-to-br ${rankBg} text-center ${orderClass}">
+            <div class="text-4xl mb-2 ${rankColor}">${rankIcon}</div>
+            <p class="text-xs uppercase tracking-wider mb-1 ${rankColor}">#${rank}</p>
+            <h3 class="font-serif text-2xl mb-2">${name}</h3>
+            <p class="text-3xl font-serif text-amber-300 mb-1">${parrain.validated_filleuls}</p>
+            <p class="text-xs text-white/60 mb-3">filleul${s} validé${s}</p>
+            <div class="flex flex-wrap justify-center gap-1">${renderBadges(parrain.badges)}</div>
+          </div>
+        `;
+      })
+      .join("");
+  }
+
+  function renderRest(rest: Parrain[]): string {
+    return rest
+      .map((parrain, i) => {
+        const name = escapeHtml(parrain.first_name || "Étoile anonyme");
+        return `
+          <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+            <td class="py-3 px-4 text-white/60 text-sm">#${i + 4}</td>
+            <td class="py-3 px-4">${name}</td>
+            <td class="py-3 px-4 text-right font-mono text-amber-300">${parrain.validated_filleuls}</td>
+            <td class="py-3 px-4 text-center hidden md:table-cell">${renderBadges(parrain.badges, true)}</td>
+          </tr>
+        `;
+      })
+      .join("");
+  }
+
+  async function refreshHall() {
+    try {
+      const res = await fetch(
+        `${SUPABASE_URL}/rest/v1/top_parrains?select=*&order=validated_filleuls.desc,total_filleuls.desc&limit=100`,
+        {
+          headers: {
+            apikey: SUPABASE_ANON_KEY,
+            Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+          },
+        }
+      );
+      if (!res.ok) return;
+
+      const data: Parrain[] = await res.json();
+
+      const emptyEl = document.getElementById("hall-empty");
+      const podiumEl = document.getElementById("hall-podium");
+      const restEl = document.getElementById("hall-rest");
+      const restTbody = document.getElementById("hall-rest-tbody");
+
+      if (data.length === 0) {
+        emptyEl?.classList.remove("hidden");
+        podiumEl?.classList.add("hidden");
+        restEl?.classList.add("hidden");
+        return;
+      }
+
+      emptyEl?.classList.add("hidden");
+
+      const podium = data.slice(0, 3);
+      const rest = data.slice(3);
+
+      if (podium.length > 0 && podiumEl) {
+        podiumEl.innerHTML = renderPodium(podium);
+        podiumEl.classList.remove("hidden");
+      }
+
+      if (rest.length > 0 && restEl && restTbody) {
+        restTbody.innerHTML = renderRest(rest);
+        restEl.classList.remove("hidden");
+      } else {
+        restEl?.classList.add("hidden");
+      }
+    } catch (e) {
+      // Silent fallback on the static SSG render
+      console.warn("Hall refresh failed:", e);
+    }
+  }
+
+  refreshHall();
+  document.addEventListener("astro:page-load", refreshHall);
+</script>
