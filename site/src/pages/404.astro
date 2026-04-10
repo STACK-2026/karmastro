@@ -1,19 +1,64 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { siteConfig } from "../../site.config";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "404 - Page not found",
+  description: "Cette page s'est égarée dans le cosmos.",
+  url: `${siteConfig.url}/404`,
+  inLanguage: "fr-FR",
+  isPartOf: { "@type": "WebSite", name: "Karmastro", url: siteConfig.url },
+};
 ---
 
-<BaseLayout title={`Page perdue dans les étoiles | ${siteConfig.name}`} description="Cette page s'est égarée dans le cosmos. Mais les astres ont d'autres chemins pour toi." noIndex>
+<BaseLayout title={`Page perdue dans les étoiles | ${siteConfig.name}`} description="Cette page s'est égarée dans le cosmos. Mais les astres ont d'autres chemins pour toi." jsonLd={jsonLd} noIndex>
   <div class="max-w-3xl mx-auto px-4 py-20 text-center relative z-10">
 
-    <!-- Big cosmic 404 -->
+    <!-- Big cosmic 404 with H1 -->
     <div class="mb-8">
-      <p class="text-8xl md:text-9xl font-bold text-gradient-violet mb-2" style="font-family: Outfit, sans-serif; line-height: 1;">4✨4</p>
-      <p class="text-xl md:text-2xl font-semibold text-white mb-2" style="font-family: Outfit, sans-serif;">Cette page s'est perdue dans le cosmos</p>
+      <h1 class="text-8xl md:text-9xl font-bold text-gradient-violet mb-2" style="font-family: Outfit, sans-serif; line-height: 1;">
+        <span data-i18n-404>4✨4</span>
+      </h1>
+      <p class="text-xl md:text-2xl font-semibold text-white mb-2" style="font-family: Outfit, sans-serif;">
+        <span data-i18n-title>Cette page s'est perdue dans le cosmos</span>
+      </p>
       <p class="text-sm" style="color: hsl(220 9% 64%);">
-        Même les étoiles changent de trajectoire parfois. Pas de panique - l'Oracle a d'autres chemins pour toi.
+        <span data-i18n-subtitle>Même les étoiles changent de trajectoire parfois. Pas de panique - l'Oracle a d'autres chemins pour toi.</span>
       </p>
     </div>
+
+    <!-- Client-side locale detection + content swap -->
+    <script is:inline>
+      (function () {
+        const messages = {
+          en: { title: "This page got lost in the cosmos", subtitle: "Even stars change course sometimes. Don't worry - the Oracle has other paths for you.", home: "Home", homeSub: "Back to the stars", blog: "The Cosmos", blogSub: "Explore the blog", oracle: "The Oracle", oracleSub: "Ask a question", didYouKnow: "Did you know?", didYouKnowText: "In numerology, 404 reduces to 4+0+4 = 8. The 8 is the number of abundance, power and cosmic balance. Landing on this page might be a sign you are about to discover something big.", explore: "Explore Karmastro", cta: "Start my cosmic awakening" },
+          es: { title: "Esta página se perdió en el cosmos", subtitle: "Incluso las estrellas cambian de rumbo a veces. No te preocupes - el Oráculo tiene otros caminos para ti.", home: "Inicio", homeSub: "Volver a las estrellas", blog: "El Cosmos", blogSub: "Explorar el blog", oracle: "El Oráculo", oracleSub: "Hacer una pregunta", didYouKnow: "¿Sabías?", didYouKnowText: "En numerología, 404 se reduce a 4+0+4 = 8. El 8 es el número de la abundancia, el poder y el equilibrio cósmico.", explore: "Explorar Karmastro", cta: "Empezar mi despertar cósmico" },
+          pt: { title: "Esta página perdeu-se no cosmos", subtitle: "Até as estrelas mudam de rumo às vezes. Não te preocupes - o Oráculo tem outros caminhos para ti.", home: "Início", homeSub: "De volta às estrelas", blog: "O Cosmos", blogSub: "Explorar o blog", oracle: "O Oráculo", oracleSub: "Fazer uma pergunta", didYouKnow: "Sabias?", didYouKnowText: "Em numerologia, 404 reduz-se a 4+0+4 = 8. O 8 é o número da abundância, do poder e do equilíbrio cósmico.", explore: "Explorar Karmastro", cta: "Começar o meu despertar cósmico" },
+          de: { title: "Diese Seite hat sich im Kosmos verirrt", subtitle: "Selbst Sterne ändern manchmal ihren Kurs. Keine Sorge - das Orakel hat andere Wege für dich.", home: "Startseite", homeSub: "Zurück zu den Sternen", blog: "Der Kosmos", blogSub: "Blog erkunden", oracle: "Das Orakel", oracleSub: "Eine Frage stellen", didYouKnow: "Wusstest du?", didYouKnowText: "In der Numerologie reduziert sich 404 auf 4+0+4 = 8. Die 8 ist die Zahl des Überflusses, der Macht und des kosmischen Gleichgewichts.", explore: "Karmastro erkunden", cta: "Mein kosmisches Erwachen beginnen" },
+          it: { title: "Questa pagina si è persa nel cosmo", subtitle: "Anche le stelle cambiano rotta a volte. Non preoccuparti - l'Oracolo ha altre strade per te.", home: "Home", homeSub: "Torna alle stelle", blog: "Il Cosmo", blogSub: "Esplora il blog", oracle: "L'Oracolo", oracleSub: "Fai una domanda", didYouKnow: "Lo sapevi?", didYouKnowText: "In numerologia, 404 si riduce a 4+0+4 = 8. L'8 è il numero dell'abbondanza, del potere e dell'equilibrio cosmico.", explore: "Esplora Karmastro", cta: "Iniziare il mio risveglio cosmico" },
+          tr: { title: "Bu sayfa kozmosta kayboldu", subtitle: "Yıldızlar bile bazen rotalarını değiştirir. Endişelenme - Kahin senin için başka yollar var.", home: "Ana sayfa", homeSub: "Yıldızlara geri dön", blog: "Kozmos", blogSub: "Blogu keşfet", oracle: "Kahin", oracleSub: "Bir soru sor", didYouKnow: "Biliyor muydun?", didYouKnowText: "Numerolojide 404 4+0+4 = 8'e indirgenir. 8 bolluk, güç ve kozmik dengenin sayısıdır.", explore: "Karmastro'yu keşfet", cta: "Kozmik uyanışıma başla" },
+          pl: { title: "Ta strona zgubiła się w kosmosie", subtitle: "Nawet gwiazdy czasem zmieniają kurs. Nie martw się - Wyrocznia ma dla ciebie inne ścieżki.", home: "Strona główna", homeSub: "Powrót do gwiazd", blog: "Kosmos", blogSub: "Eksploruj bloga", oracle: "Wyrocznia", oracleSub: "Zadaj pytanie", didYouKnow: "Czy wiesz?", didYouKnowText: "W numerologii 404 redukuje się do 4+0+4 = 8. 8 to liczba obfitości, mocy i kosmicznej równowagi.", explore: "Eksploruj Karmastro", cta: "Rozpocznij moje kosmiczne przebudzenie" },
+          ru: { title: "Эта страница потерялась в космосе", subtitle: "Даже звёзды иногда меняют курс. Не волнуйся - у Оракула есть другие пути для тебя.", home: "Главная", homeSub: "Назад к звёздам", blog: "Космос", blogSub: "Исследовать блог", oracle: "Оракул", oracleSub: "Задать вопрос", didYouKnow: "Знаешь ли ты?", didYouKnowText: "В нумерологии 404 сводится к 4+0+4 = 8. 8 - число изобилия, силы и космического равновесия.", explore: "Исследовать Karmastro", cta: "Начать моё космическое пробуждение" },
+          ja: { title: "このページは宇宙で迷子になりました", subtitle: "星でさえ時々軌道を変えます。心配しないでください - オラクルにはあなたのための他の道があります。", home: "ホーム", homeSub: "星々へ戻る", blog: "コスモス", blogSub: "ブログを探索", oracle: "オラクル", oracleSub: "質問する", didYouKnow: "知っていましたか？", didYouKnowText: "数秘術では、404は4+0+4 = 8に還元されます。8は豊かさ、力、宇宙のバランスの数字です。", explore: "Karmastroを探索", cta: "私の宇宙の目覚めを始める" },
+          ar: { title: "ضاعت هذه الصفحة في الكون", subtitle: "حتى النجوم تغير مسارها أحيانًا. لا تقلق - العرّاف لديه طرق أخرى لك.", home: "الرئيسية", homeSub: "العودة إلى النجوم", blog: "الكون", blogSub: "استكشاف المدونة", oracle: "العرّاف", oracleSub: "اطرح سؤالاً", didYouKnow: "هل كنت تعلم؟", didYouKnowText: "في علم الأعداد، يُختزل 404 إلى 4+0+4 = 8. الرقم 8 هو رقم الوفرة والقوة والتوازن الكوني.", explore: "استكشاف Karmastro", cta: "ابدأ صحوتي الكونية" },
+        };
+
+        // Detect preferred locale from path or browser
+        const pathMatch = location.pathname.match(/^\/([a-z]{2})\//);
+        const browserLang = (navigator.language || "fr").slice(0, 2);
+        const locale = (pathMatch && pathMatch[1]) || browserLang;
+        const msg = messages[locale];
+
+        if (msg) {
+          const setText = (sel, text) => { const el = document.querySelector(sel); if (el) el.textContent = text; };
+          setText("[data-i18n-title]", msg.title);
+          setText("[data-i18n-subtitle]", msg.subtitle);
+          document.documentElement.setAttribute("lang", locale);
+        }
+      })();
+    </script>
 
     <!-- Quick links -->
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">

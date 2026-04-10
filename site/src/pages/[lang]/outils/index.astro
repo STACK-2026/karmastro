@@ -26,7 +26,26 @@ const tools = [
 ];
 ---
 
-<BaseLayout title={content.seo.tools.title} description={content.seo.tools.description}>
+<BaseLayout
+  title={content.seo.tools.title}
+  description={content.seo.tools.description}
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: content.seo.tools.title,
+    description: content.seo.tools.description,
+    inLanguage: lang,
+    url: `https://karmastro.com/${lang}/outils`,
+    isPartOf: { "@type": "WebSite", name: "Karmastro", url: "https://karmastro.com" },
+    hasPart: tools.map((tool) => ({
+      "@type": "WebApplication",
+      name: t(tool.titleKey as any, lang) || tool.titleKey,
+      applicationCategory: "UtilitiesApplication",
+      url: `https://karmastro.com${tool.href}`,
+      offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    })),
+  }}
+>
   <section class="max-w-5xl mx-auto px-4 py-16">
     <div class="text-center mb-14">
       <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">{t("common.free", lang)}</p>
