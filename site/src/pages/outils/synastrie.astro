@@ -1,0 +1,424 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Synastrie astrologique gratuite - Compatibilité de couple - Karmastro";
+const description =
+  "Calcule la synastrie astrologique entre deux personnes. Compatibilité de couple complète avec tous les aspects majeurs entre les thèmes natals. Swiss Ephemeris, précision niveau NASA.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Synastrie astrologique Karmastro",
+    description,
+    url: "https://karmastro.com/outils/synastrie",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Qu'est-ce que la synastrie en astrologie ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "La synastrie est l'étude astrologique de la compatibilité entre deux personnes. On superpose les deux thèmes natals et on analyse comment les planètes de l'un aspectent celles de l'autre. C'est la méthode la plus complète pour comprendre la dynamique d'un couple, d'une amitié ou d'une collaboration professionnelle, bien plus précise qu'une simple comparaison des signes solaires.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Quels aspects sont les plus importants dans une synastrie ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Les aspects impliquant Soleil, Lune, Vénus et Mars sont les plus décisifs pour l'amour. Vénus-Mars entre les deux personnes indique l'attraction physique. Lune-Lune ou Lune-Soleil parlent de la compatibilité émotionnelle au quotidien. Saturne aspectant une planète personnelle peut apporter de la stabilité ou du blocage. Les aspects à Pluton signalent une relation transformatrice intense.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "La synastrie prédit-elle la durée d'une relation ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Non, elle ne prédit pas. Elle cartographie les zones de facilité et les zones de friction dans la relation. Une synastrie tendue ne condamne pas un couple : elle indique simplement où vous aurez du travail à faire. Une synastrie harmonique ne garantit pas non plus le succès : sans investissement, même un couple cosmiquement aligné peut se séparer.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Faut-il l'heure de naissance pour une synastrie ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Idéalement oui, car sans heure on ne connaît pas les ascendants ni les maisons, qui sont essentiels dans l'analyse complète. Sans heure, on peut quand même analyser les aspects entre les planètes principales (Soleil, Lune, Mercure, Vénus, Mars) qui suffisent pour une première lecture solide.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Synastrie ou compatibilité numérologique, laquelle choisir ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Les deux sont complémentaires. La compatibilité numérologique (via le croisement des chemins de vie) donne une vision d'ensemble rapide en 30 secondes. La synastrie astrologique va beaucoup plus loin, avec des dizaines d'aspects à analyser. Karmastro propose les deux : l'Oracle croise automatiquement numérologie et astrologie pour te donner la lecture la plus complète.",
+        },
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6">
+      <a href="/" class="hover:text-amber-300">Accueil</a>
+      <span class="mx-2">/</span>
+      <a href="/outils" class="hover:text-amber-300">Outils</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Synastrie</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Compatibilité astrologique</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Synastrie astrologique</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        L'art ancien de superposer deux thèmes natals pour révéler la dynamique profonde d'une relation. Calcul complet gratuit avec tous les aspects majeurs entre vos deux ciels de naissance.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="syn-form" class="space-y-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="space-y-3">
+            <p class="text-xs uppercase tracking-widest text-pink-300/80">Personne 1</p>
+            <div>
+              <label for="date-1" class="block text-xs text-white/60 mb-1">Date</label>
+              <input type="date" id="date-1" required class="w-full px-3 py-2 rounded-lg bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+            </div>
+            <div>
+              <label for="time-1" class="block text-xs text-white/60 mb-1">Heure</label>
+              <input type="time" id="time-1" required class="w-full px-3 py-2 rounded-lg bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+            </div>
+            <div>
+              <label for="place-1" class="block text-xs text-white/60 mb-1">Ville</label>
+              <input type="text" id="place-1" required placeholder="Paris, France" autocomplete="off" class="w-full px-3 py-2 rounded-lg bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+            </div>
+          </div>
+          <div class="space-y-3">
+            <p class="text-xs uppercase tracking-widest text-purple-300/80">Personne 2</p>
+            <div>
+              <label for="date-2" class="block text-xs text-white/60 mb-1">Date</label>
+              <input type="date" id="date-2" required class="w-full px-3 py-2 rounded-lg bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+            </div>
+            <div>
+              <label for="time-2" class="block text-xs text-white/60 mb-1">Heure</label>
+              <input type="time" id="time-2" required class="w-full px-3 py-2 rounded-lg bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+            </div>
+            <div>
+              <label for="place-2" class="block text-xs text-white/60 mb-1">Ville</label>
+              <input type="text" id="place-2" required placeholder="Lyon, France" autocomplete="off" class="w-full px-3 py-2 rounded-lg bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+            </div>
+          </div>
+        </div>
+        <button type="submit" id="submit-btn" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity disabled:opacity-50">
+          Calculer notre synastrie
+        </button>
+      </form>
+
+      <div id="error" class="mt-4 hidden p-4 rounded-xl bg-pink-500/10 border border-pink-400/30 text-sm text-pink-200"></div>
+
+      <div id="result" class="mt-8 hidden">
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="p-4 rounded-xl bg-[#0f0a1e]/60 border border-pink-300/20">
+            <p class="text-xs uppercase tracking-wider text-pink-300/80 mb-2">Personne 1</p>
+            <p class="text-sm text-white/80"><span id="p1-sun" class="font-medium"></span></p>
+            <p class="text-xs text-white/60" id="p1-moon"></p>
+            <p class="text-xs text-white/60" id="p1-venus"></p>
+            <p class="text-xs text-white/60" id="p1-mars"></p>
+          </div>
+          <div class="p-4 rounded-xl bg-[#0f0a1e]/60 border border-purple-300/20">
+            <p class="text-xs uppercase tracking-wider text-purple-300/80 mb-2">Personne 2</p>
+            <p class="text-sm text-white/80"><span id="p2-sun" class="font-medium"></span></p>
+            <p class="text-xs text-white/60" id="p2-moon"></p>
+            <p class="text-xs text-white/60" id="p2-venus"></p>
+            <p class="text-xs text-white/60" id="p2-mars"></p>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <h3 class="font-serif text-xl mb-3 text-amber-300">Aspects majeurs entre vos thèmes</h3>
+          <p class="text-xs text-white/50 mb-4">Les 15 aspects les plus exacts, classés par orbe croissant.</p>
+          <div id="aspects-list" class="space-y-1"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-3 mb-6">
+          <div class="p-4 rounded-xl bg-[#0f0a1e]/60 border border-emerald-300/20 text-center">
+            <p class="text-xs uppercase tracking-wider text-emerald-300/80 mb-1">Harmoniques</p>
+            <p id="count-harmonic" class="text-2xl font-serif text-emerald-300"></p>
+          </div>
+          <div class="p-4 rounded-xl bg-[#0f0a1e]/60 border border-amber-300/20 text-center">
+            <p class="text-xs uppercase tracking-wider text-amber-300/80 mb-1">Fusions</p>
+            <p id="count-conjunction" class="text-2xl font-serif text-amber-300"></p>
+          </div>
+          <div class="p-4 rounded-xl bg-[#0f0a1e]/60 border border-pink-300/20 text-center">
+            <p class="text-xs uppercase tracking-wider text-pink-300/80 mb-1">Tensions</p>
+            <p id="count-tension" class="text-2xl font-serif text-pink-300"></p>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-white/10 text-center">
+          <a href="https://app.karmastro.com/oracle" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
+            Interprétation complète avec Séléné
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Qu'est-ce que la synastrie ?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        La <strong>synastrie</strong> est l'art ancien de comparer deux thèmes natals pour comprendre la dynamique d'une relation. On superpose mentalement les deux cartes du ciel, on regarde comment les planètes de l'un entrent en aspect avec celles de l'autre, et on en tire une lecture de la nature profonde du lien. Aucune méthode astrologique n'est aussi complète pour analyser un couple, une amitié ou une collaboration.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Le mot vient du grec ancien <em>syn-astron</em>, "étoiles ensemble". Pour <a href="https://fr.wikipedia.org/wiki/Claude_Ptol%C3%A9m%C3%A9e" class="text-amber-300 hover:underline">Ptolémée</a>, l'astrologue-astronome du IIᵉ siècle, comprendre une relation humaine passait obligatoirement par cette double analyse. Les astrologues arabes du Moyen Âge, puis les Renaissance comme Kepler, ont raffiné la méthode. Aujourd'hui, nous disposons d'un outil que les anciens auraient rêvé d'avoir : <a href="https://www.astro.com/swisseph/" class="text-amber-300 hover:underline">Swiss Ephemeris</a>, qui calcule chaque aspect avec une précision de 0,001 seconde d'arc.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Les aspects qui comptent vraiment</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Tous les aspects ne pèsent pas également dans une relation. Certaines combinaisons sont décisives, d'autres anecdotiques. Voici les aspects majeurs à connaître, par ordre d'importance en amour :
+      </p>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Soleil 1 - Lune 2</strong> (et vice versa) : l'âme et le cœur. C'est l'aspect classique des couples profonds, celui qui donne l'impression de "se sentir chez soi" avec l'autre.</li>
+        <li><strong>Vénus 1 - Mars 2</strong> (et vice versa) : l'attraction physique et érotique. Crucial pour la dimension sensuelle du couple.</li>
+        <li><strong>Lune 1 - Lune 2</strong> : la compatibilité émotionnelle au quotidien. Deux Lunes en aspect harmonique font vivre ensemble très facilement.</li>
+        <li><strong>Soleil 1 - Soleil 2</strong> : l'alignement des volontés et des identités profondes.</li>
+        <li><strong>Mercure 1 - Mercure 2</strong> : la qualité du dialogue, la compatibilité intellectuelle.</li>
+        <li><strong>Saturne aspectant une planète personnelle</strong> : stabilité ou blocage selon la nature de l'aspect. Les aspects Saturne apportent de la durée mais aussi de la responsabilité.</li>
+        <li><strong>Pluton aspectant Vénus ou Mars</strong> : transformation profonde, obsession possible, relation karmique qui change les vies.</li>
+      </ul>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Les aspects impliquant <strong>Jupiter</strong> apportent de la chance et de l'expansion à la relation. Ceux impliquant <strong>Uranus</strong> apportent de la surprise, parfois de l'instabilité. <strong>Neptune</strong> peut idéaliser ou brouiller les frontières. Tout cela se lit en croisant les positions précises calculées par l'Engine.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Harmonique, fusion, tension</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Les aspects se classent en trois grandes familles selon la nature de l'angle formé :
+      </p>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Aspects harmoniques</strong> (trigone 120°, sextile 60°) : fluidité, facilité, talents partagés. Un couple avec beaucoup d'harmoniques vit bien ensemble sans se poser de questions. Danger : la facilité peut endormir et manquer de tension créative.</li>
+        <li><strong>Aspects de fusion</strong> (conjonction 0°) : union profonde des énergies. Intense, mais l'effet dépend des planètes : Soleil-Lune conjoints = fusion chaleureuse, Mars-Saturne conjoints = friction constante.</li>
+        <li><strong>Aspects de tension</strong> (carré 90°, opposition 180°) : friction, défis, besoin de compromis. Souvent jugés négativement à tort. En réalité, ce sont ces aspects qui font grandir un couple, qui forcent à évoluer. Beaucoup de grandes histoires d'amour sont bâties sur des tensions bien intégrées.</li>
+      </ul>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Une synastrie idéale n'est pas celle qui n'a que des harmoniques : c'est celle qui équilibre fluidité et tension. Trop d'harmoniques donne un couple plat. Trop de tensions épuise. L'équilibre est la clé.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Synastrie vs composite vs davison</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Il existe trois grandes méthodes astrologiques pour analyser un couple. La <strong>synastrie</strong> (que propose ce calculateur) compare les deux thèmes natals individuels. Le <strong>thème composite</strong> crée un troisième thème théorique à partir de la moyenne des positions planétaires des deux personnes : il représente l'entité "couple" en elle-même. Le <strong>thème Davison</strong> crée un thème à partir de la date et du lieu moyens des deux naissances, considéré comme la "naissance de la relation".
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        La synastrie reste la plus parlante et la plus utilisée. C'est celle que Karmastro privilégie pour les calculs en ligne, car elle éclaire directement la dynamique entre deux personnes réelles, sans l'abstraction du composite. Pour aller plus loin, <a href="https://app.karmastro.com" class="text-amber-300 hover:underline">l'application Karmastro</a> permet de calculer les trois types de thèmes de couple.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Au-delà de la synastrie : les autres facteurs</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        La synastrie donne la photo astronomique d'une relation, mais elle n'est pas le tout. Pour une lecture complète, il faut aussi considérer :
+      </p>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li>Les <a href="/outils/compatibilite" class="text-amber-300 hover:underline">chemins de vie numérologiques</a> : la dynamique karmique globale</li>
+        <li>Les <strong>noeuds lunaires</strong> : indications sur la dimension karmique de la rencontre</li>
+        <li>Les <strong>transits lents</strong> actuels (Jupiter, Saturne, Uranus) qui activent certains points de la synastrie</li>
+        <li>Les <strong>retours de Saturne</strong> qui marquent souvent des phases critiques dans les couples (vers 29 ans et 58 ans)</li>
+        <li>Les <strong>années personnelles</strong> de chacun : un couple peut vivre des désynchronisations cycliques</li>
+      </ul>
+      <p class="text-white/80 leading-relaxed mb-4">
+        C'est exactement le type d'analyse croisée que fait l'Oracle de Karmastro. En particulier <strong>Séléné</strong>, notre guide relationnelle (thérapeute de formation, inspirée de la déesse lunaire), est spécialisée dans ce genre de lecture qui croise astro, numérologie et psychologie.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Questions fréquentes</h2>
+
+      <h3 class="font-serif text-xl mb-2">La synastrie fonctionne-t-elle aussi pour les amitiés et le travail ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Oui, totalement. La méthode reste identique, seule l'interprétation change. Pour une amitié, les aspects Lune-Lune et Mercure-Mercure sont décisifs. Pour une collaboration professionnelle, Soleil-Mars et Saturne-Jupiter prennent de l'importance. Pour une relation parent-enfant, les aspects avec la Lune de l'enfant sont fondamentaux.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Que faire si notre synastrie montre beaucoup de tensions ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        D'abord, ne pas paniquer. Ensuite, identifier quelles tensions sont créatives (celles qui vous poussent à grandir) et lesquelles sont usantes (celles qui répètent les mêmes schémas). Les aspects tendus impliquant Saturne demandent de la maturité et du temps. Ceux impliquant Pluton demandent un travail de transformation profonde. Les tensions avec Uranus demandent d'accepter l'imprévisibilité.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">La synastrie peut-elle m'aider à choisir un partenaire ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Oui et non. Elle peut t'aider à comprendre pourquoi certaines relations te comblent et d'autres t'épuisent. Elle peut pointer des patterns récurrents dans tes attractions (souvent liés à ton propre thème natal). Mais elle ne peut pas choisir à ta place : le cœur a ses raisons que la raison astrologique ignore parfois, et certaines des plus belles histoires commencent avec des synastries improbables.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Les couples célèbres ont-ils de bonnes synastries ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Pas forcément. Les synastries les plus spectaculaires se trouvent autant dans les couples qui durent que dans ceux qui explosent. Ce qui compte, c'est la capacité à travailler ensemble les aspects tendus plutôt que de les fuir. Beaucoup de couples célèbres ont des synastries avec des Pluton-Vénus intenses, des Mars-Saturne qui frictent, des Uranus-Lune qui destabilisent. La passion naît souvent de la tension.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Karmastro propose-t-il une synastrie complète avec interprétation ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Le calcul et la liste des aspects sont gratuits, comme tous nos outils. Pour une interprétation personnalisée qui analyse aspect par aspect et te propose des pistes concrètes pour faire vivre la relation, consulte <a href="https://app.karmastro.com/oracle" class="text-amber-300 hover:underline">l'Oracle</a> et choisis Séléné, notre guide relationnelle.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Analyse de couple complète</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        La liste des aspects est un début. Pour une interprétation qui croise synastrie astrologique, compatibilité numérologique et dimension karmique, parle à Séléné, notre guide relationnelle.
+      </p>
+      <a href="https://app.karmastro.com/oracle" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Parler à Séléné
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/outils" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Tous les outils</a>
+      <a href="/outils/compatibilite" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Compatibilité numérologique</a>
+      <a href="/outils/theme-natal" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Thème natal</a>
+      <a href="/outils/ascendant" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Ascendant</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  const ENGINE_URL = "http://168.119.229.20:8100";
+
+  const PLANET_GLYPHS: Record<string, string> = {
+    Soleil: "☉", Lune: "☽", Mercure: "☿", Venus: "♀", Mars: "♂",
+    Jupiter: "♃", Saturne: "♄", Uranus: "♅", Neptune: "♆", Pluton: "♇",
+    "Noeud Nord": "☊",
+  };
+
+  const ASPECT_COLORS: Record<string, string> = {
+    Conjonction: "#D4A017",
+    Trigone: "#4ade80",
+    Sextile: "#60a5fa",
+    Carre: "#f87171",
+    Opposition: "#ec4899",
+    Quinconce: "#a78bfa",
+  };
+
+  async function geocode(place: string) {
+    const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(place)}&format=json&limit=1`;
+    const res = await fetch(url, { headers: { "Accept-Language": "fr" } });
+    if (!res.ok) throw new Error("Géolocalisation impossible");
+    const data = await res.json();
+    if (!data.length) throw new Error(`Ville introuvable : ${place}. Précise le pays.`);
+    return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon) };
+  }
+
+  async function fetchNatal(y: number, m: number, d: number, hour: number, lat: number, lng: number) {
+    const res = await fetch(`${ENGINE_URL}/natal-chart`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ year: y, month: m, day: d, hour, latitude: lat, longitude: lng }),
+    });
+    if (!res.ok) throw new Error("Erreur moteur de calcul");
+    return res.json();
+  }
+
+  async function fetchSynastry(p1: any, p2: any) {
+    const res = await fetch(`${ENGINE_URL}/compatibility`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ person1: p1, person2: p2 }),
+    });
+    if (!res.ok) throw new Error("Erreur calcul synastrie");
+    return res.json();
+  }
+
+  const form = document.getElementById("syn-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+  const errorDiv = document.getElementById("error") as HTMLDivElement;
+  const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    errorDiv.classList.add("hidden");
+    resultDiv.classList.add("hidden");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Calcul en cours...";
+
+    try {
+      const p1Data = {
+        date: (document.getElementById("date-1") as HTMLInputElement).value,
+        time: (document.getElementById("time-1") as HTMLInputElement).value,
+        place: (document.getElementById("place-1") as HTMLInputElement).value,
+      };
+      const p2Data = {
+        date: (document.getElementById("date-2") as HTMLInputElement).value,
+        time: (document.getElementById("time-2") as HTMLInputElement).value,
+        place: (document.getElementById("place-2") as HTMLInputElement).value,
+      };
+
+      const [geo1, geo2] = await Promise.all([geocode(p1Data.place), geocode(p2Data.place)]);
+
+      const build = (data: any, geo: { lat: number; lng: number }) => {
+        const [y, m, d] = data.date.split("-").map(Number);
+        const [h, mi] = data.time.split(":").map(Number);
+        return { year: y, month: m, day: d, hour: h + mi / 60, latitude: geo.lat, longitude: geo.lng };
+      };
+
+      const body1 = build(p1Data, geo1);
+      const body2 = build(p2Data, geo2);
+
+      // Get both natal charts + the synastry aspects
+      const [natal1, natal2, synastry] = await Promise.all([
+        fetchNatal(body1.year, body1.month, body1.day, body1.hour, body1.latitude, body1.longitude),
+        fetchNatal(body2.year, body2.month, body2.day, body2.hour, body2.latitude, body2.longitude),
+        fetchSynastry(body1, body2),
+      ]);
+
+      // Fill individual cards
+      const format = (planet: any) => `${planet.sign} ${planet.degree}°${planet.minute}'`;
+      (document.getElementById("p1-sun") as HTMLElement).textContent = `☉ Soleil ${format(natal1.planets.Soleil)}`;
+      (document.getElementById("p1-moon") as HTMLElement).textContent = `☽ Lune ${format(natal1.planets.Lune)}`;
+      (document.getElementById("p1-venus") as HTMLElement).textContent = `♀ Vénus ${format(natal1.planets.Venus)}`;
+      (document.getElementById("p1-mars") as HTMLElement).textContent = `♂ Mars ${format(natal1.planets.Mars)}`;
+
+      (document.getElementById("p2-sun") as HTMLElement).textContent = `☉ Soleil ${format(natal2.planets.Soleil)}`;
+      (document.getElementById("p2-moon") as HTMLElement).textContent = `☽ Lune ${format(natal2.planets.Lune)}`;
+      (document.getElementById("p2-venus") as HTMLElement).textContent = `♀ Vénus ${format(natal2.planets.Venus)}`;
+      (document.getElementById("p2-mars") as HTMLElement).textContent = `♂ Mars ${format(natal2.planets.Mars)}`;
+
+      // Aspects
+      const aspects = synastry.synastry_aspects || [];
+      const top = aspects.slice(0, 15);
+      const aspectsList = document.getElementById("aspects-list") as HTMLElement;
+      aspectsList.innerHTML = "";
+
+      let harmonic = 0, conjunction = 0, tension = 0;
+      for (const a of aspects) {
+        if (a.nature === "harmonique") harmonic++;
+        else if (a.aspect === "Conjonction") conjunction++;
+        else if (a.nature === "tension" || a.nature === "polarite") tension++;
+      }
+
+      for (const asp of top) {
+        const div = document.createElement("div");
+        div.className = "flex items-center justify-between px-3 py-2 rounded-lg bg-white/[0.02] border border-white/10 text-sm";
+        const color = ASPECT_COLORS[asp.aspect] || "#ffffff";
+        const g1 = PLANET_GLYPHS[asp.person1_planet] || "●";
+        const g2 = PLANET_GLYPHS[asp.person2_planet] || "●";
+        div.innerHTML = `
+          <span class="text-white/80"><span class="text-pink-300">${g1} ${asp.person1_planet}</span> <span style="color:${color}">${asp.aspect}</span> <span class="text-purple-300">${g2} ${asp.person2_planet}</span></span>
+          <span class="text-white/50 text-xs font-mono">${asp.orb.toFixed(2)}°</span>
+        `;
+        aspectsList.appendChild(div);
+      }
+
+      (document.getElementById("count-harmonic") as HTMLElement).textContent = String(harmonic);
+      (document.getElementById("count-conjunction") as HTMLElement).textContent = String(conjunction);
+      (document.getElementById("count-tension") as HTMLElement).textContent = String(tension);
+
+      resultDiv.classList.remove("hidden");
+      resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+    } catch (err: any) {
+      errorDiv.textContent = err.message || "Une erreur est survenue";
+      errorDiv.classList.remove("hidden");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Calculer notre synastrie";
+    }
+  });
+</script>

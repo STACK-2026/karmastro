@@ -1,0 +1,377 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Transits astrologiques du jour - Prévisions personnalisées - Karmastro";
+const description =
+  "Calcule tes transits astrologiques du jour à partir de ton thème natal. Découvre quelles planètes activent ton ciel de naissance aujourd'hui. Calcul Swiss Ephemeris gratuit et précis.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Transits astrologiques Karmastro",
+    description,
+    url: "https://karmastro.com/outils/transits",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Qu'est-ce qu'un transit en astrologie ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Un transit, c'est le passage d'une planète actuelle sur un point de ton thème natal. Quand Mars en ce moment forme un aspect exact avec ton Soleil natal, on dit que Mars transite ton Soleil. Les transits sont la méthode principale pour prévoir les grandes phases d'une vie en astrologie moderne.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Quelle est la différence entre un horoscope quotidien et les transits ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "L'horoscope quotidien est basé sur ton seul signe solaire : il est donc identique pour 600 millions de personnes partageant ce signe. Les transits sont calculés pour ton thème natal complet : ils sont uniques pour toi. Un transit de Saturne à ton Ascendant n'arrive qu'à quelques personnes dans le monde en même temps.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Quels sont les transits les plus importants ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Les transits des planètes lentes (Jupiter, Saturne, Uranus, Neptune, Pluton) sont les plus marquants car ils durent longtemps et reviennent rarement. Un transit de Saturne à ton Soleil natal ne se produit que trois fois environ dans une vie et marque des phases critiques de maturation. Les transits rapides (Lune, Mercure, Vénus, Mars) donnent les ambiances du quotidien.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Comment savoir si un transit est positif ou négatif ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Aucun transit n'est 'positif' ou 'négatif' en absolu. Tout dépend de la planète en jeu et de la nature de l'aspect. Un trigone Jupiter au Soleil est généralement expansif et bénéfique. Un carré Saturne à la Lune est plus exigeant et peut apporter de la tristesse, mais c'est aussi un moment de maturation émotionnelle profonde. Les transits 'durs' forgent, les transits 'doux' facilitent.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Les transits peuvent-ils prédire des événements précis ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Pas avec précision. Les transits indiquent la nature de l'énergie active, pas les événements concrets. Un transit Pluton à Vénus ne prédit pas 'tu vas rencontrer quelqu'un le 15 mars', il dit 'tu vas vivre une transformation profonde dans ton rapport à l'amour'. L'événement concret qui matérialise cette énergie dépend de ton libre arbitre et du contexte de ta vie.",
+        },
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6">
+      <a href="/" class="hover:text-amber-300">Accueil</a>
+      <span class="mx-2">/</span>
+      <a href="/outils" class="hover:text-amber-300">Outils</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Transits du jour</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Astrologie prévisionnelle</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Transits du jour</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Quelles planètes activent ton ciel de naissance aujourd'hui ? Calcul en temps réel des aspects entre les positions planétaires actuelles et ton thème natal, via Swiss Ephemeris.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="tr-form" class="space-y-4">
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">Date de naissance</label>
+            <input type="date" id="birth-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+          </div>
+          <div>
+            <label for="birth-time" class="block text-sm font-medium text-white/80 mb-2">Heure de naissance</label>
+            <input type="time" id="birth-time" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+          </div>
+        </div>
+        <div>
+          <label for="birth-place" class="block text-sm font-medium text-white/80 mb-2">Lieu de naissance</label>
+          <input type="text" id="birth-place" required placeholder="Paris, France" autocomplete="off" class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <button type="submit" id="submit-btn" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity disabled:opacity-50">
+          Voir mes transits du jour
+        </button>
+      </form>
+
+      <div id="error" class="mt-4 hidden p-4 rounded-xl bg-pink-500/10 border border-pink-400/30 text-sm text-pink-200"></div>
+
+      <div id="result" class="mt-8 hidden">
+        <div class="p-4 rounded-xl bg-[#0f0a1e]/60 border border-amber-300/20 text-center mb-4">
+          <p class="text-xs uppercase tracking-wider text-amber-300/80 mb-1">Ambiance cosmique du jour</p>
+          <p id="cosmic-info" class="text-sm text-white/80"></p>
+        </div>
+
+        <div class="mb-6">
+          <h3 class="font-serif text-xl mb-3 text-amber-300">Transits actifs</h3>
+          <p class="text-xs text-white/50 mb-3">Les aspects entre planètes actuelles et ton thème natal, classés par orbe croissant.</p>
+          <div id="transits-list" class="space-y-1"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-3 mb-6">
+          <div class="p-4 rounded-xl bg-[#0f0a1e]/60 border border-emerald-300/20 text-center">
+            <p class="text-xs uppercase tracking-wider text-emerald-300/80 mb-1">Harmoniques</p>
+            <p id="count-h" class="text-2xl font-serif text-emerald-300"></p>
+          </div>
+          <div class="p-4 rounded-xl bg-[#0f0a1e]/60 border border-amber-300/20 text-center">
+            <p class="text-xs uppercase tracking-wider text-amber-300/80 mb-1">Fusions</p>
+            <p id="count-c" class="text-2xl font-serif text-amber-300"></p>
+          </div>
+          <div class="p-4 rounded-xl bg-[#0f0a1e]/60 border border-pink-300/20 text-center">
+            <p class="text-xs uppercase tracking-wider text-pink-300/80 mb-1">Tensions</p>
+            <p id="count-t" class="text-2xl font-serif text-pink-300"></p>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-white/10 text-center">
+          <a href="https://app.karmastro.com/oracle" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
+            Interprétation personnalisée avec Sibylle
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Qu'est-ce qu'un transit astrologique ?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Un <strong>transit</strong>, c'est tout simplement le passage d'une planète actuelle sur un point précis de ton <a href="/outils/theme-natal" class="text-amber-300 hover:underline">thème natal</a>. Ton thème natal est fixe, il représente le ciel à ta naissance. Mais les planètes, elles, continuent leur course céleste. Quand l'une d'elles forme aujourd'hui un aspect exact (conjonction, carré, trigone, opposition, sextile) avec une planète de ton thème natal, on dit qu'elle <em>transite</em> cette planète.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Les transits sont la <strong>méthode principale de prévision</strong> en astrologie moderne. Ils ne prédisent pas des événements précis, mais ils indiquent quelle énergie est active à un moment donné et dans quel domaine de ta vie (grâce aux maisons). Savoir lire ses transits, c'est savoir quelle est la météo cosmique personnelle du jour, de la semaine, du mois, de l'année.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Planètes rapides et planètes lentes</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Tous les transits ne se valent pas. Leur importance dépend de la vitesse de la planète qui transite :
+      </p>
+      <div class="not-prose overflow-x-auto mb-6">
+        <table class="w-full text-sm text-left border-collapse">
+          <thead>
+            <tr class="border-b border-white/10">
+              <th class="py-3 px-4 text-amber-300 font-serif">Planète</th>
+              <th class="py-3 px-4 text-amber-300 font-serif">Durée du transit</th>
+              <th class="py-3 px-4 text-amber-300 font-serif">Effet typique</th>
+            </tr>
+          </thead>
+          <tbody class="text-white/80">
+            <tr class="border-b border-white/5"><td class="py-2 px-4">Lune</td><td class="py-2 px-4">Quelques heures</td><td class="py-2 px-4">Ambiance émotionnelle du jour</td></tr>
+            <tr class="border-b border-white/5"><td class="py-2 px-4">Mercure</td><td class="py-2 px-4">1-3 jours</td><td class="py-2 px-4">Communications, déplacements courts</td></tr>
+            <tr class="border-b border-white/5"><td class="py-2 px-4">Vénus</td><td class="py-2 px-4">2-5 jours</td><td class="py-2 px-4">Amour, plaisir, créativité</td></tr>
+            <tr class="border-b border-white/5"><td class="py-2 px-4">Soleil</td><td class="py-2 px-4">2-3 jours</td><td class="py-2 px-4">Volonté, énergie, projets</td></tr>
+            <tr class="border-b border-white/5"><td class="py-2 px-4">Mars</td><td class="py-2 px-4">1 semaine</td><td class="py-2 px-4">Action, conflit, désir</td></tr>
+            <tr class="border-b border-white/5"><td class="py-2 px-4">Jupiter</td><td class="py-2 px-4">2-3 semaines</td><td class="py-2 px-4">Expansion, chance, philosophie</td></tr>
+            <tr class="border-b border-white/5"><td class="py-2 px-4">Saturne</td><td class="py-2 px-4">6 semaines à 2 ans</td><td class="py-2 px-4">Maturation, responsabilité, limites</td></tr>
+            <tr class="border-b border-white/5"><td class="py-2 px-4">Uranus</td><td class="py-2 px-4">6-18 mois</td><td class="py-2 px-4">Rupture, libération, éveil soudain</td></tr>
+            <tr class="border-b border-white/5"><td class="py-2 px-4">Neptune</td><td class="py-2 px-4">1-3 ans</td><td class="py-2 px-4">Dissolution, idéalisation, spiritualité</td></tr>
+            <tr><td class="py-2 px-4">Pluton</td><td class="py-2 px-4">1-3 ans</td><td class="py-2 px-4">Transformation profonde, mort-renaissance</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Les transits de Lune durent quelques heures et ne marquent qu'une humeur passagère. Les transits de Pluton, eux, peuvent durer trois ans et bouleverser complètement un domaine de ta vie. C'est pourquoi on parle parfois de "lecture macro" (planètes lentes) et de "lecture micro" (planètes rapides).
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Les grands transits d'une vie</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Certains transits marquent toute une existence. Les astrologues modernes insistent particulièrement sur :
+      </p>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Le retour de Saturne</strong> (vers 29-30 ans, puis 58-59 ans) : Saturne revient sur sa position natale et force une maturation brutale. Beaucoup de gens changent radicalement de vie à ce moment. C'est l'un des transits les plus cités dans les biographies.</li>
+        <li><strong>L'opposition d'Uranus</strong> (vers 40-42 ans) : la fameuse "crise de la quarantaine" astrologique. Uranus passe à l'opposé exact de sa position natale et réveille tout ce qu'on avait mis de côté.</li>
+        <li><strong>Le carré de Pluton</strong> (vers 35-45 ans selon la génération) : transformation intense, dépouillement, renaissance. Souvent des deuils, divorces, reconversions à cette période.</li>
+        <li><strong>Le retour de Jupiter</strong> (tous les 12 ans) : cycle d'expansion, d'optimisme, de nouvelles opportunités. Les meilleures années pour prendre des risques calculés.</li>
+        <li><strong>Le retour lunaire</strong> (tous les mois) : cycle émotionnel court, idéal pour observer tes propres rythmes intérieurs.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Transits et libre arbitre</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Un transit n'est <strong>jamais une fatalité</strong>. Comme le disait <a href="https://fr.wikipedia.org/wiki/Andr%C3%A9_Barbault" class="text-amber-300 hover:underline">André Barbault</a>, l'un des grands astrologues français du XXᵉ siècle : "Les astres inclinent, ne déterminent pas." Un transit annonce une énergie disponible. Ce que tu en fais dépend de toi. Un carré Saturne peut être vécu comme une sanction (si tu résistes) ou comme une formation accélérée (si tu acceptes le travail).
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Les stoïciens résumaient ça parfaitement. Épictète disait dans son Manuel : "Il y a ce qui dépend de nous et ce qui ne dépend pas de nous. Le transit ne dépend pas de toi. Ta réaction au transit dépend entièrement de toi." C'est exactement la philosophie de Karmastro : on te donne la carte, c'est toi qui conduis.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Comment utiliser les transits au quotidien</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Une pratique simple et efficace : consulter tes transits une fois par semaine (plutôt que tous les jours, sinon tu t'épuises) et noter les deux ou trois transits les plus exacts. Observe-les pendant quelques jours. Tu verras émerger des corrélations étonnantes entre les énergies astrologiques et ce que tu vis réellement. C'est la meilleure façon d'apprendre l'astrologie : en l'observant sur toi-même.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Pour les grands transits (Saturne, Uranus, Neptune, Pluton), anticipe plusieurs mois à l'avance. Un retour de Saturne à 29 ans, tu le sais un an avant. Ça te permet de te préparer, de faire les choix importants au bon moment, de ne pas subir. C'est d'ailleurs ce que fait <a href="https://app.karmastro.com/oracle" class="text-amber-300 hover:underline">Sibylle, notre Oracle astrologue</a> quand tu lui poses des questions sur ta période actuelle : elle croise automatiquement tes transits avec ton thème natal et ta numérologie.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Transits et numérologie</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Un conseil pour aller plus loin : croise toujours tes transits astrologiques avec ton <a href="/outils/annee-personnelle" class="text-amber-300 hover:underline">année personnelle numérologique</a>. Un retour de Jupiter pendant une année personnelle 1 est spectaculaire : double énergie d'expansion et de nouveau départ. Un transit Saturne pendant une année 4 amplifie le besoin de structure. Un transit Uranus pendant une année 5 donne des changements radicaux presque inévitables. Les deux systèmes se complètent et se renforcent mutuellement.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Questions fréquentes</h2>
+
+      <h3 class="font-serif text-xl mb-2">Pourquoi mes transits ne semblent rien provoquer de visible ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Parce que les transits s'expriment souvent <em>intérieurement</em> avant de se manifester dans le réel. Un carré Saturne à Vénus peut d'abord te faire ressentir de la distance affective, avant de provoquer un événement relationnel concret quelques semaines plus tard. Les effets visibles arrivent souvent avec retard. Et certains transits sont presque invisibles au quotidien mais agissent sur le long terme.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Un transit exact est-il plus fort qu'un transit avec orbe ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Oui. L'orbe est la marge de tolérance autour de l'angle exact. Plus l'orbe est petit, plus l'aspect est pointu. Un transit avec orbe inférieur à 1° est considéré comme exact et agit pleinement. Au-delà de 5° d'orbe, l'effet devient diffus et peu perceptible. Les transits les plus marquants sont ceux qui passent par le degré exact plusieurs fois (à cause des rétrogrades) : l'effet est alors amplifié par la répétition.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Les rétrogrades comptent-ils dans les transits ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Absolument. Les rétrogrades sont même une des raisons pour lesquelles certains transits durent si longtemps. Saturne rétrograde peut repasser trois fois sur un même point de ton thème natal sur environ un an, créant trois vagues d'activation de l'énergie du transit. Ces périodes sont souvent vécues comme "le problème revient", mais c'est en réalité une invitation à approfondir la leçon.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Karmastro calcule-t-il les progressions secondaires aussi ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Les progressions secondaires sont une technique prévisionnelle complémentaire aux transits, où chaque jour après la naissance correspond à une année de vie. Notre calculateur actuel se concentre sur les transits, qui sont la méthode la plus utilisée et la plus immédiatement lisible. Les progressions sont disponibles dans l'application complète pour les utilisateurs avancés.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Dois-je avoir peur d'un transit Pluton ou Saturne ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Non. Ces transits sont exigeants mais ce sont aussi les plus formateurs. Un transit Pluton t'oblige à te transformer dans un domaine où tu résistais au changement. Un transit Saturne te fait mûrir dans un secteur où tu manquais de structure. Sur le moment, c'est parfois dur. Avec le recul, ce sont presque toujours des étapes que les gens décrivent comme cruciales dans leur vie. L'Oracle peut t'aider à traverser ces périodes en comprenant ce qu'elles t'invitent à intégrer.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Comprendre tes transits en profondeur</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        La liste des transits est un point de départ. Pour comprendre ce que chacun signifie pour toi personnellement, comment le traverser, et comment l'intégrer à ta numérologie, parle à Sibylle.
+      </p>
+      <a href="https://app.karmastro.com/oracle" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Parler à Sibylle
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/outils" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Tous les outils</a>
+      <a href="/outils/theme-natal" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Thème natal</a>
+      <a href="/outils/annee-personnelle" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Année personnelle</a>
+      <a href="/horoscope" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Horoscope du jour</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  const ENGINE_URL = "http://168.119.229.20:8100";
+
+  const PLANET_GLYPHS: Record<string, string> = {
+    Soleil: "☉", Lune: "☽", Mercure: "☿", Venus: "♀", Mars: "♂",
+    Jupiter: "♃", Saturne: "♄", Uranus: "♅", Neptune: "♆", Pluton: "♇",
+    "Noeud Nord": "☊",
+  };
+
+  const ASPECT_COLORS: Record<string, string> = {
+    Conjonction: "#D4A017",
+    Trigone: "#4ade80",
+    Sextile: "#60a5fa",
+    Carre: "#f87171",
+    Opposition: "#ec4899",
+    Quinconce: "#a78bfa",
+  };
+
+  async function geocode(place: string) {
+    const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(place)}&format=json&limit=1`;
+    const res = await fetch(url, { headers: { "Accept-Language": "fr" } });
+    if (!res.ok) throw new Error("Géolocalisation impossible");
+    const data = await res.json();
+    if (!data.length) throw new Error("Ville introuvable. Précise le pays.");
+    return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon) };
+  }
+
+  const form = document.getElementById("tr-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+  const errorDiv = document.getElementById("error") as HTMLDivElement;
+  const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    errorDiv.classList.add("hidden");
+    resultDiv.classList.add("hidden");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Calcul en cours...";
+
+    try {
+      const date = (document.getElementById("birth-date") as HTMLInputElement).value;
+      const time = (document.getElementById("birth-time") as HTMLInputElement).value;
+      const place = (document.getElementById("birth-place") as HTMLInputElement).value;
+      if (!date || !time || !place) throw new Error("Tous les champs sont obligatoires");
+
+      const geo = await geocode(place);
+      const [y, m, d] = date.split("-").map(Number);
+      const [h, mi] = time.split(":").map(Number);
+      const hour = h + mi / 60;
+
+      const res = await fetch(`${ENGINE_URL}/transits`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ year: y, month: m, day: d, hour, latitude: geo.lat, longitude: geo.lng }),
+      });
+
+      if (!res.ok) throw new Error("Erreur du moteur");
+      const data = await res.json();
+
+      // Cosmic info
+      const cosmic = data.cosmic || {};
+      const moonSign = cosmic.moon?.moon_sign?.sign || "?";
+      const moonPhase = cosmic.moon?.name || "?";
+      const sunSign = cosmic.sun_position?.sign || "?";
+      const retros = (cosmic.retrogrades || []).map((r: any) => r.planet).join(", ") || "aucune planète rétrograde";
+      (document.getElementById("cosmic-info") as HTMLElement).textContent =
+        `Lune ${moonPhase} en ${moonSign} · Soleil en ${sunSign} · Rétrogrades : ${retros}`;
+
+      // Transits list
+      const transits = data.transits || [];
+      const list = document.getElementById("transits-list") as HTMLElement;
+      list.innerHTML = "";
+
+      let h1 = 0, c1 = 0, t1 = 0;
+      const sorted = [...transits].sort((a: any, b: any) => a.orb - b.orb);
+      for (const tr of sorted) {
+        if (tr.nature === "harmonique") h1++;
+        else if (tr.aspect === "Conjonction") c1++;
+        else if (tr.nature === "tension" || tr.nature === "polarite") t1++;
+      }
+
+      for (const tr of sorted) {
+        const div = document.createElement("div");
+        div.className = "flex items-center justify-between px-3 py-2 rounded-lg bg-white/[0.02] border border-white/10 text-sm";
+        const color = ASPECT_COLORS[tr.aspect] || "#ffffff";
+        const g1 = PLANET_GLYPHS[tr.transit_planet] || "●";
+        const g2 = PLANET_GLYPHS[tr.natal_planet] || "●";
+        const retro = tr.transit_retrograde ? ' <span class="text-pink-400">℞</span>' : "";
+        div.innerHTML = `
+          <span class="text-white/80"><span class="text-amber-300">${g1} ${tr.transit_planet}${retro}</span> <span style="color:${color}">${tr.aspect}</span> <span class="text-white/60">${g2} ${tr.natal_planet} natal</span></span>
+          <span class="text-white/50 text-xs font-mono">${tr.orb.toFixed(2)}°</span>
+        `;
+        list.appendChild(div);
+      }
+
+      (document.getElementById("count-h") as HTMLElement).textContent = String(h1);
+      (document.getElementById("count-c") as HTMLElement).textContent = String(c1);
+      (document.getElementById("count-t") as HTMLElement).textContent = String(t1);
+
+      if (sorted.length === 0) {
+        list.innerHTML = '<p class="text-sm text-white/50 text-center py-4">Aucun transit majeur actif aujourd\'hui. Une journée calme cosmiquement.</p>';
+      }
+
+      resultDiv.classList.remove("hidden");
+      resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+    } catch (err: any) {
+      errorDiv.textContent = err.message || "Une erreur est survenue";
+      errorDiv.classList.remove("hidden");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Voir mes transits du jour";
+    }
+  });
+</script>

@@ -1,0 +1,619 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Thème natal gratuit avec carte du ciel - Swiss Ephemeris - Karmastro";
+const description =
+  "Calcule ton thème natal gratuitement et obtiens ta carte du ciel interactive. 10 planètes, 12 maisons, aspects majeurs. Précision Swiss Ephemeris niveau NASA JPL.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Thème natal gratuit Karmastro",
+    description,
+    url: "https://karmastro.com/outils/theme-natal",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Qu'est-ce qu'un thème natal en astrologie ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Le thème natal, aussi appelé carte du ciel ou horoscope de naissance, est une représentation du ciel au moment exact de ta naissance, vu depuis ton lieu de naissance. Il inclut la position des 10 planètes du zodiaque, les 12 maisons astrologiques, l'ascendant, le milieu du ciel et les aspects entre planètes. C'est la base de toute lecture astrologique sérieuse.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Quelles informations sont nécessaires pour calculer un thème natal ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Trois données sont indispensables : ta date de naissance exacte, ton heure de naissance précise (à la minute si possible) et ton lieu de naissance (ville et pays). L'heure est cruciale car l'ascendant change d'un signe à l'autre toutes les deux heures environ. Sans heure précise, le thème ne peut pas être calculé de façon fiable.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Comment Karmastro calcule les positions planétaires ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Karmastro utilise Swiss Ephemeris, le moteur de calcul astronomique le plus précis au monde. Sa précision est de 0,001 seconde d'arc, soit le même niveau que le Jet Propulsion Laboratory de la NASA pour ses calculs d'orbites. Chaque position planétaire est calculée en temps réel à partir des éphémérides astronomiques, sans aucune approximation.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Quelle est la différence entre une carte du ciel et un horoscope quotidien ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "L'horoscope quotidien concerne uniquement ton signe solaire et donne une indication générale pour la journée. Le thème natal est une photo unique du ciel à ta naissance, propre à toi seul. C'est la fondation sur laquelle toute analyse astrologique personnelle se construit. Un horoscope quotidien bien fait s'appuie d'ailleurs sur le thème natal pour être pertinent.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Que faire si je ne connais pas mon heure de naissance ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Sans heure précise, on peut quand même calculer les positions planétaires, mais pas l'ascendant ni les maisons. C'est un thème natal partiel mais déjà très riche. Pour retrouver ton heure, consulte ton carnet de santé, demande un acte de naissance intégral à ta mairie, ou fais appel à un astrologue professionnel pour une rectification astrologique basée sur des événements marquants de ta vie.",
+        },
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6">
+      <a href="/" class="hover:text-amber-300">Accueil</a>
+      <span class="mx-2">/</span>
+      <a href="/outils" class="hover:text-amber-300">Outils</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Thème natal</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Astrologie de précision</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Thème natal gratuit</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Ta carte du ciel complète avec 10 planètes, 12 maisons, ascendant, milieu du ciel et aspects majeurs. Calcul Swiss Ephemeris en temps réel, précision 0,001 seconde d'arc.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="natal-form" class="space-y-4">
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">Date de naissance</label>
+            <input
+              type="date"
+              id="birth-date"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors"
+            />
+          </div>
+          <div>
+            <label for="birth-time" class="block text-sm font-medium text-white/80 mb-2">Heure de naissance</label>
+            <input
+              type="time"
+              id="birth-time"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors"
+            />
+          </div>
+        </div>
+        <div>
+          <label for="birth-place" class="block text-sm font-medium text-white/80 mb-2">
+            Lieu de naissance
+            <span class="text-white/40 text-xs block mt-1">Ville + pays, ex: "Dijon, France"</span>
+          </label>
+          <input
+            type="text"
+            id="birth-place"
+            required
+            placeholder="Dijon, France"
+            autocomplete="off"
+            class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors"
+          />
+          <p id="place-status" class="text-xs text-white/40 mt-1 hidden"></p>
+        </div>
+        <button
+          type="submit"
+          id="submit-btn"
+          class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity disabled:opacity-50"
+        >
+          Calculer mon thème natal
+        </button>
+      </form>
+
+      <div id="error" class="mt-4 hidden p-4 rounded-xl bg-pink-500/10 border border-pink-400/30 text-sm text-pink-200"></div>
+
+      <div id="result" class="mt-8 hidden">
+        <div class="flex justify-center mb-6">
+          <svg id="chart-svg" viewBox="0 0 600 600" class="w-full max-w-xl"></svg>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-3 mb-6">
+          <div class="p-4 rounded-xl bg-[#0f0a1e]/60 border border-amber-300/20 text-center">
+            <p class="text-xs uppercase tracking-wider text-amber-300/80 mb-1">Ascendant</p>
+            <p id="asc-value" class="font-serif text-lg text-white"></p>
+          </div>
+          <div class="p-4 rounded-xl bg-[#0f0a1e]/60 border border-amber-300/20 text-center">
+            <p class="text-xs uppercase tracking-wider text-amber-300/80 mb-1">Milieu du Ciel</p>
+            <p id="mc-value" class="font-serif text-lg text-white"></p>
+          </div>
+          <div class="p-4 rounded-xl bg-[#0f0a1e]/60 border border-amber-300/20 text-center">
+            <p class="text-xs uppercase tracking-wider text-amber-300/80 mb-1">Soleil</p>
+            <p id="sun-value" class="font-serif text-lg text-white"></p>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <h3 class="font-serif text-xl mb-3 text-amber-300">Positions planétaires</h3>
+          <div id="planets-list" class="grid md:grid-cols-2 gap-2"></div>
+        </div>
+
+        <div class="mb-6">
+          <h3 class="font-serif text-xl mb-3 text-amber-300">Maisons astrologiques</h3>
+          <div id="houses-list" class="grid md:grid-cols-2 gap-2"></div>
+        </div>
+
+        <div class="mb-6">
+          <h3 class="font-serif text-xl mb-3 text-amber-300">Aspects majeurs</h3>
+          <div id="aspects-list" class="space-y-1"></div>
+        </div>
+
+        <div class="pt-4 border-t border-white/10 text-center">
+          <a
+            href="https://app.karmastro.com"
+            class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity"
+          >
+            Interprétation complète avec l'Oracle
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Qu'est-ce qu'un thème natal ?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Le <strong>thème natal</strong> (aussi appelé carte du ciel ou horoscope de naissance) est une représentation astronomique du ciel au moment précis de ta naissance, vu depuis ton lieu de naissance. Il montre la position exacte des dix planètes principales (incluant Soleil et Lune), les douze maisons astrologiques, ton ascendant et les aspects géométriques entre planètes.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        C'est la <strong>signature cosmique unique</strong> de chaque individu. Contrairement à un horoscope quotidien qui ne traite que ton signe solaire, le thème natal prend en compte les dix corps célestes, leurs positions par signe et par maison, et leurs interactions géométriques. C'est la base de toute analyse astrologique sérieuse depuis la Grèce antique.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Comment lire une carte du ciel</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Une carte du ciel est un cercle divisé en douze parties égales de 30° chacune : les <strong>signes du zodiaque</strong> sur l'anneau extérieur. À l'intérieur, les <strong>douze maisons astrologiques</strong> représentent les domaines de ta vie (identité, finances, communication, famille, créativité, santé, relations, transformation, spiritualité, carrière, amitiés, inconscient). Les <strong>planètes</strong> sont placées à leur position exacte, chacune dans un signe et dans une maison.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Chaque planète apporte une énergie, chaque signe lui donne une coloration, chaque maison lui attribue un domaine d'expression. Par exemple, une Vénus en Taureau en maison VII indique une sensualité tranquille (Vénus en Taureau) vécue dans le couple (maison VII). Les <strong>aspects</strong>, lignes géométriques entre planètes, décrivent comment ces énergies interagissent : en harmonie (trigone, sextile) ou en tension (carré, opposition).
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        L'<a href="/outils/ascendant" class="text-amber-300 hover:underline">ascendant</a> marque le début de la maison I, en position 9 heures sur la carte. Le <strong>milieu du ciel (MC)</strong> marque le sommet, en position 12 heures, et représente ta vocation professionnelle. C'est l'axe vertical de ton identité publique. L'axe horizontal, ascendant-descendant, représente la polarité je-autre.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Les 10 planètes et leur rôle</h2>
+      <div class="not-prose overflow-x-auto mb-6">
+        <table class="w-full text-sm text-left border-collapse">
+          <thead>
+            <tr class="border-b border-white/10">
+              <th class="py-3 px-4 text-amber-300 font-serif">Planète</th>
+              <th class="py-3 px-4 text-amber-300 font-serif">Énergie</th>
+              <th class="py-3 px-4 text-amber-300 font-serif">Domaine</th>
+            </tr>
+          </thead>
+          <tbody class="text-white/80">
+            <tr class="border-b border-white/5"><td class="py-2 px-4">Soleil</td><td class="py-2 px-4">Identité, volonté, vitalité</td><td class="py-2 px-4">Qui tu es</td></tr>
+            <tr class="border-b border-white/5"><td class="py-2 px-4">Lune</td><td class="py-2 px-4">Émotions, intuition, mémoire</td><td class="py-2 px-4">Monde intérieur</td></tr>
+            <tr class="border-b border-white/5"><td class="py-2 px-4">Mercure</td><td class="py-2 px-4">Esprit, communication, logique</td><td class="py-2 px-4">Pensée</td></tr>
+            <tr class="border-b border-white/5"><td class="py-2 px-4">Vénus</td><td class="py-2 px-4">Amour, beauté, valeurs</td><td class="py-2 px-4">Ce que tu aimes</td></tr>
+            <tr class="border-b border-white/5"><td class="py-2 px-4">Mars</td><td class="py-2 px-4">Action, désir, combat</td><td class="py-2 px-4">Comment tu agis</td></tr>
+            <tr class="border-b border-white/5"><td class="py-2 px-4">Jupiter</td><td class="py-2 px-4">Expansion, chance, philosophie</td><td class="py-2 px-4">Croissance</td></tr>
+            <tr class="border-b border-white/5"><td class="py-2 px-4">Saturne</td><td class="py-2 px-4">Structure, discipline, limites</td><td class="py-2 px-4">Maturité</td></tr>
+            <tr class="border-b border-white/5"><td class="py-2 px-4">Uranus</td><td class="py-2 px-4">Liberté, rébellion, révélation</td><td class="py-2 px-4">Changement soudain</td></tr>
+            <tr class="border-b border-white/5"><td class="py-2 px-4">Neptune</td><td class="py-2 px-4">Rêve, mystique, dissolution</td><td class="py-2 px-4">Spiritualité</td></tr>
+            <tr><td class="py-2 px-4">Pluton</td><td class="py-2 px-4">Transformation, pouvoir, mort-renaissance</td><td class="py-2 px-4">Abysses</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Les 12 maisons astrologiques</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Les maisons représentent les <strong>domaines de ta vie</strong> où les énergies planétaires s'expriment. Elles sont numérotées de 1 à 12 à partir de l'ascendant et font le tour du thème dans le sens contraire des aiguilles d'une montre. Une planète en maison I affectera ton identité, la même planète en maison VII affectera tes relations, et ainsi de suite.
+      </p>
+      <div class="not-prose grid md:grid-cols-2 gap-2 mb-6 text-sm text-white/80">
+        <div class="p-3 rounded-lg border border-white/10 bg-white/[0.02]"><strong class="text-amber-300">Maison I</strong> · Identité, apparence, façon d'être</div>
+        <div class="p-3 rounded-lg border border-white/10 bg-white/[0.02]"><strong class="text-amber-300">Maison II</strong> · Argent, valeurs, ressources</div>
+        <div class="p-3 rounded-lg border border-white/10 bg-white/[0.02]"><strong class="text-amber-300">Maison III</strong> · Communication, fratrie, apprentissages</div>
+        <div class="p-3 rounded-lg border border-white/10 bg-white/[0.02]"><strong class="text-amber-300">Maison IV</strong> · Famille, racines, foyer</div>
+        <div class="p-3 rounded-lg border border-white/10 bg-white/[0.02]"><strong class="text-amber-300">Maison V</strong> · Créativité, enfants, plaisir</div>
+        <div class="p-3 rounded-lg border border-white/10 bg-white/[0.02]"><strong class="text-amber-300">Maison VI</strong> · Santé, travail quotidien, routines</div>
+        <div class="p-3 rounded-lg border border-white/10 bg-white/[0.02]"><strong class="text-amber-300">Maison VII</strong> · Couple, associations, contrats</div>
+        <div class="p-3 rounded-lg border border-white/10 bg-white/[0.02]"><strong class="text-amber-300">Maison VIII</strong> · Transformation, sexualité, héritages</div>
+        <div class="p-3 rounded-lg border border-white/10 bg-white/[0.02]"><strong class="text-amber-300">Maison IX</strong> · Voyages, études, spiritualité</div>
+        <div class="p-3 rounded-lg border border-white/10 bg-white/[0.02]"><strong class="text-amber-300">Maison X</strong> · Carrière, réputation, vocation</div>
+        <div class="p-3 rounded-lg border border-white/10 bg-white/[0.02]"><strong class="text-amber-300">Maison XI</strong> · Amitiés, projets, idéaux</div>
+        <div class="p-3 rounded-lg border border-white/10 bg-white/[0.02]"><strong class="text-amber-300">Maison XII</strong> · Inconscient, retraite, épreuves</div>
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Les aspects astrologiques</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Les <strong>aspects</strong> sont les angles géométriques entre deux planètes dans ton thème. Ils indiquent comment les énergies de ces planètes dialoguent entre elles. Les cinq aspects majeurs sont :
+      </p>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Conjonction</strong> (0°) : fusion des énergies. Intense, peut être bénéfique ou challenging selon les planètes</li>
+        <li><strong>Sextile</strong> (60°) : harmonie facile, opportunités qui demandent un effort conscient</li>
+        <li><strong>Carré</strong> (90°) : tension constructive, forces le développement</li>
+        <li><strong>Trigone</strong> (120°) : harmonie naturelle, talents innés, facilités</li>
+        <li><strong>Opposition</strong> (180°) : polarité, équilibre à trouver entre deux forces</li>
+      </ul>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Un aspect est considéré comme actif quand l'angle est proche du degré exact, dans une marge appelée <em>orbe</em>. Plus l'orbe est petit, plus l'aspect est puissant. Un aspect avec orbe inférieur à 1° est considéré comme exact et joue un rôle majeur dans la personnalité.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">L'héritage historique du thème natal</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Le calcul d'un thème natal remonte aux astronomes mésopotamiens il y a plus de 4000 ans. Les Grecs, avec <strong>Ptolémée</strong> au IIᵉ siècle après J.-C., ont formalisé la méthode dans son traité le <em>Tetrabiblos</em>, qui reste une référence. Les Arabes ont perfectionné les calculs au Moyen Âge. Pendant la Renaissance, <strong>Kepler</strong> lui-même, le père de la mécanique céleste, pratiquait l'astrologie et calculait des thèmes natals pour des commanditaires prestigieux.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Aujourd'hui, Karmastro utilise <a href="https://www.astro.com/swisseph/" class="text-amber-300 hover:underline">Swiss Ephemeris</a>, une bibliothèque de calcul astronomique développée par Astrodienst sur la base des éphémérides du Jet Propulsion Laboratory. La précision est de 0,001 seconde d'arc, soit infiniment plus que ce que Ptolémée, Kepler ou n'importe quel astrologue pré-moderne pouvait espérer. C'est ce que nous détaillons dans notre <a href="/precision" class="text-amber-300 hover:underline">page précision</a>.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Questions fréquentes</h2>
+
+      <h3 class="font-serif text-xl mb-2">Mon thème natal change-t-il avec le temps ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Non. Ton thème natal est la photo du ciel à ta naissance. Il est fixe, comme une empreinte digitale. Ce qui change, ce sont les <strong>transits</strong>, les positions actuelles des planètes qui activent différents points de ton thème natal. Consulte notre <a href="/outils/transits" class="text-amber-300 hover:underline">calculateur de transits</a> pour voir ce qui t'active aujourd'hui.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Quel système de maisons utilise Karmastro ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Par défaut, Karmastro utilise le système <strong>Placidus</strong>, le plus répandu en astrologie occidentale moderne. Il produit des maisons de tailles inégales, particulièrement proches des pôles géographiques. Pour les latitudes françaises courantes (42° à 51°), le système Placidus fonctionne très bien. D'autres systèmes existent (Koch, Regiomontanus, signes entiers) et peuvent être activés pour les utilisateurs avancés.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Je ne me reconnais pas dans mon thème natal, pourquoi ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Trois raisons possibles. Soit ton heure de naissance est imprécise (le thème ne montre alors pas le bon ascendant ni les bonnes maisons). Soit tu n'exprimes qu'une partie de ton thème (la plupart des gens n'activent pleinement leur thème qu'après 30 ans). Soit tu es dans une phase de <strong>transits majeurs</strong> qui activent temporairement des énergies inhabituelles. L'Oracle peut t'aider à démêler ça.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Peut-on interpréter soi-même son thème natal ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Oui, avec du temps et de l'étude. Les bases s'apprennent en quelques semaines, mais une vraie maîtrise demande plusieurs années. Karmastro propose l'Oracle pour les lectures rapides et personnalisées, et son <a href="/glossaire" class="text-amber-300 hover:underline">glossaire</a> pour apprendre les termes. Notre <a href="/blog" class="text-amber-300 hover:underline">blog Le Cosmos</a> publie régulièrement des articles pédagogiques pour progresser.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Combien coûte un thème natal interprété par Karmastro ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Le calcul et l'affichage du thème natal sont gratuits, comme tous nos calculateurs. L'interprétation basique par l'Oracle est incluse dans la formule Éveil (gratuite, offerte par les astres). Pour des analyses approfondies illimitées, la formule Étoile débloque l'Oracle sans restrictions. Nous croyons que tout le monde mérite un accès à une guidance de qualité, pas seulement ceux qui peuvent payer 100€ chez un astrologue privé.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Interprétation personnalisée</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Calculer ton thème est un point de départ. Pour une interprétation qui croise ton thème natal avec ta numérologie, ton année personnelle et tes transits actuels, parle à Sibylle, notre Oracle astrologue.
+      </p>
+      <a
+        href="https://app.karmastro.com/oracle"
+        class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity"
+      >
+        Parler à Sibylle
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/outils" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Tous les outils</a>
+      <a href="/outils/ascendant" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Ascendant</a>
+      <a href="/outils/synastrie" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Synastrie</a>
+      <a href="/outils/transits" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Transits</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  const ENGINE_URL = "http://168.119.229.20:8100";
+
+  const PLANET_GLYPHS: Record<string, string> = {
+    Soleil: "☉",
+    Lune: "☽",
+    Mercure: "☿",
+    Venus: "♀",
+    Mars: "♂",
+    Jupiter: "♃",
+    Saturne: "♄",
+    Uranus: "♅",
+    Neptune: "♆",
+    Pluton: "♇",
+    "Noeud Nord": "☊",
+  };
+
+  const SIGN_ORDER = ["Belier", "Taureau", "Gemeaux", "Cancer", "Lion", "Vierge", "Balance", "Scorpion", "Sagittaire", "Capricorne", "Verseau", "Poissons"];
+  const SIGN_SYMBOLS = ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"];
+
+  const ASPECT_COLORS: Record<string, string> = {
+    Conjonction: "#D4A017",
+    Trigone: "#4ade80",
+    Sextile: "#60a5fa",
+    Carre: "#f87171",
+    Opposition: "#ec4899",
+  };
+
+  type SVGNS = "http://www.w3.org/2000/svg";
+  const SVG_NS: SVGNS = "http://www.w3.org/2000/svg";
+
+  // Convert astrological longitude to SVG x,y
+  // Ascendant is always at 180° SVG angle (left = 9 o'clock)
+  function longitudeToXY(longitude: number, ascLong: number, radius: number, cx = 300, cy = 300) {
+    const chartDeg = 180 - (longitude - ascLong);
+    const rad = (chartDeg * Math.PI) / 180;
+    return {
+      x: cx + radius * Math.cos(rad),
+      y: cy - radius * Math.sin(rad),
+    };
+  }
+
+  function createSVGElement(tag: string, attrs: Record<string, any> = {}) {
+    const el = document.createElementNS(SVG_NS, tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      el.setAttribute(k, String(v));
+    }
+    return el;
+  }
+
+  function renderChart(data: any) {
+    const svg = document.getElementById("chart-svg") as unknown as SVGSVGElement;
+    svg.innerHTML = "";
+
+    const cx = 300, cy = 300;
+    const rOuter = 280;      // outer ring (signs)
+    const rSignsInner = 240; // inner edge of signs band
+    const rHousesInner = 150; // inner edge of houses
+    const rPlanets = 200;    // planet glyph ring
+    const rAspects = 145;    // aspect lines inside this
+    const ascLong = data.ascendant.longitude;
+
+    // Background circle
+    svg.appendChild(createSVGElement("circle", { cx, cy, r: rOuter, fill: "#0f0a1e", stroke: "rgba(212,160,23,0.3)", "stroke-width": 1 }));
+    svg.appendChild(createSVGElement("circle", { cx, cy, r: rSignsInner, fill: "none", stroke: "rgba(212,160,23,0.2)", "stroke-width": 1 }));
+    svg.appendChild(createSVGElement("circle", { cx, cy, r: rHousesInner, fill: "none", stroke: "rgba(212,160,23,0.2)", "stroke-width": 1 }));
+    svg.appendChild(createSVGElement("circle", { cx, cy, r: rAspects, fill: "none", stroke: "rgba(139,92,246,0.1)", "stroke-width": 1 }));
+
+    // 12 sign divisions (every 30°)
+    for (let i = 0; i < 12; i++) {
+      const signStart = i * 30;
+      const p1 = longitudeToXY(signStart, ascLong, rOuter, cx, cy);
+      const p2 = longitudeToXY(signStart, ascLong, rSignsInner, cx, cy);
+      svg.appendChild(createSVGElement("line", { x1: p1.x, y1: p1.y, x2: p2.x, y2: p2.y, stroke: "rgba(212,160,23,0.3)", "stroke-width": 1 }));
+
+      // Sign glyph at center of each 30° slice
+      const mid = signStart + 15;
+      const glyphPos = longitudeToXY(mid, ascLong, (rOuter + rSignsInner) / 2, cx, cy);
+      const t = createSVGElement("text", {
+        x: glyphPos.x,
+        y: glyphPos.y,
+        "text-anchor": "middle",
+        "dominant-baseline": "central",
+        fill: "#D4A017",
+        "font-size": "20",
+      });
+      t.textContent = SIGN_SYMBOLS[i];
+      svg.appendChild(t);
+    }
+
+    // House lines (12 houses)
+    for (let i = 1; i <= 12; i++) {
+      const house = data.houses[`house_${i}`];
+      if (!house) continue;
+      const isAngle = i === 1 || i === 4 || i === 7 || i === 10;
+      const p1 = longitudeToXY(house.longitude, ascLong, rSignsInner, cx, cy);
+      const p2 = longitudeToXY(house.longitude, ascLong, rHousesInner, cx, cy);
+      svg.appendChild(createSVGElement("line", {
+        x1: p1.x, y1: p1.y, x2: p2.x, y2: p2.y,
+        stroke: isAngle ? "rgba(212,160,23,0.8)" : "rgba(255,255,255,0.15)",
+        "stroke-width": isAngle ? 1.5 : 0.8,
+      }));
+
+      // House number
+      const nextHouse = data.houses[`house_${(i % 12) + 1}`];
+      if (nextHouse) {
+        let midLong = (house.longitude + nextHouse.longitude) / 2;
+        // Handle wraparound
+        if (Math.abs(house.longitude - nextHouse.longitude) > 180) {
+          midLong = ((house.longitude + nextHouse.longitude + 360) / 2) % 360;
+        }
+        const numPos = longitudeToXY(midLong, ascLong, (rHousesInner + 20), cx, cy);
+        const tn = createSVGElement("text", {
+          x: numPos.x,
+          y: numPos.y,
+          "text-anchor": "middle",
+          "dominant-baseline": "central",
+          fill: "rgba(255,255,255,0.5)",
+          "font-size": "11",
+        });
+        tn.textContent = String(i);
+        svg.appendChild(tn);
+      }
+    }
+
+    // Axis labels (AC, DC, MC, IC)
+    const addLabel = (longitude: number, text: string) => {
+      const pos = longitudeToXY(longitude, ascLong, rOuter + 15, cx, cy);
+      const t = createSVGElement("text", {
+        x: pos.x,
+        y: pos.y,
+        "text-anchor": "middle",
+        "dominant-baseline": "central",
+        fill: "#D4A017",
+        "font-size": "12",
+        "font-weight": "bold",
+      });
+      t.textContent = text;
+      svg.appendChild(t);
+    };
+    addLabel(ascLong, "AC");
+    addLabel(ascLong + 180, "DC");
+    if (data.midheaven) {
+      addLabel(data.midheaven.longitude, "MC");
+      addLabel(data.midheaven.longitude + 180, "IC");
+    }
+
+    // Planets
+    const planets = data.planets;
+    const planetPositions: Array<{ name: string; longitude: number; x: number; y: number }> = [];
+    for (const [name, p] of Object.entries(planets) as any) {
+      const pos = longitudeToXY(p.longitude, ascLong, rPlanets, cx, cy);
+      planetPositions.push({ name, longitude: p.longitude, x: pos.x, y: pos.y });
+
+      const glyph = PLANET_GLYPHS[name] || "●";
+      const t = createSVGElement("text", {
+        x: pos.x,
+        y: pos.y,
+        "text-anchor": "middle",
+        "dominant-baseline": "central",
+        fill: p.retrograde ? "#f87171" : "#ffffff",
+        "font-size": "18",
+      });
+      t.textContent = glyph;
+      svg.appendChild(t);
+    }
+
+    // Aspect lines (top 10 most exact)
+    const topAspects = (data.aspects || []).slice(0, 10);
+    for (const asp of topAspects) {
+      const p1 = planetPositions.find((p) => p.name === asp.planet_1);
+      const p2 = planetPositions.find((p) => p.name === asp.planet_2);
+      if (!p1 || !p2) continue;
+
+      // Use inner aspect ring positions
+      const inner1 = longitudeToXY(p1.longitude, ascLong, rAspects, cx, cy);
+      const inner2 = longitudeToXY(p2.longitude, ascLong, rAspects, cx, cy);
+
+      svg.appendChild(createSVGElement("line", {
+        x1: inner1.x, y1: inner1.y, x2: inner2.x, y2: inner2.y,
+        stroke: ASPECT_COLORS[asp.aspect] || "rgba(255,255,255,0.2)",
+        "stroke-width": asp.exact ? 1.5 : 0.8,
+        opacity: Math.max(0.3, 1 - asp.orb / 8),
+      }));
+    }
+  }
+
+  function fillDetails(data: any) {
+    const asc = data.ascendant;
+    const mc = data.midheaven;
+    const sun = data.planets.Soleil;
+
+    (document.getElementById("asc-value") as HTMLElement).textContent = `${asc.sign} ${asc.degree}°${asc.minute}'`;
+    (document.getElementById("mc-value") as HTMLElement).textContent = `${mc.sign} ${mc.degree}°${mc.minute}'`;
+    (document.getElementById("sun-value") as HTMLElement).textContent = `${sun.sign} ${sun.degree}°${sun.minute}'`;
+
+    // Planets list
+    const planetsList = document.getElementById("planets-list") as HTMLElement;
+    planetsList.innerHTML = "";
+    for (const [name, p] of Object.entries(data.planets) as any) {
+      const retro = p.retrograde ? ' <span class="text-pink-400">℞</span>' : "";
+      const house = p.house ? ` · M${p.house}` : "";
+      const div = document.createElement("div");
+      div.className = "flex items-center justify-between px-3 py-2 rounded-lg bg-white/[0.02] border border-white/10 text-sm";
+      div.innerHTML = `
+        <span class="text-white/80">${PLANET_GLYPHS[name] || "●"} ${name}</span>
+        <span class="text-white/60 text-xs font-mono">${p.sign} ${p.degree}°${p.minute}'${retro}${house}</span>
+      `;
+      planetsList.appendChild(div);
+    }
+
+    // Houses list
+    const housesList = document.getElementById("houses-list") as HTMLElement;
+    housesList.innerHTML = "";
+    for (let i = 1; i <= 12; i++) {
+      const h = data.houses[`house_${i}`];
+      if (!h) continue;
+      const div = document.createElement("div");
+      div.className = "flex items-center justify-between px-3 py-2 rounded-lg bg-white/[0.02] border border-white/10 text-sm";
+      div.innerHTML = `
+        <span class="text-white/80">Maison ${i}</span>
+        <span class="text-white/60 text-xs font-mono">${h.sign} ${h.degree}°${h.minute}'</span>
+      `;
+      housesList.appendChild(div);
+    }
+
+    // Aspects list (top 15)
+    const aspectsList = document.getElementById("aspects-list") as HTMLElement;
+    aspectsList.innerHTML = "";
+    const topAspects = (data.aspects || []).slice(0, 15);
+    for (const asp of topAspects) {
+      const div = document.createElement("div");
+      div.className = "flex items-center justify-between px-3 py-2 rounded-lg bg-white/[0.02] border border-white/10 text-sm";
+      const color = ASPECT_COLORS[asp.aspect] || "#ffffff";
+      const exactMark = asp.exact ? ' <span class="text-amber-300">exact</span>' : "";
+      div.innerHTML = `
+        <span class="text-white/80">${asp.planet_1} <span style="color:${color}">${asp.aspect}</span> ${asp.planet_2}</span>
+        <span class="text-white/50 text-xs font-mono">${asp.orb.toFixed(2)}°${exactMark}</span>
+      `;
+      aspectsList.appendChild(div);
+    }
+  }
+
+  async function geocode(place: string) {
+    const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(place)}&format=json&limit=1`;
+    const res = await fetch(url, { headers: { "Accept-Language": "fr" } });
+    if (!res.ok) throw new Error("Géolocalisation impossible");
+    const data = await res.json();
+    if (!data.length) throw new Error("Ville introuvable. Précise le pays, ex: 'Dijon, France'");
+    return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon), display: data[0].display_name };
+  }
+
+  const form = document.getElementById("natal-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+  const errorDiv = document.getElementById("error") as HTMLDivElement;
+  const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement;
+  const placeStatus = document.getElementById("place-status") as HTMLElement;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    errorDiv.classList.add("hidden");
+    resultDiv.classList.add("hidden");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Calcul en cours...";
+
+    try {
+      const date = (document.getElementById("birth-date") as HTMLInputElement).value;
+      const time = (document.getElementById("birth-time") as HTMLInputElement).value;
+      const place = (document.getElementById("birth-place") as HTMLInputElement).value;
+      if (!date || !time || !place) throw new Error("Tous les champs sont obligatoires");
+
+      placeStatus.classList.remove("hidden");
+      placeStatus.textContent = "Recherche de la ville...";
+      const geo = await geocode(place);
+      placeStatus.textContent = `Localisation : ${geo.display}`;
+
+      const [y, m, d] = date.split("-").map(Number);
+      const [h, mi] = time.split(":").map(Number);
+      const hour = h + mi / 60;
+
+      const res = await fetch(`${ENGINE_URL}/natal-chart`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ year: y, month: m, day: d, hour, latitude: geo.lat, longitude: geo.lng }),
+      });
+
+      if (!res.ok) throw new Error("Erreur du moteur de calcul. Réessaie dans un instant.");
+      const data = await res.json();
+
+      renderChart(data);
+      fillDetails(data);
+
+      resultDiv.classList.remove("hidden");
+      resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+    } catch (err: any) {
+      errorDiv.textContent = err.message || "Une erreur est survenue";
+      errorDiv.classList.remove("hidden");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Calculer mon thème natal";
+    }
+  });
+</script>
