@@ -3,7 +3,9 @@ import BlogLayout from "../../layouts/BlogLayout.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  // Only generate pages for articles whose scheduled date has been reached
+  const now = new Date();
+  const posts = await getCollection("blog", ({ data }) => !data.draft && data.date.valueOf() <= now.valueOf());
   return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },
