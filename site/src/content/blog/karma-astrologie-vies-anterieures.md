@@ -1,7 +1,7 @@
 ---
 title: "Karma et astrologie : comprendre ses vies antérieures à travers son thème natal"
 description: "Lire le karma et les vies antérieures dans ton thème natal : noeuds lunaires, dettes karmiques, Saturne et Pluton. Guide trajectoire d'âme."
-date: 2026-04-20T07:54:00+02:00
+date: 2026-05-04T07:55:00+02:00
 author: "Orion"
 category: "karma"
 tags: ["karma", "vies antérieures", "astrologie", "spirituel", "noeuds lunaires"]
