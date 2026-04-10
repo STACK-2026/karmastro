@@ -1,0 +1,321 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import ZodiacSymbol from "../../../../components/ZodiacSymbol.astro";
+import { ZODIAC_SIGNS, SIGN_SLUGS, getSignBySlug, formatFrenchDate } from "../../../../data/zodiac";
+import { LOCALES, DEFAULT_LOCALE, type Locale } from "../../../../i18n/config";
+import { t } from "../../../../i18n/translations";
+import fs from "fs";
+import path from "path";
+
+export function getStaticPaths() {
+  const dataDir = path.join(process.cwd(), "src/data/horoscope");
+  const paths: any[] = [];
+
+  if (!fs.existsSync(dataDir)) return paths;
+
+  const files = fs
+    .readdirSync(dataDir)
+    .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+    .sort();
+  if (files.length === 0) return paths;
+
+  const realToday = new Date().toISOString().slice(0, 10);
+  const eligibleDates = files
+    .map((f) => f.replace(".json", ""))
+    .filter((date) => date !== realToday);
+
+  for (const lang of LOCALES) {
+    if (lang === DEFAULT_LOCALE) continue;
+    for (const date of eligibleDates) {
+      const isFuture = date > realToday;
+      // Load FR data as fallback
+      const frFile = path.join(dataDir, `${date}.json`);
+      if (!fs.existsSync(frFile)) continue;
+      const frData = JSON.parse(fs.readFileSync(frFile, "utf-8"));
+
+      for (const slug of SIGN_SLUGS) {
+        if (!frData[slug]) continue;
+        paths.push({
+          params: { lang, signe: slug, date },
+          props: { date, isFuture },
+        });
+      }
+    }
+  }
+
+  return paths;
+}
+
+const { lang, signe, date } = Astro.params as { lang: Locale; signe: string; date: string };
+const { date: propDate, isFuture } = Astro.props as { date: string; isFuture: boolean };
+const sign = getSignBySlug(signe as string);
+if (!sign) throw new Error(`Unknown sign: ${signe}`);
+
+// Sign name translation
+const signNameKeys: Record<string, string> = {
+  belier: "signs.aries", taureau: "signs.taurus", gemeaux: "signs.gemini", cancer: "signs.cancer",
+  lion: "signs.leo", vierge: "signs.virgo", balance: "signs.libra", scorpion: "signs.scorpio",
+  sagittaire: "signs.sagittarius", capricorne: "signs.capricorn", verseau: "signs.aquarius", poissons: "signs.pisces",
+};
+const localSignName = t(signNameKeys[sign.slug] as any, lang) || sign.name;
+
+// Load horoscope (localized first, FR fallback)
+const dataDir = path.join(process.cwd(), "src/data/horoscope");
+let entry: any = null;
+let contentLang: string = lang;
+
+function loadForDate(dateStr: string, langCode: string) {
+  if (langCode !== "fr") {
+    const localized = path.join(dataDir, `${dateStr}-${langCode}.json`);
+    if (fs.existsSync(localized)) {
+      try {
+        return { data: JSON.parse(fs.readFileSync(localized, "utf-8")), usedLang: langCode };
+      } catch (e) {}
+    }
+  }
+  const frFile = path.join(dataDir, `${dateStr}.json`);
+  if (fs.existsSync(frFile)) {
+    try {
+      return { data: JSON.parse(fs.readFileSync(frFile, "utf-8")), usedLang: "fr" };
+    } catch (e) {}
+  }
+  return null;
+}
+
+const loaded = loadForDate(propDate, lang);
+if (loaded) {
+  entry = loaded.data[sign.slug];
+  contentLang = loaded.usedLang;
+}
+
+if (!entry) throw new Error(`No entry for ${sign.slug} / ${propDate}`);
+
+const dateFormatted = formatFrenchDate(propDate);
+const title = `${t("horoscope.title", lang)} ${localSignName} - ${dateFormatted} - Karmastro`;
+const description = entry.intro
+  ? `${localSignName} - ${entry.intro.slice(0, 140)}...`
+  : `${isFuture ? t("horoscope.preview_of", lang) : t("horoscope.archive_of", lang)} ${dateFormatted}.`;
+
+const compatSigns = sign.compatibilities
+  .map((slug) => ZODIAC_SIGNS.find((s) => s.slug === slug))
+  .filter(Boolean) as typeof ZODIAC_SIGNS;
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    datePublished: propDate,
+    inLanguage: lang,
+    author: { "@type": "Person", name: entry.author || "Sibylle" },
+    publisher: {
+      "@type": "Organization",
+      name: "Karmastro",
+      url: "https://karmastro.com",
+      logo: { "@type": "ImageObject", url: "https://karmastro.com/favicon.svg" },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://karmastro.com/${lang}/horoscope/${sign.slug}/${propDate}` },
+    about: { "@type": "Thing", name: localSignName, sameAs: `https://en.wikipedia.org/wiki/${sign.name}_(astrology)` },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Karmastro", item: `https://karmastro.com/${lang}` },
+      { "@type": "ListItem", position: 2, name: t("horoscope.title", lang), item: `https://karmastro.com/${lang}/horoscope` },
+      { "@type": "ListItem", position: 3, name: localSignName, item: `https://karmastro.com/${lang}/horoscope/${sign.slug}` },
+      { "@type": "ListItem", position: 4, name: dateFormatted, item: `https://karmastro.com/${lang}/horoscope/${sign.slug}/${propDate}` },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd} ogType="article" publishedTime={propDate}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href={`/${lang}`} class="hover:text-amber-300">Karmastro</a>
+      <span class="mx-2">/</span>
+      <a href={`/${lang}/horoscope`} class="hover:text-amber-300">{t("horoscope.title", lang)}</a>
+      <span class="mx-2">/</span>
+      <a href={`/${lang}/horoscope/${sign.slug}`} class="hover:text-amber-300">{localSignName}</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">{dateFormatted}</span>
+    </nav>
+
+    <div class={`mb-4 px-4 py-2 rounded-xl text-center ${isFuture ? "bg-gradient-to-r from-amber-300/10 to-purple-400/10 border border-amber-300/40" : "bg-amber-300/10 border border-amber-300/20"}`}>
+      <p class="text-xs text-amber-300/90">
+        {isFuture ? "✦ " + t("horoscope.premium_preview_badge", lang) : t("horoscope.archive_of", lang)} {dateFormatted} - <a href={`/${lang}/horoscope/${sign.slug}`} class="underline hover:text-amber-300">{t("horoscope.back_to_today", lang)}</a>
+      </p>
+    </div>
+
+    <header class="text-center mb-10">
+      <div class="flex justify-center mb-4">
+        <ZodiacSymbol sign={sign.name} size={96} color="#D4A017" />
+      </div>
+      <h1 class="text-4xl md:text-5xl font-serif mb-2">{t("horoscope.title", lang)} {localSignName}</h1>
+      <p class="text-lg text-white/70 mb-1">{dateFormatted}</p>
+      <p class="text-xs text-white/40">{sign.dates} · {sign.element} · {sign.rulingPlanet}</p>
+    </header>
+
+    {contentLang !== lang && (
+      <div class="mb-6 px-4 py-2 rounded-lg bg-white/[0.02] border border-white/10 text-center">
+        <p class="text-[10px] text-white/40">
+          <span class="text-amber-300/60">✦</span> {t("horoscope.fr_translation_note", lang)}
+        </p>
+      </div>
+    )}
+
+    <div id="future-wrap" class="relative" data-future={isFuture ? "1" : "0"}>
+      <div lang={contentLang} class="p-6 rounded-2xl border border-amber-300/20 bg-amber-300/5 mb-8">
+        <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-2">{t("horoscope.cosmic_energy", lang)}</p>
+        <p class="text-lg leading-relaxed text-white/90">{entry.intro}</p>
+      </div>
+
+      <div lang={contentLang} class="grid md:grid-cols-2 gap-4 mb-8">
+        {entry.love && (
+          <section class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
+            <h2 class="font-serif text-xl mb-3 text-pink-300">{t("horoscope.love", lang)}</h2>
+            <p class="text-white/80 leading-relaxed">{entry.love}</p>
+          </section>
+        )}
+        {entry.work && (
+          <section class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
+            <h2 class="font-serif text-xl mb-3 text-amber-300">{t("horoscope.work", lang)}</h2>
+            <p class="text-white/80 leading-relaxed">{entry.work}</p>
+          </section>
+        )}
+        {entry.energy && (
+          <section class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
+            <h2 class="font-serif text-xl mb-3 text-emerald-300">{t("horoscope.energy", lang)}</h2>
+            <p class="text-white/80 leading-relaxed">{entry.energy}</p>
+          </section>
+        )}
+        {entry.intuition && (
+          <section class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
+            <h2 class="font-serif text-xl mb-3 text-purple-300">{t("horoscope.intuition", lang)}</h2>
+            <p class="text-white/80 leading-relaxed">{entry.intuition}</p>
+          </section>
+        )}
+      </div>
+
+      <div class="grid grid-cols-3 gap-4 mb-10 text-center">
+        {entry.luckyNumber != null && (
+          <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+            <p class="text-xs text-white/50 uppercase tracking-wider mb-1">{t("horoscope.lucky_number", lang)}</p>
+            <p class="text-3xl font-serif text-amber-300">{entry.luckyNumber}</p>
+          </div>
+        )}
+        {entry.color && (
+          <div lang={contentLang} class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+            <p class="text-xs text-white/50 uppercase tracking-wider mb-1">{t("horoscope.color", lang)}</p>
+            <p class="text-lg text-white/90">{entry.color}</p>
+          </div>
+        )}
+        {entry.mantra && (
+          <div lang={contentLang} class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+            <p class="text-xs text-white/50 uppercase tracking-wider mb-1">{t("horoscope.mantra", lang)}</p>
+            <p class="text-sm italic text-white/90">"{entry.mantra}"</p>
+          </div>
+        )}
+      </div>
+    </div>
+
+    {isFuture && (
+      <>
+        <div id="future-paywall" class="fixed inset-0 z-40 flex items-center justify-center p-6 pointer-events-none">
+          <div class="max-w-md w-full p-6 rounded-2xl bg-gradient-to-b from-[#1a0f2e]/95 to-[#0f0a1e]/95 border border-amber-300/30 backdrop-blur-xl shadow-2xl text-center pointer-events-auto">
+            <div class="text-4xl mb-3">✦</div>
+            <p class="font-serif text-xl mb-2 text-white">{t("horoscope.preview_of", lang)} {dateFormatted}</p>
+            <p class="text-sm text-white/60 mb-5">{t("horoscope.paywall_desc", lang)}</p>
+            <div class="flex gap-3 flex-wrap justify-center mb-4">
+              <a
+                href="https://app.karmastro.com/pricing"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity text-sm"
+              >
+                {t("horoscope.paywall_cta", lang)}
+              </a>
+            </div>
+            <p class="text-xs text-white/50">
+              {t("horoscope.paywall_available_in", lang)} <span id="future-countdown" class="font-mono text-amber-300">--:--:--</span>
+            </p>
+            <a href={`/${lang}/horoscope/${sign.slug}`} class="block mt-4 text-[10px] text-white/40 hover:text-white/60">← {t("horoscope.back_to_today", lang)}</a>
+          </div>
+        </div>
+        <script is:inline>
+          (function () {
+            function updateCountdown() {
+              const el = document.getElementById("future-countdown");
+              if (!el) return;
+              const now = new Date();
+              const target = new Date(now);
+              target.setHours(24, 0, 0, 0);
+              const diff = target - now;
+              if (diff <= 0) { el.textContent = "00:00:00"; return; }
+              const h = Math.floor(diff / 3600000);
+              const m = Math.floor((diff % 3600000) / 60000);
+              const s = Math.floor((diff % 60000) / 1000);
+              el.textContent = String(h).padStart(2, "0") + ":" + String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
+            }
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            const wrap = document.getElementById("future-wrap");
+            if (wrap && wrap.getAttribute("data-future") === "1") {
+              wrap.style.filter = "blur(6px)";
+              wrap.style.opacity = "0.5";
+              wrap.style.pointerEvents = "none";
+            }
+
+            function checkPremium() {
+              try {
+                const tier = localStorage.getItem("km_user_tier");
+                if (tier === "etoile" || tier === "cosmos") {
+                  const w = document.getElementById("future-wrap");
+                  const p = document.getElementById("future-paywall");
+                  if (w) { w.style.filter = ""; w.style.opacity = ""; w.style.pointerEvents = ""; }
+                  if (p) p.style.display = "none";
+                }
+              } catch (e) {}
+            }
+            checkPremium();
+            window.addEventListener("storage", checkPremium);
+          })();
+        </script>
+      </>
+    )}
+
+    <section class="mb-10">
+      <h2 class="font-serif text-2xl mb-4">{t("horoscope.compatibilities_of", lang)} {localSignName}</h2>
+      <div class="grid grid-cols-3 gap-3">
+        {compatSigns.map((c) => (
+          <a
+            href={`/${lang}/horoscope/${c.slug}`}
+            class="p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:border-amber-300/40 transition-colors text-center"
+          >
+            <div class="flex justify-center mb-2">
+              <ZodiacSymbol sign={c.name} size={40} color="#D4A017" />
+            </div>
+            <p class="text-sm text-white/80">{t(signNameKeys[c.slug] as any, lang) || c.name}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10">
+      {ZODIAC_SIGNS.map((s) => (
+        <a
+          href={`/${lang}/horoscope/${s.slug}`}
+          class={`text-sm px-3 py-1.5 rounded-full border transition-colors inline-flex items-center gap-1.5 ${
+            s.slug === sign.slug
+              ? "border-amber-300 bg-amber-300/10 text-amber-300"
+              : "border-white/10 hover:border-amber-300/40 hover:text-amber-300"
+          }`}
+        >
+          <ZodiacSymbol sign={s.name} size={16} color="currentColor" />
+          {t(signNameKeys[s.slug] as any, lang) || s.name}
+        </a>
+      ))}
+    </nav>
+  </article>
+</BaseLayout>
