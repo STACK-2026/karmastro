@@ -1,55 +1,29 @@
 ---
 import CounterNumber from "./CounterNumber.astro";
+import { extractLocale } from "../i18n/config";
+import { getContent } from "../i18n/content";
+
+const locale = extractLocale(Astro.url.pathname);
+const content = getContent(locale);
 
 const stats = [
-  {
-    value: 10,
-    suffix: "",
-    label: "Planètes analysées",
-    description: "Du Soleil à Pluton, chaque planète du zodiaque entre dans ton profil",
-  },
-  {
-    value: 12,
-    suffix: "",
-    label: "Maisons astrologiques",
-    description: "Les 12 domaines de vie cartographiés dans ton thème natal",
-  },
-  {
-    value: 4000,
-    suffix: "+",
-    label: "Années de tradition",
-    description: "Depuis les Mésopotamiens jusqu'à Kepler et Swiss Ephemeris",
-  },
-  {
-    value: 0.001,
-    suffix: '"',
-    decimals: 3,
-    label: "Seconde d'arc de précision",
-    description: "Niveau NASA Jet Propulsion Laboratory",
-  },
-  {
-    value: 9,
-    suffix: "",
-    label: "Calculateurs gratuits",
-    description: "Chemin de vie, thème natal, ascendant, compatibilité et plus",
-  },
-  {
-    value: 4,
-    suffix: "",
-    label: "Guides cosmiques",
-    description: "Sibylle, Orion, Séléné, Pythia — choisis celui qui te parle",
-  },
+  { value: 10, suffix: "", labelKey: "planets" as const, decimals: 0 },
+  { value: 12, suffix: "", labelKey: "houses" as const, decimals: 0 },
+  { value: 4000, suffix: "+", labelKey: "years" as const, decimals: 0 },
+  { value: 0.001, suffix: '"', labelKey: "precision" as const, decimals: 3 },
+  { value: 9, suffix: "", labelKey: "tools" as const, decimals: 0 },
+  { value: 4, suffix: "", labelKey: "guides" as const, decimals: 0 },
 ];
 ---
 
 <section class="relative z-10 max-w-6xl mx-auto px-4 py-16">
   <div class="text-center mb-12">
-    <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Karmastro en chiffres</p>
+    <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Karmastro</p>
     <h2 class="text-3xl md:text-4xl font-serif mb-3 text-white">
-      Une guidance de précision
+      {content.statsTitle}
     </h2>
     <p class="text-white/70 max-w-xl mx-auto">
-      Des données astronomiques réelles, une tradition millénaire, des outils modernes. Tout ce qu'il faut pour comprendre ton ciel intérieur.
+      {content.statsSubtitle}
     </p>
   </div>
 
@@ -60,12 +34,12 @@ const stats = [
           <CounterNumber
             value={stat.value}
             suffix={stat.suffix}
-            decimals={stat.decimals || 0}
+            decimals={stat.decimals}
             duration={1800}
           />
         </p>
-        <p class="text-sm font-medium text-white mb-1">{stat.label}</p>
-        <p class="text-xs text-white/60 leading-relaxed">{stat.description}</p>
+        <p class="text-sm font-medium text-white mb-1">{content.statsLabels[stat.labelKey]}</p>
+        <p class="text-xs text-white/60 leading-relaxed">{content.statsDescriptions[stat.labelKey]}</p>
       </div>
     ))}
   </div>

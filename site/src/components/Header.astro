@@ -1,6 +1,22 @@
 ---
 import { siteConfig } from "../../site.config";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
+import { extractLocale, DEFAULT_LOCALE } from "../i18n/config";
+import { t } from "../i18n/translations";
+
+const locale = extractLocale(Astro.url.pathname);
+
+// Build localized nav links
+const localizedPath = (path: string) => locale === DEFAULT_LOCALE ? path : `/${locale}${path}`;
+
+const navLinks = [
+  { label: t("nav.home", locale), href: localizedPath("/") },
+  { label: t("nav.horoscope", locale), href: localizedPath("/horoscope") },
+  { label: t("nav.tools", locale), href: localizedPath("/outils") },
+  { label: t("nav.blog", locale), href: localizedPath("/blog") },
+  { label: t("nav.referral", locale), href: localizedPath("/parrainage") },
+  { label: t("nav.oracle", locale), href: `${siteConfig.appUrl}/oracle`, external: true },
+];
 ---
 
 <!-- Floating glass header (inspired by ScoreImmo, dark theme) -->
@@ -29,12 +45,12 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
 
   <!-- Desktop nav -->
   <nav class="hidden md:flex items-center gap-6">
-    {siteConfig.navLinks.map((link) => (
+    {navLinks.map((link) => (
       <a
         href={link.href}
         class="nav-link text-sm font-medium no-underline relative"
         style="color: rgba(255, 255, 255, 0.85);"
-        {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        {...((link as any).external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
         {link.label}
       </a>
@@ -56,7 +72,7 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
           box-shadow: 0 4px 15px rgba(139, 92, 246, 0.25);
         "
       >
-        Mon profil cosmique
+        {t("common.cta_app", locale)}
         <svg class="w-4 h-4 arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
         </svg>
@@ -111,25 +127,28 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
     </button>
   </div>
   <nav class="flex-1 p-3 space-y-1">
-    {siteConfig.navLinks.map((link) => (
+    {navLinks.map((link) => (
       <a
         href={link.href}
         class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium no-underline transition-colors"
         style="color: white;"
-        {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        {...((link as any).external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
         {link.label}
       </a>
     ))}
   </nav>
+  <div class="p-4">
+    <LanguageSwitcher />
+  </div>
   {siteConfig.appUrl && (
-    <div class="p-4">
+    <div class="p-4 pt-0">
       <a
         href={siteConfig.appUrl}
         class="flex items-center justify-center gap-2 text-white font-semibold py-3 rounded-xl no-underline"
         style="background: hsl(271 91% 65%);"
       >
-        Mon profil cosmique
+        {t("common.cta_app", locale)}
       </a>
     </div>
   )}

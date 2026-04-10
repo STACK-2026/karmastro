@@ -1,5 +1,10 @@
 ---
 import { siteConfig } from "../../site.config";
+import { extractLocale } from "../i18n/config";
+import { getContent } from "../i18n/content";
+
+const locale = extractLocale(Astro.url.pathname);
+const content = getContent(locale);
 
 const iconMap: Record<string, string> = {
   zap: "M13 10V3L4 14h7v7l9-11h-7z",
@@ -13,10 +18,10 @@ const iconMap: Record<string, string> = {
 
 <section class="py-20 px-4 relative" style="background: linear-gradient(to bottom, transparent, hsl(260 25% 5% / 0.6) 15%, hsl(260 25% 5% / 0.6) 85%, transparent);">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-center mb-4">Pourquoi <span class="text-gradient-violet">{siteConfig.name}</span> ?</h2>
-    <p class="text-center mb-12" style="color: var(--text-muted);">Un ecosysteme spirituel qui croise 3 disciplines pour une guidance complete</p>
+    <h2 class="text-center mb-4" set:html={content.featuresTitle.replace(siteConfig.name, `<span class="text-gradient-violet">${siteConfig.name}</span>`)}></h2>
+    <p class="text-center mb-12" style="color: rgba(255, 255, 255, 0.65);">{content.featuresSubtitle}</p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {siteConfig.features.map((feature) => (
+      {content.features.map((feature) => (
         <div class="rounded-xl p-8 border-glow transition-all hover:glow-violet" style="background: var(--bg-card);">
           <div
             class="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
@@ -35,7 +40,7 @@ const iconMap: Record<string, string> = {
             </svg>
           </div>
           <h3 class="text-lg font-bold mb-2 text-white">{feature.title}</h3>
-          <p style="color: var(--text-muted);">{feature.description}</p>
+          <p style="color: rgba(255, 255, 255, 0.7);">{feature.description}</p>
         </div>
       ))}
     </div>

@@ -1,7 +1,15 @@
 ---
 import { siteConfig } from "../../site.config";
+import { extractLocale, DEFAULT_LOCALE } from "../i18n/config";
+import { t } from "../i18n/translations";
+import { getContent } from "../i18n/content";
 
+const locale = extractLocale(Astro.url.pathname);
+const content = getContent(locale);
 const currentYear = new Date().getFullYear();
+
+// Build localized paths
+const localizedPath = (path: string) => locale === DEFAULT_LOCALE ? path : `/${locale}${path}`;
 ---
 
 <div style="height: 60px; background: linear-gradient(to bottom, transparent, var(--bg-card)); pointer-events: none;" class="relative z-10"></div>
@@ -11,35 +19,39 @@ const currentYear = new Date().getFullYear();
       <!-- Brand -->
       <div>
         <p class="text-white font-bold text-lg mb-2" style="font-family: Outfit, sans-serif;">{siteConfig.name}</p>
-        <p class="text-sm" style="color: var(--text-muted);">{siteConfig.tagline}</p>
+        <p class="text-sm" style="color: rgba(255, 255, 255, 0.7);">{t("footer.tagline", locale)}</p>
+        <p class="text-xs italic mt-4" style="color: rgba(255, 255, 255, 0.4);">
+          « {t("footer.quote", locale)} »<br/>
+          <span class="text-[10px]">— {t("footer.quote_author", locale)}</span>
+        </p>
       </div>
 
       <!-- Legal links -->
       <div>
-        <p class="text-white font-semibold text-sm mb-3">Informations légales</p>
-        <ul class="space-y-2 text-sm" style="color: var(--text-muted);">
-          <li><a href="/mentions-legales" class="hover:text-white transition-colors">Mentions légales</a></li>
-          <li><a href="/cgv" class="hover:text-white transition-colors">Conditions générales</a></li>
-          <li><a href="/politique-confidentialite" class="hover:text-white transition-colors">Confidentialité</a></li>
+        <p class="text-white font-semibold text-sm mb-3">{content.footerLegalTitle}</p>
+        <ul class="space-y-2 text-sm" style="color: rgba(255, 255, 255, 0.7);">
+          <li><a href={localizedPath("/mentions-legales")} class="hover:text-white transition-colors">{t("footer.legal", locale)}</a></li>
+          <li><a href={localizedPath("/cgv")} class="hover:text-white transition-colors">{t("footer.cgv", locale)}</a></li>
+          <li><a href={localizedPath("/politique-confidentialite")} class="hover:text-white transition-colors">{t("footer.privacy", locale)}</a></li>
         </ul>
       </div>
 
-      <!-- Contact + Links -->
+      <!-- Explore links -->
       <div>
-        <p class="text-white font-semibold text-sm mb-3">Explorer</p>
-        <ul class="space-y-2 text-sm" style="color: var(--text-muted);">
-          <li><a href="/blog" class="hover:text-white transition-colors">Le Cosmos (blog)</a></li>
-          <li><a href={`${siteConfig.appUrl}/oracle`} class="hover:text-white transition-colors">L'Oracle</a></li>
-          <li><a href="/glossaire" class="hover:text-white transition-colors">Glossaire</a></li>
-          <li><a href="/notre-histoire" class="hover:text-white transition-colors">Notre histoire</a></li>
-          <li><a href="/precision" class="hover:text-white transition-colors">Notre précision</a></li>
+        <p class="text-white font-semibold text-sm mb-3">{content.footerExploreTitle}</p>
+        <ul class="space-y-2 text-sm" style="color: rgba(255, 255, 255, 0.7);">
+          <li><a href={localizedPath("/blog")} class="hover:text-white transition-colors">{t("nav.blog", locale)}</a></li>
+          <li><a href={`${siteConfig.appUrl}/oracle`} class="hover:text-white transition-colors">{t("nav.oracle", locale)}</a></li>
+          <li><a href={localizedPath("/glossaire")} class="hover:text-white transition-colors">Glossaire</a></li>
+          <li><a href={localizedPath("/notre-histoire")} class="hover:text-white transition-colors">{t("nav.about", locale)}</a></li>
+          <li><a href={localizedPath("/precision")} class="hover:text-white transition-colors">Précision</a></li>
           <li><a href={`mailto:${siteConfig.legal.email}`} class="hover:text-white transition-colors">{siteConfig.legal.email}</a></li>
         </ul>
       </div>
     </div>
 
     <div class="mt-10 pt-6 text-center text-xs" style="border-top: 1px solid hsl(260 20% 12%); color: rgba(196, 184, 219, 0.5);">
-      <p>&copy; {currentYear} {siteConfig.name}. Tous droits réservés.</p>
+      <p>&copy; {currentYear} {siteConfig.name}. {content.footerCopyright}.</p>
     </div>
   </div>
 </footer>

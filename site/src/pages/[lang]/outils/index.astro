@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { LOCALES, DEFAULT_LOCALE, type Locale } from "../../../i18n/config";
+import { getContent } from "../../../i18n/content";
+import { t } from "../../../i18n/translations";
+
+export function getStaticPaths() {
+  return LOCALES.filter((l) => l !== DEFAULT_LOCALE).map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Locale };
+const content = getContent(lang);
+
+const tools = [
+  { href: "/outils/chemin-de-vie", icon: "7", titleKey: "Life path", tagColor: "emerald" },
+  { href: "/outils/nombre-expression", icon: "∑", titleKey: "Expression number", tagColor: "emerald" },
+  { href: "/outils/annee-personnelle", icon: "◐", titleKey: "Personal year", tagColor: "emerald" },
+  { href: "/outils/dette-karmique", icon: "☿", titleKey: "Karmic debt", tagColor: "purple" },
+  { href: "/outils/theme-natal", icon: "☉", titleKey: "Complete birth chart", tagColor: "amber" },
+  { href: "/outils/ascendant", icon: "♌", titleKey: "Ascendant", tagColor: "amber" },
+  { href: "/outils/transits", icon: "◉", titleKey: "Daily transits", tagColor: "amber" },
+  { href: "/outils/compatibilite", icon: "∞", titleKey: "Compatibility", tagColor: "pink" },
+  { href: "/outils/synastrie", icon: "♥", titleKey: "Astrological synastry", tagColor: "pink" },
+];
+---
+
+<BaseLayout title={content.seo.tools.title} description={content.seo.tools.description}>
+  <section class="max-w-5xl mx-auto px-4 py-16">
+    <div class="text-center mb-14">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">{t("common.free", lang)}</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">{t("tools.title", lang)}</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        {t("tools.subtitle", lang)}
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5 mb-14">
+      {tools.map((tool) => (
+        <a
+          href={tool.href}
+          class="group block p-6 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-amber-300/40 hover:bg-amber-300/5 transition-all"
+        >
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-400/20 to-amber-300/20 flex items-center justify-center text-2xl font-serif text-amber-300">
+              {tool.icon}
+            </div>
+          </div>
+          <h2 class="font-serif text-xl mb-2 group-hover:text-amber-300 transition-colors">
+            {tool.titleKey}
+          </h2>
+          <p class="text-xs text-amber-300 mt-3 group-hover:translate-x-1 transition-transform inline-block">
+            {t("common.calculate", lang)} →
+          </p>
+        </a>
+      ))}
+    </div>
+
+    <div class="p-8 rounded-3xl border border-purple-400/20 bg-purple-400/5 text-center mb-14">
+      <h2 class="font-serif text-2xl mb-3">{t("common.learn_more", lang)}</h2>
+      <p class="text-white/70 max-w-2xl mx-auto mb-5 leading-relaxed">
+        {content.heroFreeTeaser}
+      </p>
+      <a
+        href="https://app.karmastro.com/oracle"
+        class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity"
+      >
+        {t("tools.cta_oracle", lang)}
+      </a>
+    </div>
+  </section>
+</BaseLayout>

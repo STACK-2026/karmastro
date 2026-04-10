@@ -1,25 +1,30 @@
 ---
-import { siteConfig } from "../../site.config";
+import { extractLocale } from "../i18n/config";
+import { getContent } from "../i18n/content";
+import { t } from "../i18n/translations";
 import { jsonLdFaq } from "../utils/seo";
+
+const locale = extractLocale(Astro.url.pathname);
+const content = getContent(locale);
 ---
 
 <section class="py-20 px-4">
   <div class="max-w-3xl mx-auto">
-    <h2 class="text-center mb-12">Questions <span class="text-gradient-gold">fréquentes</span></h2>
+    <h2 class="text-center mb-12">{content.faqTitle}</h2>
     <div class="space-y-4">
-      {siteConfig.faq.map((item) => (
+      {content.faq.map((item) => (
         <details class="group rounded-xl overflow-hidden border-glow" style="background: var(--bg-card);">
           <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-white">
             {item.question}
             <svg
               class="w-5 h-5 group-open:rotate-180 transition-transform"
-              style="color: hsl(220 9% 64%);"
+              style="color: rgba(255, 255, 255, 0.65);"
               fill="none" stroke="currentColor" viewBox="0 0 24 24"
             >
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </summary>
-          <div class="px-6 pb-6" style="color: hsl(220 9% 64%);">
+          <div class="px-6 pb-6" style="color: rgba(255, 255, 255, 0.75);">
             <p>{item.answer}</p>
           </div>
         </details>
@@ -27,5 +32,5 @@ import { jsonLdFaq } from "../utils/seo";
     </div>
   </div>
 
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLdFaq(siteConfig.faq))} />
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLdFaq(content.faq))} />
 </section>

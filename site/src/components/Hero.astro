@@ -1,5 +1,11 @@
 ---
 import { siteConfig } from "../../site.config";
+import { extractLocale } from "../i18n/config";
+import { t } from "../i18n/translations";
+import { getContent } from "../i18n/content";
+
+const locale = extractLocale(Astro.url.pathname);
+const content = getContent(locale);
 ---
 
 <section class="relative overflow-hidden py-12 md:py-32 px-3 md:px-4 bg-starfield">
@@ -7,15 +13,15 @@ import { siteConfig } from "../../site.config";
   <div class="absolute inset-0 z-0" style="background-image: url('/constellations.svg'); background-size: cover; background-position: center;"></div>
 
   <div class="max-w-4xl mx-auto text-center relative z-10">
-    <p class="text-xs md:text-sm font-medium uppercase tracking-widest mb-3 md:mb-4 text-gradient-gold">Astrologie + Numérologie + Karma</p>
+    <p class="text-xs md:text-sm font-medium uppercase tracking-widest mb-3 md:mb-4 text-gradient-gold">{content.heroBadge}</p>
 
     <h1 class="mb-4 md:mb-6 text-gradient-violet text-3xl md:text-5xl lg:text-6xl" data-speakable style="font-family: Outfit, sans-serif; font-weight: 700; line-height: 1.1;">
-      {siteConfig.tagline}
+      {t("hero.title", locale)}
     </h1>
 
     <!-- Rotating text -->
-    <p class="text-base md:text-lg mb-6 md:mb-8" style="color: var(--text-muted);">
-      On s'occupe de :
+    <p class="text-base md:text-lg mb-6 md:mb-8" style="color: rgba(255, 255, 255, 0.75);">
+      <span id="rotating-prefix">{t("hero.subtitle", locale).split(".")[0]}</span>
       <span id="rotating-text" class="text-gradient-violet font-semibold"></span>
     </p>
 
@@ -26,31 +32,30 @@ import { siteConfig } from "../../site.config";
           class="inline-flex items-center justify-center gap-2 text-white font-semibold px-6 md:px-8 py-3.5 md:py-4 rounded-xl text-base md:text-lg transition-all hover:scale-105 glow-violet"
           style="background: hsl(271 91% 65%);"
         >
-          Découvrir mon profil cosmique
+          {t("hero.cta_primary", locale)}
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
         </a>
       )}
       <a
-        href="/blog"
+        href={locale === "fr" ? "/blog" : `/${locale}/blog`}
         class="inline-flex items-center justify-center gap-2 font-semibold px-6 md:px-8 py-3.5 md:py-4 rounded-xl text-base md:text-lg border-glow transition-all hover:border-[hsl(271_91%_65%_/_0.4)]"
-        style="color: var(--text-muted); background: rgba(255,255,255,0.03);"
+        style="color: rgba(255, 255, 255, 0.85); background: rgba(255,255,255,0.03);"
       >
-        Explorer Le Cosmos
+        {content.exploreCosmosLabel}
       </a>
     </div>
-    <p class="mt-4 text-[11px]" style="color: rgba(196, 184, 219, 0.5);">Offert par les astres - Thème natal + 3 messages Oracle/jour</p>
-    <a href="/precision" id="nasa-badge" class="inline-flex items-center gap-1.5 mt-2 text-[10px] md:text-[11px] transition-colors" style="color: rgba(196, 184, 219, 0.4); border: 1px solid rgba(255,255,255,0.05); border-radius: 9999px; padding: 3px 10px;">
+    <p class="mt-4 text-[11px]" style="color: rgba(196, 184, 219, 0.5);">{content.heroFreeTeaser}</p>
+    <a href={locale === "fr" ? "/precision" : `/${locale}/precision`} id="nasa-badge" class="inline-flex items-center gap-1.5 mt-2 text-[10px] md:text-[11px] transition-colors" style="color: rgba(196, 184, 219, 0.4); border: 1px solid rgba(255,255,255,0.05); border-radius: 9999px; padding: 3px 10px;">
       <span style="width: 5px; height: 5px; border-radius: 50%; background: hsl(142 71% 45%); display: inline-block;" class="animate-pulse"></span>
-      <span id="nasa-text">Calculs astronomiques précision NASA</span>
+      <span id="nasa-text">{content.nasaBadge}</span>
     </a>
   </div>
 </section>
 
-<script>
-  // Rotating text animation
-  const words = ["ton thème natal", "ta numérologie", "ton karma", "tes transits", "ta compatibilité", "ton chemin de vie"];
+<script define:vars={{ rotatingWords: content.heroRotatingWords, locale }}>
+  // Rotating text animation - words from localized content
   const el = document.getElementById("rotating-text");
   let idx = 0;
 
@@ -59,42 +64,44 @@ import { siteConfig } from "../../site.config";
     el.style.opacity = "0";
     el.style.transform = "translateY(8px)";
     setTimeout(() => {
-      el.textContent = words[idx];
+      el.textContent = rotatingWords[idx];
       el.style.opacity = "1";
       el.style.transform = "translateY(0)";
-      idx = (idx + 1) % words.length;
+      idx = (idx + 1) % rotatingWords.length;
     }, 300);
   }
 
-  if (el) {
+  if (el && rotatingWords.length > 0) {
     el.style.transition = "opacity 0.3s, transform 0.3s";
     el.style.display = "inline-block";
-    el.textContent = words[0];
+    el.textContent = rotatingWords[0];
     setInterval(rotateText, 2500);
   }
 
-  // Dynamic NASA badge — show time + location
+  // Dynamic NASA badge - show time + location
   const nasaText = document.getElementById("nasa-text");
   if (nasaText) {
     const now = new Date();
-    const time = now.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+    const time = now.toLocaleTimeString(locale === "fr" ? "fr-FR" : locale, { hour: "2-digit", minute: "2-digit" });
 
-    // Get city from timezone (zero API call, instant)
-    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone; // ex: "Europe/Paris"
-    const cityMap: Record<string, string> = {
-      "Europe/Paris": "Paris", "Europe/London": "Londres", "Europe/Berlin": "Berlin",
-      "Europe/Madrid": "Madrid", "Europe/Rome": "Rome", "Europe/Brussels": "Bruxelles",
-      "Europe/Zurich": "Zurich", "Europe/Amsterdam": "Amsterdam", "Europe/Vienna": "Vienne",
-      "Europe/Lisbon": "Lisbonne", "Europe/Warsaw": "Varsovie", "Europe/Prague": "Prague",
-      "Europe/Stockholm": "Stockholm", "Europe/Helsinki": "Helsinki", "Europe/Athens": "Athènes",
-      "Europe/Bucharest": "Bucarest", "Europe/Dublin": "Dublin", "Europe/Oslo": "Oslo",
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const cityMap = {
+      "Europe/Paris": "Paris", "Europe/London": "London", "Europe/Berlin": "Berlin",
+      "Europe/Madrid": "Madrid", "Europe/Rome": "Rome", "Europe/Brussels": "Brussels",
+      "Europe/Zurich": "Zurich", "Europe/Amsterdam": "Amsterdam", "Europe/Vienna": "Vienna",
+      "Europe/Lisbon": "Lisbon", "Europe/Warsaw": "Warsaw", "Europe/Prague": "Prague",
+      "Europe/Stockholm": "Stockholm", "Europe/Helsinki": "Helsinki", "Europe/Athens": "Athens",
+      "Europe/Bucharest": "Bucharest", "Europe/Dublin": "Dublin", "Europe/Oslo": "Oslo",
+      "Europe/Istanbul": "Istanbul", "Europe/Moscow": "Moscow",
       "America/New_York": "New York", "America/Los_Angeles": "Los Angeles",
       "America/Chicago": "Chicago", "America/Toronto": "Toronto",
-      "America/Montreal": "Montréal", "Asia/Tokyo": "Tokyo",
-      "Africa/Casablanca": "Casablanca", "Africa/Tunis": "Tunis", "Africa/Algiers": "Alger",
+      "America/Sao_Paulo": "São Paulo", "America/Mexico_City": "Mexico City",
+      "Asia/Tokyo": "Tokyo", "Asia/Shanghai": "Shanghai", "Asia/Dubai": "Dubai",
+      "Asia/Riyadh": "Riyadh",
+      "Africa/Casablanca": "Casablanca", "Africa/Tunis": "Tunis", "Africa/Algiers": "Algiers",
     };
     const city = cityMap[tz] || tz.split("/").pop()?.replace(/_/g, " ") || "";
-
-    nasaText.textContent = `Précision NASA · ${time} · ${city}`;
+    const currentText = nasaText.textContent || "";
+    nasaText.textContent = `${currentText.replace(/NASA.*/i, "NASA")} · ${time} · ${city}`;
   }
 </script>
