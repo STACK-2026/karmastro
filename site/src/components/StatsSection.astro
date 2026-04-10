@@ -1,0 +1,72 @@
+---
+import CounterNumber from "./CounterNumber.astro";
+
+const stats = [
+  {
+    value: 10,
+    suffix: "",
+    label: "Planètes analysées",
+    description: "Du Soleil à Pluton, chaque planète du zodiaque entre dans ton profil",
+  },
+  {
+    value: 12,
+    suffix: "",
+    label: "Maisons astrologiques",
+    description: "Les 12 domaines de vie cartographiés dans ton thème natal",
+  },
+  {
+    value: 4000,
+    suffix: "+",
+    label: "Années de tradition",
+    description: "Depuis les Mésopotamiens jusqu'à Kepler et Swiss Ephemeris",
+  },
+  {
+    value: 0.001,
+    suffix: '"',
+    decimals: 3,
+    label: "Seconde d'arc de précision",
+    description: "Niveau NASA Jet Propulsion Laboratory",
+  },
+  {
+    value: 9,
+    suffix: "",
+    label: "Calculateurs gratuits",
+    description: "Chemin de vie, thème natal, ascendant, compatibilité et plus",
+  },
+  {
+    value: 4,
+    suffix: "",
+    label: "Guides cosmiques",
+    description: "Sibylle, Orion, Séléné, Pythia — choisis celui qui te parle",
+  },
+];
+---
+
+<section class="relative z-10 max-w-6xl mx-auto px-4 py-16">
+  <div class="text-center mb-12">
+    <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Karmastro en chiffres</p>
+    <h2 class="text-3xl md:text-4xl font-serif mb-3 text-white">
+      Une guidance de précision
+    </h2>
+    <p class="text-white/70 max-w-xl mx-auto">
+      Des données astronomiques réelles, une tradition millénaire, des outils modernes. Tout ce qu'il faut pour comprendre ton ciel intérieur.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    {stats.map((stat) => (
+      <div class="p-5 rounded-2xl border border-white/10 bg-white/[0.02] text-center hover:border-amber-300/30 transition-colors">
+        <p class="text-4xl md:text-5xl font-serif text-amber-300 mb-2">
+          <CounterNumber
+            value={stat.value}
+            suffix={stat.suffix}
+            decimals={stat.decimals || 0}
+            duration={1800}
+          />
+        </p>
+        <p class="text-sm font-medium text-white mb-1">{stat.label}</p>
+        <p class="text-xs text-white/60 leading-relaxed">{stat.description}</p>
+      </div>
+    ))}
+  </div>
+</section>

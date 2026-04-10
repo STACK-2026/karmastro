@@ -1,0 +1,80 @@
+---
+// Animated number counter that counts from 0 to target when scrolled into view
+// Vanilla JS, IntersectionObserver, no framework
+
+interface Props {
+  value: number;
+  duration?: number; // ms
+  suffix?: string;
+  prefix?: string;
+  className?: string;
+  decimals?: number;
+}
+
+const { value, duration = 1500, suffix = "", prefix = "", className = "", decimals = 0 } = Astro.props;
+---
+
+<span
+  class={`counter-number ${className}`}
+  data-target={value}
+  data-duration={duration}
+  data-decimals={decimals}
+  data-suffix={suffix}
+  data-prefix={prefix}
+>
+  {prefix}{decimals > 0 ? value.toFixed(decimals) : value}{suffix}
+</span>
+
+<script>
+  function animateCounter(el: HTMLElement) {
+    const target = parseFloat(el.dataset.target || "0");
+    const duration = parseInt(el.dataset.duration || "1500", 10);
+    const decimals = parseInt(el.dataset.decimals || "0", 10);
+    const suffix = el.dataset.suffix || "";
+    const prefix = el.dataset.prefix || "";
+
+    const start = performance.now();
+    const startValue = 0;
+
+    function easeOutCubic(t: number): number {
+      return 1 - Math.pow(1 - t, 3);
+    }
+
+    function tick(now: number) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeOutCubic(progress);
+      const current = startValue + (target - startValue) * eased;
+      el.textContent = prefix + current.toFixed(decimals) + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = prefix + target.toFixed(decimals) + suffix;
+      }
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  function setupCounters() {
+    const counters = document.querySelectorAll<HTMLElement>(".counter-number:not([data-counted])");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement;
+            el.dataset.counted = "true";
+            animateCounter(el);
+            observer.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    counters.forEach((c) => observer.observe(c));
+  }
+
+  setupCounters();
+  document.addEventListener("astro:page-load", setupCounters);
+</script>

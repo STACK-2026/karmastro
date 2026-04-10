@@ -163,10 +163,14 @@ const jsonLd = [
           </div>
         </div>
 
-        <div class="pt-4 border-t border-white/10 text-center">
+        <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-2 justify-center items-center">
           <a href="https://app.karmastro.com/oracle" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
-            Interprétation complète avec Séléné
+            Interprétation avec Séléné
           </a>
+          <button id="download-pdf-btn" type="button" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 text-sm font-medium hover:bg-amber-300/10 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Télécharger PDF
+          </button>
         </div>
       </div>
     </div>
@@ -289,6 +293,130 @@ const jsonLd = [
     "Noeud Nord": "☊",
   };
 
+  // Generate PDF via dynamic jsPDF import from CDN (no npm dependency)
+  async function generatePDF(natal1: any, natal2: any, aspects: any[], stats: any) {
+    try {
+      const { jsPDF } = await import("https://esm.sh/jspdf@2.5.2");
+      const doc = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
+
+      const pageWidth = 210;
+      let y = 20;
+
+      // Header
+      doc.setFillColor(15, 10, 30);
+      doc.rect(0, 0, pageWidth, 40, "F");
+      doc.setTextColor(212, 160, 23);
+      doc.setFontSize(22);
+      doc.setFont("helvetica", "bold");
+      doc.text("Karmastro", pageWidth / 2, 18, { align: "center" });
+      doc.setFontSize(11);
+      doc.setFont("helvetica", "normal");
+      doc.text("Synastrie astrologique", pageWidth / 2, 26, { align: "center" });
+      doc.setFontSize(9);
+      doc.setTextColor(180, 180, 180);
+      doc.text(`Genere le ${new Date().toLocaleDateString("fr-FR")}`, pageWidth / 2, 33, { align: "center" });
+
+      y = 55;
+      doc.setTextColor(30, 30, 30);
+      doc.setFontSize(14);
+      doc.setFont("helvetica", "bold");
+      doc.text("Profils des deux personnes", 20, y);
+      y += 8;
+
+      // Person 1
+      doc.setFontSize(10);
+      doc.setFont("helvetica", "bold");
+      doc.setTextColor(236, 72, 153);
+      doc.text("Personne 1", 20, y);
+      y += 6;
+      doc.setFont("helvetica", "normal");
+      doc.setTextColor(60, 60, 60);
+      const p1Data = [
+        `Soleil : ${natal1.planets.Soleil.sign} ${natal1.planets.Soleil.degree}°`,
+        `Lune : ${natal1.planets.Lune.sign} ${natal1.planets.Lune.degree}°`,
+        `Venus : ${natal1.planets.Venus.sign} ${natal1.planets.Venus.degree}°`,
+        `Mars : ${natal1.planets.Mars.sign} ${natal1.planets.Mars.degree}°`,
+        `Ascendant : ${natal1.ascendant.sign} ${natal1.ascendant.degree}°`,
+      ];
+      for (const line of p1Data) {
+        doc.text(line, 25, y);
+        y += 5;
+      }
+
+      y += 3;
+      doc.setFont("helvetica", "bold");
+      doc.setTextColor(168, 85, 247);
+      doc.text("Personne 2", 20, y);
+      y += 6;
+      doc.setFont("helvetica", "normal");
+      doc.setTextColor(60, 60, 60);
+      const p2Data = [
+        `Soleil : ${natal2.planets.Soleil.sign} ${natal2.planets.Soleil.degree}°`,
+        `Lune : ${natal2.planets.Lune.sign} ${natal2.planets.Lune.degree}°`,
+        `Venus : ${natal2.planets.Venus.sign} ${natal2.planets.Venus.degree}°`,
+        `Mars : ${natal2.planets.Mars.sign} ${natal2.planets.Mars.degree}°`,
+        `Ascendant : ${natal2.ascendant.sign} ${natal2.ascendant.degree}°`,
+      ];
+      for (const line of p2Data) {
+        doc.text(line, 25, y);
+        y += 5;
+      }
+
+      // Stats
+      y += 6;
+      doc.setFontSize(14);
+      doc.setFont("helvetica", "bold");
+      doc.setTextColor(30, 30, 30);
+      doc.text("Dynamique du couple", 20, y);
+      y += 8;
+
+      doc.setFontSize(10);
+      doc.setFont("helvetica", "normal");
+      doc.setTextColor(74, 222, 128);
+      doc.text(`Aspects harmoniques : ${stats.harmonic}`, 25, y);
+      y += 6;
+      doc.setTextColor(212, 160, 23);
+      doc.text(`Fusions (conjonctions) : ${stats.conjunction}`, 25, y);
+      y += 6;
+      doc.setTextColor(236, 72, 153);
+      doc.text(`Tensions (carres/oppositions) : ${stats.tension}`, 25, y);
+      y += 10;
+
+      // Top aspects
+      doc.setFontSize(14);
+      doc.setFont("helvetica", "bold");
+      doc.setTextColor(30, 30, 30);
+      doc.text("Top 15 aspects majeurs", 20, y);
+      y += 8;
+
+      doc.setFontSize(9);
+      doc.setFont("helvetica", "normal");
+      const topAspects = aspects.slice(0, 15);
+      for (const asp of topAspects) {
+        if (y > 275) {
+          doc.addPage();
+          y = 20;
+        }
+        const line = `${asp.person1_planet} ${asp.aspect} ${asp.person2_planet} natal - orbe ${asp.orb.toFixed(2)}° (${asp.nature})`;
+        doc.setTextColor(60, 60, 60);
+        doc.text(line, 25, y);
+        y += 5;
+      }
+
+      // Footer
+      y = 285;
+      doc.setFontSize(8);
+      doc.setTextColor(150, 150, 150);
+      doc.text("Calcule avec Swiss Ephemeris (precision 0.001 arcseconde)", pageWidth / 2, y, { align: "center" });
+      doc.text("Pour une interpretation personnalisee : karmastro.com/oracle", pageWidth / 2, y + 4, { align: "center" });
+
+      doc.save(`karmastro-synastrie-${Date.now()}.pdf`);
+    } catch (err) {
+      console.error("PDF generation failed:", err);
+      alert("Generation PDF echouee, reessaie dans un instant.");
+    }
+  }
+
   const ASPECT_COLORS: Record<string, string> = {
     Conjonction: "#D4A017",
     Trigone: "#4ade80",
@@ -410,6 +538,14 @@ const jsonLd = [
       (document.getElementById("count-harmonic") as HTMLElement).textContent = String(harmonic);
       (document.getElementById("count-conjunction") as HTMLElement).textContent = String(conjunction);
       (document.getElementById("count-tension") as HTMLElement).textContent = String(tension);
+
+      // Wire PDF download
+      const pdfBtn = document.getElementById("download-pdf-btn") as HTMLButtonElement | null;
+      if (pdfBtn) {
+        pdfBtn.onclick = async () => {
+          await generatePDF(natal1, natal2, aspects, { harmonic, conjunction, tension });
+        };
+      }
 
       resultDiv.classList.remove("hidden");
       resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });

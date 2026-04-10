@@ -1,0 +1,239 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ShareButton from "../components/ShareButton.astro";
+
+const title = "Hall des Constellations - Les parrains Karmastro - Karmastro";
+const description =
+  "Le Hall des Constellations honore les membres de Karmastro qui font grandir notre communauté cosmique. Top parrains, badges débloqués, classement mis à jour en temps réel.";
+
+// Fetch top parrains from Supabase (SSG at build time)
+// We use the anon key to query the public view
+const SUPABASE_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co";
+const SUPABASE_ANON_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ramJtYmRydmVqZW16cmdneHZyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU3NzE1MjUsImV4cCI6MjA5MTM0NzUyNX0.KYc8rXIC0RPMskW6eJIE_EranUcLK6nckCAWEph-340";
+
+type TopParrain = {
+  first_name: string;
+  referral_code: string;
+  validated_filleuls: number;
+  total_filleuls: number;
+  badges: string[];
+  first_filleul_at: string;
+};
+
+let topParrains: TopParrain[] = [];
+try {
+  const res = await fetch(
+    `${SUPABASE_URL}/rest/v1/top_parrains?select=*&order=validated_filleuls.desc,total_filleuls.desc&limit=100`,
+    {
+      headers: {
+        apikey: SUPABASE_ANON_KEY,
+        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+      },
+    }
+  );
+  if (res.ok) {
+    topParrains = await res.json();
+  }
+} catch (e) {
+  console.warn("Failed to fetch top parrains:", e);
+}
+
+const BADGE_META: Record<string, { name: string; icon: string; color: string }> = {
+  eclaireur_cosmique: { name: "Éclaireur Cosmique", icon: "✦", color: "text-amber-300" },
+  guide_des_etoiles: { name: "Guide des Étoiles", icon: "★", color: "text-purple-300" },
+  constellation_vivante: { name: "Constellation Vivante", icon: "✧", color: "text-pink-300" },
+  nebuleuse_maitresse: { name: "Nébuleuse Maîtresse", icon: "❋", color: "text-emerald-300" },
+};
+
+const podium = topParrains.slice(0, 3);
+const rest = topParrains.slice(3);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  description,
+  url: "https://karmastro.com/hall-des-constellations",
+};
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <section class="max-w-4xl mx-auto px-4 py-16">
+    <div class="text-center mb-14">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Hall des Constellations</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Les bâtisseurs du cosmos</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Ces membres de Karmastro font grandir notre communauté en partageant leur lumière. Honneur à eux : sans eux, cette aventure n'aurait pas le même éclat.
+      </p>
+    </div>
+
+    {topParrains.length === 0 && (
+      <div class="text-center py-20 border border-amber-300/20 rounded-2xl bg-amber-300/5">
+        <div class="text-6xl mb-4">✨</div>
+        <h2 class="font-serif text-2xl mb-3">Les premières étoiles attendent</h2>
+        <p class="text-white/70 max-w-md mx-auto mb-6">
+          Le Hall des Constellations est encore vierge. Tu peux être le premier à y inscrire ton nom. Invite tes proches et commence ta constellation.
+        </p>
+        <a
+          href="/parrainage"
+          class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity"
+        >
+          Découvrir le programme de parrainage
+        </a>
+      </div>
+    )}
+
+    {podium.length > 0 && (
+      <>
+        <div class="grid md:grid-cols-3 gap-4 mb-10">
+          {podium.map((parrain, i) => {
+            const rank = i + 1;
+            const rankBg = rank === 1 ? "from-amber-300/20 to-amber-300/5 border-amber-300/50"
+              : rank === 2 ? "from-white/10 to-white/5 border-white/30"
+              : "from-orange-400/15 to-orange-400/5 border-orange-400/30";
+            const rankColor = rank === 1 ? "text-amber-300"
+              : rank === 2 ? "text-white/80"
+              : "text-orange-300";
+            const rankIcon = rank === 1 ? "♔" : rank === 2 ? "♕" : "♖";
+
+            return (
+              <div class={`p-6 rounded-3xl border-2 bg-gradient-to-br ${rankBg} text-center ${rank === 1 ? "md:order-2 md:scale-110" : rank === 2 ? "md:order-1" : "md:order-3"}`}>
+                <div class={`text-4xl mb-2 ${rankColor}`}>{rankIcon}</div>
+                <p class={`text-xs uppercase tracking-wider mb-1 ${rankColor}`}>#{rank}</p>
+                <h3 class="font-serif text-2xl mb-2">{parrain.first_name || "Étoile anonyme"}</h3>
+                <p class="text-3xl font-serif text-amber-300 mb-1">{parrain.validated_filleuls}</p>
+                <p class="text-xs text-white/60 mb-3">filleul{parrain.validated_filleuls > 1 ? "s" : ""} validé{parrain.validated_filleuls > 1 ? "s" : ""}</p>
+                {parrain.badges && parrain.badges.length > 0 && (
+                  <div class="flex flex-wrap justify-center gap-1">
+                    {parrain.badges.map((b) => {
+                      const meta = BADGE_META[b];
+                      if (!meta) return null;
+                      return (
+                        <span class={`text-xs px-2 py-0.5 rounded-full border border-white/10 ${meta.color}`}>
+                          {meta.icon}
+                        </span>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </>
+    )}
+
+    {rest.length > 0 && (
+      <div class="mb-10">
+        <h2 class="font-serif text-2xl mb-4 text-center">Les autres bâtisseurs</h2>
+        <div class="rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden">
+          <table class="w-full">
+            <thead>
+              <tr class="border-b border-white/10 text-xs uppercase tracking-wider text-white/50">
+                <th class="py-3 px-4 text-left">Rang</th>
+                <th class="py-3 px-4 text-left">Nom</th>
+                <th class="py-3 px-4 text-right">Filleuls validés</th>
+                <th class="py-3 px-4 text-center hidden md:table-cell">Badges</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rest.map((parrain, i) => (
+                <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                  <td class="py-3 px-4 text-white/60 text-sm">#{i + 4}</td>
+                  <td class="py-3 px-4">{parrain.first_name || "Étoile anonyme"}</td>
+                  <td class="py-3 px-4 text-right font-mono text-amber-300">{parrain.validated_filleuls}</td>
+                  <td class="py-3 px-4 text-center hidden md:table-cell">
+                    {parrain.badges && parrain.badges.length > 0 ? (
+                      parrain.badges.map((b) => {
+                        const meta = BADGE_META[b];
+                        if (!meta) return null;
+                        return <span class={`inline-block text-xs px-1.5 ${meta.color}`}>{meta.icon}</span>;
+                      })
+                    ) : (
+                      <span class="text-white/30 text-xs">-</span>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    )}
+
+    <section class="prose prose-invert max-w-3xl mx-auto mb-14">
+      <h2 class="font-serif text-3xl mb-4">Les quatre badges cosmiques</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Plus tu invites de proches sur Karmastro, plus tu débloques de badges. Chaque badge marque une étape importante dans ton parcours de parrain et reste associé à ton profil de manière permanente.
+      </p>
+      <div class="not-prose grid md:grid-cols-2 gap-4 mb-8">
+        {Object.entries(BADGE_META).map(([key, meta]) => {
+          const thresholds = {
+            eclaireur_cosmique: 3,
+            guide_des_etoiles: 10,
+            constellation_vivante: 25,
+            nebuleuse_maitresse: 100,
+          };
+          const threshold = (thresholds as any)[key] || 0;
+          return (
+            <div class="p-4 rounded-2xl border border-white/10 bg-white/[0.02]">
+              <div class="flex items-center gap-3 mb-2">
+                <span class={`text-3xl ${meta.color}`}>{meta.icon}</span>
+                <div>
+                  <p class="font-serif text-lg">{meta.name}</p>
+                  <p class="text-xs text-white/50">À partir de {threshold} filleuls validés</p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Comment rejoindre le Hall ?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Rien de plus simple : récupère ton code de parrainage dans ton profil Karmastro (tu en as un dès ton inscription), partage-le avec tes proches, et ils s'inscriront via ton lien. Chaque filleul qui reste actif pendant 7 jours compte dans ton total et peut te faire grimper au classement.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Les filleuls qui se désinscrivent dans les 7 premiers jours ne comptent pas, pour éviter les abus. Au-delà, le parrainage est définitif et ton badge est acquis à vie. <a href="/parrainage" class="text-amber-300 hover:underline">En savoir plus sur le programme Étoiles Jumelles</a>.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Pourquoi honorer les parrains ?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Parce qu'ils portent Karmastro à bout de bras. On ne dépense pas un centime en publicité display ou en influenceurs payés. Notre croissance repose entièrement sur le bouche-à-oreille, sur les vraies personnes qui croient en notre approche rationnelle de la guidance cosmique et qui en parlent autour d'elles.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Ce Hall des Constellations est notre façon de dire merci. Pas un système de commissions, pas un programme de vendeurs. Juste une reconnaissance publique pour ceux qui prennent le temps de partager ce qu'ils aiment. Les anciens Grecs honoraient leurs bâtisseurs de temples et leurs poètes en gravant leur nom dans la pierre. Nous faisons de même dans les étoiles.
+      </p>
+    </section>
+
+    <div class="p-8 rounded-3xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-2xl mb-3">Prêt à inscrire ton nom ?</h3>
+      <p class="text-white/70 mb-6 max-w-xl mx-auto">
+        Récupère ton code de parrainage dans ton profil Karmastro et commence à inviter tes proches. Chaque étoile compte, chaque partage illumine notre constellation.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+        <a
+          href="https://app.karmastro.com"
+          class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity"
+        >
+          Voir mon code
+        </a>
+        <ShareButton
+          title="Hall des Constellations Karmastro"
+          text="Découvre les bâtisseurs de Karmastro, la plateforme de guidance cosmique qui croise astrologie, numérologie et karma"
+          url="https://karmastro.com/hall-des-constellations"
+          variant="secondary"
+          label="Partager le Hall"
+        />
+      </div>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Accueil</a>
+      <a href="/parrainage" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Programme parrainage</a>
+      <a href="/notre-histoire" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Notre histoire</a>
+      <a href="/outils" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Outils gratuits</a>
+    </nav>
+  </section>
+</BaseLayout>

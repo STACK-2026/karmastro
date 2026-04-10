@@ -11,14 +11,21 @@ const STRIPE_SECRET_KEY = Deno.env.get("STRIPE_SECRET_KEY") || "";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "";
 const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
 
-// Price ID mapping (test mode)
+// Price ID mapping (LIVE mode — activated 10/04/2026)
+// TEST IDs kept in comments for rollback:
+// etoile_monthly: price_1TKges0t7uSlTxJbUqwZ7A8Y
+// etoile_annual:  price_1TKges0t7uSlTxJbpVs86TJW
+// ame_soeur:      price_1TKget0t7uSlTxJbovixGYcH
+// pack_lune:      price_1TKgeu0t7uSlTxJboTCwe3jF
+// pack_soleil:    price_1TKgeu0t7uSlTxJb8gKdJDNq
+// pack_cosmos:    price_1TKgev0t7uSlTxJbU06O6KKB
 const PRICE_IDS: Record<string, string> = {
-  etoile_monthly: "price_1TKges0t7uSlTxJbUqwZ7A8Y",
-  etoile_annual: "price_1TKges0t7uSlTxJbpVs86TJW",
-  ame_soeur: "price_1TKget0t7uSlTxJbovixGYcH",
-  pack_lune: "price_1TKgeu0t7uSlTxJboTCwe3jF",
-  pack_soleil: "price_1TKgeu0t7uSlTxJb8gKdJDNq",
-  pack_cosmos: "price_1TKgev0t7uSlTxJbU06O6KKB",
+  etoile_monthly: "price_1TKgsP148fIJBvxR5Xof0v6g",
+  etoile_annual: "price_1TKgsQ148fIJBvxRZIqIHiA3",
+  ame_soeur: "price_1TKgsR148fIJBvxRcvA9NM6J",
+  pack_lune: "price_1TKgsR148fIJBvxRUolphVum",
+  pack_soleil: "price_1TKgsS148fIJBvxR2G1BhJT7",
+  pack_cosmos: "price_1TKgsT148fIJBvxR9TpUHW6U",
 };
 
 // Whether each priceKey is a subscription or one-time
