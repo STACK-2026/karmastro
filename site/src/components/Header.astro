@@ -11,12 +11,12 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
     top: 8px; left: 8px; right: 8px;
     height: 56px;
     padding: 0 16px;
-    background: rgba(15, 10, 30, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(139, 92, 246, 0.12);
+    background: rgba(31, 22, 54, 0.92);
+    backdrop-filter: blur(24px) saturate(1.2);
+    -webkit-backdrop-filter: blur(24px) saturate(1.2);
+    border: 1px solid rgba(212, 160, 23, 0.25);
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   "
 >
   <!-- Logo -->
@@ -33,7 +33,7 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
       <a
         href={link.href}
         class="nav-link text-sm font-medium no-underline relative"
-        style="color: var(--text-muted);"
+        style="color: rgba(255, 255, 255, 0.85);"
         {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
         {link.label}
@@ -91,20 +91,20 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
   style="
     top: 8px; right: 8px; bottom: 8px;
     width: 280px;
-    background: rgba(15, 10, 30, 0.92);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(139, 92, 246, 0.15);
+    background: rgba(31, 22, 54, 0.96);
+    backdrop-filter: blur(28px) saturate(1.2);
+    -webkit-backdrop-filter: blur(28px) saturate(1.2);
+    border: 1px solid rgba(212, 160, 23, 0.3);
     border-radius: 20px;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     transform: translateX(calc(100% + 8px));
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     overflow: hidden;
   "
 >
-  <div class="flex items-center justify-between p-4" style="border-bottom: 1px solid rgba(139, 92, 246, 0.1);">
+  <div class="flex items-center justify-between p-4" style="border-bottom: 1px solid rgba(212, 160, 23, 0.2);">
     <span class="text-white font-bold" style="font-family: Outfit, sans-serif;">{siteConfig.name}</span>
-    <button id="drawer-close" class="w-8 h-8 flex items-center justify-center rounded-lg" style="color: var(--text-muted);">
+    <button id="drawer-close" class="w-8 h-8 flex items-center justify-center rounded-lg" style="color: rgba(255, 255, 255, 0.85);">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
