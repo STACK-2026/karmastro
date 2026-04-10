@@ -4,6 +4,7 @@ import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
 import AppHeader from "@/components/AppHeader";
 import { useUserProfile } from "@/hooks/useUserProfile";
+import { ZodiacSymbol } from "@/components/ZodiacSymbol";
 
 const AstralProfile = () => {
   const navigate = useNavigate();
@@ -18,20 +19,20 @@ const AstralProfile = () => {
         {/* Big 3 */}
         <div className="grid grid-cols-3 gap-3">
           {[
-            { label: "Soleil", ...astrology.sunSign },
-            { label: "Lune", sign: astrology.moonSign.sign, symbol: astrology.moonSign.symbol, element: astrology.moonSign.element },
-            { label: "Ascendant", sign: astrology.ascendant.sign, symbol: astrology.ascendant.symbol, element: astrology.ascendant.element },
+            { label: "Soleil", sign: astrology.sunSign.sign, element: astrology.sunSign.element, color: "#D4A017" },
+            { label: "Lune", sign: astrology.moonSign.sign, element: astrology.moonSign.element, color: "#8B5CF6" },
+            { label: "Ascendant", sign: astrology.ascendant.sign, element: astrology.ascendant.element, color: "#60A5FA" },
           ].map((item) => (
             <motion.div
               key={item.label}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="border-glow rounded-xl bg-card/60 p-4 text-center"
+              className="border-glow rounded-xl bg-card/60 p-4 text-center flex flex-col items-center"
             >
-              <span className="text-3xl">{item.symbol}</span>
-              <p className="text-xs text-muted-foreground mt-1">{item.label}</p>
-              <p className="text-sm font-medium">{item.sign}</p>
-              <p className="text-[10px] text-muted-foreground">{item.element}</p>
+              <ZodiacSymbol sign={item.sign} size={36} color={item.color} />
+              <p className="text-xs text-muted-foreground mt-2">{item.label}</p>
+              <p className="text-sm font-medium">{item.sign || "—"}</p>
+              <p className="text-[10px] text-muted-foreground">{item.element || "—"}</p>
             </motion.div>
           ))}
         </div>

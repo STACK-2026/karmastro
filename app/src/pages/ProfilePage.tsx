@@ -8,6 +8,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { useUserProfile } from "@/hooks/useUserProfile";
+import { ZodiacSymbol } from "@/components/ZodiacSymbol";
 
 const ProfilePage = () => {
   const navigate = useNavigate();
@@ -100,17 +101,17 @@ const ProfilePage = () => {
           </p>
 
           <div className="flex justify-center gap-6 mt-4">
-            <div className="text-center">
-              <span className="text-2xl">{astrology.sunSign.symbol}</span>
+            <div className="text-center flex flex-col items-center">
+              <ZodiacSymbol sign={astrology.sunSign.sign} size={32} color="#D4A017" />
               <p className="text-[10px] text-muted-foreground">{astrology.sunSign.sign}</p>
             </div>
-            <div className="text-center">
-              <span className="text-2xl">{astrology.moonSign.symbol}</span>
-              <p className="text-[10px] text-muted-foreground">{astrology.moonSign.sign}</p>
+            <div className="text-center flex flex-col items-center">
+              <ZodiacSymbol sign={astrology.moonSign.sign} size={32} color="#8B5CF6" />
+              <p className="text-[10px] text-muted-foreground">{astrology.moonSign.sign || "—"}</p>
             </div>
-            <div className="text-center">
-              <span className="text-2xl">{astrology.ascendant.symbol}</span>
-              <p className="text-[10px] text-muted-foreground">Asc. {astrology.ascendant.sign}</p>
+            <div className="text-center flex flex-col items-center">
+              <ZodiacSymbol sign={astrology.ascendant.sign} size={32} color="#60A5FA" />
+              <p className="text-[10px] text-muted-foreground">Asc. {astrology.ascendant.sign || "—"}</p>
             </div>
           </div>
 

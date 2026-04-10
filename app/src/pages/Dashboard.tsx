@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
 import { dailyMessages } from "@/lib/demoData";
 import { useUserProfile } from "@/hooks/useUserProfile";
+import { ZodiacSymbol } from "@/components/ZodiacSymbol";
 import { getPersonalizedHooks, type OracleHook } from "@/lib/oracleHooks";
 import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
@@ -133,7 +134,15 @@ const Dashboard = () => {
         title={`Bonjour ${firstName}`}
         rightContent={
           <div className="text-right">
-            <p className="text-xs text-muted-foreground">{astrology.sunSign.symbol} {astrology.moonSign.symbol || "·"} {astrology.ascendant.symbol || "·"}</p>
+            <div className="flex items-center gap-1 justify-end">
+              <ZodiacSymbol sign={astrology.sunSign.sign} size={16} color="#D4A017" />
+              {astrology.moonSign.sign && astrology.moonSign.sign !== "—" && (
+                <ZodiacSymbol sign={astrology.moonSign.sign} size={14} color="#8B5CF6" />
+              )}
+              {astrology.ascendant.sign && astrology.ascendant.sign !== "—" && astrology.ascendant.sign !== "Inconnu" && (
+                <ZodiacSymbol sign={astrology.ascendant.sign} size={14} color="#60A5FA" />
+              )}
+            </div>
             <p className="text-xs font-mono text-primary">CV {numerology.lifePath.number} · AP {numerology.personalYear2026}</p>
           </div>
         }

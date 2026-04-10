@@ -11,6 +11,7 @@ import { lifePathNumber, expressionNumber, soulUrgeNumber, personalYear, getZodi
 import { geocodePlace, createDebouncer, type GeocodeResult } from "@/lib/geocoding";
 import { trackEvent } from "@/lib/tracker";
 import StarField from "@/components/StarField";
+import { ZodiacSymbol } from "@/components/ZodiacSymbol";
 
 const INTERESTS = [
   { id: "astro", label: "Astrologie", icon: Star },
@@ -398,7 +399,7 @@ const OnboardingPage = () => {
                 >
                   <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Signe solaire</p>
                   <div className="flex items-center gap-3">
-                    <span className="text-3xl">{profile.zodiac.symbol}</span>
+                    <ZodiacSymbol sign={profile.zodiac.sign} size={36} color="#D4A017" />
                     <div>
                       <p className="font-serif text-lg">{profile.zodiac.sign}</p>
                       <p className="text-xs text-muted-foreground">{profile.zodiac.element}</p>

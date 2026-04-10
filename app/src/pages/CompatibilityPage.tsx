@@ -6,6 +6,7 @@ import { compatibilityProfiles } from "@/lib/demoData";
 import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
 import AppHeader from "@/components/AppHeader";
+import { ZodiacSymbol } from "@/components/ZodiacSymbol";
 
 const CompatibilityPage = () => {
   const navigate = useNavigate();
@@ -34,7 +35,10 @@ const CompatibilityPage = () => {
                 </div>
                 <div>
                   <h3 className="font-medium">{profile.name}</h3>
-                  <p className="text-xs text-muted-foreground">{profile.sunSign.symbol} {profile.sunSign.sign} · CV {profile.lifePath}</p>
+                  <p className="text-xs text-muted-foreground flex items-center gap-1">
+                    <ZodiacSymbol sign={profile.sunSign.sign} size={14} color="#D4A017" />
+                    {profile.sunSign.sign} · CV {profile.lifePath}
+                  </p>
                 </div>
               </div>
               <div className="text-center">

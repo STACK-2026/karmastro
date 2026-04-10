@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
 import { getZodiacSign, lifePathNumber, getNumberKeyword } from "@/lib/numerology";
 import ZodiacWheel from "@/components/ZodiacWheel";
+import { ZodiacSymbol } from "@/components/ZodiacSymbol";
 import StarField from "@/components/StarField";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -378,9 +379,9 @@ const LandingPage = () => {
               animate={{ opacity: 1, height: "auto" }}
               className="border-t border-border pt-4 flex items-center justify-center gap-6 text-sm"
             >
-              <div className="text-center">
-                <span className="text-2xl">{quickResult.symbol}</span>
-                <p className="text-muted-foreground">{quickResult.sign}</p>
+              <div className="text-center flex flex-col items-center">
+                <ZodiacSymbol sign={quickResult.sign} size={28} color="#D4A017" />
+                <p className="text-muted-foreground mt-1">{quickResult.sign}</p>
               </div>
               <div className="text-center">
                 <span className="text-2xl font-mono text-primary">{quickResult.lifePath}</span>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ZodiacSymbol from "../../components/ZodiacSymbol.astro";
 import { ZODIAC_SIGNS } from "../../data/zodiac";
 
 const title = "Calculateur d'ascendant gratuit - Astrologie Swiss Ephemeris - Karmastro";
@@ -284,8 +285,8 @@ const ascendantMeanings: Record<string, { name: string; description: string; str
       <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
         {ZODIAC_SIGNS.map((sign) => (
           <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-            <div class="flex items-baseline gap-3 mb-1">
-              <span class="text-3xl text-amber-300">{sign.symbol}</span>
+            <div class="flex items-center gap-3 mb-1">
+              <ZodiacSymbol sign={sign.name} size={32} color="#D4A017" />
               <span class="text-sm font-medium text-white">Ascendant {sign.name}</span>
             </div>
             <p class="text-xs text-white/60 leading-relaxed">

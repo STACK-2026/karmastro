@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ZodiacSymbol from "../../../components/ZodiacSymbol.astro";
 import { ZODIAC_SIGNS, formatFrenchDate } from "../../../data/zodiac";
 import { LOCALES, DEFAULT_LOCALE, type Locale } from "../../../i18n/config";
 import { getContent } from "../../../i18n/content";
@@ -79,7 +80,7 @@ const signNameKeys: Record<string, string> = {
               class="group block p-5 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-amber-300/40 hover:bg-amber-300/5 transition-all"
             >
               <div class="flex items-center justify-between mb-2">
-                <span class="text-3xl text-amber-300">{sign.symbol}</span>
+                <ZodiacSymbol sign={sign.name} size={40} color="#D4A017" />
                 <span class="text-xs text-white/40 uppercase tracking-wider">{sign.element}</span>
               </div>
               <h2 class="font-serif text-xl mb-1 group-hover:text-amber-300 transition-colors">{localSignName}</h2>
