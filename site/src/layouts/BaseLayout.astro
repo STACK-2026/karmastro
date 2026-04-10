@@ -176,35 +176,42 @@ const hreflangUrls = LOCALES.map((locale) => {
         66% { transform: translate(-2px, 1px); }
         100% { transform: translate(0, 0); }
       }
-      /* Fade-in on scroll */
-      .fade-in-section {
+      /* Fade-in on scroll — JS-only, SSR-safe (visible by default for crawlers/no-JS) */
+      .js-fade-in {
         opacity: 0;
         transform: translateY(30px);
         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
       }
-      .fade-in-section.visible {
+      .js-fade-in.visible {
         opacity: 1;
         transform: translateY(0);
       }
+      @media (prefers-reduced-motion: reduce) {
+        .js-fade-in { opacity: 1 !important; transform: none !important; transition: none !important; }
+      }
     </style>
     <script>
-      // IntersectionObserver for fade-in sections
+      // JS-only fade-in: apply opacity:0 class ONLY if JS runs.
+      // This way AI crawlers, SEO bots, and no-JS users see everything immediately.
+      const sections = Array.from(document.querySelectorAll("main section"));
+      // Skip the first section (hero) — never fade
+      sections.slice(1).forEach(el => el.classList.add("js-fade-in"));
+
       const obs = new IntersectionObserver((entries) => {
         entries.forEach(e => {
           if (e.isIntersecting) {
             e.target.classList.add("visible");
+            obs.unobserve(e.target);
           }
         });
-      }, { threshold: 0.1 });
+      }, { threshold: 0.05, rootMargin: "0px 0px -50px 0px" });
 
-      document.querySelectorAll("section, .fade-in-section").forEach(el => {
-        el.classList.add("fade-in-section");
-        obs.observe(el);
-      });
+      sections.slice(1).forEach(el => obs.observe(el));
 
-      // Don't fade the first section (hero)
-      const hero = document.querySelector("section");
-      if (hero) { hero.classList.add("visible"); hero.classList.remove("fade-in-section"); }
+      // Safety net: reveal everything after 2s no matter what (e.g. if observer fails)
+      setTimeout(() => {
+        document.querySelectorAll(".js-fade-in").forEach(el => el.classList.add("visible"));
+      }, 2000);
     </script>
   </body>
 </html>

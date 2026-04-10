@@ -15,7 +15,7 @@ L'utilisateur peut créer un compte pour accéder à la voie Éveil (profil cosm
 ## Article 3 - Tarification
 
 - **Éveil** (offert) : profil cosmique complet, horoscope quotidien, 3 messages Oracle/jour
-- **Étoile** : 7,99 EUR/mois - Oracle illimité, calendrier cosmique, compatibilités illimitées
+- **Étoile** : 5,99 EUR/mois (ou 49,99 EUR/an) - Oracle illimité, calendrier cosmique, compatibilités illimitées
 - **Âme Soeur** : 2,99 EUR (rituel unique) - rapport de compatibilité complet
 
 Tous les prix sont indiqués en euros TTC.

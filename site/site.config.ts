@@ -83,7 +83,7 @@ export const siteConfig = {
     {
       question: "Est-ce que Karmastro est gratuit ?",
       answer:
-        "Oui, la voie Éveil est offerte par les astres : profil cosmique complet, horoscope quotidien et 3 messages Oracle par jour. La voie Étoile à 7,99EUR/mois débloque l'Oracle illimité, le calendrier cosmique détaillé et les compatibilités illimitées.",
+        "Oui, la voie Éveil est offerte par les astres : profil cosmique complet, horoscope quotidien et 3 messages Oracle par jour. La voie Étoile à 5,99€/mois (ou 49,99€/an) débloque l'Oracle illimité, le calendrier cosmique détaillé et les compatibilités illimitées.",
     },
     {
       question: "Quelle est la différence avec un horoscope classique ?",
