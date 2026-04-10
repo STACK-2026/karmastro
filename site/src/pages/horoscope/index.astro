@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ShareButton from "../../components/ShareButton.astro";
 import { ZODIAC_SIGNS, formatFrenchDate } from "../../data/zodiac";
 import fs from "fs";
 import path from "path";
@@ -96,6 +97,16 @@ const jsonLd = {
         })}
       </div>
     )}
+
+    <div class="mt-10 flex justify-center">
+      <ShareButton
+        title={`Horoscope du jour ${dateFormatted} - Karmastro`}
+        text="Découvre l'horoscope quotidien des 12 signes sur Karmastro, calculé avec Swiss Ephemeris"
+        url="https://karmastro.com/horoscope"
+        variant="secondary"
+        label="Partager l'horoscope du jour"
+      />
+    </div>
 
     <div class="mt-16 text-center">
       <div class="inline-block p-8 rounded-3xl border border-purple-400/20 bg-purple-400/5 max-w-xl">

@@ -133,13 +133,21 @@ const jsonLd = [
             <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">Mission</p>
             <p id="result-mission" class="text-sm text-white/80 italic leading-relaxed"></p>
           </div>
-          <div class="mt-6 pt-4 border-t border-white/10 text-center">
+          <div class="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-2 justify-center items-center">
             <a
               href="https://app.karmastro.com/oracle"
               class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity"
             >
               Aller plus loin avec l'Oracle
             </a>
+            <button
+              id="share-result-btn"
+              type="button"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 text-sm font-medium hover:bg-amber-300/10 transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+              Partager mon résultat
+            </button>
           </div>
         </div>
       </div>
@@ -290,6 +298,26 @@ const jsonLd = [
     challengesList.innerHTML = meaning.challenges.map((c) => `<li>◆ ${c}</li>`).join("");
 
     (document.getElementById("result-mission") as HTMLElement).textContent = meaning.mission;
+
+    // Wire share button
+    const shareBtn = document.getElementById("share-result-btn") as HTMLButtonElement | null;
+    if (shareBtn) {
+      const shareText = `Mon chemin de vie est ${result.number} : ${meaning.title}. Calcule le tien gratuitement sur Karmastro.`;
+      const shareUrl = "https://karmastro.com/outils/chemin-de-vie";
+      shareBtn.onclick = async () => {
+        if (typeof navigator.share === "function") {
+          try {
+            await navigator.share({ title: `Chemin de vie ${result.number} - ${meaning.title}`, text: shareText, url: shareUrl });
+            return;
+          } catch {}
+        }
+        try {
+          await navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
+          shareBtn.textContent = "Copié ✦";
+          setTimeout(() => { shareBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg> Partager mon résultat'; }, 2000);
+        } catch {}
+      };
+    }
 
     resultDiv.classList.remove("hidden");
     resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });

@@ -1,13 +1,78 @@
-import { Sparkles, Star, Hash, Moon, Zap, BookOpen } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Sparkles, Star, Hash, Moon, Zap, BookOpen, Share2, Copy, Check, Users } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { demoProfile } from "@/lib/demoData";
 import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
 import AppHeader from "@/components/AppHeader";
+import { useAuth } from "@/contexts/AuthContext";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const ProfilePage = () => {
   const navigate = useNavigate();
   const { astrology, numerology } = demoProfile;
+  const { user } = useAuth();
+  const { toast } = useToast();
+
+  const [referralCode, setReferralCode] = useState<string | null>(null);
+  const [filleulsCount, setFilleulsCount] = useState(0);
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    if (!user?.id) return;
+    // Fetch own referral code
+    supabase
+      .from("profiles")
+      .select("referral_code")
+      .eq("user_id", user.id)
+      .maybeSingle()
+      .then(({ data }: any) => {
+        if (data?.referral_code) setReferralCode(data.referral_code);
+      });
+
+    // Count filleuls who used this user's code (we need to get the code first)
+  }, [user?.id]);
+
+  useEffect(() => {
+    if (!referralCode) return;
+    (supabase as any)
+      .from("profiles")
+      .select("id", { count: "exact", head: true })
+      .eq("referred_by_code", referralCode)
+      .then(({ count }: { count: number | null }) => {
+        setFilleulsCount(count || 0);
+      });
+  }, [referralCode]);
+
+  const shareUrl = referralCode ? `https://karmastro.com/?ref=${referralCode}` : "";
+  const shareText = referralCode
+    ? `Rejoins-moi sur Karmastro, la plateforme de guidance cosmique qui croise astrologie, numérologie et karma. Utilise mon lien de parrainage ✨`
+    : "";
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+      toast({ title: "Lien copié ✦", description: "Partage-le avec qui tu veux." });
+    } catch {}
+  };
+
+  const handleShare = async () => {
+    if (typeof navigator.share === "function") {
+      try {
+        await navigator.share({ title: "Rejoins-moi sur Karmastro", text: shareText, url: shareUrl });
+        return;
+      } catch {}
+    }
+    handleCopy();
+  };
+
+  const nextBadge = filleulsCount < 3 ? { target: 3, name: "Éclaireur Cosmique" }
+    : filleulsCount < 10 ? { target: 10, name: "Guide des Étoiles" }
+    : filleulsCount < 25 ? { target: 25, name: "Constellation Vivante" }
+    : null;
 
   return (
     <div className="min-h-screen bg-background pb-20 relative">
@@ -64,6 +129,55 @@ const ProfilePage = () => {
             </p>
           )}
         </div>
+
+        {/* Referral card */}
+        {referralCode && (
+          <div className="rounded-xl border border-amber-300/20 bg-gradient-to-br from-amber-300/5 to-purple-400/5 p-5">
+            <div className="flex items-center gap-2 mb-3">
+              <Sparkles className="h-4 w-4 text-amber-300" />
+              <h3 className="font-serif text-lg">Étoiles Jumelles</h3>
+            </div>
+            <p className="text-xs text-muted-foreground mb-3 leading-relaxed">
+              Invite tes proches sur Karmastro. Vous recevez tous les deux des bonus cosmiques et tu débloques des badges en grandissant ta constellation.
+            </p>
+
+            <div className="flex items-center gap-2 mb-3 p-3 rounded-lg bg-[#0f0a1e]/60 border border-white/10">
+              <span className="flex-1 font-mono text-lg text-amber-300 text-center tracking-wider">{referralCode}</span>
+            </div>
+
+            <div className="flex gap-2 mb-4">
+              <button
+                onClick={handleCopy}
+                className="flex-1 flex items-center justify-center gap-2 text-xs border border-amber-300/40 text-amber-300 rounded-lg px-3 py-2 hover:bg-amber-300/10 transition-colors"
+              >
+                {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+                {copied ? "Copié" : "Copier le lien"}
+              </button>
+              <button
+                onClick={handleShare}
+                className="flex-1 flex items-center justify-center gap-2 text-xs bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold rounded-lg px-3 py-2 hover:opacity-90 transition-opacity"
+              >
+                <Share2 className="h-3.5 w-3.5" />
+                Partager
+              </button>
+            </div>
+
+            <div className="flex items-center justify-between text-xs pt-3 border-t border-white/10">
+              <div className="flex items-center gap-1.5 text-muted-foreground">
+                <Users className="h-3 w-3" />
+                <span>{filleulsCount} filleul{filleulsCount > 1 ? "s" : ""}</span>
+              </div>
+              {nextBadge && (
+                <span className="text-amber-300/80">
+                  {nextBadge.target - filleulsCount} de plus → {nextBadge.name}
+                </span>
+              )}
+              {!nextBadge && (
+                <span className="text-amber-300/80">Constellation Vivante ✦</span>
+              )}
+            </div>
+          </div>
+        )}
 
         {/* Quick links */}
         <div className="space-y-2">

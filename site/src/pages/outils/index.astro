@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ShareButton from "../../components/ShareButton.astro";
 
 const title = "Calculateurs gratuits d'astrologie et de numérologie - Karmastro";
 const description =
@@ -176,6 +177,16 @@ const jsonLd = {
           <p class="text-white/60 text-xs">Écrite par nos guides</p>
         </div>
       </div>
+    </div>
+
+    <div class="flex justify-center mb-14">
+      <ShareButton
+        title="Calculateurs gratuits Karmastro"
+        text="9 calculateurs cosmiques gratuits : chemin de vie, ascendant, thème natal, compatibilité et plus encore"
+        url="https://karmastro.com/outils"
+        variant="secondary"
+        label="Partager ces outils"
+      />
     </div>
 
     <section class="prose prose-invert max-w-3xl mx-auto">

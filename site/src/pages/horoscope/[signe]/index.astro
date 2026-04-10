@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ShareButton from "../../../components/ShareButton.astro";
 import { ZODIAC_SIGNS, SIGN_SLUGS, getSignBySlug, formatFrenchDate } from "../../../data/zodiac";
 import fs from "fs";
 import path from "path";
@@ -154,10 +155,20 @@ const jsonLd = {
         </div>
 
         {entry.author && (
-          <p class="text-center text-xs text-white/40 mb-10">
+          <p class="text-center text-xs text-white/40 mb-4">
             Lecture signée par <a href="/notre-histoire" class="text-amber-300 hover:underline">{entry.author}</a>
           </p>
         )}
+
+        <div class="flex justify-center mb-10">
+          <ShareButton
+            title={`Horoscope ${sign.name} du ${dateFormatted}`}
+            text={`Mon horoscope ${sign.name} du jour sur Karmastro : ${entry.intro?.slice(0, 140) || "une lecture cosmique signée Sibylle"}`}
+            url={`https://karmastro.com/horoscope/${sign.slug}`}
+            variant="secondary"
+            label="Partager cet horoscope"
+          />
+        </div>
       </>
     )}
 

@@ -1,0 +1,185 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ShareButton from "../components/ShareButton.astro";
+
+const title = "Parrainage Karmastro - Étoiles Jumelles - Partage et reçois";
+const description =
+  "Rejoins le programme Étoiles Jumelles : invite tes proches sur Karmastro et recevez tous les deux des bonus cosmiques. Programme de parrainage gratuit et sans limite de filleuls.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  description,
+  url: "https://karmastro.com/parrainage",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Karmastro",
+    url: "https://karmastro.com",
+  },
+};
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <section class="max-w-4xl mx-auto px-4 py-16">
+    <div class="text-center mb-14">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Programme Étoiles Jumelles</p>
+      <h1 class="text-4xl md:text-6xl font-serif mb-6">Partage la lumière,<br/>reçois en retour</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Karmastro grandit grâce à ceux qui croient que la guidance de qualité ne devrait pas coûter 100€ chez un voyant inconnu. Quand tu invites un proche à rejoindre l'aventure, vous recevez tous les deux des cadeaux cosmiques.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4 mb-14">
+      <div class="p-6 rounded-2xl border border-pink-400/20 bg-pink-400/5">
+        <div class="text-3xl mb-3">✨</div>
+        <h2 class="font-serif text-xl mb-2 text-pink-300">Pour toi (parrain)</h2>
+        <ul class="text-sm text-white/80 space-y-2 leading-relaxed">
+          <li>• Badge <strong>Éclaireur Cosmique</strong> à partir de 3 filleuls</li>
+          <li>• Badge <strong>Guide des Étoiles</strong> à 10 filleuls</li>
+          <li>• Accès anticipé à toutes les nouvelles fonctionnalités Karmastro</li>
+          <li>• Mention dans la page Hall des Constellations</li>
+          <li>• Remerciement personnalisé de l'équipe</li>
+        </ul>
+      </div>
+      <div class="p-6 rounded-2xl border border-purple-400/20 bg-purple-400/5">
+        <div class="text-3xl mb-3">🌙</div>
+        <h2 class="font-serif text-xl mb-2 text-purple-300">Pour tes filleuls</h2>
+        <ul class="text-sm text-white/80 space-y-2 leading-relaxed">
+          <li>• Accès complet gratuit à Karmastro (voie Éveil)</li>
+          <li>• Badge <strong>Nouveau Voyageur</strong> dès l'inscription</li>
+          <li>• Bonus de bienvenue personnalisé selon leur profil cosmique</li>
+          <li>• Bascule fluide depuis ton invitation, sans formulaire compliqué</li>
+          <li>• Un message personnalisé du guide qui te correspond le mieux</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-14">
+      <h2 class="font-serif text-2xl text-center mb-6">Comment ça marche</h2>
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div>
+          <div class="w-12 h-12 rounded-full bg-amber-300/10 border border-amber-300/30 flex items-center justify-center mx-auto mb-3">
+            <span class="font-serif text-xl text-amber-300">1</span>
+          </div>
+          <h3 class="font-serif text-lg mb-2">Récupère ton code</h3>
+          <p class="text-sm text-white/70 leading-relaxed">
+            Ton code unique de parrainage est dans ton profil Karmastro dès ton inscription. Il ressemble à <span class="font-mono text-amber-300">X7K9M2</span>.
+          </p>
+        </div>
+        <div>
+          <div class="w-12 h-12 rounded-full bg-amber-300/10 border border-amber-300/30 flex items-center justify-center mx-auto mb-3">
+            <span class="font-serif text-xl text-amber-300">2</span>
+          </div>
+          <h3 class="font-serif text-lg mb-2">Partage ton lien</h3>
+          <p class="text-sm text-white/70 leading-relaxed">
+            Copie ton lien de parrainage personnalisé et envoie-le à qui tu veux : WhatsApp, SMS, email, réseaux sociaux.
+          </p>
+        </div>
+        <div>
+          <div class="w-12 h-12 rounded-full bg-amber-300/10 border border-amber-300/30 flex items-center justify-center mx-auto mb-3">
+            <span class="font-serif text-xl text-amber-300">3</span>
+          </div>
+          <h3 class="font-serif text-lg mb-2">Recevez vos cadeaux</h3>
+          <p class="text-sm text-white/70 leading-relaxed">
+            Dès que ton filleul s'inscrit via ton lien, vous recevez tous les deux automatiquement vos bonus cosmiques.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mb-14">
+      <a
+        href="https://app.karmastro.com"
+        class="inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-lg hover:opacity-90 transition-opacity"
+      >
+        Récupérer mon code de parrainage
+      </a>
+      <p class="text-xs text-white/50 mt-3">Tu n'as pas encore de compte ? L'inscription est gratuite et ne prend que 30 secondes.</p>
+    </div>
+
+    <section class="prose prose-invert max-w-3xl mx-auto mb-14">
+      <h2 class="font-serif text-3xl mb-4">Pourquoi un programme de parrainage ?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Parce que la meilleure publicité pour Karmastro, c'est toi. On ne dépense pas d'argent en publicité display ou en influenceurs payés. On préfère récompenser les vraies personnes qui parlent de nous parce qu'elles croient à ce qu'on construit : une plateforme de guidance spirituelle rigoureuse, accessible, sans charlatans ni prédictions bidons.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Tu connais peut-être quelqu'un qui traverse une période difficile, qui cherche du sens, qui voudrait comprendre son thème natal ou calculer son chemin de vie mais qui n'a jamais osé. Ton lien de parrainage est une porte d'entrée douce, sans jugement. Et pour te remercier d'être ce pont, on t'offre des bonus qui grandissent avec toi.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Pas de pyramide, pas d'arnaque</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Attention : Karmastro n'est <strong>pas un système MLM</strong>, pas une arnaque pyramidale. Tu ne gagnes pas d'argent réel en parrainant (pas encore, on réfléchit à ajouter des crédits monétisables quand Stripe sera en place). Pour le moment, les récompenses sont <strong>symboliques et fonctionnelles</strong> : badges, accès anticipé aux nouveautés, reconnaissance publique sur la page Hall des Constellations.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Notre objectif n'est pas que tu deviennes "vendeur Karmastro". Notre objectif est que tu puisses partager ce que tu aimes à ceux qui pourraient en bénéficier, sans te sentir bizarre de le recommander. Un programme de parrainage propre, c'est ça : un cadeau pour dire merci, pas un système de commissions.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Combien de filleuls peut-on avoir ?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Aucune limite. Tu peux parrainer 3 personnes ou 300. Chaque inscription est comptée dans ton compteur personnel, et les badges se débloquent automatiquement aux paliers (3, 10, 25, 50, 100 filleuls). Les plus grands parrains sont mis à l'honneur dans notre Hall des Constellations, une page publique qui rend hommage à ceux qui font grandir la communauté Karmastro.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Comment éviter le spam ?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Règle d'or : ne partage ton lien qu'avec des gens à qui ça peut vraiment servir. Pas de mass email, pas de commentaires automatisés sur Instagram, pas de "Hey j'ai un super lien pour toi" à des inconnus. On détecte les patterns suspects et on invalide les codes abusés. Les vrais parrains sont ceux dont les filleuls restent actifs plus de 30 jours.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Questions fréquentes</h2>
+
+      <h3 class="font-serif text-xl mb-2">Mon filleul doit-il faire quelque chose de spécial ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Non, juste s'inscrire via ton lien de parrainage. Dès que son compte est créé, le lien parrain-filleul est enregistré automatiquement et vous recevez tous les deux vos bonus. Il n'a même pas besoin de valider son email pour que le parrainage soit compté (on veut que ce soit fluide).
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Que se passe-t-il si mon filleul se désinscrit ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Ton badge reste. Les filleuls qui se désinscrivent dans les 7 jours ne comptent pas dans ton total, mais au-delà, le parrainage est définitif et ton bonus te reste acquis.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Peut-on se parrainer soi-même ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Non, on détecte les auto-parrainages (même email, même appareil, même carte bancaire plus tard) et on les annule. Le but du programme est de grandir ensemble, pas de hacker le système.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Le parrainage marche-t-il à l'international ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Oui, Karmastro est accessible depuis le monde entier (avec une interface en français pour le moment). Tes filleuls peuvent être n'importe où sur Terre, tant qu'ils parlent français. On travaille sur une version anglaise pour 2026.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Quand arrivent les récompenses en argent réel ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        On réfléchit sérieusement à un système de crédits monétisables (achetables ET gagnables via le parrainage). Ça arrivera en même temps que Stripe et les abonnements, probablement courant 2026. En attendant, les badges et l'accès anticipé sont déjà des vraies récompenses pour les early adopters.
+      </p>
+    </section>
+
+    <div class="p-8 rounded-3xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-2xl mb-3">Prêt à partager ?</h3>
+      <p class="text-white/70 mb-6 max-w-xl mx-auto">
+        Récupère ton code unique dans ton profil et commence à inviter tes proches. Chaque inscription compte, chaque partage éclaire un nouveau chemin.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+        <a
+          href="https://app.karmastro.com"
+          class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity"
+        >
+          Mon code de parrainage
+        </a>
+        <ShareButton
+          title="Rejoins Karmastro"
+          text="Je viens de découvrir Karmastro : une plateforme de guidance cosmique qui croise astrologie, numérologie et karma avec une précision scientifique. Gratuit pour débuter."
+          url="https://karmastro.com"
+          variant="secondary"
+          label="Partager Karmastro"
+        />
+      </div>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Accueil</a>
+      <a href="/notre-histoire" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Notre histoire</a>
+      <a href="/outils" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Outils gratuits</a>
+      <a href="/horoscope" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Horoscope du jour</a>
+    </nav>
+  </section>
+</BaseLayout>
