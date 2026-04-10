@@ -21,6 +21,16 @@ let todayDate = new Date().toISOString().slice(0, 10);
 let tomorrowDate = "";
 let archiveDates: string[] = [];
 
+type ArchiveCard = {
+  date: string;
+  intro: string;
+  mantra: string | null;
+  luckyNumber: number | null;
+  color: string | null;
+  moonPhase: string | null;
+};
+let archiveCards: ArchiveCard[] = [];
+
 function addDays(dateStr: string, days: number): string {
   const d = new Date(dateStr + "T12:00:00Z");
   d.setUTCDate(d.getUTCDate() + days);
@@ -57,6 +67,30 @@ try {
     if (fs.existsSync(tomorrowFile)) {
       const tomorrowData = JSON.parse(fs.readFileSync(tomorrowFile, "utf-8"));
       tomorrowEntry = tomorrowData[sign.slug];
+    }
+
+    // Archive cards : load up to 14 past entries for this sign with rich metadata
+    const pastArchive = files
+      .filter((f) => f.replace(".json", "") < todayDate)
+      .reverse()
+      .slice(0, 14);
+
+    for (const f of pastArchive) {
+      try {
+        const archiveData = JSON.parse(fs.readFileSync(path.join(dataDir, f), "utf-8"));
+        const signEntry = archiveData[sign.slug];
+        if (!signEntry) continue;
+        archiveCards.push({
+          date: f.replace(".json", ""),
+          intro: (signEntry.intro || "").slice(0, 110),
+          mantra: signEntry.mantra || null,
+          luckyNumber: signEntry.luckyNumber ?? null,
+          color: signEntry.color || null,
+          moonPhase: signEntry.moonPhase || null,
+        });
+      } catch (e) {
+        /* skip corrupted file */
+      }
     }
   }
 } catch (e) {
@@ -351,16 +385,44 @@ const jsonLd = {
       </div>
     </section>
 
-    {archiveDates.length > 1 && (
+    {archiveCards.length > 0 && (
       <section class="mb-10">
-        <h2 class="font-serif text-2xl mb-4">Archives récentes</h2>
-        <div class="flex flex-wrap gap-2">
-          {archiveDates.slice(0, 14).map((d) => (
+        <div class="flex items-baseline justify-between mb-4 flex-wrap gap-2">
+          <h2 class="font-serif text-2xl">Archives récentes</h2>
+          <span class="text-xs text-white/40">{archiveCards.length} lectures passées</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {archiveCards.map((a) => (
             <a
-              href={`/horoscope/${sign.slug}/${d}`}
-              class="text-sm px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.02] hover:border-amber-300/40 hover:text-amber-300 transition-colors"
+              href={`/horoscope/${sign.slug}/${a.date}`}
+              class="group block p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:border-amber-300/40 hover:bg-amber-300/[0.03] transition-all"
             >
-              {formatFrenchDate(d)}
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-medium text-amber-300/90 group-hover:text-amber-300">
+                  {formatFrenchDate(a.date)}
+                </span>
+                {a.luckyNumber != null && (
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-300/10 border border-amber-300/30 text-amber-300">
+                    ✦ {a.luckyNumber}
+                  </span>
+                )}
+              </div>
+              {a.intro && (
+                <p class="text-xs text-white/70 leading-relaxed line-clamp-2 mb-2">
+                  {a.intro}...
+                </p>
+              )}
+              <div class="flex items-center gap-2 flex-wrap text-[10px] text-white/40">
+                {a.color && (
+                  <span class="inline-flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-white/40" />
+                    {a.color}
+                  </span>
+                )}
+                {a.mantra && (
+                  <span class="italic truncate max-w-[200px]">"{a.mantra}"</span>
+                )}
+              </div>
             </a>
           ))}
         </div>
