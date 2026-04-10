@@ -1,0 +1,137 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Calculateurs gratuits d'astrologie et de numérologie - Karmastro";
+const description =
+  "Calcule gratuitement ton chemin de vie, ton ascendant astrologique et ta compatibilité. Calculateurs cosmiques précis basés sur Swiss Ephemeris et la numérologie pythagoricienne.";
+
+const tools = [
+  {
+    href: "/outils/chemin-de-vie",
+    icon: "7",
+    title: "Chemin de vie",
+    description:
+      "Le nombre central de la numérologie pythagoricienne. Calcule ton chemin de vie à partir de ta date de naissance et découvre ta mission profonde.",
+    tag: "Numérologie",
+    tagColor: "emerald",
+    duration: "30 secondes",
+  },
+  {
+    href: "/outils/ascendant",
+    icon: "♌",
+    title: "Ascendant astrologique",
+    description:
+      "L'ascendant est le signe qui se levait à l'horizon à ta naissance. Il révèle ta façon d'aborder le monde et l'image que tu projettes aux autres.",
+    tag: "Astrologie",
+    tagColor: "amber",
+    duration: "1 minute",
+  },
+  {
+    href: "/outils/compatibilite",
+    icon: "∞",
+    title: "Compatibilité amoureuse",
+    description:
+      "Croise deux chemins de vie et découvre la dynamique karmique entre deux personnes. Calcul numérologique pythagoricien immédiat.",
+    tag: "Amour",
+    tagColor: "pink",
+    duration: "1 minute",
+  },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: title,
+  description,
+  url: "https://karmastro.com/outils",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Karmastro",
+    url: "https://karmastro.com",
+  },
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: tools.map((t, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: t.title,
+      url: `https://karmastro.com${t.href}`,
+    })),
+  },
+};
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <section class="max-w-5xl mx-auto px-4 py-16">
+    <div class="text-center mb-14">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Outils cosmiques</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Calculateurs gratuits</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Tous nos calculateurs sont basés sur des méthodes vérifiables : numérologie pythagoricienne pour les nombres, Swiss Ephemeris pour l'astrologie. Aucun compte requis, résultat immédiat.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5 mb-14">
+      {tools.map((tool) => (
+        <a
+          href={tool.href}
+          class="group block p-6 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-amber-300/40 hover:bg-amber-300/5 transition-all"
+        >
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-400/20 to-amber-300/20 flex items-center justify-center text-2xl font-serif text-amber-300">
+              {tool.icon}
+            </div>
+            <span class={`text-xs uppercase tracking-wider px-2.5 py-1 rounded-full bg-${tool.tagColor}-300/10 text-${tool.tagColor}-300`}>
+              {tool.tag}
+            </span>
+          </div>
+          <h2 class="font-serif text-2xl mb-2 group-hover:text-amber-300 transition-colors">
+            {tool.title}
+          </h2>
+          <p class="text-sm text-white/70 mb-4 leading-relaxed">{tool.description}</p>
+          <div class="flex items-center justify-between text-xs">
+            <span class="text-white/40">⏱ {tool.duration}</span>
+            <span class="text-amber-300 group-hover:translate-x-1 transition-transform">Calculer →</span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="p-8 rounded-3xl border border-purple-400/20 bg-purple-400/5 text-center mb-14">
+      <h2 class="font-serif text-2xl mb-3">Pourquoi nos calculateurs sont différents</h2>
+      <p class="text-white/70 max-w-2xl mx-auto mb-5 leading-relaxed">
+        La plupart des sites proposent des calculateurs qui affichent un nombre sans rien expliquer. Chez Karmastro, chaque résultat est accompagné du calcul détaillé, de l'interprétation selon la tradition, et d'un contexte historique. Tu comprends ce que tu vois.
+      </p>
+      <div class="grid md:grid-cols-3 gap-4 text-sm mt-6">
+        <div>
+          <p class="text-amber-300 font-medium mb-1">Calcul transparent</p>
+          <p class="text-white/60 text-xs">Chaque étape est montrée</p>
+        </div>
+        <div>
+          <p class="text-amber-300 font-medium mb-1">Swiss Ephemeris</p>
+          <p class="text-white/60 text-xs">Précision 0,001" (niveau NASA)</p>
+        </div>
+        <div>
+          <p class="text-amber-300 font-medium mb-1">Interprétation pro</p>
+          <p class="text-white/60 text-xs">Écrite par nos guides</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-3xl mx-auto">
+      <h2 class="font-serif text-3xl mb-4">L'art ancien des calculs cosmiques</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        La numérologie remonte à Pythagore, au <strong>VIe siècle avant Jésus-Christ</strong>. Pour le philosophe grec, "tout est nombre" : le cosmos lui-même obéit à des lois mathématiques que l'on peut lire dans les dates, les noms, les événements. Ses disciples, les pythagoriciens, ont codifié un système qui associe chaque lettre à un chiffre et chaque chiffre à une vibration.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        L'astrologie, elle, est encore plus ancienne. Les Mésopotamiens cartographiaient les étoiles il y a <strong>plus de 4 000 ans</strong>. Les Grecs, puis les Arabes, ont perfectionné les calculs. À la Renaissance, Kepler, Galilée et Newton étaient tous astrologues en même temps qu'astronomes. Aujourd'hui, Swiss Ephemeris donne aux calculs une précision que les anciens ne pouvaient qu'imaginer.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Nos calculateurs ne sont donc pas de la magie. Ce sont des méthodes <strong>reproductibles, vérifiables, documentées</strong>. C'est exactement ce que veut dire l'approche de Karmastro : le spirituel, rationnellement. Tu peux consulter notre <a href="/precision" class="text-amber-300 hover:underline">page précision</a> pour comprendre la méthodologie, ou le <a href="/glossaire" class="text-amber-300 hover:underline">glossaire</a> pour les définitions.
+      </p>
+      <p class="text-white/80 leading-relaxed">
+        Et quand tu voudras aller plus loin qu'un calculateur, pose ta question à <a href="https://app.karmastro.com/oracle" class="text-amber-300 hover:underline">l'Oracle</a> : il croise les trois disciplines (astrologie, numérologie, guidance karmique) pour une lecture personnalisée de ton profil complet.
+      </p>
+    </section>
+  </section>
+</BaseLayout>

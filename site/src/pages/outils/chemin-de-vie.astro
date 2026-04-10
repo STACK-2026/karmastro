@@ -1,0 +1,297 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { LIFE_PATH_MEANINGS } from "../../data/numerology-meanings";
+
+const title = "Calculateur chemin de vie gratuit - Numérologie pythagoricienne - Karmastro";
+const description =
+  "Calcule gratuitement ton chemin de vie en numérologie pythagoricienne. Méthode de Pythagore, calcul transparent, interprétation détaillée des 9 nombres et des maîtres nombres 11, 22, 33.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Calculateur chemin de vie Karmastro",
+    description,
+    url: "https://karmastro.com/outils/chemin-de-vie",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "EUR",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Qu'est-ce que le chemin de vie en numérologie ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Le chemin de vie est le nombre central de la numérologie pythagoricienne. Il se calcule en additionnant les chiffres de ta date de naissance jusqu'à obtenir un nombre entre 1 et 9, ou l'un des maîtres nombres 11, 22 ou 33. Il révèle ta mission principale dans cette existence, les défis que tu dois relever et les talents innés qui te guideront.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Comment calculer son chemin de vie ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Prends ta date de naissance complète, additionne tous les chiffres, puis réduis le résultat jusqu'à obtenir un seul chiffre. Exemple : 14/04/1992 = 1+4+0+4+1+9+9+2 = 30 = 3. Ton chemin de vie est 3. Exceptions : si tu obtiens 11, 22 ou 33 en cours de calcul, tu ne les réduis pas : ce sont des maîtres nombres.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Peut-on changer de chemin de vie ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Non. Le chemin de vie est fixé par ta date de naissance et ne change jamais. Ce qui change, c'est ta façon de l'exprimer. Chaque chemin a une version haute et une version basse : le 8 peut être un tyran ou un bâtisseur d'empire bienveillant, c'est à toi de choisir. Le thème natal complète ce calcul pour nuancer les choix de vie.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Qu'est-ce qu'un maître nombre ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Les maîtres nombres 11, 22 et 33 ne se réduisent jamais en numérologie pythagoricienne. Ils portent une vibration double : le 11 est la vision intuitive, le 22 est le grand bâtisseur, le 33 est le guérisseur universel. Porter un maître nombre est un cadeau mais aussi une épreuve : la mission est colossale, la pression aussi.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Le chemin de vie est-il vérifiable ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Oui. Contrairement aux prédictions vagues, le calcul du chemin de vie est mathématique et reproductible. Tu peux le vérifier toi-même avec une calculatrice. Karmastro montre chaque étape du calcul pour que tu puisses comprendre la logique pythagoricienne derrière le résultat.",
+        },
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6">
+      <a href="/" class="hover:text-amber-300">Accueil</a>
+      <span class="mx-2">/</span>
+      <a href="/outils" class="hover:text-amber-300">Outils</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Chemin de vie</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Numérologie pythagoricienne</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Calculateur chemin de vie</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Le chemin de vie est le nombre central en numérologie. Il révèle ta mission profonde, tes talents innés et les leçons karmiques de cette existence. Calcul gratuit, méthode transparente, interprétation complète.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="life-path-form" class="space-y-4">
+        <div>
+          <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">
+            Ta date de naissance
+          </label>
+          <input
+            type="date"
+            id="birth-date"
+            name="birth-date"
+            required
+            class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors"
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity"
+        >
+          Calculer mon chemin de vie
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Ton chemin de vie</p>
+          <div class="flex items-baseline gap-4 mb-4">
+            <span id="result-number" class="text-7xl font-serif text-amber-300"></span>
+            <span id="result-title" class="text-xl font-serif text-white/90"></span>
+          </div>
+          <p class="text-xs text-white/50 mb-4">Calcul : <span id="result-calc" class="text-white/70"></span></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Qualités</p>
+              <ul id="result-qualities" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">Défis</p>
+              <ul id="result-challenges" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">Mission</p>
+            <p id="result-mission" class="text-sm text-white/80 italic leading-relaxed"></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-center">
+            <a
+              href="https://app.karmastro.com/oracle"
+              class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity"
+            >
+              Aller plus loin avec l'Oracle
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Qu'est-ce que le chemin de vie en numérologie ?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Le <strong>chemin de vie</strong> est le nombre central en numérologie pythagoricienne. Il se calcule à partir de ta date de naissance et révèle la mission principale de ton existence. C'est l'équivalent numérologique du signe solaire en astrologie : la vibration de fond qui colore tout ce que tu fais.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Pour <strong>Pythagore</strong> et ses disciples, au VIe siècle avant Jésus-Christ, chaque nombre possède une vibration propre, une signature énergétique. Les chiffres de 1 à 9 couvrent toutes les archétypes humains. Les maîtres nombres 11, 22 et 33 portent une vibration plus rare et plus exigeante. Calculer ton chemin de vie, c'est retrouver ce que les anciens Grecs appelaient ton <em>daimon</em> : ce pour quoi tu es venu.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Comment se calcule le chemin de vie ?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        La méthode est simple et reproductible. Tu additionnes tous les chiffres de ta date de naissance, puis tu réduis jusqu'à obtenir un seul chiffre, sauf si tu tombes sur un maître nombre.
+      </p>
+      <div class="p-5 rounded-xl bg-white/[0.03] border border-white/10 mb-6">
+        <p class="text-sm text-white/90 mb-3"><strong>Exemple : 14 avril 1992</strong></p>
+        <ul class="text-sm text-white/70 space-y-1">
+          <li>Jour : 1 + 4 = 5</li>
+          <li>Mois : 4 = 4</li>
+          <li>Année : 1 + 9 + 9 + 2 = 21 → 2 + 1 = 3</li>
+          <li>Total : 5 + 4 + 3 = <strong class="text-amber-300">12 → 1 + 2 = 3</strong></li>
+        </ul>
+        <p class="text-sm text-white/60 mt-3">Chemin de vie = 3 (L'Artiste)</p>
+      </div>
+      <p class="text-white/80 leading-relaxed mb-4">
+        <strong>Exception importante</strong> : si ton calcul donne 11, 22 ou 33 avant la réduction finale, tu ne les réduis pas. Ce sont les maîtres nombres. Par exemple, un chemin de vie de 29/11 reste un 11, pas un 2. Les maîtres nombres portent une mission double, plus lourde mais plus lumineuse.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Les 9 chemins de vie (et les 3 maîtres nombres)</h2>
+      <p class="text-white/80 leading-relaxed mb-6">
+        Chaque chemin de vie correspond à un archétype universel. Voici une synthèse des 12 profils. Clique sur un nombre pour le calculer directement ou découvrir ton profil complet via l'Oracle.
+      </p>
+
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
+        {Object.values(LIFE_PATH_MEANINGS).map((meaning) => (
+          <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+            <div class="flex items-baseline gap-3 mb-2">
+              <span class="text-3xl font-serif text-amber-300">{meaning.number}</span>
+              <span class="text-sm text-white/80 font-medium">{meaning.title}</span>
+            </div>
+            <p class="text-xs text-white/60 leading-relaxed">{meaning.archetype}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">L'histoire du chemin de vie</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        La numérologie n'est pas née avec <a href="https://fr.wikipedia.org/wiki/Pythagore" class="text-amber-300 hover:underline">Pythagore</a>. Les <strong>Babyloniens</strong> utilisaient déjà un système numérique sacré il y a plus de 4 000 ans. Les Hébreux ont développé la <em>gematria</em>, cette correspondance entre lettres et nombres qu'on retrouve dans la Kabbale. Les Égyptiens alignaient leurs pyramides sur des ratios mathématiques qu'ils considéraient comme cosmiques.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Pythagore a synthétisé ces traditions en un système cohérent au VIe siècle av. J.-C. Sa maxime "tout est nombre" n'était pas une métaphore : il voyait littéralement l'univers comme une composition mathématique. Ses disciples, les pythagoriciens, ont codifié ce qu'on appelle aujourd'hui la <strong>numérologie pythagoricienne</strong>. C'est cette méthode que Karmastro utilise, avec la rigueur et la transparence qu'elle mérite.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Au-delà du chemin de vie</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Le chemin de vie est le premier nombre à calculer, mais il n'est pas le seul. En numérologie pythagoricienne, ton profil complet comprend au moins cinq nombres :
+      </p>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Le chemin de vie</strong> (date de naissance) : la mission principale</li>
+        <li><strong>Le nombre d'expression</strong> (nom complet de naissance) : tes talents naturels</li>
+        <li><strong>Le nombre de l'âme ou nombre intime</strong> (voyelles du nom) : tes désirs profonds</li>
+        <li><strong>Le nombre de personnalité</strong> (consonnes du nom) : l'image sociale</li>
+        <li><strong>L'année personnelle</strong> (qui change chaque année) : les énergies en cours</li>
+      </ul>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Pour un calcul complet de ces cinq nombres plus ton thème natal astrologique et l'interprétation croisée par l'un de nos quatre guides (<a href="/notre-histoire" class="text-amber-300 hover:underline">Sibylle, Orion, Séléné ou Pythia</a>), utilise <a href="https://app.karmastro.com" class="text-amber-300 hover:underline">l'application Karmastro</a>. Tu peux aussi lire notre <a href="/blog/qu-numerologie-guide-complet-debuter" class="text-amber-300 hover:underline">guide complet de numérologie</a> pour débuter.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Questions fréquentes</h2>
+
+      <h3 class="font-serif text-xl mb-2">Le chemin de vie peut-il prédire l'avenir ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Non. Le chemin de vie ne prédit pas d'événements précis. Il décrit la vibration de fond avec laquelle tu navigues dans l'existence. Comme le disait l'astrologue André Barbault : "les astres inclinent, ne déterminent pas". La numérologie fonctionne pareil : elle éclaire des tendances, pas des destins figés.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Pourquoi les maîtres nombres 11, 22 et 33 ne se réduisent pas ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Parce qu'ils portent une vibration double. Un 11 n'est pas juste un 2 (1+1), c'est un 11 <em>ET</em> un 2 en même temps. Le 22 porte la force du 4 (2+2) mais avec une dimension visionnaire. Le 33 combine le 11 et le 22 pour donner le guérisseur universel. Les maîtres nombres concernent moins de 5% de la population et portent une mission plus exigeante.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Que faire si je trouve que mon chemin de vie ne me correspond pas ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Deux possibilités. Soit tu es dans la <em>version basse</em> de ton chemin (chaque nombre a une version haute lumineuse et une version basse crispée), soit tu as vérifié les mauvais chiffres. Refais le calcul soigneusement. Si la version basse te parle trop, c'est une invitation à l'explorer via l'Oracle, qui croisera ton chemin de vie avec ton thème natal complet pour nuancer.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Les prénoms et noms changent-ils le chemin de vie ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Non, le chemin de vie est fixé par la date de naissance uniquement. En revanche, ton nombre d'expression (calculé à partir du nom complet de naissance) peut changer si tu changes de nom officiellement. Beaucoup de numérologues considèrent que le nom d'état civil porte l'empreinte originelle, même après un changement.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Est-ce que Karmastro utilise la méthode chaldéenne ou pythagoricienne ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        <strong>Pythagoricienne</strong>, la méthode la plus répandue et la plus documentée en France. La méthode chaldéenne est plus ancienne et attribue des valeurs différentes aux lettres : elle est fascinante mais moins intuitive pour un débutant. Karmastro applique rigoureusement la méthode pythagoricienne, avec la table A=1, B=2, C=3... jusqu'à I=9, puis J=1 et ainsi de suite. Tu peux vérifier cette table dans notre <a href="/glossaire" class="text-amber-300 hover:underline">glossaire</a>.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Envie d'une lecture complète ?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Le chemin de vie n'est qu'un début. Pour croiser tes cinq nombres numérologiques avec ton thème natal complet et obtenir une guidance personnalisée, parle à l'un de nos quatre guides cosmiques.
+      </p>
+      <a
+        href="https://app.karmastro.com/oracle"
+        class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity"
+      >
+        Consulter l'Oracle gratuitement
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/outils" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Tous les outils</a>
+      <a href="/outils/ascendant" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Ascendant</a>
+      <a href="/outils/compatibilite" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Compatibilité</a>
+      <a href="/horoscope" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Horoscope du jour</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  import { calculateLifePath, getLifePathMeaning } from "../../data/numerology-meanings";
+
+  const form = document.getElementById("life-path-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const input = document.getElementById("birth-date") as HTMLInputElement;
+    const value = input.value;
+    if (!value) return;
+
+    const [y, m, d] = value.split("-").map(Number);
+    const result = calculateLifePath(d, m, y);
+    const meaning = getLifePathMeaning(result.number);
+
+    (document.getElementById("result-number") as HTMLElement).textContent = String(result.number);
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-calc") as HTMLElement).textContent = result.calculation;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+
+    const qualitiesList = document.getElementById("result-qualities") as HTMLElement;
+    qualitiesList.innerHTML = meaning.qualities.map((q) => `<li>✦ ${q}</li>`).join("");
+
+    const challengesList = document.getElementById("result-challenges") as HTMLElement;
+    challengesList.innerHTML = meaning.challenges.map((c) => `<li>◆ ${c}</li>`).join("");
+
+    (document.getElementById("result-mission") as HTMLElement).textContent = meaning.mission;
+
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>

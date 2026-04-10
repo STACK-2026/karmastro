@@ -1,0 +1,450 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { ZODIAC_SIGNS } from "../../data/zodiac";
+
+const title = "Calculateur d'ascendant gratuit - Astrologie Swiss Ephemeris - Karmastro";
+const description =
+  "Calcule gratuitement ton ascendant astrologique avec Swiss Ephemeris (précision niveau NASA). Entre ta date, ton heure et ton lieu de naissance. Signification détaillée des 12 ascendants.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Calculateur d'ascendant Karmastro",
+    description,
+    url: "https://karmastro.com/outils/ascendant",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "EUR",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Qu'est-ce que l'ascendant en astrologie ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "L'ascendant est le signe du zodiaque qui se levait à l'horizon est au moment précis de ta naissance. Il représente ta façon d'aborder le monde, ton masque social, et la première impression que tu donnes aux autres. Contrairement au signe solaire qui change chaque mois, l'ascendant change toutes les deux heures environ.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Pourquoi l'heure de naissance est-elle essentielle ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Parce que l'ascendant bouge d'un signe à l'autre toutes les deux heures en moyenne. Une erreur de 15 minutes peut déjà changer l'ascendant. C'est la raison pour laquelle Karmastro demande l'heure précise et le lieu exact : la latitude et la longitude sont nécessaires au calcul trigonométrique.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Ascendant, Soleil et Lune, quelle différence ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Le Soleil représente ton identité profonde et ta volonté. La Lune représente tes émotions, ton monde intérieur, ce qui te nourrit affectivement. L'ascendant représente ton apparence et ta façon d'aborder la vie. Ces trois axes forment ce qu'on appelle 'la trinité astrologique' : qui tu es, ce que tu ressens et comment tu te montres.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Peut-on calculer son ascendant sans heure de naissance ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Non, pas avec précision. Sans heure de naissance, on peut seulement deviner une fourchette de signes possibles. Si tu ne connais pas ton heure, tu peux la retrouver dans ton carnet de santé, sur ton acte de naissance intégral (demande en mairie), ou via la méthode de rectification astrologique utilisée par les astrologues professionnels.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Comment Karmastro calcule l'ascendant ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Karmastro utilise Swiss Ephemeris, le même moteur que la NASA Jet Propulsion Laboratory utilise pour ses calculs d'orbites. La précision est de 0,001 seconde d'arc, soit infiniment plus précise que ce que l'œil humain peut percevoir. Ton ascendant est calculé en temps réel à partir de ta date, ton heure et ton lieu exact.",
+        },
+      },
+    ],
+  },
+];
+
+const ascendantMeanings: Record<string, { name: string; description: string; strengths: string; challenges: string }> = {
+  Belier: {
+    name: "Bélier",
+    description: "Tu arrives avec l'énergie d'un guerrier. Les gens te perçoivent comme direct, fonceur, impulsif, jamais ennuyeux. Tu prends des décisions rapides et tu n'attends pas qu'on te donne la permission.",
+    strengths: "Courage, initiative, charisme, énergie contagieuse",
+    challenges: "Impatience, agressivité, impulsivité, tendance à se brûler",
+  },
+  Taureau: {
+    name: "Taureau",
+    description: "Tu donnes une impression de solidité et de calme, comme un arbre bien enraciné. Les gens se sentent en sécurité autour de toi. Tu bouges lentement mais tu ne lâches rien.",
+    strengths: "Stabilité, beauté naturelle, sens du concret, loyauté",
+    challenges: "Entêtement, résistance au changement, matérialisme",
+  },
+  Gemeaux: {
+    name: "Gémeaux",
+    description: "Tu arrives en parlant, en racontant, en questionnant. Les gens te perçoivent comme vif, curieux, papillonnant. Tu sais te rendre intéressant en dix secondes.",
+    strengths: "Communication, intelligence vive, adaptabilité, charme",
+    challenges: "Dispersion, superficialité apparente, agitation mentale",
+  },
+  Cancer: {
+    name: "Cancer",
+    description: "Tu dégages une aura protectrice et maternelle (même si tu es un homme). Les gens te confient leurs secrets sans que tu le demandes. Tu perçois les émotions des autres comme d'autres perçoivent les couleurs.",
+    strengths: "Empathie, protection, intuition, sens du foyer",
+    challenges: "Hypersensibilité, humeurs changeantes, tendance à se replier",
+  },
+  Lion: {
+    name: "Lion",
+    description: "Tu arrives et on te remarque. Pas besoin de crier, ta simple présence prend de la place. Les gens te voient comme quelqu'un de charismatique, généreux, fier. Tu portes une aura royale.",
+    strengths: "Charisme solaire, générosité, leadership, rayonnement",
+    challenges: "Orgueil, besoin d'être admiré, susceptibilité",
+  },
+  Vierge: {
+    name: "Vierge",
+    description: "Tu arrives avec un air posé, observateur, presque timide. Les gens te perçoivent comme discret mais d'une intelligence acérée. Tu remarques les détails que les autres ignorent.",
+    strengths: "Précision, analyse, fiabilité, sens du service",
+    challenges: "Perfectionnisme, critique, anxiété, difficulté à lâcher",
+  },
+  Balance: {
+    name: "Balance",
+    description: "Tu dégages une grâce naturelle et un sens du beau. Les gens te trouvent charmant, diplomate, esthète. Tu cherches l'harmonie partout et tu évites le conflit direct.",
+    strengths: "Diplomatie, sens esthétique, charme, recherche d'équilibre",
+    challenges: "Indécision, évitement du conflit, dépendance à l'autre",
+  },
+  Scorpion: {
+    name: "Scorpion",
+    description: "Tu arrives avec un regard intense, magnétique, presque inquiétant pour certains. Les gens sentent qu'il y a une profondeur derrière tes mots, un monde caché. Tu intrigues ou tu déranges, rarement tu laisses indifférent.",
+    strengths: "Intensité, intuition puissante, résilience, magnétisme",
+    challenges: "Jalousie, méfiance, tendance à l'obsession",
+  },
+  Sagittaire: {
+    name: "Sagittaire",
+    description: "Tu dégages un enthousiasme et un optimisme contagieux. Les gens te perçoivent comme libre, voyageur, philosophe. Tu as cette façon unique de transformer les contraintes en aventures.",
+    strengths: "Optimisme, liberté, vision large, philosophie de vie",
+    challenges: "Exagération, imprudence, manque de diplomatie",
+  },
+  Capricorne: {
+    name: "Capricorne",
+    description: "Tu arrives avec un air sérieux et une autorité naturelle, même jeune. Les gens te perçoivent comme mature, ambitieux, fiable. Tu sembles toujours savoir où tu vas.",
+    strengths: "Sérieux, ambition, persévérance, autorité naturelle",
+    challenges: "Rigidité, pessimisme, difficulté à lâcher prise, froideur apparente",
+  },
+  Verseau: {
+    name: "Verseau",
+    description: "Tu arrives avec un style unique et une aura d'originalité. Les gens te perçoivent comme différent, visionnaire, un peu hors du commun. Tu penses en dehors des cases sans effort.",
+    strengths: "Originalité, vision futuriste, indépendance, humanisme",
+    challenges: "Détachement émotionnel, rebellion gratuite, imprévisibilité",
+  },
+  Poissons: {
+    name: "Poissons",
+    description: "Tu dégages une aura douce, rêveuse, parfois éthérée. Les gens te perçoivent comme sensible, artiste, mystique. Tu sembles toujours légèrement ailleurs, connecté à quelque chose que les autres ne voient pas.",
+    strengths: "Empathie profonde, créativité, spiritualité, compassion",
+    challenges: "Hypersensibilité, tendance à la fuite, flou identitaire",
+  },
+};
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6">
+      <a href="/" class="hover:text-amber-300">Accueil</a>
+      <span class="mx-2">/</span>
+      <a href="/outils" class="hover:text-amber-300">Outils</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Ascendant</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Astrologie de précision</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Calculateur d'ascendant</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        L'ascendant est ton masque social, la façon dont tu abordes le monde et l'image que tu projettes. Calcul en temps réel via Swiss Ephemeris, précision 0,001 seconde d'arc.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="asc-form" class="space-y-4">
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">Date de naissance</label>
+            <input
+              type="date"
+              id="birth-date"
+              name="birth-date"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors"
+            />
+          </div>
+          <div>
+            <label for="birth-time" class="block text-sm font-medium text-white/80 mb-2">Heure de naissance</label>
+            <input
+              type="time"
+              id="birth-time"
+              name="birth-time"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors"
+            />
+          </div>
+        </div>
+        <div>
+          <label for="birth-place" class="block text-sm font-medium text-white/80 mb-2">
+            Ville de naissance <span class="text-white/40 text-xs">(France ou international)</span>
+          </label>
+          <input
+            type="text"
+            id="birth-place"
+            name="birth-place"
+            required
+            placeholder="Ex: Dijon, Paris, Lyon..."
+            autocomplete="off"
+            class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors"
+          />
+          <p id="place-status" class="text-xs text-white/40 mt-1 hidden"></p>
+        </div>
+        <button
+          type="submit"
+          id="submit-btn"
+          class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity disabled:opacity-50"
+        >
+          Calculer mon ascendant
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Ton ascendant</p>
+          <div class="flex items-baseline gap-4 mb-4">
+            <span id="result-symbol" class="text-6xl text-amber-300"></span>
+            <div>
+              <p id="result-name" class="text-3xl font-serif text-white"></p>
+              <p id="result-degree" class="text-sm text-white/50"></p>
+            </div>
+          </div>
+          <p id="result-description" class="text-white/80 leading-relaxed mb-4"></p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Forces</p>
+              <p id="result-strengths" class="text-sm text-white/70"></p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">Défis</p>
+              <p id="result-challenges" class="text-sm text-white/70"></p>
+            </div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10 text-center">
+            <a
+              href="https://app.karmastro.com"
+              class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity"
+            >
+              Voir mon thème natal complet
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="error" class="mt-4 hidden p-4 rounded-xl bg-pink-500/10 border border-pink-400/30 text-sm text-pink-200"></div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Qu'est-ce que l'ascendant en astrologie ?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        L'<strong>ascendant</strong> est le signe du zodiaque qui se levait à l'horizon est au moment exact de ta naissance. En astrologie classique, il marque le début de la <strong>première maison</strong>, celle du "je suis", de l'apparence physique, de la façon dont tu abordes le monde. C'est souvent décrit comme ton <em>masque social</em>, mais c'est plus que ça : c'est le prisme à travers lequel tu perçois la réalité.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Contrairement à ton <strong>signe solaire</strong> qui reste le même pendant environ un mois, l'ascendant change d'un signe à l'autre <strong>toutes les deux heures environ</strong>. C'est pour cela que deux personnes nées le même jour mais à des heures différentes peuvent avoir des personnalités très différentes, malgré un signe solaire identique. L'heure de naissance est donc absolument cruciale pour le calcul.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Comment l'ascendant est-il calculé ?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Le calcul de l'ascendant repose sur trois données : la <strong>date</strong>, l'<strong>heure exacte</strong> et le <strong>lieu de naissance</strong>. Le lieu est nécessaire parce que le ciel que tu vois depuis Paris n'est pas le même que celui vu depuis Sydney au même instant. Les astrologues utilisent donc la latitude et la longitude du lieu de naissance pour déterminer quel signe se levait à l'horizon est à cette minute précise.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Karmastro utilise <a href="https://www.astro.com/swisseph/" class="text-amber-300 hover:underline">Swiss Ephemeris</a>, le même moteur de calcul que le <a href="https://ssd.jpl.nasa.gov/" class="text-amber-300 hover:underline">Jet Propulsion Laboratory</a> de la NASA utilise pour ses calculs d'orbite. La précision est de <strong>0,001 seconde d'arc</strong>, soit infiniment plus que ce que l'œil humain pourrait percevoir. Tu peux consulter notre <a href="/precision" class="text-amber-300 hover:underline">page précision</a> pour comprendre la méthodologie complète.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">La trinité astrologique : Soleil, Lune, Ascendant</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        En astrologie occidentale, on parle souvent de la <strong>trinité astrologique</strong> : ton Soleil, ta Lune et ton ascendant. Ensemble, ces trois éléments donnent un premier aperçu solide de ta personnalité, bien plus complet qu'un simple horoscope basé sur le signe solaire.
+      </p>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Le Soleil</strong> : qui tu es vraiment, ton identité profonde, ta volonté consciente</li>
+        <li><strong>La Lune</strong> : ce que tu ressens, tes émotions, tes besoins affectifs, ton monde intérieur</li>
+        <li><strong>L'ascendant</strong> : comment tu te montres, l'image que tu projettes, ta façon d'aborder le réel</li>
+      </ul>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Ces trois éléments peuvent se compléter harmonieusement ou créer des tensions intéressantes. Par exemple, un Soleil en Scorpion (profondeur, intensité) avec un ascendant Gémeaux (légèreté, communication) donnera quelqu'un qui cache ses abysses derrière un sourire jovial. Tu peux en apprendre plus dans notre <a href="/glossaire" class="text-amber-300 hover:underline">glossaire astrologique</a>.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Les 12 ascendants en un coup d'œil</h2>
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
+        {ZODIAC_SIGNS.map((sign) => (
+          <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+            <div class="flex items-baseline gap-3 mb-1">
+              <span class="text-3xl text-amber-300">{sign.symbol}</span>
+              <span class="text-sm font-medium text-white">Ascendant {sign.name}</span>
+            </div>
+            <p class="text-xs text-white/60 leading-relaxed">
+              Élément {sign.element} · Maître {sign.rulingPlanet}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Pourquoi l'heure exacte change tout</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Imagine deux bébés nés le même jour, dans la même maternité, à 15 minutes d'intervalle. Leur signe solaire sera identique, leur Lune aussi (la Lune se déplace lentement). Mais leur ascendant peut être différent si le passage entre deux signes s'est produit entre-temps. Cette différence explique pourquoi ces deux enfants peuvent développer des personnalités très dissemblables en grandissant.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Si tu ne connais pas ton heure exacte, tu peux la retrouver sur ton <strong>acte de naissance intégral</strong> (à demander à la mairie de ton lieu de naissance), dans ton carnet de santé, ou via le registre d'état civil. Certains astrologues pratiquent la <em>rectification astrologique</em>, une méthode qui permet de retrouver l'heure approximative à partir d'événements marquants de la vie.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Questions fréquentes</h2>
+
+      <h3 class="font-serif text-xl mb-2">Mon signe solaire et mon ascendant sont différents, c'est normal ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Absolument. C'est même le cas le plus fréquent : seule une minorité de personnes ont le même signe solaire et le même ascendant. Cette différence explique souvent pourquoi tu ne te reconnais pas parfaitement dans l'horoscope de ton signe solaire. L'ascendant apporte une couleur différente, parfois opposée, parfois complémentaire.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Peut-on avoir un ascendant en intercepté ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Non, l'ascendant lui-même ne peut pas être "intercepté" : il définit le début d'une maison. En revanche, certaines maisons peuvent contenir un signe entièrement sans qu'aucune pointe de maison ne tombe dedans : on parle alors de signe intercepté. C'est un sujet avancé que tu peux explorer avec l'Oracle une fois ton thème complet calculé.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">L'ascendant change-t-il au cours de la vie ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Non, ton ascendant natal est fixe : il est déterminé par le moment exact de ta naissance. Ce qui change, en revanche, ce sont les <strong>ascendants progressés</strong> (technique de l'astrologie moderne où les planètes avancent d'un degré par année de vie). C'est une discipline plus avancée qu'on peut explorer dans un thème natal complet.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Comment Karmastro gère les villes sans base de données officielle ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Notre calculateur utilise le service de géocodage <strong>Nominatim / OpenStreetMap</strong> pour convertir le nom d'une ville en latitude et longitude. Si ta ville n'est pas trouvée, essaie de préciser le pays (ex: "Dijon, France") ou d'utiliser la ville principale la plus proche. Pour un résultat ultra-précis, tu peux entrer manuellement les coordonnées dans notre application.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Mon ascendant est-il vraiment si important que mon signe solaire ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Pour certaines écoles d'astrologie, oui, parfois même plus. L'astrologie hellénistique antique accordait énormément d'importance à l'ascendant car c'est lui qui détermine la structure des maisons, donc les domaines de vie activés dans ton thème. Le signe solaire reste essentiel, mais sans l'ascendant, l'analyse reste superficielle.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Va plus loin que l'ascendant</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        L'ascendant est une porte d'entrée. Pour une lecture complète de ton thème natal (12 planètes, 12 maisons, aspects, dignités) croisée avec ta numérologie, ouvre un profil dans l'app Karmastro.
+      </p>
+      <a
+        href="https://app.karmastro.com"
+        class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity"
+      >
+        Mon thème natal complet
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/outils" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Tous les outils</a>
+      <a href="/outils/chemin-de-vie" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Chemin de vie</a>
+      <a href="/outils/compatibilite" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Compatibilité</a>
+      <a href="/horoscope" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Horoscope du jour</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script define:vars={{ ascendantMeanings }}>
+  const form = document.getElementById("asc-form");
+  const resultDiv = document.getElementById("result");
+  const errorDiv = document.getElementById("error");
+  const submitBtn = document.getElementById("submit-btn");
+  const placeStatus = document.getElementById("place-status");
+
+  const ENGINE_URL = "http://168.119.229.20:8100";
+
+  // Normalize sign name (Engine returns "Belier" without accent)
+  function normalizeSignKey(sign) {
+    const map = {
+      "Bélier": "Belier",
+      "Taureau": "Taureau",
+      "Gémeaux": "Gemeaux",
+      "Cancer": "Cancer",
+      "Lion": "Lion",
+      "Vierge": "Vierge",
+      "Balance": "Balance",
+      "Scorpion": "Scorpion",
+      "Sagittaire": "Sagittaire",
+      "Capricorne": "Capricorne",
+      "Verseau": "Verseau",
+      "Poissons": "Poissons",
+    };
+    return map[sign] || sign;
+  }
+
+  async function geocode(place) {
+    const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(place)}&format=json&limit=1`;
+    const res = await fetch(url, { headers: { "Accept-Language": "fr" } });
+    if (!res.ok) throw new Error("Impossible de géolocaliser la ville");
+    const data = await res.json();
+    if (!data.length) throw new Error("Ville introuvable. Essaie avec le pays, ex: 'Dijon, France'");
+    return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon), display: data[0].display_name };
+  }
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    errorDiv.classList.add("hidden");
+    resultDiv.classList.add("hidden");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Calcul en cours...";
+
+    try {
+      const date = document.getElementById("birth-date").value;
+      const time = document.getElementById("birth-time").value;
+      const place = document.getElementById("birth-place").value;
+
+      if (!date || !time || !place) throw new Error("Tous les champs sont obligatoires");
+
+      placeStatus.classList.remove("hidden");
+      placeStatus.textContent = "Recherche de la ville...";
+      const geo = await geocode(place);
+      placeStatus.textContent = `Localisation : ${geo.display}`;
+
+      const [y, m, d] = date.split("-").map(Number);
+      const [h, mi] = time.split(":").map(Number);
+      const hour = h + mi / 60;
+
+      const res = await fetch(`${ENGINE_URL}/natal-chart`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          year: y,
+          month: m,
+          day: d,
+          hour,
+          latitude: geo.lat,
+          longitude: geo.lng,
+        }),
+      });
+
+      if (!res.ok) throw new Error("Erreur de calcul. Réessaie dans un instant.");
+      const data = await res.json();
+      const asc = data.ascendant;
+      if (!asc) throw new Error("Ascendant non trouvé dans la réponse");
+
+      const key = normalizeSignKey(asc.sign);
+      const meaning = ascendantMeanings[key];
+
+      document.getElementById("result-symbol").textContent = asc.symbol;
+      document.getElementById("result-name").textContent = `Ascendant ${meaning?.name || asc.sign}`;
+      document.getElementById("result-degree").textContent = `${asc.degree}° ${asc.minute}' en ${asc.sign}`;
+      document.getElementById("result-description").textContent = meaning?.description || "Interprétation en cours d'enrichissement.";
+      document.getElementById("result-strengths").textContent = meaning?.strengths || "";
+      document.getElementById("result-challenges").textContent = meaning?.challenges || "";
+
+      resultDiv.classList.remove("hidden");
+      resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+    } catch (err) {
+      errorDiv.textContent = err.message || "Une erreur est survenue";
+      errorDiv.classList.remove("hidden");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Calculer mon ascendant";
+    }
+  });
+</script>

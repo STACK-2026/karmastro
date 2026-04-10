@@ -1,0 +1,387 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Calculateur de compatibilité amoureuse gratuit - Numérologie - Karmastro";
+const description =
+  "Calcule la compatibilité amoureuse entre deux chemins de vie en numérologie pythagoricienne. Score de compatibilité, dynamique karmique, forces et défis du couple. Gratuit et instantané.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Calculateur de compatibilité Karmastro",
+    description,
+    url: "https://karmastro.com/outils/compatibilite",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "EUR",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Comment calcule-t-on la compatibilité numérologique ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "La compatibilité numérologique se calcule en croisant les chemins de vie des deux personnes. Certaines combinaisons sont naturellement harmoniques (comme 1 et 5), d'autres créent de la tension productive (1 et 4), d'autres demandent beaucoup d'adaptation (1 et 8). Le score de compatibilité exprime la fluidité relationnelle, pas l'amour lui-même.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Un score bas signifie-t-il qu'on doit rompre ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Absolument pas. Les scores bas indiquent simplement que la relation demandera plus d'efforts conscients pour fonctionner. Certains des couples les plus transformateurs au monde ont des scores numérologiques tendus : c'est la friction qui les a fait grandir. Le score est une carte, pas un verdict.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "La compatibilité numérologique est-elle valable pour l'amitié ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Oui, le calcul fonctionne pour toutes les relations : amoureuses, amicales, professionnelles, familiales. Seule l'interprétation varie. Une relation de travail avec une forte tension numérologique peut être très productive, là où cette même tension en couple demanderait plus de travail émotionnel.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Faut-il privilégier l'astrologie ou la numérologie pour la compatibilité ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Idéalement, les deux. La numérologie donne la dynamique globale du couple en 30 secondes. L'astrologie, via la synastrie, permet d'entrer dans le détail aspect par aspect. Karmastro propose une synastrie complète dans son application, avec croisement des deux disciplines et guidance karmique.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Les maîtres nombres changent-ils le calcul de compatibilité ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Oui, significativement. Un 11 ou un 22 apporte une vibration plus exigeante et plus spirituelle. Une compatibilité 11-2 fonctionne sur le papier mais peut écraser le 2. Une compatibilité 22-4 est extrêmement harmonique. Les maîtres nombres demandent des partenaires qui peuvent tenir le rythme de leur mission.",
+        },
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6">
+      <a href="/" class="hover:text-amber-300">Accueil</a>
+      <span class="mx-2">/</span>
+      <a href="/outils" class="hover:text-amber-300">Outils</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Compatibilité</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Numérologie pythagoricienne</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Calculateur de compatibilité</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Croise deux chemins de vie et découvre la dynamique karmique de votre relation. Forces, défis, leçons partagées. Calcul instantané, résultat transparent.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="compat-form" class="space-y-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-3">Personne 1</p>
+            <label for="date-a" class="block text-sm font-medium text-white/80 mb-2">Date de naissance</label>
+            <input
+              type="date"
+              id="date-a"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors"
+            />
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-3">Personne 2</p>
+            <label for="date-b" class="block text-sm font-medium text-white/80 mb-2">Date de naissance</label>
+            <input
+              type="date"
+              id="date-b"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors"
+            />
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity"
+        >
+          Calculer la compatibilité
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <div class="flex items-center justify-center gap-6 mb-6">
+            <div class="text-center">
+              <p class="text-xs text-white/40 uppercase tracking-wider mb-1">Personne 1</p>
+              <p id="life-a" class="text-5xl font-serif text-amber-300"></p>
+            </div>
+            <div class="text-4xl text-white/30">·</div>
+            <div class="text-center">
+              <p class="text-xs text-white/40 uppercase tracking-wider mb-1">Personne 2</p>
+              <p id="life-b" class="text-5xl font-serif text-amber-300"></p>
+            </div>
+          </div>
+
+          <div class="text-center mb-6">
+            <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Score de compatibilité</p>
+            <div class="flex items-baseline justify-center gap-2">
+              <span id="score-value" class="text-6xl font-serif text-amber-300"></span>
+              <span class="text-2xl text-white/50">/100</span>
+            </div>
+            <p id="score-label" class="text-sm text-white/70 mt-2"></p>
+          </div>
+
+          <div class="space-y-4 mb-6">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Dynamique du couple</p>
+              <p id="dynamic-text" class="text-sm text-white/80 leading-relaxed"></p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">Leçon karmique commune</p>
+              <p id="lesson-text" class="text-sm text-white/80 leading-relaxed italic"></p>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-white/10 text-center">
+            <a
+              href="https://app.karmastro.com"
+              class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity"
+            >
+              Synastrie astrologique complète
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Qu'est-ce que la compatibilité numérologique ?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        La <strong>compatibilité numérologique</strong> analyse la dynamique relationnelle entre deux personnes en croisant leurs chemins de vie. C'est une des méthodes les plus rapides et les plus fiables pour comprendre comment deux vibrations interagissent, que ce soit en amour, en amitié ou au travail. Contrairement à la compatibilité astrologique qui demande date, heure et lieu de naissance, la numérologie pythagoricienne se contente de deux dates.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Pour <a href="https://fr.wikipedia.org/wiki/Pythagore" class="text-amber-300 hover:underline">Pythagore</a>, chaque nombre émet une vibration unique. Quand deux personnes se rencontrent, leurs vibrations entrent en interaction : elles peuvent résonner harmoniquement (comme deux notes en accord), créer de la tension productive (comme un intervalle musical dissonant qui appelle une résolution), ou se neutraliser mutuellement. Le calcul de compatibilité ne prédit pas l'amour, il décrit la musique que vous jouez ensemble.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Comment Karmastro calcule la compatibilité</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Le calcul se fait en trois étapes :
+      </p>
+      <ol class="text-white/80 space-y-2 mb-4 list-decimal pl-5">
+        <li>On calcule le <strong>chemin de vie</strong> de chaque personne à partir de sa date de naissance, selon la méthode pythagoricienne classique</li>
+        <li>On croise les deux chemins dans une <strong>matrice de compatibilité</strong> héritée de la tradition et validée par l'expérience clinique des numérologues</li>
+        <li>On produit un <strong>score</strong> (de 0 à 100) et une interprétation de la dynamique relationnelle spécifique à ce couple de nombres</li>
+      </ol>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Important : <strong>un score élevé ne garantit pas le bonheur, et un score bas ne condamne pas la relation</strong>. Le score mesure la <em>fluidité</em> de l'interaction, pas sa profondeur ni son potentiel transformateur. Certains des couples les plus féconds de l'histoire ont des compatibilités numérologiques tendues : c'est la friction qui les a fait grandir.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Les grandes familles de compatibilité</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        En numérologie, les nombres se regroupent en trois grandes familles qui partagent une affinité naturelle :
+      </p>
+      <div class="not-prose overflow-x-auto mb-6">
+        <table class="w-full text-sm text-left border-collapse">
+          <thead>
+            <tr class="border-b border-white/10">
+              <th class="py-3 px-4 text-amber-300 font-serif">Famille</th>
+              <th class="py-3 px-4 text-amber-300 font-serif">Nombres</th>
+              <th class="py-3 px-4 text-amber-300 font-serif">Énergie</th>
+            </tr>
+          </thead>
+          <tbody class="text-white/80">
+            <tr class="border-b border-white/5">
+              <td class="py-3 px-4">Famille créative</td>
+              <td class="py-3 px-4">1, 3, 5</td>
+              <td class="py-3 px-4">Action, expression, mouvement</td>
+            </tr>
+            <tr class="border-b border-white/5">
+              <td class="py-3 px-4">Famille émotionnelle</td>
+              <td class="py-3 px-4">2, 4, 6, 8</td>
+              <td class="py-3 px-4">Stabilité, responsabilité, liens</td>
+            </tr>
+            <tr class="border-b border-white/5">
+              <td class="py-3 px-4">Famille spirituelle</td>
+              <td class="py-3 px-4">7, 9, 11, 22, 33</td>
+              <td class="py-3 px-4">Profondeur, sagesse, mission</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Les compatibilités <em>intra-famille</em> sont souvent les plus fluides, mais les plus transformatrices peuvent venir du croisement entre familles. Un 5 (aventurier) avec un 4 (bâtisseur) crée un ressort formidable si les deux acceptent leurs différences. Un 9 (sage) avec un 1 (pionnier) peut donner un couple visionnaire.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Au-delà du score : la synastrie astrologique</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        La numérologie donne une vision d'ensemble. Pour aller plus loin, les astrologues utilisent la <strong>synastrie</strong> : le croisement complet des deux thèmes natals. Ils regardent comment le Soleil de l'un aspecte la Lune de l'autre, comment Vénus et Mars s'alignent (attraction physique), comment Saturne stabilise ou bloque, comment Pluton transforme. C'est le niveau de précision le plus avancé en compatibilité.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Karmastro propose cette analyse complète dans son <a href="https://app.karmastro.com" class="text-amber-300 hover:underline">application</a>, où les guides (<a href="/notre-histoire" class="text-amber-300 hover:underline">Sibylle pour l'astro profonde, Séléné pour les relations, Pythia pour les nombres</a>) croisent numérologie et astrologie pour te donner une lecture complète de ta relation. L'Oracle peut répondre à des questions précises sur ton couple.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Compatibilité et karma</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Dans la tradition hindoue comme dans la philosophie grecque, les relations ne sont pas aléatoires. Le Bouddha disait : "Ce que tu es est ce que tu as été." Les gens que tu attires aujourd'hui sont souvent des âmes que tu as déjà croisées, selon la théorie karmique. Les <strong>nœuds lunaires</strong> en astrologie et les <strong>dettes karmiques</strong> en numérologie te montrent ce que tu es venu apprendre, et avec qui.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Certaines relations "faciles" sont en réalité des confirmations de ce que tu sais déjà (karma positif). D'autres, plus difficiles, sont des leçons à intégrer. C'est pour ça qu'on ne peut pas juger une relation uniquement sur son confort : parfois, celles qui grattent le plus sont celles qui nous font le plus grandir. Le calculateur ici est un point de départ, pas un verdict.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Questions fréquentes</h2>
+
+      <h3 class="font-serif text-xl mb-2">Peut-on calculer la compatibilité avec quelqu'un de décédé ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Oui, la compatibilité se calcule toujours à partir de la date de naissance. C'est même une démarche émouvante que font beaucoup de personnes en deuil : comprendre la dynamique karmique qu'elles avaient avec un être cher disparu peut aider à faire la paix avec ce qui a été et ce qui n'a pas pu être.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Qu'est-ce qu'un couple 11-11 ou 22-22 ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        C'est extrêmement rare et très puissant. Deux maîtres nombres identiques forment un miroir : vous vous comprenez instantanément mais vous pouvez aussi vous enfermer dans votre bulle. C'est souvent le signe d'une mission spirituelle commune, une "équipe d'âmes" qui s'est retrouvée pour un travail précis.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">La compatibilité change-t-elle au fil du temps ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Les chemins de vie ne changent jamais, donc la compatibilité structurelle reste fixe. En revanche, l'<strong>année personnelle</strong> de chacun évolue d'année en année. Un couple peut traverser des années où les énergies s'alignent naturellement (années fluides) et d'autres où elles se frottent (années de croissance). C'est pour ça que beaucoup de couples consultent annuellement pour comprendre ce qui les attend.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Cette calculatrice peut-elle me dire si je dois rompre ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Non. Aucun outil, aussi précis soit-il, ne peut répondre à cette question à ta place. La numérologie éclaire, elle ne décide pas. Si tu cherches de la clarté sur une relation complexe, parle-en à <a href="https://app.karmastro.com/oracle" class="text-amber-300 hover:underline">Séléné</a>, notre guide relationnelle : elle croisera la compatibilité numérologique avec ta synastrie astrologique et tes questions précises pour t'aider à y voir plus clair.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Puis-je utiliser ce calcul pour l'amitié ou le travail ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Oui absolument. La dynamique énergétique entre deux nombres est la même en amour, en amitié et au travail, c'est l'<em>interprétation</em> qui diffère. Une forte tension numérologique peut être catastrophique en couple mais géniale dans un binôme créatif (elle pousse chacun à se dépasser). Une fluidité totale peut être un confort douillet en amour mais ennuyeuse au travail.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Synastrie complète = niveau supérieur</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        La numérologie donne la mélodie. L'astrologie donne l'orchestration. Pour une analyse de ton couple qui croise les deux (synastrie planétaire + chemins de vie + dettes karmiques), ouvre un profil dans l'app.
+      </p>
+      <a
+        href="https://app.karmastro.com"
+        class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity"
+      >
+        Analyser notre couple en profondeur
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/outils" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Tous les outils</a>
+      <a href="/outils/chemin-de-vie" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Chemin de vie</a>
+      <a href="/outils/ascendant" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Ascendant</a>
+      <a href="/horoscope" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Horoscope du jour</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  import { calculateLifePath } from "../../data/numerology-meanings";
+
+  // Compatibility matrix: score 0-100 + interpretation
+  // Based on traditional Pythagorean numerology (with master numbers reduced for matrix lookup)
+  const COMPAT_MATRIX: Record<string, { score: number; dynamic: string; lesson: string }> = {
+    "1-1": { score: 75, dynamic: "Deux leaders face à face. Puissant quand chacun reconnaît l'autre comme son égal, explosif quand l'ego prend le dessus. Vous avez besoin d'espaces séparés pour exister pleinement.", lesson: "Apprendre que la véritable force se partage sans se diluer." },
+    "1-2": { score: 70, dynamic: "Le pionnier et le diplomate. Le 1 trace la voie, le 2 en assure la cohésion. Très complémentaire si le 1 respecte la sensibilité du 2, et si le 2 n'étouffe pas le 1 sous trop de soins.", lesson: "L'équilibre entre l'action et la douceur." },
+    "1-3": { score: 85, dynamic: "Alliance créative et joyeuse. Le 1 pose les bases, le 3 illumine tout de sa couleur. Énergie contagieuse. Couple qui vit, qui crée, qui avance sans se prendre au sérieux.", lesson: "Garder le feu vivant sans s'y brûler." },
+    "1-4": { score: 55, dynamic: "Tension productive. Le 1 veut avancer vite, le 4 veut construire patiemment. Friction inévitable, mais si chacun apprend de l'autre, vous bâtissez du solide qui résiste au temps.", lesson: "Marier la vitesse et la patience." },
+    "1-5": { score: 90, dynamic: "Couple d'aventuriers. Énergie identique, même soif de liberté, même refus des cages. Vous avancez ensemble ou vous vous inspirez mutuellement à chaque pas. Combinaison magnétique.", lesson: "Rester libre ensemble sans s'oublier soi-même." },
+    "1-6": { score: 65, dynamic: "Le guerrier et le protecteur. Le 1 admire le cœur du 6, le 6 veut ancrer le 1. Relation stable si le 1 n'écrase pas les besoins affectifs du 6, et si le 6 ne maternalise pas le 1.", lesson: "Offrir de la tendresse sans étouffer l'autonomie." },
+    "1-7": { score: 60, dynamic: "Extraverti face à introspectif. Le 1 fonce dans le réel, le 7 plonge dans les mystères. Fascination mutuelle mais rythmes opposés. Fonctionne si chacun respecte les silences de l'autre.", lesson: "Honorer deux façons opposées de chercher la vérité." },
+    "1-8": { score: 70, dynamic: "Deux ambitions colossales. Pouvoir bâtir un empire ensemble, ou s'affronter pour savoir qui commande. Dépend totalement de la capacité à partager le leadership et à célébrer les succès de l'autre.", lesson: "Construire ensemble sans se faire la guerre." },
+    "1-9": { score: 75, dynamic: "Le pionnier et l'humaniste. Le 9 donne du sens à l'action du 1, le 1 passe à l'action sur les causes du 9. Couple visionnaire capable de laisser une marque dans le monde.", lesson: "Incarner ses idéaux sans les trahir par l'urgence." },
+    "2-2": { score: 85, dynamic: "Deux sensibilités qui se reconnaissent instantanément. Vous vous comprenez sans mots. Danger : vous replier dans votre bulle à deux au détriment du monde extérieur.", lesson: "Aimer sans se fondre l'un dans l'autre." },
+    "2-3": { score: 80, dynamic: "Le 3 illumine le 2, le 2 ancre le 3. Le 2 offre une oreille, le 3 offre une voix. Couple chaleureux, expressif, très fusionnel si bien équilibré.", lesson: "Ne pas étouffer la joie du 3, ne pas fatiguer la sensibilité du 2." },
+    "2-4": { score: 85, dynamic: "Stabilité et douceur. Le 4 construit le nid, le 2 le remplit de chaleur. Couple classique, fidèle, durable. Danger : routine qui éteint le désir si personne ne secoue la structure.", lesson: "Garder le romantisme vivant dans la stabilité." },
+    "2-5": { score: 50, dynamic: "Le 2 veut un port sûr, le 5 veut partir en mer. Incompréhension de fond si le 5 ne rassure pas, ou si le 2 tente de retenir. Peut fonctionner avec beaucoup de travail conscient.", lesson: "Apprendre que la sécurité est intérieure, pas contractuelle." },
+    "2-6": { score: 95, dynamic: "Harmonie totale. Deux cœurs qui battent pour les autres, deux sensibilités qui se complètent. Couple idéal sur le papier, à condition de ne pas s'oublier dans le service mutuel.", lesson: "Se souvenir de soi-même dans le grand amour." },
+    "2-7": { score: 65, dynamic: "Le 7 cherche dans la solitude, le 2 a besoin de contact. Vous devez inventer un langage pour les silences. Quand ça marche, c'est une relation d'une profondeur rare.", lesson: "Respecter les solitudes sans se sentir rejeté." },
+    "2-8": { score: 80, dynamic: "Le 8 construit, le 2 soutient. Couple classique qui fonctionne si le 8 n'écrase pas le 2 sous sa pression, et si le 2 n'exige pas du 8 une disponibilité émotionnelle qu'il n'a pas toujours.", lesson: "Équilibrer réussite matérielle et besoin affectif." },
+    "2-9": { score: 75, dynamic: "Deux cœurs ouverts sur le monde. Le 9 a une vision globale, le 2 soigne le détail. Ensemble, vous pouvez porter des projets humanitaires. Danger : s'oublier dans la cause.", lesson: "Servir l'humanité sans se sacrifier." },
+    "3-3": { score: 80, dynamic: "Feu d'artifice. Deux artistes, deux enfants intérieurs. Couple joyeux et créatif, parfois immature. Vous devez apprendre à descendre dans le sérieux de temps en temps.", lesson: "Grandir sans perdre l'émerveillement." },
+    "3-4": { score: 55, dynamic: "Le 3 vit dans le rêve, le 4 dans le concret. Frustrations mutuelles possibles. Fonctionne quand le 4 laisse respirer la fantaisie du 3, et quand le 3 valorise la structure du 4.", lesson: "Transformer la poésie en réalité durable." },
+    "3-5": { score: 90, dynamic: "Deux vitalités en mouvement. Couple léger, voyageur, amusant, jamais routinier. Vous vivez la vie comme un terrain de jeu. Danger : manquer de profondeur quand la vie se fait sérieuse.", lesson: "Explorer sans fuir ce qui demande de l'engagement." },
+    "3-6": { score: 80, dynamic: "L'artiste et le cœur du foyer. Le 6 t'offre un cocon d'amour, le 3 y apporte couleurs et joie. Très harmonique. Attention : le 6 peut vouloir ranger ce que le 3 disperse.", lesson: "Créer un foyer qui soit aussi un terrain de jeu." },
+    "3-7": { score: 70, dynamic: "L'extravagance et l'introspection. Fascination mutuelle, comme si chacun voyait dans l'autre ce qui lui manque. Fonctionne magnifiquement dans la différence assumée.", lesson: "Apprendre l'un de l'autre sans vouloir se changer." },
+    "3-8": { score: 60, dynamic: "Le 3 veut créer, le 8 veut produire. Malentendus possibles sur la valeur du travail. Si le 8 respecte la créativité du 3 comme une vraie richesse, et si le 3 admire l'ambition du 8, ça marche.", lesson: "Valoriser la création au-delà du résultat matériel." },
+    "3-9": { score: 85, dynamic: "Artistes humanistes. Couple inspiré, engagé, souvent créatif à deux (projets artistiques, écriture, scène). Vous rayonnez naturellement. Danger : idéalisme qui se prend des murs.", lesson: "Garder les pieds sur terre en visant les étoiles." },
+    "4-4": { score: 75, dynamic: "Deux bâtisseurs. Couple extrêmement solide, fiable, qui avance pas à pas. Danger : rigidité mutuelle qui éteint la spontanéité. Vous devez inventer des rituels pour briser la routine.", lesson: "Garder de l'air dans la forteresse." },
+    "4-5": { score: 45, dynamic: "Opposition fondamentale. Le 4 veut la stabilité, le 5 veut le mouvement. Chacun a l'impression que l'autre tue ce qui fait son identité. Possible seulement avec une conscience aiguë des besoins de l'autre.", lesson: "Accepter que l'amour puisse se vivre en deux rythmes différents." },
+    "4-6": { score: 85, dynamic: "Couple traditionnel, solide, chaleureux. Le 4 construit, le 6 habite. Très beau pour la vie de famille, les projets à long terme, les racines. Attention : conformisme qui étouffe.", lesson: "Nourrir la flamme sous la stabilité." },
+    "4-7": { score: 70, dynamic: "La méthode et le mystique. Le 4 respecte la profondeur du 7, le 7 apprécie la stabilité du 4. Couple peu démonstratif mais très loyal. Fonctionne dans la durée.", lesson: "Apprendre à exprimer ce qui se vit en silence." },
+    "4-8": { score: 90, dynamic: "Couple de bâtisseurs. Pragmatisme absolu, ambitions alignées, respect mutuel du travail. Vous pouvez construire quelque chose de durable, qu'il s'agisse d'une famille ou d'un empire.", lesson: "Se souvenir que la tendresse ne se délègue pas." },
+    "4-9": { score: 65, dynamic: "Le structuré et l'idéaliste. Le 9 rêve de sauver le monde, le 4 veut d'abord payer les factures. Fonctionne si le 4 soutient les idéaux du 9 avec méthode, et si le 9 apprécie l'ancrage du 4.", lesson: "Incarner les idéaux dans le réel." },
+    "5-5": { score: 80, dynamic: "Duo d'aventuriers. Couple libre, mouvementé, excitant. Danger : deux âmes qui ne se posent jamais. Vous devez apprendre à créer un centre mobile plutôt qu'un foyer fixe.", lesson: "Construire une maison qui peut voyager." },
+    "5-6": { score: 60, dynamic: "Le 6 veut nourrir, le 5 veut s'envoler. Le 6 peut se sentir abandonné, le 5 peut se sentir prisonnier. Possible avec beaucoup de dialogue et des contrats clairs sur la liberté.", lesson: "Aimer sans retenir, rester sans étouffer." },
+    "5-7": { score: 75, dynamic: "Le voyageur et le chercheur. Vous partez à la découverte ensemble, chacun à sa façon : le 5 dans le monde, le 7 dans les profondeurs. Couple fascinant et libre.", lesson: "Explorer le visible et l'invisible ensemble." },
+    "5-8": { score: 65, dynamic: "Liberté contre ambition. Si le 8 reconnaît que la liberté du 5 est une force et non une menace, et si le 5 valorise la solidité du 8, ça crée une alchimie puissante.", lesson: "Concilier aventure et construction." },
+    "5-9": { score: 80, dynamic: "Couple libre et engagé. Le 9 donne du sens, le 5 transforme ce sens en action mouvante. Souvent couples de voyageurs humanistes, d'artistes globe-trotters, d'entrepreneurs sociaux.", lesson: "Être libre sans perdre ses racines." },
+    "6-6": { score: 95, dynamic: "Deux cœurs identiques. Harmonie totale, amour enveloppant, foyer chaleureux. Danger : perfectionnisme mutuel et jalousie possessive. Vous devez laisser respirer l'autre.", lesson: "Aimer sans vouloir contrôler." },
+    "6-7": { score: 70, dynamic: "Le cœur et l'esprit. Le 6 veut prendre soin, le 7 veut être laissé tranquille pour penser. Tension possible. Fonctionne si le 6 respecte le besoin de solitude du 7.", lesson: "Nourrir sans envahir." },
+    "6-8": { score: 85, dynamic: "Couple stable et ambitieux. Le 6 tient le foyer, le 8 construit la sécurité matérielle. Dynamique traditionnelle qui marche bien si chacun reconnaît la valeur du rôle de l'autre.", lesson: "Honorer l'invisible autant que le visible." },
+    "6-9": { score: 90, dynamic: "Couple d'amour universel. Tous deux tournés vers l'autre, vers le service, vers le soin. Rayonnement puissant. Danger : s'oublier soi-même dans l'amour des autres.", lesson: "S'aimer soi-même pour continuer à aimer le monde." },
+    "7-7": { score: 85, dynamic: "Deux chercheurs. Couple très profond, souvent silencieux, qui fonctionne comme deux rivières parallèles. Vous partagez l'essentiel sans avoir besoin de le dire.", lesson: "Apprendre à parler aussi de ce qu'on sent." },
+    "7-8": { score: 55, dynamic: "Le mystique et l'entrepreneur. Mondes opposés. Le 8 peut trouver le 7 trop détaché, le 7 peut juger le 8 trop matérialiste. Difficile mais possible avec respect mutuel.", lesson: "Comprendre qu'il y a plusieurs formes de réussite." },
+    "7-9": { score: 85, dynamic: "Deux sagesses. Couple profond, philosophique, spirituel. Vous partagez les mêmes questions fondamentales. Souvent des couples qui collaborent sur des projets de sens.", lesson: "Transmettre sans se couper du quotidien." },
+    "8-8": { score: 70, dynamic: "Deux empires. Si vous bâtissez ensemble, vous êtes imparables. Si vous voulez chacun votre trône, c'est la guerre. Nécessité absolue de clarifier les rôles.", lesson: "Partager le pouvoir sans se diviser." },
+    "8-9": { score: 70, dynamic: "L'ambition et l'idéalisme. Le 9 peut donner un cap humaniste aux projets du 8, et le 8 peut concrétiser les visions du 9. Alliance féconde si les valeurs s'alignent.", lesson: "Faire servir la réussite à plus grand que soi." },
+    "9-9": { score: 80, dynamic: "Deux humanistes. Couple généreux, spirituel, engagé. Danger : idéalisme déconnecté du quotidien, et tendance à s'oublier dans les causes. Vous devez protéger votre bulle intime.", lesson: "Ne pas oublier de s'aimer soi-même." },
+  };
+
+  function getCompat(a: number, b: number) {
+    // Reduce master numbers for matrix lookup (but keep showing the real number)
+    const reduceA = a === 11 || a === 22 || a === 33 ? (a === 11 ? 2 : a === 22 ? 4 : 6) : a;
+    const reduceB = b === 11 || b === 22 || b === 33 ? (b === 11 ? 2 : b === 22 ? 4 : 6) : b;
+    const [x, y] = [reduceA, reduceB].sort((a, b) => a - b);
+    return COMPAT_MATRIX[`${x}-${y}`] || { score: 70, dynamic: "Dynamique à explorer avec l'Oracle pour une interprétation personnalisée.", lesson: "Chaque relation est unique au-delà des nombres." };
+  }
+
+  function scoreLabel(score: number): string {
+    if (score >= 85) return "Harmonie naturelle exceptionnelle";
+    if (score >= 75) return "Compatibilité forte et fluide";
+    if (score >= 65) return "Bonne entente avec ajustements";
+    if (score >= 55) return "Relation transformatrice mais exigeante";
+    return "Alchimie rare, croissance garantie";
+  }
+
+  const form = document.getElementById("compat-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const dateA = (document.getElementById("date-a") as HTMLInputElement).value;
+    const dateB = (document.getElementById("date-b") as HTMLInputElement).value;
+    if (!dateA || !dateB) return;
+
+    const [ya, ma, da] = dateA.split("-").map(Number);
+    const [yb, mb, db] = dateB.split("-").map(Number);
+
+    const lifeA = calculateLifePath(da, ma, ya);
+    const lifeB = calculateLifePath(db, mb, yb);
+    const compat = getCompat(lifeA.number, lifeB.number);
+
+    (document.getElementById("life-a") as HTMLElement).textContent = String(lifeA.number);
+    (document.getElementById("life-b") as HTMLElement).textContent = String(lifeB.number);
+    (document.getElementById("score-value") as HTMLElement).textContent = String(compat.score);
+    (document.getElementById("score-label") as HTMLElement).textContent = scoreLabel(compat.score);
+    (document.getElementById("dynamic-text") as HTMLElement).textContent = compat.dynamic;
+    (document.getElementById("lesson-text") as HTMLElement).textContent = compat.lesson;
+
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>
