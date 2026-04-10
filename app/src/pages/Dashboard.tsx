@@ -91,12 +91,25 @@ const Dashboard = () => {
   const [messageExpanded, setMessageExpanded] = useState(false);
   const { user } = useAuth();
 
+  // Real user profile (first_name)
+  const [firstName, setFirstName] = useState<string>(demoProfile.firstName);
+
   // Fetch real conversation titles for personalized hooks
   const [hooks, setHooks] = useState<OracleHook[]>(() => getPersonalizedHooks([], 5));
   const [currentHookIndex, setCurrentHookIndex] = useState(0);
 
   useEffect(() => {
     if (!user) return;
+    const fetchProfile = async () => {
+      const { data } = await supabase
+        .from("profiles")
+        .select("first_name")
+        .eq("user_id", user.id)
+        .maybeSingle();
+      if (data?.first_name) setFirstName(data.first_name);
+    };
+    fetchProfile();
+
     const fetchConversations = async () => {
       const { data } = await supabase
         .from("oracle_conversations")
@@ -104,7 +117,7 @@ const Dashboard = () => {
         .eq("user_id", user.id)
         .order("updated_at", { ascending: false })
         .limit(20);
-      
+
       if (data && data.length > 0) {
         const titles = data.map(c => c.title || "").filter(Boolean);
         setHooks(getPersonalizedHooks(titles, 5));
@@ -127,7 +140,7 @@ const Dashboard = () => {
       <StarField />
 
       <AppHeader
-        title={`Bonjour ${demoProfile.firstName}`}
+        title={`Bonjour ${firstName}`}
         rightContent={
           <div className="text-right">
             <p className="text-xs text-muted-foreground">{demoProfile.astrology.sunSign.symbol} {demoProfile.astrology.moonSign.symbol} {demoProfile.astrology.ascendant.symbol}</p>
