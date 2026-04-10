@@ -305,20 +305,22 @@ def fetch_unsplash_image(query: str, article_index: int = 0) -> dict | None:
 # ============================================
 
 AUTHORS = [
-    {"name": "Cassandra", "role": "Astrologue"},
-    {"name": "Nolan", "role": "Développeur"},
-    {"name": "Céleste", "role": "Numérologue"},
-    {"name": "Raphaël", "role": "Rédacteur karmique"},
+    {"name": "Sibylle", "role": "Astrologue"},
+    {"name": "Orion", "role": "Guide karmique"},
+    {"name": "Séléné", "role": "Guidance relationnelle"},
+    {"name": "Pythia", "role": "Numérologue"},
 ]
 
 # Category → preferred author mapping
 AUTHOR_BY_CATEGORY = {
-    "astrologie": "Cassandra",
-    "numerologie": "Céleste",
-    "karma": "Raphaël",
-    "horoscope": "Cassandra",
-    "compatibilite": "Céleste",
-    "guides": "Raphaël",
+    "astrologie": "Sibylle",
+    "numerologie": "Pythia",
+    "karma": "Orion",
+    "horoscope": "Sibylle",
+    "compatibilite": "Séléné",
+    "guides": "Orion",
+    "amour": "Séléné",
+    "relations": "Séléné",
 }
 
 

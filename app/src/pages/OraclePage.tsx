@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Send, Sparkles, ArrowLeft } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Send, Sparkles, ArrowLeft, Moon, Zap, Calculator, Stars, Check } from "lucide-react";
 import AppHeader from "@/components/AppHeader";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,7 +16,89 @@ import ReactMarkdown from "react-markdown";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
+type GuideKey = "sibylle" | "orion" | "selene" | "pythia";
+
+type GuideInfo = {
+  key: GuideKey;
+  name: string;
+  title: string;
+  description: string;
+  strengths: string;
+  icon: typeof Stars;
+  color: string;
+  opener: string;
+  suggestions: string[];
+};
+
+const GUIDES: Record<GuideKey, GuideInfo> = {
+  sibylle: {
+    key: "sibylle",
+    name: "Sibylle",
+    title: "L'Oracle mystique",
+    description: "Astrologue, poétique, profonde. Héritière des Sibylles antiques, prophétesses d'Apollon.",
+    strengths: "Astrologie profonde · Sens de la vie · Mythologie",
+    icon: Stars,
+    color: "text-purple-300",
+    opener: "Sibylle consulte les astres...",
+    suggestions: [
+      "Que me dit mon thème natal sur ma mission de vie ?",
+      "Comment interpréter ma Lune en opposition à Pluton ?",
+      "Que raconte mon Saturne en maison VII ?",
+      "Quel sens donner à mes transits actuels ?",
+    ],
+  },
+  orion: {
+    key: "orion",
+    name: "Orion",
+    title: "Le coach cosmique",
+    description: "Karmique, direct, motivant. Ancien prof de philosophie stoïcienne, chasseur du ciel.",
+    strengths: "Carrière · Décisions · Discipline · Stoïcisme",
+    icon: Zap,
+    color: "text-amber-300",
+    opener: "Orion scrute ta trajectoire...",
+    suggestions: [
+      "Est-ce le bon moment pour changer de travail ?",
+      "Comment profiter au maximum de mon retour de Saturne ?",
+      "Je procrastine sur un projet, que faire ?",
+      "Quelle leçon karmique dois-je intégrer en ce moment ?",
+    ],
+  },
+  selene: {
+    key: "selene",
+    name: "Séléné",
+    title: "L'âme sœur cosmique",
+    description: "Relationnelle, douce, empathique. Thérapeute inspirée de Séléné, déesse de la Lune.",
+    strengths: "Amour · Relations · Émotions · Guérison",
+    icon: Moon,
+    color: "text-blue-300",
+    opener: "Séléné écoute ton cœur...",
+    suggestions: [
+      "Est-ce que cette personne est mon âme sœur karmique ?",
+      "Ma relation traverse une crise, que disent les astres ?",
+      "Pourquoi je me sens bloquée émotionnellement ?",
+      "Comment comprendre ma mère à travers son thème natal ?",
+    ],
+  },
+  pythia: {
+    key: "pythia",
+    name: "Pythia",
+    title: "La calculatrice cosmique",
+    description: "Numérologue, analytique, précise. Mathématicienne dans la lignée de la Pythie de Delphes.",
+    strengths: "Numérologie · Patterns · Calculs · Synchronicités",
+    icon: Calculator,
+    color: "text-emerald-300",
+    opener: "Pythia calcule tes vibrations...",
+    suggestions: [
+      "Que signifie voir 22:22 partout depuis une semaine ?",
+      "Explique-moi mon chemin de vie en détail",
+      "Quelle est ma dette karmique et comment la résoudre ?",
+      "Calcule ma compatibilité numérologique avec mon partenaire",
+    ],
+  },
+};
+
 const CHAT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/oracle-chat";
+const STORAGE_KEY = "karmastro_oracle_guide";
 
 const OraclePage = () => {
   const navigate = useNavigate();
@@ -27,18 +109,31 @@ const OraclePage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
+  const [guideKey, setGuideKey] = useState<GuideKey | null>(null);
+  const [showPicker, setShowPicker] = useState(false);
+
+  // Load saved guide or show picker on first visit
+  useEffect(() => {
+    const saved = localStorage.getItem(STORAGE_KEY) as GuideKey | null;
+    if (saved && GUIDES[saved]) {
+      setGuideKey(saved);
+    } else {
+      setShowPicker(true);
+    }
+  }, []);
+
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages]);
 
-  const suggestions = [
-    "Est-ce que cette personne est mon âme sœur karmique ?",
-    "Est-ce le bon moment pour changer de travail ?",
-    "Que signifie voir 22:22 partout depuis une semaine ?",
-    "Pourquoi je me sens bloquée en ce moment ?",
-    "Ma relation traverse une crise  -  que disent les astres ?",
-    "Comment s'est passée ma semaine d'un point de vue cosmique ?",
-  ];
+  const selectGuide = (key: GuideKey) => {
+    setGuideKey(key);
+    localStorage.setItem(STORAGE_KEY, key);
+    setShowPicker(false);
+    setMessages([]);
+  };
+
+  const currentGuide = guideKey ? GUIDES[guideKey] : null;
 
   // Build profile context for the Oracle
   const buildProfileContext = () => {
@@ -63,13 +158,13 @@ const OraclePage = () => {
       personalMonth: pm,
       personalDay: pd,
       karmicDebts: demoProfile.numerology.karmicDebts.length > 0 ? demoProfile.numerology.karmicDebts.join(", ") : "aucune",
-      northNode: `${demoProfile.numerology.northNode.sign} M${demoProfile.numerology.northNode.house}  -  ${demoProfile.numerology.northNode.lesson}`,
+      northNode: `${demoProfile.numerology.northNode.sign} M${demoProfile.numerology.northNode.house} - ${demoProfile.numerology.northNode.lesson}`,
     };
   };
 
   const handleSend = async (text?: string) => {
     const msgText = text || input;
-    if (!msgText.trim() || isLoading) return;
+    if (!msgText.trim() || isLoading || !guideKey) return;
 
     const userMsg: Msg = { role: "user", content: msgText };
     setMessages(prev => [...prev, userMsg]);
@@ -88,6 +183,7 @@ const OraclePage = () => {
         body: JSON.stringify({
           messages: [...messages, userMsg].map(m => ({ role: m.role, content: m.content })),
           profile: buildProfileContext(),
+          guide: guideKey,
         }),
       });
 
@@ -138,27 +234,112 @@ const OraclePage = () => {
         }
       }
     } catch (e: any) {
-      toast({ title: "Erreur Oracle", description: e.message, variant: "destructive" });
+      toast({ title: `${currentGuide?.name || "Oracle"} est injoignable`, description: e.message, variant: "destructive" });
       if (!assistantSoFar) {
-        setMessages(prev => [...prev, { role: "assistant", content: "Désolé, une erreur est survenue. Réessayez dans un instant." }]);
+        setMessages(prev => [...prev, { role: "assistant", content: "Une perturbation cosmique m'empêche de te répondre. Réessaie dans un instant." }]);
       }
     } finally {
       setIsLoading(false);
     }
   };
 
+  // Guide picker modal
+  if (showPicker || !currentGuide) {
+    return (
+      <div className="min-h-screen bg-background pb-20 flex flex-col relative">
+        <StarField />
+        <AppHeader title="L'Oracle" subtitle="Choisis ton guide" showBack />
+
+        <div className="relative z-10 px-5 py-6 max-w-2xl mx-auto w-full">
+          <div className="text-center mb-8">
+            <Sparkles className="h-10 w-10 text-primary mx-auto mb-3" />
+            <h2 className="font-serif text-2xl mb-2">À qui veux-tu parler ?</h2>
+            <p className="text-sm text-muted-foreground">
+              Quatre guides, quatre voix, quatre façons d'éclairer ton chemin. Choisis celui qui résonne avec ce que tu cherches aujourd'hui.
+            </p>
+          </div>
+
+          <div className="grid gap-3">
+            {(Object.values(GUIDES) as GuideInfo[]).map((g) => {
+              const Icon = g.icon;
+              const isActive = guideKey === g.key;
+              return (
+                <motion.button
+                  key={g.key}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.99 }}
+                  onClick={() => selectGuide(g.key)}
+                  className={`text-left p-5 rounded-2xl border transition-all ${
+                    isActive
+                      ? "bg-primary/10 border-primary"
+                      : "bg-secondary/30 border-border hover:border-primary/40"
+                  }`}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className={`mt-1 shrink-0 p-2.5 rounded-xl bg-background/50 ${g.color}`}>
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-1">
+                        <h3 className="font-serif text-lg">{g.name}</h3>
+                        <span className="text-xs text-muted-foreground">· {g.title}</span>
+                        {isActive && <Check className="h-4 w-4 text-primary ml-auto" />}
+                      </div>
+                      <p className="text-sm text-muted-foreground mb-2 leading-relaxed">{g.description}</p>
+                      <p className={`text-xs ${g.color}`}>{g.strengths}</p>
+                    </div>
+                  </div>
+                </motion.button>
+              );
+            })}
+          </div>
+
+          <p className="text-xs text-muted-foreground/60 text-center mt-6">
+            Tu pourras changer de guide à tout moment depuis le chat.
+          </p>
+        </div>
+
+        <BottomNav />
+      </div>
+    );
+  }
+
+  const Icon = currentGuide.icon;
+
   return (
     <div className="min-h-screen bg-background pb-20 flex flex-col relative">
       <StarField />
 
-      <AppHeader title="L'Oracle" subtitle="Astrologie · Numerologie · Karma" showBack />
+      <AppHeader title={currentGuide.name} subtitle={currentGuide.title} showBack />
+
+      {/* Guide switcher pill */}
+      <div className="relative z-10 px-5 pt-2">
+        <button
+          onClick={() => setShowPicker(true)}
+          className="w-full flex items-center justify-between gap-3 px-4 py-2.5 rounded-xl bg-secondary/50 border border-border/60 hover:border-primary/40 transition-colors"
+        >
+          <div className="flex items-center gap-3">
+            <div className={`p-1.5 rounded-lg bg-background/50 ${currentGuide.color}`}>
+              <Icon className="h-4 w-4" />
+            </div>
+            <span className="text-sm">
+              Tu parles à <span className="font-medium">{currentGuide.name}</span>
+            </span>
+          </div>
+          <span className="text-xs text-muted-foreground">Changer</span>
+        </button>
+      </div>
 
       <div ref={scrollRef} className="relative z-10 flex-1 overflow-y-auto px-5 py-4 space-y-4">
         {messages.length === 0 && (
-          <div className="text-center pt-16">
-            <Sparkles className="h-12 w-12 text-primary/30 mx-auto mb-4" />
-            <h2 className="font-serif text-xl text-muted-foreground mb-2">Posez votre question</h2>
-            <p className="text-sm text-muted-foreground/70">L'Oracle croise votre thème astral, numérologie et guidance karmique</p>
+          <div className="text-center pt-10">
+            <Icon className={`h-12 w-12 ${currentGuide.color} mx-auto mb-4 opacity-60`} />
+            <h2 className="font-serif text-xl mb-2">{currentGuide.name} t'écoute</h2>
+            <p className="text-sm text-muted-foreground/70 max-w-md mx-auto">
+              {currentGuide.description}
+            </p>
           </div>
         )}
 
@@ -175,8 +356,8 @@ const OraclePage = () => {
                 : "bg-primary/10 border border-primary/20 rounded-2xl rounded-bl-sm px-4 py-3 max-w-[85%]"
             }>
               {msg.role === "assistant" && (
-                <p className="text-primary text-xs mb-1 font-medium flex items-center gap-1">
-                  <Sparkles className="h-3 w-3" /> Oracle
+                <p className={`text-xs mb-1 font-medium flex items-center gap-1 ${currentGuide.color}`}>
+                  <Icon className="h-3 w-3" /> {currentGuide.name}
                 </p>
               )}
               {msg.role === "assistant" ? (
@@ -193,10 +374,10 @@ const OraclePage = () => {
         {isLoading && messages[messages.length - 1]?.role !== "assistant" && (
           <div className="flex justify-start">
             <div className="bg-primary/10 border border-primary/20 rounded-2xl rounded-bl-sm px-4 py-3">
-              <p className="text-primary text-xs mb-1 font-medium flex items-center gap-1">
-                <Sparkles className="h-3 w-3 animate-spin" /> Oracle
+              <p className={`text-xs mb-1 font-medium flex items-center gap-1 ${currentGuide.color}`}>
+                <Icon className="h-3 w-3 animate-spin" /> {currentGuide.name}
               </p>
-              <p className="text-sm text-muted-foreground">Consultation des étoiles...</p>
+              <p className="text-sm text-muted-foreground">{currentGuide.opener}</p>
             </div>
           </div>
         )}
@@ -204,7 +385,7 @@ const OraclePage = () => {
 
       <div className="relative z-10 px-5 pb-2">
         <div className="flex gap-2 overflow-x-auto pb-2">
-          {suggestions.map(s => (
+          {currentGuide.suggestions.map(s => (
             <button
               key={s}
               onClick={() => handleSend(s)}
@@ -222,7 +403,7 @@ const OraclePage = () => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
-            placeholder="Posez votre question à l'Oracle..."
+            placeholder={`Pose ta question à ${currentGuide.name}...`}
             className="bg-secondary border-border"
             disabled={isLoading}
           />

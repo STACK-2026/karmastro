@@ -6,5 +6,9 @@ dist/
 .DS_Store
 blog-auto/logs/
 blog-auto/.env
+horoscope-auto/.venv/
+horoscope-auto/logs/
+horoscope-auto/.env
+__pycache__/
 *.log
 .wrangler/

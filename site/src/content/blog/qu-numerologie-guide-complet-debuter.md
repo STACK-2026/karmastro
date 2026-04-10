@@ -2,7 +2,7 @@
 title: "Qu'est-ce que la numérologie ? Guide complet pour débuter"
 description: "La numérologie est un système mathématique basé sur Pythagore qui analyse votre personnalité via les nombres. Découvrez comment calculer votre chemin de vie."
 date: 2026-04-10
-author: "Céleste"
+author: "Pythia"
 category: "numerologie"
 tags: ["numérologie", "guide complet", "débuter", "mathématiques"]
 keywords: "numérologie, guide complet, débuter, mathématiques"
@@ -294,4 +294,4 @@ En maîtrisant les calculs de base et les significations des nombres 1 à 9, tu 
 
 Pour découvrir ton profil numérologique complet et croiser ces données avec ton [thème astral](/glossaire#thème-natal), explore [l'Oracle de Karmastro](https://app.karmastro.com/oracle). Cette approche hybride te donnera une vision à 360° de tes potentiels et défis, bien au-delà de ce qu'offre la numérologie seule. Consulte aussi notre [glossaire complet](/glossaire) pour approfondir les termes utilisés dans cet article.
 
-*Article rédigé par Céleste, numérologue chez [Karmastro](/notre-histoire). Tous les calculs sont basés sur la méthode pythagoricienne et vérifiables via [Swiss Ephemeris](https://www.astro.com/swisseph/).*
+*Article rédigé par Pythia, numérologue et mathématicienne cosmique chez [Karmastro](/notre-histoire). Tous les calculs sont basés sur la méthode pythagoricienne et vérifiables via [Swiss Ephemeris](https://www.astro.com/swisseph/).*

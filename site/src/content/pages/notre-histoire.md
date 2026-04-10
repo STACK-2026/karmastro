@@ -12,7 +12,7 @@ Marre des horoscopes génériques qui disent la même chose à 600 millions de B
 
 ## Le constat qui a tout changé
 
-Un soir, en calculant un thème natal à la main avec les éphémérides Swiss Ephemeris (le même moteur que la NASA utilise pour ses missions), on a réalisé quelque chose : **la précision existe**. Les positions planétaires sont calculables au millième de seconde d'arc. Les aspects, les maisons, les transits - tout ça, c'est des maths pures.
+Un soir, en calculant un thème natal à la main avec les éphémérides Swiss Ephemeris (le même moteur que la NASA utilise pour ses missions), on a réalisé quelque chose : **la précision existe**. Les positions planétaires sont calculables au millième de seconde d'arc. Les aspects, les maisons, les transits, tout ça, c'est des maths pures.
 
 Alors pourquoi 99% des sites d'astrologie en ligne se contentent de textes pré-écrits par signe solaire ?
 
@@ -21,7 +21,7 @@ Alors pourquoi 99% des sites d'astrologie en ligne se contentent de textes pré-
 On a décidé de construire Karmastro sur trois piliers :
 
 **1. La précision scientifique**
-Nos calculs astronomiques utilisent Swiss Ephemeris, avec une précision de 0.001 seconde d'arc. C'est le même niveau de précision que le Jet Propulsion Laboratory de la NASA. Quand on te dit que ta Vénus est à 25°09' en Gémeaux, ce n'est pas une approximation - c'est un fait astronomique vérifiable.
+Nos calculs astronomiques utilisent Swiss Ephemeris, avec une précision de 0.001 seconde d'arc. C'est le même niveau de précision que le Jet Propulsion Laboratory de la NASA. Quand on te dit que ta Vénus est à 25°09' en Gémeaux, ce n'est pas une approximation, c'est un fait astronomique vérifiable.
 
 **2. La numérologie comme système mathématique**
 La numérologie pythagoricienne repose sur des règles simples et reproductibles. A=1, B=2, C=3... On additionne, on réduit. Pas de mystère. Mais ces patterns révèlent des choses fascinantes sur la personnalité, les cycles de vie et les talents naturels. On montre chaque calcul étape par étape pour que tu puisses vérifier toi-même.
@@ -34,6 +34,8 @@ Aucun autre outil ne croise astrologie, numérologie et guidance karmique en une
 L'Oracle de Karmastro n'est pas un horoscope automatique. C'est un système de guidance qui croise des milliers de données astronomiques et numérologiques pour te donner des réponses personnalisées, contextualisées et vérifiables.
 
 Il ne prédit pas l'avenir. Il éclaire le présent. Comme le disait l'astrologue André Barbault : "Les astres inclinent, ne déterminent pas."
+
+Tu peux même choisir ton guide : **Sibylle** pour une lecture mystique et profonde, **Orion** pour des conseils directs et motivants, **Séléné** pour les questions de cœur et les relations, ou **Pythia** pour la précision analytique et numérique.
 
 ## Le marché de la guidance spirituelle en France
 
@@ -50,22 +52,24 @@ Karmastro démocratise l'accès à une guidance de qualité, basée sur des calc
 
 ## L'équipe
 
-**Cassandra, 34 ans** - Astrologue & cofondatrice.
-Passionnée d'astrologie depuis l'adolescence, elle a étudié l'astrologie classique et la tradition hellénistique avant de se tourner vers la technologie. C'est elle qui a eu l'idée de croiser Swiss Ephemeris avec un système de guidance conversationnel. Elle supervise la qualité des interprétations astrologiques de l'Oracle.
+Quatre archétypes, quatre voix, quatre façons d'éclairer ton chemin. Chacun porte un prénom issu de la mythologie grecque antique, parce qu'il ne s'agit pas d'inventer : il s'agit de continuer une tradition millénaire.
 
-**Nolan, 38 ans** - Développeur & cofondateur.
-Ingénieur de formation, Nolan est le cerveau technique de Karmastro. C'est lui qui a intégré Swiss Ephemeris et construit le moteur de calcul. Il est convaincu que la technologie peut rendre les arts divinatoires plus accessibles et plus rigoureux. "Les maths ne mentent pas" est son mantra.
+**Sibylle** - Astrologue et cofondatrice.
+Son prénom vient des **Sibylles** antiques, ces prophétesses d'Apollon qui lisaient les signes du ciel et transmettaient les oracles. Passionnée d'astrologie classique depuis l'adolescence, elle a étudié la tradition hellénistique, les textes de Ptolémée et la sagesse des anciens avant de se tourner vers la technologie. C'est elle qui a eu l'idée de croiser Swiss Ephemeris avec un système de guidance conversationnel. Elle supervise la qualité des interprétations astrologiques de l'Oracle. Son style : **mystique, profond, poétique**. Elle parle par métaphores et références mythologiques.
 
-**Céleste, 57 ans** - Numérologue.
-Praticienne en numérologie pythagoricienne depuis plus de 25 ans, Céleste a formé des centaines d'élèves. Elle vérifie chaque interprétation numérologique de l'Oracle et s'assure que la tradition est respectée tout en restant accessible. Elle signe une partie des articles du [Cosmos](/blog).
+**Orion** - Guide karmique et contenu.
+Comme la **constellation** que tout le monde reconnaît dans le ciel, comme le chasseur de la mythologie grecque, Orion incarne l'action et la direction. Ancien professeur de philosophie stoïcienne (Épictète, Marc Aurèle, Sénèque), il s'est tourné vers la guidance karmique après un premier retour de Saturne transformateur. Il rédige les contenus karmiques du [Cosmos](/blog) et veille à ce que chaque conseil soit actionnable. Son style : **direct, pratique, motivant**. Pas de mysticisme flou, juste des vérités qui font bouger.
 
-**Raphaël, 44 ans** - Guidance karmique & contenu.
-Ancien professeur de philosophie, Raphaël s'est tourné vers la guidance spirituelle après un premier retour de Saturne transformateur. Il rédige les contenus du blog, les interprétations karmiques et veille à ce que le ton reste humain, chaleureux et jamais prétentieux.
+**Séléné** - Guidance relationnelle et émotionnelle.
+Son prénom vient de **Séléné**, la déesse grecque de la Lune, gardienne des émotions, des cycles et de l'intimité. Thérapeute de formation, elle a intégré l'astro-psychologie jungienne dans sa pratique. Spécialisée dans les questions de cœur, de famille, de guérison émotionnelle et de synastrie (compatibilité astro), elle accompagne ceux qui cherchent à comprendre leurs relations. Son style : **doux, empathique, chaleureux**. Comme une amie qui comprend les étoiles et qui ne juge pas.
+
+**Pythia** - Numérologue et mathématicienne cosmique.
+Son prénom vient de la **Pythie de Delphes**, la plus célèbre prophétesse de l'histoire antique, qui délivrait ses oracles dans le temple d'Apollon. Ingénieure de formation et numérologue pythagoricienne depuis plus de 25 ans, c'est elle qui a intégré Swiss Ephemeris au cœur du moteur Karmastro et formalisé les algorithmes de numérologie. Elle vérifie chaque calcul, chaque interprétation numérologique et s'assure que la tradition est respectée avec la rigueur mathématique qu'elle mérite. Son style : **analytique, précis, fascinée par les patterns**. Elle voit des nombres partout et elle t'explique pourquoi ils te parlent.
 
 ---
 
 ## Rejoins-nous
 
-Que tu sois passionné d'astrologie, curieux de numérologie, ou simplement sceptique mais intrigué - Karmastro est fait pour toi. Les calculs sont exacts. L'interprétation est profonde. Et l'Oracle est disponible 24/7.
+Que tu sois passionné d'astrologie, curieux de numérologie, ou simplement sceptique mais intrigué, Karmastro est fait pour toi. Les calculs sont exacts. L'interprétation est profonde. Et tu peux choisir qui t'accompagne : Sibylle, Orion, Séléné ou Pythia. L'Oracle est disponible 24/7.
 
 [Découvrir mon profil cosmique](https://app.karmastro.com)

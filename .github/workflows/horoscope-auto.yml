@@ -1,0 +1,63 @@
+name: Horoscope Auto — Génération quotidienne
+
+on:
+  schedule:
+    # 04:00 UTC = 06:00 Paris (CEST)
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Régénérer même si le fichier existe'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "Karmastro Horoscope Auto"
+          git config user.email "horoscope@karmastro.com"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r horoscope-auto/requirements.txt
+
+      - name: Generate horoscope
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ENGINE_URL: http://168.119.229.20:8100
+        run: |
+          cd horoscope-auto
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            python generate.py --force
+          else
+            python generate.py
+          fi
+
+      - name: Commit and push if changed
+        run: |
+          git add site/src/data/horoscope/
+          if git diff --cached --quiet; then
+            echo "No horoscope changes to commit"
+          else
+            DATE=$(date -u +%Y-%m-%d)
+            git commit -m "horoscope: génération quotidienne ${DATE}"
+            git push
+          fi

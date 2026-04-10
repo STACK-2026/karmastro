@@ -1,0 +1,223 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { ZODIAC_SIGNS, SIGN_SLUGS, getSignBySlug, formatFrenchDate } from "../../../data/zodiac";
+import fs from "fs";
+import path from "path";
+
+export function getStaticPaths() {
+  return SIGN_SLUGS.map((slug) => ({ params: { signe: slug } }));
+}
+
+const { signe } = Astro.params;
+const sign = getSignBySlug(signe as string);
+if (!sign) throw new Error(`Unknown sign: ${signe}`);
+
+const dataDir = path.join(process.cwd(), "src/data/horoscope");
+let entry: any = null;
+let todayDate = new Date().toISOString().slice(0, 10);
+let archiveDates: string[] = [];
+
+try {
+  if (fs.existsSync(dataDir)) {
+    const files = fs
+      .readdirSync(dataDir)
+      .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+      .sort();
+
+    archiveDates = files.map((f) => f.replace(".json", "")).reverse();
+
+    if (files.length > 0) {
+      const latestFile = files[files.length - 1];
+      todayDate = latestFile.replace(".json", "");
+      const data = JSON.parse(fs.readFileSync(path.join(dataDir, latestFile), "utf-8"));
+      entry = data[sign.slug];
+    }
+  }
+} catch (e) {
+  console.warn("Horoscope data load error:", e);
+}
+
+const dateFormatted = formatFrenchDate(todayDate);
+const title = `Horoscope ${sign.name} du ${dateFormatted} - Karmastro`;
+const description = entry?.intro
+  ? `${entry.intro.slice(0, 150)}...`
+  : `Horoscope ${sign.name} du ${dateFormatted} : amour, travail, énergie et intuition du jour. Lecture cosmique signée Sibylle.`;
+
+const compatSigns = sign.compatibilities
+  .map((slug) => ZODIAC_SIGNS.find((s) => s.slug === slug))
+  .filter(Boolean) as typeof ZODIAC_SIGNS;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description,
+  datePublished: todayDate,
+  dateModified: todayDate,
+  author: {
+    "@type": "Person",
+    name: entry?.author || "Sibylle",
+    description: "Oracle astrologue de Karmastro, héritière des Sibylles antiques",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Karmastro",
+    url: "https://karmastro.com",
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": `https://karmastro.com/horoscope/${sign.slug}`,
+  },
+};
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd} ogType="article" publishedTime={todayDate}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6">
+      <a href="/" class="hover:text-amber-300">Accueil</a>
+      <span class="mx-2">/</span>
+      <a href="/horoscope" class="hover:text-amber-300">Horoscope</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">{sign.name}</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <div class="text-7xl text-amber-300 mb-4">{sign.symbol}</div>
+      <h1 class="text-4xl md:text-5xl font-serif mb-2">Horoscope {sign.name}</h1>
+      <p class="text-lg text-white/70 mb-1">{dateFormatted}</p>
+      <p class="text-xs text-white/40">
+        {sign.dates} · Élément {sign.element} · Maître {sign.rulingPlanet}
+      </p>
+    </header>
+
+    {!entry && (
+      <div class="text-center py-12 border border-amber-300/20 rounded-2xl bg-amber-300/5">
+        <p class="text-amber-300/80">
+          Les astres écrivent encore ta lecture du jour. Reviens dans quelques heures.
+        </p>
+      </div>
+    )}
+
+    {entry && (
+      <>
+        <div class="p-6 rounded-2xl border border-amber-300/20 bg-amber-300/5 mb-8">
+          <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-2">Énergie cosmique du jour</p>
+          <p class="text-lg leading-relaxed text-white/90">{entry.intro}</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-8">
+          {entry.love && (
+            <section class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
+              <h2 class="font-serif text-xl mb-3 text-pink-300">Amour</h2>
+              <p class="text-white/80 leading-relaxed">{entry.love}</p>
+            </section>
+          )}
+          {entry.work && (
+            <section class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
+              <h2 class="font-serif text-xl mb-3 text-amber-300">Travail</h2>
+              <p class="text-white/80 leading-relaxed">{entry.work}</p>
+            </section>
+          )}
+          {entry.energy && (
+            <section class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
+              <h2 class="font-serif text-xl mb-3 text-emerald-300">Énergie</h2>
+              <p class="text-white/80 leading-relaxed">{entry.energy}</p>
+            </section>
+          )}
+          {entry.intuition && (
+            <section class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
+              <h2 class="font-serif text-xl mb-3 text-purple-300">Intuition</h2>
+              <p class="text-white/80 leading-relaxed">{entry.intuition}</p>
+            </section>
+          )}
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 mb-10 text-center">
+          {entry.luckyNumber != null && (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <p class="text-xs text-white/50 uppercase tracking-wider mb-1">Chiffre chanceux</p>
+              <p class="text-3xl font-serif text-amber-300">{entry.luckyNumber}</p>
+            </div>
+          )}
+          {entry.color && (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <p class="text-xs text-white/50 uppercase tracking-wider mb-1">Couleur</p>
+              <p class="text-lg text-white/90">{entry.color}</p>
+            </div>
+          )}
+          {entry.mantra && (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <p class="text-xs text-white/50 uppercase tracking-wider mb-1">Mantra</p>
+              <p class="text-sm italic text-white/90">"{entry.mantra}"</p>
+            </div>
+          )}
+        </div>
+
+        {entry.author && (
+          <p class="text-center text-xs text-white/40 mb-10">
+            Lecture signée par <a href="/notre-histoire" class="text-amber-300 hover:underline">{entry.author}</a>
+          </p>
+        )}
+      </>
+    )}
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Besoin d'une lecture plus personnelle ?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed">
+        L'horoscope est une lecture générale. Pour une guidance qui prend en compte ton thème natal complet, pose ta question à l'un de nos quatre guides.
+      </p>
+      <a
+        href="https://app.karmastro.com/oracle"
+        class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity"
+      >
+        Pose ta question à l'Oracle
+      </a>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-serif text-2xl mb-4">Compatibilités du {sign.name}</h2>
+      <div class="grid grid-cols-3 gap-3">
+        {compatSigns.map((c) => (
+          <a
+            href={`/horoscope/${c.slug}`}
+            class="p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:border-amber-300/40 transition-colors text-center"
+          >
+            <div class="text-3xl text-amber-300 mb-1">{c.symbol}</div>
+            <p class="text-sm text-white/80">{c.name}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    {archiveDates.length > 1 && (
+      <section class="mb-10">
+        <h2 class="font-serif text-2xl mb-4">Archives récentes</h2>
+        <div class="flex flex-wrap gap-2">
+          {archiveDates.slice(0, 14).map((d) => (
+            <a
+              href={`/horoscope/${sign.slug}/${d}`}
+              class="text-sm px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.02] hover:border-amber-300/40 hover:text-amber-300 transition-colors"
+            >
+              {formatFrenchDate(d)}
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10">
+      {ZODIAC_SIGNS.map((s) => (
+        <a
+          href={`/horoscope/${s.slug}`}
+          class={`text-sm px-3 py-1.5 rounded-full border transition-colors ${
+            s.slug === sign.slug
+              ? "border-amber-300 bg-amber-300/10 text-amber-300"
+              : "border-white/10 hover:border-amber-300/40 hover:text-amber-300"
+          }`}
+        >
+          {s.symbol} {s.name}
+        </a>
+      ))}
+    </nav>
+  </article>
+</BaseLayout>
