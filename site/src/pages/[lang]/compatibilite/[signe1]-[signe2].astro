@@ -1,0 +1,197 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ZodiacSymbol from "../../../components/ZodiacSymbol.astro";
+import { ZODIAC_SIGNS, SIGN_SLUGS, getSignBySlug } from "../../../data/zodiac";
+import { compatibilityScore, compatibilityInterpretation } from "../../../data/compatibility-matrix";
+import { LOCALES, DEFAULT_LOCALE, type Locale } from "../../../i18n/config";
+import { t } from "../../../i18n/translations";
+
+export function getStaticPaths() {
+  const paths: any[] = [];
+  for (const lang of LOCALES) {
+    if (lang === DEFAULT_LOCALE) continue;
+    for (const a of SIGN_SLUGS) {
+      for (const b of SIGN_SLUGS) {
+        paths.push({ params: { lang, signe1: a, signe2: b } });
+      }
+    }
+  }
+  return paths;
+}
+
+const { lang, signe1, signe2 } = Astro.params as { lang: Locale; signe1: string; signe2: string };
+const sign1 = getSignBySlug(signe1)!;
+const sign2 = getSignBySlug(signe2)!;
+
+const signNameKeys: Record<string, string> = {
+  belier: "signs.aries", taureau: "signs.taurus", gemeaux: "signs.gemini", cancer: "signs.cancer",
+  lion: "signs.leo", vierge: "signs.virgo", balance: "signs.libra", scorpion: "signs.scorpio",
+  sagittaire: "signs.sagittarius", capricorne: "signs.capricorn", verseau: "signs.aquarius", poissons: "signs.pisces",
+};
+const name1 = t(signNameKeys[sign1.slug] as any, lang) || sign1.name;
+const name2 = t(signNameKeys[sign2.slug] as any, lang) || sign2.name;
+
+const scores = compatibilityScore(
+  sign1.element as any, sign1.quality as any,
+  sign2.element as any, sign2.quality as any
+);
+const interp = compatibilityInterpretation(
+  sign1.name, sign1.element as any, sign1.quality as any,
+  sign2.name, sign2.element as any, sign2.quality as any
+);
+
+const title = `${t("compat.page_title", lang).replace("{s1}", name1).replace("{s2}", name2)} - Karmastro`;
+const description = `${name1} & ${name2}: ${t("compat.global_score", lang)} ${scores.global}/100.`;
+
+const scoreColor = (n: number) =>
+  n >= 80 ? "text-emerald-300" : n >= 60 ? "text-amber-300" : n >= 40 ? "text-orange-300" : "text-rose-300";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    inLanguage: lang,
+    datePublished: "2026-04-11",
+    author: { "@type": "Person", name: "Séléné" },
+    publisher: {
+      "@type": "Organization",
+      name: "Karmastro",
+      url: "https://karmastro.com",
+      logo: { "@type": "ImageObject", url: "https://karmastro.com/favicon.svg" },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://karmastro.com/${lang}/compatibilite/${signe1}-${signe2}` },
+    about: [
+      { "@type": "Thing", name: name1 },
+      { "@type": "Thing", name: name2 },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Karmastro", item: `https://karmastro.com/${lang}` },
+      { "@type": "ListItem", position: 2, name: t("compat.hub_title", lang), item: `https://karmastro.com/${lang}/compatibilite` },
+      { "@type": "ListItem", position: 3, name: `${name1} × ${name2}`, item: `https://karmastro.com/${lang}/compatibilite/${signe1}-${signe2}` },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd} ogType="article">
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href={`/${lang}`} class="hover:text-amber-300">Karmastro</a>
+      <span class="mx-2">/</span>
+      <a href={`/${lang}/compatibilite`} class="hover:text-amber-300">{t("compat.hub_title", lang)}</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">{name1} × {name2}</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <div class="flex justify-center items-center gap-8 mb-4">
+        <div class="flex flex-col items-center">
+          <ZodiacSymbol sign={sign1.name} size={80} color="#D4A017" />
+          <p class="mt-2 text-sm text-white/70">{name1}</p>
+          <p class="text-[10px] text-white/40">{sign1.element} · {sign1.quality}</p>
+        </div>
+        <div class="text-5xl text-amber-300/40 font-thin">×</div>
+        <div class="flex flex-col items-center">
+          <ZodiacSymbol sign={sign2.name} size={80} color="#8B5CF6" />
+          <p class="mt-2 text-sm text-white/70">{name2}</p>
+          <p class="text-[10px] text-white/40">{sign2.element} · {sign2.quality}</p>
+        </div>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-serif mb-2">{t("compat.page_title", lang).replace("{s1}", name1).replace("{s2}", name2)}</h1>
+    </header>
+
+    <div class="p-6 rounded-2xl border border-amber-300/20 bg-amber-300/5 mb-8 text-center">
+      <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">{t("compat.global_score", lang)}</p>
+      <p class={`text-6xl font-serif ${scoreColor(scores.global)}`}>{scores.global}%</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-10">
+      {([
+        { label: t("compat.love", lang), value: scores.love, color: "text-pink-300" },
+        { label: t("compat.friendship", lang), value: scores.friendship, color: "text-emerald-300" },
+        { label: t("compat.work", lang), value: scores.work, color: "text-amber-300" },
+        { label: t("compat.karma", lang), value: scores.karma, color: "text-purple-300" },
+        { label: t("compat.tension", lang), value: scores.tension, color: "text-rose-300" },
+      ]).map((s) => (
+        <div class="p-3 rounded-xl border border-white/10 bg-white/[0.02] text-center">
+          <p class="text-[10px] uppercase tracking-wider text-white/50 mb-1">{s.label}</p>
+          <p class={`text-2xl font-serif ${s.color}`}>{s.value}</p>
+          <div class="h-1 bg-white/10 rounded-full mt-2 overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-amber-300 to-purple-400" style={`width: ${s.value}%`}></div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* FR-content disclaimer */}
+    <div class="mb-6 px-4 py-2 rounded-lg bg-white/[0.02] border border-white/10 text-center">
+      <p class="text-[10px] text-white/40">
+        <span class="text-amber-300/60">✦</span> {t("horoscope.fr_translation_note", lang)}
+      </p>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-serif text-2xl text-emerald-300 mb-4">{t("compat.strengths", lang)}</h2>
+      <ul lang="fr" class="space-y-3">
+        {interp.strengths.map((s) => (
+          <li class="p-4 rounded-xl border border-emerald-300/20 bg-emerald-300/5 text-white/85 leading-relaxed">
+            <span class="text-emerald-300 mr-2">✦</span>{s}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="font-serif text-2xl text-rose-300 mb-4">{t("compat.frictions", lang)}</h2>
+      <ul lang="fr" class="space-y-3">
+        {interp.frictions.map((f) => (
+          <li class="p-4 rounded-xl border border-rose-300/20 bg-rose-300/5 text-white/85 leading-relaxed">
+            <span class="text-rose-300 mr-2">⚠</span>{f}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="font-serif text-2xl text-amber-300 mb-4">{t("compat.guidance", lang)}</h2>
+      <p lang="fr" class="p-5 rounded-xl border border-amber-300/20 bg-amber-300/5 text-white/85 leading-relaxed italic">
+        "{interp.guidance}"
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">{t("compat.more_precise_title", lang)}</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed">
+        {t("compat.more_precise_desc", lang)}
+      </p>
+      <div class="flex gap-3 flex-wrap justify-center">
+        <a href="https://app.karmastro.com/compatibility" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+          {t("compat.synastry_cta", lang)}
+        </a>
+      </div>
+    </div>
+
+    <section class="mb-10">
+      <h2 class="font-serif text-xl mb-4">{t("compat.explore_other", lang)}</h2>
+      <div class="grid grid-cols-3 md:grid-cols-4 gap-2">
+        {ZODIAC_SIGNS.filter((s) => s.slug !== sign1.slug).map((s) => (
+          <a
+            href={`/${lang}/compatibilite/${sign1.slug}-${s.slug}`}
+            class="p-3 rounded-lg border border-white/10 bg-white/[0.02] hover:border-amber-300/40 transition-colors text-center"
+          >
+            <div class="flex justify-center mb-1">
+              <ZodiacSymbol sign={s.name} size={28} color="#D4A017" />
+            </div>
+            <p class="text-xs text-white/70">{t(signNameKeys[s.slug] as any, lang) || s.name}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  </article>
+</BaseLayout>
