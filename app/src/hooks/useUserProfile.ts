@@ -152,7 +152,7 @@ export function useUserProfile(): UserProfileData {
       // Compute sun sign from birth date
       const sunSign = getZodiacSign(birthDate.getDate(), birthDate.getMonth() + 1);
 
-      setData({
+      const baseProfile: UserProfileData = {
         firstName: profile.first_name,
         lastName: profile.last_name || "",
         birthDate,
@@ -166,8 +166,6 @@ export function useUserProfile(): UserProfileData {
         isLoading: false,
         astrology: {
           sunSign: { ...sunSign, degrees: "—" },
-          // Moon + ascendant + planets/houses/aspects require Swiss Ephemeris (Engine call)
-          // For V1 we show dashes; follow-up edge function get-natal-chart will fill these.
           moonSign: { sign: "—", symbol: "", element: "", degrees: "" },
           ascendant: profile.knows_birth_time
             ? { sign: "—", symbol: "", element: "", degrees: "" }
@@ -177,11 +175,132 @@ export function useUserProfile(): UserProfileData {
           houses: [],
         },
         numerology,
-      });
+      };
+
+      setData(baseProfile);
+
+      // Lazy-load full natal chart from Engine via edge function
+      // (moon sign, ascendant, planets, houses, aspects)
+      try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session) return;
+
+        const resp = await fetch(
+          `${(supabase as any).supabaseUrl || "https://nkjbmbdrvejemzrggxvr.supabase.co"}/functions/v1/get-natal-chart`,
+          {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${session.access_token}`,
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        if (!resp.ok) return;
+        const { chart } = await resp.json();
+        if (!chart?.natal_chart) return;
+
+        const nc = chart.natal_chart;
+        const enrichedAstrology = enrichAstrologyFromEngine(baseProfile.astrology, nc);
+        setData((prev) => ({ ...prev, astrology: enrichedAstrology }));
+      } catch (e) {
+        console.warn("[useUserProfile] natal chart fetch failed", e);
+      }
     })().catch(() => {
       setData((d) => ({ ...d, isLoading: false }));
     });
   }, [user, authLoading]);
 
   return data;
+}
+
+// ───────────────────────────────────────────────────────────────
+// Engine response → UserProfile.astrology transformation
+// ───────────────────────────────────────────────────────────────
+
+const SIGN_SYMBOLS: Record<string, { symbol: string; element: string }> = {
+  "Bélier": { symbol: "♈", element: "Feu" },
+  "Taureau": { symbol: "♉", element: "Terre" },
+  "Gémeaux": { symbol: "♊", element: "Air" },
+  "Cancer": { symbol: "♋", element: "Eau" },
+  "Lion": { symbol: "♌", element: "Feu" },
+  "Vierge": { symbol: "♍", element: "Terre" },
+  "Balance": { symbol: "♎", element: "Air" },
+  "Scorpion": { symbol: "♏", element: "Eau" },
+  "Sagittaire": { symbol: "♐", element: "Feu" },
+  "Capricorne": { symbol: "♑", element: "Terre" },
+  "Verseau": { symbol: "♒", element: "Air" },
+  "Poissons": { symbol: "♓", element: "Eau" },
+};
+
+function signInfo(sign: string | undefined | null, degree?: number, minute?: number) {
+  if (!sign) return { sign: "—", symbol: "", element: "", degrees: "" };
+  const info = SIGN_SYMBOLS[sign] || { symbol: "", element: "" };
+  const deg = degree != null && minute != null ? `${degree}°${String(minute).padStart(2, "0")}'` : "";
+  return { sign, symbol: info.symbol, element: info.element, degrees: deg };
+}
+
+function enrichAstrologyFromEngine(
+  base: UserProfileData["astrology"],
+  natalChart: any
+): UserProfileData["astrology"] {
+  const planets = natalChart.planets || {};
+
+  // Moon sign
+  const moonData = planets["Lune"] || planets["Moon"];
+  const moonSign = moonData
+    ? signInfo(moonData.sign, moonData.degree, moonData.minute)
+    : base.moonSign;
+
+  // Sun sign (refine with exact degrees from engine)
+  const sunData = planets["Soleil"] || planets["Sun"];
+  const sunSign = sunData
+    ? signInfo(sunData.sign, sunData.degree, sunData.minute)
+    : base.sunSign;
+
+  // Ascendant
+  const ascData = natalChart.ascendant;
+  const ascendant = ascData
+    ? signInfo(ascData.sign, ascData.degree, ascData.minute)
+    : base.ascendant;
+
+  // Planets array (unified shape)
+  const planetsList = Object.entries(planets).map(([name, p]: [string, any]) => ({
+    name,
+    symbol: p.symbol || "",
+    sign: p.sign || "—",
+    house: p.house || 0,
+    degrees: p.degree != null ? `${p.degree}°${String(p.minute || 0).padStart(2, "0")}'` : "—",
+    interpretation: p.interpretation || "",
+  }));
+
+  // Houses
+  const housesList = Array.isArray(natalChart.houses)
+    ? natalChart.houses.map((h: any, i: number) => ({
+        house: i + 1,
+        sign: h.sign || "—",
+        description: h.description || "",
+      }))
+    : [];
+
+  // Aspects
+  const aspectsList = Array.isArray(natalChart.aspects)
+    ? natalChart.aspects.map((a: any) => ({
+        planet1: a.planet1 || a.p1 || "",
+        planet2: a.planet2 || a.p2 || "",
+        type: a.type || a.aspect || "",
+        orb: a.orb ? `${a.orb}°` : "—",
+        nature: a.nature || "—",
+        interpretation: a.interpretation || "",
+      }))
+    : [];
+
+  return {
+    sunSign,
+    moonSign,
+    ascendant,
+    planets: planetsList as any,
+    aspects: aspectsList as any,
+    houses: housesList as any,
+  };
 }
