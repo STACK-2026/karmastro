@@ -19,7 +19,13 @@ export function getStaticPaths() {
     .sort();
   if (files.length === 0) return paths;
 
-  const realToday = new Date().toISOString().slice(0, 10);
+  // Use Europe/Paris timezone for "today"
+  const realToday = new Intl.DateTimeFormat("fr-CA", {
+    timeZone: "Europe/Paris",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
   const eligibleDates = files
     .map((f) => f.replace(".json", ""))
     .filter((date) => date !== realToday);

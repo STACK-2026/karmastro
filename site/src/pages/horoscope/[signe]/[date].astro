@@ -18,8 +18,13 @@ export function getStaticPaths() {
 
   if (files.length === 0) return paths;
 
-  // Real today (server time). The "today" detail route is handled by /horoscope/[signe]/index.astro
-  const realToday = new Date().toISOString().slice(0, 10);
+  // "Today" in Paris timezone (matches index.astro logic)
+  const realToday = new Intl.DateTimeFormat("fr-CA", {
+    timeZone: "Europe/Paris",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
 
   // Generate pages for every file except "today" : past (archives) + future (preview)
   const eligible = files.filter((f) => f.replace(".json", "") !== realToday);

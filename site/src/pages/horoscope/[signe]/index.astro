@@ -17,7 +17,16 @@ if (!sign) throw new Error(`Unknown sign: ${signe}`);
 const dataDir = path.join(process.cwd(), "src/data/horoscope");
 let entry: any = null;
 let tomorrowEntry: any = null;
-let todayDate = new Date().toISOString().slice(0, 10);
+// Use Paris timezone (Europe/Paris) so "today" matches the real FR calendar day
+function parisDate(d: Date = new Date()): string {
+  return new Intl.DateTimeFormat("fr-CA", {
+    timeZone: "Europe/Paris",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(d);
+}
+let todayDate = parisDate();
 let tomorrowDate = "";
 let archiveDates: string[] = [];
 
@@ -46,8 +55,8 @@ try {
 
     archiveDates = files.map((f) => f.replace(".json", "")).reverse();
 
-    // "Today" horoscope : most recent file whose date is <= real today
-    const realToday = new Date().toISOString().slice(0, 10);
+    // "Today" in Paris timezone (CEST/CET)
+    const realToday = parisDate();
     const pastFiles = files.filter((f) => f.replace(".json", "") <= realToday);
     if (pastFiles.length > 0) {
       const latestFile = pastFiles[pastFiles.length - 1];
