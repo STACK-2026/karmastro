@@ -18,10 +18,15 @@ CREATE TABLE IF NOT EXISTS public.oracle_feedback (
 ALTER TABLE public.oracle_feedback ENABLE ROW LEVEL SECURITY;
 
 -- Anyone (auth or anon) can insert feedback
-CREATE POLICY "Anyone can insert oracle feedback"
+CREATE POLICY "anon_insert_feedback"
   ON public.oracle_feedback
   FOR INSERT
+  TO anon, authenticated
   WITH CHECK (true);
+
+-- Grants required for RLS to work with anon/authenticated roles
+GRANT INSERT ON public.oracle_feedback TO anon, authenticated;
+GRANT SELECT ON public.oracle_feedback TO authenticated;
 
 -- Users can read their own feedback; anon cannot read
 CREATE POLICY "Users can view their own oracle feedback"
