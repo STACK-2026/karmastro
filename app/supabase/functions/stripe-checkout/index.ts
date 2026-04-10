@@ -38,6 +38,21 @@ const IS_SUBSCRIPTION: Record<string, boolean> = {
   pack_cosmos: false,
 };
 
+// Locale → Stripe currency code (all prices have currency_options configured)
+const LOCALE_CURRENCY: Record<string, string> = {
+  fr: "eur",
+  es: "eur",
+  pt: "eur",
+  de: "eur",
+  it: "eur",
+  en: "usd",
+  tr: "try",
+  pl: "pln",
+  ja: "jpy",
+  ar: "usd", // SAR not supported in Stripe card charges → fallback USD
+  ru: "usd", // RUB restricted by sanctions → fallback USD
+};
+
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -52,7 +67,7 @@ serve(async (req) => {
     });
 
     // Parse request
-    const { priceKey, successUrl, cancelUrl } = await req.json();
+    const { priceKey, successUrl, cancelUrl, locale } = await req.json();
 
     if (!priceKey || !PRICE_IDS[priceKey]) {
       return new Response(JSON.stringify({ error: "Produit inconnu" }), {
@@ -60,6 +75,9 @@ serve(async (req) => {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
+
+    // Determine currency from locale (default EUR)
+    const currency = LOCALE_CURRENCY[locale || "fr"] || "eur";
 
     // Get the authenticated user
     const authHeader = req.headers.get("Authorization");
@@ -108,9 +126,15 @@ serve(async (req) => {
     const isSub = IS_SUBSCRIPTION[priceKey];
     const origin = req.headers.get("origin") || "https://app.karmastro.com";
 
+    // Stripe Checkout locale (2-letter code, supports all karmastro locales except ar)
+    const stripeLocale = ["fr", "en", "es", "pt", "de", "it", "tr", "pl", "ja"].includes(locale)
+      ? (locale as any)
+      : "auto";
+
     const session = await stripe.checkout.sessions.create({
       customer: customerId,
       mode: isSub ? "subscription" : "payment",
+      currency, // explicitly set based on user locale → uses Stripe currency_options
       line_items: [
         {
           price: PRICE_IDS[priceKey],
@@ -119,18 +143,22 @@ serve(async (req) => {
       ],
       success_url: successUrl || `${origin}/dashboard?checkout=success`,
       cancel_url: cancelUrl || `${origin}/pricing?checkout=canceled`,
-      locale: "fr",
+      locale: stripeLocale,
       allow_promotion_codes: true,
       billing_address_collection: "auto",
       metadata: {
         supabase_user_id: user.id,
         price_key: priceKey,
+        locale: locale || "fr",
+        currency,
       },
       ...(isSub && {
         subscription_data: {
           metadata: {
             supabase_user_id: user.id,
             price_key: priceKey,
+            locale: locale || "fr",
+            currency,
           },
         },
       }),

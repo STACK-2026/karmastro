@@ -11,6 +11,39 @@ import { useToast } from "@/hooks/use-toast";
 
 const CHECKOUT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/stripe-checkout";
 
+// Locale detection from navigator + pricing display per locale
+function detectLocale(): string {
+  if (typeof navigator === "undefined") return "fr";
+  const lang = navigator.language?.slice(0, 2).toLowerCase() || "fr";
+  const supported = ["fr", "en", "es", "pt", "de", "it", "tr", "pl", "ja", "ar", "ru"];
+  return supported.includes(lang) ? lang : "en";
+}
+
+// Currency mapping matches edge function LOCALE_CURRENCY
+const LOCALE_CURRENCY: Record<string, { code: string; symbol: string; symbolBefore: boolean; rate: number; zeroDecimal: boolean }> = {
+  fr: { code: "EUR", symbol: "€", symbolBefore: false, rate: 1, zeroDecimal: false },
+  es: { code: "EUR", symbol: "€", symbolBefore: false, rate: 1, zeroDecimal: false },
+  pt: { code: "EUR", symbol: "€", symbolBefore: false, rate: 1, zeroDecimal: false },
+  de: { code: "EUR", symbol: "€", symbolBefore: false, rate: 1, zeroDecimal: false },
+  it: { code: "EUR", symbol: "€", symbolBefore: false, rate: 1, zeroDecimal: false },
+  en: { code: "USD", symbol: "$", symbolBefore: true, rate: 1.08, zeroDecimal: false },
+  tr: { code: "TRY", symbol: "₺", symbolBefore: false, rate: 37, zeroDecimal: false },
+  pl: { code: "PLN", symbol: "zł", symbolBefore: false, rate: 4.3, zeroDecimal: false },
+  ja: { code: "JPY", symbol: "¥", symbolBefore: true, rate: 165, zeroDecimal: true },
+  ar: { code: "USD", symbol: "$", symbolBefore: true, rate: 1.08, zeroDecimal: false },
+  ru: { code: "USD", symbol: "$", symbolBefore: true, rate: 1.08, zeroDecimal: false },
+};
+
+function formatPrice(eurAmount: number, locale: string): string {
+  const currency = LOCALE_CURRENCY[locale] || LOCALE_CURRENCY.fr;
+  const localAmount = eurAmount * currency.rate;
+  const decimals = currency.zeroDecimal ? 0 : 2;
+  const rounded = localAmount.toFixed(decimals);
+  const [intPart, decPart] = rounded.split(".");
+  const formatted = decPart ? `${intPart},${decPart}` : intPart;
+  return currency.symbolBefore ? `${currency.symbol}${formatted}` : `${formatted}${currency.symbol}`;
+}
+
 type CurrentPlan = {
   tier: string;
   status: string | null;
@@ -25,6 +58,7 @@ const PricingPage = () => {
   const [loading, setLoading] = useState<string | null>(null);
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annual">("monthly");
   const [currentPlan, setCurrentPlan] = useState<CurrentPlan | null>(null);
+  const [locale] = useState(() => detectLocale());
 
   useEffect(() => {
     if (!user?.id) return;
@@ -65,6 +99,7 @@ const PricingPage = () => {
         },
         body: JSON.stringify({
           priceKey,
+          locale,
           successUrl: `${window.location.origin}/dashboard?checkout=success`,
           cancelUrl: `${window.location.origin}/pricing?checkout=canceled`,
         }),
@@ -171,14 +206,14 @@ const PricingPage = () => {
           <div className="mb-3">
             {billingPeriod === "monthly" ? (
               <p className="text-3xl font-serif">
-                5,99€ <span className="text-xs text-muted-foreground">/ mois</span>
+                {formatPrice(5.99, locale)} <span className="text-xs text-muted-foreground">/ mois</span>
               </p>
             ) : (
               <>
                 <p className="text-3xl font-serif">
-                  49,99€ <span className="text-xs text-muted-foreground">/ an</span>
+                  {formatPrice(49.99, locale)} <span className="text-xs text-muted-foreground">/ an</span>
                 </p>
-                <p className="text-xs text-amber-300/80">4,16€/mois, économise 2 mois</p>
+                <p className="text-xs text-amber-300/80">{formatPrice(4.16, locale)}/mois, économise 2 mois</p>
               </>
             )}
           </div>
@@ -218,7 +253,7 @@ const PricingPage = () => {
             <span className="text-xs text-muted-foreground ml-auto">Rituel unique</span>
           </div>
           <p className="text-2xl font-serif mb-3">
-            3,99€ <span className="text-xs text-muted-foreground">une seule fois</span>
+            {formatPrice(3.99, locale)} <span className="text-xs text-muted-foreground">une seule fois</span>
           </p>
           <ul className="space-y-1.5 text-sm text-muted-foreground mb-4">
             <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-pink-300 mt-0.5 shrink-0" /> Analyse karmique approfondie d'une relation</li>
@@ -245,9 +280,9 @@ const PricingPage = () => {
 
           <div className="grid grid-cols-3 gap-2">
             {[
-              { key: "pack_lune", name: "Lune", credits: 10, price: "4,99€", highlight: false },
-              { key: "pack_soleil", name: "Soleil", credits: 35, price: "11,99€", highlight: true },
-              { key: "pack_cosmos", name: "Cosmos", credits: 100, price: "29,99€", highlight: false },
+              { key: "pack_lune", name: "Lune", credits: 10, price: formatPrice(4.99, locale), highlight: false },
+              { key: "pack_soleil", name: "Soleil", credits: 35, price: formatPrice(11.99, locale), highlight: true },
+              { key: "pack_cosmos", name: "Cosmos", credits: 100, price: formatPrice(29.99, locale), highlight: false },
             ].map((pack) => (
               <button
                 key={pack.key}
