@@ -2,6 +2,7 @@
 import BaseLayout from "./BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import ShareButton from "../components/ShareButton.astro";
+import NewsletterCapture from "../components/NewsletterCapture.astro";
 import { siteConfig } from "../../site.config";
 import { fullUrl } from "../utils/config";
 import { jsonLdArticle, jsonLdBreadcrumbs } from "../utils/seo";
@@ -112,6 +113,8 @@ const jsonLd = [
     <div class="prose max-w-none">
       <slot />
     </div>
+
+    <NewsletterCapture variant="card" source={`blog-${slug}`} />
 
     <div class="mt-12 pt-8 border-t border-white/10">
       <div class="flex flex-col items-center gap-4">

@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Confirmation d'abonnement - Karmastro";
+const description = "Confirme ton abonnement à l'horoscope quotidien Karmastro.";
+---
+
+<BaseLayout title={title} description={description} noIndex>
+  <section class="max-w-md mx-auto px-4 py-20 text-center">
+    <div id="loading">
+      <div class="text-4xl mb-4 animate-pulse">✦</div>
+      <p class="text-white/70">Confirmation en cours...</p>
+    </div>
+
+    <div id="success" class="hidden">
+      <div class="text-5xl mb-4">✨</div>
+      <h1 class="font-serif text-3xl text-white mb-3">Tu es désormais parmi nous</h1>
+      <p class="text-white/70 mb-8 leading-relaxed">
+        Ton abonnement est confirmé. Chaque matin à 07h00 Paris, ton horoscope arrivera dans ta boîte.
+        Sibylle l'écrira avec les vraies données cosmiques du jour.
+      </p>
+      <a
+        href="/horoscope/"
+        class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity"
+      >
+        Découvrir l'horoscope du jour
+      </a>
+    </div>
+
+    <div id="error" class="hidden">
+      <div class="text-5xl mb-4">⚠</div>
+      <h1 class="font-serif text-2xl text-white mb-3">Lien expiré ou invalide</h1>
+      <p class="text-white/70 mb-8">
+        Ce lien de confirmation n'est plus valide. Réabonne-toi depuis la page horoscope pour recevoir un nouveau lien.
+      </p>
+      <a href="/horoscope/" class="inline-block px-6 py-3 rounded-xl border border-amber-300/40 text-amber-300 hover:bg-amber-300/10 transition-colors">
+        Retour à l'horoscope
+      </a>
+    </div>
+  </section>
+
+  <script is:inline>
+    (async function () {
+      const token = new URLSearchParams(location.search).get("token");
+      if (!token) {
+        document.getElementById("loading").classList.add("hidden");
+        document.getElementById("error").classList.remove("hidden");
+        return;
+      }
+
+      try {
+        const resp = await fetch("https://nkjbmbdrvejemzrggxvr.supabase.co/rest/v1/rpc/newsletter_confirm", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ramJtYmRydmVqZW16cmdneHZyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU3NzE1MjUsImV4cCI6MjA5MTM0NzUyNX0.KYc8rXIC0RPMskW6eJIE_EranUcLK6nckCAWEph-340",
+            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ramJtYmRydmVqZW16cmdneHZyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU3NzE1MjUsImV4cCI6MjA5MTM0NzUyNX0.KYc8rXIC0RPMskW6eJIE_EranUcLK6nckCAWEph-340",
+          },
+          body: JSON.stringify({ p_token: token }),
+        });
+        const data = await resp.json();
+        document.getElementById("loading").classList.add("hidden");
+        if (data?.success) {
+          document.getElementById("success").classList.remove("hidden");
+          if (window.km && window.km.trackEvent) window.km.trackEvent("newsletter_confirmed", { locale: data.locale });
+        } else {
+          document.getElementById("error").classList.remove("hidden");
+        }
+      } catch (e) {
+        document.getElementById("loading").classList.add("hidden");
+        document.getElementById("error").classList.remove("hidden");
+      }
+    })();
+  </script>
+</BaseLayout>

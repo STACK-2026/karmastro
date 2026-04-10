@@ -2,6 +2,7 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import ShareButton from "../../../components/ShareButton.astro";
 import ZodiacSymbol from "../../../components/ZodiacSymbol.astro";
+import NewsletterCapture from "../../../components/NewsletterCapture.astro";
 import { ZODIAC_SIGNS, SIGN_SLUGS, getSignBySlug, formatFrenchDate } from "../../../data/zodiac";
 import fs from "fs";
 import path from "path";
@@ -241,6 +242,9 @@ const jsonLd = {
             label="Partager cet horoscope"
           />
         </div>
+
+        {/* Newsletter capture : "Recevoir mon horoscope" */}
+        <NewsletterCapture sign={sign.slug} variant="card" source={`horoscope-${sign.slug}`} />
 
         {/* ═══ TOMORROW PREVIEW (Premium only) ═══ */}
         <section class="mb-10">
