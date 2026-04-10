@@ -102,8 +102,8 @@ const CalendarPage = () => {
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               {selectedDay === 8
-                ? "Jour d'achèvement et de lâcher-prise. Finalisez ce qui doit l'être, pardonnez, et faites de la place pour le nouveau cycle qui approche. L'énergie du 9 vous invite à la générosité et au détachement."
-                : `Votre jour personnel ${getDayData(selectedDay).pd} vous invite à ${getNumberKeyword(getDayData(selectedDay).pd).toLowerCase()}. Utilisez l'énergie de ce nombre pour aligner vos actions avec votre chemin de vie 3.`
+                ? "Jour d'achèvement et de lâcher-prise. Finalise ce qui doit l'être, pardonne, et fais de la place pour le nouveau cycle qui approche. L'énergie du 9 t'invite à la générosité et au détachement."
+                : `Ton jour personnel ${getDayData(selectedDay).pd} t'invite à ${getNumberKeyword(getDayData(selectedDay).pd).toLowerCase()}. Utilise l'énergie de ce nombre pour aligner tes actions avec ton chemin de vie 3.`
               }
             </p>
           </motion.div>

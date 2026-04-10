@@ -144,7 +144,7 @@ const Dashboard = () => {
           className="border-glow glow-violet rounded-xl bg-card/80 backdrop-blur-sm p-5"
         >
           <div className="flex items-center justify-between mb-3">
-            <h2 className="font-serif text-lg">Votre rendez-vous du jour</h2>
+            <h2 className="font-serif text-lg">Ton rendez-vous du jour</h2>
             <span className="text-xs text-muted-foreground">8 avr. 2026</span>
           </div>
           
@@ -302,7 +302,7 @@ const Dashboard = () => {
               <span className="text-xs font-medium">Conseil cosmique</span>
             </div>
             <p className="text-[11px] text-muted-foreground leading-relaxed">
-              {(today as any).cosmicTip || "Écoutez votre intuition aujourd'hui  -  elle est votre meilleure alliée."}
+              {(today as any).cosmicTip || "Écoute ton intuition aujourd'hui  -  elle est ta meilleure alliée."}
             </p>
           </motion.div>
         </div>
@@ -358,7 +358,7 @@ const Dashboard = () => {
             className="rounded-xl bg-gradient-to-r from-accent/20 via-primary/20 to-accent/20 border border-accent/30 p-5 text-center"
           >
             <Crown className="h-6 w-6 text-accent mx-auto mb-2" />
-            <h3 className="font-serif text-lg mb-1">Débloquez votre potentiel complet</h3>
+            <h3 className="font-serif text-lg mb-1">Débloque ton potentiel complet</h3>
             <p className="text-xs text-muted-foreground mb-3">
               Transits détaillés · Conseils karmiques exclusifs · Oracle illimité · Numérologie dynamique
             </p>

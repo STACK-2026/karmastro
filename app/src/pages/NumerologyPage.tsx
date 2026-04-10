@@ -34,7 +34,7 @@ const NumerologyPage = () => {
   ];
 
   const lifePathDescriptions: Record<number, string> = {
-    3: "Le chemin de vie 3 est celui du Créatif, de l'expressif, du communicant. Vous êtes née avec un don naturel pour l'expression sous toutes ses formes : parole, écriture, art, musique. Votre énergie est joyeuse, optimiste et inspirante. Vous avez la capacité de toucher les gens par vos mots et votre présence. Votre défi principal est la dispersion  -  trop de talents peuvent mener à n'en développer aucun pleinement. Apprenez à canaliser votre créativité dans un projet concret. En amour, vous avez besoin d'un partenaire qui stimule votre intellect et respecte votre besoin d'expression. En carrière, vous excellez dans tout ce qui touche à la communication, l'art, l'enseignement et le divertissement.",
+    3: "Le chemin de vie 3 est celui du Créatif, de l'expressif, du communicant. Tu es né(e) avec un don naturel pour l'expression sous toutes ses formes : parole, écriture, art, musique. Ton énergie est joyeuse, optimiste et inspirante. Tu as la capacité de toucher les gens par tes mots et ta présence. Ton défi principal est la dispersion  -  trop de talents peuvent mener à n'en développer aucun pleinement. Apprends à canaliser ta créativité dans un projet concret. En amour, tu as besoin d'un partenaire qui stimule ton intellect et respecte ton besoin d'expression. En carrière, tu excelles dans tout ce qui touche à la communication, l'art, l'enseignement et le divertissement.",
   };
 
   return (
@@ -91,7 +91,7 @@ const NumerologyPage = () => {
         {/* Inclusion table */}
         <div className="border-glow rounded-xl bg-card/60 p-4">
           <h3 className="font-serif text-lg mb-3">Table d'inclusion</h3>
-          <p className="text-xs text-muted-foreground mb-3">Fréquence de chaque nombre dans votre nom complet</p>
+          <p className="text-xs text-muted-foreground mb-3">Fréquence de chaque nombre dans ton nom complet</p>
           <div className="grid grid-cols-9 gap-1">
             {Object.entries(inclusion).map(([num, count]) => (
               <div key={num} className="text-center">

@@ -16,34 +16,34 @@ const ProfilePage = () => {
   const { toast } = useToast();
 
   const [referralCode, setReferralCode] = useState<string | null>(null);
-  const [filleulsCount, setFilleulsCount] = useState(0);
+  const [badges, setBadges] = useState<string[]>([]);
+  const [validatedCount, setValidatedCount] = useState(0);
+  const [pendingCount, setPendingCount] = useState(0);
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     if (!user?.id) return;
-    // Fetch own referral code
-    supabase
+    // Fetch referral code + badges
+    (supabase as any)
       .from("profiles")
-      .select("referral_code")
+      .select("referral_code, badges")
       .eq("user_id", user.id)
       .maybeSingle()
       .then(({ data }: any) => {
         if (data?.referral_code) setReferralCode(data.referral_code);
+        if (Array.isArray(data?.badges)) setBadges(data.badges);
       });
 
-    // Count filleuls who used this user's code (we need to get the code first)
-  }, [user?.id]);
-
-  useEffect(() => {
-    if (!referralCode) return;
+    // Fetch referral stats via RPC
     (supabase as any)
-      .from("profiles")
-      .select("id", { count: "exact", head: true })
-      .eq("referred_by_code", referralCode)
-      .then(({ count }: { count: number | null }) => {
-        setFilleulsCount(count || 0);
+      .rpc("get_referral_stats", { p_user_id: user.id })
+      .then(({ data }: any) => {
+        if (Array.isArray(data) && data[0]) {
+          setValidatedCount(Number(data[0].validated_count) || 0);
+          setPendingCount(Number(data[0].pending_count) || 0);
+        }
       });
-  }, [referralCode]);
+  }, [user?.id]);
 
   const shareUrl = referralCode ? `https://karmastro.com/?ref=${referralCode}` : "";
   const shareText = referralCode
@@ -69,10 +69,18 @@ const ProfilePage = () => {
     handleCopy();
   };
 
-  const nextBadge = filleulsCount < 3 ? { target: 3, name: "Éclaireur Cosmique" }
-    : filleulsCount < 10 ? { target: 10, name: "Guide des Étoiles" }
-    : filleulsCount < 25 ? { target: 25, name: "Constellation Vivante" }
+  const nextBadge = validatedCount < 3 ? { target: 3, name: "Éclaireur Cosmique" }
+    : validatedCount < 10 ? { target: 10, name: "Guide des Étoiles" }
+    : validatedCount < 25 ? { target: 25, name: "Constellation Vivante" }
+    : validatedCount < 100 ? { target: 100, name: "Nébuleuse Maîtresse" }
     : null;
+
+  const BADGE_META: Record<string, { name: string; icon: string; color: string }> = {
+    eclaireur_cosmique: { name: "Éclaireur Cosmique", icon: "✦", color: "text-amber-300 border-amber-300/40" },
+    guide_des_etoiles: { name: "Guide des Étoiles", icon: "★", color: "text-purple-300 border-purple-300/40" },
+    constellation_vivante: { name: "Constellation Vivante", icon: "✧", color: "text-pink-300 border-pink-300/40" },
+    nebuleuse_maitresse: { name: "Nébuleuse Maîtresse", icon: "❋", color: "text-emerald-300 border-emerald-300/40" },
+  };
 
   return (
     <div className="min-h-screen bg-background pb-20 relative">
@@ -138,7 +146,7 @@ const ProfilePage = () => {
               <h3 className="font-serif text-lg">Étoiles Jumelles</h3>
             </div>
             <p className="text-xs text-muted-foreground mb-3 leading-relaxed">
-              Invite tes proches sur Karmastro. Vous recevez tous les deux des bonus cosmiques et tu débloques des badges en grandissant ta constellation.
+              Invite tes proches sur Karmastro. Vous recevez tous les deux (toi + ton filleul) des bonus cosmiques et tu débloques des badges en grandissant ta constellation.
             </p>
 
             <div className="flex items-center gap-2 mb-3 p-3 rounded-lg bg-[#0f0a1e]/60 border border-white/10">
@@ -165,17 +173,43 @@ const ProfilePage = () => {
             <div className="flex items-center justify-between text-xs pt-3 border-t border-white/10">
               <div className="flex items-center gap-1.5 text-muted-foreground">
                 <Users className="h-3 w-3" />
-                <span>{filleulsCount} filleul{filleulsCount > 1 ? "s" : ""}</span>
+                <span>
+                  {validatedCount} filleul{validatedCount > 1 ? "s" : ""} validé{validatedCount > 1 ? "s" : ""}
+                  {pendingCount > 0 && (
+                    <span className="text-muted-foreground/60"> · {pendingCount} en attente (7j)</span>
+                  )}
+                </span>
               </div>
               {nextBadge && (
                 <span className="text-amber-300/80">
-                  {nextBadge.target - filleulsCount} de plus → {nextBadge.name}
+                  {nextBadge.target - validatedCount} de plus → {nextBadge.name}
                 </span>
               )}
               {!nextBadge && (
-                <span className="text-amber-300/80">Constellation Vivante ✦</span>
+                <span className="text-amber-300">Tous les badges débloqués ✦</span>
               )}
             </div>
+
+            {badges.length > 0 && (
+              <div className="mt-3 pt-3 border-t border-white/10">
+                <p className="text-xs uppercase tracking-wider text-muted-foreground/60 mb-2">Badges débloqués</p>
+                <div className="flex flex-wrap gap-2">
+                  {badges.map((badge) => {
+                    const meta = BADGE_META[badge];
+                    if (!meta) return null;
+                    return (
+                      <span
+                        key={badge}
+                        className={`inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full border bg-background/40 ${meta.color}`}
+                      >
+                        <span>{meta.icon}</span>
+                        <span>{meta.name}</span>
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </div>
         )}
 

@@ -174,8 +174,8 @@ const OnboardingPage = () => {
             <motion.div key="step0" variants={slideVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.3 }} className="space-y-6">
               <div className="text-center mb-8">
                 <Calendar className="h-10 w-10 text-primary mx-auto mb-3" />
-                <h1 className="font-serif text-2xl font-bold">Vos coordonnées cosmiques</h1>
-                <p className="text-sm text-muted-foreground mt-1">Le ciel au moment de votre naissance</p>
+                <h1 className="font-serif text-2xl font-bold">Tes coordonnées cosmiques</h1>
+                <p className="text-sm text-muted-foreground mt-1">Le ciel au moment de ta naissance</p>
               </div>
 
               <div className="space-y-4">
@@ -216,7 +216,7 @@ const OnboardingPage = () => {
             <motion.div key="step1" variants={slideVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.3 }} className="space-y-6">
               <div className="text-center mb-8">
                 <User className="h-10 w-10 text-primary mx-auto mb-3" />
-                <h1 className="font-serif text-2xl font-bold">Votre identité vibratoire</h1>
+                <h1 className="font-serif text-2xl font-bold">Ton identité vibratoire</h1>
                 <p className="text-sm text-muted-foreground mt-1">Chaque lettre porte une fréquence numérologique</p>
               </div>
 
@@ -246,7 +246,7 @@ const OnboardingPage = () => {
             <motion.div key="step2" variants={slideVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.3 }} className="space-y-6">
               <div className="text-center mb-6">
                 <Sparkles className="h-10 w-10 text-primary mx-auto mb-3" />
-                <h1 className="font-serif text-2xl font-bold">Personnalisez votre cosmos</h1>
+                <h1 className="font-serif text-2xl font-bold">Personnalise ton cosmos</h1>
                 <p className="text-sm text-muted-foreground mt-1">Pour une expérience sur mesure</p>
               </div>
 
@@ -325,8 +325,8 @@ const OnboardingPage = () => {
                 >
                   <Sparkles className="h-12 w-12 text-primary mx-auto mb-3" />
                 </motion.div>
-                <h1 className="font-serif text-2xl font-bold">Votre profil cosmique</h1>
-                <p className="text-sm text-muted-foreground mt-1">{firstName}, voici votre empreinte céleste</p>
+                <h1 className="font-serif text-2xl font-bold">Ton profil cosmique</h1>
+                <p className="text-sm text-muted-foreground mt-1">{firstName}, voici ton empreinte céleste</p>
               </div>
 
               <div className="space-y-3">

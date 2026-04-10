@@ -79,7 +79,7 @@ const AuthPage = () => {
           title: "Compte créé ✨",
           description: referrerName
             ? `Bienvenue ! Tu as été invité(e) par ${referrerName}.`
-            : "Vérifiez votre email pour confirmer votre inscription.",
+            : "Vérifie ton email pour confirmer ton inscription.",
         });
       }
     } catch (error: any) {
@@ -95,7 +95,7 @@ const AuthPage = () => {
 
   const handleForgotPassword = async () => {
     if (!email) {
-      toast({ title: "Entrez votre email", variant: "destructive" });
+      toast({ title: "Entre ton email", variant: "destructive" });
       return;
     }
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
@@ -104,7 +104,7 @@ const AuthPage = () => {
     if (error) {
       toast({ title: "Erreur", description: error.message, variant: "destructive" });
     } else {
-      toast({ title: "Email envoyé", description: "Vérifiez votre boîte de réception." });
+      toast({ title: "Email envoyé", description: "Vérifie ta boîte de réception." });
     }
   };
 
