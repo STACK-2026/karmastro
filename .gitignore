@@ -12,3 +12,4 @@ horoscope-auto/.env
 __pycache__/
 *.log
 .wrangler/
+supabase/.temp/

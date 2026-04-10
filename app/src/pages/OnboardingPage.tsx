@@ -63,6 +63,8 @@ const OnboardingPage = () => {
 
   // Step 4: Reveal
   const [revealPhase, setRevealPhase] = useState(0);
+  const [scanStep, setScanStep] = useState(0);
+  const [scanning, setScanning] = useState(false);
 
   const toggleInterest = (id: string) => {
     setInterests(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
@@ -165,15 +167,31 @@ const OnboardingPage = () => {
   const goNext = () => {
     if (step === 2) {
       setStep(3);
-      // Trigger reveal animation phases
-      setTimeout(() => setRevealPhase(1), 600);
-      setTimeout(() => setRevealPhase(2), 1800);
-      setTimeout(() => setRevealPhase(3), 3000);
-      setTimeout(() => setRevealPhase(4), 4200);
+      setScanning(true);
+      setScanStep(0);
+      // Scan phase : 4 etapes x 900ms = 3600ms
+      setTimeout(() => setScanStep(1), 900);
+      setTimeout(() => setScanStep(2), 1800);
+      setTimeout(() => setScanStep(3), 2700);
+      setTimeout(() => {
+        setScanning(false);
+        // Reveal cards sequentially
+        setRevealPhase(1);
+        setTimeout(() => setRevealPhase(2), 700);
+        setTimeout(() => setRevealPhase(3), 1400);
+        setTimeout(() => setRevealPhase(4), 2100);
+      }, 3600);
     } else {
       setStep(step + 1);
     }
   };
+
+  const SCAN_MESSAGES = [
+    { text: "Alignement avec les éphémérides", sub: "Positions planétaires Swiss Ephemeris" },
+    { text: "Calcul de ton thème natal", sub: "12 planètes, 12 maisons, aspects majeurs" },
+    { text: "Connexion aux nœuds lunaires", sub: "Trajectoire karmique et mission d'âme" },
+    { text: "Réduction pythagoricienne", sub: "Chemin de vie, expression, âme" },
+  ];
 
   const profile = step === 3 ? computeProfile() : null;
 
@@ -374,8 +392,93 @@ const OnboardingPage = () => {
             </motion.div>
           )}
 
-          {/* ===== STEP 3: Reveal ===== */}
-          {step === 3 && profile && (
+          {/* ===== STEP 3: Scan + Reveal ===== */}
+          {step === 3 && scanning && (
+            <motion.div
+              key="step3-scan"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="flex flex-col items-center justify-center min-h-[60vh] text-center"
+            >
+              {/* Rotating rings around a central star */}
+              <div className="relative w-40 h-40 mb-8">
+                <motion.div
+                  className="absolute inset-0 rounded-full border-2 border-primary/30"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                  style={{ borderTopColor: "hsl(271 91% 65%)" }}
+                />
+                <motion.div
+                  className="absolute inset-4 rounded-full border-2 border-accent/30"
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                  style={{ borderRightColor: "hsl(43 76% 55%)" }}
+                />
+                <motion.div
+                  className="absolute inset-8 rounded-full border border-primary/20"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                  style={{ borderBottomColor: "hsl(271 91% 75%)" }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <motion.div
+                    animate={{ scale: [1, 1.15, 1], opacity: [0.7, 1, 0.7] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <Sparkles className="h-10 w-10 text-primary" />
+                  </motion.div>
+                </div>
+                {/* Pulsing glow */}
+                <motion.div
+                  className="absolute inset-0 rounded-full bg-primary/10 blur-2xl"
+                  animate={{ scale: [1, 1.3, 1], opacity: [0.4, 0.7, 0.4] }}
+                  transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                />
+              </div>
+
+              {/* Progress bar linking to scan steps */}
+              <div className="w-56 h-0.5 bg-secondary rounded-full mb-6 overflow-hidden">
+                <motion.div
+                  className="h-full bg-gradient-to-r from-primary via-accent to-primary"
+                  initial={{ width: "0%" }}
+                  animate={{ width: `${((scanStep + 1) / 4) * 100}%` }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                />
+              </div>
+
+              {/* Rotating status messages */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={scanStep}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.4 }}
+                  className="text-center"
+                >
+                  <p className="font-serif text-lg text-primary mb-1">
+                    {SCAN_MESSAGES[scanStep].text}
+                    <motion.span
+                      animate={{ opacity: [0, 1, 0] }}
+                      transition={{ duration: 1.2, repeat: Infinity }}
+                      className="inline-block ml-1"
+                    >
+                      ...
+                    </motion.span>
+                  </p>
+                  <p className="text-xs text-muted-foreground">{SCAN_MESSAGES[scanStep].sub}</p>
+                </motion.div>
+              </AnimatePresence>
+
+              <p className="mt-8 text-[10px] text-muted-foreground/60 uppercase tracking-widest">
+                Précision 0.001" · Niveau NASA JPL
+              </p>
+            </motion.div>
+          )}
+
+          {step === 3 && !scanning && profile && (
             <motion.div key="step3" variants={slideVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.3 }} className="space-y-6">
               <div className="text-center mb-4">
                 <motion.div

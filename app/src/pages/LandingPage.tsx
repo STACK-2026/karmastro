@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { getZodiacSign, lifePathNumber, getNumberKeyword } from "@/lib/numerology";
 import ZodiacWheel from "@/components/ZodiacWheel";
 import { ZodiacSymbol } from "@/components/ZodiacSymbol";
+import { FlipCard } from "@/components/FlipCard";
 import StarField from "@/components/StarField";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -16,17 +17,39 @@ import Lenis from "lenis";
 gsap.registerPlugin(ScrollTrigger);
 
 // Typing effect for Oracle preview
-const ORACLE_TEXT = "Ton année personnelle 5 et Jupiter en transit dans ta maison 10 créent un alignement favorable. Calcul : chemin de vie 22 (maître bâtisseur) + année 2026 = 5 (changement). La phase de dernier quartier lunaire invite au bilan avant l'action...";
+const ORACLE_CONVERSATIONS = [
+  {
+    question: "Est-ce le bon moment pour lancer mon projet ?",
+    answer: "Ton année personnelle 5 et Jupiter en transit dans ta maison 10 créent un alignement favorable. Calcul : chemin de vie 22 (maître bâtisseur) + année 2026 = 5 (changement). La phase de dernier quartier lunaire invite au bilan avant l'action...",
+  },
+  {
+    question: "Pourquoi je me sens bloquée en ce moment ?",
+    answer: "Saturne transite ta maison 12 depuis 3 mois - un cycle de retrait et d'intériorisation. Tu n'es pas bloquée, tu digères. Ton nœud Nord en Cancer réclame que tu honores tes émotions plutôt que de forcer l'action extérieure. Écoute, puis agis.",
+  },
+  {
+    question: "Cette personne est-elle vraiment faite pour moi ?",
+    answer: "Synastrie : ton Vénus en Taureau trigone son Lune en Vierge crée une base affective solide. Mais tes nœuds lunaires opposent les siens - karma partagé qui demande conscience. Chemin de vie 6 (toi) et 9 (elle) : complémentaires, mais elle vit plus dans l'universel.",
+  },
+  {
+    question: "Quelle est ma mission profonde ?",
+    answer: "Ton chemin de vie 7 (le chercheur) croisé avec ton Soleil en maison 9 et ton nœud Nord en Sagittaire pointe vers une mission d'enseignement spirituel. Pas nécessairement en public : transmettre ce que tu comprends à ceux qui en ont besoin, quand ils en ont besoin.",
+  },
+];
 
-const OracleTypingPreview = () => {
+// Full Oracle preview : rotates through conversations (question + answer), typed answer
+const OracleLiveChat = () => {
+  const [convIndex, setConvIndex] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [done, setDone] = useState(false);
 
   useEffect(() => {
+    setDisplayed("");
+    setDone(false);
+    const text = ORACLE_CONVERSATIONS[convIndex].answer;
     let i = 0;
     const interval = setInterval(() => {
-      if (i < ORACLE_TEXT.length) {
-        setDisplayed(ORACLE_TEXT.slice(0, i + 1));
+      if (i < text.length) {
+        setDisplayed(text.slice(0, i + 1));
         i++;
       } else {
         setDone(true);
@@ -34,14 +57,34 @@ const OracleTypingPreview = () => {
       }
     }, 25);
     return () => clearInterval(interval);
-  }, []);
+  }, [convIndex]);
+
+  useEffect(() => {
+    if (!done) return;
+    const t = setTimeout(() => {
+      setConvIndex((prev) => (prev + 1) % ORACLE_CONVERSATIONS.length);
+    }, 5500);
+    return () => clearTimeout(t);
+  }, [done, convIndex]);
+
+  const current = ORACLE_CONVERSATIONS[convIndex];
 
   return (
-    <span>
-      {displayed}
-      {!done && <span className="animate-pulse text-primary">|</span>}
-      {done && <span className="text-primary cursor-pointer"> Lire la suite →</span>}
-    </span>
+    <>
+      <div key={`q-${convIndex}`} className="bg-secondary/50 rounded-lg p-3 text-sm max-w-[80%] animate-fade-in">
+        {current.question}
+      </div>
+      <div className="bg-primary/10 border border-primary/20 rounded-lg p-3 text-sm ml-auto max-w-[85%]">
+        <p className="text-primary text-xs mb-1 font-medium flex items-center gap-1">
+          <Sparkles className="h-3 w-3" /> L'Oracle
+        </p>
+        <span>
+          {displayed}
+          {!done && <span className="animate-pulse text-primary">|</span>}
+          {done && <span className="text-primary/70 italic text-xs"> · lecture suivante...</span>}
+        </span>
+      </div>
+    </>
   );
 };
 
@@ -274,14 +317,54 @@ const LandingPage = () => {
   };
 
   const features = [
-    { icon: Hash, label: "Chemin de vie", desc: "Ton nombre directeur" },
-    { icon: Star, label: "Thème astral", desc: "Planètes & maisons" },
-    { icon: Calendar, label: "Jour personnel", desc: "Guidance quotidienne" },
-    { icon: Moon, label: "Transits", desc: "Planètes en mouvement" },
-    { icon: Heart, label: "Compatibilité", desc: "Synastrie & numérologie" },
-    { icon: Sparkles, label: "Karma", desc: "Dettes & leçons" },
-    { icon: MessageCircle, label: "L'Oracle", desc: "Réponses 24/7" },
-    { icon: BookOpen, label: "Apprendre", desc: "Guides complets" },
+    {
+      icon: Hash,
+      label: "Chemin de vie",
+      desc: "Ton nombre directeur",
+      back: "Calculé à partir de ta date de naissance complète, le chemin de vie révèle ta mission principale et les talents que tu portes naturellement. C'est le nombre le plus important de ta carte numérologique.",
+    },
+    {
+      icon: Star,
+      label: "Thème astral",
+      desc: "Planètes & maisons",
+      back: "12 planètes (du Soleil à Pluton + nœuds lunaires), 12 maisons astrologiques et 40+ aspects calculés avec Swiss Ephemeris, précision 0.001 seconde d'arc. Niveau NASA JPL.",
+    },
+    {
+      icon: Calendar,
+      label: "Jour personnel",
+      desc: "Guidance quotidienne",
+      back: "Ta vibration du jour, calculée avec ton année personnelle et la date courante. Idéal pour choisir ton rythme : activer le 1, écouter le 2, créer le 3, construire le 4...",
+    },
+    {
+      icon: Moon,
+      label: "Transits",
+      desc: "Planètes en mouvement",
+      back: "Les planètes qui activent ton thème natal aujourd'hui. Mercure rétrograde, Jupiter en trigone à ton Soleil, carré de Mars à ta Lune : la météo cosmique personnalisée.",
+    },
+    {
+      icon: Heart,
+      label: "Compatibilité",
+      desc: "Synastrie & numérologie",
+      back: "Croisement de 10 planètes entre 2 thèmes natals + compatibilité numérologique (chemin de vie, expression, âme). Précision à 85%, versus 20% pour les signes seuls.",
+    },
+    {
+      icon: Sparkles,
+      label: "Karma",
+      desc: "Dettes & leçons",
+      back: "Nœuds lunaires, dettes karmiques pythagoriciennes (13, 14, 16, 19), cycles de Saturne et points karmiques. Ta trajectoire d'âme, décodée.",
+    },
+    {
+      icon: MessageCircle,
+      label: "L'Oracle",
+      desc: "Réponses 24/7",
+      back: "4 guides cosmiques (Sibylle, Orion, Séléné, Pythia) qui croisent ton thème natal, ta numérologie et les transits du jour. Guidance personnalisée en moins de 10 secondes.",
+    },
+    {
+      icon: BookOpen,
+      label: "Apprendre",
+      desc: "Guides complets",
+      back: "Blog « Le Cosmos » avec 100+ articles sur l'astrologie, la numérologie et le karma. Rédigés par notre équipe d'astrologues et mis à jour régulièrement.",
+    },
   ];
 
   const testimonials = [
@@ -430,60 +513,27 @@ const LandingPage = () => {
               why: "Pourquoi le karma ?",
               back: "Les noeuds lunaires (Nord et Sud) indiquent ta direction de vie et tes acquis passés. Les dettes karmiques (13, 14, 16, 19) apparaissent dans tes calculs numérologies et pointent vers des leçons spécifiques. Le cycle de Saturne (~29,5 ans) marque les grandes transitions. En croisant ces données, on obtient une carte de ton évolution personnelle.",
             },
-          ].map((pillar, i) => {
-            const [flipped, setFlipped] = useState(false);
-            return (
-              <div
-                key={pillar.title}
-                ref={(el) => { pillarCardsRef.current[i] = el; }}
-                className="cursor-pointer"
-                style={{ perspective: "1000px" }}
-                onClick={() => setFlipped(!flipped)}
-              >
-                {/* Grid-stack flip card : front and back occupy the same grid cell,
-                    so the container sizes itself to the taller of the two faces.
-                    This prevents the longer back content from overflowing. */}
-                <div
-                  className="relative grid transition-transform duration-500"
-                  style={{
-                    transformStyle: "preserve-3d",
-                    transform: flipped ? "rotateY(180deg)" : "rotateY(0)",
-                    gridTemplateAreas: '"stack"',
-                  }}
-                >
-                  {/* Front */}
-                  <div
-                    className="rounded-xl bg-card/60 backdrop-blur-sm p-6 text-center flex flex-col items-center justify-center"
-                    style={{
-                      gridArea: "stack",
-                      backfaceVisibility: "hidden",
-                      WebkitBackfaceVisibility: "hidden",
-                      border: `1px solid ${pillar.borderColor}`,
-                    }}
-                  >
-                    <pillar.icon className={`h-10 w-10 mb-4 ${pillar.color}`} />
-                    <h3 className="font-serif text-xl mb-2">{pillar.title}</h3>
-                    <p className="text-sm text-muted-foreground">{pillar.desc}</p>
-                    <p className="text-[10px] text-muted-foreground/50 mt-3">Clique pour retourner</p>
-                  </div>
-                  {/* Back */}
-                  <div
-                    className="rounded-xl bg-card/80 backdrop-blur-sm p-6 flex flex-col justify-center"
-                    style={{
-                      gridArea: "stack",
-                      backfaceVisibility: "hidden",
-                      WebkitBackfaceVisibility: "hidden",
-                      transform: "rotateY(180deg)",
-                      border: `1px solid ${pillar.borderColor}`,
-                    }}
-                  >
-                    <h4 className={`font-serif text-lg mb-3 ${pillar.color}`}>{pillar.why}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{pillar.back}</p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          ].map((pillar, i) => (
+            <FlipCard
+              key={pillar.title}
+              cardRef={(el) => { pillarCardsRef.current[i] = el; }}
+              borderColor={pillar.borderColor}
+              front={
+                <>
+                  <pillar.icon className={`h-10 w-10 mb-4 ${pillar.color}`} />
+                  <h3 className="font-serif text-xl mb-2">{pillar.title}</h3>
+                  <p className="text-sm text-muted-foreground">{pillar.desc}</p>
+                  <p className="text-[10px] text-muted-foreground/50 mt-3">Clique pour retourner</p>
+                </>
+              }
+              back={
+                <>
+                  <h4 className={`font-serif text-lg mb-3 ${pillar.color}`}>{pillar.why}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{pillar.back}</p>
+                </>
+              }
+            />
+          ))}
         </div>
       </section>
 
@@ -516,15 +566,9 @@ const LandingPage = () => {
           ))}
         </div>
 
-        {/* Chat preview with typing effect */}
+        {/* Chat preview - live rotating conversations */}
         <div ref={oracleChatRef} className="max-w-md mx-auto border-glow rounded-xl bg-card/60 backdrop-blur-sm p-6 space-y-4">
-          <div className="bg-secondary/50 rounded-lg p-3 text-sm max-w-[80%]">
-            Est-ce le bon moment pour lancer mon projet ?
-          </div>
-          <div className="bg-primary/10 border border-primary/20 rounded-lg p-3 text-sm ml-auto max-w-[85%]">
-            <p className="text-primary text-xs mb-1 font-medium flex items-center gap-1"><Sparkles className="h-3 w-3" /> L'Oracle</p>
-            <OracleTypingPreview />
-          </div>
+          <OracleLiveChat />
           <div className="flex gap-2 flex-wrap">
             {["Ma compatibilité", "Mercure rétrograde", "Mon chemin de vie", "Mon karma"].map(q => (
               <span key={q} className="text-xs border border-primary/30 text-primary rounded-full px-3 py-1 cursor-pointer hover:bg-primary/10 transition-colors">
@@ -546,20 +590,34 @@ const LandingPage = () => {
 
       {/* Features grid */}
       <section ref={featuresRef} className="relative z-10 px-6 py-16">
-        <h2 className="font-serif text-3xl md:text-4xl text-center mb-12">
+        <h2 className="font-serif text-3xl md:text-4xl text-center mb-4">
           Ce que Karmastro <span className="text-gradient-violet">calcule pour toi</span>
         </h2>
+        <p className="text-center text-muted-foreground mb-12 text-sm">Clique sur une carte pour en savoir plus</p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
           {features.map((f, i) => (
-            <div
+            <FlipCard
               key={f.label}
-              ref={(el) => { featureCardsRef.current[i] = el; }}
-              className="border-glow rounded-lg bg-card/40 p-4 text-center hover:bg-card/60 transition-colors cursor-pointer"
-            >
-              <f.icon className="h-6 w-6 mx-auto mb-2 text-primary" />
-              <p className="text-sm font-medium">{f.label}</p>
-              <p className="text-xs text-muted-foreground">{f.desc}</p>
-            </div>
+              cardRef={(el) => { featureCardsRef.current[i] = el; }}
+              className="min-h-[140px] p-4"
+              backClassName="min-h-[140px] p-4 text-left"
+              front={
+                <>
+                  <f.icon className="h-6 w-6 mx-auto mb-2 text-primary" />
+                  <p className="text-sm font-medium">{f.label}</p>
+                  <p className="text-xs text-muted-foreground">{f.desc}</p>
+                </>
+              }
+              back={
+                <>
+                  <div className="flex items-center gap-2 mb-2">
+                    <f.icon className="h-4 w-4 text-primary flex-shrink-0" />
+                    <p className="text-xs font-medium">{f.label}</p>
+                  </div>
+                  <p className="text-[11px] text-muted-foreground leading-snug">{f.back}</p>
+                </>
+              }
+            />
           ))}
         </div>
       </section>
