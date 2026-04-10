@@ -1,0 +1,302 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { PERSONAL_YEAR_MEANINGS } from "../../data/numerology-meanings";
+
+const currentYear = new Date().getFullYear();
+
+const title = `Calculateur année personnelle ${currentYear} gratuit - Numérologie - Karmastro`;
+const description = `Calcule ton année personnelle numérologique pour ${currentYear}. Découvre le thème dominant de ton année, ce sur quoi te concentrer, ce à éviter. Méthode pythagoricienne transparente.`;
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Calculateur année personnelle Karmastro",
+    description,
+    url: "https://karmastro.com/outils/annee-personnelle",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Qu'est-ce que l'année personnelle en numérologie ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "L'année personnelle est le nombre qui décrit l'énergie dominante de ton année en cours. Contrairement au chemin de vie qui reste fixe, l'année personnelle change chaque année. Elle suit un cycle de 9 ans et t'indique sur quoi te concentrer, ce qui va se manifester naturellement et ce qu'il vaut mieux éviter.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Comment calcule-t-on l'année personnelle ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "On additionne le jour et le mois de ta naissance avec l'année en cours (et non ton année de naissance). Exemple pour quelqu'un né le 14 avril : 14 + 4 + 2026 = 2044 → 2+0+4+4 = 10 → 1. Son année personnelle 2026 est un 1, soit un nouveau départ.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Quand commence l'année personnelle ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Selon l'école, soit le 1er janvier soit à ton anniversaire. La tradition pythagoricienne classique considère que l'année personnelle commence au 1er janvier, car le cycle de 9 ans suit le calendrier universel. Certains numérologues modernes préfèrent la date d'anniversaire : les deux sont valables.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Les années personnelles forment-elles un cycle ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Oui, un cycle de 9 ans. Chaque cycle commence par une année 1 (nouveau départ) et se termine par une année 9 (lâcher prise et transmission). Les grandes décisions se prennent idéalement en année 1, 5 ou 8. Les périodes d'introspection sont les années 2, 4 et 7. Connaître ton cycle permet de synchroniser tes efforts avec l'énergie disponible.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Peut-on prévoir plusieurs années à l'avance ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Absolument, et c'est même une pratique recommandée. Tu peux calculer ton année personnelle 2026, 2027, 2028 et plus. Cela t'aide à planifier les grands projets en année 1, à consolider en année 4, à te réinventer en année 5, à récolter en année 8. L'Oracle peut croiser ces cycles avec tes transits astrologiques pour une lecture encore plus fine.",
+        },
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6">
+      <a href="/" class="hover:text-amber-300">Accueil</a>
+      <span class="mx-2">/</span>
+      <a href="/outils" class="hover:text-amber-300">Outils</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Année personnelle</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Numérologie cyclique</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Calculateur d'année personnelle</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Chaque année, tu traverses une vibration numérologique qui colore tes mois. Découvre le thème de ton année en cours et synchronise tes décisions avec l'énergie disponible.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="py-form" class="space-y-4">
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">Ta date de naissance</label>
+            <input
+              type="date"
+              id="birth-date"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors"
+            />
+          </div>
+          <div>
+            <label for="target-year" class="block text-sm font-medium text-white/80 mb-2">Année à analyser</label>
+            <input
+              type="number"
+              id="target-year"
+              value={currentYear}
+              min="1900"
+              max="2100"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors"
+            />
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity"
+        >
+          Calculer mon année personnelle
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Ton année personnelle <span id="result-year" class="text-white"></span></p>
+          <div class="flex items-baseline gap-4 mb-4">
+            <span id="result-number" class="text-7xl font-serif text-amber-300"></span>
+            <span id="result-title" class="text-xl font-serif text-white/90"></span>
+          </div>
+          <p class="text-xs text-white/50 mb-1">Thème : <span id="result-theme" class="text-amber-300/80"></span></p>
+          <p class="text-xs text-white/50 mb-4">Calcul : <span id="result-calc" class="text-white/70"></span></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Sur quoi te concentrer</p>
+              <ul id="result-focus" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">Ce qu'il vaut mieux éviter</p>
+              <ul id="result-avoid" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">Mois les plus favorables</p>
+            <p id="result-months" class="text-sm text-white/80"></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-center">
+            <a
+              href="https://app.karmastro.com/oracle"
+              class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity"
+            >
+              Analyse personnalisée avec l'Oracle
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Qu'est-ce que l'année personnelle ?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        L'<strong>année personnelle</strong> est le nombre qui décrit l'énergie dominante de ton année en cours. Contrairement au <a href="/outils/chemin-de-vie" class="text-amber-300 hover:underline">chemin de vie</a> qui reste fixe, l'année personnelle <em>change chaque année</em>. Elle suit un cycle de neuf ans, comme les saisons suivent le cycle solaire.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Les pythagoriciens avaient compris quelque chose d'essentiel : les efforts humains ne sont pas tous équivalents. Certains moments se prêtent à l'action, d'autres à la patience. Certaines années appellent le lancement, d'autres le retrait. L'année personnelle te donne la météo vibratoire de tes douze mois à venir, pour que tu puisses aligner tes décisions avec l'énergie disponible plutôt que ramer à contre-courant.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Comment se calcule-t-elle ?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        La formule est simple. On additionne <strong>ton jour de naissance</strong>, <strong>ton mois de naissance</strong> et <strong>l'année en cours</strong> (pas ton année de naissance). On réduit ensuite la somme jusqu'à obtenir un chiffre entre 1 et 9.
+      </p>
+      <div class="p-5 rounded-xl bg-white/[0.03] border border-white/10 mb-6">
+        <p class="text-sm text-white/90 mb-3"><strong>Exemple : né(e) le 14 avril, année 2026</strong></p>
+        <ul class="text-sm text-white/70 space-y-1">
+          <li>Jour : 14 → 1 + 4 = 5</li>
+          <li>Mois : 4 = 4</li>
+          <li>Année en cours : 2026 → 2 + 0 + 2 + 6 = 10 → 1</li>
+          <li>Total : 5 + 4 + 1 = <strong class="text-amber-300">10 → 1 + 0 = 1</strong></li>
+        </ul>
+        <p class="text-sm text-white/60 mt-3">Année personnelle 2026 = 1 (grand départ)</p>
+      </div>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Notre calculateur ci-dessus fait tout automatiquement. Tu peux aussi projeter plusieurs années à l'avance pour planifier tes grands mouvements : lancer un projet en année 1, consolider en année 4, te réinventer en année 5, récolter en année 8.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Les 9 années personnelles en un coup d'œil</h2>
+      <div class="not-prose grid md:grid-cols-3 gap-3 mb-8">
+        {Object.values(PERSONAL_YEAR_MEANINGS).map((m) => (
+          <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+            <div class="flex items-baseline gap-3 mb-1">
+              <span class="text-3xl font-serif text-amber-300">{m.number}</span>
+            </div>
+            <p class="text-sm text-white/80 font-medium mb-1">{m.title.replace(`Année ${m.number} : `, "")}</p>
+            <p class="text-xs text-white/60 leading-relaxed">{m.theme}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Le cycle de 9 ans, mode d'emploi</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        En numérologie pythagoricienne, le temps humain suit une logique de neuf. C'est un héritage direct des pythagoriciens, pour qui le 9 représentait la complétion avant renaissance. Chaque cycle de neuf ans est comme une vie miniature :
+      </p>
+      <ul class="text-white/80 space-y-2 mb-4 list-decimal pl-5">
+        <li><strong>Années 1 à 3</strong> : phase de lancement et de création. L'année 1 plante les graines, l'année 2 les fait germer en douceur, l'année 3 les fait éclore en couleurs.</li>
+        <li><strong>Années 4 à 6</strong> : phase de consolidation. L'année 4 structure, l'année 5 secoue et transforme, l'année 6 enracine dans les relations.</li>
+        <li><strong>Années 7 à 9</strong> : phase de maturation et de complétion. L'année 7 introspecte, l'année 8 récolte matériellement, l'année 9 boucle et lâche prise pour préparer un nouveau 1.</li>
+      </ul>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Ce cycle n'est pas une contrainte rigide, c'est une <em>méteo vibratoire</em>. Tu peux lancer un projet en année 7, c'est juste moins porteur. Tu peux te retirer en année 3, mais tu iras contre le courant solaire ambiant. Savoir où tu en es dans ton cycle te permet de doser tes efforts.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Année personnelle et astrologie</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Les numérologues modernes aiment croiser l'année personnelle avec les <strong>transits astrologiques</strong> lents (Jupiter, Saturne, Uranus). L'année personnelle donne la vibration dominante, les transits donnent les événements spécifiques. Une année 1 numérologique pendant un retour de Jupiter amplifie massivement le potentiel de nouveaux départs. Une année 8 pendant Saturne au Milieu du Ciel peut couronner une carrière.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Ce croisement est exactement ce que fait <a href="https://app.karmastro.com/oracle" class="text-amber-300 hover:underline">l'Oracle de Karmastro</a> : il calcule en temps réel ton année personnelle, tes transits actuels, ta phase lunaire, et il te donne une lecture intégrée. Tu peux aussi consulter notre <a href="/outils/chemin-de-vie" class="text-amber-300 hover:underline">calculateur de chemin de vie</a> pour comprendre ta mission globale au-delà de l'année en cours.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Questions fréquentes</h2>
+
+      <h3 class="font-serif text-xl mb-2">Mon année personnelle commence-t-elle le 1er janvier ou à mon anniversaire ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Deux écoles s'affrontent depuis longtemps. La tradition classique pythagoricienne considère que le cycle suit le calendrier universel : ton année personnelle change au 1er janvier. Les numérologues modernes préfèrent parfois la date d'anniversaire, car c'est là que ton "année solaire personnelle" redémarre. Karmastro utilise le calendrier universel par défaut, plus simple à appliquer.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Que faire pendant une année 9 ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        L'année 9 est une année de fin de cycle. Ce n'est pas le moment idéal pour lancer de grands projets : ils vont traîner ou avorter. C'est par contre le moment parfait pour <strong>finir ce qui traîne</strong>, régler les litiges, pardonner, transmettre, dire au revoir. Une année 9 bien vécue prépare un nouveau cycle de 9 ans plus léger et plus clair dès l'année 1 suivante.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Est-ce que deux personnes d'un couple partagent la même année personnelle ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Très rarement. Chacun a son propre cycle basé sur sa date de naissance. C'est intéressant de comparer : quand l'un est en année 1 et l'autre en année 7, l'un veut lancer, l'autre veut se retirer. Cette tension cyclique peut expliquer des frictions qu'on attribue à tort au couple lui-même. L'Oracle peut t'aider à naviguer ces désynchronisations.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Les années 11, 22, 33 existent-elles en année personnelle ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Techniquement oui, mais c'est plus rare et plus exigeant. Une année 11 amplifie les intuitions et l'inspiration mais épuise nerveusement. Une année 22 peut marquer une réalisation historique dans ta vie. Une année 33 est extrêmement rare et porte une mission de service. Notre calculateur affiche automatiquement les années en maître nombre quand elles se produisent.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Quel est le meilleur moment pour un grand changement de vie ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Trois fenêtres idéales dans un cycle de 9 ans : l'année 1 (nouveau départ naturel), l'année 5 (changement et transformation), et l'année 9 (fin de cycle, détachement). L'année 5 est particulièrement puissante pour les changements radicaux : déménagements, ruptures, reconversions. L'année 1 est meilleure pour les créations nouvelles.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Ton année, mois par mois</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        L'année personnelle donne la couleur globale, mais chaque mois a sa propre vibration. Pour un calendrier cosmique personnalisé (année, mois, jour + transits astrologiques), ouvre un profil dans l'app.
+      </p>
+      <a
+        href="https://app.karmastro.com"
+        class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity"
+      >
+        Mon calendrier cosmique
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/outils" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Tous les outils</a>
+      <a href="/outils/chemin-de-vie" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Chemin de vie</a>
+      <a href="/outils/nombre-expression" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Nombre d'expression</a>
+      <a href="/outils/dette-karmique" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Dette karmique</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  import { calculatePersonalYear, getPersonalYearMeaning } from "../../data/numerology-meanings";
+
+  const form = document.getElementById("py-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const dateVal = (document.getElementById("birth-date") as HTMLInputElement).value;
+    const yearVal = parseInt((document.getElementById("target-year") as HTMLInputElement).value, 10);
+    if (!dateVal || !yearVal) return;
+
+    const [, m, d] = dateVal.split("-").map(Number);
+    const result = calculatePersonalYear(d, m, yearVal);
+    const meaning = getPersonalYearMeaning(result.number);
+
+    (document.getElementById("result-year") as HTMLElement).textContent = String(yearVal);
+    (document.getElementById("result-number") as HTMLElement).textContent = String(result.number);
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title.replace(`Année ${result.number} : `, "");
+    (document.getElementById("result-theme") as HTMLElement).textContent = meaning.theme;
+    (document.getElementById("result-calc") as HTMLElement).textContent = result.calculation;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+
+    (document.getElementById("result-focus") as HTMLElement).innerHTML = meaning.focus
+      .map((f) => `<li>✦ ${f}</li>`)
+      .join("");
+    (document.getElementById("result-avoid") as HTMLElement).innerHTML = meaning.avoid
+      .map((a) => `<li>◆ ${a}</li>`)
+      .join("");
+    (document.getElementById("result-months") as HTMLElement).textContent = meaning.bestMonths;
+
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>

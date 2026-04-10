@@ -1,0 +1,300 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { KARMIC_DEBTS } from "../../data/numerology-meanings";
+
+const title = "Calculateur de dette karmique gratuit - Numérologie karmique - Karmastro";
+const description =
+  "Découvre si tu portes une dette karmique (13/4, 14/5, 16/7, 19/1) selon la numérologie pythagoricienne. Signification, origine, leçons de vie et voie de guérison. Calcul gratuit depuis ta date de naissance.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Calculateur dette karmique Karmastro",
+    description,
+    url: "https://karmastro.com/outils/dette-karmique",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Qu'est-ce qu'une dette karmique en numérologie ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Une dette karmique est une mémoire d'erreur ou d'abus commis dans une vie antérieure, que l'âme porte encore dans cette existence pour y trouver rédemption. En numérologie pythagoricienne, les dettes karmiques sont au nombre de quatre : 13/4, 14/5, 16/7 et 19/1. Chacune correspond à une leçon spécifique à intégrer.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Comment savoir si j'ai une dette karmique ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Les dettes karmiques sont détectées dans le calcul de ton chemin de vie, de ton nombre d'expression ou de ton jour de naissance. Si l'une des étapes du calcul passe par 13, 14, 16 ou 19 avant d'atteindre son chiffre final, tu portes la dette correspondante. Notre calculateur analyse ta date de naissance pour les détecter automatiquement.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Une dette karmique est-elle une mauvaise chose ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Non, ce n'est pas une punition. C'est une opportunité de croissance accélérée. Les âmes qui portent des dettes karmiques ont choisi cette existence pour résoudre ce qu'elles n'avaient pas résolu avant. La dette est lourde mais fertile : elle oblige à grandir dans une direction précise et à développer des qualités qui transforment profondément.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Peut-on se libérer d'une dette karmique ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Oui, c'est précisément le but de cette vie. La dette karmique s'efface quand tu as intégré la leçon qu'elle porte. Un 14/5 se libère en apprenant la véritable liberté intérieure (pas celle qui vient de l'excès). Un 16/7 se libère par l'humilité spirituelle. Tant que la leçon n'est pas apprise, la dette revient sous de nouvelles formes.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Les dettes karmiques existent-elles en astrologie ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "L'équivalent astrologique des dettes karmiques se trouve dans les nœuds lunaires (particulièrement le Nœud Sud, qui représente les acquis et les excès des vies passées) et dans certaines configurations planétaires comme Saturne au Soleil ou Pluton à l'ascendant. Karmastro croise les deux systèmes dans l'Oracle pour une lecture karmique complète.",
+        },
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6">
+      <a href="/" class="hover:text-amber-300">Accueil</a>
+      <span class="mx-2">/</span>
+      <a href="/outils" class="hover:text-amber-300">Outils</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Dette karmique</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Numérologie karmique</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Calculateur de dette karmique</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Les dettes karmiques sont les mémoires d'une âme qui a quelque chose à résoudre. Découvre si tu portes l'une des quatre dettes reconnues par la tradition pythagoricienne et la leçon qu'elle t'invite à intégrer.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="kd-form" class="space-y-4">
+        <div>
+          <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">Ta date de naissance</label>
+          <input
+            type="date"
+            id="birth-date"
+            required
+            class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors"
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity"
+        >
+          Analyser mes dettes karmiques
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div id="result-none" class="hidden p-6 rounded-2xl bg-[#0f0a1e]/60 border border-emerald-300/30 text-center">
+          <p class="text-4xl mb-3">✦</p>
+          <h3 class="font-serif text-2xl mb-2 text-emerald-300">Aucune dette karmique détectée</h3>
+          <p class="text-white/80 leading-relaxed mb-4">
+            Ta date de naissance ne contient aucune des quatre dettes karmiques pythagoriciennes (13/4, 14/5, 16/7, 19/1). Cela ne signifie pas que ton âme n'a pas de leçons à apprendre, mais qu'elles ne sont pas portées par les archétypes de dette les plus lourds.
+          </p>
+          <p class="text-sm text-white/60 mb-4">
+            Pour une analyse karmique complète qui inclut les nœuds lunaires astrologiques et d'autres patterns subtils, consulte l'Oracle.
+          </p>
+          <a
+            href="https://app.karmastro.com/oracle"
+            class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity"
+          >
+            Consulter l'Oracle karmique
+          </a>
+        </div>
+
+        <div id="result-list" class="space-y-4"></div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Qu'est-ce qu'une dette karmique ?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Le concept de <strong>dette karmique</strong> est l'un des plus profonds de la numérologie pythagoricienne. Il repose sur une idée ancienne : l'âme ne disparaît pas à la mort, elle continue son voyage d'incarnation en incarnation. Et elle porte avec elle les traces de ses choix, particulièrement ceux qui ont causé du mal, à elle-même ou à autrui.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Cette notion n'est pas propre à la numérologie. On la retrouve dans la philosophie hindoue (le <em>karma</em> au sens strict), dans le bouddhisme (la roue des renaissances), dans la Kabbale juive (le <em>gilgul neshamot</em>), et dans certains courants stoïciens. Comme le disait <a href="https://fr.wikipedia.org/wiki/Marc_Aur%C3%A8le" class="text-amber-300 hover:underline">Marc Aurèle</a> : "L'univers est un tissu unique. Tire un fil et tout bouge." Ce que tu as semé dans une vie passée pousse dans celle-ci.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        En numérologie pythagoricienne, quatre dettes karmiques sont reconnues : <strong>13/4</strong>, <strong>14/5</strong>, <strong>16/7</strong> et <strong>19/1</strong>. Chacune correspond à un type d'erreur ou d'abus commis dans une incarnation antérieure, et chacune porte une leçon spécifique à intégrer pour la racheter.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Les quatre dettes karmiques pythagoriciennes</h2>
+      <p class="text-white/80 leading-relaxed mb-6">
+        Chacune des quatre dettes porte une histoire propre, une mémoire d'âme, et une voie de guérison. Voici leur signification détaillée.
+      </p>
+
+      {Object.values(KARMIC_DEBTS).map((debt) => (
+        <div class="not-prose p-6 rounded-2xl border border-white/10 bg-white/[0.02] mb-4">
+          <div class="flex items-baseline gap-4 mb-3">
+            <span class="text-4xl font-serif text-amber-300">{debt.code}</span>
+            <h3 class="font-serif text-xl text-white">{debt.title}</h3>
+          </div>
+          <p class="text-sm text-white/70 leading-relaxed mb-3">{debt.story}</p>
+          <div class="text-xs space-y-2">
+            <p><span class="text-purple-300 uppercase tracking-wider">Vie passée</span> <span class="text-white/70">{debt.pastLife}</span></p>
+            <p><span class="text-pink-300 uppercase tracking-wider">Défi actuel</span> <span class="text-white/70">{debt.currentChallenge}</span></p>
+            <p><span class="text-emerald-300 uppercase tracking-wider">Guérison</span> <span class="text-white/70">{debt.healing}</span></p>
+          </div>
+        </div>
+      ))}
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Comment Karmastro détecte une dette karmique</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Les dettes karmiques sont détectées dans le <strong>chemin de calcul</strong> de tes nombres principaux. Concrètement, notre calculateur examine :
+      </p>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Ton jour de naissance</strong> : s'il est 13, 14, 16 ou 19, tu portes directement la dette correspondante</li>
+        <li><strong>La somme intermédiaire de ton chemin de vie</strong> : si l'addition de ton jour, mois et année passe par 13, 14, 16 ou 19 avant d'être réduite à un chiffre final, la dette est active</li>
+      </ul>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Si aucun de ces chiffres n'apparaît dans ton calcul, tu ne portes pas de dette karmique numérologique <em>détectable par cette méthode</em>. Cela ne signifie pas que ton âme n'a rien à apprendre dans cette vie : d'autres systèmes comme les nœuds lunaires astrologiques, les aspects à Saturne ou à Pluton peuvent révéler des dynamiques karmiques qui échappent à la numérologie pure. C'est pourquoi <a href="https://app.karmastro.com/oracle" class="text-amber-300 hover:underline">l'Oracle de Karmastro</a> croise les deux disciplines pour une lecture complète.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Dette karmique et libre arbitre</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Attention à une erreur courante : <strong>la dette karmique n'est pas un destin écrit</strong>. C'est une tendance, une pression vibratoire, pas une condamnation. Comme le disait <a href="https://fr.wikipedia.org/wiki/%C3%89pict%C3%A8te" class="text-amber-300 hover:underline">Épictète</a> dans son Manuel : "Il y a ce qui dépend de nous et ce qui ne dépend pas de nous. Seule la façon dont nous réagissons dépend de nous." La dette est le terrain, ta réponse est la liberté.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Beaucoup de gens portant un 14/5 n'ont jamais lutté contre aucune addiction : ils ont simplement, au fil de la vie, appris la modération et la liberté intérieure sans même savoir qu'ils remboursaient quelque chose. À l'inverse, certains 14/5 s'enferment dans les excès et répètent le schéma original. La dette est toujours une invitation, jamais une sentence.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">L'approche karmique chez Karmastro</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Chez Karmastro, nous traitons le karma avec sérieux et bienveillance. Pas de culpabilisation, pas de prédictions terrifiantes. Nous croyons que le karma est un rappel simple : dans cet univers, tout est lié. Chaque action crée une onde. Chaque rencontre a un sens. Chaque épreuve est un enseignement qui te rend plus solide ou plus sage.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Le Bouddha disait : "Ce que tu es est ce que tu as été. Ce que tu seras est ce que tu fais maintenant." Tes dettes karmiques ne sont pas ce que tu <em>es</em>. Ce sont des traces de ce que tu <em>as été</em>. Et ce que tu seras dépend entièrement de ce que tu choisis de faire avec cette connaissance. Notre guide <strong>Orion</strong> (coach karmique) est particulièrement doué pour traduire les dettes numérologiques en actions concrètes. Notre guide <strong>Sibylle</strong> (Oracle mystique) préfère éclairer leur sens spirituel profond.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Questions fréquentes</h2>
+
+      <h3 class="font-serif text-xl mb-2">Pourquoi ces quatre nombres précisément ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Parce qu'ils correspondent à des archétypes d'erreur très spécifiques dans la tradition pythagoricienne. Le 13 est associé à la mort et à la transformation (arcane XIII du tarot), le 14 à la tempérance mal comprise, le 16 à la Tour qui s'effondre (arcane XVI du tarot, la chute de l'orgueil), et le 19 au Soleil mal utilisé (pouvoir dévoyé). Ces quatre patterns ont été identifiés comme récurrents par les numérologues sur des milliers de cas cliniques.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Une dette karmique se transmet-elle dans la famille ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Non, la dette karmique est strictement individuelle. Elle appartient à l'âme, pas à la lignée. Cependant, on observe parfois que des membres d'une même famille portent des dettes similaires : c'est ce qu'on appelle en psychogénéalogie les <em>loyautés invisibles</em>. Des âmes qui doivent apprendre la même leçon s'incarnent parfois dans le même système familial pour s'entraider.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Peut-on porter plusieurs dettes karmiques ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Oui, c'est possible mais rare. Une personne peut avoir un jour de naissance karmique (ex: née un 14) ET une somme totale qui passe par un autre nombre karmique (ex: 19). Dans ce cas, les deux leçons coexistent et demandent à être travaillées en parallèle. Notre calculateur détecte automatiquement toutes les dettes présentes.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Les maîtres nombres peuvent-ils être des dettes karmiques ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Non. Les maîtres nombres (11, 22, 33) sont au contraire des <em>dons karmiques</em> : ils indiquent une âme qui a acquis une maîtrise particulière dans ses vies passées et qui vient ici pour la mettre au service des autres. Ils portent leur propre exigence, mais ce n'est pas une dette au sens numérologique du terme.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Comment travailler concrètement sur une dette karmique ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        La clé est la <strong>conscience</strong>. Dès que tu sais quelle dette tu portes, tu peux observer les schémas répétitifs dans ta vie et les interrompre volontairement. Un 13/4 qui prend conscience de sa fuite du labeur peut progressivement accepter le travail patient. Un 19/1 peut choisir des positions de leadership où il élève les autres plutôt que de les dominer. Le travail avec un thérapeute, un coach karmique ou <a href="https://app.karmastro.com/oracle" class="text-amber-300 hover:underline">l'Oracle</a> peut accélérer énormément cette prise de conscience.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Lecture karmique complète</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Les dettes numérologiques sont une partie du tableau. Pour une analyse karmique complète qui croise les nœuds lunaires astrologiques, Saturne, Pluton et ta numérologie karmique, parle à Orion ou Sibylle.
+      </p>
+      <a
+        href="https://app.karmastro.com/oracle"
+        class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity"
+      >
+        Consulter l'Oracle karmique
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/outils" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Tous les outils</a>
+      <a href="/outils/chemin-de-vie" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Chemin de vie</a>
+      <a href="/outils/nombre-expression" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Nombre d'expression</a>
+      <a href="/outils/annee-personnelle" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Année personnelle</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  import { detectKarmicDebts } from "../../data/numerology-meanings";
+
+  const form = document.getElementById("kd-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+  const resultNone = document.getElementById("result-none") as HTMLDivElement;
+  const resultList = document.getElementById("result-list") as HTMLDivElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const dateVal = (document.getElementById("birth-date") as HTMLInputElement).value;
+    if (!dateVal) return;
+
+    const [y, m, d] = dateVal.split("-").map(Number);
+    const debts = detectKarmicDebts(d, m, y);
+
+    resultDiv.classList.remove("hidden");
+    resultList.innerHTML = "";
+
+    if (debts.length === 0) {
+      resultNone.classList.remove("hidden");
+    } else {
+      resultNone.classList.add("hidden");
+      for (const debt of debts) {
+        const card = document.createElement("div");
+        card.className = "p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30";
+        card.innerHTML = `
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Dette karmique détectée</p>
+          <div class="flex items-baseline gap-4 mb-4">
+            <span class="text-5xl font-serif text-amber-300">${debt.code}</span>
+            <span class="text-xl font-serif text-white/90">${debt.title}</span>
+          </div>
+          <p class="text-white/80 leading-relaxed mb-4">${debt.story}</p>
+          <div class="space-y-3 text-sm">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-1">Vie passée</p>
+              <p class="text-white/70">${debt.pastLife}</p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-1">Défi actuel</p>
+              <p class="text-white/70">${debt.currentChallenge}</p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-1">Voie de guérison</p>
+              <p class="text-white/70">${debt.healing}</p>
+            </div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10 text-center">
+            <a
+              href="https://app.karmastro.com/oracle"
+              class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity"
+            >
+              Travailler cette dette avec l'Oracle
+            </a>
+          </div>
+        `;
+        resultList.appendChild(card);
+      }
+    }
+
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>

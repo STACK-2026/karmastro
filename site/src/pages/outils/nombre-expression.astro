@@ -1,0 +1,315 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { EXPRESSION_MEANINGS } from "../../data/numerology-meanings";
+
+const title = "Calculateur nombre d'expression gratuit - Numérologie pythagoricienne - Karmastro";
+const description =
+  "Calcule gratuitement ton nombre d'expression à partir de ton nom complet. Méthode pythagoricienne A=1, B=2, C=3... Découvre tes talents innés et ta mission d'expression.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Calculateur nombre d'expression Karmastro",
+    description,
+    url: "https://karmastro.com/outils/nombre-expression",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Qu'est-ce que le nombre d'expression ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Le nombre d'expression (aussi appelé nombre de destinée) est l'un des cinq nombres fondamentaux de la numérologie pythagoricienne. Il se calcule à partir de toutes les lettres de ton nom complet de naissance et révèle tes talents innés, ta façon naturelle de t'exprimer et la mission que tu es venu accomplir.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Quelle est la différence entre chemin de vie et nombre d'expression ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Le chemin de vie se calcule à partir de ta date de naissance et révèle la mission principale de ton existence. Le nombre d'expression se calcule à partir de ton nom complet et révèle les talents concrets dont tu disposes pour accomplir cette mission. Ensemble, ils forment un couple : le quoi (chemin) et le comment (expression).",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Quel nom faut-il utiliser pour le calcul ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "En numérologie pythagoricienne classique, on utilise le nom complet de naissance tel qu'il figure sur l'acte de naissance : tous les prénoms et le nom de famille. Même si tu n'utilises plus ton deuxième prénom au quotidien, il fait partie de ta signature vibratoire originelle.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Un mariage ou un changement de nom modifie-t-il le nombre d'expression ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "C'est une question débattue en numérologie. Pour la plupart des praticiens, le nom d'origine reste l'empreinte vibratoire la plus puissante. Un nom d'épouse ou un pseudonyme d'artiste peut créer une vibration secondaire qui ajoute des nuances sans remplacer l'original. Karmastro calcule le nom de naissance par défaut.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Comment se calcule le nombre d'expression étape par étape ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "On attribue à chaque lettre une valeur numérique selon la table pythagoricienne (A=1, B=2, C=3... I=9, J=1, K=2...). On additionne toutes les valeurs du nom complet, puis on réduit la somme jusqu'à obtenir un chiffre entre 1 et 9, ou un maître nombre (11, 22, 33). Karmastro montre chaque étape du calcul.",
+        },
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6">
+      <a href="/" class="hover:text-amber-300">Accueil</a>
+      <span class="mx-2">/</span>
+      <a href="/outils" class="hover:text-amber-300">Outils</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Nombre d'expression</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Numérologie pythagoricienne</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Calculateur du nombre d'expression</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Le nombre d'expression, aussi appelé nombre de destinée, révèle tes talents innés et ta façon naturelle de t'exprimer dans le monde. Calcule-le depuis ton nom complet de naissance.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="expr-form" class="space-y-4">
+        <div>
+          <label for="full-name" class="block text-sm font-medium text-white/80 mb-2">
+            Ton nom complet de naissance
+            <span class="text-white/40 text-xs block mt-1">Tous les prénoms + nom de famille, tel qu'à l'état civil</span>
+          </label>
+          <input
+            type="text"
+            id="full-name"
+            required
+            placeholder="Ex: Marie Sophie Dubois"
+            autocomplete="off"
+            class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors"
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity"
+        >
+          Calculer mon nombre d'expression
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Ton nombre d'expression</p>
+          <div class="flex items-baseline gap-4 mb-4">
+            <span id="result-number" class="text-7xl font-serif text-amber-300"></span>
+            <span id="result-title" class="text-xl font-serif text-white/90"></span>
+          </div>
+          <p class="text-xs text-white/50 mb-1">Lettres analysées : <span id="result-letters" class="text-white/70 font-mono"></span></p>
+          <p class="text-xs text-white/50 mb-4">Calcul : <span id="result-calc" class="text-white/70"></span></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Talents innés</p>
+              <ul id="result-talents" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">Voies possibles</p>
+              <ul id="result-callings" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10 text-center">
+            <a
+              href="https://app.karmastro.com"
+              class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity"
+            >
+              Voir mon profil numérologique complet
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Qu'est-ce que le nombre d'expression ?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Le <strong>nombre d'expression</strong>, aussi appelé <em>nombre de destinée</em>, est l'un des cinq nombres fondamentaux en numérologie pythagoricienne. Il se calcule à partir de l'ensemble des lettres de ton nom complet de naissance. Là où le <a href="/outils/chemin-de-vie" class="text-amber-300 hover:underline">chemin de vie</a> révèle la mission principale de ton existence, le nombre d'expression révèle les <strong>talents innés</strong> dont tu disposes pour accomplir cette mission.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Imagine un acteur : le chemin de vie, c'est le rôle principal qu'on lui a attribué. Le nombre d'expression, c'est la palette d'émotions, de techniques, de dons qu'il a reçus à la naissance pour jouer ce rôle. Les deux sont complémentaires : tu ne peux pas accomplir pleinement ton chemin sans activer les talents de ton expression.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Comment se calcule-t-il ?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        La méthode pythagoricienne attribue une valeur numérique à chaque lettre de l'alphabet, selon une grille très simple :
+      </p>
+      <div class="not-prose overflow-x-auto mb-6">
+        <table class="w-full text-sm text-left border-collapse">
+          <thead>
+            <tr class="border-b border-white/10">
+              <th class="py-2 px-3 text-amber-300 font-serif">1</th>
+              <th class="py-2 px-3 text-amber-300 font-serif">2</th>
+              <th class="py-2 px-3 text-amber-300 font-serif">3</th>
+              <th class="py-2 px-3 text-amber-300 font-serif">4</th>
+              <th class="py-2 px-3 text-amber-300 font-serif">5</th>
+              <th class="py-2 px-3 text-amber-300 font-serif">6</th>
+              <th class="py-2 px-3 text-amber-300 font-serif">7</th>
+              <th class="py-2 px-3 text-amber-300 font-serif">8</th>
+              <th class="py-2 px-3 text-amber-300 font-serif">9</th>
+            </tr>
+          </thead>
+          <tbody class="text-white/80">
+            <tr>
+              <td class="py-2 px-3">A, J, S</td>
+              <td class="py-2 px-3">B, K, T</td>
+              <td class="py-2 px-3">C, L, U</td>
+              <td class="py-2 px-3">D, M, V</td>
+              <td class="py-2 px-3">E, N, W</td>
+              <td class="py-2 px-3">F, O, X</td>
+              <td class="py-2 px-3">G, P, Y</td>
+              <td class="py-2 px-3">H, Q, Z</td>
+              <td class="py-2 px-3">I, R</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Tu prends toutes les lettres de ton nom complet de naissance, tu leur attribues leur valeur, tu additionnes, tu réduis. Comme toujours en numérologie pythagoricienne, les maîtres nombres <strong>11, 22 et 33</strong> ne se réduisent jamais : ils conservent leur vibration double.
+      </p>
+      <div class="p-5 rounded-xl bg-white/[0.03] border border-white/10 mb-6">
+        <p class="text-sm text-white/90 mb-3"><strong>Exemple : Marie Sophie Dubois</strong></p>
+        <p class="text-sm text-white/70 mb-2">M(4) + A(1) + R(9) + I(9) + E(5) = 28</p>
+        <p class="text-sm text-white/70 mb-2">S(1) + O(6) + P(7) + H(8) + I(9) + E(5) = 36</p>
+        <p class="text-sm text-white/70 mb-2">D(4) + U(3) + B(2) + O(6) + I(9) + S(1) = 25</p>
+        <p class="text-sm text-white/70 mb-2">Total : 28 + 36 + 25 = 89 → 8 + 9 = 17 → 1 + 7 = <strong class="text-amber-300">8</strong></p>
+        <p class="text-sm text-white/60 mt-3">Nombre d'expression = 8 (L'Architecte de pouvoir)</p>
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Les 12 nombres d'expression en résumé</h2>
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
+        {Object.values(EXPRESSION_MEANINGS).map((m) => (
+          <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+            <div class="flex items-baseline gap-3 mb-2">
+              <span class="text-3xl font-serif text-amber-300">{m.number}</span>
+              <span class="text-sm text-white/80 font-medium">{m.title}</span>
+            </div>
+            <p class="text-xs text-white/60 leading-relaxed">{m.summary.slice(0, 130)}...</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Expression, chemin de vie, âme : la constellation des nombres</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        En numérologie pythagoricienne, ton profil complet ne se résume pas à un seul nombre. Il s'articule autour de <strong>cinq piliers</strong> qui se complètent :
+      </p>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Le chemin de vie</strong> (date de naissance) : ta mission</li>
+        <li><strong>Le nombre d'expression</strong> (nom complet) : tes talents</li>
+        <li><strong>Le nombre de l'âme ou nombre intime</strong> (voyelles du nom) : tes désirs profonds</li>
+        <li><strong>Le nombre de personnalité</strong> (consonnes du nom) : l'image sociale</li>
+        <li><strong>L'année personnelle</strong> (variable) : l'énergie de l'année en cours</li>
+      </ul>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Une bonne lecture numérologique croise ces cinq nombres avec les compatibilités, les cycles de vie et les dettes karmiques éventuelles. Tu peux calculer l'ensemble de ton profil via <a href="https://app.karmastro.com" class="text-amber-300 hover:underline">l'application Karmastro</a>, ou lire notre <a href="/blog/qu-numerologie-guide-complet-debuter" class="text-amber-300 hover:underline">guide complet de numérologie</a> pour comprendre comment ces nombres interagissent.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">L'origine historique de la méthode</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        La table pythagoricienne que nous utilisons est attribuée à <a href="https://fr.wikipedia.org/wiki/Pythagore" class="text-amber-300 hover:underline">Pythagore</a> (vers 580-495 av. J.-C.), bien que les correspondances lettres-nombres soient antérieures. Les Hébreux pratiquaient déjà la <em>gematria</em>, et les Babyloniens attribuaient des valeurs numériques à leurs écritures cunéiformes plus de 1 500 ans avant Pythagore.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Ce qu'a apporté Pythagore, c'est la <strong>systématisation</strong>. Pour lui et ses disciples, l'univers entier était numérique. "Tout est nombre", disait-il. Les proportions musicales, les orbites planétaires, les structures cristallines, tout obéissait à des lois arithmétiques. Attribuer un nombre à chaque lettre revenait à traduire le prénom d'une personne dans le langage fondamental du cosmos. C'est cette intuition qu'on retrouve aujourd'hui dans la numérologie moderne, et que Karmastro applique avec la rigueur qu'elle mérite.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Questions fréquentes</h2>
+
+      <h3 class="font-serif text-xl mb-2">Dois-je utiliser mon prénom d'usage ou mon prénom complet ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Le calcul traditionnel utilise le nom complet de naissance, tel qu'il figure sur ton acte de naissance. Même si tu n'utilises que ton premier prénom au quotidien, les autres prénoms font partie de ta signature vibratoire originelle. Karmastro te permet de calculer avec le nom complet, mais tu peux aussi tester ton prénom d'usage seul pour voir la différence.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Que faire si mon nom a des accents ou des caractères spéciaux ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Les accents ne changent pas la valeur numérique. Une "é" reste un "e" qui vaut 5. Les traits d'union, apostrophes et espaces sont simplement ignorés. Notre calculateur normalise automatiquement ton nom avant le calcul.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Un couple peut-il avoir un nombre d'expression compatible ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Oui, la compatibilité des nombres d'expression est une analyse avancée qui complète la <a href="/outils/compatibilite" class="text-amber-300 hover:underline">compatibilité des chemins de vie</a>. Deux nombres d'expression harmoniques indiquent que vos talents se complètent naturellement dans l'action. Deux nombres en tension peuvent créer des frictions créatives ou des incompréhensions selon l'intention.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Mon nombre d'expression ne me ressemble pas, pourquoi ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Deux possibilités. Soit tu n'exprimes encore qu'une petite partie de tes talents (c'est courant avant 30 ans), soit tu es dans la version basse du nombre (chaque archétype a une version haute lumineuse et une version basse crispée). Un dialogue avec l'Oracle peut t'aider à identifier ce qui bloque l'expression pleine de ton nombre.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Karmastro utilise-t-il la méthode pythagoricienne ou chaldéenne ?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Pythagoricienne, la plus répandue en France et la plus documentée. La méthode chaldéenne est plus ancienne et attribue des valeurs différentes aux lettres (elle exclut notamment le 9, qu'elle considère comme sacré). Les deux approches sont valables selon la tradition choisie, mais la pythagoricienne est plus intuitive pour un débutant.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Ton profil numérologique complet</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Le nombre d'expression n'est qu'un des cinq piliers de la numérologie. Pour calculer ton profil complet (chemin de vie, expression, âme, personnalité, cycles), ouvre un profil dans l'app.
+      </p>
+      <a
+        href="https://app.karmastro.com"
+        class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity"
+      >
+        Mon profil numérologique complet
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/outils" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Tous les outils</a>
+      <a href="/outils/chemin-de-vie" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Chemin de vie</a>
+      <a href="/outils/annee-personnelle" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Année personnelle</a>
+      <a href="/outils/dette-karmique" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Dette karmique</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  import { calculateExpression, getExpressionMeaning } from "../../data/numerology-meanings";
+
+  const form = document.getElementById("expr-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const input = document.getElementById("full-name") as HTMLInputElement;
+    const name = input.value.trim();
+    if (!name) return;
+
+    const result = calculateExpression(name);
+    const meaning = getExpressionMeaning(result.number);
+
+    (document.getElementById("result-number") as HTMLElement).textContent = String(result.number);
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-letters") as HTMLElement).textContent = result.letters;
+    (document.getElementById("result-calc") as HTMLElement).textContent = result.calculation;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+
+    (document.getElementById("result-talents") as HTMLElement).innerHTML = meaning.talents
+      .map((t) => `<li>✦ ${t}</li>`)
+      .join("");
+    (document.getElementById("result-callings") as HTMLElement).innerHTML = meaning.callings
+      .map((c) => `<li>◆ ${c}</li>`)
+      .join("");
+
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>
