@@ -1,0 +1,482 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import ShareButton from "../../../../components/ShareButton.astro";
+import ZodiacSymbol from "../../../../components/ZodiacSymbol.astro";
+import { ZODIAC_SIGNS, SIGN_SLUGS, getSignBySlug, formatFrenchDate } from "../../../../data/zodiac";
+import { LOCALES, DEFAULT_LOCALE, type Locale } from "../../../../i18n/config";
+import { t } from "../../../../i18n/translations";
+import fs from "fs";
+import path from "path";
+
+export function getStaticPaths() {
+  const paths: any[] = [];
+  for (const lang of LOCALES) {
+    if (lang === DEFAULT_LOCALE) continue;
+    for (const slug of SIGN_SLUGS) {
+      paths.push({ params: { lang, signe: slug } });
+    }
+  }
+  return paths;
+}
+
+const { lang, signe } = Astro.params as { lang: Locale; signe: string };
+const sign = getSignBySlug(signe as string);
+if (!sign) throw new Error(`Unknown sign: ${signe}`);
+
+// Sign name translation
+const signNameKeys: Record<string, string> = {
+  belier: "signs.aries",
+  taureau: "signs.taurus",
+  gemeaux: "signs.gemini",
+  cancer: "signs.cancer",
+  lion: "signs.leo",
+  vierge: "signs.virgo",
+  balance: "signs.libra",
+  scorpion: "signs.scorpio",
+  sagittaire: "signs.sagittarius",
+  capricorne: "signs.capricorn",
+  verseau: "signs.aquarius",
+  poissons: "signs.pisces",
+};
+const localSignName = t(signNameKeys[sign.slug] as any, lang) || sign.name;
+
+// ─── Load horoscope data (fallback to FR) ───
+const dataDir = path.join(process.cwd(), "src/data/horoscope");
+let entry: any = null;
+let tomorrowEntry: any = null;
+let todayDate = new Date().toISOString().slice(0, 10);
+let tomorrowDate = "";
+let archiveCards: any[] = [];
+
+function addDays(dateStr: string, days: number): string {
+  const d = new Date(dateStr + "T12:00:00Z");
+  d.setUTCDate(d.getUTCDate() + days);
+  return d.toISOString().slice(0, 10);
+}
+
+try {
+  if (fs.existsSync(dataDir)) {
+    const files = fs
+      .readdirSync(dataDir)
+      .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+      .sort();
+
+    const realToday = new Date().toISOString().slice(0, 10);
+    const pastFiles = files.filter((f) => f.replace(".json", "") <= realToday);
+
+    if (pastFiles.length > 0) {
+      const latestFile = pastFiles[pastFiles.length - 1];
+      todayDate = latestFile.replace(".json", "");
+      const data = JSON.parse(fs.readFileSync(path.join(dataDir, latestFile), "utf-8"));
+      entry = data[sign.slug];
+    }
+
+    tomorrowDate = addDays(todayDate, 1);
+    const tomorrowFile = path.join(dataDir, `${tomorrowDate}.json`);
+    if (fs.existsSync(tomorrowFile)) {
+      const tomorrowData = JSON.parse(fs.readFileSync(tomorrowFile, "utf-8"));
+      tomorrowEntry = tomorrowData[sign.slug];
+    }
+
+    const pastArchive = files
+      .filter((f) => f.replace(".json", "") < todayDate)
+      .reverse()
+      .slice(0, 14);
+
+    for (const f of pastArchive) {
+      try {
+        const archiveData = JSON.parse(fs.readFileSync(path.join(dataDir, f), "utf-8"));
+        const signEntry = archiveData[sign.slug];
+        if (!signEntry) continue;
+        archiveCards.push({
+          date: f.replace(".json", ""),
+          intro: (signEntry.intro || "").slice(0, 110),
+          mantra: signEntry.mantra || null,
+          luckyNumber: signEntry.luckyNumber ?? null,
+          color: signEntry.color || null,
+        });
+      } catch (e) {}
+    }
+  }
+} catch (e) {
+  console.warn("Horoscope data load error:", e);
+}
+
+const dateFormatted = formatFrenchDate(todayDate);
+const tomorrowFormatted = tomorrowDate ? formatFrenchDate(tomorrowDate) : "";
+
+// ─── SEO meta (localized) ───
+const title = `${t("horoscope.title", lang)} ${localSignName} - ${dateFormatted} - Karmastro`;
+const description = entry?.intro
+  ? `${localSignName} - ${entry.intro.slice(0, 140)}...`
+  : `${t("horoscope.daily", lang)} ${localSignName}. ${dateFormatted}.`;
+
+const compatSigns = sign.compatibilities
+  .map((slug) => ZODIAC_SIGNS.find((s) => s.slug === slug))
+  .filter(Boolean) as typeof ZODIAC_SIGNS;
+
+// ─── Rich JSON-LD schema (Article + FAQPage for LLM citation) ───
+const jsonLdArray = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    datePublished: todayDate,
+    dateModified: todayDate,
+    inLanguage: lang,
+    author: {
+      "@type": "Person",
+      name: entry?.author || "Sibylle",
+      description: "Oracle astrologue de Karmastro",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Karmastro",
+      url: "https://karmastro.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://karmastro.com/favicon.svg",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://karmastro.com/${lang}/horoscope/${sign.slug}`,
+    },
+    keywords: [localSignName, t("horoscope.daily", lang), "astrologie", "horoscope", sign.element, sign.rulingPlanet].join(", "),
+    about: {
+      "@type": "Thing",
+      name: localSignName,
+      sameAs: `https://en.wikipedia.org/wiki/${sign.name}_(astrology)`,
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Karmastro", item: `https://karmastro.com/${lang}` },
+      { "@type": "ListItem", position: 2, name: t("horoscope.title", lang), item: `https://karmastro.com/${lang}/horoscope` },
+      { "@type": "ListItem", position: 3, name: localSignName, item: `https://karmastro.com/${lang}/horoscope/${sign.slug}` },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLdArray} ogType="article" publishedTime={todayDate}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href={`/${lang}`} class="hover:text-amber-300">Karmastro</a>
+      <span class="mx-2">/</span>
+      <a href={`/${lang}/horoscope`} class="hover:text-amber-300">{t("horoscope.title", lang)}</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">{localSignName}</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <div class="flex justify-center mb-4">
+        <ZodiacSymbol sign={sign.name} size={96} color="#D4A017" />
+      </div>
+      <h1 class="text-4xl md:text-5xl font-serif mb-2">{t("horoscope.title", lang)} {localSignName}</h1>
+      <p class="text-lg text-white/70 mb-1">{dateFormatted}</p>
+      <p class="text-xs text-white/40">
+        {sign.dates} · {sign.element} · {sign.rulingPlanet}
+      </p>
+    </header>
+
+    {!entry && (
+      <div class="text-center py-12 border border-amber-300/20 rounded-2xl bg-amber-300/5">
+        <p class="text-amber-300/80">{t("horoscope.no_reading", lang)}</p>
+      </div>
+    )}
+
+    {entry && (
+      <>
+        {/* Small note : content in French, translation coming */}
+        <div lang="fr" class="mb-6 px-4 py-2 rounded-lg bg-white/[0.02] border border-white/10 text-center">
+          <p class="text-[10px] text-white/40">
+            <span class="text-amber-300/60">✦</span> {t("horoscope.fr_translation_note", lang)}
+          </p>
+        </div>
+
+        <div lang="fr" class="p-6 rounded-2xl border border-amber-300/20 bg-amber-300/5 mb-8">
+          <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-2">{t("horoscope.cosmic_energy", lang)}</p>
+          <p class="text-lg leading-relaxed text-white/90">{entry.intro}</p>
+        </div>
+
+        <div lang="fr" class="grid md:grid-cols-2 gap-4 mb-8">
+          {entry.love && (
+            <section class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
+              <h2 class="font-serif text-xl mb-3 text-pink-300">{t("horoscope.love", lang)}</h2>
+              <p class="text-white/80 leading-relaxed">{entry.love}</p>
+            </section>
+          )}
+          {entry.work && (
+            <section class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
+              <h2 class="font-serif text-xl mb-3 text-amber-300">{t("horoscope.work", lang)}</h2>
+              <p class="text-white/80 leading-relaxed">{entry.work}</p>
+            </section>
+          )}
+          {entry.energy && (
+            <section class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
+              <h2 class="font-serif text-xl mb-3 text-emerald-300">{t("horoscope.energy", lang)}</h2>
+              <p class="text-white/80 leading-relaxed">{entry.energy}</p>
+            </section>
+          )}
+          {entry.intuition && (
+            <section class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
+              <h2 class="font-serif text-xl mb-3 text-purple-300">{t("horoscope.intuition", lang)}</h2>
+              <p class="text-white/80 leading-relaxed">{entry.intuition}</p>
+            </section>
+          )}
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 mb-10 text-center">
+          {entry.luckyNumber != null && (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <p class="text-xs text-white/50 uppercase tracking-wider mb-1">{t("horoscope.lucky_number", lang)}</p>
+              <p class="text-3xl font-serif text-amber-300">{entry.luckyNumber}</p>
+            </div>
+          )}
+          {entry.color && (
+            <div lang="fr" class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <p class="text-xs text-white/50 uppercase tracking-wider mb-1">{t("horoscope.color", lang)}</p>
+              <p class="text-lg text-white/90">{entry.color}</p>
+            </div>
+          )}
+          {entry.mantra && (
+            <div lang="fr" class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <p class="text-xs text-white/50 uppercase tracking-wider mb-1">{t("horoscope.mantra", lang)}</p>
+              <p class="text-sm italic text-white/90">"{entry.mantra}"</p>
+            </div>
+          )}
+        </div>
+
+        {entry.author && (
+          <p class="text-center text-xs text-white/40 mb-4">
+            {t("horoscope.signed_by", lang)} <a href={`/${lang}/notre-histoire`} class="text-amber-300 hover:underline">{entry.author}</a>
+          </p>
+        )}
+
+        <div class="flex justify-center mb-10">
+          <ShareButton
+            title={title}
+            text={`${localSignName} - ${entry.intro?.slice(0, 100) || ""}`}
+            url={`https://karmastro.com/${lang}/horoscope/${sign.slug}`}
+            variant="secondary"
+            label={t("horoscope.share_this", lang)}
+          />
+        </div>
+
+        {/* ═══ Tomorrow preview (premium) ═══ */}
+        <section class="mb-10">
+          <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+            <h2 class="font-serif text-2xl">{t("horoscope.tomorrow", lang)}, {tomorrowFormatted}</h2>
+            <span class="text-xs px-3 py-1 rounded-full bg-gradient-to-r from-amber-300/20 to-purple-400/20 border border-amber-300/40 text-amber-300">
+              {t("horoscope.premium_preview_badge", lang)}
+            </span>
+          </div>
+
+          <div class="relative">
+            <div class="p-6 rounded-2xl border border-white/10 bg-white/[0.02] relative overflow-hidden">
+              {tomorrowEntry ? (
+                <>
+                  <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-2">{t("horoscope.cosmic_energy_tomorrow", lang)}</p>
+                  <p lang="fr" class="text-base leading-relaxed text-white/80 mb-4 italic">
+                    {tomorrowEntry.intro?.split(/[.!?]/)[0]}...
+                  </p>
+
+                  <div
+                    id="tomorrow-content"
+                    lang="fr"
+                    class="relative transition-all duration-500"
+                    data-locked="true"
+                    style="filter: blur(18px); opacity: 0.35; user-select: none; pointer-events: none;"
+                    aria-hidden="true"
+                  >
+                    <p class="text-lg leading-relaxed text-white/90 mb-4">{tomorrowEntry.intro}</p>
+                    <div class="grid md:grid-cols-2 gap-3 text-sm">
+                      {tomorrowEntry.love && (
+                        <div>
+                          <p class="font-serif text-base text-pink-300 mb-1">{t("horoscope.love", lang)}</p>
+                          <p class="text-white/80 text-sm">{tomorrowEntry.love}</p>
+                        </div>
+                      )}
+                      {tomorrowEntry.work && (
+                        <div>
+                          <p class="font-serif text-base text-amber-300 mb-1">{t("horoscope.work", lang)}</p>
+                          <p class="text-white/80 text-sm">{tomorrowEntry.work}</p>
+                        </div>
+                      )}
+                      {tomorrowEntry.energy && (
+                        <div>
+                          <p class="font-serif text-base text-emerald-300 mb-1">{t("horoscope.energy", lang)}</p>
+                          <p class="text-white/80 text-sm">{tomorrowEntry.energy}</p>
+                        </div>
+                      )}
+                      {tomorrowEntry.intuition && (
+                        <div>
+                          <p class="font-serif text-base text-purple-300 mb-1">{t("horoscope.intuition", lang)}</p>
+                          <p class="text-white/80 text-sm">{tomorrowEntry.intuition}</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  <div id="tomorrow-paywall" class="mt-6 p-5 rounded-xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30 text-center">
+                    <div class="text-3xl mb-2">✦</div>
+                    <p class="font-serif text-lg mb-1 text-white">{t("horoscope.paywall_title", lang)}</p>
+                    <p class="text-xs text-white/60 mb-4 max-w-sm mx-auto">
+                      {t("horoscope.paywall_desc", lang)}
+                    </p>
+                    <div class="flex gap-3 flex-wrap justify-center items-center">
+                      <a
+                        href="https://app.karmastro.com/pricing"
+                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity text-sm"
+                      >
+                        {t("horoscope.paywall_cta", lang)}
+                      </a>
+                      <span class="text-xs text-white/50 flex items-center gap-1">
+                        {t("horoscope.paywall_available_in", lang)} <span id="countdown-timer" class="font-mono text-amber-300">--:--:--</span>
+                      </span>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <div class="text-center py-8">
+                  <p class="text-amber-300/80 text-sm mb-2">{t("horoscope.reading_in_progress", lang)}</p>
+                  <p class="text-white/50 text-xs">{t("horoscope.come_back_midnight", lang)}</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+
+        <script is:inline>
+          (function () {
+            function updateCountdown() {
+              const el = document.getElementById("countdown-timer");
+              if (!el) return;
+              const now = new Date();
+              const tomorrow = new Date(now);
+              tomorrow.setHours(24, 0, 0, 0);
+              const diff = tomorrow - now;
+              if (diff <= 0) { el.textContent = "00:00:00"; return; }
+              const h = Math.floor(diff / 3600000);
+              const m = Math.floor((diff % 3600000) / 60000);
+              const s = Math.floor((diff % 60000) / 1000);
+              el.textContent = String(h).padStart(2, "0") + ":" + String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
+            }
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            function checkPremium() {
+              try {
+                const tier = localStorage.getItem("km_user_tier");
+                if (tier === "etoile" || tier === "cosmos") {
+                  const content = document.getElementById("tomorrow-content");
+                  const paywall = document.getElementById("tomorrow-paywall");
+                  if (content) {
+                    content.style.filter = "";
+                    content.style.opacity = "";
+                    content.style.pointerEvents = "";
+                    content.style.userSelect = "";
+                    content.removeAttribute("aria-hidden");
+                    content.setAttribute("data-locked", "false");
+                  }
+                  if (paywall) paywall.style.display = "none";
+                }
+              } catch (e) {}
+            }
+            checkPremium();
+            window.addEventListener("storage", checkPremium);
+          })();
+        </script>
+      </>
+    )}
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">{t("horoscope.personalised_cta_title", lang)}</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed">
+        {t("horoscope.personalised_cta_desc", lang)}
+      </p>
+      <a
+        href={`https://app.karmastro.com/oracle?lang=${lang}`}
+        class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity"
+      >
+        {t("horoscope.personalised_cta_button", lang)}
+      </a>
+    </div>
+
+    {/* Compatibilities */}
+    <section class="mb-10">
+      <h2 class="font-serif text-2xl mb-4">{t("horoscope.compatibilities_of", lang)} {localSignName}</h2>
+      <div class="grid grid-cols-3 gap-3">
+        {compatSigns.map((c) => (
+          <a
+            href={`/${lang}/horoscope/${c.slug}`}
+            class="p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:border-amber-300/40 transition-colors text-center"
+          >
+            <div class="flex justify-center mb-2">
+              <ZodiacSymbol sign={c.name} size={40} color="#D4A017" />
+            </div>
+            <p class="text-sm text-white/80">{t(signNameKeys[c.slug] as any, lang) || c.name}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    {/* Archives */}
+    {archiveCards.length > 0 && (
+      <section class="mb-10">
+        <div class="flex items-baseline justify-between mb-4 flex-wrap gap-2">
+          <h2 class="font-serif text-2xl">{t("horoscope.recent_archives", lang)}</h2>
+          <span class="text-xs text-white/40">{archiveCards.length} {t("horoscope.past_readings", lang)}</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {archiveCards.map((a) => (
+            <a
+              href={`/${lang}/horoscope/${sign.slug}/${a.date}`}
+              class="group block p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:border-amber-300/40 hover:bg-amber-300/[0.03] transition-all"
+            >
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-medium text-amber-300/90 group-hover:text-amber-300">
+                  {formatFrenchDate(a.date)}
+                </span>
+                {a.luckyNumber != null && (
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-300/10 border border-amber-300/30 text-amber-300">
+                    ✦ {a.luckyNumber}
+                  </span>
+                )}
+              </div>
+              {a.intro && (
+                <p lang="fr" class="text-xs text-white/70 leading-relaxed line-clamp-2 mb-2">
+                  {a.intro}...
+                </p>
+              )}
+              {a.mantra && (
+                <p lang="fr" class="text-[10px] text-white/40 italic truncate">"{a.mantra}"</p>
+              )}
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {/* Sign navigation */}
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10">
+      {ZODIAC_SIGNS.map((s) => (
+        <a
+          href={`/${lang}/horoscope/${s.slug}`}
+          class={`text-sm px-3 py-1.5 rounded-full border transition-colors inline-flex items-center gap-1.5 ${
+            s.slug === sign.slug
+              ? "border-amber-300 bg-amber-300/10 text-amber-300"
+              : "border-white/10 hover:border-amber-300/40 hover:text-amber-300"
+          }`}
+        >
+          <ZodiacSymbol sign={s.name} size={16} color="currentColor" />
+          {t(signNameKeys[s.slug] as any, lang) || s.name}
+        </a>
+      ))}
+    </nav>
+  </article>
+</BaseLayout>
