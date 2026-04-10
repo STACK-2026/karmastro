@@ -79,7 +79,9 @@ const jsonLd = [
 ];
 ---
 
-<BaseLayout title={title} description={description} jsonLd={jsonLd} ogType="article">
+{/* noIndex : the strengths/frictions/guidance text is still in FR until Claude-translated.
+    We index only the FR canonical version + the [lang] hubs until full multilang content. */}
+<BaseLayout title={title} description={description} jsonLd={jsonLd} ogType="article" noIndex={true}>
   <article class="max-w-3xl mx-auto px-4 py-12">
     <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
       <a href={`/${lang}`} class="hover:text-amber-300">Karmastro</a>

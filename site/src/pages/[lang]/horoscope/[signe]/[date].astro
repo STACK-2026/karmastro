@@ -137,7 +137,14 @@ const jsonLd = [
 ];
 ---
 
-<BaseLayout title={title} description={description} jsonLd={jsonLd} ogType="article" publishedTime={propDate}>
+<BaseLayout
+  title={title}
+  description={description}
+  jsonLd={jsonLd}
+  ogType="article"
+  publishedTime={propDate}
+  noIndex={contentLang !== lang}
+>
   <article class="max-w-3xl mx-auto px-4 py-12">
     <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
       <a href={`/${lang}`} class="hover:text-amber-300">Karmastro</a>
