@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Calcolatori Gratis di Astrologia e Numerologia | Karmastro";
+const description =
+  "Calcolatori gratis di astrologia e numerologia: cammino di vita, ascendente, compatibilità zodiacale, carta astrale, anno personale, debito karmico. Precisi, in profondità, costruiti sulle Swiss Ephemeris.";
+
+type Tool = { slug: string; title: string; desc: string; category: "Astrologia" | "Numerologia"; icon: string };
+
+const TOOLS: Tool[] = [
+  { slug: "numero-del-cammino-di-vita", title: "Numero del Cammino di Vita", desc: "La cifra centrale nella numerologia pitagorica. Rivela la tua missione, i tuoi doni innati e le lezioni karmiche.", category: "Numerologia", icon: "1" },
+  { slug: "ascendente", title: "Calcolatore dell'Ascendente", desc: "Scopri il tuo ascendente: la maschera che indossi, la prima impressione che lasci, come il mondo ti vede.", category: "Astrologia", icon: "↗" },
+];
+
+const FALLBACK_TOOLS: { slug: string; title: string; desc: string; category: "Astrologia" | "Numerologia"; icon: string }[] = [
+  { slug: "carta-astrale", title: "Carta Astrale Completa", desc: "La tua carta natale con i 10 pianeti, le 12 case e gli aspetti maggiori. Disponibile nell'Oracolo.", category: "Astrologia", icon: "☉" },
+  { slug: "compatibilita", title: "Compatibilità Zodiacale", desc: "Verifica l'amore, l'amicizia, il lavoro e la compatibilità karmica tra due segni.", category: "Astrologia", icon: "♥" },
+  { slug: "sinastria", title: "Sinastria", desc: "Confronta due carte natali complete per vedere la chimica reale tra due persone.", category: "Astrologia", icon: "∞" },
+  { slug: "transiti", title: "Transiti Quotidiani", desc: "I pianeti in movimento ora e come influenzano la tua carta astrale.", category: "Astrologia", icon: "◉" },
+  { slug: "numero-di-espressione", title: "Numero di Espressione", desc: "Chiamato anche numero del destino. Calcolato dal tuo nome completo di nascita.", category: "Numerologia", icon: "A" },
+  { slug: "anno-personale", title: "Anno Personale", desc: "Ogni anno porta un tema numerologico specifico. Scopri il tuo e allineati con la sua energia.", category: "Numerologia", icon: "★" },
+  { slug: "debito-karmico", title: "Debito Karmico", desc: "Scopri se porti i debiti 13/4, 14/5, 16/7 o 19/1 ereditati da vite passate.", category: "Numerologia", icon: "∴" },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Calcolatori Gratis di Astrologia e Numerologia",
+    description,
+    url: "https://karmastro.com/it/outils",
+    inLanguage: "it",
+    hasPart: TOOLS.map((t) => ({
+      "@type": "WebApplication",
+      name: t.title,
+      url: `https://karmastro.com/it/outils/${t.slug}`,
+      applicationCategory: "UtilitiesApplication",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://karmastro.com/it" },
+      { "@type": "ListItem", position: 2, name: "Strumenti", item: "https://karmastro.com/it/outils" },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/it" class="hover:text-amber-300">Home</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Strumenti</span>
+    </nav>
+
+    <header class="text-center mb-12">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Strumenti Gratis</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Calcolatori di Astrologia e Numerologia</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Strumenti costruiti con la stessa precisione che userebbe un astrologo professionista. Senza riempitivi, senza numeri casuali, senza gate: solo la matematica e un'interpretazione chiara.
+      </p>
+    </header>
+
+    <section class="mb-12">
+      <h2 class="font-serif text-2xl text-amber-300 mb-4 flex items-center gap-3">
+        <span class="text-3xl">✦</span> Disponibili in italiano
+      </h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        {TOOLS.map((t) => (
+          <a href={`/it/outils/${t.slug}`} class="group p-5 rounded-2xl border border-amber-300/30 bg-amber-300/5 hover:border-amber-300/60 hover:bg-amber-300/10 transition-all">
+            <div class="flex items-start gap-3 mb-2">
+              <span class="text-3xl text-amber-300">{t.icon}</span>
+              <h3 class="font-serif text-lg text-white group-hover:text-amber-300 transition-colors">{t.title}</h3>
+            </div>
+            <p class="text-sm text-white/60 leading-relaxed">{t.desc}</p>
+            <p class="text-xs text-amber-300 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">Apri →</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="font-serif text-2xl text-white/80 mb-4 flex items-center gap-3">
+        <span class="text-3xl">◑</span> Altri strumenti nell'Oracolo
+      </h2>
+      <p class="text-sm text-white/60 mb-5 leading-relaxed">
+        Questi strumenti sono disponibili nell'app dell'Oracolo in italiano. Versioni indipendenti in italiano in arrivo.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+        {FALLBACK_TOOLS.map((t) => (
+          <a href="https://app.karmastro.com/oracle?lang=it" class="group p-5 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-purple-300/40 hover:bg-purple-300/5 transition-all">
+            <div class="flex items-start gap-3 mb-2">
+              <span class="text-3xl text-purple-300">{t.icon}</span>
+              <h3 class="font-serif text-lg text-white group-hover:text-purple-300 transition-colors">{t.title}</h3>
+            </div>
+            <p class="text-sm text-white/60 leading-relaxed">{t.desc}</p>
+            <p class="text-xs text-purple-300 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">Apri nell'Oracolo →</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="prose prose-invert max-w-none mb-12">
+      <h2 class="font-serif text-3xl mb-4">Perché questi calcolatori?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Internet è pieno di calcolatori di astrologia e numerologia che restituiscono risultati vaghi, generici o semplicemente sbagliati. Noi abbiamo costruito i nostri per fare l'opposto. Ogni strumento usa la <strong>matematica esatta</strong> che astrologi e numerologi professionisti hanno usato per secoli: riduzione pitagorica per la numerologia, calcoli delle Swiss Ephemeris per l'astrologia.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Tutti gli strumenti sono gratuiti</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Sì, davvero. Nessuna prova, nessuna carta di credito, nessun «registrati per sbloccare». Abbiamo costruito Karmastro sulla convinzione che gli strumenti cosmici che hanno aiutato le persone per migliaia di anni dovrebbero essere liberamente accessibili.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center">
+      <h3 class="font-serif text-xl mb-2">Vuoi una lettura personalizzata?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Questi calcolatori ti danno i dati. Per una lettura completa che incrocia la tua astrologia e la tua numerologia con una guida personalizzata, consulta l'Oracolo di Karmastro.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=it" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Consulta l'Oracolo gratis
+      </a>
+    </div>
+  </article>
+</BaseLayout>

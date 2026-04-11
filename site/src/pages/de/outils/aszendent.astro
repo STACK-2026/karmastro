@@ -1,0 +1,257 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Aszendent berechnen - Was ist mein Aszendent? | Karmastro";
+const description =
+  "Was ist mein Aszendent? Berechne deinen Aszendenten kostenlos mit unserem präzisen Astrologie-Rechner. Entdecke, was dein Aszendent bedeutet, wie er deine Persönlichkeit prägt und wie er sich von deinem Sonnenzeichen unterscheidet.";
+
+type RisingMeaning = { title: string; ruler: string; summary: string; appearance: string; firstImpression: string; shadow: string };
+
+const MEANINGS: Record<string, RisingMeaning> = {
+  aries: { title: "Aszendent Widder", ruler: "Regiert von Mars · Feuer", summary: "Du betrittst jeden Raum wie ein Startschuss. Der Widder-Aszendent trägt einen unverwechselbaren Vorwärtsdrang, eine Direktheit, die andere spüren, bevor du ein Wort sagst.", appearance: "Markante Gesichtszüge, ausgeprägte Augenbraue oder Kiefer, athletischer Körperbau, schneller Gang.", firstImpression: "Mutig, wettbewerbsfähig, erfrischend ehrlich, ungeduldig mit Smalltalk.", shadow: "Aggression bei Ungeduld, Tendenz mehr zu beginnen als zu beenden, schnelles Temperament." },
+  taurus: { title: "Aszendent Stier", ruler: "Regiert von Venus · Erde", summary: "Du bewegst dich durch die Welt wie ein langsamer Fluss: ruhig, stetig, unmöglich zu hetzen. Der Stier-Aszendent trägt eine verwurzelte, sinnliche Präsenz.", appearance: "Weiche, attraktive Züge, volle Lippen, starker Hals und Schultern, natürliche Sinnlichkeit.", firstImpression: "Zuverlässig, warm, anfangs etwas zurückhaltend, tief präsent wenn Vertrauen da ist.", shadow: "Sturheit getarnt als Geduld, Widerstand gegen Veränderung, Tendenz in Komfort stecken zu bleiben." },
+  gemini: { title: "Aszendent Zwillinge", ruler: "Regiert von Merkur · Luft", summary: "Du bist derjenige, der jede Versammlung sofort belebt. Der Zwillinge-Aszendent trägt eine quicksilber-curious Energie.", appearance: "Jugendliche Züge unabhängig vom Alter, ausdrucksstarke Hände, schnelle Augen, schlanke Statur.", firstImpression: "Witzig, gesprächig, endlos neugierig, der soziale Klebstoff jeder Gruppe.", shadow: "Zerstreuung, oberflächliche Verbindungen, Tendenz zu reden statt zuzuhören." },
+  cancer: { title: "Aszendent Krebs", ruler: "Regiert vom Mond · Wasser", summary: "Du trägst eine unsichtbare Schale, die Menschen sofort spüren. Der Krebs-Aszendent bewegt sich durch die Welt mit einem auf den Raum eingestellten emotionalen Radar.", appearance: "Rundes oder mondförmiges Gesicht, ausdrucksstarke Augen, weiche Haut, oft eine sanfte Kurve im Körper.", firstImpression: "Warm, fürsorglich, etwas schüchtern, der Freund der wirklich fragt wie es dir geht.", shadow: "Stimmungsschwankungen, Rückzug in die Schale, Schmerz anderer absorbieren bis er zum eigenen wird." },
+  leo: { title: "Aszendent Löwe", ruler: "Regiert von der Sonne · Feuer", summary: "Du kommst herein und die Beleuchtung scheint sich zu ändern. Der Löwe-Aszendent trägt eine natürliche Bühnenpräsenz.", appearance: "Dichtes Haar (oft ein Markenzeichen), warmes Lächeln, aufrechte Haltung, katzenartige Anmut.", firstImpression: "Selbstbewusst, großzügig, theatralisch, derjenige der alle sich lebendiger fühlen lässt.", shadow: "Aufgeblasenes Ego, ständiges Aufmerksamkeitsbedürfnis, verletzter Stolz der schmollt statt zu reden." },
+  virgo: { title: "Aszendent Jungfrau", ruler: "Regiert von Merkur · Erde", summary: "Du kommst in jede Situation und führst bereits eine stille Qualitätskontrolle durch. Der Jungfrau-Aszendent trägt eine zurückhaltende, beobachtende Präsenz.", appearance: "Ordentliches und präzises Erscheinungsbild, verfeinerte Züge, elegante Hände, oft größer oder schlanker als der Durchschnitt.", firstImpression: "Zurückhaltend, nachdenklich, akribisch, die Person die tatsächlich das Handbuch liest.", shadow: "Übermäßige Kritik, Angst getarnt als Perfektionismus, emotionale Zurückhaltung verwechselt mit Kälte." },
+  libra: { title: "Aszendent Waage", ruler: "Regiert von Venus · Luft", summary: "Du bist derjenige den Menschen als mühelos charmant beschreiben. Der Waage-Aszendent trägt eine natürliche Anmut, einen diplomatischen Instinkt.", appearance: "Symmetrische Züge, Grübchen, elegante Haltung, ein fast studierter Sinn für Stil.", firstImpression: "Charmant, diplomatisch, gut gekleidet, derjenige der Konflikte glättet bevor sie entstehen.", shadow: "Unentschlossenheit, Gefallen wollen, schwierige Gespräche vermeiden um den Frieden zu wahren." },
+  scorpio: { title: "Aszendent Skorpion", ruler: "Regiert von Pluto · Wasser", summary: "Menschen spüren deine Präsenz bevor sie dich sehen. Der Skorpion-Aszendent trägt eine Intensität die unmöglich zu fälschen und unmöglich zu verbergen ist.", appearance: "Durchdringende Augen, starke Augenbrauen, magnetische Aura, kompakter mächtiger Körper.", firstImpression: "Intensiv, mysteriös, tief wahrnehmend, derjenige der Dinge über dich zu wissen scheint die du nicht geteilt hast.", shadow: "Misstrauen, Kontrollbedürfnis, Groll weit über sein Verfallsdatum hinaus halten." },
+  sagittarius: { title: "Aszendent Schütze", ruler: "Regiert von Jupiter · Feuer", summary: "Du bewegst dich durch die Welt als wäre sie dein persönlicher Spielplatz. Der Schütze-Aszendent trägt eine expansive, optimistische Suchenden-Energie.", appearance: "Lange Gliedmaßen, offenes Gesicht, athletische Anmut, ein Lächeln das die Augen erreicht.", firstImpression: "Abenteuerlich, philosophisch, direkt auf charmante Weise, derjenige der alles möglich erscheinen lässt.", shadow: "Taktlosigkeit, Unruhe, mehr versprechen als man halten kann." },
+  capricorn: { title: "Aszendent Steinbock", ruler: "Regiert von Saturn · Erde", summary: "Du trägst eine uralte Ernsthaftigkeit, selbst wenn du jung bist. Der Steinbock-Aszendent betritt Räume und scannt bereits geistig die Machtstruktur.", appearance: "Starke Knochenstruktur, markanter Kiefer oder Augenbraue, zurückhaltender Ausdruck.", firstImpression: "Gefasst, diszipliniert, subtil ehrgeizig, derjenige der tatsächlich liefert was er verspricht.", shadow: "Emotionale Zurückhaltung, Workaholismus, das Leben zu ernst nehmen um es zu genießen." },
+  aquarius: { title: "Aszendent Wassermann", ruler: "Regiert von Uranus · Luft", summary: "Du bist derjenige den Menschen nicht ganz einordnen können, und das ist der Punkt. Der Wassermann-Aszendent trägt eine leise rebellische, zukunftsorientierte Energie.", appearance: "Ungewöhnliche oder markante Züge, unverwechselbarer Stil, oft groß, Augen die scheinbar an dir vorbei sehen.", firstImpression: "Originell, intellektuell, freundlich aber leicht distanziert, derjenige der die Annahmen der Gruppe herausfordert.", shadow: "Emotionale Kälte, Rebellion ohne Richtung, intellektuelle Arroganz." },
+  pisces: { title: "Aszendent Fische", ruler: "Regiert von Neptun · Wasser", summary: "Du betrittst Räume wie Nebel in ein Tal zieht: leise, vollständig, unmöglich festzuhalten. Der Fische-Aszendent trägt eine verträumte, mitfühlende Präsenz.", appearance: "Weiche Züge, große verträumte Augen, sanfte Stimme, eine Aura von einer anderen Welt.", firstImpression: "Sanft, intuitiv, künstlerisch, derjenige der ohne Urteil zuhört.", shadow: "Eskapismus, Emotionen anderer absorbieren bis zur Erschöpfung, Schwierigkeiten mit Grenzen." },
+};
+
+const SIGNS = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Aszendent Rechner",
+    description,
+    url: "https://karmastro.com/de/outils/aszendent",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "de",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "214" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "Was ist ein Aszendent?", acceptedAnswer: { "@type": "Answer", text: "Dein Aszendent ist das Tierkreiszeichen, das im exakten Moment deiner Geburt am östlichen Horizont aufstieg. Er repräsentiert, wie andere dich sehen, dein körperliches Erscheinungsbild, deine spontanen Reaktionen und die Maske, die du beim Kennenlernen neuer Menschen trägst." } },
+      { "@type": "Question", name: "Warum brauche ich meine Geburtszeit, um meinen Aszendenten zu berechnen?", acceptedAnswer: { "@type": "Answer", text: "Der Aszendent wechselt im Durchschnitt alle zwei Stunden, daher ist deine exakte Geburtszeit unerlässlich. Ohne sie ist die Berechnung unmöglich. Wenn du deine Geburtszeit nicht kennst, findest du sie normalerweise in deiner offiziellen Geburtsurkunde." } },
+      { "@type": "Question", name: "Was ist der Unterschied zwischen Sonnenzeichen und Aszendent?", acceptedAnswer: { "@type": "Answer", text: "Dein Sonnenzeichen ist deine essenzielle Identität, der Archetyp den du zu verkörpern gekommen bist. Dein Aszendent ist die Linse durch die du diese Identität der Welt ausdrückst. Denke an die Sonne als das Lied das du singst und an den Aszendenten als die Stimme mit der du es singst." } },
+      { "@type": "Question", name: "Ist mein Aszendent dasselbe wie das aufsteigende Zeichen?", acceptedAnswer: { "@type": "Answer", text: "Ja. Aszendent und aufsteigendes Zeichen sind zwei Namen für dasselbe. Astrologen verwenden beide Begriffe austauschbar." } },
+      { "@type": "Question", name: "Kann sich mein Aszendent mit der Zeit ändern?", acceptedAnswer: { "@type": "Answer", text: "Nein. Dein Aszendent ist durch deine exakte Geburtszeit, Datum und Ort festgelegt. Er wird sich nie ändern. Was sich ändert, ist wie stark du ihn ausdrückst: viele Menschen wachsen mit dem Alter in ihren Aszendenten hinein, besonders nach ihrer Saturn-Wiederkehr um das 29. Lebensjahr." } },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/de" class="hover:text-amber-300">Start</a>
+      <span class="mx-2">/</span>
+      <a href="/de/outils" class="hover:text-amber-300">Werkzeuge</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Aszendent</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Westliche Astrologie</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Aszendent berechnen</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Dein Aszendent ist die Maske die du trägst, der erste Eindruck den du hinterlässt, die Art wie die Welt dich trifft. Berechne deinen Aszendenten kostenlos mit deiner exakten Geburtszeit und deinem Geburtsort.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="rising-form" class="space-y-4">
+        <div>
+          <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">Geburtsdatum</label>
+          <input type="date" id="birth-date" name="birth-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <div>
+          <label for="birth-time" class="block text-sm font-medium text-white/80 mb-2">Exakte Geburtszeit</label>
+          <input type="time" id="birth-time" name="birth-time" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+          <p class="text-xs text-white/50 mt-1">Unerlässlich. Schau auf deiner Geburtsurkunde nach, wenn du unsicher bist.</p>
+        </div>
+        <div>
+          <label for="birth-place" class="block text-sm font-medium text-white/80 mb-2">Geburtsort</label>
+          <input type="text" id="birth-place" name="birth-place" required placeholder="z.B. Berlin, Deutschland" class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white placeholder-white/30 focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          Meinen Aszendenten berechnen
+        </button>
+      </form>
+
+      <div id="result-loading" class="mt-6 hidden text-center text-white/70">
+        <div class="text-3xl animate-pulse">✦</div>
+        <p class="mt-2 text-sm">Berechne den Horizont im Moment deiner Geburt...</p>
+      </div>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Dein Aszendent</p>
+          <h2 id="result-title" class="text-4xl font-serif text-amber-300 mb-2"></h2>
+          <p id="result-ruler" class="text-sm text-white/60 mb-4"></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Körperliche Merkmale</p>
+              <p id="result-appearance" class="text-sm text-white/70 leading-relaxed"></p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">Erster Eindruck</p>
+              <p id="result-impression" class="text-sm text-white/70 leading-relaxed"></p>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">Schatten</p>
+            <p id="result-shadow" class="text-sm text-white/80 italic leading-relaxed"></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-center">
+            <a href="https://app.karmastro.com/oracle?lang=de" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
+              Meine vollständige Geburtskarte erhalten
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="result-error" class="mt-6 hidden p-5 rounded-xl bg-pink-300/10 border border-pink-300/30 text-sm text-white/80">
+        <p>Wir konnten deinen Aszendenten nicht aus diesen Koordinaten berechnen. Überprüfe deinen Geburtsort.</p>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Was ist der Aszendent?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Dein <strong>Aszendent</strong>, auch <strong>aufsteigendes Zeichen</strong> genannt, ist das Tierkreiszeichen, das im exakten Moment deiner Geburt am östlichen Horizont aufstieg. Während dein Sonnenzeichen deine essenzielle Identität beschreibt, beschreibt dein Aszendent die Linse durch die diese Identität sich ausdrückt. Es ist das Erste was Menschen von dir wahrnehmen.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Zwei am selben Tag geborene Menschen können sich beim Treffen radikal unterschiedlich anfühlen, weil sie unterschiedliche Aszendenten haben. Eine Skorpion-Sonne mit Löwe-Aszendent betritt einen Raum wie ein Künstler. Eine Skorpion-Sonne mit Jungfrau-Aszendent betritt ihn wie ein stiller Beobachter. Gleicher Kern, unterschiedliche Masken.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Die 12 Aszendenten erklärt</h2>
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
+        {SIGNS.map((s) => {
+          const m = MEANINGS[s];
+          return (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <div class="flex items-baseline gap-3 mb-2">
+                <span class="text-xl font-serif text-amber-300">{m.title}</span>
+              </div>
+              <p class="text-xs text-white/60 leading-relaxed">{m.firstImpression}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Sonne, Mond, Aszendent: die Dreifaltigkeit</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        In der modernen westlichen Astrologie bilden deine <strong>Sonnen-, Mond- und Aszendentenzeichen</strong> das, was Astrologen «die großen Drei» nennen. Zusammen malen sie ein viel genaueres Bild als das Sonnenzeichen allein.
+      </p>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Sonnenzeichen</strong>: deine essenzielle Identität, dein bewusstes Ego, der Archetyp den du verkörpern kamst.</li>
+        <li><strong>Mondzeichen</strong>: deine emotionale Innenwelt, deine Bedürfnisse, deine instinktiven Reaktionen im Privaten.</li>
+        <li><strong>Aszendent</strong>: deine soziale Maske, wie andere dich sehen, dein physischer Körper, dein spontaner Stil.</li>
+      </ul>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Willst du deine vollständige Geburtskarte?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Dein Aszendent ist nur einer der 10 Planeten und 12 Häuser in deiner Geburtskarte. Erhalte die vollständige Lesung mit dem Karmastro Orakel.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=de" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Meine Geburtskarte kostenlos erhalten
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/de/outils" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Alle Werkzeuge</a>
+      <a href="/de/outils/lebenszahl" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Lebenszahl</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  const MEANINGS: Record<string, { title: string; ruler: string; summary: string; appearance: string; firstImpression: string; shadow: string }> = {
+    aries: { title: "Aszendent Widder", ruler: "Regiert von Mars · Feuer", summary: "Du betrittst jeden Raum wie ein Startschuss. Der Widder-Aszendent trägt einen unverwechselbaren Vorwärtsdrang.", appearance: "Markante Gesichtszüge, ausgeprägte Augenbraue, athletischer Körperbau, schneller Gang.", firstImpression: "Mutig, wettbewerbsfähig, erfrischend ehrlich, ungeduldig mit Smalltalk.", shadow: "Aggression bei Ungeduld, Tendenz mehr zu beginnen als zu beenden." },
+    taurus: { title: "Aszendent Stier", ruler: "Regiert von Venus · Erde", summary: "Du bewegst dich durch die Welt wie ein langsamer Fluss: ruhig, stetig. Der Stier-Aszendent trägt eine verwurzelte Präsenz.", appearance: "Weiche attraktive Züge, volle Lippen, starker Hals und Schultern.", firstImpression: "Zuverlässig, warm, anfangs etwas zurückhaltend.", shadow: "Sturheit getarnt als Geduld, Widerstand gegen Veränderung." },
+    gemini: { title: "Aszendent Zwillinge", ruler: "Regiert von Merkur · Luft", summary: "Du bist derjenige der jede Versammlung sofort belebt. Der Zwillinge-Aszendent trägt eine neugierige Energie.", appearance: "Jugendliche Züge, ausdrucksstarke Hände, schnelle Augen, schlanke Statur.", firstImpression: "Witzig, gesprächig, endlos neugierig.", shadow: "Zerstreuung, oberflächliche Verbindungen." },
+    cancer: { title: "Aszendent Krebs", ruler: "Regiert vom Mond · Wasser", summary: "Du trägst eine unsichtbare Schale, die Menschen sofort spüren. Der Krebs-Aszendent bewegt sich mit einem emotionalen Radar.", appearance: "Rundes Gesicht, ausdrucksstarke Augen, weiche Haut.", firstImpression: "Warm, fürsorglich, etwas schüchtern.", shadow: "Stimmungsschwankungen, Rückzug, Schmerz anderer absorbieren." },
+    leo: { title: "Aszendent Löwe", ruler: "Regiert von der Sonne · Feuer", summary: "Du kommst herein und die Beleuchtung scheint sich zu ändern. Der Löwe-Aszendent trägt eine natürliche Bühnenpräsenz.", appearance: "Dichtes Haar, warmes Lächeln, aufrechte Haltung, katzenartige Anmut.", firstImpression: "Selbstbewusst, großzügig, theatralisch.", shadow: "Aufgeblasenes Ego, ständiges Aufmerksamkeitsbedürfnis." },
+    virgo: { title: "Aszendent Jungfrau", ruler: "Regiert von Merkur · Erde", summary: "Du kommst in jede Situation und führst bereits eine stille Qualitätskontrolle durch. Der Jungfrau-Aszendent ist beobachtend.", appearance: "Ordentliches Erscheinungsbild, verfeinerte Züge, elegante Hände.", firstImpression: "Zurückhaltend, nachdenklich, akribisch.", shadow: "Übermäßige Kritik, Angst getarnt als Perfektionismus, Kälte-Eindruck." },
+    libra: { title: "Aszendent Waage", ruler: "Regiert von Venus · Luft", summary: "Der Waage-Aszendent trägt eine natürliche Anmut, einen diplomatischen Instinkt, ein Auge für ästhetisches Gleichgewicht.", appearance: "Symmetrische Züge, Grübchen, elegante Haltung.", firstImpression: "Charmant, diplomatisch, gut gekleidet.", shadow: "Unentschlossenheit, Gefallen wollen, schwierige Gespräche vermeiden." },
+    scorpio: { title: "Aszendent Skorpion", ruler: "Regiert von Pluto · Wasser", summary: "Menschen spüren deine Präsenz bevor sie dich sehen. Der Skorpion-Aszendent trägt eine unmögliche Intensität.", appearance: "Durchdringende Augen, starke Augenbrauen, magnetische Aura, kompakter mächtiger Körper.", firstImpression: "Intensiv, mysteriös, tief wahrnehmend.", shadow: "Misstrauen, Kontrollbedürfnis, langer Groll." },
+    sagittarius: { title: "Aszendent Schütze", ruler: "Regiert von Jupiter · Feuer", summary: "Du bewegst dich durch die Welt als wäre sie dein persönlicher Spielplatz. Der Schütze-Aszendent trägt expansive Energie.", appearance: "Lange Gliedmaßen, offenes Gesicht, athletische Anmut, Lächeln das die Augen erreicht.", firstImpression: "Abenteuerlich, philosophisch, direkt auf charmante Weise.", shadow: "Taktlosigkeit, Unruhe, mehr versprechen als man halten kann." },
+    capricorn: { title: "Aszendent Steinbock", ruler: "Regiert von Saturn · Erde", summary: "Du trägst eine uralte Ernsthaftigkeit. Der Steinbock-Aszendent scannt bereits geistig die Machtstruktur.", appearance: "Starke Knochenstruktur, markanter Kiefer, zurückhaltender Ausdruck.", firstImpression: "Gefasst, diszipliniert, subtil ehrgeizig.", shadow: "Emotionale Zurückhaltung, Workaholismus, zu ernste Lebensauffassung." },
+    aquarius: { title: "Aszendent Wassermann", ruler: "Regiert von Uranus · Luft", summary: "Du bist derjenige den Menschen nicht einordnen können, und das ist der Punkt. Leise rebellische Energie.", appearance: "Ungewöhnliche Züge, unverwechselbarer Stil, oft groß, ferne Augen.", firstImpression: "Originell, intellektuell, freundlich aber distanziert.", shadow: "Emotionale Kälte, Rebellion ohne Richtung, intellektuelle Arroganz." },
+    pisces: { title: "Aszendent Fische", ruler: "Regiert von Neptun · Wasser", summary: "Du betrittst Räume wie Nebel in ein Tal zieht: leise, vollständig. Der Fische-Aszendent trägt eine verträumte Präsenz.", appearance: "Weiche Züge, große verträumte Augen, sanfte Stimme.", firstImpression: "Sanft, intuitiv, künstlerisch, urteilslos.", shadow: "Eskapismus, Emotionen anderer absorbieren bis zur Erschöpfung, Grenzen." },
+  };
+
+  const SIGN_NAMES = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"];
+
+  async function geocode(place: string): Promise<{ lat: number; lon: number } | null> {
+    try {
+      const resp = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(place)}&format=json&limit=1`, { headers: { "Accept-Language": "de" } });
+      const data = await resp.json();
+      if (!Array.isArray(data) || data.length === 0) return null;
+      return { lat: parseFloat(data[0].lat), lon: parseFloat(data[0].lon) };
+    } catch { return null; }
+  }
+
+  function computeAscendant(date: Date, lat: number, lon: number): string {
+    const jd = date.getTime() / 86400000 + 2440587.5;
+    const T = (jd - 2451545.0) / 36525;
+    const gmst = (280.46061837 + 360.98564736629 * (jd - 2451545.0) + T * T * 0.000387933) % 360;
+    const lst = ((gmst + lon + 360) % 360) * Math.PI / 180;
+    const latRad = lat * Math.PI / 180;
+    const eps = 23.4392911 * Math.PI / 180;
+    const y = -Math.cos(lst);
+    const x = Math.sin(lst) * Math.cos(eps) + Math.tan(latRad) * Math.sin(eps);
+    let asc = Math.atan2(y, x) * 180 / Math.PI;
+    if (asc < 0) asc += 360;
+    return SIGN_NAMES[Math.floor(asc / 30)];
+  }
+
+  const form = document.getElementById("rising-form") as HTMLFormElement;
+  const loadingDiv = document.getElementById("result-loading") as HTMLDivElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+  const errorDiv = document.getElementById("result-error") as HTMLDivElement;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    resultDiv.classList.add("hidden");
+    errorDiv.classList.add("hidden");
+    loadingDiv.classList.remove("hidden");
+
+    const date = (document.getElementById("birth-date") as HTMLInputElement).value;
+    const time = (document.getElementById("birth-time") as HTMLInputElement).value;
+    const place = (document.getElementById("birth-place") as HTMLInputElement).value;
+    if (!date || !time || !place) { loadingDiv.classList.add("hidden"); return; }
+
+    const coords = await geocode(place);
+    if (!coords) { loadingDiv.classList.add("hidden"); errorDiv.classList.remove("hidden"); return; }
+
+    const birthDate = new Date(`${date}T${time}:00Z`);
+    const signKey = computeAscendant(birthDate, coords.lat, coords.lon);
+    const meaning = MEANINGS[signKey];
+
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-ruler") as HTMLElement).textContent = meaning.ruler;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+    (document.getElementById("result-appearance") as HTMLElement).textContent = meaning.appearance;
+    (document.getElementById("result-impression") as HTMLElement).textContent = meaning.firstImpression;
+    (document.getElementById("result-shadow") as HTMLElement).textContent = meaning.shadow;
+
+    loadingDiv.classList.add("hidden");
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>

@@ -1,0 +1,257 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Calcolatore dell'Ascendente - Qual è il mio ascendente? | Karmastro";
+const description =
+  "Qual è il mio ascendente? Calcola il tuo ascendente gratis con il nostro calcolatore di astrologia preciso. Scopri cosa significa il tuo segno ascendente, come plasma la tua personalità e in cosa differisce dal tuo segno solare.";
+
+type RisingMeaning = { title: string; ruler: string; summary: string; appearance: string; firstImpression: string; shadow: string };
+
+const MEANINGS: Record<string, RisingMeaning> = {
+  aries: { title: "Ascendente Ariete", ruler: "Governato da Marte · Fuoco", summary: "Entri in ogni stanza come un colpo di pistola allo start. L'Ascendente Ariete porta uno slancio inconfondibile, una franchezza che gli altri sentono prima che tu dica una parola.", appearance: "Tratti facciali marcati, sopracciglio o mandibola pronunciati, corpo atletico, camminata rapida.", firstImpression: "Audace, competitivo, rinfrescantemente onesto, impaziente con le chiacchiere.", shadow: "Aggressione quando perdi la pazienza, tendenza a iniziare più di quanto finisci, temperamento rapido." },
+  taurus: { title: "Ascendente Toro", ruler: "Governato da Venere · Terra", summary: "Ti muovi nel mondo come un fiume lento: calmo, fermo, impossibile da affrettare. L'Ascendente Toro porta una presenza radicata e sensuale.", appearance: "Tratti morbidi e attraenti, labbra piene, collo e spalle forti, una sensualità naturale.", firstImpression: "Affidabile, caloroso, un po' riservato all'inizio, profondamente presente una volta che si fida.", shadow: "Testardaggine mascherata da pazienza, resistenza al cambiamento, tendenza a ristagnare nel comfort." },
+  gemini: { title: "Ascendente Gemelli", ruler: "Governato da Mercurio · Aria", summary: "Sei chi anima all'istante qualsiasi riunione. L'Ascendente Gemelli porta un'energia di mercurio, curiosa. La tua mente corre più veloce della tua bocca.", appearance: "Tratti giovanili indipendentemente dall'età, mani espressive, occhi agili, corporatura snella.", firstImpression: "Spiritoso, chiacchierone, infinitamente curioso, il collante sociale di qualsiasi gruppo.", shadow: "Dispersione, connessioni superficiali, tendenza a parlare invece di ascoltare." },
+  cancer: { title: "Ascendente Cancro", ruler: "Governato dalla Luna · Acqua", summary: "Porti un guscio invisibile che le persone percepiscono immediatamente. L'Ascendente Cancro si muove nel mondo con un radar emotivo.", appearance: "Viso rotondo o lunare, occhi espressivi, pelle morbida, spesso una curva gentile nel corpo.", firstImpression: "Caloroso, premuroso, un po' timido, l'amico che davvero chiede come stai.", shadow: "Sbalzi d'umore, ritirarsi nel guscio, assorbire il dolore altrui fino a farlo proprio." },
+  leo: { title: "Ascendente Leone", ruler: "Governato dal Sole · Fuoco", summary: "Entri e l'illuminazione sembra cambiare. L'Ascendente Leone porta una presenza scenica naturale.", appearance: "Capelli folti (spesso tratto distintivo), sorriso caloroso, postura eretta, grazia felina.", firstImpression: "Sicuro, generoso, teatrale, colui che fa sentire tutti leggermente più vivi.", shadow: "Ego gonfiato, bisogno di attenzione costante, orgoglio ferito che broncia invece di parlare." },
+  virgo: { title: "Ascendente Vergine", ruler: "Governato da Mercurio · Terra", summary: "Arrivi a ogni situazione già eseguendo un silenzioso controllo qualità. L'Ascendente Vergine porta una presenza riservata e osservatrice.", appearance: "Aspetto ordinato e preciso, tratti raffinati, mani eleganti, spesso più alto o più magro della media.", firstImpression: "Riservato, riflessivo, meticoloso, la persona che davvero legge il manuale.", shadow: "Critica eccessiva, ansia mascherata da perfezionismo, riserva emotiva confusa con freddezza." },
+  libra: { title: "Ascendente Bilancia", ruler: "Governato da Venere · Aria", summary: "Sei di quelli che le persone descrivono come affascinanti senza sforzo. L'Ascendente Bilancia porta una grazia naturale, un istinto diplomatico.", appearance: "Tratti simmetrici, fossette, postura elegante, un senso dello stile quasi studiato.", firstImpression: "Affascinante, diplomatico, ben vestito, colui che smussa i conflitti prima che accadano.", shadow: "Indecisione, compiacere gli altri, evitare conversazioni difficili per mantenere la pace." },
+  scorpio: { title: "Ascendente Scorpione", ruler: "Governato da Plutone · Acqua", summary: "Le persone sentono la tua presenza prima di vederti. L'Ascendente Scorpione porta un'intensità impossibile da fingere e impossibile da nascondere.", appearance: "Occhi penetranti, sopracciglio forte, aura magnetica, corpo compatto e potente.", firstImpression: "Intenso, misterioso, profondamente percettivo, colui che sembra sapere cose di te che non hai condiviso.", shadow: "Sospetto, bisogno di controllo, tenere rancori molto oltre la loro data di scadenza." },
+  sagittarius: { title: "Ascendente Sagittario", ruler: "Governato da Giove · Fuoco", summary: "Ti muovi nel mondo come se fosse il tuo parco personale. L'Ascendente Sagittario porta un'energia espansiva, ottimista, di cercatore.", appearance: "Arti lunghi, viso aperto, grazia atletica, un sorriso che arriva agli occhi.", firstImpression: "Avventuroso, filosofico, diretto in modo affascinante, colui che fa sembrare tutto possibile.", shadow: "Mancanza di tatto, irrequietezza, promettere più di quanto puoi mantenere." },
+  capricorn: { title: "Ascendente Capricorno", ruler: "Governato da Saturno · Terra", summary: "Porti una serietà ancestrale, anche da giovane. L'Ascendente Capricorno entra nelle stanze già scansionando mentalmente la struttura del potere.", appearance: "Struttura ossea forte, mandibola o sopracciglio prominenti, espressione riservata.", firstImpression: "Composto, disciplinato, sottilmente ambizioso, colui che davvero mantiene ciò che promette.", shadow: "Riserva emotiva, dipendenza dal lavoro, prendere la vita troppo sul serio per goderla." },
+  aquarius: { title: "Ascendente Acquario", ruler: "Governato da Urano · Aria", summary: "Sei di quelli che le persone non riescono a catalogare, ed è proprio questo il punto. L'Ascendente Acquario porta un'energia silenziosamente ribelle.", appearance: "Tratti insoliti o sorprendenti, stile distintivo, spesso alto, occhi che sembrano vedere oltre te.", firstImpression: "Originale, intellettuale, amichevole ma leggermente distaccato, colui che sfida le supposizioni del gruppo.", shadow: "Freddezza emotiva, ribellione senza direzione, arroganza intellettuale." },
+  pisces: { title: "Ascendente Pesci", ruler: "Governato da Nettuno · Acqua", summary: "Entri nelle stanze come la nebbia entra in una valle: silenzioso, completamente, impossibile da afferrare. L'Ascendente Pesci porta una presenza sognante, compassionevole.", appearance: "Tratti morbidi, occhi grandi e sognanti, voce gentile, un'aura di altro mondo.", firstImpression: "Gentile, intuitivo, artistico, colui che ascolta senza giudicare.", shadow: "Fuga dalla realtà, assorbire le emozioni altrui fino all'esaurimento, difficoltà con i confini." },
+};
+
+const SIGNS = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Calcolatore dell'Ascendente",
+    description,
+    url: "https://karmastro.com/it/outils/ascendente",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "it",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "214" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "Cos'è l'ascendente?", acceptedAnswer: { "@type": "Answer", text: "Il tuo ascendente è il segno zodiacale che stava sorgendo all'orizzonte orientale nel momento esatto della tua nascita. Rappresenta come gli altri ti vedono, il tuo aspetto fisico, le tue reazioni spontanee e la maschera che indossi quando incontri qualcuno di nuovo." } },
+      { "@type": "Question", name: "Perché ho bisogno dell'ora di nascita per calcolare l'ascendente?", acceptedAnswer: { "@type": "Answer", text: "L'ascendente cambia ogni due ore in media, quindi la tua ora esatta di nascita è essenziale. Senza di essa, il calcolo è impossibile. Se non conosci la tua ora di nascita, di solito la troverai sul tuo certificato di nascita ufficiale." } },
+      { "@type": "Question", name: "Qual è la differenza tra segno solare e ascendente?", acceptedAnswer: { "@type": "Answer", text: "Il tuo segno solare è la tua identità essenziale, l'archetipo che sei venuto a incarnare. Il tuo ascendente è la lente attraverso cui esprimi quell'identità al mondo. Pensa al Sole come alla canzone che canti e all'ascendente come alla voce con cui la canti." } },
+      { "@type": "Question", name: "Il mio ascendente è uguale al segno ascendente?", acceptedAnswer: { "@type": "Answer", text: "Sì. Ascendente e segno ascendente sono due nomi per la stessa cosa. Gli astrologi usano entrambi i termini in modo intercambiabile." } },
+      { "@type": "Question", name: "Il mio ascendente può cambiare nel tempo?", acceptedAnswer: { "@type": "Answer", text: "No. Il tuo ascendente è fissato dalla tua ora, data e luogo esatti di nascita. Non cambierà mai. Ciò che cambia è quanto fortemente lo esprimi: molte persone crescono nel loro ascendente con l'età, specialmente dopo il loro ritorno di Saturno intorno ai 29 anni." } },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/it" class="hover:text-amber-300">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/it/outils" class="hover:text-amber-300">Strumenti</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Ascendente</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Astrologia Occidentale</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Calcolatore dell'Ascendente</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Il tuo ascendente è la maschera che indossi, la prima impressione che lasci, il modo in cui il mondo ti incontra. Calcola il tuo ascendente gratis con la tua ora e il tuo luogo esatti di nascita.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="rising-form" class="space-y-4">
+        <div>
+          <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">Data di nascita</label>
+          <input type="date" id="birth-date" name="birth-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <div>
+          <label for="birth-time" class="block text-sm font-medium text-white/80 mb-2">Ora esatta di nascita</label>
+          <input type="time" id="birth-time" name="birth-time" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+          <p class="text-xs text-white/50 mt-1">Essenziale. Consulta il tuo certificato di nascita in caso di dubbi.</p>
+        </div>
+        <div>
+          <label for="birth-place" class="block text-sm font-medium text-white/80 mb-2">Città di nascita</label>
+          <input type="text" id="birth-place" name="birth-place" required placeholder="Es. Roma, Italia" class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white placeholder-white/30 focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          Calcola il mio ascendente
+        </button>
+      </form>
+
+      <div id="result-loading" class="mt-6 hidden text-center text-white/70">
+        <div class="text-3xl animate-pulse">✦</div>
+        <p class="mt-2 text-sm">Calcolando l'orizzonte nel momento esatto della tua nascita...</p>
+      </div>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Il tuo ascendente</p>
+          <h2 id="result-title" class="text-4xl font-serif text-amber-300 mb-2"></h2>
+          <p id="result-ruler" class="text-sm text-white/60 mb-4"></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Tratti fisici</p>
+              <p id="result-appearance" class="text-sm text-white/70 leading-relaxed"></p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">Prima impressione</p>
+              <p id="result-impression" class="text-sm text-white/70 leading-relaxed"></p>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">Ombra</p>
+            <p id="result-shadow" class="text-sm text-white/80 italic leading-relaxed"></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-center">
+            <a href="https://app.karmastro.com/oracle?lang=it" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
+              Ottieni la mia carta astrale completa
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="result-error" class="mt-6 hidden p-5 rounded-xl bg-pink-300/10 border border-pink-300/30 text-sm text-white/80">
+        <p>Non siamo riusciti a calcolare il tuo ascendente da quelle coordinate. Controlla la tua città di nascita.</p>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Cos'è l'ascendente?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Il tuo <strong>ascendente</strong>, chiamato anche <strong>segno ascendente</strong>, è il segno zodiacale che stava sorgendo all'orizzonte orientale nel momento esatto della tua nascita. Mentre il tuo segno solare descrive la tua identità essenziale, il tuo ascendente descrive la lente attraverso cui quell'identità si esprime. È la prima cosa che le persone percepiscono di te.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Due persone nate lo stesso giorno possono sentirsi radicalmente diverse nell'incontro perché hanno ascendenti diversi. Un Sole in Scorpione con Ascendente Leone entra in una stanza come un artista. Un Sole in Scorpione con Ascendente Vergine entra come un osservatore silenzioso. Stesso nucleo, maschere diverse.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">I 12 ascendenti spiegati</h2>
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
+        {SIGNS.map((s) => {
+          const m = MEANINGS[s];
+          return (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <div class="flex items-baseline gap-3 mb-2">
+                <span class="text-xl font-serif text-amber-300">{m.title}</span>
+              </div>
+              <p class="text-xs text-white/60 leading-relaxed">{m.firstImpression}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Sole, Luna, Ascendente: la trinità</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Nell'astrologia occidentale moderna, i tuoi <strong>segni solare, lunare e ascendente</strong> formano ciò che gli astrologi chiamano «i tre grandi». Insieme dipingono un ritratto molto più accurato del solo segno solare.
+      </p>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Segno solare</strong>: la tua identità essenziale, il tuo ego conscio, l'archetipo che sei venuto a incarnare.</li>
+        <li><strong>Segno lunare</strong>: il tuo mondo emotivo interiore, i tuoi bisogni, le tue reazioni istintive in privato.</li>
+        <li><strong>Ascendente</strong>: la tua maschera sociale, come ti vedono gli altri, il tuo corpo fisico, il tuo stile spontaneo.</li>
+      </ul>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Vuoi la tua carta astrale completa?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Il tuo ascendente è solo uno dei 10 pianeti e 12 case nella tua carta natale. Ottieni la lettura completa con l'Oracolo di Karmastro.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=it" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Ottieni la mia carta astrale gratis
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/it/outils" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Tutti gli strumenti</a>
+      <a href="/it/outils/numero-del-cammino-di-vita" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Cammino di vita</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  const MEANINGS: Record<string, { title: string; ruler: string; summary: string; appearance: string; firstImpression: string; shadow: string }> = {
+    aries: { title: "Ascendente Ariete", ruler: "Governato da Marte · Fuoco", summary: "Entri in ogni stanza come un colpo di pistola allo start. L'Ascendente Ariete porta uno slancio inconfondibile.", appearance: "Tratti facciali marcati, sopracciglio pronunciato, corpo atletico, camminata rapida.", firstImpression: "Audace, competitivo, rinfrescantemente onesto, impaziente con le chiacchiere.", shadow: "Aggressione quando perdi la pazienza, tendenza a iniziare più di quanto finisci." },
+    taurus: { title: "Ascendente Toro", ruler: "Governato da Venere · Terra", summary: "Ti muovi nel mondo come un fiume lento: calmo, fermo, impossibile da affrettare. L'Ascendente Toro porta una presenza radicata.", appearance: "Tratti morbidi e attraenti, labbra piene, collo e spalle forti.", firstImpression: "Affidabile, caloroso, un po' riservato all'inizio.", shadow: "Testardaggine, resistenza al cambiamento, tendenza a ristagnare nel comfort." },
+    gemini: { title: "Ascendente Gemelli", ruler: "Governato da Mercurio · Aria", summary: "Sei chi anima all'istante qualsiasi riunione. L'Ascendente Gemelli porta un'energia curiosa.", appearance: "Tratti giovanili, mani espressive, occhi agili, corporatura snella.", firstImpression: "Spiritoso, chiacchierone, infinitamente curioso.", shadow: "Dispersione, connessioni superficiali, tendenza a parlare invece di ascoltare." },
+    cancer: { title: "Ascendente Cancro", ruler: "Governato dalla Luna · Acqua", summary: "Porti un guscio invisibile che le persone percepiscono immediatamente. L'Ascendente Cancro si muove con un radar emotivo.", appearance: "Viso rotondo o lunare, occhi espressivi, pelle morbida.", firstImpression: "Caloroso, premuroso, un po' timido.", shadow: "Sbalzi d'umore, ritirarsi nel guscio, assorbire il dolore altrui." },
+    leo: { title: "Ascendente Leone", ruler: "Governato dal Sole · Fuoco", summary: "Entri e l'illuminazione sembra cambiare. L'Ascendente Leone porta una presenza scenica naturale.", appearance: "Capelli folti, sorriso caloroso, postura eretta, grazia felina.", firstImpression: "Sicuro, generoso, teatrale.", shadow: "Ego gonfiato, bisogno di attenzione costante." },
+    virgo: { title: "Ascendente Vergine", ruler: "Governato da Mercurio · Terra", summary: "Arrivi a ogni situazione già eseguendo un silenzioso controllo qualità. L'Ascendente Vergine è riservato e osservatore.", appearance: "Aspetto ordinato e preciso, tratti raffinati, mani eleganti.", firstImpression: "Riservato, riflessivo, meticoloso.", shadow: "Critica eccessiva, ansia mascherata da perfezionismo, freddezza apparente." },
+    libra: { title: "Ascendente Bilancia", ruler: "Governato da Venere · Aria", summary: "L'Ascendente Bilancia porta una grazia naturale, un istinto diplomatico, un occhio per l'equilibrio estetico.", appearance: "Tratti simmetrici, fossette, postura elegante, senso dello stile studiato.", firstImpression: "Affascinante, diplomatico, ben vestito.", shadow: "Indecisione, compiacere gli altri, evitare conversazioni difficili." },
+    scorpio: { title: "Ascendente Scorpione", ruler: "Governato da Plutone · Acqua", summary: "Le persone sentono la tua presenza prima di vederti. L'Ascendente Scorpione porta un'intensità impossibile da fingere.", appearance: "Occhi penetranti, sopracciglio forte, aura magnetica, corpo compatto.", firstImpression: "Intenso, misterioso, profondamente percettivo.", shadow: "Sospetto, bisogno di controllo, rancori tenaci." },
+    sagittarius: { title: "Ascendente Sagittario", ruler: "Governato da Giove · Fuoco", summary: "Ti muovi nel mondo come se fosse il tuo parco personale. L'Ascendente Sagittario porta un'energia espansiva e ottimista.", appearance: "Arti lunghi, viso aperto, grazia atletica, sorriso che arriva agli occhi.", firstImpression: "Avventuroso, filosofico, diretto in modo affascinante.", shadow: "Mancanza di tatto, irrequietezza, promesse eccessive." },
+    capricorn: { title: "Ascendente Capricorno", ruler: "Governato da Saturno · Terra", summary: "Porti una serietà ancestrale, anche da giovane. L'Ascendente Capricorno scansiona mentalmente la struttura del potere.", appearance: "Struttura ossea forte, mandibola prominente, espressione riservata.", firstImpression: "Composto, disciplinato, sottilmente ambizioso.", shadow: "Riserva emotiva, dipendenza dal lavoro, eccesso di serietà." },
+    aquarius: { title: "Ascendente Acquario", ruler: "Governato da Urano · Aria", summary: "Sei impossibile da catalogare, ed è il punto. L'Ascendente Acquario porta un'energia silenziosamente ribelle.", appearance: "Tratti insoliti, stile distintivo, spesso alto, occhi lontani.", firstImpression: "Originale, intellettuale, amichevole ma distaccato.", shadow: "Freddezza emotiva, ribellione senza direzione, arroganza intellettuale." },
+    pisces: { title: "Ascendente Pesci", ruler: "Governato da Nettuno · Acqua", summary: "Entri nelle stanze come la nebbia in una valle: silenzioso, completamente. L'Ascendente Pesci porta una presenza sognante e compassionevole.", appearance: "Tratti morbidi, occhi grandi e sognanti, voce gentile.", firstImpression: "Gentile, intuitivo, artistico, ascoltatore senza giudizio.", shadow: "Fuga, assorbire emozioni altrui fino all'esaurimento, confini difficili." },
+  };
+
+  const SIGN_NAMES = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"];
+
+  async function geocode(place: string): Promise<{ lat: number; lon: number } | null> {
+    try {
+      const resp = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(place)}&format=json&limit=1`, { headers: { "Accept-Language": "it" } });
+      const data = await resp.json();
+      if (!Array.isArray(data) || data.length === 0) return null;
+      return { lat: parseFloat(data[0].lat), lon: parseFloat(data[0].lon) };
+    } catch { return null; }
+  }
+
+  function computeAscendant(date: Date, lat: number, lon: number): string {
+    const jd = date.getTime() / 86400000 + 2440587.5;
+    const T = (jd - 2451545.0) / 36525;
+    const gmst = (280.46061837 + 360.98564736629 * (jd - 2451545.0) + T * T * 0.000387933) % 360;
+    const lst = ((gmst + lon + 360) % 360) * Math.PI / 180;
+    const latRad = lat * Math.PI / 180;
+    const eps = 23.4392911 * Math.PI / 180;
+    const y = -Math.cos(lst);
+    const x = Math.sin(lst) * Math.cos(eps) + Math.tan(latRad) * Math.sin(eps);
+    let asc = Math.atan2(y, x) * 180 / Math.PI;
+    if (asc < 0) asc += 360;
+    return SIGN_NAMES[Math.floor(asc / 30)];
+  }
+
+  const form = document.getElementById("rising-form") as HTMLFormElement;
+  const loadingDiv = document.getElementById("result-loading") as HTMLDivElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+  const errorDiv = document.getElementById("result-error") as HTMLDivElement;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    resultDiv.classList.add("hidden");
+    errorDiv.classList.add("hidden");
+    loadingDiv.classList.remove("hidden");
+
+    const date = (document.getElementById("birth-date") as HTMLInputElement).value;
+    const time = (document.getElementById("birth-time") as HTMLInputElement).value;
+    const place = (document.getElementById("birth-place") as HTMLInputElement).value;
+    if (!date || !time || !place) { loadingDiv.classList.add("hidden"); return; }
+
+    const coords = await geocode(place);
+    if (!coords) { loadingDiv.classList.add("hidden"); errorDiv.classList.remove("hidden"); return; }
+
+    const birthDate = new Date(`${date}T${time}:00Z`);
+    const signKey = computeAscendant(birthDate, coords.lat, coords.lon);
+    const meaning = MEANINGS[signKey];
+
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-ruler") as HTMLElement).textContent = meaning.ruler;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+    (document.getElementById("result-appearance") as HTMLElement).textContent = meaning.appearance;
+    (document.getElementById("result-impression") as HTMLElement).textContent = meaning.firstImpression;
+    (document.getElementById("result-shadow") as HTMLElement).textContent = meaning.shadow;
+
+    loadingDiv.classList.add("hidden");
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>

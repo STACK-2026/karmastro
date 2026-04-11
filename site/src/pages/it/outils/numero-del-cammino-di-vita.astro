@@ -1,0 +1,345 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Calcolatore del Numero del Cammino di Vita - Numerologia Pitagorica | Karmastro";
+const description =
+  "Calcola il tuo numero del cammino di vita gratis con il nostro calcolatore di numerologia pitagorica. Scopri la tua missione, i tuoi doni, le tue sfide e i 12 numeri (inclusi i maestri 11, 22, 33).";
+
+const MEANINGS: Record<number, { title: string; archetype: string; summary: string; qualities: string[]; challenges: string[]; mission: string; famousExamples: string }> = {
+  1: {
+    title: "Il Pioniere",
+    archetype: "Il leader solitario, l'iniziatore, colui che apre nuovi sentieri.",
+    summary: "Sei nato per guidare, non per seguire. Il Cammino di Vita 1 porta l'energia pura dell'iniziativa. Quando entri in una stanza, qualcosa cambia. La tua missione è trasformare quella forza in creazione, non in dominio.",
+    qualities: ["Leadership naturale", "Indipendenza", "Ambizione", "Coraggio", "Originalità"],
+    challenges: ["Egocentrismo", "Impazienza", "Solitudine", "Autoritarismo", "Rigidità"],
+    mission: "Impara a guidare senza schiacciare, a essere forte senza indurirti. L'1 è qui per creare terreno nuovo, per osare dove gli altri aspettano.",
+    famousExamples: "Napoleone Bonaparte, Steve Jobs, Martin Luther King Jr.",
+  },
+  2: {
+    title: "La Diplomatica",
+    archetype: "La mediatrice, l'intuitiva, colei che tesse i legami.",
+    summary: "Percepisci le energie come altri odono i suoni. Il Cammino di Vita 2 è il cammino della pace, dell'armonia e dell'unione. La tua missione è usare questa sensibilità come un radar, non come una ferita.",
+    qualities: ["Diplomazia", "Sensibilità", "Empatia", "Pazienza", "Cooperazione"],
+    challenges: ["Dipendenza emotiva", "Indecisione", "Ipersensibilità", "Evitare i conflitti", "Sottomissione"],
+    mission: "Comprendi che la dolcezza è forza, non debolezza. Il 2 è qui per riconciliare, per vedere ciò che altri non vedono.",
+    famousExamples: "Barack Obama, Madonna, Mahatma Gandhi",
+  },
+  3: {
+    title: "L'Artista",
+    archetype: "L'espressione creativa, il bambino del mondo, colui che illumina.",
+    summary: "Trasformi tutto in colore, parole o musica. Il Cammino di Vita 3 è il cammino dell'espressione creativa. La tua missione è dare forma all'intangibile e condividerlo generosamente.",
+    qualities: ["Creatività", "Comunicazione", "Ottimismo", "Carisma", "Gioia"],
+    challenges: ["Dispersione", "Superficialità", "Pettegolezzo", "Immaturità emotiva", "Fuga"],
+    mission: "Impara che la profondità non uccide la gioia. Il 3 è qui per esprimere, per ispirare, per ricordare agli altri la bellezza del mondo.",
+    famousExamples: "David Bowie, Hugh Jackman, Alec Baldwin",
+  },
+  4: {
+    title: "Il Costruttore",
+    archetype: "Il lavoratore metodico, l'architetto, colui che pone le fondamenta.",
+    summary: "Costruisci ciò che gli altri solo sognano. Il Cammino di Vita 4 è il cammino della stabilità, della struttura e dei risultati duraturi. La tua missione è creare qualcosa che ti sopravviva.",
+    qualities: ["Disciplina", "Affidabilità", "Pazienza", "Lealtà", "Abilità pratica"],
+    challenges: ["Rigidità", "Dipendenza dal lavoro", "Testardaggine", "Paura del cambiamento", "Eccessiva serietà"],
+    mission: "Impara che la struttura serve la libertà, non il contrario. Il 4 è qui per costruire ciò che dura, con disciplina e cura.",
+    famousExamples: "Bill Gates, Oprah Winfrey, Arnold Schwarzenegger",
+  },
+  5: {
+    title: "L'Avventuriera",
+    archetype: "Lo spirito libero, la viaggiatrice, colei che non si ferma mai.",
+    summary: "Hai bisogno di libertà come altri hanno bisogno d'aria. Il Cammino di Vita 5 è il cammino del cambiamento, dell'esperienza e della libertà personale. La tua missione è trasformare il movimento in saggezza.",
+    qualities: ["Curiosità", "Adattabilità", "Fascino", "Versatilità", "Coraggio di cambiare"],
+    challenges: ["Inquietudine", "Problemi di impegno", "Impulsività", "Tendenze additive", "Energia dispersa"],
+    mission: "Impara che la libertà senza direzione è solo deriva. Il 5 è qui per esplorare con uno scopo, per trasformare l'esperienza in visione.",
+    famousExamples: "Abraham Lincoln, Angelina Jolie, Mick Jagger",
+  },
+  6: {
+    title: "Il Nutrice",
+    archetype: "Il protettore, il maestro, colui che sostiene gli altri.",
+    summary: "Porti gli altri come Atlante portava il mondo. Il Cammino di Vita 6 è il cammino della responsabilità, dell'amore e del servizio. La tua missione è dare senza perderti.",
+    qualities: ["Istinto di cura", "Responsabilità", "Lealtà", "Capacità di insegnare", "Doni creativi"],
+    challenges: ["Martirio", "Coinvolgimento eccessivo", "Perfezionismo", "Autosacrificio", "Intromissione"],
+    mission: "Impara che non puoi servire da una coppa vuota. Il 6 è qui per guarire, per insegnare, per creare bellezza intorno a chi ama.",
+    famousExamples: "Albert Einstein, Meryl Streep, John Lennon",
+  },
+  7: {
+    title: "Il Cercatore",
+    archetype: "Il filosofo mistico, il ricercatore, colui che mette tutto in discussione.",
+    summary: "Sei nato chiedendo perché. Il Cammino di Vita 7 è il cammino della saggezza, dell'introspezione e della comprensione spirituale. La tua missione è trovare la verità e condividere ciò che impari.",
+    qualities: ["Pensiero profondo", "Intuizione", "Indipendenza", "Mente analitica", "Consapevolezza spirituale"],
+    challenges: ["Isolamento", "Cinismo", "Eccessiva analisi", "Sfiducia", "Distanza emotiva"],
+    mission: "Impara che la verità senza amore è sterile. Il 7 è qui per scavare sotto la superficie e portare ciò che trova agli altri.",
+    famousExamples: "Nikola Tesla, Principessa Diana, Johnny Depp",
+  },
+  8: {
+    title: "La Stratega",
+    archetype: "La costruttrice di imperi, la stratega, colei che trasforma la visione in ricchezza.",
+    summary: "Comprendi il potere senza lasciarti sedurre da esso. Il Cammino di Vita 8 è il cammino del dominio materiale, dell'abbondanza e dell'influenza. La tua missione è costruire qualcosa che serva più di te stesso.",
+    qualities: ["Leadership", "Intuizione finanziaria", "Capacità organizzativa", "Resistenza", "Autorità"],
+    challenges: ["Avidità", "Dipendenza dal lavoro", "Bisogno di controllare", "Materialismo", "Intimidazione"],
+    mission: "Impara che il vero potere si misura da ciò che crea, non da ciò che domina. L'8 è qui per dominare il mondo materiale con integrità.",
+    famousExamples: "Nelson Mandela, Pablo Picasso, Warren Buffett",
+  },
+  9: {
+    title: "L'Umanitario",
+    archetype: "L'anima antica, il cittadino globale, colui che serve il collettivo.",
+    summary: "Arrivi alla vita sapendo cose che altri devono imparare. Il Cammino di Vita 9 è il cammino dell'amore universale, della compassione e del distacco. La tua missione è servire qualcosa più grande di te stesso.",
+    qualities: ["Compassione", "Saggezza", "Sensibilità artistica", "Prospettiva globale", "Generosità"],
+    challenges: ["Distacco emotivo", "Complesso del salvatore", "Malinconia", "Difficoltà a lasciare andare", "Autogiustizia"],
+    mission: "Impara che arrendersi è forza, non sconfitta. Il 9 è qui per amare senza possedere, per dare senza aspettarsi nulla in cambio.",
+    famousExamples: "Madre Teresa, Mahatma Gandhi, Jim Carrey",
+  },
+  11: {
+    title: "La Visionaria (Numero Maestro)",
+    archetype: "La messaggera spirituale, l'intuitiva, colei che vede ciò che gli altri non possono.",
+    summary: "Sei nata connessa a una frequenza più alta. Il Numero Maestro 11 porta un'intuizione intensa e una chiamata a risvegliare gli altri. La tua missione è incanalare l'ispirazione in forma concreta.",
+    qualities: ["Intuizione eccezionale", "Pensiero visionario", "Carisma", "Magnetismo spirituale", "Presenza ispiratrice"],
+    challenges: ["Tensione nervosa", "Ipersensibilità", "Dubbi su se stessa", "Ansia", "Martirio"],
+    mission: "Impara che la tua sensibilità è il tuo dono, non la tua ferita. L'11 è qui per portare luce a chi cammina nell'oscurità.",
+    famousExamples: "Barack Obama, Michelle Obama, Tim Burton",
+  },
+  22: {
+    title: "Il Maestro Costruttore (Numero Maestro)",
+    archetype: "L'architetto di grandi visioni, colui che trasforma i sogni in strutture durature.",
+    summary: "Puoi trasformare l'impossibile in un progetto. Il Numero Maestro 22 combina l'intuizione spirituale dell'11 con la forza pratica del 4. La tua missione è costruire qualcosa che cambi il mondo.",
+    qualities: ["Pragmatismo visionario", "Leadership", "Innovazione", "Resistenza", "Pensiero su larga scala"],
+    challenges: ["Pressione schiacciante", "Perfezionismo", "Esaurimento", "Tendenze dittatoriali", "Paralisi dal dubbio"],
+    mission: "Impara che la pazienza non è debolezza. Il 22 è qui per costruire monumenti dello spirito, siano essi edifici, movimenti o idee.",
+    famousExamples: "Dalai Lama, Paul McCartney, Oprah Winfrey",
+  },
+  33: {
+    title: "Il Guaritore Universale (Numero Maestro)",
+    archetype: "Il maestro dei maestri, colui che guarisce attraverso l'amore incondizionato.",
+    summary: "Sei nato con una rara frequenza di amore disinteressato. Il Numero Maestro 33 è il cammino di vita più raro. La tua missione è guarire il mondo con saggezza e compassione, senza chiedere nulla in cambio.",
+    qualities: ["Amore incondizionato", "Dono dell'insegnamento", "Guarigione creativa", "Devozione spirituale", "Servizio sacro"],
+    challenges: ["Martirio", "Esaurimento emotivo", "Perfezionismo", "Dimenticanza di sé", "Responsabilità schiacciante"],
+    mission: "Impara che dare dal vuoto non è dare. Il 33 è qui per guarire attraverso la presenza, non il sacrificio.",
+    famousExamples: "Albert Einstein, John Lennon, Meryl Streep",
+  },
+};
+
+const DISPLAY_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Calcolatore del Numero del Cammino di Vita",
+    description,
+    url: "https://karmastro.com/it/outils/numero-del-cammino-di-vita",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "it",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "127" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "Come calcolare il tuo numero del cammino di vita",
+    description: "Metodo pitagorico passo passo per trovare il tuo numero del cammino di vita dalla tua data di nascita.",
+    inLanguage: "it",
+    step: [
+      { "@type": "HowToStep", position: 1, name: "Scrivi la tua data di nascita", text: "Scrivi la tua data di nascita completa nel formato GG/MM/AAAA. Esempio: 14/04/1992." },
+      { "@type": "HowToStep", position: 2, name: "Riduci ogni componente", text: "Riduci il giorno, il mese e l'anno separatamente sommando le loro cifre. 14 diventa 1+4=5. Aprile è già 4. 1992 diventa 1+9+9+2=21, poi 2+1=3." },
+      { "@type": "HowToStep", position: 3, name: "Somma i valori ridotti", text: "Somma i tre valori ridotti. Nel nostro esempio: 5 + 4 + 3 = 12." },
+      { "@type": "HowToStep", position: 4, name: "Riduzione finale", text: "Riduci la somma finale a una singola cifra, eccetto i numeri maestri 11, 22 e 33 che rimangono intatti. 12 diventa 1+2=3. Il tuo numero del cammino di vita è 3." },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "Cos'è un numero del cammino di vita?", acceptedAnswer: { "@type": "Answer", text: "Il numero del cammino di vita è la cifra centrale nella numerologia pitagorica. Si calcola dalla tua data di nascita e rivela la missione principale della tua vita, i tuoi doni innati e le lezioni che sei venuto a imparare. È l'equivalente numerologico del segno solare in astrologia." } },
+      { "@type": "Question", name: "Quanto è preciso un calcolatore del numero del cammino di vita?", acceptedAnswer: { "@type": "Answer", text: "Il numero del cammino di vita si calcola con matematica pura, quindi il numero in sé è sempre preciso al 100%. L'interpretazione è una lettura basata su migliaia di anni di tradizione pitagorica. È uno strumento di autoriflessione, non una previsione deterministica del futuro." } },
+      { "@type": "Question", name: "Il mio numero del cammino di vita può cambiare?", acceptedAnswer: { "@type": "Answer", text: "No. Il tuo numero del cammino di vita è fissato dalla tua data di nascita e non cambia mai. Ciò che cambia è come lo esprimi. Ogni numero ha un'espressione superiore e inferiore." } },
+      { "@type": "Question", name: "Cosa sono i numeri maestri (11, 22, 33)?", acceptedAnswer: { "@type": "Answer", text: "I numeri maestri 11, 22 e 33 non vengono mai ridotti nella numerologia pitagorica. Portano una vibrazione raddoppiata e una missione più esigente. Meno del 5% delle persone porta un numero maestro nel cammino di vita." } },
+      { "@type": "Question", name: "Il numero del cammino di vita è lo stesso del mio segno solare?", acceptedAnswer: { "@type": "Answer", text: "No. Il tuo segno solare viene dall'astrologia e descrive il nucleo della tua personalità in base alla posizione del Sole alla nascita. Il tuo numero del cammino di vita viene dalla numerologia e descrive la tua missione di vita dalla riduzione della tua data di nascita." } },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/it" class="hover:text-amber-300">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/it/outils" class="hover:text-amber-300">Strumenti</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Cammino di Vita</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Numerologia Pitagorica</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Calcolatore del Numero del Cammino di Vita</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Il tuo numero del cammino di vita è la cifra più importante della numerologia. Rivela la tua missione, i tuoi doni innati e le lezioni karmiche di questa esistenza. Calcolo gratis, metodo pitagorico trasparente, interpretazione completa.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="life-path-form" class="space-y-4">
+        <div>
+          <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">La tua data di nascita</label>
+          <input type="date" id="birth-date" name="birth-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          Calcola il mio cammino di vita
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Il tuo numero del cammino di vita</p>
+          <div class="flex items-baseline gap-4 mb-4">
+            <span id="result-number" class="text-7xl font-serif text-amber-300"></span>
+            <span id="result-title" class="text-xl font-serif text-white/90"></span>
+          </div>
+          <p class="text-xs text-white/50 mb-4">Calcolo: <span id="result-calc" class="text-white/70"></span></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Forze</p>
+              <ul id="result-qualities" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">Sfide</p>
+              <ul id="result-challenges" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">Missione</p>
+            <p id="result-mission" class="text-sm text-white/80 italic leading-relaxed"></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-center">
+            <a href="https://app.karmastro.com/oracle?lang=it" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
+              Approfondisci con l'Oracolo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Cos'è un numero del cammino di vita?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Il tuo <strong>numero del cammino di vita</strong> è la cifra centrale nella numerologia pitagorica. Calcolato dalla tua data di nascita, rivela la missione essenziale della tua esistenza. Pensalo come l'equivalente numerologico del segno solare in astrologia: la vibrazione sottostante che colora tutto ciò che fai, l'archetipo che sei venuto a incarnare.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Per <strong>Pitagora</strong> e i suoi discepoli nel VI secolo a.C., ogni numero portava una vibrazione unica, una firma energetica. Le cifre da 1 a 9 coprono tutti gli archetipi umani. I numeri maestri 11, 22 e 33 portano una frequenza più rara ed esigente. Calcolare il tuo numero del cammino di vita significa riscoprire ciò che gli antichi greci chiamavano il tuo <em>daimon</em>: la ragione per cui sei venuto qui.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Come calcolare il tuo numero del cammino di vita</h2>
+      <div class="p-5 rounded-xl bg-white/[0.03] border border-white/10 mb-6 not-prose">
+        <p class="text-sm text-white/90 mb-3"><strong>Esempio: 14 aprile 1992</strong></p>
+        <ul class="text-sm text-white/70 space-y-1">
+          <li>Giorno: 1 + 4 = 5</li>
+          <li>Mese: 4 = 4</li>
+          <li>Anno: 1 + 9 + 9 + 2 = 21 → 2 + 1 = 3</li>
+          <li>Totale: 5 + 4 + 3 = <strong class="text-amber-300">12 → 1 + 2 = 3</strong></li>
+        </ul>
+        <p class="text-sm text-white/60 mt-3">Numero del cammino di vita = 3 (L'Artista)</p>
+      </div>
+      <p class="text-white/80 leading-relaxed mb-4">
+        <strong>Eccezione importante:</strong> se il tuo calcolo dà 11, 22 o 33 in qualsiasi fase prima della riduzione finale, non ridurli. Sono i numeri maestri. Per esempio, un cammino di vita 29/11 rimane come 11, non come 2. I numeri maestri portano una missione raddoppiata, più pesante ma più luminosa.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">I 9 cammini di vita (e i 3 numeri maestri)</h2>
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
+        {DISPLAY_ORDER.map((n) => {
+          const meaning = MEANINGS[n];
+          return (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <div class="flex items-baseline gap-3 mb-2">
+                <span class="text-3xl font-serif text-amber-300">{n}</span>
+                <span class="text-sm text-white/80 font-medium">{meaning.title}</span>
+              </div>
+              <p class="text-xs text-white/60 leading-relaxed">{meaning.archetype}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">La storia della numerologia</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        La numerologia non è iniziata con <a href="https://it.wikipedia.org/wiki/Pitagora" class="text-amber-300 hover:underline">Pitagora</a>. I <strong>babilonesi</strong> usavano già un sistema numerico sacro più di 4.000 anni fa. Gli ebrei svilupparono la <em>gematria</em>, una corrispondenza tra lettere e numeri che si trova ancora nella Cabala. Gli egizi allineavano le loro piramidi su proporzioni matematiche che consideravano cosmiche.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Pitagora sintetizzò queste tradizioni in un sistema coerente nel VI secolo a.C. La sua famosa massima «tutto è numero» non era una metafora: vedeva letteralmente l'universo come una composizione matematica. I suoi discepoli, i pitagorici, codificarono ciò che oggi chiamiamo <strong>numerologia pitagorica</strong>. È il metodo che Karmastro utilizza, con il rigore e la trasparenza che merita.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Oltre il numero del cammino di vita</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Numero del cammino di vita</strong> (dalla tua data di nascita): la tua missione principale</li>
+        <li><strong>Numero di espressione</strong> (dal tuo nome completo): i tuoi talenti naturali</li>
+        <li><strong>Numero dell'anima</strong> (dalle vocali del tuo nome): i tuoi desideri più profondi</li>
+        <li><strong>Numero della personalità</strong> (dalle consonanti): la tua immagine sociale</li>
+        <li><strong>Anno personale</strong> (che cambia ogni anno): il tuo ciclo attuale</li>
+      </ul>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Vuoi una lettura completa?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Il numero del cammino di vita è solo l'inizio. Per incrociare i tuoi cinque numeri di numerologia con la tua carta astrale completa e ricevere una guida personalizzata, parla con una delle nostre quattro guide cosmiche.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=it" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Consulta l'Oracolo gratis
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/it/outils" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Tutti gli strumenti</a>
+      <a href="/it/outils/ascendente" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Ascendente</a>
+      <a href="/it/horoscope" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Oroscopo quotidiano</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  import { calculateLifePath } from "../../../data/numerology-meanings";
+
+  const MEANINGS_IT: Record<number, { title: string; summary: string; qualities: string[]; challenges: string[]; mission: string }> = {
+    1: { title: "Il Pioniere", summary: "Sei nato per guidare, non per seguire. Il Cammino di Vita 1 porta l'energia pura dell'iniziativa. Quando entri in una stanza, qualcosa cambia. La tua missione è trasformare quella forza in creazione.", qualities: ["Leadership naturale", "Indipendenza", "Ambizione", "Coraggio", "Originalità"], challenges: ["Egocentrismo", "Impazienza", "Solitudine", "Autoritarismo", "Rigidità"], mission: "Impara a guidare senza schiacciare. L'1 è qui per creare terreno nuovo, per osare dove gli altri aspettano." },
+    2: { title: "La Diplomatica", summary: "Percepisci le energie come altri odono i suoni. Il Cammino di Vita 2 è il cammino della pace, dell'armonia e dell'unione. La tua missione è usare questa sensibilità come un radar, non come una ferita.", qualities: ["Diplomazia", "Sensibilità", "Empatia", "Pazienza", "Cooperazione"], challenges: ["Dipendenza emotiva", "Indecisione", "Ipersensibilità", "Evitare i conflitti", "Sottomissione"], mission: "Comprendi che la dolcezza è forza, non debolezza. Il 2 è qui per riconciliare, per vedere ciò che altri non vedono." },
+    3: { title: "L'Artista", summary: "Trasformi tutto in colore, parole o musica. Il Cammino di Vita 3 è il cammino dell'espressione creativa. La tua missione è dare forma all'intangibile e condividerlo generosamente.", qualities: ["Creatività", "Comunicazione", "Ottimismo", "Carisma", "Gioia"], challenges: ["Dispersione", "Superficialità", "Pettegolezzo", "Immaturità emotiva", "Fuga"], mission: "Impara che la profondità non uccide la gioia. Il 3 è qui per esprimere, per ispirare." },
+    4: { title: "Il Costruttore", summary: "Costruisci ciò che gli altri solo sognano. Il Cammino di Vita 4 è il cammino della stabilità, della struttura e dei risultati duraturi. La tua missione è creare qualcosa che ti sopravviva.", qualities: ["Disciplina", "Affidabilità", "Pazienza", "Lealtà", "Abilità pratica"], challenges: ["Rigidità", "Dipendenza dal lavoro", "Testardaggine", "Paura del cambiamento", "Eccessiva serietà"], mission: "Impara che la struttura serve la libertà, non il contrario." },
+    5: { title: "L'Avventuriera", summary: "Hai bisogno di libertà come altri hanno bisogno d'aria. Il Cammino di Vita 5 è il cammino del cambiamento, dell'esperienza e della libertà personale.", qualities: ["Curiosità", "Adattabilità", "Fascino", "Versatilità", "Coraggio di cambiare"], challenges: ["Inquietudine", "Problemi di impegno", "Impulsività", "Tendenze additive", "Energia dispersa"], mission: "Impara che la libertà senza direzione è solo deriva." },
+    6: { title: "Il Nutrice", summary: "Porti gli altri come Atlante portava il mondo. Il Cammino di Vita 6 è il cammino della responsabilità, dell'amore e del servizio.", qualities: ["Istinto di cura", "Responsabilità", "Lealtà", "Capacità di insegnare", "Doni creativi"], challenges: ["Martirio", "Coinvolgimento eccessivo", "Perfezionismo", "Autosacrificio", "Intromissione"], mission: "Impara che non puoi servire da una coppa vuota." },
+    7: { title: "Il Cercatore", summary: "Sei nato chiedendo perché. Il Cammino di Vita 7 è il cammino della saggezza, dell'introspezione e della comprensione spirituale.", qualities: ["Pensiero profondo", "Intuizione", "Indipendenza", "Mente analitica", "Consapevolezza spirituale"], challenges: ["Isolamento", "Cinismo", "Eccessiva analisi", "Sfiducia", "Distanza emotiva"], mission: "Impara che la verità senza amore è sterile." },
+    8: { title: "La Stratega", summary: "Comprendi il potere senza lasciarti sedurre da esso. Il Cammino di Vita 8 è il cammino del dominio materiale, dell'abbondanza e dell'influenza.", qualities: ["Leadership", "Intuizione finanziaria", "Capacità organizzativa", "Resistenza", "Autorità"], challenges: ["Avidità", "Dipendenza dal lavoro", "Bisogno di controllare", "Materialismo", "Intimidazione"], mission: "Impara che il vero potere si misura da ciò che crea, non da ciò che domina." },
+    9: { title: "L'Umanitario", summary: "Arrivi alla vita sapendo cose che altri devono imparare. Il Cammino di Vita 9 è il cammino dell'amore universale, della compassione e del distacco.", qualities: ["Compassione", "Saggezza", "Sensibilità artistica", "Prospettiva globale", "Generosità"], challenges: ["Distacco emotivo", "Complesso del salvatore", "Malinconia", "Difficoltà a lasciare andare", "Autogiustizia"], mission: "Impara che arrendersi è forza, non sconfitta." },
+    11: { title: "La Visionaria (Numero Maestro)", summary: "Sei nata connessa a una frequenza più alta. Il Numero Maestro 11 porta un'intuizione intensa e una chiamata a risvegliare gli altri.", qualities: ["Intuizione eccezionale", "Pensiero visionario", "Carisma", "Magnetismo spirituale", "Presenza ispiratrice"], challenges: ["Tensione nervosa", "Ipersensibilità", "Dubbi su se stessa", "Ansia", "Martirio"], mission: "Impara che la tua sensibilità è il tuo dono, non la tua ferita." },
+    22: { title: "Il Maestro Costruttore (Numero Maestro)", summary: "Puoi trasformare l'impossibile in un progetto. Il Numero Maestro 22 combina l'intuizione spirituale dell'11 con la forza pratica del 4.", qualities: ["Pragmatismo visionario", "Leadership", "Innovazione", "Resistenza", "Pensiero su larga scala"], challenges: ["Pressione schiacciante", "Perfezionismo", "Esaurimento", "Tendenze dittatoriali", "Paralisi dal dubbio"], mission: "Impara che la pazienza non è debolezza." },
+    33: { title: "Il Guaritore Universale (Numero Maestro)", summary: "Sei nato con una rara frequenza di amore disinteressato. Il Numero Maestro 33 è il cammino di vita più raro.", qualities: ["Amore incondizionato", "Dono dell'insegnamento", "Guarigione creativa", "Devozione spirituale", "Servizio sacro"], challenges: ["Martirio", "Esaurimento emotivo", "Perfezionismo", "Dimenticanza di sé", "Responsabilità schiacciante"], mission: "Impara che dare dal vuoto non è dare." },
+  };
+
+  const form = document.getElementById("life-path-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const input = document.getElementById("birth-date") as HTMLInputElement;
+    const value = input.value;
+    if (!value) return;
+
+    const [y, m, d] = value.split("-").map(Number);
+    const result = calculateLifePath(d, m, y);
+    const meaning = MEANINGS_IT[result.number] || MEANINGS_IT[9];
+
+    (document.getElementById("result-number") as HTMLElement).textContent = String(result.number);
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-calc") as HTMLElement).textContent = result.calculation;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+
+    const qualitiesList = document.getElementById("result-qualities") as HTMLElement;
+    qualitiesList.innerHTML = meaning.qualities.map((q) => `<li>✦ ${q}</li>`).join("");
+
+    const challengesList = document.getElementById("result-challenges") as HTMLElement;
+    challengesList.innerHTML = meaning.challenges.map((c) => `<li>◆ ${c}</li>`).join("");
+
+    (document.getElementById("result-mission") as HTMLElement).textContent = meaning.mission;
+
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>

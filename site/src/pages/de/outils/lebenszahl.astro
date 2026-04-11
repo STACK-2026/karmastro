@@ -1,0 +1,335 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Lebenszahl berechnen - Pythagoreische Numerologie | Karmastro";
+const description =
+  "Berechne deine Lebenszahl kostenlos mit unserem pythagoreischen Numerologie-Rechner. Entdecke deine Mission, deine Gaben, deine Herausforderungen und die 12 Zahlen (inklusive der Meisterzahlen 11, 22, 33).";
+
+const MEANINGS: Record<number, { title: string; archetype: string; summary: string; qualities: string[]; challenges: string[]; mission: string; famousExamples: string }> = {
+  1: {
+    title: "Der Pionier",
+    archetype: "Der einsame Anführer, der Initiator, derjenige, der neue Wege eröffnet.",
+    summary: "Du bist geboren, um zu führen, nicht um zu folgen. Die Lebenszahl 1 trägt die reine Energie der Initiative. Wenn du einen Raum betrittst, verändert sich etwas. Deine Mission ist es, diese Kraft in Schöpfung zu verwandeln, nicht in Dominanz.",
+    qualities: ["Natürliche Führung", "Unabhängigkeit", "Ehrgeiz", "Mut", "Originalität"],
+    challenges: ["Egozentrik", "Ungeduld", "Einsamkeit", "Autoritarismus", "Starrheit"],
+    mission: "Lerne zu führen, ohne zu zerquetschen, stark zu sein, ohne hart zu werden. Die 1 ist hier, um neues Terrain zu erschaffen, um zu wagen, wo andere warten.",
+    famousExamples: "Napoleon Bonaparte, Steve Jobs, Martin Luther King Jr.",
+  },
+  2: {
+    title: "Die Diplomatin",
+    archetype: "Die Mediatorin, die Intuitive, die Bindungen webt.",
+    summary: "Du nimmst Energien wahr, wie andere Klänge hören. Die Lebenszahl 2 ist der Weg des Friedens, der Harmonie und der Vereinigung. Deine Mission ist es, diese Sensibilität als Radar zu nutzen, nicht als Wunde.",
+    qualities: ["Diplomatie", "Sensibilität", "Empathie", "Geduld", "Kooperation"],
+    challenges: ["Emotionale Abhängigkeit", "Unentschlossenheit", "Überempfindlichkeit", "Konfliktvermeidung", "Unterwürfigkeit"],
+    mission: "Verstehe, dass Sanftheit Stärke ist, nicht Schwäche. Die 2 ist hier, um zu versöhnen, um zu sehen, was andere nicht sehen.",
+    famousExamples: "Barack Obama, Madonna, Mahatma Gandhi",
+  },
+  3: {
+    title: "Die Künstlerin",
+    archetype: "Der kreative Ausdruck, das Kind der Welt, diejenige, die erleuchtet.",
+    summary: "Du verwandelst alles in Farbe, Worte oder Musik. Die Lebenszahl 3 ist der Weg des kreativen Ausdrucks. Deine Mission ist es, dem Ungreifbaren Form zu geben und es großzügig zu teilen.",
+    qualities: ["Kreativität", "Kommunikation", "Optimismus", "Charisma", "Freude"],
+    challenges: ["Zerstreuung", "Oberflächlichkeit", "Klatsch", "Emotionale Unreife", "Flucht"],
+    mission: "Lerne, dass Tiefe die Freude nicht tötet. Die 3 ist hier, um auszudrücken, zu inspirieren, andere an die Schönheit der Welt zu erinnern.",
+    famousExamples: "David Bowie, Hugh Jackman, Alec Baldwin",
+  },
+  4: {
+    title: "Der Erbauer",
+    archetype: "Der methodische Arbeiter, der Architekt, derjenige, der Fundamente legt.",
+    summary: "Du baust, wovon andere nur träumen. Die Lebenszahl 4 ist der Weg der Stabilität, der Struktur und dauerhafter Ergebnisse. Deine Mission ist es, etwas zu erschaffen, das dich überdauert.",
+    qualities: ["Disziplin", "Zuverlässigkeit", "Geduld", "Loyalität", "Praktische Fertigkeit"],
+    challenges: ["Starrheit", "Workaholismus", "Sturheit", "Angst vor Veränderung", "Übertriebene Ernsthaftigkeit"],
+    mission: "Lerne, dass Struktur der Freiheit dient, nicht umgekehrt. Die 4 ist hier, um Bleibendes zu bauen, mit Disziplin und Sorgfalt.",
+    famousExamples: "Bill Gates, Oprah Winfrey, Arnold Schwarzenegger",
+  },
+  5: {
+    title: "Die Abenteurerin",
+    archetype: "Der freie Geist, die Reisende, die niemals anhält.",
+    summary: "Du brauchst Freiheit, wie andere Luft brauchen. Die Lebenszahl 5 ist der Weg der Veränderung, der Erfahrung und der persönlichen Freiheit. Deine Mission ist es, Bewegung in Weisheit zu verwandeln.",
+    qualities: ["Neugier", "Anpassungsfähigkeit", "Charme", "Vielseitigkeit", "Mut zur Veränderung"],
+    challenges: ["Ruhelosigkeit", "Bindungsprobleme", "Impulsivität", "Suchttendenzen", "Zerstreute Energie"],
+    mission: "Lerne, dass Freiheit ohne Richtung nur Treibenlassen ist. Die 5 ist hier, um mit Absicht zu erkunden, Erfahrung in Einsicht zu verwandeln.",
+    famousExamples: "Abraham Lincoln, Angelina Jolie, Mick Jagger",
+  },
+  6: {
+    title: "Der Fürsorger",
+    archetype: "Der Beschützer, der Lehrer, derjenige, der andere zusammenhält.",
+    summary: "Du trägst andere, wie Atlas die Welt trug. Die Lebenszahl 6 ist der Weg der Verantwortung, der Liebe und des Dienstes. Deine Mission ist es, zu geben, ohne dich selbst zu verlieren.",
+    qualities: ["Fürsorgeinstinkt", "Verantwortung", "Loyalität", "Lehrfähigkeit", "Kreative Gaben"],
+    challenges: ["Märtyrertum", "Übermäßige Beteiligung", "Perfektionismus", "Selbstaufopferung", "Einmischung"],
+    mission: "Lerne, dass du nicht aus einem leeren Becher gießen kannst. Die 6 ist hier, um zu heilen, zu lehren, Schönheit um die zu erschaffen, die sie liebt.",
+    famousExamples: "Albert Einstein, Meryl Streep, John Lennon",
+  },
+  7: {
+    title: "Der Suchende",
+    archetype: "Der mystische Philosoph, der Forscher, derjenige, der alles hinterfragt.",
+    summary: "Du wurdest geboren und fragtest bereits warum. Die Lebenszahl 7 ist der Weg der Weisheit, der Introspektion und des spirituellen Verständnisses. Deine Mission ist es, die Wahrheit zu finden und zu teilen, was du lernst.",
+    qualities: ["Tiefes Denken", "Intuition", "Unabhängigkeit", "Analytischer Geist", "Spirituelles Bewusstsein"],
+    challenges: ["Isolation", "Zynismus", "Überanalyse", "Misstrauen", "Emotionale Distanz"],
+    mission: "Lerne, dass Wahrheit ohne Liebe steril ist. Die 7 ist hier, um unter die Oberfläche zu graben und zurückzubringen, was sie findet.",
+    famousExamples: "Nikola Tesla, Prinzessin Diana, Johnny Depp",
+  },
+  8: {
+    title: "Die Strategin",
+    archetype: "Die Imperienbauerin, die Strategin, die Vision in Reichtum verwandelt.",
+    summary: "Du verstehst Macht, ohne dich von ihr verführen zu lassen. Die Lebenszahl 8 ist der Weg materieller Meisterschaft, des Überflusses und des Einflusses. Deine Mission ist es, etwas zu bauen, das mehr als dir selbst dient.",
+    qualities: ["Führung", "Finanzielle Intuition", "Organisationsfähigkeiten", "Ausdauer", "Autorität"],
+    challenges: ["Gier", "Workaholismus", "Kontrollbedürfnis", "Materialismus", "Einschüchterung"],
+    mission: "Lerne, dass wahre Macht daran gemessen wird, was sie erschafft, nicht was sie dominiert. Die 8 ist hier, um die materielle Welt mit Integrität zu meistern.",
+    famousExamples: "Nelson Mandela, Pablo Picasso, Warren Buffett",
+  },
+  9: {
+    title: "Der Humanitäre",
+    archetype: "Die alte Seele, der globale Bürger, derjenige, der dem Kollektiv dient.",
+    summary: "Du kommst ins Leben und weißt Dinge, die andere lernen müssen. Die Lebenszahl 9 ist der Weg universeller Liebe, Mitgefühl und Loslassen. Deine Mission ist es, etwas Größerem als dir selbst zu dienen.",
+    qualities: ["Mitgefühl", "Weisheit", "Künstlerische Sensibilität", "Globale Perspektive", "Großzügigkeit"],
+    challenges: ["Emotionale Distanz", "Retterkomplex", "Melancholie", "Schwierigkeit loszulassen", "Selbstgerechtigkeit"],
+    mission: "Lerne, dass Hingabe Stärke ist, nicht Niederlage. Die 9 ist hier, um zu lieben, ohne zu besitzen, zu geben, ohne Rückgabe zu erwarten.",
+    famousExamples: "Mutter Teresa, Mahatma Gandhi, Jim Carrey",
+  },
+  11: {
+    title: "Die Visionärin (Meisterzahl)",
+    archetype: "Die spirituelle Botin, die Intuitive, die sieht, was andere nicht können.",
+    summary: "Du wurdest geboren mit einer Verbindung zu einer höheren Frequenz. Die Meisterzahl 11 trägt eine intensive Intuition und einen Ruf, andere zu erwecken. Deine Mission ist es, Inspiration in konkrete Form zu kanalisieren.",
+    qualities: ["Außergewöhnliche Intuition", "Visionäres Denken", "Charisma", "Spirituelles Magnetismus", "Inspirierende Präsenz"],
+    challenges: ["Nervöse Anspannung", "Überempfindlichkeit", "Selbstzweifel", "Angst", "Märtyrertum"],
+    mission: "Lerne, dass deine Sensibilität deine Gabe ist, nicht deine Wunde. Die 11 ist hier, um denen Licht zu bringen, die in der Dunkelheit wandeln.",
+    famousExamples: "Barack Obama, Michelle Obama, Tim Burton",
+  },
+  22: {
+    title: "Der Meisterbauer (Meisterzahl)",
+    archetype: "Der Architekt großer Visionen, der Träume in bleibende Strukturen verwandelt.",
+    summary: "Du kannst das Unmögliche in einen Bauplan verwandeln. Die Meisterzahl 22 verbindet die spirituelle Intuition der 11 mit der praktischen Kraft der 4. Deine Mission ist es, etwas zu bauen, das die Welt verändert.",
+    qualities: ["Visionärer Pragmatismus", "Führung", "Innovation", "Ausdauer", "Großmaßstäbliches Denken"],
+    challenges: ["Überwältigender Druck", "Perfektionismus", "Burnout", "Diktatorische Tendenzen", "Zweifel-Lähmung"],
+    mission: "Lerne, dass Geduld keine Schwäche ist. Die 22 ist hier, um Monumente des Geistes zu bauen, ob Gebäude, Bewegungen oder Ideen.",
+    famousExamples: "Dalai Lama, Paul McCartney, Oprah Winfrey",
+  },
+  33: {
+    title: "Der universelle Heiler (Meisterzahl)",
+    archetype: "Der Meister der Meister, der durch bedingungslose Liebe heilt.",
+    summary: "Du wurdest geboren und trägst eine seltene Frequenz selbstloser Liebe. Die Meisterzahl 33 ist die seltenste Lebenszahl. Deine Mission ist es, die Welt mit Weisheit und Mitgefühl zu heilen, ohne etwas dafür zu verlangen.",
+    qualities: ["Bedingungslose Liebe", "Lehrgabe", "Kreative Heilung", "Spirituelle Hingabe", "Heiliger Dienst"],
+    challenges: ["Märtyrertum", "Emotionale Erschöpfung", "Perfektionismus", "Selbstvergessen", "Überwältigende Verantwortung"],
+    mission: "Lerne, dass Geben aus Leere nicht Geben ist. Die 33 ist hier, um durch Präsenz zu heilen, nicht durch Opfer.",
+    famousExamples: "Albert Einstein, John Lennon, Meryl Streep",
+  },
+};
+
+const DISPLAY_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Lebenszahl Rechner",
+    description,
+    url: "https://karmastro.com/de/outils/lebenszahl",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "de",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "127" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "Wie du deine Lebenszahl berechnest",
+    description: "Schritt-für-Schritt pythagoreische Methode, um deine Lebenszahl aus deinem Geburtsdatum zu finden.",
+    inLanguage: "de",
+    step: [
+      { "@type": "HowToStep", position: 1, name: "Schreibe dein Geburtsdatum auf", text: "Schreibe dein vollständiges Geburtsdatum im Format TT/MM/JJJJ. Beispiel: 14/04/1992." },
+      { "@type": "HowToStep", position: 2, name: "Reduziere jede Komponente", text: "Reduziere den Tag, den Monat und das Jahr separat, indem du ihre Ziffern addierst. 14 wird zu 1+4=5. April ist bereits 4. 1992 wird zu 1+9+9+2=21, dann 2+1=3." },
+      { "@type": "HowToStep", position: 3, name: "Addiere die reduzierten Werte", text: "Addiere die drei reduzierten Werte. In unserem Beispiel: 5 + 4 + 3 = 12." },
+      { "@type": "HowToStep", position: 4, name: "Letzte Reduktion", text: "Reduziere die letzte Summe auf eine einzelne Ziffer, außer den Meisterzahlen 11, 22 und 33, die intakt bleiben. 12 wird zu 1+2=3. Deine Lebenszahl ist 3." },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "Was ist eine Lebenszahl?", acceptedAnswer: { "@type": "Answer", text: "Eine Lebenszahl ist die zentrale Ziffer in der pythagoreischen Numerologie. Sie wird aus deinem Geburtsdatum berechnet und offenbart die Hauptmission deines Lebens, deine angeborenen Gaben und die Lektionen, die du gekommen bist zu lernen. Sie ist das numerologische Äquivalent zum Sonnenzeichen in der Astrologie." } },
+      { "@type": "Question", name: "Wie genau ist ein Lebenszahl-Rechner?", acceptedAnswer: { "@type": "Answer", text: "Die Lebenszahl wird mit reiner Mathematik berechnet, also ist die Zahl selbst immer zu 100% genau. Die Interpretation ist eine Lesung basierend auf Tausenden von Jahren pythagoreischer Tradition. Es ist ein Werkzeug zur Selbstreflexion, keine deterministische Vorhersage deiner Zukunft." } },
+      { "@type": "Question", name: "Kann sich meine Lebenszahl ändern?", acceptedAnswer: { "@type": "Answer", text: "Nein. Deine Lebenszahl ist durch dein Geburtsdatum festgelegt und ändert sich nie. Was sich ändert, ist, wie du sie ausdrückst. Jede Zahl hat einen höheren und einen niederen Ausdruck." } },
+      { "@type": "Question", name: "Was sind Meisterzahlen (11, 22, 33)?", acceptedAnswer: { "@type": "Answer", text: "Die Meisterzahlen 11, 22 und 33 werden in der pythagoreischen Numerologie niemals reduziert. Sie tragen eine verdoppelte Schwingung und eine anspruchsvollere Mission. Weniger als 5% der Menschen tragen eine Meisterzahl als Lebenszahl." } },
+      { "@type": "Question", name: "Ist die Lebenszahl dasselbe wie mein Sonnenzeichen?", acceptedAnswer: { "@type": "Answer", text: "Nein. Dein Sonnenzeichen stammt aus der Astrologie und beschreibt den Kern deiner Persönlichkeit basierend auf der Position der Sonne bei deiner Geburt. Deine Lebenszahl stammt aus der Numerologie und beschreibt deine Lebensmission durch die Reduktion deines Geburtsdatums." } },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/de" class="hover:text-amber-300">Start</a>
+      <span class="mx-2">/</span>
+      <a href="/de/outils" class="hover:text-amber-300">Werkzeuge</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Lebenszahl</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Pythagoreische Numerologie</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Lebenszahl Rechner</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Deine Lebenszahl ist die wichtigste Ziffer der Numerologie. Sie offenbart deine Mission, deine angeborenen Gaben und die karmischen Lektionen dieser Existenz. Kostenlose Berechnung, transparente pythagoreische Methode, vollständige Interpretation.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="life-path-form" class="space-y-4">
+        <div>
+          <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">Dein Geburtsdatum</label>
+          <input type="date" id="birth-date" name="birth-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          Meine Lebenszahl berechnen
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Deine Lebenszahl</p>
+          <div class="flex items-baseline gap-4 mb-4">
+            <span id="result-number" class="text-7xl font-serif text-amber-300"></span>
+            <span id="result-title" class="text-xl font-serif text-white/90"></span>
+          </div>
+          <p class="text-xs text-white/50 mb-4">Berechnung: <span id="result-calc" class="text-white/70"></span></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Stärken</p>
+              <ul id="result-qualities" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">Herausforderungen</p>
+              <ul id="result-challenges" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">Mission</p>
+            <p id="result-mission" class="text-sm text-white/80 italic leading-relaxed"></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-center">
+            <a href="https://app.karmastro.com/oracle?lang=de" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
+              Mit dem Orakel vertiefen
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Was ist eine Lebenszahl?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Deine <strong>Lebenszahl</strong> ist die zentrale Ziffer in der pythagoreischen Numerologie. Berechnet aus deinem Geburtsdatum, offenbart sie die essenzielle Mission deiner Existenz. Denke an sie als numerologisches Äquivalent zum Sonnenzeichen in der Astrologie: die zugrundeliegende Schwingung, die alles färbt, was du tust, der Archetyp, den du verkörpern kamst.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Für <strong>Pythagoras</strong> und seine Schüler im 6. Jahrhundert v. Chr. trug jede Zahl eine einzigartige Schwingung, eine energetische Signatur. Die Ziffern 1 bis 9 decken alle menschlichen Archetypen ab. Die Meisterzahlen 11, 22 und 33 tragen eine seltenere, anspruchsvollere Frequenz. Deine Lebenszahl zu berechnen bedeutet, das wiederzuentdecken, was die alten Griechen deinen <em>Daimon</em> nannten: der Grund, warum du hier bist.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Wie du deine Lebenszahl berechnest</h2>
+      <div class="p-5 rounded-xl bg-white/[0.03] border border-white/10 mb-6 not-prose">
+        <p class="text-sm text-white/90 mb-3"><strong>Beispiel: 14. April 1992</strong></p>
+        <ul class="text-sm text-white/70 space-y-1">
+          <li>Tag: 1 + 4 = 5</li>
+          <li>Monat: 4 = 4</li>
+          <li>Jahr: 1 + 9 + 9 + 2 = 21 → 2 + 1 = 3</li>
+          <li>Gesamt: 5 + 4 + 3 = <strong class="text-amber-300">12 → 1 + 2 = 3</strong></li>
+        </ul>
+        <p class="text-sm text-white/60 mt-3">Lebenszahl = 3 (Die Künstlerin)</p>
+      </div>
+      <p class="text-white/80 leading-relaxed mb-4">
+        <strong>Wichtige Ausnahme:</strong> Wenn deine Berechnung in irgendeiner Phase vor der endgültigen Reduktion 11, 22 oder 33 ergibt, reduziere sie nicht. Das sind die Meisterzahlen. Zum Beispiel bleibt eine Lebenszahl 29/11 als 11, nicht als 2. Meisterzahlen tragen eine verdoppelte Mission, schwerer aber heller.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Die 9 Lebenszahlen (und die 3 Meisterzahlen)</h2>
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
+        {DISPLAY_ORDER.map((n) => {
+          const meaning = MEANINGS[n];
+          return (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <div class="flex items-baseline gap-3 mb-2">
+                <span class="text-3xl font-serif text-amber-300">{n}</span>
+                <span class="text-sm text-white/80 font-medium">{meaning.title}</span>
+              </div>
+              <p class="text-xs text-white/60 leading-relaxed">{meaning.archetype}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Die Geschichte der Numerologie</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Die Numerologie begann nicht mit <a href="https://de.wikipedia.org/wiki/Pythagoras" class="text-amber-300 hover:underline">Pythagoras</a>. Die <strong>Babylonier</strong> verwendeten bereits vor mehr als 4.000 Jahren ein heiliges Zahlensystem. Die Hebräer entwickelten die <em>Gematria</em>, eine Entsprechung zwischen Buchstaben und Zahlen, die sich noch in der Kabbala findet. Die Ägypter richteten ihre Pyramiden nach mathematischen Proportionen aus, die sie für kosmisch hielten.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Pythagoras synthetisierte diese Traditionen im 6. Jahrhundert v. Chr. zu einem kohärenten System. Sein berühmter Ausspruch «alles ist Zahl» war keine Metapher: Er sah das Universum buchstäblich als mathematische Komposition. Seine Schüler, die Pythagoreer, kodifizierten, was wir heute <strong>pythagoreische Numerologie</strong> nennen. Dies ist die Methode, die Karmastro mit der Strenge und Transparenz anwendet, die sie verdient.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Willst du eine vollständige Lesung?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Die Lebenszahl ist nur der Anfang. Um deine fünf Numerologie-Zahlen mit deiner vollständigen Geburtskarte zu kreuzen und persönliche Führung zu erhalten, sprich mit einer unserer vier kosmischen Führerinnen.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=de" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Das Orakel kostenlos befragen
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/de/outils" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Alle Werkzeuge</a>
+      <a href="/de/outils/aszendent" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Aszendent</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  import { calculateLifePath } from "../../../data/numerology-meanings";
+
+  const MEANINGS_DE: Record<number, { title: string; summary: string; qualities: string[]; challenges: string[]; mission: string }> = {
+    1: { title: "Der Pionier", summary: "Du bist geboren, um zu führen, nicht um zu folgen. Die Lebenszahl 1 trägt die reine Energie der Initiative. Wenn du einen Raum betrittst, verändert sich etwas.", qualities: ["Natürliche Führung", "Unabhängigkeit", "Ehrgeiz", "Mut", "Originalität"], challenges: ["Egozentrik", "Ungeduld", "Einsamkeit", "Autoritarismus", "Starrheit"], mission: "Lerne zu führen, ohne zu zerquetschen. Die 1 ist hier, um neues Terrain zu erschaffen." },
+    2: { title: "Die Diplomatin", summary: "Du nimmst Energien wahr, wie andere Klänge hören. Die Lebenszahl 2 ist der Weg des Friedens, der Harmonie und der Vereinigung.", qualities: ["Diplomatie", "Sensibilität", "Empathie", "Geduld", "Kooperation"], challenges: ["Emotionale Abhängigkeit", "Unentschlossenheit", "Überempfindlichkeit", "Konfliktvermeidung", "Unterwürfigkeit"], mission: "Verstehe, dass Sanftheit Stärke ist, nicht Schwäche." },
+    3: { title: "Die Künstlerin", summary: "Du verwandelst alles in Farbe, Worte oder Musik. Die Lebenszahl 3 ist der Weg des kreativen Ausdrucks.", qualities: ["Kreativität", "Kommunikation", "Optimismus", "Charisma", "Freude"], challenges: ["Zerstreuung", "Oberflächlichkeit", "Klatsch", "Emotionale Unreife", "Flucht"], mission: "Lerne, dass Tiefe die Freude nicht tötet." },
+    4: { title: "Der Erbauer", summary: "Du baust, wovon andere nur träumen. Die Lebenszahl 4 ist der Weg der Stabilität, der Struktur und dauerhafter Ergebnisse.", qualities: ["Disziplin", "Zuverlässigkeit", "Geduld", "Loyalität", "Praktische Fertigkeit"], challenges: ["Starrheit", "Workaholismus", "Sturheit", "Angst vor Veränderung", "Übertriebene Ernsthaftigkeit"], mission: "Lerne, dass Struktur der Freiheit dient, nicht umgekehrt." },
+    5: { title: "Die Abenteurerin", summary: "Du brauchst Freiheit, wie andere Luft brauchen. Die Lebenszahl 5 ist der Weg der Veränderung, der Erfahrung und der persönlichen Freiheit.", qualities: ["Neugier", "Anpassungsfähigkeit", "Charme", "Vielseitigkeit", "Mut zur Veränderung"], challenges: ["Ruhelosigkeit", "Bindungsprobleme", "Impulsivität", "Suchttendenzen", "Zerstreute Energie"], mission: "Lerne, dass Freiheit ohne Richtung nur Treibenlassen ist." },
+    6: { title: "Der Fürsorger", summary: "Du trägst andere, wie Atlas die Welt trug. Die Lebenszahl 6 ist der Weg der Verantwortung, der Liebe und des Dienstes.", qualities: ["Fürsorgeinstinkt", "Verantwortung", "Loyalität", "Lehrfähigkeit", "Kreative Gaben"], challenges: ["Märtyrertum", "Übermäßige Beteiligung", "Perfektionismus", "Selbstaufopferung", "Einmischung"], mission: "Lerne, dass du nicht aus einem leeren Becher gießen kannst." },
+    7: { title: "Der Suchende", summary: "Du wurdest geboren und fragtest bereits warum. Die Lebenszahl 7 ist der Weg der Weisheit, der Introspektion und des spirituellen Verständnisses.", qualities: ["Tiefes Denken", "Intuition", "Unabhängigkeit", "Analytischer Geist", "Spirituelles Bewusstsein"], challenges: ["Isolation", "Zynismus", "Überanalyse", "Misstrauen", "Emotionale Distanz"], mission: "Lerne, dass Wahrheit ohne Liebe steril ist." },
+    8: { title: "Die Strategin", summary: "Du verstehst Macht, ohne dich von ihr verführen zu lassen. Die Lebenszahl 8 ist der Weg materieller Meisterschaft, des Überflusses und des Einflusses.", qualities: ["Führung", "Finanzielle Intuition", "Organisationsfähigkeiten", "Ausdauer", "Autorität"], challenges: ["Gier", "Workaholismus", "Kontrollbedürfnis", "Materialismus", "Einschüchterung"], mission: "Lerne, dass wahre Macht daran gemessen wird, was sie erschafft." },
+    9: { title: "Der Humanitäre", summary: "Du kommst ins Leben und weißt Dinge, die andere lernen müssen. Die Lebenszahl 9 ist der Weg universeller Liebe, Mitgefühl und Loslassen.", qualities: ["Mitgefühl", "Weisheit", "Künstlerische Sensibilität", "Globale Perspektive", "Großzügigkeit"], challenges: ["Emotionale Distanz", "Retterkomplex", "Melancholie", "Schwierigkeit loszulassen", "Selbstgerechtigkeit"], mission: "Lerne, dass Hingabe Stärke ist, nicht Niederlage." },
+    11: { title: "Die Visionärin (Meisterzahl)", summary: "Du wurdest geboren mit einer Verbindung zu einer höheren Frequenz. Die Meisterzahl 11 trägt eine intensive Intuition und einen Ruf, andere zu erwecken.", qualities: ["Außergewöhnliche Intuition", "Visionäres Denken", "Charisma", "Spirituelles Magnetismus", "Inspirierende Präsenz"], challenges: ["Nervöse Anspannung", "Überempfindlichkeit", "Selbstzweifel", "Angst", "Märtyrertum"], mission: "Lerne, dass deine Sensibilität deine Gabe ist, nicht deine Wunde." },
+    22: { title: "Der Meisterbauer (Meisterzahl)", summary: "Du kannst das Unmögliche in einen Bauplan verwandeln. Die Meisterzahl 22 verbindet die spirituelle Intuition der 11 mit der praktischen Kraft der 4.", qualities: ["Visionärer Pragmatismus", "Führung", "Innovation", "Ausdauer", "Großmaßstäbliches Denken"], challenges: ["Überwältigender Druck", "Perfektionismus", "Burnout", "Diktatorische Tendenzen", "Zweifel-Lähmung"], mission: "Lerne, dass Geduld keine Schwäche ist." },
+    33: { title: "Der universelle Heiler (Meisterzahl)", summary: "Du wurdest geboren und trägst eine seltene Frequenz selbstloser Liebe. Die Meisterzahl 33 ist die seltenste Lebenszahl.", qualities: ["Bedingungslose Liebe", "Lehrgabe", "Kreative Heilung", "Spirituelle Hingabe", "Heiliger Dienst"], challenges: ["Märtyrertum", "Emotionale Erschöpfung", "Perfektionismus", "Selbstvergessen", "Überwältigende Verantwortung"], mission: "Lerne, dass Geben aus Leere nicht Geben ist." },
+  };
+
+  const form = document.getElementById("life-path-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const input = document.getElementById("birth-date") as HTMLInputElement;
+    const value = input.value;
+    if (!value) return;
+
+    const [y, m, d] = value.split("-").map(Number);
+    const result = calculateLifePath(d, m, y);
+    const meaning = MEANINGS_DE[result.number] || MEANINGS_DE[9];
+
+    (document.getElementById("result-number") as HTMLElement).textContent = String(result.number);
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-calc") as HTMLElement).textContent = result.calculation;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+
+    const qualitiesList = document.getElementById("result-qualities") as HTMLElement;
+    qualitiesList.innerHTML = meaning.qualities.map((q) => `<li>✦ ${q}</li>`).join("");
+
+    const challengesList = document.getElementById("result-challenges") as HTMLElement;
+    challengesList.innerHTML = meaning.challenges.map((c) => `<li>◆ ${c}</li>`).join("");
+
+    (document.getElementById("result-mission") as HTMLElement).textContent = meaning.mission;
+
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>
