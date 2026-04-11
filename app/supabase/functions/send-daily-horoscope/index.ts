@@ -181,15 +181,17 @@ function htmlEmail(params: {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${signName} · ${parisDate()}</title>
 </head>
-<body style="margin:0;padding:0;background:#0f0a1e;font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;color:#e5e7eb;">
+<body style="margin:0;padding:0;background-color:#0f0a1e;background-image:url('${SITE_URL}/email/starfield.svg');background-repeat:repeat-y;background-position:top center;background-size:560px auto;font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;color:#e5e7eb;">
 <div style="display:none;max-height:0;overflow:hidden;">${c.preview}</div>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#0f0a1e;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:transparent;">
 <tr><td align="center" style="padding:40px 20px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:linear-gradient(180deg,#1a0f2e 0%,#0f0a1e 100%);border:1px solid rgba(212,160,23,0.25);border-radius:16px;overflow:hidden;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background-color:rgba(15,10,30,0.85);background-image:linear-gradient(180deg,rgba(26,15,46,0.9) 0%,rgba(15,10,30,0.92) 100%);border:1px solid rgba(212,160,23,0.25);border-radius:16px;overflow:hidden;backdrop-filter:blur(8px);">
 <tr><td style="padding:40px 40px 16px;text-align:center;">
-<p style="margin:0;font-size:42px;">✦</p>
+<p style="margin:0 0 4px;font-size:10px;color:rgba(251,191,36,0.4);letter-spacing:6px;">✦ ✧ · ✦ · ✧ ✦</p>
+<p style="margin:8px 0 0;font-size:42px;">✦</p>
 <h1 style="margin:12px 0 4px;font-family:Outfit,Georgia,serif;font-size:26px;color:#fbbf24;font-weight:600;">${signName}</h1>
 <p style="margin:0;font-size:12px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:1.5px;">${parisDate()}</p>
+<p style="margin:4px 0 0;font-size:10px;color:rgba(251,191,36,0.4);letter-spacing:6px;">✧ · ✦ ✧ · ✦ ·</p>
 </td></tr>
 <tr><td style="padding:8px 40px 24px;">
 <p style="margin:0 0 16px;font-size:13px;color:rgba(255,255,255,0.6);line-height:1.6;font-style:italic;">${c.greeting}</p>
