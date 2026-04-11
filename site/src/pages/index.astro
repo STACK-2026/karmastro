@@ -6,20 +6,15 @@ import StatsSection from "../components/StatsSection.astro";
 import FAQ from "../components/FAQ.astro";
 import CTA from "../components/CTA.astro";
 import { siteConfig } from "../../site.config";
-import { jsonLdHomepage, jsonLdFaq } from "../utils/seo";
-import { getContent } from "../i18n/content";
+import { jsonLdHomepage } from "../utils/seo";
 
-const frContent = getContent("fr");
-const homeJsonLd: object[] = [jsonLdHomepage()];
-if (frContent.faq && frContent.faq.length > 0) {
-  homeJsonLd.push(jsonLdFaq(frContent.faq));
-}
+// FAQ JSON-LD is emitted by the <FAQ /> component itself, do not duplicate here.
 ---
 
 <BaseLayout
   title={`${siteConfig.name} - ${siteConfig.tagline}`}
   description={siteConfig.description}
-  jsonLd={homeJsonLd}
+  jsonLd={jsonLdHomepage()}
 >
   {siteConfig.sections.hero && <Hero />}
   {siteConfig.sections.features && <Features />}
