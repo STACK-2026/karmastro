@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Menu, X } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { detectLocale } from "@/lib/locale";
+import { detectLocale, type AppLocale } from "@/lib/locale";
+import { tNav } from "@/i18n/nav";
 
 interface AppHeaderProps {
   title?: string;
@@ -16,25 +17,47 @@ const SITE_URL = "https://karmastro.com";
 
 // Site-parity nav links. Same wording, same order as Header.astro.
 // External links point to the site (Horoscope, Outils, Le Cosmos, Parrainage).
-// Oracle stays internal to the app.
-type NavLink = { key: string; label: string; href: string; external: boolean };
+// Oracle stays internal to the app. Labels resolved via tNav().
+type NavLink = {
+  key: "horoscope" | "tools" | "blog" | "referral" | "oracle";
+  navKey: "nav.horoscope" | "nav.tools" | "nav.blog" | "nav.referral" | "nav.oracle";
+  href: string;
+  external: boolean;
+};
 
 const NAV_LINKS: NavLink[] = [
-  { key: "horoscope", label: "Horoscope", href: "/horoscope", external: true },
-  { key: "tools", label: "Outils", href: "/outils", external: true },
-  { key: "blog", label: "Le Cosmos", href: "/blog", external: true },
-  { key: "referral", label: "Parrainage", href: "/parrainage", external: true },
-  { key: "oracle", label: "L'Oracle", href: "/oracle", external: false },
+  { key: "horoscope", navKey: "nav.horoscope", href: "/horoscope", external: true },
+  { key: "tools", navKey: "nav.tools", href: "/outils", external: true },
+  { key: "blog", navKey: "nav.blog", href: "/blog", external: true },
+  { key: "referral", navKey: "nav.referral", href: "/parrainage", external: true },
+  { key: "oracle", navKey: "nav.oracle", href: "/oracle", external: false },
 ];
 
 const AppHeader = ({ title, subtitle, showBack = false, rightContent }: AppHeaderProps) => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [locale, setLocale] = useState("fr");
+  const [locale, setLocale] = useState<AppLocale>("fr");
+  const [hidden, setHidden] = useState(false);
+  const lastY = useRef(0);
 
   useEffect(() => {
     setLocale(detectLocale());
+  }, []);
+
+  // Hide header on scroll down past 450px, show on scroll up. Same behavior as site.
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (y > 450 && y > lastY.current) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+      lastY.current = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const externalHref = (path: string) => `${SITE_URL}${path}${locale !== "fr" ? `?lang=${locale}` : ""}`;
@@ -67,6 +90,7 @@ const AppHeader = ({ title, subtitle, showBack = false, rightContent }: AppHeade
           borderRadius: 16,
           boxShadow:
             "0 6px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.08)",
+          transform: hidden ? "translateY(-120%)" : "translateY(0)",
         }}
       >
         {/* Left: logo + optional back/title */}
@@ -118,7 +142,7 @@ const AppHeader = ({ title, subtitle, showBack = false, rightContent }: AppHeade
                 className="app-nav-link text-sm font-medium no-underline relative"
                 style={{ color: "rgba(255, 255, 255, 0.85)" }}
               >
-                {link.label}
+                {tNav(link.navKey, locale)}
               </a>
             ))}
           </nav>
@@ -160,7 +184,7 @@ const AppHeader = ({ title, subtitle, showBack = false, rightContent }: AppHeade
                     boxShadow: "0 4px 15px rgba(139, 92, 246, 0.25)",
                   }}
                 >
-                  Connexion
+                  {tNav("common.login", locale)}
                 </button>
               )}
             </>
@@ -228,7 +252,7 @@ const AppHeader = ({ title, subtitle, showBack = false, rightContent }: AppHeade
                   onClick={(e) => handleNavClick(link, e)}
                   className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-white no-underline hover:bg-white/5 transition-colors"
                 >
-                  {link.label}
+                  {tNav(link.navKey, locale)}
                 </a>
               ))}
             </nav>
@@ -247,7 +271,7 @@ const AppHeader = ({ title, subtitle, showBack = false, rightContent }: AppHeade
                   className="w-full flex items-center justify-center gap-2 text-white font-semibold py-3 rounded-xl no-underline"
                   style={{ background: "hsl(271 91% 65%)" }}
                 >
-                  Mon profil
+                  {tNav("common.my_profile", locale)}
                 </button>
               ) : (
                 <button
@@ -258,7 +282,7 @@ const AppHeader = ({ title, subtitle, showBack = false, rightContent }: AppHeade
                   className="w-full flex items-center justify-center gap-2 text-white font-semibold py-3 rounded-xl no-underline"
                   style={{ background: "hsl(271 91% 65%)" }}
                 >
-                  Connexion
+                  {tNav("common.login", locale)}
                 </button>
               )}
             </div>

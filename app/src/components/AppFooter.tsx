@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
-import { detectLocale } from "@/lib/locale";
+import { detectLocale, type AppLocale } from "@/lib/locale";
+import { tNav } from "@/i18n/nav";
 
 // Mirrors site/src/components/Footer.astro in structure, links and wording.
-// Pages that want the footer import it explicitly (Dashboard, Profile, Settings).
-// Oracle chat and Admin pages do NOT mount it because they use full-screen layouts.
+// Oracle link = internal (/oracle). Other links = external to karmastro.com
+// with locale propagation via ?lang=xx query param.
 
 const SITE_URL = "https://karmastro.com";
 
 const AppFooter = () => {
-  const [locale, setLocale] = useState("fr");
+  const [locale, setLocale] = useState<AppLocale>("fr");
   const [year] = useState(new Date().getFullYear());
 
   useEffect(() => {
@@ -21,7 +22,7 @@ const AppFooter = () => {
   return (
     <footer
       className="relative z-10 mt-16"
-      style={{ background: "var(--bg-card, #1a1333)", borderTop: "1px solid rgba(255,255,255,0.06)" }}
+      style={{ background: "hsl(258 46% 6%)", borderTop: "1px solid rgba(255,255,255,0.06)" }}
     >
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -31,27 +32,30 @@ const AppFooter = () => {
               Karmastro
             </p>
             <p className="text-sm" style={{ color: "rgba(255, 255, 255, 0.7)" }}>
-              Astrologie et numerologie au service de ton evolution personnelle.
+              {tNav("footer.tagline", locale)}
             </p>
             <p className="text-xs italic mt-4" style={{ color: "rgba(255, 255, 255, 0.4)" }}>
-              « Astra inclinant, sed non necessitant »
+              « {tNav("footer.quote", locale)} »
               <br />
-              <span className="text-[10px]">Thomas d'Aquin</span>
+              <span className="text-[10px]">{tNav("footer.quote_author", locale)}</span>
             </p>
           </div>
 
           {/* Legal */}
           <div>
-            <p className="text-white font-semibold text-sm mb-3">Informations legales</p>
+            <p className="text-white font-semibold text-sm mb-3">{tNav("footer.legal_title", locale)}</p>
             <ul className="space-y-2 text-sm" style={{ color: "rgba(255, 255, 255, 0.7)" }}>
               <li>
-                <a href={siteLink("/mentions-legales")} className="hover:text-white transition-colors no-underline">
-                  Mentions legales
+                <a
+                  href={siteLink("/mentions-legales")}
+                  className="hover:text-white transition-colors no-underline"
+                >
+                  {tNav("footer.legal", locale)}
                 </a>
               </li>
               <li>
                 <a href={siteLink("/cgv")} className="hover:text-white transition-colors no-underline">
-                  Conditions generales
+                  {tNav("footer.cgv", locale)}
                 </a>
               </li>
               <li>
@@ -59,7 +63,7 @@ const AppFooter = () => {
                   href={siteLink("/politique-confidentialite")}
                   className="hover:text-white transition-colors no-underline"
                 >
-                  Confidentialite
+                  {tNav("footer.privacy", locale)}
                 </a>
               </li>
             </ul>
@@ -67,31 +71,31 @@ const AppFooter = () => {
 
           {/* Explore */}
           <div>
-            <p className="text-white font-semibold text-sm mb-3">Explorer</p>
+            <p className="text-white font-semibold text-sm mb-3">{tNav("footer.explore_title", locale)}</p>
             <ul className="space-y-2 text-sm" style={{ color: "rgba(255, 255, 255, 0.7)" }}>
               <li>
                 <a href={siteLink("/blog")} className="hover:text-white transition-colors no-underline">
-                  Le Cosmos
+                  {tNav("nav.blog", locale)}
                 </a>
               </li>
               <li>
                 <a href="/oracle" className="hover:text-white transition-colors no-underline">
-                  L'Oracle
+                  {tNav("nav.oracle", locale)}
                 </a>
               </li>
               <li>
                 <a href={siteLink("/glossaire")} className="hover:text-white transition-colors no-underline">
-                  Glossaire
+                  {tNav("nav.glossary", locale)}
                 </a>
               </li>
               <li>
                 <a href={siteLink("/notre-histoire")} className="hover:text-white transition-colors no-underline">
-                  Notre histoire
+                  {tNav("nav.about", locale)}
                 </a>
               </li>
               <li>
                 <a href={siteLink("/precision")} className="hover:text-white transition-colors no-underline">
-                  Precision
+                  {tNav("nav.precision", locale)}
                 </a>
               </li>
               <li>
@@ -108,7 +112,7 @@ const AppFooter = () => {
           style={{ borderTop: "1px solid hsl(260 20% 12%)", color: "rgba(196, 184, 219, 0.5)" }}
         >
           <p>
-            &copy; {year} Karmastro. Tous droits reserves.
+            &copy; {year} Karmastro. {tNav("footer.copyright", locale)}.
           </p>
         </div>
       </div>

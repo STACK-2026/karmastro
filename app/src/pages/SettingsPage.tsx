@@ -2,6 +2,7 @@ import { Globe, Bell, Palette, Shield, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import BottomNav from "@/components/BottomNav";
+import AppFooter from "@/components/AppFooter";
 import StarField from "@/components/StarField";
 import AppHeader from "@/components/AppHeader";
 
@@ -49,6 +50,7 @@ const SettingsPage = () => {
         </p>
       </div>
 
+      <AppFooter />
       <BottomNav />
     </div>
   );

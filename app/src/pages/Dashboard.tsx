@@ -9,6 +9,7 @@ import { useUserProfile } from "@/hooks/useUserProfile";
 import { ZodiacSymbol } from "@/components/ZodiacSymbol";
 import { getPersonalizedHooks, type OracleHook } from "@/lib/oracleHooks";
 import BottomNav from "@/components/BottomNav";
+import AppFooter from "@/components/AppFooter";
 import StarField from "@/components/StarField";
 import { useState, useEffect, useCallback } from "react";
 import { useAuth } from "@/contexts/AuthContext";
@@ -432,6 +433,7 @@ const Dashboard = () => {
         </div>
       </div>
 
+      <AppFooter />
       <BottomNav />
     </div>
   );

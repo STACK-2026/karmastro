@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Sparkles, Check, Star, Heart, Package, Zap } from "lucide-react";
 import AppHeader from "@/components/AppHeader";
 import BottomNav from "@/components/BottomNav";
+import AppFooter from "@/components/AppFooter";
 import StarField from "@/components/StarField";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
@@ -301,6 +302,7 @@ const PricingPage = () => {
         </div>
       </div>
 
+      <AppFooter />
       <BottomNav />
     </div>
   );

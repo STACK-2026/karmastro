@@ -63,29 +63,33 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Figtree', sans-serif;
+  }
+
+  /* Cosmic star cursor, activated only on LandingPage via body.has-cosmic-cursor */
+  body.has-cosmic-cursor {
     cursor: url('/cursors/star.svg') 16 16, auto;
   }
-
-  input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="url"],
-  input[type="number"],
-  input[type="date"],
-  input[type="time"],
-  textarea,
-  [contenteditable="true"] {
-    cursor: text;
-  }
-
-  a, button, [role="button"], input[type="submit"], input[type="button"], label[for] {
+  body.has-cosmic-cursor a,
+  body.has-cosmic-cursor button,
+  body.has-cosmic-cursor [role="button"],
+  body.has-cosmic-cursor label[for] {
     cursor: url('/cursors/star.svg') 16 16, pointer;
   }
-
+  body.has-cosmic-cursor input[type="text"],
+  body.has-cosmic-cursor input[type="email"],
+  body.has-cosmic-cursor input[type="password"],
+  body.has-cosmic-cursor input[type="search"],
+  body.has-cosmic-cursor input[type="tel"],
+  body.has-cosmic-cursor input[type="number"],
+  body.has-cosmic-cursor input[type="date"],
+  body.has-cosmic-cursor input[type="time"],
+  body.has-cosmic-cursor textarea {
+    cursor: text;
+  }
   @media (pointer: coarse) {
-    body, a, button, [role="button"] { cursor: auto; }
+    body.has-cosmic-cursor,
+    body.has-cosmic-cursor a,
+    body.has-cosmic-cursor button { cursor: auto; }
   }
 
   h1, h2, h3, h4, h5, h6 {

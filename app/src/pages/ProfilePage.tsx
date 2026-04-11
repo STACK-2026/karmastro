@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Sparkles, Star, Hash, Moon, Zap, BookOpen, Share2, Copy, Check, Users } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import BottomNav from "@/components/BottomNav";
+import AppFooter from "@/components/AppFooter";
 import StarField from "@/components/StarField";
 import AppHeader from "@/components/AppHeader";
 import { useAuth } from "@/contexts/AuthContext";
@@ -236,6 +237,7 @@ const ProfilePage = () => {
         </div>
       </div>
 
+      <AppFooter />
       <BottomNav />
     </div>
   );

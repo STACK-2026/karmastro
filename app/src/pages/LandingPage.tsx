@@ -10,6 +10,7 @@ import ZodiacWheel from "@/components/ZodiacWheel";
 import { ZodiacSymbol } from "@/components/ZodiacSymbol";
 import { FlipCard } from "@/components/FlipCard";
 import StarField from "@/components/StarField";
+import AppFooter from "@/components/AppFooter";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
@@ -93,6 +94,13 @@ const LandingPage = () => {
   const [birthDate, setBirthDate] = useState("");
   const [firstName, setFirstName] = useState("");
   const [quickResult, setQuickResult] = useState<{ sign: string; symbol: string; lifePath: number; keyword: string } | null>(null);
+
+  // Activate the cosmic star cursor only on the landing (marketing) page.
+  // Interior app pages (dashboard, oracle, forms) keep the native cursor.
+  useEffect(() => {
+    document.body.classList.add("has-cosmic-cursor");
+    return () => document.body.classList.remove("has-cosmic-cursor");
+  }, []);
 
   // Refs for GSAP animations
   const heroRef = useRef<HTMLDivElement>(null);
@@ -696,15 +704,8 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="relative z-10 border-t border-border px-6 py-10 text-center text-sm text-muted-foreground">
-        <div className="flex items-center justify-center gap-2 mb-4">
-          <Sparkles className="h-5 w-5 text-primary" />
-          <span className="font-serif text-lg text-foreground">Karmastro</span>
-        </div>
-        <p>« Les astres inclinent, mais ne déterminent pas » - Thomas d'Aquin</p>
-        <p className="mt-2">© 2026 Karmastro. Tous droits réservés.</p>
-      </footer>
+      {/* Footer, site-parity */}
+      <AppFooter />
     </div>
   );
 };
