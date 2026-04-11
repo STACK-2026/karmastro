@@ -1,0 +1,98 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import BlogCard from "../../../components/BlogCard.astro";
+import { getCollection } from "astro:content";
+import { siteConfig } from "../../../../site.config";
+import { jsonLdBreadcrumbs } from "../../../utils/seo";
+import { fullUrl } from "../../../utils/config";
+import { LOCALES, DEFAULT_LOCALE, type Locale } from "../../../i18n/config";
+
+export function getStaticPaths() {
+  return LOCALES.filter((l) => l !== DEFAULT_LOCALE).map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Locale };
+
+const TITLES: Record<string, string> = {
+  en: "The Cosmos",
+  es: "El Cosmos",
+  pt: "O Cosmos",
+  de: "Der Kosmos",
+  it: "Il Cosmo",
+  tr: "Kozmos",
+  pl: "Kosmos",
+  ru: "Космос",
+  ja: "コスモス",
+  ar: "الكون",
+};
+
+const SUBTITLES: Record<string, string> = {
+  en: "Explore astrology, numerology, and karmic guidance",
+  es: "Explora la astrologia, la numerologia y la guia karmica",
+  pt: "Explora a astrologia, a numerologia e a orientacao karmica",
+  de: "Entdecke Astrologie, Numerologie und karmische Fuhrung",
+  it: "Esplora l'astrologia, la numerologia e la guida karmica",
+  tr: "Astroloji, numeroloji ve karmik rehberligi kesfet",
+  pl: "Odkryj astrologie, numerologie i karmiczne wskazowki",
+  ru: "Исследуй астрологию, нумерологию и кармическое руководство",
+  ja: "占星術、数秘術、カルマガイダンスの世界へ",
+  ar: "اكتشف علم التنجيم وعلم الأعداد والإرشاد الكرمي",
+};
+
+const EMPTY_MSG: Record<string, string> = {
+  en: "First articles are coming soon. Come back!",
+  es: "Los primeros articulos llegan pronto. ¡Vuelve!",
+  pt: "Os primeiros artigos chegam em breve. Volte!",
+  de: "Die ersten Artikel kommen bald. Komm wieder!",
+  it: "I primi articoli arrivano presto. Torna!",
+  tr: "Ilk makaleler yakinda. Tekrar gel!",
+  pl: "Pierwsze artykuly juz wkrotce. Wroc!",
+  ru: "Первые статьи скоро. Возвращайся!",
+  ja: "最初の記事はもうすぐ。またね!",
+  ar: "المقالات الأولى قريبا. عد لاحقا!",
+};
+
+const now = new Date();
+const posts = (await getCollection("blog", ({ data }) => !data.draft && data.lang === lang && data.date.valueOf() <= now.valueOf()))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const breadcrumbs = [
+  { name: "Home", url: `${siteConfig.url}/${lang}/` },
+  { name: TITLES[lang] || "Blog", url: `${siteConfig.url}/${lang}/blog` },
+];
+---
+
+<BaseLayout
+  title={`${TITLES[lang] || "Blog"} - ${siteConfig.name}`}
+  description={SUBTITLES[lang] || ""}
+  jsonLd={[
+    { "@context": "https://schema.org", "@type": "CollectionPage", name: `${TITLES[lang]} - ${siteConfig.name}`, url: `${siteConfig.url}/${lang}/blog` },
+    jsonLdBreadcrumbs(breadcrumbs),
+  ]}
+>
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <h1 class="mb-2">{TITLES[lang] || "Blog"}</h1>
+    <p class="text-gray-400 mb-10 text-lg">{SUBTITLES[lang] || ""}</p>
+
+    {posts.length === 0 ? (
+      <p class="text-gray-500 text-lg">{EMPTY_MSG[lang] || "Coming soon."}</p>
+    ) : (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            date={post.data.date}
+            slug={post.id}
+            href={`/${lang}/blog/${post.id}`}
+            image={post.data.image}
+            imageAlt={post.data.imageAlt}
+            category={post.data.category}
+          />
+        ))}
+      </div>
+    )}
+  </div>
+</BaseLayout>

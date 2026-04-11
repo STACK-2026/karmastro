@@ -1,6 +1,6 @@
 ---
 title: "Chakras et astrologie : la correspondance entre les 7 centres énergétiques et les planètes"
-description: "Les 7 chakras et les planètes de ta carte natale ne sont pas deux systèmes séparés. Découvre comment ils se répondent et comment utiliser ton thème astral pour comprendre tes blocages énergétiques."
+description: "Les 7 chakras et les planètes de ta carte natale se répondent. Apprends à utiliser ton thème astral pour comprendre tes blocages énergétiques."
 date: 2026-05-18T07:45:00+02:00
 author: "Sibylle"
 category: "spiritualité"

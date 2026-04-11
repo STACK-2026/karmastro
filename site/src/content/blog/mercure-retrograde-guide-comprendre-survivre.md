@@ -1,6 +1,6 @@
 ---
 title: "Mercure rétrograde : comprendre, anticiper et traverser ces périodes sans paniquer"
-description: "Trois fois par an, Mercure semble reculer dans le ciel et tout le monde panique. Découvre ce que la rétrogradation veut vraiment dire, ce qu'elle bouge dans ta vie et comment en faire un allié plutôt qu'un cauchemar."
+description: "Mercure rétrograde 3 fois par an et tout le monde panique. Découvre ce qui se joue vraiment et comment en faire un allié plutôt qu'un cauchemar."
 date: 2026-05-21T07:30:00+02:00
 author: "Orion"
 category: "astrologie"

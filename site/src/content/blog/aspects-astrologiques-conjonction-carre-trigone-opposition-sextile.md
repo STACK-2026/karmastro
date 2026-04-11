@@ -1,6 +1,6 @@
 ---
 title: "Aspects astrologiques : conjonction, carré, trigone, opposition, sextile, le guide pour les comprendre"
-description: "Les planètes ne fonctionnent jamais isolément. Elles se parlent, s'opposent, s'harmonisent ou se bloquent par les aspects. Voici le guide complet pour lire ces dialogues planétaires dans ta carte natale."
+description: "Les planètes dialoguent par les aspects : conjonction, carré, trigone, opposition, sextile. Le guide complet pour les lire dans ta carte natale."
 date: 2026-06-04T07:30:00+02:00
 author: "Orion"
 category: "astrologie"

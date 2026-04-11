@@ -1,6 +1,6 @@
 ---
 title: "Le retour de Saturne : ce grand passage astrologique vers 29 ans qui change tout"
-description: "Vers 29 ans, Saturne revient à sa position de naissance et fait le ménage. Carrière, couple, identité, valeurs : tout est remis en question. Voici ce qui se joue vraiment et comment traverser ce passage initiatique."
+description: "Vers 29 ans, Saturne revient à sa position natale et fait le ménage : carrière, couple, identité. Comment traverser ce passage initiatique."
 date: 2026-05-25T07:30:00+02:00
 author: "Orion"
 category: "astrologie"

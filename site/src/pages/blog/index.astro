@@ -8,7 +8,7 @@ import { fullUrl } from "../../utils/config";
 
 // Only show published articles (scheduled date has passed)
 const now = new Date();
-const posts = (await getCollection("blog", ({ data }) => !data.draft && data.date.valueOf() <= now.valueOf()))
+const posts = (await getCollection("blog", ({ data }) => !data.draft && data.lang === "fr" && data.date.valueOf() <= now.valueOf()))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const breadcrumbs = [

@@ -1,6 +1,6 @@
 ---
 title: "Année personnelle 2026 : trouve ton chiffre et comprends le cycle de 9 ans qui rythme ta vie"
-description: "Chaque année, ton année personnelle change et apporte une énergie spécifique. Découvre comment calculer ton chiffre 2026, ce qu'il signifie pour toi, et comment t'aligner sur le cycle des 9 ans en numérologie."
+description: "Calcule ton année personnelle 2026 en numérologie, découvre ton chiffre du cycle de 9 ans et apprends à t'aligner avec son énergie au quotidien."
 date: 2026-05-28T07:30:00+02:00
 author: "Pythia"
 category: "numérologie"

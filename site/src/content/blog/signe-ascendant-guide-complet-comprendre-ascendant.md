@@ -1,6 +1,6 @@
 ---
 title: "Signe ascendant : guide complet pour comprendre ton ascendant astrologique"
-description: "Ton ascendant est bien plus qu'un signe secondaire. Découvre ce qu'il révèle de ta personnalité, comment le calculer précisément et pourquoi il change tout dans ta carte du ciel."
+description: "Ton ascendant est bien plus qu'un signe secondaire. Ce qu'il révèle de toi, comment le calculer et pourquoi il change tout dans ta carte du ciel."
 date: 2026-05-11T07:30:00+02:00
 author: "Orion"
 category: "astrologie"

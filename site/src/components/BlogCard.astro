@@ -4,16 +4,18 @@ interface Props {
   description: string;
   date: Date;
   slug: string;
+  href?: string;
   image?: string;
   imageAlt?: string;
   category?: string;
 }
 
-const { title, description, date, slug, image, imageAlt, category } = Astro.props;
+const { title, description, date, slug, href, image, imageAlt, category } = Astro.props;
+const linkHref = href ?? `/blog/${slug}`;
 ---
 
 <article class="group rounded-xl overflow-hidden border-glow transition-all hover:glow-violet" style="background: var(--bg-card);">
-  <a href={`/blog/${slug}`} class="block">
+  <a href={linkHref} class="block">
     {image ? (
       <img
         src={image}

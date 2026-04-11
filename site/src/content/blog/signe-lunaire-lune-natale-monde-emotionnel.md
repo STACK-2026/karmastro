@@ -1,6 +1,6 @@
 ---
 title: "Signe lunaire : ce que ta Lune natale révèle de ton monde émotionnel"
-description: "Ton signe lunaire est le gardien de ton intériorité. Découvre ce qu'il dit de tes besoins affectifs, de ta façon d'aimer et du type de sécurité dont tu as réellement besoin."
+description: "Ton signe lunaire est le gardien de ton intériorité. Ce qu'il dit de tes besoins affectifs, de ta façon d'aimer et du type de sécurité qu'il te faut."
 date: 2026-05-14T08:00:00+02:00
 author: "Séléné"
 category: "astrologie"

@@ -1,6 +1,6 @@
 ---
 title: "Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie"
-description: "Les planètes te disent comment tu fonctionnes, les signes te disent dans quel style, et les maisons te disent où, dans ta vie concrète, tout cela se joue. Voici le guide pour les apprivoiser une par une."
+description: "Les planètes disent comment, les signes disent dans quel style, et les maisons disent où dans ta vie tout cela se joue. Le guide pour les apprivoiser."
 date: 2026-06-01T07:30:00+02:00
 author: "Orion"
 category: "astrologie"

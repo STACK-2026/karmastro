@@ -1,15 +1,17 @@
 ---
-import BlogLayout from "../../layouts/BlogLayout.astro";
+import BlogLayout from "../../../layouts/BlogLayout.astro";
 import { getCollection, render } from "astro:content";
+import { LOCALES, DEFAULT_LOCALE, type Locale } from "../../../i18n/config";
 
 export async function getStaticPaths() {
-  // Only generate pages for articles whose scheduled date has been reached
   const now = new Date();
-  const posts = await getCollection("blog", ({ data }) => !data.draft && data.lang === "fr" && data.date.valueOf() <= now.valueOf());
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: { post },
-  }));
+  const posts = await getCollection("blog", ({ data }) => !data.draft && data.lang !== DEFAULT_LOCALE && data.date.valueOf() <= now.valueOf());
+  return posts
+    .filter((post) => LOCALES.includes(post.data.lang as Locale))
+    .map((post) => ({
+      params: { lang: post.data.lang, slug: post.id },
+      props: { post },
+    }));
 }
 
 const { post } = Astro.props;
@@ -27,6 +29,7 @@ const { Content } = await render(post);
   imageAlt={post.data.imageAlt}
   slug={post.id}
   keywords={post.data.keywords}
+  lang={post.data.lang}
 >
   <Content />
 </BlogLayout>
