@@ -22,6 +22,7 @@ import AdminPage from "./pages/AdminPage.tsx";
 import PricingPage from "./pages/PricingPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import CookieBanner from "./components/CookieBanner.tsx";
+import GoogleOneTap from "./components/GoogleOneTap.tsx";
 import { usePageTracking } from "./hooks/usePageTracking";
 import { OnboardingGate } from "./components/OnboardingGate";
 import { useEffect } from "react";
@@ -53,6 +54,7 @@ const App = () => (
           <LocaleInit>
           <TrackingProvider>
             <OnboardingGate>
+            <GoogleOneTap />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/onboarding" element={<OnboardingPage />} />
