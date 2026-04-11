@@ -1,0 +1,50 @@
+name: Rebuild Guard — Daily touch for scheduled articles
+
+# Garantit qu'au moins un push/jour declenche un rebuild Cloudflare Pages,
+# pour que les articles du blog programmes (date future) deviennent live
+# pile a leur date meme si blog-auto ou horoscope-auto n'ont rien commit.
+#
+# Ecrit la date du jour dans site/.last-rebuild.txt et push si change.
+
+on:
+  schedule:
+    # 03:00 UTC = 05:00 Paris (CEST) / 04:00 Paris (CET)
+    # Tourne avant horoscope-auto (04:00 UTC) pour que les articles
+    # programmes du jour soient live des le premier rebuild matinal.
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  touch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "Karmastro Rebuild Guard"
+          git config user.email "rebuild@karmastro.com"
+
+      - name: Touch rebuild marker
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          echo "${DATE}" > site/.last-rebuild.txt
+
+      - name: Commit and push if changed
+        run: |
+          git add site/.last-rebuild.txt
+          if git diff --cached --quiet; then
+            echo "No marker change (already touched today)"
+          else
+            DATE=$(date -u +%Y-%m-%d)
+            git commit -m "chore: rebuild guard ${DATE}"
+            git push
+          fi
