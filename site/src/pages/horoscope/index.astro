@@ -77,7 +77,7 @@ const jsonLd = {
           <span id="geo-precision">Précision NASA JPL</span>
         </span>
         <span class="text-white/20">·</span>
-        <span id="geo-location" class="tabular-nums">—</span>
+        <span id="geo-location" class="tabular-nums">·</span>
       </div>
     </div>
 
@@ -98,7 +98,7 @@ const jsonLd = {
           if (current.includes("·")) {
             const [city] = current.split(" · ");
             locEl.textContent = `${city} · ${timeStr}`;
-          } else if (current === "—") {
+          } else if (current === "·") {
             locEl.textContent = timeStr;
           }
         };

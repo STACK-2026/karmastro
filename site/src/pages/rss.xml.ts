@@ -77,7 +77,7 @@ export async function GET(context: APIContext) {
   } catch (e) {}
 
   return rss({
-    title: "Karmastro — Le Cosmos & Horoscope quotidien",
+    title: "Karmastro · Le Cosmos & Horoscope quotidien",
     description: "Horoscope quotidien des 12 signes + articles Le Cosmos (astrologie, numérologie, karma). Calculs Swiss Ephemeris, précision 0.001 arcseconde.",
     site: context.site ?? siteConfig.url,
     items: items.sort((a, b) => b.pubDate.valueOf() - a.pubDate.valueOf()),

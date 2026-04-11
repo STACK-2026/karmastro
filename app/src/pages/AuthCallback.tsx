@@ -19,7 +19,7 @@ const AuthCallback = () => {
   useEffect(() => {
     if (loading) return;
     if (!user) {
-      // No session landed — send them back to auth
+      // No session landed, send them back to auth
       navigate("/auth");
       return;
     }
@@ -40,7 +40,7 @@ const AuthCallback = () => {
             .eq("user_id", user.id);
           localStorage.removeItem(REFERRAL_STORAGE_KEY);
         } catch (e) {
-          // Swallow errors — the profile may not exist yet if the DB trigger is slow;
+          // Swallow errors, the profile may not exist yet if the DB trigger is slow;
           // in that case the user can still complete signup. Don't block navigation.
           console.warn("Referral attach failed", e);
         }

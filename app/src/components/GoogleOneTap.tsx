@@ -97,7 +97,7 @@ const GoogleOneTap = () => {
               .eq("user_id", data.user.id);
             localStorage.removeItem(REFERRAL_STORAGE_KEY);
           } catch {
-            // Swallow — the referral attach is best-effort
+            // Swallow, the referral attach is best-effort
           }
         }
 

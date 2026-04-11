@@ -112,7 +112,7 @@ Ton profil : https://app.karmastro.com/dashboard
 
 « Les astres inclinent, mais ne déterminent pas » - Thomas d'Aquin
 
-Karmastro · contact@karmastro.com
+Karmastro, contact@karmastro.com
 `;
 
   return {
