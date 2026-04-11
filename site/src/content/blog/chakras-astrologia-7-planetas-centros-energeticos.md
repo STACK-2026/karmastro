@@ -17,13 +17,13 @@ imageAlt: "Columna luminosa con los siete colores de los chakras"
 1. Por qué relacionar chakras y astrología
 2. Orígenes: yoga tántrico y astrología hindú
 3. Los 7 chakras y sus planetas regentes
-4. Muladhara, el chakra raíz, y Saturno
-5. Svadhisthana, el chakra sacro, y la Luna
-6. Manipura, el plexo solar, y el Sol
-7. Anahata, el chakra del corazón, y Venus
-8. Vishuddha, el chakra de la garganta, y Mercurio
-9. Ajna, el tercer ojo, y Júpiter
-10. Sahasrara, el chakra corona, y Neptuno
+4. Muladhara y Saturno
+5. Svadhisthana y la Luna
+6. Manipura y el Sol
+7. Anahata y Venus
+8. Vishuddha y Mercurio
+9. Ajna y Júpiter
+10. Sahasrara y Neptuno
 11. Diagnóstico a través de tu carta
 12. Tránsitos y aperturas energéticas
 13. Mantras, cristales y rituales por chakra
@@ -36,13 +36,13 @@ Probablemente ya has oído hablar de los chakras: esos siete centros energético
 
 Los siete chakras y los planetas de tu carta natal no son dos sistemas separados. Son dos maneras de nombrar la misma realidad energética. Cada chakra corresponde a un planeta. Cada bloqueo planetario en tu carta corresponde a una zona energética de tu cuerpo.
 
-Relacionar astrología y chakras te permite pasar de una lectura abstracta (símbolos, ángulos, signos) a una lectura encarnada (lo que sientes en tu cuerpo, dónde te duele). Te da una herramienta práctica de sanación y reequilibrio.
+Relacionar astrología y chakras te permite pasar de una lectura abstracta a una lectura encarnada. Te da una herramienta práctica de sanación y reequilibrio.
 
 ## 2. Orígenes: yoga tántrico y astrología hindú
 
 El sistema de los chakras tal como lo conocemos hoy viene del yoga tántrico, una corriente de espiritualidad india desarrollada entre los siglos VI y XV. La palabra *chakra* significa "rueda" o "disco" en sánscrito.
 
-En paralelo, la astrología hindú (jyotish) desarrollaba una lectura de los planetas no separada de la anatomía espiritual. Para los maestros indios, cada planeta era una fuerza actuando sobre una zona específica del cuerpo y la conciencia.
+En paralelo, la astrología hindú (jyotish) desarrollaba una lectura de los planetas no separada de la anatomía espiritual.
 
 ## 3. Los 7 chakras y sus planetas regentes
 
@@ -66,49 +66,49 @@ Para trabajar Muladhara: caminar descalzo sobre la tierra, meditaciones de enrai
 
 ## 5. Svadhisthana, el chakra sacro, y la Luna
 
-**Svadhisthana** es el segundo chakra, en el bajo vientre. Es el centro de las emociones, de la sensualidad, de la creatividad fluida. **La Luna** es el planeta de las emociones, de la vida afectiva, de la necesidad nutriente.
+**Svadhisthana** es el segundo chakra, en el bajo vientre. Es el centro de las emociones, de la sensualidad, de la creatividad fluida. **La Luna** es el planeta de las emociones, de la vida afectiva.
 
-Un Svadhisthana fuerte da una vida emocional rica. Si tienes la Luna en tensión, tu Svadhisthana probablemente está bloqueado. Síntomas: emociones congeladas, relación distante con el cuerpo, bloqueo creativo.
+Un Svadhisthana fuerte da una vida emocional rica. Si tienes la Luna en tensión, tu Svadhisthana probablemente está bloqueado.
 
 Para trabajar Svadhisthana: danza lenta, yoga de caderas, baños de inmersión, frutas jugosas, journaling emocional.
 
 ## 6. Manipura, el plexo solar, y el Sol
 
-**Manipura** es el tercer chakra, en el plexo solar. Es el centro del poder personal, de la voluntad, de la afirmación de sí. **El Sol** es el planeta de la identidad esencial.
+**Manipura** es el tercer chakra, en el plexo solar. Es el centro del poder personal, de la voluntad, de la afirmación de sí.
 
-Un Manipura fuerte da una confianza en sí calma. Si tienes el Sol en tensión, tu Manipura probablemente está bloqueado. Síntomas: dudas crónicas, dependencia de la mirada exterior, problemas digestivos en el plexo.
+Un Manipura fuerte da una confianza en sí calma. Si tienes el Sol en tensión, tu Manipura probablemente está bloqueado.
 
-Para trabajar Manipura: exposición solar, posturas poderosas de yoga, alimentos amarillos (cúrcuma, limón).
+Para trabajar Manipura: exposición solar, posturas poderosas de yoga, alimentos amarillos.
 
 ## 7. Anahata, el chakra del corazón, y Venus
 
-**Anahata** es el cuarto chakra, en el corazón. Es el centro del amor, de la compasión, de la apertura. **Venus** es el planeta del amor y de la belleza.
+**Anahata** es el cuarto chakra, en el corazón. Es el centro del amor, de la compasión, de la apertura.
 
-Un Anahata fuerte da amor fácil, compasión abierta. Si tienes Venus en tensión, tu Anahata probablemente está bloqueado. Síntomas: rigidez emocional, dificultad para amar o recibir amor.
+Si tienes Venus en tensión, tu Anahata probablemente está bloqueado. Síntomas: rigidez emocional, dificultad para amar o recibir amor.
 
-Para trabajar Anahata: meditación *metta*, arte en todas sus formas, alimentos verdes, abrazos físicos.
+Para trabajar Anahata: meditación *metta*, arte, alimentos verdes, abrazos físicos.
 
 ## 8. Vishuddha, el chakra de la garganta, y Mercurio
 
-**Vishuddha** es el quinto chakra, en la garganta. Es el centro de la expresión. **Mercurio** es el planeta de la mente y la comunicación.
+**Vishuddha** es el quinto chakra, en la garganta. Es el centro de la expresión.
 
-Un Vishuddha fuerte da palabra fluida asumida. Si tienes Mercurio en tensión, tu Vishuddha probablemente está bloqueado. Síntomas: palabra bloqueada, dificultad para escribir, dolores recurrentes de garganta.
+Si tienes Mercurio en tensión, tu Vishuddha probablemente está bloqueado. Síntomas: palabra bloqueada, dolores recurrentes de garganta.
 
-Para trabajar Vishuddha: cantar, escribir diariamente, mantras, alimentos azules.
+Para trabajar Vishuddha: cantar, escribir diariamente, mantras.
 
 ## 9. Ajna, el tercer ojo, y Júpiter
 
-**Ajna** es el sexto chakra, entre las cejas. Es el centro de la intuición, de la visión interior. **Júpiter** es el planeta de la expansión, de la sabiduría, de la fe.
+**Ajna** es el sexto chakra, entre las cejas. Es el centro de la intuición, de la visión interior.
 
-Un Ajna fuerte da intuición fiable. Si tienes Júpiter en tensión, tu Ajna probablemente está bloqueado. Síntomas: confusión crónica, desconfianza de tu intuición, dolores de cabeza.
+Si tienes Júpiter en tensión, tu Ajna probablemente está bloqueado. Síntomas: confusión crónica, dolores de cabeza.
 
 Para trabajar Ajna: meditación con ojos cerrados, lectura de textos elevadores, largos paseos en la naturaleza.
 
 ## 10. Sahasrara, el chakra corona, y Neptuno
 
-**Sahasrara** es el séptimo chakra, en lo alto de la cabeza. Es el centro de la conexión al espíritu. **Neptuno** es el planeta de la espiritualidad.
+**Sahasrara** es el séptimo chakra, en lo alto de la cabeza. Es el centro de la conexión al espíritu.
 
-Un Sahasrara fuerte da conexión a lo invisible. Si tienes Neptuno en tensión, tu Sahasrara puede estar bloqueado o hiperactivo. Síntomas: sequedad espiritual o porosidad excesiva a las emociones de los demás.
+Si tienes Neptuno en tensión, tu Sahasrara puede estar bloqueado o hiperactivo.
 
 Para trabajar Sahasrara: meditación silenciosa sin objeto, oración, contacto con agua pura.
 
@@ -124,7 +124,7 @@ Para trabajar Sahasrara: meditación silenciosa sin objeto, oración, contacto c
 
 ## 12. Tránsitos y aperturas energéticas
 
-Cuando un planeta lento transita un punto importante de tu carta, activa el chakra correspondiente. Un tránsito de Júpiter sobre tu ascendente abre tu Ajna. Un tránsito de Saturno sobre tu Sol tensa tu Manipura.
+Cuando un planeta lento transita un punto importante de tu carta, activa el chakra correspondiente.
 
 ## 13. Mantras, cristales y rituales por chakra
 
@@ -144,16 +144,14 @@ Cuando un planeta lento transita un punto importante de tu carta, activa el chak
 
 ## 14. Caso real: Elena, 38, arquitecta
 
-Elena, 38, arquitecta en Milán. Viene a vernos quejándose de una sensación de "vacío interior". Su carta natal revela un aspecto intenso: Neptuno conjunto a su Luna en Piscis, en casa XII, cuadratura con Marte en Géminis.
-
-Traducido en chakras: su Sahasrara (Neptuno) es hiperactivo, su Svadhisthana (Luna) está saturado, su Vishuddha (Mercurio afectado por Marte) está bloqueado. Su cuerpo dice lo mismo: migrañas regulares, sensación de agotamiento al final del día.
+Elena, 38, arquitecta en Milán. Viene a vernos quejándose de una sensación de "vacío interior". Su carta natal revela un aspecto intenso: Neptuno conjunto a su Luna en Piscis, en casa XII.
 
 El trabajo propuesto: práctica diaria de silencio para estabilizar Sahasrara, escritura matinal para Vishuddha, respiración lenta del vientre para Svadhisthana. Seis semanas más tarde, Elena nos escribió. La sensación de vacío se había transformado.
 
 ## 15. Preguntas frecuentes
 
 **¿Hay que creer en los chakras para que esto funcione?**
-No. Los chakras son un modelo, como los planetas en una carta son un modelo.
+No. Los chakras son un modelo útil.
 
 **¿Puedo usar los chakras sin conocer la astrología?**
 Sí, completamente. Pero cruzarlos con tu carta te da un diagnóstico personalizado.
@@ -163,6 +161,4 @@ Un trabajo diario dirigido de 15 a 20 minutos produce cambios visibles en tres a
 
 ## Ir más lejos
 
-La correspondencia chakras-astrología es una clave poderosa para pasar de una lectura intelectual a una lectura encarnada. Si quieres explorar tu carta bajo esta luz, empieza calculando tu [ascendente](/es/herramientas/ascendente).
-
-Para una lectura personalizada, consulta el [Oracle](https://app.karmastro.com/oracle).
+La correspondencia chakras-astrología es una clave poderosa. Empieza calculando tu [ascendente](/es/herramientas/ascendente). Para una lectura personalizada, consulta el [Oracle](https://app.karmastro.com/oracle).
