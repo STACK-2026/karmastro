@@ -1,6 +1,6 @@
 ---
 title: "The Saturn return: the great astrological passage at 29 that changes everything"
-description: "Around 29, Saturn returns to its natal position and clears the deck. Career, love, identity, values: all called into question. How to walk through this initiation."
+description: "Around 29, Saturn returns to its natal position and clears the deck. Career, love, identity, values: how to walk through this initiation."
 date: 2026-05-25T07:30:00+02:00
 author: "Orion"
 category: "astrology"

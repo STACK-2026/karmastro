@@ -2,6 +2,7 @@
 import { siteConfig } from "../../site.config";
 import { extractLocale } from "../i18n/config";
 import { getContent } from "../i18n/content";
+import { getToolUrl, ICON_TO_TOOL } from "../i18n/tool-links";
 
 const locale = extractLocale(Astro.url.pathname);
 const content = getContent(locale);
@@ -21,28 +22,39 @@ const iconMap: Record<string, string> = {
     <h2 class="text-center mb-4" set:html={content.featuresTitle.replace(siteConfig.name, `<span class="text-gradient-violet">${siteConfig.name}</span>`)}></h2>
     <p class="text-center mb-12" style="color: rgba(255, 255, 255, 0.65);">{content.featuresSubtitle}</p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {content.features.map((feature) => (
-        <div class="rounded-xl p-8 border-glow transition-all hover:glow-violet" style="background: var(--bg-card);">
-          <div
-            class="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-            style="background: hsl(271 91% 65% / 0.1);"
+      {content.features.map((feature) => {
+        const toolKey = ICON_TO_TOOL[feature.icon];
+        const href = toolKey ? getToolUrl(toolKey, locale) : undefined;
+        const isExternal = href?.startsWith("http");
+        return (
+          <a
+            href={href}
+            target={isExternal ? "_blank" : undefined}
+            rel={isExternal ? "noopener" : undefined}
+            class="block rounded-xl p-8 border-glow transition-all hover:glow-violet hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(271_91%_65%_/_0.5)]"
+            style="background: var(--bg-card);"
           >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="hsl(271 91% 65%)"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+            <div
+              class="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+              style="background: hsl(271 91% 65% / 0.1);"
             >
-              <path d={iconMap[feature.icon] || iconMap.zap} />
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold mb-2 text-white">{feature.title}</h3>
-          <p style="color: rgba(255, 255, 255, 0.7);">{feature.description}</p>
-        </div>
-      ))}
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="hsl(271 91% 65%)"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d={iconMap[feature.icon] || iconMap.zap} />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-white">{feature.title}</h3>
+            <p style="color: rgba(255, 255, 255, 0.7);">{feature.description}</p>
+          </a>
+        );
+      })}
     </div>
   </div>
 </section>

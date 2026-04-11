@@ -2,17 +2,20 @@
 import CounterNumber from "./CounterNumber.astro";
 import { extractLocale } from "../i18n/config";
 import { getContent } from "../i18n/content";
+import { getToolUrl } from "../i18n/tool-links";
 
 const locale = extractLocale(Astro.url.pathname);
 const content = getContent(locale);
 
+// Each stat maps to a destination URL. "years" and "precision" stay non-clickable
+// (they are editorial context, not an actionable link).
 const stats = [
-  { value: 10, suffix: "", labelKey: "planets" as const, decimals: 0 },
-  { value: 12, suffix: "", labelKey: "houses" as const, decimals: 0 },
-  { value: 4000, suffix: "+", labelKey: "years" as const, decimals: 0 },
-  { value: 0.001, suffix: '"', labelKey: "precision" as const, decimals: 3 },
-  { value: 9, suffix: "", labelKey: "tools" as const, decimals: 0 },
-  { value: 4, suffix: "", labelKey: "guides" as const, decimals: 0 },
+  { value: 10, suffix: "", labelKey: "planets" as const, decimals: 0, href: getToolUrl("birth-chart", locale) },
+  { value: 12, suffix: "", labelKey: "houses" as const, decimals: 0, href: getToolUrl("birth-chart", locale) },
+  { value: 4000, suffix: "+", labelKey: "years" as const, decimals: 0, href: undefined },
+  { value: 0.001, suffix: '"', labelKey: "precision" as const, decimals: 3, href: locale === "fr" ? "/precision" : `/${locale}/precision` },
+  { value: 9, suffix: "", labelKey: "tools" as const, decimals: 0, href: getToolUrl("tools-index", locale) },
+  { value: 4, suffix: "", labelKey: "guides" as const, decimals: 0, href: getToolUrl("oracle", locale) },
 ];
 ---
 
@@ -29,18 +32,38 @@ const stats = [
 
   <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
     {stats.map((stat) => (
-      <div class="p-5 rounded-2xl border border-white/10 bg-white/[0.02] text-center hover:border-amber-300/30 transition-colors">
-        <p class="text-4xl md:text-5xl font-serif text-amber-300 mb-2">
-          <CounterNumber
-            value={stat.value}
-            suffix={stat.suffix}
-            decimals={stat.decimals}
-            duration={1800}
-          />
-        </p>
-        <p class="text-sm font-medium text-white mb-1">{content.statsLabels[stat.labelKey]}</p>
-        <p class="text-xs text-white/60 leading-relaxed">{content.statsDescriptions[stat.labelKey]}</p>
-      </div>
+      stat.href ? (
+        <a
+          href={stat.href}
+          target={stat.href.startsWith("http") ? "_blank" : undefined}
+          rel={stat.href.startsWith("http") ? "noopener" : undefined}
+          class="block p-5 rounded-2xl border border-white/10 bg-white/[0.02] text-center hover:border-amber-300/40 hover:bg-white/[0.04] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/40"
+        >
+          <p class="text-4xl md:text-5xl font-serif text-amber-300 mb-2">
+            <CounterNumber
+              value={stat.value}
+              suffix={stat.suffix}
+              decimals={stat.decimals}
+              duration={1800}
+            />
+          </p>
+          <p class="text-sm font-medium text-white mb-1">{content.statsLabels[stat.labelKey]}</p>
+          <p class="text-xs text-white/60 leading-relaxed">{content.statsDescriptions[stat.labelKey]}</p>
+        </a>
+      ) : (
+        <div class="p-5 rounded-2xl border border-white/10 bg-white/[0.02] text-center">
+          <p class="text-4xl md:text-5xl font-serif text-amber-300 mb-2">
+            <CounterNumber
+              value={stat.value}
+              suffix={stat.suffix}
+              decimals={stat.decimals}
+              duration={1800}
+            />
+          </p>
+          <p class="text-sm font-medium text-white mb-1">{content.statsLabels[stat.labelKey]}</p>
+          <p class="text-xs text-white/60 leading-relaxed">{content.statsDescriptions[stat.labelKey]}</p>
+        </div>
+      )
     ))}
   </div>
 </section>
