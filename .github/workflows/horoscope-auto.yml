@@ -14,6 +14,10 @@ on:
         description: "Langues à générer (csv ou 'all')"
         type: string
         default: 'all'
+      backfill_days:
+        description: "Backfill N derniers jours (0 = désactivé, normal today+J+1)"
+        type: string
+        default: '0'
 
 permissions:
   contents: write
@@ -44,6 +48,7 @@ jobs:
         run: pip install -r horoscope-auto/requirements.txt
 
       - name: Generate today in all languages
+        if: github.event.inputs.backfill_days == '' || github.event.inputs.backfill_days == '0'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ENGINE_URL: http://168.119.229.20:8100
@@ -55,6 +60,7 @@ jobs:
           python generate.py --lang "${LANG_ARG}" ${FORCE_ARG}
 
       - name: Generate tomorrow preview in all languages
+        if: github.event.inputs.backfill_days == '' || github.event.inputs.backfill_days == '0'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ENGINE_URL: http://168.119.229.20:8100
@@ -63,6 +69,21 @@ jobs:
           TOMORROW=$(date -u -d tomorrow +%Y-%m-%d 2>/dev/null || date -u -v+1d +%Y-%m-%d)
           LANG_ARG="${{ github.event.inputs.lang || 'all' }}"
           python generate.py --date "${TOMORROW}" --lang "${LANG_ARG}"
+
+      - name: Backfill last N days (skip existing files)
+        if: github.event.inputs.backfill_days != '' && github.event.inputs.backfill_days != '0'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ENGINE_URL: http://168.119.229.20:8100
+        run: |
+          cd horoscope-auto
+          LANG_ARG="${{ github.event.inputs.lang || 'all' }}"
+          N="${{ github.event.inputs.backfill_days }}"
+          for i in $(seq 1 "$N"); do
+            d=$(date -u -d "-$i days" +%Y-%m-%d 2>/dev/null || date -u -v-${i}d +%Y-%m-%d)
+            echo "[backfill] $d in langs=$LANG_ARG"
+            python generate.py --date "$d" --lang "$LANG_ARG" || echo "[warn] $d failed, continuing"
+          done
 
       - name: Commit and push if changed
         run: |
