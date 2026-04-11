@@ -1,11 +1,111 @@
 ---
-import { siteConfig } from "../../site.config";
+import { extractLocale } from "../i18n/config";
+
+const locale = extractLocale(Astro.url.pathname);
+
+type CookieCopy = { title: string; body: string; learnMore: string; acceptAll: string; essential: string; reject: string };
+
+const COPY: Record<string, CookieCopy> = {
+  fr: {
+    title: "Les astres utilisent des cookies",
+    body: "On utilise quelques cookies pour que ton expérience cosmique soit fluide. Rien de louche, promis - même si Mercure rétrograde, elle ne pourrait pas y accéder.",
+    learnMore: "En savoir plus",
+    acceptAll: "Accepter tout",
+    essential: "Essentiels uniquement",
+    reject: "Refuser",
+  },
+  en: {
+    title: "The stars use cookies",
+    body: "We use a few cookies to make your cosmic experience smooth. Nothing sketchy, we promise - even a Mercury retrograde couldn't touch them.",
+    learnMore: "Learn more",
+    acceptAll: "Accept all",
+    essential: "Essentials only",
+    reject: "Reject",
+  },
+  es: {
+    title: "Los astros usan cookies",
+    body: "Usamos algunas cookies para que tu experiencia cósmica sea fluida. Nada sospechoso, prometido - ni siquiera Mercurio retrógrado podría acceder a ellas.",
+    learnMore: "Saber más",
+    acceptAll: "Aceptar todo",
+    essential: "Solo esenciales",
+    reject: "Rechazar",
+  },
+  pt: {
+    title: "Os astros usam cookies",
+    body: "Usamos alguns cookies para que a tua experiência cósmica seja fluida. Nada suspeito, prometemos - mesmo Mercúrio retrógrado não conseguiria aceder.",
+    learnMore: "Saber mais",
+    acceptAll: "Aceitar tudo",
+    essential: "Só essenciais",
+    reject: "Rejeitar",
+  },
+  de: {
+    title: "Die Sterne verwenden Cookies",
+    body: "Wir verwenden einige Cookies, damit deine kosmische Erfahrung reibungslos verläuft. Nichts Zwielichtiges, versprochen - selbst ein Merkur rückläufig käme nicht dran.",
+    learnMore: "Mehr erfahren",
+    acceptAll: "Alle akzeptieren",
+    essential: "Nur Essentielle",
+    reject: "Ablehnen",
+  },
+  it: {
+    title: "Gli astri usano i cookie",
+    body: "Usiamo qualche cookie per rendere fluida la tua esperienza cosmica. Niente di losco, promesso - nemmeno un Mercurio retrogrado potrebbe accedervi.",
+    learnMore: "Scopri di più",
+    acceptAll: "Accetta tutto",
+    essential: "Solo essenziali",
+    reject: "Rifiuta",
+  },
+  tr: {
+    title: "Yıldızlar çerez kullanır",
+    body: "Kozmik deneyiminin akıcı olması için birkaç çerez kullanıyoruz. Şüpheli bir şey yok, söz veriyoruz - Merkür retro bile onlara erişemez.",
+    learnMore: "Daha fazla bilgi",
+    acceptAll: "Tümünü kabul et",
+    essential: "Yalnızca temel",
+    reject: "Reddet",
+  },
+  pl: {
+    title: "Gwiazdy używają ciasteczek",
+    body: "Używamy kilku ciasteczek, żeby twoje kosmiczne doświadczenie było płynne. Nic podejrzanego, obiecujemy - nawet retrogradacja Merkurego by ich nie tknęła.",
+    learnMore: "Dowiedz się więcej",
+    acceptAll: "Akceptuj wszystkie",
+    essential: "Tylko niezbędne",
+    reject: "Odrzuć",
+  },
+  ru: {
+    title: "Звёзды используют файлы cookie",
+    body: "Мы используем несколько файлов cookie, чтобы твой космический опыт был плавным. Ничего подозрительного, обещаем - даже ретроградный Меркурий до них не доберётся.",
+    learnMore: "Узнать больше",
+    acceptAll: "Принять все",
+    essential: "Только необходимые",
+    reject: "Отклонить",
+  },
+  ja: {
+    title: "星たちはクッキーを使います",
+    body: "あなたのコズミック体験をスムーズにするために、いくつかのクッキーを使用しています。怪しいものは何もありません、約束します。",
+    learnMore: "詳細を見る",
+    acceptAll: "すべて受け入れる",
+    essential: "必須のみ",
+    reject: "拒否",
+  },
+  ar: {
+    title: "النجوم تستخدم ملفات تعريف الارتباط",
+    body: "نستخدم بعض ملفات تعريف الارتباط لجعل تجربتك الكونية سلسة. لا شيء مريب، نعدك - حتى عطارد المتراجع لا يمكنه الوصول إليها.",
+    learnMore: "معرفة المزيد",
+    acceptAll: "قبول الكل",
+    essential: "الأساسية فقط",
+    reject: "رفض",
+  },
+};
+
+const c = COPY[locale] || COPY.fr;
+const privacyUrl = locale === "fr" ? "/politique-confidentialite" : `/${locale}/politique-confidentialite`;
+const dir = locale === "ar" ? "rtl" : "ltr";
 ---
 
 <!-- Cookie Banner RGPD - Karmastro cosmic theme -->
 <div
   id="cookie-banner"
   class="fixed bottom-4 left-4 right-4 z-[60] hidden md:max-w-lg"
+  dir={dir}
   style="
     background: rgba(10, 10, 15, 0.92);
     backdrop-filter: blur(24px);
@@ -20,11 +120,11 @@ import { siteConfig } from "../../site.config";
     <span class="text-2xl">🔮</span>
     <div>
       <p class="text-white text-sm font-semibold mb-1" style="font-family: Outfit, sans-serif;">
-        Les astres utilisent des cookies
+        {c.title}
       </p>
       <p class="text-xs" style="color: hsl(220 9% 64%);">
-        On utilise quelques cookies pour que ton expérience cosmique soit fluide. Rien de louche, promis - même si Mercure rétrograde, elle ne pourrait pas y accéder.
-        <a href="/politique-confidentialite" class="underline hover:text-white transition-colors" style="color: hsl(271 91% 65%);">En savoir plus</a>
+        {c.body}
+        <a href={privacyUrl} class="underline hover:text-white transition-colors" style="color: hsl(271 91% 65%);">{c.learnMore}</a>
       </p>
     </div>
   </div>
@@ -35,21 +135,21 @@ import { siteConfig } from "../../site.config";
       class="flex-1 min-w-[100px] text-sm font-semibold text-white py-2.5 px-4 rounded-xl transition-all hover:opacity-90"
       style="background: hsl(271 91% 65%); box-shadow: 0 4px 15px rgba(139, 92, 246, 0.25);"
     >
-      Accepter tout
+      {c.acceptAll}
     </button>
     <button
       id="cookie-essential"
       class="flex-1 min-w-[100px] text-sm font-medium py-2.5 px-4 rounded-xl transition-all"
       style="color: hsl(220 9% 64%); border: 1px solid rgba(139, 92, 246, 0.2);"
     >
-      Essentiels uniquement
+      {c.essential}
     </button>
     <button
       id="cookie-reject"
       class="text-xs py-2 px-3 rounded-lg transition-colors"
       style="color: hsl(220 9% 44%);"
     >
-      Refuser
+      {c.reject}
     </button>
   </div>
 </div>

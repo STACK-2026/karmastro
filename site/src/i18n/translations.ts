@@ -14,6 +14,8 @@ export type TranslationKeys = {
   "nav.oracle": string;
   "nav.profile": string;
   "nav.about": string;
+  "nav.glossary": string;
+  "nav.precision": string;
 
   // ===== Header / common =====
   "common.menu": string;
@@ -181,6 +183,8 @@ const fr: TranslationKeys = {
   "nav.oracle": "L'Oracle",
   "nav.profile": "Mon profil",
   "nav.about": "Notre histoire",
+  "nav.glossary": "Glossaire",
+  "nav.precision": "Précision",
 
   "common.menu": "Menu",
   "common.close": "Fermer",
@@ -336,6 +340,8 @@ const en: TranslationKeys = {
   "nav.oracle": "The Oracle",
   "nav.profile": "My profile",
   "nav.about": "Our story",
+  "nav.glossary": "Glossary",
+  "nav.precision": "Accuracy",
 
   "common.menu": "Menu",
   "common.close": "Close",
@@ -491,6 +497,8 @@ const es: TranslationKeys = {
   "nav.oracle": "El Oráculo",
   "nav.profile": "Mi perfil",
   "nav.about": "Nuestra historia",
+  "nav.glossary": "Glosario",
+  "nav.precision": "Precisión",
 
   "common.menu": "Menú",
   "common.close": "Cerrar",
@@ -646,6 +654,8 @@ const pt: TranslationKeys = {
   "nav.oracle": "O Oráculo",
   "nav.profile": "O meu perfil",
   "nav.about": "A nossa história",
+  "nav.glossary": "Glossário",
+  "nav.precision": "Precisão",
 
   "common.menu": "Menu",
   "common.close": "Fechar",
@@ -801,6 +811,8 @@ const de: TranslationKeys = {
   "nav.oracle": "Das Orakel",
   "nav.profile": "Mein Profil",
   "nav.about": "Unsere Geschichte",
+  "nav.glossary": "Glossar",
+  "nav.precision": "Genauigkeit",
 
   "common.menu": "Menü",
   "common.close": "Schließen",
@@ -956,6 +968,8 @@ const it: TranslationKeys = {
   "nav.oracle": "L'Oracolo",
   "nav.profile": "Il mio profilo",
   "nav.about": "La nostra storia",
+  "nav.glossary": "Glossario",
+  "nav.precision": "Precisione",
 
   "common.menu": "Menu",
   "common.close": "Chiudi",
@@ -1115,6 +1129,8 @@ const tr: TranslationKeys = {
   "nav.oracle": "Kahin",
   "nav.profile": "Profilim",
   "nav.about": "Hikayemiz",
+  "nav.glossary": "Sözlük",
+  "nav.precision": "Doğruluk",
 
   "common.menu": "Menü",
   "common.close": "Kapat",
@@ -1270,6 +1286,8 @@ const pl: TranslationKeys = {
   "nav.oracle": "Wyrocznia",
   "nav.profile": "Mój profil",
   "nav.about": "Nasza historia",
+  "nav.glossary": "Słownik",
+  "nav.precision": "Dokładność",
 
   "common.menu": "Menu",
   "common.close": "Zamknij",
@@ -1425,6 +1443,8 @@ const ru: TranslationKeys = {
   "nav.oracle": "Оракул",
   "nav.profile": "Мой профиль",
   "nav.about": "Наша история",
+  "nav.glossary": "Глоссарий",
+  "nav.precision": "Точность",
 
   "common.menu": "Меню",
   "common.close": "Закрыть",
@@ -1580,6 +1600,8 @@ const ja: TranslationKeys = {
   "nav.oracle": "オラクル",
   "nav.profile": "プロフィール",
   "nav.about": "私たちについて",
+  "nav.glossary": "用語集",
+  "nav.precision": "精度",
 
   "common.menu": "メニュー",
   "common.close": "閉じる",
@@ -1735,6 +1757,8 @@ const ar: TranslationKeys = {
   "nav.oracle": "العرّاف",
   "nav.profile": "ملفي",
   "nav.about": "قصتنا",
+  "nav.glossary": "قاموس",
+  "nav.precision": "الدقة",
 
   "common.menu": "القائمة",
   "common.close": "إغلاق",
