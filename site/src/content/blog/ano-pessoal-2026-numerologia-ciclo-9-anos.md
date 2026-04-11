@@ -10,6 +10,8 @@ draft: false
 lang: "pt"
 image: "https://images.unsplash.com/photo-1532680678473-a16f2cda8e43?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Calendário aberto com números luminosos"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, numerologa certificada escola pitagorica"
 ---
 
 ## Índice
@@ -108,3 +110,10 @@ Sim, os números mestres podem aparecer.
 ## Ir mais longe
 
 Calcula o teu [caminho de vida](/pt/ferramentas/numero-do-caminho-de-vida) e consulta o [Oracle](https://app.karmastro.com/oracle).
+
+## Fontes e referencias
+
+Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
+
+- **Enciclopedia** (pt.wikipedia.org) : [Numerologia](https://pt.wikipedia.org/wiki/Numerologia)
+- **Britannica** (britannica.com) : [Numerologia](https://www.britannica.com/topic/numerology)

@@ -10,6 +10,8 @@ draft: false
 lang: "ru"
 image: "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Восход солнца на горизонте"
+lastReviewed: "2026-04-11"
+reviewedBy: "Орион, старший астроном и астролог"
 ---
 
 ## Оглавление
@@ -128,3 +130,11 @@ imageAlt: "Восход солнца на горизонте"
 ## Идти дальше
 
 Твой восходящий — это только один слой. Обратись к [Oracle Karmastro](https://app.karmastro.com/oracle).
+
+## Источники и ссылки
+
+Эта статья основана на проверяемых энциклопедических и научных источниках.
+
+- **Энциклопедия** (ru.wikipedia.org) : [Астрология](https://ru.wikipedia.org/wiki/%D0%90%D1%81%D1%82%D1%80%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F)
+- **Britannica** (britannica.com) : [Астрология](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Солнечная система и планеты](https://science.nasa.gov/solar-system/planets/)

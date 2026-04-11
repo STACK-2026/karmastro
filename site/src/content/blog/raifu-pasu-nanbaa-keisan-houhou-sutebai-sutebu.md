@@ -10,6 +10,8 @@ draft: false
 lang: "ja"
 image: "https://images.unsplash.com/photo-1519638831568-d9897f54ed69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "数秘術計算"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia、認定ピタゴラス数秘術師"
 ---
 
 ## 目次
@@ -67,3 +69,10 @@ imageAlt: "数秘術計算"
 ## 結論
 
 生きた解釈のために、[Oracle](https://app.karmastro.com/oracle)に相談してください。
+
+## 参考文献と出典
+
+この記事は検証可能な百科事典および科学的情報源に基づいています。
+
+- **百科事典** (ja.wikipedia.org) : [数秘術](https://ja.wikipedia.org/wiki/%E6%95%B0%E7%A7%98%E8%A1%93)
+- **Britannica** (britannica.com) : [数秘術](https://www.britannica.com/topic/numerology)

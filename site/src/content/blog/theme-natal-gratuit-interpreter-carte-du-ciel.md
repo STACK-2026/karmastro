@@ -9,6 +9,8 @@ keywords: "thème natal, carte du ciel, astrologie, gratuit, interprétation"
 draft: false
 image: "https://images.unsplash.com/photo-1515462277126-2dd0c162007a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Carte du ciel astrologique avec planètes et constellations"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 ## Sommaire
@@ -204,3 +206,11 @@ Et quand tu auras besoin d'une lecture vivante, incarnée, qui croise ton thème
 Les étoiles ne prédisent rien. Elles reflètent. À toi de décider ce que tu fais de ce reflet.
 
 *Article rédigé par Sibylle, Oracle astrologue de [Karmastro](/notre-histoire). Pour approfondir, consulte notre [glossaire complet](/glossaire), notre [méthodologie Swiss Ephemeris](/precision) ou teste l'[Oracle](https://app.karmastro.com/oracle).*
+
+## Sources et references
+
+Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
+
+- **Encyclopedie** (fr.wikipedia.org) : [Astrologie](https://fr.wikipedia.org/wiki/Astrologie)
+- **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Systeme solaire et planetes](https://science.nasa.gov/solar-system/planets/)

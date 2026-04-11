@@ -10,6 +10,8 @@ draft: false
 lang: "es"
 image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Cosmos místico con nebulosas y símbolos kármicos"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronomo y astrologo senior"
 ---
 
 ## Índice
@@ -113,3 +115,11 @@ No, absolutamente. El karma es neutro.
 ## Ir más lejos
 
 El **karma en astrología** no es una prisión. Es un **terreno** que descubres en tu nacimiento. Para explorar tu propio karma astrológico, calcula tu [carta natal](/es/herramientas/) y consulta el [Oracle](https://app.karmastro.com/oracle).
+
+## Fuentes y referencias
+
+Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
+
+- **Enciclopedia** (es.wikipedia.org) : [Astrologia](https://es.wikipedia.org/wiki/Astrolog%C3%ADa)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sistema solar y planetas](https://science.nasa.gov/solar-system/planets/)

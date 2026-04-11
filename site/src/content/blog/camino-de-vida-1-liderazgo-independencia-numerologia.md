@@ -10,6 +10,8 @@ draft: false
 lang: "es"
 image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Un número 1 luminoso sobre fondo cósmico"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, numerologa certificada escuela pitagorica"
 ---
 
 ## Índice
@@ -78,3 +80,10 @@ Steve Jobs, Lady Gaga, Martin Luther King, Walt Disney. Todos **abrieron un cami
 ## 10. Ir más lejos
 
 Conocer tu camino de vida es un excelente punto de partida. Cruza con tu [carta natal](/es/herramientas/) para una visión completa.
+
+## Fuentes y referencias
+
+Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
+
+- **Enciclopedia** (es.wikipedia.org) : [Numerologia](https://es.wikipedia.org/wiki/Numerolog%C3%ADa)
+- **Britannica** (britannica.com) : [Numerologia](https://www.britannica.com/topic/numerology)

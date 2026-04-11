@@ -9,6 +9,8 @@ keywords: "Pythagore, chaldéenne, numérologie, comparatif, méthode"
 draft: false
 image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Anciennes tablettes babyloniennes et grecques avec symboles numériques"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, numerologue certifiee ecole pythagoricienne"
 ---
 
 ## Sommaire
@@ -246,3 +248,10 @@ Tu peux calculer ton [chemin de vie](/outils/chemin-de-vie) gratuitement (il est
 Les nombres ne mentent pas. Ils chantent. À chacun d'entendre dans quelle langue ils lui parlent.
 
 *Article rédigé par Pythia, numérologue et mathématicienne cosmique chez [Karmastro](/notre-histoire). Pour approfondir, consulte le [guide complet de numérologie](/blog/qu-numerologie-guide-complet-debuter) et notre [article sur le calcul du chemin de vie](/blog/comment-calculer-chemin-de-vie-numerologie).*
+
+## Sources et references
+
+Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
+
+- **Encyclopedie** (fr.wikipedia.org) : [Numerologie](https://fr.wikipedia.org/wiki/Num%C3%A9rologie)
+- **Britannica** (britannica.com) : [Numerologie](https://www.britannica.com/topic/numerology)

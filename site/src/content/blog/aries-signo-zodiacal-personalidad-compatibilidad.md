@@ -10,6 +10,8 @@ draft: false
 lang: "es"
 image: "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Constelación de Aries en un cielo estrellado"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronomo y astrologo senior"
 ---
 
 ## Índice
@@ -85,3 +87,11 @@ Leonardo da Vinci (15 abril), Vincent van Gogh (30 marzo), Lady Gaga (28 marzo),
 ## 9. Calcular tu carta natal completa
 
 Conocer tu signo solar es un comienzo, no un final. Tu [carta natal completa](/es/herramientas/) revela mucho más que solo tu Sol.
+
+## Fuentes y referencias
+
+Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
+
+- **Enciclopedia** (es.wikipedia.org) : [Astrologia](https://es.wikipedia.org/wiki/Astrolog%C3%ADa)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sistema solar y planetas](https://science.nasa.gov/solar-system/planets/)

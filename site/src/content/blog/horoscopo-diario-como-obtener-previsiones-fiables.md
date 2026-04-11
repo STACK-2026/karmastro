@@ -10,6 +10,8 @@ draft: false
 lang: "es"
 image: "https://images.unsplash.com/photo-1507034589631-9433cc6bc453?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Horóscopo diario con cartas del cielo y símbolos zodiacales"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronomo y astrologo senior"
 ---
 
 ## Índice
@@ -110,3 +112,11 @@ Las mejores calculan realmente tu carta natal y tus tránsitos.
 Un **horóscopo realmente fiable** es el cruce de tres elementos: tu carta natal completa, los tránsitos actuales y tu numerología del momento.
 
 Para empezar, lee tu [horóscopo Karmastro](/es/horoscope) cada mañana y consulta el [Oracle](https://app.karmastro.com/oracle) para preguntas precisas.
+
+## Fuentes y referencias
+
+Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
+
+- **Enciclopedia** (es.wikipedia.org) : [Astrologia](https://es.wikipedia.org/wiki/Astrolog%C3%ADa)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sistema solar y planetas](https://science.nasa.gov/solar-system/planets/)

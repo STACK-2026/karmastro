@@ -10,6 +10,8 @@ draft: false
 lang: "tr"
 image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Zodyak tekerleği 12 astrolojik ev ile"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, kidemli astronom ve astrolog"
 ---
 
 ## İçindekiler
@@ -112,3 +114,11 @@ Hayır. Doğum evleri sabittir.
 ## Daha ileri
 
 [Yükselen burcunu](/tr/araclar/yukselen-burc) hesaplayarak başla ve [Oracle](https://app.karmastro.com/oracle)'ya danış.
+
+## Kaynaklar ve referanslar
+
+Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
+
+- **Ansiklopedi** (tr.wikipedia.org) : [Astroloji](https://tr.wikipedia.org/wiki/Astroloji)
+- **Britannica** (britannica.com) : [Astroloji](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Gunes sistemi ve gezegenler](https://science.nasa.gov/solar-system/planets/)

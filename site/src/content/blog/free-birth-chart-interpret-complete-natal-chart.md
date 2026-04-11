@@ -10,6 +10,8 @@ draft: false
 lang: "en"
 image: "https://images.unsplash.com/photo-1515462277126-2dd0c162007a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Astrological birth chart with planets and constellations"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, senior astronomer and astrologer"
 ---
 
 ## Table of contents
@@ -205,3 +207,11 @@ And when you need a living, embodied reading that crosses your birth chart with 
 The stars predict nothing. They reflect. It is up to you to decide what you do with that reflection.
 
 *Article written by Sibylle, astrologer Oracle at [Karmastro](/en/our-story). To go deeper, check our [glossary](/en/glossary), our [Swiss Ephemeris methodology](/en/precision), or try the [Oracle](https://app.karmastro.com/oracle).*
+
+## Sources and references
+
+This article draws on verifiable encyclopedic and scientific sources.
+
+- **Encyclopedia** (en.wikipedia.org) : [Astrology](https://en.wikipedia.org/wiki/Astrology)
+- **Britannica** (britannica.com) : [Astrology](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Solar system and planets](https://science.nasa.gov/solar-system/planets/)

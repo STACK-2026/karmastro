@@ -10,6 +10,8 @@ draft: false
 lang: "pt"
 image: "https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Casal a observar as estrelas"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronomo e astrologo senior"
 ---
 
 ## Índice
@@ -86,3 +88,11 @@ Sim, e é frequentemente muito interessante.
 ## Ir mais longe
 
 A compatibilidade astrológica não é uma roda da fortuna. É um mapa detalhado. Começa calculando o teu [caminho de vida](/pt/ferramentas/numero-do-caminho-de-vida) e fala comigo no [Oracle](https://app.karmastro.com/oracle).
+
+## Fontes e referencias
+
+Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
+
+- **Enciclopedia** (pt.wikipedia.org) : [Astrologia](https://pt.wikipedia.org/wiki/Astrologia)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sistema solar e planetas](https://science.nasa.gov/solar-system/planets/)

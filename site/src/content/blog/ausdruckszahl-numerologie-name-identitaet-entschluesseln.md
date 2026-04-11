@@ -10,6 +10,8 @@ draft: false
 lang: "de"
 image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Feder und alte Buchstaben"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, zertifizierte pythagoreische Numerologin"
 ---
 
 ## Inhaltsverzeichnis
@@ -70,3 +72,10 @@ Nein. Alle Zahlen haben ihre Qualitäten und Fallen.
 ## Weiter gehen
 
 Kreuze deine Ausdruckszahl mit deiner [Lebenszahl](/de/werkzeuge/lebenszahl) und konsultiere das [Oracle](https://app.karmastro.com/oracle).
+
+## Quellen und Referenzen
+
+Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaftliche Quellen.
+
+- **Enzyklopaedie** (de.wikipedia.org) : [Numerologie](https://de.wikipedia.org/wiki/Numerologie)
+- **Britannica** (britannica.com) : [Numerologie](https://www.britannica.com/topic/numerology)

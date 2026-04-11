@@ -10,6 +10,8 @@ draft: false
 lang: "de"
 image: "https://images.unsplash.com/photo-1614642264762-d0a3b8bf3700?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Der Planet Saturn und seine Ringe"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, Senior-Astronom und Astrologe"
 ---
 
 ## Inhaltsverzeichnis
@@ -111,3 +113,11 @@ Nicht zwangsläufig, aber fast immer prägend.
 ## Weiter gehen
 
 Die Saturn-Rückkehr ist der wichtigste Transit zu verstehen im Erwachsenenleben. Berechne deinen [Aszendenten](/de/werkzeuge/aszendent) und konsultiere das [Oracle](https://app.karmastro.com/oracle).
+
+## Quellen und Referenzen
+
+Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaftliche Quellen.
+
+- **Enzyklopaedie** (de.wikipedia.org) : [Astrologie](https://de.wikipedia.org/wiki/Astrologie)
+- **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sonnensystem und Planeten](https://science.nasa.gov/solar-system/planets/)

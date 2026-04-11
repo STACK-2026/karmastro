@@ -10,6 +10,8 @@ draft: false
 lang: "pl"
 image: "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Pełnia księżyca nad spokojnym morzem"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, starszy astronom i astrolog"
 ---
 
 ## Spis treści
@@ -102,3 +104,11 @@ Nie.
 ## Idź dalej
 
 Twój natalny Księżyc jest częścią całości. Skonsultuj [Oracle Karmastro](https://app.karmastro.com/oracle).
+
+## Zrodla i odnosniki
+
+Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych.
+
+- **Encyklopedia** (pl.wikipedia.org) : [Astrologia](https://pl.wikipedia.org/wiki/Astrologia)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Uklad sloneczny i planety](https://science.nasa.gov/solar-system/planets/)

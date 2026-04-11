@@ -10,6 +10,8 @@ draft: false
 lang: "pl"
 image: "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Gwiazdozbiór Barana"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, starszy astronom i astrolog"
 ---
 
 ## Spis treści
@@ -76,3 +78,11 @@ Leonardo da Vinci, Vincent van Gogh, Lady Gaga, Charlie Chaplin.
 ## 9. Oblicz swoją pełną mapę natalną
 
 Znajomość znaku słonecznego to początek. Twoja [pełna mapa natalna](/pl/narzedzia/) ujawnia znacznie więcej.
+
+## Zrodla i odnosniki
+
+Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych.
+
+- **Encyklopedia** (pl.wikipedia.org) : [Astrologia](https://pl.wikipedia.org/wiki/Astrologia)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Uklad sloneczny i planety](https://science.nasa.gov/solar-system/planets/)

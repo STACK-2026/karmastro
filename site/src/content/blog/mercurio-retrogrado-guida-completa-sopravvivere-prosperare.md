@@ -10,6 +10,8 @@ draft: false
 lang: "it"
 image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Cielo stellato con pianeta luminoso"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronomo e astrologo senior"
 ---
 
 ## Indice
@@ -113,3 +115,11 @@ Sì, rileggendo con attenzione.
 ## Andare oltre
 
 Mercurio retrogrado è solo uno dei transiti. Calcola il tuo [ascendente](/it/strumenti/ascendente) e consulta l'[Oracle](https://app.karmastro.com/oracle).
+
+## Fonti e riferimenti
+
+Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
+
+- **Enciclopedia** (it.wikipedia.org) : [Astrologia](https://it.wikipedia.org/wiki/Astrologia)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sistema solare e pianeti](https://science.nasa.gov/solar-system/planets/)

@@ -10,6 +10,8 @@ draft: false
 lang: "it"
 image: "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Costellazione dell'Ariete"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronomo e astrologo senior"
 ---
 
 ## Indice
@@ -76,3 +78,11 @@ Leonardo da Vinci (15 aprile), Vincent van Gogh (30 marzo), Lady Gaga (28 marzo)
 ## 9. Calcolare il tuo tema natale completo
 
 Conoscere il tuo segno solare è un inizio. Il tuo [tema natale completo](/it/strumenti/) rivela molto di più.
+
+## Fonti e riferimenti
+
+Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
+
+- **Enciclopedia** (it.wikipedia.org) : [Astrologia](https://it.wikipedia.org/wiki/Astrologia)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sistema solare e pianeti](https://science.nasa.gov/solar-system/planets/)

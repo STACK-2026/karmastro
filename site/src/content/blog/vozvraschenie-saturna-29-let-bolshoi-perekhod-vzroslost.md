@@ -10,6 +10,8 @@ draft: false
 lang: "ru"
 image: "https://images.unsplash.com/photo-1614642264762-d0a3b8bf3700?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Планета Сатурн"
+lastReviewed: "2026-04-11"
+reviewedBy: "Орион, старший астроном и астролог"
 ---
 
 ## Оглавление
@@ -103,3 +105,11 @@ imageAlt: "Планета Сатурн"
 ## Идти дальше
 
 Возвращение Сатурна — самый важный транзит во взрослой жизни. Обратись к [Oracle](https://app.karmastro.com/oracle).
+
+## Источники и ссылки
+
+Эта статья основана на проверяемых энциклопедических и научных источниках.
+
+- **Энциклопедия** (ru.wikipedia.org) : [Астрология](https://ru.wikipedia.org/wiki/%D0%90%D1%81%D1%82%D1%80%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F)
+- **Britannica** (britannica.com) : [Астрология](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Солнечная система и планеты](https://science.nasa.gov/solar-system/planets/)

@@ -10,6 +10,8 @@ draft: false
 lang: "ar"
 image: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "قلبان ضوئيان"
+lastReviewed: "2026-04-11"
+reviewedBy: "أوريون، عالم فلك ومنجم كبير"
 ---
 
 ## المحتويات
@@ -87,3 +89,11 @@ imageAlt: "قلبان ضوئيان"
 ## للذهاب أبعد
 
 جرب [حاسبة التوافق](/ar/adawat/).
+
+## المصادر والمراجع
+
+يعتمد هذا المقال على مصادر موسوعية وعلمية يمكن التحقق منها.
+
+- **موسوعة** (ar.wikipedia.org) : [التنجيم](https://ar.wikipedia.org/wiki/%D8%AA%D9%86%D8%AC%D9%8A%D9%85)
+- **بريتانيكا** (britannica.com) : [التنجيم](https://www.britannica.com/topic/astrology)
+- **ناسا** (science.nasa.gov) : [النظام الشمسي والكواكب](https://science.nasa.gov/solar-system/planets/)

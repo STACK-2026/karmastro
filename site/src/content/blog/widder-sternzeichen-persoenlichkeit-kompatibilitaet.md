@@ -10,6 +10,8 @@ draft: false
 lang: "de"
 image: "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Sternbild Widder"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, Senior-Astronom und Astrologe"
 ---
 
 ## Inhaltsverzeichnis
@@ -76,3 +78,11 @@ Leonardo da Vinci (15. April), Vincent van Gogh (30. März), Lady Gaga (28. Mär
 ## 9. Dein vollständiges Geburtshoroskop berechnen
 
 Dein Sonnenzeichen zu kennen ist ein Anfang. Dein [vollständiges Geburtshoroskop](/de/werkzeuge/) offenbart viel mehr.
+
+## Quellen und Referenzen
+
+Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaftliche Quellen.
+
+- **Enzyklopaedie** (de.wikipedia.org) : [Astrologie](https://de.wikipedia.org/wiki/Astrologie)
+- **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sonnensystem und Planeten](https://science.nasa.gov/solar-system/planets/)

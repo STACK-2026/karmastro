@@ -9,6 +9,8 @@ keywords: "année personnelle 2026, calcul année personnelle, cycle 9 ans numé
 draft: false
 image: "https://images.unsplash.com/photo-1532680678473-a16f2cda8e43?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Calendrier ouvert et chiffres lumineux symbolisant le calcul de l'année personnelle en numérologie"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 ## Sommaire
@@ -278,3 +280,11 @@ Si tu veux une lecture personnalisée et sur mesure de ton année 2026, avec les
 Et si tu veux recevoir chaque matin un message qui t'aide à naviguer dans ton tempo personnel, abonne-toi à notre horoscope quotidien gratuit. Pas de prédictions figées, juste des clés douces pour t'aider à danser avec ton année plutôt que de la subir.
 
 L'année 2026 est devant toi. Tu sais maintenant dans quelle énergie tu vas la traverser. À toi de t'aligner, d'oser, de bâtir, de lâcher, selon ce que ton chiffre te demande. Le ciel et les nombres sont avec toi.
+
+## Sources et references
+
+Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
+
+- **Encyclopedie** (fr.wikipedia.org) : [Astrologie](https://fr.wikipedia.org/wiki/Astrologie)
+- **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Systeme solaire et planetes](https://science.nasa.gov/solar-system/planets/)

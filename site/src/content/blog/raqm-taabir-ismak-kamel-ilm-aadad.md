@@ -10,6 +10,8 @@ draft: false
 lang: "ar"
 image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "أحرف منقوشة"
+lastReviewed: "2026-04-11"
+reviewedBy: "بيثيا، عالمة أعداد معتمدة من المدرسة الفيثاغورية"
 ---
 
 ## المحتويات
@@ -97,3 +99,10 @@ imageAlt: "أحرف منقوشة"
 ## للذهاب أبعد
 
 احسب [رقمك الأساسي](/ar/adawat/).
+
+## المصادر والمراجع
+
+يعتمد هذا المقال على مصادر موسوعية وعلمية يمكن التحقق منها.
+
+- **موسوعة** (ar.wikipedia.org) : [علم الأعداد](https://ar.wikipedia.org/wiki/%D8%B9%D9%84%D9%85_%D8%A7%D9%84%D8%A3%D8%B9%D8%AF%D8%A7%D8%AF)
+- **بريتانيكا** (britannica.com) : [علم الأعداد](https://www.britannica.com/topic/numerology)

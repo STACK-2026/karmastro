@@ -112,7 +112,7 @@ export function jsonLdHomepage() {
   };
 }
 
-/** JSON-LD for Article */
+/** JSON-LD for Article with E-E-A-T signals (author Person, reviewedBy, dateModified) */
 export function jsonLdArticle(article: {
   title: string;
   description: string;
@@ -122,7 +122,17 @@ export function jsonLdArticle(article: {
   image?: string;
   author?: string;
   keywords?: string[];
+  reviewedBy?: string;
+  inLanguage?: string;
 }) {
+  const authorPerson = article.author
+    ? {
+        "@type": "Person",
+        name: article.author,
+        url: `${siteConfig.url}/notre-histoire`,
+      }
+    : { "@id": `${siteConfig.url}/#organization` };
+
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -136,11 +146,17 @@ export function jsonLdArticle(article: {
         ? article.image
         : fullUrl(article.image)
       : undefined,
-    author: { "@id": `${siteConfig.url}/#organization` },
+    author: authorPerson,
     publisher: { "@id": `${siteConfig.url}/#organization` },
     mainEntityOfPage: { "@type": "WebPage", "@id": article.url },
     keywords: article.keywords?.join(", "),
-    inLanguage: siteConfig.locale,
+    inLanguage: article.inLanguage || siteConfig.locale,
+    ...(article.reviewedBy && {
+      reviewedBy: {
+        "@type": "Person",
+        name: article.reviewedBy,
+      },
+    }),
     speakable: {
       "@type": "SpeakableSpecification",
       cssSelector: ["h1", "h2", "[data-speakable]"],

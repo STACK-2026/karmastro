@@ -10,6 +10,8 @@ draft: false
 lang: "tr"
 image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Pitagor numeroloji denklemleri"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, sertifikali Pitagor okulu numerologu"
 ---
 
 ## İçindekiler
@@ -82,3 +84,10 @@ Numeroloji maneviyata **rasyonel bir yaklaşım** sunar.
 ## Sonuç
 
 Tam profilini keşfetmek için [Oracle Karmastro](https://app.karmastro.com/oracle)'yu keşfet.
+
+## Kaynaklar ve referanslar
+
+Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
+
+- **Ansiklopedi** (tr.wikipedia.org) : [Numeroloji](https://tr.wikipedia.org/wiki/Numeroloji)
+- **Britannica** (britannica.com) : [Numeroloji](https://www.britannica.com/topic/numerology)

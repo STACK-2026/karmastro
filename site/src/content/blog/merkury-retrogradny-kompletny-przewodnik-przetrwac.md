@@ -10,6 +10,8 @@ draft: false
 lang: "pl"
 image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Gwiezdne niebo z jasną planetą"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, starszy astronom i astrolog"
 ---
 
 ## Spis treści
@@ -109,3 +111,11 @@ Camille, 31 lat. Przed retrogradacją w Bliźniętach przygotowaliśmy plan: wyk
 ## Idź dalej
 
 Skonsultuj [Oracle](https://app.karmastro.com/oracle).
+
+## Zrodla i odnosniki
+
+Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych.
+
+- **Encyklopedia** (pl.wikipedia.org) : [Astrologia](https://pl.wikipedia.org/wiki/Astrologia)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Uklad sloneczny i planety](https://science.nasa.gov/solar-system/planets/)

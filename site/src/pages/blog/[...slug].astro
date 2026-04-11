@@ -27,6 +27,8 @@ const { Content } = await render(post);
   imageAlt={post.data.imageAlt}
   slug={post.id}
   keywords={post.data.keywords}
+  lastReviewed={post.data.lastReviewed}
+  reviewedBy={post.data.reviewedBy}
 >
   <Content />
 </BlogLayout>

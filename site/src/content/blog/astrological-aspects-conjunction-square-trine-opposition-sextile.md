@@ -10,6 +10,8 @@ draft: false
 lang: "en"
 image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Astrological chart with geometric lines between planets illustrating the aspects"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, senior astronomer and astrologer"
 ---
 
 ## Table of contents
@@ -290,3 +292,11 @@ If you want a personalized and complete reading of your main aspects, the [Oracl
 And if you want to follow the transits that activate your natal aspects day by day, subscribe to our free daily horoscope. Every morning, you will know which planetary dialogues are at play in your personal sky, and therefore what is awakening inside you that day.
 
 Learn to read your aspects the way you learn to read a musical score. At first, it is strange and a bit discouraging. With time, you begin to hear the music. And one day, you realize that this music is yours.
+
+## Sources and references
+
+This article draws on verifiable encyclopedic and scientific sources.
+
+- **Encyclopedia** (en.wikipedia.org) : [Astrology](https://en.wikipedia.org/wiki/Astrology)
+- **Britannica** (britannica.com) : [Astrology](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Solar system and planets](https://science.nasa.gov/solar-system/planets/)

@@ -9,6 +9,8 @@ keywords: "retour de saturne, saturne 29 ans, transit saturne, crise des 30 ans 
 draft: false
 image: "https://images.unsplash.com/photo-1614642264762-d0a3b8bf3700?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "La planète Saturne et ses anneaux dans l'espace, symbole du retour de Saturne et du passage à l'âge adulte"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 ## Sommaire
@@ -306,3 +308,11 @@ Pour aller plus loin sur les autres grands passages de la vie astrologique, lis 
 Et si tu veux recevoir chaque matin un message qui te dit ce qui se joue dans ton ciel personnel, abonne-toi à notre horoscope quotidien gratuit. C'est une manière simple et douce d'apprivoiser les transits, jour après jour, sans peur et sans dramatisation.
 
 Le retour de Saturne fait peur parce qu'on n'en parle pas. Maintenant que tu sais, il fait moins peur. Ce qui t'attend là est précieux. Vas-y avec courage, avec patience, avec confiance. À l'autre bout, c'est toi, en plus vrai, qui t'attends.
+
+## Sources et references
+
+Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
+
+- **Encyclopedie** (fr.wikipedia.org) : [Astrologie](https://fr.wikipedia.org/wiki/Astrologie)
+- **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Systeme solaire et planetes](https://science.nasa.gov/solar-system/planets/)

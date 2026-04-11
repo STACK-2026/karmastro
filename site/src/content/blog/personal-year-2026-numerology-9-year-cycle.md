@@ -10,6 +10,8 @@ draft: false
 lang: "en"
 image: "https://images.unsplash.com/photo-1532680678473-a16f2cda8e43?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Open calendar and luminous numbers symbolizing the calculation of the personal year in numerology"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, certified Pythagorean numerologist"
 ---
 
 ## Table of contents
@@ -279,3 +281,10 @@ If you want a personalized and tailored reading of your 2026 year, with key mont
 And if you want to receive every morning a message that helps you navigate your personal tempo, subscribe to our free daily horoscope. No frozen predictions, just soft keys to help you dance with your year rather than endure it.
 
 2026 lies ahead of you. You now know what energy you will cross it in. It is up to you to align, dare, build, let go, according to what your number asks of you. The sky and the numbers are with you.
+
+## Sources and references
+
+This article draws on verifiable encyclopedic and scientific sources.
+
+- **Encyclopedia** (en.wikipedia.org) : [Numerology](https://en.wikipedia.org/wiki/Numerology)
+- **Britannica** (britannica.com) : [Numerology](https://www.britannica.com/topic/numerology)

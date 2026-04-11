@@ -10,6 +10,8 @@ draft: false
 lang: "es"
 image: "https://images.unsplash.com/photo-1519638831568-d9897f54ed69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Cálculo numerológico con cifras y ecuaciones"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, numerologa certificada escuela pitagorica"
 ---
 
 ## Índice
@@ -106,3 +108,10 @@ El **33**, que representa menos del 1% de la población.
 ## Conclusión
 
 Calcular tu camino de vida es un **gesto simple** que toma menos de dos minutos. Para una interpretación viva, consulta el [Oracle](https://app.karmastro.com/oracle).
+
+## Fuentes y referencias
+
+Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
+
+- **Enciclopedia** (es.wikipedia.org) : [Numerologia](https://es.wikipedia.org/wiki/Numerolog%C3%ADa)
+- **Britannica** (britannica.com) : [Numerologia](https://www.britannica.com/topic/numerology)

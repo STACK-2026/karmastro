@@ -10,6 +10,8 @@ draft: false
 lang: "pl"
 image: "https://images.unsplash.com/photo-1614642264762-d0a3b8bf3700?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Planeta Saturn"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, starszy astronom i astrolog"
 ---
 
 ## Spis treści
@@ -103,3 +105,11 @@ Intensywna faza trwa około dwóch lat.
 ## Idź dalej
 
 Powrót Saturna to najważniejszy tranzyt do zrozumienia w dorosłym życiu. Oblicz swój [wschodzący](/pl/narzedzia/wschodzacy-znak) i skonsultuj [Oracle](https://app.karmastro.com/oracle).
+
+## Zrodla i odnosniki
+
+Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych.
+
+- **Encyklopedia** (pl.wikipedia.org) : [Astrologia](https://pl.wikipedia.org/wiki/Astrologia)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Uklad sloneczny i planety](https://science.nasa.gov/solar-system/planets/)

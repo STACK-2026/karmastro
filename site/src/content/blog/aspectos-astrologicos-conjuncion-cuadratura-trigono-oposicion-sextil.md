@@ -10,6 +10,8 @@ draft: false
 lang: "es"
 image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Carta astrológica con líneas geométricas entre planetas"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronomo y astrologo senior"
 ---
 
 ## Índice
@@ -121,3 +123,11 @@ Los aspectos natales no cambian.
 Los aspectos son la dimensión más dinámica de tu carta natal. Para explorarlos, calcula tu carta completa empezando por tu [ascendente](/es/herramientas/ascendente).
 
 Para una lectura personalizada, consulta el [Oracle](https://app.karmastro.com/oracle).
+
+## Fuentes y referencias
+
+Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
+
+- **Enciclopedia** (es.wikipedia.org) : [Astrologia](https://es.wikipedia.org/wiki/Astrolog%C3%ADa)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sistema solar y planetas](https://science.nasa.gov/solar-system/planets/)

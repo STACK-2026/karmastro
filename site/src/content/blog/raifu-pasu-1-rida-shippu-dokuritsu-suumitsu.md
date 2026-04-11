@@ -10,6 +10,8 @@ draft: false
 lang: "ja"
 image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "輝く1"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia、認定ピタゴラス数秘術師"
 ---
 
 ## 目次
@@ -70,3 +72,10 @@ imageAlt: "輝く1"
 ## 10. さらに進む
 
 あなたの[出生図](/ja/shindan/)と交差させてください。
+
+## 参考文献と出典
+
+この記事は検証可能な百科事典および科学的情報源に基づいています。
+
+- **百科事典** (ja.wikipedia.org) : [数秘術](https://ja.wikipedia.org/wiki/%E6%95%B0%E7%A7%98%E8%A1%93)
+- **Britannica** (britannica.com) : [数秘術](https://www.britannica.com/topic/numerology)

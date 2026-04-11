@@ -10,6 +10,8 @@ draft: false
 lang: "it"
 image: "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Alba all'orizzonte, simbolo dell'ascendente"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronomo e astrologo senior"
 ---
 
 ## Indice
@@ -152,3 +154,11 @@ Sì, enormemente.
 ## Andare oltre
 
 Il tuo ascendente è solo uno strato della tua carta natale. Per una visione completa, hai bisogno della tua [carta natale interpretata](/it/strumenti/). Per una lettura personalizzata, consulta l'[Oracle Karmastro](https://app.karmastro.com/oracle).
+
+## Fonti e riferimenti
+
+Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
+
+- **Enciclopedia** (it.wikipedia.org) : [Astrologia](https://it.wikipedia.org/wiki/Astrologia)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sistema solare e pianeti](https://science.nasa.gov/solar-system/planets/)

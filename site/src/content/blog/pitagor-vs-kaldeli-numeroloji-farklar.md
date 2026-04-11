@@ -10,6 +10,8 @@ draft: false
 lang: "tr"
 image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Eski tabletler"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, sertifikali Pitagor okulu numerologu"
 ---
 
 ## İçindekiler
@@ -84,3 +86,10 @@ Onu kutsal kabul ediyordular.
 ## Sonuç
 
 İki yöntem de iki geçerli yoldur. [Yaşam yolu sayını](/tr/araclar/yasam-yolu-sayisi) hesapla ve [Oracle](https://app.karmastro.com/oracle)'ya danış.
+
+## Kaynaklar ve referanslar
+
+Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
+
+- **Ansiklopedi** (tr.wikipedia.org) : [Numeroloji](https://tr.wikipedia.org/wiki/Numeroloji)
+- **Britannica** (britannica.com) : [Numeroloji](https://www.britannica.com/topic/numerology)

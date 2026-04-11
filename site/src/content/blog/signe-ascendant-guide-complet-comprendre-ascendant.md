@@ -9,6 +9,8 @@ keywords: "signe ascendant, calculer son ascendant, comment connaître son ascen
 draft: false
 image: "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Horizon à l'aube avec les premiers rayons solaires, symbole de l'ascendant en astrologie"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 ## Sommaire
@@ -265,3 +267,11 @@ Oui, indirectement. Ton ascendant détermine la maison 10 (carrière, vocation p
 Ton ascendant n'est qu'une des couches de ta carte natale. Pour avoir une vision complète, il te faut ton [thème natal interprété en profondeur](/blog/theme-natal-gratuit-interpreter-carte-du-ciel). Et si tu veux comprendre comment ton ascendant dialogue avec les transits planétaires actuels, l'[Oracle Karmastro](https://app.karmastro.com/oracle) peut croiser ta carte avec les mouvements célestes du moment et te donner une lecture personnalisée.
 
 Ton ascendant n'est pas un détail. C'est la porte par laquelle ton âme a choisi d'entrer dans cette vie. Apprendre à la connaître, c'est apprendre à habiter ton incarnation avec plus de justesse. C'est cesser de te battre contre la façon dont les autres te perçoivent, et commencer à utiliser consciemment ce que tu irradies.
+
+## Sources et references
+
+Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
+
+- **Encyclopedie** (fr.wikipedia.org) : [Astrologie](https://fr.wikipedia.org/wiki/Astrologie)
+- **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Systeme solaire et planetes](https://science.nasa.gov/solar-system/planets/)

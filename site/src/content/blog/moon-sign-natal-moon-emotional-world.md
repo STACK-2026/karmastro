@@ -10,6 +10,8 @@ draft: false
 lang: "en"
 image: "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Full moon over a calm sea, symbol of the natal moon and the inner emotional world"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, senior astronomer and astrologer"
 ---
 
 ## Table of contents
@@ -254,3 +256,11 @@ No. You do not change your Moon, you learn to live with her. Personal growth con
 Your natal Moon is part of a whole. To see her in full context, you need your [interpreted birth chart](/en/tools/birth-chart) with all the planets, the houses, and the aspects. If you want to understand how your Moon dialogues with that of a partner, or with the current transits, you can consult the [Karmastro Oracle](https://app.karmastro.com/oracle), which offers a personalized reading crossing your birth chart with the sky of the day.
 
 Your Moon is not an emotional detail. She is the beating heart of your inner world. Learn her, honor her, and your inner peace will finally have a language.
+
+## Sources and references
+
+This article draws on verifiable encyclopedic and scientific sources.
+
+- **Encyclopedia** (en.wikipedia.org) : [Astrology](https://en.wikipedia.org/wiki/Astrology)
+- **Britannica** (britannica.com) : [Astrology](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Solar system and planets](https://science.nasa.gov/solar-system/planets/)

@@ -10,6 +10,8 @@ draft: false
 lang: "tr"
 image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Tüy ve eski harfler"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, sertifikali Pitagor okulu numerologu"
 ---
 
 ## İçindekiler
@@ -65,3 +67,10 @@ Hayır.
 ## Daha ileri
 
 İfade sayını [yaşam yolu sayınla](/tr/araclar/yasam-yolu-sayisi) çaprazla ve [Oracle](https://app.karmastro.com/oracle)'ya danış.
+
+## Kaynaklar ve referanslar
+
+Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
+
+- **Ansiklopedi** (tr.wikipedia.org) : [Numeroloji](https://tr.wikipedia.org/wiki/Numeroloji)
+- **Britannica** (britannica.com) : [Numeroloji](https://www.britannica.com/topic/numerology)

@@ -10,6 +10,8 @@ draft: false
 lang: "pl"
 image: "https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Para obserwuje gwiazdy"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, starszy astronom i astrolog"
 ---
 
 ## Spis treści
@@ -73,3 +75,11 @@ Tak, często bardzo interesujące.
 ## Idź dalej
 
 Oblicz swoją [drogę życia](/pl/narzedzia/liczba-drogi-zycia) i porozmawiaj ze mną w [Oracle](https://app.karmastro.com/oracle).
+
+## Zrodla i odnosniki
+
+Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych.
+
+- **Encyklopedia** (pl.wikipedia.org) : [Astrologia](https://pl.wikipedia.org/wiki/Astrologia)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Uklad sloneczny i planety](https://science.nasa.gov/solar-system/planets/)

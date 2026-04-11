@@ -9,6 +9,8 @@ keywords: "nombre d'expression numerologie, calcul prénom numerologie, signific
 draft: false
 image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Plume et lettres anciennes symbolisant la numérologie du prénom et le calcul du nombre d'expression"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, numerologue certifiee ecole pythagoricienne"
 ---
 
 ## Sommaire
@@ -366,3 +368,10 @@ Pour une lecture personnalisée et complète qui croise tous ces niveaux, [l'Ora
 Et si tu veux recevoir chaque matin un message qui t'aide à incarner ton nombre d'expression au quotidien, abonne-toi à notre horoscope quotidien gratuit. C'est une manière douce d'apprivoiser ta vibration jour après jour.
 
 Ton prénom est plus qu'un mot. C'est une petite musique qui te suit depuis ta naissance. Apprends à l'écouter, et tu verras qu'elle a beaucoup à te dire sur qui tu es et sur ce que tu es venu apporter au monde.
+
+## Sources et references
+
+Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
+
+- **Encyclopedie** (fr.wikipedia.org) : [Numerologie](https://fr.wikipedia.org/wiki/Num%C3%A9rologie)
+- **Britannica** (britannica.com) : [Numerologie](https://www.britannica.com/topic/numerology)

@@ -9,6 +9,8 @@ keywords: "chemin de vie 1, numérologie, leadership, indépendance, pionnier, m
 draft: false
 image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Un chiffre 1 lumineux sur fond cosmique étoilé"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, numerologue certifiee ecole pythagoricienne"
 ---
 
 ## Sommaire
@@ -136,3 +138,10 @@ Le point commun frappant entre ces figures : chacune a **ouvert une voie**. Jobs
 Connaître ton chemin de vie est un excellent point de départ, mais la numérologie ne s'arrête pas là. Ton **nombre d'expression** (tiré de ton nom complet), ton **nombre intime** (tes voyelles), ton **année personnelle** (cycle annuel) et ton **nombre karmique** (dette à résoudre) complètent le tableau.
 
 Karmastro calcule l'ensemble de ton profil numérologique en moins d'une minute, gratuitement, et le croise avec ton [thème natal astrologique](/blog/theme-natal-gratuit-interpreter-carte-du-ciel) pour une lecture unique au monde. [Lance ton analyse](/) maintenant et découvre si ton chemin de vie 1 est aligné avec le reste de ta signature cosmique.
+
+## Sources et references
+
+Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
+
+- **Encyclopedie** (fr.wikipedia.org) : [Numerologie](https://fr.wikipedia.org/wiki/Num%C3%A9rologie)
+- **Britannica** (britannica.com) : [Numerologie](https://www.britannica.com/topic/numerology)

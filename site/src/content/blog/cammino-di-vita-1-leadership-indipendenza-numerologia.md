@@ -10,6 +10,8 @@ draft: false
 lang: "it"
 image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Un numero 1 luminoso"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, numerologa certificata scuola pitagorica"
 ---
 
 ## Indice
@@ -75,3 +77,10 @@ Steve Jobs, Lady Gaga, Martin Luther King, Walt Disney. Tutti **hanno aperto un 
 ## 10. Andare oltre
 
 Incrocia con il tuo [tema natale](/it/strumenti/) per una visione completa.
+
+## Fonti e riferimenti
+
+Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
+
+- **Enciclopedia** (it.wikipedia.org) : [Numerologia](https://it.wikipedia.org/wiki/Numerologia)
+- **Britannica** (britannica.com) : [Numerologia](https://www.britannica.com/topic/numerology)

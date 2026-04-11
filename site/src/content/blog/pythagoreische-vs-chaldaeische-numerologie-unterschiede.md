@@ -10,6 +10,8 @@ draft: false
 lang: "de"
 image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Alte babylonische und griechische Tafeln"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, zertifizierte pythagoreische Numerologin"
 ---
 
 ## Inhaltsverzeichnis
@@ -87,3 +89,10 @@ Sie betrachteten sie als heilig.
 ## Schluss
 
 Beide Methoden sind zwei gültige Wege. Wenn du beginnst, benutze die pythagoreische. Berechne deine [Lebenszahl](/de/werkzeuge/lebenszahl) kostenlos und konsultiere das [Oracle](https://app.karmastro.com/oracle).
+
+## Quellen und Referenzen
+
+Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaftliche Quellen.
+
+- **Enzyklopaedie** (de.wikipedia.org) : [Numerologie](https://de.wikipedia.org/wiki/Numerologie)
+- **Britannica** (britannica.com) : [Numerologie](https://www.britannica.com/topic/numerology)

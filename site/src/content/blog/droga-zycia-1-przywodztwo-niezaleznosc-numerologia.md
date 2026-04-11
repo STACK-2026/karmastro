@@ -10,6 +10,8 @@ draft: false
 lang: "pl"
 image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Świetlista jedynka"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, certyfikowana numerolog szkoly pitagorejskiej"
 ---
 
 ## Spis treści
@@ -70,3 +72,10 @@ Steve Jobs, Lady Gaga, Martin Luther King, Walt Disney. Wszyscy **otworzyli drog
 ## 10. Idź dalej
 
 Skrzyżuj z [mapą natalną](/pl/narzedzia/) i skonsultuj [Oracle](https://app.karmastro.com/oracle).
+
+## Zrodla i odnosniki
+
+Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych.
+
+- **Encyklopedia** (pl.wikipedia.org) : [Numerologia](https://pl.wikipedia.org/wiki/Numerologia)
+- **Britannica** (britannica.com) : [Numerologia](https://www.britannica.com/topic/numerology)

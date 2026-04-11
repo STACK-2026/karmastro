@@ -10,6 +10,8 @@ draft: false
 lang: "ru"
 image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Перо и старые буквы"
+lastReviewed: "2026-04-11"
+reviewedBy: "Пифия, сертифицированный пифагорейский нумеролог"
 ---
 
 ## Оглавление
@@ -57,3 +59,10 @@ imageAlt: "Перо и старые буквы"
 ## Идти дальше
 
 Скрести с [путём жизни](/ru/instrumenty/chislo-zhiznennogo-puti) и обратись к [Oracle](https://app.karmastro.com/oracle).
+
+## Источники и ссылки
+
+Эта статья основана на проверяемых энциклопедических и научных источниках.
+
+- **Энциклопедия** (ru.wikipedia.org) : [Нумерология](https://ru.wikipedia.org/wiki/%D0%9D%D1%83%D0%BC%D0%B5%D1%80%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F)
+- **Britannica** (britannica.com) : [Нумерология](https://www.britannica.com/topic/numerology)

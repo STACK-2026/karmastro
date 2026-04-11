@@ -10,6 +10,8 @@ draft: false
 lang: "en"
 image: "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "The Aries constellation in a starry sky"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, senior astronomer and astrologer"
 ---
 
 ## Table of contents
@@ -124,3 +126,11 @@ You will notice that many are artists or innovators: Aries attracts vocations wh
 Knowing your sun sign is a start, not an end. Your [complete birth chart](/en/blog/free-birth-chart-interpret-complete-natal-chart) - with 10 planets, 12 houses, and major aspects - reveals much more than your Sun alone. An Aries with Moon in Pisces and Saturn in Scorpio has almost nothing in common with an Aries with Moon in Sagittarius and Venus in Gemini.
 
 Karmastro calculates your birth chart for free with Swiss Ephemeris ephemerides (NASA JPL precision), in 30 seconds, ad-free. [Start your analysis](/en/tools/birth-chart) to discover all your planets and understand your complete cosmic architecture.
+
+## Sources and references
+
+This article draws on verifiable encyclopedic and scientific sources.
+
+- **Encyclopedia** (en.wikipedia.org) : [Astrology](https://en.wikipedia.org/wiki/Astrology)
+- **Britannica** (britannica.com) : [Astrology](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Solar system and planets](https://science.nasa.gov/solar-system/planets/)

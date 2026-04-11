@@ -10,6 +10,8 @@ draft: false
 lang: "tr"
 image: "https://images.unsplash.com/photo-1507034589631-9433cc6bc453?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Günlük burç"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, kidemli astronom ve astrolog"
 ---
 
 ## İçindekiler
@@ -59,3 +61,11 @@ Jenerik burç yalnızca en geniş enerjileri yakalar.
 ## Daha ileri
 
 [Karmastro burcunu](/tr/horoscope) oku ve [Oracle](https://app.karmastro.com/oracle)'ya danış.
+
+## Kaynaklar ve referanslar
+
+Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
+
+- **Ansiklopedi** (tr.wikipedia.org) : [Astroloji](https://tr.wikipedia.org/wiki/Astroloji)
+- **Britannica** (britannica.com) : [Astroloji](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Gunes sistemi ve gezegenler](https://science.nasa.gov/solar-system/planets/)

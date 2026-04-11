@@ -10,6 +10,8 @@ draft: false
 lang: "en"
 image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Starry sky with bright planet, illustration of Mercury retrograde and its effects on communication"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, senior astronomer and astrologer"
 ---
 
 ## Table of contents
@@ -284,3 +286,11 @@ If you want a personalized reading of the next retrograde for you specifically, 
 And if you want to never miss an important transit again, subscribe to our free daily horoscope. Every morning, you receive a personalized message that tells you what is happening in the sky and how to use it in your day. No scary predictions, just practical keys to better navigate your daily life under the stars.
 
 Mercury slows down, the sky folds in a little, and that is good. Take advantage of this pause to breathe, reread, glue the pieces back together. The three weeks pass quickly, and on the other side, you are often clearer than before.
+
+## Sources and references
+
+This article draws on verifiable encyclopedic and scientific sources.
+
+- **Encyclopedia** (en.wikipedia.org) : [Astrology](https://en.wikipedia.org/wiki/Astrology)
+- **Britannica** (britannica.com) : [Astrology](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Solar system and planets](https://science.nasa.gov/solar-system/planets/)

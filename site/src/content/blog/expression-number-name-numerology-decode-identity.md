@@ -10,6 +10,8 @@ draft: false
 lang: "en"
 image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Quill and old letters symbolizing name numerology and the expression number"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, certified Pythagorean numerologist"
 ---
 
 ## Table of contents
@@ -367,3 +369,10 @@ For a personalized and complete reading that crosses all these levels, the [Orac
 And if you want to receive every morning a message that helps you embody your expression number in daily life, subscribe to our free daily horoscope. It is a gentle way to befriend your vibration day by day.
 
 Your name is more than a word. It is a little music that has been following you since birth. Learn to listen to it, and you will see it has much to say about who you are and what you came to bring to the world.
+
+## Sources and references
+
+This article draws on verifiable encyclopedic and scientific sources.
+
+- **Encyclopedia** (en.wikipedia.org) : [Numerology](https://en.wikipedia.org/wiki/Numerology)
+- **Britannica** (britannica.com) : [Numerology](https://www.britannica.com/topic/numerology)

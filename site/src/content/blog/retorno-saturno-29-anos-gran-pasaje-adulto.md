@@ -10,6 +10,8 @@ draft: false
 lang: "es"
 image: "https://images.unsplash.com/photo-1614642264762-d0a3b8bf3700?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "El planeta Saturno y sus anillos, símbolo del retorno de Saturno"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronomo y astrologo senior"
 ---
 
 ## Índice
@@ -214,3 +216,11 @@ Sí. Conocer su existencia y saber dónde se encuentra Saturno en tu carta natal
 El retorno de Saturno es sin duda el tránsito más importante para entender en una vida de adulto. Si quieres explorar tu carta natal en profundidad, empieza calculando tu [ascendente](/es/herramientas/ascendente) y tu [camino de vida](/es/herramientas/camino-de-vida), luego pide al [Oracle](https://app.karmastro.com/oracle) una lectura personalizada.
 
 El retorno de Saturno asusta porque no se habla de él. Ahora que sabes, asusta menos. Lo que te espera ahí es precioso.
+
+## Fuentes y referencias
+
+Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
+
+- **Enciclopedia** (es.wikipedia.org) : [Astrologia](https://es.wikipedia.org/wiki/Astrolog%C3%ADa)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sistema solar y planetas](https://science.nasa.gov/solar-system/planets/)

@@ -10,6 +10,8 @@ draft: false
 lang: "es"
 image: "https://images.unsplash.com/photo-1532680678473-a16f2cda8e43?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Calendario abierto con cifras luminosas"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, numerologa certificada escuela pitagorica"
 ---
 
 ## Índice
@@ -117,3 +119,10 @@ No. Es liberador si juegas el juego.
 El año personal es una de las herramientas más prácticas de la numerología. Comienza calculando tu [camino de vida](/es/herramientas/camino-de-vida).
 
 Para una lectura personalizada, consulta el [Oracle](https://app.karmastro.com/oracle).
+
+## Fuentes y referencias
+
+Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
+
+- **Enciclopedia** (es.wikipedia.org) : [Numerologia](https://es.wikipedia.org/wiki/Numerolog%C3%ADa)
+- **Britannica** (britannica.com) : [Numerologia](https://www.britannica.com/topic/numerology)

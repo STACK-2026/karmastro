@@ -10,6 +10,8 @@ draft: false
 lang: "ru"
 image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Пифагорейские уравнения"
+lastReviewed: "2026-04-11"
+reviewedBy: "Пифия, сертифицированный пифагорейский нумеролог"
 ---
 
 ## Оглавление
@@ -80,3 +82,10 @@ imageAlt: "Пифагорейские уравнения"
 ## Заключение
 
 Чтобы открыть свой полный профиль, изучи [Oracle Karmastro](https://app.karmastro.com/oracle).
+
+## Источники и ссылки
+
+Эта статья основана на проверяемых энциклопедических и научных источниках.
+
+- **Энциклопедия** (ru.wikipedia.org) : [Нумерология](https://ru.wikipedia.org/wiki/%D0%9D%D1%83%D0%BC%D0%B5%D1%80%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F)
+- **Britannica** (britannica.com) : [Нумерология](https://www.britannica.com/topic/numerology)

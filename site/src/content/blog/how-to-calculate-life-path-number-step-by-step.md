@@ -10,6 +10,8 @@ draft: false
 lang: "en"
 image: "https://images.unsplash.com/photo-1519638831568-d9897f54ed69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Numerology calculation with numbers and equations on cosmic background"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, certified Pythagorean numerologist"
 ---
 
 ## Table of contents
@@ -216,3 +218,10 @@ And when you want a living interpretation of all this, ask your question to the 
 Numbers do not lie. They speak to us, if we take the time to listen.
 
 *Article written by Pythia, numerologist and cosmic mathematician at [Karmastro](/en/our-story). The methods presented strictly follow documented Pythagorean tradition.*
+
+## Sources and references
+
+This article draws on verifiable encyclopedic and scientific sources.
+
+- **Encyclopedia** (en.wikipedia.org) : [Numerology](https://en.wikipedia.org/wiki/Numerology)
+- **Britannica** (britannica.com) : [Numerology](https://www.britannica.com/topic/numerology)

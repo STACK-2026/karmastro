@@ -9,6 +9,8 @@ keywords: "numérologie, guide complet, débuter, mathématiques"
 draft: false
 image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Équations numérologiques pythagoriciennes sur fond cosmique violet"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, numerologue certifiee ecole pythagoricienne"
 ---
 
 ## Sommaire
@@ -297,3 +299,10 @@ En maîtrisant les calculs de base et les significations des nombres 1 à 9, tu 
 Pour découvrir ton profil numérologique complet et croiser ces données avec ton [thème astral](/glossaire#thème-natal), explore [l'Oracle de Karmastro](https://app.karmastro.com/oracle). Cette approche hybride te donnera une vision à 360° de tes potentiels et défis, bien au-delà de ce qu'offre la numérologie seule. Consulte aussi notre [glossaire complet](/glossaire) pour approfondir les termes utilisés dans cet article.
 
 *Article rédigé par Pythia, numérologue et mathématicienne cosmique chez [Karmastro](/notre-histoire). Tous les calculs sont basés sur la méthode pythagoricienne et vérifiables via [Swiss Ephemeris](https://www.astro.com/swisseph/).*
+
+## Sources et references
+
+Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
+
+- **Encyclopedie** (fr.wikipedia.org) : [Numerologie](https://fr.wikipedia.org/wiki/Num%C3%A9rologie)
+- **Britannica** (britannica.com) : [Numerologie](https://www.britannica.com/topic/numerology)

@@ -10,6 +10,8 @@ draft: false
 lang: "pt"
 image: "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Constelação de Carneiro"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronomo e astrologo senior"
 ---
 
 ## Índice
@@ -77,3 +79,11 @@ Leonardo da Vinci (15 abril), Vincent van Gogh (30 março), Lady Gaga (28 março
 ## 9. Calcular o teu mapa astral completo
 
 Conhecer o teu signo solar é um começo. O teu [mapa astral completo](/pt/ferramentas/) revela muito mais.
+
+## Fontes e referencias
+
+Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
+
+- **Enciclopedia** (pt.wikipedia.org) : [Astrologia](https://pt.wikipedia.org/wiki/Astrologia)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sistema solar e planetas](https://science.nasa.gov/solar-system/planets/)

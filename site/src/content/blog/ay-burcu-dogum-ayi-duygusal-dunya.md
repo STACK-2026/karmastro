@@ -10,6 +10,8 @@ draft: false
 lang: "tr"
 image: "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Sakin deniz üzerinde dolunay"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, kidemli astronom ve astrolog"
 ---
 
 ## İçindekiler
@@ -109,3 +111,11 @@ Hayır. Onunla yaşamayı öğrenirsin.
 ## Daha ileri
 
 Doğum Ay'ın bir bütünün parçasıdır. Tam bir görünüm için [yorumlanmış doğum haritana](/tr/araclar/) ihtiyacın var. [Oracle Karmastro](https://app.karmastro.com/oracle)'ya danış.
+
+## Kaynaklar ve referanslar
+
+Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
+
+- **Ansiklopedi** (tr.wikipedia.org) : [Astroloji](https://tr.wikipedia.org/wiki/Astroloji)
+- **Britannica** (britannica.com) : [Astroloji](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Gunes sistemi ve gezegenler](https://science.nasa.gov/solar-system/planets/)

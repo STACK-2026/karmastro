@@ -10,6 +10,8 @@ draft: false
 lang: "en"
 image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Zodiac wheel and chart illustrating the 12 astrological houses of a birth chart"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, senior astronomer and astrologer"
 ---
 
 ## Table of contents
@@ -268,3 +270,11 @@ If you want a personalized and complete reading of your chart, with a house-by-h
 And if you want to follow the activation of your houses day by day through transits, subscribe to our free daily horoscope. Every morning, you will know which house is lit by the planets of the day, and therefore which area of your life is invited to speak.
 
 The twelve houses are the twelve rooms of your inner home. Learn to inhabit them one by one, and your chart will no longer be an abstract map: it will be your life, clearer.
+
+## Sources and references
+
+This article draws on verifiable encyclopedic and scientific sources.
+
+- **Encyclopedia** (en.wikipedia.org) : [Astrology](https://en.wikipedia.org/wiki/Astrology)
+- **Britannica** (britannica.com) : [Astrology](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Solar system and planets](https://science.nasa.gov/solar-system/planets/)

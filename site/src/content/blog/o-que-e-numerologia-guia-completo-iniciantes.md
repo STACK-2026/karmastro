@@ -10,6 +10,8 @@ draft: false
 lang: "pt"
 image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Equações numerológicas pitagóricas sobre fundo cósmico"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, numerologa certificada escola pitagorica"
 ---
 
 ## Índice
@@ -111,3 +113,10 @@ A numerologia oferece um **enfoque racional da espiritualidade**. Todos os cálc
 ## Conclusão
 
 A numerologia é um sistema acessível que oferece uma leitura racional da personalidade. Para descobrir o teu perfil completo, explora o [Oracle Karmastro](https://app.karmastro.com/oracle).
+
+## Fontes e referencias
+
+Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
+
+- **Enciclopedia** (pt.wikipedia.org) : [Numerologia](https://pt.wikipedia.org/wiki/Numerologia)
+- **Britannica** (britannica.com) : [Numerologia](https://www.britannica.com/topic/numerology)

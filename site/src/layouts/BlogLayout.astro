@@ -19,6 +19,8 @@ interface Props {
   slug: string;
   keywords?: string;
   lang?: string;
+  lastReviewed?: Date;
+  reviewedBy?: string;
 }
 
 const {
@@ -33,6 +35,8 @@ const {
   slug,
   keywords,
   lang = "fr",
+  lastReviewed,
+  reviewedBy,
 } = Astro.props;
 
 const isDefault = lang === "fr";
@@ -43,20 +47,24 @@ const homePath = isDefault ? "/" : `/${lang}/`;
 const articleUrl = fullUrl(blogPath);
 const dateStr = date.toISOString().split("T")[0];
 
-const LABELS: Record<string, { home: string; blog: string; share: string; shareBtn: string; locale: string }> = {
-  fr: { home: "Accueil", blog: "Blog", share: "Cet article t'a plu ? Partage-le", shareBtn: "Partager l'article", locale: "fr-FR" },
-  en: { home: "Home", blog: "Blog", share: "Enjoyed this article? Share it", shareBtn: "Share article", locale: "en-US" },
-  es: { home: "Inicio", blog: "Blog", share: "¿Te gusto este articulo? Compartelo", shareBtn: "Compartir articulo", locale: "es-ES" },
-  pt: { home: "Inicio", blog: "Blog", share: "Gostou deste artigo? Compartilhe", shareBtn: "Compartilhar artigo", locale: "pt-PT" },
-  de: { home: "Startseite", blog: "Blog", share: "Hat dir der Artikel gefallen? Teile ihn", shareBtn: "Artikel teilen", locale: "de-DE" },
-  it: { home: "Home", blog: "Blog", share: "Ti e piaciuto l'articolo? Condividilo", shareBtn: "Condividi articolo", locale: "it-IT" },
-  tr: { home: "Ana sayfa", blog: "Blog", share: "Makaleyi begendin mi? Paylas", shareBtn: "Makaleyi paylas", locale: "tr-TR" },
-  pl: { home: "Strona glowna", blog: "Blog", share: "Spodobal ci sie artykul? Podziel sie nim", shareBtn: "Udostepnij artykul", locale: "pl-PL" },
-  ru: { home: "Главная", blog: "Блог", share: "Понравилась статья? Поделись", shareBtn: "Поделиться", locale: "ru-RU" },
-  ja: { home: "ホーム", blog: "ブログ", share: "記事が気に入った? シェアしよう", shareBtn: "記事をシェア", locale: "ja-JP" },
-  ar: { home: "الرئيسية", blog: "المدونة", share: "هل أعجبك المقال؟ شاركه", shareBtn: "شارك المقال", locale: "ar-SA" },
+const LABELS: Record<string, { home: string; blog: string; share: string; shareBtn: string; locale: string; reviewed: string; reviewedBy: string }> = {
+  fr: { home: "Accueil", blog: "Blog", share: "Cet article t'a plu ? Partage-le", shareBtn: "Partager l'article", locale: "fr-FR", reviewed: "Relu le", reviewedBy: "Relu par" },
+  en: { home: "Home", blog: "Blog", share: "Enjoyed this article? Share it", shareBtn: "Share article", locale: "en-US", reviewed: "Reviewed on", reviewedBy: "Reviewed by" },
+  es: { home: "Inicio", blog: "Blog", share: "Te gusto este articulo? Compartelo", shareBtn: "Compartir articulo", locale: "es-ES", reviewed: "Revisado el", reviewedBy: "Revisado por" },
+  pt: { home: "Inicio", blog: "Blog", share: "Gostou deste artigo? Compartilhe", shareBtn: "Compartilhar artigo", locale: "pt-PT", reviewed: "Revisto em", reviewedBy: "Revisto por" },
+  de: { home: "Startseite", blog: "Blog", share: "Hat dir der Artikel gefallen? Teile ihn", shareBtn: "Artikel teilen", locale: "de-DE", reviewed: "Geprueft am", reviewedBy: "Geprueft von" },
+  it: { home: "Home", blog: "Blog", share: "Ti e piaciuto l'articolo? Condividilo", shareBtn: "Condividi articolo", locale: "it-IT", reviewed: "Revisionato il", reviewedBy: "Revisionato da" },
+  tr: { home: "Ana sayfa", blog: "Blog", share: "Makaleyi begendin mi? Paylas", shareBtn: "Makaleyi paylas", locale: "tr-TR", reviewed: "Gozden gecirildi", reviewedBy: "Inceleyen" },
+  pl: { home: "Strona glowna", blog: "Blog", share: "Spodobal ci sie artykul? Podziel sie nim", shareBtn: "Udostepnij artykul", locale: "pl-PL", reviewed: "Zweryfikowano", reviewedBy: "Zweryfikowane przez" },
+  ru: { home: "Главная", blog: "Блог", share: "Понравилась статья? Поделись", shareBtn: "Поделиться", locale: "ru-RU", reviewed: "Проверено", reviewedBy: "Проверил" },
+  ja: { home: "ホーム", blog: "ブログ", share: "記事が気に入った? シェアしよう", shareBtn: "記事をシェア", locale: "ja-JP", reviewed: "確認日", reviewedBy: "確認者" },
+  ar: { home: "الرئيسية", blog: "المدونة", share: "هل أعجبك المقال؟ شاركه", shareBtn: "شارك المقال", locale: "ar-SA", reviewed: "تمت المراجعة في", reviewedBy: "راجعه" },
 };
 const labels = LABELS[lang] ?? LABELS.fr;
+const reviewedDateStr = lastReviewed ? lastReviewed.toISOString().split("T")[0] : undefined;
+const reviewedDateDisplay = lastReviewed
+  ? lastReviewed.toLocaleDateString(labels.locale, { day: "numeric", month: "long", year: "numeric" })
+  : undefined;
 
 const breadcrumbs = [
   { name: labels.home, url: fullUrl(homePath) },
@@ -70,9 +78,12 @@ const jsonLd = [
     description,
     url: articleUrl,
     datePublished: dateStr,
+    dateModified: reviewedDateStr,
     image,
     author,
     keywords: keywords?.split(",").map((k) => k.trim()),
+    reviewedBy,
+    inLanguage: labels.locale,
   }),
   jsonLdBreadcrumbs(breadcrumbs),
 ];
@@ -97,7 +108,7 @@ const jsonLd = [
         </span>
       )}
       <h1 class="mb-4">{title}</h1>
-      <div class="flex items-center gap-4 text-gray-500 text-sm">
+      <div class="flex items-center gap-4 text-gray-500 text-sm flex-wrap">
         <span>{author}</span>
         <span>|</span>
         <time datetime={dateStr}>
@@ -107,6 +118,20 @@ const jsonLd = [
             year: "numeric",
           })}
         </time>
+        {reviewedDateDisplay && (
+          <>
+            <span>|</span>
+            <span>
+              {labels.reviewed} <time datetime={reviewedDateStr}>{reviewedDateDisplay}</time>
+            </span>
+          </>
+        )}
+        {reviewedBy && (
+          <>
+            <span>|</span>
+            <span>{labels.reviewedBy} {reviewedBy}</span>
+          </>
+        )}
       </div>
       {tags.length > 0 && (
         <div class="flex flex-wrap gap-2 mt-4">

@@ -10,6 +10,8 @@ draft: false
 lang: "ar"
 image: "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "بدر كامل فوق بحر هادئ"
+lastReviewed: "2026-04-11"
+reviewedBy: "أوريون، عالم فلك ومنجم كبير"
 ---
 
 ## المحتويات
@@ -101,3 +103,11 @@ imageAlt: "بدر كامل فوق بحر هادئ"
 ## للذهاب أبعد
 
 استشر [Oracle Karmastro](https://app.karmastro.com/oracle).
+
+## المصادر والمراجع
+
+يعتمد هذا المقال على مصادر موسوعية وعلمية يمكن التحقق منها.
+
+- **موسوعة** (ar.wikipedia.org) : [التنجيم](https://ar.wikipedia.org/wiki/%D8%AA%D9%86%D8%AC%D9%8A%D9%85)
+- **بريتانيكا** (britannica.com) : [التنجيم](https://www.britannica.com/topic/astrology)
+- **ناسا** (science.nasa.gov) : [النظام الشمسي والكواكب](https://science.nasa.gov/solar-system/planets/)

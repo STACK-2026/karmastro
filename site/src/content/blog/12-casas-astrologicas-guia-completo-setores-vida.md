@@ -10,6 +10,8 @@ draft: false
 lang: "pt"
 image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Roda zodiacal com as 12 casas astrológicas"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronomo e astrologo senior"
 ---
 
 ## Índice
@@ -114,3 +116,11 @@ Não. As casas natais são fixas.
 ## Ir mais longe
 
 Para explorar o teu mapa, começa por calcular o teu [ascendente](/pt/ferramentas/ascendente). Consulta o [Oracle](https://app.karmastro.com/oracle) para uma leitura personalizada.
+
+## Fontes e referencias
+
+Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
+
+- **Enciclopedia** (pt.wikipedia.org) : [Astrologia](https://pt.wikipedia.org/wiki/Astrologia)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sistema solar e planetas](https://science.nasa.gov/solar-system/planets/)

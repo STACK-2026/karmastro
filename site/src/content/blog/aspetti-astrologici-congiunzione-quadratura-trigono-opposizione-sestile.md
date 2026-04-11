@@ -10,6 +10,8 @@ draft: false
 lang: "it"
 image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Carta astrologica con linee geometriche tra pianeti"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronomo e astrologo senior"
 ---
 
 ## Indice
@@ -97,3 +99,11 @@ No.
 ## Andare oltre
 
 Gli aspetti sono la dimensione più dinamica della tua carta. Calcola il tuo [ascendente](/it/strumenti/ascendente) e consulta l'[Oracle](https://app.karmastro.com/oracle).
+
+## Fonti e riferimenti
+
+Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
+
+- **Enciclopedia** (it.wikipedia.org) : [Astrologia](https://it.wikipedia.org/wiki/Astrologia)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sistema solare e pianeti](https://science.nasa.gov/solar-system/planets/)

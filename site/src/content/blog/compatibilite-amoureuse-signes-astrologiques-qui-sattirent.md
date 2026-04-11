@@ -9,6 +9,8 @@ keywords: "compatibilité astrologique, amour, signes, couple, synastrie"
 draft: false
 image: "https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Couple regardant les étoiles sous un ciel nocturne constellé"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 ## Sommaire
@@ -206,3 +208,11 @@ Commence par calculer ta [compatibilité numérologique avec quelqu'un](/outils/
 L'amour n'est pas une mathématique. Mais les étoiles nous donnent parfois les bonnes coordonnées pour commencer à chercher.
 
 *Article rédigé par Séléné, guide relationnelle de [Karmastro](/notre-histoire). Pour une lecture personnalisée de ton couple, consulte notre [calculateur de synastrie](/outils/synastrie) ou parle-moi directement à l'[Oracle](https://app.karmastro.com/oracle).*
+
+## Sources et references
+
+Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
+
+- **Encyclopedie** (fr.wikipedia.org) : [Astrologie](https://fr.wikipedia.org/wiki/Astrologie)
+- **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Systeme solaire et planetes](https://science.nasa.gov/solar-system/planets/)

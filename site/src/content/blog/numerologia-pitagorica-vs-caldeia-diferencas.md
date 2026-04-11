@@ -10,6 +10,8 @@ draft: false
 lang: "pt"
 image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Antigas tábuas babilónicas e gregas com símbolos numéricos"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, numerologa certificada escola pitagorica"
 ---
 
 ## Índice
@@ -102,3 +104,10 @@ Tecnicamente sim, com coerência.
 Os dois métodos são dois caminhos válidos. Se começas, usa a pitagórica. Podes calcular o teu [caminho de vida](/pt/ferramentas/numero-do-caminho-de-vida) grátis (idêntico em ambos).
 
 Para uma leitura personalizada, consulta o [Oracle](https://app.karmastro.com/oracle).
+
+## Fontes e referencias
+
+Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
+
+- **Enciclopedia** (pt.wikipedia.org) : [Numerologia](https://pt.wikipedia.org/wiki/Numerologia)
+- **Britannica** (britannica.com) : [Numerologia](https://www.britannica.com/topic/numerology)

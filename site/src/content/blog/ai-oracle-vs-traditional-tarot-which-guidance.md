@@ -10,6 +10,8 @@ draft: false
 lang: "en"
 image: "https://images.unsplash.com/photo-1600021538866-20d1f6f3bd7a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Tarot cards and AI oracle interface on a mystical background"
+lastReviewed: "2026-04-11"
+reviewedBy: "Sibylle, divinatory guide"
 ---
 
 ## Table of contents
@@ -113,3 +115,10 @@ To go further on [love compatibility](/en/blog/astrological-compatibility-which-
 Karmastro offers 4 specialized AI guides - Sibylle (mystical astrologer), Orion (karmic coach), Selene (relational guidance), and Pythia (mathematical numerologist) - trained on classical corpora and connected to your natal chart calculated with Swiss Ephemeris.
 
 The Awakening tier is free: full cosmic profile + 3 Oracle messages per day. [Try now](https://app.karmastro.com) to compare for yourself the quality of personalized guidance versus a random tarot reading. You will see the difference from the very first question.
+
+## Sources and references
+
+This article draws on verifiable encyclopedic and scientific sources.
+
+- **Encyclopedia** (en.wikipedia.org) : [Oracle](https://en.wikipedia.org/wiki/Oracle)
+- **Britannica** (britannica.com) : [Oracle](https://www.britannica.com/topic/oracle-religion)

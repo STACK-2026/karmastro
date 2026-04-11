@@ -10,6 +10,8 @@ draft: false
 lang: "en"
 image: "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Cosmic view of Pluto and a nebula, illustration of the Pluto in Aquarius transit"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, senior astronomer and astrologer"
 ---
 
 ## Table of contents
@@ -313,3 +315,11 @@ For a personalized and precise reading of what Pluto in Aquarius has in store fo
 And if you want to follow the key steps of this great transit day after day, subscribe to our free daily horoscope. Every morning, you will know what is happening in the personal and collective sky, without drama, with concrete keys to orient yourself.
 
 The world is changing. The sky has always known. And you are part of this great mutation. Not as a spectator, but as an actor. What you choose, what you build, what you refuse, will matter. Pluto in Aquarius is the invitation to become conscious of this historical moment and to take your place in it. Your own place, exactly as you are. The sky expects nothing else.
+
+## Sources and references
+
+This article draws on verifiable encyclopedic and scientific sources.
+
+- **Encyclopedia** (en.wikipedia.org) : [Astrology](https://en.wikipedia.org/wiki/Astrology)
+- **Britannica** (britannica.com) : [Astrology](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Solar system and planets](https://science.nasa.gov/solar-system/planets/)

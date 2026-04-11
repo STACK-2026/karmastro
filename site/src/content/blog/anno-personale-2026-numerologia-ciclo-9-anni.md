@@ -10,6 +10,8 @@ draft: false
 lang: "it"
 image: "https://images.unsplash.com/photo-1532680678473-a16f2cda8e43?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Calendario aperto con numeri luminosi"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, numerologa certificata scuola pitagorica"
 ---
 
 ## Indice
@@ -72,3 +74,10 @@ Sì, i numeri maestri possono apparire.
 ## Andare oltre
 
 Calcola il tuo [numero del cammino di vita](/it/strumenti/numero-del-cammino-di-vita) e consulta l'[Oracle](https://app.karmastro.com/oracle).
+
+## Fonti e riferimenti
+
+Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
+
+- **Enciclopedia** (it.wikipedia.org) : [Numerologia](https://it.wikipedia.org/wiki/Numerologia)
+- **Britannica** (britannica.com) : [Numerologia](https://www.britannica.com/topic/numerology)

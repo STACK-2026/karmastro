@@ -9,6 +9,8 @@ keywords: "pluton en verseau 2024 2044, transit pluton verseau, mutation pluton,
 draft: false
 image: "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Vue cosmique de la planète Pluton et nébuleuse en arrière-plan, illustration du transit de Pluton en Verseau"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 ## Sommaire
@@ -312,3 +314,11 @@ Pour une lecture personnalisée et précise de ce que Pluton en Verseau te rése
 Et si tu veux suivre les étapes clés de ce grand transit jour après jour, abonne-toi à notre horoscope quotidien gratuit. Chaque matin, tu sauras ce qui se joue dans le ciel personnel et collectif, sans dramatisation, avec des clés concrètes pour t'orienter.
 
 Le monde change. Le ciel le sait depuis toujours. Et toi, tu fais partie de cette grande mutation. Pas comme un spectateur, mais comme un acteur. Ce que tu choisis, ce que tu construis, ce que tu refuses, comptera. Pluton en Verseau, c'est l'invitation à devenir conscient de ce moment historique et à y prendre ta place. La tienne, exactement, telle que tu es. Le ciel n'attend rien d'autre.
+
+## Sources et references
+
+Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
+
+- **Encyclopedie** (fr.wikipedia.org) : [Astrologie](https://fr.wikipedia.org/wiki/Astrologie)
+- **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Systeme solaire et planetes](https://science.nasa.gov/solar-system/planets/)

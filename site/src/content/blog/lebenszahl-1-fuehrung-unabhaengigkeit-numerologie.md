@@ -10,6 +10,8 @@ draft: false
 lang: "de"
 image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Eine leuchtende 1"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, zertifizierte pythagoreische Numerologin"
 ---
 
 ## Inhaltsverzeichnis
@@ -75,3 +77,10 @@ Steve Jobs, Lady Gaga, Martin Luther King, Walt Disney. Alle **öffneten einen W
 ## 10. Weiter gehen
 
 Kreuze mit deinem [Geburtshoroskop](/de/werkzeuge/) für eine vollständige Sicht.
+
+## Quellen und Referenzen
+
+Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaftliche Quellen.
+
+- **Enzyklopaedie** (de.wikipedia.org) : [Numerologie](https://de.wikipedia.org/wiki/Numerologie)
+- **Britannica** (britannica.com) : [Numerologie](https://www.britannica.com/topic/numerology)

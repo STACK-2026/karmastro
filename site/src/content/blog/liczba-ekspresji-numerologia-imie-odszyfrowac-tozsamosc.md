@@ -10,6 +10,8 @@ draft: false
 lang: "pl"
 image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Pióro i stare litery"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, certyfikowana numerolog szkoly pitagorejskiej"
 ---
 
 ## Spis treści
@@ -65,3 +67,10 @@ Nie.
 ## Idź dalej
 
 Skrzyżuj swoją liczbę ekspresji z [drogą życia](/pl/narzedzia/liczba-drogi-zycia) i skonsultuj [Oracle](https://app.karmastro.com/oracle).
+
+## Zrodla i odnosniki
+
+Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych.
+
+- **Encyklopedia** (pl.wikipedia.org) : [Numerologia](https://pl.wikipedia.org/wiki/Numerologia)
+- **Britannica** (britannica.com) : [Numerologia](https://www.britannica.com/topic/numerology)

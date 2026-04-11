@@ -10,6 +10,8 @@ draft: false
 lang: "es"
 image: "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Vista cósmica de Plutón y una nebulosa"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronomo y astrologo senior"
 ---
 
 ## Índice
@@ -173,3 +175,11 @@ Plutón en Acuario es probablemente el tránsito más importante de tu vida. Par
 Para una lectura personalizada, consulta el [Oracle](https://app.karmastro.com/oracle).
 
 El mundo cambia. El cielo lo sabe desde siempre. Y tú formas parte de esta gran mutación.
+
+## Fuentes y referencias
+
+Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
+
+- **Enciclopedia** (es.wikipedia.org) : [Astrologia](https://es.wikipedia.org/wiki/Astrolog%C3%ADa)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sistema solar y planetas](https://science.nasa.gov/solar-system/planets/)

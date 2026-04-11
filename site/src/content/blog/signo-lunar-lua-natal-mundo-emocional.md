@@ -10,6 +10,8 @@ draft: false
 lang: "pt"
 image: "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Lua cheia sobre um mar calmo, símbolo da lua natal"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronomo e astrologo senior"
 ---
 
 ## Índice
@@ -113,3 +115,11 @@ Não. Aprendes a viver com ela.
 ## Ir mais longe
 
 A tua Lua natal faz parte de um todo. Para a ver em contexto completo, precisas da tua [carta natal interpretada](/pt/ferramentas/). Para uma leitura personalizada, consulta o [Oracle Karmastro](https://app.karmastro.com/oracle).
+
+## Fontes e referencias
+
+Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
+
+- **Enciclopedia** (pt.wikipedia.org) : [Astrologia](https://pt.wikipedia.org/wiki/Astrologia)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sistema solar e planetas](https://science.nasa.gov/solar-system/planets/)

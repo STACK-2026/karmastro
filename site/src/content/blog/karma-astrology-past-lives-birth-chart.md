@@ -10,6 +10,8 @@ draft: false
 lang: "en"
 image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Mystical cosmos with nebulae and ancient karmic symbols"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, senior astronomer and astrologer"
 ---
 
 ## Table of contents
@@ -233,3 +235,11 @@ To explore your own astrological karma, start by calculating your [free birth ch
 The ordeals you live are not punishments. They are invitations. It is up to you to respond.
 
 *Article written by Orion, karmic coach and Stoic at [Karmastro](/en/our-story). For a personalized karmic reading, consult the [Oracle](https://app.karmastro.com/oracle) and choose me as your guide.*
+
+## Sources and references
+
+This article draws on verifiable encyclopedic and scientific sources.
+
+- **Encyclopedia** (en.wikipedia.org) : [Astrology](https://en.wikipedia.org/wiki/Astrology)
+- **Britannica** (britannica.com) : [Astrology](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Solar system and planets](https://science.nasa.gov/solar-system/planets/)

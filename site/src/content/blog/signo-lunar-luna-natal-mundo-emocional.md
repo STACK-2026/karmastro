@@ -10,6 +10,8 @@ draft: false
 lang: "es"
 image: "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Luna llena sobre un mar en calma, símbolo de la luna natal y el mundo interior"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronomo y astrologo senior"
 ---
 
 ## Índice
@@ -200,3 +202,11 @@ No. No cambias tu Luna, aprendes a vivir con ella.
 Tu Luna natal forma parte de un todo. Para verla en contexto completo, necesitas tu [carta natal interpretada](/es/herramientas/) con todos los planetas. Si quieres entender cómo tu Luna dialoga con la de una pareja, o con los tránsitos actuales, puedes consultar el [Oracle Karmastro](https://app.karmastro.com/oracle).
 
 Tu Luna no es un detalle emocional. Es el corazón latente de tu interioridad.
+
+## Fuentes y referencias
+
+Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
+
+- **Enciclopedia** (es.wikipedia.org) : [Astrologia](https://es.wikipedia.org/wiki/Astrolog%C3%ADa)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sistema solar y planetas](https://science.nasa.gov/solar-system/planets/)

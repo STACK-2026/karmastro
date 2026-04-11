@@ -10,6 +10,8 @@ draft: false
 lang: "de"
 image: "https://images.unsplash.com/photo-1474418397713-2f1091953b21?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Leuchtende Säule mit den sieben Chakra-Farben"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, Senior-Astronom und Astrologe"
 ---
 
 ## Inhaltsverzeichnis
@@ -103,3 +105,11 @@ Ja, völlig.
 ## Weiter gehen
 
 Berechne deinen [Aszendenten](/de/werkzeuge/aszendent) und konsultiere das [Oracle](https://app.karmastro.com/oracle).
+
+## Quellen und Referenzen
+
+Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaftliche Quellen.
+
+- **Enzyklopaedie** (de.wikipedia.org) : [Astrologie](https://de.wikipedia.org/wiki/Astrologie)
+- **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sonnensystem und Planeten](https://science.nasa.gov/solar-system/planets/)

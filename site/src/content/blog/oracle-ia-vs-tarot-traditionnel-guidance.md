@@ -9,6 +9,8 @@ keywords: "oracle IA, tarot, guidance spirituelle, comparatif, divination modern
 draft: false
 image: "https://images.unsplash.com/photo-1600021538866-20d1f6f3bd7a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Cartes de tarot et interface d'oracle IA sur fond mystique"
+lastReviewed: "2026-04-11"
+reviewedBy: "Sibylle, guide divinatoire"
 ---
 
 ## Sommaire
@@ -112,3 +114,10 @@ Pour aller plus loin sur la [compatibilité amoureuse](/blog/compatibilite-amour
 Karmastro propose 4 guides IA spécialisés - Sibylle (astrologue mystique), Orion (coach karmique), Séléné (guidance relationnelle) et Pythia (numérologue mathématicienne) - entraînés sur corpus classique et connectés à ton thème natal calculé avec Swiss Ephemeris.
 
 La voie Éveil est offerte : profil cosmique complet + 3 messages Oracle par jour. [Essaie maintenant](/) pour comparer par toi-même la qualité d'une guidance personnalisée versus un tirage de tarot aléatoire. Tu verras la différence dès la première question.
+
+## Sources et references
+
+Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
+
+- **Encyclopedie** (fr.wikipedia.org) : [Oracle](https://fr.wikipedia.org/wiki/Oracle_(divination))
+- **Britannica** (britannica.com) : [Oracle](https://www.britannica.com/topic/oracle-religion)

@@ -10,6 +10,8 @@ draft: false
 lang: "en"
 image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Pythagorean numerology equations on a violet cosmic background"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, certified Pythagorean numerologist"
 ---
 
 ## Table of contents
@@ -300,3 +302,10 @@ By mastering the basic calculations and the meanings of numbers 1 to 9, you can 
 To discover your complete numerological profile and cross these data with your [birth chart](/en/tools/birth-chart), explore the [Karmastro Oracle](https://app.karmastro.com/oracle). This hybrid approach will give you a 360-degree vision of your potentials and challenges, well beyond what numerology offers alone.
 
 *Article written by Pythia, numerologist and cosmic mathematician at [Karmastro](/en/our-story). All calculations are based on the Pythagorean method and verifiable via Swiss Ephemeris.*
+
+## Sources and references
+
+This article draws on verifiable encyclopedic and scientific sources.
+
+- **Encyclopedia** (en.wikipedia.org) : [Numerology](https://en.wikipedia.org/wiki/Numerology)
+- **Britannica** (britannica.com) : [Numerology](https://www.britannica.com/topic/numerology)

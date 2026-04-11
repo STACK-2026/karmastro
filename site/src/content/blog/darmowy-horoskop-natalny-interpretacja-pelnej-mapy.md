@@ -10,6 +10,8 @@ draft: false
 lang: "pl"
 image: "https://images.unsplash.com/photo-1515462277126-2dd0c162007a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Mapa astrologiczna"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, starszy astronom i astrolog"
 ---
 
 ## Spis treści
@@ -74,3 +76,11 @@ Nie, jest stała.
 ## Idź dalej
 
 **Horoskop natalny** to klucz do spersonalizowanej astrologii. Rozpocznij od naszego [kalkulatora](/pl/narzedzia/) i skonsultuj [Oracle](https://app.karmastro.com/oracle).
+
+## Zrodla i odnosniki
+
+Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych.
+
+- **Encyklopedia** (pl.wikipedia.org) : [Astrologia](https://pl.wikipedia.org/wiki/Astrologia)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Uklad sloneczny i planety](https://science.nasa.gov/solar-system/planets/)

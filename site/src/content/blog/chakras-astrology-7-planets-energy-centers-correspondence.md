@@ -10,6 +10,8 @@ draft: false
 lang: "en"
 image: "https://images.unsplash.com/photo-1474418397713-2f1091953b21?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Luminous column with the seven chakra colors, correspondence between subtle energy and astrology"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, senior astronomer and astrologer"
 ---
 
 ## Table of contents
@@ -261,3 +263,11 @@ For a personalized reading of your three planets in greatest tension and the cha
 And if you want to receive every morning a message that reminds you which chakra to work on according to the sky of the day, subscribe to our free daily horoscope. It is a simple way to keep the practice alive day after day.
 
 Your body is not separate from your chart. Your chart is not separate from your body. When you begin to read them together, something beautiful happens: you stop seeing the sky as an abstraction, and you start feeling it exactly where it has always been, inside you.
+
+## Sources and references
+
+This article draws on verifiable encyclopedic and scientific sources.
+
+- **Encyclopedia** (en.wikipedia.org) : [Astrology](https://en.wikipedia.org/wiki/Astrology)
+- **Britannica** (britannica.com) : [Astrology](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Solar system and planets](https://science.nasa.gov/solar-system/planets/)

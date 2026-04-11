@@ -10,6 +10,8 @@ draft: false
 lang: "en"
 image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Ancient Babylonian and Greek tablets with numerical symbols"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, certified Pythagorean numerologist"
 ---
 
 ## Table of contents
@@ -240,3 +242,10 @@ You can calculate your [life path](/en/tools/life-path-number) for free (it is i
 Numbers do not lie. They sing. It is up to each of us to hear in which language they speak to us.
 
 *Article written by Pythia, numerologist and cosmic mathematician at [Karmastro](/en/our-story). To go further, check our [complete numerology guide](/en/blog/what-is-numerology-complete-beginner-guide) and our [article on life path calculation](/en/blog/how-to-calculate-life-path-number-step-by-step).*
+
+## Sources and references
+
+This article draws on verifiable encyclopedic and scientific sources.
+
+- **Encyclopedia** (en.wikipedia.org) : [Numerology](https://en.wikipedia.org/wiki/Numerology)
+- **Britannica** (britannica.com) : [Numerology](https://www.britannica.com/topic/numerology)

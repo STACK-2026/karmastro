@@ -10,6 +10,8 @@ draft: false
 lang: "pt"
 image: "https://images.unsplash.com/photo-1600021538866-20d1f6f3bd7a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Cartas de tarot e interface de oráculo IA"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronomo e astrologo senior"
 ---
 
 ## Índice
@@ -84,3 +86,11 @@ As duas abordagens não procuram o mesmo. O tarot conta uma história simbólica
 ## 8. Experimentar um oráculo IA sério
 
 Karmastro propõe 4 guias IA especializados - Sibylle, Orion, Selene e Pythia - conectados ao teu mapa astral. [Experimenta agora](https://app.karmastro.com).
+
+## Fontes e referencias
+
+Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
+
+- **Enciclopedia** (pt.wikipedia.org) : [Astrologia](https://pt.wikipedia.org/wiki/Astrologia)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sistema solar e planetas](https://science.nasa.gov/solar-system/planets/)

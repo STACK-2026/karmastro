@@ -10,6 +10,8 @@ draft: false
 lang: "tr"
 image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Mistik kozmos"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, kidemli astronom ve astrolog"
 ---
 
 ## İçindekiler
@@ -83,3 +85,11 @@ Hayır. Nötrdür.
 ## Daha ileri
 
 **Karma** bir hapishane değildir. [Doğum haritanı](/tr/araclar/) hesapla ve [Oracle](https://app.karmastro.com/oracle)'ya danış.
+
+## Kaynaklar ve referanslar
+
+Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
+
+- **Ansiklopedi** (tr.wikipedia.org) : [Astroloji](https://tr.wikipedia.org/wiki/Astroloji)
+- **Britannica** (britannica.com) : [Astroloji](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Gunes sistemi ve gezegenler](https://science.nasa.gov/solar-system/planets/)

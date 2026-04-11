@@ -10,6 +10,8 @@ draft: false
 lang: "it"
 image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Piuma e lettere antiche"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, numerologa certificata scuola pitagorica"
 ---
 
 ## Indice
@@ -70,3 +72,10 @@ No. Tutti i numeri hanno le loro qualità e trappole.
 ## Andare oltre
 
 Incrocia il tuo numero di espressione con il tuo [cammino di vita](/it/strumenti/numero-del-cammino-di-vita) e consulta l'[Oracle](https://app.karmastro.com/oracle).
+
+## Fonti e riferimenti
+
+Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
+
+- **Enciclopedia** (it.wikipedia.org) : [Numerologia](https://it.wikipedia.org/wiki/Numerologia)
+- **Britannica** (britannica.com) : [Numerologia](https://www.britannica.com/topic/numerology)

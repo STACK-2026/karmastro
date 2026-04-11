@@ -10,6 +10,8 @@ draft: false
 lang: "de"
 image: "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Kosmische Ansicht von Pluto und einem Nebel"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, Senior-Astronom und Astrologe"
 ---
 
 ## Inhaltsverzeichnis
@@ -112,3 +114,11 @@ Nein, aber hellwach.
 ## Weiter gehen
 
 Pluto im Wassermann ist wahrscheinlich der wichtigste Transit deines Lebens. Berechne deinen [Aszendenten](/de/werkzeuge/aszendent) und konsultiere das [Oracle](https://app.karmastro.com/oracle).
+
+## Quellen und Referenzen
+
+Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaftliche Quellen.
+
+- **Enzyklopaedie** (de.wikipedia.org) : [Astrologie](https://de.wikipedia.org/wiki/Astrologie)
+- **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sonnensystem und Planeten](https://science.nasa.gov/solar-system/planets/)

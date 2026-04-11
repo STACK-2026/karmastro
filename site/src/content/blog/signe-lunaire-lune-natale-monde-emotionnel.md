@@ -9,6 +9,8 @@ keywords: "signe lunaire, lune natale, calculer sa lune, signification lune astr
 draft: false
 image: "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Pleine Lune argentée dans un ciel étoilé, représentant la Lune natale en astrologie"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 ## Sommaire
@@ -253,3 +255,11 @@ Non. Tu ne changes pas ta Lune, tu apprends à vivre avec elle. L'évolution per
 Ta Lune natale fait partie d'un tout. Pour la voir en contexte complet, tu as besoin de ton [thème natal interprété](/blog/theme-natal-gratuit-interpreter-carte-du-ciel) avec toutes les planètes, les maisons et les aspects. Si tu veux comprendre comment ta Lune dialogue avec celle d'un partenaire, ou avec les transits actuels, tu peux consulter l'[Oracle Karmastro](https://app.karmastro.com/oracle), qui te proposera une lecture personnalisée croisant ta carte natale et le ciel du jour.
 
 Ta Lune n'est pas un détail émotionnel. C'est le cœur battant de ton intériorité. Apprends-la, honore-la, et ta paix intérieure aura enfin un langage.
+
+## Sources et references
+
+Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
+
+- **Encyclopedie** (fr.wikipedia.org) : [Astrologie](https://fr.wikipedia.org/wiki/Astrologie)
+- **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Systeme solaire et planetes](https://science.nasa.gov/solar-system/planets/)

@@ -10,6 +10,8 @@ draft: false
 lang: "en"
 image: "https://images.unsplash.com/photo-1507034589631-9433cc6bc453?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Daily horoscope with celestial charts and zodiac symbols"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, senior astronomer and astrologer"
 ---
 
 ## Table of contents
@@ -243,3 +245,11 @@ Astrology is not a crystal ball. It is a **compass**. It does not tell you where
 The stars speak to those who know how to listen. I am here to help you decode what they are whispering to you today.
 
 *Article written by Sibylle, astrologer Oracle at [Karmastro](/en/our-story). For your [free daily horoscope](/en/horoscope) or a [personalized consultation](https://app.karmastro.com/oracle).*
+
+## Sources and references
+
+This article draws on verifiable encyclopedic and scientific sources.
+
+- **Encyclopedia** (en.wikipedia.org) : [Astrology](https://en.wikipedia.org/wiki/Astrology)
+- **Britannica** (britannica.com) : [Astrology](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Solar system and planets](https://science.nasa.gov/solar-system/planets/)

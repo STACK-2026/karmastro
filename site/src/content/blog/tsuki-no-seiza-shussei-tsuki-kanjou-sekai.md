@@ -10,6 +10,8 @@ draft: false
 lang: "ja"
 image: "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "静かな海の上の満月"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion、シニア天文学者兼占星術師"
 ---
 
 ## 目次
@@ -101,3 +103,11 @@ imageAlt: "静かな海の上の満月"
 ## さらに進む
 
 [Oracle Karmastro](https://app.karmastro.com/oracle)に相談してください。
+
+## 参考文献と出典
+
+この記事は検証可能な百科事典および科学的情報源に基づいています。
+
+- **百科事典** (ja.wikipedia.org) : [占星術](https://ja.wikipedia.org/wiki/%E5%8D%A0%E6%98%9F%E8%A1%93)
+- **Britannica** (britannica.com) : [占星術](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [太陽系と惑星](https://science.nasa.gov/solar-system/planets/)

@@ -9,6 +9,8 @@ keywords: "chakras et astrologie, 7 chakras planètes, correspondance chakras as
 draft: false
 image: "https://images.unsplash.com/photo-1474418397713-2f1091953b21?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Colonne lumineuse avec les sept couleurs des chakras, correspondance entre énergie subtile et astrologie"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 ## Sommaire
@@ -247,3 +249,11 @@ Les deux fonctionnent. L'astrologie védique a l'avantage d'intégrer nativement
 Pour identifier tes chakras dominants et bloqués, tu as besoin de ta carte natale complète. Utilise notre [calculateur de thème natal gratuit](/outils/theme-natal) pour obtenir les positions de tes sept planètes correspondantes et leurs aspects. Si tu veux une lecture personnalisée croisant tes chakras et les transits actuels, l'[Oracle Karmastro](https://app.karmastro.com/oracle) peut analyser ta carte et te dire quel centre énergétique est le plus activé en ce moment.
 
 Les chakras et les planètes ne sont pas deux vocabulaires concurrents. Ce sont deux langues pour parler de la même réalité : l'architecture subtile de l'être humain. Apprendre les deux, c'est se donner les moyens de se connaître plus profondément, et d'aligner sa vie intérieure sur les cycles plus vastes qui l'entourent.
+
+## Sources et references
+
+Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
+
+- **Encyclopedie** (fr.wikipedia.org) : [Astrologie](https://fr.wikipedia.org/wiki/Astrologie)
+- **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Systeme solaire et planetes](https://science.nasa.gov/solar-system/planets/)

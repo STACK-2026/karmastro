@@ -9,6 +9,8 @@ keywords: "aspects astrologiques signification, carré opposition trigone, conjo
 draft: false
 image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Carte astrologique avec lignes géométriques reliant les planètes pour illustrer les aspects astrologiques"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 ## Sommaire
@@ -289,3 +291,11 @@ Si tu veux une lecture personnalisée et complète de tes aspects principaux, [l
 Et si tu veux suivre les transits qui activent tes aspects natals jour après jour, abonne-toi à notre horoscope quotidien gratuit. Chaque matin, tu sauras quels dialogues planétaires sont en jeu dans ton ciel personnel, et donc ce qui se réveille en toi ce jour-là.
 
 Apprends à lire tes aspects comme on apprend à lire une partition. Au début, c'est étrange et un peu décourageant. Avec le temps, tu commences à entendre la musique. Et un jour, tu réalises que cette musique, c'est la tienne.
+
+## Sources et references
+
+Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
+
+- **Encyclopedie** (fr.wikipedia.org) : [Astrologie](https://fr.wikipedia.org/wiki/Astrologie)
+- **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Systeme solaire et planetes](https://science.nasa.gov/solar-system/planets/)

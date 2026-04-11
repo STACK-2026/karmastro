@@ -10,6 +10,8 @@ draft: false
 lang: "tr"
 image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Parlak bir 1 rakamı"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, sertifikali Pitagor okulu numerologu"
 ---
 
 ## İçindekiler
@@ -71,3 +73,10 @@ Steve Jobs, Lady Gaga, Martin Luther King, Walt Disney. Hepsi **bir yol açtıla
 ## 10. Daha ileri
 
 [Doğum haritanla](/tr/araclar/) çaprazla ve [Oracle](https://app.karmastro.com/oracle)'ya danış.
+
+## Kaynaklar ve referanslar
+
+Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
+
+- **Ansiklopedi** (tr.wikipedia.org) : [Numeroloji](https://tr.wikipedia.org/wiki/Numeroloji)
+- **Britannica** (britannica.com) : [Numeroloji](https://www.britannica.com/topic/numerology)

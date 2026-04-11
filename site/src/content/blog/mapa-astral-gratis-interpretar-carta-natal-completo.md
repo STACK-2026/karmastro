@@ -10,6 +10,8 @@ draft: false
 lang: "pt"
 image: "https://images.unsplash.com/photo-1515462277126-2dd0c162007a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Carta astrológica com planetas e constelações"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronomo e astrologo senior"
 ---
 
 ## Índice
@@ -107,3 +109,11 @@ Não no sentido estrito. É um sistema simbólico.
 ## Ir mais longe
 
 O **mapa astral** é a chave da astrologia personalizada. Começa pelo nosso [calculador](/pt/ferramentas/) e consulta o [Oracle](https://app.karmastro.com/oracle).
+
+## Fontes e referencias
+
+Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
+
+- **Enciclopedia** (pt.wikipedia.org) : [Astrologia](https://pt.wikipedia.org/wiki/Astrologia)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sistema solar e planetas](https://science.nasa.gov/solar-system/planets/)

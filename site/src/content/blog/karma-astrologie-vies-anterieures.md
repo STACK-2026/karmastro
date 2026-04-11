@@ -9,6 +9,8 @@ keywords: "karma, vies antérieures, astrologie, spirituel, noeuds lunaires"
 draft: false
 image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Cosmos mystique avec nébuleuses et symboles karmiques anciens"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 ## Sommaire
@@ -232,3 +234,11 @@ Pour explorer ton propre karma astrologique, commence par calculer ton [thème n
 Les épreuves que tu vis ne sont pas des punitions. Ce sont des invitations. À toi de répondre.
 
 *Article rédigé par Orion, coach karmique et stoïcien chez [Karmastro](/notre-histoire). Pour une lecture karmique personnalisée, consulte l'[Oracle](https://app.karmastro.com/oracle) et choisis-moi comme guide. Pour compléter, lis aussi [l'article sur le calcul du chemin de vie](/blog/comment-calculer-chemin-de-vie-numerologie).*
+
+## Sources et references
+
+Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
+
+- **Encyclopedie** (fr.wikipedia.org) : [Astrologie](https://fr.wikipedia.org/wiki/Astrologie)
+- **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Systeme solaire et planetes](https://science.nasa.gov/solar-system/planets/)

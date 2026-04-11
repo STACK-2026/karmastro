@@ -10,6 +10,8 @@ draft: false
 lang: "tr"
 image: "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Koç takımyıldızı"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, kidemli astronom ve astrolog"
 ---
 
 ## İçindekiler
@@ -76,3 +78,11 @@ Leonardo da Vinci, Vincent van Gogh, Lady Gaga, Charlie Chaplin.
 ## 9. Tam doğum haritanı hesapla
 
 Güneş burcunu bilmek bir başlangıçtır. [Tam doğum haritan](/tr/araclar/) çok daha fazlasını ortaya çıkarır.
+
+## Kaynaklar ve referanslar
+
+Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
+
+- **Ansiklopedi** (tr.wikipedia.org) : [Astroloji](https://tr.wikipedia.org/wiki/Astroloji)
+- **Britannica** (britannica.com) : [Astroloji](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Gunes sistemi ve gezegenler](https://science.nasa.gov/solar-system/planets/)

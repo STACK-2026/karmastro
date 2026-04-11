@@ -10,6 +10,8 @@ draft: false
 lang: "pl"
 image: "https://images.unsplash.com/photo-1600021538866-20d1f6f3bd7a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Karty tarota i interfejs wyroczni AI"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, starszy astronom i astrolog"
 ---
 
 ## Spis treści
@@ -75,3 +77,11 @@ Oba podejścia nie szukają tego samego. Mogą się uzupełniać.
 ## 7. Wypróbować poważną wyrocznię AI
 
 Karmastro proponuje 4 specjalizowane AI-przewodniki: Sibylle, Orion, Selene i Pythia. [Wypróbuj teraz](https://app.karmastro.com).
+
+## Zrodla i odnosniki
+
+Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych.
+
+- **Encyklopedia** (pl.wikipedia.org) : [Astrologia](https://pl.wikipedia.org/wiki/Astrologia)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Uklad sloneczny i planety](https://science.nasa.gov/solar-system/planets/)

@@ -15,6 +15,8 @@ const blog = defineCollection({
     draft: z.boolean().default(false),
     keywords: z.string().optional(),
     lang: z.string().default("fr"),
+    lastReviewed: z.coerce.date().optional(),
+    reviewedBy: z.string().optional(),
   }),
 });
 

@@ -30,6 +30,8 @@ const { Content } = await render(post);
   slug={post.id}
   keywords={post.data.keywords}
   lang={post.data.lang}
+  lastReviewed={post.data.lastReviewed}
+  reviewedBy={post.data.reviewedBy}
 >
   <Content />
 </BlogLayout>

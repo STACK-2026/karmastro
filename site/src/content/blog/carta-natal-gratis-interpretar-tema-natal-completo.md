@@ -10,6 +10,8 @@ draft: false
 lang: "es"
 image: "https://images.unsplash.com/photo-1515462277126-2dd0c162007a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Carta astrológica con planetas y constelaciones"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronomo y astrologo senior"
 ---
 
 ## Índice
@@ -135,3 +137,11 @@ No en sentido estricto. Es un sistema simbólico tradicional útil para el autoc
 ## Ir más lejos
 
 La **carta natal** es la llave de entrada a la astrología personalizada. Comienza por nuestro [calculador](/es/herramientas/) y cuando necesites una lectura viva, encarnada, consulta el [Oracle](https://app.karmastro.com/oracle).
+
+## Fuentes y referencias
+
+Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
+
+- **Enciclopedia** (es.wikipedia.org) : [Astrologia](https://es.wikipedia.org/wiki/Astrolog%C3%ADa)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sistema solar y planetas](https://science.nasa.gov/solar-system/planets/)

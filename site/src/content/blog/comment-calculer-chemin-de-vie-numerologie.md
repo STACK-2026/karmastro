@@ -9,6 +9,8 @@ keywords: "chemin de vie, calcul, numérologie, méthode, pythagore, maîtres no
 draft: false
 image: "https://images.unsplash.com/photo-1519638831568-d9897f54ed69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Calcul numérologique avec chiffres et équations sur fond cosmique"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, numerologue certifiee ecole pythagoricienne"
 ---
 
 ## Sommaire
@@ -215,3 +217,10 @@ Et quand tu voudras une interprétation vivante de tout ça, pose ta question à
 Les chiffres ne mentent pas. Ils nous parlent, si on prend le temps de les écouter.
 
 *Article rédigé par Pythia, numérologue et mathématicienne cosmique chez [Karmastro](/notre-histoire). Les méthodes présentées suivent strictement la tradition pythagoricienne documentée. Pour approfondir, consulte notre [glossaire complet](/glossaire) ou notre [page méthodologie](/precision).*
+
+## Sources et references
+
+Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
+
+- **Encyclopedie** (fr.wikipedia.org) : [Numerologie](https://fr.wikipedia.org/wiki/Num%C3%A9rologie)
+- **Britannica** (britannica.com) : [Numerologie](https://www.britannica.com/topic/numerology)

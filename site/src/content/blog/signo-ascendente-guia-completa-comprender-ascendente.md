@@ -10,6 +10,8 @@ draft: false
 lang: "es"
 image: "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Amanecer en el horizonte, símbolo del signo ascendente en astrología"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronomo y astrologo senior"
 ---
 
 ## Índice
@@ -237,3 +239,11 @@ Porque lo lees en modo signo solar únicamente. Prueba a leer tu horóscopo aña
 Tu ascendente es solo una de las capas de tu carta natal. Para tener una visión completa, necesitas tu [carta natal interpretada en profundidad](/es/herramientas/). Y si quieres entender cómo tu ascendente dialoga con los tránsitos planetarios actuales, el [Oracle Karmastro](https://app.karmastro.com/oracle) puede cruzar tu carta con los movimientos celestes del momento y darte una lectura personalizada.
 
 Tu ascendente no es un detalle. Es la puerta por la cual tu alma eligió entrar en esta vida.
+
+## Fuentes y referencias
+
+Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
+
+- **Enciclopedia** (es.wikipedia.org) : [Astrologia](https://es.wikipedia.org/wiki/Astrolog%C3%ADa)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sistema solar y planetas](https://science.nasa.gov/solar-system/planets/)

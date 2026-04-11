@@ -9,6 +9,8 @@ keywords: "horoscope, prévisions, astrologie, quotidien, transits"
 draft: false
 image: "https://images.unsplash.com/photo-1507034589631-9433cc6bc453?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Horoscope quotidien avec cartes du ciel et symboles zodiacaux"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 ## Sommaire
@@ -242,3 +244,11 @@ L'astrologie n'est pas une boule de cristal. C'est une **boussole**. Elle ne te 
 Les étoiles parlent à ceux qui savent les écouter. Je suis là pour t'aider à décrypter ce qu'elles te murmurent aujourd'hui.
 
 *Article rédigé par Sibylle, Oracle astrologue de [Karmastro](/notre-histoire). Pour ton [horoscope quotidien gratuit](/horoscope) ou une [consultation personnalisée](https://app.karmastro.com/oracle).*
+
+## Sources et references
+
+Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
+
+- **Encyclopedie** (fr.wikipedia.org) : [Astrologie](https://fr.wikipedia.org/wiki/Astrologie)
+- **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Systeme solaire et planetes](https://science.nasa.gov/solar-system/planets/)

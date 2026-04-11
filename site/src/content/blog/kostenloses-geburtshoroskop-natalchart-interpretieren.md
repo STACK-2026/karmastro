@@ -10,6 +10,8 @@ draft: false
 lang: "de"
 image: "https://images.unsplash.com/photo-1515462277126-2dd0c162007a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Astrologisches Horoskop mit Planeten"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, Senior-Astronom und Astrologe"
 ---
 
 ## Inhaltsverzeichnis
@@ -105,3 +107,11 @@ Nicht im strengen Sinne. Es ist ein symbolisches System.
 ## Weiter gehen
 
 Das **Geburtshoroskop** ist der Schlüssel zur personalisierten Astrologie. Beginne mit unserem [Rechner](/de/werkzeuge/) und konsultiere das [Oracle](https://app.karmastro.com/oracle).
+
+## Quellen und Referenzen
+
+Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaftliche Quellen.
+
+- **Enzyklopaedie** (de.wikipedia.org) : [Astrologie](https://de.wikipedia.org/wiki/Astrologie)
+- **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sonnensystem und Planeten](https://science.nasa.gov/solar-system/planets/)

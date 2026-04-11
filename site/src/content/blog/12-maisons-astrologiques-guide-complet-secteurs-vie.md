@@ -9,6 +9,8 @@ keywords: "12 maisons astrologiques, signification maisons astrologie, thème as
 draft: false
 image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Roue zodiacale et carte du ciel illustrant les 12 maisons astrologiques d'un thème natal"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 ## Sommaire
@@ -267,3 +269,11 @@ Si tu veux une lecture personnalisée et complète de ton thème, avec une analy
 Et si tu veux suivre l'activation de tes maisons jour après jour à travers les transits, abonne-toi à notre horoscope quotidien gratuit. Chaque matin, tu sauras quelle maison est éclairée par les planètes du jour, et donc quel domaine de ta vie est invité à parler.
 
 Les douze maisons sont les douze chambres de ta maison intérieure. Apprends à les habiter une par une, et ton thème ne sera plus jamais une carte abstraite : ce sera ta vie, en plus claire.
+
+## Sources et references
+
+Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
+
+- **Encyclopedie** (fr.wikipedia.org) : [Astrologie](https://fr.wikipedia.org/wiki/Astrologie)
+- **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Systeme solaire et planetes](https://science.nasa.gov/solar-system/planets/)

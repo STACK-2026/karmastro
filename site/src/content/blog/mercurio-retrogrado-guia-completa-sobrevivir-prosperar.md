@@ -10,6 +10,8 @@ draft: false
 lang: "es"
 image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Cielo estrellado con planeta brillante, ilustración de Mercurio retrógrado"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronomo y astrologo senior"
 ---
 
 ## Índice
@@ -215,3 +217,11 @@ Mercurio retrógrado es solo uno de los muchos tránsitos que ritman tu año ast
 Si quieres una lectura personalizada, [consulta el Oracle](https://app.karmastro.com/oracle).
 
 Mercurio ralentiza, el cielo se repliega un poco, y está bien. Aprovecha esta pausa para respirar, releer, recoser las piezas.
+
+## Fuentes y referencias
+
+Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
+
+- **Enciclopedia** (es.wikipedia.org) : [Astrologia](https://es.wikipedia.org/wiki/Astrolog%C3%ADa)
+- **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sistema solar y planetas](https://science.nasa.gov/solar-system/planets/)

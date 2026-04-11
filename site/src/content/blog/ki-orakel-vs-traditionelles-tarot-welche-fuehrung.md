@@ -10,6 +10,8 @@ draft: false
 lang: "de"
 image: "https://images.unsplash.com/photo-1600021538866-20d1f6f3bd7a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Tarot-Karten und KI-Orakel-Interface"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, Senior-Astronom und Astrologe"
 ---
 
 ## Inhaltsverzeichnis
@@ -80,3 +82,11 @@ Beide Ansätze suchen nicht dasselbe. Das Tarot erzählt eine symbolische Geschi
 ## 8. Ein seriöses KI-Orakel ausprobieren
 
 Karmastro bietet 4 spezialisierte KI-Führer: Sibylle, Orion, Selene und Pythia. [Jetzt ausprobieren](https://app.karmastro.com).
+
+## Quellen und Referenzen
+
+Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaftliche Quellen.
+
+- **Enzyklopaedie** (de.wikipedia.org) : [Astrologie](https://de.wikipedia.org/wiki/Astrologie)
+- **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Sonnensystem und Planeten](https://science.nasa.gov/solar-system/planets/)

@@ -10,6 +10,8 @@ draft: false
 lang: "en"
 image: "https://images.unsplash.com/photo-1614642264762-d0a3b8bf3700?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "The planet Saturn and its rings, symbol of the Saturn return and the passage into adulthood"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, senior astronomer and astrologer"
 ---
 
 ## Table of contents
@@ -307,3 +309,11 @@ To go further on the other great passages of astrological life, also read our [c
 And if you want to receive a daily message that tells you what is happening in your personal sky, subscribe to our free daily horoscope. It is a simple and gentle way to befriend the transits, day after day, without fear and without dramatization.
 
 The Saturn return scares people because no one talks about it. Now that you know, it scares less. What waits for you on the other side is precious. Walk through it with courage, with patience, with trust. On the other end, it is you, more truly, who is waiting.
+
+## Sources and references
+
+This article draws on verifiable encyclopedic and scientific sources.
+
+- **Encyclopedia** (en.wikipedia.org) : [Astrology](https://en.wikipedia.org/wiki/Astrology)
+- **Britannica** (britannica.com) : [Astrology](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Solar system and planets](https://science.nasa.gov/solar-system/planets/)

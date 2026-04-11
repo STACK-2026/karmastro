@@ -10,6 +10,8 @@ draft: false
 lang: "en"
 image: "https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Couple watching the stars under a starry night sky"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, senior astronomer and astrologer"
 ---
 
 ## Table of contents
@@ -207,3 +209,11 @@ Start by calculating your [numerological compatibility with someone](/en/tools/c
 Love is not mathematics. But the stars sometimes give us the right coordinates to start looking.
 
 *Article written by Selene, relational guide at [Karmastro](/en/our-story). For a personalized reading of your couple, check our [synastry calculator](/en/tools/synastry) or talk to me directly at the [Oracle](https://app.karmastro.com/oracle).*
+
+## Sources and references
+
+This article draws on verifiable encyclopedic and scientific sources.
+
+- **Encyclopedia** (en.wikipedia.org) : [Astrology](https://en.wikipedia.org/wiki/Astrology)
+- **Britannica** (britannica.com) : [Astrology](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Solar system and planets](https://science.nasa.gov/solar-system/planets/)

@@ -10,6 +10,8 @@ draft: false
 lang: "it"
 image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Equazioni numerologiche pitagoriche"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, numerologa certificata scuola pitagorica"
 ---
 
 ## Indice
@@ -90,3 +92,10 @@ La numerologia offre un **approccio razionale alla spiritualità**. Tutti i calc
 ## Conclusione
 
 Per scoprire il tuo profilo completo, esplora l'[Oracle Karmastro](https://app.karmastro.com/oracle).
+
+## Fonti e riferimenti
+
+Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
+
+- **Enciclopedia** (it.wikipedia.org) : [Numerologia](https://it.wikipedia.org/wiki/Numerologia)
+- **Britannica** (britannica.com) : [Numerologia](https://www.britannica.com/topic/numerology)

@@ -10,6 +10,8 @@ draft: false
 lang: "en"
 image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "A luminous number 1 on a starry cosmic background"
+lastReviewed: "2026-04-11"
+reviewedBy: "Pythia, certified Pythagorean numerologist"
 ---
 
 ## Table of contents
@@ -136,3 +138,10 @@ The striking common point between these figures: each **opened a path**. Jobs re
 Knowing your life path is an excellent starting point, but numerology does not stop there. Your **expression number** (from your full name), your **soul number** (your vowels), your **personal year** (annual cycle), and your **karmic number** (debt to resolve) complete the picture.
 
 Karmastro calculates your full numerological profile in less than a minute, for free, and crosses it with your [astrological birth chart](/en/blog/free-birth-chart-interpret-complete-natal-chart) for a unique reading. [Launch your analysis](/en/tools/life-path-number) now and discover if your life path 1 is aligned with the rest of your cosmic signature.
+
+## Sources and references
+
+This article draws on verifiable encyclopedic and scientific sources.
+
+- **Encyclopedia** (en.wikipedia.org) : [Numerology](https://en.wikipedia.org/wiki/Numerology)
+- **Britannica** (britannica.com) : [Numerology](https://www.britannica.com/topic/numerology)

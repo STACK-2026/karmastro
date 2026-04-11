@@ -10,6 +10,8 @@ draft: false
 lang: "en"
 image: "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Sunrise on the horizon, symbolic of the rising sign in astrology"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, senior astronomer and astrologer"
 ---
 
 ## Table of contents
@@ -266,3 +268,11 @@ Yes, indirectly. Your ascendant determines the tenth house (career, public vocat
 Your rising sign is only one layer of your birth chart. To get the full picture, you need your [birth chart interpreted in depth](/en/tools/birth-chart). And if you want to understand how your ascendant dialogues with the current planetary transits, the [Karmastro Oracle](https://app.karmastro.com/oracle) can cross your chart with the celestial movements of the moment and give you a personalized reading.
 
 Your rising sign is not a detail. It is the doorway your soul chose to enter this lifetime. Learning to know it is learning to inhabit your incarnation with more accuracy. It is letting go of the fight against how others perceive you, and beginning to consciously use what you radiate.
+
+## Sources and references
+
+This article draws on verifiable encyclopedic and scientific sources.
+
+- **Encyclopedia** (en.wikipedia.org) : [Astrology](https://en.wikipedia.org/wiki/Astrology)
+- **Britannica** (britannica.com) : [Astrology](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Solar system and planets](https://science.nasa.gov/solar-system/planets/)

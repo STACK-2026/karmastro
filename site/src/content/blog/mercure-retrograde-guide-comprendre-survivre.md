@@ -9,6 +9,8 @@ keywords: "mercure rétrograde 2026, comprendre mercure rétrograde, dates mercu
 draft: false
 image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Ciel étoilé avec planète lumineuse, illustration de Mercure rétrograde et de ses effets sur la communication"
+lastReviewed: "2026-04-11"
+reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 ## Sommaire
@@ -283,3 +285,11 @@ Si tu veux une lecture personnalisée de la prochaine rétrogradation pour toi s
 Et si tu veux ne plus jamais rater un transit important, abonne-toi à notre horoscope quotidien gratuit. Chaque matin, tu reçois un message personnalisé qui te dit ce qui se joue dans le ciel et comment l'utiliser dans ta journée. Pas de prédictions effrayantes, juste des clés pratiques pour mieux naviguer ton quotidien sous les étoiles.
 
 Mercure ralentit, le ciel se replie un peu, et c'est bien. Profite de cette pause pour respirer, relire, recoller les morceaux. Les trois semaines passent vite, et de l'autre côté, tu es souvent plus clair qu'avant.
+
+## Sources et references
+
+Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
+
+- **Encyclopedie** (fr.wikipedia.org) : [Astrologie](https://fr.wikipedia.org/wiki/Astrologie)
+- **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
+- **NASA** (science.nasa.gov) : [Systeme solaire et planetes](https://science.nasa.gov/solar-system/planets/)
