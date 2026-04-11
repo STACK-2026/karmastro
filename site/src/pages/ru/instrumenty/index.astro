@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Бесплатные Калькуляторы Астрологии и Нумерологии | Karmastro";
+const description =
+  "Бесплатные калькуляторы астрологии и нумерологии: число жизненного пути, восходящий знак, совместимость зодиака, натальная карта, личный год, кармический долг. Точные, глубокие, построенные на Swiss Ephemeris.";
+
+type Tool = { slug: string; title: string; desc: string; category: "Астрология" | "Нумерология"; icon: string };
+
+const TOOLS: Tool[] = [
+  { slug: "chislo-zhiznennogo-puti", title: "Число Жизненного Пути", desc: "Центральная цифра в пифагорейской нумерологии. Раскрывает твою миссию, врождённые дары и кармические уроки.", category: "Нумерология", icon: "1" },
+  { slug: "voskhodyaschiy-znak", title: "Калькулятор Восходящего Знака", desc: "Открой свой асцендент: маску, которую ты носишь, первое впечатление, которое ты оставляешь, как мир видит тебя.", category: "Астрология", icon: "↗" },
+];
+
+const FALLBACK_TOOLS: { slug: string; title: string; desc: string; category: "Астрология" | "Нумерология"; icon: string }[] = [
+  { slug: "natalnaya-karta", title: "Полная Натальная Карта", desc: "Твоя натальная карта с 10 планетами, 12 домами и главными аспектами. Доступно в Оракуле.", category: "Астрология", icon: "☉" },
+  { slug: "sovmestimost", title: "Совместимость Зодиака", desc: "Проверь любовь, дружбу, работу и кармическую совместимость между двумя знаками.", category: "Астрология", icon: "♥" },
+  { slug: "sinastriya", title: "Синастрия", desc: "Сравни две полные натальные карты, чтобы увидеть реальную химию между двумя людьми.", category: "Астрология", icon: "∞" },
+  { slug: "tranzity", title: "Ежедневные Транзиты", desc: "Планеты в движении сейчас и как они влияют на твою натальную карту.", category: "Астрология", icon: "◉" },
+  { slug: "chislo-vyrazheniya", title: "Число Выражения", desc: "Также называется числом судьбы. Рассчитывается из полного имени при рождении.", category: "Нумерология", icon: "A" },
+  { slug: "lichnyy-god", title: "Личный Год", desc: "Каждый год несёт определённую нумерологическую тему. Открой свой и настройся с его энергией.", category: "Нумерология", icon: "★" },
+  { slug: "karmicheskiy-dolg", title: "Кармический Долг", desc: "Открой, несёшь ли ты долги 13/4, 14/5, 16/7 или 19/1, унаследованные из прошлых жизней.", category: "Нумерология", icon: "∴" },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Бесплатные Калькуляторы Астрологии и Нумерологии",
+    description,
+    url: "https://karmastro.com/ru/instrumenty",
+    inLanguage: "ru",
+    hasPart: TOOLS.map((t) => ({
+      "@type": "WebApplication",
+      name: t.title,
+      url: `https://karmastro.com/ru/instrumenty/${t.slug}`,
+      applicationCategory: "UtilitiesApplication",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Главная", item: "https://karmastro.com/ru" },
+      { "@type": "ListItem", position: 2, name: "Инструменты", item: "https://karmastro.com/ru/instrumenty" },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/ru" class="hover:text-amber-300">Главная</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Инструменты</span>
+    </nav>
+
+    <header class="text-center mb-12">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Бесплатные Инструменты</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Калькуляторы Астрологии и Нумерологии</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Инструменты, построенные с той же точностью, которую использовал бы профессиональный астролог. Без наполнителей, без случайных чисел, без барьеров: только математика и ясная интерпретация.
+      </p>
+    </header>
+
+    <section class="mb-12">
+      <h2 class="font-serif text-2xl text-amber-300 mb-4 flex items-center gap-3">
+        <span class="text-3xl">✦</span> Доступны на русском
+      </h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        {TOOLS.map((t) => (
+          <a href={`/ru/instrumenty/${t.slug}`} class="group p-5 rounded-2xl border border-amber-300/30 bg-amber-300/5 hover:border-amber-300/60 hover:bg-amber-300/10 transition-all">
+            <div class="flex items-start gap-3 mb-2">
+              <span class="text-3xl text-amber-300">{t.icon}</span>
+              <h3 class="font-serif text-lg text-white group-hover:text-amber-300 transition-colors">{t.title}</h3>
+            </div>
+            <p class="text-sm text-white/60 leading-relaxed">{t.desc}</p>
+            <p class="text-xs text-amber-300 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">Открыть →</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="font-serif text-2xl text-white/80 mb-4 flex items-center gap-3">
+        <span class="text-3xl">◑</span> Больше инструментов в Оракуле
+      </h2>
+      <p class="text-sm text-white/60 mb-5 leading-relaxed">
+        Эти инструменты доступны в приложении Оракула на русском. Независимые русские версии появятся скоро.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+        {FALLBACK_TOOLS.map((t) => (
+          <a href="https://app.karmastro.com/oracle?lang=ru" class="group p-5 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-purple-300/40 hover:bg-purple-300/5 transition-all">
+            <div class="flex items-start gap-3 mb-2">
+              <span class="text-3xl text-purple-300">{t.icon}</span>
+              <h3 class="font-serif text-lg text-white group-hover:text-purple-300 transition-colors">{t.title}</h3>
+            </div>
+            <p class="text-sm text-white/60 leading-relaxed">{t.desc}</p>
+            <p class="text-xs text-purple-300 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">Открыть в Оракуле →</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="prose prose-invert max-w-none mb-12">
+      <h2 class="font-serif text-3xl mb-4">Почему эти калькуляторы?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Интернет полон калькуляторов астрологии и нумерологии, которые возвращают расплывчатые, общие или просто неправильные результаты. Мы создали наши, чтобы делать обратное. Каждый инструмент использует <strong>точную математику</strong>, которую профессиональные астрологи и нумерологи использовали на протяжении веков.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Все инструменты бесплатны</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Да, действительно. Без пробной версии, без кредитной карты, без «зарегистрируйся, чтобы разблокировать». Мы построили Karmastro на убеждении, что космические инструменты, которые помогали людям тысячи лет, должны быть свободно доступны.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center">
+      <h3 class="font-serif text-xl mb-2">Хочешь персональное чтение?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Эти калькуляторы дают тебе данные. Для полного чтения, которое пересекает твою астрологию и нумерологию с персональным руководством, обратись к Оракулу Karmastro.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=ru" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Обратиться к Оракулу бесплатно
+      </a>
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "حاسبات مجانية للتنجيم وعلم الأعداد | Karmastro";
+const description =
+  "حاسبات مجانية للتنجيم وعلم الأعداد: رقم مسار الحياة، الطالع، توافق الأبراج، خريطة الميلاد، السنة الشخصية، الدين الكارمي. دقيقة، معمقة، مبنية على Swiss Ephemeris.";
+
+type Tool = { slug: string; title: string; desc: string; category: "التنجيم" | "علم الأعداد"; icon: string };
+
+const TOOLS: Tool[] = [
+  { slug: "raqm-masar-al-hayat", title: "رقم مسار الحياة", desc: "الرقم المركزي في علم الأعداد الفيثاغوري. يكشف عن مهمتك، ومواهبك الفطرية، والدروس الكارمية.", category: "علم الأعداد", icon: "1" },
+  { slug: "al-taaali", title: "حاسبة الطالع", desc: "اكتشف طالعك: القناع الذي ترتديه، الانطباع الأول الذي تتركه، كيف يراك العالم.", category: "التنجيم", icon: "↗" },
+];
+
+const FALLBACK_TOOLS: { slug: string; title: string; desc: string; category: "التنجيم" | "علم الأعداد"; icon: string }[] = [
+  { slug: "khariat-al-milad", title: "خريطة الميلاد الكاملة", desc: "خريطة ميلادك مع 10 كواكب و12 بيتًا والجوانب الرئيسية. متاحة في العراف.", category: "التنجيم", icon: "☉" },
+  { slug: "tawafuq", title: "توافق الأبراج", desc: "تحقق من الحب والصداقة والعمل والتوافق الكارمي بين برجين.", category: "التنجيم", icon: "♥" },
+  { slug: "sinasteriya", title: "السيناستري", desc: "قارن خريطتي ميلاد كاملتين لرؤية الكيمياء الحقيقية بين شخصين.", category: "التنجيم", icon: "∞" },
+  { slug: "al-mrour", title: "العبور اليومي", desc: "الكواكب المتحركة الآن وكيف تؤثر على خريطة ميلادك.", category: "التنجيم", icon: "◉" },
+  { slug: "raqm-at-taabiir", title: "رقم التعبير", desc: "يسمى أيضًا رقم القدر. محسوب من اسم الميلاد الكامل.", category: "علم الأعداد", icon: "A" },
+  { slug: "as-sana-ash-shakhsia", title: "السنة الشخصية", desc: "كل سنة تحمل موضوعًا عدديًا محددًا. اكتشف سنتك وتناغم مع طاقتها.", category: "علم الأعداد", icon: "★" },
+  { slug: "ad-dayn-al-karmi", title: "الدين الكارمي", desc: "اكتشف ما إذا كنت تحمل ديون 13/4 أو 14/5 أو 16/7 أو 19/1 الموروثة من حيوات سابقة.", category: "علم الأعداد", icon: "∴" },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "حاسبات مجانية للتنجيم وعلم الأعداد",
+    description,
+    url: "https://karmastro.com/ar/adawat",
+    inLanguage: "ar",
+    hasPart: TOOLS.map((t) => ({
+      "@type": "WebApplication",
+      name: t.title,
+      url: `https://karmastro.com/ar/adawat/${t.slug}`,
+      applicationCategory: "UtilitiesApplication",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "الرئيسية", item: "https://karmastro.com/ar" },
+      { "@type": "ListItem", position: 2, name: "الأدوات", item: "https://karmastro.com/ar/adawat" },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-4xl mx-auto px-4 py-12" dir="rtl">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/ar" class="hover:text-amber-300">الرئيسية</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">الأدوات</span>
+    </nav>
+
+    <header class="text-center mb-12">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">أدوات مجانية</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">حاسبات التنجيم وعلم الأعداد</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        أدوات مبنية بنفس الدقة التي سيستخدمها منجم محترف. بدون حشو، بدون أرقام عشوائية، بدون حواجز: فقط الرياضيات وتفسير واضح.
+      </p>
+    </header>
+
+    <section class="mb-12">
+      <h2 class="font-serif text-2xl text-amber-300 mb-4 flex items-center gap-3">
+        <span class="text-3xl">✦</span> متاحة بالعربية
+      </h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        {TOOLS.map((t) => (
+          <a href={`/ar/adawat/${t.slug}`} class="group p-5 rounded-2xl border border-amber-300/30 bg-amber-300/5 hover:border-amber-300/60 hover:bg-amber-300/10 transition-all">
+            <div class="flex items-start gap-3 mb-2">
+              <span class="text-3xl text-amber-300">{t.icon}</span>
+              <h3 class="font-serif text-lg text-white group-hover:text-amber-300 transition-colors">{t.title}</h3>
+            </div>
+            <p class="text-sm text-white/60 leading-relaxed">{t.desc}</p>
+            <p class="text-xs text-amber-300 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">افتح ←</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="font-serif text-2xl text-white/80 mb-4 flex items-center gap-3">
+        <span class="text-3xl">◑</span> المزيد من الأدوات في العراف
+      </h2>
+      <p class="text-sm text-white/60 mb-5 leading-relaxed">
+        هذه الأدوات متاحة في تطبيق العراف بالعربية. إصدارات عربية مستقلة قريبًا.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+        {FALLBACK_TOOLS.map((t) => (
+          <a href="https://app.karmastro.com/oracle?lang=ar" class="group p-5 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-purple-300/40 hover:bg-purple-300/5 transition-all">
+            <div class="flex items-start gap-3 mb-2">
+              <span class="text-3xl text-purple-300">{t.icon}</span>
+              <h3 class="font-serif text-lg text-white group-hover:text-purple-300 transition-colors">{t.title}</h3>
+            </div>
+            <p class="text-sm text-white/60 leading-relaxed">{t.desc}</p>
+            <p class="text-xs text-purple-300 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">افتح في العراف ←</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="prose prose-invert max-w-none mb-12">
+      <h2 class="font-serif text-3xl mb-4">لماذا هذه الحاسبات؟</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        الإنترنت مليء بحاسبات التنجيم وعلم الأعداد التي تعيد نتائج غامضة أو عامة أو خاطئة ببساطة. لقد بنينا حاسباتنا لفعل العكس. كل أداة تستخدم <strong>الرياضيات الدقيقة</strong> التي استخدمها المنجمون والعدديون المحترفون لقرون.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">جميع الأدوات مجانية</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        نعم، حقًا. بدون تجربة، بدون بطاقة ائتمان، بدون «سجل لإلغاء القفل». لقد بنينا Karmastro على الاعتقاد بأن الأدوات الكونية التي ساعدت الناس لآلاف السنين يجب أن تكون متاحة بحرية.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center">
+      <h3 class="font-serif text-xl mb-2">هل تريد قراءة شخصية؟</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        هذه الحاسبات تعطيك البيانات. للحصول على قراءة كاملة تعبر تنجيمك وعلم أعدادك مع إرشاد شخصي، استشر عراف Karmastro.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=ar" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        استشر العراف مجانًا
+      </a>
+    </div>
+  </article>
+</BaseLayout>

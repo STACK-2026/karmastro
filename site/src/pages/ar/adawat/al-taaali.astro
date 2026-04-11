@@ -1,0 +1,251 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "حاسبة الطالع - ما هو طالعي؟ | Karmastro";
+const description =
+  "ما هو طالعي؟ احسب طالعك مجانًا مع حاسبة التنجيم الدقيقة. اكتشف معنى طالعك، وكيف يشكل شخصيتك، وكيف يختلف عن برجك الشمسي.";
+
+type RisingMeaning = { title: string; ruler: string; summary: string; appearance: string; firstImpression: string; shadow: string };
+
+const MEANINGS: Record<string, RisingMeaning> = {
+  aries: { title: "طالع الحمل", ruler: "يحكمه المريخ · نار", summary: "أنت تدخل كل غرفة كأنك رصاصة بداية. طالع الحمل يحمل اندفاعًا لا لبس فيه، صراحة يشعر بها الآخرون قبل أن تنطق بكلمة.", appearance: "ملامح وجه قوية، حاجب أو فك بارز، جسم رياضي، مشي سريع.", firstImpression: "جريء، تنافسي، صادق بشكل منعش، نافد الصبر مع الأحاديث الصغيرة.", shadow: "العدوان عند نفاد الصبر، الميل إلى البدء أكثر من الإنهاء، مزاج سريع." },
+  taurus: { title: "طالع الثور", ruler: "تحكمه الزهرة · أرض", summary: "أنت تتحرك في العالم كنهر بطيء: هادئ، ثابت، من المستحيل الاستعجال. طالع الثور يحمل حضورًا متجذرًا وحسيًا.", appearance: "ملامح ناعمة وجذابة، شفاه ممتلئة، رقبة وأكتاف قوية، حسية طبيعية.", firstImpression: "موثوق، دافئ، متحفظ قليلاً في البداية، حاضر بعمق عندما يثق.", shadow: "عناد متنكر في صورة صبر، مقاومة للتغيير، الميل إلى البقاء في الراحة." },
+  gemini: { title: "طالع الجوزاء", ruler: "يحكمه عطارد · هواء", summary: "أنت من ينعش أي تجمع فورًا. طالع الجوزاء يحمل طاقة زئبقية فضولية.", appearance: "ملامح شبابية بغض النظر عن العمر، يدين معبرتين، عيون سريعة، بنية نحيلة.", firstImpression: "ذكي، ثرثار، فضولي بلا نهاية، الغراء الاجتماعي لأي مجموعة.", shadow: "التشتت، الروابط السطحية، الميل إلى التحدث بدلاً من الاستماع." },
+  cancer: { title: "طالع السرطان", ruler: "يحكمه القمر · ماء", summary: "أنت تحمل قوقعة غير مرئية يشعر بها الناس فورًا. طالع السرطان يتحرك في العالم برادار عاطفي مضبوط على الغرفة.", appearance: "وجه دائري أو قمري، عيون معبرة، بشرة ناعمة، غالبًا انحناء لطيف في الجسم.", firstImpression: "دافئ، راعٍ، خجول قليلاً، الصديق الذي يسأل حقًا كيف حالك.", shadow: "تقلبات المزاج، الانسحاب إلى القوقعة، امتصاص ألم الآخرين حتى يصبح ألمك." },
+  leo: { title: "طالع الأسد", ruler: "تحكمه الشمس · نار", summary: "تدخل والإضاءة تبدو وكأنها تتغير. طالع الأسد يحمل حضورًا مسرحيًا طبيعيًا.", appearance: "شعر كثيف (غالبًا سمة مميزة)، ابتسامة دافئة، وضعية مستقيمة، رشاقة قطية.", firstImpression: "واثق، سخي، مسرحي، من يجعل الجميع يشعرون بأنهم أكثر حيوية.", shadow: "الأنا المتضخمة، الحاجة المستمرة للاهتمام، الفخر الجريح الذي يتجهم بدلاً من التحدث." },
+  virgo: { title: "طالع العذراء", ruler: "يحكمه عطارد · أرض", summary: "أنت تصل إلى كل موقف وأنت بالفعل تجري فحصًا هادئًا للجودة. طالع العذراء يحمل حضورًا متحفظًا وملاحظًا.", appearance: "مظهر مرتب ودقيق، ملامح راقية، يدين أنيقتين، غالبًا أطول أو أنحف من المتوسط.", firstImpression: "متحفظ، مفكر، دقيق، الشخص الذي يقرأ الدليل فعلاً.", shadow: "النقد المفرط للنفس والآخرين، قلق متنكر في صورة كمالية، تحفظ عاطفي يُساء فهمه كبرودة." },
+  libra: { title: "طالع الميزان", ruler: "تحكمه الزهرة · هواء", summary: "أنت من يصفه الناس بالسحر بلا مجهود. طالع الميزان يحمل رشاقة طبيعية، غريزة دبلوماسية.", appearance: "ملامح متناسقة، غمازات، وضعية أنيقة، إحساس بالأسلوب شبه مدروس.", firstImpression: "ساحر، دبلوماسي، أنيق الملبس، من يزيل الصراعات قبل حدوثها.", shadow: "التردد، إرضاء الآخرين، تجنب المحادثات الصعبة للحفاظ على السلام." },
+  scorpio: { title: "طالع العقرب", ruler: "يحكمه بلوتو · ماء", summary: "يشعر الناس بحضورك قبل أن يروك. طالع العقرب يحمل كثافة يستحيل تزييفها ويستحيل إخفاؤها.", appearance: "عيون ثاقبة، حاجب قوي، هالة مغناطيسية، جسم مضغوط قوي.", firstImpression: "مكثف، غامض، حاد الإدراك، من يبدو أنه يعرف أشياء عنك لم تشاركها.", shadow: "الشك، الحاجة للسيطرة، الإبقاء على الضغائن لفترة طويلة بعد انتهاء صلاحيتها." },
+  sagittarius: { title: "طالع القوس", ruler: "يحكمه المشتري · نار", summary: "أنت تتحرك في العالم كأنه ملعبك الشخصي. طالع القوس يحمل طاقة توسعية متفائلة باحثة.", appearance: "أطراف طويلة، وجه مفتوح، رشاقة رياضية، ابتسامة تصل إلى العيون.", firstImpression: "مغامر، فلسفي، مباشر بطريقة ساحرة، من يجعل كل شيء يبدو ممكنًا.", shadow: "قلة اللباقة، القلق، الوعد بأكثر مما يمكنك تقديمه." },
+  capricorn: { title: "طالع الجدي", ruler: "يحكمه زحل · أرض", summary: "أنت تحمل جدية قديمة، حتى وأنت صغير. طالع الجدي يدخل الغرف وهو بالفعل يمسح بنية السلطة عقليًا.", appearance: "بنية عظمية قوية، فك أو حاجب بارز، تعبير متحفظ.", firstImpression: "هادئ، منضبط، طموح بشكل خفي، من يقدم فعلاً ما وعد به.", shadow: "التحفظ العاطفي، إدمان العمل، أخذ الحياة بجدية مفرطة للاستمتاع بها." },
+  aquarius: { title: "طالع الدلو", ruler: "يحكمه أورانوس · هواء", summary: "أنت من لا يستطيع الناس تحديده تمامًا، وهذا هو المقصود. طالع الدلو يحمل طاقة متمردة بهدوء، متجهة إلى المستقبل.", appearance: "ملامح غير عادية أو لافتة، أسلوب مميز، غالبًا طويل، عيون تبدو وكأنها ترى ما وراءك.", firstImpression: "أصلي، فكري، ودود ولكن بعيد قليلاً، من يتحدى افتراضات المجموعة.", shadow: "البرودة العاطفية، التمرد بلا اتجاه، الغطرسة الفكرية." },
+  pisces: { title: "طالع الحوت", ruler: "يحكمه نبتون · ماء", summary: "أنت تدخل الغرف كما يدخل الضباب الوادي: بهدوء، كليًا، من المستحيل الإمساك به. طالع الحوت يحمل حضورًا حالمًا متعاطفًا.", appearance: "ملامح ناعمة، عيون حالمة كبيرة، صوت لطيف، هالة من عالم آخر.", firstImpression: "لطيف، حدسي، فني، من يستمع دون إصدار أحكام.", shadow: "الهروب، امتصاص مشاعر الآخرين حتى الإرهاق، الصعوبة مع الحدود." },
+};
+
+const SIGNS = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "حاسبة الطالع",
+    description,
+    url: "https://karmastro.com/ar/adawat/al-taaali",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "ar",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "214" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "ما هو الطالع؟", acceptedAnswer: { "@type": "Answer", text: "طالعك هو برج الأبراج الذي كان يرتفع على الأفق الشرقي في اللحظة الدقيقة لولادتك. يمثل كيف يراك الآخرون، ومظهرك الجسدي، وردود أفعالك العفوية، والقناع الذي ترتديه عند لقاء أشخاص جدد." } },
+      { "@type": "Question", name: "لماذا أحتاج إلى وقت ميلادي لحساب الطالع؟", acceptedAnswer: { "@type": "Answer", text: "يتغير الطالع كل ساعتين تقريبًا، لذا فإن وقت ميلادك الدقيق ضروري. بدونه، الحساب مستحيل. إذا كنت لا تعرف وقت ميلادك، يمكنك عادة العثور عليه في شهادة ميلادك الرسمية." } },
+      { "@type": "Question", name: "ما الفرق بين البرج الشمسي والطالع؟", acceptedAnswer: { "@type": "Answer", text: "برجك الشمسي هو هويتك الأساسية، النموذج الأولي الذي جئت لتجسده. طالعك هو العدسة التي تعبر من خلالها عن تلك الهوية للعالم. فكر في الشمس كأنها الأغنية التي تغنيها والطالع كأنه الصوت الذي تغني به." } },
+      { "@type": "Question", name: "هل طالعي هو نفسه البرج الصاعد؟", acceptedAnswer: { "@type": "Answer", text: "نعم. الطالع والبرج الصاعد اسمان لنفس الشيء. يستخدم المنجمون كلا المصطلحين بالتبادل." } },
+      { "@type": "Question", name: "هل يمكن أن يتغير طالعي مع مرور الوقت؟", acceptedAnswer: { "@type": "Answer", text: "لا. طالعك ثابت بوقت وتاريخ ومكان ميلادك الدقيق. لن يتغير أبدًا. ما يتغير هو مدى قوة تعبيرك عنه." } },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12" dir="rtl">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/ar" class="hover:text-amber-300">الرئيسية</a>
+      <span class="mx-2">/</span>
+      <a href="/ar/adawat" class="hover:text-amber-300">الأدوات</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">الطالع</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">علم التنجيم الغربي</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">حاسبة الطالع</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        طالعك هو القناع الذي ترتديه، الانطباع الأول الذي تتركه، الطريقة التي يلتقي بها العالم معك. احسب طالعك مجانًا مع وقت ومكان ميلادك الدقيقين.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="rising-form" class="space-y-4">
+        <div>
+          <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">تاريخ الميلاد</label>
+          <input type="date" id="birth-date" name="birth-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <div>
+          <label for="birth-time" class="block text-sm font-medium text-white/80 mb-2">وقت الميلاد الدقيق</label>
+          <input type="time" id="birth-time" name="birth-time" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+          <p class="text-xs text-white/50 mt-1">ضروري. راجع شهادة ميلادك إذا كنت في شك.</p>
+        </div>
+        <div>
+          <label for="birth-place" class="block text-sm font-medium text-white/80 mb-2">مدينة الميلاد</label>
+          <input type="text" id="birth-place" name="birth-place" required placeholder="مثل: القاهرة، مصر" class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white placeholder-white/30 focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          احسب طالعي
+        </button>
+      </form>
+
+      <div id="result-loading" class="mt-6 hidden text-center text-white/70">
+        <div class="text-3xl animate-pulse">✦</div>
+        <p class="mt-2 text-sm">نحسب أفق لحظة ولادتك الدقيقة...</p>
+      </div>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">طالعك</p>
+          <h2 id="result-title" class="text-4xl font-serif text-amber-300 mb-2"></h2>
+          <p id="result-ruler" class="text-sm text-white/60 mb-4"></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">السمات الجسدية</p>
+              <p id="result-appearance" class="text-sm text-white/70 leading-relaxed"></p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">الانطباع الأول</p>
+              <p id="result-impression" class="text-sm text-white/70 leading-relaxed"></p>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">الظل</p>
+            <p id="result-shadow" class="text-sm text-white/80 italic leading-relaxed"></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-center">
+            <a href="https://app.karmastro.com/oracle?lang=ar" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
+              احصل على خريطة ميلادك الكاملة
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="result-error" class="mt-6 hidden p-5 rounded-xl bg-pink-300/10 border border-pink-300/30 text-sm text-white/80">
+        <p>لم نتمكن من حساب طالعك من تلك الإحداثيات. تحقق من مدينة ميلادك.</p>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">ما هو الطالع؟</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        <strong>طالعك</strong>، المعروف أيضًا بـ<strong>البرج الصاعد</strong>، هو برج الأبراج الذي كان يرتفع على الأفق الشرقي في اللحظة الدقيقة لولادتك. بينما يصف برجك الشمسي هويتك الأساسية، يصف طالعك العدسة التي تُعبر من خلالها هذه الهوية. إنه أول شيء يشعر به الناس فيك.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">الطوالع الاثنا عشر</h2>
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
+        {SIGNS.map((s) => {
+          const m = MEANINGS[s];
+          return (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <div class="flex items-baseline gap-3 mb-2">
+                <span class="text-xl font-serif text-amber-300">{m.title}</span>
+              </div>
+              <p class="text-xs text-white/60 leading-relaxed">{m.firstImpression}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">الشمس والقمر والطالع: الثالوث</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pr-5">
+        <li><strong>البرج الشمسي</strong>: هويتك الأساسية، أناك الواعي، النموذج الأولي الذي جئت لتجسده.</li>
+        <li><strong>البرج القمري</strong>: عالمك العاطفي الداخلي، احتياجاتك، ردود أفعالك الغريزية في الخصوصية.</li>
+        <li><strong>الطالع</strong>: قناعك الاجتماعي، كيف يراك الآخرون، جسدك المادي، أسلوبك العفوي.</li>
+      </ul>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">هل تريد خريطة ميلادك الكاملة؟</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        طالعك هو مجرد واحد من الكواكب العشرة والبيوت الاثني عشر في خريطة ميلادك. احصل على القراءة الكاملة مع عراف Karmastro.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=ar" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        احصل على خريطة ميلادي مجانًا
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/ar/adawat" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← جميع الأدوات</a>
+      <a href="/ar/adawat/raqm-masar-al-hayat" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">رقم مسار الحياة</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  const MEANINGS: Record<string, { title: string; ruler: string; summary: string; appearance: string; firstImpression: string; shadow: string }> = {
+    aries: { title: "طالع الحمل", ruler: "المريخ · نار", summary: "أنت تدخل كل غرفة كأنك رصاصة بداية. طالع الحمل يحمل اندفاعًا لا لبس فيه.", appearance: "ملامح وجه قوية، حاجب بارز، جسم رياضي، مشي سريع.", firstImpression: "جريء، تنافسي، صادق بشكل منعش، نافد الصبر.", shadow: "العدوان عند نفاد الصبر، الميل إلى البدء أكثر من الإنهاء." },
+    taurus: { title: "طالع الثور", ruler: "الزهرة · أرض", summary: "أنت تتحرك في العالم كنهر بطيء: هادئ، ثابت. طالع الثور يحمل حضورًا متجذرًا.", appearance: "ملامح ناعمة وجذابة، شفاه ممتلئة، رقبة وأكتاف قوية.", firstImpression: "موثوق، دافئ، متحفظ قليلاً في البداية.", shadow: "عناد متنكر في صورة صبر، مقاومة للتغيير." },
+    gemini: { title: "طالع الجوزاء", ruler: "عطارد · هواء", summary: "أنت من ينعش أي تجمع فورًا. طالع الجوزاء يحمل طاقة فضولية.", appearance: "ملامح شبابية، يدان معبرتان، عيون سريعة، بنية نحيلة.", firstImpression: "ذكي، ثرثار، فضولي بلا نهاية.", shadow: "التشتت، الروابط السطحية، التحدث بدلاً من الاستماع." },
+    cancer: { title: "طالع السرطان", ruler: "القمر · ماء", summary: "أنت تحمل قوقعة غير مرئية يشعر بها الناس فورًا. طالع السرطان يتحرك برادار عاطفي.", appearance: "وجه دائري، عيون معبرة، بشرة ناعمة.", firstImpression: "دافئ، راعٍ، خجول قليلاً.", shadow: "تقلبات المزاج، الانسحاب إلى القوقعة، امتصاص ألم الآخرين." },
+    leo: { title: "طالع الأسد", ruler: "الشمس · نار", summary: "تدخل والإضاءة تبدو وكأنها تتغير. طالع الأسد يحمل حضورًا مسرحيًا طبيعيًا.", appearance: "شعر كثيف، ابتسامة دافئة، وضعية مستقيمة، رشاقة قطية.", firstImpression: "واثق، سخي، مسرحي.", shadow: "الأنا المتضخمة، الحاجة المستمرة للاهتمام، الفخر الجريح." },
+    virgo: { title: "طالع العذراء", ruler: "عطارد · أرض", summary: "أنت تصل إلى كل موقف وأنت بالفعل تجري فحصًا هادئًا للجودة. طالع العذراء متحفظ وملاحظ.", appearance: "مظهر مرتب ودقيق، ملامح راقية، يدان أنيقتان.", firstImpression: "متحفظ، مفكر، دقيق.", shadow: "النقد المفرط، قلق متنكر في كمالية، برودة مظنونة." },
+    libra: { title: "طالع الميزان", ruler: "الزهرة · هواء", summary: "طالع الميزان يحمل رشاقة طبيعية، غريزة دبلوماسية، عينًا للتوازن الجمالي.", appearance: "ملامح متناسقة، غمازات، وضعية أنيقة.", firstImpression: "ساحر، دبلوماسي، أنيق الملبس.", shadow: "التردد، إرضاء الآخرين، تجنب المحادثات الصعبة." },
+    scorpio: { title: "طالع العقرب", ruler: "بلوتو · ماء", summary: "يشعر الناس بحضورك قبل أن يروك. طالع العقرب يحمل كثافة يستحيل تزييفها.", appearance: "عيون ثاقبة، حاجب قوي، هالة مغناطيسية، جسم مضغوط قوي.", firstImpression: "مكثف، غامض، حاد الإدراك.", shadow: "الشك، الحاجة للسيطرة، الضغائن الطويلة." },
+    sagittarius: { title: "طالع القوس", ruler: "المشتري · نار", summary: "أنت تتحرك في العالم كأنه ملعبك الشخصي. طالع القوس يحمل طاقة توسعية.", appearance: "أطراف طويلة، وجه مفتوح، رشاقة رياضية، ابتسامة تصل إلى العيون.", firstImpression: "مغامر، فلسفي، مباشر بطريقة ساحرة.", shadow: "قلة اللباقة، القلق، الوعود المفرطة." },
+    capricorn: { title: "طالع الجدي", ruler: "زحل · أرض", summary: "أنت تحمل جدية قديمة. طالع الجدي يمسح بنية السلطة عقليًا.", appearance: "بنية عظمية قوية، فك بارز، تعبير متحفظ.", firstImpression: "هادئ، منضبط، طموح بشكل خفي.", shadow: "التحفظ العاطفي، إدمان العمل، الجدية المفرطة." },
+    aquarius: { title: "طالع الدلو", ruler: "أورانوس · هواء", summary: "أنت من لا يستطيع الناس تحديده تمامًا، وهذا هو المقصود. طالع الدلو يحمل طاقة متمردة بهدوء.", appearance: "ملامح غير عادية، أسلوب مميز، غالبًا طويل، عيون بعيدة.", firstImpression: "أصلي، فكري، ودود ولكن بعيد قليلاً.", shadow: "البرودة العاطفية، التمرد بلا اتجاه، الغطرسة الفكرية." },
+    pisces: { title: "طالع الحوت", ruler: "نبتون · ماء", summary: "أنت تدخل الغرف كما يدخل الضباب الوادي: بهدوء، كليًا. طالع الحوت يحمل حضورًا حالمًا.", appearance: "ملامح ناعمة، عيون حالمة كبيرة، صوت لطيف.", firstImpression: "لطيف، حدسي، فني، غير حكمي.", shadow: "الهروب، امتصاص مشاعر الآخرين حتى الإرهاق، الصعوبة مع الحدود." },
+  };
+
+  const SIGN_NAMES = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"];
+
+  async function geocode(place: string): Promise<{ lat: number; lon: number } | null> {
+    try {
+      const resp = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(place)}&format=json&limit=1`, { headers: { "Accept-Language": "ar" } });
+      const data = await resp.json();
+      if (!Array.isArray(data) || data.length === 0) return null;
+      return { lat: parseFloat(data[0].lat), lon: parseFloat(data[0].lon) };
+    } catch { return null; }
+  }
+
+  function computeAscendant(date: Date, lat: number, lon: number): string {
+    const jd = date.getTime() / 86400000 + 2440587.5;
+    const T = (jd - 2451545.0) / 36525;
+    const gmst = (280.46061837 + 360.98564736629 * (jd - 2451545.0) + T * T * 0.000387933) % 360;
+    const lst = ((gmst + lon + 360) % 360) * Math.PI / 180;
+    const latRad = lat * Math.PI / 180;
+    const eps = 23.4392911 * Math.PI / 180;
+    const y = -Math.cos(lst);
+    const x = Math.sin(lst) * Math.cos(eps) + Math.tan(latRad) * Math.sin(eps);
+    let asc = Math.atan2(y, x) * 180 / Math.PI;
+    if (asc < 0) asc += 360;
+    return SIGN_NAMES[Math.floor(asc / 30)];
+  }
+
+  const form = document.getElementById("rising-form") as HTMLFormElement;
+  const loadingDiv = document.getElementById("result-loading") as HTMLDivElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+  const errorDiv = document.getElementById("result-error") as HTMLDivElement;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    resultDiv.classList.add("hidden");
+    errorDiv.classList.add("hidden");
+    loadingDiv.classList.remove("hidden");
+
+    const date = (document.getElementById("birth-date") as HTMLInputElement).value;
+    const time = (document.getElementById("birth-time") as HTMLInputElement).value;
+    const place = (document.getElementById("birth-place") as HTMLInputElement).value;
+    if (!date || !time || !place) { loadingDiv.classList.add("hidden"); return; }
+
+    const coords = await geocode(place);
+    if (!coords) { loadingDiv.classList.add("hidden"); errorDiv.classList.remove("hidden"); return; }
+
+    const birthDate = new Date(`${date}T${time}:00Z`);
+    const signKey = computeAscendant(birthDate, coords.lat, coords.lon);
+    const meaning = MEANINGS[signKey];
+
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-ruler") as HTMLElement).textContent = meaning.ruler;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+    (document.getElementById("result-appearance") as HTMLElement).textContent = meaning.appearance;
+    (document.getElementById("result-impression") as HTMLElement).textContent = meaning.firstImpression;
+    (document.getElementById("result-shadow") as HTMLElement).textContent = meaning.shadow;
+
+    loadingDiv.classList.add("hidden");
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>

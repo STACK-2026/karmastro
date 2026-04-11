@@ -1,0 +1,324 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "ライフパスナンバー計算機 - ピタゴラス数秘術 | Karmastro";
+const description =
+  "ピタゴラス数秘術で自分のライフパスナンバーを無料で計算。あなたの使命、才能、課題、12個の数字（マスター数11、22、33を含む）の意味を発見。";
+
+const MEANINGS: Record<number, { title: string; archetype: string; summary: string; qualities: string[]; challenges: string[]; mission: string; famousExamples: string }> = {
+  1: {
+    title: "開拓者",
+    archetype: "孤独な指導者、始める者、新しい道を開く者。",
+    summary: "あなたは従うためではなく、導くために生まれた。ライフパス1は純粋な主導権のエネルギーを運ぶ。あなたが部屋に入ると、何かが変わる。あなたの使命は、その力を支配ではなく創造に変えることだ。",
+    qualities: ["生まれながらのリーダーシップ", "独立", "野心", "勇気", "独創性"],
+    challenges: ["自己中心性", "短気", "孤独", "権威主義", "硬直性"],
+    mission: "押しつぶすことなく導き、固くならずに強くあることを学ぼう。1は新しい地を生み出し、他の人が待っている場所で敢えて行動するためにここにいる。",
+    famousExamples: "ナポレオン・ボナパルト、スティーブ・ジョブズ、マーティン・ルーサー・キング・ジュニア",
+  },
+  2: {
+    title: "外交官",
+    archetype: "調停者、直感的な人、絆を織る者。",
+    summary: "あなたは他の人が音を聞くようにエネルギーを感じる。ライフパス2は平和、調和、結合の道だ。あなたの使命は、この感受性を傷ではなくレーダーとして使うことだ。",
+    qualities: ["外交", "感受性", "共感", "忍耐", "協力"],
+    challenges: ["感情的依存", "優柔不断", "過敏性", "対立回避", "服従"],
+    mission: "優しさは弱さではなく力であることを理解しよう。2は和解するため、他の人が見えないものを見るためにここにいる。",
+    famousExamples: "バラク・オバマ、マドンナ、マハトマ・ガンジー",
+  },
+  3: {
+    title: "芸術家",
+    archetype: "創造的表現、世界の子供、光を与える者。",
+    summary: "あなたはすべてを色、言葉、音楽に変える。ライフパス3は創造的表現の道だ。あなたの使命は、無形のものに形を与え、惜しみなく共有することだ。",
+    qualities: ["創造性", "コミュニケーション", "楽観主義", "カリスマ性", "喜び"],
+    challenges: ["散漫", "浅薄さ", "噂話", "感情的未熟", "逃避"],
+    mission: "深さは喜びを殺さないことを学ぼう。3は表現し、インスピレーションを与え、他の人に世界の美しさを思い出させるためにここにいる。",
+    famousExamples: "デヴィッド・ボウイ、ヒュー・ジャックマン、アレック・ボールドウィン",
+  },
+  4: {
+    title: "建設者",
+    archetype: "方法論的な労働者、建築家、基礎を築く者。",
+    summary: "あなたは他の人が夢見るだけのものを築く。ライフパス4は安定性、構造、持続的な結果の道だ。あなたの使命は、あなたを超えて生き続ける何かを作ることだ。",
+    qualities: ["規律", "信頼性", "忍耐", "忠誠心", "実践的なスキル"],
+    challenges: ["硬直性", "仕事中毒", "頑固さ", "変化への恐れ", "過度の真面目さ"],
+    mission: "構造は自由に奉仕するもので、その逆ではないことを学ぼう。4は規律と配慮で持続するものを築くためにここにいる。",
+    famousExamples: "ビル・ゲイツ、オプラ・ウィンフリー、アーノルド・シュワルツェネッガー",
+  },
+  5: {
+    title: "冒険者",
+    archetype: "自由な精神、旅人、決して止まらない者。",
+    summary: "あなたは他の人が空気を必要とするように自由を必要とする。ライフパス5は変化、経験、個人的自由の道だ。あなたの使命は、動きを知恵に変えることだ。",
+    qualities: ["好奇心", "適応性", "魅力", "多才さ", "変化への勇気"],
+    challenges: ["落ち着きのなさ", "コミットメントの問題", "衝動性", "依存傾向", "散漫なエネルギー"],
+    mission: "方向性のない自由はただの漂流であることを学ぼう。5は目的を持って探検するためにここにいる。",
+    famousExamples: "エイブラハム・リンカーン、アンジェリーナ・ジョリー、ミック・ジャガー",
+  },
+  6: {
+    title: "養育者",
+    archetype: "保護者、教師、他の人をまとめる者。",
+    summary: "あなたはアトラスが世界を背負ったように他の人を背負う。ライフパス6は責任、愛、奉仕の道だ。あなたの使命は、自分を失わずに与えることだ。",
+    qualities: ["養育の本能", "責任", "忠誠心", "教える能力", "創造的な才能"],
+    challenges: ["殉教", "過度の関与", "完璧主義", "自己犠牲", "干渉"],
+    mission: "空のカップからは注げないことを学ぼう。6は愛する人たちの周りで癒し、教え、美を生み出すためにここにいる。",
+    famousExamples: "アルベルト・アインシュタイン、メリル・ストリープ、ジョン・レノン",
+  },
+  7: {
+    title: "探求者",
+    archetype: "神秘的な哲学者、研究者、すべてを問う者。",
+    summary: "あなたは「なぜ」と問いながら生まれた。ライフパス7は知恵、内省、霊的理解の道だ。あなたの使命は、真実を見つけ、学んだことを共有することだ。",
+    qualities: ["深い思考", "直感", "独立", "分析的精神", "霊的意識"],
+    challenges: ["孤立", "冷笑", "過剰分析", "不信", "感情的距離"],
+    mission: "愛のない真実は不毛であることを学ぼう。7は表面の下を掘り、見つけたものを他の人に持ち帰るためにここにいる。",
+    famousExamples: "ニコラ・テスラ、ダイアナ妃、ジョニー・デップ",
+  },
+  8: {
+    title: "戦略家",
+    archetype: "帝国の建設者、戦略家、ビジョンを富に変える者。",
+    summary: "あなたは力に誘惑されることなく力を理解する。ライフパス8は物質的熟達、豊かさ、影響力の道だ。あなたの使命は、あなた自身以上のものに奉仕する何かを築くことだ。",
+    qualities: ["リーダーシップ", "財政的直感", "組織スキル", "持久力", "権威"],
+    challenges: ["貪欲", "仕事中毒", "支配の必要性", "物質主義", "威圧"],
+    mission: "真の力は支配するものではなく、創造するもので測られることを学ぼう。8は誠実さで物質世界を習得するためにここにいる。",
+    famousExamples: "ネルソン・マンデラ、パブロ・ピカソ、ウォーレン・バフェット",
+  },
+  9: {
+    title: "人道主義者",
+    archetype: "古い魂、世界市民、集団に奉仕する者。",
+    summary: "あなたは他の人が学ばなければならないことを知って人生に来る。ライフパス9は普遍的な愛、思いやり、手放しの道だ。あなたの使命は、あなた自身より大きな何かに奉仕することだ。",
+    qualities: ["思いやり", "知恵", "芸術的感受性", "グローバルな視点", "寛大さ"],
+    challenges: ["感情的な離脱", "救世主コンプレックス", "憂鬱", "手放すことの難しさ", "自己正当化"],
+    mission: "降伏は敗北ではなく力であることを学ぼう。9は所有せずに愛し、見返りを期待せずに与えるためにここにいる。",
+    famousExamples: "マザー・テレサ、マハトマ・ガンジー、ジム・キャリー",
+  },
+  11: {
+    title: "預言者（マスター数）",
+    archetype: "霊的な使者、直感的な人、他の人が見えないものを見る者。",
+    summary: "あなたはより高い周波数につながって生まれた。マスター数11は強烈な直感と他の人を目覚めさせる使命を運ぶ。あなたの使命は、インスピレーションを具体的な形に導くことだ。",
+    qualities: ["並外れた直感", "預言的思考", "カリスマ性", "霊的な磁気", "インスピレーションの存在"],
+    challenges: ["神経の緊張", "過敏性", "自己疑念", "不安", "殉教"],
+    mission: "あなたの感受性はあなたの傷ではなくあなたの贈り物であることを学ぼう。11は暗闇を歩く人たちに光をもたらすためにここにいる。",
+    famousExamples: "バラク・オバマ、ミシェル・オバマ、ティム・バートン",
+  },
+  22: {
+    title: "マスタービルダー（マスター数）",
+    archetype: "大きなビジョンの建築家、夢を持続する構造に変える者。",
+    summary: "あなたは不可能を計画に変えることができる。マスター数22は11の霊的直感と4の実践的な力を組み合わせる。あなたの使命は、世界を変える何かを築くことだ。",
+    qualities: ["預言的実用主義", "リーダーシップ", "革新", "持久力", "大規模な思考"],
+    challenges: ["圧倒的なプレッシャー", "完璧主義", "燃え尽き", "独裁的傾向", "疑念による麻痺"],
+    mission: "忍耐は弱さではないことを学ぼう。22は建物、運動、アイデアであれ、精神の記念碑を築くためにここにいる。",
+    famousExamples: "ダライ・ラマ、ポール・マッカートニー、オプラ・ウィンフリー",
+  },
+  33: {
+    title: "宇宙的な癒し手（マスター数）",
+    archetype: "マスターのマスター、無条件の愛を通して癒す者。",
+    summary: "あなたは無私の愛の稀な周波数を持って生まれた。マスター数33は最も稀なライフパスだ。あなたの使命は、見返りを求めずに知恵と思いやりで世界を癒すことだ。",
+    qualities: ["無条件の愛", "教えの才能", "創造的な癒し", "霊的な献身", "神聖な奉仕"],
+    challenges: ["殉教", "感情的な疲労", "完璧主義", "自己忘却", "圧倒的な責任"],
+    mission: "空虚から与えることは与えることではないことを学ぼう。33は犠牲ではなく存在を通して癒すためにここにいる。",
+    famousExamples: "アルベルト・アインシュタイン、ジョン・レノン、メリル・ストリープ",
+  },
+};
+
+const DISPLAY_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "ライフパスナンバー計算機",
+    description,
+    url: "https://karmastro.com/ja/shindan/raifu-pasu-nanbaa",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "ja",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "JPY" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "127" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "ライフパスナンバーの計算方法",
+    description: "誕生日からライフパスナンバーを見つけるためのステップバイステップのピタゴラス方式。",
+    inLanguage: "ja",
+    step: [
+      { "@type": "HowToStep", position: 1, name: "誕生日を書く", text: "DD/MM/YYYY形式で完全な誕生日を書く。例：14/04/1992。" },
+      { "@type": "HowToStep", position: 2, name: "各要素を削減する", text: "日、月、年を別々に数字を合計して削減する。14は1+4=5になる。4月は既に4。1992は1+9+9+2=21、次に2+1=3になる。" },
+      { "@type": "HowToStep", position: 3, name: "削減された値を合計する", text: "3つの削減された値を合計する。例では：5 + 4 + 3 = 12。" },
+      { "@type": "HowToStep", position: 4, name: "最終削減", text: "最終的な合計を1桁に削減する。ただし、マスター数11、22、33はそのまま残る。12は1+2=3になる。あなたのライフパスナンバーは3だ。" },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "ライフパスナンバーとは何ですか？", acceptedAnswer: { "@type": "Answer", text: "ライフパスナンバーはピタゴラス数秘術の中心的な数字です。誕生日から計算され、人生の主な使命、生まれながらの才能、学ぶために来た教訓を明らかにします。占星術の太陽星座の数秘術版です。" } },
+      { "@type": "Question", name: "ライフパスナンバー計算機はどのくらい正確ですか？", acceptedAnswer: { "@type": "Answer", text: "ライフパスナンバーは純粋な数学で計算されるため、数字自体は常に100％正確です。解釈は何千年ものピタゴラス伝統に基づく読み取りです。自己省察のツールであり、決定論的な予測ではありません。" } },
+      { "@type": "Question", name: "ライフパスナンバーは変わることがありますか？", acceptedAnswer: { "@type": "Answer", text: "いいえ。あなたのライフパスナンバーは誕生日によって固定され、決して変わりません。変わるのはあなたがそれをどう表現するかです。" } },
+      { "@type": "Question", name: "マスター数（11、22、33）とは何ですか？", acceptedAnswer: { "@type": "Answer", text: "マスター数11、22、33はピタゴラス数秘術では決して削減されません。倍増された振動とより要求の厳しい使命を運びます。人々の5％未満がマスター数のライフパスを持っています。" } },
+      { "@type": "Question", name: "ライフパスナンバーは太陽星座と同じですか？", acceptedAnswer: { "@type": "Answer", text: "いいえ。太陽星座は占星術から来ており、誕生時の太陽の位置に基づいて人格の核を説明します。ライフパスナンバーは数秘術から来ており、誕生日の削減からあなたの人生の使命を説明します。" } },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/ja" class="hover:text-amber-300">ホーム</a>
+      <span class="mx-2">/</span>
+      <a href="/ja/shindan" class="hover:text-amber-300">診断ツール</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">ライフパスナンバー</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">ピタゴラス数秘術</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">ライフパスナンバー計算機</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        ライフパスナンバーは数秘術で最も重要な数字です。あなたの使命、生まれながらの才能、この存在のカルマの教訓を明らかにします。無料計算、透明なピタゴラス方式、完全な解釈。
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="life-path-form" class="space-y-4">
+        <div>
+          <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">あなたの誕生日</label>
+          <input type="date" id="birth-date" name="birth-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          ライフパスナンバーを計算する
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">あなたのライフパスナンバー</p>
+          <div class="flex items-baseline gap-4 mb-4">
+            <span id="result-number" class="text-7xl font-serif text-amber-300"></span>
+            <span id="result-title" class="text-xl font-serif text-white/90"></span>
+          </div>
+          <p class="text-xs text-white/50 mb-4">計算: <span id="result-calc" class="text-white/70"></span></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">強み</p>
+              <ul id="result-qualities" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">課題</p>
+              <ul id="result-challenges" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">使命</p>
+            <p id="result-mission" class="text-sm text-white/80 italic leading-relaxed"></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-center">
+            <a href="https://app.karmastro.com/oracle?lang=ja" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
+              オラクルで深く掘り下げる
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">ライフパスナンバーとは？</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        あなたの<strong>ライフパスナンバー</strong>は、ピタゴラス数秘術の中心的な数字です。誕生日から計算され、あなたの存在の本質的な使命を明らかにします。占星術の太陽星座の数秘術版と考えてください：あなたのすべての行動を彩る基本的な振動、あなたが体現しに来た原型です。
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        紀元前6世紀の<strong>ピタゴラス</strong>と彼の弟子たちにとって、すべての数字は独自の振動、エネルギーの署名を運んでいました。数字1から9は人間のすべての原型をカバーします。マスター数11、22、33はより稀で、より要求の厳しい周波数を運びます。
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">ライフパスナンバーの計算方法</h2>
+      <div class="p-5 rounded-xl bg-white/[0.03] border border-white/10 mb-6 not-prose">
+        <p class="text-sm text-white/90 mb-3"><strong>例：1992年4月14日</strong></p>
+        <ul class="text-sm text-white/70 space-y-1">
+          <li>日：1 + 4 = 5</li>
+          <li>月：4 = 4</li>
+          <li>年：1 + 9 + 9 + 2 = 21 → 2 + 1 = 3</li>
+          <li>合計：5 + 4 + 3 = <strong class="text-amber-300">12 → 1 + 2 = 3</strong></li>
+        </ul>
+        <p class="text-sm text-white/60 mt-3">ライフパスナンバー = 3（芸術家）</p>
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">9つのライフパス（そして3つのマスター数）</h2>
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
+        {DISPLAY_ORDER.map((n) => {
+          const meaning = MEANINGS[n];
+          return (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <div class="flex items-baseline gap-3 mb-2">
+                <span class="text-3xl font-serif text-amber-300">{n}</span>
+                <span class="text-sm text-white/80 font-medium">{meaning.title}</span>
+              </div>
+              <p class="text-xs text-white/60 leading-relaxed">{meaning.archetype}</p>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">完全な読み取りが欲しいですか？</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        ライフパスナンバーはほんの始まりです。5つの数秘術の数字を完全な出生図と交差させ、パーソナライズされたガイダンスを受けるには、4人の宇宙のガイドの1人と話してください。
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=ja" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        オラクルに無料で相談する
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/ja/shindan" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← すべての診断</a>
+      <a href="/ja/shindan/asendanto" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">アセンダント</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  import { calculateLifePath } from "../../../data/numerology-meanings";
+
+  const MEANINGS_JA: Record<number, { title: string; summary: string; qualities: string[]; challenges: string[]; mission: string }> = {
+    1: { title: "開拓者", summary: "あなたは従うためではなく、導くために生まれた。ライフパス1は純粋な主導権のエネルギーを運ぶ。", qualities: ["生まれながらのリーダーシップ", "独立", "野心", "勇気", "独創性"], challenges: ["自己中心性", "短気", "孤独", "権威主義", "硬直性"], mission: "押しつぶすことなく導き、固くならずに強くあることを学ぼう。" },
+    2: { title: "外交官", summary: "あなたは他の人が音を聞くようにエネルギーを感じる。ライフパス2は平和、調和、結合の道だ。", qualities: ["外交", "感受性", "共感", "忍耐", "協力"], challenges: ["感情的依存", "優柔不断", "過敏性", "対立回避", "服従"], mission: "優しさは弱さではなく力であることを理解しよう。" },
+    3: { title: "芸術家", summary: "あなたはすべてを色、言葉、音楽に変える。ライフパス3は創造的表現の道だ。", qualities: ["創造性", "コミュニケーション", "楽観主義", "カリスマ性", "喜び"], challenges: ["散漫", "浅薄さ", "噂話", "感情的未熟", "逃避"], mission: "深さは喜びを殺さないことを学ぼう。" },
+    4: { title: "建設者", summary: "あなたは他の人が夢見るだけのものを築く。ライフパス4は安定性、構造、持続的な結果の道だ。", qualities: ["規律", "信頼性", "忍耐", "忠誠心", "実践的なスキル"], challenges: ["硬直性", "仕事中毒", "頑固さ", "変化への恐れ", "過度の真面目さ"], mission: "構造は自由に奉仕するもので、その逆ではないことを学ぼう。" },
+    5: { title: "冒険者", summary: "あなたは他の人が空気を必要とするように自由を必要とする。ライフパス5は変化、経験、個人的自由の道だ。", qualities: ["好奇心", "適応性", "魅力", "多才さ", "変化への勇気"], challenges: ["落ち着きのなさ", "コミットメントの問題", "衝動性", "依存傾向", "散漫なエネルギー"], mission: "方向性のない自由はただの漂流であることを学ぼう。" },
+    6: { title: "養育者", summary: "あなたはアトラスが世界を背負ったように他の人を背負う。ライフパス6は責任、愛、奉仕の道だ。", qualities: ["養育の本能", "責任", "忠誠心", "教える能力", "創造的な才能"], challenges: ["殉教", "過度の関与", "完璧主義", "自己犠牲", "干渉"], mission: "空のカップからは注げないことを学ぼう。" },
+    7: { title: "探求者", summary: "あなたは「なぜ」と問いながら生まれた。ライフパス7は知恵、内省、霊的理解の道だ。", qualities: ["深い思考", "直感", "独立", "分析的精神", "霊的意識"], challenges: ["孤立", "冷笑", "過剰分析", "不信", "感情的距離"], mission: "愛のない真実は不毛であることを学ぼう。" },
+    8: { title: "戦略家", summary: "あなたは力に誘惑されることなく力を理解する。ライフパス8は物質的熟達、豊かさ、影響力の道だ。", qualities: ["リーダーシップ", "財政的直感", "組織スキル", "持久力", "権威"], challenges: ["貪欲", "仕事中毒", "支配の必要性", "物質主義", "威圧"], mission: "真の力は支配するものではなく、創造するもので測られることを学ぼう。" },
+    9: { title: "人道主義者", summary: "あなたは他の人が学ばなければならないことを知って人生に来る。ライフパス9は普遍的な愛、思いやり、手放しの道だ。", qualities: ["思いやり", "知恵", "芸術的感受性", "グローバルな視点", "寛大さ"], challenges: ["感情的な離脱", "救世主コンプレックス", "憂鬱", "手放すことの難しさ", "自己正当化"], mission: "降伏は敗北ではなく力であることを学ぼう。" },
+    11: { title: "預言者（マスター数）", summary: "あなたはより高い周波数につながって生まれた。マスター数11は強烈な直感を運ぶ。", qualities: ["並外れた直感", "預言的思考", "カリスマ性", "霊的な磁気", "インスピレーションの存在"], challenges: ["神経の緊張", "過敏性", "自己疑念", "不安", "殉教"], mission: "あなたの感受性はあなたの傷ではなくあなたの贈り物であることを学ぼう。" },
+    22: { title: "マスタービルダー（マスター数）", summary: "あなたは不可能を計画に変えることができる。マスター数22は11の霊的直感と4の実践的な力を組み合わせる。", qualities: ["預言的実用主義", "リーダーシップ", "革新", "持久力", "大規模な思考"], challenges: ["圧倒的なプレッシャー", "完璧主義", "燃え尽き", "独裁的傾向", "疑念による麻痺"], mission: "忍耐は弱さではないことを学ぼう。" },
+    33: { title: "宇宙的な癒し手（マスター数）", summary: "あなたは無私の愛の稀な周波数を持って生まれた。マスター数33は最も稀なライフパスだ。", qualities: ["無条件の愛", "教えの才能", "創造的な癒し", "霊的な献身", "神聖な奉仕"], challenges: ["殉教", "感情的な疲労", "完璧主義", "自己忘却", "圧倒的な責任"], mission: "空虚から与えることは与えることではないことを学ぼう。" },
+  };
+
+  const form = document.getElementById("life-path-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const input = document.getElementById("birth-date") as HTMLInputElement;
+    const value = input.value;
+    if (!value) return;
+
+    const [y, m, d] = value.split("-").map(Number);
+    const result = calculateLifePath(d, m, y);
+    const meaning = MEANINGS_JA[result.number] || MEANINGS_JA[9];
+
+    (document.getElementById("result-number") as HTMLElement).textContent = String(result.number);
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-calc") as HTMLElement).textContent = result.calculation;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+
+    const qualitiesList = document.getElementById("result-qualities") as HTMLElement;
+    qualitiesList.innerHTML = meaning.qualities.map((q) => `<li>✦ ${q}</li>`).join("");
+
+    const challengesList = document.getElementById("result-challenges") as HTMLElement;
+    challengesList.innerHTML = meaning.challenges.map((c) => `<li>◆ ${c}</li>`).join("");
+
+    (document.getElementById("result-mission") as HTMLElement).textContent = meaning.mission;
+
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>

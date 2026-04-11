@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "無料の占星術・数秘術計算機 | Karmastro";
+const description =
+  "無料の占星術・数秘術計算機：ライフパスナンバー、アセンダント、星座相性、出生図、個人年、カルマの負債。正確、詳細、Swiss Ephemerisに基づいて構築。";
+
+type Tool = { slug: string; title: string; desc: string; category: "占星術" | "数秘術"; icon: string };
+
+const TOOLS: Tool[] = [
+  { slug: "raifu-pasu-nanbaa", title: "ライフパスナンバー", desc: "ピタゴラス数秘術の中心的な数字。あなたの使命、生まれながらの才能、カルマの教訓を明らかにする。", category: "数秘術", icon: "1" },
+  { slug: "asendanto", title: "アセンダント計算機", desc: "あなたのアセンダントを発見：つけるマスク、残す第一印象、世界があなたを見る方法。", category: "占星術", icon: "↗" },
+];
+
+const FALLBACK_TOOLS: { slug: string; title: string; desc: string; category: "占星術" | "数秘術"; icon: string }[] = [
+  { slug: "shusshouzu", title: "完全な出生図", desc: "10の惑星、12のハウス、主要アスペクトを含む出生図。オラクルで利用可能。", category: "占星術", icon: "☉" },
+  { slug: "aishou", title: "星座相性", desc: "2つの星座間の愛、友情、仕事、カルマの相性を確認する。", category: "占星術", icon: "♥" },
+  { slug: "shinasutori", title: "シナストリー", desc: "2人の間の本当の化学反応を見るために、2つの完全な出生図を比較する。", category: "占星術", icon: "∞" },
+  { slug: "toranjitto", title: "毎日のトランジット", desc: "今動いている惑星とあなたの出生図への影響。", category: "占星術", icon: "◉" },
+  { slug: "hyougen-nanbaa", title: "表現数", desc: "運命数とも呼ばれる。完全な出生名から計算される。", category: "数秘術", icon: "A" },
+  { slug: "pasonaru-ia", title: "個人年", desc: "毎年特定の数秘術のテーマを運ぶ。自分のを発見し、そのエネルギーに合わせる。", category: "数秘術", icon: "★" },
+  { slug: "karuma-no-fusai", title: "カルマの負債", desc: "過去の人生から受け継いだ13/4、14/5、16/7、19/1の負債を運んでいるか発見する。", category: "数秘術", icon: "∴" },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "無料の占星術・数秘術計算機",
+    description,
+    url: "https://karmastro.com/ja/shindan",
+    inLanguage: "ja",
+    hasPart: TOOLS.map((t) => ({
+      "@type": "WebApplication",
+      name: t.title,
+      url: `https://karmastro.com/ja/shindan/${t.slug}`,
+      applicationCategory: "UtilitiesApplication",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "JPY" },
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "ホーム", item: "https://karmastro.com/ja" },
+      { "@type": "ListItem", position: 2, name: "診断ツール", item: "https://karmastro.com/ja/shindan" },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/ja" class="hover:text-amber-300">ホーム</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">診断ツール</span>
+    </nav>
+
+    <header class="text-center mb-12">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">無料ツール</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">占星術・数秘術計算機</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        プロの占星術師が使用するのと同じ精度で構築されたツール。埋め草なし、ランダムな数字なし、ゲートなし：純粋な数学と明確な解釈のみ。
+      </p>
+    </header>
+
+    <section class="mb-12">
+      <h2 class="font-serif text-2xl text-amber-300 mb-4 flex items-center gap-3">
+        <span class="text-3xl">✦</span> 日本語で利用可能
+      </h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        {TOOLS.map((t) => (
+          <a href={`/ja/shindan/${t.slug}`} class="group p-5 rounded-2xl border border-amber-300/30 bg-amber-300/5 hover:border-amber-300/60 hover:bg-amber-300/10 transition-all">
+            <div class="flex items-start gap-3 mb-2">
+              <span class="text-3xl text-amber-300">{t.icon}</span>
+              <h3 class="font-serif text-lg text-white group-hover:text-amber-300 transition-colors">{t.title}</h3>
+            </div>
+            <p class="text-sm text-white/60 leading-relaxed">{t.desc}</p>
+            <p class="text-xs text-amber-300 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">開く →</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="font-serif text-2xl text-white/80 mb-4 flex items-center gap-3">
+        <span class="text-3xl">◑</span> オラクルでもっとツール
+      </h2>
+      <p class="text-sm text-white/60 mb-5 leading-relaxed">
+        これらのツールはオラクルアプリで日本語で利用できます。独立した日本語版は近日公開予定。
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+        {FALLBACK_TOOLS.map((t) => (
+          <a href="https://app.karmastro.com/oracle?lang=ja" class="group p-5 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-purple-300/40 hover:bg-purple-300/5 transition-all">
+            <div class="flex items-start gap-3 mb-2">
+              <span class="text-3xl text-purple-300">{t.icon}</span>
+              <h3 class="font-serif text-lg text-white group-hover:text-purple-300 transition-colors">{t.title}</h3>
+            </div>
+            <p class="text-sm text-white/60 leading-relaxed">{t.desc}</p>
+            <p class="text-xs text-purple-300 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">オラクルで開く →</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="prose prose-invert max-w-none mb-12">
+      <h2 class="font-serif text-3xl mb-4">なぜこれらの計算機？</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        インターネットは、曖昧で一般的、または単に間違った結果を返す占星術と数秘術の計算機でいっぱいです。私たちは反対のことをするために自分たちのものを作りました。各ツールは、プロの占星術師と数秘術師が何世紀も使用してきた<strong>正確な数学</strong>を使用します。
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">すべてのツールは無料です</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        はい、本当に。試用なし、クレジットカードなし、「ロック解除のために登録」なし。私たちはKarmastroを、何千年も人々を助けてきた宇宙のツールが自由にアクセス可能であるべきだという信念の上に構築しました。
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center">
+      <h3 class="font-serif text-xl mb-2">パーソナライズされた読み取りが欲しいですか？</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        これらの計算機はデータを提供します。占星術と数秘術をパーソナライズされたガイダンスと交差させる完全な読み取りのために、Karmastroオラクルに相談してください。
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=ja" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        オラクルに無料で相談する
+      </a>
+    </div>
+  </article>
+</BaseLayout>

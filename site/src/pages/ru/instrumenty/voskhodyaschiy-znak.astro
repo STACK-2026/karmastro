@@ -1,0 +1,254 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Калькулятор Восходящего Знака - Какой у меня асцендент? | Karmastro";
+const description =
+  "Какой у меня восходящий знак? Рассчитай свой асцендент бесплатно с нашим точным астрологическим калькулятором. Открой, что означает твой восходящий знак и как он формирует твою личность.";
+
+type RisingMeaning = { title: string; ruler: string; summary: string; appearance: string; firstImpression: string; shadow: string };
+
+const MEANINGS: Record<string, RisingMeaning> = {
+  aries: { title: "Восходящий Овен", ruler: "Управляется Марсом · Огонь", summary: "Ты входишь в каждую комнату как стартовый выстрел. Восходящий Овен несёт безошибочный порыв вперёд, прямоту, которую другие чувствуют прежде, чем ты скажешь слово.", appearance: "Выраженные черты лица, выступающая бровь или челюсть, атлетическое телосложение, быстрая походка.", firstImpression: "Смелый, конкурентный, освежающе честный, нетерпеливый к светским беседам.", shadow: "Агрессия при нетерпении, склонность начинать больше, чем заканчиваешь, быстрый темперамент." },
+  taurus: { title: "Восходящий Телец", ruler: "Управляется Венерой · Земля", summary: "Ты движешься по миру как медленная река: спокойный, устойчивый, невозможно торопить. Восходящий Телец несёт укоренённое, чувственное присутствие.", appearance: "Мягкие, привлекательные черты, полные губы, сильная шея и плечи, природная чувственность в осанке и голосе.", firstImpression: "Надёжный, тёплый, поначалу немного сдержанный, глубоко присутствующий, когда доверяет.", shadow: "Упрямство, замаскированное под терпение, сопротивление переменам, склонность застревать в комфорте." },
+  gemini: { title: "Восходящие Близнецы", ruler: "Управляются Меркурием · Воздух", summary: "Ты тот, кто мгновенно оживляет любое собрание. Восходящие Близнецы несут ртутную, любопытную энергию.", appearance: "Юношеские черты независимо от возраста, выразительные руки, быстрые глаза, стройная фигура.", firstImpression: "Остроумный, болтливый, бесконечно любопытный, социальный клей любой группы.", shadow: "Рассеянность, поверхностные связи, склонность говорить вместо того, чтобы слушать." },
+  cancer: { title: "Восходящий Рак", ruler: "Управляется Луной · Вода", summary: "Ты носишь невидимую раковину, которую люди сразу чувствуют. Восходящий Рак движется по миру с эмоциональным радаром, настроенным на комнату.", appearance: "Круглое или лунообразное лицо, выразительные глаза, мягкая кожа, часто мягкий изгиб в теле.", firstImpression: "Тёплый, заботливый, немного застенчивый, друг, который действительно спрашивает, как у тебя дела.", shadow: "Перепады настроения, уход в раковину, поглощение чужой боли до тех пор, пока она не станет собственной." },
+  leo: { title: "Восходящий Лев", ruler: "Управляется Солнцем · Огонь", summary: "Ты входишь, и освещение как будто меняется. Восходящий Лев несёт природное сценическое присутствие, хочешь ты того или нет.", appearance: "Густые волосы (часто характерная черта), тёплая улыбка, прямая осанка, кошачья грация.", firstImpression: "Уверенный, щедрый, театральный, тот, кто заставляет всех чувствовать себя немного более живыми.", shadow: "Раздутое эго, постоянная потребность во внимании, раненая гордость, которая дуется вместо того, чтобы говорить." },
+  virgo: { title: "Восходящая Дева", ruler: "Управляется Меркурием · Земля", summary: "Ты приходишь в каждую ситуацию, уже выполняя тихий контроль качества. Восходящая Дева несёт сдержанное, наблюдательное присутствие.", appearance: "Аккуратный и точный вид, утончённые черты, изящные руки, часто выше или стройнее среднего.", firstImpression: "Сдержанный, вдумчивый, скрупулёзный, человек, который действительно читает инструкцию.", shadow: "Чрезмерная критика себя и других, тревога, замаскированная под перфекционизм, эмоциональная сдержанность, принимаемая за холодность." },
+  libra: { title: "Восходящие Весы", ruler: "Управляются Венерой · Воздух", summary: "Ты тот, кого люди описывают как легко очаровательного. Восходящие Весы несут природную грацию, дипломатический инстинкт.", appearance: "Симметричные черты, ямочки, элегантная осанка, почти изученное чувство стиля.", firstImpression: "Очаровательный, дипломатичный, хорошо одетый, тот, кто сглаживает конфликты до их возникновения.", shadow: "Нерешительность, желание угодить, избегание трудных разговоров ради сохранения мира." },
+  scorpio: { title: "Восходящий Скорпион", ruler: "Управляется Плутоном · Вода", summary: "Люди чувствуют твоё присутствие прежде, чем увидят тебя. Восходящий Скорпион несёт интенсивность, которую невозможно подделать и невозможно скрыть.", appearance: "Пронзительные глаза, сильные брови, магнетическая аура, компактное мощное тело.", firstImpression: "Интенсивный, загадочный, глубоко проницательный, тот, кто, кажется, знает о тебе вещи, которые ты не делился.", shadow: "Подозрительность, потребность в контроле, удержание обид далеко за их срок годности." },
+  sagittarius: { title: "Восходящий Стрелец", ruler: "Управляется Юпитером · Огонь", summary: "Ты движешься по миру, как будто это твоя личная площадка для игр. Восходящий Стрелец несёт расширяющуюся, оптимистичную, искательскую энергию.", appearance: "Длинные конечности, открытое лицо, атлетическая грация, улыбка, которая достигает глаз.", firstImpression: "Авантюрный, философский, прямой в очаровательной манере, тот, кто делает всё возможным.", shadow: "Бестактность, беспокойство, обещание большего, чем можешь выполнить." },
+  capricorn: { title: "Восходящий Козерог", ruler: "Управляется Сатурном · Земля", summary: "Ты несёшь древнюю серьёзность, даже когда молод. Восходящий Козерог входит в комнаты, уже мысленно сканируя структуру власти.", appearance: "Сильная костная структура, выступающая челюсть или бровь, сдержанное выражение.", firstImpression: "Собранный, дисциплинированный, тонко амбициозный, тот, кто действительно выполняет обещанное.", shadow: "Эмоциональная сдержанность, трудоголизм, слишком серьёзное отношение к жизни, чтобы ей наслаждаться." },
+  aquarius: { title: "Восходящий Водолей", ruler: "Управляется Ураном · Воздух", summary: "Ты тот, кого люди не могут точно определить, и в этом суть. Восходящий Водолей несёт тихо мятежную, ориентированную на будущее энергию.", appearance: "Необычные или поразительные черты, отличительный стиль, часто высокий, глаза, которые, кажется, видят за тобой.", firstImpression: "Оригинальный, интеллектуальный, дружелюбный, но слегка отстранённый, тот, кто бросает вызов предположениям группы.", shadow: "Эмоциональная холодность, мятеж без направления, интеллектуальное высокомерие." },
+  pisces: { title: "Восходящие Рыбы", ruler: "Управляются Нептуном · Вода", summary: "Ты входишь в комнаты, как туман входит в долину: тихо, полностью, невозможно ухватить. Восходящие Рыбы несут мечтательное, сострадательное присутствие.", appearance: "Мягкие черты, большие мечтательные глаза, мягкий голос, аура другого мира.", firstImpression: "Мягкий, интуитивный, артистичный, тот, кто слушает без осуждения.", shadow: "Эскапизм, поглощение чужих эмоций до истощения, трудности с границами." },
+};
+
+const SIGNS = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Калькулятор Восходящего Знака",
+    description,
+    url: "https://karmastro.com/ru/instrumenty/voskhodyaschiy-znak",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "ru",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "214" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "Что такое восходящий знак?", acceptedAnswer: { "@type": "Answer", text: "Твой восходящий знак, также называемый асцендентом, — это зодиакальный знак, который восходил на восточном горизонте в точный момент твоего рождения. Он представляет то, как тебя видят другие, твою физическую внешность, твои спонтанные реакции и маску, которую ты носишь при знакомстве с новыми людьми." } },
+      { "@type": "Question", name: "Зачем мне нужно время рождения для расчёта восходящего знака?", acceptedAnswer: { "@type": "Answer", text: "Восходящий знак меняется в среднем каждые два часа, поэтому твоё точное время рождения необходимо. Без него расчёт невозможен. Если ты не знаешь время рождения, обычно его можно найти в официальном свидетельстве о рождении." } },
+      { "@type": "Question", name: "В чём разница между солнечным и восходящим знаком?", acceptedAnswer: { "@type": "Answer", text: "Твой солнечный знак — это твоя основная идентичность, архетип, который ты пришёл воплотить. Твой восходящий знак — это линза, через которую ты выражаешь эту идентичность миру. Думай о Солнце как о песне, которую ты поёшь, и о восходящем знаке как о голосе, которым ты её поёшь." } },
+      { "@type": "Question", name: "Мой восходящий знак — это то же самое, что асцендент?", acceptedAnswer: { "@type": "Answer", text: "Да. Восходящий знак и асцендент — это два названия одного и того же. Астрологи используют оба термина взаимозаменяемо." } },
+      { "@type": "Question", name: "Может ли мой восходящий знак измениться со временем?", acceptedAnswer: { "@type": "Answer", text: "Нет. Твой восходящий знак зафиксирован твоим точным временем, датой и местом рождения. Он никогда не изменится. Меняется то, насколько сильно ты его выражаешь: многие люди врастают в свой восходящий знак с возрастом, особенно после возвращения Сатурна около 29 лет." } },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/ru" class="hover:text-amber-300">Главная</a>
+      <span class="mx-2">/</span>
+      <a href="/ru/instrumenty" class="hover:text-amber-300">Инструменты</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Восходящий знак</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Западная Астрология</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Калькулятор Восходящего Знака</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Твой восходящий знак — это маска, которую ты носишь, первое впечатление, которое ты оставляешь, способ, которым мир встречает тебя. Рассчитай свой асцендент бесплатно с точным временем и местом рождения.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="rising-form" class="space-y-4">
+        <div>
+          <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">Дата рождения</label>
+          <input type="date" id="birth-date" name="birth-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <div>
+          <label for="birth-time" class="block text-sm font-medium text-white/80 mb-2">Точное время рождения</label>
+          <input type="time" id="birth-time" name="birth-time" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+          <p class="text-xs text-white/50 mt-1">Необходимо. Если сомневаешься, посмотри свидетельство о рождении.</p>
+        </div>
+        <div>
+          <label for="birth-place" class="block text-sm font-medium text-white/80 mb-2">Город рождения</label>
+          <input type="text" id="birth-place" name="birth-place" required placeholder="Напр. Москва, Россия" class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white placeholder-white/30 focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          Рассчитать мой восходящий знак
+        </button>
+      </form>
+
+      <div id="result-loading" class="mt-6 hidden text-center text-white/70">
+        <div class="text-3xl animate-pulse">✦</div>
+        <p class="mt-2 text-sm">Рассчитываем горизонт момента твоего рождения...</p>
+      </div>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Твой восходящий знак</p>
+          <h2 id="result-title" class="text-4xl font-serif text-amber-300 mb-2"></h2>
+          <p id="result-ruler" class="text-sm text-white/60 mb-4"></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Физические черты</p>
+              <p id="result-appearance" class="text-sm text-white/70 leading-relaxed"></p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">Первое впечатление</p>
+              <p id="result-impression" class="text-sm text-white/70 leading-relaxed"></p>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">Тень</p>
+            <p id="result-shadow" class="text-sm text-white/80 italic leading-relaxed"></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-center">
+            <a href="https://app.karmastro.com/oracle?lang=ru" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
+              Получить полную натальную карту
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="result-error" class="mt-6 hidden p-5 rounded-xl bg-pink-300/10 border border-pink-300/30 text-sm text-white/80">
+        <p>Не удалось рассчитать твой восходящий знак с этих координат. Проверь город рождения.</p>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Что такое восходящий знак?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Твой <strong>восходящий знак</strong>, также называемый <strong>асцендентом</strong>, — это зодиакальный знак, который восходил на восточном горизонте в точный момент твоего рождения. Пока твой солнечный знак описывает твою основную идентичность, восходящий знак описывает линзу, через которую эта идентичность выражается. Это первое, что люди чувствуют в тебе.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Два человека, родившихся в один день, могут чувствовать себя радикально по-разному при знакомстве, потому что у них разные асценденты. Солнце в Скорпионе с восходящим Львом входит в комнату как артист. Солнце в Скорпионе с восходящей Девой входит как тихий наблюдатель. То же ядро, разные маски.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">12 восходящих знаков</h2>
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
+        {SIGNS.map((s) => {
+          const m = MEANINGS[s];
+          return (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <div class="flex items-baseline gap-3 mb-2">
+                <span class="text-xl font-serif text-amber-300">{m.title}</span>
+              </div>
+              <p class="text-xs text-white/60 leading-relaxed">{m.firstImpression}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Солнце, Луна, Асцендент: троица</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Солнечный знак</strong>: твоя основная идентичность, твоё сознательное эго, архетип, который ты пришёл воплотить.</li>
+        <li><strong>Лунный знак</strong>: твой эмоциональный внутренний мир, твои потребности, инстинктивные реакции в частной жизни.</li>
+        <li><strong>Асцендент</strong>: твоя социальная маска, то, как тебя видят другие, твоё физическое тело, спонтанный стиль.</li>
+      </ul>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Хочешь полную натальную карту?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Твой восходящий знак — это лишь один из 10 планет и 12 домов в твоей натальной карте. Получи полное чтение с Оракулом Karmastro.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=ru" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Получить мою натальную карту бесплатно
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/ru/instrumenty" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Все инструменты</a>
+      <a href="/ru/instrumenty/chislo-zhiznennogo-puti" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Число жизненного пути</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  const MEANINGS: Record<string, { title: string; ruler: string; summary: string; appearance: string; firstImpression: string; shadow: string }> = {
+    aries: { title: "Восходящий Овен", ruler: "Марс · Огонь", summary: "Ты входишь в каждую комнату как стартовый выстрел. Восходящий Овен несёт безошибочный порыв вперёд.", appearance: "Выраженные черты лица, выступающая бровь, атлетическое телосложение, быстрая походка.", firstImpression: "Смелый, конкурентный, освежающе честный, нетерпеливый.", shadow: "Агрессия при нетерпении, склонность начинать больше, чем заканчиваешь." },
+    taurus: { title: "Восходящий Телец", ruler: "Венера · Земля", summary: "Ты движешься по миру как медленная река: спокойный, устойчивый. Восходящий Телец несёт укоренённое присутствие.", appearance: "Мягкие привлекательные черты, полные губы, сильная шея и плечи.", firstImpression: "Надёжный, тёплый, поначалу немного сдержанный.", shadow: "Упрямство, замаскированное под терпение, сопротивление переменам." },
+    gemini: { title: "Восходящие Близнецы", ruler: "Меркурий · Воздух", summary: "Ты тот, кто мгновенно оживляет любое собрание. Восходящие Близнецы несут любопытную энергию.", appearance: "Юношеские черты, выразительные руки, быстрые глаза, стройная фигура.", firstImpression: "Остроумный, болтливый, бесконечно любопытный.", shadow: "Рассеянность, поверхностные связи." },
+    cancer: { title: "Восходящий Рак", ruler: "Луна · Вода", summary: "Ты носишь невидимую раковину. Восходящий Рак движется с эмоциональным радаром.", appearance: "Круглое лицо, выразительные глаза, мягкая кожа.", firstImpression: "Тёплый, заботливый, немного застенчивый.", shadow: "Перепады настроения, уход в раковину, поглощение чужой боли." },
+    leo: { title: "Восходящий Лев", ruler: "Солнце · Огонь", summary: "Ты входишь, и освещение как будто меняется. Восходящий Лев несёт природное сценическое присутствие.", appearance: "Густые волосы, тёплая улыбка, прямая осанка, кошачья грация.", firstImpression: "Уверенный, щедрый, театральный.", shadow: "Раздутое эго, постоянная потребность во внимании, раненая гордость." },
+    virgo: { title: "Восходящая Дева", ruler: "Меркурий · Земля", summary: "Ты приходишь в каждую ситуацию, уже выполняя тихий контроль качества. Восходящая Дева наблюдательна.", appearance: "Аккуратный вид, утончённые черты, изящные руки.", firstImpression: "Сдержанный, вдумчивый, скрупулёзный.", shadow: "Чрезмерная критика, тревога под перфекционизмом, кажущаяся холодность." },
+    libra: { title: "Восходящие Весы", ruler: "Венера · Воздух", summary: "Восходящие Весы несут природную грацию, дипломатический инстинкт, глаз для эстетического равновесия.", appearance: "Симметричные черты, ямочки, элегантная осанка.", firstImpression: "Очаровательный, дипломатичный, хорошо одетый.", shadow: "Нерешительность, желание угодить, избегание трудных разговоров." },
+    scorpio: { title: "Восходящий Скорпион", ruler: "Плутон · Вода", summary: "Люди чувствуют твоё присутствие прежде, чем увидят тебя. Восходящий Скорпион несёт невероятную интенсивность.", appearance: "Пронзительные глаза, сильные брови, магнетическая аура, компактное мощное тело.", firstImpression: "Интенсивный, загадочный, глубоко проницательный.", shadow: "Подозрительность, потребность в контроле, долгие обиды." },
+    sagittarius: { title: "Восходящий Стрелец", ruler: "Юпитер · Огонь", summary: "Ты движешься по миру, как будто это твоя личная площадка. Восходящий Стрелец несёт расширяющуюся энергию.", appearance: "Длинные конечности, открытое лицо, атлетическая грация, улыбка до глаз.", firstImpression: "Авантюрный, философский, прямой в очаровательной манере.", shadow: "Бестактность, беспокойство, чрезмерные обещания." },
+    capricorn: { title: "Восходящий Козерог", ruler: "Сатурн · Земля", summary: "Ты несёшь древнюю серьёзность. Восходящий Козерог мысленно сканирует структуру власти.", appearance: "Сильная костная структура, выступающая челюсть, сдержанное выражение.", firstImpression: "Собранный, дисциплинированный, тонко амбициозный.", shadow: "Эмоциональная сдержанность, трудоголизм, чрезмерная серьёзность." },
+    aquarius: { title: "Восходящий Водолей", ruler: "Уран · Воздух", summary: "Ты тот, кого нельзя точно определить, в этом суть. Восходящий Водолей несёт тихо мятежную энергию.", appearance: "Необычные черты, отличительный стиль, часто высокий, далёкий взгляд.", firstImpression: "Оригинальный, интеллектуальный, дружелюбный, но отстранённый.", shadow: "Эмоциональная холодность, мятеж без направления, интеллектуальное высокомерие." },
+    pisces: { title: "Восходящие Рыбы", ruler: "Нептун · Вода", summary: "Ты входишь в комнаты, как туман в долину: тихо, полностью. Восходящие Рыбы несут мечтательное присутствие.", appearance: "Мягкие черты, большие мечтательные глаза, мягкий голос.", firstImpression: "Мягкий, интуитивный, артистичный, не осуждающий.", shadow: "Эскапизм, поглощение чужих эмоций до истощения, трудности с границами." },
+  };
+
+  const SIGN_NAMES = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"];
+
+  async function geocode(place: string): Promise<{ lat: number; lon: number } | null> {
+    try {
+      const resp = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(place)}&format=json&limit=1`, { headers: { "Accept-Language": "ru" } });
+      const data = await resp.json();
+      if (!Array.isArray(data) || data.length === 0) return null;
+      return { lat: parseFloat(data[0].lat), lon: parseFloat(data[0].lon) };
+    } catch { return null; }
+  }
+
+  function computeAscendant(date: Date, lat: number, lon: number): string {
+    const jd = date.getTime() / 86400000 + 2440587.5;
+    const T = (jd - 2451545.0) / 36525;
+    const gmst = (280.46061837 + 360.98564736629 * (jd - 2451545.0) + T * T * 0.000387933) % 360;
+    const lst = ((gmst + lon + 360) % 360) * Math.PI / 180;
+    const latRad = lat * Math.PI / 180;
+    const eps = 23.4392911 * Math.PI / 180;
+    const y = -Math.cos(lst);
+    const x = Math.sin(lst) * Math.cos(eps) + Math.tan(latRad) * Math.sin(eps);
+    let asc = Math.atan2(y, x) * 180 / Math.PI;
+    if (asc < 0) asc += 360;
+    return SIGN_NAMES[Math.floor(asc / 30)];
+  }
+
+  const form = document.getElementById("rising-form") as HTMLFormElement;
+  const loadingDiv = document.getElementById("result-loading") as HTMLDivElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+  const errorDiv = document.getElementById("result-error") as HTMLDivElement;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    resultDiv.classList.add("hidden");
+    errorDiv.classList.add("hidden");
+    loadingDiv.classList.remove("hidden");
+
+    const date = (document.getElementById("birth-date") as HTMLInputElement).value;
+    const time = (document.getElementById("birth-time") as HTMLInputElement).value;
+    const place = (document.getElementById("birth-place") as HTMLInputElement).value;
+    if (!date || !time || !place) { loadingDiv.classList.add("hidden"); return; }
+
+    const coords = await geocode(place);
+    if (!coords) { loadingDiv.classList.add("hidden"); errorDiv.classList.remove("hidden"); return; }
+
+    const birthDate = new Date(`${date}T${time}:00Z`);
+    const signKey = computeAscendant(birthDate, coords.lat, coords.lon);
+    const meaning = MEANINGS[signKey];
+
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-ruler") as HTMLElement).textContent = meaning.ruler;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+    (document.getElementById("result-appearance") as HTMLElement).textContent = meaning.appearance;
+    (document.getElementById("result-impression") as HTMLElement).textContent = meaning.firstImpression;
+    (document.getElementById("result-shadow") as HTMLElement).textContent = meaning.shadow;
+
+    loadingDiv.classList.add("hidden");
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>

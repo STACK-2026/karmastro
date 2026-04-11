@@ -1,0 +1,311 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "حاسبة رقم مسار الحياة - علم الأعداد الفيثاغوري | Karmastro";
+const description =
+  "احسب رقم مسار حياتك مجانًا مع حاسبة علم الأعداد الفيثاغوري. اكتشف مهمتك، مواهبك، تحدياتك ومعاني الأرقام الاثني عشر (بما في ذلك الأرقام الرئيسية 11 و22 و33).";
+
+const MEANINGS: Record<number, { title: string; archetype: string; summary: string; qualities: string[]; challenges: string[]; mission: string; famousExamples: string }> = {
+  1: {
+    title: "الرائد",
+    archetype: "القائد الوحيد، المبادر، الذي يفتح طرقًا جديدة.",
+    summary: "لقد ولدت لتقود، لا لتتبع. مسار الحياة 1 يحمل الطاقة النقية للمبادرة. عندما تدخل غرفة، يتغير شيء ما. مهمتك هي تحويل تلك القوة إلى خلق، لا إلى هيمنة.",
+    qualities: ["القيادة الطبيعية", "الاستقلالية", "الطموح", "الشجاعة", "الأصالة"],
+    challenges: ["الأنانية", "نفاد الصبر", "الوحدة", "السلطوية", "الجمود"],
+    mission: "تعلم أن تقود دون أن تسحق، أن تكون قويًا دون أن تتصلب. الرقم 1 هنا لخلق أرض جديدة، للتجرؤ حيث ينتظر الآخرون.",
+    famousExamples: "نابليون بونابرت، ستيف جوبز، مارتن لوثر كينغ الابن",
+  },
+  2: {
+    title: "الدبلوماسية",
+    archetype: "الوسيطة، الحدسية، التي تنسج الروابط.",
+    summary: "أنت تشعر بالطاقات كما يسمع الآخرون الأصوات. مسار الحياة 2 هو طريق السلام والانسجام والاتحاد. مهمتك هي استخدام هذه الحساسية كرادار، لا كجرح.",
+    qualities: ["الدبلوماسية", "الحساسية", "التعاطف", "الصبر", "التعاون"],
+    challenges: ["الاعتماد العاطفي", "التردد", "فرط الحساسية", "تجنب الصراع", "الخضوع"],
+    mission: "افهمي أن اللطف قوة، لا ضعف. الرقم 2 هنا ليصالح، ليرى ما لا يراه الآخرون.",
+    famousExamples: "باراك أوباما، مادونا، المهاتما غاندي",
+  },
+  3: {
+    title: "الفنانة",
+    archetype: "التعبير الإبداعي، طفلة العالم، التي تنير.",
+    summary: "أنت تحولين كل شيء إلى لون أو كلمات أو موسيقى. مسار الحياة 3 هو طريق التعبير الإبداعي. مهمتك هي إعطاء شكل لما لا يُلمس ومشاركته بسخاء.",
+    qualities: ["الإبداع", "التواصل", "التفاؤل", "الكاريزما", "الفرح"],
+    challenges: ["التشتت", "السطحية", "الثرثرة", "عدم النضج العاطفي", "الهروب"],
+    mission: "تعلمي أن العمق لا يقتل الفرح. الرقم 3 هنا للتعبير، للإلهام، لتذكير الآخرين بجمال العالم.",
+    famousExamples: "ديفيد بوي، هيو جاكمان، أليك بالدوين",
+  },
+  4: {
+    title: "البنّاء",
+    archetype: "العامل المنهجي، المهندس، الذي يضع الأسس.",
+    summary: "أنت تبني ما يحلم به الآخرون فقط. مسار الحياة 4 هو طريق الاستقرار والبنية والنتائج الدائمة. مهمتك هي إنشاء شيء يعيش بعدك.",
+    qualities: ["الانضباط", "الموثوقية", "الصبر", "الولاء", "المهارة العملية"],
+    challenges: ["الجمود", "إدمان العمل", "العناد", "الخوف من التغيير", "الجدية المفرطة"],
+    mission: "تعلم أن البنية تخدم الحرية، لا العكس. الرقم 4 هنا ليبني ما يدوم بانضباط ورعاية.",
+    famousExamples: "بيل غيتس، أوبرا وينفري، أرنولد شوارزنيجر",
+  },
+  5: {
+    title: "المغامرة",
+    archetype: "الروح الحرة، المسافرة، التي لا تتوقف أبدًا.",
+    summary: "أنت تحتاجين إلى الحرية كما يحتاج الآخرون إلى الهواء. مسار الحياة 5 هو طريق التغيير والتجربة والحرية الشخصية. مهمتك هي تحويل الحركة إلى حكمة.",
+    qualities: ["الفضول", "القدرة على التكيف", "السحر", "التنوع", "الشجاعة للتغيير"],
+    challenges: ["القلق", "مشاكل الالتزام", "الاندفاع", "ميول الإدمان", "الطاقة المشتتة"],
+    mission: "تعلمي أن الحرية بدون اتجاه مجرد انجراف. الرقم 5 هنا للاستكشاف بهدف.",
+    famousExamples: "أبراهام لينكولن، أنجلينا جولي، ميك جاغر",
+  },
+  6: {
+    title: "الراعي",
+    archetype: "الحامي، المعلم، الذي يجمع الآخرين معًا.",
+    summary: "أنت تحمل الآخرين كما حمل أطلس العالم. مسار الحياة 6 هو طريق المسؤولية والحب والخدمة. مهمتك هي العطاء دون أن تفقد نفسك.",
+    qualities: ["غريزة الرعاية", "المسؤولية", "الولاء", "القدرة على التعليم", "المواهب الإبداعية"],
+    challenges: ["الاستشهاد", "المشاركة المفرطة", "الكمالية", "التضحية بالذات", "التدخل"],
+    mission: "تعلم أنك لا تستطيع أن تسكب من كوب فارغ. الرقم 6 هنا ليشفي، ليعلم، ليخلق الجمال حول من يحبهم.",
+    famousExamples: "ألبرت أينشتاين، ميريل ستريب، جون لينون",
+  },
+  7: {
+    title: "الباحث",
+    archetype: "الفيلسوف الصوفي، الباحث، الذي يسأل عن كل شيء.",
+    summary: "لقد ولدت وأنت تسأل لماذا. مسار الحياة 7 هو طريق الحكمة والتأمل والفهم الروحي. مهمتك هي إيجاد الحقيقة ومشاركة ما تتعلمه.",
+    qualities: ["التفكير العميق", "الحدس", "الاستقلالية", "العقل التحليلي", "الوعي الروحي"],
+    challenges: ["العزلة", "السخرية", "التحليل المفرط", "عدم الثقة", "المسافة العاطفية"],
+    mission: "تعلم أن الحقيقة بدون حب عقيمة. الرقم 7 هنا للحفر تحت السطح وإحضار ما يجده للآخرين.",
+    famousExamples: "نيكولا تيسلا، الأميرة ديانا، جوني ديب",
+  },
+  8: {
+    title: "الاستراتيجية",
+    archetype: "بانية الإمبراطوريات، الاستراتيجية، التي تحول الرؤية إلى ثروة.",
+    summary: "أنت تفهمين السلطة دون أن تنخدعي بها. مسار الحياة 8 هو طريق الإتقان المادي والوفرة والنفوذ. مهمتك هي بناء شيء يخدم أكثر من نفسك.",
+    qualities: ["القيادة", "الحدس المالي", "المهارات التنظيمية", "القدرة على التحمل", "السلطة"],
+    challenges: ["الجشع", "إدمان العمل", "الحاجة للسيطرة", "المادية", "الترهيب"],
+    mission: "تعلمي أن القوة الحقيقية تُقاس بما تخلقه، لا بما تهيمن عليه. الرقم 8 هنا لإتقان العالم المادي بنزاهة.",
+    famousExamples: "نيلسون مانديلا، بابلو بيكاسو، وارن بافيت",
+  },
+  9: {
+    title: "الإنساني",
+    archetype: "الروح القديمة، المواطن العالمي، الذي يخدم المجموع.",
+    summary: "أنت تأتي إلى الحياة وأنت تعرف أشياء يجب على الآخرين تعلمها. مسار الحياة 9 هو طريق الحب الكوني والرحمة والتخلي. مهمتك هي خدمة شيء أكبر من نفسك.",
+    qualities: ["الرحمة", "الحكمة", "الحساسية الفنية", "المنظور العالمي", "الكرم"],
+    challenges: ["الانفصال العاطفي", "عقدة المنقذ", "الكآبة", "صعوبة التخلي", "البر الذاتي"],
+    mission: "تعلم أن الاستسلام قوة، لا هزيمة. الرقم 9 هنا ليحب دون أن يمتلك، ليعطي دون أن ينتظر المقابل.",
+    famousExamples: "الأم تيريزا، المهاتما غاندي، جيم كاري",
+  },
+  11: {
+    title: "الرؤيوية (رقم رئيسي)",
+    archetype: "الرسولة الروحية، الحدسية، التي ترى ما لا يستطيع الآخرون رؤيته.",
+    summary: "لقد ولدت متصلة بتردد أعلى. الرقم الرئيسي 11 يحمل حدسًا مكثفًا ودعوة لإيقاظ الآخرين. مهمتك هي توجيه الإلهام إلى شكل ملموس.",
+    qualities: ["الحدس الاستثنائي", "التفكير الرؤيوي", "الكاريزما", "المغناطيسية الروحية", "الحضور الملهم"],
+    challenges: ["التوتر العصبي", "فرط الحساسية", "الشك بالنفس", "القلق", "الاستشهاد"],
+    mission: "تعلمي أن حساسيتك هي هديتك، لا جرحك. الرقم 11 هنا ليحمل النور لأولئك الذين يمشون في الظلام.",
+    famousExamples: "باراك أوباما، ميشيل أوباما، تيم بيرتون",
+  },
+  22: {
+    title: "البنّاء الرئيسي (رقم رئيسي)",
+    archetype: "مهندس الرؤى العظيمة، الذي يحول الأحلام إلى هياكل دائمة.",
+    summary: "يمكنك تحويل المستحيل إلى خطة. الرقم الرئيسي 22 يجمع الحدس الروحي للرقم 11 مع القوة العملية للرقم 4. مهمتك هي بناء شيء يغير العالم.",
+    qualities: ["البراغماتية الرؤيوية", "القيادة", "الابتكار", "القدرة على التحمل", "التفكير على نطاق واسع"],
+    challenges: ["الضغط الساحق", "الكمالية", "الإرهاق", "الميول الاستبدادية", "شلل الشك"],
+    mission: "تعلم أن الصبر ليس ضعفًا. الرقم 22 هنا لبناء نصب الروح، سواء كانت مباني أو حركات أو أفكار.",
+    famousExamples: "الدالاي لاما، بول مكارتني، أوبرا وينفري",
+  },
+  33: {
+    title: "المعالج الكوني (رقم رئيسي)",
+    archetype: "معلم المعلمين، الذي يشفي من خلال الحب غير المشروط.",
+    summary: "لقد ولدت بتردد نادر من الحب غير الأناني. الرقم الرئيسي 33 هو أندر مسار حياة. مهمتك هي شفاء العالم بالحكمة والرحمة، دون طلب أي شيء في المقابل.",
+    qualities: ["الحب غير المشروط", "موهبة التعليم", "الشفاء الإبداعي", "التفاني الروحي", "الخدمة المقدسة"],
+    challenges: ["الاستشهاد", "الإرهاق العاطفي", "الكمالية", "نسيان الذات", "المسؤولية الساحقة"],
+    mission: "تعلم أن العطاء من الفراغ ليس عطاءً. الرقم 33 هنا ليشفي من خلال الحضور، لا من خلال التضحية.",
+    famousExamples: "ألبرت أينشتاين، جون لينون، ميريل ستريب",
+  },
+};
+
+const DISPLAY_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "حاسبة رقم مسار الحياة",
+    description,
+    url: "https://karmastro.com/ar/adawat/raqm-masar-al-hayat",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "ar",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "127" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "ما هو رقم مسار الحياة؟", acceptedAnswer: { "@type": "Answer", text: "رقم مسار الحياة هو الرقم المركزي في علم الأعداد الفيثاغوري. يتم حسابه من تاريخ ميلادك ويكشف عن المهمة الرئيسية لحياتك، ومواهبك الفطرية، والدروس التي جئت لتتعلمها. إنه المعادل العددي لعلامة الشمس في علم التنجيم." } },
+      { "@type": "Question", name: "ما مدى دقة حاسبة رقم مسار الحياة؟", acceptedAnswer: { "@type": "Answer", text: "يتم حساب رقم مسار الحياة بالرياضيات البحتة، لذا فإن الرقم نفسه دقيق دائمًا بنسبة 100%. التفسير هو قراءة مبنية على آلاف السنين من التقاليد الفيثاغورية." } },
+      { "@type": "Question", name: "هل يمكن أن يتغير رقم مسار حياتي؟", acceptedAnswer: { "@type": "Answer", text: "لا. رقم مسار حياتك ثابت بتاريخ ميلادك ولا يتغير أبدًا. ما يتغير هو كيف تعبر عنه." } },
+      { "@type": "Question", name: "ما هي الأرقام الرئيسية (11 و22 و33)؟", acceptedAnswer: { "@type": "Answer", text: "الأرقام الرئيسية 11 و22 و33 لا يتم تقليصها أبدًا في علم الأعداد الفيثاغوري. تحمل اهتزازًا مضاعفًا ومهمة أكثر تطلبًا." } },
+      { "@type": "Question", name: "هل رقم مسار الحياة هو نفسه علامة الشمس؟", acceptedAnswer: { "@type": "Answer", text: "لا. علامة الشمس تأتي من علم التنجيم وتصف جوهر شخصيتك بناءً على موقع الشمس عند ولادتك. رقم مسار الحياة يأتي من علم الأعداد." } },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12" dir="rtl">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/ar" class="hover:text-amber-300">الرئيسية</a>
+      <span class="mx-2">/</span>
+      <a href="/ar/adawat" class="hover:text-amber-300">الأدوات</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">مسار الحياة</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">علم الأعداد الفيثاغوري</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">حاسبة رقم مسار الحياة</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        رقم مسار حياتك هو الرقم الأهم في علم الأعداد. يكشف عن مهمتك، ومواهبك الفطرية، والدروس الكارمية لهذا الوجود. حساب مجاني، طريقة فيثاغورية شفافة، تفسير كامل.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="life-path-form" class="space-y-4">
+        <div>
+          <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">تاريخ ميلادك</label>
+          <input type="date" id="birth-date" name="birth-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          احسب رقم مسار حياتي
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">رقم مسار حياتك</p>
+          <div class="flex items-baseline gap-4 mb-4">
+            <span id="result-number" class="text-7xl font-serif text-amber-300"></span>
+            <span id="result-title" class="text-xl font-serif text-white/90"></span>
+          </div>
+          <p class="text-xs text-white/50 mb-4">الحساب: <span id="result-calc" class="text-white/70"></span></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">نقاط القوة</p>
+              <ul id="result-qualities" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">التحديات</p>
+              <ul id="result-challenges" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">المهمة</p>
+            <p id="result-mission" class="text-sm text-white/80 italic leading-relaxed"></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-center">
+            <a href="https://app.karmastro.com/oracle?lang=ar" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
+              تعمق مع العراف
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">ما هو رقم مسار الحياة؟</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        <strong>رقم مسار حياتك</strong> هو الرقم المركزي في علم الأعداد الفيثاغوري. محسوبًا من تاريخ ميلادك، يكشف عن المهمة الأساسية لوجودك. فكر فيه على أنه المعادل العددي لعلامة الشمس في علم التنجيم: الاهتزاز الأساسي الذي يلون كل ما تفعله، النموذج الأولي الذي جئت لتجسده.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        بالنسبة لـ<strong>فيثاغورس</strong> وتلاميذه في القرن السادس قبل الميلاد، كان كل رقم يحمل اهتزازًا فريدًا، توقيعًا للطاقة. الأرقام من 1 إلى 9 تغطي جميع النماذج الأولية البشرية. الأرقام الرئيسية 11 و22 و33 تحمل ترددًا أندر وأكثر تطلبًا.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">كيفية حساب رقم مسار حياتك</h2>
+      <div class="p-5 rounded-xl bg-white/[0.03] border border-white/10 mb-6 not-prose">
+        <p class="text-sm text-white/90 mb-3"><strong>مثال: 14 أبريل 1992</strong></p>
+        <ul class="text-sm text-white/70 space-y-1">
+          <li>اليوم: 1 + 4 = 5</li>
+          <li>الشهر: 4 = 4</li>
+          <li>السنة: 1 + 9 + 9 + 2 = 21 ← 2 + 1 = 3</li>
+          <li>المجموع: 5 + 4 + 3 = <strong class="text-amber-300">12 ← 1 + 2 = 3</strong></li>
+        </ul>
+        <p class="text-sm text-white/60 mt-3">رقم مسار الحياة = 3 (الفنانة)</p>
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">9 مسارات الحياة (و3 أرقام رئيسية)</h2>
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
+        {DISPLAY_ORDER.map((n) => {
+          const meaning = MEANINGS[n];
+          return (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <div class="flex items-baseline gap-3 mb-2">
+                <span class="text-3xl font-serif text-amber-300">{n}</span>
+                <span class="text-sm text-white/80 font-medium">{meaning.title}</span>
+              </div>
+              <p class="text-xs text-white/60 leading-relaxed">{meaning.archetype}</p>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">هل تريد قراءة كاملة؟</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        رقم مسار الحياة هو البداية فقط. لعبور أرقام علم الأعداد الخمسة مع خريطة ميلادك الكاملة وتلقي إرشاد شخصي، تحدث مع أحد مرشدينا الكونيين الأربعة.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=ar" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        استشر العراف مجانًا
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/ar/adawat" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← جميع الأدوات</a>
+      <a href="/ar/adawat/al-taaali" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">الطالع</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  import { calculateLifePath } from "../../../data/numerology-meanings";
+
+  const MEANINGS_AR: Record<number, { title: string; summary: string; qualities: string[]; challenges: string[]; mission: string }> = {
+    1: { title: "الرائد", summary: "لقد ولدت لتقود، لا لتتبع. مسار الحياة 1 يحمل الطاقة النقية للمبادرة.", qualities: ["القيادة الطبيعية", "الاستقلالية", "الطموح", "الشجاعة", "الأصالة"], challenges: ["الأنانية", "نفاد الصبر", "الوحدة", "السلطوية", "الجمود"], mission: "تعلم أن تقود دون أن تسحق." },
+    2: { title: "الدبلوماسية", summary: "أنت تشعر بالطاقات كما يسمع الآخرون الأصوات. مسار الحياة 2 هو طريق السلام والانسجام والاتحاد.", qualities: ["الدبلوماسية", "الحساسية", "التعاطف", "الصبر", "التعاون"], challenges: ["الاعتماد العاطفي", "التردد", "فرط الحساسية", "تجنب الصراع", "الخضوع"], mission: "افهمي أن اللطف قوة، لا ضعف." },
+    3: { title: "الفنانة", summary: "أنت تحولين كل شيء إلى لون أو كلمات أو موسيقى. مسار الحياة 3 هو طريق التعبير الإبداعي.", qualities: ["الإبداع", "التواصل", "التفاؤل", "الكاريزما", "الفرح"], challenges: ["التشتت", "السطحية", "الثرثرة", "عدم النضج العاطفي", "الهروب"], mission: "تعلمي أن العمق لا يقتل الفرح." },
+    4: { title: "البنّاء", summary: "أنت تبني ما يحلم به الآخرون فقط. مسار الحياة 4 هو طريق الاستقرار والبنية والنتائج الدائمة.", qualities: ["الانضباط", "الموثوقية", "الصبر", "الولاء", "المهارة العملية"], challenges: ["الجمود", "إدمان العمل", "العناد", "الخوف من التغيير", "الجدية المفرطة"], mission: "تعلم أن البنية تخدم الحرية، لا العكس." },
+    5: { title: "المغامرة", summary: "أنت تحتاجين إلى الحرية كما يحتاج الآخرون إلى الهواء. مسار الحياة 5 هو طريق التغيير والتجربة والحرية الشخصية.", qualities: ["الفضول", "القدرة على التكيف", "السحر", "التنوع", "الشجاعة للتغيير"], challenges: ["القلق", "مشاكل الالتزام", "الاندفاع", "ميول الإدمان", "الطاقة المشتتة"], mission: "تعلمي أن الحرية بدون اتجاه مجرد انجراف." },
+    6: { title: "الراعي", summary: "أنت تحمل الآخرين كما حمل أطلس العالم. مسار الحياة 6 هو طريق المسؤولية والحب والخدمة.", qualities: ["غريزة الرعاية", "المسؤولية", "الولاء", "القدرة على التعليم", "المواهب الإبداعية"], challenges: ["الاستشهاد", "المشاركة المفرطة", "الكمالية", "التضحية بالذات", "التدخل"], mission: "تعلم أنك لا تستطيع أن تسكب من كوب فارغ." },
+    7: { title: "الباحث", summary: "لقد ولدت وأنت تسأل لماذا. مسار الحياة 7 هو طريق الحكمة والتأمل والفهم الروحي.", qualities: ["التفكير العميق", "الحدس", "الاستقلالية", "العقل التحليلي", "الوعي الروحي"], challenges: ["العزلة", "السخرية", "التحليل المفرط", "عدم الثقة", "المسافة العاطفية"], mission: "تعلم أن الحقيقة بدون حب عقيمة." },
+    8: { title: "الاستراتيجية", summary: "أنت تفهمين السلطة دون أن تنخدعي بها. مسار الحياة 8 هو طريق الإتقان المادي والوفرة والنفوذ.", qualities: ["القيادة", "الحدس المالي", "المهارات التنظيمية", "القدرة على التحمل", "السلطة"], challenges: ["الجشع", "إدمان العمل", "الحاجة للسيطرة", "المادية", "الترهيب"], mission: "تعلمي أن القوة الحقيقية تُقاس بما تخلقه." },
+    9: { title: "الإنساني", summary: "أنت تأتي إلى الحياة وأنت تعرف أشياء يجب على الآخرين تعلمها. مسار الحياة 9 هو طريق الحب الكوني.", qualities: ["الرحمة", "الحكمة", "الحساسية الفنية", "المنظور العالمي", "الكرم"], challenges: ["الانفصال العاطفي", "عقدة المنقذ", "الكآبة", "صعوبة التخلي", "البر الذاتي"], mission: "تعلم أن الاستسلام قوة، لا هزيمة." },
+    11: { title: "الرؤيوية (رقم رئيسي)", summary: "لقد ولدت متصلة بتردد أعلى. الرقم الرئيسي 11 يحمل حدسًا مكثفًا.", qualities: ["الحدس الاستثنائي", "التفكير الرؤيوي", "الكاريزما", "المغناطيسية الروحية", "الحضور الملهم"], challenges: ["التوتر العصبي", "فرط الحساسية", "الشك بالنفس", "القلق", "الاستشهاد"], mission: "تعلمي أن حساسيتك هي هديتك، لا جرحك." },
+    22: { title: "البنّاء الرئيسي (رقم رئيسي)", summary: "يمكنك تحويل المستحيل إلى خطة. الرقم الرئيسي 22 يجمع الحدس الروحي للرقم 11 مع القوة العملية للرقم 4.", qualities: ["البراغماتية الرؤيوية", "القيادة", "الابتكار", "القدرة على التحمل", "التفكير على نطاق واسع"], challenges: ["الضغط الساحق", "الكمالية", "الإرهاق", "الميول الاستبدادية", "شلل الشك"], mission: "تعلم أن الصبر ليس ضعفًا." },
+    33: { title: "المعالج الكوني (رقم رئيسي)", summary: "لقد ولدت بتردد نادر من الحب غير الأناني. الرقم الرئيسي 33 هو أندر مسار حياة.", qualities: ["الحب غير المشروط", "موهبة التعليم", "الشفاء الإبداعي", "التفاني الروحي", "الخدمة المقدسة"], challenges: ["الاستشهاد", "الإرهاق العاطفي", "الكمالية", "نسيان الذات", "المسؤولية الساحقة"], mission: "تعلم أن العطاء من الفراغ ليس عطاءً." },
+  };
+
+  const form = document.getElementById("life-path-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const input = document.getElementById("birth-date") as HTMLInputElement;
+    const value = input.value;
+    if (!value) return;
+
+    const [y, m, d] = value.split("-").map(Number);
+    const result = calculateLifePath(d, m, y);
+    const meaning = MEANINGS_AR[result.number] || MEANINGS_AR[9];
+
+    (document.getElementById("result-number") as HTMLElement).textContent = String(result.number);
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-calc") as HTMLElement).textContent = result.calculation;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+
+    const qualitiesList = document.getElementById("result-qualities") as HTMLElement;
+    qualitiesList.innerHTML = meaning.qualities.map((q) => `<li>✦ ${q}</li>`).join("");
+
+    const challengesList = document.getElementById("result-challenges") as HTMLElement;
+    challengesList.innerHTML = meaning.challenges.map((c) => `<li>◆ ${c}</li>`).join("");
+
+    (document.getElementById("result-mission") as HTMLElement).textContent = meaning.mission;
+
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>

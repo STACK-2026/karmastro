@@ -20,3 +20,9 @@
 /tr/outils/* /tr/araclar/:splat 301
 /pl/outils /pl/narzedzia 301
 /pl/outils/* /pl/narzedzia/:splat 301
+/ru/outils /ru/instrumenty 301
+/ru/outils/* /ru/instrumenty/:splat 301
+/ja/outils /ja/shindan 301
+/ja/outils/* /ja/shindan/:splat 301
+/ar/outils /ar/adawat 301
+/ar/outils/* /ar/adawat/:splat 301

@@ -1,0 +1,251 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "アセンダント計算機 - 私のアセンダントは何ですか？ | Karmastro";
+const description =
+  "私のアセンダントは何ですか？正確な占星術計算機で無料でアセンダントを計算。アセンダントの意味、性格への影響、太陽星座との違いを発見。";
+
+type RisingMeaning = { title: string; ruler: string; summary: string; appearance: string; firstImpression: string; shadow: string };
+
+const MEANINGS: Record<string, RisingMeaning> = {
+  aries: { title: "牡羊座アセンダント", ruler: "火星支配 · 火", summary: "あなたはスタート合図の銃のように部屋に入る。牡羊座アセンダントは紛れもない前進の勢い、言葉を発する前に他の人が感じる率直さを運ぶ。", appearance: "強い顔立ち、目立つ眉やあご、アスリート体型、速い歩き方。", firstImpression: "大胆、競争的、爽やかに正直、雑談に対して忍耐力がない。", shadow: "焦った時の攻撃性、終わらせるよりも始める傾向、速く燃えて速く冷える気性。" },
+  taurus: { title: "牡牛座アセンダント", ruler: "金星支配 · 地", summary: "あなたはゆっくりとした川のように世界を移動する：穏やかで、安定していて、急がせることは不可能。牡牛座アセンダントは根ざした、官能的な存在感を運ぶ。", appearance: "柔らかく魅力的な顔立ち、豊かな唇、強い首と肩、姿勢と声の自然な官能性。", firstImpression: "頼りがい、暖かい、最初は少し控えめ、信頼すると深く存在する。", shadow: "忍耐として偽装された頑固さ、変化への抵抗、快適さに固執する傾向。" },
+  gemini: { title: "双子座アセンダント", ruler: "水星支配 · 風", summary: "あなたはどんな集まりでも瞬時に活気づける人。双子座アセンダントは水銀のような好奇心旺盛なエネルギーを運ぶ。", appearance: "年齢に関係なく若々しい顔立ち、表現豊かな手、素早い目、細い体格。", firstImpression: "機知に富む、おしゃべり、無限に好奇心旺盛、どんなグループの社会的接着剤。", shadow: "散漫、表面的なつながり、聞くより話す傾向。" },
+  cancer: { title: "蟹座アセンダント", ruler: "月支配 · 水", summary: "あなたは人々がすぐに感じる目に見えない殻を運ぶ。蟹座アセンダントは部屋に調整された感情的レーダーで世界を移動する。", appearance: "丸い、または月の形の顔、表現豊かな目、柔らかい肌、しばしば体に優しい曲線。", firstImpression: "暖かい、思いやり深い、少し恥ずかしがり屋、本当に元気かと尋ねる友人。", shadow: "気分の変動、殻に引きこもる、他人の痛みが自分のものになるまで吸収する。" },
+  leo: { title: "獅子座アセンダント", ruler: "太陽支配 · 火", summary: "あなたが入ると照明が変わるように見える。獅子座アセンダントは望むかどうかに関わらず自然な舞台的存在感を運ぶ。", appearance: "豊かな髪（しばしば特徴的な特徴）、暖かい笑顔、まっすぐな姿勢、猫のような優雅さ。", firstImpression: "自信に満ちた、寛大、演劇的、誰もが少し生き生きと感じさせる人。", shadow: "膨らんだエゴ、絶えず注目を浴びたいという欲求、話すよりむくれる傷ついたプライド。" },
+  virgo: { title: "乙女座アセンダント", ruler: "水星支配 · 地", summary: "あなたはどんな状況にも静かな品質チェックをしながら到着する。乙女座アセンダントは控えめで観察力のある存在感を運ぶ。", appearance: "きちんとした正確な外観、洗練された顔立ち、優雅な手、しばしば平均より高いか細い。", firstImpression: "控えめ、思慮深い、几帳面、実際にマニュアルを読む人。", shadow: "自分と他人への過度な批判、完璧主義として偽装された不安、冷たさと誤解される感情的な控えめさ。" },
+  libra: { title: "天秤座アセンダント", ruler: "金星支配 · 風", summary: "あなたは努力せず魅力的だと人々に描写される人。天秤座アセンダントは自然な優雅さ、外交的な本能を運ぶ。", appearance: "対称的な顔立ち、えくぼ、優雅な姿勢、ほぼ計算されたスタイル感覚。", firstImpression: "魅力的、外交的、よく服を着ている、起こる前に対立を和らげる人。", shadow: "優柔不断、人を喜ばせる、平和を保つために難しい会話を避ける。" },
+  scorpio: { title: "蠍座アセンダント", ruler: "冥王星支配 · 水", summary: "人々はあなたを見る前にあなたの存在を感じる。蠍座アセンダントは偽装不可能で隠蔽不可能な強度を運ぶ。", appearance: "鋭い目、強い眉、磁気的なオーラ、コンパクトで力強い体。", firstImpression: "強烈、神秘的、深く洞察力がある、あなたが共有していないことを知っているようだ。", shadow: "疑い、支配の必要性、賞味期限を過ぎた恨みを抱く。" },
+  sagittarius: { title: "射手座アセンダント", ruler: "木星支配 · 火", summary: "あなたは個人的な遊び場のように世界を移動する。射手座アセンダントは拡張的、楽観的、探求者のエネルギーを運ぶ。", appearance: "長い手足、開いた顔、アスリートの優雅さ、目に届く笑顔。", firstImpression: "冒険的、哲学的、魅力的な率直さ、すべてを可能に感じさせる人。", shadow: "機転のなさ、落ち着きのなさ、実現できる以上のことを約束する。" },
+  capricorn: { title: "山羊座アセンダント", ruler: "土星支配 · 地", summary: "あなたは若くても古代の真剣さを運ぶ。山羊座アセンダントはすでに権力構造を精神的にスキャンしながら部屋に入る。", appearance: "強い骨格、目立つあごや眉、控えめな表情。", firstImpression: "落ち着いた、規律正しい、微妙に野心的、実際に約束を果たす人。", shadow: "感情的な控えめさ、仕事中毒、楽しむには人生を真剣に取りすぎる。" },
+  aquarius: { title: "水瓶座アセンダント", ruler: "天王星支配 · 風", summary: "あなたは人々が完全に位置付けられない人、それがポイント。水瓶座アセンダントは静かに反抗的で、未来志向のエネルギーを運ぶ。", appearance: "珍しいか印象的な顔立ち、独特のスタイル、しばしば背が高い、あなたを超えて見るような目。", firstImpression: "独創的、知的、親しみやすいがやや離れている、グループの仮定に挑戦する人。", shadow: "感情的な冷たさ、方向のない反抗、知的傲慢。" },
+  pisces: { title: "魚座アセンダント", ruler: "海王星支配 · 水", summary: "あなたは霧が谷に入るように部屋に入る：静かに、完全に、つかむことが不可能。魚座アセンダントは夢見がちで思いやり深い存在感を運ぶ。", appearance: "柔らかい顔立ち、大きな夢見がちな目、優しい声、異世界のオーラ。", firstImpression: "優しい、直感的、芸術的、判断せずに聞く人。", shadow: "逃避、疲れ果てるまで他人の感情を吸収する、境界線の難しさ。" },
+};
+
+const SIGNS = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "アセンダント計算機",
+    description,
+    url: "https://karmastro.com/ja/shindan/asendanto",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "ja",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "JPY" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "214" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "アセンダントとは何ですか？", acceptedAnswer: { "@type": "Answer", text: "あなたのアセンダントは、あなたが生まれた正確な瞬間に東の地平線に昇っていた星座です。他人があなたをどう見るか、あなたの身体的外見、自発的な反応、新しい人に会うときにつけるマスクを表します。" } },
+      { "@type": "Question", name: "なぜアセンダントを計算するのに出生時間が必要ですか？", acceptedAnswer: { "@type": "Answer", text: "アセンダントは平均して2時間ごとに変わるため、正確な出生時間が不可欠です。それなしでは計算は不可能です。出生時間がわからない場合は、通常、公式の出生証明書で見つかります。" } },
+      { "@type": "Question", name: "太陽星座とアセンダントの違いは何ですか？", acceptedAnswer: { "@type": "Answer", text: "太陽星座は本質的なアイデンティティ、あなたが体現しに来た原型です。アセンダントはそのアイデンティティを世界に表現するレンズです。太陽をあなたが歌う歌、アセンダントを歌う声と考えてください。" } },
+      { "@type": "Question", name: "私のアセンダントは上昇星座と同じですか？", acceptedAnswer: { "@type": "Answer", text: "はい。アセンダントと上昇星座は同じものの2つの名前です。占星術師は両方の用語を互換的に使用します。" } },
+      { "@type": "Question", name: "私のアセンダントは時間とともに変わることがありますか？", acceptedAnswer: { "@type": "Answer", text: "いいえ。あなたのアセンダントは正確な出生時間、日付、場所によって固定されます。決して変わりません。変わるのはあなたがそれをどれだけ強く表現するかです。" } },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/ja" class="hover:text-amber-300">ホーム</a>
+      <span class="mx-2">/</span>
+      <a href="/ja/shindan" class="hover:text-amber-300">診断ツール</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">アセンダント</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">西洋占星術</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">アセンダント計算機</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        アセンダントはあなたがつけるマスク、あなたが残す第一印象、世界があなたに出会う方法です。正確な出生時間と場所で無料でアセンダントを計算。
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="rising-form" class="space-y-4">
+        <div>
+          <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">生年月日</label>
+          <input type="date" id="birth-date" name="birth-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <div>
+          <label for="birth-time" class="block text-sm font-medium text-white/80 mb-2">正確な出生時間</label>
+          <input type="time" id="birth-time" name="birth-time" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+          <p class="text-xs text-white/50 mt-1">必須。疑問がある場合は出生証明書を確認してください。</p>
+        </div>
+        <div>
+          <label for="birth-place" class="block text-sm font-medium text-white/80 mb-2">出生都市</label>
+          <input type="text" id="birth-place" name="birth-place" required placeholder="例：東京、日本" class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white placeholder-white/30 focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          アセンダントを計算する
+        </button>
+      </form>
+
+      <div id="result-loading" class="mt-6 hidden text-center text-white/70">
+        <div class="text-3xl animate-pulse">✦</div>
+        <p class="mt-2 text-sm">あなたの誕生の瞬間の地平線を計算しています...</p>
+      </div>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">あなたのアセンダント</p>
+          <h2 id="result-title" class="text-4xl font-serif text-amber-300 mb-2"></h2>
+          <p id="result-ruler" class="text-sm text-white/60 mb-4"></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">身体的特徴</p>
+              <p id="result-appearance" class="text-sm text-white/70 leading-relaxed"></p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">第一印象</p>
+              <p id="result-impression" class="text-sm text-white/70 leading-relaxed"></p>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">影</p>
+            <p id="result-shadow" class="text-sm text-white/80 italic leading-relaxed"></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-center">
+            <a href="https://app.karmastro.com/oracle?lang=ja" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
+              完全な出生図を取得
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="result-error" class="mt-6 hidden p-5 rounded-xl bg-pink-300/10 border border-pink-300/30 text-sm text-white/80">
+        <p>これらの座標からアセンダントを計算できませんでした。出生都市を確認してください。</p>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">アセンダントとは？</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        あなたの<strong>アセンダント</strong>（<strong>上昇星座</strong>とも呼ばれる）は、あなたが生まれた正確な瞬間に東の地平線に昇っていた星座です。太陽星座があなたの本質的なアイデンティティを表す一方、アセンダントはそのアイデンティティが表現されるレンズを表します。人々があなたに最初に感じるものです。
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">12のアセンダント</h2>
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
+        {SIGNS.map((s) => {
+          const m = MEANINGS[s];
+          return (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <div class="flex items-baseline gap-3 mb-2">
+                <span class="text-xl font-serif text-amber-300">{m.title}</span>
+              </div>
+              <p class="text-xs text-white/60 leading-relaxed">{m.firstImpression}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">太陽、月、アセンダント：三位一体</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>太陽星座</strong>：あなたの本質的なアイデンティティ、意識的なエゴ、体現しに来た原型。</li>
+        <li><strong>月星座</strong>：感情的な内面世界、ニーズ、プライベートでの本能的な反応。</li>
+        <li><strong>アセンダント</strong>：社会的マスク、他人からの見え方、身体、自発的なスタイル。</li>
+      </ul>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">完全な出生図が欲しいですか？</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        アセンダントは出生図の10の惑星と12のハウスの1つにすぎません。Karmastroオラクルで完全な読み取りを取得してください。
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=ja" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        出生図を無料で取得
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/ja/shindan" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← すべての診断</a>
+      <a href="/ja/shindan/raifu-pasu-nanbaa" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">ライフパスナンバー</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  const MEANINGS: Record<string, { title: string; ruler: string; summary: string; appearance: string; firstImpression: string; shadow: string }> = {
+    aries: { title: "牡羊座アセンダント", ruler: "火星 · 火", summary: "あなたはスタート合図の銃のように部屋に入る。牡羊座アセンダントは紛れもない前進の勢いを運ぶ。", appearance: "強い顔立ち、目立つ眉、アスリート体型、速い歩き方。", firstImpression: "大胆、競争的、爽やかに正直、忍耐力がない。", shadow: "焦った時の攻撃性、終わらせるよりも始める傾向。" },
+    taurus: { title: "牡牛座アセンダント", ruler: "金星 · 地", summary: "あなたはゆっくりとした川のように世界を移動する：穏やかで安定していて急がせることは不可能。", appearance: "柔らかく魅力的な顔立ち、豊かな唇、強い首と肩。", firstImpression: "頼りがい、暖かい、最初は少し控えめ。", shadow: "頑固さ、変化への抵抗、快適さに固執する傾向。" },
+    gemini: { title: "双子座アセンダント", ruler: "水星 · 風", summary: "あなたはどんな集まりでも瞬時に活気づける人。双子座アセンダントは好奇心旺盛なエネルギーを運ぶ。", appearance: "若々しい顔立ち、表現豊かな手、素早い目、細い体格。", firstImpression: "機知に富む、おしゃべり、無限に好奇心旺盛。", shadow: "散漫、表面的なつながり、聞くより話す傾向。" },
+    cancer: { title: "蟹座アセンダント", ruler: "月 · 水", summary: "あなたは人々がすぐに感じる目に見えない殻を運ぶ。蟹座アセンダントは感情的レーダーで世界を移動する。", appearance: "丸い顔、表現豊かな目、柔らかい肌。", firstImpression: "暖かい、思いやり深い、少し恥ずかしがり屋。", shadow: "気分の変動、殻に引きこもる、他人の痛みを吸収する。" },
+    leo: { title: "獅子座アセンダント", ruler: "太陽 · 火", summary: "あなたが入ると照明が変わるように見える。獅子座アセンダントは自然な舞台的存在感を運ぶ。", appearance: "豊かな髪、暖かい笑顔、まっすぐな姿勢、猫のような優雅さ。", firstImpression: "自信に満ちた、寛大、演劇的。", shadow: "膨らんだエゴ、絶えず注目を浴びたいという欲求、傷ついたプライド。" },
+    virgo: { title: "乙女座アセンダント", ruler: "水星 · 地", summary: "あなたはどんな状況にも静かな品質チェックをしながら到着する。乙女座アセンダントは観察力がある。", appearance: "きちんとした外観、洗練された顔立ち、優雅な手。", firstImpression: "控えめ、思慮深い、几帳面。", shadow: "過度な批判、完璧主義として偽装された不安、冷たさの印象。" },
+    libra: { title: "天秤座アセンダント", ruler: "金星 · 風", summary: "天秤座アセンダントは自然な優雅さ、外交的な本能、美的バランスへの目を運ぶ。", appearance: "対称的な顔立ち、えくぼ、優雅な姿勢。", firstImpression: "魅力的、外交的、よく服を着ている。", shadow: "優柔不断、人を喜ばせる、難しい会話を避ける。" },
+    scorpio: { title: "蠍座アセンダント", ruler: "冥王星 · 水", summary: "人々はあなたを見る前にあなたの存在を感じる。蠍座アセンダントは偽装不可能な強度を運ぶ。", appearance: "鋭い目、強い眉、磁気的なオーラ、コンパクトで力強い体。", firstImpression: "強烈、神秘的、深く洞察力がある。", shadow: "疑い、支配の必要性、長い恨み。" },
+    sagittarius: { title: "射手座アセンダント", ruler: "木星 · 火", summary: "あなたは個人的な遊び場のように世界を移動する。射手座アセンダントは拡張的なエネルギーを運ぶ。", appearance: "長い手足、開いた顔、アスリートの優雅さ、目に届く笑顔。", firstImpression: "冒険的、哲学的、魅力的な率直さ。", shadow: "機転のなさ、落ち着きのなさ、過剰な約束。" },
+    capricorn: { title: "山羊座アセンダント", ruler: "土星 · 地", summary: "あなたは古代の真剣さを運ぶ。山羊座アセンダントは権力構造を精神的にスキャンする。", appearance: "強い骨格、目立つあご、控えめな表情。", firstImpression: "落ち着いた、規律正しい、微妙に野心的。", shadow: "感情的な控えめさ、仕事中毒、過度の真面目さ。" },
+    aquarius: { title: "水瓶座アセンダント", ruler: "天王星 · 風", summary: "あなたは人々が位置付けられない人、それがポイント。水瓶座アセンダントは静かに反抗的なエネルギーを運ぶ。", appearance: "珍しい顔立ち、独特のスタイル、しばしば背が高い、遠い目。", firstImpression: "独創的、知的、親しみやすいがやや離れている。", shadow: "感情的な冷たさ、方向のない反抗、知的傲慢。" },
+    pisces: { title: "魚座アセンダント", ruler: "海王星 · 水", summary: "あなたは霧が谷に入るように部屋に入る：静かに、完全に。魚座アセンダントは夢見がちな存在感を運ぶ。", appearance: "柔らかい顔立ち、大きな夢見がちな目、優しい声。", firstImpression: "優しい、直感的、芸術的、判断しない。", shadow: "逃避、他人の感情を吸収する、境界線の難しさ。" },
+  };
+
+  const SIGN_NAMES = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"];
+
+  async function geocode(place: string): Promise<{ lat: number; lon: number } | null> {
+    try {
+      const resp = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(place)}&format=json&limit=1`, { headers: { "Accept-Language": "ja" } });
+      const data = await resp.json();
+      if (!Array.isArray(data) || data.length === 0) return null;
+      return { lat: parseFloat(data[0].lat), lon: parseFloat(data[0].lon) };
+    } catch { return null; }
+  }
+
+  function computeAscendant(date: Date, lat: number, lon: number): string {
+    const jd = date.getTime() / 86400000 + 2440587.5;
+    const T = (jd - 2451545.0) / 36525;
+    const gmst = (280.46061837 + 360.98564736629 * (jd - 2451545.0) + T * T * 0.000387933) % 360;
+    const lst = ((gmst + lon + 360) % 360) * Math.PI / 180;
+    const latRad = lat * Math.PI / 180;
+    const eps = 23.4392911 * Math.PI / 180;
+    const y = -Math.cos(lst);
+    const x = Math.sin(lst) * Math.cos(eps) + Math.tan(latRad) * Math.sin(eps);
+    let asc = Math.atan2(y, x) * 180 / Math.PI;
+    if (asc < 0) asc += 360;
+    return SIGN_NAMES[Math.floor(asc / 30)];
+  }
+
+  const form = document.getElementById("rising-form") as HTMLFormElement;
+  const loadingDiv = document.getElementById("result-loading") as HTMLDivElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+  const errorDiv = document.getElementById("result-error") as HTMLDivElement;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    resultDiv.classList.add("hidden");
+    errorDiv.classList.add("hidden");
+    loadingDiv.classList.remove("hidden");
+
+    const date = (document.getElementById("birth-date") as HTMLInputElement).value;
+    const time = (document.getElementById("birth-time") as HTMLInputElement).value;
+    const place = (document.getElementById("birth-place") as HTMLInputElement).value;
+    if (!date || !time || !place) { loadingDiv.classList.add("hidden"); return; }
+
+    const coords = await geocode(place);
+    if (!coords) { loadingDiv.classList.add("hidden"); errorDiv.classList.remove("hidden"); return; }
+
+    const birthDate = new Date(`${date}T${time}:00Z`);
+    const signKey = computeAscendant(birthDate, coords.lat, coords.lon);
+    const meaning = MEANINGS[signKey];
+
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-ruler") as HTMLElement).textContent = meaning.ruler;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+    (document.getElementById("result-appearance") as HTMLElement).textContent = meaning.appearance;
+    (document.getElementById("result-impression") as HTMLElement).textContent = meaning.firstImpression;
+    (document.getElementById("result-shadow") as HTMLElement).textContent = meaning.shadow;
+
+    loadingDiv.classList.add("hidden");
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>
