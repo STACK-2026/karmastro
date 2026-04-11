@@ -34,6 +34,33 @@ body {
     radial-gradient(ellipse at 50% 0%, rgba(88, 40, 160, 0.15) 0%, transparent 60%),
     radial-gradient(ellipse at 80% 50%, rgba(120, 60, 200, 0.08) 0%, transparent 50%);
   line-height: 1.7;
+  /* Cosmic custom cursor, keeps native fallback for safety */
+  cursor: url('/cursors/star.svg') 16 16, auto;
+}
+
+/* Keep text cursor on inputs/textareas for ergonomy */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+textarea,
+[contenteditable="true"] {
+  cursor: text;
+}
+
+/* Native pointer fallback on buttons/links on top of the star */
+a, button, [role="button"], input[type="submit"], input[type="button"], label[for], .cursor-pointer {
+  cursor: url('/cursors/star.svg') 16 16, pointer;
+}
+
+/* Mobile: no custom cursor, touch interactions are used instead */
+@media (pointer: coarse) {
+  body, a, button, [role="button"] { cursor: auto; }
 }
 
 /* === Typography === */

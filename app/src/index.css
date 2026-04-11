@@ -63,6 +63,29 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Figtree', sans-serif;
+    cursor: url('/cursors/star.svg') 16 16, auto;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="number"],
+  input[type="date"],
+  input[type="time"],
+  textarea,
+  [contenteditable="true"] {
+    cursor: text;
+  }
+
+  a, button, [role="button"], input[type="submit"], input[type="button"], label[for] {
+    cursor: url('/cursors/star.svg') 16 16, pointer;
+  }
+
+  @media (pointer: coarse) {
+    body, a, button, [role="button"] { cursor: auto; }
   }
 
   h1, h2, h3, h4, h5, h6 {
