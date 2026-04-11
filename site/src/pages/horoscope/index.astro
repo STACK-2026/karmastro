@@ -105,22 +105,49 @@ const jsonLd = {
         updateTime();
         setInterval(updateTime, 30000);
 
-        // 2. City from IP (cached 24h in localStorage)
+        // 2. City from IP: ipapi gives raw commune (can be tiny village like "Craon"),
+        // so we reverse-geocode via Nominatim to get the nearest significant admin unit.
+        // Cache key v2 to invalidate the old commune-level cache.
         async function getCity() {
           try {
-            const cached = localStorage.getItem("km_geo_city");
-            const cachedAt = parseInt(localStorage.getItem("km_geo_city_at") || "0", 10);
+            const cached = localStorage.getItem("km_geo_city_v2");
+            const cachedAt = parseInt(localStorage.getItem("km_geo_city_v2_at") || "0", 10);
             if (cached && Date.now() - cachedAt < 24 * 3600 * 1000) return cached;
 
-            const resp = await fetch("https://ipapi.co/json/", { cache: "default" });
-            if (!resp.ok) return null;
-            const data = await resp.json();
-            const city = data.city || null;
-            if (city) {
-              localStorage.setItem("km_geo_city", city);
-              localStorage.setItem("km_geo_city_at", String(Date.now()));
+            const ipResp = await fetch("https://ipapi.co/json/", { cache: "default" });
+            if (!ipResp.ok) return null;
+            const ipData = await ipResp.json();
+            const lat = ipData.latitude;
+            const lon = ipData.longitude;
+
+            // Fallback chain: if no coords, use ipapi region or city
+            let place: string | null = null;
+
+            if (lat != null && lon != null) {
+              try {
+                const nomResp = await fetch(
+                  `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json&zoom=10&addressdetails=1&accept-language=fr`,
+                  { headers: { Accept: "application/json" } }
+                );
+                if (nomResp.ok) {
+                  const nomData = await nomResp.json();
+                  const a = nomData.address || {};
+                  // Prefer known major admin units in descending significance.
+                  // address.city only populates for OSM places tagged place=city (prefectures, metropolises).
+                  // For villages we fall back to county (French département) or state (région).
+                  place = a.city || a.state_district || a.county || a.town || a.municipality || a.state || null;
+                }
+              } catch {}
             }
-            return city;
+
+            // Last resort: ipapi region, then raw city
+            if (!place) place = ipData.region || ipData.city || null;
+
+            if (place) {
+              localStorage.setItem("km_geo_city_v2", place);
+              localStorage.setItem("km_geo_city_v2_at", String(Date.now()));
+            }
+            return place;
           } catch {
             return null;
           }

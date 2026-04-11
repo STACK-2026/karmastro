@@ -7,7 +7,7 @@ category: "numerologie"
 tags: ["chemin de vie", "calcul", "numérologie", "méthode", "pythagore"]
 keywords: "chemin de vie, calcul, numérologie, méthode, pythagore, maîtres nombres"
 draft: false
-image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&h=630&fit=crop&crop=center&q=80"
+image: "https://images.unsplash.com/photo-1519638831568-d9897f54ed69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Calcul numérologique avec chiffres et équations sur fond cosmique"
 ---
 
