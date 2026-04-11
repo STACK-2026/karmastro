@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS public.newsletter_subscribers (
   confirmed_at TIMESTAMPTZ,
   unsubscribed BOOLEAN NOT NULL DEFAULT false,
   unsubscribed_at TIMESTAMPTZ,
-  unsubscribe_token TEXT UNIQUE NOT NULL DEFAULT encode(gen_random_bytes(24), 'hex'),
+  unsubscribe_token TEXT UNIQUE NOT NULL DEFAULT encode(extensions.gen_random_bytes(24), 'hex'),
   last_sent_at TIMESTAMPTZ,
   send_count INTEGER NOT NULL DEFAULT 0,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
@@ -61,7 +61,7 @@ BEGIN
     RETURN jsonb_build_object('success', false, 'error', 'invalid_email');
   END IF;
 
-  v_token := encode(gen_random_bytes(24), 'hex');
+  v_token := encode(extensions.gen_random_bytes(24), 'hex');
 
   SELECT * INTO v_existing FROM public.newsletter_subscribers WHERE email = lower(p_email);
 
