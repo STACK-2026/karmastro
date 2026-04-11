@@ -5,9 +5,14 @@ import { getContent } from "../../../i18n/content";
 import { t } from "../../../i18n/translations";
 
 export function getStaticPaths() {
-  return LOCALES.filter((l) => l !== DEFAULT_LOCALE).map((lang) => ({
-    params: { lang },
-  }));
+  // Exclude langs that have a dedicated localized tools folder (/es/herramientas/,
+  // /pt/ferramentas/, /it/strumenti/, /de/werkzeuge/, /en/tools/). The CF Pages
+  // _redirects file will 301 any /{lang}/outils/* to the new path for those langs.
+  const LOCALIZED = ["es", "pt", "it", "de", "en"];
+  return LOCALES
+    .filter((l) => l !== DEFAULT_LOCALE)
+    .filter((l) => !LOCALIZED.includes(l))
+    .map((lang) => ({ params: { lang } }));
 }
 
 const { lang } = Astro.params as { lang: Locale };

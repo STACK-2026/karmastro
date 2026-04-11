@@ -28,12 +28,12 @@ const jsonLd = [
     "@type": "CollectionPage",
     name: "Kostenlose Astrologie & Numerologie Rechner",
     description,
-    url: "https://karmastro.com/de/outils",
+    url: "https://karmastro.com/de/werkzeuge",
     inLanguage: "de",
     hasPart: TOOLS.map((t) => ({
       "@type": "WebApplication",
       name: t.title,
-      url: `https://karmastro.com/de/outils/${t.slug}`,
+      url: `https://karmastro.com/de/werkzeuge/${t.slug}`,
       applicationCategory: "UtilitiesApplication",
       offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
     })),
@@ -43,7 +43,7 @@ const jsonLd = [
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Start", item: "https://karmastro.com/de" },
-      { "@type": "ListItem", position: 2, name: "Werkzeuge", item: "https://karmastro.com/de/outils" },
+      { "@type": "ListItem", position: 2, name: "Werkzeuge", item: "https://karmastro.com/de/werkzeuge" },
     ],
   },
 ];
@@ -71,7 +71,7 @@ const jsonLd = [
       </h2>
       <div class="grid md:grid-cols-2 gap-4">
         {TOOLS.map((t) => (
-          <a href={`/de/outils/${t.slug}`} class="group p-5 rounded-2xl border border-amber-300/30 bg-amber-300/5 hover:border-amber-300/60 hover:bg-amber-300/10 transition-all">
+          <a href={`/de/werkzeuge/${t.slug}`} class="group p-5 rounded-2xl border border-amber-300/30 bg-amber-300/5 hover:border-amber-300/60 hover:bg-amber-300/10 transition-all">
             <div class="flex items-start gap-3 mb-2">
               <span class="text-3xl text-amber-300">{t.icon}</span>
               <h3 class="font-serif text-lg text-white group-hover:text-amber-300 transition-colors">{t.title}</h3>

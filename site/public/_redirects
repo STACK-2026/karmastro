@@ -3,3 +3,16 @@
 
 # Slug fix: premier article avait un mauvais slug
 /blog/numerologie-guide-complet-debuter /blog/qu-numerologie-guide-complet-debuter 301
+
+# Localized tools folder slugs (12/04/2026) — URLs /lang/outils/* → /lang/<localized>/*
+# Preserves SEO juice if any /lang/outils/* was indexed briefly.
+/en/outils /en/tools 301
+/en/outils/* /en/tools/:splat 301
+/es/outils /es/herramientas 301
+/es/outils/* /es/herramientas/:splat 301
+/pt/outils /pt/ferramentas 301
+/pt/outils/* /pt/ferramentas/:splat 301
+/it/outils /it/strumenti 301
+/it/outils/* /it/strumenti/:splat 301
+/de/outils /de/werkzeuge 301
+/de/outils/* /de/werkzeuge/:splat 301
