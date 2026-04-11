@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { compatibilityProfiles } from "@/lib/demoData";
 import BottomNav from "@/components/BottomNav";
+import AppFooter from "@/components/AppFooter";
 import StarField from "@/components/StarField";
 import AppHeader from "@/components/AppHeader";
 import { ZodiacSymbol } from "@/components/ZodiacSymbol";
@@ -90,6 +91,7 @@ const CompatibilityPage = () => {
         ))}
       </div>
 
+      <AppFooter />
       <BottomNav />
     </div>
   );

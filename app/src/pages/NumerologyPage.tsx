@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { personalYear, personalMonth, personalDay, inclusionTable, getNumberKeyword, getNumberColor } from "@/lib/numerology";
 import BottomNav from "@/components/BottomNav";
+import AppFooter from "@/components/AppFooter";
 import StarField from "@/components/StarField";
 import AppHeader from "@/components/AppHeader";
 import { useUserProfile } from "@/hooks/useUserProfile";
@@ -134,6 +135,7 @@ const NumerologyPage = () => {
         </div>
       </div>
 
+      <AppFooter />
       <BottomNav />
     </div>
   );

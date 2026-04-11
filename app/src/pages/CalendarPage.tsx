@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { personalYear, personalDay as calcPD, getNumberKeyword, getNumberColor, getMoonPhase } from "@/lib/numerology";
 import BottomNav from "@/components/BottomNav";
+import AppFooter from "@/components/AppFooter";
 import StarField from "@/components/StarField";
 import AppHeader from "@/components/AppHeader";
 import { useUserProfile } from "@/hooks/useUserProfile";
@@ -110,6 +111,7 @@ const CalendarPage = () => {
         )}
       </div>
 
+      <AppFooter />
       <BottomNav />
     </div>
   );
