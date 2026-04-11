@@ -1,0 +1,437 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Calculadora del Número de Camino de Vida - Numerología Pitagórica | Karmastro";
+const description =
+  "Calcula tu número de camino de vida gratis con nuestra calculadora de numerología pitagórica. Descubre tu misión, tus dones, tus desafíos y los 12 números (incluidos los maestros 11, 22, 33).";
+
+const MEANINGS: Record<number, { title: string; archetype: string; summary: string; qualities: string[]; challenges: string[]; mission: string; famousExamples: string }> = {
+  1: {
+    title: "El Pionero",
+    archetype: "El líder solitario, el iniciador, el que abre nuevos caminos.",
+    summary: "Naciste para liderar, no para seguir. El Camino de Vida 1 carga con la energía pura de la iniciativa. Cuando entras en una sala, algo cambia. Tu misión es convertir esa fuerza en creación, no en dominación.",
+    qualities: ["Liderazgo natural", "Independencia", "Ambición", "Valentía", "Originalidad"],
+    challenges: ["Egocentrismo", "Impaciencia", "Soledad", "Autoritarismo", "Rigidez"],
+    mission: "Aprende a liderar sin aplastar, a ser fuerte sin endurecerte. El 1 está aquí para crear terreno nuevo, para atreverse donde otros esperan.",
+    famousExamples: "Napoleón Bonaparte, Steve Jobs, Martin Luther King Jr.",
+  },
+  2: {
+    title: "La Diplomática",
+    archetype: "La mediadora, la intuitiva, la que teje vínculos.",
+    summary: "Percibes las energías como otros oyen sonidos. El Camino de Vida 2 es el camino de la paz, la armonía y la unión. Tu misión es usar esa sensibilidad como un radar, no como una herida.",
+    qualities: ["Diplomacia", "Sensibilidad", "Empatía", "Paciencia", "Cooperación"],
+    challenges: ["Dependencia emocional", "Indecisión", "Hipersensibilidad", "Evitar conflictos", "Sumisión"],
+    mission: "Entiende que la suavidad es fuerza, no debilidad. El 2 está aquí para reconciliar, para ver lo que otros no ven.",
+    famousExamples: "Barack Obama, Madonna, Mahatma Gandhi",
+  },
+  3: {
+    title: "La Artista",
+    archetype: "La expresión creativa, la niña del mundo, la que ilumina.",
+    summary: "Conviertes todo en color, palabras o música. El Camino de Vida 3 es el camino de la expresión creativa. Tu misión es dar forma a lo intangible y compartirlo generosamente.",
+    qualities: ["Creatividad", "Comunicación", "Optimismo", "Carisma", "Alegría"],
+    challenges: ["Dispersión", "Superficialidad", "Chismes", "Inmadurez emocional", "Escapismo"],
+    mission: "Aprende que la profundidad no mata la alegría. El 3 está aquí para expresar, para inspirar, para recordar a otros la belleza del mundo.",
+    famousExamples: "David Bowie, Hugh Jackman, Alec Baldwin",
+  },
+  4: {
+    title: "El Constructor",
+    archetype: "El trabajador metódico, el arquitecto, el que pone los cimientos.",
+    summary: "Construyes lo que otros solo sueñan. El Camino de Vida 4 es el camino de la estabilidad, la estructura y los resultados duraderos. Tu misión es crear algo que te sobreviva.",
+    qualities: ["Disciplina", "Fiabilidad", "Paciencia", "Lealtad", "Destreza práctica"],
+    challenges: ["Rigidez", "Adicción al trabajo", "Terquedad", "Miedo al cambio", "Excesiva seriedad"],
+    mission: "Aprende que la estructura sirve a la libertad, no al revés. El 4 está aquí para construir lo duradero, con disciplina y cuidado.",
+    famousExamples: "Bill Gates, Oprah Winfrey, Arnold Schwarzenegger",
+  },
+  5: {
+    title: "La Aventurera",
+    archetype: "El espíritu libre, la viajera, la que nunca se detiene.",
+    summary: "Necesitas libertad como otros necesitan aire. El Camino de Vida 5 es el camino del cambio, la experiencia y la libertad personal. Tu misión es convertir el movimiento en sabiduría.",
+    qualities: ["Curiosidad", "Adaptabilidad", "Encanto", "Versatilidad", "Valor para cambiar"],
+    challenges: ["Inquietud", "Problemas de compromiso", "Impulsividad", "Tendencias adictivas", "Energía dispersa"],
+    mission: "Aprende que la libertad sin dirección es solo deriva. El 5 está aquí para explorar con propósito, para transformar la experiencia en visión.",
+    famousExamples: "Abraham Lincoln, Angelina Jolie, Mick Jagger",
+  },
+  6: {
+    title: "El Cuidador",
+    archetype: "El protector, el maestro, el que sostiene a los demás.",
+    summary: "Cargas a otros como Atlas cargó el mundo. El Camino de Vida 6 es el camino de la responsabilidad, el amor y el servicio. Tu misión es dar sin perderte a ti mismo.",
+    qualities: ["Instinto de cuidar", "Responsabilidad", "Lealtad", "Capacidad de enseñar", "Dones creativos"],
+    challenges: ["Martirio", "Implicación excesiva", "Perfeccionismo", "Autosacrificio", "Entrometimiento"],
+    mission: "Aprende que no puedes servir desde una copa vacía. El 6 está aquí para sanar, para enseñar, para crear belleza alrededor de los que ama.",
+    famousExamples: "Albert Einstein, Meryl Streep, John Lennon",
+  },
+  7: {
+    title: "El Buscador",
+    archetype: "El filósofo místico, el investigador, el que lo cuestiona todo.",
+    summary: "Naciste preguntando por qué. El Camino de Vida 7 es el camino de la sabiduría, la introspección y la comprensión espiritual. Tu misión es encontrar la verdad y compartir lo que aprendes.",
+    qualities: ["Pensamiento profundo", "Intuición", "Independencia", "Mente analítica", "Conciencia espiritual"],
+    challenges: ["Aislamiento", "Cinismo", "Sobreanálisis", "Desconfianza", "Distancia emocional"],
+    mission: "Aprende que la verdad sin amor es estéril. El 7 está aquí para cavar bajo la superficie y traer lo que encuentra para otros.",
+    famousExamples: "Nikola Tesla, Princesa Diana, Johnny Depp",
+  },
+  8: {
+    title: "La Estratega",
+    archetype: "La constructora de imperios, la estratega, la que convierte la visión en riqueza.",
+    summary: "Entiendes el poder sin dejarte seducir por él. El Camino de Vida 8 es el camino del dominio material, la abundancia y la influencia. Tu misión es construir algo que sirva a más que a ti mismo.",
+    qualities: ["Liderazgo", "Intuición financiera", "Capacidad organizativa", "Resistencia", "Autoridad"],
+    challenges: ["Codicia", "Adicción al trabajo", "Necesidad de controlar", "Materialismo", "Intimidación"],
+    mission: "Aprende que el verdadero poder se mide por lo que crea, no por lo que domina. El 8 está aquí para dominar el mundo material con integridad.",
+    famousExamples: "Nelson Mandela, Pablo Picasso, Warren Buffett",
+  },
+  9: {
+    title: "El Humanitario",
+    archetype: "El alma vieja, el ciudadano global, el que sirve al colectivo.",
+    summary: "Llegas a la vida sabiendo cosas que otros deben aprender. El Camino de Vida 9 es el camino del amor universal, la compasión y el desapego. Tu misión es servir a algo más grande que tú mismo.",
+    qualities: ["Compasión", "Sabiduría", "Sensibilidad artística", "Perspectiva global", "Generosidad"],
+    challenges: ["Desapego emocional", "Complejo de salvador", "Melancolía", "Dificultad para soltar", "Autojusticia"],
+    mission: "Aprende que rendirse es fuerza, no derrota. El 9 está aquí para amar sin poseer, para dar sin esperar retorno.",
+    famousExamples: "Madre Teresa, Mahatma Gandhi, Jim Carrey",
+  },
+  11: {
+    title: "La Visionaria (Número Maestro)",
+    archetype: "La mensajera espiritual, la intuitiva, la que ve lo que otros no pueden.",
+    summary: "Naciste conectada a una frecuencia más alta. El Número Maestro 11 carga con una intuición intensa y una llamada a despertar a otros. Tu misión es canalizar la inspiración en forma concreta.",
+    qualities: ["Intuición excepcional", "Pensamiento visionario", "Carisma", "Magnetismo espiritual", "Presencia inspiradora"],
+    challenges: ["Tensión nerviosa", "Hipersensibilidad", "Dudas de sí misma", "Ansiedad", "Martirio"],
+    mission: "Aprende que tu sensibilidad es tu don, no tu herida. El 11 está aquí para traer luz a quienes caminan en la oscuridad.",
+    famousExamples: "Barack Obama, Michelle Obama, Tim Burton",
+  },
+  22: {
+    title: "El Maestro Constructor (Número Maestro)",
+    archetype: "El arquitecto de grandes visiones, el que convierte sueños en estructuras duraderas.",
+    summary: "Puedes convertir lo imposible en un plano. El Número Maestro 22 combina la intuición espiritual del 11 con la fuerza práctica del 4. Tu misión es construir algo que cambie el mundo.",
+    qualities: ["Pragmatismo visionario", "Liderazgo", "Innovación", "Resistencia", "Pensamiento a gran escala"],
+    challenges: ["Presión abrumadora", "Perfeccionismo", "Agotamiento", "Tendencias dictatoriales", "Parálisis por duda"],
+    mission: "Aprende que la paciencia no es debilidad. El 22 está aquí para construir monumentos del espíritu, sean edificios, movimientos o ideas.",
+    famousExamples: "Dalai Lama, Paul McCartney, Oprah Winfrey",
+  },
+  33: {
+    title: "El Sanador Universal (Número Maestro)",
+    archetype: "El maestro de maestros, el que sana a través del amor incondicional.",
+    summary: "Naciste con una frecuencia rara de amor desinteresado. El Número Maestro 33 es el camino de vida más raro. Tu misión es sanar el mundo con sabiduría y compasión, sin pedir nada a cambio.",
+    qualities: ["Amor incondicional", "Don para enseñar", "Sanación creativa", "Devoción espiritual", "Servicio sagrado"],
+    challenges: ["Martirio", "Agotamiento emocional", "Perfeccionismo", "Olvido de sí mismo", "Responsabilidad abrumadora"],
+    mission: "Aprende que dar desde el vacío no es dar. El 33 está aquí para sanar a través de la presencia, no del sacrificio.",
+    famousExamples: "Albert Einstein, John Lennon, Meryl Streep",
+  },
+};
+
+const DISPLAY_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Calculadora del Número de Camino de Vida",
+    description,
+    url: "https://karmastro.com/es/outils/camino-de-vida",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "es",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "127" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "Cómo calcular tu número de camino de vida",
+    description: "Método pitagórico paso a paso para encontrar tu número de camino de vida desde tu fecha de nacimiento.",
+    inLanguage: "es",
+    step: [
+      { "@type": "HowToStep", position: 1, name: "Escribe tu fecha de nacimiento", text: "Escribe tu fecha de nacimiento completa en formato DD/MM/AAAA. Ejemplo: 14/04/1992." },
+      { "@type": "HowToStep", position: 2, name: "Reduce cada componente", text: "Reduce el día, el mes y el año por separado sumando sus dígitos. 14 se convierte en 1+4=5. Abril ya es 4. 1992 se convierte en 1+9+9+2=21, luego 2+1=3." },
+      { "@type": "HowToStep", position: 3, name: "Suma los valores reducidos", text: "Suma los tres valores reducidos. En nuestro ejemplo: 5 + 4 + 3 = 12." },
+      { "@type": "HowToStep", position: 4, name: "Reducción final", text: "Reduce la suma final a un solo dígito, excepto los números maestros 11, 22 y 33 que se mantienen intactos. 12 se convierte en 1+2=3. Tu número de camino de vida es 3." },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "¿Qué es un número de camino de vida?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Un número de camino de vida es la cifra central en la numerología pitagórica. Se calcula a partir de tu fecha de nacimiento y revela la misión principal de tu vida, tus dones innatos y las lecciones que has venido a aprender. Es el equivalente numerológico del signo solar en astrología.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿Qué tan precisa es una calculadora del número de camino de vida?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "El número de camino de vida se calcula con matemática pura, así que el número en sí siempre es 100% preciso. La interpretación es una lectura basada en miles de años de tradición pitagórica. Está pensado como herramienta de autorreflexión, no como una predicción determinista de tu futuro.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿Puede cambiar mi número de camino de vida?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. Tu número de camino de vida lo fija tu fecha de nacimiento y nunca cambia. Lo que cambia es cómo lo expresas. Cada número tiene una expresión superior e inferior: el 8 puede ser un tirano o un benévolo constructor de imperios. La elección es tuya.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿Qué son los números maestros (11, 22, 33)?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Los números maestros 11, 22 y 33 nunca se reducen en numerología pitagórica. Cargan una vibración duplicada y una misión más exigente. El 11 es la visión intuitiva, el 22 es el maestro constructor y el 33 es el sanador universal. Menos del 5% de las personas cargan un número maestro de camino de vida.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿Es el número de camino de vida lo mismo que mi signo solar?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. Tu signo solar proviene de la astrología y describe el núcleo de tu personalidad según la posición del Sol al nacer. Tu número de camino de vida proviene de la numerología y describe tu misión de vida desde la reducción de tu fecha de nacimiento. Los dos sistemas se complementan pero no son intercambiables.",
+        },
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/es" class="hover:text-amber-300">Inicio</a>
+      <span class="mx-2">/</span>
+      <a href="/es/outils" class="hover:text-amber-300">Herramientas</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Camino de Vida</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Numerología Pitagórica</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Calculadora del Número de Camino de Vida</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Tu número de camino de vida es la cifra más importante de la numerología. Revela tu misión, tus dones innatos y las lecciones kármicas de esta existencia. Cálculo gratis, método pitagórico transparente, interpretación completa.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="life-path-form" class="space-y-4">
+        <div>
+          <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">
+            Tu fecha de nacimiento
+          </label>
+          <input
+            type="date"
+            id="birth-date"
+            name="birth-date"
+            required
+            class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors"
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity"
+        >
+          Calcular mi camino de vida
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Tu número de camino de vida</p>
+          <div class="flex items-baseline gap-4 mb-4">
+            <span id="result-number" class="text-7xl font-serif text-amber-300"></span>
+            <span id="result-title" class="text-xl font-serif text-white/90"></span>
+          </div>
+          <p class="text-xs text-white/50 mb-4">Cálculo: <span id="result-calc" class="text-white/70"></span></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Fortalezas</p>
+              <ul id="result-qualities" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">Desafíos</p>
+              <ul id="result-challenges" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">Misión</p>
+            <p id="result-mission" class="text-sm text-white/80 italic leading-relaxed"></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-center">
+            <a
+              href="https://app.karmastro.com/oracle?lang=es"
+              class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity"
+            >
+              Profundiza con el Oráculo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">¿Qué es un número de camino de vida?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Tu <strong>número de camino de vida</strong> es la cifra central en la numerología pitagórica. Calculado a partir de tu fecha de nacimiento, revela la misión esencial de tu existencia. Piénsalo como el equivalente numerológico del signo solar en astrología: la vibración subyacente que colorea todo lo que haces, el arquetipo que viniste a encarnar.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Para <strong>Pitágoras</strong> y sus discípulos en el siglo VI a.C., cada número llevaba una vibración única, una firma energética. Los dígitos del 1 al 9 cubren todos los arquetipos humanos. Los números maestros 11, 22 y 33 cargan una frecuencia más rara y exigente. Calcular tu número de camino de vida es redescubrir lo que los antiguos griegos llamaban tu <em>daimon</em>: la razón por la que viniste aquí.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Cómo calcular tu número de camino de vida</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        El método es simple y reproducible. Sumas cada dígito de tu fecha de nacimiento y reduces la suma hasta obtener un solo dígito, a menos que caigas en un número maestro.
+      </p>
+      <div class="p-5 rounded-xl bg-white/[0.03] border border-white/10 mb-6 not-prose">
+        <p class="text-sm text-white/90 mb-3"><strong>Ejemplo: 14 de abril de 1992</strong></p>
+        <ul class="text-sm text-white/70 space-y-1">
+          <li>Día: 1 + 4 = 5</li>
+          <li>Mes: 4 = 4</li>
+          <li>Año: 1 + 9 + 9 + 2 = 21 → 2 + 1 = 3</li>
+          <li>Total: 5 + 4 + 3 = <strong class="text-amber-300">12 → 1 + 2 = 3</strong></li>
+        </ul>
+        <p class="text-sm text-white/60 mt-3">Número de camino de vida = 3 (La Artista)</p>
+      </div>
+      <p class="text-white/80 leading-relaxed mb-4">
+        <strong>Excepción importante:</strong> si tu cálculo da 11, 22 o 33 en cualquier etapa antes de la reducción final, no los reduzcas. Son los números maestros. Por ejemplo, un camino de vida 29/11 se queda como 11, no como 2. Los números maestros cargan una misión duplicada, más pesada pero más luminosa.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Los 9 caminos de vida (y los 3 números maestros)</h2>
+      <p class="text-white/80 leading-relaxed mb-6">
+        Cada número de camino de vida corresponde a un arquetipo universal. Aquí tienes un resumen de los 12 perfiles. Calcula tu número arriba para ver la lectura completa de tu camino específico.
+      </p>
+
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
+        {DISPLAY_ORDER.map((n) => {
+          const meaning = MEANINGS[n];
+          return (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <div class="flex items-baseline gap-3 mb-2">
+                <span class="text-3xl font-serif text-amber-300">{n}</span>
+                <span class="text-sm text-white/80 font-medium">{meaning.title}</span>
+              </div>
+              <p class="text-xs text-white/60 leading-relaxed">{meaning.archetype}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">La historia de la numerología</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        La numerología no empezó con <a href="https://es.wikipedia.org/wiki/Pit%C3%A1goras" class="text-amber-300 hover:underline">Pitágoras</a>. Los <strong>babilonios</strong> ya usaban un sistema numérico sagrado hace más de 4.000 años. Los hebreos desarrollaron la <em>gematría</em>, una correspondencia entre letras y números que todavía se encuentra en la Cábala. Los egipcios alineaban sus pirámides sobre proporciones matemáticas que consideraban cósmicas.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Pitágoras sintetizó estas tradiciones en un sistema coherente en el siglo VI a.C. Su famosa máxima «todo es número» no era una metáfora: literalmente veía el universo como una composición matemática. Sus discípulos, los pitagóricos, codificaron lo que hoy llamamos <strong>numerología pitagórica</strong>. Es el método que Karmastro utiliza, con el rigor y la transparencia que merece.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Más allá del número de camino de vida</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        El número de camino de vida es el primero que calcular, pero no el único. En numerología pitagórica, tu perfil completo incluye al menos cinco números clave:
+      </p>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Número de camino de vida</strong> (de tu fecha de nacimiento): tu misión principal</li>
+        <li><strong>Número de expresión</strong> (de tu nombre completo): tus talentos naturales</li>
+        <li><strong>Número del alma</strong> (de las vocales de tu nombre): tus deseos más profundos</li>
+        <li><strong>Número de personalidad</strong> (de las consonantes): tu imagen social</li>
+        <li><strong>Año personal</strong> (que cambia cada año): tu ciclo actual</li>
+      </ul>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Para un cálculo completo de estos cinco números más tu carta astral y una lectura personalizada por una de nuestras cuatro guías cósmicas (Sibylle, Orión, Séléné o Pythia), usa <a href="https://app.karmastro.com" class="text-amber-300 hover:underline">la app de Karmastro</a>.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Preguntas frecuentes</h2>
+
+      <h3 class="font-serif text-xl mb-2">¿Puede un número de camino de vida predecir el futuro?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        No. Tu número de camino de vida no predice eventos específicos. Describe la vibración subyacente que cargas a lo largo de la existencia. La máxima medieval a menudo atribuida a Tomás de Aquino lo captura bien: <em>astra inclinant, sed non necessitant</em> — «los astros inclinan, pero no determinan». La numerología funciona igual: ilumina tendencias, no destinos fijos.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">¿Por qué los números maestros 11, 22 y 33 nunca se reducen?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Porque cargan una vibración duplicada. Un 11 no es solo un 2 (1+1), es un 11 <em>y</em> un 2 al mismo tiempo. El 22 sostiene la fuerza concreta del 4 (2+2) combinada con una dimensión visionaria. El 33 teje el 11 y el 22 para dar el sanador universal. Los números maestros conciernen a menos del 5% de la población y cargan una misión más exigente.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">¿Y si mi número no me resuena?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Dos posibilidades. O estás viviendo el <em>lado sombra</em> de tu número (cada camino tiene una expresión luminosa y una oscura), o calculaste mal los dígitos. Rehaz las cuentas con cuidado. Si el lado sombra resuena demasiado, es una invitación a explorarlo — el Oráculo puede ayudar cruzando tu camino de vida con tu carta astral completa.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">¿Cambiar mi nombre cambia mi número de camino de vida?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        No. Tu número de camino de vida lo fija solo tu fecha de nacimiento. Sin embargo, tu número de expresión (calculado desde tu nombre completo de nacimiento) puede cambiar si cambias legalmente de nombre. Muchos numerólogos consideran que el nombre legal de nacimiento carga la impronta original, incluso tras un cambio posterior.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">¿Karmastro usa numerología pitagórica o caldea?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        <strong>Pitagórica</strong>, el método más extendido y mejor documentado. El método caldeo es más antiguo y asigna valores distintos a las letras: fascinante pero menos intuitivo para principiantes. Karmastro aplica rigurosamente el método pitagórico, con la tabla A=1, B=2, C=3 hasta I=9, luego J=1 y así sucesivamente.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">¿Quieres una lectura completa?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        El número de camino de vida es solo el comienzo. Para cruzar tus cinco números de numerología con tu carta astral completa y recibir guía personalizada, habla con una de nuestras cuatro guías cósmicas.
+      </p>
+      <a
+        href="https://app.karmastro.com/oracle?lang=es"
+        class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity"
+      >
+        Consultar el Oráculo gratis
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/es/outils" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Todas las herramientas</a>
+      <a href="/es/outils/ascendente" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Ascendente</a>
+      <a href="/es/horoscope" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Horóscopo diario</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  import { calculateLifePath } from "../../../data/numerology-meanings";
+
+  const MEANINGS_ES: Record<number, { title: string; summary: string; qualities: string[]; challenges: string[]; mission: string }> = {
+    1: { title: "El Pionero", summary: "Naciste para liderar, no para seguir. El Camino de Vida 1 carga con la energía pura de la iniciativa. Cuando entras en una sala, algo cambia. Tu misión es convertir esa fuerza en creación, no en dominación.", qualities: ["Liderazgo natural", "Independencia", "Ambición", "Valentía", "Originalidad"], challenges: ["Egocentrismo", "Impaciencia", "Soledad", "Autoritarismo", "Rigidez"], mission: "Aprende a liderar sin aplastar, a ser fuerte sin endurecerte. El 1 está aquí para crear terreno nuevo, para atreverse donde otros esperan." },
+    2: { title: "La Diplomática", summary: "Percibes las energías como otros oyen sonidos. El Camino de Vida 2 es el camino de la paz, la armonía y la unión. Tu misión es usar esa sensibilidad como un radar, no como una herida.", qualities: ["Diplomacia", "Sensibilidad", "Empatía", "Paciencia", "Cooperación"], challenges: ["Dependencia emocional", "Indecisión", "Hipersensibilidad", "Evitar conflictos", "Sumisión"], mission: "Entiende que la suavidad es fuerza, no debilidad. El 2 está aquí para reconciliar, para ver lo que otros no ven." },
+    3: { title: "La Artista", summary: "Conviertes todo en color, palabras o música. El Camino de Vida 3 es el camino de la expresión creativa. Tu misión es dar forma a lo intangible y compartirlo generosamente.", qualities: ["Creatividad", "Comunicación", "Optimismo", "Carisma", "Alegría"], challenges: ["Dispersión", "Superficialidad", "Chismes", "Inmadurez emocional", "Escapismo"], mission: "Aprende que la profundidad no mata la alegría. El 3 está aquí para expresar, para inspirar, para recordar a otros la belleza del mundo." },
+    4: { title: "El Constructor", summary: "Construyes lo que otros solo sueñan. El Camino de Vida 4 es el camino de la estabilidad, la estructura y los resultados duraderos. Tu misión es crear algo que te sobreviva.", qualities: ["Disciplina", "Fiabilidad", "Paciencia", "Lealtad", "Destreza práctica"], challenges: ["Rigidez", "Adicción al trabajo", "Terquedad", "Miedo al cambio", "Excesiva seriedad"], mission: "Aprende que la estructura sirve a la libertad, no al revés. El 4 está aquí para construir lo duradero, con disciplina y cuidado." },
+    5: { title: "La Aventurera", summary: "Necesitas libertad como otros necesitan aire. El Camino de Vida 5 es el camino del cambio, la experiencia y la libertad personal. Tu misión es convertir el movimiento en sabiduría.", qualities: ["Curiosidad", "Adaptabilidad", "Encanto", "Versatilidad", "Valor para cambiar"], challenges: ["Inquietud", "Problemas de compromiso", "Impulsividad", "Tendencias adictivas", "Energía dispersa"], mission: "Aprende que la libertad sin dirección es solo deriva. El 5 está aquí para explorar con propósito, para transformar la experiencia en visión." },
+    6: { title: "El Cuidador", summary: "Cargas a otros como Atlas cargó el mundo. El Camino de Vida 6 es el camino de la responsabilidad, el amor y el servicio. Tu misión es dar sin perderte a ti mismo.", qualities: ["Instinto de cuidar", "Responsabilidad", "Lealtad", "Capacidad de enseñar", "Dones creativos"], challenges: ["Martirio", "Implicación excesiva", "Perfeccionismo", "Autosacrificio", "Entrometimiento"], mission: "Aprende que no puedes servir desde una copa vacía. El 6 está aquí para sanar, para enseñar, para crear belleza alrededor de los que ama." },
+    7: { title: "El Buscador", summary: "Naciste preguntando por qué. El Camino de Vida 7 es el camino de la sabiduría, la introspección y la comprensión espiritual. Tu misión es encontrar la verdad y compartir lo que aprendes.", qualities: ["Pensamiento profundo", "Intuición", "Independencia", "Mente analítica", "Conciencia espiritual"], challenges: ["Aislamiento", "Cinismo", "Sobreanálisis", "Desconfianza", "Distancia emocional"], mission: "Aprende que la verdad sin amor es estéril. El 7 está aquí para cavar bajo la superficie y traer lo que encuentra para otros." },
+    8: { title: "La Estratega", summary: "Entiendes el poder sin dejarte seducir por él. El Camino de Vida 8 es el camino del dominio material, la abundancia y la influencia. Tu misión es construir algo que sirva a más que a ti mismo.", qualities: ["Liderazgo", "Intuición financiera", "Capacidad organizativa", "Resistencia", "Autoridad"], challenges: ["Codicia", "Adicción al trabajo", "Necesidad de controlar", "Materialismo", "Intimidación"], mission: "Aprende que el verdadero poder se mide por lo que crea, no por lo que domina. El 8 está aquí para dominar el mundo material con integridad." },
+    9: { title: "El Humanitario", summary: "Llegas a la vida sabiendo cosas que otros deben aprender. El Camino de Vida 9 es el camino del amor universal, la compasión y el desapego. Tu misión es servir a algo más grande que tú mismo.", qualities: ["Compasión", "Sabiduría", "Sensibilidad artística", "Perspectiva global", "Generosidad"], challenges: ["Desapego emocional", "Complejo de salvador", "Melancolía", "Dificultad para soltar", "Autojusticia"], mission: "Aprende que rendirse es fuerza, no derrota. El 9 está aquí para amar sin poseer, para dar sin esperar retorno." },
+    11: { title: "La Visionaria (Número Maestro)", summary: "Naciste conectada a una frecuencia más alta. El Número Maestro 11 carga con una intuición intensa y una llamada a despertar a otros. Tu misión es canalizar la inspiración en forma concreta.", qualities: ["Intuición excepcional", "Pensamiento visionario", "Carisma", "Magnetismo espiritual", "Presencia inspiradora"], challenges: ["Tensión nerviosa", "Hipersensibilidad", "Dudas de sí misma", "Ansiedad", "Martirio"], mission: "Aprende que tu sensibilidad es tu don, no tu herida. El 11 está aquí para traer luz a quienes caminan en la oscuridad." },
+    22: { title: "El Maestro Constructor (Número Maestro)", summary: "Puedes convertir lo imposible en un plano. El Número Maestro 22 combina la intuición espiritual del 11 con la fuerza práctica del 4. Tu misión es construir algo que cambie el mundo.", qualities: ["Pragmatismo visionario", "Liderazgo", "Innovación", "Resistencia", "Pensamiento a gran escala"], challenges: ["Presión abrumadora", "Perfeccionismo", "Agotamiento", "Tendencias dictatoriales", "Parálisis por duda"], mission: "Aprende que la paciencia no es debilidad. El 22 está aquí para construir monumentos del espíritu, sean edificios, movimientos o ideas." },
+    33: { title: "El Sanador Universal (Número Maestro)", summary: "Naciste con una frecuencia rara de amor desinteresado. El Número Maestro 33 es el camino de vida más raro. Tu misión es sanar el mundo con sabiduría y compasión.", qualities: ["Amor incondicional", "Don para enseñar", "Sanación creativa", "Devoción espiritual", "Servicio sagrado"], challenges: ["Martirio", "Agotamiento emocional", "Perfeccionismo", "Olvido de sí mismo", "Responsabilidad abrumadora"], mission: "Aprende que dar desde el vacío no es dar. El 33 está aquí para sanar a través de la presencia, no del sacrificio." },
+  };
+
+  const form = document.getElementById("life-path-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const input = document.getElementById("birth-date") as HTMLInputElement;
+    const value = input.value;
+    if (!value) return;
+
+    const [y, m, d] = value.split("-").map(Number);
+    const result = calculateLifePath(d, m, y);
+    const meaning = MEANINGS_ES[result.number] || MEANINGS_ES[9];
+
+    (document.getElementById("result-number") as HTMLElement).textContent = String(result.number);
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-calc") as HTMLElement).textContent = result.calculation;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+
+    const qualitiesList = document.getElementById("result-qualities") as HTMLElement;
+    qualitiesList.innerHTML = meaning.qualities.map((q) => `<li>✦ ${q}</li>`).join("");
+
+    const challengesList = document.getElementById("result-challenges") as HTMLElement;
+    challengesList.innerHTML = meaning.challenges.map((c) => `<li>◆ ${c}</li>`).join("");
+
+    (document.getElementById("result-mission") as HTMLElement).textContent = meaning.mission;
+
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>
