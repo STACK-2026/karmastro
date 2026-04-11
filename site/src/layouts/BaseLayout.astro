@@ -219,5 +219,55 @@ const hreflangUrls = LOCALES.map((locale) => {
         document.querySelectorAll(".js-fade-in").forEach(el => el.classList.add("visible"));
       }, 2000);
     </script>
+
+    <!-- Sparkle cursor trail, ultra lite. Disabled for reduced-motion users. -->
+    <script is:inline>
+      (function () {
+        if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        const isMobile = matchMedia("(pointer: coarse)").matches;
+        const throttle = isMobile ? 120 : 45;
+        const colors = ["rgba(251,191,36,0.85)", "rgba(201,168,232,0.75)", "rgba(255,255,255,0.8)"];
+        let lastSpawn = 0;
+        let active = 0;
+        const MAX_ACTIVE = 30;
+
+        function spawn(x, y) {
+          const now = performance.now();
+          if (now - lastSpawn < throttle) return;
+          if (active >= MAX_ACTIVE) return;
+          lastSpawn = now;
+          active++;
+
+          const size = 2 + Math.random() * 2.2;
+          const color = colors[(Math.random() * colors.length) | 0];
+          const dx = (Math.random() - 0.5) * 22;
+          const dy = (Math.random() - 0.5) * 14 + 8;
+          const dur = 650 + Math.random() * 400;
+
+          const star = document.createElement("div");
+          star.style.cssText =
+            "position:fixed;left:" + x + "px;top:" + y + "px;width:" + size + "px;height:" + size +
+            "px;background:" + color + ";border-radius:50%;box-shadow:0 0 " + (size * 2.5) + "px " + color +
+            ";pointer-events:none;z-index:9999;opacity:0.85;transform:translate(-50%,-50%);transition:opacity " +
+            dur + "ms ease-out, transform " + dur + "ms ease-out;will-change:opacity,transform;";
+          document.body.appendChild(star);
+
+          requestAnimationFrame(function () {
+            star.style.opacity = "0";
+            star.style.transform = "translate(calc(-50% + " + dx + "px), calc(-50% + " + dy + "px))";
+          });
+
+          setTimeout(function () {
+            star.remove();
+            active--;
+          }, dur + 80);
+        }
+
+        window.addEventListener("mousemove", function (e) { spawn(e.clientX, e.clientY); }, { passive: true });
+        window.addEventListener("touchmove", function (e) {
+          if (e.touches && e.touches[0]) spawn(e.touches[0].clientX, e.touches[0].clientY);
+        }, { passive: true });
+      })();
+    </script>
   </body>
 </html>

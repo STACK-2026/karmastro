@@ -23,6 +23,7 @@ import PricingPage from "./pages/PricingPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import CookieBanner from "./components/CookieBanner.tsx";
 import GoogleOneTap from "./components/GoogleOneTap.tsx";
+import SparkleCursorTrail from "./components/SparkleCursorTrail.tsx";
 import { usePageTracking } from "./hooks/usePageTracking";
 import { OnboardingGate } from "./components/OnboardingGate";
 import { useEffect } from "react";
@@ -55,6 +56,7 @@ const App = () => (
           <TrackingProvider>
             <OnboardingGate>
             <GoogleOneTap />
+            <SparkleCursorTrail />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/onboarding" element={<OnboardingPage />} />
