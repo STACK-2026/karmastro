@@ -1,0 +1,149 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Free Synastry Calculator - Relationship Astrology Chart | Karmastro";
+const description =
+  "Free synastry calculator. Compare two birth charts to see how your planets interact. Reveals the real chemistry between two people beyond simple sun sign compatibility.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Free Synastry Calculator",
+    description,
+    url: "https://karmastro.com/en/tools/synastry",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "en",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "What is a synastry chart?", acceptedAnswer: { "@type": "Answer", text: "A synastry chart overlays two people's complete birth charts to study how their planets aspect each other. It is the most detailed form of astrological compatibility analysis, going far beyond sun sign comparison to reveal the real dynamics between two people." } },
+      { "@type": "Question", name: "Synastry vs composite chart, what is the difference?", acceptedAnswer: { "@type": "Answer", text: "Synastry studies how each person's planets aspect the other's (interaction). Composite chart creates a single new chart from the midpoints of both partners (the relationship itself as an entity). Both are useful and give different insights. Karmastro offers both in the Oracle app." } },
+      { "@type": "Question", name: "Which planets matter most in synastry?", acceptedAnswer: { "@type": "Answer", text: "Venus and Mars are the most important for romance. Moon for emotional connection. Sun for core identity resonance. Mercury for communication. Saturn for long-term commitment. The ascendants tell you about physical attraction. A strong romantic match usually shows harmonious aspects between several of these." } },
+      { "@type": "Question", name: "Can synastry predict if a relationship will last?", acceptedAnswer: { "@type": "Answer", text: "Not directly. Synastry shows the energetic dynamics and potential challenges, not a verdict. A challenging synastry can last forever if both partners choose to grow together. A smooth synastry can end fast if neither does the work. Astrology shows the deal; free will plays it." } },
+      { "@type": "Question", name: "What is the best aspect in synastry?", acceptedAnswer: { "@type": "Answer", text: "There is no single best aspect. Commonly celebrated: Venus trine Venus (deep love compatibility), Sun conjunct Moon (core resonance), Mars trine Venus (physical chemistry), Saturn trine Saturn (long-term stability). The best synastry has a mix of harmonious and challenging aspects — total harmony is often boring, total friction is exhausting." } },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/en" class="hover:text-amber-300">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/en/tools" class="hover:text-amber-300">Tools</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Synastry</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Relationship Astrology</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Synastry Calculator</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Compare two complete birth charts to see the real chemistry between you. Synastry is what professional astrologers use when sun sign compatibility is not enough.
+      </p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-pink-300/30 bg-gradient-to-br from-pink-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">✦✦</div>
+      <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">Get your free synastry reading</h2>
+      <p class="text-white/70 mb-6 max-w-xl mx-auto leading-relaxed">
+        A full synastry calculation requires both partners' exact birth date, time, and location. Our app runs the Swiss Ephemeris to compute every planet-to-planet aspect between the two charts, then hands the result to Séléné, our love astrology guide.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=en" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+        Start my synastry reading
+      </a>
+      <p class="text-xs text-white/50 mt-3">No credit card · Complete analysis in English</p>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">What is synastry?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        <strong>Synastry</strong> is the branch of astrology that studies how two people's birth charts interact. Instead of comparing just sun signs, synastry overlays both complete natal charts and studies every angle between every planet in one chart and every planet in the other. The result is a detailed map of the specific chemistry between two people — romantic, emotional, sexual, intellectual, karmic.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        This is the technique professional astrologers use for couple consultations. It reveals why some relationships feel electric and others feel flat, why some fights never end and others are resolved by a single look, why some couples finish each other's sentences and others misunderstand the simplest things.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">What synastry reveals</h2>
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-6">
+        <div class="p-4 rounded-xl border border-pink-300/20 bg-pink-300/5">
+          <p class="font-serif text-lg text-pink-300 mb-1">Romantic chemistry</p>
+          <p class="text-sm text-white/70 leading-relaxed">Venus-Mars aspects, Moon-Venus aspects, the fire in the actual attraction.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-sky-300/20 bg-sky-300/5">
+          <p class="font-serif text-lg text-sky-300 mb-1">Emotional resonance</p>
+          <p class="text-sm text-white/70 leading-relaxed">Moon-to-Moon and Moon-to-Sun aspects reveal how deeply you feel understood.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-emerald-300/20 bg-emerald-300/5">
+          <p class="font-serif text-lg text-emerald-300 mb-1">Communication style</p>
+          <p class="text-sm text-white/70 leading-relaxed">Mercury aspects show whether you speak the same language (literally and figuratively).</p>
+        </div>
+        <div class="p-4 rounded-xl border border-purple-300/20 bg-purple-300/5">
+          <p class="font-serif text-lg text-purple-300 mb-1">Long-term potential</p>
+          <p class="text-sm text-white/70 leading-relaxed">Saturn aspects reveal whether the connection can weather time, stress, and real life.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-amber-300/20 bg-amber-300/5">
+          <p class="font-serif text-lg text-amber-300 mb-1">Karmic ties</p>
+          <p class="text-sm text-white/70 leading-relaxed">Lunar nodes, Pluto contacts, and 12th house aspects show past-life echoes and soul contracts.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-rose-300/20 bg-rose-300/5">
+          <p class="font-serif text-lg text-rose-300 mb-1">Friction points</p>
+          <p class="text-sm text-white/70 leading-relaxed">Squares and oppositions show where you will fight — not if, but how. Knowing in advance turns recurring fights into conscious growth.</p>
+        </div>
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">The most important synastry aspects</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Not every planetary contact carries the same weight. These are the ones professional astrologers study first:
+      </p>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Sun-Moon</strong>: core resonance. One of the most important aspects in any lasting relationship.</li>
+        <li><strong>Venus-Mars</strong>: sexual attraction and romantic chemistry. The engine of passion.</li>
+        <li><strong>Moon-Moon</strong>: how you soothe each other when things get hard.</li>
+        <li><strong>Sun-Ascendant</strong>: do you see each other as the person you want to be?</li>
+        <li><strong>Venus-Venus</strong>: do you love the same things, enjoy the same pleasures?</li>
+        <li><strong>Mercury-Mercury</strong>: do you actually understand each other when you talk?</li>
+        <li><strong>Saturn aspects</strong>: will this last? Saturn is the long-game planet.</li>
+        <li><strong>Pluto contacts</strong>: is this a transformative relationship or a passing encounter?</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Synastry vs composite chart</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        These two techniques answer different questions. <strong>Synastry</strong> asks: how do we interact? It shows the back-and-forth between two individuals. <strong>Composite chart</strong> asks: what kind of entity is this relationship itself? It creates a single new chart from the midpoints of both birth charts, treating the relationship as its own being with its own destiny.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Professional astrologers use both. The Karmastro Oracle calculates them automatically when you enter two birth charts, so you get the full picture in one session.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Can synastry predict if we will stay together?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        No — and anyone who promises that is selling something. Synastry shows <em>what you are working with</em>, not what you will do with it. A challenging synastry can become one of the great love stories of two lives if both partners grow into the lessons. A beautiful synastry can fizzle out fast if neither partner does any inner work. Astrology shows the deal; free will plays the hand.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        What synastry is excellent for is <strong>self-awareness in relationship</strong>. When you understand why the same fight keeps happening, you can stop taking it personally and start working with it. That alone saves relationships.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Want your full synastry reading?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Complete synastry with every major aspect, plus a composite chart, plus a personalized reading by Séléné, our love astrology guide. Free, no signup required to start.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=en" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Start my reading
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/en/tools" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← All tools</a>
+      <a href="/en/tools/compatibility" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Zodiac compatibility</a>
+      <a href="/en/tools/birth-chart" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Birth chart</a>
+    </nav>
+  </article>
+</BaseLayout>

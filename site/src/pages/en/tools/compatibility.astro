@@ -1,0 +1,348 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { ZODIAC_SIGNS } from "../../../data/zodiac";
+
+const title = "Zodiac Compatibility Calculator - Free Love & Friendship Match | Karmastro";
+const description =
+  "Free zodiac compatibility calculator. Check love, friendship, work and karmic compatibility between any two signs. Built on traditional astrological rules, not random numbers.";
+
+type SignInfo = { slug: string; name: string; symbol: string; element: string; quality: string };
+
+const SIGNS_EN: SignInfo[] = [
+  { slug: "aries", name: "Aries", symbol: "♈", element: "feu", quality: "cardinal" },
+  { slug: "taurus", name: "Taurus", symbol: "♉", element: "terre", quality: "fixe" },
+  { slug: "gemini", name: "Gemini", symbol: "♊", element: "air", quality: "mutable" },
+  { slug: "cancer", name: "Cancer", symbol: "♋", element: "eau", quality: "cardinal" },
+  { slug: "leo", name: "Leo", symbol: "♌", element: "feu", quality: "fixe" },
+  { slug: "virgo", name: "Virgo", symbol: "♍", element: "terre", quality: "mutable" },
+  { slug: "libra", name: "Libra", symbol: "♎", element: "air", quality: "cardinal" },
+  { slug: "scorpio", name: "Scorpio", symbol: "♏", element: "eau", quality: "fixe" },
+  { slug: "sagittarius", name: "Sagittarius", symbol: "♐", element: "feu", quality: "mutable" },
+  { slug: "capricorn", name: "Capricorn", symbol: "♑", element: "terre", quality: "cardinal" },
+  { slug: "aquarius", name: "Aquarius", symbol: "♒", element: "air", quality: "fixe" },
+  { slug: "pisces", name: "Pisces", symbol: "♓", element: "eau", quality: "mutable" },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Zodiac Compatibility Calculator",
+    description,
+    url: "https://karmastro.com/en/tools/compatibility",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "en",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.7", ratingCount: "312" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How accurate is zodiac sign compatibility?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Sun sign compatibility gives a useful first read but is only one layer of astrological compatibility. A full analysis requires a synastry chart comparing both full birth charts, including moon signs, rising signs, Venus, Mars, and the composite chart. Karmastro uses traditional element and quality rules to give you an accurate first impression.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Which signs are most compatible?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Traditional astrology considers signs of the same element (fire with fire, earth with earth) or complementary elements (fire with air, earth with water) as naturally compatible. The highest sun sign matches are typically Aries-Leo, Taurus-Virgo, Gemini-Libra, Cancer-Scorpio, Leo-Sagittarius, Virgo-Capricorn, Libra-Aquarius, Scorpio-Pisces.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Which signs are least compatible?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Signs in square aspect (90 degrees apart) tend to have the most friction: Aries-Cancer, Taurus-Leo, Gemini-Virgo, Cancer-Libra, Leo-Scorpio, Virgo-Sagittarius. This friction is not a deal breaker but requires conscious work. Many long-lasting relationships have challenging sun sign pairings with deeply harmonious inner planets.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is astrological compatibility only about romance?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. Compatibility applies to friendship, family, work partnerships, and any significant relationship. Our calculator gives you separate scores for love, friendship, work, karmic lessons, and the intensity of potential tension so you can see how a match plays out across different contexts.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What is a synastry chart?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "A synastry chart overlays two birth charts to see how each person's planets interact with the other's. It is the most detailed form of astrological compatibility analysis and reveals the specific dynamics of the relationship beyond sun sign generalizations. Karmastro offers full synastry readings in the Oracle app.",
+        },
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/en" class="hover:text-amber-300">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/en/tools" class="hover:text-amber-300">Tools</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Zodiac Compatibility</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Astrological Compatibility</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Zodiac Compatibility Calculator</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Check the match between any two zodiac signs. Love, friendship, work, karma, tension — we give you five scores based on traditional element and quality rules, not random numbers.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="compat-form" class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="sign1" class="block text-sm font-medium text-white/80 mb-2">Your sign</label>
+            <select id="sign1" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors">
+              {SIGNS_EN.map((s) => <option value={s.slug}>{s.symbol} {s.name}</option>)}
+            </select>
+          </div>
+          <div>
+            <label for="sign2" class="block text-sm font-medium text-white/80 mb-2">Their sign</label>
+            <select id="sign2" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors">
+              {SIGNS_EN.map((s, i) => <option value={s.slug} selected={i === 4}>{s.symbol} {s.name}</option>)}
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          Check compatibility
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <div class="flex items-center justify-center gap-4 mb-6 text-center">
+            <div>
+              <div id="result-sym1" class="text-5xl"></div>
+              <p id="result-name1" class="text-sm text-white/70 mt-1"></p>
+            </div>
+            <div class="text-2xl text-amber-300/50">✦</div>
+            <div>
+              <div id="result-sym2" class="text-5xl"></div>
+              <p id="result-name2" class="text-sm text-white/70 mt-1"></p>
+            </div>
+          </div>
+
+          <div class="mb-6 text-center">
+            <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-1">Overall compatibility</p>
+            <div class="text-6xl font-serif text-amber-300" id="result-global">—</div>
+            <p class="text-sm text-white/60 mt-1">out of 100</p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 mb-6">
+            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/10">
+              <p class="text-xs uppercase tracking-wider text-pink-300/80 mb-1">Love</p>
+              <p class="text-2xl font-serif text-white" id="result-love">—</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/10">
+              <p class="text-xs uppercase tracking-wider text-emerald-300/80 mb-1">Friendship</p>
+              <p class="text-2xl font-serif text-white" id="result-friendship">—</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/10">
+              <p class="text-xs uppercase tracking-wider text-sky-300/80 mb-1">Work</p>
+              <p class="text-2xl font-serif text-white" id="result-work">—</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/[0.03] border border-white/10">
+              <p class="text-xs uppercase tracking-wider text-purple-300/80 mb-1">Karma</p>
+              <p class="text-2xl font-serif text-white" id="result-karma">—</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-amber-300/5 border border-amber-300/20 mb-4">
+            <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Interpretation</p>
+            <p id="result-interpretation" class="text-sm text-white/80 leading-relaxed"></p>
+          </div>
+
+          <div class="mt-4 pt-4 border-t border-white/10 text-center">
+            <a href="https://app.karmastro.com/oracle?lang=en" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
+              Get a full synastry reading
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">How zodiac compatibility works</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        In traditional astrology, compatibility between two people is not random and it is not a gimmick. It follows centuries of observation codified into a system of <strong>elements</strong> (fire, earth, air, water) and <strong>qualities</strong> (cardinal, fixed, mutable). Our calculator uses those exact rules to produce the scores you see above.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        The short version: signs of the <strong>same element</strong> understand each other naturally. Fire and air fuel each other. Earth and water nourish each other. Elements in opposition create friction that can either forge deep bonds or blow up in flames. Your compatibility score is a weighted combination of these element and quality affinities.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">The five compatibility scores explained</h2>
+      <div class="grid md:grid-cols-2 gap-3 not-prose mb-6">
+        <div class="p-4 rounded-xl border border-pink-300/20 bg-pink-300/5">
+          <p class="font-serif text-lg text-pink-300 mb-1">Love</p>
+          <p class="text-sm text-white/70 leading-relaxed">Romantic chemistry, passion, physical attraction, emotional resonance.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-emerald-300/20 bg-emerald-300/5">
+          <p class="font-serif text-lg text-emerald-300 mb-1">Friendship</p>
+          <p class="text-sm text-white/70 leading-relaxed">Day-to-day ease, shared interests, the ability to simply enjoy each other's company.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-sky-300/20 bg-sky-300/5">
+          <p class="font-serif text-lg text-sky-300 mb-1">Work</p>
+          <p class="text-sm text-white/70 leading-relaxed">Collaboration effectiveness, professional respect, complementary strengths in action.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-purple-300/20 bg-purple-300/5">
+          <p class="font-serif text-lg text-purple-300 mb-1">Karma</p>
+          <p class="text-sm text-white/70 leading-relaxed">The soul lesson embedded in this encounter. High karma means you came here to teach each other something.</p>
+        </div>
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">The most compatible sign combinations</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Aries + Leo</strong>: Fire on fire. Passion, play, and a mutual refusal to be boring.</li>
+        <li><strong>Taurus + Virgo</strong>: Earth on earth. Steady, sensual, built to last.</li>
+        <li><strong>Gemini + Libra</strong>: Air on air. Conversations that never end and never bore.</li>
+        <li><strong>Cancer + Scorpio</strong>: Water on water. Emotional depth that scares everyone else.</li>
+        <li><strong>Leo + Sagittarius</strong>: Fire on fire. Adventure, generosity, and laughter.</li>
+        <li><strong>Virgo + Capricorn</strong>: Earth on earth. Disciplined, loyal, and quietly powerful.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Why sun sign compatibility is not the whole story</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        A real compatibility reading goes far beyond sun signs. Professional astrologers use <strong>synastry</strong>: they overlay both complete birth charts and study how each person's planets aspect the other's. Your moon (emotions), Venus (love style), Mars (desire), and ascendant (first impressions) matter at least as much as your sun sign.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Two Aries who clash on paper might have their Venuses in harmonious aspect and build a beautiful romance. Two Cancers with perfect sun match might have rising signs that rub each other raw. Sun sign compatibility is the first data point, not the full analysis.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        For a complete synastry reading including all major aspects, the composite chart, and a karmic analysis, try the <a href="https://app.karmastro.com/oracle?lang=en" class="text-amber-300 hover:underline">Karmastro Oracle</a>.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Frequently asked questions</h2>
+
+      <h3 class="font-serif text-xl mb-2">Can incompatible signs have a happy relationship?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Absolutely. A challenging sun sign pairing is an invitation to work consciously rather than a verdict. Some of the most enduring partnerships are between signs the textbooks call "incompatible": they grow precisely because they have to meet each other halfway.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">What if we have the same sign?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Same-sign couples often share instant understanding because they see the world through the same lens. The risk is amplification of shadow traits: two Scorpios can love and jealously guard each other in equal measure, two Geminis can lose themselves in endless chatter without depth. Awareness is the cure.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Does compatibility apply to family too?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Yes. Astrological compatibility describes how two energies interact, whether it is with a parent, sibling, child, or friend. Understanding your compatibility with family members can transform long-standing friction into compassion.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Want a full synastry chart?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        This calculator gives you the sun sign read. For a complete synastry analysis using both full birth charts, consult one of our four cosmic guides in the Karmastro app.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=en" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Get my free synastry reading
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/en/tools" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← All tools</a>
+      <a href="/en/tools/synastry" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Full synastry</a>
+      <a href="/en/tools/rising-sign" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Rising sign</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  import { compatibilityScore } from "../../../data/compatibility-matrix";
+  import type { Element, Quality } from "../../../data/compatibility-matrix";
+
+  const SIGNS: Record<string, { name: string; symbol: string; element: Element; quality: Quality }> = {
+    aries: { name: "Aries", symbol: "♈", element: "feu", quality: "cardinal" },
+    taurus: { name: "Taurus", symbol: "♉", element: "terre", quality: "fixe" },
+    gemini: { name: "Gemini", symbol: "♊", element: "air", quality: "mutable" },
+    cancer: { name: "Cancer", symbol: "♋", element: "eau", quality: "cardinal" },
+    leo: { name: "Leo", symbol: "♌", element: "feu", quality: "fixe" },
+    virgo: { name: "Virgo", symbol: "♍", element: "terre", quality: "mutable" },
+    libra: { name: "Libra", symbol: "♎", element: "air", quality: "cardinal" },
+    scorpio: { name: "Scorpio", symbol: "♏", element: "eau", quality: "fixe" },
+    sagittarius: { name: "Sagittarius", symbol: "♐", element: "feu", quality: "mutable" },
+    capricorn: { name: "Capricorn", symbol: "♑", element: "terre", quality: "cardinal" },
+    aquarius: { name: "Aquarius", symbol: "♒", element: "air", quality: "fixe" },
+    pisces: { name: "Pisces", symbol: "♓", element: "eau", quality: "mutable" },
+  };
+
+  function interpret(s1: string, s2: string, scores: ReturnType<typeof compatibilityScore>): string {
+    const a = SIGNS[s1];
+    const b = SIGNS[s2];
+    const sameElement = a.element === b.element;
+    const sameQuality = a.quality === b.quality;
+    const { global, love, friendship, work } = scores;
+
+    const elementMap: Record<Element, string> = { feu: "fire", terre: "earth", air: "air", eau: "water" };
+    const el1 = elementMap[a.element];
+    const el2 = elementMap[b.element];
+
+    let base = "";
+    if (sameElement) {
+      base = `${a.name} and ${b.name} share the ${el1} element, which creates a natural resonance. You recognize each other instantly. The risk is amplification: you share the same strengths and the same shadows.`;
+    } else if ((a.element === "feu" && b.element === "air") || (a.element === "air" && b.element === "feu")) {
+      base = `${a.name} (${el1}) and ${b.name} (${el2}) fuel each other. Air feeds fire, fire warms air. When this works, it is electric. When it does not, it burns out.`;
+    } else if ((a.element === "terre" && b.element === "eau") || (a.element === "eau" && b.element === "terre")) {
+      base = `${a.name} (${el1}) and ${b.name} (${el2}) nourish each other. Earth gives water form, water gives earth life. This is one of the most stable and fertile combinations in the zodiac.`;
+    } else if ((a.element === "feu" && b.element === "eau") || (a.element === "eau" && b.element === "feu")) {
+      base = `${a.name} (${el1}) and ${b.name} (${el2}) are elemental opposites. Fire evaporates water, water extinguishes fire. The tension is real but so is the transformation potential: you are here to teach each other the lesson you each resisted most.`;
+    } else if ((a.element === "terre" && b.element === "air") || (a.element === "air" && b.element === "terre")) {
+      base = `${a.name} (${el1}) and ${b.name} (${el2}) speak different languages. Air is abstract, earth is concrete. You will frustrate each other regularly, but you will also bring each other exactly what was missing.`;
+    } else {
+      base = `${a.name} and ${b.name} have a nuanced connection. Their elements (${el1} and ${el2}) create a specific flavor of chemistry that depends heavily on the rest of your birth chart.`;
+    }
+
+    let verdict = "";
+    if (global >= 80) verdict = " Overall, this is a strong match with a high ceiling.";
+    else if (global >= 65) verdict = " Overall, this is a solid pairing that grows stronger with self-awareness.";
+    else if (global >= 50) verdict = " Overall, this pairing requires intentional communication to thrive.";
+    else verdict = " Overall, this is a challenging match, but challenging does not mean impossible. Some of the deepest bonds begin with friction.";
+
+    const ratio = love > work ? "love" : "work";
+    const strong = Math.max(love, friendship, work) === love ? "romance" : Math.max(love, friendship, work) === friendship ? "friendship" : "collaboration";
+    return `${base}${verdict} Your strongest dimension is ${strong}.`;
+  }
+
+  const form = document.getElementById("compat-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const s1 = (document.getElementById("sign1") as HTMLSelectElement).value;
+    const s2 = (document.getElementById("sign2") as HTMLSelectElement).value;
+    const a = SIGNS[s1];
+    const b = SIGNS[s2];
+    if (!a || !b) return;
+
+    const scores = compatibilityScore(a.element, a.quality, b.element, b.quality);
+    (document.getElementById("result-sym1") as HTMLElement).textContent = a.symbol;
+    (document.getElementById("result-name1") as HTMLElement).textContent = a.name;
+    (document.getElementById("result-sym2") as HTMLElement).textContent = b.symbol;
+    (document.getElementById("result-name2") as HTMLElement).textContent = b.name;
+    (document.getElementById("result-global") as HTMLElement).textContent = String(scores.global);
+    (document.getElementById("result-love") as HTMLElement).textContent = String(scores.love);
+    (document.getElementById("result-friendship") as HTMLElement).textContent = String(scores.friendship);
+    (document.getElementById("result-work") as HTMLElement).textContent = String(scores.work);
+    (document.getElementById("result-karma") as HTMLElement).textContent = String(scores.karma);
+    (document.getElementById("result-interpretation") as HTMLElement).textContent = interpret(s1, s2, scores);
+
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>

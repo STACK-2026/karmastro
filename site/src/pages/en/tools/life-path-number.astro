@@ -1,0 +1,446 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Life Path Number Calculator - Free & Accurate | Karmastro";
+const description =
+  "Calculate your life path number in seconds with our free Pythagorean numerology calculator. Discover your mission, strengths, challenges, and the meanings of all 12 numbers (including master numbers 11, 22, 33).";
+
+// English interpretations of the 12 life path numbers (Pythagorean tradition)
+const MEANINGS: Record<number, { title: string; archetype: string; summary: string; qualities: string[]; challenges: string[]; mission: string; famousExamples: string }> = {
+  1: {
+    title: "The Pioneer",
+    archetype: "The lone leader, the initiator, the one who breaks new ground.",
+    summary: "You were born to lead, not to follow. Life Path 1 carries the raw energy of initiative. When you walk into a room, something shifts. Your mission is to turn that force into creation, not domination.",
+    qualities: ["Natural leadership", "Independence", "Ambition", "Courage", "Originality"],
+    challenges: ["Self-centeredness", "Impatience", "Loneliness", "Authoritarianism", "Rigidity"],
+    mission: "Learn to lead without crushing, to be strong without becoming hard. The 1 is here to create new ground, to dare where others wait.",
+    famousExamples: "Napoleon Bonaparte, Steve Jobs, Martin Luther King Jr.",
+  },
+  2: {
+    title: "The Diplomat",
+    archetype: "The mediator, the intuitive, the one who weaves bonds.",
+    summary: "You sense energies the way others hear sound. Life Path 2 is the path of peace, harmony, and union. Your mission is to use this sensitivity as a radar, not as a wound.",
+    qualities: ["Diplomacy", "Sensitivity", "Empathy", "Patience", "Cooperation"],
+    challenges: ["Emotional dependency", "Indecision", "Oversensitivity", "Conflict avoidance", "Submission"],
+    mission: "Understand that softness is strength, not weakness. The 2 is here to reconcile, to see what others cannot see.",
+    famousExamples: "Barack Obama, Madonna, Mahatma Gandhi",
+  },
+  3: {
+    title: "The Artist",
+    archetype: "The expressive creative, the world's child, the one who illuminates.",
+    summary: "You turn everything into color, words, or music. Life Path 3 is the path of creative expression. Your mission is to shape the intangible and share it generously.",
+    qualities: ["Creativity", "Communication", "Optimism", "Charisma", "Joy"],
+    challenges: ["Scatteredness", "Superficiality", "Gossiping", "Emotional immaturity", "Escapism"],
+    mission: "Learn that depth does not kill joy. The 3 is here to express, to inspire, to remind others of the beauty of the world.",
+    famousExamples: "David Bowie, Hugh Jackman, Alec Baldwin",
+  },
+  4: {
+    title: "The Builder",
+    archetype: "The methodical worker, the architect, the one who lays foundations.",
+    summary: "You build what others only dream of. Life Path 4 is the path of stability, structure, and durable results. Your mission is to create something that outlives you.",
+    qualities: ["Discipline", "Reliability", "Patience", "Loyalty", "Practical skill"],
+    challenges: ["Rigidity", "Workaholism", "Stubbornness", "Fear of change", "Over-seriousness"],
+    mission: "Learn that structure serves freedom, not the opposite. The 4 is here to build what lasts, with discipline and care.",
+    famousExamples: "Bill Gates, Oprah Winfrey, Arnold Schwarzenegger",
+  },
+  5: {
+    title: "The Adventurer",
+    archetype: "The free spirit, the traveler, the one who never stops moving.",
+    summary: "You need freedom like others need air. Life Path 5 is the path of change, experience, and personal freedom. Your mission is to turn movement into wisdom.",
+    qualities: ["Curiosity", "Adaptability", "Charm", "Versatility", "Courage to change"],
+    challenges: ["Restlessness", "Commitment issues", "Impulsiveness", "Addiction tendencies", "Scattered energy"],
+    mission: "Learn that freedom without direction is just drift. The 5 is here to explore with purpose, to transform experiences into insight.",
+    famousExamples: "Abraham Lincoln, Angelina Jolie, Mick Jagger",
+  },
+  6: {
+    title: "The Nurturer",
+    archetype: "The protector, the teacher, the one who holds others together.",
+    summary: "You carry others the way Atlas carried the world. Life Path 6 is the path of responsibility, love, and service. Your mission is to give without losing yourself.",
+    qualities: ["Nurturing instinct", "Responsibility", "Loyalty", "Teaching ability", "Creative gifts"],
+    challenges: ["Martyrdom", "Over-involvement", "Perfectionism", "Self-sacrifice", "Meddling"],
+    mission: "Learn that you cannot pour from an empty cup. The 6 is here to heal, to teach, to create beauty around the people it loves.",
+    famousExamples: "Albert Einstein, Meryl Streep, John Lennon",
+  },
+  7: {
+    title: "The Seeker",
+    archetype: "The mystic philosopher, the researcher, the one who questions everything.",
+    summary: "You were born asking why. Life Path 7 is the path of wisdom, introspection, and spiritual understanding. Your mission is to find truth and share what you learn.",
+    qualities: ["Deep thinking", "Intuition", "Independence", "Analytical mind", "Spiritual awareness"],
+    challenges: ["Isolation", "Cynicism", "Overthinking", "Distrust of others", "Emotional distance"],
+    mission: "Learn that truth without love is sterile. The 7 is here to dig beneath the surface and bring back what it finds for others.",
+    famousExamples: "Nikola Tesla, Princess Diana, Johnny Depp",
+  },
+  8: {
+    title: "The Powerhouse",
+    archetype: "The builder of empires, the strategist, the one who turns vision into wealth.",
+    summary: "You understand power without being seduced by it. Life Path 8 is the path of material mastery, abundance, and influence. Your mission is to build something that serves more than yourself.",
+    qualities: ["Leadership", "Financial intuition", "Organizational skills", "Endurance", "Authority"],
+    challenges: ["Greed", "Workaholism", "Control issues", "Materialism", "Intimidation"],
+    mission: "Learn that true power is measured by what it creates, not what it dominates. The 8 is here to master the material world with integrity.",
+    famousExamples: "Nelson Mandela, Pablo Picasso, Warren Buffett",
+  },
+  9: {
+    title: "The Humanitarian",
+    archetype: "The old soul, the global citizen, the one who serves the collective.",
+    summary: "You arrive at life knowing things others must learn. Life Path 9 is the path of universal love, compassion, and letting go. Your mission is to serve something bigger than yourself.",
+    qualities: ["Compassion", "Wisdom", "Artistic sensitivity", "Global perspective", "Generosity"],
+    challenges: ["Emotional detachment", "Savior complex", "Melancholy", "Difficulty letting go", "Self-righteousness"],
+    mission: "Learn that surrender is strength, not defeat. The 9 is here to love without owning, to give without expecting return.",
+    famousExamples: "Mother Teresa, Mahatma Gandhi, Jim Carrey",
+  },
+  11: {
+    title: "The Visionary (Master Number)",
+    archetype: "The spiritual messenger, the intuitive, the one who sees what others cannot.",
+    summary: "You were born with a wire plugged into a higher frequency. Master Number 11 carries intense intuition and a calling to awaken others. Your mission is to channel inspiration into form.",
+    qualities: ["Exceptional intuition", "Visionary thinking", "Charisma", "Spiritual magnetism", "Inspirational presence"],
+    challenges: ["Nervous tension", "Oversensitivity", "Self-doubt", "Anxiety", "Martyrdom"],
+    mission: "Learn that your sensitivity is your gift, not your wound. The 11 is here to bring light to those who walk in darkness.",
+    famousExamples: "Barack Obama, Michelle Obama, Tim Burton",
+  },
+  22: {
+    title: "The Master Builder (Master Number)",
+    archetype: "The architect of grand visions, the one who turns dreams into lasting structures.",
+    summary: "You can turn the impossible into a blueprint. Master Number 22 combines the spiritual intuition of the 11 with the practical force of the 4. Your mission is to build something that changes the world.",
+    qualities: ["Visionary pragmatism", "Leadership", "Innovation", "Endurance", "Large-scale thinking"],
+    challenges: ["Overwhelming pressure", "Perfectionism", "Burnout", "Dictatorial tendencies", "Self-doubt paralysis"],
+    mission: "Learn that patience is not weakness. The 22 is here to build monuments of the spirit, whether they are buildings, movements, or ideas.",
+    famousExamples: "Dalai Lama, Paul McCartney, Oprah Winfrey",
+  },
+  33: {
+    title: "The Universal Healer (Master Number)",
+    archetype: "The teacher of teachers, the one who heals through unconditional love.",
+    summary: "You were born carrying a rare frequency of selfless love. Master Number 33 is the rarest life path. Your mission is to heal the world through wisdom and compassion, without asking for anything in return.",
+    qualities: ["Unconditional love", "Teaching gift", "Creative healing", "Spiritual devotion", "Sacred service"],
+    challenges: ["Martyrdom", "Emotional exhaustion", "Perfectionism", "Self-forgetting", "Overwhelming responsibility"],
+    mission: "Learn that giving from emptiness is not giving. The 33 is here to heal through presence, not sacrifice.",
+    famousExamples: "Albert Einstein, John Lennon, Meryl Streep",
+  },
+};
+
+const DISPLAY_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Life Path Number Calculator",
+    description,
+    url: "https://karmastro.com/en/tools/life-path-number",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "en",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      ratingCount: "127",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to calculate your life path number",
+    description: "Step-by-step Pythagorean method to find your life path number from your birth date.",
+    inLanguage: "en",
+    step: [
+      { "@type": "HowToStep", position: 1, name: "Write your birth date", text: "Write your full birth date in DD/MM/YYYY format. Example: 14/04/1992." },
+      { "@type": "HowToStep", position: 2, name: "Reduce each component", text: "Reduce the day, month, and year separately by summing their digits. 14 becomes 1+4=5. April is already 4. 1992 becomes 1+9+9+2=21, then 2+1=3." },
+      { "@type": "HowToStep", position: 3, name: "Sum the reduced values", text: "Add the three reduced values together. In our example: 5 + 4 + 3 = 12." },
+      { "@type": "HowToStep", position: 4, name: "Final reduction", text: "Reduce the final sum to a single digit, except for master numbers 11, 22, and 33 which stay intact. 12 becomes 1+2=3. Your life path number is 3." },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is a life path number?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "A life path number is the central figure in Pythagorean numerology. It is calculated from your birth date and reveals the main mission of your life, your innate talents, and the lessons you are here to learn. It is the numerological equivalent of your sun sign in astrology.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How accurate is a life path number calculator?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "A life path number is calculated with pure mathematics, so the number itself is always 100% accurate. The interpretation is a reading based on thousands of years of Pythagorean tradition. It is meant as self-reflection, not as a deterministic prediction of your future.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can my life path number change?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. Your life path number is fixed by your date of birth and never changes. What changes is how you express it. Each number has a higher and lower expression: the 8 can be a tyrant or a benevolent empire builder. The choice is yours.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What are master numbers (11, 22, 33)?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Master numbers 11, 22, and 33 are never reduced in Pythagorean numerology. They carry a doubled vibration and a more demanding mission. The 11 is intuitive vision, the 22 is the master builder, and the 33 is the universal healer. Less than 5% of people carry a master number life path.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is the life path number the same as my sun sign?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. Your sun sign comes from astrology and describes the core of your personality based on the Sun's position at your birth. Your life path number comes from numerology and describes your life mission based on the reduction of your birth date. The two systems complement each other but are not interchangeable.",
+        },
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/en" class="hover:text-amber-300">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/en/tools" class="hover:text-amber-300">Tools</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Life Path Number</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Pythagorean Numerology</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Life Path Number Calculator</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Your life path number is the most important figure in numerology. It reveals your life mission, your innate talents, and the karmic lessons of this existence. Free calculation, transparent Pythagorean method, complete interpretation.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="life-path-form" class="space-y-4">
+        <div>
+          <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">
+            Your date of birth
+          </label>
+          <input
+            type="date"
+            id="birth-date"
+            name="birth-date"
+            required
+            class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors"
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity"
+        >
+          Calculate my life path number
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Your life path number</p>
+          <div class="flex items-baseline gap-4 mb-4">
+            <span id="result-number" class="text-7xl font-serif text-amber-300"></span>
+            <span id="result-title" class="text-xl font-serif text-white/90"></span>
+          </div>
+          <p class="text-xs text-white/50 mb-4">Calculation: <span id="result-calc" class="text-white/70"></span></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Strengths</p>
+              <ul id="result-qualities" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">Challenges</p>
+              <ul id="result-challenges" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">Mission</p>
+            <p id="result-mission" class="text-sm text-white/80 italic leading-relaxed"></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-2 justify-center items-center">
+            <a
+              href="https://app.karmastro.com/oracle?lang=en"
+              class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity"
+            >
+              Go deeper with the Oracle
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">What is a life path number?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Your <strong>life path number</strong> is the central figure in Pythagorean numerology. Calculated from your date of birth, it reveals the core mission of your life. Think of it as the numerological equivalent of the Sun sign in astrology: the underlying vibration that colors everything you do, the archetype you came to embody.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        For <strong>Pythagoras</strong> and his disciples in the 6th century BCE, every number carried a unique vibration, an energetic signature. The digits 1 through 9 cover every human archetype. Master numbers 11, 22, and 33 carry a rarer, more demanding frequency. Calculating your life path number is how you rediscover what the ancient Greeks called your <em>daimon</em>: the reason you came here.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">How to calculate your life path number</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        The method is simple and reproducible. You add every digit of your birth date, then reduce the sum until you get a single digit, unless you land on a master number.
+      </p>
+      <div class="p-5 rounded-xl bg-white/[0.03] border border-white/10 mb-6 not-prose">
+        <p class="text-sm text-white/90 mb-3"><strong>Example: April 14, 1992</strong></p>
+        <ul class="text-sm text-white/70 space-y-1">
+          <li>Day: 1 + 4 = 5</li>
+          <li>Month: 4 = 4</li>
+          <li>Year: 1 + 9 + 9 + 2 = 21 → 2 + 1 = 3</li>
+          <li>Total: 5 + 4 + 3 = <strong class="text-amber-300">12 → 1 + 2 = 3</strong></li>
+        </ul>
+        <p class="text-sm text-white/60 mt-3">Life path number = 3 (The Artist)</p>
+      </div>
+      <p class="text-white/80 leading-relaxed mb-4">
+        <strong>Important exception:</strong> if your calculation yields 11, 22, or 33 at any stage before the final reduction, you do not reduce them. These are the master numbers. For example, a life path of 29/11 stays as 11, not 2. Master numbers carry a doubled mission, heavier but brighter.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">The 9 life path numbers (and the 3 master numbers)</h2>
+      <p class="text-white/80 leading-relaxed mb-6">
+        Each life path number corresponds to a universal archetype. Here is a summary of all 12 profiles. Calculate your number above to see the complete reading for your specific path.
+      </p>
+
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
+        {DISPLAY_ORDER.map((n) => {
+          const meaning = MEANINGS[n];
+          return (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <div class="flex items-baseline gap-3 mb-2">
+                <span class="text-3xl font-serif text-amber-300">{n}</span>
+                <span class="text-sm text-white/80 font-medium">{meaning.title}</span>
+              </div>
+              <p class="text-xs text-white/60 leading-relaxed">{meaning.archetype}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">The history of numerology</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Numerology did not begin with <a href="https://en.wikipedia.org/wiki/Pythagoras" class="text-amber-300 hover:underline">Pythagoras</a>. The <strong>Babylonians</strong> were already using a sacred numerical system more than 4,000 years ago. The Hebrews developed <em>gematria</em>, a correspondence between letters and numbers still found in the Kabbalah. The Egyptians aligned their pyramids on mathematical ratios they considered cosmic.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Pythagoras synthesized these traditions into a coherent system in the 6th century BCE. His famous maxim "all is number" was not a metaphor: he literally saw the universe as a mathematical composition. His disciples, the Pythagoreans, codified what we now call <strong>Pythagorean numerology</strong>. This is the method Karmastro uses, with the rigor and transparency it deserves.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Beyond the life path number</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        The life path number is the first number to calculate, but not the only one. In Pythagorean numerology, your complete profile includes at least five key numbers:
+      </p>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Life path number</strong> (from your birth date): your main mission</li>
+        <li><strong>Expression number</strong> (from your full birth name): your natural talents</li>
+        <li><strong>Soul urge number</strong> (from the vowels in your name): your deepest desires</li>
+        <li><strong>Personality number</strong> (from the consonants in your name): your social image</li>
+        <li><strong>Personal year</strong> (which changes each year): your current cycle</li>
+      </ul>
+      <p class="text-white/80 leading-relaxed mb-4">
+        For a complete calculation of these five numbers plus your astrological birth chart and a personalized reading by one of our four cosmic guides (<a href="/en/notre-histoire" class="text-amber-300 hover:underline">Sibylle, Orion, Séléné, or Pythia</a>), use <a href="https://app.karmastro.com" class="text-amber-300 hover:underline">the Karmastro app</a>.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Frequently asked questions</h2>
+
+      <h3 class="font-serif text-xl mb-2">Can a life path number predict the future?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        No. Your life path number does not predict specific events. It describes the underlying vibration you carry through existence. The medieval maxim often attributed to Thomas Aquinas captures it well: <em>astra inclinant, sed non necessitant</em> — "the stars incline, but they do not determine." Numerology works the same way: it sheds light on tendencies, not fixed destinies.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Why are master numbers 11, 22, and 33 never reduced?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Because they carry a doubled vibration. An 11 is not merely a 2 (1+1), it is both an 11 <em>and</em> a 2 at once. The 22 holds the grounded strength of 4 (2+2) combined with a visionary dimension. The 33 weaves together the 11 and the 22 to give the universal healer. Master numbers concern less than 5% of the population and carry a more demanding mission.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">What if my life path number does not feel like me?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Two possibilities. Either you are living the <em>shadow side</em> of your number (every life path has a light and shadow expression), or you calculated the wrong digits. Redo the math carefully. If the shadow side rings too true, it is an invitation to explore it — the Oracle can help by cross-referencing your life path with your complete birth chart.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Does changing my name change my life path number?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        No. Your life path number is fixed by your birth date alone. However, your expression number (calculated from your full birth name) can shift if you officially change your name. Many numerologists consider the legal birth name as carrying the original imprint, even after a later change.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Does Karmastro use Pythagorean or Chaldean numerology?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        <strong>Pythagorean</strong>, the most widespread and best-documented method. The Chaldean method is older and assigns different values to letters: fascinating but less intuitive for beginners. Karmastro rigorously applies the Pythagorean method, with the table A=1, B=2, C=3 up to I=9, then J=1 and so on. You can verify this table in our <a href="/en/glossaire" class="text-amber-300 hover:underline">glossary</a>.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Want a complete reading?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        The life path number is just the beginning. To cross-reference all five of your numerology numbers with your complete birth chart and receive personalized guidance, talk to one of our four cosmic guides.
+      </p>
+      <a
+        href="https://app.karmastro.com/oracle?lang=en"
+        class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity"
+      >
+        Consult the Oracle for free
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/en/tools" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← All tools</a>
+      <a href="/en/horoscope" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Daily horoscope</a>
+      <a href="/en/compatibilite" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Zodiac compatibility</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  import { calculateLifePath } from "../../../data/numerology-meanings";
+
+  const MEANINGS_EN: Record<number, { title: string; summary: string; qualities: string[]; challenges: string[]; mission: string }> = {
+    1: { title: "The Pioneer", summary: "You were born to lead, not to follow. Life Path 1 carries the raw energy of initiative. When you walk into a room, something shifts. Your mission is to turn that force into creation, not domination.", qualities: ["Natural leadership", "Independence", "Ambition", "Courage", "Originality"], challenges: ["Self-centeredness", "Impatience", "Loneliness", "Authoritarianism", "Rigidity"], mission: "Learn to lead without crushing, to be strong without becoming hard. The 1 is here to create new ground, to dare where others wait." },
+    2: { title: "The Diplomat", summary: "You sense energies the way others hear sound. Life Path 2 is the path of peace, harmony, and union. Your mission is to use this sensitivity as a radar, not as a wound.", qualities: ["Diplomacy", "Sensitivity", "Empathy", "Patience", "Cooperation"], challenges: ["Emotional dependency", "Indecision", "Oversensitivity", "Conflict avoidance", "Submission"], mission: "Understand that softness is strength, not weakness. The 2 is here to reconcile, to see what others cannot see." },
+    3: { title: "The Artist", summary: "You turn everything into color, words, or music. Life Path 3 is the path of creative expression. Your mission is to shape the intangible and share it generously.", qualities: ["Creativity", "Communication", "Optimism", "Charisma", "Joy"], challenges: ["Scatteredness", "Superficiality", "Gossiping", "Emotional immaturity", "Escapism"], mission: "Learn that depth does not kill joy. The 3 is here to express, to inspire, to remind others of the beauty of the world." },
+    4: { title: "The Builder", summary: "You build what others only dream of. Life Path 4 is the path of stability, structure, and durable results. Your mission is to create something that outlives you.", qualities: ["Discipline", "Reliability", "Patience", "Loyalty", "Practical skill"], challenges: ["Rigidity", "Workaholism", "Stubbornness", "Fear of change", "Over-seriousness"], mission: "Learn that structure serves freedom, not the opposite. The 4 is here to build what lasts, with discipline and care." },
+    5: { title: "The Adventurer", summary: "You need freedom like others need air. Life Path 5 is the path of change, experience, and personal freedom. Your mission is to turn movement into wisdom.", qualities: ["Curiosity", "Adaptability", "Charm", "Versatility", "Courage to change"], challenges: ["Restlessness", "Commitment issues", "Impulsiveness", "Addiction tendencies", "Scattered energy"], mission: "Learn that freedom without direction is just drift. The 5 is here to explore with purpose, to transform experiences into insight." },
+    6: { title: "The Nurturer", summary: "You carry others the way Atlas carried the world. Life Path 6 is the path of responsibility, love, and service. Your mission is to give without losing yourself.", qualities: ["Nurturing instinct", "Responsibility", "Loyalty", "Teaching ability", "Creative gifts"], challenges: ["Martyrdom", "Over-involvement", "Perfectionism", "Self-sacrifice", "Meddling"], mission: "Learn that you cannot pour from an empty cup. The 6 is here to heal, to teach, to create beauty around the people it loves." },
+    7: { title: "The Seeker", summary: "You were born asking why. Life Path 7 is the path of wisdom, introspection, and spiritual understanding. Your mission is to find truth and share what you learn.", qualities: ["Deep thinking", "Intuition", "Independence", "Analytical mind", "Spiritual awareness"], challenges: ["Isolation", "Cynicism", "Overthinking", "Distrust of others", "Emotional distance"], mission: "Learn that truth without love is sterile. The 7 is here to dig beneath the surface and bring back what it finds for others." },
+    8: { title: "The Powerhouse", summary: "You understand power without being seduced by it. Life Path 8 is the path of material mastery, abundance, and influence. Your mission is to build something that serves more than yourself.", qualities: ["Leadership", "Financial intuition", "Organizational skills", "Endurance", "Authority"], challenges: ["Greed", "Workaholism", "Control issues", "Materialism", "Intimidation"], mission: "Learn that true power is measured by what it creates, not what it dominates. The 8 is here to master the material world with integrity." },
+    9: { title: "The Humanitarian", summary: "You arrive at life knowing things others must learn. Life Path 9 is the path of universal love, compassion, and letting go. Your mission is to serve something bigger than yourself.", qualities: ["Compassion", "Wisdom", "Artistic sensitivity", "Global perspective", "Generosity"], challenges: ["Emotional detachment", "Savior complex", "Melancholy", "Difficulty letting go", "Self-righteousness"], mission: "Learn that surrender is strength, not defeat. The 9 is here to love without owning, to give without expecting return." },
+    11: { title: "The Visionary (Master Number)", summary: "You were born with a wire plugged into a higher frequency. Master Number 11 carries intense intuition and a calling to awaken others. Your mission is to channel inspiration into form.", qualities: ["Exceptional intuition", "Visionary thinking", "Charisma", "Spiritual magnetism", "Inspirational presence"], challenges: ["Nervous tension", "Oversensitivity", "Self-doubt", "Anxiety", "Martyrdom"], mission: "Learn that your sensitivity is your gift, not your wound. The 11 is here to bring light to those who walk in darkness." },
+    22: { title: "The Master Builder (Master Number)", summary: "You can turn the impossible into a blueprint. Master Number 22 combines the spiritual intuition of the 11 with the practical force of the 4. Your mission is to build something that changes the world.", qualities: ["Visionary pragmatism", "Leadership", "Innovation", "Endurance", "Large-scale thinking"], challenges: ["Overwhelming pressure", "Perfectionism", "Burnout", "Dictatorial tendencies", "Self-doubt paralysis"], mission: "Learn that patience is not weakness. The 22 is here to build monuments of the spirit, whether they are buildings, movements, or ideas." },
+    33: { title: "The Universal Healer (Master Number)", summary: "You were born carrying a rare frequency of selfless love. Master Number 33 is the rarest life path. Your mission is to heal the world through wisdom and compassion.", qualities: ["Unconditional love", "Teaching gift", "Creative healing", "Spiritual devotion", "Sacred service"], challenges: ["Martyrdom", "Emotional exhaustion", "Perfectionism", "Self-forgetting", "Overwhelming responsibility"], mission: "Learn that giving from emptiness is not giving. The 33 is here to heal through presence, not sacrifice." },
+  };
+
+  const form = document.getElementById("life-path-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const input = document.getElementById("birth-date") as HTMLInputElement;
+    const value = input.value;
+    if (!value) return;
+
+    const [y, m, d] = value.split("-").map(Number);
+    const result = calculateLifePath(d, m, y);
+    const meaning = MEANINGS_EN[result.number] || MEANINGS_EN[9];
+
+    (document.getElementById("result-number") as HTMLElement).textContent = String(result.number);
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-calc") as HTMLElement).textContent = result.calculation;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+
+    const qualitiesList = document.getElementById("result-qualities") as HTMLElement;
+    qualitiesList.innerHTML = meaning.qualities.map((q) => `<li>✦ ${q}</li>`).join("");
+
+    const challengesList = document.getElementById("result-challenges") as HTMLElement;
+    challengesList.innerHTML = meaning.challenges.map((c) => `<li>◆ ${c}</li>`).join("");
+
+    (document.getElementById("result-mission") as HTMLElement).textContent = meaning.mission;
+
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>

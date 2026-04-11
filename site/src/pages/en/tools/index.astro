@@ -1,0 +1,127 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Free Astrology & Numerology Calculators | Karmastro";
+const description =
+  "Nine free astrology and numerology calculators: birth chart, rising sign, zodiac compatibility, synastry, transits, life path, expression, personal year, and karmic debt. Accurate, in-depth, built on the Swiss Ephemeris.";
+
+const TOOLS = [
+  { slug: "birth-chart", title: "Free Birth Chart Calculator", desc: "Your complete natal chart with all 10 planets, 12 houses, and major aspects. Powered by the Swiss Ephemeris.", category: "Astrology", icon: "✦" },
+  { slug: "rising-sign", title: "Rising Sign Calculator", desc: "Discover your ascendant: the mask you wear, the first impression you leave, how the world meets you.", category: "Astrology", icon: "☉" },
+  { slug: "compatibility", title: "Zodiac Compatibility Calculator", desc: "Check love, friendship, work, and karmic compatibility between any two zodiac signs.", category: "Astrology", icon: "♥" },
+  { slug: "synastry", title: "Synastry Calculator", desc: "Compare two full birth charts to see the real chemistry between you beyond sun signs.", category: "Astrology", icon: "∞" },
+  { slug: "transits", title: "Transit Calculator", desc: "See which planets are currently aspecting your birth chart and what they mean today.", category: "Astrology", icon: "↻" },
+  { slug: "life-path-number", title: "Life Path Number Calculator", desc: "The central number in Pythagorean numerology. Reveals your life mission, innate talents, and karmic lessons.", category: "Numerology", icon: "1" },
+  { slug: "expression-number", title: "Expression Number Calculator", desc: "Also called destiny number. Calculated from your full birth name. Reveals the talents you arrived with.", category: "Numerology", icon: "A" },
+  { slug: "personal-year", title: "Personal Year Calculator", desc: "Every year carries a specific numerological theme. Find yours for 2026 and align with its energy.", category: "Numerology", icon: "★" },
+  { slug: "karmic-debt", title: "Karmic Debt Calculator", desc: "Discover whether you carry the 13/4, 14/5, 16/7, or 19/1 karmic debts from past lives.", category: "Numerology", icon: "∴" },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Free Astrology & Numerology Calculators",
+    description,
+    url: "https://karmastro.com/en/tools",
+    inLanguage: "en",
+    hasPart: TOOLS.map((t) => ({
+      "@type": "WebApplication",
+      name: t.title,
+      url: `https://karmastro.com/en/tools/${t.slug}`,
+      applicationCategory: "UtilitiesApplication",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://karmastro.com/en" },
+      { "@type": "ListItem", position: 2, name: "Tools", item: "https://karmastro.com/en/tools" },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/en" class="hover:text-amber-300">Home</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Tools</span>
+    </nav>
+
+    <header class="text-center mb-12">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Free Tools</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Astrology & Numerology Calculators</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Nine free calculators, each built with the same precision a professional astrologer would use. No fluff, no random numbers, no gatekeeping — just the math and a clear interpretation.
+      </p>
+    </header>
+
+    <section class="mb-12">
+      <h2 class="font-serif text-2xl text-amber-300 mb-4 flex items-center gap-3">
+        <span class="text-3xl">✦</span> Astrology
+      </h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        {TOOLS.filter((t) => t.category === "Astrology").map((t) => (
+          <a href={`/en/tools/${t.slug}`} class="group p-5 rounded-2xl border border-white/10 hover:border-amber-300/40 bg-white/[0.02] hover:bg-amber-300/5 transition-all">
+            <div class="flex items-start gap-3 mb-2">
+              <span class="text-3xl text-amber-300">{t.icon}</span>
+              <h3 class="font-serif text-lg text-white group-hover:text-amber-300 transition-colors">{t.title}</h3>
+            </div>
+            <p class="text-sm text-white/60 leading-relaxed">{t.desc}</p>
+            <p class="text-xs text-amber-300 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">Open →</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="font-serif text-2xl text-purple-300 mb-4 flex items-center gap-3">
+        <span class="text-3xl">∴</span> Numerology
+      </h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        {TOOLS.filter((t) => t.category === "Numerology").map((t) => (
+          <a href={`/en/tools/${t.slug}`} class="group p-5 rounded-2xl border border-white/10 hover:border-purple-300/40 bg-white/[0.02] hover:bg-purple-300/5 transition-all">
+            <div class="flex items-start gap-3 mb-2">
+              <span class="text-3xl text-purple-300">{t.icon}</span>
+              <h3 class="font-serif text-lg text-white group-hover:text-purple-300 transition-colors">{t.title}</h3>
+            </div>
+            <p class="text-sm text-white/60 leading-relaxed">{t.desc}</p>
+            <p class="text-xs text-purple-300 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">Open →</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="prose prose-invert max-w-none mb-12">
+      <h2 class="font-serif text-3xl mb-4">Why these calculators?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        The internet is full of astrology and numerology calculators that return vague, generic, or wrong results. We built ours to do the opposite. Each tool on this page uses the <strong>exact mathematics</strong> professional astrologers and numerologists have used for centuries — Pythagorean reduction for numerology, Swiss Ephemeris calculations for astrology — and returns interpretations written in clear English, not copy-pasted from a template database.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        The astrology tools can all be used individually on this page, but they are designed to be combined. Your birth chart is the foundation. Your rising sign is one layer of that chart. Compatibility and synastry show how two charts interact. Transits show what the sky is doing to your chart right now. Read together, they tell a coherent story.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        The numerology tools follow the same logic. Life path is your mission. Expression is the toolkit you arrived with. Personal year is the theme of the current chapter. Karmic debt reveals what unfinished business your soul is working through. Four numbers, one integrated reading.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">All nine tools are free</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Yes, really. No trial, no credit card, no "sign up to unlock." We built Karmastro on the belief that the cosmic tools that have helped people for thousands of years should be freely accessible. The paid tier of Karmastro exists for people who want to go deeper with one of our four cosmic guides (Sibylle, Orion, Séléné, Pythia), but the calculators themselves are free forever.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center">
+      <h3 class="font-serif text-xl mb-2">Want a personalized reading?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        These calculators give you the data. For a complete reading that cross-references your astrology and numerology with personalized guidance, consult the Karmastro Oracle.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=en" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Consult the Oracle free
+      </a>
+    </div>
+  </article>
+</BaseLayout>

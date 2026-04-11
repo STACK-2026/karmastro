@@ -1,0 +1,228 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Karmic Debt Number Calculator - 13, 14, 16, 19 Explained | Karmastro";
+const description =
+  "Free karmic debt number calculator. Discover whether you carry the 13/4, 14/5, 16/7, or 19/1 karmic debts from past lives and what they mean for this incarnation.";
+
+type DebtInfo = { code: string; title: string; story: string; pastLife: string; challenge: string; healing: string };
+
+const DEBTS_EN: Record<string, DebtInfo> = {
+  "13/4": {
+    code: "13/4",
+    title: "The Debt of Laziness",
+    story: "The 13 is the number of forced transformation. In the tarot it is the Death card — not punishment, but molting. A soul carrying 13/4 is believed to have taken shortcuts in a past life, letting others carry the weight of its existence.",
+    pastLife: "In a previous incarnation, you are thought to have sought the easy path, avoided effort, and benefited from the labor of others without contributing your share.",
+    challenge: "In this life, everything you want costs double the effort. Projects only succeed when you stay the distance. You are here to learn the value of patient, consistent, daily work.",
+    healing: "Embrace the daily labor. Every small task completed with care pays down the debt. No shortcuts, no cheating, just the beauty of work done well. Build routines. Finish what you start.",
+  },
+  "14/5": {
+    code: "14/5",
+    title: "The Debt of Misused Freedom",
+    story: "The 14 carries the memory of freedom badly used. A soul carrying 14/5 is believed to have abused pleasure, food, sex, and indulgence in a past life — without measure, without responsibility, without awareness of consequences.",
+    pastLife: "In a previous life, you confused freedom with license, pleasure with the absence of limits. You followed every desire and caused damage, either to yourself or to those around you.",
+    challenge: "In this life, temptations come often and consequences come fast. Addictions, excesses, and compulsive changes are your tests. You must learn true freedom — the kind that does not depend on consumption.",
+    healing: "Find freedom in moderation and in chosen commitment. The real meaning of 14 is: I am free because I choose my attachments, not because I run from them all.",
+  },
+  "16/7": {
+    code: "16/7",
+    title: "The Debt of Spiritual Ego",
+    story: "The 16 is the Tower in the tarot: the ego structure struck by lightning. A soul carrying 16/7 is believed to have used spiritual, religious, or intellectual knowledge to dominate others, to feel superior, to manipulate.",
+    pastLife: "In a previous life, you used your knowledge to manipulate, to seduce, to rule. Spiritual or religious authority abused for personal power.",
+    challenge: "In this life, sudden falls, brutal reality checks, and ego collapses are common. Anything built on spiritual pride crumbles to force humility. You learn that true wisdom is silent.",
+    healing: "Accept each collapse as a purification. Cultivate sincere humility. Share knowledge without vanity. Become a student before claiming to be a teacher.",
+  },
+  "19/1": {
+    code: "19/1",
+    title: "The Debt of Misused Power",
+    story: "The 19 carries the memory of power badly wielded. A soul carrying 19/1 is believed to have had a position of leadership in a past life and used it to crush, humiliate, or exploit others.",
+    pastLife: "You wielded authority with cruelty, or you refused to step into a leadership role when it was needed, abandoning those who counted on you.",
+    challenge: "In this life, you must learn to lead with responsibility. You may feel isolated in your leadership, misunderstood, tested. Will you use your power to lift others, or to crush them?",
+    healing: "Accept the role of leader when it is yours. Learn power-in-service. Be the leader you would have wanted in your past life. True authority lifts.",
+  },
+};
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Karmic Debt Number Calculator",
+    description,
+    url: "https://karmastro.com/en/tools/karmic-debt",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "en",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "What is a karmic debt number?", acceptedAnswer: { "@type": "Answer", text: "A karmic debt number is a specific number in your numerology chart that indicates a lesson carried over from a past life. The four karmic debt numbers are 13/4, 14/5, 16/7, and 19/1. Each represents a specific imbalance that your soul is here to correct this time around." } },
+      { "@type": "Question", name: "How do I know if I have a karmic debt?", acceptedAnswer: { "@type": "Answer", text: "You carry a karmic debt if the number 13, 14, 16, or 19 appears at any stage of calculating your life path number, expression number, soul urge number, or birth day number. If the calculation passes through one of these four numbers before the final reduction, the debt is active." } },
+      { "@type": "Question", name: "Is a karmic debt a punishment?", acceptedAnswer: { "@type": "Answer", text: "No. In numerology, karmic debts are not divine punishment. They are soul contracts — lessons you yourself chose to work through in this lifetime because you were not yet done with them. They are opportunities for growth, not sentences." } },
+      { "@type": "Question", name: "Can I pay off a karmic debt?", acceptedAnswer: { "@type": "Answer", text: "Yes. Each debt has a specific healing path: conscious daily work for 13/4, responsible freedom for 14/5, humility for 16/7, and power-in-service for 19/1. The debt is paid down each time you choose the higher expression of the number instead of repeating the past life pattern." } },
+      { "@type": "Question", name: "How many people have karmic debts?", acceptedAnswer: { "@type": "Answer", text: "Approximately 20 to 25 percent of people carry at least one karmic debt in their chart. Some rare individuals carry two or three. Most of us carry none, which does not mean the soul has no lessons — just that these particular four are not active this time around." } },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/en" class="hover:text-amber-300">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/en/tools" class="hover:text-amber-300">Tools</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Karmic Debt</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Pythagorean Numerology</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Karmic Debt Number Calculator</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Four numbers in numerology are said to carry lessons from past lives: 13/4, 14/5, 16/7, and 19/1. Find out whether your birth chart carries any of them.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="karmic-form" class="space-y-4">
+        <div>
+          <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">Your date of birth</label>
+          <input type="date" id="birth-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          Check my karmic debts
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div id="result-none" class="hidden p-6 rounded-2xl bg-emerald-300/5 border border-emerald-300/30 text-center">
+          <div class="text-4xl mb-3">✦</div>
+          <h2 class="text-2xl font-serif text-emerald-300 mb-2">No karmic debts detected</h2>
+          <p class="text-sm text-white/70 leading-relaxed">
+            Your birth date does not pass through any of the four karmic debt numbers (13, 14, 16, 19). This does not mean your soul has no lessons — only that these specific four are not active this incarnation. Most people carry no karmic debts at all.
+          </p>
+        </div>
+
+        <div id="result-debts" class="hidden space-y-4"></div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">What are karmic debt numbers?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        In Pythagorean numerology, four numbers are considered <strong>karmic debt numbers</strong>: <strong>13/4, 14/5, 16/7, and 19/1</strong>. Each one encodes a specific pattern that, according to numerological tradition, your soul is here to correct — a lesson it did not finish working through in a past incarnation. The "/" indicates the reduction: 13 reduces to 4, 14 to 5, and so on. The root number is what matters.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        The theory is not about punishment. It is about <em>soul contracts</em>. Whatever you see yourself as, the deeper self that chose this life also chose its challenges. Karmic debt numbers are a map of which specific challenges you signed up for — which makes them much less scary once you see them clearly.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">The four karmic debts</h2>
+      <div class="not-prose space-y-4 mb-8">
+        {Object.values(DEBTS_EN).map((d) => (
+          <div class="p-5 rounded-xl border border-amber-300/20 bg-amber-300/5">
+            <div class="flex items-baseline gap-3 mb-2">
+              <span class="text-3xl font-serif text-amber-300">{d.code}</span>
+              <span class="text-lg font-serif text-white/90">{d.title}</span>
+            </div>
+            <p class="text-sm text-white/70 leading-relaxed">{d.story}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">How karmic debts are detected</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        A karmic debt is active in your chart when the numbers 13, 14, 16, or 19 appear <strong>anywhere in the reduction chain</strong> of your core numerology calculations — especially the life path. The number does not need to be the final result. It only needs to pass through the reduction. If you were born on the 19th, you carry 19/1 even if your final life path reduces to something else.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        This is why many numerologists look at the <em>raw sum before the final reduction</em>. A life path 4 from a total sum of 22 is a completely different energy from a life path 4 from a total of 13. The final digit is the same. The karmic charge is not.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Working with a karmic debt</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Every karmic debt has a healing path. Once you recognize the pattern, you stop being a victim of it and become a student of it. The 13/4 heals through patient work. The 14/5 heals through chosen freedom. The 16/7 heals through humility. The 19/1 heals through power-in-service. In each case, the cure is to practice the higher expression of the number instead of repeating the past life wound.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        People often describe the first time they recognize their karmic debt as a kind of relief. The recurring pattern in their life suddenly has a name. And a name is the first thing you need to start working with something instead of being dragged by it.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Want a complete karmic reading?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Karmic debts are one layer. The Karmastro Oracle cross-references them with your full numerology profile and astrological transits to show you how to work with them this year.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=en" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Get my karmic reading free
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/en/tools" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← All tools</a>
+      <a href="/en/tools/life-path-number" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Life path number</a>
+      <a href="/en/tools/expression-number" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Expression number</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  import { detectKarmicDebts } from "../../../data/numerology-meanings";
+
+  const DEBTS_EN: Record<string, { title: string; story: string; pastLife: string; challenge: string; healing: string }> = {
+    "13/4": { title: "The Debt of Laziness", story: "The 13 is the number of forced transformation. In the tarot it is the Death card — not punishment, but molting. A soul carrying 13/4 is believed to have taken shortcuts in a past life, letting others carry the weight of its existence.", pastLife: "In a previous incarnation, you are thought to have sought the easy path, avoided effort, and benefited from the labor of others without contributing your share.", challenge: "In this life, everything you want costs double the effort. Projects only succeed when you stay the distance. You are here to learn the value of patient, consistent, daily work.", healing: "Embrace the daily labor. Every small task completed with care pays down the debt. No shortcuts, no cheating, just the beauty of work done well." },
+    "14/5": { title: "The Debt of Misused Freedom", story: "The 14 carries the memory of freedom badly used. A soul carrying 14/5 is believed to have abused pleasure, food, sex, and indulgence in a past life — without measure, without responsibility.", pastLife: "In a previous life, you confused freedom with license, pleasure with the absence of limits. You followed every desire and caused damage, either to yourself or to those around you.", challenge: "In this life, temptations come often and consequences come fast. Addictions, excesses, and compulsive changes are your tests. You must learn true freedom — the kind that does not depend on consumption.", healing: "Find freedom in moderation and in chosen commitment. I am free because I choose my attachments, not because I run from them all." },
+    "16/7": { title: "The Debt of Spiritual Ego", story: "The 16 is the Tower in the tarot: the ego structure struck by lightning. A soul carrying 16/7 is believed to have used spiritual, religious, or intellectual knowledge to dominate others.", pastLife: "In a previous life, you used your knowledge to manipulate, to seduce, to rule. Spiritual or religious authority abused for personal power.", challenge: "In this life, sudden falls, brutal reality checks, and ego collapses are common. Anything built on spiritual pride crumbles to force humility.", healing: "Accept each collapse as a purification. Cultivate sincere humility. Share knowledge without vanity. Become a student before claiming to be a teacher." },
+    "19/1": { title: "The Debt of Misused Power", story: "The 19 carries the memory of power badly wielded. A soul carrying 19/1 is believed to have had a position of leadership in a past life and used it to crush, humiliate, or exploit others.", pastLife: "You wielded authority with cruelty, or you refused to step into a leadership role when it was needed, abandoning those who counted on you.", challenge: "In this life, you must learn to lead with responsibility. You may feel isolated in your leadership, misunderstood, tested. Will you use your power to lift others, or to crush them?", healing: "Accept the role of leader when it is yours. Learn power-in-service. Be the leader you would have wanted in your past life. True authority lifts." },
+  };
+
+  const form = document.getElementById("karmic-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+  const noneDiv = document.getElementById("result-none") as HTMLDivElement;
+  const debtsDiv = document.getElementById("result-debts") as HTMLDivElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const dateStr = (document.getElementById("birth-date") as HTMLInputElement).value;
+    if (!dateStr) return;
+    const [y, m, d] = dateStr.split("-").map(Number);
+    const debts = detectKarmicDebts(d, m, y);
+
+    resultDiv.classList.remove("hidden");
+    if (debts.length === 0) {
+      noneDiv.classList.remove("hidden");
+      debtsDiv.classList.add("hidden");
+    } else {
+      noneDiv.classList.add("hidden");
+      debtsDiv.classList.remove("hidden");
+      debtsDiv.innerHTML = debts.map((debt) => {
+        const en = DEBTS_EN[debt.code];
+        if (!en) return "";
+        return `
+          <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+            <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Karmic debt detected</p>
+            <div class="flex items-baseline gap-4 mb-4">
+              <span class="text-5xl font-serif text-amber-300">${debt.code}</span>
+              <span class="text-lg font-serif text-white/90">${en.title}</span>
+            </div>
+            <p class="text-sm text-white/80 leading-relaxed mb-4">${en.story}</p>
+            <div class="p-4 rounded-xl bg-purple-300/5 border border-purple-300/20 mb-3">
+              <p class="text-xs uppercase tracking-wider text-purple-300/80 mb-1">Past life echo</p>
+              <p class="text-sm text-white/80 italic">${en.pastLife}</p>
+            </div>
+            <div class="p-4 rounded-xl bg-pink-300/5 border border-pink-300/20 mb-3">
+              <p class="text-xs uppercase tracking-wider text-pink-300/80 mb-1">Current challenge</p>
+              <p class="text-sm text-white/80">${en.challenge}</p>
+            </div>
+            <div class="p-4 rounded-xl bg-emerald-300/5 border border-emerald-300/20">
+              <p class="text-xs uppercase tracking-wider text-emerald-300/80 mb-1">Healing path</p>
+              <p class="text-sm text-white/80">${en.healing}</p>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>

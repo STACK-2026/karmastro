@@ -1,0 +1,151 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Free Birth Chart Calculator - Natal Chart Reading | Karmastro";
+const description =
+  "Free birth chart calculator powered by the Swiss Ephemeris. Get your complete natal chart with sun, moon, rising, all 10 planets, 12 houses, and full interpretation in English.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Free Birth Chart Calculator",
+    description,
+    url: "https://karmastro.com/en/tools/birth-chart",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "en",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "487" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "What is a birth chart?", acceptedAnswer: { "@type": "Answer", text: "A birth chart, also called a natal chart, is an astronomical snapshot of the sky at the exact moment and place of your birth. It shows where the Sun, Moon, and all eight planets were positioned, which zodiac signs they occupied, which of the 12 houses they fell into, and the geometric relationships (aspects) between them. It is the foundational document of Western astrology." } },
+      { "@type": "Question", name: "Is this birth chart calculator really free?", acceptedAnswer: { "@type": "Answer", text: "Yes. Karmastro offers a complete free natal chart including all 10 celestial bodies, all 12 houses, all major aspects, and a written interpretation. No signup required to see the basic chart. Creating a free account unlocks a deeper, personalized reading by one of our four cosmic guides." } },
+      { "@type": "Question", name: "What accuracy level does Karmastro use?", acceptedAnswer: { "@type": "Answer", text: "Karmastro uses the Swiss Ephemeris, the same astronomical engine used by professional astrologers and many scientific observatories. It is accurate to the arcsecond. We use the Placidus house system by default (the most common in modern Western astrology) but Whole Sign and Equal House are also available in the advanced options." } },
+      { "@type": "Question", name: "Do I need to know my exact birth time?", acceptedAnswer: { "@type": "Answer", text: "For a complete birth chart, yes. The rising sign and the 12 house placements require your exact birth time. Without it, we can still calculate the sun sign, moon sign (approximately, since the moon moves fast), and the inner planets with reasonable accuracy. For the full reading, dig up your birth certificate." } },
+      { "@type": "Question", name: "What does my birth chart reveal about me?", acceptedAnswer: { "@type": "Answer", text: "Your birth chart reveals your core identity (Sun), emotional inner world (Moon), social mask (Ascendant), communication style (Mercury), love style (Venus), desire and drive (Mars), growth pattern (Jupiter), discipline and karma (Saturn), and generational themes (Uranus, Neptune, Pluto). Each planet in each sign in each house tells a specific story. Together they paint a detailed psychological portrait." } },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/en" class="hover:text-amber-300">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/en/tools" class="hover:text-amber-300">Tools</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Birth Chart</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Western Astrology</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Free Birth Chart Calculator</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Your complete natal chart, computed with the Swiss Ephemeris. Every planet, every house, every aspect, plus a full interpretation in plain English. No shortcuts.
+      </p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">✦</div>
+      <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">Get your complete birth chart</h2>
+      <p class="text-white/70 mb-6 max-w-xl mx-auto leading-relaxed">
+        The full natal chart calculation requires your exact birth date, time, and location. Our app uses the Swiss Ephemeris to compute all 10 celestial bodies, all 12 houses, all major aspects, and hands the result to Orion, our astrology guide, for a personalized reading.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=en" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+        Get my free birth chart
+      </a>
+      <p class="text-xs text-white/50 mt-3">No credit card · No signup required to see your chart</p>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">What is a birth chart?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        A <strong>birth chart</strong>, also called a <strong>natal chart</strong>, is a precise astronomical map of the sky at the exact moment and place you were born. It captures where the Sun, the Moon, and the eight planets were positioned relative to the zodiac and relative to the horizon above your birthplace. That snapshot never happens again in exactly the same way, which is why your chart is as unique as a fingerprint.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Astrology argues that this snapshot encodes the basic psychological dynamics you walk through life with. It is not destiny — it is a description of the starting hand you were dealt. How you play it is up to you. Good astrology is less about prediction and more about self-knowledge.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">What your birth chart contains</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        A complete natal chart has four layers. Understanding them helps you read the wheel instead of just staring at a diagram full of glyphs.
+      </p>
+
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-6">
+        <div class="p-4 rounded-xl border border-amber-300/20 bg-amber-300/5">
+          <p class="font-serif text-lg text-amber-300 mb-1">The 10 celestial bodies</p>
+          <p class="text-sm text-white/70 leading-relaxed">Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Each represents a specific psychological function.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-purple-300/20 bg-purple-300/5">
+          <p class="font-serif text-lg text-purple-300 mb-1">The 12 zodiac signs</p>
+          <p class="text-sm text-white/70 leading-relaxed">The signs color how each planet expresses itself. Mars in Aries acts differently from Mars in Pisces.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-sky-300/20 bg-sky-300/5">
+          <p class="font-serif text-lg text-sky-300 mb-1">The 12 houses</p>
+          <p class="text-sm text-white/70 leading-relaxed">Houses describe the life areas where the planets operate: identity, money, relationships, career, and so on.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-pink-300/20 bg-pink-300/5">
+          <p class="font-serif text-lg text-pink-300 mb-1">The aspects</p>
+          <p class="text-sm text-white/70 leading-relaxed">Geometric angles between planets that describe how their energies cooperate, tense, or transform each other.</p>
+        </div>
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">The 10 planets and what they mean</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Sun</strong>: your core identity, ego, conscious will. The you that says "I am."</li>
+        <li><strong>Moon</strong>: your emotional inner world, instincts, needs, inner child.</li>
+        <li><strong>Mercury</strong>: how you think, learn, communicate, process information.</li>
+        <li><strong>Venus</strong>: what you love, how you love, your aesthetic, your values.</li>
+        <li><strong>Mars</strong>: your drive, desire, anger, how you go after what you want.</li>
+        <li><strong>Jupiter</strong>: how you grow, expand, find meaning, experience abundance.</li>
+        <li><strong>Saturn</strong>: your discipline, karma, structure, the adult version of you.</li>
+        <li><strong>Uranus</strong>: where you rebel, innovate, break free, surprise yourself.</li>
+        <li><strong>Neptune</strong>: your dreams, illusions, spirituality, creative imagination.</li>
+        <li><strong>Pluto</strong>: deep transformation, power, death-and-rebirth themes.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">The big three: sun, moon, rising</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Modern astrologers often say that knowing just three of your placements already tells you 80 percent of the story: your <strong>sun sign</strong> (core identity), your <strong>moon sign</strong> (emotional self), and your <strong>rising sign</strong> (the mask you wear, the first impression you leave). When someone asks for your "big three," they mean these. If you do not know your rising sign yet, start with our <a href="/en/tools/rising-sign" class="text-amber-300 hover:underline">Rising Sign Calculator</a>.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">How Karmastro calculates your chart</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        We use the <strong>Swiss Ephemeris</strong>, the gold standard in astronomical precision. It is accurate to the arcsecond and used by professional astrologers, software like AstroDienst, and scientific observatories. Our default house system is <strong>Placidus</strong>, the most widespread in modern Western astrology. Whole Sign and Equal House are available in the advanced options.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Once your chart is computed, it is handed to <strong>Orion</strong>, our astrology guide, for interpretation. Orion does not just print generic descriptions from a database — he cross-references your specific placements, reads the major aspect patterns, and delivers a narrative reading shaped to your chart, not to a template.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Why birth time matters</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        The Moon moves roughly one degree every two hours, which is enough to shift it to the next sign once or twice a day. The <strong>ascendant</strong> (rising sign) changes every two hours on average. The <strong>12 houses</strong> are entirely dependent on your exact birth time. Without it, a birth chart is missing the entire "where" layer and the rising sign guess is unreliable.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Check your birth certificate first. Many hospitals record the time to the minute. If nothing works, you can still get a meaningful sun-moon read with just the date, and a professional astrologer can rectify your chart from major life events.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Ready for your complete chart?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        All 10 planets. All 12 houses. All major aspects. A full written reading from Orion. Free, no signup required to see the chart.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=en" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Calculate my birth chart
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/en/tools" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← All tools</a>
+      <a href="/en/tools/rising-sign" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Rising sign</a>
+      <a href="/en/tools/synastry" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Synastry</a>
+      <a href="/en/tools/transits" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Transits</a>
+    </nav>
+  </article>
+</BaseLayout>

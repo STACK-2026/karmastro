@@ -1,0 +1,211 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Expression Number Calculator - Destiny Number Free | Karmastro";
+const description =
+  "Calculate your expression number (also called destiny number) from your full birth name. Discover your natural talents, your life purpose, and the vibration your name carries.";
+
+const MEANINGS: Record<number, { title: string; talents: string[]; path: string; summary: string }> = {
+  1: { title: "The Original", talents: ["Leadership", "Innovation", "Independence", "Courage"], path: "Forging new paths, starting ventures, standing out.", summary: "Your name vibrates with pioneer energy. You are here to lead, to originate, to be the first. Your talent is translating vision into action before anyone else even sees the opportunity." },
+  2: { title: "The Peacemaker", talents: ["Diplomacy", "Intuition", "Cooperation", "Artistry"], path: "Building bridges, mediating, creating harmony.", summary: "Your name vibrates with relational intelligence. You read rooms the way others read books. Your talent is weaving people and ideas together without anyone noticing the thread." },
+  3: { title: "The Communicator", talents: ["Creative expression", "Writing", "Performance", "Charisma"], path: "Making ideas visible, entertaining, inspiring.", summary: "Your name vibrates with expressive genius. Words, images, music, stories — these are your tools. Your talent is making people feel something they didn't know they needed to feel." },
+  4: { title: "The Architect", talents: ["Discipline", "Craftsmanship", "Organization", "Durability"], path: "Building systems and structures that last.", summary: "Your name vibrates with solid, patient, foundational energy. You build what others dream about. Your talent is turning chaos into a blueprint, then turning the blueprint into something real." },
+  5: { title: "The Freedom-Seeker", talents: ["Adaptability", "Communication", "Travel", "Sales"], path: "Movement, variety, connecting worlds.", summary: "Your name vibrates with restless curiosity. You thrive in motion. Your talent is translating between cultures, systems, or ideas that normally never meet." },
+  6: { title: "The Caregiver", talents: ["Teaching", "Healing", "Counseling", "Creating beauty"], path: "Nurturing, protecting, beautifying.", summary: "Your name vibrates with responsibility and love. People bring you their troubles because something in you holds steady. Your talent is making others feel at home." },
+  7: { title: "The Mystic", talents: ["Deep analysis", "Research", "Spirituality", "Mastery"], path: "Uncovering hidden truths, teaching wisdom.", summary: "Your name vibrates with the energy of the seeker. You go deeper than the surface, always. Your talent is finding patterns nobody else notices and articulating them clearly." },
+  8: { title: "The Executive", talents: ["Business acumen", "Leadership", "Strategy", "Financial mastery"], path: "Building wealth and influence, organizing at scale.", summary: "Your name vibrates with material mastery. You understand power without being corrupted by it. Your talent is turning vision into infrastructure and infrastructure into legacy." },
+  9: { title: "The Humanitarian", talents: ["Compassion", "Teaching", "Art", "Global thinking"], path: "Serving the collective, inspiring through example.", summary: "Your name vibrates with old-soul wisdom. You see past tribal boundaries to the whole. Your talent is serving causes bigger than yourself without losing your own center." },
+  11: { title: "The Illuminator (Master Number)", talents: ["Spiritual insight", "Inspiration", "Vision", "Magnetism"], path: "Awakening others through presence and example.", summary: "Your name vibrates with master number 11 — a doubled 2. You are a channel for inspiration. Your talent is walking into rooms and shifting the energy without saying a word." },
+  22: { title: "The Master Builder", talents: ["Visionary pragmatism", "Large-scale projects", "Leadership", "Endurance"], path: "Turning grand visions into lasting reality.", summary: "Your name vibrates with master number 22 — a doubled 4. You are here to build at scale. Your talent is taking impossible dreams and turning them into working systems." },
+  33: { title: "The Master Teacher", talents: ["Unconditional love", "Healing", "Teaching", "Selfless service"], path: "Healing the world through compassionate teaching.", summary: "Your name vibrates with master number 33 — the rarest of all. You are here to love without condition and teach without ego. Your talent is presence itself." },
+};
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Expression Number Calculator",
+    description,
+    url: "https://karmastro.com/en/tools/expression-number",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "en",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "What is an expression number?", acceptedAnswer: { "@type": "Answer", text: "Your expression number, also called destiny number, is calculated from the letters of your full birth name using Pythagorean numerology. It reveals the natural talents you were born with and the overall path your name vibration supports." } },
+      { "@type": "Question", name: "Expression number vs life path number?", acceptedAnswer: { "@type": "Answer", text: "Life path comes from your birth date and describes your life mission. Expression number comes from your full birth name and describes the talents and abilities you brought to fulfill that mission. Life path is what you came here to do; expression is the toolkit you arrived with." } },
+      { "@type": "Question", name: "Should I use my full birth name or my current legal name?", acceptedAnswer: { "@type": "Answer", text: "Traditional numerology uses your full birth name exactly as it appears on your birth certificate, including middle names. This carries your original karmic imprint. Name changes later in life can create a secondary vibration but do not erase the original." } },
+      { "@type": "Question", name: "What if I have multiple middle names?", acceptedAnswer: { "@type": "Answer", text: "Include all of them. Every letter of your full birth name contributes to the total vibration. A long name is neither better nor worse than a short one — it simply carries more layers." } },
+      { "@type": "Question", name: "Does marriage change my expression number?", acceptedAnswer: { "@type": "Answer", text: "Your original birth name expression never changes. However, the name you use daily creates a secondary vibration. If you took your partner's name, you now carry two expressions: the original (core talents) and the current (daily energy)." } },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/en" class="hover:text-amber-300">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/en/tools" class="hover:text-amber-300">Tools</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Expression Number</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Pythagorean Numerology</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Expression Number Calculator</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Your expression number — also called your destiny number — is the vibration carried by your full birth name. It reveals your natural talents and the toolkit you arrived with.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="expr-form" class="space-y-4">
+        <div>
+          <label for="full-name" class="block text-sm font-medium text-white/80 mb-2">Your full birth name</label>
+          <input type="text" id="full-name" required placeholder="e.g. Sarah Elizabeth Johnson" class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white placeholder-white/30 focus:border-amber-300 focus:outline-none transition-colors" />
+          <p class="text-xs text-white/50 mt-1">Use the full name from your birth certificate, including middle names.</p>
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          Calculate my expression number
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Your expression number</p>
+          <div class="flex items-baseline gap-4 mb-4">
+            <span id="result-number" class="text-7xl font-serif text-amber-300"></span>
+            <span id="result-title" class="text-xl font-serif text-white/90"></span>
+          </div>
+          <p class="text-xs text-white/50 mb-4">Letters: <span id="result-letters" class="text-white/70"></span></p>
+          <p class="text-xs text-white/50 mb-4">Calculation: <span id="result-calc" class="text-white/70"></span></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div>
+            <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Your natural talents</p>
+            <ul id="result-talents" class="text-sm text-white/70 space-y-1 mb-4"></ul>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">Your destiny path</p>
+            <p id="result-path" class="text-sm text-white/80 italic leading-relaxed"></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-center">
+            <a href="https://app.karmastro.com/oracle?lang=en" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
+              Get your complete numerology profile
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">What is an expression number?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Your <strong>expression number</strong>, also widely known as your <strong>destiny number</strong>, is calculated from the letters of your full birth name. In Pythagorean numerology, every letter carries a numerical value (A=1, B=2, C=3, and so on through I=9, then J=1 again). Add them all up, reduce to a single digit, and you get a number that describes the talents you arrived with and the path your name vibration naturally supports.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        While your life path number comes from your birth date and represents your mission, your expression number represents your <em>toolkit</em>. It is the gift you brought into this life to fulfill that mission. Ideally, life path and expression work together: the path gives you the "why" and the expression gives you the "how."
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">The Pythagorean letter table</h2>
+      <div class="not-prose overflow-x-auto mb-6">
+        <table class="w-full text-sm border border-white/10 rounded-xl overflow-hidden">
+          <thead class="bg-white/5">
+            <tr><th class="p-2 text-left">Number</th><th class="p-2 text-left">Letters</th></tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-white/10"><td class="p-2 text-amber-300 font-serif">1</td><td class="p-2">A · J · S</td></tr>
+            <tr class="border-t border-white/10"><td class="p-2 text-amber-300 font-serif">2</td><td class="p-2">B · K · T</td></tr>
+            <tr class="border-t border-white/10"><td class="p-2 text-amber-300 font-serif">3</td><td class="p-2">C · L · U</td></tr>
+            <tr class="border-t border-white/10"><td class="p-2 text-amber-300 font-serif">4</td><td class="p-2">D · M · V</td></tr>
+            <tr class="border-t border-white/10"><td class="p-2 text-amber-300 font-serif">5</td><td class="p-2">E · N · W</td></tr>
+            <tr class="border-t border-white/10"><td class="p-2 text-amber-300 font-serif">6</td><td class="p-2">F · O · X</td></tr>
+            <tr class="border-t border-white/10"><td class="p-2 text-amber-300 font-serif">7</td><td class="p-2">G · P · Y</td></tr>
+            <tr class="border-t border-white/10"><td class="p-2 text-amber-300 font-serif">8</td><td class="p-2">H · Q · Z</td></tr>
+            <tr class="border-t border-white/10"><td class="p-2 text-amber-300 font-serif">9</td><td class="p-2">I · R</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">How to calculate your expression number</h2>
+      <div class="p-5 rounded-xl bg-white/[0.03] border border-white/10 mb-6 not-prose">
+        <p class="text-sm text-white/90 mb-3"><strong>Example: MARY JANE SMITH</strong></p>
+        <ul class="text-sm text-white/70 space-y-1">
+          <li>MARY: 4+1+9+7 = 21</li>
+          <li>JANE: 1+1+5+5 = 12</li>
+          <li>SMITH: 1+4+9+2+8 = 24</li>
+          <li>Total: 21+12+24 = <strong class="text-amber-300">57 → 5+7 = 12 → 1+2 = 3</strong></li>
+        </ul>
+        <p class="text-sm text-white/60 mt-3">Expression number = 3 (The Communicator)</p>
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Expression number vs life path number</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        These two are the most important numbers in Pythagorean numerology and they work as a pair. Your <strong>life path</strong> (from your birth date) describes the mission you signed up for. Your <strong>expression</strong> (from your birth name) describes the talents and abilities you brought to fulfill that mission.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        When life path and expression are in harmony, life flows: you have both the "why" and the "how." When they clash, you can feel an inner tension: you know what you should do but the tools feel wrong. The good news is that friction is not failure. It is an invitation to develop aspects of yourself your natural talents did not cover.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Want your complete numerology profile?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Life path, expression, soul urge, personality, personal year — cross-referenced with your astrological birth chart. The Karmastro Oracle delivers it all.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=en" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Get my full reading free
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/en/tools" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← All tools</a>
+      <a href="/en/tools/life-path-number" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Life path number</a>
+      <a href="/en/tools/karmic-debt" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Karmic debt</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  import { calculateExpression } from "../../../data/numerology-meanings";
+
+  const MEANINGS: Record<number, { title: string; talents: string[]; path: string; summary: string }> = {
+    1: { title: "The Original", talents: ["Leadership", "Innovation", "Independence", "Courage"], path: "Forging new paths, starting ventures, standing out.", summary: "Your name vibrates with pioneer energy. You are here to lead, to originate, to be the first. Your talent is translating vision into action before anyone else even sees the opportunity." },
+    2: { title: "The Peacemaker", talents: ["Diplomacy", "Intuition", "Cooperation", "Artistry"], path: "Building bridges, mediating, creating harmony.", summary: "Your name vibrates with relational intelligence. You read rooms the way others read books. Your talent is weaving people and ideas together without anyone noticing the thread." },
+    3: { title: "The Communicator", talents: ["Creative expression", "Writing", "Performance", "Charisma"], path: "Making ideas visible, entertaining, inspiring.", summary: "Your name vibrates with expressive genius. Words, images, music, stories — these are your tools. Your talent is making people feel something they didn't know they needed to feel." },
+    4: { title: "The Architect", talents: ["Discipline", "Craftsmanship", "Organization", "Durability"], path: "Building systems and structures that last.", summary: "Your name vibrates with solid, patient, foundational energy. You build what others dream about. Your talent is turning chaos into a blueprint, then turning the blueprint into something real." },
+    5: { title: "The Freedom-Seeker", talents: ["Adaptability", "Communication", "Travel", "Sales"], path: "Movement, variety, connecting worlds.", summary: "Your name vibrates with restless curiosity. You thrive in motion. Your talent is translating between cultures, systems, or ideas that normally never meet." },
+    6: { title: "The Caregiver", talents: ["Teaching", "Healing", "Counseling", "Creating beauty"], path: "Nurturing, protecting, beautifying.", summary: "Your name vibrates with responsibility and love. People bring you their troubles because something in you holds steady. Your talent is making others feel at home." },
+    7: { title: "The Mystic", talents: ["Deep analysis", "Research", "Spirituality", "Mastery"], path: "Uncovering hidden truths, teaching wisdom.", summary: "Your name vibrates with the energy of the seeker. You go deeper than the surface, always. Your talent is finding patterns nobody else notices and articulating them clearly." },
+    8: { title: "The Executive", talents: ["Business acumen", "Leadership", "Strategy", "Financial mastery"], path: "Building wealth and influence, organizing at scale.", summary: "Your name vibrates with material mastery. You understand power without being corrupted by it. Your talent is turning vision into infrastructure and infrastructure into legacy." },
+    9: { title: "The Humanitarian", talents: ["Compassion", "Teaching", "Art", "Global thinking"], path: "Serving the collective, inspiring through example.", summary: "Your name vibrates with old-soul wisdom. You see past tribal boundaries to the whole. Your talent is serving causes bigger than yourself without losing your own center." },
+    11: { title: "The Illuminator (Master Number)", talents: ["Spiritual insight", "Inspiration", "Vision", "Magnetism"], path: "Awakening others through presence and example.", summary: "Your name vibrates with master number 11 — a doubled 2. You are a channel for inspiration. Your talent is walking into rooms and shifting the energy without saying a word." },
+    22: { title: "The Master Builder", talents: ["Visionary pragmatism", "Large-scale projects", "Leadership", "Endurance"], path: "Turning grand visions into lasting reality.", summary: "Your name vibrates with master number 22 — a doubled 4. You are here to build at scale. Your talent is taking impossible dreams and turning them into working systems." },
+    33: { title: "The Master Teacher", talents: ["Unconditional love", "Healing", "Teaching", "Selfless service"], path: "Healing the world through compassionate teaching.", summary: "Your name vibrates with master number 33 — the rarest of all. You are here to love without condition and teach without ego. Your talent is presence itself." },
+  };
+
+  const form = document.getElementById("expr-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = (document.getElementById("full-name") as HTMLInputElement).value;
+    if (!name.trim()) return;
+    const result = calculateExpression(name);
+    const meaning = MEANINGS[result.number] || MEANINGS[1];
+    (document.getElementById("result-number") as HTMLElement).textContent = String(result.number);
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-letters") as HTMLElement).textContent = result.letters;
+    (document.getElementById("result-calc") as HTMLElement).textContent = result.calculation;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+    (document.getElementById("result-talents") as HTMLElement).innerHTML = meaning.talents.map((t) => `<li>✦ ${t}</li>`).join("");
+    (document.getElementById("result-path") as HTMLElement).textContent = meaning.path;
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>

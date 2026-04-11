@@ -1,0 +1,138 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Free Transit Calculator - Current Planetary Transits | Karmastro";
+const description =
+  "Free transit calculator. See which planets are currently aspecting your birth chart and what they mean. Saturn return, Jupiter blessings, Pluto transformations, all explained.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Free Transit Calculator",
+    description,
+    url: "https://karmastro.com/en/tools/transits",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "en",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "What are astrological transits?", acceptedAnswer: { "@type": "Answer", text: "Transits are the real-time movements of the planets across the sky compared to your birth chart. When a currently-moving planet forms a significant angle to one of your natal planets, that is called a transit. Transits are how astrology moves from static personality description to dynamic life forecasting." } },
+      { "@type": "Question", name: "What is a Saturn return?", acceptedAnswer: { "@type": "Answer", text: "A Saturn return happens when transiting Saturn returns to the exact position it held at your birth — roughly every 29-30 years. The first Saturn return (around age 28-30) is often the most transformative period of early adult life. It is when you stop living the script you inherited and start building the life that is actually yours." } },
+      { "@type": "Question", name: "Which transits matter most?", acceptedAnswer: { "@type": "Answer", text: "Outer planet transits (Jupiter, Saturn, Uranus, Neptune, Pluto) matter most because they are slow and their effects last months to years. Inner planet transits (Mercury, Venus, Mars) are faster and subtler. The big life events usually correlate with outer planet transits to personal chart points (sun, moon, ascendant, MC)." } },
+      { "@type": "Question", name: "What is Pluto transit?", acceptedAnswer: { "@type": "Answer", text: "A Pluto transit is when Pluto forms a major aspect to one of your natal planets. Because Pluto moves so slowly, these transits last 2-3 years. They are the most transformative periods of a life: old identities die, deep truths surface, and something new is born from the ashes. Not easy, but almost always necessary." } },
+      { "@type": "Question", name: "Is Mercury retrograde real or made up?", acceptedAnswer: { "@type": "Answer", text: "Mercury retrograde is astronomically real: Mercury appears to reverse course in the sky three or four times a year. Whether it actually affects communication and technology is a matter of interpretation. Astrologers have tracked it for centuries and notice patterns; skeptics dismiss them as confirmation bias. The safest posture is to slow down, back up important files, and reread contracts during retrograde periods." } },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/en" class="hover:text-amber-300">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/en/tools" class="hover:text-amber-300">Tools</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Transits</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Predictive Astrology</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Transit Calculator</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        The planets are moving right now, and they are talking to your birth chart. Find out which transits are active today, what they mean, and how to work with them instead of against them.
+      </p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-sky-300/30 bg-gradient-to-br from-sky-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">✦</div>
+      <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">See your current transits</h2>
+      <p class="text-white/70 mb-6 max-w-xl mx-auto leading-relaxed">
+        Transit calculation requires your full birth chart plus the real-time position of every moving planet. Our app runs the Swiss Ephemeris and delivers a ranked list of your active transits with interpretation by Orion, our astrology guide.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=en" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+        Check my current transits
+      </a>
+      <p class="text-xs text-white/50 mt-3">Updates daily · Free core reading</p>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">What are transits?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        <strong>Transits</strong> are the real-time movements of the planets across the sky, compared to the positions they held at your birth. When a currently-moving planet forms a significant geometric angle (an <em>aspect</em>) to one of your natal planets, astrologers call that a <strong>transit</strong>. Transits are how astrology moves from static personality description to living, breathing forecasting.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Think of your birth chart as a fixed piano keyboard and the transiting planets as the musician currently playing. Your keyboard never changes — your core identity is set at birth. But the music changes every day, and specific combinations of keys produce specific emotional and life experiences. Transits tell you what song the sky is playing on your personal instrument right now.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">The major transits and what they mean</h2>
+      <div class="not-prose space-y-3 mb-6">
+        <div class="p-4 rounded-xl border border-amber-300/20 bg-amber-300/5">
+          <p class="font-serif text-lg text-amber-300 mb-1">Jupiter transits</p>
+          <p class="text-sm text-white/70 leading-relaxed">Expansion, growth, luck, opportunity. Jupiter transits typically last a few weeks to a few months. Good times to take risks, travel, study, or expand the things that matter.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-sky-300/20 bg-sky-300/5">
+          <p class="font-serif text-lg text-sky-300 mb-1">Saturn transits</p>
+          <p class="text-sm text-white/70 leading-relaxed">Structure, commitment, reality checks, karma. Saturn forces you to confront what is not working and rebuild it on stronger foundations. Not easy. Often the most useful transits of a life.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-emerald-300/20 bg-emerald-300/5">
+          <p class="font-serif text-lg text-emerald-300 mb-1">Uranus transits</p>
+          <p class="text-sm text-white/70 leading-relaxed">Sudden change, liberation, breakthrough. Uranus transits shatter what no longer fits. They are abrupt, sometimes jarring, always clarifying. Do not try to control a Uranus transit.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-purple-300/20 bg-purple-300/5">
+          <p class="font-serif text-lg text-purple-300 mb-1">Neptune transits</p>
+          <p class="text-sm text-white/70 leading-relaxed">Dreams, illusions, spiritual opening, confusion. Neptune transits dissolve boundaries — sometimes beautifully, sometimes painfully. Watch for escapism. Lean into meditation, art, and dreams.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-rose-300/20 bg-rose-300/5">
+          <p class="font-serif text-lg text-rose-300 mb-1">Pluto transits</p>
+          <p class="text-sm text-white/70 leading-relaxed">Deep transformation, death and rebirth, power dynamics. The slowest and most profound transits of all. Pluto does not negotiate. When it touches a natal point, something in you ends so something truer can begin.</p>
+        </div>
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">The Saturn return: astrology's rite of passage</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Saturn takes approximately 29.5 years to orbit the Sun. Around your 28th to 30th birthday, Saturn returns to the exact zodiac position it held when you were born. This is called the <strong>Saturn return</strong> and it is arguably the most transformative transit of early adulthood. The first Saturn return is when you stop living the script you inherited from your family, your culture, and your school, and start building the life that is actually yours.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Many people describe their first Saturn return as the most difficult period of their life so far. Relationships, careers, and identities that no longer fit fall apart. But on the other side, almost everyone says the same thing: they became themselves. The second Saturn return (age 58-60) is a second coming-of-age, often marked by retirement, legacy building, and deep clarity about what truly mattered all along.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Mercury retrograde, explained</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Three or four times a year, Mercury appears to move <strong>backward</strong> in the sky for about three weeks. This is called a <strong>retrograde</strong>. It is an optical illusion caused by Earth and Mercury moving at different speeds, but astrologers have tracked patterns around it for centuries: communication breakdowns, technology glitches, travel delays, misunderstandings, old contacts resurfacing.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Whether or not you believe in the effect, the practical advice is sound: during Mercury retrograde, slow down, reread contracts, back up files, double-check travel bookings, and be patient with communication. Retrograde periods are also excellent for the "re-" activities: reviewing, rewriting, reflecting, reconnecting with old friends.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">How to work with transits</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        The goal of transit astrology is not prediction. It is <strong>alignment</strong>. When you know that transiting Jupiter is touching your natal Venus, you know this is a window for love, beauty, and pleasure — and you say yes to the opportunities that show up. When you know that transiting Saturn is touching your Sun, you know this is a reality check year — and you stop trying to escape it and start doing the hard work that will reward you later.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Astrology at its best is a planning tool. You see the weather forecast, you dress accordingly. The weather does not control you, but pretending it does not exist means getting soaked.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Ready to see your active transits?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Every transit currently touching your chart, ranked by importance, with interpretation and timing. Updated daily. Free.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=en" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        See my transits
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/en/tools" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← All tools</a>
+      <a href="/en/tools/birth-chart" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Birth chart</a>
+      <a href="/en/horoscope" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Daily horoscope</a>
+    </nav>
+  </article>
+</BaseLayout>

@@ -1,0 +1,297 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Personal Year Number Calculator - Numerology Cycle 2026 | Karmastro";
+const description =
+  "Calculate your personal year number for 2026 free. Discover the 9-year numerology cycle, what each year means, and how to align with your current energetic theme.";
+
+type YearMeaning = { title: string; theme: string; summary: string; dos: string[]; donts: string[]; keyword: string };
+
+const MEANINGS: Record<number, YearMeaning> = {
+  1: {
+    title: "Personal Year 1",
+    theme: "New beginnings and initiative",
+    summary: "The slate is clean. Personal Year 1 opens a brand new nine-year cycle. This is the year to plant seeds for what you want to harvest over the next decade. The universe is asking you: what do you want to build, and are you brave enough to start?",
+    dos: ["Start new projects", "Take independent action", "Trust your instincts", "Invest in your own growth", "Make bold first moves"],
+    donts: ["Cling to the past", "Wait for permission", "Play it too safe", "Depend on others to lead"],
+    keyword: "initiation",
+  },
+  2: {
+    title: "Personal Year 2",
+    theme: "Patience, partnership, and growth through waiting",
+    summary: "The seeds you planted last year need time to germinate. Personal Year 2 is a year of slower, quieter growth. The work is relational: partnerships, cooperation, diplomacy. Push too hard and you break the seedlings. Patience is not weakness here, it is wisdom.",
+    dos: ["Cultivate partnerships", "Practice patience", "Listen more than you speak", "Tend existing relationships", "Accept help"],
+    donts: ["Force outcomes", "Go it alone", "Rush decisions", "Take things personally"],
+    keyword: "patience",
+  },
+  3: {
+    title: "Personal Year 3",
+    theme: "Creative expression and joy",
+    summary: "Something wants to be born through you. Personal Year 3 is the most creative and expressive year of the cycle. Write, paint, speak, sing, dance, ship. The universe rewards visibility now. This is also a year of joy, friendships, and social expansion.",
+    dos: ["Express yourself creatively", "Say yes to social invitations", "Share your work publicly", "Have fun intentionally", "Let your voice be heard"],
+    donts: ["Hide your gifts", "Drown in self-doubt", "Scatter your energy", "Take things too seriously"],
+    keyword: "expression",
+  },
+  4: {
+    title: "Personal Year 4",
+    theme: "Hard work and building foundations",
+    summary: "The party is over. Personal Year 4 is when you roll up your sleeves and build the actual structure beneath your dreams. It is the least glamorous year of the cycle but one of the most important. The foundations you lay now will hold up everything you build in years 5 through 9.",
+    dos: ["Work hard and consistently", "Build systems and routines", "Save money", "Handle logistics", "Honor commitments"],
+    donts: ["Cut corners", "Avoid the boring work", "Burn yourself out", "Neglect your body"],
+    keyword: "foundation",
+  },
+  5: {
+    title: "Personal Year 5",
+    theme: "Change, freedom, and expansion",
+    summary: "The walls of the structure you built last year start to shift. Personal Year 5 brings change, adventure, and unexpected opportunities. Travel, new people, new experiences. This is the most dynamic year of the cycle. Resist the urge to control it.",
+    dos: ["Embrace change", "Travel", "Say yes to new experiences", "Break old patterns", "Explore freely"],
+    donts: ["Cling to stability", "Resist opportunities", "Make permanent decisions rashly", "Fear the unknown"],
+    keyword: "freedom",
+  },
+  6: {
+    title: "Personal Year 6",
+    theme: "Love, home, and responsibility",
+    summary: "After the adventure of last year, Personal Year 6 calls you home. Relationships deepen, family matters demand attention, and your nest becomes important again. Love, marriage, birth, and moving homes are common themes. The heart leads.",
+    dos: ["Invest in relationships", "Beautify your home", "Care for loved ones", "Take on meaningful responsibility", "Create a beautiful environment"],
+    donts: ["Neglect self-care while serving others", "Become a martyr", "Control loved ones", "Avoid commitment"],
+    keyword: "devotion",
+  },
+  7: {
+    title: "Personal Year 7",
+    theme: "Introspection and spiritual growth",
+    summary: "The external world grows quieter. Personal Year 7 is the most introspective year of the cycle, a sabbatical for the soul. This is a year for deep study, contemplation, spiritual practice, and rest. Outward progress slows; inward growth accelerates.",
+    dos: ["Meditate and reflect", "Study deeply", "Spend time in nature", "Honor your need for solitude", "Listen to dreams"],
+    donts: ["Force external progress", "Skip the rest", "Avoid solitude", "Ignore your inner voice"],
+    keyword: "wisdom",
+  },
+  8: {
+    title: "Personal Year 8",
+    theme: "Power, abundance, and recognition",
+    summary: "The harvest arrives. Personal Year 8 is the year of financial rewards, professional recognition, and real-world power. The seeds you planted in Year 1 are ripening. This is not a year to shrink. Step into your authority and claim what you have earned.",
+    dos: ["Negotiate boldly", "Claim your worth", "Take on leadership", "Make big financial decisions", "Own your success"],
+    donts: ["Play small", "Fear your own power", "Give credit away", "Neglect integrity for gain"],
+    keyword: "harvest",
+  },
+  9: {
+    title: "Personal Year 9",
+    theme: "Completion, release, and letting go",
+    summary: "The cycle ends. Personal Year 9 is about releasing what no longer serves you so you can begin again clean next year. Endings, closures, goodbyes, completions. The more you resist this year's call to let go, the harder the lesson will hit.",
+    dos: ["Complete unfinished projects", "Forgive and release", "Declutter your life", "Say goodbye with grace", "Serve others selflessly"],
+    donts: ["Start major new projects", "Cling to what is dying", "Resist endings", "Focus on the self"],
+    keyword: "release",
+  },
+};
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Personal Year Number Calculator",
+    description,
+    url: "https://karmastro.com/en/tools/personal-year",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "en",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is a personal year number?",
+        acceptedAnswer: { "@type": "Answer", text: "A personal year number is the numerological theme of a specific year in your life, calculated from your birth day, birth month, and the year in question. It runs on a 9-year cycle: Year 1 is new beginnings, Year 9 is completion and release, then the cycle resets." },
+      },
+      {
+        "@type": "Question",
+        name: "How do I calculate my personal year?",
+        acceptedAnswer: { "@type": "Answer", text: "Add your birth day, your birth month, and the current year. Reduce each to a single digit, then reduce the sum. Example: born April 14, for the year 2026: 1+4=5, 4=4, 2+0+2+6=10 → 1+0=1. Total: 5+4+1=10 → 1+0=1. Personal Year 1 for 2026." },
+      },
+      {
+        "@type": "Question",
+        name: "When does the personal year start?",
+        acceptedAnswer: { "@type": "Answer", text: "Numerologists disagree. Traditional Pythagorean numerology says your personal year begins on January 1. A more modern school says it begins on your birthday. Many practitioners use January 1 for simplicity. Karmastro uses the January 1 convention." },
+      },
+      {
+        "@type": "Question",
+        name: "What is the best personal year?",
+        acceptedAnswer: { "@type": "Answer", text: "There is no best year. Each has its own purpose. Year 1 is great for starting a business, Year 5 is great for travel and change, Year 8 is great for financial breakthroughs, Year 9 is great for releasing what no longer serves you. The art is aligning your actions with the year's energy instead of fighting it." },
+      },
+      {
+        "@type": "Question",
+        name: "Can I override a difficult personal year?",
+        acceptedAnswer: { "@type": "Answer", text: "You cannot override the theme, but you can work with it instead of against it. A Year 4 feels hard if you expect rest; it flows when you accept that this is a building year. A Year 9 feels depressing if you resist endings; it liberates when you embrace release. Alignment is the key." },
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/en" class="hover:text-amber-300">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/en/tools" class="hover:text-amber-300">Tools</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Personal Year</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Pythagorean Numerology</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Personal Year Number Calculator</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Every year carries a specific numerological theme for you. Discover which year you are in, what it means, and how to align with its energy instead of fighting it.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="year-form" class="space-y-4">
+        <div>
+          <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">Date of birth</label>
+          <input type="date" id="birth-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <div>
+          <label for="target-year" class="block text-sm font-medium text-white/80 mb-2">Year to analyze</label>
+          <input type="number" id="target-year" required value="2026" min="1900" max="2100" class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          Calculate my personal year
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Your personal year</p>
+          <div class="flex items-baseline gap-4 mb-4">
+            <span id="result-number" class="text-7xl font-serif text-amber-300"></span>
+            <span id="result-title" class="text-xl font-serif text-white/90"></span>
+          </div>
+          <p id="result-theme" class="text-sm text-amber-300/80 italic mb-4"></p>
+          <p class="text-xs text-white/50 mb-4">Calculation: <span id="result-calc" class="text-white/70"></span></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Do this year</p>
+              <ul id="result-dos" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">Avoid this year</p>
+              <ul id="result-donts" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-center">
+            <a href="https://app.karmastro.com/oracle?lang=en" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
+              Get a full yearly forecast
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">What is a personal year?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        In Pythagorean numerology, every year of your life carries a specific <strong>vibration</strong>. The personal year number tells you which vibration you are currently moving through. It runs on a 9-year cycle: Year 1 is new beginnings, Year 2 is patience and partnership, and so on until Year 9, the year of release. Then the cycle starts over.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Unlike your life path number, which never changes, your personal year shifts every January 1. It is the single most practical number in numerology because it tells you <em>what the current year is actually for</em>. If you know you are in a Year 4, you stop trying to force rapid change and start building foundations instead. Alignment beats effort.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">The 9-year numerology cycle</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Your life is divided into nine-year chapters. Each chapter has the same structure, but the content is unique because you are a different person each time you walk through it. Here is a quick map of the cycle.
+      </p>
+
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
+        {[1,2,3,4,5,6,7,8,9].map((n) => {
+          const m = MEANINGS[n];
+          return (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <div class="flex items-baseline gap-3 mb-2">
+                <span class="text-3xl font-serif text-amber-300">{n}</span>
+                <span class="text-sm text-white/80 font-medium">{m.keyword}</span>
+              </div>
+              <p class="text-xs text-white/60 leading-relaxed">{m.theme}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">How to calculate your personal year</h2>
+      <div class="p-5 rounded-xl bg-white/[0.03] border border-white/10 mb-6 not-prose">
+        <p class="text-sm text-white/90 mb-3"><strong>Example: born April 14, calculating for 2026</strong></p>
+        <ul class="text-sm text-white/70 space-y-1">
+          <li>Birth day: 1 + 4 = 5</li>
+          <li>Birth month: 4 = 4</li>
+          <li>Target year: 2 + 0 + 2 + 6 = 10 → 1 + 0 = 1</li>
+          <li>Total: 5 + 4 + 1 = <strong class="text-amber-300">10 → 1 + 0 = 1</strong></li>
+        </ul>
+        <p class="text-sm text-white/60 mt-3">Personal Year 1 for 2026. A year of new beginnings.</p>
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Using your personal year strategically</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        The power of the personal year is not prediction, it is <strong>alignment</strong>. When you know the theme of your current year, you can choose actions that flow with it instead of against it. Trying to launch a big project in a Year 9 (release) is exhausting; launching it in a Year 1 (initiation) feels effortless. Trying to rest in a Year 8 (harvest) means leaving money on the table; resting in a Year 7 (introspection) is exactly what the soul needs.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Most people fight their personal year without realizing it. They try to start new things in endings years and rest in harvest years, then wonder why nothing works. The numerology is not predicting failure: it is showing you what the year wants from you.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Want a full yearly forecast?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Personal year plus personal month plus personal day gives you a granular map of the year ahead. The Karmastro Oracle cross-references numerology with your astrological transits for a complete forecast.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=en" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Get my full forecast free
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/en/tools" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← All tools</a>
+      <a href="/en/tools/life-path-number" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Life path number</a>
+      <a href="/en/tools/expression-number" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Expression number</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  import { calculatePersonalYear } from "../../../data/numerology-meanings";
+
+  const MEANINGS: Record<number, { title: string; theme: string; summary: string; dos: string[]; donts: string[] }> = {
+    1: { title: "The Year of New Beginnings", theme: "Initiation, independence, first steps", summary: "The slate is clean. Personal Year 1 opens a brand new nine-year cycle. This is the year to plant seeds for what you want to harvest over the next decade. The universe is asking: what do you want to build, and are you brave enough to start?", dos: ["Start new projects", "Take independent action", "Trust your instincts", "Invest in your own growth", "Make bold first moves"], donts: ["Cling to the past", "Wait for permission", "Play it too safe", "Depend on others to lead"] },
+    2: { title: "The Year of Patience", theme: "Partnership, sensitivity, slow growth", summary: "The seeds you planted last year need time to germinate. Personal Year 2 is quieter, more relational. Push too hard and you break the seedlings. Patience is wisdom here, not weakness.", dos: ["Cultivate partnerships", "Practice patience", "Listen more than you speak", "Tend existing relationships", "Accept help"], donts: ["Force outcomes", "Go it alone", "Rush decisions", "Take things personally"] },
+    3: { title: "The Year of Creative Expression", theme: "Joy, visibility, creative flow", summary: "Something wants to be born through you. Personal Year 3 is the most creative and expressive year of the cycle. Write, paint, speak, sing, ship. The universe rewards visibility now.", dos: ["Express yourself creatively", "Say yes to social invitations", "Share your work publicly", "Have fun intentionally", "Let your voice be heard"], donts: ["Hide your gifts", "Drown in self-doubt", "Scatter your energy", "Take things too seriously"] },
+    4: { title: "The Year of Hard Work", theme: "Foundations, discipline, structure", summary: "The party is over. Personal Year 4 is when you roll up your sleeves and build the actual structure beneath your dreams. The foundations you lay now will hold up everything you build in years 5 through 9.", dos: ["Work hard and consistently", "Build systems and routines", "Save money", "Handle logistics", "Honor commitments"], donts: ["Cut corners", "Avoid the boring work", "Burn yourself out", "Neglect your body"] },
+    5: { title: "The Year of Freedom", theme: "Change, adventure, expansion", summary: "The walls of the structure you built last year start to shift. Personal Year 5 brings change, adventure, and unexpected opportunities. The most dynamic year of the cycle.", dos: ["Embrace change", "Travel", "Say yes to new experiences", "Break old patterns", "Explore freely"], donts: ["Cling to stability", "Resist opportunities", "Make permanent decisions rashly", "Fear the unknown"] },
+    6: { title: "The Year of Love and Home", theme: "Relationships, family, beauty", summary: "After the adventure of last year, Personal Year 6 calls you home. Relationships deepen, family matters demand attention, and your nest becomes important again. The heart leads.", dos: ["Invest in relationships", "Beautify your home", "Care for loved ones", "Take on meaningful responsibility", "Create a beautiful environment"], donts: ["Neglect self-care while serving others", "Become a martyr", "Control loved ones", "Avoid commitment"] },
+    7: { title: "The Year of Introspection", theme: "Wisdom, spirituality, rest", summary: "The external world grows quieter. Personal Year 7 is a sabbatical for the soul. Deep study, contemplation, spiritual practice, and rest. Outward progress slows; inward growth accelerates.", dos: ["Meditate and reflect", "Study deeply", "Spend time in nature", "Honor your need for solitude", "Listen to dreams"], donts: ["Force external progress", "Skip the rest", "Avoid solitude", "Ignore your inner voice"] },
+    8: { title: "The Year of Harvest", theme: "Power, abundance, recognition", summary: "The harvest arrives. Personal Year 8 is the year of financial rewards, professional recognition, and real-world power. The seeds you planted in Year 1 are ripening. Step into your authority and claim what you have earned.", dos: ["Negotiate boldly", "Claim your worth", "Take on leadership", "Make big financial decisions", "Own your success"], donts: ["Play small", "Fear your own power", "Give credit away", "Neglect integrity for gain"] },
+    9: { title: "The Year of Completion", theme: "Release, endings, closure", summary: "The cycle ends. Personal Year 9 is about releasing what no longer serves you so you can begin again clean next year. The more you resist this year's call to let go, the harder the lesson will hit.", dos: ["Complete unfinished projects", "Forgive and release", "Declutter your life", "Say goodbye with grace", "Serve others selflessly"], donts: ["Start major new projects", "Cling to what is dying", "Resist endings", "Focus on the self"] },
+  };
+
+  const form = document.getElementById("year-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const dateStr = (document.getElementById("birth-date") as HTMLInputElement).value;
+    const year = parseInt((document.getElementById("target-year") as HTMLInputElement).value, 10);
+    if (!dateStr || !year) return;
+    const [, m, d] = dateStr.split("-").map(Number);
+    const result = calculatePersonalYear(d, m, year);
+    const meaning = MEANINGS[result.number] || MEANINGS[1];
+    (document.getElementById("result-number") as HTMLElement).textContent = String(result.number);
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-theme") as HTMLElement).textContent = meaning.theme;
+    (document.getElementById("result-calc") as HTMLElement).textContent = result.calculation;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+    (document.getElementById("result-dos") as HTMLElement).innerHTML = meaning.dos.map((q) => `<li>✦ ${q}</li>`).join("");
+    (document.getElementById("result-donts") as HTMLElement).innerHTML = meaning.donts.map((q) => `<li>◆ ${q}</li>`).join("");
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>

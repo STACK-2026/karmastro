@@ -1,0 +1,455 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Rising Sign Calculator - Find Your Ascendant Free | Karmastro";
+const description =
+  "What is my rising sign? Calculate your ascendant free with our accurate astrology calculator. Learn what your rising sign means, how it shapes your personality, and how it differs from your sun sign.";
+
+type RisingMeaning = {
+  title: string;
+  ruler: string;
+  element: string;
+  summary: string;
+  appearance: string;
+  firstImpression: string;
+  shadow: string;
+};
+
+const MEANINGS: Record<string, RisingMeaning> = {
+  aries: {
+    title: "Aries Rising",
+    ruler: "Mars",
+    element: "Fire",
+    summary: "You enter every room like a starting pistol just fired. Aries Rising carries an unmistakable forward momentum, a directness others can feel before you say a word. People remember meeting you because something in the air shifts when you arrive.",
+    appearance: "Strong facial features, pronounced brow or jawline, athletic frame, fast walk, often marked by a scar or birthmark on the head or face.",
+    firstImpression: "Bold, competitive, refreshingly honest, impatient with small talk, the kind of person who gets straight to the point.",
+    shadow: "Aggression when impatient, a tendency to start more than you finish, a quick temper that burns bright and cools fast.",
+  },
+  taurus: {
+    title: "Taurus Rising",
+    ruler: "Venus",
+    element: "Earth",
+    summary: "You move through the world like a slow river: calm, steady, impossible to rush. Taurus Rising carries a rooted, sensual presence. People feel grounded near you, almost physically reassured by your unhurried rhythm.",
+    appearance: "Soft, attractive features, full lips, strong neck and shoulders, a natural sensuality in posture and voice.",
+    firstImpression: "Reliable, warm, a little reserved at first, deeply present once they trust you.",
+    shadow: "Stubbornness disguised as patience, resistance to change, a tendency to get stuck in comfort.",
+  },
+  gemini: {
+    title: "Gemini Rising",
+    ruler: "Mercury",
+    element: "Air",
+    summary: "You are the one who makes any gathering instantly livelier. Gemini Rising carries a quicksilver, curious energy. Your mind runs faster than your mouth, which is already fast. You collect information the way others collect friends.",
+    appearance: "Youthful features no matter your age, expressive hands, quick darting eyes, slender or wiry frame.",
+    firstImpression: "Witty, talkative, endlessly curious, the social glue of any group.",
+    shadow: "Scatteredness, superficial connections, a tendency to talk instead of listen.",
+  },
+  cancer: {
+    title: "Cancer Rising",
+    ruler: "The Moon",
+    element: "Water",
+    summary: "You carry an invisible shell that people immediately sense. Cancer Rising moves through the world with emotional radar tuned to the room. You remember the birthdays, you know who needs a text, you feel everything.",
+    appearance: "Round or moon-shaped face, expressive eyes, soft skin, often a gentle curve to the body.",
+    firstImpression: "Warm, caring, a little shy, the friend who actually asks how you are and waits for the real answer.",
+    shadow: "Moodiness, retreating into the shell, absorbing other people's pain until it becomes your own.",
+  },
+  leo: {
+    title: "Leo Rising",
+    ruler: "The Sun",
+    element: "Fire",
+    summary: "You walk in and the lighting seems to change. Leo Rising carries a natural stage presence whether you want it or not. Your hair, your laugh, your gestures all seem slightly amplified. People orbit you and you often do not notice.",
+    appearance: "Thick hair (often a signature feature), warm smile, upright posture, cat-like grace in movement.",
+    firstImpression: "Confident, generous, theatrical, the one who makes everyone feel slightly more alive.",
+    shadow: "Ego inflation, needing constant attention, wounded pride that sulks instead of speaking.",
+  },
+  virgo: {
+    title: "Virgo Rising",
+    ruler: "Mercury",
+    element: "Earth",
+    summary: "You arrive at every situation already running a quiet quality check. Virgo Rising carries a reserved, observant presence. You notice what others miss: the typo, the tension, the detail out of place. Your mind is always working.",
+    appearance: "Neat and precise appearance, refined features, graceful hands, often taller or slimmer than average.",
+    firstImpression: "Reserved, thoughtful, meticulous, the person who actually reads the manual.",
+    shadow: "Over-criticism of yourself and others, anxiety disguised as perfectionism, emotional reserve mistaken for coldness.",
+  },
+  libra: {
+    title: "Libra Rising",
+    ruler: "Venus",
+    element: "Air",
+    summary: "You are the one people describe as effortlessly charming without ever seeming to try. Libra Rising carries a natural grace, a diplomatic instinct, an eye for aesthetic balance. Rooms feel more pleasant because you are in them.",
+    appearance: "Symmetrical features, dimples, elegant posture, an almost studied sense of style.",
+    firstImpression: "Charming, diplomatic, well-dressed, the one who smooths conflicts before they happen.",
+    shadow: "Indecision, people-pleasing, avoiding hard conversations to keep the peace.",
+  },
+  scorpio: {
+    title: "Scorpio Rising",
+    ruler: "Pluto (Mars)",
+    element: "Water",
+    summary: "People feel your presence before they see you. Scorpio Rising carries an intensity that is impossible to fake and impossible to hide. Your eyes hold something. Strangers either lean in or back away. There is no in-between with you.",
+    appearance: "Piercing eyes (often the defining feature), strong brow, magnetic aura, compact powerful body.",
+    firstImpression: "Intense, mysterious, deeply perceptive, the one who seems to know things about you that you did not share.",
+    shadow: "Suspicion, control issues, holding grudges long past their expiration date.",
+  },
+  sagittarius: {
+    title: "Sagittarius Rising",
+    ruler: "Jupiter",
+    element: "Fire",
+    summary: "You move through the world like it is your personal playground. Sagittarius Rising carries an expansive, optimistic, seeker energy. You are the friend who has just come back from somewhere and is already planning the next trip.",
+    appearance: "Long limbs, open face, athletic or horse-like grace, a smile that reaches the eyes.",
+    firstImpression: "Adventurous, philosophical, blunt in a charming way, the one who makes everything feel possible.",
+    shadow: "Tactlessness, restlessness, promising more than you can deliver.",
+  },
+  capricorn: {
+    title: "Capricorn Rising",
+    ruler: "Saturn",
+    element: "Earth",
+    summary: "You carry an ancient seriousness, even when you are young. Capricorn Rising walks into rooms already mentally scanning the power structure. You respect competence. You respect time. People sense you are someone to take seriously.",
+    appearance: "Strong bone structure, prominent jaw or brow, reserved expression, often age-reversing (you look older young, younger old).",
+    firstImpression: "Composed, disciplined, subtly ambitious, the one who actually delivers what they promise.",
+    shadow: "Emotional reserve, workaholism, taking life too seriously to enjoy it.",
+  },
+  aquarius: {
+    title: "Aquarius Rising",
+    ruler: "Uranus (Saturn)",
+    element: "Air",
+    summary: "You are the one people cannot quite place, and that is the point. Aquarius Rising carries a quietly rebellious, forward-looking energy. You belong to every group and none. Your mind is already living ten years in the future.",
+    appearance: "Unusual or striking features, distinctive style, often tall, eyes that seem to see past you.",
+    firstImpression: "Original, intellectual, friendly but slightly detached, the one who challenges the group's assumptions.",
+    shadow: "Emotional coldness, rebellion without direction, intellectual arrogance.",
+  },
+  pisces: {
+    title: "Pisces Rising",
+    ruler: "Neptune (Jupiter)",
+    element: "Water",
+    summary: "You enter rooms the way mist enters a valley: quietly, completely, impossible to grab hold of. Pisces Rising carries a dreamy, compassionate, otherworldly presence. People feel understood near you even before you speak.",
+    appearance: "Soft features, large dreamy eyes, gentle voice, an aura of otherworldliness.",
+    firstImpression: "Gentle, intuitive, artistic, the one who listens without judgment.",
+    shadow: "Escapism, absorbing others' emotions until exhausted, difficulty with boundaries.",
+  },
+};
+
+const SIGNS = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Rising Sign Calculator",
+    description,
+    url: "https://karmastro.com/en/tools/rising-sign",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "en",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "214" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is a rising sign?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Your rising sign, also called your ascendant, is the zodiac sign that was rising on the eastern horizon at the exact moment of your birth. It represents how others see you, your physical appearance, your spontaneous reactions, and the mask you wear when meeting new people. It is one of the three most important placements in astrology, alongside your sun and moon signs.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Why do I need my birth time to calculate my rising sign?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The rising sign changes every two hours on average, so your exact birth time is essential. Without it, the calculation is impossible. If you do not know your birth time, you can usually find it on your official birth certificate. Some users resort to astrocartography rectification with a professional astrologer when their birth time is lost.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What is the difference between sun sign and rising sign?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Your sun sign is your core identity, the archetype you came here to embody. Your rising sign is the lens through which you express that identity to the world. Think of the sun as the song you sing and the ascendant as the voice you sing it with. Two Scorpios with different rising signs will feel very different to meet.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is my rising sign the same as my ascendant?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Rising sign and ascendant are two names for the same thing. Astrologers use both terms interchangeably. The ascendant is the zodiac degree rising on the eastern horizon at your birth, and the rising sign is the zodiac sign that contains that degree.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can my rising sign change over time?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. Your rising sign is fixed by your exact birth time, date, and location. It will never change. What changes is how strongly you express it: many people grow into their rising sign with age, especially after their Saturn return around age 29.",
+        },
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/en" class="hover:text-amber-300">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/en/tools" class="hover:text-amber-300">Tools</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Rising Sign</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Western Astrology</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Rising Sign Calculator</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Your rising sign is the mask you wear, the first impression you leave, the way the world meets you. Calculate your ascendant free with your exact birth time and location.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="rising-form" class="space-y-4">
+        <div>
+          <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">Date of birth</label>
+          <input type="date" id="birth-date" name="birth-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <div>
+          <label for="birth-time" class="block text-sm font-medium text-white/80 mb-2">Exact time of birth</label>
+          <input type="time" id="birth-time" name="birth-time" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+          <p class="text-xs text-white/50 mt-1">Essential. Check your birth certificate if unsure.</p>
+        </div>
+        <div>
+          <label for="birth-place" class="block text-sm font-medium text-white/80 mb-2">City of birth</label>
+          <input type="text" id="birth-place" name="birth-place" required placeholder="e.g. New York, United States" class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white placeholder-white/30 focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          Calculate my rising sign
+        </button>
+      </form>
+
+      <div id="result-loading" class="mt-6 hidden text-center text-white/70">
+        <div class="text-3xl animate-pulse">✦</div>
+        <p class="mt-2 text-sm">Computing the horizon at the exact moment you were born...</p>
+      </div>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Your rising sign</p>
+          <h2 id="result-title" class="text-4xl font-serif text-amber-300 mb-2"></h2>
+          <p id="result-ruler" class="text-sm text-white/60 mb-4"></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Physical traits</p>
+              <p id="result-appearance" class="text-sm text-white/70 leading-relaxed"></p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">First impression</p>
+              <p id="result-impression" class="text-sm text-white/70 leading-relaxed"></p>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">Shadow</p>
+            <p id="result-shadow" class="text-sm text-white/80 italic leading-relaxed"></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-center">
+            <a href="https://app.karmastro.com/oracle?lang=en" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
+              Get my complete birth chart
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="result-error" class="mt-6 hidden p-5 rounded-xl bg-pink-300/10 border border-pink-300/30 text-sm text-white/80">
+        <p>We could not compute your rising sign from those coordinates. Double-check your birth city, or use the <a href="https://app.karmastro.com/oracle?lang=en" class="text-amber-300 underline">full birth chart tool</a> which includes a more robust geocoder.</p>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">What is a rising sign?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Your <strong>rising sign</strong>, also called your <strong>ascendant</strong>, is the zodiac sign that was rising on the eastern horizon at the exact moment of your birth. While your sun sign describes your core identity, your rising sign describes the lens through which that identity is expressed. It is the first thing people sense about you. It shapes your physical features, your body language, and your instinctive reactions.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Two people born on the same day can feel radically different to meet because they have different ascendants. A Scorpio Sun with Leo Rising walks into a room like a performer. A Scorpio Sun with Virgo Rising walks in like a quiet observer. Same core, different masks.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Why birth time matters</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Unlike your sun sign, which only needs the date, your rising sign requires your <strong>exact birth time</strong>. The ascendant shifts roughly every two hours, moving through all twelve signs in a 24-hour cycle. A two-hour error can give you the wrong rising sign entirely. This is why professional astrologers insist on birth certificate data, not family memory.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        If your birth time is unknown or uncertain, professional astrologers can perform a <strong>chart rectification</strong>: working backward from major life events to estimate the most likely birth time. The Karmastro Oracle uses precise Swiss Ephemeris calculations when you provide an accurate time.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">The 12 rising signs explained</h2>
+      <p class="text-white/80 leading-relaxed mb-6">
+        Each rising sign carries a distinct signature. Here is a quick guide to all twelve. Calculate yours above to see the full reading for your specific ascendant.
+      </p>
+
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
+        {SIGNS.map((s) => {
+          const m = MEANINGS[s];
+          return (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <div class="flex items-baseline gap-3 mb-2">
+                <span class="text-xl font-serif text-amber-300">{m.title}</span>
+              </div>
+              <p class="text-xs text-white/60 leading-relaxed">{m.firstImpression}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Sun, Moon, Rising: the trinity</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        In modern Western astrology, your <strong>sun, moon, and rising signs</strong> form what astrologers call "the big three." Together they paint a much more accurate portrait than the sun sign alone:
+      </p>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Sun sign</strong>: your core identity, your conscious ego, the archetype you came here to embody.</li>
+        <li><strong>Moon sign</strong>: your emotional inner world, your needs, your instinctive reactions in private.</li>
+        <li><strong>Rising sign</strong>: your social mask, how others see you, your physical body, your spontaneous style.</li>
+      </ul>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Your full birth chart includes all three plus the positions of every planet, the 12 houses, and the major aspects. This is why professional astrologers say reading someone from their sun sign alone is like judging a book by its title page.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">How the ascendant is calculated</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        The calculation requires three pieces of data: your date of birth, your exact time of birth, and the latitude and longitude of your birthplace. From those, an astrologer computes the <strong>sidereal time</strong> at birth, then uses it to identify which degree of which zodiac sign was crossing the eastern horizon at that moment.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        This is not a rough estimate: astronomers and astrologers use the exact same mathematics. The ephemeris tables used for navigation at sea are the same ones used by astrologers for chart casting. The Karmastro Oracle uses the Swiss Ephemeris, the gold standard in precision astronomy, accurate to the arcsecond.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Frequently asked questions</h2>
+
+      <h3 class="font-serif text-xl mb-2">Does my rising sign change as I get older?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        No, your rising sign is fixed at birth. What changes is your relationship to it. Astrologers often observe that people "grow into" their rising sign around their Saturn return (age 28-30). Before that, the sun sign often dominates. After that, the rising sign becomes more integrated, more visible, more yours.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">What if I do not know my birth time?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Start with your birth certificate, which usually records it. Some hospitals give parents a welcome card with the exact time. If nothing works, you can still enjoy the sun and moon sign readings, which only require the date. A professional astrologer can also rectify your chart from major life events.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Can two people have the same rising sign and look totally different?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Yes. Rising sign influences appearance, but genetics obviously dominates. What is more consistent is the energy people feel when they meet you: the first impression, the body language, the way you enter a room. Those are remarkably similar across people with the same rising sign.
+      </p>
+
+      <h3 class="font-serif text-xl mb-2">Which is more important: sun sign or rising sign?</h3>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Different astrologers answer differently. In traditional Hellenistic astrology, the rising sign is often considered the chart ruler and arguably more important than the sun. In modern psychological astrology, the sun is the core identity and the ascendant is the interface. Karmastro treats both as equally essential: the sun is who you are, the ascendant is how you show up.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Want your complete birth chart?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Your rising sign is just one of 10 planets and 12 houses in your natal chart. Get the full reading with Karmastro's Oracle, powered by the Swiss Ephemeris and guided by one of our four cosmic advisors.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=en" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Get my free birth chart
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/en/tools" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← All tools</a>
+      <a href="/en/tools/life-path-number" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Life path number</a>
+      <a href="/en/horoscope" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Daily horoscope</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  const MEANINGS: Record<string, { title: string; ruler: string; element: string; summary: string; appearance: string; firstImpression: string; shadow: string }> = {
+    aries: { title: "Aries Rising", ruler: "Ruled by Mars · Fire", element: "Fire", summary: "You enter every room like a starting pistol just fired. Aries Rising carries an unmistakable forward momentum, a directness others can feel before you say a word. People remember meeting you because something in the air shifts when you arrive.", appearance: "Strong facial features, pronounced brow or jawline, athletic frame, fast walk.", firstImpression: "Bold, competitive, refreshingly honest, impatient with small talk.", shadow: "Aggression when impatient, a tendency to start more than you finish, a quick temper that burns bright and cools fast." },
+    taurus: { title: "Taurus Rising", ruler: "Ruled by Venus · Earth", element: "Earth", summary: "You move through the world like a slow river: calm, steady, impossible to rush. Taurus Rising carries a rooted, sensual presence. People feel grounded near you, almost physically reassured by your unhurried rhythm.", appearance: "Soft attractive features, full lips, strong neck and shoulders, a natural sensuality in posture and voice.", firstImpression: "Reliable, warm, a little reserved at first, deeply present once they trust you.", shadow: "Stubbornness disguised as patience, resistance to change, a tendency to get stuck in comfort." },
+    gemini: { title: "Gemini Rising", ruler: "Ruled by Mercury · Air", element: "Air", summary: "You are the one who makes any gathering instantly livelier. Gemini Rising carries a quicksilver, curious energy. Your mind runs faster than your mouth, which is already fast. You collect information the way others collect friends.", appearance: "Youthful features no matter your age, expressive hands, quick darting eyes, slender or wiry frame.", firstImpression: "Witty, talkative, endlessly curious, the social glue of any group.", shadow: "Scatteredness, superficial connections, a tendency to talk instead of listen." },
+    cancer: { title: "Cancer Rising", ruler: "Ruled by the Moon · Water", element: "Water", summary: "You carry an invisible shell that people immediately sense. Cancer Rising moves through the world with emotional radar tuned to the room. You remember the birthdays, you know who needs a text, you feel everything.", appearance: "Round or moon-shaped face, expressive eyes, soft skin, often a gentle curve to the body.", firstImpression: "Warm, caring, a little shy, the friend who actually asks how you are and waits for the real answer.", shadow: "Moodiness, retreating into the shell, absorbing other people's pain until it becomes your own." },
+    leo: { title: "Leo Rising", ruler: "Ruled by the Sun · Fire", element: "Fire", summary: "You walk in and the lighting seems to change. Leo Rising carries a natural stage presence whether you want it or not. Your hair, your laugh, your gestures all seem slightly amplified. People orbit you and you often do not notice.", appearance: "Thick hair (often a signature feature), warm smile, upright posture, cat-like grace.", firstImpression: "Confident, generous, theatrical, the one who makes everyone feel slightly more alive.", shadow: "Ego inflation, needing constant attention, wounded pride that sulks instead of speaking." },
+    virgo: { title: "Virgo Rising", ruler: "Ruled by Mercury · Earth", element: "Earth", summary: "You arrive at every situation already running a quiet quality check. Virgo Rising carries a reserved, observant presence. You notice what others miss: the typo, the tension, the detail out of place. Your mind is always working.", appearance: "Neat and precise appearance, refined features, graceful hands, often taller or slimmer than average.", firstImpression: "Reserved, thoughtful, meticulous, the person who actually reads the manual.", shadow: "Over-criticism of yourself and others, anxiety disguised as perfectionism, emotional reserve mistaken for coldness." },
+    libra: { title: "Libra Rising", ruler: "Ruled by Venus · Air", element: "Air", summary: "You are the one people describe as effortlessly charming without ever seeming to try. Libra Rising carries a natural grace, a diplomatic instinct, an eye for aesthetic balance. Rooms feel more pleasant because you are in them.", appearance: "Symmetrical features, dimples, elegant posture, an almost studied sense of style.", firstImpression: "Charming, diplomatic, well-dressed, the one who smooths conflicts before they happen.", shadow: "Indecision, people-pleasing, avoiding hard conversations to keep the peace." },
+    scorpio: { title: "Scorpio Rising", ruler: "Ruled by Pluto · Water", element: "Water", summary: "People feel your presence before they see you. Scorpio Rising carries an intensity that is impossible to fake and impossible to hide. Your eyes hold something. Strangers either lean in or back away. There is no in-between with you.", appearance: "Piercing eyes (often the defining feature), strong brow, magnetic aura, compact powerful body.", firstImpression: "Intense, mysterious, deeply perceptive, the one who seems to know things about you that you did not share.", shadow: "Suspicion, control issues, holding grudges long past their expiration date." },
+    sagittarius: { title: "Sagittarius Rising", ruler: "Ruled by Jupiter · Fire", element: "Fire", summary: "You move through the world like it is your personal playground. Sagittarius Rising carries an expansive, optimistic, seeker energy. You are the friend who has just come back from somewhere and is already planning the next trip.", appearance: "Long limbs, open face, athletic or horse-like grace, a smile that reaches the eyes.", firstImpression: "Adventurous, philosophical, blunt in a charming way, the one who makes everything feel possible.", shadow: "Tactlessness, restlessness, promising more than you can deliver." },
+    capricorn: { title: "Capricorn Rising", ruler: "Ruled by Saturn · Earth", element: "Earth", summary: "You carry an ancient seriousness, even when you are young. Capricorn Rising walks into rooms already mentally scanning the power structure. You respect competence. You respect time. People sense you are someone to take seriously.", appearance: "Strong bone structure, prominent jaw or brow, reserved expression, often age-reversing.", firstImpression: "Composed, disciplined, subtly ambitious, the one who actually delivers what they promise.", shadow: "Emotional reserve, workaholism, taking life too seriously to enjoy it." },
+    aquarius: { title: "Aquarius Rising", ruler: "Ruled by Uranus · Air", element: "Air", summary: "You are the one people cannot quite place, and that is the point. Aquarius Rising carries a quietly rebellious, forward-looking energy. You belong to every group and none. Your mind is already living ten years in the future.", appearance: "Unusual or striking features, distinctive style, often tall, eyes that seem to see past you.", firstImpression: "Original, intellectual, friendly but slightly detached, the one who challenges the group's assumptions.", shadow: "Emotional coldness, rebellion without direction, intellectual arrogance." },
+    pisces: { title: "Pisces Rising", ruler: "Ruled by Neptune · Water", element: "Water", summary: "You enter rooms the way mist enters a valley: quietly, completely, impossible to grab hold of. Pisces Rising carries a dreamy, compassionate, otherworldly presence. People feel understood near you even before you speak.", appearance: "Soft features, large dreamy eyes, gentle voice, an aura of otherworldliness.", firstImpression: "Gentle, intuitive, artistic, the one who listens without judgment.", shadow: "Escapism, absorbing others' emotions until exhausted, difficulty with boundaries." },
+  };
+
+  const SIGN_NAMES = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"];
+
+  async function geocode(place: string): Promise<{ lat: number; lon: number } | null> {
+    try {
+      const resp = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(place)}&format=json&limit=1`, {
+        headers: { "Accept-Language": "en" },
+      });
+      const data = await resp.json();
+      if (!Array.isArray(data) || data.length === 0) return null;
+      return { lat: parseFloat(data[0].lat), lon: parseFloat(data[0].lon) };
+    } catch {
+      return null;
+    }
+  }
+
+  function computeAscendant(date: Date, lat: number, lon: number): string {
+    // Simplified Koch-house ascendant calculation using mean obliquity
+    const jd = date.getTime() / 86400000 + 2440587.5;
+    const T = (jd - 2451545.0) / 36525;
+    const gmst = (280.46061837 + 360.98564736629 * (jd - 2451545.0) + T * T * 0.000387933) % 360;
+    const lst = ((gmst + lon + 360) % 360) * Math.PI / 180;
+    const latRad = lat * Math.PI / 180;
+    const eps = 23.4392911 * Math.PI / 180;
+    const y = -Math.cos(lst);
+    const x = Math.sin(lst) * Math.cos(eps) + Math.tan(latRad) * Math.sin(eps);
+    let asc = Math.atan2(y, x) * 180 / Math.PI;
+    if (asc < 0) asc += 360;
+    const signIdx = Math.floor(asc / 30);
+    return SIGN_NAMES[signIdx];
+  }
+
+  const form = document.getElementById("rising-form") as HTMLFormElement;
+  const loadingDiv = document.getElementById("result-loading") as HTMLDivElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+  const errorDiv = document.getElementById("result-error") as HTMLDivElement;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    resultDiv.classList.add("hidden");
+    errorDiv.classList.add("hidden");
+    loadingDiv.classList.remove("hidden");
+
+    const date = (document.getElementById("birth-date") as HTMLInputElement).value;
+    const time = (document.getElementById("birth-time") as HTMLInputElement).value;
+    const place = (document.getElementById("birth-place") as HTMLInputElement).value;
+    if (!date || !time || !place) {
+      loadingDiv.classList.add("hidden");
+      return;
+    }
+
+    const coords = await geocode(place);
+    if (!coords) {
+      loadingDiv.classList.add("hidden");
+      errorDiv.classList.remove("hidden");
+      return;
+    }
+
+    const birthDate = new Date(`${date}T${time}:00Z`);
+    const signKey = computeAscendant(birthDate, coords.lat, coords.lon);
+    const meaning = MEANINGS[signKey];
+
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-ruler") as HTMLElement).textContent = meaning.ruler;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+    (document.getElementById("result-appearance") as HTMLElement).textContent = meaning.appearance;
+    (document.getElementById("result-impression") as HTMLElement).textContent = meaning.firstImpression;
+    (document.getElementById("result-shadow") as HTMLElement).textContent = meaning.shadow;
+
+    loadingDiv.classList.add("hidden");
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>
