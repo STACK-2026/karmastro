@@ -6,6 +6,23 @@
 
   var SESSION_KEY = "km_session_id";
   var UTM_KEY = "km_utm";
+  var COUNTRY_KEY = "km_country_code";
+
+  var cachedCountry = null;
+  try { cachedCountry = sessionStorage.getItem(COUNTRY_KEY) || null; } catch (e) {}
+
+  function fetchCountry() {
+    // Cloudflare Pages exposes /cdn-cgi/trace on every site, no key required.
+    // Returns plain text "fl=...\nh=...\nip=...\nts=...\nloc=FR\n..."
+    return fetch("/cdn-cgi/trace", { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.text() : null; })
+      .then(function (txt) {
+        if (!txt) return null;
+        var m = txt.match(/^loc=([A-Z]{2})\s*$/m);
+        return m ? m[1] : null;
+      })
+      .catch(function () { return null; });
+  }
 
   function getSessionId() {
     try {
@@ -135,6 +152,7 @@
       screen_width: window.innerWidth,
       screen_height: window.innerHeight,
       locale: getLocale(),
+      country_code: cachedCountry,
     };
 
     // Fire-and-forget : with Prefer: return=minimal, status 201 = success
@@ -144,6 +162,18 @@
     lastInsertId = newId;
     lastTimerStart = Date.now();
     lastPath = path;
+
+    // If country not known yet (first pageview of session), fetch it async
+    // and PATCH this row once resolved. Future pageviews will have it inline.
+    if (!cachedCountry) {
+      fetchCountry().then(function (cc) {
+        if (!cc) return;
+        cachedCountry = cc;
+        try { sessionStorage.setItem(COUNTRY_KEY, cc); } catch (e) {}
+        // Patch the row we just inserted
+        patch("page_views?id=eq." + newId, { country_code: cc }).catch(function () {});
+      });
+    }
   }
 
   function trackEvent(name, props) {
