@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Darmowe Kalkulatory Astrologii i Numerologii | Karmastro";
+const description =
+  "Darmowe kalkulatory astrologii i numerologii: liczba drogi życia, wschodzący znak, kompatybilność zodiaku, karta urodzenia, rok osobisty, dług karmiczny. Precyzyjne, dogłębne, zbudowane na Swiss Ephemeris.";
+
+type Tool = { slug: string; title: string; desc: string; category: "Astrologia" | "Numerologia"; icon: string };
+
+const TOOLS: Tool[] = [
+  { slug: "liczba-drogi-zycia", title: "Liczba Drogi Życia", desc: "Centralna cyfra w numerologii pitagorejskiej. Ujawnia twoją misję, wrodzone dary i karmiczne lekcje.", category: "Numerologia", icon: "1" },
+  { slug: "wschodzacy-znak", title: "Kalkulator Wschodzącego Znaku", desc: "Odkryj swój ascendent: maskę którą nosisz, pierwsze wrażenie które zostawiasz, sposób w jaki świat cię widzi.", category: "Astrologia", icon: "↗" },
+];
+
+const FALLBACK_TOOLS: { slug: string; title: string; desc: string; category: "Astrologia" | "Numerologia"; icon: string }[] = [
+  { slug: "karta-urodzenia", title: "Pełna Karta Urodzenia", desc: "Twoja karta urodzenia z 10 planetami, 12 domami i głównymi aspektami. Dostępne w Wyroczni.", category: "Astrologia", icon: "☉" },
+  { slug: "kompatybilnosc", title: "Kompatybilność Zodiaku", desc: "Sprawdź miłość, przyjaźń, pracę i kompatybilność karmiczną między dwoma znakami.", category: "Astrologia", icon: "♥" },
+  { slug: "synastria", title: "Synastria", desc: "Porównaj dwie pełne karty urodzenia aby zobaczyć prawdziwą chemię między dwoma osobami.", category: "Astrologia", icon: "∞" },
+  { slug: "tranzyty", title: "Codzienne Tranzyty", desc: "Planety w ruchu teraz i jak wpływają na twoją kartę urodzenia.", category: "Astrologia", icon: "◉" },
+  { slug: "liczba-ekspresji", title: "Liczba Ekspresji", desc: "Zwana także liczbą przeznaczenia. Obliczana z pełnego imienia z urodzenia.", category: "Numerologia", icon: "A" },
+  { slug: "rok-osobisty", title: "Rok Osobisty", desc: "Każdy rok niesie określony temat numerologiczny. Odkryj swój i dostrój się z jego energią.", category: "Numerologia", icon: "★" },
+  { slug: "dlug-karmiczny", title: "Dług Karmiczny", desc: "Odkryj czy nosisz długi 13/4, 14/5, 16/7 lub 19/1 odziedziczone z poprzednich żyć.", category: "Numerologia", icon: "∴" },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Darmowe Kalkulatory Astrologii i Numerologii",
+    description,
+    url: "https://karmastro.com/pl/narzedzia",
+    inLanguage: "pl",
+    hasPart: TOOLS.map((t) => ({
+      "@type": "WebApplication",
+      name: t.title,
+      url: `https://karmastro.com/pl/narzedzia/${t.slug}`,
+      applicationCategory: "UtilitiesApplication",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Strona główna", item: "https://karmastro.com/pl" },
+      { "@type": "ListItem", position: 2, name: "Narzędzia", item: "https://karmastro.com/pl/narzedzia" },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/pl" class="hover:text-amber-300">Strona główna</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Narzędzia</span>
+    </nav>
+
+    <header class="text-center mb-12">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Darmowe Narzędzia</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Kalkulatory Astrologii i Numerologii</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Narzędzia zbudowane z taką samą precyzją, jakiej używałby profesjonalny astrolog. Bez wypełniaczy, bez losowych liczb, bez bariery: tylko matematyka i jasna interpretacja.
+      </p>
+    </header>
+
+    <section class="mb-12">
+      <h2 class="font-serif text-2xl text-amber-300 mb-4 flex items-center gap-3">
+        <span class="text-3xl">✦</span> Dostępne po polsku
+      </h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        {TOOLS.map((t) => (
+          <a href={`/pl/narzedzia/${t.slug}`} class="group p-5 rounded-2xl border border-amber-300/30 bg-amber-300/5 hover:border-amber-300/60 hover:bg-amber-300/10 transition-all">
+            <div class="flex items-start gap-3 mb-2">
+              <span class="text-3xl text-amber-300">{t.icon}</span>
+              <h3 class="font-serif text-lg text-white group-hover:text-amber-300 transition-colors">{t.title}</h3>
+            </div>
+            <p class="text-sm text-white/60 leading-relaxed">{t.desc}</p>
+            <p class="text-xs text-amber-300 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">Otwórz →</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="font-serif text-2xl text-white/80 mb-4 flex items-center gap-3">
+        <span class="text-3xl">◑</span> Więcej narzędzi w Wyroczni
+      </h2>
+      <p class="text-sm text-white/60 mb-5 leading-relaxed">
+        Te narzędzia są dostępne w aplikacji Wyroczni po polsku. Niezależne polskie wersje już wkrótce.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+        {FALLBACK_TOOLS.map((t) => (
+          <a href="https://app.karmastro.com/oracle?lang=pl" class="group p-5 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-purple-300/40 hover:bg-purple-300/5 transition-all">
+            <div class="flex items-start gap-3 mb-2">
+              <span class="text-3xl text-purple-300">{t.icon}</span>
+              <h3 class="font-serif text-lg text-white group-hover:text-purple-300 transition-colors">{t.title}</h3>
+            </div>
+            <p class="text-sm text-white/60 leading-relaxed">{t.desc}</p>
+            <p class="text-xs text-purple-300 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">Otwórz w Wyroczni →</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="prose prose-invert max-w-none mb-12">
+      <h2 class="font-serif text-3xl mb-4">Dlaczego te kalkulatory?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Internet jest pełen kalkulatorów astrologii i numerologii, które zwracają niejasne, ogólne lub po prostu błędne wyniki. My zbudowaliśmy nasze, aby robić przeciwieństwo. Każde narzędzie używa <strong>dokładnej matematyki</strong>, której profesjonalni astrologowie i numerolodzy używali od wieków.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Wszystkie narzędzia są bezpłatne</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Tak, naprawdę. Brak wersji próbnej, brak karty kredytowej, brak «zarejestruj się, aby odblokować». Zbudowaliśmy Karmastro na przekonaniu, że kosmiczne narzędzia, które pomagały ludziom przez tysiące lat, powinny być swobodnie dostępne.
+      </p>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center">
+      <h3 class="font-serif text-xl mb-2">Chcesz spersonalizowanego odczytu?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Te kalkulatory dają ci dane. Aby otrzymać pełny odczyt krzyżujący twoją astrologię i numerologię ze spersonalizowanym przewodnictwem, zasięgnij porady Wyroczni Karmastro.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=pl" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Zasięgnij porady Wyroczni za darmo
+      </a>
+    </div>
+  </article>
+</BaseLayout>

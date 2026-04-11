@@ -1,0 +1,324 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Yaşam Yolu Sayısı Hesaplayıcı - Pisagor Numerolojisi | Karmastro";
+const description =
+  "Pisagor numerolojisi ile yaşam yolu sayını ücretsiz hesapla. Misyonunu, yeteneklerini, zorluklarını ve 12 sayının (ustaların 11, 22, 33 dahil) anlamlarını keşfet.";
+
+const MEANINGS: Record<number, { title: string; archetype: string; summary: string; qualities: string[]; challenges: string[]; mission: string; famousExamples: string }> = {
+  1: {
+    title: "Öncü",
+    archetype: "Yalnız lider, başlatıcı, yeni yolları açan.",
+    summary: "Takip etmek için değil, yönetmek için doğdun. Yaşam Yolu 1 inisiyatifin saf enerjisini taşır. Bir odaya girdiğinde bir şeyler değişir. Misyonun bu gücü hükmetmeye değil, yaratmaya çevirmek.",
+    qualities: ["Doğal liderlik", "Bağımsızlık", "Hırs", "Cesaret", "Özgünlük"],
+    challenges: ["Bencillik", "Sabırsızlık", "Yalnızlık", "Otoriterlik", "Katılık"],
+    mission: "Ezmeden yönetmeyi, sertleşmeden güçlü olmayı öğren. 1, başkalarının beklediği yerde cüret etmek için buradadır.",
+    famousExamples: "Napolyon Bonaparte, Steve Jobs, Martin Luther King Jr.",
+  },
+  2: {
+    title: "Diplomat",
+    archetype: "Aracı, sezgisel, bağları ören.",
+    summary: "Enerjileri başkalarının sesleri duyduğu gibi hissedersin. Yaşam Yolu 2 barış, uyum ve birlik yoludur. Misyonun bu hassasiyeti bir yara olarak değil, bir radar olarak kullanmak.",
+    qualities: ["Diplomasi", "Hassasiyet", "Empati", "Sabır", "İş birliği"],
+    challenges: ["Duygusal bağımlılık", "Kararsızlık", "Aşırı hassasiyet", "Çatışmadan kaçınma", "Boyun eğme"],
+    mission: "Yumuşaklığın zayıflık değil, güç olduğunu anla. 2, uzlaşmak için, başkalarının göremediğini görmek için buradadır.",
+    famousExamples: "Barack Obama, Madonna, Mahatma Gandhi",
+  },
+  3: {
+    title: "Sanatçı",
+    archetype: "Yaratıcı ifade, dünyanın çocuğu, aydınlatan.",
+    summary: "Her şeyi renge, kelimeye veya müziğe çevirirsin. Yaşam Yolu 3 yaratıcı ifadenin yoludur. Misyonun soyutu şekillendirmek ve cömertçe paylaşmak.",
+    qualities: ["Yaratıcılık", "İletişim", "İyimserlik", "Karizma", "Neşe"],
+    challenges: ["Dağınıklık", "Yüzeysellik", "Dedikodu", "Duygusal olgunluk eksikliği", "Kaçış"],
+    mission: "Derinliğin neşeyi öldürmediğini öğren. 3, ifade etmek, ilham vermek, başkalarına dünyanın güzelliğini hatırlatmak için buradadır.",
+    famousExamples: "David Bowie, Hugh Jackman, Alec Baldwin",
+  },
+  4: {
+    title: "İnşacı",
+    archetype: "Metodik işçi, mimar, temelleri atan.",
+    summary: "Başkalarının sadece hayal ettiğini inşa edersin. Yaşam Yolu 4 istikrarın, yapının ve kalıcı sonuçların yoludur. Misyonun seni aşan bir şey yaratmak.",
+    qualities: ["Disiplin", "Güvenilirlik", "Sabır", "Sadakat", "Pratik beceri"],
+    challenges: ["Katılık", "İşkoliklik", "İnatçılık", "Değişim korkusu", "Aşırı ciddiyet"],
+    mission: "Yapının özgürlüğe hizmet ettiğini, tersinin olmadığını öğren. 4, disiplin ve özenle kalıcı olanı inşa etmek için buradadır.",
+    famousExamples: "Bill Gates, Oprah Winfrey, Arnold Schwarzenegger",
+  },
+  5: {
+    title: "Maceracı",
+    archetype: "Özgür ruh, gezgin, asla durmayan.",
+    summary: "Başkaları havaya ihtiyaç duyduğu gibi özgürlüğe ihtiyaç duyarsın. Yaşam Yolu 5 değişim, deneyim ve kişisel özgürlüğün yoludur. Misyonun hareketi bilgeliğe çevirmek.",
+    qualities: ["Merak", "Uyum sağlama", "Cazibe", "Çok yönlülük", "Değişim cesareti"],
+    challenges: ["Huzursuzluk", "Bağlanma sorunları", "Düşüncesizlik", "Bağımlılık eğilimleri", "Dağınık enerji"],
+    mission: "Yönsüz özgürlüğün sadece sürüklenme olduğunu öğren. 5, amaçla keşfetmek için buradadır.",
+    famousExamples: "Abraham Lincoln, Angelina Jolie, Mick Jagger",
+  },
+  6: {
+    title: "Bakıcı",
+    archetype: "Koruyucu, öğretmen, başkalarını bir arada tutan.",
+    summary: "Başkalarını Atlas'ın dünyayı taşıdığı gibi taşırsın. Yaşam Yolu 6 sorumluluk, aşk ve hizmet yoludur. Misyonun kendini kaybetmeden vermek.",
+    qualities: ["Bakma içgüdüsü", "Sorumluluk", "Sadakat", "Öğretme yeteneği", "Yaratıcı yetenekler"],
+    challenges: ["Şehitlik", "Aşırı müdahale", "Mükemmeliyetçilik", "Kendini feda", "Karışma"],
+    mission: "Boş bir kupadan hizmet edemeyeceğini öğren. 6, iyileştirmek, öğretmek ve sevdiklerinin çevresinde güzellik yaratmak için buradadır.",
+    famousExamples: "Albert Einstein, Meryl Streep, John Lennon",
+  },
+  7: {
+    title: "Arayıcı",
+    archetype: "Mistik filozof, araştırmacı, her şeyi sorgulayan.",
+    summary: "Neden sorarak doğdun. Yaşam Yolu 7 bilgelik, içebakış ve ruhsal anlayış yoludur. Misyonun gerçeği bulmak ve öğrendiklerini paylaşmak.",
+    qualities: ["Derin düşünce", "Sezgi", "Bağımsızlık", "Analitik zihin", "Ruhsal farkındalık"],
+    challenges: ["İzolasyon", "Alaycılık", "Aşırı analiz", "Güvensizlik", "Duygusal mesafe"],
+    mission: "Sevgisiz gerçeğin kısır olduğunu öğren. 7, yüzeyin altını kazmak ve bulduğunu başkalarına getirmek için buradadır.",
+    famousExamples: "Nikola Tesla, Prenses Diana, Johnny Depp",
+  },
+  8: {
+    title: "Güç Sahibi",
+    archetype: "İmparatorluk kurucusu, stratejist, vizyonu zenginliğe çeviren.",
+    summary: "Gücü ondan baştan çıkmadan anlarsın. Yaşam Yolu 8 maddi ustalık, bolluk ve etki yoludur. Misyonun kendinden daha fazlasına hizmet eden bir şey inşa etmek.",
+    qualities: ["Liderlik", "Finansal sezgi", "Organizasyon becerisi", "Dayanıklılık", "Otorite"],
+    challenges: ["Açgözlülük", "İşkoliklik", "Kontrol sorunları", "Materyalizm", "Yıldırma"],
+    mission: "Gerçek gücün ne yarattığıyla ölçüldüğünü, ne egemen olduğuyla değil, öğren. 8, maddi dünyayı dürüstlükle ustalaşmak için buradadır.",
+    famousExamples: "Nelson Mandela, Pablo Picasso, Warren Buffett",
+  },
+  9: {
+    title: "İnsancıl",
+    archetype: "Eski ruh, küresel vatandaş, kolektife hizmet eden.",
+    summary: "Başkalarının öğrenmesi gereken şeyleri bilerek hayata gelirsin. Yaşam Yolu 9 evrensel aşk, şefkat ve bırakma yoludur. Misyonun kendinden daha büyük bir şeye hizmet etmek.",
+    qualities: ["Şefkat", "Bilgelik", "Sanatsal hassasiyet", "Küresel perspektif", "Cömertlik"],
+    challenges: ["Duygusal mesafe", "Kurtarıcı kompleksi", "Melankoli", "Bırakmakta zorluk", "Kendini haklı görme"],
+    mission: "Teslim olmanın yenilgi değil, güç olduğunu öğren. 9, sahiplenmeden sevmek, karşılık beklemeden vermek için buradadır.",
+    famousExamples: "Rahibe Teresa, Mahatma Gandhi, Jim Carrey",
+  },
+  11: {
+    title: "Vizyoner (Usta Sayı)",
+    archetype: "Ruhsal haberci, sezgisel, başkalarının göremediğini gören.",
+    summary: "Daha yüksek bir frekansa bağlı doğdun. Usta Sayı 11 yoğun bir sezgi ve başkalarını uyandırma çağrısı taşır. Misyonun ilhamı somut forma aktarmak.",
+    qualities: ["Olağanüstü sezgi", "Vizyoner düşünce", "Karizma", "Ruhsal manyetizm", "İlham verici varlık"],
+    challenges: ["Sinir gerginliği", "Aşırı hassasiyet", "Öz şüphe", "Kaygı", "Şehitlik"],
+    mission: "Hassasiyetinin yaran değil, armağanın olduğunu öğren. 11, karanlıkta yürüyenlere ışık getirmek için buradadır.",
+    famousExamples: "Barack Obama, Michelle Obama, Tim Burton",
+  },
+  22: {
+    title: "Usta İnşacı (Usta Sayı)",
+    archetype: "Büyük vizyonların mimarı, hayalleri kalıcı yapılara çeviren.",
+    summary: "İmkansızı bir plana çevirebilirsin. Usta Sayı 22, 11'in ruhsal sezgisini 4'ün pratik gücüyle birleştirir. Misyonun dünyayı değiştirecek bir şey inşa etmek.",
+    qualities: ["Vizyoner pragmatizm", "Liderlik", "İnovasyon", "Dayanıklılık", "Büyük ölçekli düşünme"],
+    challenges: ["Ezici baskı", "Mükemmeliyetçilik", "Tükenmişlik", "Diktatörce eğilimler", "Şüphe felci"],
+    mission: "Sabrın zayıflık olmadığını öğren. 22, ruhun anıtlarını inşa etmek için buradadır.",
+    famousExamples: "Dalai Lama, Paul McCartney, Oprah Winfrey",
+  },
+  33: {
+    title: "Evrensel Şifacı (Usta Sayı)",
+    archetype: "Ustaların ustası, koşulsuz sevgiyle şifa veren.",
+    summary: "Nadir bir özverili sevgi frekansıyla doğdun. Usta Sayı 33 en nadir yaşam yoludur. Misyonun dünyayı bilgelik ve şefkatle, karşılığında hiçbir şey istemeden iyileştirmek.",
+    qualities: ["Koşulsuz sevgi", "Öğretme yeteneği", "Yaratıcı şifa", "Ruhsal bağlılık", "Kutsal hizmet"],
+    challenges: ["Şehitlik", "Duygusal tükenme", "Mükemmeliyetçilik", "Kendini unutma", "Ezici sorumluluk"],
+    mission: "Boşluktan vermenin vermek olmadığını öğren. 33, fedakarlıkla değil, varlıkla iyileştirmek için buradadır.",
+    famousExamples: "Albert Einstein, John Lennon, Meryl Streep",
+  },
+};
+
+const DISPLAY_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Yaşam Yolu Sayısı Hesaplayıcı",
+    description,
+    url: "https://karmastro.com/tr/araclar/yasam-yolu-sayisi",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "tr",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "127" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "Yaşam yolu sayını nasıl hesaplarsın",
+    description: "Doğum tarihinden yaşam yolu sayını bulmak için adım adım Pisagor yöntemi.",
+    inLanguage: "tr",
+    step: [
+      { "@type": "HowToStep", position: 1, name: "Doğum tarihini yaz", text: "Tam doğum tarihini GG/AA/YYYY formatında yaz. Örnek: 14/04/1992." },
+      { "@type": "HowToStep", position: 2, name: "Her bileşeni indirge", text: "Gün, ay ve yılı ayrı ayrı rakamlarını toplayarak indirge. 14, 1+4=5 olur. Nisan zaten 4. 1992, 1+9+9+2=21, sonra 2+1=3 olur." },
+      { "@type": "HowToStep", position: 3, name: "İndirgenmiş değerleri topla", text: "Üç indirgenmiş değeri topla. Örneğimizde: 5 + 4 + 3 = 12." },
+      { "@type": "HowToStep", position: 4, name: "Son indirgeme", text: "Son toplamı tek haneye indir, usta sayılar 11, 22 ve 33 hariç. 12, 1+2=3 olur. Yaşam yolu sayın 3." },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "Yaşam yolu sayısı nedir?", acceptedAnswer: { "@type": "Answer", text: "Yaşam yolu sayısı Pisagor numerolojisinin merkezi rakamıdır. Doğum tarihinden hesaplanır ve hayatının ana misyonunu, doğuştan gelen yeteneklerini ve öğrenmek için geldiğin dersleri ortaya koyar. Astrolojide güneş burcunun numerolojik karşılığıdır." } },
+      { "@type": "Question", name: "Yaşam yolu sayısı hesaplayıcı ne kadar doğru?", acceptedAnswer: { "@type": "Answer", text: "Yaşam yolu sayısı saf matematikle hesaplanır, yani sayının kendisi her zaman %100 doğrudur. Yorum binlerce yıllık Pisagor geleneğine dayalı bir okumadır. Bir öz-yansıma aracıdır, kesin bir gelecek tahmini değil." } },
+      { "@type": "Question", name: "Yaşam yolu sayım değişebilir mi?", acceptedAnswer: { "@type": "Answer", text: "Hayır. Yaşam yolu sayın doğum tarihinle sabittir ve asla değişmez. Değişen, onu nasıl ifade ettiğindir. Her sayının yüksek ve düşük bir ifadesi vardır." } },
+      { "@type": "Question", name: "Usta sayılar (11, 22, 33) nedir?", acceptedAnswer: { "@type": "Answer", text: "Usta sayılar 11, 22 ve 33 Pisagor numerolojisinde asla indirgenmez. İkiye katlanmış bir titreşim ve daha zorlu bir misyon taşırlar. İnsanların yüzde 5'inden azı bir usta sayı yaşam yolu taşır." } },
+      { "@type": "Question", name: "Yaşam yolu sayısı güneş burcumla aynı mı?", acceptedAnswer: { "@type": "Answer", text: "Hayır. Güneş burcun astrolojiden gelir ve doğumundaki Güneş konumuna dayanarak kişiliğinin çekirdeğini tanımlar. Yaşam yolu sayın numerolojiden gelir ve doğum tarihinin indirgenmesinden hayat misyonunu tanımlar." } },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/tr" class="hover:text-amber-300">Ana Sayfa</a>
+      <span class="mx-2">/</span>
+      <a href="/tr/araclar" class="hover:text-amber-300">Araçlar</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Yaşam Yolu</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Pisagor Numerolojisi</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Yaşam Yolu Sayısı Hesaplayıcı</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Yaşam yolu sayın numerolojinin en önemli rakamıdır. Misyonunu, doğuştan gelen yeteneklerini ve bu varoluşun karmik derslerini ortaya koyar. Ücretsiz hesaplama, şeffaf Pisagor yöntemi, eksiksiz yorum.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="life-path-form" class="space-y-4">
+        <div>
+          <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">Doğum tarihin</label>
+          <input type="date" id="birth-date" name="birth-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          Yaşam yolumu hesapla
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Yaşam yolu sayın</p>
+          <div class="flex items-baseline gap-4 mb-4">
+            <span id="result-number" class="text-7xl font-serif text-amber-300"></span>
+            <span id="result-title" class="text-xl font-serif text-white/90"></span>
+          </div>
+          <p class="text-xs text-white/50 mb-4">Hesaplama: <span id="result-calc" class="text-white/70"></span></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Güçler</p>
+              <ul id="result-qualities" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">Zorluklar</p>
+              <ul id="result-challenges" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">Misyon</p>
+            <p id="result-mission" class="text-sm text-white/80 italic leading-relaxed"></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-center">
+            <a href="https://app.karmastro.com/oracle?lang=tr" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
+              Kahin ile derinleş
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Yaşam yolu sayısı nedir?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        <strong>Yaşam yolu sayın</strong> Pisagor numerolojisinin merkezi rakamıdır. Doğum tarihinden hesaplanır ve varoluşunun temel misyonunu ortaya koyar. Onu astrolojideki güneş burcunun numerolojik karşılığı olarak düşün: yaptığın her şeyi renklendiren temel titreşim, somutlaştırmaya geldiğin arketip.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        <strong>Pisagor</strong> ve öğrencileri için MÖ 6. yüzyılda her sayı benzersiz bir titreşim, enerjik bir imza taşıyordu. 1'den 9'a kadar olan rakamlar tüm insan arketiplerini kapsar. Usta sayılar 11, 22 ve 33 daha nadir, daha zorlu bir frekans taşır.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Yaşam yolu sayını nasıl hesaplarsın</h2>
+      <div class="p-5 rounded-xl bg-white/[0.03] border border-white/10 mb-6 not-prose">
+        <p class="text-sm text-white/90 mb-3"><strong>Örnek: 14 Nisan 1992</strong></p>
+        <ul class="text-sm text-white/70 space-y-1">
+          <li>Gün: 1 + 4 = 5</li>
+          <li>Ay: 4 = 4</li>
+          <li>Yıl: 1 + 9 + 9 + 2 = 21 → 2 + 1 = 3</li>
+          <li>Toplam: 5 + 4 + 3 = <strong class="text-amber-300">12 → 1 + 2 = 3</strong></li>
+        </ul>
+        <p class="text-sm text-white/60 mt-3">Yaşam yolu sayısı = 3 (Sanatçı)</p>
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">9 yaşam yolu (ve 3 usta sayı)</h2>
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
+        {DISPLAY_ORDER.map((n) => {
+          const meaning = MEANINGS[n];
+          return (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <div class="flex items-baseline gap-3 mb-2">
+                <span class="text-3xl font-serif text-amber-300">{n}</span>
+                <span class="text-sm text-white/80 font-medium">{meaning.title}</span>
+              </div>
+              <p class="text-xs text-white/60 leading-relaxed">{meaning.archetype}</p>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Eksiksiz bir okuma ister misin?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Yaşam yolu sayısı sadece başlangıçtır. Beş numeroloji sayını eksiksiz doğum haritanla kesiştirmek ve kişiselleştirilmiş rehberlik almak için dört kozmik rehberimizden biriyle konuş.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=tr" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Kahin'e ücretsiz danış
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/tr/araclar" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Tüm araçlar</a>
+      <a href="/tr/araclar/yukselen-burc" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Yükselen burç</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  import { calculateLifePath } from "../../../data/numerology-meanings";
+
+  const MEANINGS_TR: Record<number, { title: string; summary: string; qualities: string[]; challenges: string[]; mission: string }> = {
+    1: { title: "Öncü", summary: "Takip etmek için değil, yönetmek için doğdun. Yaşam Yolu 1 inisiyatifin saf enerjisini taşır.", qualities: ["Doğal liderlik", "Bağımsızlık", "Hırs", "Cesaret", "Özgünlük"], challenges: ["Bencillik", "Sabırsızlık", "Yalnızlık", "Otoriterlik", "Katılık"], mission: "Ezmeden yönetmeyi, sertleşmeden güçlü olmayı öğren." },
+    2: { title: "Diplomat", summary: "Enerjileri başkalarının sesleri duyduğu gibi hissedersin. Yaşam Yolu 2 barış, uyum ve birlik yoludur.", qualities: ["Diplomasi", "Hassasiyet", "Empati", "Sabır", "İş birliği"], challenges: ["Duygusal bağımlılık", "Kararsızlık", "Aşırı hassasiyet", "Çatışmadan kaçınma", "Boyun eğme"], mission: "Yumuşaklığın zayıflık değil, güç olduğunu anla." },
+    3: { title: "Sanatçı", summary: "Her şeyi renge, kelimeye veya müziğe çevirirsin. Yaşam Yolu 3 yaratıcı ifadenin yoludur.", qualities: ["Yaratıcılık", "İletişim", "İyimserlik", "Karizma", "Neşe"], challenges: ["Dağınıklık", "Yüzeysellik", "Dedikodu", "Duygusal olgunluk eksikliği", "Kaçış"], mission: "Derinliğin neşeyi öldürmediğini öğren." },
+    4: { title: "İnşacı", summary: "Başkalarının sadece hayal ettiğini inşa edersin. Yaşam Yolu 4 istikrarın, yapının ve kalıcı sonuçların yoludur.", qualities: ["Disiplin", "Güvenilirlik", "Sabır", "Sadakat", "Pratik beceri"], challenges: ["Katılık", "İşkoliklik", "İnatçılık", "Değişim korkusu", "Aşırı ciddiyet"], mission: "Yapının özgürlüğe hizmet ettiğini, tersinin olmadığını öğren." },
+    5: { title: "Maceracı", summary: "Başkaları havaya ihtiyaç duyduğu gibi özgürlüğe ihtiyaç duyarsın. Yaşam Yolu 5 değişim, deneyim ve kişisel özgürlüğün yoludur.", qualities: ["Merak", "Uyum sağlama", "Cazibe", "Çok yönlülük", "Değişim cesareti"], challenges: ["Huzursuzluk", "Bağlanma sorunları", "Düşüncesizlik", "Bağımlılık eğilimleri", "Dağınık enerji"], mission: "Yönsüz özgürlüğün sadece sürüklenme olduğunu öğren." },
+    6: { title: "Bakıcı", summary: "Başkalarını Atlas'ın dünyayı taşıdığı gibi taşırsın. Yaşam Yolu 6 sorumluluk, aşk ve hizmet yoludur.", qualities: ["Bakma içgüdüsü", "Sorumluluk", "Sadakat", "Öğretme yeteneği", "Yaratıcı yetenekler"], challenges: ["Şehitlik", "Aşırı müdahale", "Mükemmeliyetçilik", "Kendini feda", "Karışma"], mission: "Boş bir kupadan hizmet edemeyeceğini öğren." },
+    7: { title: "Arayıcı", summary: "Neden sorarak doğdun. Yaşam Yolu 7 bilgelik, içebakış ve ruhsal anlayış yoludur.", qualities: ["Derin düşünce", "Sezgi", "Bağımsızlık", "Analitik zihin", "Ruhsal farkındalık"], challenges: ["İzolasyon", "Alaycılık", "Aşırı analiz", "Güvensizlik", "Duygusal mesafe"], mission: "Sevgisiz gerçeğin kısır olduğunu öğren." },
+    8: { title: "Güç Sahibi", summary: "Gücü ondan baştan çıkmadan anlarsın. Yaşam Yolu 8 maddi ustalık, bolluk ve etki yoludur.", qualities: ["Liderlik", "Finansal sezgi", "Organizasyon becerisi", "Dayanıklılık", "Otorite"], challenges: ["Açgözlülük", "İşkoliklik", "Kontrol sorunları", "Materyalizm", "Yıldırma"], mission: "Gerçek gücün ne yarattığıyla ölçüldüğünü öğren." },
+    9: { title: "İnsancıl", summary: "Başkalarının öğrenmesi gereken şeyleri bilerek hayata gelirsin. Yaşam Yolu 9 evrensel aşk, şefkat ve bırakma yoludur.", qualities: ["Şefkat", "Bilgelik", "Sanatsal hassasiyet", "Küresel perspektif", "Cömertlik"], challenges: ["Duygusal mesafe", "Kurtarıcı kompleksi", "Melankoli", "Bırakmakta zorluk", "Kendini haklı görme"], mission: "Teslim olmanın yenilgi değil, güç olduğunu öğren." },
+    11: { title: "Vizyoner (Usta Sayı)", summary: "Daha yüksek bir frekansa bağlı doğdun. Usta Sayı 11 yoğun bir sezgi ve başkalarını uyandırma çağrısı taşır.", qualities: ["Olağanüstü sezgi", "Vizyoner düşünce", "Karizma", "Ruhsal manyetizm", "İlham verici varlık"], challenges: ["Sinir gerginliği", "Aşırı hassasiyet", "Öz şüphe", "Kaygı", "Şehitlik"], mission: "Hassasiyetinin yaran değil, armağanın olduğunu öğren." },
+    22: { title: "Usta İnşacı (Usta Sayı)", summary: "İmkansızı bir plana çevirebilirsin. Usta Sayı 22, 11'in ruhsal sezgisini 4'ün pratik gücüyle birleştirir.", qualities: ["Vizyoner pragmatizm", "Liderlik", "İnovasyon", "Dayanıklılık", "Büyük ölçekli düşünme"], challenges: ["Ezici baskı", "Mükemmeliyetçilik", "Tükenmişlik", "Diktatörce eğilimler", "Şüphe felci"], mission: "Sabrın zayıflık olmadığını öğren." },
+    33: { title: "Evrensel Şifacı (Usta Sayı)", summary: "Nadir bir özverili sevgi frekansıyla doğdun. Usta Sayı 33 en nadir yaşam yoludur.", qualities: ["Koşulsuz sevgi", "Öğretme yeteneği", "Yaratıcı şifa", "Ruhsal bağlılık", "Kutsal hizmet"], challenges: ["Şehitlik", "Duygusal tükenme", "Mükemmeliyetçilik", "Kendini unutma", "Ezici sorumluluk"], mission: "Boşluktan vermenin vermek olmadığını öğren." },
+  };
+
+  const form = document.getElementById("life-path-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const input = document.getElementById("birth-date") as HTMLInputElement;
+    const value = input.value;
+    if (!value) return;
+
+    const [y, m, d] = value.split("-").map(Number);
+    const result = calculateLifePath(d, m, y);
+    const meaning = MEANINGS_TR[result.number] || MEANINGS_TR[9];
+
+    (document.getElementById("result-number") as HTMLElement).textContent = String(result.number);
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-calc") as HTMLElement).textContent = result.calculation;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+
+    const qualitiesList = document.getElementById("result-qualities") as HTMLElement;
+    qualitiesList.innerHTML = meaning.qualities.map((q) => `<li>✦ ${q}</li>`).join("");
+
+    const challengesList = document.getElementById("result-challenges") as HTMLElement;
+    challengesList.innerHTML = meaning.challenges.map((c) => `<li>◆ ${c}</li>`).join("");
+
+    (document.getElementById("result-mission") as HTMLElement).textContent = meaning.mission;
+
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>

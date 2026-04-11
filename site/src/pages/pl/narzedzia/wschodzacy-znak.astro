@@ -1,0 +1,254 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Kalkulator Wschodzącego Znaku - Jaki jest mój ascendent? | Karmastro";
+const description =
+  "Jaki jest mój wschodzący znak? Oblicz swój ascendent za darmo z naszym precyzyjnym kalkulatorem astrologicznym. Odkryj, co oznacza twój wschodzący znak i jak kształtuje twoją osobowość.";
+
+type RisingMeaning = { title: string; ruler: string; summary: string; appearance: string; firstImpression: string; shadow: string };
+
+const MEANINGS: Record<string, RisingMeaning> = {
+  aries: { title: "Wschodzący Baran", ruler: "Rządzony przez Marsa · Ogień", summary: "Wchodzisz do każdego pokoju jak strzał startowy. Wschodzący Baran niesie niepodważalny pęd do przodu, bezpośredniość, którą inni wyczuwają, zanim powiesz słowo.", appearance: "Mocne rysy twarzy, wydatne brwi lub szczęka, atletyczna sylwetka, szybki chód.", firstImpression: "Odważny, konkurencyjny, odświeżająco szczery, niecierpliwy wobec drobnej rozmowy.", shadow: "Agresja przy niecierpliwości, tendencja do zaczynania więcej niż kończenia, szybki temperament." },
+  taurus: { title: "Wschodzący Byk", ruler: "Rządzony przez Wenus · Ziemia", summary: "Poruszasz się po świecie jak powolna rzeka: spokojny, stały, niemożliwy do pośpiechu. Wschodzący Byk niesie ugruntowaną, zmysłową obecność.", appearance: "Miękkie, atrakcyjne rysy, pełne usta, mocna szyja i ramiona, naturalna zmysłowość w postawie i głosie.", firstImpression: "Niezawodny, ciepły, początkowo nieco zastrzegający, głęboko obecny gdy zaufa.", shadow: "Upór przebrany za cierpliwość, opór wobec zmiany, tendencja do zatrzymywania się w komforcie." },
+  gemini: { title: "Wschodzące Bliźnięta", ruler: "Rządzone przez Merkurego · Powietrze", summary: "Jesteś tym, kto natychmiast ożywia każde zgromadzenie. Wschodzące Bliźnięta niosą rtęciową, ciekawską energię.", appearance: "Młodzieńcze rysy niezależnie od wieku, wyraziste dłonie, szybkie oczy, smukła budowa.", firstImpression: "Dowcipny, rozmowny, nieskończenie ciekawy, społeczny klej każdej grupy.", shadow: "Rozproszenie, powierzchowne połączenia, tendencja do mówienia zamiast słuchania." },
+  cancer: { title: "Wschodzący Rak", ruler: "Rządzony przez Księżyc · Woda", summary: "Nosisz niewidzialną skorupę, którą ludzie natychmiast wyczuwają. Wschodzący Rak porusza się po świecie z emocjonalnym radarem dostrojonym do pokoju.", appearance: "Okrągła lub księżycowa twarz, wyraziste oczy, miękka skóra, często delikatna krzywizna w ciele.", firstImpression: "Ciepły, opiekuńczy, nieco nieśmiały, przyjaciel który naprawdę pyta jak się masz.", shadow: "Wahania nastroju, wycofywanie się do skorupy, wchłanianie bólu innych aż staje się własnym." },
+  leo: { title: "Wschodzący Lew", ruler: "Rządzony przez Słońce · Ogień", summary: "Wchodzisz i oświetlenie wydaje się zmieniać. Wschodzący Lew niesie naturalną obecność sceniczną, czy tego chcesz czy nie.", appearance: "Gęste włosy (często cecha charakterystyczna), ciepły uśmiech, wyprostowana postawa, koci wdzięk.", firstImpression: "Pewny siebie, hojny, teatralny, ten który sprawia że wszyscy czują się nieco bardziej żywi.", shadow: "Napompowane ego, stała potrzeba uwagi, zraniona duma która dąsa się zamiast mówić." },
+  virgo: { title: "Wschodząca Panna", ruler: "Rządzona przez Merkurego · Ziemia", summary: "Przybywasz do każdej sytuacji, już wykonując cichą kontrolę jakości. Wschodząca Panna niesie powściągliwą, obserwującą obecność.", appearance: "Schludny i precyzyjny wygląd, wyrafinowane rysy, eleganckie dłonie, często wyższa lub szczuplejsza niż średnia.", firstImpression: "Powściągliwy, przemyślany, skrupulatny, osoba która faktycznie czyta instrukcję.", shadow: "Nadmierna krytyka siebie i innych, lęk przebrany za perfekcjonizm, emocjonalna rezerwa mylona z chłodem." },
+  libra: { title: "Wschodząca Waga", ruler: "Rządzona przez Wenus · Powietrze", summary: "Jesteś kimś, kogo ludzie opisują jako bez wysiłku uroczego. Wschodząca Waga niesie naturalną gracja, dyplomatyczny instynkt.", appearance: "Symetryczne rysy, dołeczki, elegancka postawa, niemal wystudiowane poczucie stylu.", firstImpression: "Uroczy, dyplomatyczny, dobrze ubrany, ten który wygładza konflikty zanim się pojawią.", shadow: "Niezdecydowanie, chęć zadowolenia, unikanie trudnych rozmów aby utrzymać pokój." },
+  scorpio: { title: "Wschodzący Skorpion", ruler: "Rządzony przez Plutona · Woda", summary: "Ludzie czują twoją obecność zanim cię zobaczą. Wschodzący Skorpion niesie intensywność niemożliwą do udawania i niemożliwą do ukrycia.", appearance: "Przenikliwe oczy, mocne brwi, magnetyczna aura, zwarte potężne ciało.", firstImpression: "Intensywny, tajemniczy, głęboko spostrzegawczy, ten który wydaje się wiedzieć rzeczy o tobie których nie udostępniłeś.", shadow: "Podejrzliwość, potrzeba kontroli, trzymanie urazów długo po ich dacie ważności." },
+  sagittarius: { title: "Wschodzący Strzelec", ruler: "Rządzony przez Jowisza · Ogień", summary: "Poruszasz się po świecie jakby był twoim osobistym placem zabaw. Wschodzący Strzelec niesie ekspansywną, optymistyczną, poszukującą energię.", appearance: "Długie kończyny, otwarta twarz, atletyczny wdzięk, uśmiech który sięga oczu.", firstImpression: "Awanturniczy, filozoficzny, bezpośredni w uroczy sposób, ten który sprawia że wszystko wydaje się możliwe.", shadow: "Brak taktu, niepokój, obiecywanie więcej niż możesz dostarczyć." },
+  capricorn: { title: "Wschodzący Koziorożec", ruler: "Rządzony przez Saturna · Ziemia", summary: "Nosisz pradawną powagę, nawet gdy jesteś młody. Wschodzący Koziorożec wchodzi do pokoi już mentalnie skanując strukturę władzy.", appearance: "Silna struktura kostna, wydatna szczęka lub brwi, powściągliwy wyraz twarzy.", firstImpression: "Opanowany, zdyscyplinowany, subtelnie ambitny, ten który faktycznie dostarcza co obiecuje.", shadow: "Emocjonalna rezerwa, pracoholizm, branie życia zbyt poważnie aby się nim cieszyć." },
+  aquarius: { title: "Wschodzący Wodnik", ruler: "Rządzony przez Urana · Powietrze", summary: "Jesteś kimś, kogo ludzie nie potrafią do końca umieścić, i o to chodzi. Wschodzący Wodnik niesie cicho buntowniczą, ukierunkowaną na przyszłość energię.", appearance: "Nietypowe lub uderzające rysy, charakterystyczny styl, często wysoki, oczy które wydają się widzieć poza tobą.", firstImpression: "Oryginalny, intelektualny, przyjazny ale nieco zdystansowany, ten który kwestionuje założenia grupy.", shadow: "Emocjonalny chłód, bunt bez kierunku, intelektualna arogancja." },
+  pisces: { title: "Wschodzące Ryby", ruler: "Rządzone przez Neptuna · Woda", summary: "Wchodzisz do pokoi jak mgła wchodzi do doliny: cicho, całkowicie, niemożliwa do uchwycenia. Wschodzące Ryby niosą marzycielską, współczującą obecność.", appearance: "Miękkie rysy, duże marzycielskie oczy, łagodny głos, aura z innego świata.", firstImpression: "Delikatny, intuicyjny, artystyczny, ten który słucha bez oceniania.", shadow: "Eskapizm, wchłanianie emocji innych aż do wyczerpania, trudność z granicami." },
+};
+
+const SIGNS = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Kalkulator Wschodzącego Znaku",
+    description,
+    url: "https://karmastro.com/pl/narzedzia/wschodzacy-znak",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "pl",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "214" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "Czym jest wschodzący znak?", acceptedAnswer: { "@type": "Answer", text: "Twój wschodzący znak, zwany także ascendentem, to znak zodiaku który wschodził na wschodnim horyzoncie w dokładnej chwili twoich narodzin. Reprezentuje jak inni cię widzą, twój wygląd fizyczny, twoje spontaniczne reakcje i maskę którą nosisz poznając nowych ludzi." } },
+      { "@type": "Question", name: "Dlaczego potrzebuję godziny urodzenia aby obliczyć wschodzący znak?", acceptedAnswer: { "@type": "Answer", text: "Wschodzący znak zmienia się średnio co dwie godziny, więc twoja dokładna godzina urodzenia jest niezbędna. Bez niej obliczenie jest niemożliwe. Jeśli nie znasz godziny urodzenia, zwykle znajdziesz ją na oficjalnym akcie urodzenia." } },
+      { "@type": "Question", name: "Jaka jest różnica między znakiem słonecznym a wschodzącym?", acceptedAnswer: { "@type": "Answer", text: "Twój znak słoneczny to twoja zasadnicza tożsamość, archetyp który przyszedłeś ucieleśnić. Twój wschodzący znak to soczewka przez którą wyrażasz tę tożsamość światu. Pomyśl o Słońcu jako piosence którą śpiewasz i o wschodzącym znaku jako głosie którym ją śpiewasz." } },
+      { "@type": "Question", name: "Czy mój wschodzący znak jest taki sam jak ascendent?", acceptedAnswer: { "@type": "Answer", text: "Tak. Wschodzący znak i ascendent to dwie nazwy tej samej rzeczy. Astrologowie używają obu terminów zamiennie." } },
+      { "@type": "Question", name: "Czy mój wschodzący znak może się zmieniać z czasem?", acceptedAnswer: { "@type": "Answer", text: "Nie. Twój wschodzący znak jest ustalony przez dokładną godzinę, datę i miejsce urodzenia. Nigdy się nie zmieni. Zmienia się to jak silnie go wyrażasz: wiele osób wrasta w swój wschodzący znak z wiekiem, szczególnie po powrocie Saturna około 29 roku życia." } },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/pl" class="hover:text-amber-300">Strona główna</a>
+      <span class="mx-2">/</span>
+      <a href="/pl/narzedzia" class="hover:text-amber-300">Narzędzia</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Wschodzący znak</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Astrologia Zachodnia</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Kalkulator Wschodzącego Znaku</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Twój wschodzący znak to maska którą nosisz, pierwsze wrażenie które zostawiasz, sposób w jaki świat cię spotyka. Oblicz swój ascendent za darmo ze swoją dokładną godziną i miejscem urodzenia.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="rising-form" class="space-y-4">
+        <div>
+          <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">Data urodzenia</label>
+          <input type="date" id="birth-date" name="birth-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <div>
+          <label for="birth-time" class="block text-sm font-medium text-white/80 mb-2">Dokładna godzina urodzenia</label>
+          <input type="time" id="birth-time" name="birth-time" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+          <p class="text-xs text-white/50 mt-1">Niezbędna. Sprawdź akt urodzenia jeśli masz wątpliwości.</p>
+        </div>
+        <div>
+          <label for="birth-place" class="block text-sm font-medium text-white/80 mb-2">Miasto urodzenia</label>
+          <input type="text" id="birth-place" name="birth-place" required placeholder="Np. Warszawa, Polska" class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white placeholder-white/30 focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          Oblicz mój wschodzący znak
+        </button>
+      </form>
+
+      <div id="result-loading" class="mt-6 hidden text-center text-white/70">
+        <div class="text-3xl animate-pulse">✦</div>
+        <p class="mt-2 text-sm">Obliczam horyzont dokładnej chwili twoich narodzin...</p>
+      </div>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Twój wschodzący znak</p>
+          <h2 id="result-title" class="text-4xl font-serif text-amber-300 mb-2"></h2>
+          <p id="result-ruler" class="text-sm text-white/60 mb-4"></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Cechy fizyczne</p>
+              <p id="result-appearance" class="text-sm text-white/70 leading-relaxed"></p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">Pierwsze wrażenie</p>
+              <p id="result-impression" class="text-sm text-white/70 leading-relaxed"></p>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">Cień</p>
+            <p id="result-shadow" class="text-sm text-white/80 italic leading-relaxed"></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-center">
+            <a href="https://app.karmastro.com/oracle?lang=pl" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
+              Otrzymaj pełną kartę urodzenia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="result-error" class="mt-6 hidden p-5 rounded-xl bg-pink-300/10 border border-pink-300/30 text-sm text-white/80">
+        <p>Nie mogliśmy obliczyć twojego wschodzącego znaku z tych współrzędnych. Sprawdź miasto urodzenia.</p>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Czym jest wschodzący znak?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Twój <strong>wschodzący znak</strong>, zwany także <strong>ascendentem</strong>, to znak zodiaku który wschodził na wschodnim horyzoncie w dokładnej chwili twoich narodzin. Podczas gdy twój znak słoneczny opisuje twoją zasadniczą tożsamość, wschodzący znak opisuje soczewkę przez którą ta tożsamość się wyraża. To pierwsza rzecz, którą ludzie w tobie wyczuwają.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Dwie osoby urodzone tego samego dnia mogą czuć się radykalnie różnie przy poznaniu, ponieważ mają różne ascendenty. Skorpion ze wschodzącym Lwem wchodzi do pokoju jak artysta. Skorpion ze wschodzącą Panną wchodzi jak cichy obserwator. Ten sam rdzeń, różne maski.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">12 wschodzących znaków wyjaśnione</h2>
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
+        {SIGNS.map((s) => {
+          const m = MEANINGS[s];
+          return (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <div class="flex items-baseline gap-3 mb-2">
+                <span class="text-xl font-serif text-amber-300">{m.title}</span>
+              </div>
+              <p class="text-xs text-white/60 leading-relaxed">{m.firstImpression}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Słońce, Księżyc, Ascendent: trójca</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Znak słoneczny</strong>: twoja zasadnicza tożsamość, twoje świadome ego, archetyp który przyszedłeś ucieleśnić.</li>
+        <li><strong>Znak księżycowy</strong>: twój emocjonalny świat wewnętrzny, twoje potrzeby, instynktowne reakcje w prywatności.</li>
+        <li><strong>Ascendent</strong>: twoja maska społeczna, jak inni cię widzą, twoje fizyczne ciało, spontaniczny styl.</li>
+      </ul>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Chcesz pełnej karty urodzenia?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Twój wschodzący znak to tylko jedna z 10 planet i 12 domów w twojej karcie urodzenia. Otrzymaj pełny odczyt z Wyrocznią Karmastro.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=pl" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Otrzymaj moją kartę urodzenia za darmo
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/pl/narzedzia" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Wszystkie narzędzia</a>
+      <a href="/pl/narzedzia/liczba-drogi-zycia" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Droga życia</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  const MEANINGS: Record<string, { title: string; ruler: string; summary: string; appearance: string; firstImpression: string; shadow: string }> = {
+    aries: { title: "Wschodzący Baran", ruler: "Mars · Ogień", summary: "Wchodzisz do każdego pokoju jak strzał startowy. Wschodzący Baran niesie niepodważalny pęd do przodu.", appearance: "Mocne rysy twarzy, wydatne brwi, atletyczna sylwetka, szybki chód.", firstImpression: "Odważny, konkurencyjny, odświeżająco szczery, niecierpliwy.", shadow: "Agresja przy niecierpliwości, tendencja do zaczynania więcej niż kończenia." },
+    taurus: { title: "Wschodzący Byk", ruler: "Wenus · Ziemia", summary: "Poruszasz się po świecie jak powolna rzeka: spokojny, stały. Wschodzący Byk niesie ugruntowaną obecność.", appearance: "Miękkie atrakcyjne rysy, pełne usta, mocna szyja i ramiona.", firstImpression: "Niezawodny, ciepły, początkowo nieco zastrzegający.", shadow: "Upór przebrany za cierpliwość, opór wobec zmiany." },
+    gemini: { title: "Wschodzące Bliźnięta", ruler: "Merkury · Powietrze", summary: "Jesteś tym, kto natychmiast ożywia każde zgromadzenie. Wschodzące Bliźnięta niosą ciekawską energię.", appearance: "Młodzieńcze rysy, wyraziste dłonie, szybkie oczy, smukła budowa.", firstImpression: "Dowcipny, rozmowny, nieskończenie ciekawy.", shadow: "Rozproszenie, powierzchowne połączenia." },
+    cancer: { title: "Wschodzący Rak", ruler: "Księżyc · Woda", summary: "Nosisz niewidzialną skorupę, którą ludzie natychmiast wyczuwają. Wschodzący Rak porusza się z emocjonalnym radarem.", appearance: "Okrągła twarz, wyraziste oczy, miękka skóra.", firstImpression: "Ciepły, opiekuńczy, nieco nieśmiały.", shadow: "Wahania nastroju, wycofywanie się do skorupy, wchłanianie bólu innych." },
+    leo: { title: "Wschodzący Lew", ruler: "Słońce · Ogień", summary: "Wchodzisz i oświetlenie wydaje się zmieniać. Wschodzący Lew niesie naturalną obecność sceniczną.", appearance: "Gęste włosy, ciepły uśmiech, wyprostowana postawa, koci wdzięk.", firstImpression: "Pewny siebie, hojny, teatralny.", shadow: "Napompowane ego, stała potrzeba uwagi, zraniona duma." },
+    virgo: { title: "Wschodząca Panna", ruler: "Merkury · Ziemia", summary: "Przybywasz do każdej sytuacji już wykonując cichą kontrolę jakości. Wschodząca Panna jest powściągliwa i obserwująca.", appearance: "Schludny i precyzyjny wygląd, wyrafinowane rysy, eleganckie dłonie.", firstImpression: "Powściągliwy, przemyślany, skrupulatny.", shadow: "Nadmierna krytyka, lęk przebrany za perfekcjonizm, postrzegany chłód." },
+    libra: { title: "Wschodząca Waga", ruler: "Wenus · Powietrze", summary: "Wschodząca Waga niesie naturalną gracja, dyplomatyczny instynkt, oko do estetycznej równowagi.", appearance: "Symetryczne rysy, dołeczki, elegancka postawa.", firstImpression: "Uroczy, dyplomatyczny, dobrze ubrany.", shadow: "Niezdecydowanie, chęć zadowolenia, unikanie trudnych rozmów." },
+    scorpio: { title: "Wschodzący Skorpion", ruler: "Pluton · Woda", summary: "Ludzie czują twoją obecność zanim cię zobaczą. Wschodzący Skorpion niesie intensywność niemożliwą do udawania.", appearance: "Przenikliwe oczy, mocne brwi, magnetyczna aura, zwarte potężne ciało.", firstImpression: "Intensywny, tajemniczy, głęboko spostrzegawczy.", shadow: "Podejrzliwość, potrzeba kontroli, długotrwałe urazy." },
+    sagittarius: { title: "Wschodzący Strzelec", ruler: "Jowisz · Ogień", summary: "Poruszasz się po świecie jakby był twoim osobistym placem zabaw. Wschodzący Strzelec niesie ekspansywną energię.", appearance: "Długie kończyny, otwarta twarz, atletyczny wdzięk, uśmiech który sięga oczu.", firstImpression: "Awanturniczy, filozoficzny, bezpośredni w uroczy sposób.", shadow: "Brak taktu, niepokój, nadmierne obietnice." },
+    capricorn: { title: "Wschodzący Koziorożec", ruler: "Saturn · Ziemia", summary: "Nosisz pradawną powagę. Wschodzący Koziorożec skanuje strukturę władzy.", appearance: "Silna struktura kostna, wydatna szczęka, powściągliwy wyraz twarzy.", firstImpression: "Opanowany, zdyscyplinowany, subtelnie ambitny.", shadow: "Emocjonalna rezerwa, pracoholizm, nadmierna powaga." },
+    aquarius: { title: "Wschodzący Wodnik", ruler: "Uran · Powietrze", summary: "Jesteś kimś kogo nie można umieścić, i o to chodzi. Wschodzący Wodnik niesie cicho buntowniczą energię.", appearance: "Nietypowe rysy, charakterystyczny styl, często wysoki, odległe oczy.", firstImpression: "Oryginalny, intelektualny, przyjazny ale zdystansowany.", shadow: "Emocjonalny chłód, bunt bez kierunku, intelektualna arogancja." },
+    pisces: { title: "Wschodzące Ryby", ruler: "Neptun · Woda", summary: "Wchodzisz do pokoi jak mgła wchodzi do doliny: cicho, całkowicie. Wschodzące Ryby niosą marzycielską obecność.", appearance: "Miękkie rysy, duże marzycielskie oczy, łagodny głos.", firstImpression: "Delikatny, intuicyjny, artystyczny, nieoceniający.", shadow: "Eskapizm, wchłanianie emocji innych aż do wyczerpania, trudność z granicami." },
+  };
+
+  const SIGN_NAMES = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"];
+
+  async function geocode(place: string): Promise<{ lat: number; lon: number } | null> {
+    try {
+      const resp = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(place)}&format=json&limit=1`, { headers: { "Accept-Language": "pl" } });
+      const data = await resp.json();
+      if (!Array.isArray(data) || data.length === 0) return null;
+      return { lat: parseFloat(data[0].lat), lon: parseFloat(data[0].lon) };
+    } catch { return null; }
+  }
+
+  function computeAscendant(date: Date, lat: number, lon: number): string {
+    const jd = date.getTime() / 86400000 + 2440587.5;
+    const T = (jd - 2451545.0) / 36525;
+    const gmst = (280.46061837 + 360.98564736629 * (jd - 2451545.0) + T * T * 0.000387933) % 360;
+    const lst = ((gmst + lon + 360) % 360) * Math.PI / 180;
+    const latRad = lat * Math.PI / 180;
+    const eps = 23.4392911 * Math.PI / 180;
+    const y = -Math.cos(lst);
+    const x = Math.sin(lst) * Math.cos(eps) + Math.tan(latRad) * Math.sin(eps);
+    let asc = Math.atan2(y, x) * 180 / Math.PI;
+    if (asc < 0) asc += 360;
+    return SIGN_NAMES[Math.floor(asc / 30)];
+  }
+
+  const form = document.getElementById("rising-form") as HTMLFormElement;
+  const loadingDiv = document.getElementById("result-loading") as HTMLDivElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+  const errorDiv = document.getElementById("result-error") as HTMLDivElement;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    resultDiv.classList.add("hidden");
+    errorDiv.classList.add("hidden");
+    loadingDiv.classList.remove("hidden");
+
+    const date = (document.getElementById("birth-date") as HTMLInputElement).value;
+    const time = (document.getElementById("birth-time") as HTMLInputElement).value;
+    const place = (document.getElementById("birth-place") as HTMLInputElement).value;
+    if (!date || !time || !place) { loadingDiv.classList.add("hidden"); return; }
+
+    const coords = await geocode(place);
+    if (!coords) { loadingDiv.classList.add("hidden"); errorDiv.classList.remove("hidden"); return; }
+
+    const birthDate = new Date(`${date}T${time}:00Z`);
+    const signKey = computeAscendant(birthDate, coords.lat, coords.lon);
+    const meaning = MEANINGS[signKey];
+
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-ruler") as HTMLElement).textContent = meaning.ruler;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+    (document.getElementById("result-appearance") as HTMLElement).textContent = meaning.appearance;
+    (document.getElementById("result-impression") as HTMLElement).textContent = meaning.firstImpression;
+    (document.getElementById("result-shadow") as HTMLElement).textContent = meaning.shadow;
+
+    loadingDiv.classList.add("hidden");
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>

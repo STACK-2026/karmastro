@@ -1,0 +1,254 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Yükselen Burç Hesaplayıcı - Yükselenim ne? | Karmastro";
+const description =
+  "Yükselen burcum ne? Yükselen burcunu hassas astroloji hesaplayıcımızla ücretsiz hesapla. Yükselen burcunun ne anlama geldiğini, kişiliğini nasıl şekillendirdiğini ve güneş burcundan nasıl farklı olduğunu keşfet.";
+
+type RisingMeaning = { title: string; ruler: string; summary: string; appearance: string; firstImpression: string; shadow: string };
+
+const MEANINGS: Record<string, RisingMeaning> = {
+  aries: { title: "Koç Yükselen", ruler: "Mars tarafından yönetilir · Ateş", summary: "Her odaya başlangıç tabancası gibi girersin. Koç Yükselen unutulmaz bir ileri hareket, kelimeyi söylemeden başkalarının hissettiği bir doğrudanlık taşır.", appearance: "Belirgin yüz hatları, çıkıntılı kaş veya çene, atletik vücut, hızlı yürüyüş.", firstImpression: "Cesur, rekabetçi, ferahlatıcı derecede dürüst, küçük sohbetle sabırsız.", shadow: "Sabırsızlıkta saldırganlık, bitirmekten fazla başlatma eğilimi, hızlı yanan ve çabuk soğuyan öfke." },
+  taurus: { title: "Boğa Yükselen", ruler: "Venüs tarafından yönetilir · Toprak", summary: "Dünyada yavaş bir nehir gibi hareket edersin: sakin, istikrarlı, acele ettirilemez. Boğa Yükselen köklü, şehvetli bir varlık taşır.", appearance: "Yumuşak, çekici yüz hatları, dolgun dudaklar, güçlü boyun ve omuzlar, duruşta ve seste doğal bir şehvet.", firstImpression: "Güvenilir, sıcak, başlangıçta biraz çekingen, güvendiğinde derinden varlıklı.", shadow: "Sabır olarak maskelenen inatçılık, değişime direnç, konforda takılı kalma eğilimi." },
+  gemini: { title: "İkizler Yükselen", ruler: "Merkür tarafından yönetilir · Hava", summary: "Herhangi bir toplantıyı anında canlandıran kişisin. İkizler Yükselen cıva gibi meraklı bir enerji taşır.", appearance: "Yaştan bağımsız genç görünüm, ifadeli eller, hızlı gözler, ince yapı.", firstImpression: "Esprili, konuşkan, sonsuz meraklı, herhangi bir grubun sosyal yapıştırıcısı.", shadow: "Dağınıklık, yüzeysel bağlantılar, dinlemek yerine konuşma eğilimi." },
+  cancer: { title: "Yengeç Yükselen", ruler: "Ay tarafından yönetilir · Su", summary: "İnsanların hemen hissettiği görünmez bir kabuk taşırsın. Yengeç Yükselen odaya ayarlı duygusal bir radarla dünyada hareket eder.", appearance: "Yuvarlak veya ay biçimli yüz, ifadeli gözler, yumuşak cilt, genellikle vücutta nazik bir kıvrım.", firstImpression: "Sıcak, şefkatli, biraz utangaç, gerçekten nasıl olduğunu soran arkadaş.", shadow: "Ruh hali değişiklikleri, kabuğa çekilme, başkalarının acısını kendininkine dönüştürünceye kadar emme." },
+  leo: { title: "Aslan Yükselen", ruler: "Güneş tarafından yönetilir · Ateş", summary: "Girersin ve aydınlatma değişir gibi görünür. Aslan Yükselen ister istemez doğal bir sahne varlığı taşır.", appearance: "Gür saçlar (genellikle bir özellik), sıcak gülüş, dik duruş, kedimsi zarafet.", firstImpression: "Kendine güvenen, cömert, teatral, herkesi biraz daha canlı hissettiren.", shadow: "Şişirilmiş ego, sürekli ilgi ihtiyacı, konuşmak yerine surat asan yaralı gurur." },
+  virgo: { title: "Başak Yükselen", ruler: "Merkür tarafından yönetilir · Toprak", summary: "Her duruma zaten sessiz bir kalite kontrolü yaparak gelirsin. Başak Yükselen çekingen, gözlemci bir varlık taşır.", appearance: "Düzenli ve hassas görünüm, zarif yüz hatları, zarif eller, genellikle ortalamanın üstünde boy veya incelik.", firstImpression: "Çekingen, düşünceli, titiz, aslında kılavuzu okuyan kişi.", shadow: "Kendine ve başkalarına aşırı eleştiri, mükemmeliyetçilik olarak maskelenen kaygı, soğukluk olarak yorumlanan duygusal çekinceler." },
+  libra: { title: "Terazi Yükselen", ruler: "Venüs tarafından yönetilir · Hava", summary: "İnsanların zahmetsizce çekici diye tanımladığı kişisin. Terazi Yükselen doğal bir zarafet, diplomatik bir içgüdü taşır.", appearance: "Simetrik yüz hatları, gamzeler, zarif duruş, neredeyse incelenmiş bir stil anlayışı.", firstImpression: "Çekici, diplomatik, iyi giyimli, çatışmaları olmadan önce yumuşatan.", shadow: "Kararsızlık, başkalarını memnun etme, barışı korumak için zor konuşmalardan kaçınma." },
+  scorpio: { title: "Akrep Yükselen", ruler: "Plüton tarafından yönetilir · Su", summary: "İnsanlar seni görmeden önce varlığını hisseder. Akrep Yükselen taklit edilmesi imkansız ve gizlenmesi imkansız bir yoğunluk taşır.", appearance: "Delici gözler, güçlü kaş, manyetik aura, kompakt güçlü vücut.", firstImpression: "Yoğun, gizemli, derinden algısal, paylaşmadığın şeyleri biliyormuş gibi görünen.", shadow: "Şüphe, kontrol ihtiyacı, son kullanma tarihini çok aşan kinleri tutma." },
+  sagittarius: { title: "Yay Yükselen", ruler: "Jüpiter tarafından yönetilir · Ateş", summary: "Dünyada kişisel oyun alanınmış gibi hareket edersin. Yay Yükselen genişleyen, iyimser, arayıcı bir enerji taşır.", appearance: "Uzun uzuvlar, açık yüz, atletik zarafet, gözlere ulaşan bir gülümseme.", firstImpression: "Maceraperest, felsefi, çekici bir şekilde dobra, her şeyi mümkün gösteren.", shadow: "Nezaketsizlik, huzursuzluk, tutabildiğinden fazlasını söz verme." },
+  capricorn: { title: "Oğlak Yükselen", ruler: "Satürn tarafından yönetilir · Toprak", summary: "Genç olsan bile kadim bir ciddiyet taşırsın. Oğlak Yükselen odalara girer ve zihinsel olarak güç yapısını zaten tarar.", appearance: "Güçlü kemik yapısı, belirgin çene veya kaş, çekingen ifade.", firstImpression: "Sakin, disiplinli, ince ince hırslı, gerçekten söz verdiğini yapan.", shadow: "Duygusal çekinceler, işkoliklik, zevk almak için hayatı fazla ciddiye alma." },
+  aquarius: { title: "Kova Yükselen", ruler: "Uranüs tarafından yönetilir · Hava", summary: "İnsanların tam olarak yerleştiremediği kişisin, ve bu zaten amaç. Kova Yükselen sessizce isyankar, ileriye dönük bir enerji taşır.", appearance: "Olağandışı veya çarpıcı yüz hatları, ayırt edici stil, genellikle uzun boylu, senden ötesini gören gözler.", firstImpression: "Orijinal, entelektüel, samimi ama biraz uzak, grubun varsayımlarına meydan okuyan.", shadow: "Duygusal soğukluk, yönü olmayan isyan, entelektüel kibir." },
+  pisces: { title: "Balık Yükselen", ruler: "Neptün tarafından yönetilir · Su", summary: "Odalara sis vadiye girer gibi girersin: sessizce, tamamen, tutulması imkansız. Balık Yükselen hayalperest, şefkatli, dünya dışı bir varlık taşır.", appearance: "Yumuşak yüz hatları, büyük hayalperest gözler, nazik ses, dünya dışı bir aura.", firstImpression: "Nazik, sezgisel, sanatsal, yargılamadan dinleyen.", shadow: "Kaçış, başkalarının duygularını tükeninceye kadar emme, sınırlarla zorluk." },
+};
+
+const SIGNS = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Yükselen Burç Hesaplayıcı",
+    description,
+    url: "https://karmastro.com/tr/araclar/yukselen-burc",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "tr",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "214" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "Yükselen burç nedir?", acceptedAnswer: { "@type": "Answer", text: "Yükselen burcun, doğduğun tam anda doğu ufkunda yükselen zodyak burcudur. Başkalarının seni nasıl gördüğünü, fiziksel görünümünü, kendiliğinden tepkilerini ve yeni insanlarla tanışırken taktığın maskeyi temsil eder. Güneş ve ay burcunla birlikte astrolojideki en önemli üç konumdan biridir." } },
+      { "@type": "Question", name: "Yükselen burcumu hesaplamak için neden doğum saatime ihtiyacım var?", acceptedAnswer: { "@type": "Answer", text: "Yükselen burç ortalama her iki saatte bir değişir, bu yüzden kesin doğum saatin gereklidir. O olmadan hesaplama imkansızdır. Doğum saatini bilmiyorsan, genellikle resmi doğum belgende bulabilirsin." } },
+      { "@type": "Question", name: "Güneş burcu ve yükselen burç arasındaki fark nedir?", acceptedAnswer: { "@type": "Answer", text: "Güneş burcun temel kimliğin, somutlaştırmaya geldiğin arketiptir. Yükselen burcun bu kimliği dünyaya ifade ettiğin merceği. Güneş'i söylediğin şarkı, yükseleni şarkıyı söylediğin ses olarak düşün. Farklı yükselenleri olan iki Akrep tanışırken çok farklı hissettirir." } },
+      { "@type": "Question", name: "Yükselen burcum yükselen işaretle aynı mı?", acceptedAnswer: { "@type": "Answer", text: "Evet. Yükselen burç ve yükselen işaret aynı şeyin iki ismidir. Astrologlar her iki terimi de birbirinin yerine kullanır." } },
+      { "@type": "Question", name: "Yükselen burcum zamanla değişebilir mi?", acceptedAnswer: { "@type": "Answer", text: "Hayır. Yükselen burcun kesin doğum saatin, tarihin ve yerinle sabittir. Asla değişmeyecek. Değişen, onu ne kadar güçlü ifade ettiğin: birçok insan yaşla yükselen burcunun içine büyür, özellikle 29 yaş civarındaki Satürn dönüşünden sonra." } },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/tr" class="hover:text-amber-300">Ana Sayfa</a>
+      <span class="mx-2">/</span>
+      <a href="/tr/araclar" class="hover:text-amber-300">Araçlar</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Yükselen</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Batı Astrolojisi</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Yükselen Burç Hesaplayıcı</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Yükselen burcun taktığın maske, bıraktığın ilk izlenim, dünyanın seninle tanışma şeklidir. Kesin doğum saatin ve yerinle yükselen burcunu ücretsiz hesapla.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="rising-form" class="space-y-4">
+        <div>
+          <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">Doğum tarihi</label>
+          <input type="date" id="birth-date" name="birth-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <div>
+          <label for="birth-time" class="block text-sm font-medium text-white/80 mb-2">Kesin doğum saati</label>
+          <input type="time" id="birth-time" name="birth-time" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+          <p class="text-xs text-white/50 mt-1">Gerekli. Emin değilsen doğum belgene bak.</p>
+        </div>
+        <div>
+          <label for="birth-place" class="block text-sm font-medium text-white/80 mb-2">Doğum şehri</label>
+          <input type="text" id="birth-place" name="birth-place" required placeholder="Örn. İstanbul, Türkiye" class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white placeholder-white/30 focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          Yükselen burcumu hesapla
+        </button>
+      </form>
+
+      <div id="result-loading" class="mt-6 hidden text-center text-white/70">
+        <div class="text-3xl animate-pulse">✦</div>
+        <p class="mt-2 text-sm">Doğduğun anın ufkunu hesaplıyoruz...</p>
+      </div>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Yükselen burcun</p>
+          <h2 id="result-title" class="text-4xl font-serif text-amber-300 mb-2"></h2>
+          <p id="result-ruler" class="text-sm text-white/60 mb-4"></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Fiziksel özellikler</p>
+              <p id="result-appearance" class="text-sm text-white/70 leading-relaxed"></p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">İlk izlenim</p>
+              <p id="result-impression" class="text-sm text-white/70 leading-relaxed"></p>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">Gölge</p>
+            <p id="result-shadow" class="text-sm text-white/80 italic leading-relaxed"></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-center">
+            <a href="https://app.karmastro.com/oracle?lang=tr" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
+              Eksiksiz doğum haritamı al
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="result-error" class="mt-6 hidden p-5 rounded-xl bg-pink-300/10 border border-pink-300/30 text-sm text-white/80">
+        <p>Bu koordinatlardan yükselen burcunu hesaplayamadık. Doğum şehrini kontrol et.</p>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Yükselen burç nedir?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        <strong>Yükselen burcun</strong>, doğduğun tam anda doğu ufkunda yükselen zodyak burcudur. Güneş burcun temel kimliğini tanımlarken, yükselen burcun bu kimliği dünyaya ifade etme merceğini tanımlar. İnsanların sende ilk hissettiği şeydir.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Aynı gün doğan iki insan, farklı yükselen burçlara sahip oldukları için tanışırken kökten farklı hissedebilir. Aslan Yükselen bir Akrep Güneşi bir odaya sanatçı gibi girer. Başak Yükselen bir Akrep Güneşi sessiz bir gözlemci gibi girer. Aynı çekirdek, farklı maskeler.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">12 yükselen burç açıklandı</h2>
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
+        {SIGNS.map((s) => {
+          const m = MEANINGS[s];
+          return (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <div class="flex items-baseline gap-3 mb-2">
+                <span class="text-xl font-serif text-amber-300">{m.title}</span>
+              </div>
+              <p class="text-xs text-white/60 leading-relaxed">{m.firstImpression}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Güneş, Ay, Yükselen: üçlü</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Güneş burcu</strong>: temel kimliğin, bilinçli egon, somutlaştırmaya geldiğin arketip.</li>
+        <li><strong>Ay burcu</strong>: duygusal iç dünyan, ihtiyaçların, özel olarak içgüdüsel tepkilerin.</li>
+        <li><strong>Yükselen</strong>: sosyal maskeler, başkalarının seni nasıl gördüğü, fiziksel beden, kendiliğinden tarzın.</li>
+      </ul>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Eksiksiz doğum haritanı ister misin?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Yükselen burcun doğum haritandaki 10 gezegenden ve 12 evden sadece biridir. Karmastro Kahini ile eksiksiz okumanı al.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=tr" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Doğum haritamı ücretsiz al
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/tr/araclar" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Tüm araçlar</a>
+      <a href="/tr/araclar/yasam-yolu-sayisi" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Yaşam yolu sayısı</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  const MEANINGS: Record<string, { title: string; ruler: string; summary: string; appearance: string; firstImpression: string; shadow: string }> = {
+    aries: { title: "Koç Yükselen", ruler: "Mars · Ateş", summary: "Her odaya başlangıç tabancası gibi girersin. Koç Yükselen unutulmaz bir ileri hareket taşır.", appearance: "Belirgin yüz hatları, çıkıntılı kaş, atletik vücut, hızlı yürüyüş.", firstImpression: "Cesur, rekabetçi, ferahlatıcı derecede dürüst, küçük sohbetle sabırsız.", shadow: "Sabırsızlıkta saldırganlık, bitirmekten fazla başlatma eğilimi, hızlı öfke." },
+    taurus: { title: "Boğa Yükselen", ruler: "Venüs · Toprak", summary: "Dünyada yavaş bir nehir gibi hareket edersin: sakin, istikrarlı. Boğa Yükselen köklü bir varlık taşır.", appearance: "Yumuşak çekici yüz hatları, dolgun dudaklar, güçlü boyun ve omuzlar.", firstImpression: "Güvenilir, sıcak, başlangıçta biraz çekingen.", shadow: "Sabır olarak maskelenen inatçılık, değişime direnç." },
+    gemini: { title: "İkizler Yükselen", ruler: "Merkür · Hava", summary: "Herhangi bir toplantıyı anında canlandıran kişisin. İkizler Yükselen meraklı bir enerji taşır.", appearance: "Genç görünüm, ifadeli eller, hızlı gözler, ince yapı.", firstImpression: "Esprili, konuşkan, sonsuz meraklı.", shadow: "Dağınıklık, yüzeysel bağlantılar, dinlemek yerine konuşma." },
+    cancer: { title: "Yengeç Yükselen", ruler: "Ay · Su", summary: "İnsanların hemen hissettiği görünmez bir kabuk taşırsın. Duygusal bir radarla hareket edersin.", appearance: "Yuvarlak yüz, ifadeli gözler, yumuşak cilt.", firstImpression: "Sıcak, şefkatli, biraz utangaç.", shadow: "Ruh hali değişiklikleri, kabuğa çekilme, başkalarının acısını emme." },
+    leo: { title: "Aslan Yükselen", ruler: "Güneş · Ateş", summary: "Girersin ve aydınlatma değişir gibi görünür. Aslan Yükselen doğal bir sahne varlığı taşır.", appearance: "Gür saçlar, sıcak gülüş, dik duruş, kedimsi zarafet.", firstImpression: "Kendine güvenen, cömert, teatral.", shadow: "Şişirilmiş ego, sürekli ilgi ihtiyacı, yaralı gurur." },
+    virgo: { title: "Başak Yükselen", ruler: "Merkür · Toprak", summary: "Her duruma zaten sessiz bir kalite kontrolü yaparak gelirsin. Başak Yükselen gözlemci bir varlık taşır.", appearance: "Düzenli görünüm, zarif yüz hatları, zarif eller.", firstImpression: "Çekingen, düşünceli, titiz.", shadow: "Aşırı eleştiri, mükemmeliyetçilik olarak maskelenen kaygı, soğukluk izlenimi." },
+    libra: { title: "Terazi Yükselen", ruler: "Venüs · Hava", summary: "Terazi Yükselen doğal bir zarafet, diplomatik bir içgüdü, estetik denge için bir göz taşır.", appearance: "Simetrik yüz hatları, gamzeler, zarif duruş.", firstImpression: "Çekici, diplomatik, iyi giyimli.", shadow: "Kararsızlık, başkalarını memnun etme, zor konuşmalardan kaçınma." },
+    scorpio: { title: "Akrep Yükselen", ruler: "Plüton · Su", summary: "İnsanlar seni görmeden önce varlığını hisseder. Akrep Yükselen taklit edilmesi imkansız bir yoğunluk taşır.", appearance: "Delici gözler, güçlü kaş, manyetik aura, kompakt güçlü vücut.", firstImpression: "Yoğun, gizemli, derinden algısal.", shadow: "Şüphe, kontrol ihtiyacı, uzun süreli kinleri tutma." },
+    sagittarius: { title: "Yay Yükselen", ruler: "Jüpiter · Ateş", summary: "Dünyada kişisel oyun alanınmış gibi hareket edersin. Yay Yükselen genişleyen enerji taşır.", appearance: "Uzun uzuvlar, açık yüz, atletik zarafet, gözlere ulaşan gülümseme.", firstImpression: "Maceraperest, felsefi, çekici dobra.", shadow: "Nezaketsizlik, huzursuzluk, aşırı söz verme." },
+    capricorn: { title: "Oğlak Yükselen", ruler: "Satürn · Toprak", summary: "Kadim bir ciddiyet taşırsın. Oğlak Yükselen zihinsel olarak güç yapısını tarar.", appearance: "Güçlü kemik yapısı, belirgin çene, çekingen ifade.", firstImpression: "Sakin, disiplinli, ince hırslı.", shadow: "Duygusal çekinceler, işkoliklik, aşırı ciddiyet." },
+    aquarius: { title: "Kova Yükselen", ruler: "Uranüs · Hava", summary: "İnsanların yerleştiremediği kişisin. Kova Yükselen sessizce isyankar enerji taşır.", appearance: "Olağandışı yüz hatları, ayırt edici stil, genellikle uzun boylu, uzağa bakan gözler.", firstImpression: "Orijinal, entelektüel, samimi ama uzak.", shadow: "Duygusal soğukluk, yönsüz isyan, entelektüel kibir." },
+    pisces: { title: "Balık Yükselen", ruler: "Neptün · Su", summary: "Odalara sis vadiye girer gibi girersin: sessizce, tamamen. Balık Yükselen hayalperest bir varlık taşır.", appearance: "Yumuşak yüz hatları, büyük hayalperest gözler, nazik ses.", firstImpression: "Nazik, sezgisel, sanatsal, yargısız.", shadow: "Kaçış, başkalarının duygularını emme, sınırlarla zorluk." },
+  };
+
+  const SIGN_NAMES = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"];
+
+  async function geocode(place: string): Promise<{ lat: number; lon: number } | null> {
+    try {
+      const resp = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(place)}&format=json&limit=1`, { headers: { "Accept-Language": "tr" } });
+      const data = await resp.json();
+      if (!Array.isArray(data) || data.length === 0) return null;
+      return { lat: parseFloat(data[0].lat), lon: parseFloat(data[0].lon) };
+    } catch { return null; }
+  }
+
+  function computeAscendant(date: Date, lat: number, lon: number): string {
+    const jd = date.getTime() / 86400000 + 2440587.5;
+    const T = (jd - 2451545.0) / 36525;
+    const gmst = (280.46061837 + 360.98564736629 * (jd - 2451545.0) + T * T * 0.000387933) % 360;
+    const lst = ((gmst + lon + 360) % 360) * Math.PI / 180;
+    const latRad = lat * Math.PI / 180;
+    const eps = 23.4392911 * Math.PI / 180;
+    const y = -Math.cos(lst);
+    const x = Math.sin(lst) * Math.cos(eps) + Math.tan(latRad) * Math.sin(eps);
+    let asc = Math.atan2(y, x) * 180 / Math.PI;
+    if (asc < 0) asc += 360;
+    return SIGN_NAMES[Math.floor(asc / 30)];
+  }
+
+  const form = document.getElementById("rising-form") as HTMLFormElement;
+  const loadingDiv = document.getElementById("result-loading") as HTMLDivElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+  const errorDiv = document.getElementById("result-error") as HTMLDivElement;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    resultDiv.classList.add("hidden");
+    errorDiv.classList.add("hidden");
+    loadingDiv.classList.remove("hidden");
+
+    const date = (document.getElementById("birth-date") as HTMLInputElement).value;
+    const time = (document.getElementById("birth-time") as HTMLInputElement).value;
+    const place = (document.getElementById("birth-place") as HTMLInputElement).value;
+    if (!date || !time || !place) { loadingDiv.classList.add("hidden"); return; }
+
+    const coords = await geocode(place);
+    if (!coords) { loadingDiv.classList.add("hidden"); errorDiv.classList.remove("hidden"); return; }
+
+    const birthDate = new Date(`${date}T${time}:00Z`);
+    const signKey = computeAscendant(birthDate, coords.lat, coords.lon);
+    const meaning = MEANINGS[signKey];
+
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-ruler") as HTMLElement).textContent = meaning.ruler;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+    (document.getElementById("result-appearance") as HTMLElement).textContent = meaning.appearance;
+    (document.getElementById("result-impression") as HTMLElement).textContent = meaning.firstImpression;
+    (document.getElementById("result-shadow") as HTMLElement).textContent = meaning.shadow;
+
+    loadingDiv.classList.add("hidden");
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>

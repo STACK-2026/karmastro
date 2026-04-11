@@ -16,3 +16,7 @@
 /it/outils/* /it/strumenti/:splat 301
 /de/outils /de/werkzeuge 301
 /de/outils/* /de/werkzeuge/:splat 301
+/tr/outils /tr/araclar 301
+/tr/outils/* /tr/araclar/:splat 301
+/pl/outils /pl/narzedzia 301
+/pl/outils/* /pl/narzedzia/:splat 301

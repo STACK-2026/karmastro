@@ -8,7 +8,7 @@ export function getStaticPaths() {
   // Exclude langs that have a dedicated localized tools folder (/es/herramientas/,
   // /pt/ferramentas/, /it/strumenti/, /de/werkzeuge/, /en/tools/). The CF Pages
   // _redirects file will 301 any /{lang}/outils/* to the new path for those langs.
-  const LOCALIZED = ["es", "pt", "it", "de", "en"];
+  const LOCALIZED = ["es", "pt", "it", "de", "en", "tr", "pl"];
   return LOCALES
     .filter((l) => l !== DEFAULT_LOCALE)
     .filter((l) => !LOCALIZED.includes(l))

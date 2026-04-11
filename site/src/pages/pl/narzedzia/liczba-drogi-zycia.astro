@@ -1,0 +1,324 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Kalkulator Liczby Drogi Życia - Numerologia Pitagorejska | Karmastro";
+const description =
+  "Oblicz swoją liczbę drogi życia za darmo z naszym kalkulatorem numerologii pitagorejskiej. Odkryj swoją misję, dary, wyzwania i 12 liczb (w tym liczby mistrzowskie 11, 22, 33).";
+
+const MEANINGS: Record<number, { title: string; archetype: string; summary: string; qualities: string[]; challenges: string[]; mission: string; famousExamples: string }> = {
+  1: {
+    title: "Pionier",
+    archetype: "Samotny lider, inicjator, ten, który otwiera nowe ścieżki.",
+    summary: "Urodziłeś się, by prowadzić, nie by podążać. Droga Życia 1 niesie czystą energię inicjatywy. Kiedy wchodzisz do pokoju, coś się zmienia. Twoją misją jest zamienić tę siłę w tworzenie, a nie dominację.",
+    qualities: ["Naturalne przywództwo", "Niezależność", "Ambicja", "Odwaga", "Oryginalność"],
+    challenges: ["Egocentryzm", "Niecierpliwość", "Samotność", "Autorytaryzm", "Sztywność"],
+    mission: "Naucz się prowadzić bez miażdżenia, być silnym bez stawania się twardym. 1 jest tu, by tworzyć nowy grunt, by odważać się tam, gdzie inni czekają.",
+    famousExamples: "Napoleon Bonaparte, Steve Jobs, Martin Luther King Jr.",
+  },
+  2: {
+    title: "Dyplomatka",
+    archetype: "Mediatorka, intuicyjna, ta, która tka więzi.",
+    summary: "Wyczuwasz energie, jak inni słyszą dźwięki. Droga Życia 2 to droga pokoju, harmonii i jedności. Twoją misją jest używać tej wrażliwości jak radaru, nie jak rany.",
+    qualities: ["Dyplomacja", "Wrażliwość", "Empatia", "Cierpliwość", "Współpraca"],
+    challenges: ["Zależność emocjonalna", "Niezdecydowanie", "Nadwrażliwość", "Unikanie konfliktów", "Uległość"],
+    mission: "Zrozum, że łagodność jest siłą, nie słabością. 2 jest tu, by godzić, by widzieć to, czego inni nie widzą.",
+    famousExamples: "Barack Obama, Madonna, Mahatma Gandhi",
+  },
+  3: {
+    title: "Artystka",
+    archetype: "Twórcza ekspresja, dziecko świata, ta, która rozświetla.",
+    summary: "Zamieniasz wszystko w kolor, słowa lub muzykę. Droga Życia 3 to droga twórczej ekspresji. Twoją misją jest nadać kształt nieuchwytnemu i szczodrze go dzielić.",
+    qualities: ["Kreatywność", "Komunikacja", "Optymizm", "Charyzma", "Radość"],
+    challenges: ["Rozproszenie", "Powierzchowność", "Plotkowanie", "Niedojrzałość emocjonalna", "Ucieczka"],
+    mission: "Naucz się, że głębia nie zabija radości. 3 jest tu, by wyrażać, inspirować, przypominać innym o pięknie świata.",
+    famousExamples: "David Bowie, Hugh Jackman, Alec Baldwin",
+  },
+  4: {
+    title: "Budowniczy",
+    archetype: "Metodyczny robotnik, architekt, ten, który kładzie fundamenty.",
+    summary: "Budujesz to, o czym inni tylko marzą. Droga Życia 4 to droga stabilności, struktury i trwałych rezultatów. Twoją misją jest stworzyć coś, co cię przetrwa.",
+    qualities: ["Dyscyplina", "Niezawodność", "Cierpliwość", "Lojalność", "Praktyczne umiejętności"],
+    challenges: ["Sztywność", "Pracoholizm", "Upór", "Strach przed zmianą", "Nadmierna powaga"],
+    mission: "Naucz się, że struktura służy wolności, nie odwrotnie. 4 jest tu, by budować to, co trwałe, z dyscypliną i troską.",
+    famousExamples: "Bill Gates, Oprah Winfrey, Arnold Schwarzenegger",
+  },
+  5: {
+    title: "Poszukiwaczka Przygód",
+    archetype: "Wolny duch, podróżniczka, ta, która nigdy się nie zatrzymuje.",
+    summary: "Potrzebujesz wolności, jak inni powietrza. Droga Życia 5 to droga zmiany, doświadczenia i osobistej wolności. Twoją misją jest zamienić ruch w mądrość.",
+    qualities: ["Ciekawość", "Zdolność przystosowania", "Urok", "Wszechstronność", "Odwaga do zmiany"],
+    challenges: ["Niepokój", "Problemy z zaangażowaniem", "Impulsywność", "Skłonności uzależniające", "Rozproszona energia"],
+    mission: "Naucz się, że wolność bez kierunku to tylko dryfowanie. 5 jest tu, by eksplorować z celem.",
+    famousExamples: "Abraham Lincoln, Angelina Jolie, Mick Jagger",
+  },
+  6: {
+    title: "Opiekun",
+    archetype: "Obrońca, nauczyciel, ten, który trzyma innych razem.",
+    summary: "Nosisz innych, jak Atlas niósł świat. Droga Życia 6 to droga odpowiedzialności, miłości i służby. Twoją misją jest dawać, nie tracąc siebie.",
+    qualities: ["Instynkt opiekuńczy", "Odpowiedzialność", "Lojalność", "Umiejętność nauczania", "Twórcze dary"],
+    challenges: ["Męczeństwo", "Nadmierne zaangażowanie", "Perfekcjonizm", "Samoofiara", "Wścibstwo"],
+    mission: "Naucz się, że nie możesz podawać z pustej filiżanki. 6 jest tu, by leczyć, uczyć, tworzyć piękno wokół tych, których kocha.",
+    famousExamples: "Albert Einstein, Meryl Streep, John Lennon",
+  },
+  7: {
+    title: "Poszukiwacz",
+    archetype: "Mistyczny filozof, badacz, ten, który wszystko kwestionuje.",
+    summary: "Urodziłeś się, pytając dlaczego. Droga Życia 7 to droga mądrości, introspekcji i duchowego zrozumienia. Twoją misją jest znaleźć prawdę i dzielić się tym, czego się uczysz.",
+    qualities: ["Głębokie myślenie", "Intuicja", "Niezależność", "Umysł analityczny", "Duchowa świadomość"],
+    challenges: ["Izolacja", "Cynizm", "Nadmierna analiza", "Nieufność", "Emocjonalny dystans"],
+    mission: "Naucz się, że prawda bez miłości jest jałowa. 7 jest tu, by kopać pod powierzchnią i przynosić to, co znajduje, innym.",
+    famousExamples: "Nikola Tesla, Księżna Diana, Johnny Depp",
+  },
+  8: {
+    title: "Strateżka",
+    archetype: "Budowniczyni imperiów, stratega, ta, która zamienia wizję w bogactwo.",
+    summary: "Rozumiesz władzę, nie dając się jej uwieść. Droga Życia 8 to droga materialnego mistrzostwa, obfitości i wpływu. Twoją misją jest zbudować coś, co służy więcej niż tobie samej.",
+    qualities: ["Przywództwo", "Finansowa intuicja", "Umiejętności organizacyjne", "Wytrwałość", "Autorytet"],
+    challenges: ["Chciwość", "Pracoholizm", "Potrzeba kontroli", "Materializm", "Zastraszanie"],
+    mission: "Naucz się, że prawdziwa władza mierzy się tym, co tworzy, nie tym, co dominuje. 8 jest tu, by opanować świat materialny z integralnością.",
+    famousExamples: "Nelson Mandela, Pablo Picasso, Warren Buffett",
+  },
+  9: {
+    title: "Humanitarysta",
+    archetype: "Stara dusza, globalny obywatel, ten, który służy zbiorowości.",
+    summary: "Przychodzisz do życia, wiedząc rzeczy, których inni muszą się uczyć. Droga Życia 9 to droga uniwersalnej miłości, współczucia i puszczania. Twoją misją jest służyć czemuś większemu niż ty sam.",
+    qualities: ["Współczucie", "Mądrość", "Artystyczna wrażliwość", "Globalna perspektywa", "Hojność"],
+    challenges: ["Emocjonalny dystans", "Kompleks zbawiciela", "Melancholia", "Trudność w puszczaniu", "Samoprawość"],
+    mission: "Naucz się, że poddanie się jest siłą, nie porażką. 9 jest tu, by kochać bez posiadania, dawać bez oczekiwania zwrotu.",
+    famousExamples: "Matka Teresa, Mahatma Gandhi, Jim Carrey",
+  },
+  11: {
+    title: "Wizjonerka (Liczba Mistrzowska)",
+    archetype: "Duchowa posłaniec, intuicyjna, ta, która widzi to, czego inni nie mogą.",
+    summary: "Urodziłaś się połączona z wyższą częstotliwością. Liczba Mistrzowska 11 niesie intensywną intuicję i wezwanie do przebudzania innych. Twoją misją jest kanalizować inspirację w konkretną formę.",
+    qualities: ["Wyjątkowa intuicja", "Wizjonerskie myślenie", "Charyzma", "Duchowy magnetyzm", "Inspirująca obecność"],
+    challenges: ["Nerwowe napięcie", "Nadwrażliwość", "Zwątpienie w siebie", "Lęk", "Męczeństwo"],
+    mission: "Naucz się, że twoja wrażliwość to twój dar, nie twoja rana. 11 jest tu, by nieść światło tym, którzy chodzą w ciemności.",
+    famousExamples: "Barack Obama, Michelle Obama, Tim Burton",
+  },
+  22: {
+    title: "Mistrz Budowniczy (Liczba Mistrzowska)",
+    archetype: "Architekt wielkich wizji, ten, który zamienia sny w trwałe struktury.",
+    summary: "Możesz zamienić niemożliwe w plan. Liczba Mistrzowska 22 łączy duchową intuicję 11 z praktyczną siłą 4. Twoją misją jest zbudować coś, co zmieni świat.",
+    qualities: ["Wizjonerski pragmatyzm", "Przywództwo", "Innowacja", "Wytrwałość", "Myślenie na dużą skalę"],
+    challenges: ["Przytłaczająca presja", "Perfekcjonizm", "Wypalenie", "Dyktatorskie skłonności", "Paraliż zwątpienia"],
+    mission: "Naucz się, że cierpliwość nie jest słabością. 22 jest tu, by budować pomniki ducha, czy to budynki, ruchy czy idee.",
+    famousExamples: "Dalajlama, Paul McCartney, Oprah Winfrey",
+  },
+  33: {
+    title: "Uniwersalny Uzdrowiciel (Liczba Mistrzowska)",
+    archetype: "Mistrz mistrzów, ten, który leczy poprzez bezwarunkową miłość.",
+    summary: "Urodziłeś się z rzadką częstotliwością bezinteresownej miłości. Liczba Mistrzowska 33 to najrzadsza droga życia. Twoją misją jest leczyć świat mądrością i współczuciem, nie prosząc o nic w zamian.",
+    qualities: ["Bezwarunkowa miłość", "Dar nauczania", "Twórcze leczenie", "Duchowe oddanie", "Święta służba"],
+    challenges: ["Męczeństwo", "Emocjonalne wyczerpanie", "Perfekcjonizm", "Zapominanie o sobie", "Przytłaczająca odpowiedzialność"],
+    mission: "Naucz się, że dawanie z pustki to nie dawanie. 33 jest tu, by leczyć przez obecność, nie przez poświęcenie.",
+    famousExamples: "Albert Einstein, John Lennon, Meryl Streep",
+  },
+};
+
+const DISPLAY_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Kalkulator Liczby Drogi Życia",
+    description,
+    url: "https://karmastro.com/pl/narzedzia/liczba-drogi-zycia",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "pl",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "127" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "Jak obliczyć swoją liczbę drogi życia",
+    description: "Metoda pitagorejska krok po kroku, by znaleźć swoją liczbę drogi życia z daty urodzenia.",
+    inLanguage: "pl",
+    step: [
+      { "@type": "HowToStep", position: 1, name: "Zapisz datę urodzenia", text: "Zapisz pełną datę urodzenia w formacie DD/MM/RRRR. Przykład: 14/04/1992." },
+      { "@type": "HowToStep", position: 2, name: "Zredukuj każdy element", text: "Zredukuj dzień, miesiąc i rok osobno, sumując ich cyfry. 14 staje się 1+4=5. Kwiecień to już 4. 1992 staje się 1+9+9+2=21, następnie 2+1=3." },
+      { "@type": "HowToStep", position: 3, name: "Zsumuj zredukowane wartości", text: "Zsumuj trzy zredukowane wartości. W naszym przykładzie: 5 + 4 + 3 = 12." },
+      { "@type": "HowToStep", position: 4, name: "Ostateczna redukcja", text: "Zredukuj ostateczną sumę do jednej cyfry, z wyjątkiem liczb mistrzowskich 11, 22 i 33, które pozostają nietknięte. 12 staje się 1+2=3. Twoja liczba drogi życia to 3." },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "Czym jest liczba drogi życia?", acceptedAnswer: { "@type": "Answer", text: "Liczba drogi życia to centralna cyfra w numerologii pitagorejskiej. Oblicza się ją z daty urodzenia i ujawnia główną misję twojego życia, wrodzone dary i lekcje, których przyszedłeś się nauczyć. To numerologiczny odpowiednik znaku słonecznego w astrologii." } },
+      { "@type": "Question", name: "Jak dokładny jest kalkulator liczby drogi życia?", acceptedAnswer: { "@type": "Answer", text: "Liczba drogi życia jest obliczana czystą matematyką, więc sama liczba jest zawsze w 100% dokładna. Interpretacja to odczyt oparty na tysiącach lat tradycji pitagorejskiej. To narzędzie do autorefleksji, nie deterministyczna prognoza." } },
+      { "@type": "Question", name: "Czy moja liczba drogi życia może się zmienić?", acceptedAnswer: { "@type": "Answer", text: "Nie. Twoja liczba drogi życia jest ustalona przez twoją datę urodzenia i nigdy się nie zmienia. Zmienia się to, jak ją wyrażasz. Każda liczba ma wyższy i niższy wyraz." } },
+      { "@type": "Question", name: "Czym są liczby mistrzowskie (11, 22, 33)?", acceptedAnswer: { "@type": "Answer", text: "Liczby mistrzowskie 11, 22 i 33 nigdy nie są redukowane w numerologii pitagorejskiej. Niosą podwojoną wibrację i bardziej wymagającą misję. Mniej niż 5% ludzi nosi liczbę mistrzowską jako drogę życia." } },
+      { "@type": "Question", name: "Czy liczba drogi życia to to samo co mój znak słoneczny?", acceptedAnswer: { "@type": "Answer", text: "Nie. Twój znak słoneczny pochodzi z astrologii i opisuje rdzeń twojej osobowości w oparciu o pozycję Słońca przy narodzinach. Twoja liczba drogi życia pochodzi z numerologii i opisuje twoją misję życiową poprzez redukcję daty urodzenia." } },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/pl" class="hover:text-amber-300">Strona główna</a>
+      <span class="mx-2">/</span>
+      <a href="/pl/narzedzia" class="hover:text-amber-300">Narzędzia</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Droga życia</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Numerologia Pitagorejska</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Kalkulator Liczby Drogi Życia</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Twoja liczba drogi życia to najważniejsza cyfra w numerologii. Ujawnia twoją misję, wrodzone dary i karmiczne lekcje tej egzystencji. Darmowe obliczenie, przejrzysta metoda pitagorejska, pełna interpretacja.
+      </p>
+    </header>
+
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="life-path-form" class="space-y-4">
+        <div>
+          <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">Twoja data urodzenia</label>
+          <input type="date" id="birth-date" name="birth-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          Oblicz moją drogę życia
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Twoja liczba drogi życia</p>
+          <div class="flex items-baseline gap-4 mb-4">
+            <span id="result-number" class="text-7xl font-serif text-amber-300"></span>
+            <span id="result-title" class="text-xl font-serif text-white/90"></span>
+          </div>
+          <p class="text-xs text-white/50 mb-4">Obliczenie: <span id="result-calc" class="text-white/70"></span></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Mocne strony</p>
+              <ul id="result-qualities" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">Wyzwania</p>
+              <ul id="result-challenges" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">Misja</p>
+            <p id="result-mission" class="text-sm text-white/80 italic leading-relaxed"></p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-center">
+            <a href="https://app.karmastro.com/oracle?lang=pl" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
+              Pogłęb się z Wyrocznią
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Czym jest liczba drogi życia?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Twoja <strong>liczba drogi życia</strong> to centralna cyfra w numerologii pitagorejskiej. Obliczona z twojej daty urodzenia, ujawnia zasadniczą misję twojej egzystencji. Pomyśl o niej jako numerologicznym odpowiedniku znaku słonecznego w astrologii: podstawowej wibracji, która barwi wszystko, co robisz.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Dla <strong>Pitagorasa</strong> i jego uczniów w VI wieku p.n.e. każda liczba niosła unikalną wibrację. Cyfry od 1 do 9 pokrywają wszystkie ludzkie archetypy. Liczby mistrzowskie 11, 22 i 33 niosą rzadszą, bardziej wymagającą częstotliwość.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Jak obliczyć swoją liczbę drogi życia</h2>
+      <div class="p-5 rounded-xl bg-white/[0.03] border border-white/10 mb-6 not-prose">
+        <p class="text-sm text-white/90 mb-3"><strong>Przykład: 14 kwietnia 1992</strong></p>
+        <ul class="text-sm text-white/70 space-y-1">
+          <li>Dzień: 1 + 4 = 5</li>
+          <li>Miesiąc: 4 = 4</li>
+          <li>Rok: 1 + 9 + 9 + 2 = 21 → 2 + 1 = 3</li>
+          <li>Suma: 5 + 4 + 3 = <strong class="text-amber-300">12 → 1 + 2 = 3</strong></li>
+        </ul>
+        <p class="text-sm text-white/60 mt-3">Liczba drogi życia = 3 (Artystka)</p>
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">9 dróg życia (i 3 liczby mistrzowskie)</h2>
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-8">
+        {DISPLAY_ORDER.map((n) => {
+          const meaning = MEANINGS[n];
+          return (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+              <div class="flex items-baseline gap-3 mb-2">
+                <span class="text-3xl font-serif text-amber-300">{n}</span>
+                <span class="text-sm text-white/80 font-medium">{meaning.title}</span>
+              </div>
+              <p class="text-xs text-white/60 leading-relaxed">{meaning.archetype}</p>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Chcesz pełnego odczytu?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Liczba drogi życia to dopiero początek. Aby skrzyżować swoje pięć liczb numerologicznych z pełną kartą urodzenia i otrzymać spersonalizowane wskazówki, porozmawiaj z jednym z naszych czterech kosmicznych przewodników.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=pl" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Zasięgnij porady Wyroczni za darmo
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/pl/narzedzia" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Wszystkie narzędzia</a>
+      <a href="/pl/narzedzia/wschodzacy-znak" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Wschodzący znak</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<script>
+  import { calculateLifePath } from "../../../data/numerology-meanings";
+
+  const MEANINGS_PL: Record<number, { title: string; summary: string; qualities: string[]; challenges: string[]; mission: string }> = {
+    1: { title: "Pionier", summary: "Urodziłeś się, by prowadzić, nie by podążać. Droga Życia 1 niesie czystą energię inicjatywy.", qualities: ["Naturalne przywództwo", "Niezależność", "Ambicja", "Odwaga", "Oryginalność"], challenges: ["Egocentryzm", "Niecierpliwość", "Samotność", "Autorytaryzm", "Sztywność"], mission: "Naucz się prowadzić bez miażdżenia, być silnym bez stawania się twardym." },
+    2: { title: "Dyplomatka", summary: "Wyczuwasz energie, jak inni słyszą dźwięki. Droga Życia 2 to droga pokoju, harmonii i jedności.", qualities: ["Dyplomacja", "Wrażliwość", "Empatia", "Cierpliwość", "Współpraca"], challenges: ["Zależność emocjonalna", "Niezdecydowanie", "Nadwrażliwość", "Unikanie konfliktów", "Uległość"], mission: "Zrozum, że łagodność jest siłą, nie słabością." },
+    3: { title: "Artystka", summary: "Zamieniasz wszystko w kolor, słowa lub muzykę. Droga Życia 3 to droga twórczej ekspresji.", qualities: ["Kreatywność", "Komunikacja", "Optymizm", "Charyzma", "Radość"], challenges: ["Rozproszenie", "Powierzchowność", "Plotkowanie", "Niedojrzałość emocjonalna", "Ucieczka"], mission: "Naucz się, że głębia nie zabija radości." },
+    4: { title: "Budowniczy", summary: "Budujesz to, o czym inni tylko marzą. Droga Życia 4 to droga stabilności, struktury i trwałych rezultatów.", qualities: ["Dyscyplina", "Niezawodność", "Cierpliwość", "Lojalność", "Praktyczne umiejętności"], challenges: ["Sztywność", "Pracoholizm", "Upór", "Strach przed zmianą", "Nadmierna powaga"], mission: "Naucz się, że struktura służy wolności, nie odwrotnie." },
+    5: { title: "Poszukiwaczka Przygód", summary: "Potrzebujesz wolności, jak inni powietrza. Droga Życia 5 to droga zmiany, doświadczenia i osobistej wolności.", qualities: ["Ciekawość", "Zdolność przystosowania", "Urok", "Wszechstronność", "Odwaga do zmiany"], challenges: ["Niepokój", "Problemy z zaangażowaniem", "Impulsywność", "Skłonności uzależniające", "Rozproszona energia"], mission: "Naucz się, że wolność bez kierunku to tylko dryfowanie." },
+    6: { title: "Opiekun", summary: "Nosisz innych, jak Atlas niósł świat. Droga Życia 6 to droga odpowiedzialności, miłości i służby.", qualities: ["Instynkt opiekuńczy", "Odpowiedzialność", "Lojalność", "Umiejętność nauczania", "Twórcze dary"], challenges: ["Męczeństwo", "Nadmierne zaangażowanie", "Perfekcjonizm", "Samoofiara", "Wścibstwo"], mission: "Naucz się, że nie możesz podawać z pustej filiżanki." },
+    7: { title: "Poszukiwacz", summary: "Urodziłeś się, pytając dlaczego. Droga Życia 7 to droga mądrości, introspekcji i duchowego zrozumienia.", qualities: ["Głębokie myślenie", "Intuicja", "Niezależność", "Umysł analityczny", "Duchowa świadomość"], challenges: ["Izolacja", "Cynizm", "Nadmierna analiza", "Nieufność", "Emocjonalny dystans"], mission: "Naucz się, że prawda bez miłości jest jałowa." },
+    8: { title: "Strateżka", summary: "Rozumiesz władzę, nie dając się jej uwieść. Droga Życia 8 to droga materialnego mistrzostwa, obfitości i wpływu.", qualities: ["Przywództwo", "Finansowa intuicja", "Umiejętności organizacyjne", "Wytrwałość", "Autorytet"], challenges: ["Chciwość", "Pracoholizm", "Potrzeba kontroli", "Materializm", "Zastraszanie"], mission: "Naucz się, że prawdziwa władza mierzy się tym, co tworzy." },
+    9: { title: "Humanitarysta", summary: "Przychodzisz do życia, wiedząc rzeczy, których inni muszą się uczyć. Droga Życia 9 to droga uniwersalnej miłości, współczucia i puszczania.", qualities: ["Współczucie", "Mądrość", "Artystyczna wrażliwość", "Globalna perspektywa", "Hojność"], challenges: ["Emocjonalny dystans", "Kompleks zbawiciela", "Melancholia", "Trudność w puszczaniu", "Samoprawość"], mission: "Naucz się, że poddanie się jest siłą, nie porażką." },
+    11: { title: "Wizjonerka (Liczba Mistrzowska)", summary: "Urodziłaś się połączona z wyższą częstotliwością. Liczba Mistrzowska 11 niesie intensywną intuicję.", qualities: ["Wyjątkowa intuicja", "Wizjonerskie myślenie", "Charyzma", "Duchowy magnetyzm", "Inspirująca obecność"], challenges: ["Nerwowe napięcie", "Nadwrażliwość", "Zwątpienie w siebie", "Lęk", "Męczeństwo"], mission: "Naucz się, że twoja wrażliwość to twój dar, nie twoja rana." },
+    22: { title: "Mistrz Budowniczy (Liczba Mistrzowska)", summary: "Możesz zamienić niemożliwe w plan. Liczba Mistrzowska 22 łączy duchową intuicję 11 z praktyczną siłą 4.", qualities: ["Wizjonerski pragmatyzm", "Przywództwo", "Innowacja", "Wytrwałość", "Myślenie na dużą skalę"], challenges: ["Przytłaczająca presja", "Perfekcjonizm", "Wypalenie", "Dyktatorskie skłonności", "Paraliż zwątpienia"], mission: "Naucz się, że cierpliwość nie jest słabością." },
+    33: { title: "Uniwersalny Uzdrowiciel (Liczba Mistrzowska)", summary: "Urodziłeś się z rzadką częstotliwością bezinteresownej miłości. Liczba Mistrzowska 33 to najrzadsza droga życia.", qualities: ["Bezwarunkowa miłość", "Dar nauczania", "Twórcze leczenie", "Duchowe oddanie", "Święta służba"], challenges: ["Męczeństwo", "Emocjonalne wyczerpanie", "Perfekcjonizm", "Zapominanie o sobie", "Przytłaczająca odpowiedzialność"], mission: "Naucz się, że dawanie z pustki to nie dawanie." },
+  };
+
+  const form = document.getElementById("life-path-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const input = document.getElementById("birth-date") as HTMLInputElement;
+    const value = input.value;
+    if (!value) return;
+
+    const [y, m, d] = value.split("-").map(Number);
+    const result = calculateLifePath(d, m, y);
+    const meaning = MEANINGS_PL[result.number] || MEANINGS_PL[9];
+
+    (document.getElementById("result-number") as HTMLElement).textContent = String(result.number);
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-calc") as HTMLElement).textContent = result.calculation;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+
+    const qualitiesList = document.getElementById("result-qualities") as HTMLElement;
+    qualitiesList.innerHTML = meaning.qualities.map((q) => `<li>✦ ${q}</li>`).join("");
+
+    const challengesList = document.getElementById("result-challenges") as HTMLElement;
+    challengesList.innerHTML = meaning.challenges.map((c) => `<li>◆ ${c}</li>`).join("");
+
+    (document.getElementById("result-mission") as HTMLElement).textContent = meaning.mission;
+
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>
