@@ -32,6 +32,8 @@ import {
   Globe,
   ArrowRight,
   Radio,
+  Bot,
+  User,
 } from "lucide-react";
 import AppHeader from "@/components/AppHeader";
 import BottomNav from "@/components/BottomNav";
@@ -65,6 +67,7 @@ import {
   type UserJourney,
   type PageviewsTimeseries,
   type EventBreakdown,
+  type BotStats,
 } from "@/lib/adminApi";
 
 const GUIDE_ICONS: Record<string, typeof Star> = {
@@ -836,21 +839,24 @@ const AnalyticsTab = ({ periodDays }: { periodDays: number }) => {
   const [journeys, setJourneys] = useState<UserJourney[]>([]);
   const [ts, setTs] = useState<PageviewsTimeseries>([]);
   const [events, setEvents] = useState<EventBreakdown[]>([]);
+  const [botStatsData, setBotStatsData] = useState<BotStats | null>(null);
   const [surfaceFilter, setSurfaceFilter] = useState<string | null>(null);
+  const [excludeBots, setExcludeBots] = useState(false);
   const [loading, setLoading] = useState(true);
 
   const load = useCallback(() => {
     setLoading(true);
     Promise.all([
       adminApi.liveVisitors(5),
-      adminApi.topPages(periodDays, surfaceFilter, 30),
-      adminApi.trafficSources(periodDays),
-      adminApi.deviceBreakdown(periodDays),
+      adminApi.topPages(periodDays, surfaceFilter, 30, excludeBots),
+      adminApi.trafficSources(periodDays, excludeBots),
+      adminApi.deviceBreakdown(periodDays, excludeBots),
       adminApi.recentJourneys(20),
-      adminApi.pageviewsTimeseries(periodDays),
+      adminApi.pageviewsTimeseries(periodDays, excludeBots),
       adminApi.eventsBreakdown(periodDays),
+      adminApi.botStats(periodDays),
     ])
-      .then(([l, p, s, d, j, t, e]) => {
+      .then(([l, p, s, d, j, t, e, b]) => {
         setLive(l);
         setTopPages(p);
         setSources(s);
@@ -858,10 +864,11 @@ const AnalyticsTab = ({ periodDays }: { periodDays: number }) => {
         setJourneys(j);
         setTs(t);
         setEvents(e);
+        setBotStatsData(b);
       })
       .catch((e) => console.error("Analytics load error:", e))
       .finally(() => setLoading(false));
-  }, [periodDays, surfaceFilter]);
+  }, [periodDays, surfaceFilter, excludeBots]);
 
   useEffect(() => {
     load();
@@ -886,6 +893,26 @@ const AnalyticsTab = ({ periodDays }: { periodDays: number }) => {
 
   return (
     <div className="space-y-4">
+      {/* Bot filter toggle */}
+      <div className="flex items-center gap-3">
+        <button
+          onClick={() => setExcludeBots(!excludeBots)}
+          className={`flex items-center gap-2 text-[11px] px-3 py-1.5 rounded-lg border transition-colors ${
+            excludeBots
+              ? "border-primary bg-primary/10 text-primary"
+              : "border-orange-500/40 bg-orange-500/10 text-orange-300"
+          }`}
+        >
+          {excludeBots ? <User className="h-3.5 w-3.5" /> : <Bot className="h-3.5 w-3.5" />}
+          {excludeBots ? "Humains uniquement" : "Bots inclus"}
+        </button>
+        {live && (
+          <span className="text-[10px] text-muted-foreground">
+            {live.total_humans} humain{live.total_humans !== 1 ? "s" : ""} · {live.total_bots} bot{live.total_bots !== 1 ? "s" : ""} live
+          </span>
+        )}
+      </div>
+
       {/* Live + summary KPIs */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 relative overflow-hidden">
@@ -897,7 +924,9 @@ const AnalyticsTab = ({ periodDays }: { periodDays: number }) => {
             <Radio className="h-3.5 w-3.5" /> Visiteurs live
           </div>
           <p className="text-3xl font-serif text-emerald-300">{liveCount}</p>
-          <p className="text-[10px] text-emerald-200/60">5 dernières min</p>
+          <p className="text-[10px] text-emerald-200/60">
+            {live ? `${live.total_humans} humain${live.total_humans !== 1 ? "s" : ""} · ${live.total_bots} bot${live.total_bots !== 1 ? "s" : ""}` : "5 dernières min"}
+          </p>
         </div>
         <KpiCard icon={Globe} label={`Vues site (${periodDays}j)`} value={totalSiteViews} />
         <KpiCard icon={Smartphone} label={`Vues app (${periodDays}j)`} value={totalAppViews} />
@@ -914,9 +943,22 @@ const AnalyticsTab = ({ periodDays }: { periodDays: number }) => {
             {live.sessions.slice(0, 15).map((s) => (
               <div
                 key={s.session_id}
-                className="flex items-center gap-2 p-2 rounded bg-background/40 border border-border/30 text-[11px]"
+                className={`flex items-center gap-2 p-2 rounded border text-[11px] ${
+                  s.is_bot
+                    ? "bg-orange-500/5 border-orange-500/20"
+                    : "bg-background/40 border-border/30"
+                }`}
               >
-                <Radio className="h-3 w-3 text-emerald-400 animate-pulse flex-shrink-0" />
+                <Radio className={`h-3 w-3 animate-pulse flex-shrink-0 ${s.is_bot ? "text-orange-400" : "text-emerald-400"}`} />
+                {s.is_bot ? (
+                  <Badge variant="outline" className="text-[9px] h-4 px-1 bg-orange-500/20 border-orange-500/40 text-orange-300">
+                    bot
+                  </Badge>
+                ) : (
+                  <Badge variant="outline" className="text-[9px] h-4 px-1 bg-emerald-500/20 border-emerald-500/40 text-emerald-300">
+                    humain
+                  </Badge>
+                )}
                 <Badge variant="outline" className="text-[9px] h-4 px-1">
                   {s.surface}
                 </Badge>
@@ -1099,8 +1141,19 @@ const AnalyticsTab = ({ periodDays }: { periodDays: number }) => {
             <p className="text-xs text-muted-foreground">Aucun parcours pour le moment.</p>
           ) : (
             journeys.map((j) => (
-              <div key={j.session_id} className="p-2 rounded bg-background/40 border border-border/30 text-[11px]">
+              <div key={j.session_id} className={`p-2 rounded border text-[11px] ${
+                j.is_bot ? "bg-orange-500/5 border-orange-500/20" : "bg-background/40 border-border/30"
+              }`}>
                 <div className="flex items-center gap-2 mb-1">
+                  {j.is_bot ? (
+                    <Badge variant="outline" className="text-[9px] h-4 px-1 bg-orange-500/20 border-orange-500/40 text-orange-300">
+                      bot
+                    </Badge>
+                  ) : (
+                    <Badge variant="outline" className="text-[9px] h-4 px-1 bg-emerald-500/20 border-emerald-500/40 text-emerald-300">
+                      humain
+                    </Badge>
+                  )}
                   <Badge variant="outline" className="text-[9px] h-4 px-1">
                     {j.surface}
                   </Badge>
@@ -1155,6 +1208,61 @@ const AnalyticsTab = ({ periodDays }: { periodDays: number }) => {
                 <span className="text-[9px] text-muted-foreground">{e.unique_sessions} sess · {e.unique_users} users</span>
               </div>
             ))}
+          </div>
+        </SectionCard>
+      )}
+
+      {/* Bot crawl stats */}
+      {botStatsData && botStatsData.total_bot_hits > 0 && (
+        <SectionCard
+          title="Crawl bots"
+          action={
+            <span className="text-[10px] text-orange-300">
+              {botStatsData.total_bot_hits} hits · {botStatsData.unique_pages_crawled} pages · {botStatsData.crawl_window_hours}h de crawl
+            </span>
+          }
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* By bot breakdown */}
+            <div>
+              <p className="text-[10px] text-muted-foreground mb-2">Par bot</p>
+              <div className="space-y-1">
+                {botStatsData.by_bot?.map((b) => (
+                  <div key={b.name} className="flex items-center gap-2 p-1.5 rounded bg-orange-500/5 border border-orange-500/10 text-[11px]">
+                    <Bot className="h-3 w-3 text-orange-400 flex-shrink-0" />
+                    <span className="flex-1 font-medium">{b.name}</span>
+                    <span className="text-orange-300">{b.hits}</span>
+                    <span className="text-[9px] text-muted-foreground">{b.sessions} sess</span>
+                    <span className="text-[9px] text-muted-foreground">{b.unique_pages} pg</span>
+                  </div>
+                ))}
+              </div>
+              {botStatsData.first_crawl && (
+                <p className="text-[9px] text-muted-foreground mt-2">
+                  Premier crawl : {formatDateTime(botStatsData.first_crawl)} · Dernier : {formatDateTime(botStatsData.last_crawl)}
+                </p>
+              )}
+            </div>
+            {/* Crawl per day chart */}
+            <div>
+              <p className="text-[10px] text-muted-foreground mb-2">Crawl / jour</p>
+              <div className="flex items-end gap-0.5 h-20">
+                {botStatsData.crawl_per_day?.map((d) => {
+                  const max = Math.max(...(botStatsData.crawl_per_day?.map((x) => x.hits) || [1]), 1);
+                  const pct = (d.hits / max) * 100;
+                  return (
+                    <div key={d.day} className="flex-1 flex flex-col items-center justify-end group relative">
+                      <div className="w-full bg-orange-400 opacity-60 rounded-t" style={{ height: `${pct}%` }} />
+                      <div className="absolute bottom-full mb-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 bg-popover border border-border rounded px-2 py-1 text-[9px] whitespace-nowrap">
+                        <div>{new Date(d.day).toLocaleDateString("fr-FR", { day: "2-digit", month: "2-digit" })}</div>
+                        <div className="text-orange-300">{d.hits} hits</div>
+                        <div className="text-muted-foreground">{d.pages} pages</div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </SectionCard>
       )}

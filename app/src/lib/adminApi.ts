@@ -163,6 +163,8 @@ async function rpc<T>(fn: string, args: Record<string, unknown> = {}): Promise<T
 // Analytics types
 export type LiveVisitors = {
   total: number;
+  total_humans: number;
+  total_bots: number;
   sessions: Array<{
     session_id: string;
     last_path: string;
@@ -171,6 +173,7 @@ export type LiveVisitors = {
     surface: "site" | "app";
     user_id: string | null;
     user_agent: string | null;
+    is_bot: boolean;
   }>;
 };
 
@@ -207,6 +210,18 @@ export type UserJourney = {
   referrer_domain: string | null;
   utm_source: string | null;
   user_agent: string | null;
+  is_bot: boolean;
+};
+
+export type BotStats = {
+  total_bot_hits: number;
+  total_bot_sessions: number;
+  unique_pages_crawled: number;
+  first_crawl: string | null;
+  last_crawl: string | null;
+  crawl_window_hours: number;
+  by_bot: Array<{ name: string; hits: number; sessions: number; unique_pages: number }>;
+  crawl_per_day: Array<{ day: string; hits: number; pages: number }>;
 };
 
 export type PageviewsTimeseries = Array<{
@@ -250,14 +265,17 @@ export const adminApi = {
   toggleAdmin: (userId: string) => rpc<boolean>("admin_toggle_admin", { p_user_id: userId }),
   // Analytics
   liveVisitors: (windowMinutes = 5) => rpc<LiveVisitors>("admin_live_visitors", { p_window_minutes: windowMinutes }),
-  topPages: (periodDays = 30, surface: string | null = null, limit = 30) =>
-    rpc<TopPage[]>("admin_top_pages", { p_period_days: periodDays, p_surface: surface, p_limit: limit }),
-  trafficSources: (periodDays = 30) => rpc<TrafficSources>("admin_traffic_sources", { p_period_days: periodDays }),
-  deviceBreakdown: (periodDays = 30) => rpc<DeviceBreakdown>("admin_device_breakdown", { p_period_days: periodDays }),
+  topPages: (periodDays = 30, surface: string | null = null, limit = 30, excludeBots = false) =>
+    rpc<TopPage[]>("admin_top_pages", { p_period_days: periodDays, p_surface: surface, p_limit: limit, p_exclude_bots: excludeBots }),
+  trafficSources: (periodDays = 30, excludeBots = false) =>
+    rpc<TrafficSources>("admin_traffic_sources", { p_period_days: periodDays, p_exclude_bots: excludeBots }),
+  deviceBreakdown: (periodDays = 30, excludeBots = false) =>
+    rpc<DeviceBreakdown>("admin_device_breakdown", { p_period_days: periodDays, p_exclude_bots: excludeBots }),
   recentJourneys: (limit = 20) => rpc<UserJourney[]>("admin_recent_journeys", { p_limit: limit }),
-  pageviewsTimeseries: (periodDays = 30) =>
-    rpc<PageviewsTimeseries>("admin_pageviews_timeseries", { p_period_days: periodDays }),
+  pageviewsTimeseries: (periodDays = 30, excludeBots = false) =>
+    rpc<PageviewsTimeseries>("admin_pageviews_timeseries", { p_period_days: periodDays, p_exclude_bots: excludeBots }),
   eventsBreakdown: (periodDays = 30) => rpc<EventBreakdown[]>("admin_events_breakdown", { p_period_days: periodDays }),
+  botStats: (periodDays = 30) => rpc<BotStats>("admin_bot_stats", { p_period_days: periodDays }),
 };
 
 // Helpers
