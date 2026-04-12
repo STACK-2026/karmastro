@@ -51,7 +51,7 @@ function formatDisplay(isoDate: string): string {
 
 function isValidDate(isoDate: string): boolean {
   const [y, m, d] = isoDate.split("-").map(Number);
-  if (y < 1900 || y > 2025) return false;
+  if (y < 1900 || y > new Date().getFullYear()) return false;
   if (m < 1 || m > 12) return false;
   if (d < 1 || d > 31) return false;
   const date = new Date(y, m - 1, d);

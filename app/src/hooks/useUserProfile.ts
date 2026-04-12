@@ -198,31 +198,52 @@ export function useUserProfile(): UserProfileData {
 
       // Lazy-load full natal chart from Engine via edge function
       // (moon sign, ascendant, planets, houses, aspects)
-      try {
-        const { data: { session } } = await supabase.auth.getSession();
-        if (!session) return;
-
-        const resp = await fetch(
-          `${(supabase as any).supabaseUrl || "https://nkjbmbdrvejemzrggxvr.supabase.co"}/functions/v1/get-natal-chart`,
-          {
-            method: "POST",
-            headers: {
-              Authorization: `Bearer ${session.access_token}`,
-              "Content-Type": "application/json",
-            },
+      // Retry once after 3s if first attempt fails (session may not be ready)
+      const fetchNatalChart = async (attempt = 1): Promise<void> => {
+        try {
+          const { data: { session } } = await supabase.auth.getSession();
+          if (!session) {
+            if (attempt < 2) {
+              await new Promise((r) => setTimeout(r, 3000));
+              return fetchNatalChart(attempt + 1);
+            }
+            return;
           }
-        );
 
-        if (!resp.ok) return;
-        const { chart } = await resp.json();
-        if (!chart?.natal_chart) return;
+          const resp = await fetch(
+            `${(supabase as any).supabaseUrl || "https://nkjbmbdrvejemzrggxvr.supabase.co"}/functions/v1/get-natal-chart`,
+            {
+              method: "POST",
+              headers: {
+                Authorization: `Bearer ${session.access_token}`,
+                "Content-Type": "application/json",
+              },
+            }
+          );
 
-        const nc = chart.natal_chart;
-        const enrichedAstrology = enrichAstrologyFromEngine(baseProfile.astrology, nc);
-        setData((prev) => ({ ...prev, astrology: enrichedAstrology }));
-      } catch (e) {
-        console.warn("[useUserProfile] natal chart fetch failed", e);
-      }
+          if (!resp.ok) {
+            if (attempt < 2) {
+              await new Promise((r) => setTimeout(r, 3000));
+              return fetchNatalChart(attempt + 1);
+            }
+            return;
+          }
+          const { chart } = await resp.json();
+          if (!chart?.natal_chart) return;
+
+          const nc = chart.natal_chart;
+          const enrichedAstrology = enrichAstrologyFromEngine(baseProfile.astrology, nc);
+          setData((prev) => ({ ...prev, astrology: enrichedAstrology }));
+        } catch (e) {
+          console.warn(`[useUserProfile] natal chart fetch failed (attempt ${attempt})`, e);
+          if (attempt < 2) {
+            await new Promise((r) => setTimeout(r, 3000));
+            return fetchNatalChart(attempt + 1);
+          }
+        }
+      };
+
+      fetchNatalChart();
     })().catch(() => {
       setData((d) => ({ ...d, isLoading: false }));
     });

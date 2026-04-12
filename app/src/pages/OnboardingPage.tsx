@@ -1,8 +1,9 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, Clock, MapPin, User, Sparkles, ChevronRight, ChevronLeft, Heart, BookOpen, Star, Check, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import SmartDateInput from "@/components/SmartDateInput";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
@@ -12,6 +13,8 @@ import { geocodePlace, createDebouncer, type GeocodeResult } from "@/lib/geocodi
 import { trackEvent } from "@/lib/tracker";
 import StarField from "@/components/StarField";
 import { ZodiacSymbol } from "@/components/ZodiacSymbol";
+
+const ONBOARDING_STORAGE_KEY = "km_onboarding";
 
 const INTERESTS = [
   { id: "astro", label: "Astrologie", icon: Star },
@@ -65,6 +68,86 @@ const OnboardingPage = () => {
   const [revealPhase, setRevealPhase] = useState(0);
   const [scanStep, setScanStep] = useState(0);
   const [scanning, setScanning] = useState(false);
+
+  // Restore form data on mount:
+  // 1. From existing DB profile (user already filled partial data before)
+  // 2. Fallback to sessionStorage (landing quick calc + data saved before auth redirect)
+  useEffect(() => {
+    let cancelled = false;
+
+    const restoreFromSession = () => {
+      try {
+        const raw = sessionStorage.getItem(ONBOARDING_STORAGE_KEY);
+        if (!raw) return;
+        const saved = JSON.parse(raw);
+        if (saved.birthDate) setBirthDate(saved.birthDate);
+        if (saved.birthTime) setBirthTime(saved.birthTime);
+        if (saved.knowsBirthTime === false) setKnowsBirthTime(false);
+        if (saved.birthPlace) setBirthPlace(saved.birthPlace);
+        if (saved.geoResult) setGeoResult(saved.geoResult);
+        if (saved.firstName) setFirstName(saved.firstName);
+        if (saved.lastName) setLastName(saved.lastName);
+        if (saved.birthName) setBirthName(saved.birthName);
+        if (saved.currentName) setCurrentName(saved.currentName);
+        if (saved.gender) setGender(saved.gender);
+        if (Array.isArray(saved.interests)) setInterests(saved.interests);
+        if (saved.level) setLevel(saved.level);
+      } catch {}
+    };
+
+    if (user) {
+      // Try to pre-fill from existing profile in DB
+      supabase
+        .from("profiles")
+        .select("first_name, last_name, birth_name, current_name, birth_date, birth_time, knows_birth_time, birth_place, birth_latitude, birth_longitude, gender, interests, level")
+        .eq("user_id", user.id)
+        .maybeSingle()
+        .then(({ data: p }) => {
+          if (cancelled) return;
+          if (p?.birth_date) {
+            setBirthDate(p.birth_date);
+            if (p.birth_time) setBirthTime(p.birth_time);
+            if (p.knows_birth_time === false) setKnowsBirthTime(false);
+            if (p.birth_place) {
+              setBirthPlace(p.birth_place);
+              if (p.birth_latitude && p.birth_longitude) {
+                setGeoResult({
+                  displayName: p.birth_place,
+                  latitude: Number(p.birth_latitude),
+                  longitude: Number(p.birth_longitude),
+                });
+              }
+            }
+            if (p.first_name) setFirstName(p.first_name);
+            if (p.last_name) setLastName(p.last_name);
+            if (p.birth_name) setBirthName(p.birth_name);
+            if (p.current_name) setCurrentName(p.current_name);
+            if (p.gender) setGender(p.gender);
+            if (Array.isArray(p.interests) && p.interests.length) setInterests(p.interests);
+            if (p.level) setLevel(p.level);
+          } else {
+            // No DB data yet, fallback to sessionStorage
+            restoreFromSession();
+          }
+        });
+    } else {
+      restoreFromSession();
+    }
+
+    return () => { cancelled = true; };
+  }, [user]);
+
+  // Persist form state to sessionStorage on every meaningful change
+  // so data survives auth redirect
+  useEffect(() => {
+    try {
+      sessionStorage.setItem(ONBOARDING_STORAGE_KEY, JSON.stringify({
+        birthDate, birthTime, knowsBirthTime, birthPlace, geoResult,
+        firstName, lastName, birthName, currentName,
+        gender, interests, level,
+      }));
+    } catch {}
+  }, [birthDate, birthTime, knowsBirthTime, birthPlace, geoResult, firstName, lastName, birthName, currentName, gender, interests, level]);
 
   const toggleInterest = (id: string) => {
     setInterests(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
@@ -156,6 +239,8 @@ const OnboardingPage = () => {
         interests_count: interests.length,
         level,
       });
+      // Clean up session storage now that data is in DB
+      try { sessionStorage.removeItem(ONBOARDING_STORAGE_KEY); } catch {}
       navigate("/dashboard");
     } catch (e: any) {
       toast({ title: "Erreur", description: e.message, variant: "destructive" });
@@ -240,7 +325,7 @@ const OnboardingPage = () => {
               <div className="space-y-4">
                 <div>
                   <label className="text-sm text-muted-foreground mb-1 block">Date de naissance *</label>
-                  <Input type="date" value={birthDate} onChange={e => setBirthDate(e.target.value)} className="bg-secondary border-border" />
+                  <SmartDateInput value={birthDate} onChange={setBirthDate} />
                 </div>
 
                 <div>
