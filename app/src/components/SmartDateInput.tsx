@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Calendar } from "lucide-react";
 
@@ -62,6 +62,14 @@ const SmartDateInput = ({ value, onChange, placeholder = "JJ/MM/AAAA", className
   const [displayValue, setDisplayValue] = useState(value ? formatDisplay(value) : "");
   const [error, setError] = useState(false);
   const nativeDateRef = useRef<HTMLInputElement>(null);
+
+  // Sync displayValue when value prop changes externally (e.g. pre-fill from DB/sessionStorage)
+  useEffect(() => {
+    if (value && formatDisplay(value) !== displayValue) {
+      setDisplayValue(formatDisplay(value));
+      setError(false);
+    }
+  }, [value]);
 
   const handleTextChange = (text: string) => {
     setDisplayValue(text);
