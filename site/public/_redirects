@@ -1,6 +1,9 @@
 # Cloudflare Pages redirects
 # Format: /old-url /new-url 301
 
+# Sitemap alias — Google/bots sometimes look for /sitemap.xml directly
+/sitemap.xml /sitemap-index.xml 301
+
 # Slug fix: premier article avait un mauvais slug
 /blog/numerologie-guide-complet-debuter /blog/qu-numerologie-guide-complet-debuter 301
 
