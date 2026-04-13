@@ -68,6 +68,7 @@ import {
   type PageviewsTimeseries,
   type EventBreakdown,
   type BotStats,
+  type UserSession,
 } from "@/lib/adminApi";
 
 const GUIDE_ICONS: Record<string, typeof Star> = {
@@ -258,6 +259,7 @@ const UsersTab = () => {
   const [expanded, setExpanded] = useState<string | null>(null);
   const [detail, setDetail] = useState<UserDetail | null>(null);
   const [detailLoading, setDetailLoading] = useState(false);
+  const [showAllSessions, setShowAllSessions] = useState(false);
 
   const load = useCallback(() => {
     setLoading(true);
@@ -287,6 +289,7 @@ const UsersTab = () => {
     }
     setExpanded(userId);
     setDetail(null);
+    setShowAllSessions(false);
     setDetailLoading(true);
     try {
       const d = await adminApi.userDetail(userId);
@@ -392,102 +395,283 @@ const UsersTab = () => {
                 {isExpanded && (
                   <div className="border-t border-border px-4 py-3 bg-background/40 space-y-3 text-xs">
                     {detailLoading || !detail ? (
-                      <p className="text-muted-foreground">Chargement du détail...</p>
-                    ) : (
-                      <>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-1">
-                          <div>
-                            <span className="text-muted-foreground">Email : </span>
-                            <span>{detail.email || "-"}</span>
-                          </div>
-                          <div>
-                            <span className="text-muted-foreground">Inscrit : </span>
-                            <span>{formatDateTime(u.created_at)}</span>
-                          </div>
-                          <div>
-                            <span className="text-muted-foreground">Langue : </span>
-                            <span>{u.language || "fr"}</span>
-                          </div>
-                          <div>
-                            <span className="text-muted-foreground">Naissance : </span>
-                            <span>{u.birth_date ? new Date(u.birth_date).toLocaleDateString("fr-FR") : "-"}</span>
-                          </div>
-                          <div>
-                            <span className="text-muted-foreground">Lieu : </span>
-                            <span>{u.birth_place || "-"}</span>
-                          </div>
-                          <div>
-                            <span className="text-muted-foreground">Genre : </span>
-                            <span>{u.gender || "-"}</span>
-                          </div>
-                          <div>
-                            <span className="text-muted-foreground">Code parrain : </span>
-                            <span className="font-mono">{u.referral_code || "-"}</span>
-                          </div>
-                          <div>
-                            <span className="text-muted-foreground">Filleuls : </span>
-                            <span>{u.filleuls_count}</span>
-                          </div>
-                          <div>
-                            <span className="text-muted-foreground">Abonnement : </span>
-                            <span>{u.subscription_status || "-"}</span>
-                          </div>
-                        </div>
+                      <p className="text-muted-foreground">Chargement du detail...</p>
+                    ) : (() => {
+                      const attr = detail.attribution;
+                      const stats = detail.stats;
+                      const sessions = detail.sessions || [];
+                      const visibleSessions = showAllSessions ? sessions : sessions.slice(0, 3);
+                      const profile = detail.profile as Record<string, any> | null;
+                      const natal = profile?.natal_chart_json as Record<string, any> | null;
+                      const formatDuration = (s: number) => {
+                        if (s < 60) return `${s}s`;
+                        if (s < 3600) return `${Math.floor(s / 60)}min ${s % 60}s`;
+                        return `${Math.floor(s / 3600)}h ${Math.floor((s % 3600) / 60)}min`;
+                      };
+                      const providerLabel: Record<string, string> = { google: "Google", email: "Email/MDP", github: "GitHub" };
+                      const sourceLabel = attr?.utm_source || attr?.referrer_domain || "Direct";
 
-                        {u.badges && u.badges.length > 0 && (
-                          <div>
-                            <p className="text-muted-foreground mb-1">Badges :</p>
-                            <div className="flex flex-wrap gap-1">
-                              {u.badges.map((b) => (
-                                <Badge key={b} variant="outline" className="text-[9px] h-4 px-1">
-                                  {b}
-                                </Badge>
-                              ))}
+                      return (
+                        <>
+                          {/* Provenance + Stats */}
+                          <div className="rounded-lg bg-background/60 border border-border p-3 space-y-2">
+                            <div className="flex items-center gap-2 mb-1">
+                              <Globe className="h-3.5 w-3.5 text-primary" />
+                              <span className="text-[11px] font-medium">Provenance et activite</span>
                             </div>
-                          </div>
-                        )}
-
-                        {detail.conversations.length > 0 && (
-                          <div>
-                            <p className="text-muted-foreground mb-1">Conversations Oracle ({detail.conversations.length}) :</p>
-                            <div className="space-y-1 max-h-32 overflow-y-auto">
-                              {detail.conversations.slice(0, 10).map((c) => (
-                                <div key={c.id} className="flex items-center justify-between text-[10px] bg-background/40 rounded px-2 py-1">
-                                  <span className="truncate flex-1">{c.title || "Sans titre"}</span>
-                                  <span className="text-muted-foreground ml-2">{c.message_count} msg · {formatRelative(c.updated_at)}</span>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-1">
+                              <div>
+                                <span className="text-muted-foreground">Source : </span>
+                                <span className="font-medium">{sourceLabel}</span>
+                              </div>
+                              <div>
+                                <span className="text-muted-foreground">Auth : </span>
+                                <span>{providerLabel[detail.auth_provider] || detail.auth_provider}</span>
+                              </div>
+                              {attr?.utm_campaign && (
+                                <div>
+                                  <span className="text-muted-foreground">Campagne : </span>
+                                  <span>{attr.utm_campaign}</span>
                                 </div>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-
-                        {detail.credit_transactions.length > 0 && (
-                          <div>
-                            <p className="text-muted-foreground mb-1">Historique crédits ({detail.credit_transactions.length}) :</p>
-                            <div className="space-y-1 max-h-32 overflow-y-auto">
-                              {detail.credit_transactions.slice(0, 10).map((t) => (
-                                <div key={t.id} className="flex items-center justify-between text-[10px] bg-background/40 rounded px-2 py-1">
-                                  <span>{t.type} · {t.description || "-"}</span>
-                                  <span className={t.amount > 0 ? "text-emerald-300" : "text-rose-300"}>
-                                    {t.amount > 0 ? "+" : ""}{t.amount}
-                                  </span>
+                              )}
+                              {attr?.landing_page && (
+                                <div>
+                                  <span className="text-muted-foreground">Landing : </span>
+                                  <span className="truncate">{attr.landing_page}</span>
                                 </div>
-                              ))}
+                              )}
+                              <div>
+                                <span className="text-muted-foreground">1ere visite : </span>
+                                <span>{stats?.first_seen ? formatDateTime(stats.first_seen) : formatDateTime(u.created_at)}</span>
+                              </div>
+                              <div>
+                                <span className="text-muted-foreground">Derniere visite : </span>
+                                <span>{stats?.last_seen ? formatRelative(stats.last_seen) : "-"}</span>
+                              </div>
+                              <div>
+                                <span className="text-muted-foreground">Sessions : </span>
+                                <span className="font-medium">{stats?.total_sessions ?? 0}</span>
+                              </div>
+                              <div>
+                                <span className="text-muted-foreground">Pages vues : </span>
+                                <span className="font-medium">{stats?.total_page_views ?? 0}</span>
+                              </div>
+                              <div>
+                                <span className="text-muted-foreground">Temps cumule : </span>
+                                <span className="font-medium">{formatDuration(stats?.estimated_time_seconds ?? 0)}</span>
+                              </div>
+                              <div>
+                                <span className="text-muted-foreground">Messages Oracle : </span>
+                                <span className="font-medium">{stats?.total_oracle_messages ?? 0}</span>
+                              </div>
+                              <div>
+                                <span className="text-muted-foreground">Conversations : </span>
+                                <span>{stats?.total_conversations ?? 0}</span>
+                              </div>
                             </div>
                           </div>
-                        )}
 
-                        <div className="flex gap-2 pt-2">
-                          <Button size="sm" variant="outline" onClick={() => handleGrantCredits(u.user_id)}>
-                            <Plus className="h-3 w-3 mr-1" /> Crédits
-                          </Button>
-                          <Button size="sm" variant="outline" onClick={() => handleToggleAdmin(u.user_id)}>
-                            <ShieldCheck className="h-3 w-3 mr-1" /> Toggle admin
-                          </Button>
-                          <code className="ml-auto text-[9px] text-muted-foreground self-center">{u.user_id}</code>
-                        </div>
-                      </>
-                    )}
+                          {/* Profil perso + astro */}
+                          <div className="rounded-lg bg-background/60 border border-border p-3 space-y-2">
+                            <div className="flex items-center gap-2 mb-1">
+                              <User className="h-3.5 w-3.5 text-primary" />
+                              <span className="text-[11px] font-medium">Profil</span>
+                            </div>
+                            <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-1">
+                              <div>
+                                <span className="text-muted-foreground">Email : </span>
+                                <span>{detail.email || "-"}</span>
+                              </div>
+                              <div>
+                                <span className="text-muted-foreground">Inscrit : </span>
+                                <span>{formatDateTime(u.created_at)}</span>
+                              </div>
+                              <div>
+                                <span className="text-muted-foreground">Langue : </span>
+                                <span>{u.language || "fr"}</span>
+                              </div>
+                              <div>
+                                <span className="text-muted-foreground">Naissance : </span>
+                                <span>{u.birth_date ? new Date(u.birth_date).toLocaleDateString("fr-FR") : "-"}</span>
+                              </div>
+                              <div>
+                                <span className="text-muted-foreground">Lieu : </span>
+                                <span>{u.birth_place || "-"}</span>
+                              </div>
+                              <div>
+                                <span className="text-muted-foreground">Genre : </span>
+                                <span>{u.gender || "-"}</span>
+                              </div>
+                              <div>
+                                <span className="text-muted-foreground">Code parrain : </span>
+                                <span className="font-mono">{u.referral_code || "-"}</span>
+                              </div>
+                              <div>
+                                <span className="text-muted-foreground">Filleuls : </span>
+                                <span>{u.filleuls_count}</span>
+                              </div>
+                              <div>
+                                <span className="text-muted-foreground">Abonnement : </span>
+                                <span>{u.subscription_status || "-"}</span>
+                              </div>
+                              {profile?.interests && (profile.interests as string[]).length > 0 && (
+                                <div className="col-span-2">
+                                  <span className="text-muted-foreground">Interets : </span>
+                                  <span>{(profile.interests as string[]).join(", ")}</span>
+                                </div>
+                              )}
+                              {profile?.level && (
+                                <div>
+                                  <span className="text-muted-foreground">Niveau : </span>
+                                  <span>{profile.level as string}</span>
+                                </div>
+                              )}
+                              {profile?.oracle_tone && (
+                                <div>
+                                  <span className="text-muted-foreground">Profil Oracle : </span>
+                                  <span className="capitalize">{profile.oracle_tone as string}</span>
+                                </div>
+                              )}
+                            </div>
+                            {natal && (
+                              <div className="mt-2 pt-2 border-t border-border/50">
+                                <p className="text-muted-foreground text-[10px] mb-1">Theme natal :</p>
+                                <div className="grid grid-cols-3 md:grid-cols-4 gap-x-3 gap-y-0.5 text-[10px]">
+                                  {natal.sun && <div><span className="text-amber-300">Soleil</span> {natal.sun}</div>}
+                                  {natal.moon && <div><span className="text-blue-300">Lune</span> {natal.moon}</div>}
+                                  {natal.ascendant && <div><span className="text-emerald-300">Asc</span> {natal.ascendant}</div>}
+                                  {natal.mercury && <div><span className="text-muted-foreground">Mercure</span> {natal.mercury}</div>}
+                                  {natal.venus && <div><span className="text-rose-300">Venus</span> {natal.venus}</div>}
+                                  {natal.mars && <div><span className="text-red-400">Mars</span> {natal.mars}</div>}
+                                  {natal.jupiter && <div><span className="text-purple-300">Jupiter</span> {natal.jupiter}</div>}
+                                  {natal.saturn && <div><span className="text-slate-300">Saturne</span> {natal.saturn}</div>}
+                                  {natal.north_node && <div><span className="text-primary">Noeud N</span> {natal.north_node}</div>}
+                                </div>
+                              </div>
+                            )}
+                            {u.badges && u.badges.length > 0 && (
+                              <div>
+                                <p className="text-muted-foreground mb-1">Badges :</p>
+                                <div className="flex flex-wrap gap-1">
+                                  {u.badges.map((b) => (
+                                    <Badge key={b} variant="outline" className="text-[9px] h-4 px-1">{b}</Badge>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+
+                          {/* Sessions */}
+                          {sessions.length > 0 && (
+                            <div className="rounded-lg bg-background/60 border border-border p-3 space-y-2">
+                              <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-2">
+                                  <Activity className="h-3.5 w-3.5 text-primary" />
+                                  <span className="text-[11px] font-medium">Sessions ({sessions.length})</span>
+                                </div>
+                                {sessions.length > 3 && (
+                                  <button
+                                    onClick={() => setShowAllSessions(!showAllSessions)}
+                                    className="text-[10px] text-primary hover:underline"
+                                  >
+                                    {showAllSessions ? "Voir moins" : `Voir les ${sessions.length}`}
+                                  </button>
+                                )}
+                              </div>
+                              <div className="space-y-1.5">
+                                {visibleSessions.map((sess: UserSession) => (
+                                  <div key={sess.session_id} className="bg-background/40 rounded-lg px-2.5 py-1.5 text-[10px]">
+                                    <div className="flex items-center justify-between gap-2 flex-wrap">
+                                      <div className="flex items-center gap-2">
+                                        <Smartphone className="h-3 w-3 text-muted-foreground" />
+                                        <span className="font-medium">{sess.device}</span>
+                                        {sess.country_code && <span className="text-muted-foreground">{sess.country_code}</span>}
+                                        <span className="text-muted-foreground">{sess.surface}</span>
+                                      </div>
+                                      <div className="flex items-center gap-2 text-muted-foreground">
+                                        <span>{sess.page_count} pages</span>
+                                        <span>{formatDuration(sess.duration_seconds)}</span>
+                                        <span>{formatDateTime(sess.started_at)}</span>
+                                      </div>
+                                    </div>
+                                    {sess.referrer_domain && (
+                                      <div className="text-muted-foreground mt-0.5">
+                                        via {sess.referrer_domain}
+                                      </div>
+                                    )}
+                                    <div className="flex flex-wrap gap-1 mt-1">
+                                      {sess.pages.map((p, i) => (
+                                        <span key={i} className="bg-card/80 px-1.5 py-0.5 rounded text-[9px]">
+                                          {p.path}
+                                        </span>
+                                      ))}
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Conversations Oracle */}
+                          {detail.conversations.length > 0 && (
+                            <div>
+                              <p className="text-muted-foreground mb-1">Conversations Oracle ({detail.conversations.length}) :</p>
+                              <div className="space-y-1 max-h-32 overflow-y-auto">
+                                {detail.conversations.slice(0, 10).map((c) => (
+                                  <div key={c.id} className="flex items-center justify-between text-[10px] bg-background/40 rounded px-2 py-1">
+                                    <span className="truncate flex-1">{c.title || "Sans titre"}</span>
+                                    <span className="text-muted-foreground ml-2">{c.message_count} msg · {formatRelative(c.updated_at)}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Credits */}
+                          {detail.credit_transactions.length > 0 && (
+                            <div>
+                              <p className="text-muted-foreground mb-1">Historique credits ({detail.credit_transactions.length}) :</p>
+                              <div className="space-y-1 max-h-32 overflow-y-auto">
+                                {detail.credit_transactions.slice(0, 10).map((t) => (
+                                  <div key={t.id} className="flex items-center justify-between text-[10px] bg-background/40 rounded px-2 py-1">
+                                    <span>{t.type} · {t.description || "-"}</span>
+                                    <span className={t.amount > 0 ? "text-emerald-300" : "text-rose-300"}>
+                                      {t.amount > 0 ? "+" : ""}{t.amount}
+                                    </span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Feedbacks */}
+                          {detail.feedbacks.length > 0 && (
+                            <div>
+                              <p className="text-muted-foreground mb-1">Feedbacks ({detail.feedbacks.length}) :</p>
+                              <div className="space-y-1 max-h-32 overflow-y-auto">
+                                {detail.feedbacks.map((fb) => (
+                                  <div key={fb.id} className="text-[10px] bg-background/40 rounded px-2 py-1">
+                                    <span className="text-amber-300">{"★".repeat(fb.rating)}{"☆".repeat(5 - fb.rating)}</span>
+                                    <span className="text-muted-foreground ml-1">{fb.guide}</span>
+                                    {fb.text && <p className="mt-0.5">{fb.text}</p>}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          <div className="flex gap-2 pt-2">
+                            <Button size="sm" variant="outline" onClick={() => handleGrantCredits(u.user_id)}>
+                              <Plus className="h-3 w-3 mr-1" /> Credits
+                            </Button>
+                            <Button size="sm" variant="outline" onClick={() => handleToggleAdmin(u.user_id)}>
+                              <ShieldCheck className="h-3 w-3 mr-1" /> Toggle admin
+                            </Button>
+                            <code className="ml-auto text-[9px] text-muted-foreground self-center">{u.user_id}</code>
+                          </div>
+                        </>
+                      );
+                    })()}
                   </div>
                 )}
               </div>

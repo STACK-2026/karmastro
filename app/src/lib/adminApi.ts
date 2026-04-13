@@ -122,9 +122,50 @@ export type AdminReferrer = {
   created_at: string;
 };
 
+export type UserSession = {
+  session_id: string;
+  started_at: string;
+  ended_at: string;
+  duration_seconds: number;
+  page_count: number;
+  pages: Array<{ path: string; at: string }>;
+  surface: string;
+  device: string;
+  country_code: string | null;
+  referrer_domain: string | null;
+};
+
+export type UserStats = {
+  total_page_views: number;
+  total_sessions: number;
+  total_time_seconds: number;
+  estimated_time_seconds: number;
+  first_seen: string | null;
+  last_seen: string | null;
+  total_oracle_messages: number;
+  total_conversations: number;
+};
+
+export type UserAttribution = {
+  utm_source: string | null;
+  utm_medium: string | null;
+  utm_campaign: string | null;
+  utm_term: string | null;
+  utm_content: string | null;
+  landing_page: string | null;
+  referrer: string | null;
+  referrer_domain: string | null;
+};
+
 export type UserDetail = {
   email: string | null;
+  auth_provider: string;
+  first_sign_in: string | null;
+  last_sign_in: string | null;
   profile: Record<string, unknown> | null;
+  attribution: UserAttribution | null;
+  sessions: UserSession[];
+  stats: UserStats;
   conversations: Array<{
     id: string;
     title: string | null;
