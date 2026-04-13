@@ -21,15 +21,15 @@
     "category": "numerologie",
     "blog": "principal",
     "index": 2,
-    "published": false,
-    "published_at": null,
-    "slug": null,
+    "published": true,
+    "published_at": "2026-04-13T11:09:27.380109+02:00",
+    "slug": "comment-calculer-chemin-vie-numerologie",
     "scheduled_date": "2026-04-13",
     "scheduled_time": "09:47",
     "scheduled_datetime": "2026-04-13T09:47:00",
-    "title_tag": null,
-    "meta_description": null,
-    "featured_image_url": null
+    "title_tag": "Comment calculer son chemin de vie en numérologie - Méthode ",
+    "meta_description": "Le chemin de vie se calcule en additionnant les chiffres de votre date de naissance. Méthode complète avec exemples pratiques et significations.",
+    "featured_image_url": "https://images.unsplash.com/photo-1770226482908-24ef400707d5?ixid=M3w4Nzg4MzB8MHwxfHNlYXJjaHwzfHxjaGVtaW4lMjBkZSUyMHZpZXxlbnwwfDB8fHwxNzc2MDcxMzY2fDA&ixlib=rb-4.1.0&w=1200&h=630&fit=crop&crop=center&q=80"
   },
   {
     "title": "Thème natal gratuit : interpréter sa carte du ciel",
