@@ -64,7 +64,7 @@ BEGIN
   FROM public.user_attribution ua WHERE ua.user_id = p_user_id;
 
   -- Sessions (from page_views, grouped by session_id, ordered by recency)
-  SELECT COALESCE(jsonb_agg(s ORDER BY s.started_at DESC), '[]'::jsonb)
+  SELECT COALESCE(jsonb_agg(sub.s), '[]'::jsonb)
   INTO v_sessions
   FROM (
     SELECT jsonb_build_object(
@@ -88,6 +88,7 @@ BEGIN
     FROM public.page_views pv
     WHERE pv.user_id = p_user_id AND NOT is_bot_ua(pv.user_agent)
     GROUP BY pv.session_id
+    ORDER BY MIN(pv.created_at) DESC
   ) sub;
 
   -- Cumulative stats

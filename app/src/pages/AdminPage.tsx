@@ -259,6 +259,7 @@ const UsersTab = () => {
   const [expanded, setExpanded] = useState<string | null>(null);
   const [detail, setDetail] = useState<UserDetail | null>(null);
   const [detailLoading, setDetailLoading] = useState(false);
+  const [detailError, setDetailError] = useState<string | null>(null);
   const [showAllSessions, setShowAllSessions] = useState(false);
 
   const load = useCallback(() => {
@@ -289,13 +290,15 @@ const UsersTab = () => {
     }
     setExpanded(userId);
     setDetail(null);
+    setDetailError(null);
     setShowAllSessions(false);
     setDetailLoading(true);
     try {
       const d = await adminApi.userDetail(userId);
       setDetail(d);
-    } catch (e) {
-      console.error(e);
+    } catch (e: any) {
+      console.error("[admin] userDetail error:", e);
+      setDetailError(e?.message || String(e));
     } finally {
       setDetailLoading(false);
     }
@@ -394,7 +397,12 @@ const UsersTab = () => {
 
                 {isExpanded && (
                   <div className="border-t border-border px-4 py-3 bg-background/40 space-y-3 text-xs">
-                    {detailLoading || !detail ? (
+                    {detailError ? (
+                      <div className="text-center py-2 space-y-1">
+                        <p className="text-xs text-red-400">Erreur detail : {detailError}</p>
+                        <Button variant="outline" size="sm" onClick={() => toggleExpand(u.user_id)}>Fermer</Button>
+                      </div>
+                    ) : detailLoading || !detail ? (
                       <p className="text-muted-foreground">Chargement du detail...</p>
                     ) : (() => {
                       const attr = detail.attribution;
