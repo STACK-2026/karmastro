@@ -254,16 +254,23 @@ const UsersTab = () => {
   const [users, setUsers] = useState<AdminUserRow[]>([]);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
   const [detail, setDetail] = useState<UserDetail | null>(null);
   const [detailLoading, setDetailLoading] = useState(false);
 
   const load = useCallback(() => {
     setLoading(true);
+    setError(null);
     adminApi
       .users(200, 0, search || null)
-      .then(setUsers)
-      .catch((e) => console.error(e))
+      .then((data) => {
+        setUsers(Array.isArray(data) ? data : []);
+      })
+      .catch((e) => {
+        console.error("[admin] users error:", e);
+        setError(e?.message || String(e));
+      })
       .finally(() => setLoading(false));
   }, [search]);
 
@@ -336,6 +343,12 @@ const UsersTab = () => {
 
       {loading ? (
         <p className="text-xs text-muted-foreground text-center py-8">Chargement...</p>
+      ) : error ? (
+        <div className="text-center py-8 space-y-2">
+          <AlertCircle className="h-5 w-5 text-red-400 mx-auto" />
+          <p className="text-xs text-red-400">Erreur : {error}</p>
+          <Button variant="outline" size="sm" onClick={load}>Réessayer</Button>
+        </div>
       ) : users.length === 0 ? (
         <p className="text-xs text-muted-foreground text-center py-8">Aucun utilisateur trouvé.</p>
       ) : (
