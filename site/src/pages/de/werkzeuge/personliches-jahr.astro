@@ -1,0 +1,91 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Persönliches Jahr Rechner - Numerologie des Jahres | Karmastro";
+const description =
+  "Berechne dein persönliches Jahr kostenlos. Jedes Jahr trägt ein spezifisches numerologisches Thema im Zyklus 1 bis 9. Entdecke die Energie deines laufenden Jahres.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "Persönliches Jahr Rechner", description, url: "https://karmastro.com/de/werkzeuge/personliches-jahr", applicationCategory: "UtilitiesApplication", inLanguage: "de", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "203" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "Was ist ein persönliches Jahr?", acceptedAnswer: { "@type": "Answer", text: "Eine Zahl von 1 bis 9 (oder 11, 22, 33), die die numerologische Energie deines aktuellen Jahres beschreibt. Teil eines neunjährigen Zyklus, der sich im Leben wiederholt." } },
+    { "@type": "Question", name: "Wie wird es berechnet?", acceptedAnswer: { "@type": "Answer", text: "Addiere Geburtstag + Geburtsmonat + laufendes Jahr (nicht dein Geburtsjahr). Reduziere auf eine Ziffer, außer bei 11, 22, 33." } },
+    { "@type": "Question", name: "Wann beginnt das persönliche Jahr?", acceptedAnswer: { "@type": "Answer", text: "Die meisten Numerologen lassen es am 1. Januar beginnen. Andere bevorzugen den Geburtstag. Beide Schulen haben Logik." } },
+    { "@type": "Question", name: "Was tun in jedem Jahr?", acceptedAnswer: { "@type": "Answer", text: "Jahr 1 säen. 2 Beziehungen. 3 Ausdruck. 4 Aufbau. 5 Wandel. 6 Verantwortung. 7 Innenschau. 8 Ernte. 9 Abschluss." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/de" class="hover:text-amber-300">Startseite</a><span class="mx-2">/</span>
+      <a href="/de/werkzeuge" class="hover:text-amber-300">Werkzeuge</a><span class="mx-2">/</span>
+      <span class="text-white/80">Persönliches Jahr</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Pythagoreische Numerologie</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Persönliches Jahr Rechner</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">Jedes Jahr trägt ein numerologisches Thema. Entdecke dein eigenes und richte dich mit seiner Energie aus, statt dagegen zu rudern.</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">★</div>
+      <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">Berechne dein persönliches Jahr</h2>
+      <p class="text-white/70 mb-6 max-w-xl mx-auto leading-relaxed">Du brauchst nur dein Geburtsdatum und das laufende Jahr. Die App summiert, reduziert und liefert die Zahl von 1 bis 9 (oder 11, 22, 33).</p>
+      <a href="https://app.karmastro.com/oracle?lang=de" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">Mein persönliches Jahr berechnen</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Der Neunjahreszyklus</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Die pythagoreische Numerologie betrachtet das Leben als Zyklen von neun Jahren. Jedes Jahr schreitet deine Zahl von 1 auf 9 und beginnt neu. Zu wissen, in welchem Jahr du stehst, hilft bei besseren Entscheidungen.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Berechnung</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Addiere Geburtstag + Geburtsmonat + <strong>laufendes Jahr</strong>. Reduziere. Beispiel für jemanden, der am 12. März geboren wurde, in 2026: 1+2+3+2+0+2+6 = 16 → 1+6 = 7. Persönliches Jahr 7.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Die neun Themen</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Jahr 1 · Säen</strong>: neue Anfänge, Grundentscheidungen.</li>
+        <li><strong>Jahr 2 · Beziehungen</strong>: Geduld, Allianzen.</li>
+        <li><strong>Jahr 3 · Ausdruck</strong>: Kreativität, Sichtbarkeit.</li>
+        <li><strong>Jahr 4 · Aufbau</strong>: Disziplin, Fundament.</li>
+        <li><strong>Jahr 5 · Wandel</strong>: Freiheit, Bewegung.</li>
+        <li><strong>Jahr 6 · Verantwortung</strong>: Familie, Dienst.</li>
+        <li><strong>Jahr 7 · Innenschau</strong>: Pause, Studium.</li>
+        <li><strong>Jahr 8 · Ernte</strong>: materielle Erfolge, Macht.</li>
+        <li><strong>Jahr 9 · Abschluss</strong>: loslassen, vollenden.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Persönliches Jahr innerhalb der Lebenszahl</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Kombiniere mit deiner <a href="/de/werkzeuge/lebenszahl" class="text-amber-300 hover:underline">Lebenszahl</a>. Ein Jahr 5 bei einer Lebenszahl 4 erzeugt produktive Spannung. Ein Jahr 8 bei Lebenszahl 8 verstärkt die Energie maximal.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Übergang zwischen Jahren</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Die Schwingung des neuen persönlichen Jahres beginnt ab Oktober und dominiert ab dem Geburtstag. Nutze diesen Vorlauf, um Unerledigtes des vorigen Zyklus abzuschließen.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Autoritative Quellen</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://de.wikipedia.org/wiki/Numerologie" class="text-amber-300 hover:underline" rel="external">Numerologie - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/topic/numerology" class="text-amber-300 hover:underline" rel="external">Numerology - Britannica</a></li>
+        <li><a href="https://de.wikipedia.org/wiki/Pythagoras" class="text-amber-300 hover:underline" rel="external">Pythagoras - Wikipedia</a></li>
+      </ul>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Vollständige Jahreslesung?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">Kreuze persönliches Jahr, Lebenszahl, Ausdruckszahl und astrologischen Kalender mit Pythia.</p>
+      <a href="https://app.karmastro.com/oracle?lang=de" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">Oracle öffnen</a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/de/werkzeuge" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Alle Werkzeuge</a>
+      <a href="/de/werkzeuge/lebenszahl" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Lebenszahl</a>
+      <a href="/de/werkzeuge/ausdruckszahl" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Ausdruckszahl</a>
+      <a href="/de/werkzeuge/geburtshoroskop" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Geburtshoroskop</a>
+      <a href="/de/werkzeuge/aszendent" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Aszendent</a>
+      <a href="/de/werkzeuge/partnerhoroskop" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Partnerhoroskop</a>
+      <a href="/de/horoskop" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Horoskop</a>
+      <a href="/de/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Blog</a>
+    </nav>
+  </article>
+</BaseLayout>

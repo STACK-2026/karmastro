@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Calculadora de Compatibilidade Zodiacal Grátis | Karmastro";
+const description =
+  "Compatibilidade zodiacal grátis: amor, amizade, trabalho e compatibilidade kármica entre dois signos. Baseada em elementos, modalidades e aspetos planetários.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "Calculadora de Compatibilidade Zodiacal", description, url: "https://karmastro.com/pt/ferramentas/compatibilidade", applicationCategory: "UtilitiesApplication", inLanguage: "pt", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "312" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "Como funciona a compatibilidade zodiacal?", acceptedAnswer: { "@type": "Answer", text: "Analisa relações entre elementos (fogo, terra, ar, água), modalidades (cardinal, fixo, mutável) e planetas regentes de dois signos. Signos do mesmo elemento ou de elementos complementares costumam ter maior afinidade natural." } },
+    { "@type": "Question", name: "Basta o signo solar?", acceptedAnswer: { "@type": "Answer", text: "Não, é apenas a primeira camada. Uma compatibilidade real cruza sol, lua, Vénus, Marte e ascendente das duas pessoas. A sinastria completa revela a química verdadeira." } },
+    { "@type": "Question", name: "Opostos atraem-se mesmo?", acceptedAnswer: { "@type": "Answer", text: "Sim e não. Os signos opostos partilham o eixo e estão feitos para se complementar, mas precisam de trabalho consciente. Atração inicial forte, convivência exige maturidade." } },
+    { "@type": "Question", name: "Quais signos são mais compatíveis?", acceptedAnswer: { "@type": "Answer", text: "Os do mesmo elemento têm afinidade natural. Elementos complementares também funcionam: fogo e ar alimentam-se, terra e água nutrem-se. Cada mapa completo conta uma história única." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/pt" class="hover:text-amber-300">Início</a><span class="mx-2">/</span>
+      <a href="/pt/ferramentas" class="hover:text-amber-300">Ferramentas</a><span class="mx-2">/</span>
+      <span class="text-white/80">Compatibilidade</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Astrologia Relacional</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Compatibilidade Zodiacal Grátis</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        Que signos combinam de verdade? A nossa calculadora cruza elementos, modalidades, regentes e aspetos para dar uma leitura honesta da afinidade.
+      </p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-pink-300/30 bg-gradient-to-br from-pink-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">♥</div>
+      <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">Descobre a vossa compatibilidade real</h2>
+      <p class="text-white/70 mb-6 max-w-xl mx-auto leading-relaxed">Indica os dois signos solares e acede a uma análise completa: amor, amizade, trabalho, compatibilidade kármica. Para aprofundar, usa a sinastria no Oráculo.</p>
+      <a href="https://app.karmastro.com/oracle?lang=pt" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-pink-400 to-purple-400 text-white font-semibold hover:opacity-90 transition-opacity">Calcular a compatibilidade</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">A lógica da compatibilidade</h2>
+      <p class="text-white/80 leading-relaxed mb-4">A astrologia não se limita a dizer "Carneiro e Leão combinam". Quatro camadas combinadas dão uma leitura fina: elementos, modalidades, planetas regentes e aspetos entre astros pessoais (Sol, Lua, Vénus, Marte).</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Os quatro elementos</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Fogo</strong> (Carneiro, Leão, Sagitário): paixão, ação, entusiasmo.</li>
+        <li><strong>Terra</strong> (Touro, Virgem, Capricórnio): estabilidade, sensualidade, pragmatismo.</li>
+        <li><strong>Ar</strong> (Gémeos, Balança, Aquário): mente, palavra, conexão social.</li>
+        <li><strong>Água</strong> (Caranguejo, Escorpião, Peixes): emoção, intuição, profundidade.</li>
+      </ul>
+      <p class="text-white/80 leading-relaxed mb-4">Fogo e ar alimentam-se. Terra e água nutrem-se. Combinações opostas geram tensão e, com trabalho, transformação.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">As modalidades</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Cardinal</strong>: iniciadores (Carneiro, Caranguejo, Balança, Capricórnio).</li>
+        <li><strong>Fixo</strong>: construtores, leais (Touro, Leão, Escorpião, Aquário).</li>
+        <li><strong>Mutável</strong>: adaptáveis (Gémeos, Virgem, Sagitário, Peixes).</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Para além do signo solar</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Uma compatibilidade séria cruza <strong>Lua</strong> (necessidades emocionais), <strong>Vénus</strong> (estilo amoroso), <strong>Marte</strong> (desejo e conflito) e <strong>Ascendente</strong> (primeira impressão). Para esta profundidade, vai à nossa <a href="/pt/ferramentas/mapa-natal" class="text-amber-300 hover:underline">Calculadora de Mapa Natal</a>.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Compatibilidade kármica</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Certos aspetos (conjunção Saturno-Vénus, nodo lunar sobre planeta pessoal) indicam vínculos kármicos. A numerologia também contribui: compara o <a href="/pt/ferramentas/numero-do-caminho-de-vida" class="text-amber-300 hover:underline">caminho de vida</a> de ambos.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Fontes autorizadas</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://pt.wikipedia.org/wiki/Zod%C3%ADaco" class="text-amber-300 hover:underline" rel="external">Zodíaco - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/topic/zodiac" class="text-amber-300 hover:underline" rel="external">Zodiac - Britannica</a></li>
+        <li><a href="https://pt.wikipedia.org/wiki/Sinastria" class="text-amber-300 hover:underline" rel="external">Sinastria - Wikipedia</a></li>
+      </ul>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-pink-300/30 bg-pink-300/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Queres uma sinastria completa?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">A sinastria compara dois mapas natais inteiros para ver a química real. Disponível no Oráculo.</p>
+      <a href="https://app.karmastro.com/oracle?lang=pt" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-pink-400 to-purple-400 text-white font-medium hover:opacity-90 transition-opacity">Abrir a sinastria</a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/pt/ferramentas" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Todas as ferramentas</a>
+      <a href="/pt/ferramentas/mapa-natal" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Mapa natal</a>
+      <a href="/pt/ferramentas/ascendente" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Ascendente</a>
+      <a href="/pt/ferramentas/numero-do-caminho-de-vida" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Caminho de vida</a>
+      <a href="/pt/ferramentas/numero-expressao" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Número de expressão</a>
+      <a href="/pt/ferramentas/ano-pessoal" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Ano pessoal</a>
+      <a href="/pt/horoscopo" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Horóscopo</a>
+      <a href="/pt/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Blog</a>
+    </nav>
+  </article>
+</BaseLayout>

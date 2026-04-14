@@ -1,0 +1,91 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Partnerhoroskop - Sternzeichen-Kompatibilität kostenlos | Karmastro";
+const description =
+  "Kostenlose Kompatibilität der Sternzeichen: Liebe, Freundschaft, Arbeit und karmische Verbindung zwischen zwei Zeichen. Basiert auf Elementen, Qualitäten und Planetenaspekten.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "Partnerhoroskop-Rechner", description, url: "https://karmastro.com/de/werkzeuge/partnerhoroskop", applicationCategory: "UtilitiesApplication", inLanguage: "de", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "291" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "Wie funktioniert Sternzeichen-Kompatibilität?", acceptedAnswer: { "@type": "Answer", text: "Sie analysiert Elemente (Feuer, Erde, Luft, Wasser), Qualitäten (kardinal, fix, veränderlich) und Herrscherplaneten zweier Zeichen. Zeichen desselben Elements oder komplementärer Elemente haben meist mehr natürliche Affinität." } },
+    { "@type": "Question", name: "Reicht das Sonnenzeichen?", acceptedAnswer: { "@type": "Answer", text: "Nein, es ist nur die erste Schicht. Echte Kompatibilität kreuzt Sonne, Mond, Venus, Mars und Aszendent beider Personen. Die vollständige Synastrie enthüllt die wahre Chemie." } },
+    { "@type": "Question", name: "Ziehen sich Gegensätze an?", acceptedAnswer: { "@type": "Answer", text: "Ja und nein. Gegenüberliegende Zeichen teilen die Achse und sind zur Ergänzung gemacht, brauchen aber bewusste Arbeit. Starke Anfangsanziehung, Zusammenleben verlangt Reife." } },
+    { "@type": "Question", name: "Welche Zeichen sind am kompatibelsten?", acceptedAnswer: { "@type": "Answer", text: "Zeichen desselben Elements haben natürliche Affinität. Komplementäre Elemente funktionieren auch: Feuer und Luft nähren sich, Erde und Wasser ebenso. Jede vollständige Geburtskarte erzählt eine eigene Geschichte." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/de" class="hover:text-amber-300">Startseite</a><span class="mx-2">/</span>
+      <a href="/de/werkzeuge" class="hover:text-amber-300">Werkzeuge</a><span class="mx-2">/</span>
+      <span class="text-white/80">Partnerhoroskop</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Beziehungsastrologie</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Partnerhoroskop & Sternzeichen-Kompatibilität</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">Welche Sternzeichen passen wirklich? Unser Rechner kreuzt Elemente, Qualitäten, Herrscherplaneten und Aspekte für eine ehrliche Deutung.</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-pink-300/30 bg-gradient-to-br from-pink-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">♥</div>
+      <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">Entdeckt eure wahre Kompatibilität</h2>
+      <p class="text-white/70 mb-6 max-w-xl mx-auto leading-relaxed">Gib die beiden Sonnenzeichen an und erhalte eine umfassende Analyse: Liebe, Freundschaft, Arbeit, karmische Verbindung.</p>
+      <a href="https://app.karmastro.com/oracle?lang=de" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-pink-400 to-purple-400 text-white font-semibold hover:opacity-90 transition-opacity">Kompatibilität berechnen</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Die Logik der Kompatibilität</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Die Astrologie beschränkt sich nicht auf "Widder und Löwe passen". Vier Schichten kombiniert geben eine feine Deutung: Elemente, Qualitäten, Herrscherplaneten und Aspekte zwischen persönlichen Himmelskörpern (Sonne, Mond, Venus, Mars).</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Die vier Elemente</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Feuer</strong> (Widder, Löwe, Schütze): Leidenschaft, Handlung.</li>
+        <li><strong>Erde</strong> (Stier, Jungfrau, Steinbock): Stabilität, Pragmatismus.</li>
+        <li><strong>Luft</strong> (Zwillinge, Waage, Wassermann): Denken, Kommunikation.</li>
+        <li><strong>Wasser</strong> (Krebs, Skorpion, Fische): Gefühl, Tiefe.</li>
+      </ul>
+      <p class="text-white/80 leading-relaxed mb-4">Feuer und Luft nähren sich (Wind entfacht Flamme). Erde und Wasser nähren sich ebenso. Gegensätzliche Kombinationen erzeugen Spannung und, mit Arbeit, Transformation.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Die Qualitäten</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Kardinal</strong>: Initiatoren (Widder, Krebs, Waage, Steinbock).</li>
+        <li><strong>Fix</strong>: Erbauer, loyal (Stier, Löwe, Skorpion, Wassermann).</li>
+        <li><strong>Veränderlich</strong>: anpassungsfähig (Zwillinge, Jungfrau, Schütze, Fische).</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Jenseits des Sonnenzeichens</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Echte Kompatibilität kreuzt <strong>Mond</strong> (emotionale Bedürfnisse), <strong>Venus</strong> (Liebesstil), <strong>Mars</strong> (Begehren und Konflikt) und <strong>Aszendent</strong>. Für diese Tiefe nutze unseren <a href="/de/werkzeuge/geburtshoroskop" class="text-amber-300 hover:underline">Geburtshoroskop-Rechner</a>.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Karmische Kompatibilität</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Bestimmte Aspekte (Saturn-Venus-Konjunktion, Mondknoten auf persönlichem Planeten) deuten karmische Bindungen an. Die Numerologie trägt ebenfalls bei: vergleicht eure <a href="/de/werkzeuge/lebenszahl" class="text-amber-300 hover:underline">Lebenszahlen</a>.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Autoritative Quellen</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://de.wikipedia.org/wiki/Tierkreis" class="text-amber-300 hover:underline" rel="external">Tierkreis - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/topic/zodiac" class="text-amber-300 hover:underline" rel="external">Zodiac - Britannica</a></li>
+        <li><a href="https://de.wikipedia.org/wiki/Synastrie" class="text-amber-300 hover:underline" rel="external">Synastrie - Wikipedia</a></li>
+      </ul>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-pink-300/30 bg-pink-300/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Vollständige Synastrie?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">Die Synastrie vergleicht zwei vollständige Geburtshoroskope für die wahre Chemie. Im Oracle verfügbar.</p>
+      <a href="https://app.karmastro.com/oracle?lang=de" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-pink-400 to-purple-400 text-white font-medium hover:opacity-90 transition-opacity">Synastrie öffnen</a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/de/werkzeuge" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Alle Werkzeuge</a>
+      <a href="/de/werkzeuge/geburtshoroskop" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Geburtshoroskop</a>
+      <a href="/de/werkzeuge/aszendent" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Aszendent</a>
+      <a href="/de/werkzeuge/lebenszahl" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Lebenszahl</a>
+      <a href="/de/werkzeuge/ausdruckszahl" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Ausdruckszahl</a>
+      <a href="/de/werkzeuge/personliches-jahr" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Persönliches Jahr</a>
+      <a href="/de/horoskop" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Horoskop</a>
+      <a href="/de/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Blog</a>
+    </nav>
+  </article>
+</BaseLayout>

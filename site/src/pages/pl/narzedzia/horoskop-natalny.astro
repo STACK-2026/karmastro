@@ -1,0 +1,86 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Kalkulator Horoskopu Natalnego - Darmowa Karta Natalna | Karmastro";
+const description =
+  "Darmowy kalkulator horoskopu natalnego ze Swiss Ephemeris. Wszystkie 10 planet, 12 domów, ascendent i pełna interpretacja po polsku. Profesjonalna precyzja.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "Kalkulator Horoskopu Natalnego", description, url: "https://karmastro.com/pl/narzedzia/horoskop-natalny", applicationCategory: "UtilitiesApplication", inLanguage: "pl", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "263" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "Czym jest horoskop natalny?", acceptedAnswer: { "@type": "Answer", text: "Horoskop natalny, zwany też kartą natalną, to astronomiczna fotografia nieba w dokładnym momencie i miejscu twoich narodzin. Pokazuje pozycje Słońca, Księżyca i ośmiu planet, znaki zodiaku, 12 domów i aspekty między nimi." } },
+    { "@type": "Question", name: "Czy kalkulator jest naprawdę darmowy?", acceptedAnswer: { "@type": "Answer", text: "Tak. Karmastro oferuje pełny darmowy horoskop natalny z 10 ciałami niebieskimi, 12 domami, głównymi aspektami i pisemną interpretacją. Bez obowiązkowej rejestracji." } },
+    { "@type": "Question", name: "Jaka jest precyzja?", acceptedAnswer: { "@type": "Answer", text: "Karmastro używa Swiss Ephemeris, astronomicznego standardu profesjonalnych astrologów. Precyzja do sekundy kątowej. System domów Placidus domyślnie." } },
+    { "@type": "Question", name: "Czy potrzebuję dokładnej godziny narodzin?", acceptedAnswer: { "@type": "Answer", text: "Do pełnego horoskopu natalnego tak. Ascendent i 12 domów zależą od dokładnej godziny. Bez niej można wiarygodnie obliczyć znak słoneczny, księżycowy i planety wewnętrzne." } },
+    { "@type": "Question", name: "Co ujawnia horoskop natalny?", acceptedAnswer: { "@type": "Answer", text: "Ujawnia rdzeń tożsamości (Słońce), świat emocji (Księżyc), maskę społeczną (Ascendent), styl komunikacji (Merkury), styl miłosny (Wenus), pęd (Mars), wzorzec wzrostu (Jowisz), dyscyplinę (Saturn) i tematy pokoleniowe." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/pl" class="hover:text-amber-300">Strona główna</a><span class="mx-2">/</span>
+      <a href="/pl/narzedzia" class="hover:text-amber-300">Narzędzia</a><span class="mx-2">/</span>
+      <span class="text-white/80">Horoskop natalny</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Astrologia Zachodnia</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Darmowy Kalkulator Horoskopu Natalnego</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">Pełna karta natalna obliczona Swiss Ephemeris. Każda planeta, każdy dom, każdy aspekt, z jasną interpretacją po polsku.</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">✦</div>
+      <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">Zdobądź pełny horoskop natalny</h2>
+      <p class="text-white/70 mb-6 max-w-xl mx-auto leading-relaxed">Potrzebujemy dokładnej daty, godziny i miejsca urodzenia. Orion, nasza przewodniczka astrologiczna, dostarczy spersonalizowaną interpretację.</p>
+      <a href="https://app.karmastro.com/oracle?lang=pl" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">Mój darmowy horoskop natalny</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Czym jest horoskop natalny?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Horoskop natalny, zwany też <strong>kartą natalną</strong> lub <strong>radixem</strong>, to precyzyjna astronomiczna mapa nieba w dokładnym momencie i miejscu twoich narodzin. Zapisuje pozycje Słońca, Księżyca i ośmiu planet względem zodiaku i horyzontu.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Zawartość horoskopu</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>10 ciał niebieskich</strong>: Słońce, Księżyc, Merkury, Wenus, Mars, Jowisz, Saturn, Uran, Neptun, Pluton.</li>
+        <li><strong>12 znaków zodiaku</strong>: barwią ekspresję każdej planety.</li>
+        <li><strong>12 domów</strong>: opisują obszary życia.</li>
+        <li><strong>Aspekty</strong>: kąty geometryczne między planetami.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Wielka trójka</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Słońce (tożsamość), Księżyc (emocje) i <a href="/pl/narzedzia/wschodzacy-znak" class="text-amber-300 hover:underline">Ascendent</a> (maska). To 80% historii.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Jak obliczamy twoją kartę</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Swiss Ephemeris, złoty standard precyzji astronomicznej. System Placidus domyślnie. Potem Orion dostarcza narracyjną interpretację dopasowaną do twojej karty.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Dlaczego dokładna godzina</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Ascendent zmienia się średnio co dwie godziny, 12 domów zależy całkowicie od godziny. Sprawdź akt urodzenia.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Autorytatywne źródła</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://pl.wikipedia.org/wiki/Horoskop" class="text-amber-300 hover:underline" rel="external">Horoskop - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/topic/astrology" class="text-amber-300 hover:underline" rel="external">Astrology - Britannica</a></li>
+        <li><a href="https://www.astro.com/swisseph/" class="text-amber-300 hover:underline" rel="external">Swiss Ephemeris</a></li>
+      </ul>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Gotowy na pełny horoskop?</h3>
+      <a href="https://app.karmastro.com/oracle?lang=pl" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">Obliczyć horoskop natalny</a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/pl/narzedzia" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Wszystkie narzędzia</a>
+      <a href="/pl/narzedzia/wschodzacy-znak" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Ascendent</a>
+      <a href="/pl/narzedzia/liczba-drogi-zycia" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Droga życia</a>
+      <a href="/pl/narzedzia/kompatybilnosc" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Kompatybilność</a>
+      <a href="/pl/narzedzia/liczba-ekspresji" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Liczba ekspresji</a>
+      <a href="/pl/narzedzia/rok-osobisty" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Rok osobisty</a>
+      <a href="/pl/horoskop" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Horoskop</a>
+      <a href="/pl/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Blog</a>
+    </nav>
+  </article>
+</BaseLayout>

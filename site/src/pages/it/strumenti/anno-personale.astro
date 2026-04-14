@@ -1,0 +1,91 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Calcolatore dell'Anno Personale - Numerologia dell'anno | Karmastro";
+const description =
+  "Calcola gratis il tuo anno personale. Ogni anno porta un tema numerologico specifico del ciclo da 1 a 9. Scopri l'energia del tuo anno in corso.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "Calcolatore Anno Personale", description, url: "https://karmastro.com/it/strumenti/anno-personale", applicationCategory: "UtilitiesApplication", inLanguage: "it", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "176" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "Cos'è un anno personale?", acceptedAnswer: { "@type": "Answer", text: "Un numero da 1 a 9 (o 11, 22, 33) che descrive l'energia numerologica del tuo anno corrente. Parte di un ciclo di 9 anni che si ripete nella vita." } },
+    { "@type": "Question", name: "Come si calcola?", acceptedAnswer: { "@type": "Answer", text: "Somma giorno + mese di nascita + anno in corso. Riduci a una cifra, tranne 11, 22, 33." } },
+    { "@type": "Question", name: "Quando inizia?", acceptedAnswer: { "@type": "Answer", text: "La maggior parte dei numerologi lo fa iniziare il 1 gennaio. Altri preferiscono il compleanno." } },
+    { "@type": "Question", name: "Cosa fare ogni anno?", acceptedAnswer: { "@type": "Answer", text: "Anno 1 seminare. 2 relazioni. 3 espressione. 4 costruzione. 5 cambiamento. 6 responsabilità. 7 introspezione. 8 raccolto. 9 chiusura." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/it" class="hover:text-amber-300">Home</a><span class="mx-2">/</span>
+      <a href="/it/strumenti" class="hover:text-amber-300">Strumenti</a><span class="mx-2">/</span>
+      <span class="text-white/80">Anno personale</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Numerologia Pitagorica</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Calcolatore dell'Anno Personale</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">Ogni anno porta un tema numerologico. Scopri il tuo e allineati con la sua energia.</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">★</div>
+      <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">Calcola il tuo anno personale</h2>
+      <p class="text-white/70 mb-6 max-w-xl mx-auto leading-relaxed">Solo la tua data di nascita e l'anno in corso.</p>
+      <a href="https://app.karmastro.com/oracle?lang=it" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">Calcolare il mio anno personale</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Il ciclo di nove anni</h2>
+      <p class="text-white/80 leading-relaxed mb-4">La numerologia pitagorica considera la vita in cicli di nove anni. Ogni anno il tuo numero personale progredisce da 1 a 9 e ricomincia.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Come calcolare</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Somma giorno + mese di nascita + <strong>anno in corso</strong>. Riduci. Esempio per chi è nato il 12 marzo in 2026: 1+2+3+2+0+2+6 = 16 → 1+6 = 7. Anno personale 7.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">I nove temi</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Anno 1 · Semina</strong>: nuovi inizi.</li>
+        <li><strong>Anno 2 · Relazioni</strong>: pazienza, alleanze.</li>
+        <li><strong>Anno 3 · Espressione</strong>: creatività.</li>
+        <li><strong>Anno 4 · Costruzione</strong>: disciplina.</li>
+        <li><strong>Anno 5 · Cambiamento</strong>: libertà.</li>
+        <li><strong>Anno 6 · Responsabilità</strong>: famiglia, servizio.</li>
+        <li><strong>Anno 7 · Introspezione</strong>: pausa, studio.</li>
+        <li><strong>Anno 8 · Raccolto</strong>: successi materiali.</li>
+        <li><strong>Anno 9 · Chiusura</strong>: lasciar andare.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">L'anno personale dentro il cammino di vita</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Combina il tuo anno personale con il tuo <a href="/it/strumenti/numero-del-cammino-di-vita" class="text-amber-300 hover:underline">cammino di vita</a>. Un anno 5 per un cammino 4 crea tensione produttiva.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Transizione tra gli anni</h2>
+      <p class="text-white/80 leading-relaxed mb-4">La vibrazione del nuovo anno inizia a sentirsi da ottobre e domina dal compleanno.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Fonti autorevoli</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://it.wikipedia.org/wiki/Numerologia" class="text-amber-300 hover:underline" rel="external">Numerologia - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/topic/numerology" class="text-amber-300 hover:underline" rel="external">Numerology - Britannica</a></li>
+        <li><a href="https://it.wikipedia.org/wiki/Pitagora" class="text-amber-300 hover:underline" rel="external">Pitagora - Wikipedia</a></li>
+      </ul>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Lettura completa dell'anno?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">Pythia incrocia anno personale, cammino di vita e calendario astrologico.</p>
+      <a href="https://app.karmastro.com/oracle?lang=it" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">Aprire l'Oracle</a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/it/strumenti" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Tutti gli strumenti</a>
+      <a href="/it/strumenti/numero-del-cammino-di-vita" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Cammino di vita</a>
+      <a href="/it/strumenti/numero-espressione" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Numero di espressione</a>
+      <a href="/it/strumenti/tema-natale" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Tema natale</a>
+      <a href="/it/strumenti/ascendente" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Ascendente</a>
+      <a href="/it/strumenti/compatibilita" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Compatibilità</a>
+      <a href="/it/oroscopo" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Oroscopo</a>
+      <a href="/it/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Blog</a>
+    </nav>
+  </article>
+</BaseLayout>

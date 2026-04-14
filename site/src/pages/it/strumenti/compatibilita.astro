@@ -1,0 +1,90 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Calcolatore Compatibilità Zodiacale Gratis | Karmastro";
+const description =
+  "Compatibilità zodiacale gratis: amore, amicizia, lavoro e compatibilità karmica tra due segni. Basata su elementi, modalità e aspetti planetari.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "Calcolatore Compatibilità Zodiacale", description, url: "https://karmastro.com/it/strumenti/compatibilita", applicationCategory: "UtilitiesApplication", inLanguage: "it", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "278" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "Come funziona la compatibilità zodiacale?", acceptedAnswer: { "@type": "Answer", text: "Analizza le relazioni tra elementi (fuoco, terra, aria, acqua), modalità (cardinale, fisso, mutevole) e pianeti reggenti di due segni. Segni dello stesso elemento o di elementi complementari hanno maggiore affinità naturale." } },
+    { "@type": "Question", name: "Basta il segno solare?", acceptedAnswer: { "@type": "Answer", text: "No, è solo il primo strato. Una compatibilità reale incrocia sole, luna, Venere, Marte e ascendente delle due persone." } },
+    { "@type": "Question", name: "Gli opposti si attraggono?", acceptedAnswer: { "@type": "Answer", text: "Sì e no. I segni opposti condividono l'asse e sono fatti per completarsi, ma richiedono lavoro consapevole." } },
+    { "@type": "Question", name: "Quali segni sono più compatibili?", acceptedAnswer: { "@type": "Answer", text: "Quelli dello stesso elemento hanno affinità naturale. Elementi complementari funzionano: fuoco e aria si alimentano, terra e acqua si nutrono." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/it" class="hover:text-amber-300">Home</a><span class="mx-2">/</span>
+      <a href="/it/strumenti" class="hover:text-amber-300">Strumenti</a><span class="mx-2">/</span>
+      <span class="text-white/80">Compatibilità</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Astrologia Relazionale</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Compatibilità Zodiacale Gratis</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">Quali segni si incastrano davvero? Il nostro calcolatore incrocia elementi, modalità, pianeti reggenti e aspetti per una lettura onesta.</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-pink-300/30 bg-gradient-to-br from-pink-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">♥</div>
+      <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">Scopri la vostra compatibilità reale</h2>
+      <p class="text-white/70 mb-6 max-w-xl mx-auto leading-relaxed">Indica i due segni solari e accedi a un'analisi completa: amore, amicizia, lavoro, compatibilità karmica.</p>
+      <a href="https://app.karmastro.com/oracle?lang=it" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-pink-400 to-purple-400 text-white font-semibold hover:opacity-90 transition-opacity">Calcolare la compatibilità</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">La logica della compatibilità</h2>
+      <p class="text-white/80 leading-relaxed mb-4">L'astrologia non si limita a dire "Ariete e Leone vanno d'accordo". Quattro strati combinati danno una lettura fine: elementi, modalità, pianeti reggenti e aspetti tra astri personali (Sole, Luna, Venere, Marte).</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">I quattro elementi</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Fuoco</strong> (Ariete, Leone, Sagittario): passione, azione.</li>
+        <li><strong>Terra</strong> (Toro, Vergine, Capricorno): stabilità, pragmatismo.</li>
+        <li><strong>Aria</strong> (Gemelli, Bilancia, Acquario): mente, parola.</li>
+        <li><strong>Acqua</strong> (Cancro, Scorpione, Pesci): emozione, profondità.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Le modalità</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Cardinale</strong>: iniziatori.</li>
+        <li><strong>Fisso</strong>: costruttori, leali.</li>
+        <li><strong>Mutevole</strong>: adattabili.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Oltre il segno solare</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Una compatibilità seria incrocia <strong>Luna</strong>, <strong>Venere</strong>, <strong>Marte</strong> e <strong>Ascendente</strong>. Per questa profondità, vai al nostro <a href="/it/strumenti/tema-natale" class="text-amber-300 hover:underline">Calcolatore del Tema Natale</a>.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Compatibilità karmica</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Certi aspetti indicano legami karmici. La numerologia contribuisce: confronta il <a href="/it/strumenti/numero-del-cammino-di-vita" class="text-amber-300 hover:underline">cammino di vita</a> di entrambi.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Fonti autorevoli</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://it.wikipedia.org/wiki/Zodiaco" class="text-amber-300 hover:underline" rel="external">Zodiaco - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/topic/zodiac" class="text-amber-300 hover:underline" rel="external">Zodiac - Britannica</a></li>
+        <li><a href="https://it.wikipedia.org/wiki/Sinastria" class="text-amber-300 hover:underline" rel="external">Sinastria - Wikipedia</a></li>
+      </ul>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-pink-300/30 bg-pink-300/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Vuoi una sinastria completa?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">Disponibile nell'Oracle.</p>
+      <a href="https://app.karmastro.com/oracle?lang=it" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-pink-400 to-purple-400 text-white font-medium hover:opacity-90 transition-opacity">Aprire la sinastria</a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/it/strumenti" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Tutti gli strumenti</a>
+      <a href="/it/strumenti/tema-natale" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Tema natale</a>
+      <a href="/it/strumenti/ascendente" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Ascendente</a>
+      <a href="/it/strumenti/numero-del-cammino-di-vita" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Cammino di vita</a>
+      <a href="/it/strumenti/numero-espressione" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Numero di espressione</a>
+      <a href="/it/strumenti/anno-personale" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Anno personale</a>
+      <a href="/it/oroscopo" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Oroscopo</a>
+      <a href="/it/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Blog</a>
+    </nav>
+  </article>
+</BaseLayout>

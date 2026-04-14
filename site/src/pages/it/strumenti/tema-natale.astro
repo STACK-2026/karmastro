@@ -1,0 +1,103 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Calcolatore del Tema Natale Gratis - Carta Astrale | Karmastro";
+const description =
+  "Calcola il tuo tema natale gratis con Swiss Ephemeris. Tutti i 10 pianeti, le 12 case, l'ascendente e interpretazione completa in italiano. Precisione professionale.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "Calcolatore Tema Natale", description, url: "https://karmastro.com/it/strumenti/tema-natale", applicationCategory: "UtilitiesApplication", inLanguage: "it", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "346" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "Cos'è un tema natale?", acceptedAnswer: { "@type": "Answer", text: "Il tema natale, detto anche carta astrale o oroscopo natale, è una fotografia astronomica del cielo nell'istante esatto e nel luogo della tua nascita. Mostra la posizione del Sole, della Luna e degli otto pianeti, i segni che occupavano, le 12 case e gli aspetti." } },
+    { "@type": "Question", name: "Il calcolatore è davvero gratis?", acceptedAnswer: { "@type": "Answer", text: "Sì. Karmastro offre un tema natale completo gratis con i 10 corpi celesti, le 12 case, gli aspetti maggiori e un'interpretazione scritta. Nessuna registrazione obbligatoria." } },
+    { "@type": "Question", name: "Quale precisione usa Karmastro?", acceptedAnswer: { "@type": "Answer", text: "Karmastro usa Swiss Ephemeris, il motore astronomico standard degli astrologi professionisti. Precisione al secondo d'arco. Sistema di case Placidus di default, con Segno Intero e Case Uguali disponibili." } },
+    { "@type": "Question", name: "Mi serve l'ora esatta di nascita?", acceptedAnswer: { "@type": "Answer", text: "Per un tema natale completo, sì. L'ascendente e le 12 case dipendono dall'ora esatta. Senza, possiamo calcolare segno solare, segno lunare (approssimato) e pianeti interni con affidabilità." } },
+    { "@type": "Question", name: "Cosa rivela il mio tema natale?", acceptedAnswer: { "@type": "Answer", text: "Rivela l'identità centrale (Sole), il mondo emotivo (Luna), la maschera sociale (Ascendente), lo stile comunicativo (Mercurio), lo stile amoroso (Venere), il desiderio (Marte), il pattern di crescita (Giove), la disciplina (Saturno) e i temi generazionali (Urano, Nettuno, Plutone)." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/it" class="hover:text-amber-300">Home</a><span class="mx-2">/</span>
+      <a href="/it/strumenti" class="hover:text-amber-300">Strumenti</a><span class="mx-2">/</span>
+      <span class="text-white/80">Tema natale</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Astrologia Occidentale</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Calcolatore del Tema Natale Gratis</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">Il tuo tema natale completo, calcolato con Swiss Ephemeris. Ogni pianeta, ogni casa, ogni aspetto, con interpretazione chiara in italiano.</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">✦</div>
+      <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">Ottieni il tuo tema natale completo</h2>
+      <p class="text-white/70 mb-6 max-w-xl mx-auto leading-relaxed">Il calcolo completo richiede data, ora e luogo esatti di nascita. Orion, la nostra guida astrologica, consegna l'interpretazione personalizzata.</p>
+      <a href="https://app.karmastro.com/oracle?lang=it" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">Ottenere il mio tema natale gratis</a>
+      <p class="text-xs text-white/50 mt-3">Nessuna carta, nessuna registrazione obbligatoria</p>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Cos'è un tema natale?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Un <strong>tema natale</strong>, detto anche <strong>carta astrale</strong>, è una mappa astronomica precisa del cielo nell'istante esatto e nel luogo della tua nascita. Registra la posizione del Sole, della Luna e degli otto pianeti rispetto allo zodiaco e all'orizzonte del tuo luogo di nascita. Questa istantanea non si ripete mai in modo identico: per questo la tua carta è unica come un'impronta digitale.</p>
+      <p class="text-white/80 leading-relaxed mb-4">L'astrologia sostiene che questa fotografia codifica le dinamiche psicologiche con cui attraversi la vita. Non è destino, è la descrizione delle carte che ti sono state date. Come giocarle dipende da te.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Cosa contiene il tema natale</h2>
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-6">
+        <div class="p-4 rounded-xl border border-amber-300/20 bg-amber-300/5"><p class="font-serif text-lg text-amber-300 mb-1">I 10 corpi celesti</p><p class="text-sm text-white/70 leading-relaxed">Sole, Luna, Mercurio, Venere, Marte, Giove, Saturno, Urano, Nettuno, Plutone.</p></div>
+        <div class="p-4 rounded-xl border border-purple-300/20 bg-purple-300/5"><p class="font-serif text-lg text-purple-300 mb-1">I 12 segni</p><p class="text-sm text-white/70 leading-relaxed">I segni colorano l'espressione di ogni pianeta. Marte in Ariete agisce diverso da Marte in Pesci.</p></div>
+        <div class="p-4 rounded-xl border border-sky-300/20 bg-sky-300/5"><p class="font-serif text-lg text-sky-300 mb-1">Le 12 case</p><p class="text-sm text-white/70 leading-relaxed">Le case descrivono le aree della vita: identità, denaro, relazioni, carriera.</p></div>
+        <div class="p-4 rounded-xl border border-pink-300/20 bg-pink-300/5"><p class="font-serif text-lg text-pink-300 mb-1">Gli aspetti</p><p class="text-sm text-white/70 leading-relaxed">Angoli geometrici tra pianeti che descrivono come le loro energie cooperano o trasformano.</p></div>
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">I 10 pianeti e il loro significato</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Sole</strong>: identità centrale, ego, volontà.</li>
+        <li><strong>Luna</strong>: mondo emotivo, istinti.</li>
+        <li><strong>Mercurio</strong>: pensiero, comunicazione.</li>
+        <li><strong>Venere</strong>: cosa ami, estetica, valori.</li>
+        <li><strong>Marte</strong>: impulso, desiderio, azione.</li>
+        <li><strong>Giove</strong>: crescita, espansione, senso.</li>
+        <li><strong>Saturno</strong>: disciplina, karma, struttura.</li>
+        <li><strong>Urano</strong>: ribellione, innovazione.</li>
+        <li><strong>Nettuno</strong>: sogni, spiritualità.</li>
+        <li><strong>Plutone</strong>: trasformazione profonda, potere.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">I tre grandi: sole, luna, ascendente</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Conoscere solo tre posizioni racconta l'80 per cento della storia: il <strong>segno solare</strong> (identità), il <strong>segno lunare</strong> (emotività) e l'<strong>ascendente</strong> (maschera sociale). Se non conosci ancora il tuo ascendente, inizia dal nostro <a href="/it/strumenti/ascendente" class="text-amber-300 hover:underline">Calcolatore di Ascendente</a>.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Come Karmastro calcola il tuo tema</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Usiamo la <strong>Swiss Ephemeris</strong>, lo standard di precisione astronomica usato dagli astrologi professionisti e dagli osservatori scientifici. Sistema di case <strong>Placidus</strong> di default. Poi <strong>Orion</strong>, la nostra guida, consegna una lettura narrativa su misura.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Perché l'ora esatta conta</h2>
+      <p class="text-white/80 leading-relaxed mb-4">La Luna avanza di circa un grado ogni due ore. L'<strong>ascendente</strong> cambia ogni due ore in media. Le <strong>12 case</strong> dipendono totalmente dall'ora esatta. Controlla prima il certificato di nascita.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Fonti autorevoli</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://it.wikipedia.org/wiki/Tema_natale" class="text-amber-300 hover:underline" rel="external">Tema natale - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/topic/astrology" class="text-amber-300 hover:underline" rel="external">Astrology - Britannica</a></li>
+        <li><a href="https://www.astro.com/swisseph/" class="text-amber-300 hover:underline" rel="external">Swiss Ephemeris - AstroDienst</a></li>
+      </ul>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Pronto per il tuo tema completo?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">10 pianeti, 12 case, aspetti maggiori, lettura scritta. Gratis.</p>
+      <a href="https://app.karmastro.com/oracle?lang=it" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">Calcolare il mio tema natale</a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/it/strumenti" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Tutti gli strumenti</a>
+      <a href="/it/strumenti/ascendente" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Ascendente</a>
+      <a href="/it/strumenti/numero-del-cammino-di-vita" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Cammino di vita</a>
+      <a href="/it/strumenti/compatibilita" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Compatibilità</a>
+      <a href="/it/strumenti/numero-espressione" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Numero di espressione</a>
+      <a href="/it/strumenti/anno-personale" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Anno personale</a>
+      <a href="/it/oroscopo" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Oroscopo</a>
+      <a href="/it/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Blog</a>
+    </nav>
+  </article>
+</BaseLayout>

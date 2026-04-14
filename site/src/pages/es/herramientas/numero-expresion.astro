@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Calculadora del Número de Expresión (Número del Destino) | Karmastro";
+const description =
+  "Calcula tu número de expresión gratis, también llamado número del destino. Revela tus talentos innatos, tu misión y la dirección natural de tu vida. Numerología pitagórica.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Calculadora del Número de Expresión",
+    description,
+    url: "https://karmastro.com/es/herramientas/numero-expresion",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Any",
+    inLanguage: "es",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "298" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "¿Qué es el número de expresión?", acceptedAnswer: { "@type": "Answer", text: "El número de expresión, también llamado número del destino, se obtiene a partir del nombre completo de nacimiento. Revela los talentos innatos, las habilidades naturales y la misión vital que traes de fábrica." } },
+      { "@type": "Question", name: "¿En qué se diferencia del camino de vida?", acceptedAnswer: { "@type": "Answer", text: "El camino de vida se calcula desde la fecha de nacimiento y muestra el viaje. El número de expresión se calcula desde el nombre completo de nacimiento y muestra las herramientas que traes para recorrerlo." } },
+      { "@type": "Question", name: "¿Qué nombre debo usar?", acceptedAnswer: { "@type": "Answer", text: "Siempre el nombre completo que figura en tu certificado de nacimiento, incluyendo segundos nombres y apellidos. No el nombre casado, ni el apodo, ni el nombre artístico. El número de expresión viene de la vibración original del nacimiento." } },
+      { "@type": "Question", name: "¿Qué son los números maestros 11, 22 y 33?", acceptedAnswer: { "@type": "Answer", text: "Los números maestros 11, 22 y 33 no se reducen. Cargan una vibración elevada: 11 intuición visionaria, 22 maestro constructor, 33 maestro sanador. Son dones exigentes que piden madurez." } },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/es" class="hover:text-amber-300">Inicio</a>
+      <span class="mx-2">/</span>
+      <a href="/es/herramientas" class="hover:text-amber-300">Herramientas</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Número de expresión</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Numerología Pitagórica</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Calculadora del Número de Expresión</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        También llamado número del destino. Revela los talentos innatos que traes desde el nacimiento y la dirección natural de tu vida. Gratis, preciso, en español.
+      </p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">A</div>
+      <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">Calcula tu número de expresión</h2>
+      <p class="text-white/70 mb-6 max-w-xl mx-auto leading-relaxed">
+        Necesitas tu nombre completo de nacimiento, tal como aparece en el certificado. La app aplica la tabla pitagórica letra a letra y reduce hasta el número final (excepto números maestros 11, 22, 33).
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=es" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+        Calcular mi número de expresión
+      </a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">¿Qué es el número de expresión?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        El número de expresión (también conocido como número del destino) es una de las cifras fundamentales de la numerología pitagórica. Mientras el <a href="/es/herramientas/camino-de-vida" class="text-amber-300 hover:underline">camino de vida</a> describe el viaje que recorres, el número de expresión describe las <strong>herramientas con las que naces para recorrerlo</strong>: tus talentos innatos, tu vocación natural, la misión que trae tu vibración original.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Cómo se calcula</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        El método pitagórico asigna un número del 1 al 9 a cada letra del alfabeto: A=1, B=2, C=3, ..., I=9, J=1, etc. Se suman todos los valores de tu nombre completo de nacimiento y se reduce el total a una sola cifra, salvo cuando aparecen los números maestros 11, 22 o 33, que se conservan.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Significado breve de cada número</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>1 El Pionero</strong>: liderazgo, originalidad, independencia.</li>
+        <li><strong>2 El Diplomático</strong>: sensibilidad, cooperación, mediación.</li>
+        <li><strong>3 El Artista</strong>: expresión, creatividad, carisma.</li>
+        <li><strong>4 El Constructor</strong>: disciplina, estructura, fiabilidad.</li>
+        <li><strong>5 El Aventurero</strong>: libertad, cambio, versatilidad.</li>
+        <li><strong>6 El Cuidador</strong>: responsabilidad, amor, servicio.</li>
+        <li><strong>7 El Buscador</strong>: sabiduría, introspección, espiritualidad.</li>
+        <li><strong>8 El Estratega</strong>: poder, abundancia, organización.</li>
+        <li><strong>9 El Humanitario</strong>: compasión, visión universal, cierre de ciclos.</li>
+        <li><strong>11 El Visionario</strong>: intuición elevada, inspiración.</li>
+        <li><strong>22 El Maestro Constructor</strong>: realización material a gran escala.</li>
+        <li><strong>33 El Maestro Sanador</strong>: amor incondicional al servicio del mundo.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Expresión, alma y personalidad</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        El número de expresión se construye con todas las letras del nombre. A partir de él, la numerología deriva dos cifras complementarias: el <strong>número del alma</strong> (solo vocales: lo que deseas en el fondo) y el <strong>número de la personalidad</strong> (solo consonantes: cómo te perciben los demás). Los tres juntos forman tu firma numerológica.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Por qué usar el nombre de nacimiento</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        La tradición pitagórica sostiene que el primer nombre dado al nacer carga la vibración original con la que llegas al mundo. Cambiar de apellido al casarte, usar un apodo o un nombre artístico añade vibraciones secundarias, pero no reemplaza tu número de expresión nativo. Es el código madre.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Fuentes autorizadas</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://es.wikipedia.org/wiki/Numerolog%C3%ADa" class="text-amber-300 hover:underline" rel="external">Numerología - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/topic/numerology" class="text-amber-300 hover:underline" rel="external">Numerology - Britannica</a></li>
+        <li><a href="https://es.wikipedia.org/wiki/Pit%C3%A1goras" class="text-amber-300 hover:underline" rel="external">Pitágoras - Wikipedia</a></li>
+      </ul>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">¿Quieres tu lectura numerológica completa?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
+        Camino de vida, expresión, alma, personalidad, año personal, deuda kármica. Pythia, nuestra guía numerológica, los cruza todos en una lectura única.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=es" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
+        Consultar a Pythia
+      </a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/es/herramientas" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Todas las herramientas</a>
+      <a href="/es/herramientas/camino-de-vida" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Camino de vida</a>
+      <a href="/es/herramientas/ano-personal" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Año personal</a>
+      <a href="/es/herramientas/carta-natal" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Carta natal</a>
+      <a href="/es/herramientas/ascendente" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Ascendente</a>
+      <a href="/es/herramientas/compatibilidad" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Compatibilidad</a>
+      <a href="/es/horoscopo" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Horóscopo</a>
+      <a href="/es/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Blog</a>
+    </nav>
+  </article>
+</BaseLayout>

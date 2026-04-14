@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Ausdruckszahl Rechner (Schicksalszahl) kostenlos | Karmastro";
+const description =
+  "Berechne deine Ausdruckszahl kostenlos, auch Schicksalszahl genannt. Sie offenbart deine angeborenen Talente, deine Mission und die natürliche Richtung deines Lebens.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "Ausdruckszahl-Rechner", description, url: "https://karmastro.com/de/werkzeuge/ausdruckszahl", applicationCategory: "UtilitiesApplication", inLanguage: "de", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "219" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "Was ist die Ausdruckszahl?", acceptedAnswer: { "@type": "Answer", text: "Die Ausdruckszahl, auch Schicksalszahl genannt, wird aus dem vollständigen Geburtsnamen berechnet. Sie offenbart angeborene Talente, natürliche Fähigkeiten und die Lebensmission, die du von Haus aus mitbringst." } },
+    { "@type": "Question", name: "Wie unterscheidet sie sich von der Lebenszahl?", acceptedAnswer: { "@type": "Answer", text: "Die Lebenszahl kommt aus dem Geburtsdatum und zeigt die Reise. Die Ausdruckszahl kommt aus dem vollständigen Namen und zeigt die Werkzeuge, mit denen du sie zurücklegst." } },
+    { "@type": "Question", name: "Welchen Namen verwenden?", acceptedAnswer: { "@type": "Answer", text: "Immer den vollständigen Geburtsnamen aus der Geburtsurkunde, inklusive Zweitnamen. Keine Eheform, kein Spitzname. Die Ausdruckszahl kommt aus der ursprünglichen Schwingung der Geburt." } },
+    { "@type": "Question", name: "Was sind die Meisterzahlen 11, 22, 33?", acceptedAnswer: { "@type": "Answer", text: "Meisterzahlen werden nicht reduziert. 11 visionäre Intuition, 22 Meisterbauer, 33 Meisterheiler. Anspruchsvolle Gaben, die Reife verlangen." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/de" class="hover:text-amber-300">Startseite</a><span class="mx-2">/</span>
+      <a href="/de/werkzeuge" class="hover:text-amber-300">Werkzeuge</a><span class="mx-2">/</span>
+      <span class="text-white/80">Ausdruckszahl</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Pythagoreische Numerologie</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Ausdruckszahl-Rechner</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">Auch Schicksalszahl genannt. Offenbart die angeborenen Talente, die du seit der Geburt mitbringst, und die natürliche Richtung deines Lebens.</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">A</div>
+      <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">Berechne deine Ausdruckszahl</h2>
+      <p class="text-white/70 mb-6 max-w-xl mx-auto leading-relaxed">Du brauchst deinen vollständigen Geburtsnamen. Die App wendet die pythagoreische Tabelle Buchstabe für Buchstabe an und reduziert bis zur Endzahl (außer Meisterzahlen 11, 22, 33).</p>
+      <a href="https://app.karmastro.com/oracle?lang=de" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">Meine Ausdruckszahl berechnen</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Was ist die Ausdruckszahl?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Eine der zentralen Zahlen der pythagoreischen Numerologie. Während die <a href="/de/werkzeuge/lebenszahl" class="text-amber-300 hover:underline">Lebenszahl</a> die Reise beschreibt, beschreibt die Ausdruckszahl die <strong>Werkzeuge, mit denen du geboren wurdest</strong>: angeborene Talente, natürliche Berufung, Mission.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Berechnung</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Die pythagoreische Methode ordnet jedem Buchstaben eine Zahl von 1 bis 9 zu: A=1, B=2, ..., I=9, J=1, etc. Alle Werte deines vollständigen Geburtsnamens werden addiert und auf eine Ziffer reduziert, außer bei Meisterzahlen 11, 22, 33.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Bedeutung der Zahlen</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>1 Pionier</strong>: Führung, Originalität.</li>
+        <li><strong>2 Diplomat</strong>: Sensibilität, Kooperation.</li>
+        <li><strong>3 Künstler</strong>: Ausdruck, Charisma.</li>
+        <li><strong>4 Erbauer</strong>: Disziplin, Struktur.</li>
+        <li><strong>5 Abenteurer</strong>: Freiheit, Wandel.</li>
+        <li><strong>6 Hüter</strong>: Verantwortung, Dienst.</li>
+        <li><strong>7 Sucher</strong>: Weisheit, Spiritualität.</li>
+        <li><strong>8 Stratege</strong>: Macht, Fülle.</li>
+        <li><strong>9 Humanist</strong>: Mitgefühl, Zyklenschluss.</li>
+        <li><strong>11 Visionär</strong>: erhöhte Intuition.</li>
+        <li><strong>22 Meisterbauer</strong>: große materielle Verwirklichung.</li>
+        <li><strong>33 Meisterheiler</strong>: bedingungslose Liebe im Dienst.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Ausdruck, Seele und Persönlichkeit</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Aus der Ausdruckszahl leiten sich zwei weitere ab: die <strong>Seelenzahl</strong> (nur Vokale: tiefstes Verlangen) und die <strong>Persönlichkeitszahl</strong> (nur Konsonanten: äußere Wahrnehmung). Die drei bilden deine numerologische Signatur.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Warum der Geburtsname</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Die pythagoreische Tradition hält den ersten Namen, den du erhalten hast, für die ursprüngliche Schwingung. Spätere Namensänderungen fügen Schichten hinzu, ersetzen aber nicht die native Zahl.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Autoritative Quellen</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://de.wikipedia.org/wiki/Numerologie" class="text-amber-300 hover:underline" rel="external">Numerologie - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/topic/numerology" class="text-amber-300 hover:underline" rel="external">Numerology - Britannica</a></li>
+        <li><a href="https://de.wikipedia.org/wiki/Pythagoras" class="text-amber-300 hover:underline" rel="external">Pythagoras - Wikipedia</a></li>
+      </ul>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Vollständige numerologische Lesung?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">Lebenszahl, Ausdruck, Seele, Persönlichkeit, persönliches Jahr. Pythia kreuzt alles in einer einzigartigen Lesung.</p>
+      <a href="https://app.karmastro.com/oracle?lang=de" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">Pythia konsultieren</a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/de/werkzeuge" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Alle Werkzeuge</a>
+      <a href="/de/werkzeuge/lebenszahl" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Lebenszahl</a>
+      <a href="/de/werkzeuge/personliches-jahr" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Persönliches Jahr</a>
+      <a href="/de/werkzeuge/geburtshoroskop" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Geburtshoroskop</a>
+      <a href="/de/werkzeuge/aszendent" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Aszendent</a>
+      <a href="/de/werkzeuge/partnerhoroskop" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Partnerhoroskop</a>
+      <a href="/de/horoskop" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Horoskop</a>
+      <a href="/de/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Blog</a>
+    </nav>
+  </article>
+</BaseLayout>

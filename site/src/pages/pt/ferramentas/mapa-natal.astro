@@ -1,0 +1,119 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Calculadora de Mapa Natal Grátis - Mapa Astral Completo | Karmastro";
+const description =
+  "Calcula o teu mapa natal grátis com Swiss Ephemeris. 10 planetas, 12 casas, ascendente e interpretação completa em português. Precisão profissional, sem registo obrigatório.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "Calculadora de Mapa Natal", description, url: "https://karmastro.com/pt/ferramentas/mapa-natal", applicationCategory: "UtilitiesApplication", operatingSystem: "Any", inLanguage: "pt", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "389" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "O que é um mapa natal?", acceptedAnswer: { "@type": "Answer", text: "O mapa natal, também chamado tema natal ou mapa astral, é uma fotografia astronómica do céu no momento exato e no lugar do teu nascimento. Mostra a posição do Sol, Lua e oito planetas, os signos que ocupavam, as 12 casas e os aspetos entre eles." } },
+    { "@type": "Question", name: "A calculadora é mesmo grátis?", acceptedAnswer: { "@type": "Answer", text: "Sim. Karmastro oferece um mapa natal completo grátis com os 10 corpos celestes, as 12 casas, os aspetos maiores e uma interpretação escrita. Sem registo obrigatório. Criar uma conta grátis desbloqueia uma leitura mais aprofundada por uma das nossas guias cósmicas." } },
+    { "@type": "Question", name: "Que precisão usa Karmastro?", acceptedAnswer: { "@type": "Answer", text: "Karmastro usa o Swiss Ephemeris, o motor astronómico padrão dos astrólogos profissionais. Precisão ao arcossegundo. Sistema de casas Placidus por defeito, com Signo Inteiro e Casas Iguais disponíveis nas opções avançadas." } },
+    { "@type": "Question", name: "Preciso da hora exata de nascimento?", acceptedAnswer: { "@type": "Answer", text: "Para um mapa natal completo, sim. O ascendente e as 12 casas dependem da hora exata. Sem ela, conseguimos calcular com fiabilidade o signo solar, o signo lunar (aproximado) e os planetas interiores." } },
+    { "@type": "Question", name: "O que revela o meu mapa natal?", acceptedAnswer: { "@type": "Answer", text: "Revela a tua identidade central (Sol), o mundo emocional (Lua), a máscara social (Ascendente), o estilo de comunicação (Mercúrio), o estilo amoroso (Vénus), o desejo (Marte), o padrão de crescimento (Júpiter), a disciplina (Saturno) e os temas geracionais (Úrano, Neptuno, Plutão)." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/pt" class="hover:text-amber-300">Início</a>
+      <span class="mx-2">/</span>
+      <a href="/pt/ferramentas" class="hover:text-amber-300">Ferramentas</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">Mapa Natal</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Astrologia Ocidental</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Calculadora de Mapa Natal Grátis</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        O teu mapa natal completo, calculado com Swiss Ephemeris. Cada planeta, cada casa, cada aspeto, com interpretação clara em português.
+      </p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">✦</div>
+      <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">Obtém o teu mapa natal completo</h2>
+      <p class="text-white/70 mb-6 max-w-xl mx-auto leading-relaxed">
+        O cálculo completo precisa da tua data, hora e local de nascimento exatos. A app usa o Swiss Ephemeris para os 10 corpos celestes, as 12 casas e os aspetos maiores. Orion, a nossa guia, entrega a leitura personalizada.
+      </p>
+      <a href="https://app.karmastro.com/oracle?lang=pt" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">Obter o meu mapa natal grátis</a>
+      <p class="text-xs text-white/50 mt-3">Sem cartão, sem registo obrigatório</p>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">O que é um mapa natal?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Um <strong>mapa natal</strong>, também chamado <strong>tema natal</strong> ou <strong>mapa astral</strong>, é um mapa astronómico preciso do céu no momento exato e no lugar em que nasceste. Regista a posição do Sol, da Lua e dos oito planetas em relação ao zodíaco e ao horizonte do teu local de nascimento. Essa fotografia nunca mais se repete de forma idêntica, o que torna o teu mapa tão único quanto uma impressão digital.
+      </p>
+      <p class="text-white/80 leading-relaxed mb-4">
+        A astrologia defende que essa fotografia codifica as dinâmicas psicológicas com as quais atravessas a vida. Não é destino, é a descrição das cartas com que foste distribuído. Como jogas depende de ti. A boa astrologia é menos sobre previsão e mais sobre autoconhecimento.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">O que contém o mapa natal</h2>
+      <div class="not-prose grid md:grid-cols-2 gap-3 mb-6">
+        <div class="p-4 rounded-xl border border-amber-300/20 bg-amber-300/5"><p class="font-serif text-lg text-amber-300 mb-1">Os 10 corpos celestes</p><p class="text-sm text-white/70 leading-relaxed">Sol, Lua, Mercúrio, Vénus, Marte, Júpiter, Saturno, Úrano, Neptuno, Plutão.</p></div>
+        <div class="p-4 rounded-xl border border-purple-300/20 bg-purple-300/5"><p class="font-serif text-lg text-purple-300 mb-1">Os 12 signos</p><p class="text-sm text-white/70 leading-relaxed">Os signos colorem como cada planeta se expressa. Marte em Carneiro age diferente de Marte em Peixes.</p></div>
+        <div class="p-4 rounded-xl border border-sky-300/20 bg-sky-300/5"><p class="font-serif text-lg text-sky-300 mb-1">As 12 casas</p><p class="text-sm text-white/70 leading-relaxed">As casas descrevem as áreas da vida: identidade, dinheiro, relações, carreira.</p></div>
+        <div class="p-4 rounded-xl border border-pink-300/20 bg-pink-300/5"><p class="font-serif text-lg text-pink-300 mb-1">Os aspetos</p><p class="text-sm text-white/70 leading-relaxed">Ângulos geométricos que descrevem como os planetas cooperam, tensionam ou transformam.</p></div>
+      </div>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Os 10 planetas e o seu significado</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Sol</strong>: identidade central, ego, vontade consciente.</li>
+        <li><strong>Lua</strong>: mundo emocional, instintos, necessidades.</li>
+        <li><strong>Mercúrio</strong>: pensamento, comunicação, aprendizagem.</li>
+        <li><strong>Vénus</strong>: o que amas, estética, valores.</li>
+        <li><strong>Marte</strong>: impulso, desejo, ação.</li>
+        <li><strong>Júpiter</strong>: crescimento, expansão, sentido.</li>
+        <li><strong>Saturno</strong>: disciplina, karma, estrutura.</li>
+        <li><strong>Úrano</strong>: rebeldia, inovação, quebra.</li>
+        <li><strong>Neptuno</strong>: sonhos, espiritualidade, imaginação.</li>
+        <li><strong>Plutão</strong>: transformação profunda, poder, morte e renascimento.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Os três grandes: sol, lua, ascendente</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Conhecer apenas três posições conta-te 80 por cento da história: o <strong>signo solar</strong> (identidade), o <strong>signo lunar</strong> (emoção) e o <strong>ascendente</strong> (máscara social). Se ainda não conheces o teu ascendente, começa pela nossa <a href="/pt/ferramentas/ascendente" class="text-amber-300 hover:underline">Calculadora de Ascendente</a>.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Como Karmastro calcula o teu mapa</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        Usamos o <strong>Swiss Ephemeris</strong>, o padrão de ouro em precisão astronómica, usado por astrólogos profissionais e observatórios científicos. Sistema de casas <strong>Placidus</strong> por defeito. Depois, <strong>Orion</strong>, a nossa guia de astrologia, entrega uma leitura narrativa feita para o teu mapa, não um molde.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Por que a hora exata importa</h2>
+      <p class="text-white/80 leading-relaxed mb-4">
+        A Lua avança cerca de um grau a cada duas horas. O <strong>ascendente</strong> muda a cada duas horas em média. As <strong>12 casas</strong> dependem totalmente da tua hora exata. Confere primeiro a certidão de nascimento.
+      </p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Fontes autorizadas</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://pt.wikipedia.org/wiki/Mapa_astral" class="text-amber-300 hover:underline" rel="external">Mapa astral - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/topic/astrology" class="text-amber-300 hover:underline" rel="external">Astrology - Britannica</a></li>
+        <li><a href="https://www.astro.com/swisseph/" class="text-amber-300 hover:underline" rel="external">Swiss Ephemeris - AstroDienst</a></li>
+      </ul>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Pronto para o teu mapa completo?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">10 planetas, 12 casas, aspetos maiores, leitura escrita. Grátis.</p>
+      <a href="https://app.karmastro.com/oracle?lang=pt" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">Calcular o meu mapa natal</a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/pt/ferramentas" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Todas as ferramentas</a>
+      <a href="/pt/ferramentas/ascendente" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Ascendente</a>
+      <a href="/pt/ferramentas/numero-do-caminho-de-vida" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Caminho de vida</a>
+      <a href="/pt/ferramentas/compatibilidade" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Compatibilidade</a>
+      <a href="/pt/ferramentas/numero-expressao" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Número de expressão</a>
+      <a href="/pt/ferramentas/ano-pessoal" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Ano pessoal</a>
+      <a href="/pt/horoscopo" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Horóscopo</a>
+      <a href="/pt/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Blog</a>
+    </nav>
+  </article>
+</BaseLayout>

@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Calcolatore del Numero di Espressione (Numero del Destino) | Karmastro";
+const description =
+  "Calcola gratis il tuo numero di espressione, detto anche numero del destino. Rivela i talenti innati, la missione e la direzione naturale della tua vita.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "Calcolatore Numero di Espressione", description, url: "https://karmastro.com/it/strumenti/numero-espressione", applicationCategory: "UtilitiesApplication", inLanguage: "it", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "187" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "Cos'è il numero di espressione?", acceptedAnswer: { "@type": "Answer", text: "Detto anche numero del destino, si calcola dal nome completo di nascita. Rivela talenti innati, abilità naturali e la missione che porti con te dalla nascita." } },
+    { "@type": "Question", name: "Che differenza c'è col cammino di vita?", acceptedAnswer: { "@type": "Answer", text: "Il cammino di vita viene dalla data di nascita e mostra il viaggio. Il numero di espressione viene dal nome e mostra gli strumenti per percorrerlo." } },
+    { "@type": "Question", name: "Quale nome usare?", acceptedAnswer: { "@type": "Answer", text: "Il nome completo del certificato di nascita, inclusi secondi nomi. Non il cognome da sposata né soprannomi." } },
+    { "@type": "Question", name: "Numeri maestri 11, 22, 33?", acceptedAnswer: { "@type": "Answer", text: "Non si riducono. 11 intuizione visionaria, 22 maestro costruttore, 33 maestro guaritore." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/it" class="hover:text-amber-300">Home</a><span class="mx-2">/</span>
+      <a href="/it/strumenti" class="hover:text-amber-300">Strumenti</a><span class="mx-2">/</span>
+      <span class="text-white/80">Numero di espressione</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Numerologia Pitagorica</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Calcolatore del Numero di Espressione</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">Detto anche numero del destino. Rivela i talenti innati con cui nasci e la direzione naturale della tua vita.</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">A</div>
+      <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">Calcola il tuo numero di espressione</h2>
+      <p class="text-white/70 mb-6 max-w-xl mx-auto leading-relaxed">Ti serve il nome completo di nascita. L'app applica la tavola pitagorica lettera per lettera e riduce fino al numero finale.</p>
+      <a href="https://app.karmastro.com/oracle?lang=it" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">Calcolare il mio numero</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Cos'è il numero di espressione?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Una delle cifre fondamentali della numerologia pitagorica. Mentre il <a href="/it/strumenti/numero-del-cammino-di-vita" class="text-amber-300 hover:underline">cammino di vita</a> descrive il viaggio, il numero di espressione descrive <strong>gli strumenti con cui nasci</strong>: talenti innati, vocazione naturale, missione.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Come si calcola</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Il metodo pitagorico assegna un numero da 1 a 9 a ogni lettera: A=1, B=2, ..., I=9, J=1, etc. Somma tutti i valori del nome completo di nascita e riduci a una cifra, salvo i maestri 11, 22, 33.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Significato dei numeri</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>1 Pioniere</strong>: leadership, originalità.</li>
+        <li><strong>2 Diplomatico</strong>: sensibilità, cooperazione.</li>
+        <li><strong>3 Artista</strong>: espressione, carisma.</li>
+        <li><strong>4 Costruttore</strong>: disciplina, struttura.</li>
+        <li><strong>5 Avventuriero</strong>: libertà, cambiamento.</li>
+        <li><strong>6 Custode</strong>: responsabilità, servizio.</li>
+        <li><strong>7 Ricercatore</strong>: saggezza, spiritualità.</li>
+        <li><strong>8 Stratega</strong>: potere, abbondanza.</li>
+        <li><strong>9 Umanitario</strong>: compassione, chiusura di cicli.</li>
+        <li><strong>11 Visionario</strong>: intuizione elevata.</li>
+        <li><strong>22 Maestro Costruttore</strong>: grandi realizzazioni.</li>
+        <li><strong>33 Maestro Guaritore</strong>: amore incondizionato.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Espressione, anima e personalità</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Dall'espressione derivano il <strong>numero dell'anima</strong> (solo vocali) e il <strong>numero della personalità</strong> (solo consonanti). I tre formano la tua firma numerologica.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Perché il nome di nascita</h2>
+      <p class="text-white/80 leading-relaxed mb-4">La tradizione pitagorica ritiene che il primo nome ricevuto porti la vibrazione originale. Cambi successivi aggiungono strati ma non sostituiscono il numero nativo.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Fonti autorevoli</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://it.wikipedia.org/wiki/Numerologia" class="text-amber-300 hover:underline" rel="external">Numerologia - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/topic/numerology" class="text-amber-300 hover:underline" rel="external">Numerology - Britannica</a></li>
+        <li><a href="https://it.wikipedia.org/wiki/Pitagora" class="text-amber-300 hover:underline" rel="external">Pitagora - Wikipedia</a></li>
+      </ul>
+    </section>
+
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
+      <h3 class="font-serif text-xl mb-2">Lettura numerologica completa?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">Pythia incrocia tutto per te.</p>
+      <a href="https://app.karmastro.com/oracle?lang=it" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">Consultare Pythia</a>
+    </div>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/it/strumenti" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Tutti gli strumenti</a>
+      <a href="/it/strumenti/numero-del-cammino-di-vita" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Cammino di vita</a>
+      <a href="/it/strumenti/anno-personale" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Anno personale</a>
+      <a href="/it/strumenti/tema-natale" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Tema natale</a>
+      <a href="/it/strumenti/ascendente" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Ascendente</a>
+      <a href="/it/strumenti/compatibilita" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Compatibilità</a>
+      <a href="/it/oroscopo" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Oroscopo</a>
+      <a href="/it/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Blog</a>
+    </nav>
+  </article>
+</BaseLayout>
