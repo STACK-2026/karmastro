@@ -450,112 +450,335 @@ const it: LocaleContent = {
   },
 };
 
-// For the 5 remaining languages (TR, PL, RU, JA, AR), we provide SEO + basic
-// strings now. Features/FAQ fall back to English for those languages.
-// This can be extended progressively.
+// ============================================================
+// TR
+// ============================================================
 
-function contentWithEnglishFallback(seo: LocaleContent["seo"], overrides: Partial<LocaleContent> = {}): LocaleContent {
-  return {
-    ...en,
-    ...overrides,
-    seo,
-  };
-}
+const tr: LocaleContent = {
+  heroRotatingWords: ["doğum haritanı", "numerolojini", "karmanı", "transitlerini", "uyumunu", "hayat yolunu"],
+  heroBadge: "Astroloji + Numeroloji + Karma",
+  heroFreeTeaser: "Yıldızların hediyesi · Doğum haritası + günlük 3 Kahin mesajı",
+  nasaBadge: "NASA hassasiyetinde astronomik hesaplamalar",
+  exploreCosmosLabel: "Kozmosu Keşfet",
+  features: [
+    { title: "Tam doğum haritası", description: "12 gezegen, 12 ev, büyük ve küçük açılar. Doğum göğün derinlemesine çözümleniyor.", icon: "star" },
+    { title: "Karmik numeroloji", description: "Hayat yolu, ifade sayısı, ruh, karmik borçlar ve zirveler. Sayılar misyonunu ortaya çıkarır.", icon: "chart" },
+    { title: "Kahin 7/24", description: "Sorularını Kahin'e sor. Doğum haritanı, numerolojini ve karmik döngülerini birleştirerek sana yol gösterir.", icon: "zap" },
+    { title: "Eksiksiz uyumluluk", description: "Astrolojik sinastri + numerolojik uyumluluk. Her ilişkinin güçlerini ve zorluklarını keşfet.", icon: "users" },
+    { title: "Kozmik takvim", description: "Günlük transitler, retrolar, ay evreleri ve numerolojik kişisel günler. Doğru anda planla.", icon: "search" },
+    { title: "Karmik rehberlik", description: "Ay düğümleri, hayat dersleri, Satürn döngüleri. Nereden geldiğini ve nereye gittiğini anla.", icon: "shield" },
+  ],
+  featuresTitle: "Neden Karmastro?",
+  featuresSubtitle: "Eksiksiz bir rehberlik için 3 disiplini birleştiren ruhani bir ekosistem",
+  faq: [
+    { question: "Karmastro nedir?", answer: "Karmastro, astroloji, numeroloji ve karmik rehberliği birleştiren akıllı bir ruhani ekosistemdir. Doğum tarihin, saatin ve yerine dayalı eksiksiz bir kozmik profil ve 7/24 Kahin erişimi sunar." },
+    { question: "Kahin nasıl çalışır?", answer: "Kahin doğum haritanı, numerolojik hayat yolunu ve karmik ay düğümlerini analiz ederek sana kişiselleştirilmiş yanıtlar verir. 4 rehber arasından seçim yapabilirsin: Sibylle, Orion, Séléné veya Pythia." },
+    { question: "Karmastro ücretsiz mi?", answer: "Evet, Uyanış yolu yıldızların hediyesidir: eksiksiz kozmik profil, günlük burç ve günde 3 Kahin mesajı. Aylık 5,99€ Yıldız yolu sınırsız Kahin'i ve çok daha fazlasını açar." },
+    { question: "Klasik burçtan farkı ne?", answer: "Klasik burç sadece güneş burcuna dayanır. Karmastro 3 disiplini birleştirir: astroloji (12 gezegen, açılar, evler), numeroloji (hayat yolu, ifade, ruh) ve karmik rehberlik (ay düğümleri, borçlar, döngüler)." },
+    { question: "Verilerim korunuyor mu?", answer: "Evet. Kişisel verilerin ve kozmik profilin şifrelenerek güvenli şekilde saklanır. Karmastro GDPR uyumludur. Hiçbir veri üçüncü taraflarla paylaşılmaz." },
+  ],
+  faqTitle: "Sıkça sorulan sorular",
+  ctaTitle: "Kozmik uyanışına başla",
+  ctaSubtitle: "Doğum haritası, hayat yolu, karmik rehberlik. Yıldızlar seni bekliyor.",
+  ctaButton: "Uyanışıma başla",
+  ctaNoCard: "Kredi kartı gerekmez",
+  statsTitle: "Hassas bir rehberlik",
+  statsSubtitle: "Gerçek astronomik veriler, binlerce yıllık gelenek, modern araçlar. İç göğünü anlamak için ihtiyacın olan her şey.",
+  statsLabels: { planets: "Analiz edilen gezegen", houses: "Astrolojik ev", years: "Yıllık gelenek", precision: "Yay saniyesi hassasiyet", tools: "Ücretsiz hesaplayıcı", guides: "Kozmik rehber" },
+  statsDescriptions: {
+    planets: "Güneş'ten Plüton'a, zodyağın her gezegeni profiline giriyor",
+    houses: "Doğum haritanda haritalanan 12 yaşam alanı",
+    years: "Mezopotamyalılardan Kepler'e ve Swiss Ephemeris'e",
+    precision: "NASA Jet Propulsion Laboratory seviyesi",
+    tools: "Hayat yolu, doğum haritası, yükselen, uyumluluk ve daha fazlası",
+    guides: "Sibylle, Orion, Séléné, Pythia · sana hitap edeni seç",
+  },
+  footerLegalTitle: "Yasal bilgiler",
+  footerExploreTitle: "Keşfet",
+  footerCopyright: "Tüm hakları saklıdır",
+  seo: {
+    home: {
+      title: "Karmastro - Yıldızlarda ve sayılarda yazılı hayat haritan",
+      description: "Karmastro, astroloji, numeroloji ve karmik rehberliği birleştiren ilk akıllı ruhani ekosistem. 7/24 Kahin, tam doğum haritası, Swiss Ephemeris hesaplamaları.",
+    },
+    horoscope: {
+      title: "Ücretsiz günlük burç - 12 burç - Karmastro",
+      description: "12 burç için Swiss Ephemeris ile hesaplanan günlük burç. Günün aşkı, işi, enerjisi ve sezgisi.",
+    },
+    tools: {
+      title: "Ücretsiz astroloji ve numeroloji hesaplayıcıları - Karmastro",
+      description: "9 ücretsiz kozmik hesaplayıcı: hayat yolu, yükselen, doğum haritası, uyumluluk, transitler.",
+    },
+    referral: {
+      title: "Karmastro Davet Programı - İkiz Yıldızlar",
+      description: "İkiz Yıldızlar programına katılın. Sevdiklerinizi Karmastro'ya davet edin ve kozmik bonuslar kazanın.",
+    },
+  },
+};
 
-const tr: LocaleContent = contentWithEnglishFallback({
-  home: {
-    title: "Karmastro - Yıldızlarda ve sayılarda yazılı hayat haritanız",
-    description: "Karmastro, astroloji, numeroloji ve karmik rehberliği birleştiren ilk akıllı ruhani ekosistem. 7/24 Kahin, tam doğum haritası, Swiss Ephemeris hesaplamaları.",
-  },
-  horoscope: {
-    title: "Ücretsiz günlük burç - 12 burç - Karmastro",
-    description: "12 burç için Swiss Ephemeris ile hesaplanan günlük burç. Günün aşkı, işi, enerjisi ve sezgisi.",
-  },
-  tools: {
-    title: "Ücretsiz astroloji ve numeroloji hesaplayıcıları - Karmastro",
-    description: "9 ücretsiz kozmik hesaplayıcı: hayat yolu, yükselen, doğum haritası, uyumluluk, transitler.",
-  },
-  referral: {
-    title: "Karmastro Davet Programı - İkiz Yıldızlar",
-    description: "İkiz Yıldızlar programına katılın. Sevdiklerinizi Karmastro'ya davet edin ve kozmik bonuslar kazanın.",
-  },
-});
+// ============================================================
+// PL
+// ============================================================
 
-const pl: LocaleContent = contentWithEnglishFallback({
-  home: {
-    title: "Karmastro - Twoja mapa życia zapisana w gwiazdach i liczbach",
-    description: "Karmastro to pierwszy inteligentny ekosystem duchowy łączący astrologię, numerologię i przewodnictwo karmiczne. Wyrocznia 24/7, pełny horoskop urodzeniowy, Swiss Ephemeris.",
+const pl: LocaleContent = {
+  heroRotatingWords: ["twój horoskop urodzeniowy", "twoja numerologia", "twoja karma", "twoje tranzyty", "twoja kompatybilność", "twoja droga życia"],
+  heroBadge: "Astrologia + Numerologia + Karma",
+  heroFreeTeaser: "Dar gwiazd · Horoskop urodzeniowy + 3 wiadomości Wyroczni dziennie",
+  nasaBadge: "Obliczenia astronomiczne precyzji NASA",
+  exploreCosmosLabel: "Odkryj Kosmos",
+  features: [
+    { title: "Pełny horoskop urodzeniowy", description: "12 planet, 12 domów, aspekty główne i poboczne. Twoje niebo urodzeniowe odczytane dogłębnie.", icon: "star" },
+    { title: "Numerologia karmiczna", description: "Droga życia, liczba ekspresji, dusza, długi karmiczne i szczyty. Liczby ujawniają twoją misję.", icon: "chart" },
+    { title: "Wyrocznia 24/7", description: "Zadaj Wyroczni pytania. Łączy twój horoskop urodzeniowy, numerologię i cykle karmiczne, aby cię prowadzić.", icon: "zap" },
+    { title: "Pełna kompatybilność", description: "Synastria astrologiczna + kompatybilność numerologiczna. Odkryj mocne strony i wyzwania każdej relacji.", icon: "users" },
+    { title: "Kosmiczny kalendarz", description: "Codzienne tranzyty, retrogradacje, fazy Księżyca i numerologiczne dni osobiste. Planuj w odpowiednim momencie.", icon: "search" },
+    { title: "Karmiczne przewodnictwo", description: "Węzły księżycowe, lekcje życia, cykle Saturna. Zrozum skąd pochodzisz i dokąd zmierzasz.", icon: "shield" },
+  ],
+  featuresTitle: "Dlaczego Karmastro?",
+  featuresSubtitle: "Duchowy ekosystem łączący 3 dyscypliny dla pełnego przewodnictwa",
+  faq: [
+    { question: "Czym jest Karmastro?", answer: "Karmastro to inteligentny ekosystem duchowy łączący astrologię, numerologię i przewodnictwo karmiczne. Otrzymujesz pełny profil kosmiczny oparty na dacie, godzinie i miejscu urodzenia, z Wyrocznią dostępną 24/7." },
+    { question: "Jak działa Wyrocznia?", answer: "Wyrocznia analizuje twój horoskop urodzeniowy, numerologiczną drogę życia i karmiczne węzły księżycowe, aby dać ci spersonalizowane odpowiedzi. Możesz wybierać spośród 4 przewodników: Sibylle, Orion, Séléné lub Pythia." },
+    { question: "Czy Karmastro jest darmowe?", answer: "Tak, ścieżka Przebudzenia jest darem gwiazd: pełny profil kosmiczny, codzienny horoskop i 3 wiadomości Wyroczni dziennie. Ścieżka Gwiazdy za 5,99€/miesiąc odblokowuje nieograniczoną Wyrocznię i wiele więcej." },
+    { question: "Czym różni się od klasycznego horoskopu?", answer: "Klasyczny horoskop opiera się tylko na znaku słonecznym. Karmastro łączy 3 dyscypliny: astrologię (12 planet, aspekty, domy), numerologię (droga życia, ekspresja, dusza) i przewodnictwo karmiczne (węzły księżycowe, długi, cykle)." },
+    { question: "Czy moje dane są chronione?", answer: "Tak. Twoje dane osobowe i profil kosmiczny są szyfrowane i bezpiecznie przechowywane. Karmastro jest zgodne z RODO. Żadne dane nie są udostępniane stronom trzecim." },
+  ],
+  faqTitle: "Często zadawane pytania",
+  ctaTitle: "Rozpocznij kosmiczne przebudzenie",
+  ctaSubtitle: "Horoskop urodzeniowy, droga życia, przewodnictwo karmiczne. Gwiazdy na ciebie czekają.",
+  ctaButton: "Rozpocznij moje przebudzenie",
+  ctaNoCard: "Karta kredytowa niewymagana",
+  statsTitle: "Przewodnictwo z precyzją",
+  statsSubtitle: "Prawdziwe dane astronomiczne, tysiącletnia tradycja, nowoczesne narzędzia. Wszystko, czego potrzebujesz, aby zrozumieć swoje wewnętrzne niebo.",
+  statsLabels: { planets: "Analizowane planety", houses: "Domy astrologiczne", years: "Lat tradycji", precision: "Sekund kątowych precyzji", tools: "Darmowe kalkulatory", guides: "Kosmiczni przewodnicy" },
+  statsDescriptions: {
+    planets: "Od Słońca do Plutona, każda planeta zodiaku wchodzi do twojego profilu",
+    houses: "12 obszarów życia zmapowanych w twoim horoskopie urodzeniowym",
+    years: "Od Mezopotamczyków przez Keplera do Swiss Ephemeris",
+    precision: "Poziom NASA Jet Propulsion Laboratory",
+    tools: "Droga życia, horoskop urodzeniowy, ascendent, kompatybilność i więcej",
+    guides: "Sibylle, Orion, Séléné, Pythia · wybierz tego, który do ciebie przemawia",
   },
-  horoscope: {
-    title: "Darmowy codzienny horoskop - 12 znaków - Karmastro",
-    description: "Codzienny horoskop dla 12 znaków zodiaku, obliczony z Swiss Ephemeris. Miłość, praca, energia i intuicja dnia.",
+  footerLegalTitle: "Informacje prawne",
+  footerExploreTitle: "Odkrywaj",
+  footerCopyright: "Wszelkie prawa zastrzeżone",
+  seo: {
+    home: {
+      title: "Karmastro - Twoja mapa życia zapisana w gwiazdach i liczbach",
+      description: "Karmastro to pierwszy inteligentny ekosystem duchowy łączący astrologię, numerologię i przewodnictwo karmiczne. Wyrocznia 24/7, pełny horoskop urodzeniowy, Swiss Ephemeris.",
+    },
+    horoscope: {
+      title: "Darmowy codzienny horoskop - 12 znaków - Karmastro",
+      description: "Codzienny horoskop dla 12 znaków zodiaku, obliczony z Swiss Ephemeris. Miłość, praca, energia i intuicja dnia.",
+    },
+    tools: {
+      title: "Darmowe kalkulatory astrologii i numerologii - Karmastro",
+      description: "9 darmowych kalkulatorów kosmicznych: droga życia, ascendent, horoskop urodzeniowy, kompatybilność, tranzyty.",
+    },
+    referral: {
+      title: "Program polecający Karmastro - Gwiazdy Bliźniacze",
+      description: "Dołącz do programu Gwiazdy Bliźniacze. Zaproś bliskich do Karmastro i oboje otrzymajcie kosmiczne bonusy.",
+    },
   },
-  tools: {
-    title: "Darmowe kalkulatory astrologii i numerologii - Karmastro",
-    description: "9 darmowych kalkulatorów kosmicznych: droga życia, ascendent, horoskop urodzeniowy, kompatybilność, tranzyty.",
-  },
-  referral: {
-    title: "Program polecający Karmastro - Gwiazdy Bliźniacze",
-    description: "Dołącz do programu Gwiazdy Bliźniacze. Zaproś bliskich do Karmastro i oboje otrzymajcie kosmiczne bonusy.",
-  },
-});
+};
 
-const ru: LocaleContent = contentWithEnglishFallback({
-  home: {
-    title: "Karmastro - Твоя карта жизни, записанная в звёздах и числах",
-    description: "Karmastro - первая умная духовная экосистема, объединяющая астрологию, нумерологию и кармическое руководство. Оракул 24/7, полная натальная карта, Swiss Ephemeris.",
-  },
-  horoscope: {
-    title: "Бесплатный ежедневный гороскоп - 12 знаков - Karmastro",
-    description: "Ежедневный гороскоп для 12 знаков зодиака, рассчитанный с помощью Swiss Ephemeris. Любовь, работа, энергия и интуиция дня.",
-  },
-  tools: {
-    title: "Бесплатные калькуляторы астрологии и нумерологии - Karmastro",
-    description: "9 бесплатных космических калькуляторов: путь жизни, асцендент, натальная карта, совместимость, транзиты.",
-  },
-  referral: {
-    title: "Программа рефералов Karmastro - Звёзды-Близнецы",
-    description: "Присоединяйся к программе Звёзды-Близнецы. Пригласи близких на Karmastro и получите космические бонусы.",
-  },
-});
+// ============================================================
+// RU
+// ============================================================
 
-const ja: LocaleContent = contentWithEnglishFallback({
-  home: {
-    title: "Karmastro - 星々と数字に書かれたあなたの人生地図",
-    description: "Karmastroは、占星術、数秘術、カルマ的ガイダンスを融合させた最初のインテリジェントなスピリチュアルエコシステム。24時間オラクル、完全な出生図、Swiss Ephemeris計算。",
+const ru: LocaleContent = {
+  heroRotatingWords: ["твою натальную карту", "твою нумерологию", "твою карму", "твои транзиты", "твою совместимость", "твой путь жизни"],
+  heroBadge: "Астрология + Нумерология + Карма",
+  heroFreeTeaser: "Дар звёзд · Натальная карта + 3 сообщения Оракула в день",
+  nasaBadge: "Астрономические расчёты точности NASA",
+  exploreCosmosLabel: "Исследовать Космос",
+  features: [
+    { title: "Полная натальная карта", description: "12 планет, 12 домов, мажорные и минорные аспекты. Небо твоего рождения расшифровано в глубину.", icon: "star" },
+    { title: "Кармическая нумерология", description: "Путь жизни, число выражения, душа, кармические долги и вершины. Числа раскрывают твою миссию.", icon: "chart" },
+    { title: "Оракул 24/7", description: "Задай Оракулу свои вопросы. Он соединяет твою натальную карту, нумерологию и кармические циклы, чтобы вести тебя.", icon: "zap" },
+    { title: "Полная совместимость", description: "Астрологическая синастрия + нумерологическая совместимость. Открой силы и вызовы каждых отношений.", icon: "users" },
+    { title: "Космический календарь", description: "Ежедневные транзиты, ретрограды, фазы Луны и персональные нумерологические дни. Планируй в нужный момент.", icon: "search" },
+    { title: "Кармическое руководство", description: "Лунные узлы, уроки жизни, циклы Сатурна. Пойми, откуда ты пришёл и куда идёшь.", icon: "shield" },
+  ],
+  featuresTitle: "Почему Karmastro?",
+  featuresSubtitle: "Духовная экосистема, объединяющая 3 дисциплины для полного руководства",
+  faq: [
+    { question: "Что такое Karmastro?", answer: "Karmastro - это умная духовная экосистема, объединяющая астрологию, нумерологию и кармическое руководство. Ты получаешь полный космический профиль на основе твоей даты, времени и места рождения, с Оракулом 24/7." },
+    { question: "Как работает Оракул?", answer: "Оракул анализирует твою натальную карту, нумерологический путь жизни и кармические лунные узлы, чтобы дать персонализированные ответы. Можно выбрать из 4 гидов: Сибилла, Орион, Селена или Пифия." },
+    { question: "Karmastro бесплатный?", answer: "Да, путь Пробуждения - дар звёзд: полный космический профиль, ежедневный гороскоп и 3 сообщения Оракула в день. Путь Звезды за 5,99€/месяц открывает безлимитного Оракула и многое другое." },
+    { question: "Чем отличается от классического гороскопа?", answer: "Классический гороскоп опирается только на солнечный знак. Karmastro объединяет 3 дисциплины: астрологию (12 планет, аспекты, дома), нумерологию (путь жизни, выражение, душа) и кармическое руководство (лунные узлы, долги, циклы)." },
+    { question: "Мои данные защищены?", answer: "Да. Твои личные данные и космический профиль зашифрованы и безопасно хранятся. Karmastro соответствует GDPR. Никакие данные не передаются третьим лицам." },
+  ],
+  faqTitle: "Частые вопросы",
+  ctaTitle: "Начни космическое пробуждение",
+  ctaSubtitle: "Натальная карта, путь жизни, кармическое руководство. Звёзды ждут тебя.",
+  ctaButton: "Начать пробуждение",
+  ctaNoCard: "Банковская карта не требуется",
+  statsTitle: "Руководство с точностью",
+  statsSubtitle: "Реальные астрономические данные, тысячелетняя традиция, современные инструменты. Всё, что нужно, чтобы понять твоё внутреннее небо.",
+  statsLabels: { planets: "Планет проанализировано", houses: "Астрологических домов", years: "Лет традиции", precision: "Угловая секунда точности", tools: "Бесплатных калькуляторов", guides: "Космических гидов" },
+  statsDescriptions: {
+    planets: "От Солнца до Плутона, каждая планета зодиака входит в твой профиль",
+    houses: "12 сфер жизни нанесены на твою натальную карту",
+    years: "От месопотамцев до Кеплера и Swiss Ephemeris",
+    precision: "Уровень NASA Jet Propulsion Laboratory",
+    tools: "Путь жизни, натальная карта, асцендент, совместимость и ещё",
+    guides: "Сибилла, Орион, Селена, Пифия · выбери того, кто говорит с тобой",
   },
-  horoscope: {
-    title: "無料デイリーホロスコープ - 12星座 - Karmastro",
-    description: "Swiss Ephemerisで計算された12星座のデイリーホロスコープ。その日の恋愛、仕事、エネルギー、直感。",
+  footerLegalTitle: "Правовая информация",
+  footerExploreTitle: "Исследовать",
+  footerCopyright: "Все права защищены",
+  seo: {
+    home: {
+      title: "Karmastro - Твоя карта жизни, записанная в звёздах и числах",
+      description: "Karmastro - первая умная духовная экосистема, объединяющая астрологию, нумерологию и кармическое руководство. Оракул 24/7, полная натальная карта, Swiss Ephemeris.",
+    },
+    horoscope: {
+      title: "Бесплатный ежедневный гороскоп - 12 знаков - Karmastro",
+      description: "Ежедневный гороскоп для 12 знаков зодиака, рассчитанный с помощью Swiss Ephemeris. Любовь, работа, энергия и интуиция дня.",
+    },
+    tools: {
+      title: "Бесплатные калькуляторы астрологии и нумерологии - Karmastro",
+      description: "9 бесплатных космических калькуляторов: путь жизни, асцендент, натальная карта, совместимость, транзиты.",
+    },
+    referral: {
+      title: "Программа рефералов Karmastro - Звёзды-Близнецы",
+      description: "Присоединяйся к программе Звёзды-Близнецы. Пригласи близких на Karmastro и получите космические бонусы.",
+    },
   },
-  tools: {
-    title: "無料占星術・数秘術計算機 - Karmastro",
-    description: "9つの無料コスミック計算機:人生の道、アセンダント、出生図、相性、トランジット。",
-  },
-  referral: {
-    title: "Karmastro紹介プログラム - ツインスター",
-    description: "ツインスタープログラムに参加。大切な人をKarmastroに招待して、コスミックボーナスを受け取ろう。",
-  },
-});
+};
 
-const ar: LocaleContent = contentWithEnglishFallback({
-  home: {
-    title: "Karmastro - خريطة حياتك مكتوبة في النجوم والأرقام",
-    description: "Karmastro هي أول منظومة روحية ذكية تدمج التنجيم وعلم الأعداد والإرشاد الكرمي. عراف على مدار الساعة، خريطة ولادة كاملة، حسابات Swiss Ephemeris.",
+// ============================================================
+// JA
+// ============================================================
+
+const ja: LocaleContent = {
+  heroRotatingWords: ["あなたの出生図", "あなたの数秘術", "あなたのカルマ", "あなたのトランジット", "あなたの相性", "あなたの人生の道"],
+  heroBadge: "占星術 + 数秘術 + カルマ",
+  heroFreeTeaser: "星々からの贈り物 · 出生図 + 1日3つのオラクルメッセージ",
+  nasaBadge: "NASA精度の天文計算",
+  exploreCosmosLabel: "コスモスを探索",
+  features: [
+    { title: "完全な出生図", description: "12惑星、12ハウス、メジャーとマイナーのアスペクト。あなたの誕生の空を深く解読。", icon: "star" },
+    { title: "カルマ数秘術", description: "人生の道、表現数、魂、カルマの負債、ピナクル。数字があなたの使命を明らかにします。", icon: "chart" },
+    { title: "オラクル24時間", description: "オラクルに質問を。あなたの出生図、数秘術、カルマ的サイクルを組み合わせてあなたを導きます。", icon: "zap" },
+    { title: "完全な相性診断", description: "占星術シナストリー + 数秘術相性。それぞれの関係の強みと課題を発見。", icon: "users" },
+    { title: "コスミックカレンダー", description: "日々のトランジット、逆行、月相、数秘術のパーソナルデイ。最適な瞬間に計画を。", icon: "search" },
+    { title: "カルマ的ガイダンス", description: "ドラゴンヘッド、人生の教訓、土星サイクル。どこから来てどこへ行くのかを理解。", icon: "shield" },
+  ],
+  featuresTitle: "なぜKarmastro?",
+  featuresSubtitle: "3つの分野を組み合わせた完全なガイダンスのためのスピリチュアルなエコシステム",
+  faq: [
+    { question: "Karmastroとは?", answer: "Karmastroは、占星術、数秘術、カルマ的ガイダンスを融合したインテリジェントなスピリチュアルエコシステムです。生年月日、時刻、場所に基づいた完全なコスミックプロファイルと、24時間利用可能なオラクルを提供します。" },
+    { question: "オラクルはどう動く?", answer: "オラクルはあなたの出生図、数秘術の人生の道、カルマ的な月のノードを分析し、パーソナライズされた回答を提供します。4人のガイドから選べます: Sibylle、Orion、Séléné、Pythia。" },
+    { question: "Karmastroは無料?", answer: "はい、目覚めの道は星々からの贈り物です: 完全なコスミックプロファイル、毎日の星占い、1日3つのオラクルメッセージ。月額5,99€の星の道では無制限のオラクルなどがアンロックされます。" },
+    { question: "一般的な星占いとの違いは?", answer: "一般的な星占いは太陽星座のみに基づきます。Karmastroは3つの分野を融合します: 占星術(12惑星、アスペクト、ハウス)、数秘術(人生の道、表現、魂)、カルマ的ガイダンス(月のノード、負債、サイクル)。" },
+    { question: "データは保護されていますか?", answer: "はい。個人データとコスミックプロファイルは暗号化され安全に保管されます。KarmastroはGDPR準拠です。第三者とデータが共有されることはありません。" },
+  ],
+  faqTitle: "よくある質問",
+  ctaTitle: "コスミックな目覚めを始める",
+  ctaSubtitle: "出生図、人生の道、カルマ的ガイダンス。星々があなたを待っています。",
+  ctaButton: "目覚めを始める",
+  ctaNoCard: "クレジットカード不要",
+  statsTitle: "精度の高いガイダンス",
+  statsSubtitle: "実際の天文データ、千年を超える伝統、モダンなツール。あなたの内なる空を理解するために必要なすべて。",
+  statsLabels: { planets: "分析された惑星", houses: "占星術のハウス", years: "伝統の年月", precision: "弧秒の精度", tools: "無料計算機", guides: "コスミックガイド" },
+  statsDescriptions: {
+    planets: "太陽から冥王星まで、黄道のすべての惑星があなたのプロファイルに",
+    houses: "あなたの出生図にマッピングされた12の人生領域",
+    years: "メソポタミア人からケプラー、Swiss Ephemerisへ",
+    precision: "NASAジェット推進研究所レベル",
+    tools: "人生の道、出生図、アセンダント、相性など",
+    guides: "Sibylle、Orion、Séléné、Pythia · あなたに語りかける者を選んで",
   },
-  horoscope: {
-    title: "برج يومي مجاني - 12 برجاً - Karmastro",
-    description: "برج يومي لأبراج الزودياك الاثني عشر، محسوب بـ Swiss Ephemeris. حب، عمل، طاقة وحدس اليوم.",
+  footerLegalTitle: "法的情報",
+  footerExploreTitle: "探索",
+  footerCopyright: "全著作権所有",
+  seo: {
+    home: {
+      title: "Karmastro - 星々と数字に書かれたあなたの人生地図",
+      description: "Karmastroは、占星術、数秘術、カルマ的ガイダンスを融合させた最初のインテリジェントなスピリチュアルエコシステム。24時間オラクル、完全な出生図、Swiss Ephemeris計算。",
+    },
+    horoscope: {
+      title: "無料デイリーホロスコープ - 12星座 - Karmastro",
+      description: "Swiss Ephemerisで計算された12星座のデイリーホロスコープ。その日の恋愛、仕事、エネルギー、直感。",
+    },
+    tools: {
+      title: "無料占星術・数秘術計算機 - Karmastro",
+      description: "9つの無料コスミック計算機:人生の道、アセンダント、出生図、相性、トランジット。",
+    },
+    referral: {
+      title: "Karmastro紹介プログラム - ツインスター",
+      description: "ツインスタープログラムに参加。大切な人をKarmastroに招待して、コスミックボーナスを受け取ろう。",
+    },
   },
-  tools: {
-    title: "حاسبات تنجيم وعلم أعداد مجانية - Karmastro",
-    description: "9 حاسبات كونية مجانية: مسار الحياة، الطالع، خريطة الولادة، التوافق، العبور.",
+};
+
+// ============================================================
+// AR
+// ============================================================
+
+const ar: LocaleContent = {
+  heroRotatingWords: ["خريطة ولادتك", "علم أعدادك", "كارماك", "عبوراتك", "توافقك", "مسار حياتك"],
+  heroBadge: "التنجيم + علم الأعداد + الكارما",
+  heroFreeTeaser: "هدية من النجوم · خريطة ولادة + 3 رسائل من العراف يومياً",
+  nasaBadge: "حسابات فلكية بدقة ناسا",
+  exploreCosmosLabel: "استكشف الكون",
+  features: [
+    { title: "خريطة ولادة كاملة", description: "12 كوكباً، 12 بيتاً، الجوانب الكبرى والصغرى. سماء ولادتك مفكّكة بعمق.", icon: "star" },
+    { title: "علم أعداد كرمي", description: "مسار الحياة، رقم التعبير، الروح، الديون الكرمية والقمم. الأرقام تكشف مهمتك.", icon: "chart" },
+    { title: "العراف على مدار الساعة", description: "اطرح أسئلتك على العراف. يدمج خريطة ولادتك وعلم أعدادك ودوراتك الكرمية ليرشدك.", icon: "zap" },
+    { title: "توافق كامل", description: "سيناستريا فلكية + توافق عددي. اكتشف نقاط القوة والتحديات في كل علاقة.", icon: "users" },
+    { title: "تقويم كوني", description: "عبور يومي، تراجعات، أطوار قمرية وأيام شخصية عددية. خطط في اللحظة المناسبة.", icon: "search" },
+    { title: "إرشاد كرمي", description: "العقد القمرية، دروس الحياة، دورات زحل. افهم من أين أتيت وإلى أين تذهب.", icon: "shield" },
+  ],
+  featuresTitle: "لماذا Karmastro؟",
+  featuresSubtitle: "منظومة روحية تدمج 3 علوم لإرشاد متكامل",
+  faq: [
+    { question: "ما هو Karmastro؟", answer: "Karmastro هي منظومة روحية ذكية تدمج التنجيم وعلم الأعداد والإرشاد الكرمي. تحصل على ملف شخصي كوني كامل بناءً على تاريخ وساعة ومكان ولادتك، مع عراف متاح على مدار الساعة." },
+    { question: "كيف يعمل العراف؟", answer: "العراف يحلل خريطة ولادتك، مسار حياتك العددي والعقد القمرية الكرمية ليعطيك إجابات شخصية. يمكنك الاختيار من 4 مرشدين: Sibylle، Orion، Séléné أو Pythia." },
+    { question: "هل Karmastro مجاني؟", answer: "نعم، طريق الصحوة هدية من النجوم: ملف كوني كامل، برج يومي و3 رسائل من العراف يومياً. طريق النجمة بـ 5,99€/شهرياً يفتح العراف اللامحدود والكثير غير ذلك." },
+    { question: "ما الفرق عن برج تقليدي؟", answer: "البرج التقليدي يعتمد على البرج الشمسي فقط. Karmastro يدمج 3 علوم: التنجيم (12 كوكباً، جوانب، بيوت)، علم الأعداد (مسار حياة، تعبير، روح) والإرشاد الكرمي (عقد قمرية، ديون، دورات)." },
+    { question: "هل بياناتي محمية؟", answer: "نعم. بياناتك الشخصية وملفك الكوني مشفرة ومخزنة بأمان. Karmastro متوافق مع GDPR. لا تتم مشاركة أي بيانات مع أطراف ثالثة." },
+  ],
+  faqTitle: "أسئلة شائعة",
+  ctaTitle: "ابدأ صحوتك الكونية",
+  ctaSubtitle: "خريطة ولادة، مسار حياة، إرشاد كرمي. النجوم تنتظرك.",
+  ctaButton: "ابدأ صحوتي",
+  ctaNoCard: "لا حاجة لبطاقة بنكية",
+  statsTitle: "إرشاد بدقة",
+  statsSubtitle: "بيانات فلكية حقيقية، تقليد يمتد لآلاف السنين، أدوات حديثة. كل ما تحتاجه لفهم سماءك الداخلية.",
+  statsLabels: { planets: "كواكب محللة", houses: "بيوت فلكية", years: "سنوات تقليد", precision: "دقة بثانية قوسية", tools: "حاسبات مجانية", guides: "مرشدون كونيون" },
+  statsDescriptions: {
+    planets: "من الشمس إلى بلوتو، كل كواكب البروج تدخل ملفك الشخصي",
+    houses: "الـ 12 مجالاً من الحياة مُرسَّمة في خريطة ولادتك",
+    years: "من بلاد ما بين النهرين إلى كبلر و Swiss Ephemeris",
+    precision: "مستوى مختبر الدفع النفاث التابع لناسا",
+    tools: "مسار الحياة، خريطة ولادة، الطالع، التوافق والمزيد",
+    guides: "Sibylle، Orion، Séléné، Pythia · اختر من يخاطبك",
   },
-  referral: {
-    title: "برنامج إحالة Karmastro - النجوم التوأم",
-    description: "انضم إلى برنامج النجوم التوأم. ادعُ أحبائك إلى Karmastro واحصلا على مكافآت كونية.",
+  footerLegalTitle: "معلومات قانونية",
+  footerExploreTitle: "استكشف",
+  footerCopyright: "جميع الحقوق محفوظة",
+  seo: {
+    home: {
+      title: "Karmastro - خريطة حياتك مكتوبة في النجوم والأرقام",
+      description: "Karmastro هي أول منظومة روحية ذكية تدمج التنجيم وعلم الأعداد والإرشاد الكرمي. عراف على مدار الساعة، خريطة ولادة كاملة، حسابات Swiss Ephemeris.",
+    },
+    horoscope: {
+      title: "برج يومي مجاني - 12 برجاً - Karmastro",
+      description: "برج يومي لأبراج الزودياك الاثني عشر، محسوب بـ Swiss Ephemeris. حب، عمل، طاقة وحدس اليوم.",
+    },
+    tools: {
+      title: "حاسبات تنجيم وعلم أعداد مجانية - Karmastro",
+      description: "9 حاسبات كونية مجانية: مسار الحياة، الطالع، خريطة الولادة، التوافق، العبور.",
+    },
+    referral: {
+      title: "برنامج إحالة Karmastro - النجوم التوأم",
+      description: "انضم إلى برنامج النجوم التوأم. ادعُ أحبائك إلى Karmastro واحصلا على مكافآت كونية.",
+    },
   },
-});
+};
 
 // ============================================================
 // Map
