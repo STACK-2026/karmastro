@@ -10,7 +10,8 @@ import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { trackEvent } from "@/lib/tracker";
-import { detectLocale, formatPrice } from "@/lib/locale";
+import { formatPrice } from "@/lib/locale";
+import { useT } from "@/i18n/ui";
 
 const CHECKOUT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/stripe-checkout";
 
@@ -25,10 +26,10 @@ const PricingPage = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { toast } = useToast();
+  const { t, locale } = useT();
   const [loading, setLoading] = useState<string | null>(null);
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annual">("monthly");
   const [currentPlan, setCurrentPlan] = useState<CurrentPlan | null>(null);
-  const [locale] = useState(() => detectLocale());
 
   useEffect(() => {
     if (!user?.id) return;
@@ -52,7 +53,7 @@ const PricingPage = () => {
   const handleCheckout = async (priceKey: string) => {
     if (!user) {
       trackEvent("checkout_blocked_no_auth", { price_key: priceKey });
-      toast({ title: "Connexion requise", description: "Crée un compte pour débloquer cette offre.", variant: "destructive" });
+      toast({ title: t("pricing.toast_auth_required_title"), description: t("pricing.toast_auth_required_desc"), variant: "destructive" });
       navigate("/auth");
       return;
     }
@@ -61,7 +62,7 @@ const PricingPage = () => {
     setLoading(priceKey);
     try {
       const { data: { session } } = await supabase.auth.getSession();
-      if (!session) throw new Error("Session expirée");
+      if (!session) throw new Error(t("pricing.checkout_session_expired"));
 
       const res = await fetch(CHECKOUT_URL, {
         method: "POST",
@@ -79,12 +80,12 @@ const PricingPage = () => {
 
       const data = await res.json();
       if (!res.ok || !data.url) {
-        throw new Error(data.error || "Impossible de créer la session");
+        throw new Error(data.error || t("pricing.checkout_create_failed"));
       }
 
       window.location.href = data.url;
     } catch (e: any) {
-      toast({ title: "Erreur checkout", description: e.message, variant: "destructive" });
+      toast({ title: t("pricing.toast_checkout_error_title"), description: e.message, variant: "destructive" });
       setLoading(null);
     }
   };
@@ -94,22 +95,22 @@ const PricingPage = () => {
   return (
     <div className="min-h-screen bg-background pb-20 relative">
       <StarField />
-      <AppHeader title="Tarifs" subtitle="Choisis ton chemin" showBack />
+      <AppHeader title={t("pricing.header_title")} subtitle={t("pricing.header_subtitle")} showBack />
 
       <div className="relative z-10 px-5 space-y-5 max-w-2xl mx-auto">
         {/* Current plan indicator */}
         {currentPlan && currentPlan.tier !== "eveil" && (
           <div className="p-3 rounded-xl bg-primary/10 border border-primary/30 text-center">
             <p className="text-xs text-primary">
-              Tu es actuellement en{" "}
+              {t("pricing.current_plan_prefix")}{" "}
               <strong>
                 {currentPlan.tier === "etoile"
-                  ? "Étoile"
+                  ? t("pricing.current_plan_etoile")
                   : currentPlan.tier === "ame_soeur"
-                  ? "Âme Sœur"
+                  ? t("pricing.current_plan_ame_soeur")
                   : currentPlan.tier}
               </strong>
-              {currentPlan.credits > 0 && <> · <strong>{currentPlan.credits} crédits</strong></>}
+              {currentPlan.credits > 0 && <> · <strong>{t("pricing.current_credits", { count: currentPlan.credits })}</strong></>}
             </p>
           </div>
         )}
@@ -123,7 +124,7 @@ const PricingPage = () => {
                 billingPeriod === "monthly" ? "bg-primary text-primary-foreground" : "text-muted-foreground"
               }`}
             >
-              Mensuel
+              {t("pricing.period_monthly")}
             </button>
             <button
               onClick={() => setBillingPeriod("annual")}
@@ -131,7 +132,7 @@ const PricingPage = () => {
                 billingPeriod === "annual" ? "bg-primary text-primary-foreground" : "text-muted-foreground"
               }`}
             >
-              Annuel <span className="text-[10px] text-amber-300">-30%</span>
+              {t("pricing.period_annual")} <span className="text-[10px] text-amber-300">{t("pricing.period_annual_badge")}</span>
             </button>
           </div>
         </div>
@@ -144,19 +145,19 @@ const PricingPage = () => {
         >
           <div className="flex items-center gap-2 mb-2">
             <Sparkles className="h-5 w-5 text-muted-foreground" />
-            <h3 className="font-serif text-xl">Éveil</h3>
+            <h3 className="font-serif text-xl">{t("pricing.tier_eveil")}</h3>
             <span className="text-xs text-muted-foreground ml-auto">
-              {isCurrentTier("eveil") || !currentPlan?.tier || currentPlan.tier === "eveil" ? "Plan actuel" : ""}
+              {isCurrentTier("eveil") || !currentPlan?.tier || currentPlan.tier === "eveil" ? t("pricing.tier_eveil_current") : ""}
             </span>
           </div>
           <p className="text-2xl font-serif mb-3">
-            Gratuit <span className="text-xs text-muted-foreground">offert par les astres</span>
+            {t("pricing.tier_eveil_price")} <span className="text-xs text-muted-foreground">{t("pricing.tier_eveil_price_hint")}</span>
           </p>
           <ul className="space-y-1.5 text-sm text-muted-foreground mb-4">
-            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" /> Profil cosmique complet (thème natal + numérologie)</li>
-            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" /> 3 messages Oracle par jour</li>
-            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" /> Horoscope quotidien détaillé</li>
-            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" /> Calendrier cosmique basique</li>
+            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" /> {t("pricing.tier_eveil_f1")}</li>
+            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" /> {t("pricing.tier_eveil_f2")}</li>
+            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" /> {t("pricing.tier_eveil_f3")}</li>
+            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" /> {t("pricing.tier_eveil_f4")}</li>
           </ul>
         </motion.div>
 
@@ -168,34 +169,34 @@ const PricingPage = () => {
           className="relative p-6 rounded-2xl border-2 border-amber-300/60 bg-gradient-to-br from-purple-500/10 to-amber-300/10"
         >
           <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-amber-300 text-[#0f0a1e] text-xs font-semibold">
-            ★ Le plus populaire
+            {t("pricing.most_popular")}
           </div>
           <div className="flex items-center gap-2 mb-2">
             <Star className="h-5 w-5 text-amber-300" />
-            <h3 className="font-serif text-xl text-amber-300">Étoile</h3>
-            {isCurrentTier("etoile") && <span className="text-xs text-primary ml-auto">Plan actuel</span>}
+            <h3 className="font-serif text-xl text-amber-300">{t("pricing.tier_etoile")}</h3>
+            {isCurrentTier("etoile") && <span className="text-xs text-primary ml-auto">{t("pricing.cta_current_plan")}</span>}
           </div>
           <div className="mb-3">
             {billingPeriod === "monthly" ? (
               <p className="text-3xl font-serif">
-                {formatPrice(5.99, locale)} <span className="text-xs text-muted-foreground">/ mois</span>
+                {formatPrice(5.99, locale)} <span className="text-xs text-muted-foreground">{t("pricing.per_month")}</span>
               </p>
             ) : (
               <>
                 <p className="text-3xl font-serif">
-                  {formatPrice(49.99, locale)} <span className="text-xs text-muted-foreground">/ an</span>
+                  {formatPrice(49.99, locale)} <span className="text-xs text-muted-foreground">{t("pricing.per_year")}</span>
                 </p>
-                <p className="text-xs text-amber-300/80">{formatPrice(4.16, locale)}/mois, économise 2 mois</p>
+                <p className="text-xs text-amber-300/80">{t("pricing.annual_saves", { price: formatPrice(4.16, locale) })}</p>
               </>
             )}
           </div>
           <ul className="space-y-1.5 text-sm text-foreground/90 mb-5">
-            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-amber-300 mt-0.5 shrink-0" /> Tout Éveil, plus :</li>
-            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-amber-300 mt-0.5 shrink-0" /> Oracle illimité (4 guides au choix)</li>
-            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-amber-300 mt-0.5 shrink-0" /> Compatibilité astro-numérologique illimitée</li>
-            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-amber-300 mt-0.5 shrink-0" /> Calendrier cosmique détaillé (transits, rétrogrades)</li>
-            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-amber-300 mt-0.5 shrink-0" /> Notifications transits en temps réel</li>
-            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-amber-300 mt-0.5 shrink-0" /> Sans engagement, résiliable à tout moment</li>
+            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-amber-300 mt-0.5 shrink-0" /> {t("pricing.tier_etoile_f1")}</li>
+            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-amber-300 mt-0.5 shrink-0" /> {t("pricing.tier_etoile_f2")}</li>
+            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-amber-300 mt-0.5 shrink-0" /> {t("pricing.tier_etoile_f3")}</li>
+            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-amber-300 mt-0.5 shrink-0" /> {t("pricing.tier_etoile_f4")}</li>
+            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-amber-300 mt-0.5 shrink-0" /> {t("pricing.tier_etoile_f5")}</li>
+            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-amber-300 mt-0.5 shrink-0" /> {t("pricing.tier_etoile_f6")}</li>
           </ul>
           <button
             onClick={() => handleCheckout(billingPeriod === "monthly" ? "etoile_monthly" : "etoile_annual")}
@@ -203,12 +204,12 @@ const PricingPage = () => {
             className="w-full px-5 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity disabled:opacity-50"
           >
             {loading === (billingPeriod === "monthly" ? "etoile_monthly" : "etoile_annual")
-              ? "Chargement..."
+              ? t("pricing.cta_loading")
               : isCurrentTier("etoile")
-              ? "Plan actuel"
+              ? t("pricing.cta_current_plan")
               : billingPeriod === "monthly"
-              ? "Passer en Étoile"
-              : "Étoile annuel - économise 20€"}
+              ? t("pricing.cta_etoile_monthly")
+              : t("pricing.cta_etoile_annual")}
           </button>
         </motion.div>
 
@@ -221,24 +222,24 @@ const PricingPage = () => {
         >
           <div className="flex items-center gap-2 mb-2">
             <Heart className="h-5 w-5 text-pink-300" />
-            <h3 className="font-serif text-xl text-pink-300">Âme Sœur</h3>
-            <span className="text-xs text-muted-foreground ml-auto">Rituel unique</span>
+            <h3 className="font-serif text-xl text-pink-300">{t("pricing.tier_ame_soeur")}</h3>
+            <span className="text-xs text-muted-foreground ml-auto">{t("pricing.tier_ame_soeur_kind")}</span>
           </div>
           <p className="text-2xl font-serif mb-3">
-            {formatPrice(3.99, locale)} <span className="text-xs text-muted-foreground">une seule fois</span>
+            {formatPrice(3.99, locale)} <span className="text-xs text-muted-foreground">{t("pricing.once_only")}</span>
           </p>
           <ul className="space-y-1.5 text-sm text-muted-foreground mb-4">
-            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-pink-300 mt-0.5 shrink-0" /> Analyse karmique approfondie d'une relation</li>
-            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-pink-300 mt-0.5 shrink-0" /> Synastrie astrologique complète</li>
-            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-pink-300 mt-0.5 shrink-0" /> Compatibilité numérologique détaillée</li>
-            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-pink-300 mt-0.5 shrink-0" /> Guidance karmique personnalisée par Séléné</li>
+            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-pink-300 mt-0.5 shrink-0" /> {t("pricing.tier_ame_soeur_f1")}</li>
+            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-pink-300 mt-0.5 shrink-0" /> {t("pricing.tier_ame_soeur_f2")}</li>
+            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-pink-300 mt-0.5 shrink-0" /> {t("pricing.tier_ame_soeur_f3")}</li>
+            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-pink-300 mt-0.5 shrink-0" /> {t("pricing.tier_ame_soeur_f4")}</li>
           </ul>
           <button
             onClick={() => handleCheckout("ame_soeur")}
             disabled={loading !== null}
             className="w-full px-5 py-2.5 rounded-xl border border-pink-400/40 text-pink-300 font-medium hover:bg-pink-400/10 transition-colors disabled:opacity-50"
           >
-            {loading === "ame_soeur" ? "Chargement..." : "Débloquer ce rituel"}
+            {loading === "ame_soeur" ? t("pricing.cta_loading") : t("pricing.cta_ame_soeur")}
           </button>
         </motion.div>
 
@@ -246,15 +247,15 @@ const PricingPage = () => {
         <div className="space-y-3">
           <div className="flex items-center gap-2 pt-2">
             <Package className="h-4 w-4 text-muted-foreground" />
-            <h3 className="text-sm font-medium text-muted-foreground">Packs de crédits</h3>
+            <h3 className="text-sm font-medium text-muted-foreground">{t("pricing.credit_packs_title")}</h3>
           </div>
-          <p className="text-xs text-muted-foreground">1 crédit = 1 consultation approfondie avec l'Oracle. Parfait pour les questions ponctuelles sans engagement.</p>
+          <p className="text-xs text-muted-foreground">{t("pricing.credit_intro")}</p>
 
           <div className="grid grid-cols-3 gap-2">
             {[
-              { key: "pack_lune", name: "Lune", credits: 10, price: formatPrice(4.99, locale), highlight: false },
-              { key: "pack_soleil", name: "Soleil", credits: 35, price: formatPrice(11.99, locale), highlight: true },
-              { key: "pack_cosmos", name: "Cosmos", credits: 100, price: formatPrice(29.99, locale), highlight: false },
+              { key: "pack_lune", name: t("pricing.pack_lune"), credits: 10, price: formatPrice(4.99, locale), highlight: false },
+              { key: "pack_soleil", name: t("pricing.pack_soleil"), credits: 35, price: formatPrice(11.99, locale), highlight: true },
+              { key: "pack_cosmos", name: t("pricing.pack_cosmos"), credits: 100, price: formatPrice(29.99, locale), highlight: false },
             ].map((pack) => (
               <button
                 key={pack.key}
@@ -266,10 +267,10 @@ const PricingPage = () => {
                     : "border-border bg-card/40 hover:bg-card/60"
                 }`}
               >
-                {pack.highlight && <p className="text-[9px] text-amber-300 mb-1">★ Best value</p>}
+                {pack.highlight && <p className="text-[9px] text-amber-300 mb-1">{t("pricing.pack_best_value")}</p>}
                 <p className="font-serif text-base mb-0.5">{pack.name}</p>
                 <p className="text-lg font-mono text-primary">{pack.credits}</p>
-                <p className="text-[10px] text-muted-foreground">crédits</p>
+                <p className="text-[10px] text-muted-foreground">{t("pricing.pack_credits")}</p>
                 <p className="text-xs font-medium mt-1">{pack.price}</p>
               </button>
             ))}
@@ -281,22 +282,22 @@ const PricingPage = () => {
           <div className="flex items-start gap-2">
             <Zap className="h-4 w-4 text-primary mt-0.5 shrink-0" />
             <div>
-              <p className="font-medium">Sans engagement</p>
-              <p className="text-xs text-muted-foreground">Tu peux résilier ou changer de plan à tout moment depuis ton profil.</p>
+              <p className="font-medium">{t("pricing.faq_no_commit_title")}</p>
+              <p className="text-xs text-muted-foreground">{t("pricing.faq_no_commit_desc")}</p>
             </div>
           </div>
           <div className="flex items-start gap-2">
             <Sparkles className="h-4 w-4 text-primary mt-0.5 shrink-0" />
             <div>
-              <p className="font-medium">Paiement sécurisé par Stripe</p>
-              <p className="text-xs text-muted-foreground">Aucune donnée bancaire stockée chez Karmastro. Compatible CB, Apple Pay, Google Pay.</p>
+              <p className="font-medium">{t("pricing.faq_stripe_title")}</p>
+              <p className="text-xs text-muted-foreground">{t("pricing.faq_stripe_desc")}</p>
             </div>
           </div>
           <div className="flex items-start gap-2">
             <Heart className="h-4 w-4 text-primary mt-0.5 shrink-0" />
             <div>
-              <p className="font-medium">Récompenses parrainage</p>
-              <p className="text-xs text-muted-foreground">Invite tes proches et gagnez tous les deux des bonus. Voir ton code dans ton profil.</p>
+              <p className="font-medium">{t("pricing.faq_referral_title")}</p>
+              <p className="text-xs text-muted-foreground">{t("pricing.faq_referral_desc")}</p>
             </div>
           </div>
         </div>

@@ -14,6 +14,7 @@ import AppFooter from "@/components/AppFooter";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
+import { useT } from "@/i18n/ui";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,6 +40,7 @@ const ORACLE_CONVERSATIONS = [
 
 // Full Oracle preview : rotates through conversations (question + answer), typed answer
 const OracleLiveChat = () => {
+  const { t } = useT();
   const [convIndex, setConvIndex] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [done, setDone] = useState(false);
@@ -77,12 +79,12 @@ const OracleLiveChat = () => {
       </div>
       <div className="bg-primary/10 border border-primary/20 rounded-lg p-3 text-sm ml-auto max-w-[85%]">
         <p className="text-primary text-xs mb-1 font-medium flex items-center gap-1">
-          <Sparkles className="h-3 w-3" /> L'Oracle
+          <Sparkles className="h-3 w-3" /> {t("landing.oracle_live_label")}
         </p>
         <span>
           {displayed}
           {!done && <span className="animate-pulse text-primary">|</span>}
-          {done && <span className="text-primary/70 italic text-xs"> · lecture suivante...</span>}
+          {done && <span className="text-primary/70 italic text-xs">{t("landing.oracle_live_next")}</span>}
         </span>
       </div>
     </>
@@ -91,6 +93,7 @@ const OracleLiveChat = () => {
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const { t } = useT();
   const [birthDate, setBirthDate] = useState("");
   const [firstName, setFirstName] = useState("");
   const [quickResult, setQuickResult] = useState<{ sign: string; symbol: string; lifePath: number; keyword: string } | null>(null);
@@ -413,10 +416,10 @@ const LandingPage = () => {
         </div>
         <div className="flex items-center gap-3">
           <Button variant="ghost" size="sm" onClick={() => navigate("/auth")} className="text-muted-foreground hover:text-foreground">
-            Connexion
+            {t("landing.header_login")}
           </Button>
           <Button size="sm" onClick={() => navigate("/auth")} className="bg-primary hover:bg-primary/90" style={{ borderRadius: 12, boxShadow: "0 4px 15px rgba(139, 92, 246, 0.25)" }}>
-            Commencer
+            {t("landing.header_start")}
           </Button>
         </div>
       </header>
@@ -431,27 +434,27 @@ const LandingPage = () => {
 
         <div ref={heroTextRef}>
           <h1 className="font-serif text-4xl md:text-6xl font-bold mb-4 leading-tight">
-            Ta carte de vie.
+            {t("landing.hero_title_1")}
             <br />
-            <span className="text-gradient-violet">Écrite dans les étoiles</span>
+            <span className="text-gradient-violet">{t("landing.hero_title_2")}</span>
             <br />
-            <span className="text-gradient-gold">et les nombres.</span>
+            <span className="text-gradient-gold">{t("landing.hero_title_3")}</span>
           </h1>
 
           <p className="text-muted-foreground text-lg max-w-xl mb-6 mx-auto">
-            Astrologie + Numérologie + Guidance karmique. Un seul profil. Un rendez-vous quotidien. L'Oracle disponible 24/7.
+            {t("landing.hero_tagline")}
           </p>
           <p className="mb-10">
             <a href="https://karmastro.com/precision" className="inline-flex items-center gap-1.5 text-[11px] text-muted-foreground/60 hover:text-muted-foreground transition-colors border border-white/5 rounded-full px-3 py-1">
               <span className="w-1.5 h-1.5 rounded-full bg-karmique-earth animate-pulse" />
-              Calculs astronomiques précision NASA
+              {t("landing.hero_precision_badge")}
             </a>
           </p>
         </div>
 
         {/* Quick calculator */}
         <div ref={calcRef} className="w-full max-w-lg border-glow rounded-xl bg-card/80 backdrop-blur-sm p-6">
-          <p className="text-sm text-muted-foreground mb-4">Découvre ton profil en 10 secondes</p>
+          <p className="text-sm text-muted-foreground mb-4">{t("landing.calc_title")}</p>
           <div className="flex flex-col sm:flex-row gap-3 mb-4">
             <SmartDateInput
               value={birthDate}
@@ -462,10 +465,10 @@ const LandingPage = () => {
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               className="flex-1 bg-secondary border-border"
-              placeholder="Prénom"
+              placeholder={t("landing.calc_firstname_placeholder")}
             />
             <Button onClick={handleQuickCalc} className="bg-primary hover:bg-primary/90">
-              <Sparkles className="h-4 w-4 mr-1" /> Découvrir
+              <Sparkles className="h-4 w-4 mr-1" /> {t("landing.calc_discover")}
             </Button>
           </div>
 
@@ -484,7 +487,7 @@ const LandingPage = () => {
                 <p className="text-muted-foreground">{quickResult.keyword}</p>
               </div>
               <Button size="sm" variant="outline" onClick={() => navigate("/onboarding")} className="border-primary text-primary">
-                Profil complet <ChevronRight className="h-3 w-3" />
+                {t("landing.calc_full_profile")} <ChevronRight className="h-3 w-3" />
               </Button>
             </motion.div>
           )}
@@ -494,9 +497,9 @@ const LandingPage = () => {
       {/* 3 Pillars - Flip cards */}
       <section ref={pillarsRef} className="relative z-10 px-6 py-16">
         <h2 className="font-serif text-3xl md:text-4xl text-center mb-4">
-          3 piliers, <span className="text-gradient-violet">1 profil</span>
+          {t("landing.pillars_title_1")} <span className="text-gradient-violet">{t("landing.pillars_title_2")}</span>
         </h2>
-        <p className="text-center text-muted-foreground mb-12 text-sm">Clique sur une carte pour en savoir plus</p>
+        <p className="text-center text-muted-foreground mb-12 text-sm">{t("landing.pillars_click_hint")}</p>
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {[
             {
@@ -536,7 +539,7 @@ const LandingPage = () => {
                   <pillar.icon className={`h-10 w-10 mb-4 ${pillar.color}`} />
                   <h3 className="font-serif text-xl mb-2">{pillar.title}</h3>
                   <p className="text-sm text-muted-foreground">{pillar.desc}</p>
-                  <p className="text-[10px] text-muted-foreground/50 mt-3">Clique pour retourner</p>
+                  <p className="text-[10px] text-muted-foreground/50 mt-3">{t("landing.pillar_click_flip")}</p>
                 </>
               }
               back={
@@ -553,10 +556,10 @@ const LandingPage = () => {
       {/* Oracle preview - enriched */}
       <section ref={oracleRef} className="relative z-10 px-6 py-16">
         <h2 className="font-serif text-3xl md:text-4xl text-center mb-4">
-          L'Oracle <span className="text-gradient-gold">te répond</span>
+          {t("landing.oracle_title_1")} <span className="text-gradient-gold">{t("landing.oracle_title_2")}</span>
         </h2>
         <p className="oracle-subtitle text-muted-foreground text-center mb-12 max-w-lg mx-auto">
-          Pas un horoscope générique. Un guide personnel qui calcule, croise et explique.
+          {t("landing.oracle_subtitle")}
         </p>
 
         {/* What the Oracle does - 4 points */}
@@ -590,12 +593,12 @@ const LandingPage = () => {
             ))}
           </div>
           <Button className="w-full bg-primary hover:bg-primary/90" onClick={() => navigate("/onboarding")}>
-            <MessageCircle className="h-4 w-4 mr-2" /> Poser ta question à l'Oracle
+            <MessageCircle className="h-4 w-4 mr-2" /> {t("landing.oracle_cta")}
           </Button>
         <p className="text-center mt-4">
             <a href="https://karmastro.com/precision" className="inline-flex items-center gap-1.5 text-[10px] text-muted-foreground/50 hover:text-muted-foreground transition-colors">
               <span className="w-1 h-1 rounded-full bg-karmique-earth" />
-              Positions planétaires Swiss Ephemeris - précision 0.001"
+              {t("landing.oracle_footnote")}
             </a>
           </p>
         </div>
@@ -637,7 +640,7 @@ const LandingPage = () => {
 
       {/* Testimonials */}
       <section ref={testimonialsRef} className="relative z-10 px-6 py-16">
-        <h2 className="font-serif text-3xl text-center mb-10">Ils ont trouvé <span className="text-gradient-gold">leur chemin</span></h2>
+        <h2 className="font-serif text-3xl text-center mb-10">{t("landing.testi_title_1")} <span className="text-gradient-gold">{t("landing.testi_title_2")}</span></h2>
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {testimonials.map((t, i) => (
             <div
@@ -660,50 +663,50 @@ const LandingPage = () => {
       {/* Pricing */}
       <section ref={pricingRef} className="relative z-10 px-6 py-16" id="pricing">
         <h2 className="font-serif text-3xl md:text-4xl text-center mb-12">
-          Choisis ta <span className="text-gradient-violet">voie</span>
+          {t("landing.pricing_title_1")} <span className="text-gradient-violet">{t("landing.pricing_title_2")}</span>
         </h2>
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {/* Éveil */}
           <div ref={(el) => { pricingCardsRef.current[0] = el; }} className="border-glow rounded-xl bg-card/40 p-6">
-            <h3 className="font-serif text-xl mb-1">Éveil <Sparkles className="h-4 w-4 inline text-primary" /></h3>
-            <p className="text-lg font-medium mb-4 text-gradient-gold">Offert par les astres</p>
+            <h3 className="font-serif text-xl mb-1">{t("landing.pricing_eveil_title")} <Sparkles className="h-4 w-4 inline text-primary" /></h3>
+            <p className="text-lg font-medium mb-4 text-gradient-gold">{t("landing.pricing_eveil_price")}</p>
             <ul className="space-y-2 text-sm text-muted-foreground mb-6">
               {["Profil cosmique complet", "RDV quotidien (court)", "3 messages Oracle/jour", "1 compatibilité", "Guides éducatifs"].map(f => (
                 <li key={f} className="flex items-center gap-2"><Check className="h-4 w-4 text-karmique-earth" /> {f}</li>
               ))}
             </ul>
             <Button variant="outline" className="w-full border-primary text-primary" onClick={() => navigate("/onboarding")}>
-              Commencer mon éveil
+              {t("landing.pricing_eveil_cta")}
             </Button>
           </div>
           {/* Étoile */}
           <div ref={(el) => { pricingCardsRef.current[1] = el; }} className="border-glow-gold glow-violet rounded-xl bg-card/60 p-6 relative">
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full">
-              Le plus choisi
+              {t("landing.pricing_etoile_badge")}
             </span>
-            <h3 className="font-serif text-xl mb-1">Étoile <Star className="h-4 w-4 inline text-accent" /></h3>
-            <p className="text-3xl font-bold mb-1">5,99€<span className="text-sm font-normal text-muted-foreground">/mois</span></p>
-            <p className="text-xs text-muted-foreground mb-4">ou 49,99€/an (2 mois offerts)</p>
+            <h3 className="font-serif text-xl mb-1">{t("landing.pricing_etoile_title")} <Star className="h-4 w-4 inline text-accent" /></h3>
+            <p className="text-3xl font-bold mb-1">5,99€<span className="text-sm font-normal text-muted-foreground">{t("landing.pricing_etoile_per_month")}</span></p>
+            <p className="text-xs text-muted-foreground mb-4">{t("landing.pricing_etoile_annual_hint")}</p>
             <ul className="space-y-2 text-sm text-muted-foreground mb-6">
               {["RDV quotidien COMPLET", "L'Oracle ILLIMITÉ", "Calendrier cosmique détaillé", "Compatibilités illimitées", "Calculateur timing optimal", "Export PDF", "Zéro publicité"].map(f => (
                 <li key={f} className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> {f}</li>
               ))}
             </ul>
             <Button className="w-full bg-primary hover:bg-primary/90" onClick={() => navigate("/onboarding")}>
-              7 jours offerts par les astres
+              {t("landing.pricing_etoile_cta")}
             </Button>
           </div>
           {/* Âme Sœur */}
           <div ref={(el) => { pricingCardsRef.current[2] = el; }} className="border-glow rounded-xl bg-card/40 p-6">
-            <h3 className="font-serif text-xl mb-1">Âme Sœur <Heart className="h-4 w-4 inline text-karmique-fire" /></h3>
-            <p className="text-3xl font-bold mb-4">2,99€<span className="text-sm font-normal text-muted-foreground"> rituel unique</span></p>
+            <h3 className="font-serif text-xl mb-1">{t("landing.pricing_ame_title")} <Heart className="h-4 w-4 inline text-karmique-fire" /></h3>
+            <p className="text-3xl font-bold mb-4">2,99€<span className="text-sm font-normal text-muted-foreground"> {t("landing.pricing_ame_unit")}</span></p>
             <ul className="space-y-2 text-sm text-muted-foreground mb-6">
               {["Rapport compatibilité 15 pages", "Synastrie complète", "Guidance karmique couple", "Export PDF"].map(f => (
                 <li key={f} className="flex items-center gap-2"><Check className="h-4 w-4 text-accent" /> {f}</li>
               ))}
             </ul>
             <Button variant="outline" className="w-full border-accent text-accent" onClick={() => navigate("/onboarding")}>
-              Recevoir mon rituel
+              {t("landing.pricing_ame_cta")}
             </Button>
           </div>
         </div>

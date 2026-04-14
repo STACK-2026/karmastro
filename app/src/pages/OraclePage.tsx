@@ -14,86 +14,87 @@ import { trackEvent } from "@/lib/tracker";
 import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
 import ReactMarkdown from "react-markdown";
+import { useT, type UiKey } from "@/i18n/ui";
 
 type Msg = { role: "user" | "assistant" | "paywall"; content: string };
 
 type GuideKey = "sibylle" | "orion" | "selene" | "pythia";
 
-type GuideInfo = {
+type GuideMeta = {
   key: GuideKey;
-  name: string;
-  title: string;
-  description: string;
-  strengths: string;
   icon: typeof Stars;
   color: string;
-  opener: string;
-  suggestions: string[];
+  nameKey: UiKey;
+  titleKey: UiKey;
+  descKey: UiKey;
+  strengthsKey: UiKey;
+  openerKey: UiKey;
+  suggestionKeys: [UiKey, UiKey, UiKey, UiKey];
 };
 
-const GUIDES: Record<GuideKey, GuideInfo> = {
+const GUIDES: Record<GuideKey, GuideMeta> = {
   sibylle: {
     key: "sibylle",
-    name: "Sibylle",
-    title: "L'Oracle mystique",
-    description: "Astrologue, poétique, profonde. Héritière des Sibylles antiques, prophétesses d'Apollon.",
-    strengths: "Astrologie profonde · Sens de la vie · Mythologie",
     icon: Stars,
     color: "text-purple-300",
-    opener: "Sibylle consulte les astres...",
-    suggestions: [
-      "Que me dit mon thème natal sur ma mission de vie ?",
-      "Comment interpréter ma Lune en opposition à Pluton ?",
-      "Que raconte mon Saturne en maison VII ?",
-      "Quel sens donner à mes transits actuels ?",
+    nameKey: "oracle.guide_sibylle_name",
+    titleKey: "oracle.guide_sibylle_title",
+    descKey: "oracle.guide_sibylle_desc",
+    strengthsKey: "oracle.guide_sibylle_strengths",
+    openerKey: "oracle.guide_sibylle_opener",
+    suggestionKeys: [
+      "oracle.guide_sibylle_sugg1",
+      "oracle.guide_sibylle_sugg2",
+      "oracle.guide_sibylle_sugg3",
+      "oracle.guide_sibylle_sugg4",
     ],
   },
   orion: {
     key: "orion",
-    name: "Orion",
-    title: "Le coach cosmique",
-    description: "Karmique, direct, motivant. Ancien prof de philosophie stoïcienne, chasseur du ciel.",
-    strengths: "Carrière · Décisions · Discipline · Stoïcisme",
     icon: Zap,
     color: "text-amber-300",
-    opener: "Orion scrute ta trajectoire...",
-    suggestions: [
-      "Est-ce le bon moment pour changer de travail ?",
-      "Comment profiter au maximum de mon retour de Saturne ?",
-      "Je procrastine sur un projet, que faire ?",
-      "Quelle leçon karmique dois-je intégrer en ce moment ?",
+    nameKey: "oracle.guide_orion_name",
+    titleKey: "oracle.guide_orion_title",
+    descKey: "oracle.guide_orion_desc",
+    strengthsKey: "oracle.guide_orion_strengths",
+    openerKey: "oracle.guide_orion_opener",
+    suggestionKeys: [
+      "oracle.guide_orion_sugg1",
+      "oracle.guide_orion_sugg2",
+      "oracle.guide_orion_sugg3",
+      "oracle.guide_orion_sugg4",
     ],
   },
   selene: {
     key: "selene",
-    name: "Séléné",
-    title: "L'âme sœur cosmique",
-    description: "Relationnelle, douce, empathique. Thérapeute inspirée de Séléné, déesse de la Lune.",
-    strengths: "Amour · Relations · Émotions · Guérison",
     icon: Moon,
     color: "text-blue-300",
-    opener: "Séléné écoute ton cœur...",
-    suggestions: [
-      "Est-ce que cette personne est mon âme sœur karmique ?",
-      "Ma relation traverse une crise, que disent les astres ?",
-      "Pourquoi je me sens bloquée émotionnellement ?",
-      "Comment comprendre ma mère à travers son thème natal ?",
+    nameKey: "oracle.guide_selene_name",
+    titleKey: "oracle.guide_selene_title",
+    descKey: "oracle.guide_selene_desc",
+    strengthsKey: "oracle.guide_selene_strengths",
+    openerKey: "oracle.guide_selene_opener",
+    suggestionKeys: [
+      "oracle.guide_selene_sugg1",
+      "oracle.guide_selene_sugg2",
+      "oracle.guide_selene_sugg3",
+      "oracle.guide_selene_sugg4",
     ],
   },
   pythia: {
     key: "pythia",
-    name: "Pythia",
-    title: "La calculatrice cosmique",
-    description: "Numérologue, analytique, précise. Mathématicienne dans la lignée de la Pythie de Delphes.",
-    strengths: "Numérologie · Patterns · Calculs · Synchronicités",
     icon: Calculator,
     color: "text-emerald-300",
-    opener: "Pythia calcule tes vibrations...",
-    suggestions: [
-      "Que signifie voir 22:22 partout depuis une semaine ?",
-      "Explique-moi mon chemin de vie en détail",
-      "Quelle est ma dette karmique et comment la résoudre ?",
-      "Calcule ma compatibilité numérologique avec mon partenaire",
+    nameKey: "oracle.guide_pythia_name",
+    titleKey: "oracle.guide_pythia_title",
+    descKey: "oracle.guide_pythia_desc",
+    strengthsKey: "oracle.guide_pythia_strengths",
+    openerKey: "oracle.guide_pythia_opener",
+    suggestionKeys: [
+      "oracle.guide_pythia_sugg1",
+      "oracle.guide_pythia_sugg2",
+      "oracle.guide_pythia_sugg3",
+      "oracle.guide_pythia_sugg4",
     ],
   },
 };
@@ -117,10 +118,10 @@ type FeedbackState = {
   rating?: 1 | 2 | 3;
 };
 
-const FEEDBACK_OPTIONS = [
-  { rating: 3 as const, emoji: "✨", label: "Ça résonne", color: "border-emerald-400/40 hover:bg-emerald-400/10 text-emerald-300" },
-  { rating: 2 as const, emoji: "⭐", label: "Intéressant, dis-m'en plus", color: "border-amber-300/40 hover:bg-amber-300/10 text-amber-300" },
-  { rating: 1 as const, emoji: "🌑", label: "Pas cette fois", color: "border-pink-400/40 hover:bg-pink-400/10 text-pink-300" },
+const FEEDBACK_OPTIONS: Array<{ rating: 1 | 2 | 3; emoji: string; labelKey: UiKey; color: string }> = [
+  { rating: 3, emoji: "✨", labelKey: "oracle.feedback_resonates", color: "border-emerald-400/40 hover:bg-emerald-400/10 text-emerald-300" },
+  { rating: 2, emoji: "⭐", labelKey: "oracle.feedback_interesting", color: "border-amber-300/40 hover:bg-amber-300/10 text-amber-300" },
+  { rating: 1, emoji: "🌑", labelKey: "oracle.feedback_not_now", color: "border-pink-400/40 hover:bg-pink-400/10 text-pink-300" },
 ];
 
 const OraclePage = () => {
@@ -128,6 +129,7 @@ const OraclePage = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { toast } = useToast();
+  const { t } = useT();
   const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -184,11 +186,12 @@ const OraclePage = () => {
       trackEvent("oracle_feedback_submitted", { guide: guideKey, rating, has_text: Boolean(text?.trim()) });
       setFeedback((prev) => ({ ...prev, [messageIndex]: { status: "submitted", rating } }));
       if (text?.trim()) {
-        toast({ title: "Merci pour ton retour", description: "Ta voix aide " + (currentGuide?.name || "l'Oracle") + " à mieux te guider." });
+        const guideName = currentGuide ? t(currentGuide.nameKey) : t("oracle.header_title");
+        toast({ title: t("oracle.feedback_toast_title"), description: t("oracle.feedback_toast_desc", { name: guideName }) });
       }
     } catch (e: any) {
       console.error("Feedback submit error:", e);
-      toast({ title: "Retour non enregistré", description: "Réessaie dans un instant.", variant: "destructive" });
+      toast({ title: t("oracle.feedback_error_title"), description: t("oracle.feedback_error_desc"), variant: "destructive" });
     }
   };
 
@@ -281,16 +284,16 @@ const OraclePage = () => {
             ...prev,
             {
               role: "paywall",
-              content: errData.paywall.message || "Tu as atteint ta limite quotidienne.",
+              content: errData.paywall.message || t("oracle.paywall_default_msg"),
             },
           ]);
           return;
         }
 
-        throw new Error(errData.error || `Erreur ${resp.status}`);
+        throw new Error(errData.error || t("oracle.error_generic", { status: resp.status }));
       }
 
-      if (!resp.body) throw new Error("Pas de stream");
+      if (!resp.body) throw new Error(t("oracle.error_no_stream"));
 
       const reader = resp.body.getReader();
       const decoder = new TextDecoder();
@@ -332,9 +335,10 @@ const OraclePage = () => {
         }
       }
     } catch (e: any) {
-      toast({ title: `${currentGuide?.name || "Oracle"} est injoignable`, description: e.message, variant: "destructive" });
+      const guideName = currentGuide ? t(currentGuide.nameKey) : t("oracle.header_title");
+      toast({ title: t("oracle.error_unreachable", { name: guideName }), description: e.message, variant: "destructive" });
       if (!assistantSoFar) {
-        setMessages(prev => [...prev, { role: "assistant", content: "Une perturbation cosmique m'empêche de te répondre. Réessaie dans un instant." }]);
+        setMessages(prev => [...prev, { role: "assistant", content: t("oracle.error_fallback_msg") }]);
       }
     } finally {
       setIsLoading(false);
@@ -346,19 +350,19 @@ const OraclePage = () => {
     return (
       <div className="min-h-screen bg-background pb-20 flex flex-col relative">
         <StarField />
-        <AppHeader title="L'Oracle" subtitle="Choisis ton guide" showBack />
+        <AppHeader title={t("oracle.header_title")} subtitle={t("oracle.header_subtitle_picker")} showBack />
 
         <div className="relative z-10 px-5 py-6 max-w-2xl mx-auto w-full">
           <div className="text-center mb-8">
             <Sparkles className="h-10 w-10 text-primary mx-auto mb-3" />
-            <h2 className="font-serif text-2xl mb-2">À qui veux-tu parler ?</h2>
+            <h2 className="font-serif text-2xl mb-2">{t("oracle.picker_title")}</h2>
             <p className="text-sm text-muted-foreground">
-              Quatre guides, quatre voix, quatre façons d'éclairer ton chemin. Choisis celui qui résonne avec ce que tu cherches aujourd'hui.
+              {t("oracle.picker_subtitle")}
             </p>
           </div>
 
           <div className="grid gap-3">
-            {(Object.values(GUIDES) as GuideInfo[]).map((g) => {
+            {(Object.values(GUIDES) as GuideMeta[]).map((g) => {
               const Icon = g.icon;
               const isActive = guideKey === g.key;
               return (
@@ -381,12 +385,12 @@ const OraclePage = () => {
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1">
-                        <h3 className="font-serif text-lg">{g.name}</h3>
-                        <span className="text-xs text-muted-foreground">· {g.title}</span>
+                        <h3 className="font-serif text-lg">{t(g.nameKey)}</h3>
+                        <span className="text-xs text-muted-foreground">· {t(g.titleKey)}</span>
                         {isActive && <Check className="h-4 w-4 text-primary ml-auto" />}
                       </div>
-                      <p className="text-sm text-muted-foreground mb-2 leading-relaxed">{g.description}</p>
-                      <p className={`text-xs ${g.color}`}>{g.strengths}</p>
+                      <p className="text-sm text-muted-foreground mb-2 leading-relaxed">{t(g.descKey)}</p>
+                      <p className={`text-xs ${g.color}`}>{t(g.strengthsKey)}</p>
                     </div>
                   </div>
                 </motion.button>
@@ -395,7 +399,7 @@ const OraclePage = () => {
           </div>
 
           <p className="text-xs text-muted-foreground/60 text-center mt-6">
-            Tu pourras changer de guide à tout moment depuis le chat.
+            {t("oracle.picker_change_note")}
           </p>
         </div>
 
@@ -410,7 +414,7 @@ const OraclePage = () => {
     <div className="min-h-screen bg-background pb-20 flex flex-col relative">
       <StarField />
 
-      <AppHeader title={currentGuide.name} subtitle={currentGuide.title} showBack />
+      <AppHeader title={t(currentGuide.nameKey)} subtitle={t(currentGuide.titleKey)} showBack />
 
       {/* Guide switcher pill */}
       <div className="relative z-10 px-5 pt-2">
@@ -423,10 +427,10 @@ const OraclePage = () => {
               <Icon className="h-4 w-4" />
             </div>
             <span className="text-sm">
-              Tu parles à <span className="font-medium">{currentGuide.name}</span>
+              {t("oracle.guide_pill_talking_to", { name: t(currentGuide.nameKey) })}
             </span>
           </div>
-          <span className="text-xs text-muted-foreground">Changer</span>
+          <span className="text-xs text-muted-foreground">{t("oracle.guide_pill_change")}</span>
         </button>
       </div>
 
@@ -434,9 +438,9 @@ const OraclePage = () => {
         {messages.length === 0 && (
           <div className="text-center pt-10">
             <Icon className={`h-12 w-12 ${currentGuide.color} mx-auto mb-4 opacity-60`} />
-            <h2 className="font-serif text-xl mb-2">{currentGuide.name} t'écoute</h2>
+            <h2 className="font-serif text-xl mb-2">{t("oracle.empty_listens", { name: t(currentGuide.nameKey) })}</h2>
             <p className="text-sm text-muted-foreground/70 max-w-md mx-auto">
-              {currentGuide.description}
+              {t(currentGuide.descKey)}
             </p>
           </div>
         )}
@@ -453,20 +457,20 @@ const OraclePage = () => {
               >
                 <div className="w-full max-w-md p-5 rounded-2xl border border-amber-300/30 bg-gradient-to-br from-purple-500/10 to-amber-300/10 text-center">
                   <Sparkles className="h-8 w-8 text-amber-300 mx-auto mb-2" />
-                  <h3 className="font-serif text-lg mb-2">Les astres ne dorment jamais</h3>
+                  <h3 className="font-serif text-lg mb-2">{t("oracle.paywall_title")}</h3>
                   <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{msg.content}</p>
                   <div className="flex flex-col sm:flex-row gap-2">
                     <button
                       onClick={() => navigate("/pricing")}
                       className="flex-1 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity"
                     >
-                      Passer en Étoile
+                      {t("oracle.paywall_cta_etoile")}
                     </button>
                     <button
                       onClick={() => navigate("/pricing")}
                       className="flex-1 px-4 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 font-medium text-sm hover:bg-amber-300/10 transition-colors"
                     >
-                      Recharger en crédits
+                      {t("oracle.paywall_cta_credits")}
                     </button>
                   </div>
                 </div>
@@ -494,7 +498,7 @@ const OraclePage = () => {
               }>
                 {msg.role === "assistant" && (
                   <p className={`text-xs mb-1 font-medium flex items-center gap-1 ${currentGuide.color}`}>
-                    <Icon className="h-3 w-3" /> {currentGuide.name}
+                    <Icon className="h-3 w-3" /> {t(currentGuide.nameKey)}
                   </p>
                 )}
                 {msg.role === "assistant" ? (
@@ -511,7 +515,7 @@ const OraclePage = () => {
                   {(!fb || fb.status === "idle") && (
                     <div className="flex flex-wrap gap-1.5">
                       <span className="text-[10px] text-muted-foreground/60 self-center mr-1">
-                        Cette lecture t'a parlé ?
+                        {t("oracle.feedback_prompt")}
                       </span>
                       {FEEDBACK_OPTIONS.map((opt) => (
                         <button
@@ -519,7 +523,7 @@ const OraclePage = () => {
                           onClick={() => handleFeedbackClick(i, opt.rating)}
                           className={`text-[11px] border rounded-full px-2.5 py-1 transition-colors ${opt.color}`}
                         >
-                          {opt.emoji} {opt.label}
+                          {opt.emoji} {t(opt.labelKey)}
                         </button>
                       ))}
                     </div>
@@ -528,15 +532,15 @@ const OraclePage = () => {
                   {fb?.status === "expanded" && (
                     <div className="p-3 rounded-xl border border-primary/20 bg-primary/5 space-y-2">
                       <p className="text-xs text-muted-foreground">
-                        {fb.rating === 3 && "Heureux que ça t'ait parlé."}
-                        {fb.rating === 2 && "Dis-moi ce qui manquait, j'affine."}
-                        {fb.rating === 1 && "Explique-moi pour que je fasse mieux."}
-                        <span className="text-muted-foreground/50"> (optionnel)</span>
+                        {fb.rating === 3 && t("oracle.feedback_expanded_r3")}
+                        {fb.rating === 2 && t("oracle.feedback_expanded_r2")}
+                        {fb.rating === 1 && t("oracle.feedback_expanded_r1")}
+                        <span className="text-muted-foreground/50"> {t("oracle.feedback_optional")}</span>
                       </p>
                       <textarea
                         value={feedbackText[i] || ""}
                         onChange={(e) => setFeedbackText((prev) => ({ ...prev, [i]: e.target.value }))}
-                        placeholder="Ton retour en quelques mots..."
+                        placeholder={t("oracle.feedback_placeholder")}
                         rows={2}
                         maxLength={500}
                         className="w-full text-sm bg-background/50 border border-border rounded-lg px-3 py-2 focus:outline-none focus:border-primary/50 resize-none"
@@ -546,13 +550,13 @@ const OraclePage = () => {
                           onClick={() => handleFeedbackSkip(i)}
                           className="text-xs text-muted-foreground hover:text-foreground px-3 py-1.5"
                         >
-                          Passer
+                          {t("oracle.feedback_skip")}
                         </button>
                         <button
                           onClick={() => handleFeedbackSubmit(i)}
                           className="text-xs bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg px-3 py-1.5 font-medium"
                         >
-                          Envoyer
+                          {t("oracle.feedback_send")}
                         </button>
                       </div>
                     </div>
@@ -560,7 +564,7 @@ const OraclePage = () => {
 
                   {fb?.status === "submitted" && (
                     <p className="text-[11px] text-muted-foreground/60 italic">
-                      Merci, ton retour a été transmis à {currentGuide.name}.
+                      {t("oracle.feedback_submitted", { name: t(currentGuide.nameKey) })}
                     </p>
                   )}
                 </div>
@@ -573,9 +577,9 @@ const OraclePage = () => {
           <div className="flex justify-start">
             <div className="bg-primary/10 border border-primary/20 rounded-2xl rounded-bl-sm px-4 py-3">
               <p className={`text-xs mb-1 font-medium flex items-center gap-1 ${currentGuide.color}`}>
-                <Icon className="h-3 w-3 animate-spin" /> {currentGuide.name}
+                <Icon className="h-3 w-3 animate-spin" /> {t(currentGuide.nameKey)}
               </p>
-              <p className="text-sm text-muted-foreground">{currentGuide.opener}</p>
+              <p className="text-sm text-muted-foreground">{t(currentGuide.openerKey)}</p>
             </div>
           </div>
         )}
@@ -583,15 +587,18 @@ const OraclePage = () => {
 
       <div className="relative z-10 px-5 pb-2">
         <div className="flex gap-2 overflow-x-auto pb-2">
-          {currentGuide.suggestions.map(s => (
-            <button
-              key={s}
-              onClick={() => handleSend(s)}
-              className="text-xs border border-primary/30 text-primary rounded-full px-3 py-1.5 whitespace-nowrap hover:bg-primary/10 transition-colors shrink-0"
-            >
-              {s}
-            </button>
-          ))}
+          {currentGuide.suggestionKeys.map(sk => {
+            const s = t(sk);
+            return (
+              <button
+                key={sk}
+                onClick={() => handleSend(s)}
+                className="text-xs border border-primary/30 text-primary rounded-full px-3 py-1.5 whitespace-nowrap hover:bg-primary/10 transition-colors shrink-0"
+              >
+                {s}
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -601,7 +608,7 @@ const OraclePage = () => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
-            placeholder={`Pose ta question à ${currentGuide.name}...`}
+            placeholder={t("oracle.input_placeholder", { name: t(currentGuide.nameKey) })}
             className="bg-secondary border-border"
             disabled={isLoading}
           />
