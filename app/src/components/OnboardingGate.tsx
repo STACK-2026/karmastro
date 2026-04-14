@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
+import { useT } from "@/i18n/ui";
 
 /**
  * Wraps the app and redirects authenticated users with an incomplete profile
@@ -22,6 +23,7 @@ export const OnboardingGate = ({ children }: { children: React.ReactNode }) => {
   const { user, loading: authLoading } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
+  const { t } = useT();
   const [checked, setChecked] = useState(false);
   const checkedFor = useRef<string | null>(null); // user.id we already validated
 
@@ -67,7 +69,7 @@ export const OnboardingGate = ({ children }: { children: React.ReactNode }) => {
   if (!checked && user && !WHITELIST.has(location.pathname)) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
-        <p className="text-sm text-muted-foreground">Alignement des astres...</p>
+        <p className="text-sm text-muted-foreground">{t("common.onboarding_loading")}</p>
       </div>
     );
   }

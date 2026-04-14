@@ -8,18 +8,20 @@ import AppFooter from "@/components/AppFooter";
 import StarField from "@/components/StarField";
 import AppHeader from "@/components/AppHeader";
 import { ZodiacSymbol } from "@/components/ZodiacSymbol";
+import { useT } from "@/i18n/ui";
 
 const CompatibilityPage = () => {
   const navigate = useNavigate();
+  const { t } = useT();
 
   return (
     <div className="min-h-screen bg-background pb-20 relative">
       <StarField />
-      <AppHeader title="Compatibilite" showBack />
+      <AppHeader title={t("compat.header_title")} showBack />
 
       <div className="relative z-10 px-5 space-y-5">
         <Button variant="outline" className="w-full border-primary text-primary">
-          <UserPlus className="h-4 w-4 mr-2" /> Ajouter une personne
+          <UserPlus className="h-4 w-4 mr-2" /> {t("compat.add_person")}
         </Button>
 
         {compatibilityProfiles.map((profile) => (
@@ -44,7 +46,7 @@ const CompatibilityPage = () => {
               </div>
               <div className="text-center">
                 <span className="text-2xl font-mono font-bold text-primary">{profile.scores.global}%</span>
-                <p className="text-[10px] text-muted-foreground">Global</p>
+                <p className="text-[10px] text-muted-foreground">{t("compat.score_global")}</p>
               </div>
             </div>
 
@@ -67,22 +69,22 @@ const CompatibilityPage = () => {
 
             {/* Strengths & Frictions */}
             <details>
-              <summary className="text-sm text-primary cursor-pointer mb-2">Voir l'analyse</summary>
+              <summary className="text-sm text-primary cursor-pointer mb-2">{t("compat.see_analysis")}</summary>
               <div className="space-y-3 mt-3">
                 <div>
-                  <p className="text-xs font-medium text-karmique-earth mb-1">Forces</p>
+                  <p className="text-xs font-medium text-karmique-earth mb-1">{t("compat.strengths")}</p>
                   {profile.strengths.map((s, i) => (
                     <p key={i} className="text-xs text-muted-foreground mb-1">• {s}</p>
                   ))}
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-destructive mb-1">Points de friction</p>
+                  <p className="text-xs font-medium text-destructive mb-1">{t("compat.frictions")}</p>
                   {profile.frictions.map((f, i) => (
                     <p key={i} className="text-xs text-muted-foreground mb-1">• {f}</p>
                   ))}
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-accent mb-1">Guidance karmique</p>
+                  <p className="text-xs font-medium text-accent mb-1">{t("compat.karmic_guidance")}</p>
                   <p className="text-xs text-muted-foreground">{profile.karmicGuidance}</p>
                 </div>
               </div>

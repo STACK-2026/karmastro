@@ -4,31 +4,33 @@ import BottomNav from "@/components/BottomNav";
 import AppFooter from "@/components/AppFooter";
 import StarField from "@/components/StarField";
 import AppHeader from "@/components/AppHeader";
-
-const guides = [
-  { icon: Star, title: "Les 12 signes du zodiaque", desc: "Traits, compatibilités, célébrités pour chaque signe", count: "12 articles" },
-  { icon: Hash, title: "Les 9 chemins de vie", desc: "Interprétation complète de chaque nombre directeur", count: "9 articles" },
-  { icon: Moon, title: "Les planètes en astrologie", desc: "Du Soleil à Pluton : rôle et influence de chaque planète", count: "10 articles" },
-  { icon: Star, title: "Les 12 maisons astrologiques", desc: "Ce que gouverne chaque maison dans ton thème", count: "12 articles" },
-  { icon: Sparkles, title: "Les dettes karmiques", desc: "13, 14, 16, 19 : comprendre et transformer tes leçons", count: "4 articles" },
-  { icon: Moon, title: "Les heures miroirs", desc: "11:11, 22:22, 12:21... signification et messages", count: "20+ articles" },
-  { icon: Hash, title: "La numérologie pythagoricienne", desc: "Méthode de calcul complète expliquée pas à pas", count: "Guide" },
-  { icon: Star, title: "Comprendre les transits", desc: "Guide pour débutants sur les mouvements planétaires", count: "Guide" },
-  { icon: Moon, title: "Mercure rétrograde", desc: "Guide pratique : dates, impacts, conseils", count: "Guide" },
-  { icon: Sparkles, title: "Nœuds lunaires et karma", desc: "Nord et Sud : ton passé et ta destinée", count: "Guide" },
-];
+import { useT } from "@/i18n/ui";
 
 const LearnPage = () => {
   const navigate = useNavigate();
+  const { t } = useT();
+
+  const guides = [
+    { icon: Star, title: t("learn.guide_zodiac_title"), desc: t("learn.guide_zodiac_desc"), count: t("learn.count_articles", { n: 12 }) },
+    { icon: Hash, title: t("learn.guide_lifepaths_title"), desc: t("learn.guide_lifepaths_desc"), count: t("learn.count_articles", { n: 9 }) },
+    { icon: Moon, title: t("learn.guide_planets_title"), desc: t("learn.guide_planets_desc"), count: t("learn.count_articles", { n: 10 }) },
+    { icon: Star, title: t("learn.guide_houses_title"), desc: t("learn.guide_houses_desc"), count: t("learn.count_articles", { n: 12 }) },
+    { icon: Sparkles, title: t("learn.guide_karma_title"), desc: t("learn.guide_karma_desc"), count: t("learn.count_articles", { n: 4 }) },
+    { icon: Moon, title: t("learn.guide_moon_title"), desc: t("learn.guide_moon_desc"), count: t("learn.count_articles", { n: 20 }) },
+    { icon: Hash, title: t("learn.guide_numerology_title"), desc: t("learn.guide_numerology_desc"), count: t("learn.count_guide") },
+    { icon: Star, title: t("learn.guide_transits_title"), desc: t("learn.guide_transits_desc"), count: t("learn.count_guide") },
+    { icon: Moon, title: t("learn.guide_aspects_title"), desc: t("learn.guide_aspects_desc"), count: t("learn.count_guide") },
+    { icon: Sparkles, title: t("learn.guide_compat_title"), desc: t("learn.guide_compat_desc"), count: t("learn.count_guide") },
+  ];
 
   return (
     <div className="min-h-screen bg-background pb-20 relative">
       <StarField />
-      <AppHeader title="Apprendre" showBack />
+      <AppHeader title={t("learn.header_title")} showBack />
 
       <div className="relative z-10 px-5 space-y-3">
         <p className="text-sm text-muted-foreground mb-4">
-          Explore les guides pour approfondir tes connaissances en astrologie, numérologie et spiritualité.
+          {t("learn.intro")}
         </p>
 
         {guides.map((guide, i) => (

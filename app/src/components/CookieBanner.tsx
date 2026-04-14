@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { useT } from "@/i18n/ui";
 
 const CookieBanner = () => {
   const [visible, setVisible] = useState(false);
+  const { t } = useT();
 
   useEffect(() => {
     const match = document.cookie.match(/(^| )cookie-consent=([^;]+)/);
@@ -37,12 +39,12 @@ const CookieBanner = () => {
         <span className="text-2xl">🔮</span>
         <div>
           <p className="text-foreground text-sm font-semibold mb-1 font-serif">
-            Les astres utilisent des cookies
+            {t("cookie.title")}
           </p>
           <p className="text-xs text-muted-foreground">
-            On utilise quelques cookies pour que ton expérience cosmique soit fluide. Rien de louche, promis - même si Mercure rétrograde, elle ne pourrait pas y accéder.{" "}
+            {t("cookie.desc")}{" "}
             <a href="https://karmastro.com/politique-confidentialite" className="underline text-primary hover:text-foreground transition-colors">
-              En savoir plus
+              {t("cookie.learn_more")}
             </a>
           </p>
         </div>
@@ -54,19 +56,19 @@ const CookieBanner = () => {
           className="flex-1 min-w-[100px] text-sm font-semibold text-white py-2.5 px-4 rounded-xl bg-primary hover:opacity-90 transition-all"
           style={{ boxShadow: "0 4px 15px rgba(139, 92, 246, 0.25)" }}
         >
-          Accepter tout
+          {t("cookie.accept_all")}
         </button>
         <button
           onClick={() => saveConsent("essential")}
           className="flex-1 min-w-[100px] text-sm font-medium text-muted-foreground py-2.5 px-4 rounded-xl border-glow hover:text-foreground transition-all"
         >
-          Essentiels uniquement
+          {t("cookie.essentials_only")}
         </button>
         <button
           onClick={() => saveConsent("none")}
           className="text-xs py-2 px-3 rounded-lg text-muted-foreground/60 hover:text-muted-foreground transition-colors"
         >
-          Refuser
+          {t("cookie.refuse")}
         </button>
       </div>
     </div>

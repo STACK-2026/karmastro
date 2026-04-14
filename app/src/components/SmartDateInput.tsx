@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Calendar } from "lucide-react";
+import { useT } from "@/i18n/ui";
 
 interface SmartDateInputProps {
   value: string; // YYYY-MM-DD format
@@ -58,10 +59,12 @@ function isValidDate(isoDate: string): boolean {
   return date.getFullYear() === y && date.getMonth() === m - 1 && date.getDate() === d;
 }
 
-const SmartDateInput = ({ value, onChange, placeholder = "JJ/MM/AAAA", className = "" }: SmartDateInputProps) => {
+const SmartDateInput = ({ value, onChange, placeholder, className = "" }: SmartDateInputProps) => {
+  const { t } = useT();
   const [displayValue, setDisplayValue] = useState(value ? formatDisplay(value) : "");
   const [error, setError] = useState(false);
   const nativeDateRef = useRef<HTMLInputElement>(null);
+  const resolvedPlaceholder = placeholder ?? t("common.date_placeholder");
 
   // Sync displayValue when value prop changes externally (e.g. pre-fill from DB/sessionStorage)
   useEffect(() => {
@@ -121,7 +124,7 @@ const SmartDateInput = ({ value, onChange, placeholder = "JJ/MM/AAAA", className
         value={displayValue}
         onChange={(e) => handleTextChange(e.target.value)}
         onBlur={handleBlur}
-        placeholder={placeholder}
+        placeholder={resolvedPlaceholder}
         className={`bg-secondary border-border pr-10 ${error ? "border-red-500/50" : ""}`}
       />
       {/* Calendar icon → native date picker fallback */}
@@ -143,7 +146,7 @@ const SmartDateInput = ({ value, onChange, placeholder = "JJ/MM/AAAA", className
           setError(false);
         }}
       />
-      {error && <p className="text-[10px] text-red-400 mt-1">Format attendu : JJ/MM/AAAA</p>}
+      {error && <p className="text-[10px] text-red-400 mt-1">{t("common.date_error_format")}</p>}
     </div>
   );
 };

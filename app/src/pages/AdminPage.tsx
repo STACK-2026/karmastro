@@ -70,6 +70,7 @@ import {
   type BotStats,
   type UserSession,
 } from "@/lib/adminApi";
+import { useT } from "@/i18n/ui";
 
 const GUIDE_ICONS: Record<string, typeof Star> = {
   sibylle: Star,
@@ -1484,6 +1485,7 @@ const AdminPage = () => {
   const { user, loading: authLoading } = useAuth();
   const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
   const [periodDays, setPeriodDays] = useState(30);
+  const { t } = useT();
 
   useEffect(() => {
     if (authLoading) return;
@@ -1501,7 +1503,7 @@ const AdminPage = () => {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <StarField />
-        <p className="relative z-10 text-sm text-muted-foreground">Vérification des accès cosmiques...</p>
+        <p className="relative z-10 text-sm text-muted-foreground">{t("admin.loading")}</p>
       </div>
     );
   }
@@ -1512,10 +1514,10 @@ const AdminPage = () => {
         <StarField />
         <div className="relative z-10 text-center px-6">
           <Shield className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-          <h2 className="font-serif text-2xl mb-2">Accès restreint</h2>
-          <p className="text-sm text-muted-foreground mb-6">Cette zone est réservée à l'équipe Karmastro.</p>
+          <h2 className="font-serif text-2xl mb-2">{t("admin.restricted_title")}</h2>
+          <p className="text-sm text-muted-foreground mb-6">{t("admin.restricted_desc")}</p>
           <button onClick={() => navigate("/dashboard")} className="text-sm text-primary hover:underline">
-            Retour au dashboard
+            {t("admin.restricted_back")}
           </button>
         </div>
       </div>

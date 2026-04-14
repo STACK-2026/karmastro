@@ -8,11 +8,13 @@ import AppFooter from "@/components/AppFooter";
 import StarField from "@/components/StarField";
 import AppHeader from "@/components/AppHeader";
 import { useUserProfile } from "@/hooks/useUserProfile";
+import { useT } from "@/i18n/ui";
 
 const NumerologyPage = () => {
   const navigate = useNavigate();
   const profile = useUserProfile();
   const { numerology, firstName, lastName, birthDate: bd } = profile;
+  const { t } = useT();
 
   const now = new Date();
   const py = personalYear(bd.getDate(), bd.getMonth() + 1, now.getFullYear());
@@ -21,32 +23,32 @@ const NumerologyPage = () => {
   const inclusion = inclusionTable(`${firstName} ${lastName}`.trim() || "Utilisateur");
 
   const coreNumbers = [
-    { label: "Chemin de vie", number: numerology.lifePath.number, desc: numerology.lifePath.label },
-    { label: "Expression", number: numerology.expression.number, desc: numerology.expression.label },
-    { label: "Nombre intime", number: numerology.soulUrge.number, desc: numerology.soulUrge.label },
-    { label: "Personnalité", number: numerology.personality.number, desc: numerology.personality.label },
-    { label: "Anniversaire", number: numerology.birthday, desc: "Talents naturels" },
+    { label: t("numerology.label_life_path"), number: numerology.lifePath.number, desc: numerology.lifePath.label },
+    { label: t("numerology.label_expression"), number: numerology.expression.number, desc: numerology.expression.label },
+    { label: t("numerology.label_soul_urge"), number: numerology.soulUrge.number, desc: numerology.soulUrge.label },
+    { label: t("numerology.label_personality"), number: numerology.personality.number, desc: numerology.personality.label },
+    { label: t("numerology.label_birthday"), number: numerology.birthday, desc: t("numerology.birthday_desc") },
   ];
 
   const dynamicNumbers = [
-    { label: "Année personnelle", number: py, desc: getNumberKeyword(py) },
-    { label: "Mois personnel", number: pm, desc: getNumberKeyword(pm) },
-    { label: "Jour personnel", number: pd, desc: getNumberKeyword(pd) },
+    { label: t("numerology.label_personal_year"), number: py, desc: getNumberKeyword(py) },
+    { label: t("numerology.label_personal_month"), number: pm, desc: getNumberKeyword(pm) },
+    { label: t("numerology.label_personal_day"), number: pd, desc: getNumberKeyword(pd) },
   ];
 
   const lifePathDescriptions: Record<number, string> = {
-    3: "Le chemin de vie 3 est celui du Créatif, de l'expressif, du communicant. Tu es né(e) avec un don naturel pour l'expression sous toutes ses formes : parole, écriture, art, musique. Ton énergie est joyeuse, optimiste et inspirante. Tu as la capacité de toucher les gens par tes mots et ta présence. Ton défi principal est la dispersion  -  trop de talents peuvent mener à n'en développer aucun pleinement. Apprends à canaliser ta créativité dans un projet concret. En amour, tu as besoin d'un partenaire qui stimule ton intellect et respecte ton besoin d'expression. En carrière, tu excelles dans tout ce qui touche à la communication, l'art, l'enseignement et le divertissement.",
+    3: "Le chemin de vie 3 est celui du Créatif, de l'expressif, du communicant. Tu es né(e) avec un don naturel pour l'expression sous toutes ses formes : parole, écriture, art, musique. Ton énergie est joyeuse, optimiste et inspirante. Tu as la capacité de toucher les gens par tes mots et ta présence. Ton défi principal est la dispersion, trop de talents peuvent mener à n'en développer aucun pleinement. Apprends à canaliser ta créativité dans un projet concret. En amour, tu as besoin d'un partenaire qui stimule ton intellect et respecte ton besoin d'expression. En carrière, tu excelles dans tout ce qui touche à la communication, l'art, l'enseignement et le divertissement.",
   };
 
   return (
     <div className="min-h-screen bg-background pb-20 relative">
       <StarField />
-      <AppHeader title="Numerologie" showBack />
+      <AppHeader title={t("numerology.header_title")} showBack />
 
       <div className="relative z-10 px-5 space-y-5">
         {/* Core numbers */}
         <div>
-          <h3 className="font-serif text-lg mb-3">Nombres fondamentaux</h3>
+          <h3 className="font-serif text-lg mb-3">{t("numerology.core_title")}</h3>
           <div className="grid grid-cols-2 gap-3">
             {coreNumbers.map((n, i) => (
               <motion.div
@@ -61,7 +63,7 @@ const NumerologyPage = () => {
                 <p className="text-xs text-muted-foreground">{n.desc}</p>
                 {i === 0 && lifePathDescriptions[n.number] && (
                   <details className="mt-3 text-left">
-                    <summary className="text-xs text-primary cursor-pointer">Interprétation complète</summary>
+                    <summary className="text-xs text-primary cursor-pointer">{t("numerology.full_interpretation")}</summary>
                     <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{lifePathDescriptions[n.number]}</p>
                   </details>
                 )}
@@ -72,7 +74,7 @@ const NumerologyPage = () => {
 
         {/* Dynamic numbers */}
         <div>
-          <h3 className="font-serif text-lg mb-3">Numérologie dynamique</h3>
+          <h3 className="font-serif text-lg mb-3">{t("numerology.dynamic_title")}</h3>
           <div className="grid grid-cols-3 gap-3">
             {dynamicNumbers.map((n) => (
               <motion.div
@@ -91,8 +93,8 @@ const NumerologyPage = () => {
 
         {/* Inclusion table */}
         <div className="border-glow rounded-xl bg-card/60 p-4">
-          <h3 className="font-serif text-lg mb-3">Table d'inclusion</h3>
-          <p className="text-xs text-muted-foreground mb-3">Fréquence de chaque nombre dans ton nom complet</p>
+          <h3 className="font-serif text-lg mb-3">{t("numerology.inclusion_title")}</h3>
+          <p className="text-xs text-muted-foreground mb-3">{t("numerology.inclusion_desc")}</p>
           <div className="grid grid-cols-9 gap-1">
             {Object.entries(inclusion).map(([num, count]) => (
               <div key={num} className="text-center">
@@ -100,7 +102,7 @@ const NumerologyPage = () => {
                   {count}
                 </div>
                 <div className="text-[10px] text-muted-foreground">{num}</div>
-                {count === 0 && <div className="text-[8px] text-destructive">absent</div>}
+                {count === 0 && <div className="text-[8px] text-destructive">{t("numerology.absent")}</div>}
               </div>
             ))}
           </div>
@@ -109,9 +111,9 @@ const NumerologyPage = () => {
         {/* Calendar mini */}
         <div className="border-glow rounded-xl bg-card/60 p-4">
           <div className="flex items-center justify-between mb-3">
-            <h3 className="font-serif text-lg">Calendrier numérologique</h3>
+            <h3 className="font-serif text-lg">{t("numerology.mini_calendar_title")}</h3>
             <Button variant="ghost" size="sm" className="text-primary text-xs" onClick={() => navigate("/calendar")}>
-              Voir tout
+              {t("numerology.see_all")}
             </Button>
           </div>
           <div className="grid grid-cols-7 gap-1 text-center">
