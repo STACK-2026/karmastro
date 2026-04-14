@@ -8,12 +8,14 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import StarField from "@/components/StarField";
 import { trackEvent } from "@/lib/tracker";
+import { useT } from "@/i18n/ui";
 
 const REFERRAL_STORAGE_KEY = "karmastro_referral_code";
 
 const AuthPage = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { t } = useT();
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -83,15 +85,15 @@ const AuthPage = () => {
         }
 
         toast({
-          title: "Compte créé ✨",
+          title: t("auth.toast_account_created_title"),
           description: referrerName
-            ? `Bienvenue ! Tu as été invité(e) par ${referrerName}.`
-            : "Vérifie ton email pour confirmer ton inscription.",
+            ? t("auth.toast_welcome_invited", { name: referrerName })
+            : t("auth.toast_verify_email"),
         });
       }
     } catch (error: any) {
       toast({
-        title: "Erreur",
+        title: t("auth.toast_error_title"),
         description: error.message,
         variant: "destructive",
       });
@@ -113,8 +115,8 @@ const AuthPage = () => {
       // Redirect happens externally, nothing else to do here
     } catch (error: any) {
       toast({
-        title: "Connexion Google impossible",
-        description: error.message || "Réessaie dans un instant.",
+        title: t("auth.toast_google_error_title"),
+        description: error.message || t("auth.toast_google_error_desc"),
         variant: "destructive",
       });
       setLoading(false);
@@ -123,16 +125,16 @@ const AuthPage = () => {
 
   const handleForgotPassword = async () => {
     if (!email) {
-      toast({ title: "Entre ton email", variant: "destructive" });
+      toast({ title: t("auth.toast_enter_email"), variant: "destructive" });
       return;
     }
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
       redirectTo: `${window.location.origin}/reset-password`,
     });
     if (error) {
-      toast({ title: "Erreur", description: error.message, variant: "destructive" });
+      toast({ title: t("auth.toast_error_title"), description: error.message, variant: "destructive" });
     } else {
-      toast({ title: "Email envoyé", description: "Vérifie ta boîte de réception." });
+      toast({ title: t("auth.toast_email_sent_title"), description: t("auth.toast_email_sent_desc") });
     }
   };
 
@@ -146,24 +148,24 @@ const AuthPage = () => {
         className="relative z-10 w-full max-w-sm px-6"
       >
         <button onClick={() => navigate("/")} className="flex items-center gap-1 text-sm text-muted-foreground mb-8 hover:text-foreground transition-colors">
-          <ArrowLeft className="h-4 w-4" /> Retour
+          <ArrowLeft className="h-4 w-4" /> {t("auth.back")}
         </button>
 
         <div className="text-center mb-8">
           <Sparkles className="h-10 w-10 text-primary mx-auto mb-3" />
           <h1 className="font-serif text-3xl font-bold">
-            {isLogin ? "Bon retour" : "Bienvenue"} ✨
+            {isLogin ? t("auth.title_login") : t("auth.title_signup")}
           </h1>
           <p className="text-sm text-muted-foreground mt-2">
-            {isLogin ? "Retrouve ton cosmos" : "Commence ton voyage cosmique"}
+            {isLogin ? t("auth.subtitle_login") : t("auth.subtitle_signup")}
           </p>
           {referralCode && !isLogin && (
             <div className="mt-4 p-3 rounded-xl bg-amber-300/10 border border-amber-300/30">
               <p className="text-xs text-amber-300">
                 {referrerName ? (
-                  <><strong>{referrerName}</strong> t'a invité(e) sur Karmastro ✨</>
+                  <>{t("auth.referral_invited", { name: referrerName })}</>
                 ) : (
-                  <>Tu arrives avec le code <strong className="font-mono">{referralCode}</strong></>
+                  <>{t("auth.referral_with_code", { code: referralCode })}</>
                 )}
               </p>
             </div>
@@ -182,12 +184,12 @@ const AuthPage = () => {
             <path d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z" fill="#FBBC05"/>
             <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.167 6.656 3.58 9 3.58z" fill="#EA4335"/>
           </svg>
-          Continuer avec Google
+          {t("auth.continue_google")}
         </button>
 
         <div className="flex items-center gap-3 my-4">
           <div className="flex-1 h-px bg-border" />
-          <span className="text-xs text-muted-foreground">ou</span>
+          <span className="text-xs text-muted-foreground">{t("auth.separator_or")}</span>
           <div className="flex-1 h-px bg-border" />
         </div>
 
@@ -196,7 +198,7 @@ const AuthPage = () => {
             <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
             <Input
               type="email"
-              placeholder="Email"
+              placeholder={t("auth.email_placeholder")}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="pl-10 bg-secondary border-border"
@@ -207,7 +209,7 @@ const AuthPage = () => {
             <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
             <Input
               type={showPassword ? "text" : "password"}
-              placeholder="Mot de passe"
+              placeholder={t("auth.password_placeholder")}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="pl-10 pr-10 bg-secondary border-border"
@@ -221,19 +223,19 @@ const AuthPage = () => {
 
           {isLogin && (
             <button type="button" onClick={handleForgotPassword} className="text-xs text-primary hover:underline block">
-              Mot de passe oublié ?
+              {t("auth.forgot_password")}
             </button>
           )}
 
           <Button type="submit" className="w-full bg-primary hover:bg-primary/90" disabled={loading}>
-            {loading ? "..." : isLogin ? "Se connecter" : "Créer mon compte"}
+            {loading ? t("auth.loading") : isLogin ? t("auth.submit_login") : t("auth.submit_signup")}
           </Button>
         </form>
 
         <p className="text-center text-sm text-muted-foreground mt-6">
-          {isLogin ? "Pas encore de compte ?" : "Déjà un compte ?"}
+          {isLogin ? t("auth.no_account") : t("auth.have_account")}
           <button onClick={() => setIsLogin(!isLogin)} className="text-primary ml-1 hover:underline">
-            {isLogin ? "S'inscrire" : "Se connecter"}
+            {isLogin ? t("auth.switch_signup") : t("auth.switch_login")}
           </button>
         </p>
       </motion.div>
