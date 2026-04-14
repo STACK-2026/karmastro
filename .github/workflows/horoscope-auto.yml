@@ -25,7 +25,9 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    # Standard daily run stays under ~15 min. Backfill 10 days x 11 langs
+    # can reach ~90-120 min on rate-limited Anthropic tier, so bump ceiling.
+    timeout-minutes: 180
 
     steps:
       - name: Checkout

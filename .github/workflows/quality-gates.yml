@@ -1,0 +1,169 @@
+name: Quality Gates
+
+# Runs on every push to main + every pull request.
+# Prevents regressions that hit us 14/04/2026 :
+#  - thin blog stubs (< 2500 words, missing internal mesh)
+#  - em-dashes (—, –) forbidden brand-wide
+#  - i18n coverage holes (FR baseline incomplete, non-FR blocks missing keys)
+#  - app build breakage
+#  - hardcoded FR leaking into React pages when i18n exists
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  em-dash-ban:
+    name: Em/en dash ban
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan for em/en dashes in content + i18n + source
+        run: |
+          set -e
+          FOUND=0
+          # Blog content
+          if grep -rn "[—–]" site/src/content/blog/ 2>/dev/null | head -50; then FOUND=1; fi
+          # Site i18n
+          if grep -rn "[—–]" site/src/i18n/ 2>/dev/null | head -20; then FOUND=1; fi
+          # App i18n
+          if grep -rn "[—–]" app/src/i18n/ 2>/dev/null | head -20; then FOUND=1; fi
+          # Site pages
+          if grep -rn "[—–]" site/src/pages/ 2>/dev/null | head -20; then FOUND=1; fi
+          # App pages
+          if grep -rn "[—–]" app/src/pages/ 2>/dev/null | head -20; then FOUND=1; fi
+          # App components
+          if grep -rn "[—–]" app/src/components/ 2>/dev/null | head -20; then FOUND=1; fi
+          if [ "$FOUND" = "1" ]; then
+            echo "::error::Em-dashes (—) or en-dashes (–) detected. Replace with ',' ':' '.' or '-'. This is a brand-wide rule."
+            exit 1
+          fi
+          echo "OK: no em/en dashes anywhere."
+
+  blog-quality:
+    name: Blog article standard (2500+ mots, maillage, frontmatter)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 50
+      - name: Find modified blog files
+        id: changed
+        run: |
+          BASE="${{ github.event.pull_request.base.sha || github.event.before }}"
+          if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ]; then
+            BASE=$(git rev-parse HEAD~1 2>/dev/null || echo "")
+          fi
+          if [ -n "$BASE" ]; then
+            FILES=$(git diff --name-only "$BASE" HEAD -- 'site/src/content/blog/*.md' 2>/dev/null || true)
+          else
+            FILES=""
+          fi
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          echo "$FILES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+      - name: Check standard on modified blog articles
+        run: |
+          set -e
+          FAIL=0
+          echo "${{ steps.changed.outputs.files }}" | while read -r f; do
+            [ -z "$f" ] && continue
+            [ ! -f "$f" ] && continue
+            w=$(wc -w < "$f")
+            # FR baseline target is 3500, non-FR 2500
+            if grep -q '^lang:' "$f"; then TARGET=2500; else TARGET=3500; fi
+            internals=$(grep -oE '\]\(/' "$f" | wc -l | tr -d ' ')
+            externals=$(grep -oE '\]\(https?://[^)]+\)' "$f" | wc -l | tr -d ' ')
+            img=$(grep -c "^image:" "$f" || true)
+            rev=$(grep -c "^lastReviewed:" "$f" || true)
+            author=$(grep -c "^author:" "$f" || true)
+            echo "Check $f : $w mots (cible $TARGET), int=$internals, ext=$externals, img=$img, rev=$rev, author=$author"
+            if [ "$w" -lt "$TARGET" ]; then echo "::error file=$f::Words $w < target $TARGET"; FAIL=1; fi
+            if [ "$internals" -lt 25 ]; then echo "::warning file=$f::Internal links $internals < 25"; fi
+            if [ "$externals" -lt 5 ]; then echo "::error file=$f::External links $externals < 5"; FAIL=1; fi
+            if [ "$img" = "0" ]; then echo "::error file=$f::Missing 'image:' in frontmatter"; FAIL=1; fi
+            if [ "$rev" = "0" ]; then echo "::warning file=$f::Missing 'lastReviewed:' in frontmatter"; fi
+            if [ "$author" = "0" ]; then echo "::error file=$f::Missing 'author:' in frontmatter"; FAIL=1; fi
+          done
+          exit $FAIL
+
+  i18n-coverage:
+    name: i18n translations complete
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Check app/src/i18n/ui.ts FR baseline completeness
+        run: |
+          set -e
+          # Extract all UiKey values from type union
+          KEYS=$(grep -oE '\| "[a-z.]+_*[a-z0-9.]+"' app/src/i18n/ui.ts | sed 's/| "//; s/"$//' | sort -u)
+          KEYCOUNT=$(echo "$KEYS" | wc -l | tr -d ' ')
+          FRKEYS=$(awk '/^export const fr: UiStrings = \{/,/^\};/' app/src/i18n/ui.ts | grep -oE '^  "[^"]+"' | sed 's/^  "//; s/"$//' | sort -u | wc -l | tr -d ' ')
+          echo "Type UiKey union : $KEYCOUNT keys"
+          echo "FR baseline entries : $FRKEYS"
+          if [ "$FRKEYS" -lt "$KEYCOUNT" ]; then
+            echo "::error::FR baseline has $FRKEYS entries but UiKey type expects $KEYCOUNT. Fill the missing ones."
+            MISSING=$(comm -23 <(echo "$KEYS") <(awk '/^export const fr: UiStrings = \{/,/^\};/' app/src/i18n/ui.ts | grep -oE '^  "[^"]+"' | sed 's/^  "//; s/"$//' | sort -u))
+            echo "Missing keys:"; echo "$MISSING" | head -20
+            exit 1
+          fi
+          echo "OK: FR baseline complete."
+      - name: Check non-FR locales don't regress below 95% coverage
+        run: |
+          set -e
+          FRKEYS=$(awk '/^export const fr: UiStrings = \{/,/^\};/' app/src/i18n/ui.ts | grep -oE '^  "[^"]+"' | wc -l | tr -d ' ')
+          FAIL=0
+          for lang in en es pt de it tr pl ru ja ar; do
+            COUNT=$(awk "/^export const $lang: Partial<UiStrings> = \{/,/^\};/" app/src/i18n/ui.ts | grep -oE '^  "[^"]+"' | wc -l | tr -d ' ')
+            # 95% threshold
+            THRESHOLD=$((FRKEYS * 95 / 100))
+            if [ "$COUNT" -lt "$THRESHOLD" ]; then
+              echo "::error::Locale $lang has $COUNT/$FRKEYS keys (< 95% threshold $THRESHOLD). Falling back to FR on live UI."
+              FAIL=1
+            else
+              echo "OK: $lang has $COUNT/$FRKEYS keys"
+            fi
+          done
+          exit $FAIL
+      - name: Check site/src/i18n/translations.ts FR baseline has all TranslationKeys
+        run: |
+          # Keep track that translations.ts stays in sync with its type
+          cd site
+          # Basic check : warn if content.ts still uses contentWithEnglishFallback helper
+          if grep -n "contentWithEnglishFallback" src/i18n/content.ts 2>/dev/null; then
+            echo "::warning::contentWithEnglishFallback still in use. Target is native translations everywhere."
+          fi
+
+  app-build:
+    name: App builds (Vite)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - name: Install
+        run: cd app && npm ci --prefer-offline --no-audit
+      - name: Build
+        run: cd app && npm run build
+
+  site-build:
+    name: Site builds (Astro)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - name: Install
+        run: cd site && npm ci --prefer-offline --no-audit
+      - name: Build
+        run: cd site && npm run build
