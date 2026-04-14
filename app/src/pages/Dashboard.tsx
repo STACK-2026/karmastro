@@ -14,27 +14,34 @@ import StarField from "@/components/StarField";
 import { useState, useEffect, useCallback } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
+import { useT } from "@/i18n/ui";
 
 const today = dailyMessages[0];
 const IS_PREMIUM = false; // Toggle for demo  -  will be replaced by real subscription check
 
-const PremiumPill = ({ label = "Premium" }: { label?: string }) => (
-  <span className="inline-flex items-center gap-1 rounded-full bg-accent/20 text-accent px-2 py-0.5 text-[10px] font-semibold">
-    <Crown className="h-2.5 w-2.5" /> {label}
-  </span>
-);
+const PremiumPill = ({ label }: { label?: string }) => {
+  const { t } = useT();
+  const displayLabel = label ?? t("dashboard.premium_label");
+  return (
+    <span className="inline-flex items-center gap-1 rounded-full bg-accent/20 text-accent px-2 py-0.5 text-[10px] font-semibold">
+      <Crown className="h-2.5 w-2.5" /> {displayLabel}
+    </span>
+  );
+};
 
-const LockedOverlay = ({ children, cta = "Débloquer avec Premium" }: { children: React.ReactNode; cta?: string }) => {
+const LockedOverlay = ({ children, cta }: { children: React.ReactNode; cta?: string }) => {
   const navigate = useNavigate();
+  const { t } = useT();
+  const displayCta = cta ?? t("dashboard.locked_cta");
   if (IS_PREMIUM) return <>{children}</>;
   return (
     <div className="relative">
       <div className="blur-[6px] pointer-events-none select-none">{children}</div>
       <div className="absolute inset-0 flex flex-col items-center justify-center bg-card/60 backdrop-blur-sm rounded-xl">
         <Lock className="h-5 w-5 text-accent mb-1.5" />
-        <span className="text-[11px] text-muted-foreground mb-2">{cta}</span>
+        <span className="text-[11px] text-muted-foreground mb-2">{displayCta}</span>
         <Button size="sm" variant="outline" className="border-accent text-accent text-xs h-7 px-3" onClick={() => navigate("/#pricing")}>
-          <Crown className="h-3 w-3 mr-1" /> Étoile
+          <Crown className="h-3 w-3 mr-1" /> {t("dashboard.locked_etoile")}
         </Button>
       </div>
     </div>
@@ -91,6 +98,7 @@ const DoListItem = ({ item, type }: { item: DoItem; type: "do" | "dont" }) => {
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const { t, locale } = useT();
   const [messageExpanded, setMessageExpanded] = useState(false);
   const { user } = useAuth();
   const userProfile = useUserProfile();
@@ -132,7 +140,7 @@ const Dashboard = () => {
       <StarField />
 
       <AppHeader
-        title={`Bonjour ${firstName}`}
+        title={t("dashboard.greeting", { firstName })}
         rightContent={
           <div className="text-right">
             <div className="flex items-center gap-1 justify-end">
@@ -144,7 +152,9 @@ const Dashboard = () => {
                 <ZodiacSymbol sign={astrology.ascendant.sign} size={14} color="#60A5FA" />
               )}
             </div>
-            <p className="text-xs font-mono text-primary">CV {numerology.lifePath.number} · AP {numerology.personalYear2026}</p>
+            <p className="text-xs font-mono text-primary">
+              {t("dashboard.badge_cv", { number: numerology.lifePath.number })} · {t("dashboard.badge_py", { number: numerology.personalYear2026 })}
+            </p>
           </div>
         }
       />
@@ -157,29 +167,31 @@ const Dashboard = () => {
           className="border-glow glow-violet rounded-xl bg-card/80 backdrop-blur-sm p-5"
         >
           <div className="flex items-center justify-between mb-3">
-            <h2 className="font-serif text-lg">Ton rendez-vous du jour</h2>
-            <span className="text-xs text-muted-foreground">8 avr. 2026</span>
+            <h2 className="font-serif text-lg">{t("dashboard.rdv_title")}</h2>
+            <span className="text-xs text-muted-foreground">
+              {new Intl.DateTimeFormat(locale, { day: "numeric", month: "short", year: "numeric" }).format(new Date(2026, 3, 8))}
+            </span>
           </div>
-          
+
           <div className="flex flex-wrap gap-2 mb-4 text-xs">
             <span className="bg-secondary rounded-full px-2.5 py-1">🌔 {today.moonSign}</span>
-            <span className="bg-secondary rounded-full px-2.5 py-1">☿℞ Rétrograde</span>
-            <span className="bg-primary/20 text-primary rounded-full px-2.5 py-1 font-mono">Jour {today.personalDay}</span>
-            {!IS_PREMIUM && <PremiumPill label="3 sections verrouillées" />}
+            <span className="bg-secondary rounded-full px-2.5 py-1">{t("dashboard.retrograde_pill")}</span>
+            <span className="bg-primary/20 text-primary rounded-full px-2.5 py-1 font-mono">{t("dashboard.personal_day_pill", { n: today.personalDay })}</span>
+            {!IS_PREMIUM && <PremiumPill label={t("dashboard.premium_locked_sections")} />}
           </div>
 
           <p className="text-sm text-muted-foreground leading-relaxed">
             {messageExpanded ? today.message : today.message.slice(0, 300) + "..."}
           </p>
-          
+
           <Button variant="ghost" size="sm" className="text-primary mt-2 -ml-2" onClick={() => setMessageExpanded(!messageExpanded)}>
-            {messageExpanded ? "Réduire" : "Lire la suite"} <ChevronRight className={`h-3 w-3 transition-transform ${messageExpanded ? "rotate-90" : ""}`} />
+            {messageExpanded ? t("dashboard.read_less") : t("dashboard.read_more")} <ChevronRight className={`h-3 w-3 transition-transform ${messageExpanded ? "rotate-90" : ""}`} />
           </Button>
 
           {/* Affirmation du jour */}
           {(today as any).affirmation && (
             <div className="mt-3 p-3 rounded-lg bg-primary/10 border border-primary/20">
-              <p className="text-xs text-primary italic text-center">✨ « {(today as any).affirmation} »</p>
+              <p className="text-xs text-primary italic text-center">{t("dashboard.affirmation_prefix", { text: (today as any).affirmation })}</p>
             </div>
           )}
 
@@ -221,19 +233,19 @@ const Dashboard = () => {
           className="border-glow rounded-xl bg-card/80 backdrop-blur-sm p-5"
         >
           <div className="flex items-center justify-between mb-4">
-            <h3 className="font-serif text-lg">À faire / Éviter</h3>
-            <span className="text-[10px] text-muted-foreground">Appuyez pour le pourquoi</span>
+            <h3 className="font-serif text-lg">{t("dashboard.do_title")}</h3>
+            <span className="text-[10px] text-muted-foreground">{t("dashboard.tap_for_why")}</span>
           </div>
 
           <div className="mb-4">
-            <p className="text-[10px] uppercase tracking-wider text-karmique-earth mb-2 font-semibold">✓ Faire aujourd'hui</p>
+            <p className="text-[10px] uppercase tracking-wider text-karmique-earth mb-2 font-semibold">{t("dashboard.do_today")}</p>
             {today.doList.map((item: DoItem) => (
               <DoListItem key={item.text} item={item} type="do" />
             ))}
           </div>
 
           <div className="border-t border-border pt-3">
-            <p className="text-[10px] uppercase tracking-wider text-destructive mb-2 font-semibold">✗ Éviter aujourd'hui</p>
+            <p className="text-[10px] uppercase tracking-wider text-destructive mb-2 font-semibold">{t("dashboard.dont_today")}</p>
             {today.dontList.map((item: DoItem) => (
               <DoListItem key={item.text} item={item} type="dont" />
             ))}
@@ -251,11 +263,11 @@ const Dashboard = () => {
           >
             <div className="flex items-center gap-1.5 mb-3">
               <Zap className="h-4 w-4 text-accent" />
-              <span className="text-xs font-medium">Énergie du jour</span>
+              <span className="text-xs font-medium">{t("dashboard.energy_title")}</span>
             </div>
             {Object.entries(today.energies).map(([key, val]) => (
               <div key={key} className="flex items-center gap-2 mb-1.5">
-                <span className="text-[10px] text-muted-foreground w-16 capitalize">{key === "sante" ? "Santé" : key === "spiritualite" ? "Spiritu." : key.charAt(0).toUpperCase() + key.slice(1)}</span>
+                <span className="text-[10px] text-muted-foreground w-16 capitalize">{key === "sante" ? t("dashboard.energy_sante") : key === "spiritualite" ? t("dashboard.energy_spiritu") : key.charAt(0).toUpperCase() + key.slice(1)}</span>
                 <div className="flex-1 h-1.5 bg-secondary rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
@@ -277,9 +289,9 @@ const Dashboard = () => {
             className="border-glow rounded-xl bg-card/60 p-4 flex flex-col items-center justify-center text-center"
           >
             <Hash className="h-4 w-4 text-primary mb-1" />
-            <span className="text-xs text-muted-foreground">Nombre du jour</span>
+            <span className="text-xs text-muted-foreground">{t("dashboard.day_number_title")}</span>
             <span className="text-4xl font-mono font-bold text-primary my-1">{today.personalDay}</span>
-            <span className="text-xs text-muted-foreground">Achèvement</span>
+            <span className="text-xs text-muted-foreground">{t("dashboard.day_number_keyword")}</span>
             {(today as any).luckyNumbers && (
               <div className="mt-2 flex gap-1">
                 {(today as any).luckyNumbers.map((n: number) => (
@@ -297,10 +309,10 @@ const Dashboard = () => {
             className="border-glow rounded-xl bg-card/60 p-4 text-center"
           >
             <Moon className="h-4 w-4 text-karmique-blue mx-auto mb-1" />
-            <span className="text-xs text-muted-foreground">Lune du jour</span>
+            <span className="text-xs text-muted-foreground">{t("dashboard.moon_title")}</span>
             <p className="text-lg mt-1">🌔</p>
             <p className="text-xs">{today.moonSign}</p>
-            <p className="text-[10px] text-muted-foreground mt-1">Gibbeuse croissante</p>
+            <p className="text-[10px] text-muted-foreground mt-1">{t("dashboard.moon_phase_generic")}</p>
           </motion.div>
 
           {/* Cosmic Tip  -  NEW */}
@@ -312,10 +324,10 @@ const Dashboard = () => {
           >
             <div className="flex items-center gap-1.5 mb-2">
               <Sparkles className="h-4 w-4 text-accent" />
-              <span className="text-xs font-medium">Conseil cosmique</span>
+              <span className="text-xs font-medium">{t("dashboard.cosmic_tip_title")}</span>
             </div>
             <p className="text-[11px] text-muted-foreground leading-relaxed">
-              {(today as any).cosmicTip || "Écoute ton intuition aujourd'hui  -  elle est ta meilleure alliée."}
+              {(today as any).cosmicTip || t("dashboard.cosmic_tip_default")}
             </p>
           </motion.div>
         </div>
@@ -330,9 +342,9 @@ const Dashboard = () => {
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
               <TrendingUp className="h-4 w-4 text-karmique-blue" />
-              <h3 className="font-serif text-lg">Transits du jour</h3>
+              <h3 className="font-serif text-lg">{t("dashboard.transits_title")}</h3>
             </div>
-            <PremiumPill label="2 sur 3" />
+            <PremiumPill label={t("dashboard.transits_gated")} />
           </div>
 
           <div className="space-y-3">
@@ -371,35 +383,35 @@ const Dashboard = () => {
             className="rounded-xl bg-gradient-to-r from-accent/20 via-primary/20 to-accent/20 border border-accent/30 p-5 text-center"
           >
             <Crown className="h-6 w-6 text-accent mx-auto mb-2" />
-            <h3 className="font-serif text-lg mb-1">Débloque ton potentiel complet</h3>
+            <h3 className="font-serif text-lg mb-1">{t("dashboard.cta_banner_title")}</h3>
             <p className="text-xs text-muted-foreground mb-3">
-              Transits détaillés · Conseils karmiques exclusifs · Oracle illimité · Numérologie dynamique
+              {t("dashboard.cta_banner_desc")}
             </p>
             <div className="flex flex-wrap gap-1.5 justify-center mb-4">
-              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">Oracle illimité</span>
-              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">Transits complets</span>
-              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">Numérologie avancée</span>
-              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">Conseils karmiques</span>
-              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">Calendrier détaillé</span>
-              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">Compatibilité étendue</span>
+              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">{t("dashboard.cta_chip_oracle")}</span>
+              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">{t("dashboard.cta_chip_transits")}</span>
+              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">{t("dashboard.cta_chip_numero")}</span>
+              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">{t("dashboard.cta_chip_karmic")}</span>
+              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">{t("dashboard.cta_chip_calendar")}</span>
+              <span className="text-[10px] bg-secondary rounded-full px-2 py-0.5">{t("dashboard.cta_chip_compat")}</span>
             </div>
             <Button className="bg-accent text-accent-foreground hover:bg-accent/90" onClick={() => navigate("/#pricing")}>
-              <Star className="h-4 w-4 mr-2" /> Passer en Étoile
+              <Star className="h-4 w-4 mr-2" /> {t("dashboard.cta_etoile")}
             </Button>
           </motion.div>
         )}
 
         {/* Quick access */}
         <div>
-          <h3 className="font-serif text-lg mb-3">Accès rapides</h3>
+          <h3 className="font-serif text-lg mb-3">{t("dashboard.quick_access_title")}</h3>
           <div className="grid grid-cols-3 gap-3">
             {[
-              { icon: Star, label: "Profil astral", path: "/astral" },
-              { icon: Hash, label: "Numérologie", path: "/numerology" },
-              { icon: Heart, label: "Compatibilité", path: "/compatibility" },
-              { icon: MessageCircle, label: "Oracle", path: "/oracle" },
-              { icon: Calendar, label: "Calendrier", path: "/calendar" },
-              { icon: BookOpen, label: "Apprendre", path: "/learn" },
+              { icon: Star, label: t("dashboard.quick_astral"), path: "/astral" },
+              { icon: Hash, label: t("dashboard.quick_numerology"), path: "/numerology" },
+              { icon: Heart, label: t("dashboard.quick_compat"), path: "/compatibility" },
+              { icon: MessageCircle, label: t("dashboard.quick_oracle"), path: "/oracle" },
+              { icon: Calendar, label: t("dashboard.quick_calendar"), path: "/calendar" },
+              { icon: BookOpen, label: t("dashboard.quick_learn"), path: "/learn" },
             ].map((item) => (
               <button
                 key={item.label}
@@ -415,7 +427,7 @@ const Dashboard = () => {
 
         {/* History */}
         <div>
-          <h3 className="font-serif text-lg mb-3">Jours précédents</h3>
+          <h3 className="font-serif text-lg mb-3">{t("dashboard.history_title")}</h3>
           <div className="flex gap-3 overflow-x-auto pb-2 -mx-5 px-5">
             {dailyMessages.slice(1, 5).map((msg) => (
               <div

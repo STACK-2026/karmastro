@@ -10,9 +10,11 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { useUserProfile } from "@/hooks/useUserProfile";
 import { ZodiacSymbol } from "@/components/ZodiacSymbol";
+import { useT } from "@/i18n/ui";
 
 const ProfilePage = () => {
   const navigate = useNavigate();
+  const { t, locale } = useT();
   const profile = useUserProfile();
   const { astrology, numerology, firstName, lastName, birthDate, birthTime, birthPlace } = profile;
   const { user } = useAuth();
@@ -49,46 +51,44 @@ const ProfilePage = () => {
   }, [user?.id]);
 
   const shareUrl = referralCode ? `https://karmastro.com/?ref=${referralCode}` : "";
-  const shareText = referralCode
-    ? `Rejoins-moi sur Karmastro, la plateforme de guidance cosmique qui croise astrologie, numérologie et karma. Utilise mon lien de parrainage ✨`
-    : "";
+  const shareText = referralCode ? t("profile.share_text") : "";
 
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(shareUrl);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-      toast({ title: "Lien copié ✦", description: "Partage-le avec qui tu veux." });
+      toast({ title: t("profile.toast_link_copied_title"), description: t("profile.toast_link_copied_desc") });
     } catch {}
   };
 
   const handleShare = async () => {
     if (typeof navigator.share === "function") {
       try {
-        await navigator.share({ title: "Rejoins-moi sur Karmastro", text: shareText, url: shareUrl });
+        await navigator.share({ title: t("profile.share_title"), text: shareText, url: shareUrl });
         return;
       } catch {}
     }
     handleCopy();
   };
 
-  const nextBadge = validatedCount < 3 ? { target: 3, name: "Éclaireur Cosmique" }
-    : validatedCount < 10 ? { target: 10, name: "Guide des Étoiles" }
-    : validatedCount < 25 ? { target: 25, name: "Constellation Vivante" }
-    : validatedCount < 100 ? { target: 100, name: "Nébuleuse Maîtresse" }
+  const nextBadge = validatedCount < 3 ? { target: 3, name: t("profile.badge_eclaireur") }
+    : validatedCount < 10 ? { target: 10, name: t("profile.badge_guide") }
+    : validatedCount < 25 ? { target: 25, name: t("profile.badge_constellation") }
+    : validatedCount < 100 ? { target: 100, name: t("profile.badge_nebuleuse") }
     : null;
 
   const BADGE_META: Record<string, { name: string; icon: string; color: string }> = {
-    eclaireur_cosmique: { name: "Éclaireur Cosmique", icon: "✦", color: "text-amber-300 border-amber-300/40" },
-    guide_des_etoiles: { name: "Guide des Étoiles", icon: "★", color: "text-purple-300 border-purple-300/40" },
-    constellation_vivante: { name: "Constellation Vivante", icon: "✧", color: "text-pink-300 border-pink-300/40" },
-    nebuleuse_maitresse: { name: "Nébuleuse Maîtresse", icon: "❋", color: "text-emerald-300 border-emerald-300/40" },
+    eclaireur_cosmique: { name: t("profile.badge_eclaireur"), icon: "✦", color: "text-amber-300 border-amber-300/40" },
+    guide_des_etoiles: { name: t("profile.badge_guide"), icon: "★", color: "text-purple-300 border-purple-300/40" },
+    constellation_vivante: { name: t("profile.badge_constellation"), icon: "✧", color: "text-pink-300 border-pink-300/40" },
+    nebuleuse_maitresse: { name: t("profile.badge_nebuleuse"), icon: "❋", color: "text-emerald-300 border-emerald-300/40" },
   };
 
   return (
     <div className="min-h-screen bg-background pb-20 relative">
       <StarField />
-      <AppHeader title="Mon profil" showBack />
+      <AppHeader title={t("profile.header_title")} showBack />
 
       <div className="relative z-10 px-5 space-y-5">
         {/* Cosmic ID card */}
@@ -98,7 +98,7 @@ const ProfilePage = () => {
           </div>
           <h2 className="font-serif text-2xl">{firstName} {lastName}</h2>
           <p className="text-sm text-muted-foreground mt-1">
-            {birthDate.toLocaleDateString("fr-FR")} · {birthTime} · {birthPlace}
+            {birthDate.toLocaleDateString(locale)} · {birthTime} · {birthPlace}
           </p>
 
           <div className="flex justify-center gap-6 mt-4">
@@ -123,7 +123,7 @@ const ProfilePage = () => {
             </div>
             <div className="bg-secondary/50 rounded-lg px-3 py-2">
               <span className="font-mono text-primary text-lg">{numerology.personalYear2026}</span>
-              <p className="text-[10px] text-muted-foreground">Année {new Date().getFullYear()}</p>
+              <p className="text-[10px] text-muted-foreground">{t("profile.year_label", { year: new Date().getFullYear() })}</p>
             </div>
             <div className="bg-secondary/50 rounded-lg px-3 py-2">
               <span className="font-mono text-primary text-lg">{numerology.expression.number}</span>
@@ -132,11 +132,11 @@ const ProfilePage = () => {
           </div>
 
           {numerology.karmicDebts.length > 0 && (
-            <p className="text-xs text-accent mt-3">Dette karmique : {numerology.karmicDebts.join(", ")}</p>
+            <p className="text-xs text-accent mt-3">{t("profile.karmic_debt", { list: numerology.karmicDebts.join(", ") })}</p>
           )}
           {numerology.northNode && (
             <p className="text-xs text-muted-foreground mt-2">
-              ☊ Nœud Nord : {numerology.northNode.sign} M{numerology.northNode.house}  -  {numerology.northNode.lesson}
+              {t("profile.north_node", { sign: numerology.northNode.sign, house: numerology.northNode.house, lesson: numerology.northNode.lesson })}
             </p>
           )}
         </div>
@@ -146,10 +146,10 @@ const ProfilePage = () => {
           <div className="rounded-xl border border-amber-300/20 bg-gradient-to-br from-amber-300/5 to-purple-400/5 p-5">
             <div className="flex items-center gap-2 mb-3">
               <Sparkles className="h-4 w-4 text-amber-300" />
-              <h3 className="font-serif text-lg">Étoiles Jumelles</h3>
+              <h3 className="font-serif text-lg">{t("profile.referral_title")}</h3>
             </div>
             <p className="text-xs text-muted-foreground mb-3 leading-relaxed">
-              Invite tes proches sur Karmastro. Vous recevez tous les deux (toi + ton filleul) des bonus cosmiques et tu débloques des badges en grandissant ta constellation.
+              {t("profile.referral_intro")}
             </p>
 
             <div className="flex items-center gap-2 mb-3 p-3 rounded-lg bg-[#0f0a1e]/60 border border-white/10">
@@ -162,14 +162,14 @@ const ProfilePage = () => {
                 className="flex-1 flex items-center justify-center gap-2 text-xs border border-amber-300/40 text-amber-300 rounded-lg px-3 py-2 hover:bg-amber-300/10 transition-colors"
               >
                 {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
-                {copied ? "Copié" : "Copier le lien"}
+                {copied ? t("profile.copied") : t("profile.copy_link")}
               </button>
               <button
                 onClick={handleShare}
                 className="flex-1 flex items-center justify-center gap-2 text-xs bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold rounded-lg px-3 py-2 hover:opacity-90 transition-opacity"
               >
                 <Share2 className="h-3.5 w-3.5" />
-                Partager
+                {t("profile.share")}
               </button>
             </div>
 
@@ -177,25 +177,25 @@ const ProfilePage = () => {
               <div className="flex items-center gap-1.5 text-muted-foreground">
                 <Users className="h-3 w-3" />
                 <span>
-                  {validatedCount} filleul{validatedCount > 1 ? "s" : ""} validé{validatedCount > 1 ? "s" : ""}
+                  {t("profile.godchildren_count", { n: validatedCount })}
                   {pendingCount > 0 && (
-                    <span className="text-muted-foreground/60"> · {pendingCount} en attente (7j)</span>
+                    <span className="text-muted-foreground/60"> · {t("profile.pending_count", { n: pendingCount })}</span>
                   )}
                 </span>
               </div>
               {nextBadge && (
                 <span className="text-amber-300/80">
-                  {nextBadge.target - validatedCount} de plus → {nextBadge.name}
+                  {t("profile.next_badge", { n: nextBadge.target - validatedCount, badge: nextBadge.name })}
                 </span>
               )}
               {!nextBadge && (
-                <span className="text-amber-300">Tous les badges débloqués ✦</span>
+                <span className="text-amber-300">{t("profile.all_badges_done")}</span>
               )}
             </div>
 
             {badges.length > 0 && (
               <div className="mt-3 pt-3 border-t border-white/10">
-                <p className="text-xs uppercase tracking-wider text-muted-foreground/60 mb-2">Badges débloqués</p>
+                <p className="text-xs uppercase tracking-wider text-muted-foreground/60 mb-2">{t("profile.badges_title")}</p>
                 <div className="flex flex-wrap gap-2">
                   {badges.map((badge) => {
                     const meta = BADGE_META[badge];
@@ -219,11 +219,11 @@ const ProfilePage = () => {
         {/* Quick links */}
         <div className="space-y-2">
           {[
-            { icon: Star, label: "Mon profil astral complet", path: "/astral" },
-            { icon: Hash, label: "Ma numérologie complète", path: "/numerology" },
-            { icon: Moon, label: "Calendrier cosmique", path: "/calendar" },
-            { icon: Zap, label: "Compatibilités", path: "/compatibility" },
-            { icon: BookOpen, label: "Apprendre", path: "/learn" },
+            { icon: Star, label: t("profile.quick_astral_full"), path: "/astral" },
+            { icon: Hash, label: t("profile.quick_numero_full"), path: "/numerology" },
+            { icon: Moon, label: t("profile.quick_calendar"), path: "/calendar" },
+            { icon: Zap, label: t("profile.quick_compat"), path: "/compatibility" },
+            { icon: BookOpen, label: t("profile.quick_learn"), path: "/learn" },
           ].map((item) => (
             <button
               key={item.path}
