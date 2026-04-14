@@ -10,6 +10,19 @@ const currentYear = new Date().getFullYear();
 
 // Build localized paths
 const localizedPath = (path: string) => locale === DEFAULT_LOCALE ? path : `/${locale}${path}`;
+
+// Pages legales/about non encore localisees : pointer vers la version FR avec lang="fr"
+// pour eviter les 404. A retirer quand les versions localisees sont creees.
+const FR_ONLY_PAGES = new Set([
+  "/mentions-legales",
+  "/cgv",
+  "/politique-confidentialite",
+  "/glossaire",
+  "/notre-histoire",
+  "/precision",
+]);
+const safePath = (path: string) => FR_ONLY_PAGES.has(path) ? path : localizedPath(path);
+const isFrFallback = (path: string) => locale !== DEFAULT_LOCALE && FR_ONLY_PAGES.has(path);
 ---
 
 <div style="height: 60px; background: linear-gradient(to bottom, transparent, var(--bg-card)); pointer-events: none;" class="relative z-10"></div>
@@ -30,9 +43,9 @@ const localizedPath = (path: string) => locale === DEFAULT_LOCALE ? path : `/${l
       <div>
         <p class="text-white font-semibold text-sm mb-3">{content.footerLegalTitle}</p>
         <ul class="space-y-2 text-sm" style="color: rgba(255, 255, 255, 0.7);">
-          <li><a href={localizedPath("/mentions-legales")} class="hover:text-white transition-colors">{t("footer.legal", locale)}</a></li>
-          <li><a href={localizedPath("/cgv")} class="hover:text-white transition-colors">{t("footer.cgv", locale)}</a></li>
-          <li><a href={localizedPath("/politique-confidentialite")} class="hover:text-white transition-colors">{t("footer.privacy", locale)}</a></li>
+          <li><a href={safePath("/mentions-legales")} hreflang={isFrFallback("/mentions-legales") ? "fr" : undefined} class="hover:text-white transition-colors">{t("footer.legal", locale)}</a></li>
+          <li><a href={safePath("/cgv")} hreflang={isFrFallback("/cgv") ? "fr" : undefined} class="hover:text-white transition-colors">{t("footer.cgv", locale)}</a></li>
+          <li><a href={safePath("/politique-confidentialite")} hreflang={isFrFallback("/politique-confidentialite") ? "fr" : undefined} class="hover:text-white transition-colors">{t("footer.privacy", locale)}</a></li>
         </ul>
       </div>
 
@@ -42,9 +55,9 @@ const localizedPath = (path: string) => locale === DEFAULT_LOCALE ? path : `/${l
         <ul class="space-y-2 text-sm" style="color: rgba(255, 255, 255, 0.7);">
           <li><a href={localizedPath("/blog")} class="hover:text-white transition-colors">{t("nav.blog", locale)}</a></li>
           <li><a href={`${siteConfig.appUrl}/oracle`} class="hover:text-white transition-colors">{t("nav.oracle", locale)}</a></li>
-          <li><a href={localizedPath("/glossaire")} class="hover:text-white transition-colors">{t("nav.glossary", locale)}</a></li>
-          <li><a href={localizedPath("/notre-histoire")} class="hover:text-white transition-colors">{t("nav.about", locale)}</a></li>
-          <li><a href={localizedPath("/precision")} class="hover:text-white transition-colors">{t("nav.precision", locale)}</a></li>
+          <li><a href={safePath("/glossaire")} hreflang={isFrFallback("/glossaire") ? "fr" : undefined} class="hover:text-white transition-colors">{t("nav.glossary", locale)}</a></li>
+          <li><a href={safePath("/notre-histoire")} hreflang={isFrFallback("/notre-histoire") ? "fr" : undefined} class="hover:text-white transition-colors">{t("nav.about", locale)}</a></li>
+          <li><a href={safePath("/precision")} hreflang={isFrFallback("/precision") ? "fr" : undefined} class="hover:text-white transition-colors">{t("nav.precision", locale)}</a></li>
           <li><a href={`mailto:${siteConfig.legal.email}`} class="hover:text-white transition-colors">{siteConfig.legal.email}</a></li>
         </ul>
       </div>
