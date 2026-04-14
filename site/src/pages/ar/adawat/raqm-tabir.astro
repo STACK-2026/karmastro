@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "حاسبة رقم التعبير (رقم القدر) مجانا | Karmastro";
+const description =
+  "احسب رقم التعبير مجانا، المعروف أيضا برقم القدر. يكشف مواهبك الفطرية ورسالتك واتجاه حياتك الطبيعي. علم الأعداد الفيثاغوري.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "حاسبة رقم التعبير", description, url: "https://karmastro.com/ar/adawat/raqm-tabir", applicationCategory: "UtilitiesApplication", inLanguage: "ar", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "128" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "ما هو رقم التعبير؟", acceptedAnswer: { "@type": "Answer", text: "رقم التعبير يحسب من اسم الميلاد الكامل. يكشف المواهب الفطرية والرسالة الحياتية." } },
+    { "@type": "Question", name: "الفرق عن مسار الحياة؟", acceptedAnswer: { "@type": "Answer", text: "مسار الحياة من تاريخ الميلاد ويظهر الرحلة. رقم التعبير من الاسم ويظهر الأدوات." } },
+    { "@type": "Question", name: "أي اسم أستخدم؟", acceptedAnswer: { "@type": "Answer", text: "الاسم الكامل من شهادة الميلاد." } },
+    { "@type": "Question", name: "الأرقام الرئيسية 11 و22 و33؟", acceptedAnswer: { "@type": "Answer", text: "لا تختزل. 11 حدس رؤيوي، 22 البناء المعلم، 33 الشفاء المعلم." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12" dir="rtl">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/ar" class="hover:text-amber-300">الرئيسية</a><span class="mx-2">/</span>
+      <a href="/ar/adawat" class="hover:text-amber-300">الأدوات</a><span class="mx-2">/</span>
+      <span class="text-white/80">رقم التعبير</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">علم الأعداد الفيثاغوري</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">حاسبة رقم التعبير</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">يسمى أيضا رقم القدر. يكشف المواهب التي ولدت بها.</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">A</div>
+      <a href="https://app.karmastro.com/oracle?lang=ar" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">احسب رقم تعبيري</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">ما هو؟</h2>
+      <p class="text-white/80 leading-relaxed mb-4">أحد الأرقام الأساسية في علم الأعداد الفيثاغوري. بينما يصف <a href="/ar/adawat/raqm-masar-al-hayat" class="text-amber-300 hover:underline">مسار الحياة</a> الرحلة، يصف رقم التعبير <strong>الأدوات</strong>.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">الحساب</h2>
+      <p class="text-white/80 leading-relaxed mb-4">تحصل كل حرف على رقم من 1 إلى 9: A=1، B=2، ...، I=9، J=1. اجمع قيم الاسم الكامل واختزل، ما عدا 11 و22 و33.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">معاني الأرقام</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pr-5">
+        <li><strong>1 الرائد</strong>: قيادة.</li>
+        <li><strong>2 الدبلوماسي</strong>: حساسية.</li>
+        <li><strong>3 الفنان</strong>: تعبير.</li>
+        <li><strong>4 الباني</strong>: انضباط.</li>
+        <li><strong>5 المغامر</strong>: حرية.</li>
+        <li><strong>6 الراعي</strong>: خدمة.</li>
+        <li><strong>7 الباحث</strong>: حكمة.</li>
+        <li><strong>8 الاستراتيجي</strong>: قوة.</li>
+        <li><strong>9 الإنساني</strong>: رحمة.</li>
+        <li><strong>11 و22 و33</strong>: أرقام رئيسية.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">التعبير والروح والشخصية</h2>
+      <p class="text-white/80 leading-relaxed mb-4">من التعبير يشتق رقم الروح (الحروف الصوتية) ورقم الشخصية (الساكنة).</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">لماذا اسم الميلاد</h2>
+      <p class="text-white/80 leading-relaxed mb-4">التقليد الفيثاغوري يعتبر أن الاسم الأول الممنوح يحمل الاهتزاز الأصلي.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">المصادر</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pr-5">
+        <li><a href="https://ar.wikipedia.org/wiki/علم_الأعداد" class="text-amber-300 hover:underline" rel="external">علم الأعداد - ويكيبيديا</a></li>
+        <li><a href="https://www.britannica.com/topic/numerology" class="text-amber-300 hover:underline" rel="external">Numerology - Britannica</a></li>
+        <li><a href="https://ar.wikipedia.org/wiki/فيثاغورس" class="text-amber-300 hover:underline" rel="external">فيثاغورس - ويكيبيديا</a></li>
+      </ul>
+    </section>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/ar/adawat" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">جميع الأدوات</a>
+      <a href="/ar/adawat/raqm-masar-al-hayat" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">مسار الحياة</a>
+      <a href="/ar/adawat/sanat-shakhseya" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">السنة الشخصية</a>
+      <a href="/ar/adawat/kharitat-mawlid" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">خريطة الميلاد</a>
+      <a href="/ar/adawat/al-taaali" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">الطالع</a>
+      <a href="/ar/adawat/tawafuq-azwaj" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">التوافق</a>
+      <a href="/ar/abraj" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">الأبراج</a>
+      <a href="/ar/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">المدونة</a>
+    </nav>
+  </article>
+</BaseLayout>

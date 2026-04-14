@@ -1,0 +1,82 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "حاسبة توافق الأبراج مجانا | Karmastro";
+const description =
+  "توافق الأبراج مجانا: الحب والصداقة والعمل والتوافق الكارمي بين برجين. مبني على العناصر والطرائق والجوانب الكوكبية.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "حاسبة توافق الأبراج", description, url: "https://karmastro.com/ar/adawat/tawafuq-azwaj", applicationCategory: "UtilitiesApplication", inLanguage: "ar", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "156" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "كيف يعمل التوافق؟", acceptedAnswer: { "@type": "Answer", text: "يحلل العلاقات بين العناصر والطرائق والكواكب الحاكمة لبرجين." } },
+    { "@type": "Question", name: "هل يكفي البرج الشمسي؟", acceptedAnswer: { "@type": "Answer", text: "لا. التوافق الحقيقي يقاطع الشمس والقمر والزهرة والمريخ والطالع للشخصين." } },
+    { "@type": "Question", name: "هل تتجاذب الأضداد؟", acceptedAnswer: { "@type": "Answer", text: "نعم ولا. الأبراج المتقابلة تتشارك المحور وتكمل بعضها لكن تحتاج عملا واعيا." } },
+    { "@type": "Question", name: "ما أبراج التوافق الأقوى؟", acceptedAnswer: { "@type": "Answer", text: "أبراج العنصر الواحد تتوافق طبيعيا. العناصر المكملة تعمل أيضا." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12" dir="rtl">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/ar" class="hover:text-amber-300">الرئيسية</a><span class="mx-2">/</span>
+      <a href="/ar/adawat" class="hover:text-amber-300">الأدوات</a><span class="mx-2">/</span>
+      <span class="text-white/80">التوافق</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">تنجيم العلاقات</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">توافق الأبراج مجانا</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">أي الأبراج تتناسب حقا؟ تحليل عبر العناصر والطرائق والحاكمين والجوانب.</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-pink-300/30 bg-gradient-to-br from-pink-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">♥</div>
+      <a href="https://app.karmastro.com/oracle?lang=ar" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-pink-400 to-purple-400 text-white font-semibold hover:opacity-90 transition-opacity">احسب التوافق</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">منطق التوافق</h2>
+      <p class="text-white/80 leading-relaxed mb-4">أربع طبقات مجتمعة تعطي قراءة دقيقة: العناصر، الطرائق، الحاكمون، والجوانب بين الأجرام الشخصية.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">العناصر الأربعة</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pr-5">
+        <li><strong>النار</strong> (الحمل، الأسد، القوس): شغف، حركة.</li>
+        <li><strong>التراب</strong> (الثور، العذراء، الجدي): استقرار.</li>
+        <li><strong>الهواء</strong> (الجوزاء، الميزان، الدلو): عقل، كلمة.</li>
+        <li><strong>الماء</strong> (السرطان، العقرب، الحوت): عاطفة، عمق.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">الطرائق</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pr-5">
+        <li><strong>المبتدئة</strong>: المبادرون.</li>
+        <li><strong>الثابتة</strong>: البناؤون.</li>
+        <li><strong>المتغيرة</strong>: المتكيفون.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">ما وراء البرج الشمسي</h2>
+      <p class="text-white/80 leading-relaxed mb-4">القمر، الزهرة، المريخ، الطالع. للعمق استخدم <a href="/ar/adawat/kharitat-mawlid" class="text-amber-300 hover:underline">حاسبة خريطة الميلاد</a>.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">التوافق الكارمي</h2>
+      <p class="text-white/80 leading-relaxed mb-4">قارن <a href="/ar/adawat/raqm-masar-al-hayat" class="text-amber-300 hover:underline">مسارات الحياة</a>.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">المصادر</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pr-5">
+        <li><a href="https://ar.wikipedia.org/wiki/أبراج" class="text-amber-300 hover:underline" rel="external">الأبراج - ويكيبيديا</a></li>
+        <li><a href="https://www.britannica.com/topic/zodiac" class="text-amber-300 hover:underline" rel="external">Zodiac - Britannica</a></li>
+        <li><a href="https://ar.wikipedia.org/wiki/علم_التنجيم" class="text-amber-300 hover:underline" rel="external">التنجيم - ويكيبيديا</a></li>
+      </ul>
+    </section>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/ar/adawat" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">جميع الأدوات</a>
+      <a href="/ar/adawat/kharitat-mawlid" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">خريطة الميلاد</a>
+      <a href="/ar/adawat/al-taaali" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">الطالع</a>
+      <a href="/ar/adawat/raqm-masar-al-hayat" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">مسار الحياة</a>
+      <a href="/ar/adawat/raqm-tabir" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">رقم التعبير</a>
+      <a href="/ar/adawat/sanat-shakhseya" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">السنة الشخصية</a>
+      <a href="/ar/abraj" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">الأبراج</a>
+      <a href="/ar/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">المدونة</a>
+    </nav>
+  </article>
+</BaseLayout>

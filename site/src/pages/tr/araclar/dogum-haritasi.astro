@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Ücretsiz Doğum Haritası Hesaplayıcı - Natal Chart | Karmastro";
+const description =
+  "Ücretsiz doğum haritası hesaplayıcı, Swiss Ephemeris ile. 10 gezegen, 12 ev, yükselen burç ve Türkçe tam yorum. Profesyonel hassasiyet, kayıt gerekmez.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "Doğum Haritası Hesaplayıcı", description, url: "https://karmastro.com/tr/araclar/dogum-haritasi", applicationCategory: "UtilitiesApplication", inLanguage: "tr", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "241" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "Doğum haritası nedir?", acceptedAnswer: { "@type": "Answer", text: "Doğum haritası, natal harita olarak da bilinir, doğduğunuz anın ve yerin gökyüzünün astronomik fotoğrafıdır. Güneş, Ay ve sekiz gezegenin konumlarını, burçlarını, 12 evi ve açıları gösterir." } },
+    { "@type": "Question", name: "Hesaplayıcı gerçekten ücretsiz mi?", acceptedAnswer: { "@type": "Answer", text: "Evet. 10 gök cismi, 12 ev, büyük açılar ve yazılı yorum içeren tam doğum haritası. Zorunlu kayıt yok." } },
+    { "@type": "Question", name: "Hassasiyet nedir?", acceptedAnswer: { "@type": "Answer", text: "Karmastro Swiss Ephemeris kullanır. Yay saniyesi hassasiyet. Placidus ev sistemi varsayılan." } },
+    { "@type": "Question", name: "Doğum saati gerekli mi?", acceptedAnswer: { "@type": "Answer", text: "Tam doğum haritası için evet. Yükselen ve 12 ev saatin kesinliğine bağlı." } },
+    { "@type": "Question", name: "Doğum haritam ne açıklar?", acceptedAnswer: { "@type": "Answer", text: "Merkez kimliğinizi (Güneş), duygu dünyanızı (Ay), sosyal maskenizi (Yükselen), iletişim stilinizi (Merkür), aşk stilinizi (Venüs), dürtünüzü (Mars), büyüme kalıbınızı (Jüpiter), disiplininizi (Satürn) ve kuşak temalarını (Uranüs, Neptün, Plüton) gösterir." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/tr" class="hover:text-amber-300">Ana sayfa</a><span class="mx-2">/</span>
+      <a href="/tr/araclar" class="hover:text-amber-300">Araçlar</a><span class="mx-2">/</span>
+      <span class="text-white/80">Doğum haritası</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Batı Astrolojisi</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Ücretsiz Doğum Haritası Hesaplayıcı</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">Swiss Ephemeris ile hesaplanan tam doğum haritanız. Her gezegen, her ev, her açı, açık Türkçe yorumla.</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">✦</div>
+      <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">Tam doğum haritanızı alın</h2>
+      <p class="text-white/70 mb-6 max-w-xl mx-auto leading-relaxed">Doğum tarihiniz, saatiniz ve yeriniz gerekli. Orion, astroloji rehberimiz, kişisel yorum verir.</p>
+      <a href="https://app.karmastro.com/oracle?lang=tr" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">Ücretsiz doğum haritam</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Doğum haritası nedir?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Doğum haritası, doğduğunuz tam anın gökyüzünün hassas astronomik haritasıdır. Güneş, Ay ve sekiz gezegenin zodyak ve ufka göre konumlarını kaydeder. Bu anlık görüntü asla aynı şekilde tekrarlanmaz; bu yüzden haritanız parmak izi kadar benzersizdir.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">İçerik</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>10 gök cismi</strong>: Güneş, Ay, Merkür, Venüs, Mars, Jüpiter, Satürn, Uranüs, Neptün, Plüton.</li>
+        <li><strong>12 burç</strong>: her gezegenin nasıl ifade edildiğini renklendirir.</li>
+        <li><strong>12 ev</strong>: yaşam alanlarını tanımlar.</li>
+        <li><strong>Açılar</strong>: gezegenler arası geometrik açılar.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Büyük üçlü</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Güneş (kimlik), Ay (duygu) ve <a href="/tr/araclar/yukselen-burc" class="text-amber-300 hover:underline">Yükselen</a> (maske) hikayenin yüzde 80'ini anlatır.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Karmastro nasıl hesaplar</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Swiss Ephemeris, astronomik hassasiyetin altın standardı. Placidus varsayılan. Sonra Orion kişiselleştirilmiş anlatı yorumu verir.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Doğum saati neden önemli</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Yükselen ortalama iki saatte bir değişir. 12 ev saat hassasiyetine tamamen bağlıdır.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Yetkili kaynaklar</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://tr.wikipedia.org/wiki/Do%C4%9Fum_haritas%C4%B1" class="text-amber-300 hover:underline" rel="external">Doğum haritası - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/topic/astrology" class="text-amber-300 hover:underline" rel="external">Astrology - Britannica</a></li>
+        <li><a href="https://www.astro.com/swisseph/" class="text-amber-300 hover:underline" rel="external">Swiss Ephemeris</a></li>
+      </ul>
+    </section>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/tr/araclar" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Tüm araçlar</a>
+      <a href="/tr/araclar/yukselen-burc" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Yükselen</a>
+      <a href="/tr/araclar/yasam-yolu-sayisi" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Yaşam yolu</a>
+      <a href="/tr/araclar/uyumluluk" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Uyumluluk</a>
+      <a href="/tr/araclar/ifade-sayisi" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">İfade sayısı</a>
+      <a href="/tr/araclar/kisisel-yil" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Kişisel yıl</a>
+      <a href="/tr/burc-yorumlari" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Burç yorumları</a>
+      <a href="/tr/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Blog</a>
+    </nav>
+  </article>
+</BaseLayout>

@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Калькулятор числа выражения (число судьбы) | Karmastro";
+const description =
+  "Рассчитайте ваше число выражения бесплатно, также называемое число судьбы. Раскрывает врождённые таланты, миссию и естественное направление жизни.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "Калькулятор числа выражения", description, url: "https://karmastro.com/ru/instrumenty/chislo-vyrazheniya", applicationCategory: "UtilitiesApplication", inLanguage: "ru", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "167" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "Что такое число выражения?", acceptedAnswer: { "@type": "Answer", text: "Число судьбы, рассчитанное из полного имени при рождении. Раскрывает врождённые таланты и жизненную миссию." } },
+    { "@type": "Question", name: "Отличие от жизненного пути?", acceptedAnswer: { "@type": "Answer", text: "Жизненный путь из даты рождения показывает путешествие. Число выражения из имени показывает инструменты." } },
+    { "@type": "Question", name: "Какое имя использовать?", acceptedAnswer: { "@type": "Answer", text: "Полное имя из свидетельства о рождении, включая отчества. Не фамилию после брака." } },
+    { "@type": "Question", name: "Мастер-числа 11, 22, 33?", acceptedAnswer: { "@type": "Answer", text: "Не редуцируются. 11 визионерская интуиция, 22 мастер-строитель, 33 мастер-целитель." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/ru" class="hover:text-amber-300">Главная</a><span class="mx-2">/</span>
+      <a href="/ru/instrumenty" class="hover:text-amber-300">Инструменты</a><span class="mx-2">/</span>
+      <span class="text-white/80">Число выражения</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Пифагорейская нумерология</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Калькулятор числа выражения</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">Также число судьбы. Раскрывает таланты, с которыми вы родились.</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">A</div>
+      <a href="https://app.karmastro.com/oracle?lang=ru" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">Рассчитать моё число выражения</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Что это?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Одно из ключевых чисел пифагорейской нумерологии. Если <a href="/ru/instrumenty/chislo-zhiznennogo-puti" class="text-amber-300 hover:underline">жизненный путь</a> описывает путешествие, то число выражения описывает <strong>инструменты</strong>.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Расчёт</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Каждая буква получает число 1-9: A=1, B=2, ..., I=9, J=1. Суммируйте значения полного имени и редуцируйте, кроме 11, 22, 33.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Значения чисел</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>1 Пионер</strong>: лидерство.</li>
+        <li><strong>2 Дипломат</strong>: чувствительность.</li>
+        <li><strong>3 Художник</strong>: выражение.</li>
+        <li><strong>4 Строитель</strong>: дисциплина.</li>
+        <li><strong>5 Искатель приключений</strong>: свобода.</li>
+        <li><strong>6 Опекун</strong>: служение.</li>
+        <li><strong>7 Искатель</strong>: мудрость.</li>
+        <li><strong>8 Стратег</strong>: власть.</li>
+        <li><strong>9 Гуманист</strong>: сострадание.</li>
+        <li><strong>11/22/33</strong>: мастер-числа.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Выражение, душа, личность</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Из выражения выводятся число души (гласные) и личности (согласные).</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Почему имя при рождении</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Пифагорейская традиция считает, что первое имя несёт изначальную вибрацию.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Источники</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://ru.wikipedia.org/wiki/Нумерология" class="text-amber-300 hover:underline" rel="external">Нумерология - Википедия</a></li>
+        <li><a href="https://www.britannica.com/topic/numerology" class="text-amber-300 hover:underline" rel="external">Numerology - Britannica</a></li>
+        <li><a href="https://ru.wikipedia.org/wiki/Пифагор" class="text-amber-300 hover:underline" rel="external">Пифагор - Википедия</a></li>
+      </ul>
+    </section>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/ru/instrumenty" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Все инструменты</a>
+      <a href="/ru/instrumenty/chislo-zhiznennogo-puti" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Жизненный путь</a>
+      <a href="/ru/instrumenty/lichnyi-god" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Личный год</a>
+      <a href="/ru/instrumenty/natalnaya-karta" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Натальная карта</a>
+      <a href="/ru/instrumenty/voskhodyaschiy-znak" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Асцендент</a>
+      <a href="/ru/instrumenty/sovmestimost" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Совместимость</a>
+      <a href="/ru/goroskop" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Гороскоп</a>
+      <a href="/ru/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Блог</a>
+    </nav>
+  </article>
+</BaseLayout>

@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Kalkulator Roku Osobistego - Numerologia roku | Karmastro";
+const description =
+  "Oblicz darmo swój rok osobisty. Każdy rok niesie określony temat numerologiczny w cyklu 1-9. Odkryj energię obecnego roku.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "Kalkulator Roku Osobistego", description, url: "https://karmastro.com/pl/narzedzia/rok-osobisty", applicationCategory: "UtilitiesApplication", inLanguage: "pl", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "142" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "Czym jest rok osobisty?", acceptedAnswer: { "@type": "Answer", text: "Liczba 1-9 opisująca numerologiczną energię obecnego roku. Część dziewięcioletniego cyklu." } },
+    { "@type": "Question", name: "Jak obliczyć?", acceptedAnswer: { "@type": "Answer", text: "Suma dzień + miesiąc urodzenia + bieżący rok. Redukcja do cyfry." } },
+    { "@type": "Question", name: "Kiedy zaczyna się rok?", acceptedAnswer: { "@type": "Answer", text: "Większość numerologów od 1 stycznia. Inni od urodzin." } },
+    { "@type": "Question", name: "Co robić w każdym roku?", acceptedAnswer: { "@type": "Answer", text: "1 siać. 2 relacje. 3 wyrażać się. 4 budować. 5 zmieniać. 6 odpowiadać. 7 wglądać. 8 zbierać. 9 zamykać." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/pl" class="hover:text-amber-300">Strona główna</a><span class="mx-2">/</span>
+      <a href="/pl/narzedzia" class="hover:text-amber-300">Narzędzia</a><span class="mx-2">/</span>
+      <span class="text-white/80">Rok osobisty</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Numerologia Pitagorejska</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Kalkulator Roku Osobistego</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">Każdy rok niesie temat numerologiczny. Odkryj swój i dostrój się do jego energii.</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">★</div>
+      <a href="https://app.karmastro.com/oracle?lang=pl" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">Obliczyć mój rok osobisty</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Dziewięcioletni cykl</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Numerologia pitagorejska widzi życie w cyklach dziewięcioletnich.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Jak obliczyć</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Suma dzień + miesiąc urodzenia + <strong>bieżący rok</strong>. Redukcja. Przykład dla urodzonego 12 marca w 2026: 1+2+3+2+0+2+6 = 16 → 7. Rok osobisty 7.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Dziewięć tematów</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Rok 1 · Siew</strong>: nowe początki.</li>
+        <li><strong>Rok 2 · Relacje</strong>: cierpliwość.</li>
+        <li><strong>Rok 3 · Ekspresja</strong>: kreatywność.</li>
+        <li><strong>Rok 4 · Budowa</strong>: dyscyplina.</li>
+        <li><strong>Rok 5 · Zmiana</strong>: wolność.</li>
+        <li><strong>Rok 6 · Odpowiedzialność</strong>: rodzina.</li>
+        <li><strong>Rok 7 · Wgląd</strong>: pauza, studia.</li>
+        <li><strong>Rok 8 · Żniwa</strong>: osiągnięcia.</li>
+        <li><strong>Rok 9 · Zamknięcie</strong>: puszczać.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Rok osobisty w drodze życia</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Połącz z <a href="/pl/narzedzia/liczba-drogi-zycia" class="text-amber-300 hover:underline">drogą życia</a>.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Przejście między latami</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Wibracja nowego roku zaczyna się odczuwać od października.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Źródła</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://pl.wikipedia.org/wiki/Numerologia" class="text-amber-300 hover:underline" rel="external">Numerologia - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/topic/numerology" class="text-amber-300 hover:underline" rel="external">Numerology - Britannica</a></li>
+        <li><a href="https://pl.wikipedia.org/wiki/Pitagoras" class="text-amber-300 hover:underline" rel="external">Pitagoras - Wikipedia</a></li>
+      </ul>
+    </section>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/pl/narzedzia" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Wszystkie narzędzia</a>
+      <a href="/pl/narzedzia/liczba-drogi-zycia" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Droga życia</a>
+      <a href="/pl/narzedzia/liczba-ekspresji" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Liczba ekspresji</a>
+      <a href="/pl/narzedzia/horoskop-natalny" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Horoskop natalny</a>
+      <a href="/pl/narzedzia/wschodzacy-znak" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Ascendent</a>
+      <a href="/pl/narzedzia/kompatybilnosc" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Kompatybilność</a>
+      <a href="/pl/horoskop" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Horoskop</a>
+      <a href="/pl/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Blog</a>
+    </nav>
+  </article>
+</BaseLayout>

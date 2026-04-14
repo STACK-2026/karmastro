@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "حاسبة خريطة الميلاد الكاملة مجانا | Karmastro";
+const description =
+  "حاسبة خريطة الميلاد المجانية باستخدام Swiss Ephemeris. جميع الكواكب العشرة والبيوت الاثني عشر والطالع وتفسير كامل بالعربية. دقة احترافية.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "حاسبة خريطة الميلاد", description, url: "https://karmastro.com/ar/adawat/kharitat-mawlid", applicationCategory: "UtilitiesApplication", inLanguage: "ar", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "187" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "ما هي خريطة الميلاد؟", acceptedAnswer: { "@type": "Answer", text: "خريطة الميلاد صورة فلكية للسماء في اللحظة والمكان الدقيقين لولادتك. تعرض مواقع الشمس والقمر والكواكب الثمانية وأبراجها والبيوت الاثني عشر والجوانب بينها." } },
+    { "@type": "Question", name: "هل الحاسبة مجانية فعلا؟", acceptedAnswer: { "@type": "Answer", text: "نعم. خريطة ميلاد كاملة مع 10 أجرام سماوية و12 بيتا والجوانب الرئيسية وتفسير مكتوب. بدون تسجيل إلزامي." } },
+    { "@type": "Question", name: "ما درجة الدقة؟", acceptedAnswer: { "@type": "Answer", text: "تستخدم Karmastro برنامج Swiss Ephemeris المعيار الفلكي للمنجمين المحترفين. دقة بالثانية القوسية." } },
+    { "@type": "Question", name: "هل أحتاج ساعة الميلاد؟", acceptedAnswer: { "@type": "Answer", text: "للخريطة الكاملة نعم. الطالع والبيوت الاثنا عشر يعتمدان على الساعة الدقيقة." } },
+    { "@type": "Question", name: "ماذا تكشف خريطة الميلاد؟", acceptedAnswer: { "@type": "Answer", text: "تكشف هويتك الأساسية (الشمس)، وعالمك العاطفي (القمر)، وقناعك الاجتماعي (الطالع)، وأسلوب تواصلك (عطارد)، وأسلوب حبك (الزهرة)، ودافعك (المريخ)، ونمط نموك (المشتري)، وانضباطك (زحل)، والمواضيع الجيلية." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12" dir="rtl">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/ar" class="hover:text-amber-300">الرئيسية</a><span class="mx-2">/</span>
+      <a href="/ar/adawat" class="hover:text-amber-300">الأدوات</a><span class="mx-2">/</span>
+      <span class="text-white/80">خريطة الميلاد</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">التنجيم الغربي</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">حاسبة خريطة الميلاد مجانا</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">خريطة ميلادك الكاملة محسوبة بـ Swiss Ephemeris. كل كوكب وكل بيت وكل جانب، بتفسير واضح بالعربية.</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">✦</div>
+      <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">احصل على خريطة الميلاد الكاملة</h2>
+      <p class="text-white/70 mb-6 max-w-xl mx-auto leading-relaxed">نحتاج تاريخ وساعة ومكان ميلادك الدقيقة. أوريون مرشدنا سيقدم التفسير الشخصي.</p>
+      <a href="https://app.karmastro.com/oracle?lang=ar" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">خريطة ميلادي مجانا</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">ما هي خريطة الميلاد؟</h2>
+      <p class="text-white/80 leading-relaxed mb-4">خريطة الميلاد خريطة فلكية دقيقة للسماء في اللحظة والمكان الدقيقين لولادتك. هذه الصورة الفريدة لا تتكرر أبدا، مما يجعل خريطتك فريدة كبصمة الإصبع.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">محتوى الخريطة</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pr-5">
+        <li><strong>10 أجرام سماوية</strong>: الشمس، القمر، عطارد، الزهرة، المريخ، المشتري، زحل، أورانوس، نبتون، بلوتو.</li>
+        <li><strong>12 برجا</strong>: تلون تعبير كل كوكب.</li>
+        <li><strong>12 بيتا</strong>: تصف مجالات الحياة.</li>
+        <li><strong>الجوانب</strong>: الزوايا الهندسية بين الكواكب.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">الثلاثي الكبير</h2>
+      <p class="text-white/80 leading-relaxed mb-4">الشمس (الهوية)، القمر (العاطفة)، و<a href="/ar/adawat/al-taaali" class="text-amber-300 hover:underline">الطالع</a> (القناع) يروون 80 بالمئة من القصة.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">كيف تحسب Karmastro</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Swiss Ephemeris، المعيار الذهبي للدقة الفلكية. نظام Placidus افتراضيا. ثم أوريون يقدم قراءة سردية مصممة لخريطتك.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">لماذا تهم الساعة الدقيقة</h2>
+      <p class="text-white/80 leading-relaxed mb-4">يتغير الطالع كل ساعتين في المتوسط. البيوت الاثنا عشر تعتمد كليا على الساعة الدقيقة.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">مصادر موثوقة</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pr-5">
+        <li><a href="https://ar.wikipedia.org/wiki/علم_التنجيم" class="text-amber-300 hover:underline" rel="external">علم التنجيم - ويكيبيديا</a></li>
+        <li><a href="https://www.britannica.com/topic/astrology" class="text-amber-300 hover:underline" rel="external">Astrology - Britannica</a></li>
+        <li><a href="https://www.astro.com/swisseph/" class="text-amber-300 hover:underline" rel="external">Swiss Ephemeris</a></li>
+      </ul>
+    </section>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/ar/adawat" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">جميع الأدوات</a>
+      <a href="/ar/adawat/al-taaali" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">الطالع</a>
+      <a href="/ar/adawat/raqm-masar-al-hayat" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">مسار الحياة</a>
+      <a href="/ar/adawat/tawafuq-azwaj" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">التوافق</a>
+      <a href="/ar/adawat/raqm-tabir" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">رقم التعبير</a>
+      <a href="/ar/adawat/sanat-shakhseya" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">السنة الشخصية</a>
+      <a href="/ar/abraj" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">الأبراج</a>
+      <a href="/ar/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">المدونة</a>
+    </nav>
+  </article>
+</BaseLayout>

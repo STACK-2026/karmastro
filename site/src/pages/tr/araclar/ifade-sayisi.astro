@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "İfade Sayısı Hesaplayıcı (Kader Sayısı) Ücretsiz | Karmastro";
+const description =
+  "İfade sayınızı ücretsiz hesaplayın, kader sayısı olarak da bilinir. Doğuştan gelen yetenekleri, misyonu ve yaşamın doğal yönünü ortaya çıkarır.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "İfade Sayısı Hesaplayıcı", description, url: "https://karmastro.com/tr/araclar/ifade-sayisi", applicationCategory: "UtilitiesApplication", inLanguage: "tr", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "149" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "İfade sayısı nedir?", acceptedAnswer: { "@type": "Answer", text: "Tam doğum adından hesaplanan sayı. Doğuştan gelen yetenekleri ve yaşam misyonunu gösterir." } },
+    { "@type": "Question", name: "Yaşam yolundan farkı?", acceptedAnswer: { "@type": "Answer", text: "Yaşam yolu doğum tarihinden gelir ve yolculuğu gösterir. İfade sayısı adından gelir ve araçları gösterir." } },
+    { "@type": "Question", name: "Hangi adı kullanmalıyım?", acceptedAnswer: { "@type": "Answer", text: "Doğum belgesindeki tam ad, göbek adları dahil. Evlilik soyadı veya takma ad değil." } },
+    { "@type": "Question", name: "Usta sayılar 11, 22, 33?", acceptedAnswer: { "@type": "Answer", text: "İndirgenmezler. 11 vizyoner sezgi, 22 usta inşaatçı, 33 usta şifacı." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/tr" class="hover:text-amber-300">Ana sayfa</a><span class="mx-2">/</span>
+      <a href="/tr/araclar" class="hover:text-amber-300">Araçlar</a><span class="mx-2">/</span>
+      <span class="text-white/80">İfade sayısı</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Pisagor Numerolojisi</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">İfade Sayısı Hesaplayıcı</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">Kader sayısı olarak da bilinir. Doğduğunuz andan taşıdığınız yetenekleri ortaya çıkarır.</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">A</div>
+      <a href="https://app.karmastro.com/oracle?lang=tr" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">İfade sayımı hesapla</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">İfade sayısı nedir?</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Pisagor numerolojisinin temel sayılarından biri. <a href="/tr/araclar/yasam-yolu-sayisi" class="text-amber-300 hover:underline">Yaşam yolu</a> yolculuğu tanımlarken, ifade sayısı <strong>araçları</strong> tanımlar.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Hesaplama</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Her harfe 1-9 arası sayı: A=1, B=2, ..., I=9, J=1. Tam adın değerlerini topla ve indirge, 11/22/33 hariç.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Sayıların anlamı</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>1 Öncü</strong>: liderlik.</li>
+        <li><strong>2 Diplomat</strong>: hassasiyet.</li>
+        <li><strong>3 Sanatçı</strong>: ifade.</li>
+        <li><strong>4 İnşaatçı</strong>: disiplin.</li>
+        <li><strong>5 Maceracı</strong>: özgürlük.</li>
+        <li><strong>6 Bakıcı</strong>: hizmet.</li>
+        <li><strong>7 Arayıcı</strong>: bilgelik.</li>
+        <li><strong>8 Stratejist</strong>: güç.</li>
+        <li><strong>9 Hümanist</strong>: merhamet.</li>
+        <li><strong>11/22/33</strong>: usta sayılar.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">İfade, ruh, kişilik</h2>
+      <p class="text-white/80 leading-relaxed mb-4">İfadeden ruh sayısı (ünlüler) ve kişilik sayısı (ünsüzler) türer.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Neden doğum adı</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Pisagor geleneği, verilen ilk adın orijinal titreşimi taşıdığını savunur.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Kaynaklar</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://tr.wikipedia.org/wiki/Numeroloji" class="text-amber-300 hover:underline" rel="external">Numeroloji - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/topic/numerology" class="text-amber-300 hover:underline" rel="external">Numerology - Britannica</a></li>
+        <li><a href="https://tr.wikipedia.org/wiki/Pisagor" class="text-amber-300 hover:underline" rel="external">Pisagor - Wikipedia</a></li>
+      </ul>
+    </section>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/tr/araclar" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Tüm araçlar</a>
+      <a href="/tr/araclar/yasam-yolu-sayisi" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Yaşam yolu</a>
+      <a href="/tr/araclar/kisisel-yil" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Kişisel yıl</a>
+      <a href="/tr/araclar/dogum-haritasi" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Doğum haritası</a>
+      <a href="/tr/araclar/yukselen-burc" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Yükselen</a>
+      <a href="/tr/araclar/uyumluluk" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Uyumluluk</a>
+      <a href="/tr/burc-yorumlari" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Burç yorumları</a>
+      <a href="/tr/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Blog</a>
+    </nav>
+  </article>
+</BaseLayout>

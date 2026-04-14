@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "表現数計算ツール (運命数) 無料 | Karmastro";
+const description =
+  "表現数、別名運命数を無料で計算。生まれ持った才能、使命、人生の自然な方向性を明らかにします。ピタゴラス数秘術。";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "表現数計算ツール", description, url: "https://karmastro.com/ja/shindan/hyougen-suu", applicationCategory: "UtilitiesApplication", inLanguage: "ja", offers: { "@type": "Offer", price: "0", priceCurrency: "JPY" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "112" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "表現数とは？", acceptedAnswer: { "@type": "Answer", text: "出生時の氏名全体から計算される数。生まれ持った才能と人生の使命を明らかにします。" } },
+    { "@type": "Question", name: "ライフパス数との違いは？", acceptedAnswer: { "@type": "Answer", text: "ライフパス数は生年月日から。旅を示します。表現数は名前から。道具を示します。" } },
+    { "@type": "Question", name: "どの名前を使うべき？", acceptedAnswer: { "@type": "Answer", text: "出生証明書の完全な名前。結婚後の姓やニックネームではありません。" } },
+    { "@type": "Question", name: "マスターナンバー11、22、33とは？", acceptedAnswer: { "@type": "Answer", text: "還元されません。11は洞察力、22はマスタービルダー、33はマスターヒーラー。" } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/ja" class="hover:text-amber-300">ホーム</a><span class="mx-2">/</span>
+      <a href="/ja/shindan" class="hover:text-amber-300">診断</a><span class="mx-2">/</span>
+      <span class="text-white/80">表現数</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">ピタゴラス数秘術</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">表現数計算ツール</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">運命数とも呼ばれる。あなたが生まれながらに持っている才能を明らかにします。</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">A</div>
+      <a href="https://app.karmastro.com/oracle?lang=ja" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">表現数を計算</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">表現数とは</h2>
+      <p class="text-white/80 leading-relaxed mb-4">ピタゴラス数秘術の中核となる数の一つ。<a href="/ja/shindan/raifu-pasu-nanbaa" class="text-amber-300 hover:underline">ライフパス数</a>が旅を記述する一方、表現数は<strong>道具</strong>を記述します。</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">計算方法</h2>
+      <p class="text-white/80 leading-relaxed mb-4">各文字に1-9の数字を割り当てます：A=1、B=2、...、I=9、J=1など。完全な名前のすべての値を合計し、一桁に還元（11、22、33を除く）。</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">各数の意味</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>1 先駆者</strong>：リーダーシップ。</li>
+        <li><strong>2 外交官</strong>：感受性。</li>
+        <li><strong>3 芸術家</strong>：表現力。</li>
+        <li><strong>4 建設者</strong>：規律。</li>
+        <li><strong>5 冒険者</strong>：自由。</li>
+        <li><strong>6 守護者</strong>：奉仕。</li>
+        <li><strong>7 探求者</strong>：知恵。</li>
+        <li><strong>8 戦略家</strong>：力。</li>
+        <li><strong>9 人道主義者</strong>：慈悲。</li>
+        <li><strong>11/22/33</strong>：マスターナンバー。</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">表現、魂、人格</h2>
+      <p class="text-white/80 leading-relaxed mb-4">表現数から魂の数（母音のみ）と人格の数（子音のみ）が導出されます。</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">なぜ出生時の名前か</h2>
+      <p class="text-white/80 leading-relaxed mb-4">ピタゴラスの伝統では、最初に与えられた名前が元のバイブレーションを運ぶとされています。</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">情報源</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://ja.wikipedia.org/wiki/数秘術" class="text-amber-300 hover:underline" rel="external">数秘術 - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/topic/numerology" class="text-amber-300 hover:underline" rel="external">Numerology - Britannica</a></li>
+        <li><a href="https://ja.wikipedia.org/wiki/ピタゴラス" class="text-amber-300 hover:underline" rel="external">ピタゴラス - Wikipedia</a></li>
+      </ul>
+    </section>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/ja/shindan" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">すべての診断</a>
+      <a href="/ja/shindan/raifu-pasu-nanbaa" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">ライフパス</a>
+      <a href="/ja/shindan/kojin-toshi" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">個人年</a>
+      <a href="/ja/shindan/shusseizu" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">出生図</a>
+      <a href="/ja/shindan/asendanto" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">アセンダント</a>
+      <a href="/ja/shindan/aishou-shindan" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">相性診断</a>
+      <a href="/ja/horosukopu" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">ホロスコープ</a>
+      <a href="/ja/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">ブログ</a>
+    </nav>
+  </article>
+</BaseLayout>

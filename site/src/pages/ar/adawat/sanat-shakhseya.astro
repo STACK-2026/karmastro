@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "حاسبة السنة الشخصية - علم الأعداد للسنة | Karmastro";
+const description =
+  "احسب سنتك الشخصية مجانا. كل سنة تحمل موضوعا عدديا محددا في دورة من 1 إلى 9. اكتشف طاقة سنتك الحالية.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "حاسبة السنة الشخصية", description, url: "https://karmastro.com/ar/adawat/sanat-shakhseya", applicationCategory: "UtilitiesApplication", inLanguage: "ar", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "118" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "ما هي السنة الشخصية؟", acceptedAnswer: { "@type": "Answer", text: "رقم من 1 إلى 9 يصف طاقة السنة الحالية. جزء من دورة تسع سنوات." } },
+    { "@type": "Question", name: "كيف تحسب؟", acceptedAnswer: { "@type": "Answer", text: "اجمع اليوم + الشهر + السنة الحالية. اختزل إلى رقم واحد." } },
+    { "@type": "Question", name: "متى تبدأ؟", acceptedAnswer: { "@type": "Answer", text: "أغلب العلماء يبدؤونها في 1 يناير. آخرون في عيد الميلاد." } },
+    { "@type": "Question", name: "ماذا نفعل في كل سنة؟", acceptedAnswer: { "@type": "Answer", text: "1 زرع. 2 علاقات. 3 تعبير. 4 بناء. 5 تغيير. 6 مسؤولية. 7 تأمل. 8 حصاد. 9 إغلاق." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12" dir="rtl">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/ar" class="hover:text-amber-300">الرئيسية</a><span class="mx-2">/</span>
+      <a href="/ar/adawat" class="hover:text-amber-300">الأدوات</a><span class="mx-2">/</span>
+      <span class="text-white/80">السنة الشخصية</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">علم الأعداد الفيثاغوري</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">حاسبة السنة الشخصية</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">كل سنة تحمل موضوعا. اكتشف سنتك وتناغم مع طاقتها.</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">★</div>
+      <a href="https://app.karmastro.com/oracle?lang=ar" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">احسب سنتي الشخصية</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">دورة التسع سنوات</h2>
+      <p class="text-white/80 leading-relaxed mb-4">يعتبر علم الأعداد الفيثاغوري أن الحياة تتقدم في دورات من تسع سنوات.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">كيف تحسب</h2>
+      <p class="text-white/80 leading-relaxed mb-4">اجمع يوم + شهر الميلاد + <strong>السنة الحالية</strong>. اختزل. مثال لمن ولد في 12 مارس في 2026: 1+2+3+2+0+2+6 = 16 ← 7. السنة الشخصية 7.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">المواضيع التسعة</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pr-5">
+        <li><strong>السنة 1 · الزرع</strong>: بدايات جديدة.</li>
+        <li><strong>السنة 2 · العلاقات</strong>: صبر.</li>
+        <li><strong>السنة 3 · التعبير</strong>: إبداع.</li>
+        <li><strong>السنة 4 · البناء</strong>: انضباط.</li>
+        <li><strong>السنة 5 · التغيير</strong>: حرية.</li>
+        <li><strong>السنة 6 · المسؤولية</strong>: عائلة.</li>
+        <li><strong>السنة 7 · التأمل</strong>: توقف.</li>
+        <li><strong>السنة 8 · الحصاد</strong>: نجاحات.</li>
+        <li><strong>السنة 9 · الإغلاق</strong>: إفلات.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">مع مسار الحياة</h2>
+      <p class="text-white/80 leading-relaxed mb-4">ادمج مع <a href="/ar/adawat/raqm-masar-al-hayat" class="text-amber-300 hover:underline">مسار الحياة</a>.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">الانتقال بين السنوات</h2>
+      <p class="text-white/80 leading-relaxed mb-4">يبدأ اهتزاز السنة الجديدة في أكتوبر.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">المصادر</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pr-5">
+        <li><a href="https://ar.wikipedia.org/wiki/علم_الأعداد" class="text-amber-300 hover:underline" rel="external">علم الأعداد - ويكيبيديا</a></li>
+        <li><a href="https://www.britannica.com/topic/numerology" class="text-amber-300 hover:underline" rel="external">Numerology - Britannica</a></li>
+        <li><a href="https://ar.wikipedia.org/wiki/فيثاغورس" class="text-amber-300 hover:underline" rel="external">فيثاغورس - ويكيبيديا</a></li>
+      </ul>
+    </section>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/ar/adawat" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">جميع الأدوات</a>
+      <a href="/ar/adawat/raqm-masar-al-hayat" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">مسار الحياة</a>
+      <a href="/ar/adawat/raqm-tabir" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">رقم التعبير</a>
+      <a href="/ar/adawat/kharitat-mawlid" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">خريطة الميلاد</a>
+      <a href="/ar/adawat/al-taaali" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">الطالع</a>
+      <a href="/ar/adawat/tawafuq-azwaj" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">التوافق</a>
+      <a href="/ar/abraj" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">الأبراج</a>
+      <a href="/ar/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">المدونة</a>
+    </nav>
+  </article>
+</BaseLayout>

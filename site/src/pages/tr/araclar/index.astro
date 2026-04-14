@@ -8,16 +8,17 @@ const description =
 type Tool = { slug: string; title: string; desc: string; category: "Astroloji" | "Numeroloji"; icon: string };
 
 const TOOLS: Tool[] = [
-  { slug: "yasam-yolu-sayisi", title: "Yaşam Yolu Sayısı", desc: "Pisagor numerolojisindeki merkezi rakam. Misyonunu, doğuştan gelen yeteneklerini ve karmik dersleri ortaya koyar.", category: "Numeroloji", icon: "1" },
-  { slug: "yukselen-burc", title: "Yükselen Burç Hesaplayıcı", desc: "Yükselen burcunu keşfet: taktığın maske, bıraktığın ilk izlenim, dünyanın seni gördüğü şekil.", category: "Astroloji", icon: "↗" },
+  { slug: "dogum-haritasi", title: "Doğum Haritası", desc: "10 gezegen, 12 ev ve büyük açılarla tam doğum haritası.", category: "Astroloji", icon: "☉" },
+  { slug: "yukselen-burc", title: "Yükselen Burç Hesaplayıcı", desc: "Yükselen burcunu keşfet: taktığın maske, bıraktığın ilk izlenim.", category: "Astroloji", icon: "↗" },
+  { slug: "uyumluluk", title: "Burç Uyumluluğu", desc: "İki burç arasında aşk, arkadaşlık, iş ve karmik uyum.", category: "Astroloji", icon: "♥" },
+  { slug: "yasam-yolu-sayisi", title: "Yaşam Yolu Sayısı", desc: "Pisagor numerolojisindeki merkezi rakam. Misyonu ortaya koyar.", category: "Numeroloji", icon: "1" },
+  { slug: "ifade-sayisi", title: "İfade Sayısı", desc: "Kader sayısı olarak da bilinir. Doğuştan gelen yetenekleri gösterir.", category: "Numeroloji", icon: "A" },
+  { slug: "kisisel-yil", title: "Kişisel Yıl", desc: "Her yıl belirli bir numerolojik tema taşır. Sizinkini keşfedin.", category: "Numeroloji", icon: "★" },
 ];
 
 const FALLBACK_TOOLS: { slug: string; title: string; desc: string; category: "Astroloji" | "Numeroloji"; icon: string }[] = [
-  { slug: "dogum-haritasi", title: "Eksiksiz Doğum Haritası", desc: "Doğum haritan 10 gezegen, 12 ev ve ana açılarla. Kahin'de mevcut.", category: "Astroloji", icon: "☉" },
-  { slug: "uyum", title: "Zodyak Uyumu", desc: "İki burç arasında aşk, dostluk, iş ve karmik uyumu kontrol et.", category: "Astroloji", icon: "♥" },
   { slug: "sinastri", title: "Sinastri", desc: "İki kişi arasındaki gerçek kimyayı görmek için iki tam doğum haritasını karşılaştır.", category: "Astroloji", icon: "∞" },
   { slug: "transitler", title: "Günlük Transitler", desc: "Şu anda hareket halindeki gezegenler ve doğum haritanı nasıl etkiledikleri.", category: "Astroloji", icon: "◉" },
-  { slug: "ifade-sayisi", title: "İfade Sayısı", desc: "Kader sayısı olarak da bilinir. Tam doğum adından hesaplanır.", category: "Numeroloji", icon: "A" },
   { slug: "kisisel-yil", title: "Kişisel Yıl", desc: "Her yıl belirli bir numerolojik tema taşır. Kendi yılını keşfet ve enerjisiyle uyum sağla.", category: "Numeroloji", icon: "★" },
   { slug: "karmik-borc", title: "Karmik Borç", desc: "Önceki yaşamlardan miras kalan 13/4, 14/5, 16/7 veya 19/1 borçlarını taşıyıp taşımadığını keşfet.", category: "Numeroloji", icon: "∴" },
 ];

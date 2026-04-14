@@ -8,18 +8,17 @@ const description =
 type Tool = { slug: string; title: string; desc: string; category: "Astrología" | "Numerología"; icon: string; native: boolean };
 
 const TOOLS: Tool[] = [
-  { slug: "camino-de-vida", title: "Número de Camino de Vida", desc: "La cifra central en numerología pitagórica. Revela tu misión, tus dones innatos y las lecciones kármicas.", category: "Numerología", icon: "1", native: true },
-  { slug: "ascendente", title: "Calculadora de Ascendente", desc: "Descubre tu ascendente: la máscara que llevas, la primera impresión que dejas, cómo te ve el mundo.", category: "Astrología", icon: "↗", native: true },
+  { slug: "carta-natal", title: "Carta Natal Completa", desc: "Tu carta natal con los 10 planetas, las 12 casas y los aspectos mayores.", category: "Astrología", icon: "☉", native: true },
+  { slug: "ascendente", title: "Calculadora de Ascendente", desc: "Descubre tu ascendente: la máscara que llevas, la primera impresión que dejas.", category: "Astrología", icon: "↗", native: true },
+  { slug: "compatibilidad", title: "Compatibilidad Zodiacal", desc: "Comprueba el amor, la amistad, el trabajo y la compatibilidad kármica entre dos signos.", category: "Astrología", icon: "♥", native: true },
+  { slug: "camino-de-vida", title: "Número de Camino de Vida", desc: "La cifra central en numerología pitagórica. Revela tu misión y dones innatos.", category: "Numerología", icon: "1", native: true },
+  { slug: "numero-expresion", title: "Número de Expresión", desc: "También llamado número del destino. Calculado desde tu nombre completo de nacimiento.", category: "Numerología", icon: "A", native: true },
+  { slug: "ano-personal", title: "Año Personal", desc: "Cada año carga un tema numerológico específico. Descubre el tuyo y alinéate.", category: "Numerología", icon: "★", native: true },
 ];
 
-// Redirections vers les FR pour les outils pas encore traduits (user fallback)
 const FALLBACK_TOOLS: { slug: string; title: string; desc: string; category: "Astrología" | "Numerología"; icon: string }[] = [
-  { slug: "theme-natal", title: "Carta Astral Completa", desc: "Tu carta natal con los 10 planetas, las 12 casas y los aspectos mayores. Disponible en el Oráculo.", category: "Astrología", icon: "☉" },
-  { slug: "compatibilite", title: "Compatibilidad Zodiacal", desc: "Comprueba el amor, la amistad, el trabajo y la compatibilidad kármica entre cualquier par de signos.", category: "Astrología", icon: "♥" },
   { slug: "synastrie", title: "Sinastría", desc: "Compara dos cartas natales completas para ver la química real entre dos personas.", category: "Astrología", icon: "∞" },
   { slug: "transits", title: "Tránsitos Diarios", desc: "Los planetas en movimiento ahora mismo y cómo aspectan tu carta astral.", category: "Astrología", icon: "◉" },
-  { slug: "nombre-expression", title: "Número de Expresión", desc: "También llamado número del destino. Calculado desde tu nombre completo de nacimiento.", category: "Numerología", icon: "A" },
-  { slug: "annee-personnelle", title: "Año Personal", desc: "Cada año carga un tema numerológico específico. Descubre el tuyo y alinéate con su energía.", category: "Numerología", icon: "★" },
   { slug: "dette-karmique", title: "Deuda Kármica", desc: "Descubre si cargas las deudas 13/4, 14/5, 16/7 o 19/1 heredadas de vidas anteriores.", category: "Numerología", icon: "∴" },
 ];
 

@@ -1,0 +1,82 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "無料相性診断 星座の相性 | Karmastro";
+const description =
+  "無料の星座相性診断：恋愛、友情、仕事、カルマ的な繋がり。エレメント、クオリティ、惑星の支配と角度に基づきます。";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "相性診断ツール", description, url: "https://karmastro.com/ja/shindan/aishou-shindan", applicationCategory: "UtilitiesApplication", inLanguage: "ja", offers: { "@type": "Offer", price: "0", priceCurrency: "JPY" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "134" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "星座相性はどう働きますか？", acceptedAnswer: { "@type": "Answer", text: "エレメント、クオリティ、2つの星座の支配惑星の関係を分析します。" } },
+    { "@type": "Question", name: "太陽星座だけで十分ですか？", acceptedAnswer: { "@type": "Answer", text: "いいえ。本物の相性は両者の太陽、月、金星、火星、アセンダントを交差させます。" } },
+    { "@type": "Question", name: "反対は引き合いますか？", acceptedAnswer: { "@type": "Answer", text: "はい、いいえ。反対の星座は軸を共有し、補完するために作られていますが、意識的な努力が必要です。" } },
+    { "@type": "Question", name: "最も相性の良い星座は？", acceptedAnswer: { "@type": "Answer", text: "同じエレメントの星座は自然な親和性があります。補完的なエレメントも機能します。" } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/ja" class="hover:text-amber-300">ホーム</a><span class="mx-2">/</span>
+      <a href="/ja/shindan" class="hover:text-amber-300">診断</a><span class="mx-2">/</span>
+      <span class="text-white/80">相性診断</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">関係性の占星術</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">無料の星座相性診断</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">どの星座が本当に合うのか。エレメント、クオリティ、支配惑星、アスペクトを交差させます。</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-pink-300/30 bg-gradient-to-br from-pink-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">♥</div>
+      <a href="https://app.karmastro.com/oracle?lang=ja" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-pink-400 to-purple-400 text-white font-semibold hover:opacity-90 transition-opacity">相性を計算</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">相性の論理</h2>
+      <p class="text-white/80 leading-relaxed mb-4">4つのレイヤー：エレメント、クオリティ、支配惑星、個人天体間のアスペクト。</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">4つのエレメント</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>火</strong>（牡羊、獅子、射手）：情熱、行動。</li>
+        <li><strong>地</strong>（牡牛、乙女、山羊）：安定、実用性。</li>
+        <li><strong>風</strong>（双子、天秤、水瓶）：知性、言葉。</li>
+        <li><strong>水</strong>（蟹、蠍、魚）：感情、深さ。</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">クオリティ</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>活動</strong>：始動者。</li>
+        <li><strong>不動</strong>：建設者。</li>
+        <li><strong>柔軟</strong>：適応者。</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">太陽星座を超えて</h2>
+      <p class="text-white/80 leading-relaxed mb-4">月、金星、火星、アセンダント。深さのために<a href="/ja/shindan/shusseizu" class="text-amber-300 hover:underline">出生図</a>を使用。</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">カルマ的相性</h2>
+      <p class="text-white/80 leading-relaxed mb-4"><a href="/ja/shindan/raifu-pasu-nanbaa" class="text-amber-300 hover:underline">ライフパスナンバー</a>も比較してください。</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">情報源</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://ja.wikipedia.org/wiki/黄道十二星座" class="text-amber-300 hover:underline" rel="external">黄道十二星座 - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/topic/zodiac" class="text-amber-300 hover:underline" rel="external">Zodiac - Britannica</a></li>
+        <li><a href="https://ja.wikipedia.org/wiki/相性" class="text-amber-300 hover:underline" rel="external">相性 - Wikipedia</a></li>
+      </ul>
+    </section>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/ja/shindan" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">すべての診断</a>
+      <a href="/ja/shindan/shusseizu" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">出生図</a>
+      <a href="/ja/shindan/asendanto" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">アセンダント</a>
+      <a href="/ja/shindan/raifu-pasu-nanbaa" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">ライフパス</a>
+      <a href="/ja/shindan/hyougen-suu" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">表現数</a>
+      <a href="/ja/shindan/kojin-toshi" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">個人年</a>
+      <a href="/ja/horosukopu" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">ホロスコープ</a>
+      <a href="/ja/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">ブログ</a>
+    </nav>
+  </article>
+</BaseLayout>

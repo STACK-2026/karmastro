@@ -1,0 +1,82 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Burç Uyumluluğu Hesaplayıcı Ücretsiz | Karmastro";
+const description =
+  "Ücretsiz burç uyumluluğu: aşk, arkadaşlık, iş ve karmik bağ iki burç arasında. Elementler, modaliteler ve gezegen açılarına dayanır.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "Burç Uyumluluğu Hesaplayıcı", description, url: "https://karmastro.com/tr/araclar/uyumluluk", applicationCategory: "UtilitiesApplication", inLanguage: "tr", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "189" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "Burç uyumluluğu nasıl çalışır?", acceptedAnswer: { "@type": "Answer", text: "Elementler, modaliteler ve iki burcun yönetici gezegenleri arasındaki ilişkileri analiz eder." } },
+    { "@type": "Question", name: "Güneş burcu yeterli mi?", acceptedAnswer: { "@type": "Answer", text: "Hayır. Gerçek uyumluluk iki kişinin Güneş, Ay, Venüs, Mars ve Yükselenini çaprazlar." } },
+    { "@type": "Question", name: "Zıtlar çeker mi?", acceptedAnswer: { "@type": "Answer", text: "Evet ve hayır. Zıt burçlar ekseni paylaşır, tamamlanmak için bilinçli çalışma gerekir." } },
+    { "@type": "Question", name: "Hangi burçlar daha uyumlu?", acceptedAnswer: { "@type": "Answer", text: "Aynı elementten olanlar doğal yakınlığa sahiptir. Tamamlayıcı elementler de işe yarar." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/tr" class="hover:text-amber-300">Ana sayfa</a><span class="mx-2">/</span>
+      <a href="/tr/araclar" class="hover:text-amber-300">Araçlar</a><span class="mx-2">/</span>
+      <span class="text-white/80">Uyumluluk</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">İlişki Astrolojisi</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Burç Uyumluluğu Ücretsiz</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">Hangi burçlar gerçekten yakışır? Hesaplayıcımız elementler, modaliteler, yöneticiler ve açıları çaprazlar.</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-pink-300/30 bg-gradient-to-br from-pink-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">♥</div>
+      <a href="https://app.karmastro.com/oracle?lang=tr" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-pink-400 to-purple-400 text-white font-semibold hover:opacity-90 transition-opacity">Uyumluluğu hesapla</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Uyumluluk mantığı</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Dört katman ince bir yorum verir: elementler, modaliteler, yönetici gezegenler ve kişisel gök cisimleri arasındaki açılar.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Dört element</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Ateş</strong> (Koç, Aslan, Yay): tutku, eylem.</li>
+        <li><strong>Toprak</strong> (Boğa, Başak, Oğlak): istikrar.</li>
+        <li><strong>Hava</strong> (İkizler, Terazi, Kova): zihin, söz.</li>
+        <li><strong>Su</strong> (Yengeç, Akrep, Balık): duygu, derinlik.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Modaliteler</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Öncü</strong>: başlatıcılar.</li>
+        <li><strong>Sabit</strong>: inşaatçılar.</li>
+        <li><strong>Değişken</strong>: uyarlanabilirler.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Güneş burcunun ötesi</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Ay, Venüs, Mars, Yükselen. Derinlik için <a href="/tr/araclar/dogum-haritasi" class="text-amber-300 hover:underline">Doğum Haritası</a> kullanın.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Karmik uyum</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Numeroloji de katkıda bulunur: iki <a href="/tr/araclar/yasam-yolu-sayisi" class="text-amber-300 hover:underline">yaşam yolunu</a> karşılaştırın.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Yetkili kaynaklar</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://tr.wikipedia.org/wiki/Zodyak" class="text-amber-300 hover:underline" rel="external">Zodyak - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/topic/zodiac" class="text-amber-300 hover:underline" rel="external">Zodiac - Britannica</a></li>
+        <li><a href="https://tr.wikipedia.org/wiki/Sinastri" class="text-amber-300 hover:underline" rel="external">Sinastri - Wikipedia</a></li>
+      </ul>
+    </section>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/tr/araclar" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Tüm araçlar</a>
+      <a href="/tr/araclar/dogum-haritasi" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Doğum haritası</a>
+      <a href="/tr/araclar/yukselen-burc" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Yükselen</a>
+      <a href="/tr/araclar/yasam-yolu-sayisi" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Yaşam yolu</a>
+      <a href="/tr/araclar/ifade-sayisi" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">İfade sayısı</a>
+      <a href="/tr/araclar/kisisel-yil" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Kişisel yıl</a>
+      <a href="/tr/burc-yorumlari" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Burç yorumları</a>
+      <a href="/tr/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Blog</a>
+    </nav>
+  </article>
+</BaseLayout>

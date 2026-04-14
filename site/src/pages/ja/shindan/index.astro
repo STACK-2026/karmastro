@@ -8,16 +8,17 @@ const description =
 type Tool = { slug: string; title: string; desc: string; category: "占星術" | "数秘術"; icon: string };
 
 const TOOLS: Tool[] = [
-  { slug: "raifu-pasu-nanbaa", title: "ライフパスナンバー", desc: "ピタゴラス数秘術の中心的な数字。あなたの使命、生まれながらの才能、カルマの教訓を明らかにする。", category: "数秘術", icon: "1" },
-  { slug: "asendanto", title: "アセンダント計算機", desc: "あなたのアセンダントを発見：つけるマスク、残す第一印象、世界があなたを見る方法。", category: "占星術", icon: "↗" },
+  { slug: "shusseizu", title: "出生図", desc: "10惑星、12ハウス、主要アスペクトを含む完全な出生図。", category: "占星術", icon: "☉" },
+  { slug: "asendanto", title: "アセンダント計算機", desc: "あなたのアセンダントを発見：つけるマスク、残す第一印象。", category: "占星術", icon: "↗" },
+  { slug: "aishou-shindan", title: "相性診断", desc: "2つの星座間の愛、友情、仕事、カルマの相性。", category: "占星術", icon: "♥" },
+  { slug: "raifu-pasu-nanbaa", title: "ライフパスナンバー", desc: "ピタゴラス数秘術の中心的な数字。使命と才能を明らかにする。", category: "数秘術", icon: "1" },
+  { slug: "hyougen-suu", title: "表現数", desc: "運命数とも呼ばれる。生まれ持った才能を明らかにする。", category: "数秘術", icon: "A" },
+  { slug: "kojin-toshi", title: "個人年", desc: "各年は特定の数秘術テーマを運ぶ。", category: "数秘術", icon: "★" },
 ];
 
 const FALLBACK_TOOLS: { slug: string; title: string; desc: string; category: "占星術" | "数秘術"; icon: string }[] = [
-  { slug: "shusshouzu", title: "完全な出生図", desc: "10の惑星、12のハウス、主要アスペクトを含む出生図。オラクルで利用可能。", category: "占星術", icon: "☉" },
-  { slug: "aishou", title: "星座相性", desc: "2つの星座間の愛、友情、仕事、カルマの相性を確認する。", category: "占星術", icon: "♥" },
   { slug: "shinasutori", title: "シナストリー", desc: "2人の間の本当の化学反応を見るために、2つの完全な出生図を比較する。", category: "占星術", icon: "∞" },
   { slug: "toranjitto", title: "毎日のトランジット", desc: "今動いている惑星とあなたの出生図への影響。", category: "占星術", icon: "◉" },
-  { slug: "hyougen-nanbaa", title: "表現数", desc: "運命数とも呼ばれる。完全な出生名から計算される。", category: "数秘術", icon: "A" },
   { slug: "pasonaru-ia", title: "個人年", desc: "毎年特定の数秘術のテーマを運ぶ。自分のを発見し、そのエネルギーに合わせる。", category: "数秘術", icon: "★" },
   { slug: "karuma-no-fusai", title: "カルマの負債", desc: "過去の人生から受け継いだ13/4、14/5、16/7、19/1の負債を運んでいるか発見する。", category: "数秘術", icon: "∴" },
 ];

@@ -8,17 +8,17 @@ const description =
 type Tool = { slug: string; title: string; desc: string; category: "Astrologia" | "Numerologia"; icon: string };
 
 const TOOLS: Tool[] = [
-  { slug: "numero-del-cammino-di-vita", title: "Numero del Cammino di Vita", desc: "La cifra centrale nella numerologia pitagorica. Rivela la tua missione, i tuoi doni innati e le lezioni karmiche.", category: "Numerologia", icon: "1" },
-  { slug: "ascendente", title: "Calcolatore dell'Ascendente", desc: "Scopri il tuo ascendente: la maschera che indossi, la prima impressione che lasci, come il mondo ti vede.", category: "Astrologia", icon: "↗" },
+  { slug: "tema-natale", title: "Tema Natale", desc: "La tua carta astrale con 10 pianeti, 12 case e aspetti maggiori.", category: "Astrologia", icon: "☉" },
+  { slug: "ascendente", title: "Calcolatore dell'Ascendente", desc: "Scopri il tuo ascendente: la maschera che indossi, la prima impressione.", category: "Astrologia", icon: "↗" },
+  { slug: "compatibilita", title: "Compatibilità Zodiacale", desc: "Amore, amicizia, lavoro e compatibilità karmica tra due segni.", category: "Astrologia", icon: "♥" },
+  { slug: "numero-del-cammino-di-vita", title: "Numero del Cammino di Vita", desc: "La cifra centrale nella numerologia pitagorica. Rivela la missione.", category: "Numerologia", icon: "1" },
+  { slug: "numero-espressione", title: "Numero di Espressione", desc: "Chiamato anche numero del destino. Calcolato dal nome completo.", category: "Numerologia", icon: "A" },
+  { slug: "anno-personale", title: "Anno Personale", desc: "Ogni anno porta un tema numerologico specifico. Scopri il tuo.", category: "Numerologia", icon: "★" },
 ];
 
 const FALLBACK_TOOLS: { slug: string; title: string; desc: string; category: "Astrologia" | "Numerologia"; icon: string }[] = [
-  { slug: "carta-astrale", title: "Carta Astrale Completa", desc: "La tua carta natale con i 10 pianeti, le 12 case e gli aspetti maggiori. Disponibile nell'Oracolo.", category: "Astrologia", icon: "☉" },
-  { slug: "compatibilita", title: "Compatibilità Zodiacale", desc: "Verifica l'amore, l'amicizia, il lavoro e la compatibilità karmica tra due segni.", category: "Astrologia", icon: "♥" },
   { slug: "sinastria", title: "Sinastria", desc: "Confronta due carte natali complete per vedere la chimica reale tra due persone.", category: "Astrologia", icon: "∞" },
   { slug: "transiti", title: "Transiti Quotidiani", desc: "I pianeti in movimento ora e come influenzano la tua carta astrale.", category: "Astrologia", icon: "◉" },
-  { slug: "numero-di-espressione", title: "Numero di Espressione", desc: "Chiamato anche numero del destino. Calcolato dal tuo nome completo di nascita.", category: "Numerologia", icon: "A" },
-  { slug: "anno-personale", title: "Anno Personale", desc: "Ogni anno porta un tema numerologico specifico. Scopri il tuo e allineati con la sua energia.", category: "Numerologia", icon: "★" },
   { slug: "debito-karmico", title: "Debito Karmico", desc: "Scopri se porti i debiti 13/4, 14/5, 16/7 o 19/1 ereditati da vite passate.", category: "Numerologia", icon: "∴" },
 ];
 

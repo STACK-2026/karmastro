@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "無料出生図計算ツール - ネイタルチャート | Karmastro";
+const description =
+  "Swiss Ephemerisで計算する無料の出生図ツール。10惑星、12ハウス、アセンダント、日本語での完全な解釈。プロフェッショナルな精度。";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "出生図計算ツール", description, url: "https://karmastro.com/ja/shindan/shusseizu", applicationCategory: "UtilitiesApplication", inLanguage: "ja", offers: { "@type": "Offer", price: "0", priceCurrency: "JPY" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "176" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "出生図とは？", acceptedAnswer: { "@type": "Answer", text: "出生図、ネイタルチャートとも呼ばれ、あなたが生まれた正確な瞬間と場所の空の天文学的スナップショットです。太陽、月、8惑星の位置、星座、12ハウス、アスペクトを示します。" } },
+    { "@type": "Question", name: "本当に無料ですか？", acceptedAnswer: { "@type": "Answer", text: "はい。10の天体、12ハウス、主要アスペクト、書面による解釈付きの完全な出生図。登録不要。" } },
+    { "@type": "Question", name: "精度は？", acceptedAnswer: { "@type": "Answer", text: "KarmastroはプロフェッショナルのアストロロジャーのスタンダードであるSwiss Ephemerisを使用。秒角精度。プラシダス・ハウスシステムがデフォルト。" } },
+    { "@type": "Question", name: "正確な出生時刻が必要ですか？", acceptedAnswer: { "@type": "Answer", text: "完全な出生図には必要です。アセンダントと12ハウスは出生時刻に依存します。" } },
+    { "@type": "Question", name: "出生図は何を示しますか？", acceptedAnswer: { "@type": "Answer", text: "コアアイデンティティ（太陽）、感情世界（月）、社会的仮面（アセンダント）、コミュニケーションスタイル（水星）、愛のスタイル（金星）、欲求（火星）、成長パターン（木星）、規律（土星）、世代テーマ（天王星、海王星、冥王星）を示します。" } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/ja" class="hover:text-amber-300">ホーム</a><span class="mx-2">/</span>
+      <a href="/ja/shindan" class="hover:text-amber-300">診断</a><span class="mx-2">/</span>
+      <span class="text-white/80">出生図</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">西洋占星術</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">無料の出生図計算ツール</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">Swiss Ephemerisで計算する完全な出生図。すべての惑星、すべてのハウス、すべてのアスペクト、日本語での明確な解釈付き。</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">✦</div>
+      <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">完全な出生図を入手</h2>
+      <p class="text-white/70 mb-6 max-w-xl mx-auto leading-relaxed">正確な生年月日、時刻、場所が必要です。オリオン、占星術ガイドが個別解釈を提供します。</p>
+      <a href="https://app.karmastro.com/oracle?lang=ja" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">無料の出生図を取得</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">出生図とは</h2>
+      <p class="text-white/80 leading-relaxed mb-4">出生図は、あなたが生まれた正確な瞬間と場所における空の精密な天文地図です。このスナップショットは決して同じ形で繰り返されないため、あなたの図は指紋のようにユニークです。</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">出生図の構成要素</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>10の天体</strong>：太陽、月、水星、金星、火星、木星、土星、天王星、海王星、冥王星。</li>
+        <li><strong>12星座</strong>：各惑星の表現を彩ります。</li>
+        <li><strong>12ハウス</strong>：人生の領域を記述します。</li>
+        <li><strong>アスペクト</strong>：惑星間の幾何学的角度。</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">ビッグスリー</h2>
+      <p class="text-white/80 leading-relaxed mb-4">太陽（アイデンティティ）、月（感情）、<a href="/ja/shindan/asendanto" class="text-amber-300 hover:underline">アセンダント</a>（仮面）が物語の80パーセントを語ります。</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Karmastroの計算方法</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Swiss Ephemeris、天文精度のゴールドスタンダード。プラシダスがデフォルト。その後オリオンがあなたの図に合わせた物語的読解を提供します。</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">出生時刻が重要な理由</h2>
+      <p class="text-white/80 leading-relaxed mb-4">アセンダントは平均2時間ごとに変わります。12ハウスは出生時刻に完全に依存します。</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">権威ある情報源</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://ja.wikipedia.org/wiki/ホロスコープ" class="text-amber-300 hover:underline" rel="external">ホロスコープ - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/topic/astrology" class="text-amber-300 hover:underline" rel="external">Astrology - Britannica</a></li>
+        <li><a href="https://www.astro.com/swisseph/" class="text-amber-300 hover:underline" rel="external">Swiss Ephemeris</a></li>
+      </ul>
+    </section>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/ja/shindan" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">すべての診断</a>
+      <a href="/ja/shindan/asendanto" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">アセンダント</a>
+      <a href="/ja/shindan/raifu-pasu-nanbaa" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">ライフパス</a>
+      <a href="/ja/shindan/aishou-shindan" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">相性診断</a>
+      <a href="/ja/shindan/hyougen-suu" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">表現数</a>
+      <a href="/ja/shindan/kojin-toshi" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">個人年</a>
+      <a href="/ja/horosukopu" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">ホロスコープ</a>
+      <a href="/ja/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">ブログ</a>
+    </nav>
+  </article>
+</BaseLayout>

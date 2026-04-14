@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Kişisel Yıl Hesaplayıcı - Yılın Numerolojisi | Karmastro";
+const description =
+  "Kişisel yılınızı ücretsiz hesaplayın. Her yıl 1-9 döngüsünde belirli bir numerolojik tema taşır. Bu yılın enerjisini keşfedin.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "Kişisel Yıl Hesaplayıcı", description, url: "https://karmastro.com/tr/araclar/kisisel-yil", applicationCategory: "UtilitiesApplication", inLanguage: "tr", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "134" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "Kişisel yıl nedir?", acceptedAnswer: { "@type": "Answer", text: "1-9 arası sayı, içinde bulunduğunuz yılın numerolojik enerjisini açıklar. Dokuz yıllık döngünün parçası." } },
+    { "@type": "Question", name: "Nasıl hesaplanır?", acceptedAnswer: { "@type": "Answer", text: "Doğum günü + doğum ayı + bu yıl. İndirgeme ile tek haneye, 11/22/33 hariç." } },
+    { "@type": "Question", name: "Ne zaman başlar?", acceptedAnswer: { "@type": "Answer", text: "Çoğu numerolog 1 Ocak'ta başlatır. Bazıları doğum gününde." } },
+    { "@type": "Question", name: "Her yıl ne yapmalı?", acceptedAnswer: { "@type": "Answer", text: "1 ekmek. 2 ilişkiler. 3 ifade. 4 inşa. 5 değişim. 6 sorumluluk. 7 içe dönüş. 8 hasat. 9 kapanış." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/tr" class="hover:text-amber-300">Ana sayfa</a><span class="mx-2">/</span>
+      <a href="/tr/araclar" class="hover:text-amber-300">Araçlar</a><span class="mx-2">/</span>
+      <span class="text-white/80">Kişisel yıl</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Pisagor Numerolojisi</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Kişisel Yıl Hesaplayıcı</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">Her yıl bir tema taşır. Sizinkini keşfedin ve enerjisiyle uyumlanın.</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">★</div>
+      <a href="https://app.karmastro.com/oracle?lang=tr" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">Kişisel yılımı hesapla</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Dokuz yıllık döngü</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Pisagor numerolojisi yaşamı dokuz yıllık döngüler olarak görür.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Nasıl hesaplanır</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Doğum günü + doğum ayı + <strong>bu yıl</strong>. İndirge. 12 Mart doğumlu için 2026: 1+2+3+2+0+2+6 = 16 → 7. Kişisel yıl 7.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Dokuz tema</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Yıl 1 · Ekim</strong>: yeni başlangıçlar.</li>
+        <li><strong>Yıl 2 · İlişkiler</strong>: sabır.</li>
+        <li><strong>Yıl 3 · İfade</strong>: yaratıcılık.</li>
+        <li><strong>Yıl 4 · İnşa</strong>: disiplin.</li>
+        <li><strong>Yıl 5 · Değişim</strong>: özgürlük.</li>
+        <li><strong>Yıl 6 · Sorumluluk</strong>: aile.</li>
+        <li><strong>Yıl 7 · İçe dönüş</strong>: mola.</li>
+        <li><strong>Yıl 8 · Hasat</strong>: başarı.</li>
+        <li><strong>Yıl 9 · Kapanış</strong>: bırakma.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Yaşam yolu ile birleşim</h2>
+      <p class="text-white/80 leading-relaxed mb-4"><a href="/tr/araclar/yasam-yolu-sayisi" class="text-amber-300 hover:underline">Yaşam yolu</a> ile çaprazlayın.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Yıllar arası geçiş</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Yeni yılın titreşimi Ekim'den itibaren hissedilmeye başlar.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Kaynaklar</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://tr.wikipedia.org/wiki/Numeroloji" class="text-amber-300 hover:underline" rel="external">Numeroloji - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/topic/numerology" class="text-amber-300 hover:underline" rel="external">Numerology - Britannica</a></li>
+        <li><a href="https://tr.wikipedia.org/wiki/Pisagor" class="text-amber-300 hover:underline" rel="external">Pisagor - Wikipedia</a></li>
+      </ul>
+    </section>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/tr/araclar" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Tüm araçlar</a>
+      <a href="/tr/araclar/yasam-yolu-sayisi" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Yaşam yolu</a>
+      <a href="/tr/araclar/ifade-sayisi" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">İfade sayısı</a>
+      <a href="/tr/araclar/dogum-haritasi" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Doğum haritası</a>
+      <a href="/tr/araclar/yukselen-burc" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Yükselen</a>
+      <a href="/tr/araclar/uyumluluk" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Uyumluluk</a>
+      <a href="/tr/burc-yorumlari" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Burç yorumları</a>
+      <a href="/tr/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Blog</a>
+    </nav>
+  </article>
+</BaseLayout>

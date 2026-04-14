@@ -8,16 +8,17 @@ const description =
 type Tool = { slug: string; title: string; desc: string; category: "Astrologia" | "Numerologia"; icon: string };
 
 const TOOLS: Tool[] = [
-  { slug: "liczba-drogi-zycia", title: "Liczba Drogi Życia", desc: "Centralna cyfra w numerologii pitagorejskiej. Ujawnia twoją misję, wrodzone dary i karmiczne lekcje.", category: "Numerologia", icon: "1" },
-  { slug: "wschodzacy-znak", title: "Kalkulator Wschodzącego Znaku", desc: "Odkryj swój ascendent: maskę którą nosisz, pierwsze wrażenie które zostawiasz, sposób w jaki świat cię widzi.", category: "Astrologia", icon: "↗" },
+  { slug: "horoskop-natalny", title: "Horoskop Natalny", desc: "Pełna karta natalna z 10 planetami, 12 domami i głównymi aspektami.", category: "Astrologia", icon: "☉" },
+  { slug: "wschodzacy-znak", title: "Kalkulator Wschodzącego Znaku", desc: "Odkryj swój ascendent: maskę którą nosisz, pierwsze wrażenie które zostawiasz.", category: "Astrologia", icon: "↗" },
+  { slug: "kompatybilnosc", title: "Kompatybilność Zodiakalna", desc: "Miłość, przyjaźń, praca i karmiczna więź między dwoma znakami.", category: "Astrologia", icon: "♥" },
+  { slug: "liczba-drogi-zycia", title: "Liczba Drogi Życia", desc: "Centralna cyfra w numerologii pitagorejskiej. Ujawnia misję i dary.", category: "Numerologia", icon: "1" },
+  { slug: "liczba-ekspresji", title: "Liczba Ekspresji", desc: "Zwana także liczbą przeznaczenia. Obliczana z pełnego imienia.", category: "Numerologia", icon: "A" },
+  { slug: "rok-osobisty", title: "Rok Osobisty", desc: "Każdy rok niesie specyficzny temat numerologiczny. Odkryj swój.", category: "Numerologia", icon: "★" },
 ];
 
 const FALLBACK_TOOLS: { slug: string; title: string; desc: string; category: "Astrologia" | "Numerologia"; icon: string }[] = [
-  { slug: "karta-urodzenia", title: "Pełna Karta Urodzenia", desc: "Twoja karta urodzenia z 10 planetami, 12 domami i głównymi aspektami. Dostępne w Wyroczni.", category: "Astrologia", icon: "☉" },
-  { slug: "kompatybilnosc", title: "Kompatybilność Zodiaku", desc: "Sprawdź miłość, przyjaźń, pracę i kompatybilność karmiczną między dwoma znakami.", category: "Astrologia", icon: "♥" },
   { slug: "synastria", title: "Synastria", desc: "Porównaj dwie pełne karty urodzenia aby zobaczyć prawdziwą chemię między dwoma osobami.", category: "Astrologia", icon: "∞" },
   { slug: "tranzyty", title: "Codzienne Tranzyty", desc: "Planety w ruchu teraz i jak wpływają na twoją kartę urodzenia.", category: "Astrologia", icon: "◉" },
-  { slug: "liczba-ekspresji", title: "Liczba Ekspresji", desc: "Zwana także liczbą przeznaczenia. Obliczana z pełnego imienia z urodzenia.", category: "Numerologia", icon: "A" },
   { slug: "rok-osobisty", title: "Rok Osobisty", desc: "Każdy rok niesie określony temat numerologiczny. Odkryj swój i dostrój się z jego energią.", category: "Numerologia", icon: "★" },
   { slug: "dlug-karmiczny", title: "Dług Karmiczny", desc: "Odkryj czy nosisz długi 13/4, 14/5, 16/7 lub 19/1 odziedziczone z poprzednich żyć.", category: "Numerologia", icon: "∴" },
 ];

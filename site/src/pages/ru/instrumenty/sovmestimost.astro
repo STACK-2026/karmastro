@@ -1,0 +1,82 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "Калькулятор совместимости знаков зодиака | Karmastro";
+const description =
+  "Бесплатная совместимость знаков зодиака: любовь, дружба, работа и кармическая связь между двумя знаками. На основе стихий, качеств и планетарных аспектов.";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "Калькулятор совместимости", description, url: "https://karmastro.com/ru/instrumenty/sovmestimost", applicationCategory: "UtilitiesApplication", inLanguage: "ru", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "213" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "Как работает совместимость знаков?", acceptedAnswer: { "@type": "Answer", text: "Анализируются стихии (огонь, земля, воздух, вода), качества (кардинальные, фиксированные, мутабельные) и планеты-управители двух знаков." } },
+    { "@type": "Question", name: "Достаточно ли солнечного знака?", acceptedAnswer: { "@type": "Answer", text: "Нет. Настоящая совместимость пересекает Солнце, Луну, Венеру, Марс и Асцендент обоих." } },
+    { "@type": "Question", name: "Притягиваются ли противоположности?", acceptedAnswer: { "@type": "Answer", text: "Да и нет. Противоположные знаки делят ось и созданы дополнять друг друга, но требуют сознательной работы." } },
+    { "@type": "Question", name: "Какие знаки наиболее совместимы?", acceptedAnswer: { "@type": "Answer", text: "Знаки одной стихии имеют естественное родство. Дополняющие стихии тоже работают." } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/ru" class="hover:text-amber-300">Главная</a><span class="mx-2">/</span>
+      <a href="/ru/instrumenty" class="hover:text-amber-300">Инструменты</a><span class="mx-2">/</span>
+      <span class="text-white/80">Совместимость</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Астрология отношений</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Совместимость знаков зодиака бесплатно</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">Какие знаки действительно подходят? Наш калькулятор пересекает стихии, качества, управителей и аспекты.</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-pink-300/30 bg-gradient-to-br from-pink-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">♥</div>
+      <a href="https://app.karmastro.com/oracle?lang=ru" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-pink-400 to-purple-400 text-white font-semibold hover:opacity-90 transition-opacity">Рассчитать совместимость</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">Логика совместимости</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Четыре слоя вместе дают тонкую интерпретацию: стихии, качества, управители и аспекты между личными астрами.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Четыре стихии</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Огонь</strong> (Овен, Лев, Стрелец): страсть, действие.</li>
+        <li><strong>Земля</strong> (Телец, Дева, Козерог): стабильность.</li>
+        <li><strong>Воздух</strong> (Близнецы, Весы, Водолей): ум, слово.</li>
+        <li><strong>Вода</strong> (Рак, Скорпион, Рыбы): эмоция, глубина.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Качества</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>Кардинальные</strong>: инициаторы.</li>
+        <li><strong>Фиксированные</strong>: строители.</li>
+        <li><strong>Мутабельные</strong>: адаптивные.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">За пределами солнечного знака</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Луна, Венера, Марс, Асцендент. Для глубины используйте <a href="/ru/instrumenty/natalnaya-karta" class="text-amber-300 hover:underline">Калькулятор натальной карты</a>.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Кармическая совместимость</h2>
+      <p class="text-white/80 leading-relaxed mb-4">Сравните также <a href="/ru/instrumenty/chislo-zhiznennogo-puti" class="text-amber-300 hover:underline">жизненные пути</a>.</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">Источники</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://ru.wikipedia.org/wiki/Зодиак" class="text-amber-300 hover:underline" rel="external">Зодиак - Википедия</a></li>
+        <li><a href="https://www.britannica.com/topic/zodiac" class="text-amber-300 hover:underline" rel="external">Zodiac - Britannica</a></li>
+        <li><a href="https://ru.wikipedia.org/wiki/Синастрия" class="text-amber-300 hover:underline" rel="external">Синастрия - Википедия</a></li>
+      </ul>
+    </section>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/ru/instrumenty" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Все инструменты</a>
+      <a href="/ru/instrumenty/natalnaya-karta" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Натальная карта</a>
+      <a href="/ru/instrumenty/voskhodyaschiy-znak" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Асцендент</a>
+      <a href="/ru/instrumenty/chislo-zhiznennogo-puti" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Жизненный путь</a>
+      <a href="/ru/instrumenty/chislo-vyrazheniya" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Число выражения</a>
+      <a href="/ru/instrumenty/lichnyi-god" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Личный год</a>
+      <a href="/ru/goroskop" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Гороскоп</a>
+      <a href="/ru/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Блог</a>
+    </nav>
+  </article>
+</BaseLayout>

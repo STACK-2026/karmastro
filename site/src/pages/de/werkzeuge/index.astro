@@ -8,17 +8,17 @@ const description =
 type Tool = { slug: string; title: string; desc: string; category: "Astrologie" | "Numerologie"; icon: string };
 
 const TOOLS: Tool[] = [
-  { slug: "lebenszahl", title: "Lebenszahl Rechner", desc: "Die zentrale Ziffer der pythagoreischen Numerologie. Offenbart deine Mission, deine angeborenen Gaben und die karmischen Lektionen.", category: "Numerologie", icon: "1" },
-  { slug: "aszendent", title: "Aszendent Rechner", desc: "Entdecke deinen Aszendenten: die Maske die du trägst, der erste Eindruck den du hinterlässt, wie die Welt dich sieht.", category: "Astrologie", icon: "↗" },
+  { slug: "geburtshoroskop", title: "Geburtshoroskop", desc: "Dein vollständiges Natal Chart mit 10 Planeten, 12 Häusern und Hauptaspekten.", category: "Astrologie", icon: "☉" },
+  { slug: "aszendent", title: "Aszendent Rechner", desc: "Entdecke deinen Aszendenten: die Maske, der erste Eindruck.", category: "Astrologie", icon: "↗" },
+  { slug: "partnerhoroskop", title: "Partnerhoroskop", desc: "Liebe, Freundschaft, Arbeit und karmische Kompatibilität zwischen zwei Zeichen.", category: "Astrologie", icon: "♥" },
+  { slug: "lebenszahl", title: "Lebenszahl", desc: "Die zentrale Ziffer der pythagoreischen Numerologie.", category: "Numerologie", icon: "1" },
+  { slug: "ausdruckszahl", title: "Ausdruckszahl", desc: "Auch Schicksalszahl genannt. Berechnet aus deinem vollständigen Geburtsnamen.", category: "Numerologie", icon: "A" },
+  { slug: "personliches-jahr", title: "Persönliches Jahr", desc: "Jedes Jahr trägt ein spezifisches numerologisches Thema.", category: "Numerologie", icon: "★" },
 ];
 
 const FALLBACK_TOOLS: { slug: string; title: string; desc: string; category: "Astrologie" | "Numerologie"; icon: string }[] = [
-  { slug: "geburtskarte", title: "Vollständige Geburtskarte", desc: "Deine Geburtskarte mit den 10 Planeten, 12 Häusern und wichtigsten Aspekten. Im Orakel verfügbar.", category: "Astrologie", icon: "☉" },
-  { slug: "kompatibilitaet", title: "Tierkreis-Kompatibilität", desc: "Überprüfe Liebe, Freundschaft, Arbeit und karmische Kompatibilität zwischen zwei Zeichen.", category: "Astrologie", icon: "♥" },
   { slug: "synastrie", title: "Synastrie", desc: "Vergleiche zwei vollständige Geburtskarten, um die echte Chemie zwischen zwei Personen zu sehen.", category: "Astrologie", icon: "∞" },
   { slug: "transite", title: "Tägliche Transite", desc: "Die Planeten in Bewegung und wie sie deine Geburtskarte beeinflussen.", category: "Astrologie", icon: "◉" },
-  { slug: "ausdruckszahl", title: "Ausdruckszahl", desc: "Auch Schicksalszahl genannt. Berechnet aus deinem vollständigen Geburtsnamen.", category: "Numerologie", icon: "A" },
-  { slug: "persoenliches-jahr", title: "Persönliches Jahr", desc: "Jedes Jahr trägt ein spezifisches numerologisches Thema. Entdecke deins und richte dich mit seiner Energie aus.", category: "Numerologie", icon: "★" },
   { slug: "karmische-schuld", title: "Karmische Schuld", desc: "Entdecke ob du die Schulden 13/4, 14/5, 16/7 oder 19/1 aus früheren Leben trägst.", category: "Numerologie", icon: "∴" },
 ];
 

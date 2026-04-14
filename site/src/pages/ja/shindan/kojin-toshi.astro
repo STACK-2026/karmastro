@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const title = "個人年計算ツール - 年の数秘術 | Karmastro";
+const description =
+  "個人年を無料で計算。各年は1-9のサイクルで特定の数秘術テーマを運びます。今年のエネルギーを発見しましょう。";
+
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "WebApplication", name: "個人年計算ツール", description, url: "https://karmastro.com/ja/shindan/kojin-toshi", applicationCategory: "UtilitiesApplication", inLanguage: "ja", offers: { "@type": "Offer", price: "0", priceCurrency: "JPY" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "98" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
+    { "@type": "Question", name: "個人年とは？", acceptedAnswer: { "@type": "Answer", text: "現在の年の数秘術的エネルギーを表す1-9の数。9年サイクルの一部。" } },
+    { "@type": "Question", name: "どう計算する？", acceptedAnswer: { "@type": "Answer", text: "誕生日 + 誕生月 + 現在の年。一桁に還元（11、22、33を除く）。" } },
+    { "@type": "Question", name: "いつ始まる？", acceptedAnswer: { "@type": "Answer", text: "多くの数秘術師は1月1日から。誕生日からとする者もいます。" } },
+    { "@type": "Question", name: "各年に何をすべき？", acceptedAnswer: { "@type": "Answer", text: "1 種まき。2 関係。3 表現。4 建設。5 変化。6 責任。7 内省。8 収穫。9 終わり。" } },
+  ] },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
+      <a href="/ja" class="hover:text-amber-300">ホーム</a><span class="mx-2">/</span>
+      <a href="/ja/shindan" class="hover:text-amber-300">診断</a><span class="mx-2">/</span>
+      <span class="text-white/80">個人年</span>
+    </nav>
+
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">ピタゴラス数秘術</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">個人年計算ツール</h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">各年は数秘術的テーマを運びます。あなたのものを発見し、そのエネルギーに同調しましょう。</p>
+    </header>
+
+    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
+      <div class="text-5xl mb-4">★</div>
+      <a href="https://app.karmastro.com/oracle?lang=ja" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">個人年を計算</a>
+    </div>
+
+    <section class="prose prose-invert max-w-none mb-10">
+      <h2 class="font-serif text-3xl mb-4">9年サイクル</h2>
+      <p class="text-white/80 leading-relaxed mb-4">ピタゴラス数秘術は人生を9年周期で進むと見なします。</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">計算方法</h2>
+      <p class="text-white/80 leading-relaxed mb-4">誕生日 + 誕生月 + <strong>現在の年</strong>。還元。2026年、3月12日生まれの例：1+2+3+2+0+2+6 = 16 → 7。個人年7。</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">9つのテーマ</h2>
+      <ul class="text-white/80 space-y-2 mb-4 list-disc pl-5">
+        <li><strong>年 1 · 種まき</strong>：新しい始まり。</li>
+        <li><strong>年 2 · 関係</strong>：忍耐。</li>
+        <li><strong>年 3 · 表現</strong>：創造性。</li>
+        <li><strong>年 4 · 建設</strong>：規律。</li>
+        <li><strong>年 5 · 変化</strong>：自由。</li>
+        <li><strong>年 6 · 責任</strong>：家族。</li>
+        <li><strong>年 7 · 内省</strong>：休止。</li>
+        <li><strong>年 8 · 収穫</strong>：成功。</li>
+        <li><strong>年 9 · 終わり</strong>：手放す。</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">ライフパスの中の個人年</h2>
+      <p class="text-white/80 leading-relaxed mb-4"><a href="/ja/shindan/raifu-pasu-nanbaa" class="text-amber-300 hover:underline">ライフパス数</a>と組み合わせてください。</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">年間の移行</h2>
+      <p class="text-white/80 leading-relaxed mb-4">新しい年のバイブレーションは10月から感じられ始めます。</p>
+
+      <h2 class="font-serif text-3xl mb-4 mt-10">情報源</h2>
+      <ul class="text-white/80 space-y-1 mb-4 list-disc pl-5">
+        <li><a href="https://ja.wikipedia.org/wiki/数秘術" class="text-amber-300 hover:underline" rel="external">数秘術 - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/topic/numerology" class="text-amber-300 hover:underline" rel="external">Numerology - Britannica</a></li>
+        <li><a href="https://ja.wikipedia.org/wiki/ピタゴラス" class="text-amber-300 hover:underline" rel="external">ピタゴラス - Wikipedia</a></li>
+      </ul>
+    </section>
+
+    <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10 text-sm">
+      <a href="/ja/shindan" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">すべての診断</a>
+      <a href="/ja/shindan/raifu-pasu-nanbaa" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">ライフパス</a>
+      <a href="/ja/shindan/hyougen-suu" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">表現数</a>
+      <a href="/ja/shindan/shusseizu" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">出生図</a>
+      <a href="/ja/shindan/asendanto" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">アセンダント</a>
+      <a href="/ja/shindan/aishou-shindan" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">相性診断</a>
+      <a href="/ja/horosukopu" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">ホロスコープ</a>
+      <a href="/ja/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">ブログ</a>
+    </nav>
+  </article>
+</BaseLayout>
