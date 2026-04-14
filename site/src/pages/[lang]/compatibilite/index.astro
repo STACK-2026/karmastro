@@ -29,6 +29,40 @@ const jsonLd = {
   url: `https://karmastro.com/${lang}/compatibilite`,
   isPartOf: { "@type": "WebSite", name: "Karmastro", url: "https://karmastro.com" },
 };
+
+// JSON localisé pour le client JS
+const signsForClient = ZODIAC_SIGNS.map((s) => ({
+  slug: s.slug,
+  name: t(signNameKeys[s.slug] as any, lang) || s.name,
+  element: s.element,
+  quality: s.quality,
+}));
+
+// UI labels — picker-specific keys, fallback hardcoded per language
+const pickerLabels: Record<string, Record<string, string>> = {
+  fr: { pick1: "Signe 1", pick2: "Signe 2", empty: "Aucun signe sélectionné", pickBoth: "Choisis deux signes", step0: "Commence par ton signe.", step1: "Signe 1 choisi. Pick le deuxième.", step2: "Prêt. Clique sur \"Découvrir\".", change: "Changer", reset: "Réinitialiser", discover: "Découvrir la compatibilité →" },
+  en: { pick1: "Sign 1", pick2: "Sign 2", empty: "No sign selected", pickBoth: "Pick two signs", step0: "Start with your sign.", step1: "Sign 1 chosen. Pick the second.", step2: "Ready. Click \"Discover\".", change: "Change", reset: "Reset", discover: "Discover compatibility →" },
+  es: { pick1: "Signo 1", pick2: "Signo 2", empty: "Ningún signo seleccionado", pickBoth: "Elige dos signos", step0: "Empieza por tu signo.", step1: "Signo 1 elegido. Elige el segundo.", step2: "Listo. Haz clic en \"Descubrir\".", change: "Cambiar", reset: "Reiniciar", discover: "Descubrir la compatibilidad →" },
+  pt: { pick1: "Signo 1", pick2: "Signo 2", empty: "Nenhum signo selecionado", pickBoth: "Escolhe dois signos", step0: "Começa pelo teu signo.", step1: "Signo 1 escolhido. Escolhe o segundo.", step2: "Pronto. Clica em \"Descobrir\".", change: "Mudar", reset: "Reiniciar", discover: "Descobrir a compatibilidade →" },
+  de: { pick1: "Zeichen 1", pick2: "Zeichen 2", empty: "Kein Zeichen ausgewählt", pickBoth: "Wähle zwei Zeichen", step0: "Beginne mit deinem Zeichen.", step1: "Zeichen 1 gewählt. Wähle das zweite.", step2: "Bereit. Klicke auf \"Entdecken\".", change: "Ändern", reset: "Zurücksetzen", discover: "Kompatibilität entdecken →" },
+  it: { pick1: "Segno 1", pick2: "Segno 2", empty: "Nessun segno selezionato", pickBoth: "Scegli due segni", step0: "Inizia dal tuo segno.", step1: "Segno 1 scelto. Scegli il secondo.", step2: "Pronto. Clicca su \"Scopri\".", change: "Cambia", reset: "Ripristina", discover: "Scopri la compatibilità →" },
+  tr: { pick1: "Burç 1", pick2: "Burç 2", empty: "Burç seçilmedi", pickBoth: "İki burç seç", step0: "Kendi burcunla başla.", step1: "Burç 1 seçildi. İkinciyi seç.", step2: "Hazır. \"Keşfet\" ye tıkla.", change: "Değiştir", reset: "Sıfırla", discover: "Uyumu keşfet →" },
+  ar: { pick1: "البرج 1", pick2: "البرج 2", empty: "لم يتم اختيار برج", pickBoth: "اختر برجين", step0: "ابدأ ببرجك.", step1: "تم اختيار البرج 1. اختر الثاني.", step2: "جاهز. انقر على \"اكتشف\".", change: "تغيير", reset: "إعادة ضبط", discover: "اكتشف التوافق ←" },
+  ja: { pick1: "星座 1", pick2: "星座 2", empty: "星座が選択されていません", pickBoth: "2つの星座を選んでください", step0: "あなたの星座から始めましょう。", step1: "星座 1 を選択しました。2つ目を選んでください。", step2: "準備完了。「発見する」をクリック。", change: "変更", reset: "リセット", discover: "相性を発見する →" },
+  pl: { pick1: "Znak 1", pick2: "Znak 2", empty: "Nie wybrano znaku", pickBoth: "Wybierz dwa znaki", step0: "Zacznij od swojego znaku.", step1: "Znak 1 wybrany. Wybierz drugi.", step2: "Gotowe. Kliknij \"Odkryj\".", change: "Zmień", reset: "Resetuj", discover: "Odkryj kompatybilność →" },
+  ru: { pick1: "Знак 1", pick2: "Знак 2", empty: "Знак не выбран", pickBoth: "Выберите два знака", step0: "Начните со своего знака.", step1: "Знак 1 выбран. Выберите второй.", step2: "Готово. Нажмите \"Открыть\".", change: "Изменить", reset: "Сбросить", discover: "Открыть совместимость →" },
+};
+const pl_ = pickerLabels[lang] || pickerLabels.en;
+const labelPick1 = pl_.pick1;
+const labelPick2 = pl_.pick2;
+const labelEmpty = pl_.empty;
+const labelPickBoth = pl_.pickBoth;
+const labelProgressStep0 = pl_.step0;
+const labelProgressStep1 = pl_.step1;
+const labelProgressStep2 = pl_.step2;
+const labelChange = pl_.change;
+const labelReset = pl_.reset;
+const labelDiscover = pl_.discover;
 ---
 
 <BaseLayout title={title} description={description} jsonLd={jsonLd}>
@@ -46,6 +80,96 @@ const jsonLd = {
       </p>
     </header>
 
+    {/* ═══ 2-STEP PICKER ═══ */}
+    <section class="mb-10 p-6 md:p-8 rounded-2xl border border-amber-300/30 bg-gradient-to-b from-amber-300/[0.04] to-transparent">
+      <div class="flex items-center justify-between mb-6 flex-wrap gap-3">
+        <h2 class="font-serif text-2xl">{labelPickBoth}</h2>
+        <div id="compat-progress" class="text-xs text-white/50">
+          <span data-step="0" class="hidden">{labelProgressStep0}</span>
+          <span data-step="1" class="hidden text-amber-300/80">{labelProgressStep1}</span>
+          <span data-step="2" class="hidden text-emerald-300/80">✓ {labelProgressStep2}</span>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {/* Slot 1 */}
+        <div>
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-3">{labelPick1}</p>
+          <div id="sign1-display" class="mb-3 min-h-[76px] p-4 rounded-xl border border-dashed border-white/15 bg-white/[0.02] flex items-center gap-3">
+            <span class="text-white/40 text-sm">{labelEmpty}</span>
+          </div>
+          <div class="grid grid-cols-4 gap-2" data-slot="sign1">
+            {ZODIAC_SIGNS.map((sign) => {
+              const signName = t(signNameKeys[sign.slug] as any, lang) || sign.name;
+              return (
+                <button
+                  type="button"
+                  data-slug={sign.slug}
+                  data-name={signName}
+                  data-element={sign.element}
+                  data-quality={sign.quality}
+                  class="compat-btn group p-2.5 rounded-lg border border-white/10 bg-white/[0.02] hover:border-amber-300/40 hover:bg-amber-300/[0.04] transition-colors text-center focus:outline-none focus:ring-2 focus:ring-amber-300/50"
+                  aria-label={`${labelPick1}: ${signName}`}
+                >
+                  <div class="flex justify-center mb-1 opacity-80 group-hover:opacity-100 transition-opacity">
+                    <ZodiacSymbol sign={sign.name} size={24} color="#D4A017" />
+                  </div>
+                  <p class="text-[11px] text-white/70 leading-tight group-hover:text-amber-300 transition-colors">{signName}</p>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Slot 2 */}
+        <div>
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-3">{labelPick2}</p>
+          <div id="sign2-display" class="mb-3 min-h-[76px] p-4 rounded-xl border border-dashed border-white/15 bg-white/[0.02] flex items-center gap-3">
+            <span class="text-white/40 text-sm">{labelEmpty}</span>
+          </div>
+          <div class="grid grid-cols-4 gap-2" data-slot="sign2">
+            {ZODIAC_SIGNS.map((sign) => {
+              const signName = t(signNameKeys[sign.slug] as any, lang) || sign.name;
+              return (
+                <button
+                  type="button"
+                  data-slug={sign.slug}
+                  data-name={signName}
+                  data-element={sign.element}
+                  data-quality={sign.quality}
+                  class="compat-btn group p-2.5 rounded-lg border border-white/10 bg-white/[0.02] hover:border-amber-300/40 hover:bg-amber-300/[0.04] transition-colors text-center focus:outline-none focus:ring-2 focus:ring-amber-300/50"
+                  aria-label={`${labelPick2}: ${signName}`}
+                >
+                  <div class="flex justify-center mb-1 opacity-80 group-hover:opacity-100 transition-opacity">
+                    <ZodiacSymbol sign={sign.name} size={24} color="#D4A017" />
+                  </div>
+                  <p class="text-[11px] text-white/70 leading-tight group-hover:text-amber-300 transition-colors">{signName}</p>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 flex items-center justify-between flex-wrap gap-3">
+        <button
+          type="button"
+          id="compat-reset"
+          class="text-xs text-white/50 hover:text-white/80 underline underline-offset-4"
+        >
+          {labelReset}
+        </button>
+        <button
+          type="button"
+          id="compat-go"
+          disabled
+          class="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity text-sm disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:opacity-30"
+        >
+          {labelDiscover}
+        </button>
+      </div>
+    </section>
+
     <div class="mb-10 p-6 rounded-2xl border border-amber-300/20 bg-amber-300/5">
       <h2 class="font-serif text-xl mb-3">{t("compat.method_title", lang)}</h2>
       <p class="text-white/80 text-sm leading-relaxed">
@@ -56,42 +180,7 @@ const jsonLd = {
       </p>
     </div>
 
-    <h2 class="font-serif text-2xl mb-6">{t("compat.choose_sign", lang)}</h2>
-    <div class="space-y-8">
-      {ZODIAC_SIGNS.map((sign) => {
-        const signName = t(signNameKeys[sign.slug] as any, lang) || sign.name;
-        return (
-          <section class="p-6 rounded-2xl border border-white/10 bg-white/[0.02]">
-            <div class="flex items-center gap-4 mb-4">
-              <ZodiacSymbol sign={sign.name} size={48} color="#D4A017" />
-              <div>
-                <h3 class="font-serif text-2xl">{signName}</h3>
-                <p class="text-xs text-white/50">{sign.dates} · {sign.element} · {sign.quality}</p>
-              </div>
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
-              {ZODIAC_SIGNS.map((other) => (
-                <a
-                  href={`/${lang}/compatibilite/${sign.slug}-${other.slug}`}
-                  class={`p-2.5 rounded-lg border transition-colors text-center ${
-                    sign.slug === other.slug
-                      ? "border-amber-300/40 bg-amber-300/5"
-                      : "border-white/10 bg-white/[0.02] hover:border-amber-300/40 hover:bg-amber-300/[0.03]"
-                  }`}
-                >
-                  <div class="flex justify-center mb-1">
-                    <ZodiacSymbol sign={other.name} size={24} color="#D4A017" />
-                  </div>
-                  <p class="text-[11px] text-white/70 leading-tight">{t(signNameKeys[other.slug] as any, lang) || other.name}</p>
-                </a>
-              ))}
-            </div>
-          </section>
-        );
-      })}
-    </div>
-
-    <div class="mt-12 p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center">
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center">
       <h2 class="font-serif text-xl mb-2">{t("compat.more_precise_title", lang)}</h2>
       <p class="text-white/70 mb-4 text-sm leading-relaxed">
         {t("compat.more_precise_desc", lang)}
@@ -104,4 +193,131 @@ const jsonLd = {
       </a>
     </div>
   </article>
+
+  <script is:inline define:vars={{ signsForClient, basePath: `/${lang}/compatibilite`, labels: { empty: labelEmpty, change: labelChange } }}>
+    (function () {
+      const state = { sign1: null, sign2: null };
+
+      function findSign(slug) {
+        return signsForClient.find((s) => s.slug === slug) || null;
+      }
+
+      function renderDisplay(slot) {
+        const el = document.getElementById(`${slot}-display`);
+        if (!el) return;
+        const sign = state[slot];
+        if (!sign) {
+          el.innerHTML = `<span class="text-white/40 text-sm">${labels.empty}</span>`;
+          return;
+        }
+        el.innerHTML = `
+          <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-300/10 border border-amber-300/40 text-amber-300 text-2xl font-serif">✦</span>
+          <div>
+            <p class="font-serif text-xl text-white">${sign.name}</p>
+            <p class="text-[11px] text-white/50">${sign.element} · ${sign.quality}</p>
+          </div>
+          <button type="button" data-clear="${slot}" class="ml-auto text-[11px] text-white/40 hover:text-white/80 underline underline-offset-4">${labels.change}</button>
+        `;
+      }
+
+      function updateButtons() {
+        for (const slot of ["sign1", "sign2"]) {
+          const container = document.querySelector(`[data-slot="${slot}"]`);
+          if (!container) continue;
+          const current = state[slot];
+          container.querySelectorAll(".compat-btn").forEach((btn) => {
+            const slug = btn.dataset.slug;
+            const isSelected = current && current.slug === slug;
+            btn.classList.toggle("border-amber-300", isSelected);
+            btn.classList.toggle("bg-amber-300/10", isSelected);
+            btn.classList.toggle("border-white/10", !isSelected);
+            btn.setAttribute("aria-pressed", isSelected ? "true" : "false");
+          });
+        }
+      }
+
+      function updateProgress() {
+        const el = document.getElementById("compat-progress");
+        if (!el) return;
+        let step = 0;
+        if (state.sign1 && state.sign2) step = 2;
+        else if (state.sign1 || state.sign2) step = 1;
+        el.querySelectorAll("[data-step]").forEach((s) => {
+          s.classList.toggle("hidden", parseInt(s.dataset.step, 10) !== step);
+        });
+      }
+
+      function updateGoButton() {
+        const btn = document.getElementById("compat-go");
+        if (!btn) return;
+        btn.disabled = !(state.sign1 && state.sign2);
+      }
+
+      function persist() {
+        try {
+          const qs = new URLSearchParams();
+          if (state.sign1) qs.set("s1", state.sign1.slug);
+          if (state.sign2) qs.set("s2", state.sign2.slug);
+          window.history.replaceState({}, "", window.location.pathname + (qs.toString() ? `?${qs.toString()}` : ""));
+        } catch (e) {}
+      }
+
+      function rerender() {
+        renderDisplay("sign1");
+        renderDisplay("sign2");
+        updateButtons();
+        updateProgress();
+        updateGoButton();
+        persist();
+      }
+
+      function setSign(slot, slug) {
+        state[slot] = findSign(slug);
+        rerender();
+      }
+
+      function clearSign(slot) {
+        state[slot] = null;
+        rerender();
+      }
+
+      document.querySelectorAll('[data-slot]').forEach((container) => {
+        const slot = container.dataset.slot;
+        container.addEventListener("click", (e) => {
+          const btn = e.target.closest(".compat-btn");
+          if (!btn) return;
+          setSign(slot, btn.dataset.slug);
+        });
+      });
+
+      document.addEventListener("click", (e) => {
+        const clearBtn = e.target.closest("[data-clear]");
+        if (clearBtn) {
+          clearSign(clearBtn.dataset.clear);
+          return;
+        }
+      });
+
+      document.getElementById("compat-reset")?.addEventListener("click", () => {
+        state.sign1 = null;
+        state.sign2 = null;
+        rerender();
+      });
+
+      document.getElementById("compat-go")?.addEventListener("click", () => {
+        if (!state.sign1 || !state.sign2) return;
+        window.location.href = `${basePath}/${state.sign1.slug}-${state.sign2.slug}`;
+      });
+
+      try {
+        const qs = new URLSearchParams(window.location.search);
+        const s1 = qs.get("s1");
+        const s2 = qs.get("s2");
+        if (s1) state.sign1 = findSign(s1);
+        if (s2) state.sign2 = findSign(s2);
+      } catch (e) {}
+
+      rerender();
+    })();
+  </script>
 </BaseLayout>

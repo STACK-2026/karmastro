@@ -25,6 +25,14 @@ const jsonLd = {
     description: "Analyse de la compatibilité entre les 12 signes du zodiaque tropical",
   },
 };
+
+// JSON serialisé pour le client JS
+const signsForClient = ZODIAC_SIGNS.map((s) => ({
+  slug: s.slug,
+  name: s.name,
+  element: s.element,
+  quality: s.quality,
+}));
 ---
 
 <BaseLayout title={title} description={description} jsonLd={jsonLd}>
@@ -38,9 +46,93 @@ const jsonLd = {
     <header class="text-center mb-12">
       <h1 class="text-4xl md:text-5xl font-serif mb-4">Compatibilité des 12 signes</h1>
       <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
-        Explore les 144 combinaisons possibles du zodiaque. Clique sur ton signe puis sur celui qui t'intéresse pour découvrir amour, amitié, travail et guidance karmique.
+        Sélectionne deux signes, découvre leur dynamique. 144 combinaisons, analyse hellénistique gratuite.
       </p>
     </header>
+
+    {/* ═══ PICKER 2 ETAPES ═══ */}
+    <section class="mb-10 p-6 md:p-8 rounded-2xl border border-amber-300/30 bg-gradient-to-b from-amber-300/[0.04] to-transparent">
+      <div class="flex items-center justify-between mb-6 flex-wrap gap-3">
+        <h2 class="font-serif text-2xl">Choisis deux signes</h2>
+        <div id="compat-progress" class="text-xs text-white/50">
+          <span data-step="0" class="hidden">Commence par ton signe.</span>
+          <span data-step="1" class="hidden text-amber-300/80">Signe 1 choisi. Pick le deuxième.</span>
+          <span data-step="2" class="hidden text-emerald-300/80">✓ Prêt. Clique sur "Découvrir".</span>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {/* Slot 1 */}
+        <div>
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-3">Signe 1</p>
+          <div id="sign1-display" class="mb-3 min-h-[76px] p-4 rounded-xl border border-dashed border-white/15 bg-white/[0.02] flex items-center gap-3">
+            <span class="text-white/40 text-sm">Aucun signe sélectionné</span>
+          </div>
+          <div class="grid grid-cols-4 gap-2" data-slot="sign1">
+            {ZODIAC_SIGNS.map((sign) => (
+              <button
+                type="button"
+                data-slug={sign.slug}
+                data-name={sign.name}
+                data-element={sign.element}
+                data-quality={sign.quality}
+                class="compat-btn group p-2.5 rounded-lg border border-white/10 bg-white/[0.02] hover:border-amber-300/40 hover:bg-amber-300/[0.04] transition-colors text-center focus:outline-none focus:ring-2 focus:ring-amber-300/50"
+                aria-label={`Choisir ${sign.name} comme signe 1`}
+              >
+                <div class="flex justify-center mb-1 opacity-80 group-hover:opacity-100 transition-opacity">
+                  <ZodiacSymbol sign={sign.name} size={24} color="#D4A017" />
+                </div>
+                <p class="text-[11px] text-white/70 leading-tight group-hover:text-amber-300 transition-colors">{sign.name}</p>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Slot 2 */}
+        <div>
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-3">Signe 2</p>
+          <div id="sign2-display" class="mb-3 min-h-[76px] p-4 rounded-xl border border-dashed border-white/15 bg-white/[0.02] flex items-center gap-3">
+            <span class="text-white/40 text-sm">Aucun signe sélectionné</span>
+          </div>
+          <div class="grid grid-cols-4 gap-2" data-slot="sign2">
+            {ZODIAC_SIGNS.map((sign) => (
+              <button
+                type="button"
+                data-slug={sign.slug}
+                data-name={sign.name}
+                data-element={sign.element}
+                data-quality={sign.quality}
+                class="compat-btn group p-2.5 rounded-lg border border-white/10 bg-white/[0.02] hover:border-amber-300/40 hover:bg-amber-300/[0.04] transition-colors text-center focus:outline-none focus:ring-2 focus:ring-amber-300/50"
+                aria-label={`Choisir ${sign.name} comme signe 2`}
+              >
+                <div class="flex justify-center mb-1 opacity-80 group-hover:opacity-100 transition-opacity">
+                  <ZodiacSymbol sign={sign.name} size={24} color="#D4A017" />
+                </div>
+                <p class="text-[11px] text-white/70 leading-tight group-hover:text-amber-300 transition-colors">{sign.name}</p>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 flex items-center justify-between flex-wrap gap-3">
+        <button
+          type="button"
+          id="compat-reset"
+          class="text-xs text-white/50 hover:text-white/80 underline underline-offset-4"
+        >
+          Réinitialiser
+        </button>
+        <button
+          type="button"
+          id="compat-go"
+          disabled
+          class="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity text-sm disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:opacity-30"
+        >
+          Découvrir la compatibilité →
+        </button>
+      </div>
+    </section>
 
     <div class="mb-10 p-6 rounded-2xl border border-amber-300/20 bg-amber-300/5">
       <h2 class="font-serif text-xl mb-3">Méthode de calcul</h2>
@@ -56,39 +148,7 @@ const jsonLd = {
       </p>
     </div>
 
-    <h2 class="font-serif text-2xl mb-6">Choisis ton signe</h2>
-    <div class="space-y-8">
-      {ZODIAC_SIGNS.map((sign) => (
-        <section class="p-6 rounded-2xl border border-white/10 bg-white/[0.02]">
-          <div class="flex items-center gap-4 mb-4">
-            <ZodiacSymbol sign={sign.name} size={48} color="#D4A017" />
-            <div>
-              <h3 class="font-serif text-2xl">{sign.name}</h3>
-              <p class="text-xs text-white/50">{sign.dates} · {sign.element} · {sign.quality}</p>
-            </div>
-          </div>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
-            {ZODIAC_SIGNS.map((other) => (
-              <a
-                href={`/compatibilite/${sign.slug}-${other.slug}`}
-                class={`p-2.5 rounded-lg border transition-colors text-center ${
-                  sign.slug === other.slug
-                    ? "border-amber-300/40 bg-amber-300/5"
-                    : "border-white/10 bg-white/[0.02] hover:border-amber-300/40 hover:bg-amber-300/[0.03]"
-                }`}
-              >
-                <div class="flex justify-center mb-1">
-                  <ZodiacSymbol sign={other.name} size={24} color="#D4A017" />
-                </div>
-                <p class="text-[11px] text-white/70 leading-tight">{other.name}</p>
-              </a>
-            ))}
-          </div>
-        </section>
-      ))}
-    </div>
-
-    <div class="mt-12 p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center">
+    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center">
       <h2 class="font-serif text-xl mb-2">Tu veux une analyse 10x plus précise ?</h2>
       <p class="text-white/70 mb-4 text-sm leading-relaxed">
         Les signes solaires ne couvrent que 30% de votre dynamique réelle. La synastrie croise les 10 planètes et les ascendants des deux thèmes natals pour monter à 85% de précision.
@@ -101,4 +161,139 @@ const jsonLd = {
       </a>
     </div>
   </article>
+
+  <script is:inline define:vars={{ signsForClient, basePath: "/compatibilite" }}>
+    (function () {
+      const state = { sign1: null, sign2: null };
+
+      function findSign(slug) {
+        return signsForClient.find((s) => s.slug === slug) || null;
+      }
+
+      function renderDisplay(slot) {
+        const el = document.getElementById(`${slot}-display`);
+        if (!el) return;
+        const sign = state[slot];
+        if (!sign) {
+          el.innerHTML = '<span class="text-white/40 text-sm">Aucun signe sélectionné</span>';
+          return;
+        }
+        el.innerHTML = `
+          <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-300/10 border border-amber-300/40 text-amber-300 text-2xl font-serif">✦</span>
+          <div>
+            <p class="font-serif text-xl text-white">${sign.name}</p>
+            <p class="text-[11px] text-white/50">${sign.element} · ${sign.quality}</p>
+          </div>
+          <button type="button" data-clear="${slot}" class="ml-auto text-[11px] text-white/40 hover:text-white/80 underline underline-offset-4">Changer</button>
+        `;
+      }
+
+      function updateButtons() {
+        for (const slot of ["sign1", "sign2"]) {
+          const container = document.querySelector(`[data-slot="${slot}"]`);
+          if (!container) continue;
+          const current = state[slot];
+          container.querySelectorAll(".compat-btn").forEach((btn) => {
+            const slug = btn.dataset.slug;
+            const isSelected = current && current.slug === slug;
+            btn.classList.toggle("border-amber-300", isSelected);
+            btn.classList.toggle("bg-amber-300/10", isSelected);
+            btn.classList.toggle("border-white/10", !isSelected);
+            btn.setAttribute("aria-pressed", isSelected ? "true" : "false");
+          });
+        }
+      }
+
+      function updateProgress() {
+        const el = document.getElementById("compat-progress");
+        if (!el) return;
+        let step = 0;
+        if (state.sign1 && state.sign2) step = 2;
+        else if (state.sign1 || state.sign2) step = 1;
+        el.querySelectorAll("[data-step]").forEach((s) => {
+          s.classList.toggle("hidden", parseInt(s.dataset.step, 10) !== step);
+        });
+      }
+
+      function updateGoButton() {
+        const btn = document.getElementById("compat-go");
+        if (!btn) return;
+        btn.disabled = !(state.sign1 && state.sign2);
+      }
+
+      function persist() {
+        try {
+          const qs = new URLSearchParams();
+          if (state.sign1) qs.set("s1", state.sign1.slug);
+          if (state.sign2) qs.set("s2", state.sign2.slug);
+          const next = qs.toString() ? `?${qs.toString()}` : window.location.pathname;
+          window.history.replaceState({}, "", window.location.pathname + (qs.toString() ? `?${qs.toString()}` : ""));
+        } catch (e) {}
+      }
+
+      function rerender() {
+        renderDisplay("sign1");
+        renderDisplay("sign2");
+        updateButtons();
+        updateProgress();
+        updateGoButton();
+        persist();
+      }
+
+      function setSign(slot, slug) {
+        state[slot] = findSign(slug);
+        rerender();
+      }
+
+      function clearSign(slot) {
+        state[slot] = null;
+        rerender();
+      }
+
+      // Bind buttons
+      document.querySelectorAll('[data-slot]').forEach((container) => {
+        const slot = container.dataset.slot;
+        container.addEventListener("click", (e) => {
+          const btn = e.target.closest(".compat-btn");
+          if (!btn) return;
+          setSign(slot, btn.dataset.slug);
+        });
+      });
+
+      // Clear buttons (delegated)
+      document.addEventListener("click", (e) => {
+        const clearBtn = e.target.closest("[data-clear]");
+        if (clearBtn) {
+          clearSign(clearBtn.dataset.clear);
+          return;
+        }
+      });
+
+      // Reset
+      const resetBtn = document.getElementById("compat-reset");
+      resetBtn?.addEventListener("click", () => {
+        state.sign1 = null;
+        state.sign2 = null;
+        rerender();
+      });
+
+      // Go
+      const goBtn = document.getElementById("compat-go");
+      goBtn?.addEventListener("click", () => {
+        if (!state.sign1 || !state.sign2) return;
+        window.location.href = `${basePath}/${state.sign1.slug}-${state.sign2.slug}`;
+      });
+
+      // Restore from query string
+      try {
+        const qs = new URLSearchParams(window.location.search);
+        const s1 = qs.get("s1");
+        const s2 = qs.get("s2");
+        if (s1) state.sign1 = findSign(s1);
+        if (s2) state.sign2 = findSign(s2);
+      } catch (e) {}
+
+      rerender();
+    })();
+  </script>
 </BaseLayout>
