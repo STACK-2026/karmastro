@@ -137,8 +137,88 @@ export const ZODIAC_SIGNS: ZodiacSign[] = [
 
 export const SIGN_SLUGS = ZODIAC_SIGNS.map((s) => s.slug);
 
+// Localized URL slugs per language.
+// Keys = canonical FR slug, values = localized slug used in the URL path.
+// FR is identity. Other locales use the SEO-standard term users actually search for.
+export const SIGN_SLUGS_BY_LANG: Record<string, Record<string, string>> = {
+  fr: {
+    belier: "belier", taureau: "taureau", gemeaux: "gemeaux", cancer: "cancer",
+    lion: "lion", vierge: "vierge", balance: "balance", scorpion: "scorpion",
+    sagittaire: "sagittaire", capricorne: "capricorne", verseau: "verseau", poissons: "poissons",
+  },
+  en: {
+    belier: "aries", taureau: "taurus", gemeaux: "gemini", cancer: "cancer",
+    lion: "leo", vierge: "virgo", balance: "libra", scorpion: "scorpio",
+    sagittaire: "sagittarius", capricorne: "capricorn", verseau: "aquarius", poissons: "pisces",
+  },
+  es: {
+    belier: "aries", taureau: "tauro", gemeaux: "geminis", cancer: "cancer",
+    lion: "leo", vierge: "virgo", balance: "libra", scorpion: "escorpio",
+    sagittaire: "sagitario", capricorne: "capricornio", verseau: "acuario", poissons: "piscis",
+  },
+  pt: {
+    belier: "aries", taureau: "touro", gemeaux: "gemeos", cancer: "cancer",
+    lion: "leao", vierge: "virgem", balance: "libra", scorpion: "escorpiao",
+    sagittaire: "sagitario", capricorne: "capricornio", verseau: "aquario", poissons: "peixes",
+  },
+  de: {
+    belier: "widder", taureau: "stier", gemeaux: "zwillinge", cancer: "krebs",
+    lion: "loewe", vierge: "jungfrau", balance: "waage", scorpion: "skorpion",
+    sagittaire: "schuetze", capricorne: "steinbock", verseau: "wassermann", poissons: "fische",
+  },
+  it: {
+    belier: "ariete", taureau: "toro", gemeaux: "gemelli", cancer: "cancro",
+    lion: "leone", vierge: "vergine", balance: "bilancia", scorpion: "scorpione",
+    sagittaire: "sagittario", capricorne: "capricorno", verseau: "acquario", poissons: "pesci",
+  },
+  tr: {
+    belier: "koc", taureau: "boga", gemeaux: "ikizler", cancer: "yengec",
+    lion: "aslan", vierge: "basak", balance: "terazi", scorpion: "akrep",
+    sagittaire: "yay", capricorne: "oglak", verseau: "kova", poissons: "balik",
+  },
+  ar: {
+    belier: "alhamal", taureau: "althawr", gemeaux: "aljawza", cancer: "alsaratan",
+    lion: "alasad", vierge: "alazra", balance: "almizan", scorpion: "alaqrab",
+    sagittaire: "alqaws", capricorne: "aljadi", verseau: "aldalw", poissons: "alhut",
+  },
+  ja: {
+    belier: "ohitsujiza", taureau: "oushiza", gemeaux: "futagoza", cancer: "kaniza",
+    lion: "shishiza", vierge: "otomeza", balance: "tenbinza", scorpion: "sasoriza",
+    sagittaire: "iteza", capricorne: "yagiza", verseau: "mizugameza", poissons: "uoza",
+  },
+  pl: {
+    belier: "baran", taureau: "byk", gemeaux: "blizniaki", cancer: "rak",
+    lion: "lew", vierge: "panna", balance: "waga", scorpion: "skorpion",
+    sagittaire: "strzelec", capricorne: "koziorozec", verseau: "wodnik", poissons: "ryby",
+  },
+  ru: {
+    belier: "oven", taureau: "telets", gemeaux: "bliznetsy", cancer: "rak",
+    lion: "lev", vierge: "deva", balance: "vesy", scorpion: "skorpion",
+    sagittaire: "strelets", capricorne: "kozerog", verseau: "vodoley", poissons: "ryby",
+  },
+};
+
+export function getLocalizedSlug(canonicalSlug: string, lang: string): string {
+  return SIGN_SLUGS_BY_LANG[lang]?.[canonicalSlug] ?? canonicalSlug;
+}
+
+export function getCanonicalSlugFromLocalized(localizedSlug: string, lang: string): string | undefined {
+  const map = SIGN_SLUGS_BY_LANG[lang];
+  if (!map) return undefined;
+  for (const [canonical, localized] of Object.entries(map)) {
+    if (localized === localizedSlug) return canonical;
+  }
+  return undefined;
+}
+
 export function getSignBySlug(slug: string): ZodiacSign | undefined {
   return ZODIAC_SIGNS.find((s) => s.slug === slug);
+}
+
+export function getSignByLocalizedSlug(localizedSlug: string, lang: string): ZodiacSign | undefined {
+  const canonical = getCanonicalSlugFromLocalized(localizedSlug, lang);
+  if (!canonical) return undefined;
+  return getSignBySlug(canonical);
 }
 
 export function formatFrenchDate(dateStr: string): string {

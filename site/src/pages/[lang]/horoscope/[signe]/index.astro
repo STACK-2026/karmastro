@@ -3,7 +3,7 @@ import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import ShareButton from "../../../../components/ShareButton.astro";
 import ZodiacSymbol from "../../../../components/ZodiacSymbol.astro";
 import NewsletterCapture from "../../../../components/NewsletterCapture.astro";
-import { ZODIAC_SIGNS, SIGN_SLUGS, getSignBySlug, formatFrenchDate } from "../../../../data/zodiac";
+import { ZODIAC_SIGNS, SIGN_SLUGS, getSignByLocalizedSlug, getLocalizedSlug, formatFrenchDate } from "../../../../data/zodiac";
 import { LOCALES, DEFAULT_LOCALE, type Locale } from "../../../../i18n/config";
 import { t } from "../../../../i18n/translations";
 import fs from "fs";
@@ -13,16 +13,17 @@ export function getStaticPaths() {
   const paths: any[] = [];
   for (const lang of LOCALES) {
     if (lang === DEFAULT_LOCALE) continue;
-    for (const slug of SIGN_SLUGS) {
-      paths.push({ params: { lang, signe: slug } });
+    for (const canonicalSlug of SIGN_SLUGS) {
+      const localizedSlug = getLocalizedSlug(canonicalSlug, lang);
+      paths.push({ params: { lang, signe: localizedSlug } });
     }
   }
   return paths;
 }
 
 const { lang, signe } = Astro.params as { lang: Locale; signe: string };
-const sign = getSignBySlug(signe as string);
-if (!sign) throw new Error(`Unknown sign: ${signe}`);
+const sign = getSignByLocalizedSlug(signe as string, lang);
+if (!sign) throw new Error(`Unknown sign: ${signe} for lang ${lang}`);
 
 // Sign name translation
 const signNameKeys: Record<string, string> = {
@@ -172,7 +173,7 @@ const jsonLdArray = [
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://karmastro.com/${lang}/horoscope/${sign.slug}`,
+      "@id": `https://karmastro.com/${lang}/horoscope/${getLocalizedSlug(sign.slug, lang)}`,
     },
     keywords: [localSignName, t("horoscope.daily", lang), "astrologie", "horoscope", sign.element, sign.rulingPlanet].join(", "),
     about: {
@@ -187,7 +188,7 @@ const jsonLdArray = [
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Karmastro", item: `https://karmastro.com/${lang}` },
       { "@type": "ListItem", position: 2, name: t("horoscope.title", lang), item: `https://karmastro.com/${lang}/horoscope` },
-      { "@type": "ListItem", position: 3, name: localSignName, item: `https://karmastro.com/${lang}/horoscope/${sign.slug}` },
+      { "@type": "ListItem", position: 3, name: localSignName, item: `https://karmastro.com/${lang}/horoscope/${getLocalizedSlug(sign.slug, lang)}` },
     ],
   },
 ];
@@ -300,7 +301,7 @@ const jsonLdArray = [
           <ShareButton
             title={title}
             text={`${localSignName} - ${entry.intro?.slice(0, 100) || ""}`}
-            url={`https://karmastro.com/${lang}/horoscope/${sign.slug}`}
+            url={`https://karmastro.com/${lang}/horoscope/${getLocalizedSlug(sign.slug, lang)}`}
             variant="secondary"
             label={t("horoscope.share_this", lang)}
           />
@@ -454,7 +455,7 @@ const jsonLdArray = [
       <div class="grid grid-cols-3 gap-3">
         {compatSigns.map((c) => (
           <a
-            href={`/${lang}/horoscope/${c.slug}`}
+            href={`/${lang}/horoscope/${getLocalizedSlug(c.slug, lang)}`}
             class="p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:border-amber-300/40 transition-colors text-center"
           >
             <div class="flex justify-center mb-2">
@@ -476,7 +477,7 @@ const jsonLdArray = [
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
           {archiveCards.map((a) => (
             <a
-              href={`/${lang}/horoscope/${sign.slug}/${a.date}`}
+              href={`/${lang}/horoscope/${getLocalizedSlug(sign.slug, lang)}/${a.date}`}
               class="group block p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:border-amber-300/40 hover:bg-amber-300/[0.03] transition-all"
             >
               <div class="flex items-center justify-between mb-2">
@@ -507,7 +508,7 @@ const jsonLdArray = [
     <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10">
       {ZODIAC_SIGNS.map((s) => (
         <a
-          href={`/${lang}/horoscope/${s.slug}`}
+          href={`/${lang}/horoscope/${getLocalizedSlug(s.slug, lang)}`}
           class={`text-sm px-3 py-1.5 rounded-full border transition-colors inline-flex items-center gap-1.5 ${
             s.slug === sign.slug
               ? "border-amber-300 bg-amber-300/10 text-amber-300"

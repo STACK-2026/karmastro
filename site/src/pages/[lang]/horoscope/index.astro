@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import ZodiacSymbol from "../../../components/ZodiacSymbol.astro";
-import { ZODIAC_SIGNS, formatFrenchDate } from "../../../data/zodiac";
+import { ZODIAC_SIGNS, formatFrenchDate, getLocalizedSlug } from "../../../data/zodiac";
 import { LOCALES, DEFAULT_LOCALE, type Locale } from "../../../i18n/config";
 import { getContent } from "../../../i18n/content";
 import { t } from "../../../i18n/translations";
@@ -88,7 +88,7 @@ const signNameKeys: Record<string, string> = {
       hasPart: ZODIAC_SIGNS.map((sign) => ({
         "@type": "WebPage",
         name: t(signNameKeys[sign.slug] as any, lang) || sign.name,
-        url: `https://karmastro.com/${lang}/horoscope/${sign.slug}`,
+        url: `https://karmastro.com/${lang}/horoscope/${getLocalizedSlug(sign.slug, lang)}`,
       })),
     },
     {
@@ -117,7 +117,7 @@ const signNameKeys: Record<string, string> = {
           const localSignName = t(signNameKeys[sign.slug] as any, lang);
           return (
             <a
-              href={`/${lang}/horoscope/${sign.slug}`}
+              href={`/${lang}/horoscope/${getLocalizedSlug(sign.slug, lang)}`}
               class="group block p-5 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-amber-300/40 hover:bg-amber-300/5 transition-all"
             >
               <div class="flex items-center justify-between mb-2">

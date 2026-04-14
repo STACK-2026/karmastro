@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import ZodiacSymbol from "../../../../components/ZodiacSymbol.astro";
-import { ZODIAC_SIGNS, SIGN_SLUGS, getSignBySlug, formatFrenchDate } from "../../../../data/zodiac";
+import { ZODIAC_SIGNS, SIGN_SLUGS, getSignByLocalizedSlug, getLocalizedSlug, formatFrenchDate } from "../../../../data/zodiac";
 import { LOCALES, DEFAULT_LOCALE, type Locale } from "../../../../i18n/config";
 import { t } from "../../../../i18n/translations";
 import fs from "fs";
@@ -39,10 +39,11 @@ export function getStaticPaths() {
       if (!fs.existsSync(frFile)) continue;
       const frData = JSON.parse(fs.readFileSync(frFile, "utf-8"));
 
-      for (const slug of SIGN_SLUGS) {
-        if (!frData[slug]) continue;
+      for (const canonicalSlug of SIGN_SLUGS) {
+        if (!frData[canonicalSlug]) continue;
+        const localizedSlug = getLocalizedSlug(canonicalSlug, lang);
         paths.push({
-          params: { lang, signe: slug, date },
+          params: { lang, signe: localizedSlug, date },
           props: { date, isFuture },
         });
       }
@@ -54,8 +55,8 @@ export function getStaticPaths() {
 
 const { lang, signe, date } = Astro.params as { lang: Locale; signe: string; date: string };
 const { date: propDate, isFuture } = Astro.props as { date: string; isFuture: boolean };
-const sign = getSignBySlug(signe as string);
-if (!sign) throw new Error(`Unknown sign: ${signe}`);
+const sign = getSignByLocalizedSlug(signe as string, lang);
+if (!sign) throw new Error(`Unknown sign: ${signe} for lang ${lang}`);
 
 // Sign name translation
 const signNameKeys: Record<string, string> = {
@@ -121,7 +122,7 @@ const jsonLd = [
       url: "https://karmastro.com",
       logo: { "@type": "ImageObject", url: "https://karmastro.com/favicon.svg" },
     },
-    mainEntityOfPage: { "@type": "WebPage", "@id": `https://karmastro.com/${lang}/horoscope/${sign.slug}/${propDate}` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://karmastro.com/${lang}/horoscope/${getLocalizedSlug(sign.slug, lang)}/${propDate}` },
     about: { "@type": "Thing", name: localSignName, sameAs: `https://en.wikipedia.org/wiki/${sign.name}_(astrology)` },
   },
   {
@@ -130,8 +131,8 @@ const jsonLd = [
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Karmastro", item: `https://karmastro.com/${lang}` },
       { "@type": "ListItem", position: 2, name: t("horoscope.title", lang), item: `https://karmastro.com/${lang}/horoscope` },
-      { "@type": "ListItem", position: 3, name: localSignName, item: `https://karmastro.com/${lang}/horoscope/${sign.slug}` },
-      { "@type": "ListItem", position: 4, name: dateFormatted, item: `https://karmastro.com/${lang}/horoscope/${sign.slug}/${propDate}` },
+      { "@type": "ListItem", position: 3, name: localSignName, item: `https://karmastro.com/${lang}/horoscope/${getLocalizedSlug(sign.slug, lang)}` },
+      { "@type": "ListItem", position: 4, name: dateFormatted, item: `https://karmastro.com/${lang}/horoscope/${getLocalizedSlug(sign.slug, lang)}/${propDate}` },
     ],
   },
 ];
@@ -151,14 +152,14 @@ const jsonLd = [
       <span class="mx-2">/</span>
       <a href={`/${lang}/horoscope`} class="hover:text-amber-300">{t("horoscope.title", lang)}</a>
       <span class="mx-2">/</span>
-      <a href={`/${lang}/horoscope/${sign.slug}`} class="hover:text-amber-300">{localSignName}</a>
+      <a href={`/${lang}/horoscope/${getLocalizedSlug(sign.slug, lang)}`} class="hover:text-amber-300">{localSignName}</a>
       <span class="mx-2">/</span>
       <span class="text-white/80">{dateFormatted}</span>
     </nav>
 
     <div class={`mb-4 px-4 py-2 rounded-xl text-center ${isFuture ? "bg-gradient-to-r from-amber-300/10 to-purple-400/10 border border-amber-300/40" : "bg-amber-300/10 border border-amber-300/20"}`}>
       <p class="text-xs text-amber-300/90">
-        {isFuture ? "✦ " + t("horoscope.premium_preview_badge", lang) : t("horoscope.archive_of", lang)} {dateFormatted} - <a href={`/${lang}/horoscope/${sign.slug}`} class="underline hover:text-amber-300">{t("horoscope.back_to_today", lang)}</a>
+        {isFuture ? "✦ " + t("horoscope.premium_preview_badge", lang) : t("horoscope.archive_of", lang)} {dateFormatted} - <a href={`/${lang}/horoscope/${getLocalizedSlug(sign.slug, lang)}`} class="underline hover:text-amber-300">{t("horoscope.back_to_today", lang)}</a>
       </p>
     </div>
 
@@ -252,7 +253,7 @@ const jsonLd = [
             <p class="text-xs text-white/50">
               {t("horoscope.paywall_available_in", lang)} <span id="future-countdown" class="font-mono text-amber-300">--:--:--</span>
             </p>
-            <a href={`/${lang}/horoscope/${sign.slug}`} class="block mt-4 text-[10px] text-white/40 hover:text-white/60">← {t("horoscope.back_to_today", lang)}</a>
+            <a href={`/${lang}/horoscope/${getLocalizedSlug(sign.slug, lang)}`} class="block mt-4 text-[10px] text-white/40 hover:text-white/60">← {t("horoscope.back_to_today", lang)}</a>
           </div>
         </div>
         <script is:inline>
@@ -303,7 +304,7 @@ const jsonLd = [
       <div class="grid grid-cols-3 gap-3">
         {compatSigns.map((c) => (
           <a
-            href={`/${lang}/horoscope/${c.slug}`}
+            href={`/${lang}/horoscope/${getLocalizedSlug(c.slug, lang)}`}
             class="p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:border-amber-300/40 transition-colors text-center"
           >
             <div class="flex justify-center mb-2">
@@ -318,7 +319,7 @@ const jsonLd = [
     <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10">
       {ZODIAC_SIGNS.map((s) => (
         <a
-          href={`/${lang}/horoscope/${s.slug}`}
+          href={`/${lang}/horoscope/${getLocalizedSlug(s.slug, lang)}`}
           class={`text-sm px-3 py-1.5 rounded-full border transition-colors inline-flex items-center gap-1.5 ${
             s.slug === sign.slug
               ? "border-amber-300 bg-amber-300/10 text-amber-300"
