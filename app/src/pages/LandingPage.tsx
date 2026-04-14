@@ -14,28 +14,16 @@ import AppFooter from "@/components/AppFooter";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
-import { useT } from "@/i18n/ui";
+import { useT, type UiKey } from "@/i18n/ui";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Typing effect for Oracle preview
-const ORACLE_CONVERSATIONS = [
-  {
-    question: "Est-ce le bon moment pour lancer mon projet ?",
-    answer: "Ton année personnelle 5 et Jupiter en transit dans ta maison 10 créent un alignement favorable. Calcul : chemin de vie 22 (maître bâtisseur) + année 2026 = 5 (changement). La phase de dernier quartier lunaire invite au bilan avant l'action...",
-  },
-  {
-    question: "Pourquoi je me sens bloquée en ce moment ?",
-    answer: "Saturne transite ta maison 12 depuis 3 mois - un cycle de retrait et d'intériorisation. Tu n'es pas bloquée, tu digères. Ton nœud Nord en Cancer réclame que tu honores tes émotions plutôt que de forcer l'action extérieure. Écoute, puis agis.",
-  },
-  {
-    question: "Cette personne est-elle vraiment faite pour moi ?",
-    answer: "Synastrie : ton Vénus en Taureau trigone son Lune en Vierge crée une base affective solide. Mais tes nœuds lunaires opposent les siens - karma partagé qui demande conscience. Chemin de vie 6 (toi) et 9 (elle) : complémentaires, mais elle vit plus dans l'universel.",
-  },
-  {
-    question: "Quelle est ma mission profonde ?",
-    answer: "Ton chemin de vie 7 (le chercheur) croisé avec ton Soleil en maison 9 et ton nœud Nord en Sagittaire pointe vers une mission d'enseignement spirituel. Pas nécessairement en public : transmettre ce que tu comprends à ceux qui en ont besoin, quand ils en ont besoin.",
-  },
+// Typing effect for Oracle preview. Strings live in i18n (ui.ts) and are resolved at render time.
+const ORACLE_CONVERSATION_KEYS: { question: UiKey; answer: UiKey }[] = [
+  { question: "landing.oracle_conv1_q", answer: "landing.oracle_conv1_a" },
+  { question: "landing.oracle_conv2_q", answer: "landing.oracle_conv2_a" },
+  { question: "landing.oracle_conv3_q", answer: "landing.oracle_conv3_a" },
+  { question: "landing.oracle_conv4_q", answer: "landing.oracle_conv4_a" },
 ];
 
 // Full Oracle preview : rotates through conversations (question + answer), typed answer
@@ -45,10 +33,14 @@ const OracleLiveChat = () => {
   const [displayed, setDisplayed] = useState("");
   const [done, setDone] = useState(false);
 
+  const currentKeys = ORACLE_CONVERSATION_KEYS[convIndex];
+  const questionText = t(currentKeys.question);
+  const answerText = t(currentKeys.answer);
+
   useEffect(() => {
     setDisplayed("");
     setDone(false);
-    const text = ORACLE_CONVERSATIONS[convIndex].answer;
+    const text = answerText;
     let i = 0;
     const interval = setInterval(() => {
       if (i < text.length) {
@@ -60,22 +52,20 @@ const OracleLiveChat = () => {
       }
     }, 25);
     return () => clearInterval(interval);
-  }, [convIndex]);
+  }, [convIndex, answerText]);
 
   useEffect(() => {
     if (!done) return;
-    const t = setTimeout(() => {
-      setConvIndex((prev) => (prev + 1) % ORACLE_CONVERSATIONS.length);
+    const timer = setTimeout(() => {
+      setConvIndex((prev) => (prev + 1) % ORACLE_CONVERSATION_KEYS.length);
     }, 5500);
-    return () => clearTimeout(t);
+    return () => clearTimeout(timer);
   }, [done, convIndex]);
-
-  const current = ORACLE_CONVERSATIONS[convIndex];
 
   return (
     <>
       <div key={`q-${convIndex}`} className="bg-secondary/50 rounded-lg p-3 text-sm max-w-[80%] animate-fade-in">
-        {current.question}
+        {questionText}
       </div>
       <div className="bg-primary/10 border border-primary/20 rounded-lg p-3 text-sm ml-auto max-w-[85%]">
         <p className="text-primary text-xs mb-1 font-medium flex items-center gap-1">
@@ -332,61 +322,21 @@ const LandingPage = () => {
     } catch {}
   };
 
-  const features = [
-    {
-      icon: Hash,
-      label: "Chemin de vie",
-      desc: "Ton nombre directeur",
-      back: "Calculé à partir de ta date de naissance complète, le chemin de vie révèle ta mission principale et les talents que tu portes naturellement. C'est le nombre le plus important de ta carte numérologique.",
-    },
-    {
-      icon: Star,
-      label: "Thème astral",
-      desc: "Planètes & maisons",
-      back: "12 planètes (du Soleil à Pluton + nœuds lunaires), 12 maisons astrologiques et 40+ aspects calculés avec Swiss Ephemeris, précision 0.001 seconde d'arc. Niveau NASA JPL.",
-    },
-    {
-      icon: Calendar,
-      label: "Jour personnel",
-      desc: "Guidance quotidienne",
-      back: "Ta vibration du jour, calculée avec ton année personnelle et la date courante. Idéal pour choisir ton rythme : activer le 1, écouter le 2, créer le 3, construire le 4...",
-    },
-    {
-      icon: Moon,
-      label: "Transits",
-      desc: "Planètes en mouvement",
-      back: "Les planètes qui activent ton thème natal aujourd'hui. Mercure rétrograde, Jupiter en trigone à ton Soleil, carré de Mars à ta Lune : la météo cosmique personnalisée.",
-    },
-    {
-      icon: Heart,
-      label: "Compatibilité",
-      desc: "Synastrie & numérologie",
-      back: "Croisement de 10 planètes entre 2 thèmes natals + compatibilité numérologique (chemin de vie, expression, âme). Précision à 85%, versus 20% pour les signes seuls.",
-    },
-    {
-      icon: Sparkles,
-      label: "Karma",
-      desc: "Dettes & leçons",
-      back: "Nœuds lunaires, dettes karmiques pythagoriciennes (13, 14, 16, 19), cycles de Saturne et points karmiques. Ta trajectoire d'âme, décodée.",
-    },
-    {
-      icon: MessageCircle,
-      label: "L'Oracle",
-      desc: "Réponses 24/7",
-      back: "4 guides cosmiques (Sibylle, Orion, Séléné, Pythia) qui croisent ton thème natal, ta numérologie et les transits du jour. Guidance personnalisée en moins de 10 secondes.",
-    },
-    {
-      icon: BookOpen,
-      label: "Apprendre",
-      desc: "Guides complets",
-      back: "Blog « Le Cosmos » avec 100+ articles sur l'astrologie, la numérologie et le karma. Rédigés par notre équipe d'astrologues et mis à jour régulièrement.",
-    },
+  const features: { icon: typeof Hash; labelKey: UiKey; descKey: UiKey; backKey: UiKey }[] = [
+    { icon: Hash,          labelKey: "landing.feat_lifepath_label",    descKey: "landing.feat_lifepath_desc",    backKey: "landing.feat_lifepath_back" },
+    { icon: Star,          labelKey: "landing.feat_theme_label",       descKey: "landing.feat_theme_desc",       backKey: "landing.feat_theme_back" },
+    { icon: Calendar,      labelKey: "landing.feat_personalday_label", descKey: "landing.feat_personalday_desc", backKey: "landing.feat_personalday_back" },
+    { icon: Moon,          labelKey: "landing.feat_transits_label",    descKey: "landing.feat_transits_desc",    backKey: "landing.feat_transits_back" },
+    { icon: Heart,         labelKey: "landing.feat_compat_label",      descKey: "landing.feat_compat_desc",      backKey: "landing.feat_compat_back" },
+    { icon: Sparkles,      labelKey: "landing.feat_karma_label",       descKey: "landing.feat_karma_desc",       backKey: "landing.feat_karma_back" },
+    { icon: MessageCircle, labelKey: "landing.feat_oracle_label",      descKey: "landing.feat_oracle_desc",      backKey: "landing.feat_oracle_back" },
+    { icon: BookOpen,      labelKey: "landing.feat_learn_label",       descKey: "landing.feat_learn_desc",       backKey: "landing.feat_learn_back" },
   ];
 
-  const testimonials = [
-    { name: "Sophie M.", text: "Mon rendez-vous quotidien est devenu un rituel. La fusion astro + numérologie est unique.", stars: 5 },
-    { name: "Marc L.", text: "L'Oracle m'a aidé à comprendre mon cycle karmique. Des réponses d'une profondeur incroyable.", stars: 5 },
-    { name: "Émilie R.", text: "Enfin une app en français qui prend la numérologie au sérieux. Le jour personnel change tout.", stars: 5 },
+  const testimonials: { nameKey: UiKey; textKey: UiKey; stars: number }[] = [
+    { nameKey: "landing.testi_1_name", textKey: "landing.testi_1_text", stars: 5 },
+    { nameKey: "landing.testi_2_name", textKey: "landing.testi_2_text", stars: 5 },
+    { nameKey: "landing.testi_3_name", textKey: "landing.testi_3_text", stars: 5 },
   ];
 
   return (
@@ -501,51 +451,51 @@ const LandingPage = () => {
         </h2>
         <p className="text-center text-muted-foreground mb-12 text-sm">{t("landing.pillars_click_hint")}</p>
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          {[
+          {([
             {
               icon: Star,
-              title: "Astrologie",
-              desc: "Thème natal complet, transits du jour, rétrogrades, maisons et aspects. Ta carte du ciel, décodée.",
+              titleKey: "landing.pillar_astro_title" as UiKey,
+              descKey: "landing.pillar_astro_desc" as UiKey,
+              whyKey: "landing.pillar_astro_why" as UiKey,
+              backKey: "landing.pillar_astro_back" as UiKey,
               color: "text-karmique-blue",
               borderColor: "hsl(217 91% 60% / 0.3)",
-              why: "Pourquoi l'astrologie ?",
-              back: "L'astrologie est basée sur les éphémérides - les positions exactes des planètes au moment de ta naissance. Ce ne sont pas des croyances : ce sont des calculs astronomiques précis. Ton thème natal est unique, comme une empreinte digitale cosmique. Karmastro calcule les positions de 12 planètes dans 12 maisons et analyse plus de 40 aspects pour dresser ton portrait céleste.",
             },
             {
               icon: Hash,
-              title: "Numérologie",
-              desc: "Chemin de vie, année/mois/jour personnel, table d'inclusion, cycles, pinnacles. Les nombres qui te guident.",
+              titleKey: "landing.pillar_numero_title" as UiKey,
+              descKey: "landing.pillar_numero_desc" as UiKey,
+              whyKey: "landing.pillar_numero_why" as UiKey,
+              backKey: "landing.pillar_numero_back" as UiKey,
               color: "text-primary",
               borderColor: "hsl(271 91% 65% / 0.3)",
-              why: "Pourquoi la numérologie ?",
-              back: "La numérologie pythagoricienne est un système mathématique pur. A=1, B=2... Z=8. Les calculs sont reproductibles et vérifiables. Ton chemin de vie se calcule en additionnant chaque chiffre de ta date de naissance. Pas de mystère : des maths. Mais ces nombres révèlent des patterns fascinants sur ta personnalité, tes cycles de vie et tes talents naturels.",
             },
             {
               icon: Sparkles,
-              title: "Karma",
-              desc: "Dettes karmiques, noeuds lunaires, leçons de vie, cycles de Saturne. L'histoire de ton âme.",
+              titleKey: "landing.pillar_karma_title" as UiKey,
+              descKey: "landing.pillar_karma_desc" as UiKey,
+              whyKey: "landing.pillar_karma_why" as UiKey,
+              backKey: "landing.pillar_karma_back" as UiKey,
               color: "text-accent",
               borderColor: "hsl(43 76% 53% / 0.3)",
-              why: "Pourquoi le karma ?",
-              back: "Les noeuds lunaires (Nord et Sud) indiquent ta direction de vie et tes acquis passés. Les dettes karmiques (13, 14, 16, 19) apparaissent dans tes calculs numérologies et pointent vers des leçons spécifiques. Le cycle de Saturne (~29,5 ans) marque les grandes transitions. En croisant ces données, on obtient une carte de ton évolution personnelle.",
             },
-          ].map((pillar, i) => (
+          ]).map((pillar, i) => (
             <FlipCard
-              key={pillar.title}
+              key={pillar.titleKey}
               cardRef={(el) => { pillarCardsRef.current[i] = el; }}
               borderColor={pillar.borderColor}
               front={
                 <>
                   <pillar.icon className={`h-10 w-10 mb-4 ${pillar.color}`} />
-                  <h3 className="font-serif text-xl mb-2">{pillar.title}</h3>
-                  <p className="text-sm text-muted-foreground">{pillar.desc}</p>
+                  <h3 className="font-serif text-xl mb-2">{t(pillar.titleKey)}</h3>
+                  <p className="text-sm text-muted-foreground">{t(pillar.descKey)}</p>
                   <p className="text-[10px] text-muted-foreground/50 mt-3">{t("landing.pillar_click_flip")}</p>
                 </>
               }
               back={
                 <>
-                  <h4 className={`font-serif text-lg mb-3 ${pillar.color}`}>{pillar.why}</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{pillar.back}</p>
+                  <h4 className={`font-serif text-lg mb-3 ${pillar.color}`}>{t(pillar.whyKey)}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{t(pillar.backKey)}</p>
                 </>
               }
             />
@@ -564,19 +514,19 @@ const LandingPage = () => {
 
         {/* What the Oracle does - 4 points */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-12">
-          {[
-            { icon: Hash, title: "Calculs précis", desc: "Thème natal, positions planétaires, aspects - du calcul astronomique pur, pas de l'approximation.", color: "text-primary" },
-            { icon: Moon, title: "Données en temps réel", desc: "Phase lunaire du jour, rétrogrades en cours, ton jour/mois/année personnel calculés à l'instant.", color: "text-accent" },
-            { icon: Sparkles, title: "Croisement multi-disciplines", desc: "Astrologie + numérologie + karma en une seule réponse. Aucun autre outil ne fait ça.", color: "text-primary" },
-            { icon: Zap, title: "Disponible 24/7", desc: "3h du matin et une question te travaille ? L'Oracle est là. Pas d'attente, pas de rendez-vous.", color: "text-accent" },
-          ].map((item) => (
-            <div key={item.title} className="border-glow rounded-xl bg-card/40 p-4 flex gap-3">
+          {([
+            { icon: Hash,     titleKey: "landing.oracle_does_1_title" as UiKey, descKey: "landing.oracle_does_1_desc" as UiKey, color: "text-primary" },
+            { icon: Moon,     titleKey: "landing.oracle_does_2_title" as UiKey, descKey: "landing.oracle_does_2_desc" as UiKey, color: "text-accent" },
+            { icon: Sparkles, titleKey: "landing.oracle_does_3_title" as UiKey, descKey: "landing.oracle_does_3_desc" as UiKey, color: "text-primary" },
+            { icon: Zap,      titleKey: "landing.oracle_does_4_title" as UiKey, descKey: "landing.oracle_does_4_desc" as UiKey, color: "text-accent" },
+          ]).map((item) => (
+            <div key={item.titleKey} className="border-glow rounded-xl bg-card/40 p-4 flex gap-3">
               <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" style={{ background: "hsl(271 91% 65% / 0.1)" }}>
                 <item.icon className={`h-4 w-4 ${item.color}`} />
               </div>
               <div>
-                <h4 className="text-sm font-semibold text-foreground mb-1">{item.title}</h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+                <h4 className="text-sm font-semibold text-foreground mb-1">{t(item.titleKey)}</h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">{t(item.descKey)}</p>
               </div>
             </div>
           ))}
@@ -586,9 +536,9 @@ const LandingPage = () => {
         <div ref={oracleChatRef} className="max-w-md mx-auto border-glow rounded-xl bg-card/60 backdrop-blur-sm p-6 space-y-4">
           <OracleLiveChat />
           <div className="flex gap-2 flex-wrap">
-            {["Ma compatibilité", "Mercure rétrograde", "Mon chemin de vie", "Mon karma"].map(q => (
-              <span key={q} className="text-xs border border-primary/30 text-primary rounded-full px-3 py-1 cursor-pointer hover:bg-primary/10 transition-colors">
-                {q}
+            {(["landing.oracle_chip_1", "landing.oracle_chip_2", "landing.oracle_chip_3", "landing.oracle_chip_4"] as UiKey[]).map(k => (
+              <span key={k} className="text-xs border border-primary/30 text-primary rounded-full px-3 py-1 cursor-pointer hover:bg-primary/10 transition-colors">
+                {t(k)}
               </span>
             ))}
           </div>
@@ -607,30 +557,30 @@ const LandingPage = () => {
       {/* Features grid */}
       <section ref={featuresRef} className="relative z-10 px-6 py-16">
         <h2 className="font-serif text-3xl md:text-4xl text-center mb-4">
-          Ce que Karmastro <span className="text-gradient-violet">calcule pour toi</span>
+          {t("landing.feat_grid_h2_1")} <span className="text-gradient-violet">{t("landing.feat_grid_h2_2")}</span>
         </h2>
-        <p className="text-center text-muted-foreground mb-12 text-sm">Clique sur une carte pour en savoir plus</p>
+        <p className="text-center text-muted-foreground mb-12 text-sm">{t("landing.feat_grid_hint")}</p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
           {features.map((f, i) => (
             <FlipCard
-              key={f.label}
+              key={f.labelKey}
               cardRef={(el) => { featureCardsRef.current[i] = el; }}
               className="min-h-[140px] p-4"
               backClassName="min-h-[140px] p-4 text-left"
               front={
                 <>
                   <f.icon className="h-6 w-6 mx-auto mb-2 text-primary" />
-                  <p className="text-sm font-medium">{f.label}</p>
-                  <p className="text-xs text-muted-foreground">{f.desc}</p>
+                  <p className="text-sm font-medium">{t(f.labelKey)}</p>
+                  <p className="text-xs text-muted-foreground">{t(f.descKey)}</p>
                 </>
               }
               back={
                 <>
                   <div className="flex items-center gap-2 mb-2">
                     <f.icon className="h-4 w-4 text-primary flex-shrink-0" />
-                    <p className="text-xs font-medium">{f.label}</p>
+                    <p className="text-xs font-medium">{t(f.labelKey)}</p>
                   </div>
-                  <p className="text-[11px] text-muted-foreground leading-snug">{f.back}</p>
+                  <p className="text-[11px] text-muted-foreground leading-snug">{t(f.backKey)}</p>
                 </>
               }
             />
@@ -642,19 +592,19 @@ const LandingPage = () => {
       <section ref={testimonialsRef} className="relative z-10 px-6 py-16">
         <h2 className="font-serif text-3xl text-center mb-10">{t("landing.testi_title_1")} <span className="text-gradient-gold">{t("landing.testi_title_2")}</span></h2>
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          {testimonials.map((t, i) => (
+          {testimonials.map((testi, i) => (
             <div
-              key={t.name}
+              key={testi.nameKey}
               ref={(el) => { testimonialCardsRef.current[i] = el; }}
               className="border-glow rounded-xl bg-card/40 p-6"
             >
               <div className="flex gap-0.5 mb-3">
-                {Array(t.stars).fill(0).map((_, j) => (
+                {Array(testi.stars).fill(0).map((_, j) => (
                   <Star key={j} className="h-4 w-4 fill-accent text-accent" />
                 ))}
               </div>
-              <p className="text-sm text-muted-foreground mb-3">"{t.text}"</p>
-              <p className="text-sm font-medium">{t.name}</p>
+              <p className="text-sm text-muted-foreground mb-3">"{t(testi.textKey)}"</p>
+              <p className="text-sm font-medium">{t(testi.nameKey)}</p>
             </div>
           ))}
         </div>
@@ -671,8 +621,8 @@ const LandingPage = () => {
             <h3 className="font-serif text-xl mb-1">{t("landing.pricing_eveil_title")} <Sparkles className="h-4 w-4 inline text-primary" /></h3>
             <p className="text-lg font-medium mb-4 text-gradient-gold">{t("landing.pricing_eveil_price")}</p>
             <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-              {["Profil cosmique complet", "RDV quotidien (court)", "3 messages Oracle/jour", "1 compatibilité", "Guides éducatifs"].map(f => (
-                <li key={f} className="flex items-center gap-2"><Check className="h-4 w-4 text-karmique-earth" /> {f}</li>
+              {(["landing.pricing_eveil_f1","landing.pricing_eveil_f2","landing.pricing_eveil_f3","landing.pricing_eveil_f4","landing.pricing_eveil_f5"] as UiKey[]).map(k => (
+                <li key={k} className="flex items-center gap-2"><Check className="h-4 w-4 text-karmique-earth" /> {t(k)}</li>
               ))}
             </ul>
             <Button variant="outline" className="w-full border-primary text-primary" onClick={() => navigate("/onboarding")}>
@@ -688,8 +638,8 @@ const LandingPage = () => {
             <p className="text-3xl font-bold mb-1">5,99€<span className="text-sm font-normal text-muted-foreground">{t("landing.pricing_etoile_per_month")}</span></p>
             <p className="text-xs text-muted-foreground mb-4">{t("landing.pricing_etoile_annual_hint")}</p>
             <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-              {["RDV quotidien COMPLET", "L'Oracle ILLIMITÉ", "Calendrier cosmique détaillé", "Compatibilités illimitées", "Calculateur timing optimal", "Export PDF", "Zéro publicité"].map(f => (
-                <li key={f} className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> {f}</li>
+              {(["landing.pricing_etoile_f1","landing.pricing_etoile_f2","landing.pricing_etoile_f3","landing.pricing_etoile_f4","landing.pricing_etoile_f5","landing.pricing_etoile_f6","landing.pricing_etoile_f7"] as UiKey[]).map(k => (
+                <li key={k} className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> {t(k)}</li>
               ))}
             </ul>
             <Button className="w-full bg-primary hover:bg-primary/90" onClick={() => navigate("/onboarding")}>
@@ -701,8 +651,8 @@ const LandingPage = () => {
             <h3 className="font-serif text-xl mb-1">{t("landing.pricing_ame_title")} <Heart className="h-4 w-4 inline text-karmique-fire" /></h3>
             <p className="text-3xl font-bold mb-4">2,99€<span className="text-sm font-normal text-muted-foreground"> {t("landing.pricing_ame_unit")}</span></p>
             <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-              {["Rapport compatibilité 15 pages", "Synastrie complète", "Guidance karmique couple", "Export PDF"].map(f => (
-                <li key={f} className="flex items-center gap-2"><Check className="h-4 w-4 text-accent" /> {f}</li>
+              {(["landing.pricing_ame_f1","landing.pricing_ame_f2","landing.pricing_ame_f3","landing.pricing_ame_f4"] as UiKey[]).map(k => (
+                <li key={k} className="flex items-center gap-2"><Check className="h-4 w-4 text-accent" /> {t(k)}</li>
               ))}
             </ul>
             <Button variant="outline" className="w-full border-accent text-accent" onClick={() => navigate("/onboarding")}>
