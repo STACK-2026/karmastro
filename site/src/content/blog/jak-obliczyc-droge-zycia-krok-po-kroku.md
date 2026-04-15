@@ -1,6 +1,6 @@
 ---
 title: "Jak obliczyć drogę życia krok po kroku"
-description: "Kompletny przewodnik obliczania drogi życia w numerologii pitagorejskiej: wzór, przykłady liczbowe, liczby mistrzowskie 11/22/33 i znaczenie wszystkich dziewięciu dróg."
+description: "Przewodnik obliczania drogi życia w numerologii pitagorejskiej: wzór, przykłady, liczby mistrzowskie 11/22/33 i znaczenie dziewięciu dróg."
 date: 2026-04-10T08:15:00+02:00
 lang: "pl"
 image: "https://images.unsplash.com/photo-1507499036636-f716246c2c23?w=1200&h=630&fit=crop&crop=center&q=80"
