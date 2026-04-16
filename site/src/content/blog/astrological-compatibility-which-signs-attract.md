@@ -217,3 +217,20 @@ This article draws on verifiable encyclopedic and scientific sources.
 - **Encyclopedia** (en.wikipedia.org) : [Astrology](https://en.wikipedia.org/wiki/Astrology)
 - **Britannica** (britannica.com) : [Astrology](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Solar system and planets](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## For further reading
+
+**Related articles:**
+- [Life path 1 in numerology: leadership, independence, and incarnation mission](/en/blog/life-path-1-leadership-independence-numerology)
+- [Aries zodiac sign: personality, compatibility and deep traits](/en/blog/aries-zodiac-sign-personality-compatibility-traits)
+- [What is numerology? A complete beginner](/en/blog/what-is-numerology-complete-beginner-guide)
+- [AI Oracle vs traditional tarot: which guidance should you choose in 2026?](/en/blog/ai-oracle-vs-traditional-tarot-which-guidance)
+
+**Karmastro tools:**
+- [Birth chart](/en/tools/birth-chart)
+- [Life path number](/en/tools/life-path-number)
+- [Compatibility](/en/tools/compatibility)
+
+[Explore the full blog and all calculators](/en/blog/) · [Karmastro tools](/en/tools/)
+

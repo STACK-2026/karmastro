@@ -179,3 +179,20 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 - **Enciclopedia** (es.wikipedia.org) : [Astrologia](https://es.wikipedia.org/wiki/Astrolog%C3%ADa)
 - **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Sistema solar y planetas](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Para profundizar
+
+**Artículos relacionados :**
+- [Camino de vida 1 en numerología: liderazgo, independencia y misión de encarnación](/es/blog/camino-de-vida-1-liderazgo-independencia-numerologia)
+- [Las 12 casas astrológicas: guía completa de los 12 sectores de tu vida](/es/blog/12-casas-astrologicas-guia-completa-sectores-vida)
+- [Numerología pitagórica vs caldea: diferencias y métodos comparados](/es/blog/numerologia-pitagorica-vs-caldea-diferencias)
+- [¿Qué es la numerología? Guía completa para principiantes](/es/blog/que-es-numerologia-guia-completa-principiantes)
+
+**Herramientas Karmastro:**
+- [Carta natal](/es/herramientas/carta-natal)
+- [Camino de vida](/es/herramientas/camino-de-vida)
+- [Compatibilidad](/es/herramientas/compatibilidad)
+
+[Explora el blog completo y todas las herramientas](/es/blog/) · [Herramientas Karmastro](/es/herramientas/)
+

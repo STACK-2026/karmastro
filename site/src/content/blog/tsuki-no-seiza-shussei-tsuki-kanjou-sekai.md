@@ -111,3 +111,20 @@ reviewedBy: "Orion、シニア天文学者兼占星術師"
 - **百科事典** (ja.wikipedia.org) : [占星術](https://ja.wikipedia.org/wiki/%E5%8D%A0%E6%98%9F%E8%A1%93)
 - **Britannica** (britannica.com) : [占星術](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [太陽系と惑星](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## さらに詳しく
+
+**関連記事:**
+- [土星回帰:29歳ですべてを変える大きな占星術的移行](/ja/blog/dosei-kaiki-29sai-juudai-otona-ikou)
+- [無料の出生図 完全なナタルチャート解釈の実践ガイド](/ja/blog/muryou-shusseizu-kanzen-natal-kaishaku)
+- [12のアストロロジー・ハウス:人生の12セクターの完全ガイド](/ja/blog/12-no-asutoroji-hausu-kanzen-gaido)
+- [牡羊座:性格、相性、深い特徴](/ja/blog/ohitsuji-seiza-seikaku-aishou-tokuchou)
+
+**Karmastro 診断ツール:**
+- [出生図](/ja/shindan/shusseizu)
+- [ライフパスナンバー](/ja/shindan/raifu-pasu-nanbaa)
+- [相性診断](/ja/shindan/aishou-shindan)
+
+[ブログ全体と全診断ツールを見る](/ja/blog/) · [Karmastro 診断ツール](/ja/shindan/)
+

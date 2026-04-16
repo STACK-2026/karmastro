@@ -194,3 +194,20 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 - **Enciclopedia** (es.wikipedia.org) : [Astrologia](https://es.wikipedia.org/wiki/Astrolog%C3%ADa)
 - **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Sistema solar y planetas](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Para profundizar
+
+**Artículos relacionados :**
+- [El retorno de Saturno: el gran paso astrológico a los 29 años que lo cambia todo](/es/blog/retorno-saturno-29-anos-gran-pasaje-adulto)
+- [Número de expresión: descifra lo que tu nombre revela de tu identidad](/es/blog/numero-expresion-numerologia-nombre-descifrar-identidad)
+- [Numerología pitagórica vs caldea: diferencias y métodos comparados](/es/blog/numerologia-pitagorica-vs-caldea-diferencias)
+- [Chakras y astrología: la correspondencia entre los 7 centros energéticos y los planetas](/es/blog/chakras-astrologia-7-planetas-centros-energeticos)
+
+**Herramientas Karmastro:**
+- [Carta natal](/es/herramientas/carta-natal)
+- [Camino de vida](/es/herramientas/camino-de-vida)
+- [Compatibilidad](/es/herramientas/compatibilidad)
+
+[Explora el blog completo y todas las herramientas](/es/blog/) · [Herramientas Karmastro](/es/herramientas/)
+

@@ -162,3 +162,20 @@ Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
 - **Enciclopedia** (pt.wikipedia.org) : [Astrologia](https://pt.wikipedia.org/wiki/Astrologia)
 - **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Sistema solar e planetas](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Para aprofundar
+
+**Artigos relacionados :**
+- [Plutão em Aquário 2024-2044: a grande mutação coletiva de 20 anos](/pt/blog/plutao-aquario-2024-2044-grande-mutacao-coletiva)
+- [Signo lunar: o que a tua Lua natal revela do teu mundo emocional](/pt/blog/signo-lunar-lua-natal-mundo-emocional)
+- [Aspetos astrológicos: conjunção, quadratura, trígono, oposição, sextil - o guia](/pt/blog/aspetos-astrologicos-conjuncao-quadratura-trigono-oposicao-sextil)
+- [As 12 casas astrológicas: guia completo dos 12 setores da tua vida](/pt/blog/12-casas-astrologicas-guia-completo-setores-vida)
+
+**Ferramentas Karmastro:**
+- [Mapa natal](/pt/ferramentas/mapa-natal)
+- [Número do caminho de vida](/pt/ferramentas/numero-do-caminho-de-vida)
+- [Compatibilidade](/pt/ferramentas/compatibilidade)
+
+[Explore todo o blog e todas as ferramentas](/pt/blog/) · [Ferramentas Karmastro](/pt/ferramentas/)
+

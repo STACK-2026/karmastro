@@ -106,3 +106,20 @@ reviewedBy: "بيثيا، عالمة أعداد معتمدة من المدرسة
 
 - **موسوعة** (ar.wikipedia.org) : [علم الأعداد](https://ar.wikipedia.org/wiki/%D8%B9%D9%84%D9%85_%D8%A7%D9%84%D8%A3%D8%B9%D8%AF%D8%A7%D8%AF)
 - **بريتانيكا** (britannica.com) : [علم الأعداد](https://www.britannica.com/topic/numerology)
+
+<!-- maillage:auto -->
+## المزيد من المحتوى
+
+**مقالات ذات صلة:**
+- [السنة الشخصية 2026: احسب رقمك وافهم دورتك](/ar/blog/sana-shakhseya-2026-hisab-maana)
+- [مسار الحياة 1: القائد المبادر، كيفية الحساب والمعنى الكامل](/ar/blog/masar-hayat-1-qaid-mubadir-ilm-aadad)
+- [كيف تحسب مسار حياتك: الطريقة الفيثاغورية خطوة بخطوة](/ar/blog/hisab-masar-hayat-tareeqa-feeqaghoras)
+- [فيثاغورس vs كلدانية: مقارنة شاملة بين مدرستي علم الأعداد](/ar/blog/feeqaghoras-vs-kaldaneya-ilm-aadad-muqarana)
+
+**أدوات Karmastro:**
+- [خريطة المولد](/ar/adawat/kharitat-mawlid)
+- [رقم مسار الحياة](/ar/adawat/raqm-masar-al-hayat)
+- [توافق الأزواج](/ar/adawat/tawafuq-azwaj)
+
+[استكشف المدونة بالكامل وجميع الأدوات](/ar/blog/) · [أدوات Karmastro](/ar/adawat/)
+

@@ -257,3 +257,20 @@ Cet article s'appuie sur des sources encyclopediques et scientifiques verifiable
 - **Encyclopedie** (fr.wikipedia.org) : [Astrologie](https://fr.wikipedia.org/wiki/Astrologie)
 - **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Systeme solaire et planetes](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Pour aller plus loin
+
+**Articles connexes :**
+- [Horoscope du jour : prévisions astrologiques fiables 2026](/blog/horoscope-jour-previsions-astrologiques-fiables)
+- [Thème natal gratuit : comment interpréter sa carte du ciel complète](/blog/theme-natal-gratuit-interpreter-carte-du-ciel)
+- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/12-maisons-astrologiques-guide-complet-secteurs-vie)
+- [Comment calculer son chemin de vie en numérologie](/blog/comment-calculer-chemin-vie-numerologie)
+
+**Outils Karmastro:**
+- [Thème natal](/outils/theme-natal)
+- [Chemin de vie](/outils/chemin-de-vie)
+- [Compatibilité](/outils/compatibilite)
+
+[Explore le blog complet et tous les calculateurs](/blog/) · [Outils Karmastro](/outils/)
+

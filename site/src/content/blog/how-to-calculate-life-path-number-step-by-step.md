@@ -225,3 +225,20 @@ This article draws on verifiable encyclopedic and scientific sources.
 
 - **Encyclopedia** (en.wikipedia.org) : [Numerology](https://en.wikipedia.org/wiki/Numerology)
 - **Britannica** (britannica.com) : [Numerology](https://www.britannica.com/topic/numerology)
+
+<!-- maillage:auto -->
+## For further reading
+
+**Related articles:**
+- [What is numerology? A complete beginner](/en/blog/what-is-numerology-complete-beginner-guide)
+- [Life path 1 in numerology: leadership, independence, and incarnation mission](/en/blog/life-path-1-leadership-independence-numerology)
+- [Pythagorean vs Chaldean numerology: differences and compared methods](/en/blog/pythagorean-vs-chaldean-numerology-differences)
+- [Personal year 2026: find your number and understand the 9-year cycle that shapes your life](/en/blog/personal-year-2026-numerology-9-year-cycle)
+
+**Karmastro tools:**
+- [Birth chart](/en/tools/birth-chart)
+- [Life path number](/en/tools/life-path-number)
+- [Compatibility](/en/tools/compatibility)
+
+[Explore the full blog and all calculators](/en/blog/) · [Karmastro tools](/en/tools/)
+

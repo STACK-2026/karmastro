@@ -262,3 +262,20 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 
 - **Enciclopedia** (it.wikipedia.org) : [Numerologia](https://it.wikipedia.org/wiki/Numerologia)
 - **Britannica** (britannica.com) : [Numerologia](https://www.britannica.com/topic/numerology)
+
+<!-- maillage:auto -->
+## Per approfondire
+
+**Articoli correlati :**
+- [Cammino di vita 1 in numerologia: leadership, indipendenza e missione di incarnazione](/it/blog/cammino-di-vita-1-leadership-indipendenza-numerologia)
+- [Numero di espressione: decifra cosa il tuo nome rivela della tua identità](/it/blog/numero-di-espressione-numerologia-nome-decifrare-identita)
+- [Numerologia pitagorica vs caldea: differenze e metodi a confronto](/it/blog/numerologia-pitagorica-vs-caldea-differenze)
+- [Anno personale 2026: trova il tuo numero e comprendi il ciclo di 9 anni](/it/blog/anno-personale-2026-numerologia-ciclo-9-anni)
+
+**Strumenti Karmastro:**
+- [Tema natale](/it/strumenti/tema-natale)
+- [Numero del cammino di vita](/it/strumenti/numero-del-cammino-di-vita)
+- [Compatibilità](/it/strumenti/compatibilita)
+
+[Esplora tutto il blog e gli strumenti](/it/blog/) · [Strumenti Karmastro](/it/strumenti/)
+

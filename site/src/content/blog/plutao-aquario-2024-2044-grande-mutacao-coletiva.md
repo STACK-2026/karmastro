@@ -124,3 +124,20 @@ Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
 - **Enciclopedia** (pt.wikipedia.org) : [Astrologia](https://pt.wikipedia.org/wiki/Astrologia)
 - **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Sistema solar e planetas](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Para aprofundar
+
+**Artigos relacionados :**
+- [Aspetos astrológicos: conjunção, quadratura, trígono, oposição, sextil - o guia](/pt/blog/aspetos-astrologicos-conjuncao-quadratura-trigono-oposicao-sextil)
+- [O retorno de Saturno: a grande passagem astrológica aos 29 anos que muda tudo](/pt/blog/retorno-saturno-29-anos-grande-passagem-adulto)
+- [As 12 casas astrológicas: guia completo dos 12 setores da tua vida](/pt/blog/12-casas-astrologicas-guia-completo-setores-vida)
+- [Mercúrio retrógrado: como entender, antecipar e sobreviver a estes períodos sem pânico](/pt/blog/mercurio-retrogrado-guia-completo-sobreviver-prosperar)
+
+**Ferramentas Karmastro:**
+- [Mapa natal](/pt/ferramentas/mapa-natal)
+- [Número do caminho de vida](/pt/ferramentas/numero-do-caminho-de-vida)
+- [Compatibilidade](/pt/ferramentas/compatibilidade)
+
+[Explore todo o blog e todas as ferramentas](/pt/blog/) · [Ferramentas Karmastro](/pt/ferramentas/)
+

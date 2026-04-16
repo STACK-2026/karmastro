@@ -247,3 +247,20 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 - **Enciclopedia** (es.wikipedia.org) : [Astrologia](https://es.wikipedia.org/wiki/Astrolog%C3%ADa)
 - **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Sistema solar y planetas](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Para profundizar
+
+**Artículos relacionados :**
+- [El retorno de Saturno: el gran paso astrológico a los 29 años que lo cambia todo](/es/blog/retorno-saturno-29-anos-gran-pasaje-adulto)
+- [Mercurio retrógrado: cómo entender, anticipar y sobrevivir estos períodos sin pánico](/es/blog/mercurio-retrogrado-guia-completa-sobrevivir-prosperar)
+- [Las 12 casas astrológicas: guía completa de los 12 sectores de tu vida](/es/blog/12-casas-astrologicas-guia-completa-sectores-vida)
+- [Signo zodiacal Aries: personalidad, compatibilidad y rasgos profundos](/es/blog/aries-signo-zodiacal-personalidad-compatibilidad)
+
+**Herramientas Karmastro:**
+- [Carta natal](/es/herramientas/carta-natal)
+- [Camino de vida](/es/herramientas/camino-de-vida)
+- [Compatibilidad](/es/herramientas/compatibilidad)
+
+[Explora el blog completo y todas las herramientas](/es/blog/) · [Herramientas Karmastro](/es/herramientas/)
+

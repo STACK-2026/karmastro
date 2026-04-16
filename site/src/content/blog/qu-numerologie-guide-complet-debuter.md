@@ -306,3 +306,20 @@ Cet article s'appuie sur des sources encyclopediques et scientifiques verifiable
 
 - **Encyclopedie** (fr.wikipedia.org) : [Numerologie](https://fr.wikipedia.org/wiki/Num%C3%A9rologie)
 - **Britannica** (britannica.com) : [Numerologie](https://www.britannica.com/topic/numerology)
+
+<!-- maillage:auto -->
+## Pour aller plus loin
+
+**Articles connexes :**
+- [Numérologie pythagoricienne vs chaldéenne : différences et méthodes comparées](/blog/numerologie-pythagoricienne-vs-chaldeenne-differences)
+- [Chemin de vie 1 en numérologie : leadership, indépendance et mission d](/blog/chemin-de-vie-1-leadership-independance)
+- [Comment calculer son chemin de vie en numérologie](/blog/comment-calculer-chemin-vie-numerologie)
+- [Comment calculer son chemin de vie en numérologie : méthode pythagoricienne pas à pas](/blog/comment-calculer-chemin-de-vie-numerologie)
+
+**Outils Karmastro:**
+- [Thème natal](/outils/theme-natal)
+- [Chemin de vie](/outils/chemin-de-vie)
+- [Compatibilité](/outils/compatibilite)
+
+[Explore le blog complet et tous les calculateurs](/blog/) · [Outils Karmastro](/outils/)
+

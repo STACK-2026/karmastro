@@ -293,3 +293,20 @@ Cet article s'appuie sur des sources encyclopediques et scientifiques verifiable
 - **Encyclopedie** (fr.wikipedia.org) : [Astrologie](https://fr.wikipedia.org/wiki/Astrologie)
 - **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Systeme solaire et planetes](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Pour aller plus loin
+
+**Articles connexes :**
+- [Signe astrologique Bélier : personnalité, compatibilité et traits profonds](/blog/signe-astrologique-belier-personnalite-compatibilite)
+- [Thème natal gratuit : comment interpréter sa carte du ciel complète](/blog/theme-natal-gratuit-interpreter-carte-du-ciel)
+- [Thème natal gratuit : comment interpréter sa carte du ciel](/blog/theme-natal-gratuit-interpreter-carte-ciel)
+- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/12-maisons-astrologiques-guide-complet-secteurs-vie)
+
+**Outils Karmastro:**
+- [Thème natal](/outils/theme-natal)
+- [Chemin de vie](/outils/chemin-de-vie)
+- [Compatibilité](/outils/compatibilite)
+
+[Explore le blog complet et tous les calculateurs](/blog/) · [Outils Karmastro](/outils/)
+

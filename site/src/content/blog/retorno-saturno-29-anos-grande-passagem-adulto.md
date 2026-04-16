@@ -121,3 +121,20 @@ Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
 - **Enciclopedia** (pt.wikipedia.org) : [Astrologia](https://pt.wikipedia.org/wiki/Astrologia)
 - **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Sistema solar e planetas](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Para aprofundar
+
+**Artigos relacionados :**
+- [As 12 casas astrológicas: guia completo dos 12 setores da tua vida](/pt/blog/12-casas-astrologicas-guia-completo-setores-vida)
+- [Mercúrio retrógrado: como entender, antecipar e sobreviver a estes períodos sem pânico](/pt/blog/mercurio-retrogrado-guia-completo-sobreviver-prosperar)
+- [Signo zodiacal Carneiro: personalidade, compatibilidade e traços profundos](/pt/blog/carneiro-signo-zodiacal-personalidade-compatibilidade)
+- [Mapa astral grátis: como interpretar a tua carta natal completa](/pt/blog/mapa-astral-gratis-interpretar-carta-natal-completo)
+
+**Ferramentas Karmastro:**
+- [Mapa natal](/pt/ferramentas/mapa-natal)
+- [Número do caminho de vida](/pt/ferramentas/numero-do-caminho-de-vida)
+- [Compatibilidade](/pt/ferramentas/compatibilidade)
+
+[Explore todo o blog e todas as ferramentas](/pt/blog/) · [Ferramentas Karmastro](/pt/ferramentas/)
+

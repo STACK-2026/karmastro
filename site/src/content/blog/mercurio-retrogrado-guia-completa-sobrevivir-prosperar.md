@@ -225,3 +225,20 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 - **Enciclopedia** (es.wikipedia.org) : [Astrologia](https://es.wikipedia.org/wiki/Astrolog%C3%ADa)
 - **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Sistema solar y planetas](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Para profundizar
+
+**Artículos relacionados :**
+- [Carta natal gratis: cómo interpretar tu tema natal completo](/es/blog/carta-natal-gratis-interpretar-tema-natal-completo)
+- [Signo zodiacal Aries: personalidad, compatibilidad y rasgos profundos](/es/blog/aries-signo-zodiacal-personalidad-compatibilidad)
+- [Aspectos astrológicos: conjunción, cuadratura, trígono, oposición, sextil - la guía](/es/blog/aspectos-astrologicos-conjuncion-cuadratura-trigono-oposicion-sextil)
+- [Las 12 casas astrológicas: guía completa de los 12 sectores de tu vida](/es/blog/12-casas-astrologicas-guia-completa-sectores-vida)
+
+**Herramientas Karmastro:**
+- [Carta natal](/es/herramientas/carta-natal)
+- [Camino de vida](/es/herramientas/camino-de-vida)
+- [Compatibilidad](/es/herramientas/compatibilidad)
+
+[Explora el blog completo y todas las herramientas](/es/blog/) · [Herramientas Karmastro](/es/herramientas/)
+

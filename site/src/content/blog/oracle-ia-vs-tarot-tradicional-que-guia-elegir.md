@@ -240,3 +240,20 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 - **Enciclopedia** (es.wikipedia.org) : [Astrologia](https://es.wikipedia.org/wiki/Astrolog%C3%ADa)
 - **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Sistema solar y planetas](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Para profundizar
+
+**Artículos relacionados :**
+- [Compatibilidad astrológica: qué signos se atraen realmente](/es/blog/compatibilidad-astrologica-que-signos-se-atraen)
+- [Año personal 2026: encuentra tu cifra y comprende el ciclo de 9 años](/es/blog/ano-personal-2026-numerologia-ciclo-9-anos)
+- [Cómo calcular tu camino de vida: el método pitagórico paso a paso](/es/blog/como-calcular-camino-de-vida-paso-a-paso)
+- [Camino de vida 1 en numerología: liderazgo, independencia y misión de encarnación](/es/blog/camino-de-vida-1-liderazgo-independencia-numerologia)
+
+**Herramientas Karmastro:**
+- [Carta natal](/es/herramientas/carta-natal)
+- [Camino de vida](/es/herramientas/camino-de-vida)
+- [Compatibilidad](/es/herramientas/compatibilidad)
+
+[Explora el blog completo y todas las herramientas](/es/blog/) · [Herramientas Karmastro](/es/herramientas/)
+

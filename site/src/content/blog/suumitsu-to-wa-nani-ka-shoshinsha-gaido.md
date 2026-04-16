@@ -271,3 +271,20 @@ reviewedBy: "Orion 数秘術歴15年の認定プラクティショナー"
 - ウィキペディア日本語版 カバラ項目 [ja.wikipedia.org/wiki/カバラ](https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%90%E3%83%A9)
 
 本記事は2026年4月14日にOrionによって最終レビューされました 数秘術歴15年 ピタゴラス式認定プラクティショナーとしての知見に基づいて事実確認と解釈の妥当性が検証されています。
+
+<!-- maillage:auto -->
+## さらに詳しく
+
+**関連記事:**
+- [ライフパス1:数秘術におけるリーダーシップ、独立、化身の使命](/ja/blog/raifu-pasu-1-rida-shippu-dokuritsu-suumitsu)
+- [表現数:あなたの名前があなたのアイデンティティについて明かすこと](/ja/blog/hyougen-suji-suumitsu-namae-aidentiti)
+- [個人の年 2026:あなたの数字を見つけて9年サイクルを理解する](/ja/blog/kojin-toshi-2026-suumitsu-9-nen-saikuru)
+- [ピタゴラス vs カルデア数秘術:違いと方法の比較](/ja/blog/pitagorasu-vs-karudia-suumitsu-chigai)
+
+**Karmastro 診断ツール:**
+- [出生図](/ja/shindan/shusseizu)
+- [ライフパスナンバー](/ja/shindan/raifu-pasu-nanbaa)
+- [相性診断](/ja/shindan/aishou-shindan)
+
+[ブログ全体と全診断ツールを見る](/ja/blog/) · [Karmastro 診断ツール](/ja/shindan/)
+

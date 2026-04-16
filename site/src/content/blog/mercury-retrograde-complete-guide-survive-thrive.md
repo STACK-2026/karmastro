@@ -294,3 +294,20 @@ This article draws on verifiable encyclopedic and scientific sources.
 - **Encyclopedia** (en.wikipedia.org) : [Astrology](https://en.wikipedia.org/wiki/Astrology)
 - **Britannica** (britannica.com) : [Astrology](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Solar system and planets](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## For further reading
+
+**Related articles:**
+- [Rising sign: the complete guide to understand your astrological ascendant](/en/blog/rising-sign-complete-guide-understand-ascendant)
+- [Astrological aspects: conjunction, square, trine, opposition, sextile, the guide to read them](/en/blog/astrological-aspects-conjunction-square-trine-opposition-sextile)
+- [Free birth chart: how to interpret your complete natal chart](/en/blog/free-birth-chart-interpret-complete-natal-chart)
+- [Aries zodiac sign: personality, compatibility and deep traits](/en/blog/aries-zodiac-sign-personality-compatibility-traits)
+
+**Karmastro tools:**
+- [Birth chart](/en/tools/birth-chart)
+- [Life path number](/en/tools/life-path-number)
+- [Compatibility](/en/tools/compatibility)
+
+[Explore the full blog and all calculators](/en/blog/) · [Karmastro tools](/en/tools/)
+

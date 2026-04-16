@@ -268,3 +268,20 @@ Bu makale dogrulanabilir ansiklopedik akademik ve resmi bilimsel kaynaklara daya
 - Wikipedia Turkce Kabala maddesi [tr.wikipedia.org/wiki/Kabala](https://tr.wikipedia.org/wiki/Kabala)
 
 Bu yazi 14 Nisan 2026 tarihinde Orion tarafindan son olarak gozden gecirilmistir. 15 yillik numeroloji deneyimi sertifikali Pitagor okulu uygulamacisi olarak bilgisiyle olgu dogrulama ve yorum gecerliligi sinanmistir.
+
+<!-- maillage:auto -->
+## Daha fazlası
+
+**İlgili makaleler:**
+- [İfade sayısı: isminin kimliğin hakkında ne söylediğini çöz](/tr/blog/ifade-sayisi-numeroloji-isim-kimlik-cozmek)
+- [Pitagor vs Kaldeli numeroloji: farklar ve karşılaştırmalı yöntemler](/tr/blog/pitagor-vs-kaldeli-numeroloji-farklar)
+- [Numerolojide yaşam yolu 1: liderlik, bağımsızlık ve enkarnasyon misyonu](/tr/blog/yasam-yolu-1-liderlik-bagimsizlik-numeroloji)
+- [Kişisel yıl 2026: numaranı bul ve 9 yıllık döngüyü anla](/tr/blog/kisisel-yil-2026-numeroloji-9-yil-dongusu)
+
+**Karmastro araçları:**
+- [Doğum haritası](/tr/araclar/dogum-haritasi)
+- [Yaşam yolu sayısı](/tr/araclar/yasam-yolu-sayisi)
+- [Uyumluluk](/tr/araclar/uyumluluk)
+
+[Tüm blogu ve araçları keşfet](/tr/blog/) · [Karmastro araçları](/tr/araclar/)
+

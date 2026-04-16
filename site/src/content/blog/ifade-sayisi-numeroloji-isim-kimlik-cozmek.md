@@ -74,3 +74,20 @@ Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
 
 - **Ansiklopedi** (tr.wikipedia.org) : [Numeroloji](https://tr.wikipedia.org/wiki/Numeroloji)
 - **Britannica** (britannica.com) : [Numeroloji](https://www.britannica.com/topic/numerology)
+
+<!-- maillage:auto -->
+## Daha fazlası
+
+**İlgili makaleler:**
+- [Kişisel yıl 2026: numaranı bul ve 9 yıllık döngüyü anla](/tr/blog/kisisel-yil-2026-numeroloji-9-yil-dongusu)
+- [Pitagor vs Kaldeli numeroloji: farklar ve karşılaştırmalı yöntemler](/tr/blog/pitagor-vs-kaldeli-numeroloji-farklar)
+- [Numeroloji nedir Tam baslangic rehberi](/tr/blog/numeroloji-nedir-tam-baslangic-rehberi)
+- [Numerolojide yaşam yolu 1: liderlik, bağımsızlık ve enkarnasyon misyonu](/tr/blog/yasam-yolu-1-liderlik-bagimsizlik-numeroloji)
+
+**Karmastro araçları:**
+- [Doğum haritası](/tr/araclar/dogum-haritasi)
+- [Yaşam yolu sayısı](/tr/araclar/yasam-yolu-sayisi)
+- [Uyumluluk](/tr/araclar/uyumluluk)
+
+[Tüm blogu ve araçları keşfet](/tr/blog/) · [Karmastro araçları](/tr/araclar/)
+

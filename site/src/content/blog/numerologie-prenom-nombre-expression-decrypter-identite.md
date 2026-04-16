@@ -375,3 +375,20 @@ Cet article s'appuie sur des sources encyclopediques et scientifiques verifiable
 
 - **Encyclopedie** (fr.wikipedia.org) : [Numerologie](https://fr.wikipedia.org/wiki/Num%C3%A9rologie)
 - **Britannica** (britannica.com) : [Numerologie](https://www.britannica.com/topic/numerology)
+
+<!-- maillage:auto -->
+## Pour aller plus loin
+
+**Articles connexes :**
+- [Année personnelle 2026 : trouve ton chiffre et comprends le cycle de 9 ans qui rythme ta vie](/blog/annee-personnelle-2026-numerologie-cycle-9-ans)
+- [Comment calculer son chemin de vie en numérologie : méthode pythagoricienne pas à pas](/blog/comment-calculer-chemin-de-vie-numerologie)
+- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/12-maisons-astrologiques-guide-complet-secteurs-vie)
+- [Thème natal gratuit : comment interpréter sa carte du ciel complète](/blog/theme-natal-gratuit-interpreter-carte-du-ciel)
+
+**Outils Karmastro:**
+- [Thème natal](/outils/theme-natal)
+- [Chemin de vie](/outils/chemin-de-vie)
+- [Compatibilité](/outils/compatibilite)
+
+[Explore le blog complet et tous les calculateurs](/blog/) · [Outils Karmastro](/outils/)
+

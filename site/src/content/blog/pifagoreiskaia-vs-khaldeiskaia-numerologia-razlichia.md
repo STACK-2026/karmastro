@@ -95,3 +95,20 @@ reviewedBy: "Пифия, сертифицированный пифагорейс
 
 - **Энциклопедия** (ru.wikipedia.org) : [Нумерология](https://ru.wikipedia.org/wiki/%D0%9D%D1%83%D0%BC%D0%B5%D1%80%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F)
 - **Britannica** (britannica.com) : [Нумерология](https://www.britannica.com/topic/numerology)
+
+<!-- maillage:auto -->
+## Читать дальше
+
+**Похожие статьи:**
+- [Число выражения: расшифруй что твоё имя говорит о твоей идентичности](/ru/blog/chislo-vyrazheniia-numerologia-imia-rasshifrovat-lichnost)
+- [Что такое нумерология: полное руководство для начинающих в 2026 году](/ru/blog/chto-takoe-numerologia-polnoe-rukovodstvo-nachinaiuschikh)
+- [Путь жизни 1 в нумерологии: лидерство, независимость и миссия воплощения](/ru/blog/put-zhizni-1-liderstvo-nezavisimost-numerologia)
+- [Как рассчитать число пути жизни: пошаговый метод](/ru/blog/kak-rasschitat-put-zhizni-poshagovyi-metod)
+
+**Инструменты Karmastro:**
+- [Натальная карта](/ru/instrumenty/natalnaya-karta)
+- [Число жизненного пути](/ru/instrumenty/chislo-zhiznennogo-puti)
+- [Совместимость](/ru/instrumenty/sovmestimost)
+
+[Читайте весь блог и все инструменты](/ru/blog/) · [Инструменты Karmastro](/ru/instrumenty/)
+

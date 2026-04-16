@@ -93,3 +93,20 @@ reviewedBy: "Pythia、認定ピタゴラス数秘術師"
 
 - **百科事典** (ja.wikipedia.org) : [数秘術](https://ja.wikipedia.org/wiki/%E6%95%B0%E7%A7%98%E8%A1%93)
 - **Britannica** (britannica.com) : [数秘術](https://www.britannica.com/topic/numerology)
+
+<!-- maillage:auto -->
+## さらに詳しく
+
+**関連記事:**
+- [表現数:あなたの名前があなたのアイデンティティについて明かすこと](/ja/blog/hyougen-suji-suumitsu-namae-aidentiti)
+- [数秘術とは何か 初心者のための完全ガイド](/ja/blog/suumitsu-to-wa-nani-ka-shoshinsha-gaido)
+- [ライフパスナンバーの計算方法:ステップバイステップ完全ガイド](/ja/blog/raifu-pasu-nanbaa-keisan-houhou-sutebai-sutebu)
+- [ライフパス1:数秘術におけるリーダーシップ、独立、化身の使命](/ja/blog/raifu-pasu-1-rida-shippu-dokuritsu-suumitsu)
+
+**Karmastro 診断ツール:**
+- [出生図](/ja/shindan/shusseizu)
+- [ライフパスナンバー](/ja/shindan/raifu-pasu-nanbaa)
+- [相性診断](/ja/shindan/aishou-shindan)
+
+[ブログ全体と全診断ツールを見る](/ja/blog/) · [Karmastro 診断ツール](/ja/shindan/)
+

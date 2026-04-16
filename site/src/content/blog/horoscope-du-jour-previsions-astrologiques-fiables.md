@@ -252,3 +252,20 @@ Cet article s'appuie sur des sources encyclopediques et scientifiques verifiable
 - **Encyclopedie** (fr.wikipedia.org) : [Astrologie](https://fr.wikipedia.org/wiki/Astrologie)
 - **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Systeme solaire et planetes](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Pour aller plus loin
+
+**Articles connexes :**
+- [Horoscope du jour : prévisions astrologiques fiables 2026](/blog/horoscope-jour-previsions-astrologiques-fiables)
+- [Oracle IA vs tarot traditionnel : quelle guidance choisir en 2026 ?](/blog/oracle-ia-vs-tarot-traditionnel-guidance)
+- [Numérologie pythagoricienne vs chaldéenne : différences et méthodes comparées](/blog/numerologie-pythagoricienne-vs-chaldeenne-differences)
+- [Le retour de Saturne : ce grand passage astrologique vers 29 ans qui change tout](/blog/retour-de-saturne-29-ans-grand-passage-adulte)
+
+**Outils Karmastro:**
+- [Thème natal](/outils/theme-natal)
+- [Chemin de vie](/outils/chemin-de-vie)
+- [Compatibilité](/outils/compatibilite)
+
+[Explore le blog complet et tous les calculateurs](/blog/) · [Outils Karmastro](/outils/)
+

@@ -376,3 +376,20 @@ This article draws on verifiable encyclopedic and scientific sources.
 
 - **Encyclopedia** (en.wikipedia.org) : [Numerology](https://en.wikipedia.org/wiki/Numerology)
 - **Britannica** (britannica.com) : [Numerology](https://www.britannica.com/topic/numerology)
+
+<!-- maillage:auto -->
+## For further reading
+
+**Related articles:**
+- [Pythagorean vs Chaldean numerology: differences and compared methods](/en/blog/pythagorean-vs-chaldean-numerology-differences)
+- [Personal year 2026: find your number and understand the 9-year cycle that shapes your life](/en/blog/personal-year-2026-numerology-9-year-cycle)
+- [What is numerology? A complete beginner](/en/blog/what-is-numerology-complete-beginner-guide)
+- [How to calculate your life path number: the Pythagorean method step by step](/en/blog/how-to-calculate-life-path-number-step-by-step)
+
+**Karmastro tools:**
+- [Birth chart](/en/tools/birth-chart)
+- [Life path number](/en/tools/life-path-number)
+- [Compatibility](/en/tools/compatibility)
+
+[Explore the full blog and all calculators](/en/blog/) · [Karmastro tools](/en/tools/)
+

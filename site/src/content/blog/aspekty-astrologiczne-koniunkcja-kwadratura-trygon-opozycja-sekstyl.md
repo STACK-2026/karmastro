@@ -104,3 +104,20 @@ Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych
 - **Encyklopedia** (pl.wikipedia.org) : [Astrologia](https://pl.wikipedia.org/wiki/Astrologia)
 - **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Uklad sloneczny i planety](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Warto przeczytać
+
+**Powiązane artykuły:**
+- [Znak księżycowy: co twój natalny Księżyc mówi o twoim świecie emocjonalnym](/pl/blog/znak-ksiezycowy-ksiezyc-natalny-swiat-emocjonalny)
+- [Powrót Saturna: wielkie astrologiczne przejście w wieku 29 lat które zmienia wszystko](/pl/blog/powrot-saturna-29-lat-wielkie-przejscie-doroslosc)
+- [Pluton w Wodniku 2024-2044: wielka 20-letnia mutacja zbiorowa](/pl/blog/pluton-wodnik-2024-2044-wielka-mutacja-zbiorowa)
+- [12 domów astrologicznych: kompletny przewodnik po 12 sektorach twojego życia](/pl/blog/12-domow-astrologicznych-kompletny-przewodnik-sektory-zycia)
+
+**Narzędzia Karmastro:**
+- [Horoskop natalny](/pl/narzedzia/horoskop-natalny)
+- [Liczba drogi życia](/pl/narzedzia/liczba-drogi-zycia)
+- [Kompatybilność](/pl/narzedzia/kompatybilnosc)
+
+[Zobacz cały blog i wszystkie narzędzia](/pl/blog/) · [Narzędzia Karmastro](/pl/narzedzia/)
+

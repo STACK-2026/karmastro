@@ -216,3 +216,20 @@ Cet article s'appuie sur des sources encyclopediques et scientifiques verifiable
 - **Encyclopedie** (fr.wikipedia.org) : [Astrologie](https://fr.wikipedia.org/wiki/Astrologie)
 - **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Systeme solaire et planetes](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Pour aller plus loin
+
+**Articles connexes :**
+- [Compatibilité amoureuse : quels signes astrologiques s](/blog/compatibilite-amoureuse-signes-astrologiques-attirent)
+- [Signe lunaire : ce que ta Lune natale révèle de ton monde émotionnel](/blog/signe-lunaire-lune-natale-monde-emotionnel)
+- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/12-maisons-astrologiques-guide-complet-secteurs-vie)
+- [Pluton en Verseau 2024-2044 : la grande mutation collective qui change tout pendant 20 ans](/blog/pluton-verseau-2024-2044-grande-mutation-collective)
+
+**Outils Karmastro:**
+- [Thème natal](/outils/theme-natal)
+- [Chemin de vie](/outils/chemin-de-vie)
+- [Compatibilité](/outils/compatibilite)
+
+[Explore le blog complet et tous les calculateurs](/blog/) · [Outils Karmastro](/outils/)
+

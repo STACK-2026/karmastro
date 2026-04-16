@@ -97,3 +97,20 @@ reviewedBy: "أوريون، عالم فلك ومنجم كبير"
 - **موسوعة** (ar.wikipedia.org) : [التنجيم](https://ar.wikipedia.org/wiki/%D8%AA%D9%86%D8%AC%D9%8A%D9%85)
 - **بريتانيكا** (britannica.com) : [التنجيم](https://www.britannica.com/topic/astrology)
 - **ناسا** (science.nasa.gov) : [النظام الشمسي والكواكب](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## المزيد من المحتوى
+
+**مقالات ذات صلة:**
+- [برج الحمل: الشخصية، التوافق والسمات العميقة](/ar/blog/burj-al-hamal-shakhseya-tawafuq-simat)
+- [الطالع: الدليل الكامل لفهم طالعك الفلكي](/ar/blog/al-taaali-dalil-kamel-fahm-al-taaali)
+- [الشاكرات والتنجيم: 7 كواكب، 7 مراكز طاقة](/ar/blog/shakra-tanjeem-sabaat-kawakib-markaz-taqa)
+- [عطارد التراجعي: كيف تفهم وتتوقع وتنجو من هذه الفترات بدون ذعر](/ar/blog/utarid-tarajuei-dalil-fahm-najat)
+
+**أدوات Karmastro:**
+- [خريطة المولد](/ar/adawat/kharitat-mawlid)
+- [رقم مسار الحياة](/ar/adawat/raqm-masar-al-hayat)
+- [توافق الأزواج](/ar/adawat/tawafuq-azwaj)
+
+[استكشف المدونة بالكامل وجميع الأدوات](/ar/blog/) · [أدوات Karmastro](/ar/adawat/)
+

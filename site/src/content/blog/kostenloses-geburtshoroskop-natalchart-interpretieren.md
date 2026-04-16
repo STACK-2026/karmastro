@@ -249,3 +249,20 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 - **Enzyklopaedie** (de.wikipedia.org) : [Astrologie](https://de.wikipedia.org/wiki/Astrologie)
 - **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Sonnensystem und Planeten](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Mehr erfahren
+
+**Ähnliche Artikel:**
+- [Astrologische Aspekte: Konjunktion, Quadrat, Trigon, Opposition, Sextil - der Leitfaden](/de/blog/astrologische-aspekte-konjunktion-quadrat-trigon-opposition-sextil)
+- [Aszendent: der vollständige Leitfaden zum Verständnis deines astrologischen Aszendenten](/de/blog/aszendent-vollstaendiger-leitfaden-verstehen)
+- [Sternzeichen Widder: Persönlichkeit, Kompatibilität und tiefe Merkmale](/de/blog/widder-sternzeichen-persoenlichkeit-kompatibilitaet)
+- [Mondzeichen: was dein Natalmond über deine Gefühlswelt verrät](/de/blog/mondzeichen-natalmond-emotionale-welt)
+
+**Karmastro Werkzeuge:**
+- [Geburtshoroskop](/de/werkzeuge/geburtshoroskop)
+- [Lebenszahl](/de/werkzeuge/lebenszahl)
+- [Partnerhoroskop](/de/werkzeuge/partnerhoroskop)
+
+[Entdecke das ganze Blog und alle Werkzeuge](/de/blog/) · [Karmastro Werkzeuge](/de/werkzeuge/)
+

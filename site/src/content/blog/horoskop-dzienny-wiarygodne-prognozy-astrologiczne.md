@@ -69,3 +69,20 @@ Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych
 - **Encyklopedia** (pl.wikipedia.org) : [Astrologia](https://pl.wikipedia.org/wiki/Astrologia)
 - **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Uklad sloneczny i planety](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Warto przeczytać
+
+**Powiązane artykuły:**
+- [Darmowy horoskop natalny : interpretacja pełnej mapy urodzeniowej](/pl/blog/darmowy-horoskop-natalny-interpretacja-pelnej-mapy)
+- [Czym jest numerologia: kompletny przewodnik dla poczatkujacych 2026](/pl/blog/czym-jest-numerologia-kompletny-przewodnik-dla-poczatkujacych)
+- [Aspekty astrologiczne: koniunkcja, kwadratura, trygon, opozycja, sekstyl - przewodnik](/pl/blog/aspekty-astrologiczne-koniunkcja-kwadratura-trygon-opozycja-sekstyl)
+- [Merkury retrogradny: jak zrozumieć, przewidzieć i przetrwać te okresy bez paniki](/pl/blog/merkury-retrogradny-kompletny-przewodnik-przetrwac)
+
+**Narzędzia Karmastro:**
+- [Horoskop natalny](/pl/narzedzia/horoskop-natalny)
+- [Liczba drogi życia](/pl/narzedzia/liczba-drogi-zycia)
+- [Kompatybilność](/pl/narzedzia/kompatybilnosc)
+
+[Zobacz cały blog i wszystkie narzędzia](/pl/blog/) · [Narzędzia Karmastro](/pl/narzedzia/)
+

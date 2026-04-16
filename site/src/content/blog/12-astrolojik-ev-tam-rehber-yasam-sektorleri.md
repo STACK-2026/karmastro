@@ -122,3 +122,20 @@ Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
 - **Ansiklopedi** (tr.wikipedia.org) : [Astroloji](https://tr.wikipedia.org/wiki/Astroloji)
 - **Britannica** (britannica.com) : [Astroloji](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Gunes sistemi ve gezegenler](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Daha fazlası
+
+**İlgili makaleler:**
+- [Koç burcu: kişilik, uyumluluk ve derin özellikler](/tr/blog/koc-burcu-kisilik-uyumluluk-ozellikler)
+- [Ay burcu: doğum Ay](/tr/blog/ay-burcu-dogum-ayi-duygusal-dunya)
+- [Astrolojik açılar: kavuşum, kare, üçlü, karşıt, altmışlık - rehber](/tr/blog/astrolojik-acilar-kavusum-kare-uclu-karsit-altmislik)
+- [Yükselen burç: astrolojik yükselen burcunu anlamak için tam rehber](/tr/blog/yukselen-burc-tam-rehber-yukselen-anlama)
+
+**Karmastro araçları:**
+- [Doğum haritası](/tr/araclar/dogum-haritasi)
+- [Yaşam yolu sayısı](/tr/araclar/yasam-yolu-sayisi)
+- [Uyumluluk](/tr/araclar/uyumluluk)
+
+[Tüm blogu ve araçları keşfet](/tr/blog/) · [Karmastro araçları](/tr/araclar/)
+

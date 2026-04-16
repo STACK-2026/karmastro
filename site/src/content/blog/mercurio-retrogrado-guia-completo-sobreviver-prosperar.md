@@ -131,3 +131,20 @@ Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
 - **Enciclopedia** (pt.wikipedia.org) : [Astrologia](https://pt.wikipedia.org/wiki/Astrologia)
 - **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Sistema solar e planetas](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Para aprofundar
+
+**Artigos relacionados :**
+- [Mapa astral grátis: como interpretar a tua carta natal completa](/pt/blog/mapa-astral-gratis-interpretar-carta-natal-completo)
+- [Signo lunar: o que a tua Lua natal revela do teu mundo emocional](/pt/blog/signo-lunar-lua-natal-mundo-emocional)
+- [Signo ascendente: o guia completo para entender o teu ascendente astrológico](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente)
+- [Plutão em Aquário 2024-2044: a grande mutação coletiva de 20 anos](/pt/blog/plutao-aquario-2024-2044-grande-mutacao-coletiva)
+
+**Ferramentas Karmastro:**
+- [Mapa natal](/pt/ferramentas/mapa-natal)
+- [Número do caminho de vida](/pt/ferramentas/numero-do-caminho-de-vida)
+- [Compatibilidade](/pt/ferramentas/compatibilidade)
+
+[Explore todo o blog e todas as ferramentas](/pt/blog/) · [Ferramentas Karmastro](/pt/ferramentas/)
+

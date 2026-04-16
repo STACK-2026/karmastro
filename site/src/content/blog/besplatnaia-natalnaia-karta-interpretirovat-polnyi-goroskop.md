@@ -264,3 +264,20 @@ reviewedBy: "Орион, старший астроном и астролог"
 - **Swiss Ephemeris** : [Astrodienst Swiss Ephemeris](https://www.astro.com/swisseph/)
 - **NASA** : [Solar System and Planets](https://science.nasa.gov/solar-system/planets/)
 - **Astro-Databank** : [Fyodor Dostoyevsky](https://www.astro.com/astro-databank/Dostoyevsky,_Fyodor)
+
+<!-- maillage:auto -->
+## Читать дальше
+
+**Похожие статьи:**
+- [Восходящий знак: полное руководство к пониманию твоего астрологического асцендента](/ru/blog/voskhodiaschii-znak-polnoe-rukovodstvo-ponimaniie)
+- [Плутон в Водолее 2024-2044: великая 20-летняя коллективная мутация](/ru/blog/pluton-vodolei-2024-2044-velikaia-kollektivnaia-mutatsiia)
+- [12 астрологических домов: полное руководство по 12 секторам твоей жизни](/ru/blog/12-astrologicheskikh-domov-polnoe-rukovodstvo)
+- [Знак зодиака Овен: личность, совместимость и глубокие черты](/ru/blog/oven-znak-zodiaka-lichnost-sovmestimost)
+
+**Инструменты Karmastro:**
+- [Натальная карта](/ru/instrumenty/natalnaya-karta)
+- [Число жизненного пути](/ru/instrumenty/chislo-zhiznennogo-puti)
+- [Совместимость](/ru/instrumenty/sovmestimost)
+
+[Читайте весь блог и все инструменты](/ru/blog/) · [Инструменты Karmastro](/ru/instrumenty/)
+

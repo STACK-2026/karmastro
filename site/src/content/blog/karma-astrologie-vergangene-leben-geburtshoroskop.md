@@ -191,3 +191,20 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 - **Enzyklopaedie** (de.wikipedia.org) : [Astrologie](https://de.wikipedia.org/wiki/Astrologie)
 - **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Sonnensystem und Planeten](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Mehr erfahren
+
+**Ähnliche Artikel:**
+- [Aszendent: der vollständige Leitfaden zum Verständnis deines astrologischen Aszendenten](/de/blog/aszendent-vollstaendiger-leitfaden-verstehen)
+- [Chakras und Astrologie: die Korrespondenz zwischen den 7 Energiezentren und den Planeten](/de/blog/chakras-astrologie-7-planeten-energiezentren)
+- [Sternzeichen Widder: Persönlichkeit, Kompatibilität und tiefe Merkmale](/de/blog/widder-sternzeichen-persoenlichkeit-kompatibilitaet)
+- [Was ist Numerologie? Vollständiger Leitfaden für Anfänger](/de/blog/was-ist-numerologie-vollstaendiger-anfaenger-leitfaden)
+
+**Karmastro Werkzeuge:**
+- [Geburtshoroskop](/de/werkzeuge/geburtshoroskop)
+- [Lebenszahl](/de/werkzeuge/lebenszahl)
+- [Partnerhoroskop](/de/werkzeuge/partnerhoroskop)
+
+[Entdecke das ganze Blog und alle Werkzeuge](/de/blog/) · [Karmastro Werkzeuge](/de/werkzeuge/)
+

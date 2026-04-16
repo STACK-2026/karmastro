@@ -131,3 +131,20 @@ Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
 
 - **Enciclopedia** (pt.wikipedia.org) : [Numerologia](https://pt.wikipedia.org/wiki/Numerologia)
 - **Britannica** (britannica.com) : [Numerologia](https://www.britannica.com/topic/numerology)
+
+<!-- maillage:auto -->
+## Para aprofundar
+
+**Artigos relacionados :**
+- [Numerologia pitagórica vs caldeia: diferenças e métodos comparados](/pt/blog/numerologia-pitagorica-vs-caldeia-diferencas)
+- [Caminho de vida 1 em numerologia: liderança, independência e missão de encarnação](/pt/blog/caminho-de-vida-1-lideranca-independencia-numerologia)
+- [Ano pessoal 2026: encontra o teu número e compreende o ciclo de 9 anos](/pt/blog/ano-pessoal-2026-numerologia-ciclo-9-anos)
+- [Como calcular o teu caminho de vida: o método pitagórico passo a passo](/pt/blog/como-calcular-caminho-de-vida-passo-a-passo)
+
+**Ferramentas Karmastro:**
+- [Mapa natal](/pt/ferramentas/mapa-natal)
+- [Número do caminho de vida](/pt/ferramentas/numero-do-caminho-de-vida)
+- [Compatibilidade](/pt/ferramentas/compatibilidade)
+
+[Explore todo o blog e todas as ferramentas](/pt/blog/) · [Ferramentas Karmastro](/pt/ferramentas/)
+

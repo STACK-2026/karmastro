@@ -271,3 +271,20 @@ This article draws on verifiable encyclopedic and scientific sources.
 - **Encyclopedia** (en.wikipedia.org) : [Astrology](https://en.wikipedia.org/wiki/Astrology)
 - **Britannica** (britannica.com) : [Astrology](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Solar system and planets](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## For further reading
+
+**Related articles:**
+- [Mercury retrograde: how to understand, anticipate, and survive these periods without panic](/en/blog/mercury-retrograde-complete-guide-survive-thrive)
+- [What is numerology? A complete beginner](/en/blog/what-is-numerology-complete-beginner-guide)
+- [Pythagorean vs Chaldean numerology: differences and compared methods](/en/blog/pythagorean-vs-chaldean-numerology-differences)
+- [Karma and astrology: reading your past lives through your birth chart](/en/blog/karma-astrology-past-lives-birth-chart)
+
+**Karmastro tools:**
+- [Birth chart](/en/tools/birth-chart)
+- [Life path number](/en/tools/life-path-number)
+- [Compatibility](/en/tools/compatibility)
+
+[Explore the full blog and all calculators](/en/blog/) · [Karmastro tools](/en/tools/)
+

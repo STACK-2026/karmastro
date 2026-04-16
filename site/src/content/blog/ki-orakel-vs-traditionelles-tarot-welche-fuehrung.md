@@ -213,3 +213,20 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 - **Enzyklopaedie** (de.wikipedia.org) : [Astrologie](https://de.wikipedia.org/wiki/Astrologie)
 - **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Sonnensystem und Planeten](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Mehr erfahren
+
+**Ähnliche Artikel:**
+- [Kostenloses Geburtshoroskop: wie du dein vollständiges Natalchart interpretierst](/de/blog/kostenloses-geburtshoroskop-natalchart-interpretieren)
+- [Pluto im Wassermann 2024-2044: die große kollektive Mutation von 20 Jahren](/de/blog/pluto-wassermann-2024-2044-grosse-kollektive-mutation)
+- [Lebenszahl 1 in Numerologie: Führung, Unabhängigkeit und Inkarnationsmission](/de/blog/lebenszahl-1-fuehrung-unabhaengigkeit-numerologie)
+- [Mondzeichen: was dein Natalmond über deine Gefühlswelt verrät](/de/blog/mondzeichen-natalmond-emotionale-welt)
+
+**Karmastro Werkzeuge:**
+- [Geburtshoroskop](/de/werkzeuge/geburtshoroskop)
+- [Lebenszahl](/de/werkzeuge/lebenszahl)
+- [Partnerhoroskop](/de/werkzeuge/partnerhoroskop)
+
+[Entdecke das ganze Blog und alle Werkzeuge](/de/blog/) · [Karmastro Werkzeuge](/de/werkzeuge/)
+

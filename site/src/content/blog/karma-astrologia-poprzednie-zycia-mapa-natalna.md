@@ -90,3 +90,20 @@ Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych
 - **Encyklopedia** (pl.wikipedia.org) : [Astrologia](https://pl.wikipedia.org/wiki/Astrologia)
 - **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Uklad sloneczny i planety](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Warto przeczytać
+
+**Powiązane artykuły:**
+- [Rok osobisty 2026: znajdź swoją liczbę i zrozum 9-letni cykl](/pl/blog/rok-osobisty-2026-numerologia-cykl-9-lat)
+- [Kompatybilność astrologiczna: jakie znaki naprawdę się przyciągają](/pl/blog/kompatybilnosc-astrologiczna-jakie-znaki-sie-przyciagaja)
+- [Czym jest numerologia: kompletny przewodnik dla poczatkujacych 2026](/pl/blog/czym-jest-numerologia-kompletny-przewodnik-dla-poczatkujacych)
+- [Pluton w Wodniku 2024-2044: wielka 20-letnia mutacja zbiorowa](/pl/blog/pluton-wodnik-2024-2044-wielka-mutacja-zbiorowa)
+
+**Narzędzia Karmastro:**
+- [Horoskop natalny](/pl/narzedzia/horoskop-natalny)
+- [Liczba drogi życia](/pl/narzedzia/liczba-drogi-zycia)
+- [Kompatybilność](/pl/narzedzia/kompatybilnosc)
+
+[Zobacz cały blog i wszystkie narzędzia](/pl/blog/) · [Narzędzia Karmastro](/pl/narzedzia/)
+

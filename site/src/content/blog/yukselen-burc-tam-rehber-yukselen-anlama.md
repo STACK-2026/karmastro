@@ -145,3 +145,20 @@ Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
 - **Ansiklopedi** (tr.wikipedia.org) : [Astroloji](https://tr.wikipedia.org/wiki/Astroloji)
 - **Britannica** (britannica.com) : [Astroloji](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Gunes sistemi ve gezegenler](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Daha fazlası
+
+**İlgili makaleler:**
+- [Plüton Kova](/tr/blog/pluton-kova-2024-2044-buyuk-kolektif-donusum)
+- [Koç burcu: kişilik, uyumluluk ve derin özellikler](/tr/blog/koc-burcu-kisilik-uyumluluk-ozellikler)
+- [12 astrolojik ev: hayatının 12 sektörünün tam rehberi](/tr/blog/12-astrolojik-ev-tam-rehber-yasam-sektorleri)
+- [Ay burcu: doğum Ay](/tr/blog/ay-burcu-dogum-ayi-duygusal-dunya)
+
+**Karmastro araçları:**
+- [Doğum haritası](/tr/araclar/dogum-haritasi)
+- [Yaşam yolu sayısı](/tr/araclar/yasam-yolu-sayisi)
+- [Uyumluluk](/tr/araclar/uyumluluk)
+
+[Tüm blogu ve araçları keşfet](/tr/blog/) · [Karmastro araçları](/tr/araclar/)
+

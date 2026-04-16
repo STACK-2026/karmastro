@@ -169,3 +169,20 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 
 - **Enciclopedia** (it.wikipedia.org) : [Numerologia](https://it.wikipedia.org/wiki/Numerologia)
 - **Britannica** (britannica.com) : [Numerologia](https://www.britannica.com/topic/numerology)
+
+<!-- maillage:auto -->
+## Per approfondire
+
+**Articoli correlati :**
+- [Cos](/it/blog/cos-e-numerologia-guida-completa-principianti)
+- [Anno personale 2026: trova il tuo numero e comprendi il ciclo di 9 anni](/it/blog/anno-personale-2026-numerologia-ciclo-9-anni)
+- [Come calcolare il tuo cammino di vita: il metodo pitagorico passo passo](/it/blog/come-calcolare-cammino-di-vita-passo-passo)
+- [Numerologia pitagorica vs caldea: differenze e metodi a confronto](/it/blog/numerologia-pitagorica-vs-caldea-differenze)
+
+**Strumenti Karmastro:**
+- [Tema natale](/it/strumenti/tema-natale)
+- [Numero del cammino di vita](/it/strumenti/numero-del-cammino-di-vita)
+- [Compatibilità](/it/strumenti/compatibilita)
+
+[Esplora tutto il blog e gli strumenti](/it/blog/) · [Strumenti Karmastro](/it/strumenti/)
+

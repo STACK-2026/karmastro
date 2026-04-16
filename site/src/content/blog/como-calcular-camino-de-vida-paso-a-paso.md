@@ -225,3 +225,20 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 
 - **Enciclopedia** (es.wikipedia.org) : [Numerologia](https://es.wikipedia.org/wiki/Numerolog%C3%ADa)
 - **Britannica** (britannica.com) : [Numerologia](https://www.britannica.com/topic/numerology)
+
+<!-- maillage:auto -->
+## Para profundizar
+
+**Artículos relacionados :**
+- [Número de expresión: descifra lo que tu nombre revela de tu identidad](/es/blog/numero-expresion-numerologia-nombre-descifrar-identidad)
+- [¿Qué es la numerología? Guía completa para principiantes](/es/blog/que-es-numerologia-guia-completa-principiantes)
+- [Camino de vida 1 en numerología: liderazgo, independencia y misión de encarnación](/es/blog/camino-de-vida-1-liderazgo-independencia-numerologia)
+- [Numerología pitagórica vs caldea: diferencias y métodos comparados](/es/blog/numerologia-pitagorica-vs-caldea-diferencias)
+
+**Herramientas Karmastro:**
+- [Carta natal](/es/herramientas/carta-natal)
+- [Camino de vida](/es/herramientas/camino-de-vida)
+- [Compatibilidad](/es/herramientas/compatibilidad)
+
+[Explora el blog completo y todas las herramientas](/es/blog/) · [Herramientas Karmastro](/es/herramientas/)
+

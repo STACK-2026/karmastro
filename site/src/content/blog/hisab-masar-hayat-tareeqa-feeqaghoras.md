@@ -370,3 +370,20 @@ reviewedBy: "إيزيس، مستشارة علم الأعداد"
 - **JSTOR** (jstor.org): Burkert, Walter. "Lore and Science in Ancient Pythagoreanism", Harvard University Press, 1972.
 - **الموسوعة** (ar.wikipedia.org): [علم الأعداد](https://ar.wikipedia.org/wiki/%D8%B9%D9%84%D9%85_%D8%A7%D9%84%D8%A3%D8%B9%D8%AF%D8%A7%D8%AF)
 - **المعاني** (al-maany.com): [الكندي ورسائل الأعداد](https://www.almaany.com/ar/dict/ar-ar/%D8%A7%D9%84%D9%83%D9%86%D8%AF%D9%8A/)
+
+<!-- maillage:auto -->
+## المزيد من المحتوى
+
+**مقالات ذات صلة:**
+- [ما هو علم الأعداد: التعريف الكامل للمبتدئ](/ar/blog/ilm-al-aadad-taareef-kamel-lil-mubtadi)
+- [رقم التعبير: كيف يكشف اسمك كامل شخصيتك](/ar/blog/raqm-taabir-ismak-kamel-ilm-aadad)
+- [فيثاغورس vs كلدانية: مقارنة شاملة بين مدرستي علم الأعداد](/ar/blog/feeqaghoras-vs-kaldaneya-ilm-aadad-muqarana)
+- [مسار الحياة 1: القائد المبادر، كيفية الحساب والمعنى الكامل](/ar/blog/masar-hayat-1-qaid-mubadir-ilm-aadad)
+
+**أدوات Karmastro:**
+- [خريطة المولد](/ar/adawat/kharitat-mawlid)
+- [رقم مسار الحياة](/ar/adawat/raqm-masar-al-hayat)
+- [توافق الأزواج](/ar/adawat/tawafuq-azwaj)
+
+[استكشف المدونة بالكامل وجميع الأدوات](/ar/blog/) · [أدوات Karmastro](/ar/adawat/)
+

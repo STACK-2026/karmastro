@@ -117,3 +117,20 @@ reviewedBy: "Орион, старший астроном и астролог"
 - **Энциклопедия** (ru.wikipedia.org) : [Астрология](https://ru.wikipedia.org/wiki/%D0%90%D1%81%D1%82%D1%80%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F)
 - **Britannica** (britannica.com) : [Астрология](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Солнечная система и планеты](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Читать дальше
+
+**Похожие статьи:**
+- [Восходящий знак: полное руководство к пониманию твоего астрологического асцендента](/ru/blog/voskhodiaschii-znak-polnoe-rukovodstvo-ponimaniie)
+- [Возвращение Сатурна: великий астрологический переход в 29 лет, меняющий всё](/ru/blog/vozvraschenie-saturna-29-let-bolshoi-perekhod-vzroslost)
+- [Меркурий ретроградный: как понять, предвидеть и пережить эти периоды без паники](/ru/blog/merkurii-retrograd-polnyi-gid-perezhit)
+- [Знак зодиака Овен: личность, совместимость и глубокие черты](/ru/blog/oven-znak-zodiaka-lichnost-sovmestimost)
+
+**Инструменты Karmastro:**
+- [Натальная карта](/ru/instrumenty/natalnaya-karta)
+- [Число жизненного пути](/ru/instrumenty/chislo-zhiznennogo-puti)
+- [Совместимость](/ru/instrumenty/sovmestimost)
+
+[Читайте весь блог и все инструменты](/ru/blog/) · [Инструменты Karmastro](/ru/instrumenty/)
+

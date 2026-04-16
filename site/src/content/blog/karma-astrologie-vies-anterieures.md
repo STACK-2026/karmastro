@@ -242,3 +242,20 @@ Cet article s'appuie sur des sources encyclopediques et scientifiques verifiable
 - **Encyclopedie** (fr.wikipedia.org) : [Astrologie](https://fr.wikipedia.org/wiki/Astrologie)
 - **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Systeme solaire et planetes](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Pour aller plus loin
+
+**Articles connexes :**
+- [Signe lunaire : ce que ta Lune natale révèle de ton monde émotionnel](/blog/signe-lunaire-lune-natale-monde-emotionnel)
+- [Horoscope du jour : prévisions astrologiques fiables 2026](/blog/horoscope-jour-previsions-astrologiques-fiables)
+- [Oracle IA vs tarot traditionnel : quelle guidance choisir en 2026 ?](/blog/oracle-ia-vs-tarot-traditionnel-guidance)
+- [Chakras et astrologie : la correspondance entre les 7 centres énergétiques et les planètes](/blog/chakras-astrologie-correspondance-planetes-centres-energetiques)
+
+**Outils Karmastro:**
+- [Thème natal](/outils/theme-natal)
+- [Chemin de vie](/outils/chemin-de-vie)
+- [Compatibilité](/outils/compatibilite)
+
+[Explore le blog complet et tous les calculateurs](/blog/) · [Outils Karmastro](/outils/)
+

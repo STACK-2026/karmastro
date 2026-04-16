@@ -121,3 +121,20 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 - **Enciclopedia** (it.wikipedia.org) : [Astrologia](https://it.wikipedia.org/wiki/Astrologia)
 - **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Sistema solare e pianeti](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Per approfondire
+
+**Articoli correlati :**
+- [Le 12 case astrologiche: guida completa ai 12 settori della tua vita](/it/blog/12-case-astrologiche-guida-completa-settori-vita)
+- [Plutone in Acquario 2024-2044: la grande mutazione collettiva di 20 anni](/it/blog/plutone-acquario-2024-2044-grande-mutazione-collettiva)
+- [Ascendente: la guida completa per comprendere il tuo ascendente astrologico](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico)
+- [Segno zodiacale Ariete: personalità, compatibilità e tratti profondi](/it/blog/ariete-segno-zodiacale-personalita-compatibilita)
+
+**Strumenti Karmastro:**
+- [Tema natale](/it/strumenti/tema-natale)
+- [Numero del cammino di vita](/it/strumenti/numero-del-cammino-di-vita)
+- [Compatibilità](/it/strumenti/compatibilita)
+
+[Esplora tutto il blog e gli strumenti](/it/blog/) · [Strumenti Karmastro](/it/strumenti/)
+

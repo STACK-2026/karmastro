@@ -82,3 +82,20 @@ reviewedBy: "أوريون، عالم فلك ومنجم كبير"
 - **موسوعة** (ar.wikipedia.org) : [التنجيم](https://ar.wikipedia.org/wiki/%D8%AA%D9%86%D8%AC%D9%8A%D9%85)
 - **بريتانيكا** (britannica.com) : [التنجيم](https://www.britannica.com/topic/astrology)
 - **ناسا** (science.nasa.gov) : [النظام الشمسي والكواكب](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## المزيد من المحتوى
+
+**مقالات ذات صلة:**
+- [بلوتو في الدلو 2023-2044: ثورة فلكية لمدة 20 سنة](/ar/blog/bluto-fee-ddalu-thawra-falakeya-2023-2044)
+- [الطالع: الدليل الكامل لفهم طالعك الفلكي](/ar/blog/al-taaali-dalil-kamel-fahm-al-taaali)
+- [توافق الأبراج: الدليل الكامل لعلاقات ناجحة](/ar/blog/tawafuq-burooj-dalil-kamel-ilaqat)
+- [برج الحمل: الشخصية، التوافق والسمات العميقة](/ar/blog/burj-al-hamal-shakhseya-tawafuq-simat)
+
+**أدوات Karmastro:**
+- [خريطة المولد](/ar/adawat/kharitat-mawlid)
+- [رقم مسار الحياة](/ar/adawat/raqm-masar-al-hayat)
+- [توافق الأزواج](/ar/adawat/tawafuq-azwaj)
+
+[استكشف المدونة بالكامل وجميع الأدوات](/ar/blog/) · [أدوات Karmastro](/ar/adawat/)
+

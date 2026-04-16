@@ -196,3 +196,20 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 - **Enciclopedia** (it.wikipedia.org) : [Astrologia](https://it.wikipedia.org/wiki/Astrologia)
 - **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Sistema solare e pianeti](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Per approfondire
+
+**Articoli correlati :**
+- [Segno zodiacale Ariete: personalità, compatibilità e tratti profondi](/it/blog/ariete-segno-zodiacale-personalita-compatibilita)
+- [Oracolo IA vs tarocchi tradizionali: quale guida scegliere nel 2026?](/it/blog/oracolo-ia-vs-tarocchi-tradizionali-quale-guida)
+- [Cammino di vita 1 in numerologia: leadership, indipendenza e missione di incarnazione](/it/blog/cammino-di-vita-1-leadership-indipendenza-numerologia)
+- [Numerologia pitagorica vs caldea: differenze e metodi a confronto](/it/blog/numerologia-pitagorica-vs-caldea-differenze)
+
+**Strumenti Karmastro:**
+- [Tema natale](/it/strumenti/tema-natale)
+- [Numero del cammino di vita](/it/strumenti/numero-del-cammino-di-vita)
+- [Compatibilità](/it/strumenti/compatibilita)
+
+[Esplora tutto il blog e gli strumenti](/it/blog/) · [Strumenti Karmastro](/it/strumenti/)
+

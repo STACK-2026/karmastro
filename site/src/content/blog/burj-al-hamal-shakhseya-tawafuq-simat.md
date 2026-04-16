@@ -298,3 +298,20 @@ reviewedBy: "إيزيس، مستشارة فلكية"
 - **المعاني** (al-maany.com): [تعريف الحمل في علم الفلك](https://www.almaany.com/ar/dict/ar-ar/%D8%A7%D9%84%D8%AD%D9%85%D9%84/)
 - **الموسوعة الفلسفية ستانفورد** (plato.stanford.edu): [Astrology and philosophy](https://plato.stanford.edu/entries/astrology/)
 - **JSTOR** (jstor.org): Culpeper, Nicholas. "Astrological Judgement of Diseases", 1655, أرشيف تاريخي عن الفلك الطبي.
+
+<!-- maillage:auto -->
+## المزيد من المحتوى
+
+**مقالات ذات صلة:**
+- [الشاكرات والتنجيم: 7 كواكب، 7 مراكز طاقة](/ar/blog/shakra-tanjeem-sabaat-kawakib-markaz-taqa)
+- [بلوتو في الدلو 2023-2044: ثورة فلكية لمدة 20 سنة](/ar/blog/bluto-fee-ddalu-thawra-falakeya-2023-2044)
+- [عطارد التراجعي: كيف تفهم وتتوقع وتنجو من هذه الفترات بدون ذعر](/ar/blog/utarid-tarajuei-dalil-fahm-najat)
+- [الاتصالات الكوكبية في التنجيم: الدليل الكامل للزوايا](/ar/blog/ittisalat-kawkabeya-tanjeem-dalil-kamel)
+
+**أدوات Karmastro:**
+- [خريطة المولد](/ar/adawat/kharitat-mawlid)
+- [رقم مسار الحياة](/ar/adawat/raqm-masar-al-hayat)
+- [توافق الأزواج](/ar/adawat/tawafuq-azwaj)
+
+[استكشف المدونة بالكامل وجميع الأدوات](/ar/blog/) · [أدوات Karmastro](/ar/adawat/)
+

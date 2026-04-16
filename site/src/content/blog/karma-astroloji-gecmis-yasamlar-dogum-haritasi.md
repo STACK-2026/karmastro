@@ -93,3 +93,20 @@ Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
 - **Ansiklopedi** (tr.wikipedia.org) : [Astroloji](https://tr.wikipedia.org/wiki/Astroloji)
 - **Britannica** (britannica.com) : [Astroloji](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Gunes sistemi ve gezegenler](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Daha fazlası
+
+**İlgili makaleler:**
+- [Çakralar ve astroloji: 7 enerji merkezi ve gezegenler arasındaki karşılık](/tr/blog/cakralar-astroloji-7-gezegen-enerji-merkezleri)
+- [Numeroloji nedir Tam baslangic rehberi](/tr/blog/numeroloji-nedir-tam-baslangic-rehberi)
+- [Astrolojik uyumluluk: hangi burçlar gerçekten birbirini çeker](/tr/blog/astrolojik-uyumluluk-hangi-burclar-birbirini-ceker)
+- [Kişisel yıl 2026: numaranı bul ve 9 yıllık döngüyü anla](/tr/blog/kisisel-yil-2026-numeroloji-9-yil-dongusu)
+
+**Karmastro araçları:**
+- [Doğum haritası](/tr/araclar/dogum-haritasi)
+- [Yaşam yolu sayısı](/tr/araclar/yasam-yolu-sayisi)
+- [Uyumluluk](/tr/araclar/uyumluluk)
+
+[Tüm blogu ve araçları keşfet](/tr/blog/) · [Karmastro araçları](/tr/araclar/)
+

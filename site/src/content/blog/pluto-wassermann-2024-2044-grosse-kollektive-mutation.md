@@ -122,3 +122,20 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 - **Enzyklopaedie** (de.wikipedia.org) : [Astrologie](https://de.wikipedia.org/wiki/Astrologie)
 - **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Sonnensystem und Planeten](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Mehr erfahren
+
+**Ähnliche Artikel:**
+- [Kostenloses Geburtshoroskop: wie du dein vollständiges Natalchart interpretierst](/de/blog/kostenloses-geburtshoroskop-natalchart-interpretieren)
+- [Mondzeichen: was dein Natalmond über deine Gefühlswelt verrät](/de/blog/mondzeichen-natalmond-emotionale-welt)
+- [Merkur rückläufig: wie du diese Phasen verstehst, antizipierst und ohne Panik überlebst](/de/blog/merkur-rueckläufig-leitfaden-verstehen-ueberleben)
+- [Die Saturn-Rückkehr: der große astrologische Übergang mit 29 der alles verändert](/de/blog/saturn-rueckkehr-29-jahre-grosser-uebergang-erwachsensein)
+
+**Karmastro Werkzeuge:**
+- [Geburtshoroskop](/de/werkzeuge/geburtshoroskop)
+- [Lebenszahl](/de/werkzeuge/lebenszahl)
+- [Partnerhoroskop](/de/werkzeuge/partnerhoroskop)
+
+[Entdecke das ganze Blog und alle Werkzeuge](/de/blog/) · [Karmastro Werkzeuge](/de/werkzeuge/)
+

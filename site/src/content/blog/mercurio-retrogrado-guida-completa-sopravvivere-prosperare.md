@@ -123,3 +123,20 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 - **Enciclopedia** (it.wikipedia.org) : [Astrologia](https://it.wikipedia.org/wiki/Astrologia)
 - **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Sistema solare e pianeti](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Per approfondire
+
+**Articoli correlati :**
+- [Il ritorno di Saturno: il grande passaggio astrologico a 29 anni che cambia tutto](/it/blog/ritorno-di-saturno-29-anni-grande-passaggio-adulto)
+- [Tema natale gratuito: come interpretare la tua carta astrale completa](/it/blog/tema-natale-gratuito-interpretare-carta-astrale-completa)
+- [Le 12 case astrologiche: guida completa ai 12 settori della tua vita](/it/blog/12-case-astrologiche-guida-completa-settori-vita)
+- [Aspetti astrologici: congiunzione, quadratura, trigono, opposizione, sestile - la guida](/it/blog/aspetti-astrologici-congiunzione-quadratura-trigono-opposizione-sestile)
+
+**Strumenti Karmastro:**
+- [Tema natale](/it/strumenti/tema-natale)
+- [Numero del cammino di vita](/it/strumenti/numero-del-cammino-di-vita)
+- [Compatibilità](/it/strumenti/compatibilita)
+
+[Esplora tutto il blog e gli strumenti](/it/blog/) · [Strumenti Karmastro](/it/strumenti/)
+

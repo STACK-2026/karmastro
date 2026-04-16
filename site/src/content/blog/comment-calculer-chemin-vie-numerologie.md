@@ -245,3 +245,20 @@ Sur le plan scientifique, la numérologie n'est pas une discipline validée par 
 - [Ton horoscope Bélier](/horoscope/belier), [Taureau](/horoscope/taureau), [Gémeaux](/horoscope/gemeaux), [Cancer](/horoscope/cancer), [Lion](/horoscope/lion), [Vierge](/horoscope/vierge), [Balance](/horoscope/balance), [Scorpion](/horoscope/scorpion), [Sagittaire](/horoscope/sagittaire), [Capricorne](/horoscope/capricorne), [Verseau](/horoscope/verseau), [Poissons](/horoscope/poissons)
 - [Calculateur ascendant](/outils/ascendant), [calculateur Lune natale](/outils/lune-natale), [chemin de vie](/outils/chemin-de-vie), [thème natal](/outils/theme-natal)
 - [Compatibilité amoureuse](/compatibilite), [Newsletter Karmastro](/newsletter), [Hall des Constellations](/hall-des-constellations)
+
+<!-- maillage:auto -->
+## Pour aller plus loin
+
+**Articles connexes :**
+- [Chemin de vie 1 en numérologie : leadership, indépendance et mission d](/blog/chemin-de-vie-1-leadership-independance)
+- [Comment calculer son chemin de vie en numérologie : méthode pythagoricienne pas à pas](/blog/comment-calculer-chemin-de-vie-numerologie)
+- [Qu](/blog/qu-numerologie-guide-complet-debuter)
+- [Numérologie pythagoricienne vs chaldéenne : différences et méthodes comparées](/blog/numerologie-pythagoricienne-vs-chaldeenne-differences)
+
+**Outils Karmastro:**
+- [Thème natal](/outils/theme-natal)
+- [Chemin de vie](/outils/chemin-de-vie)
+- [Compatibilité](/outils/compatibilite)
+
+[Explore le blog complet et tous les calculateurs](/blog/) · [Outils Karmastro](/outils/)
+

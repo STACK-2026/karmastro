@@ -215,3 +215,20 @@ This article draws on verifiable encyclopedic and scientific sources.
 - **Encyclopedia** (en.wikipedia.org) : [Astrology](https://en.wikipedia.org/wiki/Astrology)
 - **Britannica** (britannica.com) : [Astrology](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Solar system and planets](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## For further reading
+
+**Related articles:**
+- [Astrological aspects: conjunction, square, trine, opposition, sextile, the guide to read them](/en/blog/astrological-aspects-conjunction-square-trine-opposition-sextile)
+- [Pluto in Aquarius 2024-2044: the 20-year collective mutation that changes everything](/en/blog/pluto-in-aquarius-2024-2044-great-collective-mutation)
+- [Mercury retrograde: how to understand, anticipate, and survive these periods without panic](/en/blog/mercury-retrograde-complete-guide-survive-thrive)
+- [The Saturn return: the great astrological passage at 29 that changes everything](/en/blog/saturn-return-29-major-passage-into-adulthood)
+
+**Karmastro tools:**
+- [Birth chart](/en/tools/birth-chart)
+- [Life path number](/en/tools/life-path-number)
+- [Compatibility](/en/tools/compatibility)
+
+[Explore the full blog and all calculators](/en/blog/) · [Karmastro tools](/en/tools/)
+

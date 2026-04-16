@@ -85,3 +85,20 @@ Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych
 - **Encyklopedia** (pl.wikipedia.org) : [Astrologia](https://pl.wikipedia.org/wiki/Astrologia)
 - **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Uklad sloneczny i planety](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Warto przeczytać
+
+**Powiązane artykuły:**
+- [Darmowy horoskop natalny : interpretacja pełnej mapy urodzeniowej](/pl/blog/darmowy-horoskop-natalny-interpretacja-pelnej-mapy)
+- [Horoskop dzienny: jak uzyskać naprawdę wiarygodne prognozy astrologiczne](/pl/blog/horoskop-dzienny-wiarygodne-prognozy-astrologiczne)
+- [Liczba ekspresji: odszyfruj co twoje imię mówi o twojej tożsamości](/pl/blog/liczba-ekspresji-numerologia-imie-odszyfrowac-tozsamosc)
+- [Kompatybilność astrologiczna: jakie znaki naprawdę się przyciągają](/pl/blog/kompatybilnosc-astrologiczna-jakie-znaki-sie-przyciagaja)
+
+**Narzędzia Karmastro:**
+- [Horoskop natalny](/pl/narzedzia/horoskop-natalny)
+- [Liczba drogi życia](/pl/narzedzia/liczba-drogi-zycia)
+- [Kompatybilność](/pl/narzedzia/kompatybilnosc)
+
+[Zobacz cały blog i wszystkie narzędzia](/pl/blog/) · [Narzędzia Karmastro](/pl/narzedzia/)
+

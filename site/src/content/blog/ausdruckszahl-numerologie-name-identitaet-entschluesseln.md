@@ -79,3 +79,20 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 
 - **Enzyklopaedie** (de.wikipedia.org) : [Numerologie](https://de.wikipedia.org/wiki/Numerologie)
 - **Britannica** (britannica.com) : [Numerologie](https://www.britannica.com/topic/numerology)
+
+<!-- maillage:auto -->
+## Mehr erfahren
+
+**Ähnliche Artikel:**
+- [Was ist Numerologie? Vollständiger Leitfaden für Anfänger](/de/blog/was-ist-numerologie-vollstaendiger-anfaenger-leitfaden)
+- [Pythagoreische vs chaldäische Numerologie: Unterschiede und verglichene Methoden](/de/blog/pythagoreische-vs-chaldaeische-numerologie-unterschiede)
+- [Lebenszahl 1 in Numerologie: Führung, Unabhängigkeit und Inkarnationsmission](/de/blog/lebenszahl-1-fuehrung-unabhaengigkeit-numerologie)
+- [Persönliches Jahr 2026: finde deine Zahl und verstehe den 9-Jahre-Zyklus](/de/blog/persoenliches-jahr-2026-numerologie-9-jahre-zyklus)
+
+**Karmastro Werkzeuge:**
+- [Geburtshoroskop](/de/werkzeuge/geburtshoroskop)
+- [Lebenszahl](/de/werkzeuge/lebenszahl)
+- [Partnerhoroskop](/de/werkzeuge/partnerhoroskop)
+
+[Entdecke das ganze Blog und alle Werkzeuge](/de/blog/) · [Karmastro Werkzeuge](/de/werkzeuge/)
+

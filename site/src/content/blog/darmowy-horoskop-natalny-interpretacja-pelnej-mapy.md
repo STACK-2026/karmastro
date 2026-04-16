@@ -265,3 +265,20 @@ Po zakończeniu ćwiczenia otrzymasz podstawowy szkielet interpretacji, który m
 - **Swiss Ephemeris** : [Astrodienst Swiss Ephemeris](https://www.astro.com/swisseph/)
 - **NASA** : [Solar System and Planets](https://science.nasa.gov/solar-system/planets/)
 - **Astro-Databank** : [Frederic Chopin](https://www.astro.com/astro-databank/Chopin,_Frederic)
+
+<!-- maillage:auto -->
+## Warto przeczytać
+
+**Powiązane artykuły:**
+- [Powrót Saturna: wielkie astrologiczne przejście w wieku 29 lat które zmienia wszystko](/pl/blog/powrot-saturna-29-lat-wielkie-przejscie-doroslosc)
+- [12 domów astrologicznych: kompletny przewodnik po 12 sektorach twojego życia](/pl/blog/12-domow-astrologicznych-kompletny-przewodnik-sektory-zycia)
+- [Aspekty astrologiczne: koniunkcja, kwadratura, trygon, opozycja, sekstyl - przewodnik](/pl/blog/aspekty-astrologiczne-koniunkcja-kwadratura-trygon-opozycja-sekstyl)
+- [Znak księżycowy: co twój natalny Księżyc mówi o twoim świecie emocjonalnym](/pl/blog/znak-ksiezycowy-ksiezyc-natalny-swiat-emocjonalny)
+
+**Narzędzia Karmastro:**
+- [Horoskop natalny](/pl/narzedzia/horoskop-natalny)
+- [Liczba drogi życia](/pl/narzedzia/liczba-drogi-zycia)
+- [Kompatybilność](/pl/narzedzia/kompatybilnosc)
+
+[Zobacz cały blog i wszystkie narzędzia](/pl/blog/) · [Narzędzia Karmastro](/pl/narzedzia/)
+

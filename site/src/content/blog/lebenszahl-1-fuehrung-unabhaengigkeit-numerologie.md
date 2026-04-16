@@ -194,3 +194,20 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 
 - **Enzyklopaedie** (de.wikipedia.org) : [Numerologie](https://de.wikipedia.org/wiki/Numerologie)
 - **Britannica** (britannica.com) : [Numerologie](https://www.britannica.com/topic/numerology)
+
+<!-- maillage:auto -->
+## Mehr erfahren
+
+**Ähnliche Artikel:**
+- [Was ist Numerologie? Vollständiger Leitfaden für Anfänger](/de/blog/was-ist-numerologie-vollstaendiger-anfaenger-leitfaden)
+- [Wie berechnet man die Lebenszahl: die pythagoreische Methode Schritt für Schritt](/de/blog/wie-berechnet-man-lebenszahl-schritt-fuer-schritt)
+- [Ausdruckszahl: entschlüssele was dein Name über deine Identität verrät](/de/blog/ausdruckszahl-numerologie-name-identitaet-entschluesseln)
+- [Persönliches Jahr 2026: finde deine Zahl und verstehe den 9-Jahre-Zyklus](/de/blog/persoenliches-jahr-2026-numerologie-9-jahre-zyklus)
+
+**Karmastro Werkzeuge:**
+- [Geburtshoroskop](/de/werkzeuge/geburtshoroskop)
+- [Lebenszahl](/de/werkzeuge/lebenszahl)
+- [Partnerhoroskop](/de/werkzeuge/partnerhoroskop)
+
+[Entdecke das ganze Blog und alle Werkzeuge](/de/blog/) · [Karmastro Werkzeuge](/de/werkzeuge/)
+

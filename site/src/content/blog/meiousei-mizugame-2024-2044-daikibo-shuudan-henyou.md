@@ -117,3 +117,20 @@ reviewedBy: "Orion、シニア天文学者兼占星術師"
 - **百科事典** (ja.wikipedia.org) : [占星術](https://ja.wikipedia.org/wiki/%E5%8D%A0%E6%98%9F%E8%A1%93)
 - **Britannica** (britannica.com) : [占星術](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [太陽系と惑星](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## さらに詳しく
+
+**関連記事:**
+- [占星術アスペクト:合、スクエア、トライン、オポジション、セクスタイル - ガイド](/ja/blog/asutoroji-asupekuto-goukei-sukuea-torin-opposshon-sekisutairu)
+- [土星回帰:29歳ですべてを変える大きな占星術的移行](/ja/blog/dosei-kaiki-29sai-juudai-otona-ikou)
+- [水星逆行:パニックなしにこれらの期間を理解し、予測し、生き延びる方法](/ja/blog/suisei-gyakkou-kanzen-gaido-rikai-ikinobi)
+- [アセンダント:あなたの占星術上昇星座を理解する完全ガイド](/ja/blog/asendanto-kanzen-gaido-rikai)
+
+**Karmastro 診断ツール:**
+- [出生図](/ja/shindan/shusseizu)
+- [ライフパスナンバー](/ja/shindan/raifu-pasu-nanbaa)
+- [相性診断](/ja/shindan/aishou-shindan)
+
+[ブログ全体と全診断ツールを見る](/ja/blog/) · [Karmastro 診断ツール](/ja/shindan/)
+

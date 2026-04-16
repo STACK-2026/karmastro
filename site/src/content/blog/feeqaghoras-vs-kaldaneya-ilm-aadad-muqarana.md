@@ -438,3 +438,20 @@ Karmastro اعتمد الفيثاغورية الصارمة لأنها الأكث
 - **JSTOR** (jstor.org): Burkert, Walter. "Lore and Science in Ancient Pythagoreanism", Harvard University Press, 1972.
 - **JSTOR** (jstor.org): Schimmel, Annemarie. "The Mystery of Numbers", Oxford University Press, 1993.
 - **المعاني** (al-maany.com): [ابن عربي وعلم الحروف](https://www.almaany.com/ar/dict/ar-ar/%D8%A7%D8%A8%D9%86-%D8%B9%D8%B1%D8%A8%D9%8A/)
+
+<!-- maillage:auto -->
+## المزيد من المحتوى
+
+**مقالات ذات صلة:**
+- [رقم التعبير: كيف يكشف اسمك كامل شخصيتك](/ar/blog/raqm-taabir-ismak-kamel-ilm-aadad)
+- [كيف تحسب مسار حياتك: الطريقة الفيثاغورية خطوة بخطوة](/ar/blog/hisab-masar-hayat-tareeqa-feeqaghoras)
+- [مسار الحياة 1: القائد المبادر، كيفية الحساب والمعنى الكامل](/ar/blog/masar-hayat-1-qaid-mubadir-ilm-aadad)
+- [ما هو علم الأعداد: التعريف الكامل للمبتدئ](/ar/blog/ilm-al-aadad-taareef-kamel-lil-mubtadi)
+
+**أدوات Karmastro:**
+- [خريطة المولد](/ar/adawat/kharitat-mawlid)
+- [رقم مسار الحياة](/ar/adawat/raqm-masar-al-hayat)
+- [توافق الأزواج](/ar/adawat/tawafuq-azwaj)
+
+[استكشف المدونة بالكامل وجميع الأدوات](/ar/blog/) · [أدوات Karmastro](/ar/adawat/)
+

@@ -97,3 +97,20 @@ reviewedBy: "أوريون، عالم فلك ومنجم كبير"
 - **موسوعة** (ar.wikipedia.org) : [التنجيم](https://ar.wikipedia.org/wiki/%D8%AA%D9%86%D8%AC%D9%8A%D9%85)
 - **بريتانيكا** (britannica.com) : [التنجيم](https://www.britannica.com/topic/astrology)
 - **ناسا** (science.nasa.gov) : [النظام الشمسي والكواكب](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## المزيد من المحتوى
+
+**مقالات ذات صلة:**
+- [البيوت الاثنا عشر في التنجيم: الدليل الكامل لفهم خريطتك](/ar/blog/albuyut-ithna-ashar-dalil-kamel-falakee)
+- [عودة زحل: النضج، أزمة منتصف العمر وإعادة الميلاد حوالي 29 سنة](/ar/blog/aawdat-zuhal-nuddoj-azmat-muntasaf-alomr)
+- [عطارد التراجعي: كيف تفهم وتتوقع وتنجو من هذه الفترات بدون ذعر](/ar/blog/utarid-tarajuei-dalil-fahm-najat)
+- [الكرمة في التنجيم: الحياوات السابقة والخريطة الفلكية](/ar/blog/karma-tanjeem-hayawat-sabiqa-kharita-falakeya)
+
+**أدوات Karmastro:**
+- [خريطة المولد](/ar/adawat/kharitat-mawlid)
+- [رقم مسار الحياة](/ar/adawat/raqm-masar-al-hayat)
+- [توافق الأزواج](/ar/adawat/tawafuq-azwaj)
+
+[استكشف المدونة بالكامل وجميع الأدوات](/ar/blog/) · [أدوات Karmastro](/ar/adawat/)
+

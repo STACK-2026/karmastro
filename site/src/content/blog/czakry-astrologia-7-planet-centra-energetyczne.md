@@ -110,3 +110,20 @@ Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych
 - **Encyklopedia** (pl.wikipedia.org) : [Astrologia](https://pl.wikipedia.org/wiki/Astrologia)
 - **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Uklad sloneczny i planety](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Warto przeczytać
+
+**Powiązane artykuły:**
+- [Znak wschodzący: kompletny przewodnik do zrozumienia twojego astrologicznego ascendentu](/pl/blog/znak-wschodzacy-kompletny-przewodnik-zrozumienie)
+- [Droga życia 1 w numerologii: przywództwo, niezależność i misja wcielenia](/pl/blog/droga-zycia-1-przywodztwo-niezaleznosc-numerologia)
+- [Rok osobisty 2026: znajdź swoją liczbę i zrozum 9-letni cykl](/pl/blog/rok-osobisty-2026-numerologia-cykl-9-lat)
+- [Numerologia pitagorejska vs chaldejska: różnice i metody porównane](/pl/blog/numerologia-pitagorejska-vs-chaldejska-roznice)
+
+**Narzędzia Karmastro:**
+- [Horoskop natalny](/pl/narzedzia/horoskop-natalny)
+- [Liczba drogi życia](/pl/narzedzia/liczba-drogi-zycia)
+- [Kompatybilność](/pl/narzedzia/kompatybilnosc)
+
+[Zobacz cały blog i wszystkie narzędzia](/pl/blog/) · [Narzędzia Karmastro](/pl/narzedzia/)
+

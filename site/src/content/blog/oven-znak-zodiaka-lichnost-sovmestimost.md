@@ -85,3 +85,20 @@ reviewedBy: "Орион, старший астроном и астролог"
 - **Энциклопедия** (ru.wikipedia.org) : [Астрология](https://ru.wikipedia.org/wiki/%D0%90%D1%81%D1%82%D1%80%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F)
 - **Britannica** (britannica.com) : [Астрология](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Солнечная система и планеты](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Читать дальше
+
+**Похожие статьи:**
+- [Возвращение Сатурна: великий астрологический переход в 29 лет, меняющий всё](/ru/blog/vozvraschenie-saturna-29-let-bolshoi-perekhod-vzroslost)
+- [Бесплатная натальная карта : интерпретировать полный гороскоп](/ru/blog/besplatnaia-natalnaia-karta-interpretirovat-polnyi-goroskop)
+- [12 астрологических домов: полное руководство по 12 секторам твоей жизни](/ru/blog/12-astrologicheskikh-domov-polnoe-rukovodstvo)
+- [Лунный знак: что твоя натальная Луна говорит о твоём эмоциональном мире](/ru/blog/lunnyi-znak-natalnaia-luna-emotsionalnyi-mir)
+
+**Инструменты Karmastro:**
+- [Натальная карта](/ru/instrumenty/natalnaya-karta)
+- [Число жизненного пути](/ru/instrumenty/chislo-zhiznennogo-puti)
+- [Совместимость](/ru/instrumenty/sovmestimost)
+
+[Читайте весь блог и все инструменты](/ru/blog/) · [Инструменты Karmastro](/ru/instrumenty/)
+

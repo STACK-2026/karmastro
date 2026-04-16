@@ -69,3 +69,20 @@ Karmastro создаёт **уникальный гороскоп каждый д
 - **Энциклопедия** (ru.wikipedia.org) : [Астрология](https://ru.wikipedia.org/wiki/%D0%90%D1%81%D1%82%D1%80%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F)
 - **Britannica** (britannica.com) : [Астрология](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Солнечная система и планеты](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Читать дальше
+
+**Похожие статьи:**
+- [Астрологические аспекты: соединение, квадрат, тригон, оппозиция, секстиль - руководство](/ru/blog/astrologicheskie-aspekty-soedinenie-kvadrat-trigon-oppozitsia-sekstil)
+- [12 астрологических домов: полное руководство по 12 секторам твоей жизни](/ru/blog/12-astrologicheskikh-domov-polnoe-rukovodstvo)
+- [Как рассчитать число пути жизни: пошаговый метод](/ru/blog/kak-rasschitat-put-zhizni-poshagovyi-metod)
+- [Восходящий знак: полное руководство к пониманию твоего астрологического асцендента](/ru/blog/voskhodiaschii-znak-polnoe-rukovodstvo-ponimaniie)
+
+**Инструменты Karmastro:**
+- [Натальная карта](/ru/instrumenty/natalnaya-karta)
+- [Число жизненного пути](/ru/instrumenty/chislo-zhiznennogo-puti)
+- [Совместимость](/ru/instrumenty/sovmestimost)
+
+[Читайте весь блог и все инструменты](/ru/blog/) · [Инструменты Karmastro](/ru/instrumenty/)
+

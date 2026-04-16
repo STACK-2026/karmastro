@@ -275,3 +275,19 @@ Pour une analyse complète croisant astrologie et numerologie, découvre ton pro
 - [Qu'est-ce que la numérologie ? Guide complet pour débuter](https://karmastro.com/blog/qu-numerologie-guide-complet-debuter)
 - [Comment calculer son chemin de vie en numérologie](https://karmastro.com/blog/comment-calculer-chemin-vie-numerologie)
 
+<!-- maillage:auto -->
+## Pour aller plus loin
+
+**Articles connexes :**
+- [Signe ascendant : guide complet pour comprendre ton ascendant astrologique](/blog/signe-ascendant-guide-complet-comprendre-ascendant)
+- [Signe lunaire : ce que ta Lune natale révèle de ton monde émotionnel](/blog/signe-lunaire-lune-natale-monde-emotionnel)
+- [Le retour de Saturne : ce grand passage astrologique vers 29 ans qui change tout](/blog/retour-de-saturne-29-ans-grand-passage-adulte)
+- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/12-maisons-astrologiques-guide-complet-secteurs-vie)
+
+**Outils Karmastro:**
+- [Thème natal](/outils/theme-natal)
+- [Chemin de vie](/outils/chemin-de-vie)
+- [Compatibilité](/outils/compatibilite)
+
+[Explore le blog complet et tous les calculateurs](/blog/) · [Outils Karmastro](/outils/)
+

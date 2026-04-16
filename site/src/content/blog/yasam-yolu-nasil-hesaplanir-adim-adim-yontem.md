@@ -235,3 +235,20 @@ Bilimsel açıdan numeroloji tekrarlanabilir deneysel bir yöntemle doğrulanmam
 - [Yükselen burç: tam rehber](/tr/blog/yukselen-burc-tam-rehber-yukselen-anlama)
 - [Ay burcu: doğum Ay'ı, duygusal dünya](/tr/blog/ay-burcu-dogum-ayi-duygusal-dunya)
 - [Yaşam yolu sayısı hesaplayıcısı](/tr/araclar/yasam-yolu-sayisi), [yükselen burç hesaplayıcısı](/tr/araclar/yukselen-burc)
+
+<!-- maillage:auto -->
+## Daha fazlası
+
+**İlgili makaleler:**
+- [Numeroloji nedir Tam baslangic rehberi](/tr/blog/numeroloji-nedir-tam-baslangic-rehberi)
+- [Kişisel yıl 2026: numaranı bul ve 9 yıllık döngüyü anla](/tr/blog/kisisel-yil-2026-numeroloji-9-yil-dongusu)
+- [Numerolojide yaşam yolu 1: liderlik, bağımsızlık ve enkarnasyon misyonu](/tr/blog/yasam-yolu-1-liderlik-bagimsizlik-numeroloji)
+- [İfade sayısı: isminin kimliğin hakkında ne söylediğini çöz](/tr/blog/ifade-sayisi-numeroloji-isim-kimlik-cozmek)
+
+**Karmastro araçları:**
+- [Doğum haritası](/tr/araclar/dogum-haritasi)
+- [Yaşam yolu sayısı](/tr/araclar/yasam-yolu-sayisi)
+- [Uyumluluk](/tr/araclar/uyumluluk)
+
+[Tüm blogu ve araçları keşfet](/tr/blog/) · [Karmastro araçları](/tr/araclar/)
+

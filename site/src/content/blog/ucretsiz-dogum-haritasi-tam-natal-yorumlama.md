@@ -265,3 +265,20 @@ Egzersizi tamamladığında, yıllar boyunca geliştirilebilecek yorumlamanın t
 - **Swiss Ephemeris** : [Astrodienst Swiss Ephemeris](https://www.astro.com/swisseph/)
 - **NASA** : [Solar System and Planets](https://science.nasa.gov/solar-system/planets/)
 - **Astro-Databank** : [Mustafa Kemal Ataturk](https://www.astro.com/astro-databank/Atat%C3%BCrk,_Mustafa_Kemal)
+
+<!-- maillage:auto -->
+## Daha fazlası
+
+**İlgili makaleler:**
+- [Ay burcu: doğum Ay](/tr/blog/ay-burcu-dogum-ayi-duygusal-dunya)
+- [Koç burcu: kişilik, uyumluluk ve derin özellikler](/tr/blog/koc-burcu-kisilik-uyumluluk-ozellikler)
+- [12 astrolojik ev: hayatının 12 sektörünün tam rehberi](/tr/blog/12-astrolojik-ev-tam-rehber-yasam-sektorleri)
+- [Satürn dönüşü: 29 yaşındaki her şeyi değiştiren büyük astrolojik geçiş](/tr/blog/saturn-donusu-29-yas-buyuk-yetiskinlik-gecisi)
+
+**Karmastro araçları:**
+- [Doğum haritası](/tr/araclar/dogum-haritasi)
+- [Yaşam yolu sayısı](/tr/araclar/yasam-yolu-sayisi)
+- [Uyumluluk](/tr/araclar/uyumluluk)
+
+[Tüm blogu ve araçları keşfet](/tr/blog/) · [Karmastro araçları](/tr/araclar/)
+

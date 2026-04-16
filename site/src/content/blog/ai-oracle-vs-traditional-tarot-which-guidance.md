@@ -122,3 +122,20 @@ This article draws on verifiable encyclopedic and scientific sources.
 
 - **Encyclopedia** (en.wikipedia.org) : [Oracle](https://en.wikipedia.org/wiki/Oracle)
 - **Britannica** (britannica.com) : [Oracle](https://www.britannica.com/topic/oracle-religion)
+
+<!-- maillage:auto -->
+## For further reading
+
+**Related articles:**
+- [Karma and astrology: reading your past lives through your birth chart](/en/blog/karma-astrology-past-lives-birth-chart)
+- [Free birth chart: how to interpret your complete natal chart](/en/blog/free-birth-chart-interpret-complete-natal-chart)
+- [The 12 astrological houses: a complete guide to the 12 sectors of your life](/en/blog/12-astrological-houses-complete-guide-life-sectors)
+- [Personal year 2026: find your number and understand the 9-year cycle that shapes your life](/en/blog/personal-year-2026-numerology-9-year-cycle)
+
+**Karmastro tools:**
+- [Birth chart](/en/tools/birth-chart)
+- [Life path number](/en/tools/life-path-number)
+- [Compatibility](/en/tools/compatibility)
+
+[Explore the full blog and all calculators](/en/blog/) · [Karmastro tools](/en/tools/)
+

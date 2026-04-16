@@ -113,3 +113,20 @@ reviewedBy: "Orion、シニア天文学者兼占星術師"
 - **百科事典** (ja.wikipedia.org) : [占星術](https://ja.wikipedia.org/wiki/%E5%8D%A0%E6%98%9F%E8%A1%93)
 - **Britannica** (britannica.com) : [占星術](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [太陽系と惑星](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## さらに詳しく
+
+**関連記事:**
+- [無料の出生図 完全なナタルチャート解釈の実践ガイド](/ja/blog/muryou-shusseizu-kanzen-natal-kaishaku)
+- [12のアストロロジー・ハウス:人生の12セクターの完全ガイド](/ja/blog/12-no-asutoroji-hausu-kanzen-gaido)
+- [冥王星水瓶座 2024-2044:20年間の大規模な集団変容](/ja/blog/meiousei-mizugame-2024-2044-daikibo-shuudan-henyou)
+- [占星術アスペクト:合、スクエア、トライン、オポジション、セクスタイル - ガイド](/ja/blog/asutoroji-asupekuto-goukei-sukuea-torin-opposshon-sekisutairu)
+
+**Karmastro 診断ツール:**
+- [出生図](/ja/shindan/shusseizu)
+- [ライフパスナンバー](/ja/shindan/raifu-pasu-nanbaa)
+- [相性診断](/ja/shindan/aishou-shindan)
+
+[ブログ全体と全診断ツールを見る](/ja/blog/) · [Karmastro 診断ツール](/ja/shindan/)
+

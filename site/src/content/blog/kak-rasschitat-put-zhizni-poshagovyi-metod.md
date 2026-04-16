@@ -235,3 +235,20 @@ keywords: "путь жизни, расчёт пути жизни, пифагор
 - [Восходящий знак: полное руководство](/ru/blog/voskhodiaschii-znak-polnoe-rukovodstvo-ponimaniie)
 - [Лунный знак: натальная Луна, эмоциональный мир](/ru/blog/lunnyi-znak-natalnaia-luna-emotsionalnyi-mir)
 - [Калькулятор восходящего знака](/ru/instrumenty/voskhodyaschiy-znak), [калькулятор числа пути жизни](/ru/instrumenty/chislo-zhiznennogo-puti)
+
+<!-- maillage:auto -->
+## Читать дальше
+
+**Похожие статьи:**
+- [Путь жизни 1 в нумерологии: лидерство, независимость и миссия воплощения](/ru/blog/put-zhizni-1-liderstvo-nezavisimost-numerologia)
+- [Личный год 2026: найди свой номер и пойми 9-летний цикл](/ru/blog/lichnyi-god-2026-numerologia-tsikl-9-let)
+- [Что такое нумерология: полное руководство для начинающих в 2026 году](/ru/blog/chto-takoe-numerologia-polnoe-rukovodstvo-nachinaiuschikh)
+- [Пифагорейская vs халдейская нумерология: различия и методы](/ru/blog/pifagoreiskaia-vs-khaldeiskaia-numerologia-razlichia)
+
+**Инструменты Karmastro:**
+- [Натальная карта](/ru/instrumenty/natalnaya-karta)
+- [Число жизненного пути](/ru/instrumenty/chislo-zhiznennogo-puti)
+- [Совместимость](/ru/instrumenty/sovmestimost)
+
+[Читайте весь блог и все инструменты](/ru/blog/) · [Инструменты Karmastro](/ru/instrumenty/)
+

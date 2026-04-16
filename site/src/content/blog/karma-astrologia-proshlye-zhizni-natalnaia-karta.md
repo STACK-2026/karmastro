@@ -90,3 +90,20 @@ reviewedBy: "Орион, старший астроном и астролог"
 - **Энциклопедия** (ru.wikipedia.org) : [Астрология](https://ru.wikipedia.org/wiki/%D0%90%D1%81%D1%82%D1%80%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F)
 - **Britannica** (britannica.com) : [Астрология](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Солнечная система и планеты](https://science.nasa.gov/solar-system/planets/)
+
+<!-- maillage:auto -->
+## Читать дальше
+
+**Похожие статьи:**
+- [Как рассчитать число пути жизни: пошаговый метод](/ru/blog/kak-rasschitat-put-zhizni-poshagovyi-metod)
+- [Ежедневный гороскоп: как получить действительно надёжные астрологические прогнозы](/ru/blog/ezhednevnyi-goroskop-nadezhnye-astrologicheskie-prognozy)
+- [ИИ-оракул vs традиционное таро: какого гида выбрать в 2026?](/ru/blog/ii-orakul-vs-traditsionnoe-taro-kakoi-gid-vybrat)
+- [Астрологическая совместимость: какие знаки действительно притягиваются](/ru/blog/astrologicheskaia-sovmestimost-kakie-znaki-prityagivaiutsia)
+
+**Инструменты Karmastro:**
+- [Натальная карта](/ru/instrumenty/natalnaya-karta)
+- [Число жизненного пути](/ru/instrumenty/chislo-zhiznennogo-puti)
+- [Совместимость](/ru/instrumenty/sovmestimost)
+
+[Читайте весь блог и все инструменты](/ru/blog/) · [Инструменты Karmastro](/ru/instrumenty/)
+

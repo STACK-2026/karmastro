@@ -66,3 +66,20 @@ reviewedBy: "Pythia、認定ピタゴラス数秘術師"
 
 - **百科事典** (ja.wikipedia.org) : [数秘術](https://ja.wikipedia.org/wiki/%E6%95%B0%E7%A7%98%E8%A1%93)
 - **Britannica** (britannica.com) : [数秘術](https://www.britannica.com/topic/numerology)
+
+<!-- maillage:auto -->
+## さらに詳しく
+
+**関連記事:**
+- [ライフパス1:数秘術におけるリーダーシップ、独立、化身の使命](/ja/blog/raifu-pasu-1-rida-shippu-dokuritsu-suumitsu)
+- [ピタゴラス vs カルデア数秘術:違いと方法の比較](/ja/blog/pitagorasu-vs-karudia-suumitsu-chigai)
+- [個人の年 2026:あなたの数字を見つけて9年サイクルを理解する](/ja/blog/kojin-toshi-2026-suumitsu-9-nen-saikuru)
+- [ライフパスナンバーの計算方法:ステップバイステップ完全ガイド](/ja/blog/raifu-pasu-nanbaa-keisan-houhou-sutebai-sutebu)
+
+**Karmastro 診断ツール:**
+- [出生図](/ja/shindan/shusseizu)
+- [ライフパスナンバー](/ja/shindan/raifu-pasu-nanbaa)
+- [相性診断](/ja/shindan/aishou-shindan)
+
+[ブログ全体と全診断ツールを見る](/ja/blog/) · [Karmastro 診断ツール](/ja/shindan/)
+
