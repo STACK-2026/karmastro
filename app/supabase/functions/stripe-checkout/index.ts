@@ -11,7 +11,7 @@ const STRIPE_SECRET_KEY = Deno.env.get("STRIPE_SECRET_KEY") || "";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "";
 const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
 
-// Price ID mapping (LIVE mode — activated 10/04/2026)
+// Price ID mapping (LIVE mode , activated 10/04/2026)
 // TEST IDs kept in comments for rollback:
 // etoile_monthly: price_1TKges0t7uSlTxJbUqwZ7A8Y
 // etoile_annual:  price_1TKges0t7uSlTxJbpVs86TJW

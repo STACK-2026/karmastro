@@ -1,4 +1,4 @@
-// Karmastro site tracker — vanilla JS, sends page_views + events to Supabase
+// Karmastro site tracker , vanilla JS, sends page_views + events to Supabase
 // No build step, no bundler. Loaded in BaseLayout.astro via <script src="/tracker.js">
 (function () {
   var SUPABASE_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co";

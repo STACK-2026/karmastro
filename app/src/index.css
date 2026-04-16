@@ -158,7 +158,7 @@
   to { transform: translateY(0); opacity: 1; }
 }
 
-/* Section dividers — seamless gradient transitions */
+/* Section dividers , seamless gradient transitions */
 .section-divider {
   height: 80px;
   background: linear-gradient(to bottom, transparent, hsl(260 25% 5% / 0.4), transparent);

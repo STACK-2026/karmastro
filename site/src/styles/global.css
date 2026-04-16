@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* === Karmastro — identical to app theme === */
+/* === Karmastro , identical to app theme === */
 :root {
   --color-primary: theme("colors.primary");
   --color-secondary: theme("colors.secondary");
@@ -8,7 +8,7 @@
   --font-display: "Outfit", sans-serif;
   --font-body: "Figtree", sans-serif;
 
-  /* Palette cosmique — sombre mais lisible */
+  /* Palette cosmique , sombre mais lisible */
   --bg: #0f0a1e;
   --bg-card: #1a1333;
   --bg-secondary: #211845;

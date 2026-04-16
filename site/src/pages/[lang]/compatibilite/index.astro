@@ -38,7 +38,7 @@ const signsForClient = ZODIAC_SIGNS.map((s) => ({
   quality: s.quality,
 }));
 
-// UI labels — picker-specific keys, fallback hardcoded per language
+// UI labels, picker-specific keys, fallback hardcoded per language
 const pickerLabels: Record<string, Record<string, string>> = {
   fr: { pick1: "Signe 1", pick2: "Signe 2", empty: "Aucun signe sélectionné", pickBoth: "Choisis deux signes", step0: "Commence par ton signe.", step1: "Signe 1 choisi. Pick le deuxième.", step2: "Prêt. Clique sur \"Découvrir\".", change: "Changer", reset: "Réinitialiser", discover: "Découvrir la compatibilité →" },
   en: { pick1: "Sign 1", pick2: "Sign 2", empty: "No sign selected", pickBoth: "Pick two signs", step0: "Start with your sign.", step1: "Sign 1 chosen. Pick the second.", step2: "Ready. Click \"Discover\".", change: "Change", reset: "Reset", discover: "Discover compatibility →" },
