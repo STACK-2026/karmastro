@@ -21,20 +21,23 @@ jobs:
       - uses: actions/checkout@v4
       - name: Scan for em/en dashes in content + i18n + source
         run: |
-          set -e
+          set +e
           FOUND=0
-          # Blog content
-          if grep -rn "[—–]" site/src/content/blog/ 2>/dev/null | head -50; then FOUND=1; fi
-          # Site i18n
-          if grep -rn "[—–]" site/src/i18n/ 2>/dev/null | head -20; then FOUND=1; fi
-          # App i18n
-          if grep -rn "[—–]" app/src/i18n/ 2>/dev/null | head -20; then FOUND=1; fi
-          # Site pages
-          if grep -rn "[—–]" site/src/pages/ 2>/dev/null | head -20; then FOUND=1; fi
-          # App pages
-          if grep -rn "[—–]" app/src/pages/ 2>/dev/null | head -20; then FOUND=1; fi
-          # App components
-          if grep -rn "[—–]" app/src/components/ 2>/dev/null | head -20; then FOUND=1; fi
+          scan() {
+            local path="$1"; local max="$2"
+            [ -d "$path" ] || return 0
+            OUT=$(grep -rn "[—–]" "$path" 2>/dev/null | head -"$max")
+            if [ -n "$OUT" ]; then
+              echo "$OUT"
+              FOUND=1
+            fi
+          }
+          scan site/src/content/blog 50
+          scan site/src/i18n 20
+          scan app/src/i18n 20
+          scan site/src/pages 20
+          scan app/src/pages 20
+          scan app/src/components 20
           if [ "$FOUND" = "1" ]; then
             echo "::error::Em-dashes (—) or en-dashes (–) detected. Replace with ',' ':' '.' or '-'. This is a brand-wide rule."
             exit 1
