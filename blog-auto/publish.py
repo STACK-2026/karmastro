@@ -33,6 +33,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
+MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY", "")
 UNSPLASH_ACCESS_KEY = os.getenv("UNSPLASH_ACCESS_KEY", "")
 
 # Paths
@@ -47,6 +48,12 @@ LOG_FILE = SCRIPT_DIR / "logs" / "publications.log"
 CLAUDE_MODEL = "claude-sonnet-4-20250514"
 CLAUDE_MAX_TOKENS = 16000
 CLAUDE_TIMEOUT = 300  # 5 minutes
+
+# Mistral API (cheaper, used as default engine for drafting; Claude only audits)
+MISTRAL_URL = "https://api.mistral.ai/v1/chat/completions"
+MISTRAL_SMALL = "mistral-small-latest"
+MISTRAL_LARGE = "mistral-large-latest"
+MISTRAL_TIMEOUT = 300
 
 # Retry config (429/529)
 MAX_RETRIES = 3
@@ -234,6 +241,178 @@ Puis le contenu Markdown de l'article (sans H1, commence directement par le somm
     text = data["content"][0]["text"]
 
     return parse_claude_response(text, article)
+
+
+# ============================================
+# MISTRAL PIPELINE (Mistral draft + Claude grounding audit + Mistral fix)
+# Port depuis adapte-toi/actu_watch_mistral.py. Reduction ~65% spend Claude.
+# ============================================
+
+def mistral_call(messages: list, model: str = MISTRAL_SMALL, temperature: float = 0.4,
+                 max_tokens: int = 6000, json_mode: bool = False, retries: int = 3) -> str:
+    if not MISTRAL_API_KEY:
+        raise RuntimeError("MISTRAL_API_KEY manquant")
+    payload = {"model": model, "messages": messages, "temperature": temperature, "max_tokens": max_tokens}
+    if json_mode:
+        payload["response_format"] = {"type": "json_object"}
+    last = None
+    for attempt in range(retries):
+        try:
+            r = requests.post(MISTRAL_URL, json=payload, headers={
+                "Authorization": f"Bearer {MISTRAL_API_KEY}",
+                "Content-Type": "application/json",
+            }, timeout=MISTRAL_TIMEOUT)
+            if r.status_code in (429, 503):
+                wait = 5 * (2 ** attempt)
+                log.warning(f"Mistral {r.status_code}, retry {wait}s")
+                time.sleep(wait)
+                continue
+            r.raise_for_status()
+            return r.json()["choices"][0]["message"]["content"]
+        except Exception as e:
+            last = e
+            log.warning(f"Mistral error attempt {attempt+1}: {e}")
+            time.sleep(3)
+    raise last or RuntimeError("Mistral failed")
+
+
+def claude_audit_call(system: str, user: str, max_tokens: int = 2500, retries: int = 3) -> str:
+    if not ANTHROPIC_API_KEY:
+        raise RuntimeError("ANTHROPIC_API_KEY manquant pour audit")
+    payload = {"model": CLAUDE_MODEL, "max_tokens": max_tokens, "system": system,
+               "messages": [{"role": "user", "content": user}]}
+    last = None
+    for attempt in range(retries):
+        try:
+            r = requests.post("https://api.anthropic.com/v1/messages", json=payload, headers={
+                "x-api-key": ANTHROPIC_API_KEY,
+                "anthropic-version": "2023-06-01",
+                "content-type": "application/json",
+            }, timeout=CLAUDE_TIMEOUT)
+            if r.status_code in (429, 529):
+                wait = 10 * (2 ** attempt)
+                log.warning(f"Claude audit {r.status_code}, retry {wait}s")
+                time.sleep(wait)
+                continue
+            r.raise_for_status()
+            j = r.json()
+            return "".join(b.get("text", "") for b in j.get("content", []) if b.get("type") == "text")
+        except Exception as e:
+            last = e
+            log.warning(f"Claude audit error attempt {attempt+1}: {e}")
+            time.sleep(3)
+    raise last or RuntimeError("Claude audit failed")
+
+
+DRAFT_SYSTEM_SUFFIX = """
+
+REGLES DURES SUPPLEMENTAIRES:
+- Jamais de tiret cadratin (em U+2014) ni en (en U+2013). Remplace par virgule, deux-points, point ou tiret simple (-).
+- Accents FR systematiques quand langue = FR.
+- Chiffres et noms propres precis : reste factuel ou reformule en tendance.
+- Pas de claim vague du genre "des etudes montrent" sans source.
+- Sortie STRICTEMENT en Markdown, sans wrapper triple-backticks.
+"""
+
+AUDIT_SYSTEM = """Tu es auditeur factuel strict pour un article SEO.
+Ta seule tache : detecter les hallucinations factuelles (chiffres inventes, citations fabriquees, noms d'entreprises/outils inexistants, dates fausses, lois imaginaires).
+Tu IGNORES: opinions, ton editorial, structure, style, qualite du texte.
+Tu ACCEPTES: tendances generales sans source chiffree precise, concepts techniques connus, liens internes.
+
+Retourne UNIQUEMENT ce JSON :
+{
+  "hallucinations": [
+    {"claim": "extrait exact du draft (max 180 chars)", "type": "chiffre|citation|nom|date|loi", "reason": "pourquoi c'est suspect"}
+  ],
+  "verdict": "CLEAN|MINOR|MAJOR"
+}
+CLEAN = 0 hallucination. MINOR = 1-3. MAJOR = >3 ou invention majeure."""
+
+
+def generate_article_mistral(article: dict, system_prompt: str) -> dict:
+    """Draft article via Mistral-large (replaces Claude for draft)."""
+    user_prompt = f"""Ecris un article SEO complet sur le sujet suivant :
+
+Titre : {article['title']}
+Mots-cles : {article.get('keywords', '')}
+Categorie : {article.get('category', '')}
+Blog : {article.get('blog', 'principal')}
+Date de publication : {article.get('scheduled_date', '')}
+
+IMPORTANT : L'article doit etre en Markdown (PAS en HTML).
+Commence ta reponse avec exactement ces 2 lignes :
+TITLE_TAG: [titre SEO optimise < 60 caracteres]
+META_DESCRIPTION: [meta description 150-160 caracteres]
+
+Puis le contenu Markdown de l'article (sans H1, commence directement par le sommaire puis les H2).
+"""
+    log.info("Mistral-large draft...")
+    text = mistral_call(
+        [{"role": "system", "content": system_prompt + DRAFT_SYSTEM_SUFFIX},
+         {"role": "user", "content": user_prompt}],
+        model=MISTRAL_LARGE, temperature=0.4, max_tokens=8000,
+    )
+    text = _strip_md_fence(text)
+    parsed = parse_claude_response(text, article)
+
+    # Optional grounding audit (only if ANTHROPIC_API_KEY present)
+    if ANTHROPIC_API_KEY:
+        try:
+            log.info("Claude grounding audit...")
+            audit = _audit_draft(parsed["content"])
+            verdict = audit.get("verdict", "UNKNOWN")
+            halls = audit.get("hallucinations", [])
+            log.info(f"  verdict={verdict} hallucinations={len(halls)}")
+            if verdict in ("MINOR", "MAJOR") and halls:
+                log.info("Mistral-large fix hallucinations...")
+                fixed_text = _fix_hallucinations(text, halls)
+                fixed_text = _strip_md_fence(fixed_text)
+                parsed = parse_claude_response(fixed_text, article)
+        except Exception as e:
+            log.warning(f"Audit skipped: {e}")
+    else:
+        log.info("No ANTHROPIC_API_KEY, audit skipped (Mistral-only mode)")
+
+    return parsed
+
+
+def _strip_md_fence(text: str) -> str:
+    text = re.sub(r"^```(?:markdown|md|yaml)?\s*\n", "", text.strip())
+    text = re.sub(r"\n```\s*$", "", text)
+    return text
+
+
+def _audit_draft(draft: str) -> dict:
+    user = f"DRAFT A AUDITER :\n\n{draft[:10000]}\n\nRetourne le JSON d'audit uniquement."
+    content = claude_audit_call(AUDIT_SYSTEM, user, max_tokens=2000)
+    m = re.search(r"\{[\s\S]*\}", content)
+    if not m:
+        return {"verdict": "UNKNOWN", "hallucinations": []}
+    try:
+        return json.loads(m.group())
+    except json.JSONDecodeError:
+        return {"verdict": "UNKNOWN", "hallucinations": []}
+
+
+def _fix_hallucinations(draft: str, hallucinations: list) -> str:
+    halls_text = "\n".join(f"- [{h.get('type','?')}] {h.get('claim','')} ({h.get('reason','')})"
+                           for h in hallucinations[:10])
+    user = f"""Voici un draft d'article. Claude a flagge {len(hallucinations)} claims factuels douteux :
+
+{halls_text}
+
+Ta tache : reecris l'article ENTIER en corrigeant UNIQUEMENT ces claims (reformule en tendance generale, retire le chiffre precis, ou remplace par un exemple verifiable). Garde tout le reste INTACT : structure, ton, longueur, paragraphes, liens internes, TITLE_TAG et META_DESCRIPTION.
+
+DRAFT ORIGINAL :
+{draft}
+
+Retourne le draft corrige COMPLET (avec TITLE_TAG/META_DESCRIPTION + contenu), sans commentaire, sans wrapper.
+"""
+    return mistral_call(
+        [{"role": "system", "content": "Tu corriges UNIQUEMENT les claims flagges, sans rien reecrire d'autre."},
+         {"role": "user", "content": user}],
+        model=MISTRAL_LARGE, temperature=0.2, max_tokens=8000,
+    )
 
 
 def parse_claude_response(text: str, article: dict) -> dict:
@@ -525,9 +704,19 @@ def inject_related_links(
 # MAIN PIPELINE
 # ============================================
 
+def _arg_value(flag: str, default: str) -> str:
+    """Extract `--flag value` from sys.argv; returns default if not found."""
+    if flag in sys.argv:
+        idx = sys.argv.index(flag)
+        if idx + 1 < len(sys.argv):
+            return sys.argv[idx + 1]
+    return default
+
+
 def main():
     force = "--force" in sys.argv
     dry_run = "--dry-run" in sys.argv
+    engine = _arg_value("--engine", "mistral").lower()  # mistral (default) | claude
 
     log.info("=" * 60)
     log.info(f"Blog Auto — {now_paris().strftime('%Y-%m-%d %H:%M:%S')}")
