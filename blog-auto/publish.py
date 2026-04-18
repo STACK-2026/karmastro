@@ -180,6 +180,57 @@ def load_system_prompt() -> str:
         return f.read()
 
 
+
+def _build_serp_enrichment(article):
+    """Returns SERP brief enrichment text to append to user_prompt, or empty string."""
+    serp_brief = (article.get("serp_brief") or {}).get("brief")
+    if not serp_brief:
+        return ""
+    top10 = serp_brief.get("top10", [])
+    weak_angles = serp_brief.get("weak_angles", [])
+    winning_moves = serp_brief.get("winning_moves", [])
+    must_sections = serp_brief.get("must_include_sections", [])
+    citable_facts = serp_brief.get("citable_facts_to_verify", [])
+    entities = serp_brief.get("entities_to_mention", [])
+    target_words = serp_brief.get("target_word_count", 3500)
+    intent = serp_brief.get("intent_type", "informational")
+    snippet_opp = serp_brief.get("featured_snippet_opportunity", "")
+    serp_features = serp_brief.get("serp_features_detected", [])
+    competitors_block = "\n".join(
+        f"  #{c.get('rank','?')} {c.get('domain','?')} : angle=\"{c.get('main_angle','')[:120]}\" | weakness=\"{c.get('weakness','')[:100]}\""
+        for c in top10[:10]
+    )
+    return f"""
+
+BRIEF SERP (analyse Gemini + Google Search grounding, top 10)
+=============================================================
+
+INTENT : {intent}
+TARGET WORDS : {target_words} (>= 3500 requis pour standard STACK-2026)
+SERP FEATURES : {", ".join(serp_features) if serp_features else "aucune"}
+FEATURED SNIPPET : {snippet_opp}
+
+TOP 10 CONCURRENTS :
+{competitors_block}
+
+ANGLES FAIBLES A EXPLOITER :
+""" + "\n".join(f"  - {a}" for a in weak_angles) + f"""
+
+WINNING MOVES (pour battre le top 3) :
+""" + "\n".join(f"  - {m}" for m in winning_moves) + f"""
+
+SECTIONS H2 OBLIGATOIRES (inspire-toi, reformule pour ta voix) :
+""" + "\n".join(f"  - {s}" for s in must_sections) + f"""
+
+FAITS CITABLES (verifie avant de reutiliser) :
+""" + "\n".join(f"  - {fact}" for fact in citable_facts) + f"""
+
+ENTITES A MENTIONNER : {", ".join(entities)}
+
+REGLE : ton article doit etre SUPERIEUR au top 3 en (1) profondeur sur les weak_angles, (2) execution des winning_moves, (3) clarte/citabilite LLM, (4) E-E-A-T."""
+
+
+
 def generate_article(article: dict, system_prompt: str) -> dict:
     """
     Call Claude API to generate an article.
@@ -216,6 +267,7 @@ META_DESCRIPTION: [150-160 chars, reponse directe, chiffre si possible]
 
 Puis "**TL;DR**" + bullets, puis l'intro, puis les H2.
 """
+    user_prompt = user_prompt + _build_serp_enrichment(article)
 
     for attempt in range(MAX_RETRIES):
         try:
@@ -391,6 +443,7 @@ META_DESCRIPTION: [meta description 150-160 caracteres]
 
 Puis le contenu Markdown de l'article (sans H1, commence directement par le sommaire puis les H2).
 """
+    user_prompt = user_prompt + _build_serp_enrichment(article)
     log.info("Mistral-large draft...")
     text = mistral_call(
         [{"role": "system", "content": system_prompt + DRAFT_SYSTEM_SUFFIX},
