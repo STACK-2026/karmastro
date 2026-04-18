@@ -46,7 +46,7 @@ ENGINE_URL = os.getenv("ENGINE_URL", "http://168.119.229.20:8100")
 DEFAULT_OUTPUT = Path(__file__).parent.parent / "site" / "src" / "data" / "horoscope"
 OUTPUT_DIR = Path(os.getenv("OUTPUT_DIR", str(DEFAULT_OUTPUT)))
 
-ANTHROPIC_MODEL = "claude-sonnet-4-20250514"
+ANTHROPIC_MODEL = "claude-sonnet-4-6"
 MAX_TOKENS_PER_SIGN = 1400
 
 ZODIAC_SIGNS = [

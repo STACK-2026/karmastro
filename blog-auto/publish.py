@@ -45,7 +45,7 @@ BLOG_DIR = REPO_DIR / "site" / "src" / "content" / "blog"
 LOG_FILE = SCRIPT_DIR / "logs" / "publications.log"
 
 # Claude API
-CLAUDE_MODEL = "claude-sonnet-4-20250514"
+CLAUDE_MODEL = "claude-sonnet-4-6"
 CLAUDE_MAX_TOKENS = 16000
 CLAUDE_TIMEOUT = 300  # 5 minutes
 
