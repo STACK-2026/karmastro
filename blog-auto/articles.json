@@ -109,7 +109,168 @@
     "scheduled_datetime": "2026-04-20T10:08:00",
     "title_tag": null,
     "meta_description": null,
-    "featured_image_url": null
+    "featured_image_url": null,
+    "serp_brief": {
+      "keyword": "karma",
+      "generated_at": "2026-04-18T23:47:05",
+      "model": "gemini-2.5-pro",
+      "brief": {
+        "top10": [
+          {
+            "rank": 1,
+            "domain": "fr.wikipedia.org",
+            "title": "Karma - Wikipédia",
+            "main_angle": "Définition encyclopédique et académique du karma, ses origines (sanskrit), et ses déclinaisons dans les grandes religions orientales (hindouisme, bouddhisme, jaïnisme, sikhisme).",
+            "strength": "Contenu très complet, bien structuré, neutre et factuel. Forte autorité du domaine.",
+            "weakness": "Contenu dense, peu accessible pour un néophyte. Manque d'application pratique et de connexion au développement personnel occidental."
+          },
+          {
+            "rank": 2,
+            "domain": "le-bienvivant.fr",
+            "title": "Les 12 Lois du Karma | Le Bienvivant",
+            "main_angle": "Présentation vulgarisée et pratique du karma à travers une liste de \"12 lois\" applicables au quotidien.",
+            "strength": "Angle très pratique et facile à comprendre (listicle). Orienté développement personnel, ce qui répond à une forte intention de recherche.",
+            "weakness": "Simplification à l'extrême des concepts. Les \"12 lois\" sont une construction occidentale populaire, pas une doctrine canonique, ce qui manque de profondeur."
+          },
+          {
+            "rank": 3,
+            "domain": "soka-bouddhisme.fr",
+            "title": "Le karma, transformer son destin - Soka-bouddhisme.fr",
+            "main_angle": "Explication du karma selon la perspective spécifique du bouddhisme de Nichiren, en insistant sur la capacité à transformer son destin.",
+            "strength": "Angle positif et responsabilisant (\"transformer son destin\"). Contenu spécialisé qui inspire confiance pour ceux qui s'intéressent au bouddhisme.",
+            "weakness": "Vision très spécifique à une école du bouddhisme, ce qui peut ne pas correspondre à une recherche d'information générale."
+          },
+          {
+            "rank": 4,
+            "domain": "rituals.com",
+            "title": "Comprendre ce qu'est le karma. - Rituals",
+            "main_angle": "Article de blog commercial très simple définissant le karma comme une loi de cause à effet pour introduire l'univers de la marque.",
+            "strength": "Simplicité et clarté de la définition de base. Associé à une marque connue dans le bien-être.",
+            "weakness": "Contenu très superficiel, sans profondeur, servant principalement de prétexte commercial."
+          },
+          {
+            "rank": 5,
+            "domain": "vocabulary.com",
+            "title": "Karma - Definition, Meaning & Synonyms - Vocabulary.com",
+            "main_angle": "Définition simple du mot \"karma\" dans un contexte de dictionnaire, axée sur la réincarnation.",
+            "strength": "Définition claire et concise pour un public anglophone ou apprenant l'anglais.",
+            "weakness": "Très court, manque de contexte culturel et philosophique. Contenu en anglais sur une SERP française."
+          },
+          {
+            "rank": 6,
+            "domain": "en.wikipedia.org",
+            "title": "Karma - Wikipedia",
+            "main_angle": "Version anglaise de l'article Wikipedia, plus détaillée sur certains aspects comme les différents types de karma dans l'hindouisme.",
+            "strength": "Exhaustivité et autorité du domaine.",
+            "weakness": "En anglais, donc moins pertinent pour la majorité du marché cible français. Redondant avec le premier résultat."
+          },
+          {
+            "rank": 7,
+            "domain": "yogom.fr",
+            "title": "Qu'est ce que le Karma ? Définition et principes fondamentaux - Yogom",
+            "main_angle": "Article de blog qui définit le karma dans le contexte du yoga, de l'hindouisme et du bouddhisme, avec une approche bien-être.",
+            "strength": "Fait le lien entre le concept et une pratique populaire (yoga). Contenu accessible.",
+            "weakness": "Assez généraliste, survole les concepts sans entrer dans les détails. Structure un peu confuse."
+          },
+          {
+            "rank": 8,
+            "domain": "webmd.com",
+            "title": "Karma: What It Is and How It Affects Your Life - WebMD",
+            "main_angle": "Approche santé et bien-être du karma, expliquant comment les actions influencent la vie, avec une distinction entre karma individuel et collectif.",
+            "strength": "Angle original (santé/bien-être) et autorité du domaine médical. Simple à comprendre.",
+            "weakness": "Contenu en anglais. Simplification qui peut frôler la psychologie populaire."
+          },
+          {
+            "rank": 9,
+            "domain": "reddit.com",
+            "title": "Karma dans le bouddhisme vs Karma dans l'hindouisme : r/Buddhism - Reddit",
+            "main_angle": "Discussion sur un forum comparant les nuances du karma entre le bouddhisme et l'hindouisme.",
+            "strength": "Contenu généré par les utilisateurs qui peut répondre à des questions très spécifiques et nuancées.",
+            "weakness": "Manque de structure et d'autorité. L'information n'est pas vérifiée et peut être contradictoire."
+          },
+          {
+            "rank": 10,
+            "domain": "hdasianart.com",
+            "title": "Quelles sont les principales différences philosophiques entre le karma dans l'hindouisme et le bouddhisme - HD Asian Art",
+            "main_angle": "Comparaison structurée des concepts de karma dans l'hindouisme et le bouddhisme, en se concentrant sur la notion d'intention.",
+            "strength": "Angle précis et comparatif qui répond à une intention de recherche spécifique. Bien structuré.",
+            "weakness": "Niche et potentiellement trop académique pour le grand public. Le design du site est daté."
+          }
+        ],
+        "common_angles": [
+          "Définition du karma comme loi de cause à effet (\"on récolte ce que l'on sème\").",
+          "Origine du concept dans les religions indiennes (hindouisme, bouddhisme).",
+          "Lien avec le cycle des réincarnations (Saṃsāra).",
+          "Distinction entre les approches hindouiste et bouddhiste."
+        ],
+        "weak_angles": [
+          "Le lien concret entre le karma et l'astrologie (nœuds lunaires, Saturne, maisons karmiques).",
+          "L'application du karma via la numérologie (dettes karmiques, chemin de vie).",
+          "Approche pratique et moderne : comment 'nettoyer' ou 'améliorer' son karma aujourd'hui (actions, rituels, méditations).",
+          "La vision du karma dans d'autres traditions spirituelles ou ésotériques occidentales."
+        ],
+        "winning_moves": [
+          "Créer un guide ultime et holistique qui fusionne la définition philosophique (ce que fait Wikipedia) avec l'application pratique et personnalisée (ce que notre positionnement permet).",
+          "Intégrer des outils interactifs : un calculateur simple de 'nombre karmique' basé sur la date de naissance pour engager l'utilisateur et le connecter à nos services de numérologie.",
+          "Structurer l'article pour répondre aux questions du 'People Also Ask' et viser un Featured Snippet de type définition ('Le karma est la loi spirituelle de cause à effet où chaque action, pensée et parole d'un individu influence son présent et son futur, y compris dans ses vies ultérieures.')",
+          "Développer une section unique 'Votre Karma dans votre Thème Astral' qui explique comment des éléments astrologiques (Nœuds Nord/Sud, Saturne, Maison 12) sont les reflets du parcours karmique, créant un pont direct vers nos rapports payants.",
+          "Traduire et adapter culturellement ce contenu pilier pour les 9 autres langues, en insistant sur les aspects universels du développement personnel tout en respectant les nuances culturelles et spirituelles de chaque marché."
+        ],
+        "must_include_sections": [
+          "Qu'est-ce que le Karma ? Définition simple pour tous",
+          "Les Origines Spirituelles : du Veda à Bouddha",
+          "Karma Hindouiste vs Karma Bouddhiste : Quelles Différences ?",
+          "Les 12 Lois du Karma : Des Principes pour Guider Votre Vie",
+          "Votre Héritage Karmique : Comment le Découvrir grâce à la Numérologie ?",
+          "Astrologie Karmique : Lire Votre Destin dans Votre Thème Astral",
+          "Comment Améliorer son Karma au Quotidien : Actions et Rituels"
+        ],
+        "citable_facts_to_verify": [
+          "L'origine du concept de karma se trouverait dans les Upanishad.",
+          "Il existe 3 (ou 4) types de karma dans le Jñāna yoga : Saṃcita-karma, Prārabdha-karma, et Āgāmin-karma (ou Kriyamāṇa-karma).",
+          "Les '12 lois du karma' sont une construction populaire occidentale et non un texte canonique bouddhiste ou hindouiste."
+        ],
+        "entities_to_mention": [
+          "Hindouisme",
+          "Bouddhisme",
+          "Jaïnisme",
+          "Sikhisme",
+          "Saṃsāra",
+          "Moksha",
+          "Nirvana",
+          "Upanishad",
+          "Bhagavad-Gîtâ"
+        ],
+        "target_word_count": 3000,
+        "intent_type": "informational",
+        "featured_snippet_opportunity": "Format : Définition. Formulation cible : 'Le karma est un terme sanskrit signifiant 'action'. C'est un principe spirituel central dans l'hindouisme et le bouddhisme, qui décrit une loi universelle de cause à effet : chaque action, parole et pensée d'une personne détermine ses vies futures. En résumé, on récolte ce que l'on sème.'",
+        "serp_features_detected": [
+          "AI Overview",
+          "People Also Ask",
+          "Featured Snippet",
+          "Video",
+          "Image Pack"
+        ],
+        "grounding_sources": [
+          {
+            "title": "lebienvivant.fr",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxvgc2z2QBjxpBaC6yEo7fGKnS55BHEOVkeqOWFOFkXGnxtbPPkIPEE7BQm0cByuJ7G1GjXLoaM7oOPuxp0TXNEuoRvz4elNs2t3xfQRyQjAdbNIcGVp3g_HJd8dbD2j68bkceIi87ae3UZCwSTdrUuANUeVJx72MF2eFS9SNfnH0T3vaPEw=="
+          },
+          {
+            "title": "yogom.fr",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvz5pe0txT7O_x0rakXxGpSqpKM7LF58yvTvh-jhQhVueDu2CPe8J3gMSP4sGbqgeGH1B10Q6wn6IdmLgDdkVY1nZCPS1i7sWVN9SaGhPEYcROh6qxo4Xe"
+          },
+          {
+            "title": "wikipedia.org",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG34e3Pwi27iiYE2y45_F4Sx-nKdP4przYE0g79AyRFx_lOdS9auOuvK0f-2OFa6PoOPhI_2u8cpCi-b1o82wWJh1RdHfo6txYjGcR_n8vLLfL1K--SCqfWAgxdI2E="
+          },
+          {
+            "title": "wikipedia.org",
+            "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdagSPG3r87Zv38esaDLMxLFxnVaFjLU5o0vlDAbkhMSTmNPz72HQpQiN06bA9D0X0mYJr6taG2J6x9ADHiVIb0SK7WbuJI_hqCAlWIyGZPByz820mhxR6R8CmUao="
+          }
+        ]
+      }
+    }
   },
   {
     "title": "Oracle IA vs tarot traditionnel : quelle guidance choisir",
