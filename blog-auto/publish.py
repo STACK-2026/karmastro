@@ -186,20 +186,35 @@ def generate_article(article: dict, system_prompt: str) -> dict:
     Returns dict with title_tag, meta_description, content (markdown).
     Retries on 429/529 with exponential backoff.
     """
-    user_prompt = f"""Ecris un article SEO complet sur le sujet suivant :
+    user_prompt = f"""Ecris un article SEO profond, humain et optimise pour ranker sur ce sujet :
 
 Titre : {article['title']}
 Mots-cles : {article.get('keywords', '')}
 Categorie : {article.get('category', '')}
-Blog : {article.get('blog', 'principal')}
-Date de publication : {article.get('scheduled_date', '')}
+Date : {article.get('scheduled_date', '')}
 
-IMPORTANT : L'article doit etre en Markdown (PAS en HTML).
-Commence ta reponse avec exactement ces 2 lignes :
-TITLE_TAG: [titre SEO optimise < 60 caracteres]
-META_DESCRIPTION: [meta description 150-160 caracteres]
+STANDARDS QUALITE STACK-2026 (OBLIGATOIRES, article rejete sinon) :
+1. LONGUEUR : 3500+ mots dans le corps.
+2. TL;DR : bloc "**TL;DR**" au tout debut (avant 1ere H2) avec 3-5 bullets resumant l'essentiel.
+3. STRUCTURE : intro 200-300 mots, minimum 6 sections H2, sous-sections H3 quand pertinent.
+4. FAQ : section "## FAQ" a la fin avec 5 questions + reponses 80-150 mots chacune.
+5. SOURCES : section "## Sources" avec minimum 5 references externes verifiables (format: "- [Titre](URL) - Organisme, Date").
+6. LIENS EXTERNES : minimum 5 liens dans le corps vers autorites reelles (.gov, .edu, journaux reconnus, entreprises leaders). PAS d'inventer d'URL.
+7. LIENS INTERNES : minimum 10 liens relatifs vers /blog/..., /tarifs, /outils, /methode, /contact.
+8. E-E-A-T : demontre expertise avec exemples concrets, cas clients anonymises, chiffres sources, nuances pro/contra.
 
-Puis le contenu Markdown de l'article (sans H1, commence directement par le sommaire puis les H2).
+REGLES STYLE :
+- Jamais de tiret cadratin ni en dash. Virgule/deux-points/tiret simple (-).
+- Accents FR systematiques.
+- Chiffres precis UNIQUEMENT si source adjacente (ex: "selon l'INSEE 2024 : 23 %").
+- Interdit "les etudes montrent" sans source.
+- Zero tableau repete.
+
+Commence par ces 2 lignes EXACTEMENT :
+TITLE_TAG: [< 60 chars, mot-cle principal en debut]
+META_DESCRIPTION: [150-160 chars, reponse directe, chiffre si possible]
+
+Puis "**TL;DR**" + bullets, puis l'intro, puis les H2.
 """
 
     for attempt in range(MAX_RETRIES):
@@ -306,27 +321,57 @@ def claude_audit_call(system: str, user: str, max_tokens: int = 2500, retries: i
 
 DRAFT_SYSTEM_SUFFIX = """
 
-REGLES DURES SUPPLEMENTAIRES:
-- Jamais de tiret cadratin (em U+2014) ni en (en U+2013). Remplace par virgule, deux-points, point ou tiret simple (-).
-- Accents FR systematiques quand langue = FR.
-- Chiffres et noms propres precis : reste factuel ou reformule en tendance.
-- Pas de claim vague du genre "des etudes montrent" sans source.
+STANDARDS QUALITE OBLIGATOIRES STACK-2026 (article rejete si non respectes):
+- LONGUEUR : 3500+ mots strict dans le corps (hors frontmatter).
+- TL;DR : bloc "**TL;DR**" au debut de l'article (avant la 1ere H2) resumant l'essentiel en 3-5 bullets.
+- STRUCTURE : intro 200-300 mots, minimum 6 sections H2, sous-sections H3.
+- FAQ : section H2 "## FAQ" a la fin avec 5 questions + reponses 80-150 mots chacune.
+- SOURCES : section H2 "## Sources" a la fin avec minimum 5 references markdown vers autorites reelles (format: "- [Titre](URL) - Organisme, Date").
+- MAILLAGE EXTERNE : minimum 5 liens vers domaines autorites (.gov, .edu, journaux, entreprises leaders VERIFIABLES). JAMAIS inventer d'URL.
+- MAILLAGE INTERNE : minimum 10 liens relatifs (/blog/..., /tarifs, /outils, /methode, /contact).
+- JAMAIS de tiret cadratin (em U+2014) ni en (en U+2013). Remplace par virgule, deux-points, point ou tiret simple (-).
+- Chiffres precis UNIQUEMENT si verifiables avec source adjacente. Sinon reformule en tendance.
+- Interdit les claims vagues ("les etudes montrent", "les experts disent") sans source.
 - Sortie STRICTEMENT en Markdown, sans wrapper triple-backticks.
+- E-E-A-T : demontre l'expertise avec exemples concrets, cas clients, chiffres sources, nuances.
 """
 
-AUDIT_SYSTEM = """Tu es auditeur factuel strict pour un article SEO.
-Ta seule tache : detecter les hallucinations factuelles (chiffres inventes, citations fabriquees, noms d'entreprises/outils inexistants, dates fausses, lois imaginaires).
-Tu IGNORES: opinions, ton editorial, structure, style, qualite du texte.
-Tu ACCEPTES: tendances generales sans source chiffree precise, concepts techniques connus, liens internes.
+AUDIT_SYSTEM = """Tu es auditeur QUALITE SEO pour standards STACK-2026.
+
+Audite le DRAFT contre les CRITERES OBJECTIFS. Retourne JSON strict.
+
+SEUILS DURS (MAJOR si non respectes):
+1. LONGUEUR corps : 3500+ mots. MINOR si 3000-3499, MAJOR si < 3000.
+2. TL;DR : bloc "**TL;DR**" ou "TL;DR:" present avant la 1ere H2.
+3. FAQ : section "## FAQ" avec au moins 5 questions.
+4. SOURCES : section "## Sources" avec au moins 5 references markdown.
+5. LIENS EXTERNES : minimum 5 liens [...](https://...) vers domaines differents du site courant.
+6. LIENS INTERNES : minimum 10 liens [...](/...) relatifs.
+7. HALLUCINATIONS : chiffres precis sans source adjacente, citations sans attribution, noms/lois inventees.
+8. TIRETS : em dash (U+2014) ou en dash (U+2013) present = MAJOR.
 
 Retourne UNIQUEMENT ce JSON :
 {
-  "hallucinations": [
-    {"claim": "extrait exact du draft (max 180 chars)", "type": "chiffre|citation|nom|date|loi", "reason": "pourquoi c'est suspect"}
-  ],
+  "word_count_body": 0,
+  "has_tldr": false,
+  "has_faq": false,
+  "faq_questions_count": 0,
+  "has_sources": false,
+  "sources_count": 0,
+  "external_links_count": 0,
+  "internal_links_count": 0,
+  "em_dashes_present": false,
+  "hallucinations": [{"claim": "max 180 chars", "type": "chiffre|citation|nom|date|loi", "reason": "..."}],
+  "issues": [{"field": "word_count|tldr|faq|sources|external_links|internal_links|hallucinations|dashes", "severity": "MINOR|MAJOR", "description": "..."}],
   "verdict": "CLEAN|MINOR|MAJOR"
 }
-CLEAN = 0 hallucination. MINOR = 1-3. MAJOR = >3 ou invention majeure."""
+
+VERDICT :
+- CLEAN = 0 issue.
+- MINOR = 1-3 issues non critiques (3000-3499 mots, 4 liens ext, 9 liens int).
+- MAJOR = au moins 1 critique : pas FAQ/Sources/TL;DR, mots<3000, hallucination grave, em-dash present, liens < minima durs.
+
+IGNORE: opinions, style, choix editoriaux."""
 
 
 def generate_article_mistral(article: dict, system_prompt: str) -> dict:
@@ -350,7 +395,7 @@ Puis le contenu Markdown de l'article (sans H1, commence directement par le somm
     text = mistral_call(
         [{"role": "system", "content": system_prompt + DRAFT_SYSTEM_SUFFIX},
          {"role": "user", "content": user_prompt}],
-        model=MISTRAL_LARGE, temperature=0.4, max_tokens=8000,
+        model=MISTRAL_LARGE, temperature=0.4, max_tokens=14000,
     )
     text = _strip_md_fence(text)
     parsed = parse_claude_response(text, article)
@@ -363,9 +408,9 @@ Puis le contenu Markdown de l'article (sans H1, commence directement par le somm
             verdict = audit.get("verdict", "UNKNOWN")
             halls = audit.get("hallucinations", [])
             log.info(f"  verdict={verdict} hallucinations={len(halls)}")
-            if verdict in ("MINOR", "MAJOR") and halls:
+            if verdict == "MAJOR" or (audit.get("issues") or halls):
                 log.info("Mistral-large fix hallucinations...")
-                fixed_text = _fix_hallucinations(text, halls)
+                fixed_text = _fix_issues(text, audit)
                 fixed_text = _strip_md_fence(fixed_text)
                 parsed = parse_claude_response(fixed_text, article)
         except Exception as e:
@@ -394,24 +439,48 @@ def _audit_draft(draft: str) -> dict:
         return {"verdict": "UNKNOWN", "hallucinations": []}
 
 
-def _fix_hallucinations(draft: str, hallucinations: list) -> str:
-    halls_text = "\n".join(f"- [{h.get('type','?')}] {h.get('claim','')} ({h.get('reason','')})"
-                           for h in hallucinations[:10])
-    user = f"""Voici un draft d'article. Claude a flagge {len(hallucinations)} claims factuels douteux :
+def _fix_issues(draft: str, audit: dict) -> str:
+    """Mistral-large fix based on audit issues. Replaces _fix_hallucinations (broader scope)."""
+    issues = list(audit.get("issues", [])) + [
+        {"field": "hallucination", "severity": "MAJOR",
+         "description": f"Claim: {h.get('claim','')[:150]} | Raison: {h.get('reason','')}"}
+        for h in audit.get("hallucinations", [])
+    ]
+    if not issues:
+        return draft
+    issues_text = "
+".join(
+        f"- [{i.get('severity','?')}] {i.get('field','?')}: {i.get('description','')}"
+        for i in issues[:25]
+    )
+    wc = audit.get("word_count_body", 0)
+    user = f"""Auditeur a flagge {len(issues)} problemes dans le DRAFT. Corrige-les en developpant intelligemment.
 
-{halls_text}
+PROBLEMES :
+{issues_text}
 
-Ta tache : reecris l'article ENTIER en corrigeant UNIQUEMENT ces claims (reformule en tendance generale, retire le chiffre precis, ou remplace par un exemple verifiable). Garde tout le reste INTACT : structure, ton, longueur, paragraphes, liens internes, TITLE_TAG et META_DESCRIPTION.
+Longueur actuelle : {wc} mots.
 
-DRAFT ORIGINAL :
+DIRECTIVES DURES :
+- Si word_count < 3500 : DEVELOPPE chaque section existante avec exemples concrets, chiffres sources, nuances. Ajoute des H2/H3 supplementaires si besoin. Ecris jusqu'a atteindre 3500+ mots.
+- Si TL;DR absent : ajoute un bloc "**TL;DR**" (3-5 bullets) au tout debut avant la 1ere H2.
+- Si FAQ absente ou < 5 questions : ajoute/etend "## FAQ" avec 5 questions + reponses 80-150 mots.
+- Si Sources absente ou < 5 references : ajoute/etend "## Sources" avec liens reels (format markdown).
+- Si liens externes < 5 : injecte des liens vers autorites reelles (.gov, .edu, journaux, leaders secteur) dans le corps.
+- Si liens internes < 10 : injecte des liens relatifs vers /blog/..., /tarifs, /outils, /methode, /contact.
+- Si em/en dash : remplace TOUS par virgule, deux-points, point ou tiret simple (-).
+- Si hallucinations : retire les chiffres/citations douteux ou reformule en tendance (ex: "plusieurs etudes" sans chiffre precis) ou attribue a une source reelle verifiable.
+
+CONSERVE le frontmatter (TITLE_TAG + META_DESCRIPTION) INTACT. Garde la structure, le style, le ton. Modifie UNIQUEMENT ce qui est flagge.
+
+DRAFT :
 {draft}
 
-Retourne le draft corrige COMPLET (avec TITLE_TAG/META_DESCRIPTION + contenu), sans commentaire, sans wrapper.
-"""
+Retourne le draft corrige COMPLET, sans commentaire, sans triple-backticks."""
     return mistral_call(
-        [{"role": "system", "content": "Tu corriges UNIQUEMENT les claims flagges, sans rien reecrire d'autre."},
+        [{"role": "system", "content": "Tu corriges les issues flaggees en developpant le contenu pour atteindre les standards STACK-2026."},
          {"role": "user", "content": user}],
-        model=MISTRAL_LARGE, temperature=0.2, max_tokens=8000,
+        model=MISTRAL_LARGE, temperature=0.25, max_tokens=14000,
     )
 
 
@@ -761,9 +830,13 @@ def main():
     # Load system prompt
     system_prompt = load_system_prompt()
 
-    # Generate article via Claude API
-    log.info("Generation via Claude API...")
-    generated = generate_article(article, system_prompt)
+    # Dispatch based on --engine flag (mistral default, claude fallback)
+    if engine == "mistral" and MISTRAL_API_KEY:
+        log.info("Generation via Mistral-large + Claude audit (engine=mistral)...")
+        generated = generate_article_mistral(article, system_prompt)
+    else:
+        log.info("Generation via Claude Sonnet (engine=claude)...")
+        generated = generate_article(article, system_prompt)
     log.info(f"Title tag: {generated['title_tag']}")
     log.info(f"Meta desc: {generated['meta_description'][:80]}...")
 
