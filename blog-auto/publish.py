@@ -501,8 +501,7 @@ def _fix_issues(draft: str, audit: dict) -> str:
     ]
     if not issues:
         return draft
-    issues_text = "
-".join(
+    issues_text = "\n".join(
         f"- [{i.get('severity','?')}] {i.get('field','?')}: {i.get('description','')}"
         for i in issues[:25]
     )
