@@ -1,0 +1,86 @@
+{
+  "tagline": "L'âme sensible du zodiaque qui transforme l'émotion en sagesse",
+  "intro": "Dernier né du zodiaque, les Poissons incarnent l'aboutissement du cycle astrologique, cette synthèse ultime où l'individu se dissout dans l'universel. Gouvernés par Neptune, planète de l'inspiration et de l'illusion, ils naviguent entre deux eaux : celle de l'intuition la plus pure et celle de la confusion la plus totale. Signe d'eau mutable, ils possèdent cette capacité rare de s'adapter à tous les courants émotionnels, absorbant les vibrations environnantes comme une éponge spirituelle. Leur sensibilité extrême n'est pas faiblesse mais pouvoir : celle de percevoir l'invisible, de capter les non-dits, de transformer la souffrance en art. Entre empathie débordante et fuite salvatrice, les Poissons portent en eux cette mélancolie fertile qui nourrit la création et l'amour inconditionnel.",
+  "strengths": [
+    "Intuition psychique développée remarquable",
+    "Empathie profonde et naturelle",
+    "Créativité artistique sans limites",
+    "Compassion désintéressée et guérisseuse",
+    "Capacité d'adaptation émotionnelle fluide"
+  ],
+  "weaknesses": [
+    "Tendance à fuir la réalité",
+    "Hypersensibilité paralysante aux critiques",
+    "Difficulté à poser des limites",
+    "Indécision chronique face aux choix",
+    "Propension aux addictions compensatoires"
+  ],
+  "in_love": "Les Poissons aiment avec leur âme entière, cherchant moins un partenaire qu'une fusion spirituelle totale. Ils offrent un amour sans condition ni frontière, capable de pardonner l'impardonnable et de voir la beauté là où d'autres ne perçoivent que défauts. Cette générosité émotionnelle peut toutefois les mener vers des relations déséquilibrées où ils donnent sans compter. Ils fuient la confrontation directe, préférant se retirer en silence plutôt que d'affronter les conflits. Leur romantisme idéaliste les pousse parfois à projeter sur l'autre leurs propres rêves, créant des déceptions quand la réalité rattrape le fantasme.",
+  "in_friendship": "En amitié, les Poissons sont ces confidents précieux qui écoutent sans juger et consolent sans moraliser. Leur loyauté émotionnelle traverse les années et les épreuves, même si leur présence physique peut parfois se faire discrète. Ils excellent dans l'art de sentir quand un ami traverse une période difficile, apparaissant souvent au bon moment avec les mots justes. Leur nature empathique fait d'eux des amis thérapeutiques, capables d'absorber la souffrance d'autrui parfois au détriment de leur propre équilibre.",
+  "at_work": "Les Poissons s'épanouissent dans les métiers de l'aide, de l'art ou du soin : psychologie, médecine alternative, musique, peinture, cinéma. Ils supportent mal la hiérarchie rigide et les ambiances compétitives, préférant les environnements collaboratifs et bienveillants. Leur rythme de travail suit leurs cycles émotionnels : periods d'inspiration fulgurante alternant avec des phases de retrait nécessaire. Leur créativité débordante compense souvent leur difficulté avec les tâches administratives et la gestion du temps, nécessitant un cadre structurant pour révéler tout leur potentiel.",
+  "best_matches": [
+    {
+      "slug": "cancer",
+      "score": 92,
+      "why": "Compréhension mutuelle des mondes émotionnels et besoin partagé de sécurité affective profonde."
+    },
+    {
+      "slug": "scorpion",
+      "score": 88,
+      "why": "Intensité émotionnelle commune et fascination pour les mystères de l'âme humaine."
+    },
+    {
+      "slug": "capricorne",
+      "score": 85,
+      "why": "Complémentarité parfaite entre la sensibilité poissons et la structure capricorne stabilisante."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "gemeaux",
+      "why": "Opposition entre l'approche rationnelle des Gémeaux et l'intuition pure des Poissons créant incompréhensions récurrentes."
+    },
+    {
+      "slug": "vierge",
+      "why": "Tension naturelle entre le perfectionnisme critique de la Vierge et la sensibilité à fleur de peau des Poissons."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Améthyste",
+    "animal_totem": "Dauphin",
+    "flower": "Lotus",
+    "color": "Bleu océan",
+    "lucky_day": "Jeudi",
+    "lucky_number": 7,
+    "metal": "Platine"
+  },
+  "famous_people": [
+    "Albert Einstein",
+    "Steve Jobs",
+    "Rihanna",
+    "Victor Hugo",
+    "Elizabeth Taylor"
+  ],
+  "faq": [
+    {
+      "q": "Pourquoi les Poissons sont-ils si sensibles aux énergies négatives des autres ?",
+      "a": "La sensibilité extrême des Poissons provient de leur nature neptunienne qui dissout les frontières entre soi et autrui. Leur système nerveux capte naturellement les vibrations émotionnelles environnantes, fonctionnant comme une antenne psychique permanent. Cette perméabilité énergétique, don autant que fardeau, les rend particulièrement vulnérables dans les environnements chargés négativement. Ils absorbent littéralement les émotions d'autrui, ayant parfois du mal à distinguer leurs propres sentiments de ceux qu'ils captent. Cette hypersensibilité nécessite des périodes de solitude régulières pour se ressourcer et évacuer les énergies parasites accumalées au contact des autres."
+    },
+    {
+      "q": "Comment un Poissons peut-il développer sa créativité naturelle ?",
+      "a": "La créativité des Poissons s'épanouit dans l'abandon et la confiance en leur intuition première. Ils doivent créer un espace sacré où l'inspiration peut circuler librement, sans jugement ni contrainte technique immédiate. L'art devient leur langage privilégié pour exprimer l'inexprimable, transformer l'émotion brute en beauté tangible. Les pratiques méditatives, la connexion à la nature et l'exploration de leurs rêves nourrissent leur imaginaire fertile. Il leur faut accepter les cycles créatifs naturels, alternant phases d'inspiration intense et périodes de gestation apparemment stériles mais nécessaires. La clé réside dans la patience et l'acceptation de leur rythme unique."
+    },
+    {
+      "q": "Un ascendant Poissons modifie-t-il la personnalité du signe solaire ?",
+      "a": "L'ascendant Poissons enveloppe la personnalité d'une aura mystérieuse et d'une sensibilité magnétique, quel que soit le signe solaire. Cette influence neptunienne adoucit les angles trop vifs, créé une approche plus intuitive de la vie et développe une empathie naturelle remarquable. La personne dégage une impression d'être ailleurs, connectée à des dimensions subtiles que les autres ne perçoivent pas. Cette configuration amplifie les capacités artistiques et spirituelles, mais peut aussi générer une certaine confusion identitaire. L'ascendant Poissons rend la personnalité plus adaptable et réceptive, parfois au détriment de l'affirmation claire des besoins personnels et des limites nécessaires."
+    },
+    {
+      "q": "Quels sont les métiers idéaux pour exprimer la nature des Poissons ?",
+      "a": "Les Poissons excellent dans les professions qui allient service à autrui et expression créative : psychothérapie, art-thérapie, médecine holistique, travail social, enseignement spirituel. Les domaines artistiques leur offrent un terrain d'épanouissement naturel : musique, danse, peinture, écriture, cinéma, photographie. Leur capacité d'empathie en fait d'excellents soignants : infirmiers, vétérinaires, masseurs, énergéticiens. Les métiers liés à l'eau leur conviennent parfaitement : océanographie, aquaculture, thermalisme. Ils s'épanouissent également dans la recherche spirituelle, l'astrologie, la numérologie. L'essentiel est qu'ils puissent exprimer leur sensibilité et contribuer au bien-être collectif dans un environnement bienveillant et non compétitif."
+    },
+    {
+      "q": "Comment les Poissons peuvent-ils mieux gérer leur tendance à l'évasion ?",
+      "a": "La tendance à l'évasion des Poissons naît souvent d'une réalité trop dure à affronter directement. Plutôt que de lutter contre cette nature, ils doivent apprendre à canaliser constructivement ce besoin de fuite : méditation, art, spiritualité, voyages intérieurs. Il s'agit de créer des soupapes créatives et spirituelles qui nourrissent l'âme sans nuire à l'équilibre de vie. L'ancrage par des pratiques corporelles douces (yoga, natation, marche en nature) aide à maintenir le lien avec le concret. La clé réside dans l'acceptation de leur rythme particulier et la création d'un environnement de vie qui respecte leur besoin d'espaces de retrait et de rêverie, tout en maintenant des liens avec la réalité pratique."
+    }
+  ]
+}

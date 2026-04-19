@@ -1,0 +1,86 @@
+{
+  "tagline": "Primo nato dello zodiaco, l'Ariete apre la strada con ardore",
+  "intro": "Nato nel momento in cui la natura rinasce, l'Ariete incarna lo slancio vitale primordiale. Primo segno dello zodiaco, porta in sé la forza bruta dell'inizio, quella che spezza il guscio dell'inverno per far scaturire la vita nuova. Marte, il suo pianeta dominante, gli conferisce questa capacità unica di trasformare l'intenzione in azione immediata. Cardinale del Fuoco, l'Ariete non conosce l'esitazione: vede, vuole, agisce. Questa spontaneità apparente nasconde in realtà un'intelligenza intuitiva formidabile, capace di cogliere l'essenziale di una situazione in un lampo. Lontano dal cliché dell'impulsivo, il vero Ariete possiede quella prescienza del pioniere che intuisce i sentieri prima che siano tracciati. Attraversa il mondo da esploratore, assumendosi il rischio dell'errore per aprire la strada agli altri.",
+  "strengths": [
+    "Coraggio davanti alle sfide inedite",
+    "Iniziativa creatrice spontanea",
+    "Leadership naturale ispirante",
+    "Franchezza disarmante e autentica",
+    "Capacità di rigenerazione rapida"
+  ],
+  "weaknesses": [
+    "Impazienza davanti alla lentezza",
+    "Tendenza all'individualismo eccessivo",
+    "Difficoltà a mantenere lo sforzo",
+    "Suscettibilità ferita facilmente",
+    "Mancanza di diplomazia a volte"
+  ],
+  "in_love": "L'Ariete ama con la stessa intensità con cui vive: totalmente e immediatamente. Non rincorre l'amore, lo riconosce al primo sguardo e vi si lancia senza calcoli. La sua seduzione opera attraverso l'autenticità piuttosto che la strategia. Cerca un partner complice dei suoi slanci, capace di ammirare la sua spontaneità senza cercare di imbrigliarla. L'Ariete fugge dalle relazioni tiepide o dai giochi di potere sottili. Ha bisogno di sentire quella particolare elettricità che conferma che l'altro è alla sua altezza. In coppia, rimane l'iniziatore dei progetti comuni, quello che propone l'avventura e trascina l'altro nella sua scia energica.",
+  "in_friendship": "L'amicizia Ariete si riconosce per la sua lealtà immediata e la sua generosità senza condizioni. Sceglie i suoi amici per un colpo di fulmine e rimane loro fedele con una costanza che può sorprendere in questo segno ritenuto instabile. L'Ariete mantiene le sue amicizie attraverso l'azione comune piuttosto che le confidenze interminabili. Preferisce condividere un'avventura che una terapia di gruppo. I suoi amici apprezzano la sua capacità di rilanciare la dinamica del gruppo quando l'energia cala, e il suo modo diretto di risolvere i conflitti senza lasciare marcire i non detti.",
+  "at_work": "L'Ariete eccelle nei mestieri del pioniere: imprenditore, commerciale sul campo, medico d'urgenza, capo progetto innovazione. Ha bisogno di autonomia e sfide rinnovate per dare il massimo. Di fronte all'autorità, rispetta quella che si merita per competenza, ma rifiuta istintivamente le gerarchie cristallizzate. Il suo ritmo di lavoro funziona a scatti intensi piuttosto che per regolarità. Il suo punto cieco professionale: la pazienza necessaria per i compiti di fondo e la gestione dei dettagli amministrativi che lo annoiano profondamente.",
+  "best_matches": [
+    {
+      "slug": "lion",
+      "score": 92,
+      "why": "Due fuochi cardinali che si ammirano reciprocamente e creano una dinamica di superamento permanente"
+    },
+    {
+      "slug": "sagittaire",
+      "score": 88,
+      "why": "Complementarietà perfetta tra l'iniziativa Ariete e la visione espansiva Sagittario"
+    },
+    {
+      "slug": "gemeaux",
+      "score": 85,
+      "why": "Opposizione creativa dove la spontaneità Ariete stimola l'intelligenza adattiva Gemelli"
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "cancer",
+      "why": "La prudenza difensiva Cancro frena lo slancio spontaneo Ariete, creando frustrazione reciproca"
+    },
+    {
+      "slug": "capricorne",
+      "why": "Opposizione tra l'immediatezza Ariete e la pazienza strutturata Capricorno, ritmi incompatibili"
+    }
+  ],
+  "attributes": {
+    "gemstone": "Rubino",
+    "animal_totem": "Ariete",
+    "flower": "Tulipano rosso",
+    "color": "Rosso cardinale",
+    "lucky_day": "Martedì",
+    "lucky_number": 7,
+    "metal": "Ferro"
+  },
+  "famous_people": [
+    "Leonardo da Vinci",
+    "Vincent van Gogh",
+    "Charlie Chaplin",
+    "Marlon Brando",
+    "Lady Gaga"
+  ],
+  "faq": [
+    {
+      "q": "Perché l'Ariete è considerato il leader naturale dello zodiaco?",
+      "a": "L'Ariete occupa questa posizione per la sua natura cardinale di Fuoco, combinata all'influenza di Marte. Primo segno del ciclo zodiacale, possiede l'energia di iniziazione pura, quella che lancia le dinamiche nuove. La sua capacità di leadership non deriva da un desiderio di dominazione ma da un'attitudine naturale a vedere le opportunità prima degli altri e ad agire di conseguenza. L'Ariete guida con l'esempio e il trascinamento piuttosto che con l'autorità imposta. Questa posizione di pioniere gli conferisce una responsabilità particolare: quella di aprire i sentieri che altri segni potranno poi sviluppare e stabilizzare."
+    },
+    {
+      "q": "Come influisce un ascendente Ariete sulla personalità anche con un sole diverso?",
+      "a": "L'ascendente Ariete colora istantaneamente il modo di approcciare il mondo, anche se il Sole natale tempera questo primo impulso. La persona sviluppa un'andatura decisa, uno sguardo diretto e una tendenza a prendere iniziative rapide. Dà l'impressione di essere sempre pronta all'azione, anche se il suo segno solare la spinge verso più riflessione. Questo ascendente conferisce un carisma naturale e una capacità di motivare gli altri. Può creare tensioni interne se il Sole natale privilegia la prudenza o la diplomazia, ma offre sempre questa energia di avvio così caratteristica dell'Ariete."
+    },
+    {
+      "q": "Quali professioni permettono all'Ariete di sfruttare il suo potenziale marziano?",
+      "a": "L'Ariete si realizza nelle professioni che richiedono coraggio, iniziativa e capacità di gestire l'urgenza. I mestieri dell'innovazione tecnologica, dell'imprenditoria, del giornalismo investigativo gli si addicono perfettamente. In campo medico, eccelle in chirurgia o in medicina d'urgenza. Lo sport ad alto livello, il coaching, le forze dell'ordine o i mestieri della sicurezza corrispondono al suo temperamento marziano. Riesce anche nella vendita diretta, nel marketing innovativo o in qualsiasi ambito che richieda di convincere e trascinare. L'essenziale è che possa vedere rapidamente i risultati della sua azione e mantenere un margine di autonomia nelle sue decisioni."
+    },
+    {
+      "q": "L'Ariete può sviluppare pazienza naturalmente con l'età?",
+      "a": "La pazienza dell'Ariete evolve effettivamente con la maturità, ma assume una forma particolare. Piuttosto che imparare l'attesa passiva, l'Ariete maturo sviluppa una pazienza attiva: comprende che certi obiettivi richiedono tempo e impara a strutturare la sua azione in tappe. L'esperienza gli insegna a canalizzare la sua energia marziana verso progetti a più lungo termine. Non diventa paziente nel senso tradizionale, ma acquisisce una visione strategica che gli permette di accettare i tempi necessari. Questa evoluzione avviene spesso attraverso esperienze professionali o personali che gli mostrano il valore delle realizzazioni durature."
+    },
+    {
+      "q": "Come può l'Ariete armonizzare la sua natura di fuoco con partner più contemplativi?",
+      "a": "L'armonizzazione passa attraverso il riconoscimento reciproco dei ritmi diversi e la creazione di spazi rispettivi. L'Ariete deve imparare a valorizzare la profondità riflessiva del suo partner come complemento alla sua spontaneità, non come un freno. In cambio, il partner contemplativo può attingere dallo slancio Ariete un'energia rivitalizzante. La chiave risiede nell'alternanza: momenti di azione comune iniziati dall'Ariete, momenti di pausa e riflessione guidati dall'altro. Questa complementarietà arricchisce entrambe le parti a condizione che ciascuna rispetti il modo di funzionare dell'altra senza cercare di trasformarlo. La relazione diventa allora un equilibrio dinamico tra slancio e profondità."
+    }
+  ]
+}

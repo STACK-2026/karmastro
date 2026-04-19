@@ -1,0 +1,86 @@
+{
+  "tagline": "First-born of the zodiac, Aries blazes the trail with fierce determination",
+  "intro": "Born at the moment when nature awakens, Aries embodies the primordial vital force. As the first sign of the zodiac, it carries within the raw power of beginnings, that which shatters winter's shell to unleash new life. Mars, its planetary ruler, grants this unique ability to transform intention into immediate action. Cardinal Fire, Aries knows no hesitation: it sees, it wants, it acts. This apparent spontaneity actually conceals a formidable intuitive intelligence, capable of grasping the essence of any situation in a flash. Far from the cliche of the impulsive charger, the true Aries possesses that pioneer's foresight which senses paths before they are carved. It moves through the world as a scout, accepting the risk of error to open the road for others.",
+  "strengths": [
+    "Courage when facing unprecedented challenges",
+    "Spontaneous creative initiative",
+    "Natural inspiring leadership",
+    "Disarming and authentic frankness",
+    "Rapid regeneration capacity"
+  ],
+  "weaknesses": [
+    "Impatience with slowness",
+    "Tendency toward excessive individualism",
+    "Difficulty maintaining sustained effort",
+    "Easily wounded sensitivity",
+    "Sometimes lacks diplomacy"
+  ],
+  "in_love": "Aries loves with the same intensity it lives: totally and immediately. It doesn't chase love, it recognizes it at first sight and plunges in without calculation. Its seduction works through authenticity rather than strategy. It seeks a partner who complements its impulses, capable of admiring its spontaneity without trying to restrain it. Aries flees lukewarm relationships or subtle power games. It needs to feel that particular electricity which confirms the other is its equal. In relationships, it remains the initiator of shared projects, the one who proposes adventure and draws the other into its energetic wake.",
+  "in_friendship": "Aries friendship is recognized by its immediate loyalty and unconditional generosity. It chooses friends on impulse and remains faithful with a constancy that can surprise in this supposedly unstable sign. Aries maintains friendships through shared action rather than endless confidences. It prefers sharing an adventure to group therapy. Its friends appreciate its ability to revive group dynamics when energy flags, and its direct way of resolving conflicts without letting unspoken issues fester.",
+  "at_work": "Aries excels in pioneering professions: entrepreneur, field sales, emergency medicine, innovation project manager. It needs autonomy and renewed challenges to give its full measure. When facing authority, it respects that which is earned through competence, but instinctively rejects rigid hierarchies. Its work rhythm functions in intense bursts rather than steady regularity. Its professional blind spot: the patience required for foundational tasks and managing administrative details that deeply bore it.",
+  "best_matches": [
+    {
+      "slug": "lion",
+      "score": 92,
+      "why": "Two cardinal fires who mutually admire and create a dynamic of constant transcendence"
+    },
+    {
+      "slug": "sagittaire",
+      "score": 88,
+      "why": "Perfect complementarity between Aries initiative and Sagittarius expansive vision"
+    },
+    {
+      "slug": "gemeaux",
+      "score": 85,
+      "why": "Creative opposition where Aries spontaneity stimulates Gemini's adaptive intelligence"
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "cancer",
+      "why": "Cancer's defensive caution brakes Aries spontaneous momentum, creating mutual frustration"
+    },
+    {
+      "slug": "capricorne",
+      "why": "Opposition between Aries immediacy and Capricorn's structured patience, incompatible rhythms"
+    }
+  ],
+  "attributes": {
+    "gemstone": "Ruby",
+    "animal_totem": "Ram",
+    "flower": "Red tulip",
+    "color": "Cardinal red",
+    "lucky_day": "Tuesday",
+    "lucky_number": 7,
+    "metal": "Iron"
+  },
+  "famous_people": [
+    "Robert Downey Jr.",
+    "Lady Gaga",
+    "Elton John",
+    "Emma Watson",
+    "Jackie Chan"
+  ],
+  "faq": [
+    {
+      "q": "Why is Aries considered the natural leader of the zodiac?",
+      "a": "Aries holds this position through its cardinal Fire nature, combined with Mars' influence. As the first sign of the zodiacal cycle, it possesses pure initiating energy, that which launches new dynamics. Its leadership capacity doesn't come from a desire for domination but from a natural aptitude to see opportunities before others and act accordingly. Aries leads by example and inspiration rather than imposed authority. This pioneer position confers a particular responsibility: opening paths that other signs can then develop and stabilize."
+    },
+    {
+      "q": "How does Aries rising influence personality even with a different sun sign?",
+      "a": "Aries rising instantly colors the way one approaches the world, even if the natal Sun tempers this first impulse. The person develops a decisive bearing, direct gaze and tendency to take quick initiatives. They give the impression of always being ready for action, even if their sun sign pushes toward more reflection. This ascendant confers natural charisma and an ability to motivate others. It can create internal tensions if the natal Sun favors caution or diplomacy, but always offers that startup energy so characteristic of Aries."
+    },
+    {
+      "q": "What careers allow Aries to fully exploit their Martian potential?",
+      "a": "Aries flourishes in professions requiring courage, initiative and ability to handle urgency. Careers in technological innovation, entrepreneurship, investigative journalism suit them perfectly. In medicine, they excel in surgery or emergency care. High-level sports, coaching, law enforcement or security fields match their Martian temperament. They also succeed in field sales, disruptive marketing or any domain requiring persuasion and leadership. The essential element is being able to quickly see results of their action and maintain autonomy in their decisions."
+    },
+    {
+      "q": "Can Aries naturally develop patience with age?",
+      "a": "Aries patience does evolve with maturity, but takes a particular form. Rather than learning passive waiting, mature Aries develops active patience: understanding that certain objectives require time and learning to structure action in stages. Experience teaches channeling Martian energy toward longer-term projects. They don't become patient in the traditional sense, but acquire strategic vision allowing acceptance of necessary delays. This evolution often occurs through professional or personal experiences showing the value of lasting achievements."
+    },
+    {
+      "q": "How can Aries harmonize their fire nature with more contemplative partners?",
+      "a": "Harmonization comes through mutual recognition of different rhythms and creating respective spaces. Aries must learn to value their partner's reflective depth as complement to their spontaneity, not as a brake. In return, the contemplative partner can draw revitalizing energy from Aries momentum. The key lies in alternation: moments of shared action initiated by Aries, moments of pause and reflection guided by the other. This complementarity enriches both parties provided each respects the other's functioning without trying to transform it. The relationship becomes dynamic balance between momentum and depth."
+    }
+  ]
+}

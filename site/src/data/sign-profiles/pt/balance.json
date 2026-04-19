@@ -1,0 +1,86 @@
+{
+  "tagline": "O equilibrista cósmico que transforma cada encontro em harmonia",
+  "intro": "Sétimo signo do zodíaco, a Balança encarna o arquétipo venusiano da harmonia relacional e da beleza partilhada. Cardinal de Ar, ela inicia conexões autênticas onde outros veem apenas caos. Governada por Vénus na sua dimensão social, possui este dom raro de perceber instantaneamente os desequilíbrios e propor soluções elegantes. O seu génio reside na capacidade de criar pontes onde existem abismos, de revelar a beleza escondida das situações mais complexas. Contrariamente ao cliché da indecisa, a Balança autêntica sabe exactamente o que quer: um mundo onde cada um encontra o seu lugar numa sinfonia colectiva. O seu desafio existencial consiste em manter esta busca de equilíbrio sem perder a sua identidade própria no processo.",
+  "strengths": [
+    "Diplomacia natural instintiva",
+    "Sentido estético notável",
+    "Justiça equitativa assumida",
+    "Charme magnético autêntico",
+    "Mediação relacional experiente"
+  ],
+  "weaknesses": [
+    "Indecisão crónica paralisante",
+    "Evitamento sistemático de conflitos",
+    "Dependência afectiva subtil",
+    "Procrastinação elegante perfeccionista",
+    "Superficialidade estética ocasional"
+  ],
+  "in_love": "A Balança ama com a arte do refinamento e a busca constante da harmonia perfeita. Seduz pela sua capacidade de tornar cada momento precioso, transformando encontros em obras de arte relacionais. Foge da vulgaridade e das demonstrações brutais, preferindo declarações subtis e gestos delicados. A sua armadilha amorosa reside na idealização do parceiro e na dificuldade em aceitar as asperezas naturais de qualquer relação. Excele na arte de criar uma bolha romântica onde reinam beleza e cumplicidade, mas pode por vezes sacrificar a autenticidade no altar da harmonia.",
+  "in_friendship": "Na amizade, a Balança cultiva relações equilibradas onde cada um encontra o seu lugar sem esmagar o outro. Possui este talento precioso de reconciliar personalidades antagónicas e criar grupos harmoniosos. A sua lealdade expressa-se na capacidade de sempre ver o melhor nos seus amigos, mesmo nos seus momentos difíceis. Mantém naturalmente a ligação através de atenções delicadas e um sentido inato de hospitalidade.",
+  "at_work": "A Balança excele em todas as profissões ligadas à beleza, justiça, diplomacia e relações humanas: advogado, mediador, decorador, conselheiro matrimonial, adido cultural. Brilha particularmente em ambientes colaborativos onde o seu sentido de equidade se pode expressar. A sua relação com a autoridade é matizada: prefere convencer a constrager. O seu ângulo morto profissional reside na dificuldade em tomar decisões tajantes sob pressão temporal.",
+  "best_matches": [
+    {
+      "slug": "gemeaux",
+      "score": 92,
+      "why": "Dois signos de Ar que partilham o amor pela comunicação refinada e pelas trocas intelectuais estimulantes."
+    },
+    {
+      "slug": "verseau",
+      "score": 88,
+      "why": "Cumplicidade de Ar cardinal e fixo, visão partilhada de um mundo mais harmonioso e mais justo."
+    },
+    {
+      "slug": "sagittaire",
+      "score": 85,
+      "why": "O optimismo jupiteriano do Sagitário casa perfeitamente com a busca de harmonia venusiana da Balança."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "cancer",
+      "why": "O quadrado Caranguejo-Balança cria tensão entre necessidade de segurança emocional e busca de harmonia social."
+    },
+    {
+      "slug": "capricorne",
+      "why": "A oposição Balança-Capricórnio opõe a diplomacia venusiana à autoridade saturniana, criando incompreensões estruturais."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Opala",
+    "animal_totem": "Pomba",
+    "flower": "Rosa",
+    "color": "Rosa pastel",
+    "lucky_day": "Sexta-feira",
+    "lucky_number": 7,
+    "metal": "Cobre"
+  },
+  "famous_people": [
+    "Joaquim de Almeida",
+    "John Lennon",
+    "Oscar Wilde",
+    "Gandhi",
+    "Catherine Deneuve"
+  ],
+  "faq": [
+    {
+      "q": "Como saber se uma Balança tem interesse romântico em mim",
+      "a": "A Balança interessada multiplicará as atenções refinadas e integrar-te-á naturalmente no seu círculo social. Procurará a tua opinião sobre assuntos estéticos ou relacionais, sinal de que te atribui valor. Contrariamente ao cliché, uma Balança apaixonada torna-se menos indecisa: sabe o que quer e orquestrará subtilmente as condições da vossa aproximação. Atenção aos sinais subtis: convites para lugares belos, presentes escolhidos com gosto, conversas aprofundadas sobre os teus gostos artísticos. Se te apresentar aos amigos próximos, é porque realmente contas para ela."
+    },
+    {
+      "q": "Por que razão a Balança tem tanta dificuldade em tomar decisões",
+      "a": "A indecisão da Balança provém da sua capacidade excepcional para perceber todas as facetas de uma situação. Governada por Vénus, procura naturalmente a solução mais harmoniosa para todos, o que complica as suas escolhas. A sua mente de Ar cardinal analisa constantemente os prós e contras, procurando o equilíbrio perfeito. Esta busca de justiça e harmonia paralisa-a por vezes, pois recusa optar por uma solução que possa prejudicar alguém. Para a ajudar, propõe-lhe listar os critérios importantes e ponderar cada opção segundo os seus valores profundos em vez das expectativas exteriores."
+    },
+    {
+      "q": "A Balança com ascendente Leão muda realmente a sua personalidade",
+      "a": "O ascendente Leão transforma consideravelmente a expressão da Balança. Onde a Balança pura privilegia a discrição diplomática, o ascendente Leão acrescenta uma dimensão teatral e uma necessidade de reconhecimento. Esta combinação cria uma personalidade que seduz pelo seu charme solar conservando o seu sentido inato de harmonia. O lado indeciso da Balança é temperado pela segurança leonina, dando uma Balança mais afirmada nas suas escolhas estéticas e relacionais. Torna-se então um verdadeiro íman social, capaz de organizar eventos memoráveis onde beleza venusiana e generosidade solar se conjugam harmoniosamente."
+    },
+    {
+      "q": "Que profissões se adequam melhor ao temperamento da Balança",
+      "a": "A Balança excele em todos os domínios onde beleza, harmonia e relações humanas se encontram. As profissões jurídicas (advogado, mediador, juiz) correspondem à sua busca natural de justiça. Na estética, brilha como decorador de interiores, estilista, arquitecto de interiores ou consultor de imagem. As relações humanas atraem-na: psicólogo, conselheiro matrimonial, adido cultural, diplomata. Pode também ter sucesso na arte (galeria, crítica de arte) e nos eventos de gama alta. O seu sentido de equilíbrio faz dela também uma excelente gestora de conflitos em empresa ou uma negociadora comercial refinada."
+    },
+    {
+      "q": "Como pode a Balança desenvolver a sua espiritualidade de forma autêntica",
+      "a": "A espiritualidade da Balança passa pela procura de harmonia entre interior e exterior, entre si e os outros. Encontra o seu caminho nas práticas que cultivam a beleza da alma: meditação estética, contemplação artística, serviço aos outros na justiça social. O tantrismo, que une beleza e sagrado, pode particularmente convir-lhe. Desenvolverá a sua espiritualidade criando espaços belos dedicados à meditação, praticando gratidão pela beleza do mundo, cultivando a arte da relação consciente. A sua missão espiritual consiste em revelar a harmonia divina escondida em qualquer situação, tornando-se assim um agente de paz e reconciliação."
+    }
+  ]
+}

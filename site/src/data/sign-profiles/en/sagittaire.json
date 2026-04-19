@@ -1,0 +1,86 @@
+{
+  "tagline": "The philosophical adventurer who transforms every horizon into new wisdom",
+  "intro": "Sagittarius embodies the Jupiterian impulse toward expansion and understanding of the world. Born in late autumn, when nature prepares for winter, they carry within them this urgency to gather the last fruits of experience before dormancy. Their mutable fire doesn't burn to conquer like Aries, nor to radiate like Leo, but to illuminate unknown paths. Jupiter, their ruler, bestows this thirst for the absolute that drives them to transcend boundaries: geographical, intellectual, spiritual. Sagittarius is never content with the status quo. They question, explore, teach, always seeking that universal truth that would give meaning to existence. Their synthetic intelligence allows them to connect the scattered dots of human experience to extract a personal philosophy that is generous and optimistic.",
+  "strengths": [
+    "Natural and contagious optimism",
+    "Global and synthetic vision",
+    "Disarming and direct honesty",
+    "Adaptability in the face of change",
+    "Intellectual and spiritual generosity"
+  ],
+  "weaknesses": [
+    "Impatience with details",
+    "Tendency toward dispersion",
+    "Sometimes categorical judgments",
+    "Difficulty anchoring permanently",
+    "Excessive frankness that wounds"
+  ],
+  "in_love": "Sagittarius loves with the enthusiasm of one discovering a new continent. They seek an adventure companion rather than a cozy nest, someone who shares their curiosity about the world and accepts their need for space. Their seduction comes through travel stories, philosophical debates, and escapade plans. They flee possessiveness and stifling routines, preferring complicity based on mutual freedom. Their love grows through movement and shared discovery. When they commit, it's with that Jupiterian generosity that wants to make the other their best exploration companion, whether geographical or spiritual.",
+  "in_friendship": "Sagittarian friendship thrives on stimulating exchanges and shared escapades. This native collects authentic relationships, preferring a few true companions to a large superficial network. They inspire through enthusiasm, comfort through optimism, but can also be abrupt through their frankness. Loyal without being possessive, they maintain connections even at distance, always ready to pick up conversations where they left off. Their friendship is characterized by this intellectual generosity that pushes others to exceed their limits.",
+  "at_work": "Sagittarius excels in careers that combine movement and transmission: teaching, journalism, international commerce, tourism, publishing. They need autonomy and poorly tolerate micromanagement. Their work rhythm follows their inspirations, with phases of intense creativity alternating with moments of reflection. Facing authority, they prefer cooperation to submission. Their professional blind spot lies in their tendency to neglect repetitive and administrative tasks, essential but unstimulating for their explorer temperament.",
+  "best_matches": [
+    {
+      "slug": "belier",
+      "score": 92,
+      "why": "Two fires that fuel each other in action and adventure, sharing love of challenge and independence."
+    },
+    {
+      "slug": "lion",
+      "score": 88,
+      "why": "Natural complicity between two generous fire signs, Leo admiring Sagittarian freedom, Sagittarius respecting Leonine nobility."
+    },
+    {
+      "slug": "balance",
+      "score": 85,
+      "why": "Libran balance tempers Sagittarian enthusiasm while Sagittarian optimism energizes Libran reflection."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "vierge",
+      "why": "Virgoan methodical approach creates tension with Sagittarian spontaneous impulse, creating misunderstandings about life's tempo."
+    },
+    {
+      "slug": "poissons",
+      "why": "Piscean diffuse intuition confounds Sagittarian quest for direct truth, their modes of world perception structurally opposing each other."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Turquoise",
+    "animal_totem": "Horse",
+    "flower": "Narcissus",
+    "color": "Ultramarine blue",
+    "lucky_day": "Thursday",
+    "lucky_number": 9,
+    "metal": "Tin"
+  },
+  "famous_people": [
+    "Taylor Swift",
+    "Brad Pitt",
+    "Jay-Z",
+    "Scarlett Johansson",
+    "Jamie Foxx"
+  ],
+  "faq": [
+    {
+      "q": "Why does Sagittarius need so much freedom in relationships?",
+      "a": "Jupiter, ruler of Sagittarius, governs expansion and growth. This native instinctively perceives love as a territory of mutual exploration rather than a fortress to defend. Their mutable fire nature pushes them to constantly evolve, and they fear that overly tight bonds might limit this natural evolution. This quest for freedom doesn't translate to lack of commitment, but rather the vital need to preserve their creative momentum. In traditional astrology, we consider that Sagittarius loves through the prism of shared adventure, seeking a partner accomplice rather than a possessive companion. Their love grows in space and mutual trust."
+    },
+    {
+      "q": "How does Sagittarius rising influence apparent personality?",
+      "a": "Sagittarius rising gives a first impression of contagious optimism and benevolent curiosity. These natives approach the world with spontaneous smiles and natural tendencies to philosophize about their experiences. Their gestures are broad, their gait relaxed, reflecting this Jupiterian confidence in life. They easily ask questions, willingly share their experiences, quickly creating relaxed atmospheres. This influence can temper a more introverted sun sign by giving it a more sociable facade, or amplify the extraversion of an already expansive sign. Sagittarius rising colors world perception through an optimistic filter, pushing to see opportunities rather than obstacles in each new situation."
+    },
+    {
+      "q": "What careers allow Sagittarius to fully express their potential?",
+      "a": "Sagittarius flourishes in professions that combine movement, transmission, and cultural openness. Higher education, research, international journalism correspond perfectly to their need for synthesis and sharing. Travel careers, foreign commerce, translation exploit their taste for intercultural exchanges. In publishing, philosophy, theology, they can develop their capacity to connect apparently disparate concepts. Legal professions, particularly international law, also attract this sign enamored with justice. Their professional challenge consists of avoiding dispersion by choosing a field vast enough to nourish their curiosity while allowing them to develop recognized expertise."
+    },
+    {
+      "q": "Are Sagittarius and Gemini really incompatible despite their zodiacal opposition?",
+      "a": "The Sagittarius-Gemini opposition perfectly illustrates the astrological principle that opposite signs can either complement each other magnificently or create permanent tensions. Both are mutable and intellectually curious, but their approaches differ radically. Gemini collects information through pure curiosity, while Sagittarius seeks to synthesize it into a coherent world vision. This difference can create either enriching complementarity (one bringing details, the other global perspective) or recurring misunderstandings about their respective priorities. Success of this combination largely depends on their mutual capacity to respect these approach differences without seeking to convert the other to their method."
+    },
+    {
+      "q": "How can Sagittarius develop their spirituality authentically?",
+      "a": "Sagittarian spirituality naturally feeds on the quest for meaning and comparative philosophy. This sign finds its spiritual path by exploring different traditions, traveling to sacred places, studying foundational texts of various cultures. Their approach remains intellectual and synthetic rather than mystical or meditative. Sagittarius develops their spiritual dimension by teaching, sharing discoveries, creating bridges between world wisdoms. Pilgrimages, philosophical retreats, study of ancient languages nourish their soul as much as metaphysical debates. Their spirituality matures when they manage to transform personal convictions into transmissible wisdom, thus becoming the natural guide they are called to be by their Jupiterian nature."
+    }
+  ]
+}

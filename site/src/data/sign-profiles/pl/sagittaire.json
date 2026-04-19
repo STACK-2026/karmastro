@@ -1,0 +1,86 @@
+{
+  "tagline": "Filozof-poszukiwacz przygód, który każdy horyzont przekształca w nową mądrość",
+  "intro": "Strzelec uosabia jupiteriański impet ku ekspansji i zrozumieniu świata. Narodzony u schyłku jesieni, gdy przyroda przygotowuje się do zimy, nosi w sobie tę pilność zerwania ostatnich owoców doświadczenia przed uśpieniem. Jego zmienny ogień nie płonie po to, by zdobywać jak Baran, ani by promieniować jak Lew, ale by oświetlać nieznane ścieżki. Jowisz, jego władca, obdarza go tym pragnieniem absolutu, które popycha go do przekraczania granic: geograficznych, intelektualnych, duchowych. Strzelec nigdy nie zadowala się status quo. Kwestionuje, bada, naucza, zawsze w poszukiwaniu tej uniwersalnej prawdy, która nadałaby sens egzystencji. Jego syntetyczna inteligencja pozwala mu łączyć rozproszone punkty ludzkiego doświadczenia, aby wydobyć z nich osobistą filozofię, hojną i optymistyczną.",
+  "strengths": [
+    "Naturalny i zarażający optymizm",
+    "Globalna i syntetyczna wizja",
+    "Rozbrajająca i bezpośrednia szczerość",
+    "Zdolność adaptacji wobec zmian",
+    "Intelektualna i duchowa hojność"
+  ],
+  "weaknesses": [
+    "Niecierpliwość wobec szczegółów",
+    "Tendencja do rozpraszania się",
+    "Czasem kategoryczne osądy",
+    "Trudność w trwałym zakorzenieniu",
+    "Nadmiar raniącej szczerości"
+  ],
+  "in_love": "Strzelec kocha z impetem tego, kto odkrywa nowy kontynent. Szuka współtowarzysza przygód raczej niż przytulnego gniazda, kogoś kto podziela jego ciekawość świata i akceptuje jego potrzebę przestrzeni. Jego uwodzenie opiera się na opowieściach z podróży, debatach filozoficznych, planach ucieczki. Ucieka przed zaborczością i duszącymi rutyną, preferując współdziałanie oparte na wzajemnej wolności. Jego miłość rośnie w ruchu i wspólnym odkrywaniu. Gdy się angażuje, czyni to z tą jowiszową hojnością, która chce uczynić z drugiej osoby swojego najlepszego towarzysza eksploracji, czy to geograficznej, czy duchowej.",
+  "in_friendship": "Strzelecka przyjaźń karmi się stymulującymi wymianami i wspólnymi ucieczkami. Ten urodzony kolekcjonuje autentyczne relacje, preferując kilku prawdziwych towarzyszy od szerokiej powierzchownej sieci. Inspiruje swoim entuzjazmem, pociesza swoim optymizmem, ale może też ranić swoją szczerością. Lojalny bez bycia zaborczy, podtrzymuje więź nawet na odległość, zawsze gotów podjąć rozmowę tam, gdzie została przerwana. Jego przyjaźń charakteryzuje się tą intelektualną hojnością, która popchnęła drugą osobę do przekraczania własnych granic.",
+  "at_work": "Strzelec doskonale radzi sobie w zawodach łączących ruch z przekazem: nauczanie, dziennikarstwo, handel międzynarodowy, turystyka, wydawnictwo. Potrzebuje autonomii i źle znosi mikromanagement. Jego rytm pracy podąża za inspiracjami, z fazami intensywnej kreatywności przeplatanymi momentami refleksji. Wobec władzy preferuje współpracę nad podporządkowaniem. Jego martwy punkt zawodowy tkwi w tendencji do zaniedbywania powtarzalnych i administracyjnych zadań, niezbędnych ale mało stymulujących dla jego temperamentu odkrywcy.",
+  "best_matches": [
+    {
+      "slug": "belier",
+      "score": 92,
+      "why": "Dwa ognie wzajemnie się zasilające w działaniu i przygodzie, dzielące miłość do wyzwań i niezależności."
+    },
+    {
+      "slug": "lion",
+      "score": 88,
+      "why": "Naturalne współdziałanie między dwoma hojnymi znakami ognia, Lew podziwia strzelecką wolność, Strzelec szanuje lwią szlachetność."
+    },
+    {
+      "slug": "balance",
+      "score": 85,
+      "why": "Równowaga Wagi łagodzi strzelecki impet, podczas gdy optymizm Strzelca dynamizuje wagowe rozważania."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "vierge",
+      "why": "Metodyczne podejście Panny wchodzi w napięcie ze spontanicznym impetem Strzelca, tworząc nieporozumienia co do tempa życia."
+    },
+    {
+      "slug": "poissons",
+      "why": "Rozproszona intuicja Ryb dezorientuje bezpośrednie poszukiwanie prawdy przez Strzelca, ich sposoby postrzegania świata strukturalnie się przeciwstawiają."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Turkus",
+    "animal_totem": "Koń",
+    "flower": "Narcyz",
+    "color": "Błękit ultramarynowy",
+    "lucky_day": "Czwartek",
+    "lucky_number": 9,
+    "metal": "Cyna"
+  },
+  "famous_people": [
+    "Agnieszka Holland",
+    "Brad Pitt",
+    "Walt Disney",
+    "Edyta Górniak",
+    "Winston Churchill"
+  ],
+  "faq": [
+    {
+      "q": "Dlaczego Strzelec ma taką potrzebę wolności w miłości?",
+      "a": "Jowisz, władca Strzelca, rządzi ekspansją i wzrostem. Ten urodzony instynktownie postrzega miłość jako terytorium wzajemnej eksploracji, a nie jako twierdzę do obrony. Jego natura zmiennego ognia popycham go do ciągłej ewolucji i obawia się, że zbyt ścisłe więzi mogą ograniczyć tę naturalną ewolucję. Ta potrzeba wolności nie świadczy o braku zaangażowania, ale raczej o życiowej potrzebie zachowania swojego twórczego impulsu. W tradycyjnej astrologii uważa się, że Strzelec kocha przez pryzmat wspólnej przygody, szukając partnera-towarzysza raczej niż zaborczego kompana. Jego miłość rośnie w przestrzeni i wzajemnym zaufaniu."
+    },
+    {
+      "q": "Jak ascendent w Strzelcu wpływa na pozorny charakter?",
+      "a": "Ascendent Strzelca daje pierwsze wrażenie zarażającego optymizmu i życzliwej ciekawości. Ci urodzeni podchodzą do świata ze spontanicznym uśmiechem i naturalną tendencją do filozofowania na temat swoich przeżyć. Ich gestykulacja jest szeroka, postawa swobodna, odzwierciedlając tę jowiszową pewność życia. Łatwo zadają pytania, chętnie opowiadają o swoich doświadczeniach, szybko tworząc swobodną atmosferę. Ten wpływ może złagodzić bardziej introwertyczny znak słoneczny, nadając mu bardziej towarzyską fasadę, lub wzmocnić ekstrawersję już ekspansywnego znaku. Ascendent Strzelca koloruje postrzeganie świata przez optymistyczny filtr, skłaniając do dostrzegania możliwości raczej niż przeszkód w każdej nowej sytuacji."
+    },
+    {
+      "q": "Jakie zawody pozwalają Strzelcowi w pełni wyrazić swój potencjał?",
+      "a": "Strzelec kwitnie w zawodach łączących ruch, przekaz i otwartość kulturową. Szkolnictwo wyższe, badania, dziennikarstwo międzynarodowe idealnie odpowiadają jego potrzebie syntezy i dzielenia się. Zawody związane z podróżami, handlem zagranicznym, tłumaczeniami wykorzystują jego zamiłowanie do wymiany międzykulturowej. W wydawnictwie, filozofii, teologii może rozwijać swoją zdolność łączenia pozornie rozbieżnych koncepcji. Zawody prawnicze, szczególnie prawo międzynarodowe, również przyciągają ten znak przepełniony pragnieniem sprawiedliwości. Jego wyzwaniem zawodowym jest unikanie rozproszenia poprzez wybór dziedziny wystarczająco szerokiej, by zaspokoić jego ciekawość, pozwalając jednocześnie na rozwinięcie uznanej ekspertyzy."
+    },
+    {
+      "q": "Czy Strzelec i Bliźnięta są rzeczywiście niekompatybilne pomimo opozycji zodiakalnej?",
+      "a": "Opozycja Strzelec-Bliźnięta doskonale ilustruje astrologiczną zasadę, według której znaki przeciwstawne mogą albo uzupełniać się wspaniale, albo tworzyć stałe napięcia. Oba są zmienne i intelektualnie ciekawe, ale ich podejścia radykalnie się różnią. Bliźnięta zbierają informacje z czystej ciekawości, podczas gdy Strzelec dąży do syntetyzowania ich w spójną wizję świata. Ta różnica może stworzyć albo wzbogacające uzupełnienie (jeden dostarcza szczegóły, drugi globalną perspektywę), albo powtarzające się nieporozumienia co do ich względnych priorytetów. Sukces tej kombinacji zależy w dużej mierze od ich wzajemnej zdolności do szanowania tych różnic w podejściu, nie próbując nawracać drugiego na swoją metodę."
+    },
+    {
+      "q": "Jak Strzelec może rozwijać swoją duchowość w autentyczny sposób?",
+      "a": "Duchowość Strzelca naturalnie karmi się poszukiwaniem sensu i filozofią porównawczą. Ten znak znajduje swoją duchową ścieżkę poprzez eksplorowanie różnych tradycji, podróżowanie do świętych miejsc, studiowanie tekstów założycielskich różnych kultur. Jego podejście pozostaje intelektualne i syntetyczne, raczej niż mistyczne czy medytacyjne. Strzelec rozwija swój wymiar duchowy ucząc, dzieląc się swoimi odkryciami, budując mosty między mądrościami świata. Pielgrzymki, rekolekcje filozoficzne, nauka starożytnych języków karmią jego duszę równie mocno jak debaty metafizyczne. Jego duchowość dojrzewa, gdy udaje mu się przekształcić osobiste przekonania w przekazywalną mądrość, stając się w ten sposób naturalnym przewodnikiem, którym jest powołany być przez swoją jowiszową naturę."
+    }
+  ]
+}

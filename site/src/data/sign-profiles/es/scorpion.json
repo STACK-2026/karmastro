@@ -1,0 +1,86 @@
+{
+  "tagline": "El alquimista de las profundidades, maestro de las transformaciones y guardián de los misterios",
+  "intro": "Escorpio encarna el arquetipo del transformador, aquel que se atreve a descender a los infiernos para renacer purificado. Gobernado por Plutón, planeta de las metamorfosis radicales, este signo de agua fijo posee una intensidad emocional rara y una capacidad única para percibir lo no dicho. Nacido en el corazón del otoño, cuando la naturaleza se despoja para revelar lo esencial, Escorpio sobresale en el arte de revelar las verdades ocultas. Su fuerza reside en su capacidad de transmutar el dolor en sabiduría, el caos en orden, la destrucción en creación. A diferencia de otros signos de agua que se adaptan o escapan, Escorpio se arraiga en la emoción para trascenderla. Atraviesa el mundo con la certeza de que solo la verdad desnuda puede liberar, aunque primero queme.",
+  "strengths": [
+    "Intuición psicológica fulminante",
+    "Capacidad de regeneración excepcional",
+    "Lealtad absoluta hacia los suyos",
+    "Coraje ante las crisis",
+    "Magnetismo natural y carisma"
+  ],
+  "weaknesses": [
+    "Tendencia a la posesividad excesiva",
+    "Rencor tenaz y memoria larga",
+    "Desconfianza sistemática de las motivaciones",
+    "Necesidad compulsiva de controlar",
+    "Fascinación por las zonas oscuras"
+  ],
+  "in_love": "Escorpio ama con una intensidad que puede asustar o fascinar. Busca la fusión de almas más que la armonía superficial, exigiendo una transparencia total de su pareja. Su seducción opera por magnetismo: atrae por su misterio y su profundidad emocional. Huye de las relaciones ligeras y privilegia los vínculos transformadores, aunque sean dolorosos. En pareja, se vuelve protector hasta la posesividad, fiel hasta la exclusividad absoluta. Sus celos no son capricho sino necesidad vital de seguridad afectiva. Ama apasionadamente, definitivamente, y espera la misma devoción a cambio.",
+  "in_friendship": "La amistad de Escorpio se merece y se preserva con paciencia. Elige pocos amigos pero los conserva de por vida, creando vínculos casi fraternales basados en la confianza mutua. Sobresale en el arte de escuchar sin juzgar y aconsejar con acierto, convirtiéndose a menudo en el confidente privilegiado del grupo. Su lealtad es legendaria: defenderá a sus cercanos contra viento y marea. A cambio, exige sinceridad y autenticidad, detestando las máscaras sociales y las relaciones superficiales.",
+  "at_work": "Escorpio brilla en las profesiones de lo invisible: psicología, investigación, cirugía, finanzas, investigación. Sobresale donde hay que cavar, analizar, transformar. Ante la autoridad, respeta la competencia pero desafía la incompetencia con ferocidad. Trabaja por ciclos intensos, capaz de esfuerzos sobrehumanos seguidos de fases de regeneración. Su punto ciego profesional: la diplomacia superficial y el manejo de susceptibilidades. Prefiere la verdad brutal a los miramientos tácticos, lo que puede crear tensiones jerárquicas.",
+  "best_matches": [
+    {
+      "slug": "cancer",
+      "score": 92,
+      "why": "Complementariedad perfecta entre la profundidad de Escorpio y la protección de Cáncer en el elemento agua"
+    },
+    {
+      "slug": "poissons",
+      "score": 88,
+      "why": "Unión mística entre la intensidad plutoniana y la intuición neptuniana de Piscis"
+    },
+    {
+      "slug": "vierge",
+      "score": 85,
+      "why": "Oposición fructífera entre el análisis de Virgo y el instinto de Escorpio creando equilibrio tierra-agua"
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "lion",
+      "why": "Choque de egos entre dos signos fijos, Leo buscando la luz cuando Escorpio prefiere la sombra"
+    },
+    {
+      "slug": "verseau",
+      "why": "Oposición aire-agua entre el desapego de Acuario y la intensidad emocional de Escorpio creando incomprensiones"
+    }
+  ],
+  "attributes": {
+    "gemstone": "Topacio rojo",
+    "animal_totem": "Escorpión y águila",
+    "flower": "Crisantemo",
+    "color": "Rojo burdeos",
+    "lucky_day": "Martes",
+    "lucky_number": 7,
+    "metal": "Hierro y acero"
+  },
+  "famous_people": [
+    "Diego Maradona",
+    "Pablo Picasso",
+    "Maribel Verdú",
+    "Leonardo DiCaprio",
+    "Joaquín Sabina"
+  ],
+  "faq": [
+    {
+      "q": "¿Cómo reconocer el ascendente en Escorpio en una carta astral?",
+      "a": "El ascendente en Escorpio se reconoce por una mirada intensa y penetrante, una presencia magnética inmediata y una tendencia a mantener sus emociones en secreto. Físicamente, suele dar rasgos marcados, ojos profundos y un aire misterioso. La personalidad manifiesta una capacidad natural para percibir lo no dicho y una desconfianza instintiva ante nuevos encuentros. El ascendente en Escorpio transforma cualquier signo solar en una versión más intensa y secreta, añadiendo una dimensión psicológica profunda a la personalidad base. Estos nativos irradian un aura de poder personal y transformación permanente."
+    },
+    {
+      "q": "¿Qué profesiones se adaptan mejor al temperamento de Escorpio?",
+      "a": "Escorpio sobresale en profesiones relacionadas con la investigación, la transformación y la regeneración. Psicólogo, cirujano, detective privado, analista financiero, investigador científico, tanatólogo o sexólogo corresponden a su necesidad de explorar lo invisible. También triunfa en bienes raíces, gestión de crisis, arqueología y todas las profesiones ocultas o esotéricas. Su talento para detectar motivaciones ocultas lo convierte en excelente reclutador o negociador. Los campos del reciclaje, transformación de residuos o ecología radical también lo atraen por su dimensión regeneradora."
+    },
+    {
+      "q": "¿Es Escorpio compatible con su propio signo en el amor?",
+      "a": "Dos Escorpio juntos crean una relación de intensidad excepcional, a veces explosiva. Se comprenden intuitivamente, compartiendo la misma sed de verdad y profundidad emocional. Sin embargo, esta unión puede volverse posesiva al extremo, cada uno intentando controlar al otro por celos o desconfianza. Su magnetismo mutuo crea una atracción fatal, pero sus secretos respectivos pueden generar crisis de confianza mayores. Esta combinación funciona si ambos aceptan revelar sus zonas de sombra y transforman su intensidad en fuerza creadora común en lugar de lucha de poder destructiva."
+    },
+    {
+      "q": "¿Cómo maneja Escorpio el estrés y las emociones difíciles?",
+      "a": "Escorpio posee una capacidad de regeneración emocional notable, transformando naturalmente el sufrimiento en fuerza interior. Ante el estrés, tiende primero a aislarse para analizar la situación en profundidad, luego moviliza sus recursos ocultos con determinación feroz. Evacua las tensiones mediante actividad física intensa o prácticas de transformación personal como la meditación profunda. A diferencia de otros signos, no evita la confrontación con sus demonios interiores sino que los usa como combustible para su metamorfosis. Esta alquimia emocional le permite renacer más fuerte después de cada prueba."
+    },
+    {
+      "q": "¿Cuáles son las fases de vida importantes para un nativo de Escorpio?",
+      "a": "Escorpio vive por ciclos de muerte y renacimiento, con fases de transformación radical aproximadamente cada siete años. Su primera gran metamorfosis suele ocurrir hacia los 28-30 años, edad de su retorno de Saturno, donde abandona las ilusiones de juventud. Los cuarenta marcan generalmente un renacimiento espiritual mayor, momento en que integra plenamente su poder plutoniano. Cada crisis existencial se convierte para él en una oportunidad de evolución, contrariamente a otros signos que buscan estabilidad. Estas fases transformadoras tocan sucesivamente su vida emocional, profesional y luego espiritual, creando un recorrido iniciático permanente hacia la autenticidad absoluta y el dominio de sus poderes ocultos."
+    }
+  ]
+}

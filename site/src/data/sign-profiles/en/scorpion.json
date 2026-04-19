@@ -1,0 +1,86 @@
+{
+  "tagline": "The alchemist of the depths, master of transformations and guardian of mysteries",
+  "intro": "Scorpio embodies the archetype of the transformer, one who dares to descend into hell to be reborn purified. Ruled by Pluto, planet of radical metamorphoses, this fixed water sign possesses rare emotional intensity and a unique ability to perceive the unspoken. Born in the heart of autumn, when nature strips away to reveal the essential, Scorpio excels in the art of revealing hidden truths. Its strength lies in its capacity to transmute pain into wisdom, chaos into order, destruction into creation. Unlike other water signs that adapt or escape, Scorpio roots itself in emotion to transcend it. It moves through the world with the certainty that only naked truth can liberate, even if it burns first.",
+  "strengths": [
+    "Lightning-fast psychological intuition",
+    "Exceptional regenerative capacity",
+    "Absolute loyalty to loved ones",
+    "Courage in the face of crises",
+    "Natural magnetism and charisma"
+  ],
+  "weaknesses": [
+    "Tendency toward excessive possessiveness",
+    "Stubborn grudges and long memory",
+    "Systematic mistrust of motivations",
+    "Compulsive need to control",
+    "Fascination with dark territories"
+  ],
+  "in_love": "Scorpio loves with an intensity that can frighten or fascinate. It seeks the fusion of souls more than superficial harmony, demanding total transparency from its partner. Its seduction operates through magnetism: it attracts through its mystery and emotional depth. It flees light relationships and favors transformative bonds, even painful ones. In couples, it becomes protective to the point of possessiveness, faithful to absolute exclusivity. Its jealousy is not whim but vital need for emotional security. It loves passionately, definitively, and expects the same devotion in return.",
+  "in_friendship": "Scorpio friendship must be earned and preserved with patience. It chooses few friends but keeps them for life, creating quasi-fraternal bonds based on mutual trust. It excels in the art of listening without judgment and advising with accuracy, often becoming the group's privileged confidant. Its loyalty is legendary: it will defend its loved ones against all odds. In return, it demands sincerity and authenticity, hating social masks and surface relationships.",
+  "at_work": "Scorpio shines in professions of the invisible: psychology, investigation, surgery, finance, research. It excels where one must dig, analyze, transform. Facing authority, it respects competence but challenges incompetence with ferocity. It works in intense cycles, capable of superhuman efforts followed by regeneration phases. Its professional blind spot: surface diplomacy and managing sensitivities. It prefers brutal truth to tactical considerations, which can create hierarchical tensions.",
+  "best_matches": [
+    {
+      "slug": "cancer",
+      "score": 92,
+      "why": "Perfect complementarity between Scorpio depth and Cancer protection within the water element"
+    },
+    {
+      "slug": "poissons",
+      "score": 88,
+      "why": "Mystical union between Plutonian intensity and the Neptunian intuition of Pisces"
+    },
+    {
+      "slug": "vierge",
+      "score": 85,
+      "why": "Fruitful opposition between Virgo analysis and Scorpio instinct creating earth-water balance"
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "lion",
+      "why": "Ego clash between two fixed signs, Leo seeking light when Scorpio prefers shadow"
+    },
+    {
+      "slug": "verseau",
+      "why": "Air-water opposition between Aquarius detachment and Scorpio emotional intensity creating misunderstandings"
+    }
+  ],
+  "attributes": {
+    "gemstone": "Red topaz",
+    "animal_totem": "Scorpion and eagle",
+    "flower": "Chrysanthemum",
+    "color": "Burgundy red",
+    "lucky_day": "Tuesday",
+    "lucky_number": 7,
+    "metal": "Iron and steel"
+  },
+  "famous_people": [
+    "Leonardo DiCaprio",
+    "Julia Roberts",
+    "Ryan Gosling",
+    "Emma Stone",
+    "Matthew McConaughey"
+  ],
+  "faq": [
+    {
+      "q": "How do you recognize Scorpio rising in a birth chart?",
+      "a": "Scorpio rising is recognized by an intense and penetrating gaze, immediate magnetic presence and a tendency to keep emotions secret. Physically, it often gives marked features, deep eyes and a mysterious allure. The personality manifests a natural ability to perceive the unspoken and instinctive mistrust of new encounters. Scorpio rising transforms any sun sign into a more intense and secretive version, adding deep psychological dimension to the base personality. These natives emanate an aura of personal power and permanent transformation."
+    },
+    {
+      "q": "What careers best suit the Scorpio temperament?",
+      "a": "Scorpio excels in professions related to investigation, transformation and regeneration. Psychologist, surgeon, private detective, financial analyst, scientific researcher, thanatologist or sexologist correspond to their need to explore the invisible. They also succeed in real estate, crisis management, archaeology and all occult or esoteric professions. Their talent for detecting hidden motivations makes them excellent recruiters or negotiators. Fields of recycling, waste transformation or radical ecology also attract them through their regenerative dimension."
+    },
+    {
+      "q": "Is Scorpio compatible with their own sign in love?",
+      "a": "Two Scorpios together create a relationship of exceptional intensity, sometimes explosive. They understand each other intuitively, sharing the same thirst for truth and emotional depth. However, this union can become extremely possessive, each trying to control the other through jealousy or mistrust. Their mutual magnetism creates fatal attraction, but their respective secrets can generate major trust crises. This combination works if both partners accept revealing their shadow zones and transform their intensity into common creative force rather than destructive power struggle."
+    },
+    {
+      "q": "How does Scorpio handle stress and difficult emotions?",
+      "a": "Scorpio possesses remarkable emotional regeneration capacity, naturally transforming suffering into inner strength. Facing stress, it first tends to isolate to analyze the situation deeply, then mobilizes hidden resources with fierce determination. It releases tension through intense physical activity or personal transformation practices like deep meditation. Unlike other signs, it doesn't avoid confrontation with inner demons but uses them as fuel for metamorphosis. This emotional alchemy allows rebirth stronger after each trial."
+    },
+    {
+      "q": "What are the important life phases for a Scorpio native?",
+      "a": "Scorpio lives through cycles of death and rebirth, with radical transformation phases approximately every seven years. Their first great metamorphosis often occurs around 28-30 years old, age of their Saturn return, where they abandon youthful illusions. The forties generally mark a major spiritual renaissance, moment when they fully integrate their Plutonian power. Each existential crisis becomes an evolution opportunity, unlike other signs that seek stability. These transformative phases successively touch their emotional, professional then spiritual life, creating a permanent initiatory journey toward absolute authenticity and mastery of hidden powers."
+    }
+  ]
+}

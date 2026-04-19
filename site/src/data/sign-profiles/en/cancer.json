@@ -1,0 +1,86 @@
+{
+  "tagline": "The sensitive soul who transforms emotion into protective sanctuary",
+  "intro": "Cancer embodies the maternal archetype of the zodiac, the first manifestation of the Water element in its cardinal form. Ruled by the Moon, it captures emotional cycles with troubling acuity, transforming each sensation into living memory. Contrary to clichés about its fragility, Cancer possesses formidable initiative when it comes to creating and protecting its intimate world. Its shell is not weakness but an art of living: it builds cocoons where emotion can flourish without judgment. Sign of the summer solstice, it marks the apex of light yet already turns toward interiority. Its genius lies in its ability to make emotion a reliable compass.",
+  "strengths": [
+    "Formidable emotional intuition",
+    "Unwavering loyalty toward loved ones",
+    "Creativity nourished by sensitivity",
+    "Authentic natural protective capacity",
+    "Exceptionally precise emotional memory"
+  ],
+  "weaknesses": [
+    "Excessive susceptibility to criticism",
+    "Grudge-holding tendency, difficulty forgiving",
+    "Sometimes paralyzing defensive withdrawal",
+    "Chronic invasive anticipatory anxiety",
+    "Frequent involuntary emotional manipulation"
+  ],
+  "in_love": "Cancer loves with its gut, seeking to recreate the original cocoon where the other becomes an extension of itself. It seduces through its listening capacity and emotional generosity, but expects absolute fidelity in return. Its declarations pass through daily gestures: cooking, pampering, creating a cozy nest. It flees passing romances and armored hearts, preferring shared vulnerability. Possessive without being jealous, it needs to feel that its partner truly belongs to its chosen family.",
+  "in_friendship": "In friendship, Cancer weaves familial bonds with its loved ones, creating a chosen tribe it nourishes with constant small attentions. It remembers everything: birthdays, sorrows, precious moments. Its circles are restricted but durable, built on absolute mutual trust. It excels in the art of therapeutic listening and often becomes its friends' confidant. Its door remains always open to souls in distress.",
+  "at_work": "Cancer flourishes in care professions: psychology, healthcare, education, hospitality, family real estate. It needs a secure environment and authentic human relationships to give its best. Facing authority, it prefers collaboration over direct confrontation. Its rhythm follows internal cycles rather than external imperatives. It may lack visible ambition but develops remarkable expertise in its field through sincere passion.",
+  "best_matches": [
+    {
+      "slug": "scorpion",
+      "score": 92,
+      "why": "Water-water alliance where Scorpio's emotional intensity resonates with Cancerian depth, creating transformative intimacy."
+    },
+    {
+      "slug": "poissons",
+      "score": 88,
+      "why": "Natural intuitive communion between two Water signs who understand each other without words and share the same spiritual sensitivity."
+    },
+    {
+      "slug": "taureau",
+      "score": 85,
+      "why": "Ideal earth-water complementarity: Taurine stability secures Cancer who emotionally nourishes Taurus in return."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "capricorne",
+      "why": "Structural opposition between Cancerian emotionality and Capricorn rationality, creating mutual misunderstanding about life priorities."
+    },
+    {
+      "slug": "belier",
+      "why": "Tense square between Aries impulsiveness and Cancer's need for security, fundamentally different rhythms and relational approaches."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Moonstone",
+    "animal_totem": "Crab",
+    "flower": "White lily",
+    "color": "Silvery white",
+    "lucky_day": "Monday",
+    "lucky_number": 7,
+    "metal": "Silver"
+  },
+  "famous_people": [
+    "Tom Hanks",
+    "Meryl Streep",
+    "Princess Diana",
+    "Robin Williams",
+    "Selena Gomez"
+  ],
+  "faq": [
+    {
+      "q": "Why is Cancer considered the most sensitive sign of the zodiac?",
+      "a": "Cancer's sensitivity comes from its lunar rulership and cardinal Water element. The Moon amplifies its emotional receptivity, making it permeable to atmospheres and unspoken feelings. Its cardinal nature pushes it to act on these perceptions, sometimes creating intense reactions. This sensitivity isn't weakness but emotional intelligence: it captures nuances invisible to other signs. Its exceptional emotional memory archives every emotion, creating inner richness but also vulnerability to past wounds."
+    },
+    {
+      "q": "Which signs are most compatible with Cancer in love?",
+      "a": "Water signs (Scorpio, Pisces) form deep unions with Cancer based on shared intuition. Scorpio brings intensity and transformation, Pisces spiritual communion. Earth signs (Taurus, Virgo, Capricorn) offer the stability Cancer seeks, particularly Taurus who shares its love of home. Certain Fire signs like Leo can create passionate unions if the ascendant or Moon softens temperamental differences."
+    },
+    {
+      "q": "How does a Cancer with Scorpio rising behave?",
+      "a": "Scorpio rising considerably intensifies the Cancerian nature, creating a magnetic but complex personality. Cancer emotionality becomes tinged with Scorpionic mystery, making this person fascinating but hard to read. They develop more sophisticated protection mechanisms, alternating between vulnerability and impenetrable armor. This double Water combination creates phenomenal intuition and remarkable personal transformation power. In love, the intensity can be overwhelming but also possessive."
+    },
+    {
+      "q": "What careers best suit Cancer temperament?",
+      "a": "Cancer excels in care professions: psychology, medicine, teaching, social work, early childhood. Its protective instinct guides toward nursing, midwifery, or alternative therapies. Its creativity nourished by emotion leads toward culinary arts, decoration, family photography, or intimate writing. Family real estate, boutique hospitality, or wealth management correspond to its need to create secure cocoons. It generally avoids competitive or dehumanized environments."
+    },
+    {
+      "q": "How to handle a Cancer's mood swings in a relationship?",
+      "a": "Cancer's emotional variations often follow lunar cycles and internal rhythms. Understanding that its moods aren't whims but authentic reactions to energetic environment is crucial. Benevolent listening without judgment remains the best approach, with patience to let it express feelings. Creating a secure environment where it can withdraw without guilt helps regulate these oscillations. Respecting its needs for periodic solitude prevents accumulation of emotional tensions."
+    }
+  ]
+}

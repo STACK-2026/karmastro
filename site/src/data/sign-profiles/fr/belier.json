@@ -1,0 +1,86 @@
+{
+  "tagline": "Premier né du zodiaque, le Bélier ouvre la voie avec fougue",
+  "intro": "Né au moment où la nature renaît, le Bélier incarne l'élan vital primordial. Premier signe du zodiaque, il porte en lui la force brute du commencement, celle qui brise la gangue de l'hiver pour faire jaillir la vie nouvelle. Mars, son maître planétaire, lui confère cette capacité unique à transformer l'intention en action immédiate. Cardinal du Feu, le Bélier ne connaît pas l'hésitation : il voit, il veut, il agit. Cette spontanéité apparente cache en réalité une intelligence intuitive redoutable, capable de saisir l'essentiel d'une situation en un éclair. Loin du cliché du fonceur impulsif, le vrai Bélier possède cette prescience du pionnier qui devine les chemins avant qu'ils ne soient tracés. Il traverse le monde en éclaireur, assumant le risque de l'erreur pour ouvrir la route aux autres.",
+  "strengths": [
+    "Courage face aux défis inédits",
+    "Initiative créatrice spontanée",
+    "Leadership naturel inspirant",
+    "Franchise désarmante et authentique",
+    "Capacité de régénération rapide"
+  ],
+  "weaknesses": [
+    "Impatience devant la lenteur",
+    "Tendance à l'individualisme excessif",
+    "Difficulté à maintenir l'effort",
+    "Susceptibilité blessée facilement",
+    "Manque de diplomatie parfois"
+  ],
+  "in_love": "Le Bélier aime avec la même intensité qu'il vit : totalement et immédiatement. Il ne court pas après l'amour, il le reconnaît au premier regard et s'y lance sans calcul. Sa séduction opère par l'authenticité plutôt que par la stratégie. Il cherche un partenaire complice de ses élans, capable d'admirer sa spontanéité sans chercher à la brider. Le Bélier fuit les relations tièdes ou les jeux de pouvoir subtils. Il a besoin de ressentir cette électricité particulière qui confirme que l'autre est à sa hauteur. En couple, il reste l'initiateur des projets communs, celui qui propose l'aventure et entraîne l'autre dans son sillage énergique.",
+  "in_friendship": "L'amitié Bélier se reconnaît à sa loyauté immédiate et à sa générosité sans condition. Il choisit ses amis sur un coup de cœur et leur reste fidèle avec une constance qui peut surprendre chez ce signe réputé instable. Le Bélier entretient ses amitiés par l'action commune plutôt que par les confidences interminables. Il préfère partager une aventure qu'une thérapie de groupe. Ses amis apprécient sa capacité à relancer la dynamique du groupe quand l'énergie retombe, et sa manière directe de régler les conflits sans laisser pourrir les non-dits.",
+  "at_work": "Le Bélier excelle dans les métiers de pionnier : entrepreneur, commercial terrain, urgentiste, chef de projet innovation. Il a besoin d'autonomie et de défis renouvelés pour donner sa pleine mesure. Face à l'autorité, il respecte celle qui se mérite par la compétence, mais rejette instinctivement les hiérarchies figées. Son rythme de travail fonctionne par à-coups intenses plutôt que par régularité. Son angle mort professionnel : la patience nécessaire aux tâches de fond et la gestion des détails administratifs qui l'ennuient profondément.",
+  "best_matches": [
+    {
+      "slug": "lion",
+      "score": 92,
+      "why": "Deux feux cardinaux qui s'admirent mutuellement et créent une dynamique de dépassement permanent"
+    },
+    {
+      "slug": "sagittaire",
+      "score": 88,
+      "why": "Complémentarité parfaite entre l'initiative Bélier et la vision expansive Sagittaire"
+    },
+    {
+      "slug": "gemeaux",
+      "score": 85,
+      "why": "Opposition créative où la spontanéité Bélier stimule l'intelligence adaptative Gémeaux"
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "cancer",
+      "why": "La prudence défensive Cancer freine l'élan spontané Bélier, créant frustration mutuelle"
+    },
+    {
+      "slug": "capricorne",
+      "why": "Opposition entre l'immédiateté Bélier et la patience structurée Capricorne, rythmes incompatibles"
+    }
+  ],
+  "attributes": {
+    "gemstone": "Rubis",
+    "animal_totem": "Bélier",
+    "flower": "Tulipe rouge",
+    "color": "Rouge cardinal",
+    "lucky_day": "Mardi",
+    "lucky_number": 7,
+    "metal": "Fer"
+  },
+  "famous_people": [
+    "Vincent Van Gogh",
+    "Charlie Chaplin",
+    "Marlon Brando",
+    "Lady Gaga",
+    "Leonardo da Vinci"
+  ],
+  "faq": [
+    {
+      "q": "Pourquoi le Bélier est-il considéré comme le leader naturel du zodiaque ?",
+      "a": "Le Bélier occupe cette position par sa nature cardinale de Feu, combinée à l'influence de Mars. Premier signe du cycle zodiacal, il possède l'énergie d'initiation pure, celle qui lance les dynamiques nouvelles. Sa capacité de leadership ne vient pas d'un désir de domination mais d'une aptitude naturelle à voir les opportunités avant les autres et à agir en conséquence. Le Bélier mène par l'exemple et l'entraînement plutôt que par l'autorité imposée. Cette position de pionnier lui confère une responsabilité particulière : celle d'ouvrir les chemins que d'autres signes pourront ensuite développer et stabiliser."
+    },
+    {
+      "q": "Comment un ascendant Bélier influence-t-il la personnalité même avec un soleil différent ?",
+      "a": "L'ascendant Bélier colore instantanément la façon d'aborder le monde, même si le Soleil natal tempère cette première impulsion. La personne développe une allure décidée, un regard direct et une tendance à prendre des initiatives rapides. Elle donne l'impression d'être toujours prête à l'action, même si son signe solaire la pousse vers plus de réflexion. Cet ascendant confère un charisme naturel et une capacité à motiver les autres. Il peut créer des tensions internes si le Soleil natal privilégie la prudence ou la diplomatie, mais offre toujours cette énergie de démarrage si caractéristique du Bélier."
+    },
+    {
+      "q": "Quels métiers permettent au Bélier d'exploiter pleinement son potentiel martien ?",
+      "a": "Le Bélier s'épanouit dans les professions qui demandent du courage, de l'initiative et une capacité à gérer l'urgence. Les métiers de l'innovation technologique, de l'entrepreneuriat, du journalisme d'investigation lui conviennent parfaitement. Dans le médical, il excelle en chirurgie ou en médecine d'urgence. Le sport de haut niveau, le coaching, les forces de l'ordre ou les métiers de la sécurité correspondent à son tempérament martien. Il réussit aussi dans la vente terrain, le marketing disruptif ou tout domaine nécessitant de convaincre et d'entraîner. L'essentiel est qu'il puisse voir rapidement les résultats de son action et garder une marge d'autonomie dans ses décisions."
+    },
+    {
+      "q": "Le Bélier peut-il développer sa patience naturellement avec l'âge ?",
+      "a": "La patience du Bélier évolue effectivement avec la maturité, mais elle prend une forme particulière. Plutôt que d'apprendre l'attente passive, le Bélier mûr développe une patience active : il comprend que certains objectifs demandent du temps et apprend à structurer son action en étapes. L'expérience lui enseigne à canaliser son énergie martienne vers des projets à plus long terme. Il ne devient pas patient au sens traditionnel, mais acquiert une vision stratégique qui lui permet d'accepter les délais nécessaires. Cette évolution se fait souvent à travers des expériences professionnelles ou personnelles qui lui montrent la valeur des réalisations durables."
+    },
+    {
+      "q": "Comment le Bélier peut-il harmoniser sa nature de feu avec des partenaires plus contemplatifs ?",
+      "a": "L'harmonisation passe par la reconnaissance mutuelle des rythmes différents et la création d'espaces respectifs. Le Bélier doit apprendre à valoriser la profondeur réflexive de son partenaire comme un complément à sa spontanéité, non comme un frein. En retour, le partenaire contemplatif peut puiser dans l'élan Bélier une énergie revitalisante. La clé réside dans l'alternance : moments d'action commune initiés par le Bélier, moments de pause et de réflexion guidés par l'autre. Cette complémentarité enrichit les deux parties à condition que chacune respecte le mode de fonctionnement de l'autre sans chercher à le transformer. La relation devient alors un équilibre dynamique entre élan et profondeur."
+    }
+  ]
+}

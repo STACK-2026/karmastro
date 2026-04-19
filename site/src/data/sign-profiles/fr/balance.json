@@ -1,0 +1,86 @@
+{
+  "tagline": "L'équilibriste cosmique qui transforme chaque rencontre en harmonie",
+  "intro": "Septième signe du zodiaque, la Balance incarne l'archétype vénusien de l'harmonie relationnelle et de la beauté partagée. Cardinal d'Air, elle initie des connexions authentiques là où d'autres ne voient que chaos. Gouvernée par Vénus dans sa dimension sociale, elle possède ce don rare de percevoir instantanément les déséquilibres et de proposer des solutions élégantes. Son génie réside dans sa capacité à créer des ponts là où existent des fossés, à révéler la beauté cachée des situations les plus complexes. Contrairement au cliché de l'indécise, la Balance authentique sait exactement ce qu'elle veut : un monde où chacun trouve sa place dans une symphonie collective. Son défi existentiel consiste à maintenir cette quête d'équilibre sans perdre son identité propre dans le processus.",
+  "strengths": [
+    "Diplomatie naturelle instinctive",
+    "Sens esthétique remarquable",
+    "Justice équitable assumée",
+    "Charme magnétique authentique",
+    "Médiation relationnelle experte"
+  ],
+  "weaknesses": [
+    "Indécision chronique paralysante",
+    "Évitement des conflits systématique",
+    "Dépendance affective subtile",
+    "Procrastination élégante perfectionniste",
+    "Superficialité esthétique occasionnelle"
+  ],
+  "in_love": "La Balance aime avec l'art du raffinement et la recherche constante de l'harmonie parfaite. Elle séduit par sa capacité à rendre chaque moment précieux, transformant les rendez-vous en œuvres d'art relationnelles. Elle fuit la vulgarité et les démonstrations brutales, préférant les déclarations subtiles et les gestes délicats. Son piège amoureux réside dans l'idéalisation du partenaire et la difficulté à accepter les aspérités naturelles de toute relation. Elle excelle dans l'art de créer une bulle romantique où règnent beauté et complicité, mais peut parfois sacrifier l'authenticité sur l'autel de l'harmonie.",
+  "in_friendship": "En amitié, la Balance cultive des relations équilibrées où chacun trouve sa place sans écraser l'autre. Elle possède ce talent précieux de réconcilier les personnalités antagonistes et de créer des groupes harmonieux. Sa loyauté s'expresse dans sa capacité à toujours voir le meilleur chez ses amis, même dans leurs moments difficiles. Elle maintient naturellement le lien par des attentions délicates et un sens inné de l'hospitalité.",
+  "at_work": "La Balance excelle dans tous les métiers liés à la beauté, la justice, la diplomatie et les relations humaines : avocat, médiateur, décorateur, conseiller conjugal, attaché culturel. Elle brille particulièrement dans les environnements collaboratifs où son sens de l'équité peut s'exprimer. Son rapport à l'autorité est nuancé : elle préfère convaincre plutôt que contraindre. Son angle mort professionnel réside dans sa difficulté à prendre des décisions tranchées sous pression temporelle.",
+  "best_matches": [
+    {
+      "slug": "gemeaux",
+      "score": 92,
+      "why": "Deux signes d'Air qui partagent l'amour de la communication raffinée et des échanges intellectuels stimulants."
+    },
+    {
+      "slug": "verseau",
+      "score": 88,
+      "why": "Complicité d'Air cardinal et fixe, vision partagée d'un monde plus harmonieux et plus juste."
+    },
+    {
+      "slug": "sagittaire",
+      "score": 85,
+      "why": "L'optimisme jupitérien du Sagittaire épouse parfaitement la quête d'harmonie vénusienne de la Balance."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "cancer",
+      "why": "Le carré Cancer-Balance crée une tension entre besoin de sécurité émotionnelle et quête d'harmonie sociale."
+    },
+    {
+      "slug": "capricorne",
+      "why": "L'opposition Balance-Capricorne oppose la diplomatie vénusienne à l'autorité saturnienne, créant des incompréhensions structurelles."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Opale",
+    "animal_totem": "Colombe",
+    "flower": "Rose",
+    "color": "Rose pastel",
+    "lucky_day": "Vendredi",
+    "lucky_number": 7,
+    "metal": "Cuivre"
+  },
+  "famous_people": [
+    "Brigitte Bardot",
+    "John Lennon",
+    "Oscar Wilde",
+    "Gandhi",
+    "Catherine Deneuve"
+  ],
+  "faq": [
+    {
+      "q": "Comment savoir si une Balance s'intéresse vraiment à moi en amour",
+      "a": "La Balance intéressée multipliera les attentions raffinées et vous intégrera naturellement dans son cercle social. Elle cherchera votre avis sur des sujets esthétiques ou relationnels, signe qu'elle vous accorde de la valeur. Contrairement au cliché, une Balance amoureuse devient moins indécise : elle sait ce qu'elle veut et orchestrera subtilement les conditions de votre rapprochement. Attention aux signaux subtils : invitations dans des lieux beaux, cadeaux choisis avec goût, conversations approfondies sur vos goûts artistiques. Si elle vous présente à ses amis proches, c'est que vous comptez réellement pour elle."
+    },
+    {
+      "q": "Pourquoi la Balance a-t-elle tant de mal à prendre des décisions",
+      "a": "L'indécision de la Balance provient de sa capacité exceptionnelle à percevoir toutes les facettes d'une situation. Gouvernée par Vénus, elle cherche naturellement la solution la plus harmonieuse pour tous, ce qui complexifie ses choix. Son mental d'Air cardinal analyse constamment les pour et les contre, cherchant l'équilibre parfait. Cette quête de justice et d'harmonie la paralyse parfois, car elle refuse d'opter pour une solution qui pourrait léser quelqu'un. Pour l'aider, proposez-lui de lister les critères importants et de pondérer chaque option selon ses valeurs profondes plutôt que selon les attentes extérieures."
+    },
+    {
+      "q": "La Balance ascendant Lion change-t-elle vraiment sa personnalité",
+      "a": "L'ascendant Lion transforme considérablement l'expression de la Balance. Là où la Balance pure privilégie la discrétion diplomatique, l'ascendant Lion ajoute une dimension théâtrale et un besoin de reconnaissance. Cette combinaison crée une personnalité qui séduit par son charme solaire tout en conservant son sens inné de l'harmonie. Le côté indécis de la Balance se trouve tempéré par l'assurance léonine, donnant une Balance plus affirmée dans ses choix esthétiques et relationnels. Elle devient alors un véritable aimant social, capable d'organiser des événements mémorables où beauté vénusienne et générosité solaire se conjuguent harmonieusement."
+    },
+    {
+      "q": "Quels métiers conviennent le mieux au tempérament Balance",
+      "a": "La Balance excelle dans tous les domaines où beauté, harmonie et relations humaines se rencontrent. Les métiers juridiques (avocat, médiateur, juge) correspondent à sa quête naturelle de justice. Dans l'esthétique, elle brille comme décorateur d'intérieur, styliste, architecte d'intérieur ou conseiller en image. Les relations humaines l'attirent : psychologue, conseiller conjugal, attaché culturel, diplomate. Elle peut également réussir dans l'art (galerie, critique d'art) et l'événementiel haut de gamme. Son sens de l'équilibre en fait aussi une excellente gestionnaire de conflits en entreprise ou une négociatrice commerciale raffinée."
+    },
+    {
+      "q": "Comment la Balance peut-elle développer sa spiritualité de façon authentique",
+      "a": "La spiritualité de la Balance passe par la recherche d'harmonie entre l'intérieur et l'extérieur, entre soi et les autres. Elle trouve sa voie dans les pratiques qui cultivent la beauté de l'âme : méditation esthétique, contemplation artistique, service aux autres dans la justice sociale. Le tantrisme, qui unit beauté et sacré, peut particulièrement lui convenir. Elle développera sa spiritualité en créant des espaces beaux dédiés à la méditation, en pratiquant la gratitude pour la beauté du monde, en cultivant l'art de la relation consciente. Sa mission spirituelle consiste à révéler l'harmonie divine cachée dans toute situation, devenant ainsi un agent de paix et de réconciliation."
+    }
+  ]
+}

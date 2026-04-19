@@ -1,0 +1,86 @@
+{
+  "tagline": "Die feinfühlige Seele des Tierkreises, die Emotion in Weisheit verwandelt",
+  "intro": "Als letztes Zeichen des Tierkreises verkörpern die Fische die Vollendung des astrologischen Zyklus, diese ultimative Synthese, wo das Individuum im Universellen aufgeht. Von Neptun regiert, dem Planeten der Inspiration und Illusion, navigieren sie zwischen zwei Gewässern: dem der reinsten Intuition und dem der totalen Verwirrung. Als veränderliches Wasserzeichen besitzen sie die seltene Fähigkeit, sich allen emotionalen Strömungen anzupassen und die Schwingungen der Umgebung wie ein spiritueller Schwamm zu absorbieren. Ihre extreme Sensibilität ist keine Schwäche, sondern Macht: die Kraft, das Unsichtbare wahrzunehmen, das Unausgesprochene zu erfassen, Leiden in Kunst zu verwandeln. Zwischen überfließender Empathie und rettender Flucht tragen die Fische jene fruchtbare Melancholie in sich, die Kreativität und bedingungslose Liebe nährt.",
+  "strengths": [
+    "Bemerkenswert entwickelte psychische Intuition",
+    "Tiefe und natürliche Empathie",
+    "Grenzenlose künstlerische Kreativität",
+    "Selbstlose und heilende Mitgefühl",
+    "Fließende emotionale Anpassungsfähigkeit"
+  ],
+  "weaknesses": [
+    "Neigung zur Realitätsflucht",
+    "Lähmende Überempfindlichkeit gegenüber Kritik",
+    "Schwierigkeit beim Setzen von Grenzen",
+    "Chronische Unentschlossenheit bei Entscheidungen",
+    "Hang zu kompensatorischen Süchten"
+  ],
+  "in_love": "Die Fische lieben mit ihrer ganzen Seele und suchen weniger einen Partner als eine totale spirituelle Verschmelzung. Sie bieten eine Liebe ohne Bedingungen oder Grenzen, können das Unverzeihliche vergeben und Schönheit sehen, wo andere nur Fehler wahrnehmen. Diese emotionale Großzügigkeit kann sie jedoch in unausgewogene Beziehungen führen, wo sie geben, ohne zu zählen. Sie meiden direkte Konfrontation und ziehen es vor, sich still zurückzuziehen, anstatt Konflikte anzugehen. Ihr idealistischer Romantismus verleitet sie manchmal dazu, ihre eigenen Träume auf den anderen zu projizieren, was zu Enttäuschungen führt, wenn die Realität die Fantasie einholt.",
+  "in_friendship": "In der Freundschaft sind die Fische jene kostbaren Vertrauten, die ohne zu urteilen zuhören und ohne zu moralisieren trösten. Ihre emotionale Loyalität überdauert Jahre und Prüfungen, auch wenn ihre physische Präsenz manchmal diskret sein kann. Sie beherrschen die Kunst zu spüren, wann ein Freund eine schwierige Zeit durchlebt, und erscheinen oft im richtigen Moment mit den passenden Worten. Ihre empathische Natur macht sie zu therapeutischen Freunden, fähig, das Leid anderer zu absorbieren, manchmal auf Kosten ihres eigenen Gleichgewichts.",
+  "at_work": "Die Fische gedeihen in helfenden, künstlerischen oder heilenden Berufen: Psychologie, alternative Medizin, Musik, Malerei, Kino. Sie vertragen schlecht starre Hierarchien und konkurrierende Atmosphären und bevorzugen kollaborative und wohlwollende Umgebungen. Ihr Arbeitsrhythmus folgt ihren emotionalen Zyklen: Perioden blitzartiger Inspiration wechseln mit notwendigen Rückzugsphasen. Ihre überfließende Kreativität kompensiert oft ihre Schwierigkeiten mit administrativen Aufgaben und Zeitmanagement, wodurch sie einen strukturierenden Rahmen benötigen, um ihr volles Potenzial zu entfalten.",
+  "best_matches": [
+    {
+      "slug": "cancer",
+      "score": 92,
+      "why": "Gegenseitiges Verständnis der emotionalen Welten und geteiltes Bedürfnis nach tiefer emotionaler Sicherheit."
+    },
+    {
+      "slug": "scorpion",
+      "score": 88,
+      "why": "Gemeinsame emotionale Intensität und Faszination für die Geheimnisse der menschlichen Seele."
+    },
+    {
+      "slug": "capricorne",
+      "score": 85,
+      "why": "Perfekte Komplementarität zwischen der Fische-Sensibilität und der stabilisierenden Steinbock-Struktur."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "gemeaux",
+      "why": "Gegensatz zwischen dem rationalen Ansatz der Zwillinge und der reinen Intuition der Fische, der zu wiederkehrenden Missverständnissen führt."
+    },
+    {
+      "slug": "vierge",
+      "why": "Natürliche Spannung zwischen dem kritischen Perfektionismus der Jungfrau und der verletzlichen Sensibilität der Fische."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Amethyst",
+    "animal_totem": "Delfin",
+    "flower": "Lotus",
+    "color": "Ozeanblau",
+    "lucky_day": "Donnerstag",
+    "lucky_number": 7,
+    "metal": "Platin"
+  },
+  "famous_people": [
+    "Albert Einstein",
+    "Rihanna",
+    "Nena",
+    "Kurt Cobain",
+    "Elizabeth Taylor"
+  ],
+  "faq": [
+    {
+      "q": "Warum sind Fische so empfindlich gegenüber negativen Energien anderer?",
+      "a": "Die extreme Sensibilität der Fische rührt von ihrer neptunischen Natur her, die die Grenzen zwischen sich selbst und anderen auflöst. Ihr Nervensystem erfasst natürlich die emotionalen Schwingungen der Umgebung und funktioniert wie eine permanente psychische Antenne. Diese energetische Durchlässigkeit, sowohl Gabe als auch Last, macht sie besonders verletzlich in negativ geladenen Umgebungen. Sie absorbieren buchstäblich die Emotionen anderer und haben manchmal Schwierigkeiten, ihre eigenen Gefühle von denen zu unterscheiden, die sie aufnehmen. Diese Überempfindlichkeit erfordert regelmäßige Perioden der Einsamkeit zum Auftanken und um die im Kontakt mit anderen angesammelten parasitären Energien abzubauen."
+    },
+    {
+      "q": "Wie können Fische ihre natürliche Kreativität entwickeln?",
+      "a": "Die Kreativität der Fische entfaltet sich in der Hingabe und dem Vertrauen in ihre erste Intuition. Sie müssen einen heiligen Raum schaffen, wo Inspiration frei fließen kann, ohne Urteil oder unmittelbare technische Beschränkungen. Die Kunst wird ihre bevorzugte Sprache, um das Unaussprechliche auszudrücken und rohe Emotion in greifbare Schönheit zu verwandeln. Meditative Praktiken, die Verbindung zur Natur und die Erforschung ihrer Träume nähren ihre fruchtbare Fantasie. Sie müssen die natürlichen kreativen Zyklen akzeptieren, die Phasen intensiver Inspiration mit scheinbar sterilen, aber notwendigen Gestationsperioden abwechseln. Der Schlüssel liegt in der Geduld und Akzeptanz ihres einzigartigen Rhythmus."
+    },
+    {
+      "q": "Verändert ein Fische-Aszendent die Persönlichkeit des Sonnenzeichens?",
+      "a": "Der Fische-Aszendent umhüllt die Persönlichkeit mit einer mysteriösen Aura und magnetischer Sensibilität, unabhängig vom Sonnenzeichen. Dieser neptunische Einfluss mildert zu scharfe Kanten, schafft eine intuitivere Lebensherangehensweise und entwickelt bemerkenswerte natürliche Empathie. Die Person strahlt den Eindruck aus, anderswo zu sein, verbunden mit subtilen Dimensionen, die andere nicht wahrnehmen. Diese Konfiguration verstärkt künstlerische und spirituelle Fähigkeiten, kann aber auch eine gewisse Identitätsverwirrung erzeugen. Der Fische-Aszendent macht die Persönlichkeit anpassungsfähiger und empfänglicher, manchmal auf Kosten der klaren Behauptung persönlicher Bedürfnisse und notwendiger Grenzen."
+    },
+    {
+      "q": "Welche sind die idealen Berufe für die Natur der Fische?",
+      "a": "Die Fische zeichnen sich in Berufen aus, die Dienst am Nächsten mit kreativem Ausdruck verbinden: Psychotherapie, Kunsttherapie, ganzheitliche Medizin, Sozialarbeit, spirituelle Lehre. Künstlerische Bereiche bieten ihnen ein natürliches Entfaltungsfeld: Musik, Tanz, Malerei, Schreibkunst, Kino, Fotografie. Ihre Empathiefähigkeit macht sie zu ausgezeichneten Heilern: Krankenpfleger, Tierärzte, Masseure, Energetiker. Wasserverbundene Berufe passen perfekt zu ihnen: Ozeanografie, Aquakultur, Thermalwesen. Sie gedeihen auch in spiritueller Forschung, Astrologie, Numerologie. Wesentlich ist, dass sie ihre Sensibilität ausdrücken und zum kollektiven Wohlbefinden in einer wohlwollenden und nicht wettbewerbsorientierten Umgebung beitragen können."
+    },
+    {
+      "q": "Wie können Fische ihre Neigung zur Flucht besser handhaben?",
+      "a": "Die Fluchtneigung der Fische entsteht oft aus einer zu hart erscheinenden Realität, die direkt konfrontiert werden müsste. Anstatt gegen diese Natur zu kämpfen, müssen sie lernen, dieses Fluchtbedürfnis konstruktiv zu kanalisieren: Meditation, Kunst, Spiritualität, innere Reisen. Es geht darum, kreative und spirituelle Ventile zu schaffen, die die Seele nähren, ohne das Lebensgleichgewicht zu schädigen. Die Erdung durch sanfte Körperpraktiken (Yoga, Schwimmen, Naturwanderungen) hilft, die Verbindung zum Konkreten aufrechtzuerhalten. Der Schlüssel liegt in der Akzeptanz ihres besonderen Rhythmus und der Schaffung einer Lebensumgebung, die ihr Bedürfnis nach Rückzugsräumen und Träumerei respektiert, während sie gleichzeitig Verbindungen zur praktischen Realität aufrechterhält."
+    }
+  ]
+}

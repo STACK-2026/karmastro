@@ -1,0 +1,86 @@
+{
+  "tagline": "The idea explorer who makes words and connections dance",
+  "intro": "Third sign of the zodiac, Gemini embodies the intellectual awakening of late spring. Ruled by Mercury, messenger of the gods, this mutable air sign transforms every encounter into an opportunity to learn and transmit knowledge. Where Aries charges ahead and Taurus consolidates, Gemini establishes connections. Their genius lies in their ability to weave links between people and ideas, to translate and simplify the most complex concepts. This natural versatility makes them the great communicator of the zodiac, the one who animates exchanges and feeds collective curiosity. Their dual nature, symbolized by the twins, allows them to embrace multiple perspectives simultaneously, making them natural mediators but also beings in perpetual search for balance between their multiple facets.",
+  "strengths": [
+    "Remarkable intellectual adaptability",
+    "Natural and persuasive communication",
+    "Insatiable and invigorating curiosity",
+    "Exceptional synthesis capacity",
+    "Versatility across all domains"
+  ],
+  "weaknesses": [
+    "Chronic scattering of energies",
+    "Superficiality through excess interests",
+    "Emotional and decisional instability",
+    "Tendency toward verbal manipulation",
+    "Difficulty with sustained depth"
+  ],
+  "in_love": "In love, Gemini seduces first through the mind before the heart. They seek an intellectual accomplice with whom to share their discoveries and infinite questioning. Romantic routine frightens them more than solitude: they need constant stimulation and enriching conversations to keep the flame alive. Their playful approach to romance may confuse more serious souls, but it conceals a sincere quest for mutual understanding. They flee possessiveness and value independence in relationships, preferring equal partnerships where each maintains freedom of movement and thought.",
+  "in_friendship": "Gemini friendship feeds on constant exchanges and shared novelties. A faithful but never exclusive friend, they maintain an extensive social network where each person brings their specialty. Their loyalty expresses itself through attentive listening and enlightened advice rather than constant physical presence. They excel at the art of reconnecting after long silences, resuming conversation as if it had never ceased.",
+  "at_work": "Gemini flourishes in communication careers: journalism, teaching, translation, or commerce. They hate rigid hierarchy and prefer horizontal environments where ideas circulate freely. Their irregular work rhythm alternates between periods of intense productivity and moments of dispersion. They will shine in negotiation and mediation but struggle with repetitive or overly technical tasks requiring prolonged concentration.",
+  "best_matches": [
+    {
+      "slug": "balance",
+      "score": 92,
+      "why": "Two air signs sharing a taste for intellectual harmony and the art of refined conversation."
+    },
+    {
+      "slug": "verseau",
+      "score": 88,
+      "why": "Perfect mental complicity between two free spirits who value independence and originality."
+    },
+    {
+      "slug": "lion",
+      "score": 85,
+      "why": "Creative opposition where Leo's brilliance feeds Gemini curiosity in a stimulating dynamic."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "vierge",
+      "why": "Virgo's meticulous precision opposes Gemini's natural dispersion in a demanding square."
+    },
+    {
+      "slug": "poissons",
+      "why": "Pisces' deep emotional nature confounds Gemini's mental approach in a complex opposition."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Agate",
+    "animal_totem": "Butterfly",
+    "flower": "Lavender",
+    "color": "Yellow",
+    "lucky_day": "Wednesday",
+    "lucky_number": 7,
+    "metal": "Mercury"
+  },
+  "famous_people": [
+    "Angelina Jolie",
+    "Johnny Depp",
+    "Marilyn Monroe",
+    "Bob Dylan",
+    "Kanye West"
+  ],
+  "faq": [
+    {
+      "q": "Are Geminis really two-faced and can you trust them as friends",
+      "a": "The reputation for duplicity comes from their twin symbolism and their ability to see multiple angles of a situation. This intellectual versatility doesn't equal dishonesty but rather assumed complexity. In friendship, Gemini shows loyalty through listening and sharing ideas rather than constant presence. Their reliability expresses itself differently according to circumstances, which may confuse more linear temperaments. You must accept their changeable nature to appreciate the richness of their friendship, made of perpetual discoveries and stimulating conversations that nourish the spirit."
+    },
+    {
+      "q": "How do you recognize a Gemini rising and what influence does it have on personality",
+      "a": "Gemini rising is recognizable by expressive gestures, lively gait, and eyes sparkling with curiosity. These natives give a first impression of intellectual vivacity and accessibility, even if their sun sign is more introverted. They approach life with constant questioning and remarkable adaptability to new situations. This rising sign tempers more rigid signs by bringing flexibility and open-mindedness, while it may scatter the energy of already mobile signs. It favors social contacts and gives natural ease in communication, transforming even the most reserved personalities into engaging conversationalists."
+    },
+    {
+      "q": "What careers best suit the Gemini temperament and why",
+      "a": "Gemini excels in all careers related to communication and information transmission: journalism, teaching, translation, public relations, commerce, or broadcasting. Their natural versatility destines them for professions requiring adaptation and constant renewal of knowledge. They also shine in negotiation, mediation, and all interface roles between different professional universes. Digital careers, social media, and digital marketing suit them perfectly as they combine technology and communication. However, they flee overly routine, hierarchical jobs or those requiring deep technical specialization that would limit their thirst for intellectual diversity."
+    },
+    {
+      "q": "How does a Gemini woman express her seduction and what does she seek in a partner",
+      "a": "The Gemini woman seduces through sparkling intelligence and captivating conversation rather than physical artifice. She prioritizes humor, culture, and originality to attract attention, creating intellectual complicity before any emotional engagement. In a partner, she seeks a mental equal capable of stimulating her curiosity and following her complex reasoning. She flees possessiveness and values mutual independence in couples. Her seduction relies on her adaptability to different personalities she encounters, instinctively knowing how to adopt the communication style that will touch her interlocutor. She appreciates cultured, open-minded men confident enough to accept her freedom of movement."
+    },
+    {
+      "q": "How do you manage a romantic relationship with a Gemini who always seems distracted or elsewhere",
+      "a": "Gemini's apparent distraction actually reflects mental richness requiring constant stimulation. To maintain their attention, you must vary pleasures and avoid routine: propose new activities, feed conversations with fresh topics, accept their multiple interests. Their tendency to flutter doesn't signify disinterest but need for intellectual diversity. You should respect their moments of dispersion while creating privileged appointments where exchange becomes priority. Patience and understanding of their complex nature are essential, as well as developing your own autonomy to not depend solely on their often fragmented but sincere attention."
+    }
+  ]
+}

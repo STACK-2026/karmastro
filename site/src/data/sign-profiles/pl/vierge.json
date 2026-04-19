@@ -1,0 +1,86 @@
+{
+  "tagline": "Alchemik codzienności, który przekształca chaos w doskonałą harmonię",
+  "intro": "Panna uosabia praktyczną inteligencję służącą ziemskiej doskonałości. Rządzona przez Merkurego w jego analitycznym wymiarze, reprezentuje etap zodiakalny, gdzie energia oczyszcza się do perfekcji. Jako zmienny znak ziemi, Panna opanowała sztukę adaptacji przez ciągłe doskonalenie. Przemierza świat z niezwykłą przenikliwością, odróżniając istotne od powierzchownego, przekształcając surowe w czyste. Jej geniusz tkwi w zdolności dostrzeżenia szczegółów, które inni pomijają, a następnie organizowania ich w spójną całość. Daleka od jałowego perfekcjonizmu, Panna kultywuje chirurgiczne podejście do egzystencji: nacina tam, gdzie trzeba uzdrowić, dostosowuje tam, gdzie trzeba zharmonizować. Jej temperament końca lata nadaje jej mądrość żniw, wiedząc, że każde ziarno ma znaczenie dla wyżywienia ludzkości.",
+  "strengths": [
+    "Bezlitosne rozeznanie analityczne",
+    "Autentyczne bezinteresowne poświęcenie",
+    "Stałe metodyczne doskonalenie",
+    "Niezwykła skuteczność operacyjna",
+    "Naturalna konstruktywna pokora"
+  ],
+  "weaknesses": [
+    "Paraliżująca nadmierna krytyka",
+    "Chroniczny perfekcjonizm wywołujący lęk",
+    "Skromność maskująca talenty",
+    "Kompulsywne kontrolowanie szczegółów",
+    "Systematyczny prewencyjny pesymizm"
+  ],
+  "in_love": "Panna kocha po cichu, z dyskretną, ale głęboką intensywnością. Nie wylewa się w płomiennych deklaracjach, preferując demonstrowanie uczuć przez tysiąc codziennych uwag. Jej miłość przejawia się w konkretnym ulepszaniu wspólnego życia: przewiduje potrzeby, organizuje domowe szczęście, tworzy kokon dobrostanu. Szuka partnera, którego może szanować intelektualnie, kogoś niezawodnego i konstruktywnego. Panna ucieka od emocjonalnej niestabilności i destrukcyjnych namiętności. Potrzebuje czasu, by zaufać, ale raz się zaangażowawszy, jej wierność staje się legendarna. Jej miłosne wyzwanie: zaakceptować niedoskonałość partnera bez chęci jego poprawiania.",
+  "in_friendship": "Przyjaźń Panny buduje się w czasie i stałości. Nie gromadzi powierzchownych znajomości, ale kultywuje kilka uprzywilejowanych więzi z drobiazgową troską. Jako przyjaciółka o niechybnej lojalności, zawsze będzie obecna w trudnych momentach, uzbrojona w praktyczne rady i konkretne rozwiązania. Podtrzymuje więź poprzez troskliwe gesty, pamiętając ważne szczegóły z życia bliskich. Jej hojność wyraża się bardziej w działaniu niż w słowach: będzie tą, która konkretnie pomaga, organizuje, ułatwia życie innym.",
+  "at_work": "Panna celuje w zawodach usługowych, zdrowotnych, analitycznych i organizacyjnych. Księgowość, medycyna, edytorstwo, badania, precyzyjne rzemiosło doskonale jej odpowiadają. Szanuje hierarchię, gdy jest kompetentna, ale nie waha się zgłaszać dysfunkcji. Jej rytm pracy jest regularny i intensywny, przedkładając jakość nad ilość. Jej zawodowy martwy punkt: może zagubić się w szczegółach i stracić z oczu globalny cel. Ma też tendencję do niedoceniania swoich wkładów i pozwalania innym przypisywać sobie zasługi swojej skrupulatnej pracy.",
+  "best_matches": [
+    {
+      "slug": "taureau",
+      "score": 92,
+      "why": "Dwa znaki ziemi dzielące miłość do stabilności i prostych przyjemności, doskonała komplementarność między perfekcjonizmem a cierpliwością."
+    },
+    {
+      "slug": "capricorne",
+      "score": 88,
+      "why": "Sojusz ziemia-ziemia działający na wspólnej ambicji i dzielonej rygorystyczności, wzajemny szacunek dla kompetencji i doskonałości."
+    },
+    {
+      "slug": "scorpion",
+      "score": 85,
+      "why": "Przyciąganie przeciwieństw między dziewiczą czystością a plutońską intensywnością, wzajemna fascynacja transformacją i uzdrowieniem."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "gemeaux",
+      "why": "Dwa przeciwstawne wyrażenia Merkurego, które się konfrontują: precyzja Panny wobec rozproszenia Bliźniąt, wyczerpująca dokładność przeciw zmienności."
+    },
+    {
+      "slug": "sagittaire",
+      "why": "Fundamentalna opozycja między drobiazgowością przyziemną a jowiszową wizją całości, pragmatyzm przeciw filozoficznemu idealizmowi."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Szafir",
+    "animal_totem": "Pszczoła",
+    "flower": "Lawenda",
+    "color": "Granatowy",
+    "lucky_day": "Środa",
+    "lucky_number": 7,
+    "metal": "Platyna"
+  },
+  "famous_people": [
+    "Agnieszka Holland",
+    "Czesław Miłosz",
+    "Krystyna Janda",
+    "Lech Wałęsa",
+    "Keanu Reeves"
+  ],
+  "faq": [
+    {
+      "q": "Dlaczego Panny są często krytykowane za swój perfekcjonizm?",
+      "a": "Perfekcjonizm Panny jest źle rozumiany, ponieważ rodzi się z autentycznej miłości do doskonałości, a nie z chęci szkodzenia. Rządzona przez analitycznego Merkurego, Panna naturalnie dostrzega możliwe ulepszenia tam, gdzie inni już widzą perfekcję. Ta przenikliwość może rzeczywiście stać się problematyczna, gdy stosuje się ją kompulsywnie do innych, ale pozostaje fundamentalnie konstruktywna. Wyzwaniem jest ukierunkowanie tej wymagalności na dziedziny, gdzie jest doceniana: rzemiosło, medycyna, badania. Panna musi nauczyć się odróżniać to, co zasługuje na jej chirurgiczną precyzję, od tego, co może pozostać niedoskonałe bez konsekwencji."
+    },
+    {
+      "q": "Jak Panna może radzić sobie ze skłonnością do lęku i pesymizmu?",
+      "a": "Lęk Panny wynika z jej zdolności przewidywania wszystkich potencjalnych problemów, co jest cenną cechą, która staje się utrudnieniem, gdy zawładnie wszystkim. Ta merkuriańska hiperczujność wymaga ćwiczeń centrujących: medytacji, ogrodnictwa, rękodzieła, które uspokajają analityczny umysł. Panna musi kultywować zaufanie przez rozwijanie uspokajających rutyn i celebrowanie konkretnych sukcesów. Prowadzenie dziennika codziennych osiągnięć pomaga jej zrównoważyć tendencję do skupiania się na niedoskonałościach. Regularna aktywność fizyczna uziemia jej zmienną energię i rozprasza nagromadzone napięcia mentalne."
+    },
+    {
+      "q": "Jaki wpływ ma ascendent w Pannie na osobowość?",
+      "a": "Ascendent w Pannie nadaje społecznemu wizerunkowi wygląd zorganizowany, dyskretny i kompetentny, niezależnie od głębokiej natury znaku słonecznego. Ta persona rozwija metodyczne podejście do nowych środowisk, preferując obserwację przed działaniem. Ascendent Panny skłania do dbania o wygląd bez ostentacji, do rozwijania praktycznych umiejętności cenionych społecznie. Może temperować nadmiary znaku ognia, narzucając więcej refleksji, lub przeciwnie hamować twórczą spontaniczność znaku powietrza przez nadmierną ostrożność. Ten merkuriański wpływ udoskonala inteligencję społeczną i rozwija sztukę czynienia się niezastąpionym poprzez konkretną użyteczność."
+    },
+    {
+      "q": "W jakich obszarach zawodowych Panny szczególnie się wyróżniają?",
+      "a": "Panny błyszczą we wszystkich zawodach wymagających precyzji, analizy i służby: medycyna specjalistyczna, badania naukowe, edytorstwo, księgowość, luksusowe rzemiosło, dietetyka, farmacja. Ich merkuriańska inteligencja celuje w dziedzinach technicznych, gdzie każdy szczegół ma znaczenie. Odnoszą też niezwykłe sukcesy jako asystentki kierownictwa, organizatorki wydarzeń, tłumaczki, krytyczki literackie. Ich naturalne poświęcenie pcha je ku zawodom opiekuńczym: fizjoterapia, psychologia, praca socjalna. W przedsiębiorczości celują w usługach wysokiej jakości i produktach rzemieślniczych. Ich zawodowe wyzwanie: nauczyć się doceniać swoje kompetencje i negocjować sprawiedliwe uznanie, często niedoceniane przez własną skromność."
+    },
+    {
+      "q": "Jak rozwijać duchowość dostosowaną do temperamentu Panny?",
+      "a": "Duchowość Panny rozwija się w konkretnej praktyce raczej niż w mistycznej abstrakcji. Znajduje sacrum w bezinteresownej służbie, doskonaleniu siebie, uwadze na szczegóły stworzenia. Praktyki, które jej odpowiadają: medytacyjne ogrodnictwo, święte rzemiosło, precyzyjna joga, głębokie studium tekstów duchowych. Panna rozwija swój duchowy wymiar opiekując się innymi, chroniąc naturę, przekazując ancestralne umiejętności. Rozumie, że boska doskonałość przejawia się w nieskończenie małym: każdy właściwy gest, każda delikatna uwaga staje się aktem oddania. Jej duchowa droga prowadzi przez stopniowe oczyszczanie intencji i wyrównanie między głębokimi wartościami a codziennymi działaniami."
+    }
+  ]
+}

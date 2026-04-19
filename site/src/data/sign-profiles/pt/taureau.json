@@ -1,0 +1,86 @@
+{
+  "tagline": "O arquiteto do concreto que transforma os sonhos em realidade tangível",
+  "intro": "O Touro encarna o poder criador de Vénus ancorado na matéria. Nascido no coração da primavera, quando a natureza revela a sua fecundidade, transforma o ímpeto pioneiro do Carneiro em obra duradoura. Este signo fixo de Terra possui esta capacidade única de dar corpo às ideias, de lhes oferecer forma e substância. Governado por Vénus, procura a beleza no tangível, a harmonia no concreto. A sua força reside nesta alquimia particular que une sensualidade e pragmatismo, estética e eficácia. O Touro avança com a paciência de quem constrói para a eternidade, sabendo que as mais belas catedrais nascem pedra após pedra. A sua relação com o tempo difere: onde outros correm, ele cultiva, consciente de que a verdadeira riqueza se constrói lenta mas seguramente.",
+  "strengths": [
+    "Perseverança inabalável face aos obstáculos",
+    "Sentido estético refinado e autêntico",
+    "Pragmatismo criativo e construtivo",
+    "Lealdade inquebrantável para com os seus próximos",
+    "Estabilidade emocional tranquilizadora"
+  ],
+  "weaknesses": [
+    "Resistência excessiva à mudança necessária",
+    "Tendência possessiva nas relações",
+    "Teimosia por vezes contraproducente",
+    "Apego material por vezes excessivo",
+    "Lentidão decisória que trava a ação"
+  ],
+  "in_love": "O Touro ama com os seus cinco sentidos, procurando uma comunhão carnal tanto quanto emocional. Corteja com paciência, oferecendo estabilidade e segurança ao eleito do seu coração. A sua sensualidade venusiana expressa-se através dos prazeres partilhados: refeições saborosas, massagens, momentos aconchegantes. Foge da instabilidade afetiva e das relações superficiais, preferindo construir uma intimidade profunda e duradoura. O seu ciúme, por vezes possessivo, revela a sua necessidade de segurança afetiva. Uma vez comprometido, torna-se o parceiro mais fiável do zodíaco, criando um lar harmonioso onde reinam beleza e conforto.",
+  "in_friendship": "A amizade taurina constrói-se na duração e na reciprocidade. Este signo privilegia um círculo restrito de amigos fiéis em vez de uma rede alargada. Expressa a sua ternura através de gestos concretos: convites gastronómicos, presentes refletidos, presença constante nos momentos difíceis. A sua lealdade lendária faz dele um confidente privilegiado, capaz de guardar segredos e oferecer conselhos pragmáticos. Mantém o laço através da regularidade dos contactos e da criação de tradições partilhadas.",
+  "at_work": "O Touro excele em profissões relacionadas com a beleza, o artesanato, a gastronomia ou as finanças. A sua relação com a autoridade mantém-se respeitosa mas independente: prefere o reconhecimento das suas competências às honras hierárquicas. O seu ritmo de trabalho, metódico e regular, pode desconcertar os ambientes frenéticos. O seu ponto cego profissional reside na sua dificuldade em adaptar-se rapidamente a novas ferramentas ou métodos, privilegiando as técnicas comprovadas às inovações arriscadas.",
+  "best_matches": [
+    {
+      "slug": "vierge",
+      "score": 92,
+      "why": "Terra comum e complementaridade Vénus-Mercúrio criam uma alquimia perfeita entre sensualidade e precisão."
+    },
+    {
+      "slug": "capricorne",
+      "score": 88,
+      "why": "Trígono de Terra favorece a construção comum de um futuro estável e próspero."
+    },
+    {
+      "slug": "cancer",
+      "score": 85,
+      "why": "Sextil criativo entre Vénus e Lua harmoniza segurança material e emocional."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "lion",
+      "why": "Quadratura fixa Vénus-Sol cria tensões entre necessidade de simplicidade taurina e teatralidade leonina."
+    },
+    {
+      "slug": "verseau",
+      "why": "Oposição fixa Vénus-Úrano gera conflitos entre tradição taurina e revolução aquariana."
+    }
+  ],
+  "attributes": {
+    "gemstone": "esmeralda",
+    "animal_totem": "touro",
+    "flower": "rosa",
+    "color": "verde tenro",
+    "lucky_day": "sexta-feira",
+    "lucky_number": 6,
+    "metal": "cobre"
+  },
+  "famous_people": [
+    "Cristiano Ronaldo",
+    "Salvadora Dalí",
+    "Adele",
+    "José Saramago",
+    "Barbra Streisand"
+  ],
+  "faq": [
+    {
+      "q": "Porque é que o Touro é tão apegado aos seus hábitos e rotinas?",
+      "a": "A natureza fixa do Touro, combinada com a sua governança venusiana, cria uma necessidade profunda de estabilidade e harmonia. As suas rotinas não são rigidez mas rituais de bem-estar que lhe permitem cultivar a beleza no quotidiano. Esta regularidade estrutura o seu mundo interior e oferece-lhe as referências necessárias para expressar a sua criatividade. Ao contrário dos signos mutáveis que se expandem na mudança, o Touro extrai a sua força da constância, transformando cada gesto repetido em arte de viver refinada."
+    },
+    {
+      "q": "Como pode um Touro superar a sua resistência natural à mudança?",
+      "a": "A chave reside na associação da mudança a benefícios tangíveis e estéticos. O Touro aceitará mais facilmente uma evolução se puder visualizar concretamente as melhorias que ela traz ao seu conforto ou à sua beleza de vida. É preciso dar-lhe tempo para se familiarizar com a novidade, procedendo por etapas graduais em vez de revoluções bruscas. A sua natureza venusiana responde favoravelmente às transições harmoniosas que respeitam o seu ritmo natural e preservam o que lhe é caro no sistema antigo."
+    },
+    {
+      "q": "Qual é a influência do ascendente na personalidade de um Touro?",
+      "a": "O ascendente modula a expressão da sensualidade e do pragmatismo taurinos. Um ascendente Gémeos trará mais mobilidade mental e curiosidade intelectual, enquanto um ascendente Escorpião intensificará a dimensão passional e misteriosa. Um ascendente Fogo dinamizará a energia taurina, tornando-a mais expressiva e empreendedora. O ascendente Ar favorecerá a expressão artística e social de Vénus, enquanto um ascendente Água amplificará a intuição e a recetividade emocional do signo solar."
+    },
+    {
+      "q": "Que profissões permitem ao Touro expressar plenamente os seus talentos naturais?",
+      "a": "O Touro floresce em todos os domínios onde beleza e saber-fazer se unem: arquitetura de interiores, joalharia, gastronomia, viticultura, artesanato de arte. A sua conexão venusiana destina-o naturalmente às profissões artísticas, da escultura à música. Nas finanças, o seu sentido prático e a sua paciência fazem dele um excelente gestor de património. O imobiliário, a horticultura, a perfumaria correspondem igualmente à sua natureza. Excele também no acompanhamento de bem-estar: massoterapia, estética, coaching em arte de viver."
+    },
+    {
+      "q": "Como expressa o Touro a sua espiritualidade e conexão ao sagrado?",
+      "a": "A espiritualidade taurina passa pela encarnação e celebração da beleza divina na matéria. Menos místico que contemplativo, encontra o sagrado na natureza, nos jardins, nas obras de arte que elevam a alma. A sua prática espiritual privilegia os rituais sensoriais: meditação num belo cenário, canto, dança sagrada, criação artística como oração. Honra o divino através da gratidão pela abundância terrestre e da preservação da beleza do mundo. A sua fé nutre-se de tradições antigas e expressa-se através de atos concretos de generosidade e proteção do ambiente."
+    }
+  ]
+}

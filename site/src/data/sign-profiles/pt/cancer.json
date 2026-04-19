@@ -1,0 +1,86 @@
+{
+  "tagline": "A alma sensível que transforma a emoção em santuário protetor",
+  "intro": "O Caranguejo encarna o arquétipo maternal do zodíaco, primeira manifestação do elemento Água na sua forma cardinal. Governado pela Lua, capta os ciclos emocionais com uma acuidade perturbadora, transformando cada sensação em memória viva. Contrariamente aos clichés sobre a sua fragilidade, o Caranguejo possui uma força de iniciativa temível quando se trata de criar e proteger o seu mundo íntimo. A sua carapaça não é uma fraqueza mas uma arte de viver: constrói casulos onde a emoção pode florescer sem ser julgada. Signo do solstício de verão, marca o apogeu da luz mas volta-se já para a interioridade. O seu génio reside na capacidade de fazer da emoção uma bússola fiável.",
+  "strengths": [
+    "Intuição emocional temível",
+    "Lealdade inabalável aos próximos",
+    "Criatividade nutrida pela sensibilidade",
+    "Capacidade protetora natural autêntica",
+    "Memória afetiva excecional precisa"
+  ],
+  "weaknesses": [
+    "Suscetibilidade excessiva face a críticas",
+    "Tendência rancorosa difícil de perdoar",
+    "Recolhimento defensivo por vezes paralisante",
+    "Ansiedade antecipatória crónica invasiva",
+    "Manipulação emocional involuntária frequente"
+  ],
+  "in_love": "O Caranguejo ama com as entranhas, procurando recriar o casulo original onde o outro se torna extensão de si mesmo. Seduz pela sua capacidade de escuta e generosidade emocional, mas espera em troca uma fidelidade absoluta. As suas declarações passam pelos gestos quotidianos: cozinhar, mimar, criar um ninho acolhedor. Foge dos amores de passagem e dos corações blindados, preferindo a vulnerabilidade partilhada. Possessivo sem ser ciumento, precisa de sentir que o seu parceiro faz realmente parte da sua família eletiva.",
+  "in_friendship": "Na amizade, o Caranguejo tece laços familiares com os seus próximos, criando uma tribo escolhida que nutre com pequenas atenções constantes. Lembra-se de tudo: aniversários, mágoas, momentos preciosos. Os seus círculos são restritos mas duradouros, construídos sobre uma confiança mútua absoluta. Excele na arte da escuta terapêutica e torna-se frequentemente o confidente dos seus amigos. A sua porta permanece sempre aberta às almas em aflição.",
+  "at_work": "O Caranguejo floresce nas profissões de cuidado: psicologia, saúde, educação, restauração, imobiliário familiar. Precisa de um ambiente seguro e de relações humanas autênticas para dar o melhor. Face à autoridade, prefere a colaboração ao confronto direto. O seu ritmo segue os seus ciclos internos em vez dos imperativos exteriores. Pode carecer de ambição visível mas desenvolve uma perícia notável no seu domínio por paixão sincera.",
+  "best_matches": [
+    {
+      "slug": "scorpion",
+      "score": 92,
+      "why": "Aliança água-água onde a intensidade emocional do Escorpião ressoa com a profundidade do Caranguejo, criando uma intimidade transformadora."
+    },
+    {
+      "slug": "poissons",
+      "score": 88,
+      "why": "Comunhão intuitiva natural entre dois signos de Água que se compreendem sem palavras e partilham a mesma sensibilidade espiritual."
+    },
+    {
+      "slug": "taureau",
+      "score": 85,
+      "why": "Complementaridade terra-água ideal: estabilidade taurina tranquiliza Caranguejo que nutre emocionalmente o Touro em troca."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "capricorne",
+      "why": "Oposição estrutural entre emotividade do Caranguejo e racionalidade do Capricórnio, criando incompreensão mútua sobre as prioridades de vida."
+    },
+    {
+      "slug": "belier",
+      "why": "Quadratura tensa entre impulsividade do Carneiro e necessidade de segurança do Caranguejo, ritmos e abordagens relacionais fundamentalmente diferentes."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Pedra da lua",
+    "animal_totem": "Caranguejo",
+    "flower": "Lírio branco",
+    "color": "Branco prateado",
+    "lucky_day": "Segunda-feira",
+    "lucky_number": 7,
+    "metal": "Prata"
+  },
+  "famous_people": [
+    "Cristiano Ronaldo",
+    "José Saramago",
+    "Amália Rodrigues",
+    "Diogo Morgado",
+    "Daniela Ruah"
+  ],
+  "faq": [
+    {
+      "q": "Porque é que o Caranguejo é considerado o signo mais sensível do zodíaco?",
+      "a": "A sensibilidade do Caranguejo vem da sua governança lunar e do seu elemento Água cardinal. A Lua amplifica a sua recetividade emocional, tornando-o permeável às atmosferas e aos não ditos. O seu carácter cardinal leva-o a agir sobre estas perceções, criando por vezes reações intensas. Esta sensibilidade não é fraqueza mas inteligência emocional: capta nuances invisíveis aos outros signos. A sua memória afetiva excecional arquiva cada emoção, criando uma riqueza interior mas também uma vulnerabilidade às feridas passadas."
+    },
+    {
+      "q": "Quais são os signos mais compatíveis com o Caranguejo no amor?",
+      "a": "Os signos de Água (Escorpião, Peixes) formam com o Caranguejo uniões profundas baseadas na intuição partilhada. O Escorpião traz intensidade e transformação, os Peixes comunhão espiritual. Os signos de Terra (Touro, Virgem, Capricórnio) oferecem a estabilidade procurada pelo Caranguejo, particularmente o Touro que partilha o seu amor pelo lar. Alguns signos de Fogo como o Leão podem criar uniões apaixonadas se o ascendente ou a Lua suavizarem as diferenças temperamentais."
+    },
+    {
+      "q": "Como se comporta um Caranguejo ascendente Escorpião?",
+      "a": "O ascendente Escorpião intensifica consideravelmente a natureza do Caranguejo, criando uma personalidade magnética mas complexa. A emotividade do Caranguejo matiza-se de mistério escorpionesco, tornando esta pessoa fascinante mas difícil de decifrar. Desenvolve mecanismos de proteção mais sofisticados, alternando vulnerabilidade e couraça impenetrável. Esta combinação dupla Água cria uma intuição fenomenal e um poder de transformação pessoal notável. No amor, a intensidade pode ser arrebatadora mas também possessiva."
+    },
+    {
+      "q": "Que profissões convêm melhor ao temperamento do Caranguejo?",
+      "a": "O Caranguejo excele nas profissões de cuidado: psicologia, medicina, ensino, área social, primeira infância. O seu instinto protetor guia-o para cuidados de enfermagem, obstetrícia, ou terapias alternativas. A sua criatividade nutrida de emoção orienta-o para artes culinárias, decoração, fotografia familiar, ou escrita intimista. O imobiliário familiar, a hotelaria de charme, ou a gestão de património correspondem à sua necessidade de criar casulos seguros. Evita geralmente ambientes competitivos ou desumanizados."
+    },
+    {
+      "q": "Como gerir as mudanças de humor de um Caranguejo numa relação?",
+      "a": "As variações emocionais do Caranguejo seguem frequentemente os ciclos lunares e os seus ritmos internos. É preciso compreender que os seus humores não são caprichos mas reações autênticas ao seu ambiente energético. A escuta benevolente sem julgamento continua a ser a melhor abordagem, com paciência para o deixar exprimir os seus sentimentos. Criar um ambiente seguro onde se pode recolher sem culpa ajuda a regular estas oscilações. Respeitar as suas necessidades de solidão periódicas evita a acumulação de tensões emocionais."
+    }
+  ]
+}

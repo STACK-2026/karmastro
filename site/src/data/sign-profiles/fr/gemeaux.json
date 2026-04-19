@@ -1,0 +1,86 @@
+{
+  "tagline": "L'explorateur des idées qui fait danser les mots et les liens",
+  "intro": "Troisième signe du zodiaque, Gémeaux incarne l'éveil intellectuel du printemps finissant. Gouverné par Mercure, messager des dieux, ce signe d'air mutable transforme chaque rencontre en occasion d'apprendre et de transmettre. Là où Bélier fonce et Taureau consolide, Gémeaux établit les connexions. Son génie réside dans sa capacité à tisser des liens entre les êtres et les idées, à traduire et vulgariser les concepts les plus complexes. Cette polyvalence naturelle fait de lui le grand communicateur du zodiaque, celui qui anime les échanges et nourrit la curiosité collective. Sa nature duelle, symbolisée par les jumeaux, lui permet d'embrasser plusieurs perspectives simultanément, faisant de lui un médiateur né mais aussi un être en perpétuelle recherche d'équilibre entre ses multiples facettes.",
+  "strengths": [
+    "Adaptabilité intellectuelle remarquable",
+    "Communication naturelle et persuasive",
+    "Curiosité insatiable et vivifiante",
+    "Capacité de synthèse exceptionnelle",
+    "Polyvalence dans tous domaines"
+  ],
+  "weaknesses": [
+    "Dispersion chronique des énergies",
+    "Superficialité par excès d'intérêts",
+    "Instabilité émotionnelle et décisionnelle",
+    "Tendance à la manipulation verbale",
+    "Difficulté à approfondir durablement"
+  ],
+  "in_love": "En amour, Gémeaux séduit d'abord par l'esprit avant le cœur. Il cherche un complice intellectuel avec qui partager ses découvertes et ses questionnements infinis. La routine sentimentale l'effraie plus que la solitude, il a besoin de stimulation constante et de conversations enrichissantes pour maintenir la flamme. Son approche ludique de la romance peut dérouter les âmes plus graves, mais elle cache une quête sincère de compréhension mutuelle. Il fuit la possessivité et valorise l'indépendance dans le couple, préférant une relation d'égal à égal où chacun garde sa liberté de mouvement et de pensée.",
+  "in_friendship": "L'amitié Gémeaux se nourrit d'échanges constants et de nouveautés partagées. Ami fidèle mais jamais exclusif, il maintient un réseau social étendu où chacun apporte sa spécialité. Sa loyauté s'exprime par l'écoute attentive et les conseils éclairés plutôt que par la présence physique constante. Il excelle dans l'art de renouer contact après de longs silences, reprenant la conversation comme si elle n'avait jamais cessé.",
+  "at_work": "Gémeaux s'épanouit dans les métiers de communication, journalisme, enseignement, traduction ou commerce. Il déteste la hiérarchie rigide et préfère les environnements horizontaux où les idées circulent librement. Son rythme de travail irrégulier alterne entre périodes d'intense productivité et moments de dispersion. Il brillera dans la négociation et la médiation mais peinera sur les tâches répétitives ou trop techniques nécessitant une concentration prolongée.",
+  "best_matches": [
+    {
+      "slug": "balance",
+      "score": 92,
+      "why": "Deux signes d'air qui partagent le goût de l'harmonie intellectuelle et l'art de la conversation raffinée."
+    },
+    {
+      "slug": "verseau",
+      "score": 88,
+      "why": "Complicité mentale parfaite entre deux esprits libres qui valorisent l'indépendance et l'originalité."
+    },
+    {
+      "slug": "lion",
+      "score": 85,
+      "why": "L'opposition créatrice où l'éclat du Lion nourrit la curiosité Gémeaux dans une dynamique stimulante."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "vierge",
+      "why": "La précision minutieuse de Vierge s'oppose à la dispersion naturelle de Gémeaux dans un carré exigeant."
+    },
+    {
+      "slug": "poissons",
+      "why": "L'émotionnel profond des Poissons déroute l'approche mentale de Gémeaux dans une opposition complexe."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Agate",
+    "animal_totem": "Papillon",
+    "flower": "Lavande",
+    "color": "Jaune",
+    "lucky_day": "Mercredi",
+    "lucky_number": 7,
+    "metal": "Mercure"
+  },
+  "famous_people": [
+    "Donald Trump",
+    "Marilyn Monroe",
+    "John F. Kennedy",
+    "Angelina Jolie",
+    "Bob Dylan"
+  ],
+  "faq": [
+    {
+      "q": "Pourquoi dit-on que les Gémeaux sont à double face et peut-on leur faire confiance en amitié",
+      "a": "La réputation de duplicité des Gémeaux vient de leur symbolisme des jumeaux et de leur capacité à voir plusieurs angles d'une situation. Cette polyvalence intellectuelle n'équivaut pas à de la malhonnêteté mais à une complexité assumée. En amitié, Gémeaux se montre loyal par l'écoute et le partage d'idées plutôt que par la présence constante. Sa fiabilité s'exprime différemment selon les circonstances, ce qui peut dérouter les tempéraments plus linéaires. Il faut accepter sa nature changeante pour apprécier la richesse de son amitié, faite de découvertes perpétuelles et de conversations stimulantes qui nourrissent l'esprit."
+    },
+    {
+      "q": "Comment reconnaître un ascendant Gémeaux et quelle influence a-t-il sur la personnalité générale",
+      "a": "L'ascendant Gémeaux se reconnaît à une gestuelle expressive, une démarche vive et un regard pétillant de curiosité. Ces natifs donnent une première impression de vivacité intellectuelle et d'accessibilité, même si leur signe solaire est plus introverti. Ils abordent la vie avec un questionnement constant et une capacité d'adaptation remarquable aux situations nouvelles. Cet ascendant tempère les signes plus rigides en apportant flexibilité et ouverture d'esprit, tandis qu'il peut disperser l'énergie des signes déjà mobiles. Il favorise les contacts sociaux et donne une aisance naturelle dans la communication, transformant même les personnalités les plus réservées en interlocuteurs engageants."
+    },
+    {
+      "q": "Quels sont les métiers qui conviennent le mieux au tempérament Gémeaux et pourquoi",
+      "a": "Gémeaux excelle dans tous les métiers liés à la communication et à la transmission d'informations : journalisme, enseignement, traduction, relations publiques, commerce ou animation. Sa polyvalence naturelle le destine aux professions nécessitant adaptation et renouvellement constant des connaissances. Il brille également dans la négociation, la médiation et tous les rôles d'interface entre différents univers professionnels. Les métiers du numérique, des réseaux sociaux et du marketing digital lui conviennent parfaitement car ils allient technologie et communication. En revanche, il fuit les emplois trop routiniers, hiérarchisés ou nécessitant une spécialisation technique poussée qui limiterait sa soif de diversité intellectuelle."
+    },
+    {
+      "q": "Comment une femme Gémeaux exprime-t-elle sa séduction et que recherche-t-elle chez un partenaire",
+      "a": "La femme Gémeaux séduit par son intelligence pétillante et sa conversation captivante plutôt que par des artifices physiques. Elle privilégie l'humour, la culture et l'originalité pour attirer l'attention, créant une complicité intellectuelle avant tout engagement émotionnel. Chez un partenaire, elle recherche un égal mental capable de stimuler sa curiosité et de suivre ses raisonnements complexes. Elle fuit la possessivité et valorise l'indépendance mutuelle dans le couple. Sa séduction s'appuie sur sa capacité d'adaptation aux différentes personnalités qu'elle rencontre, sachant instinctivement adopter le registre de communication qui touchera son interlocuteur. Elle apprécie les hommes cultivés, ouverts d'esprit et suffisamment sûrs d'eux pour accepter sa liberté de mouvement."
+    },
+    {
+      "q": "Comment gérer une relation amoureuse avec un Gémeaux qui semble toujours distrait ou ailleurs",
+      "a": "La distraction apparente du Gémeaux traduit en réalité une richesse mentale qui nécessite stimulation constante. Pour maintenir son attention, il faut varier les plaisirs et éviter la routine : proposer de nouvelles activités, nourrir les conversations de sujets inédits, accepter ses multiples centres d'intérêt. Sa tendance à papillonner ne signifie pas désintérêt mais besoin de diversité intellectuelle. Il convient de respecter ses moments de dispersion tout en créant des rendez-vous privilégiés où l'échange devient prioritaire. La patience et la compréhension de sa nature complexe sont essentielles, ainsi que le développement de sa propre autonomie pour ne pas dépendre uniquement de son attention souvent fragmentée mais sincère."
+    }
+  ]
+}

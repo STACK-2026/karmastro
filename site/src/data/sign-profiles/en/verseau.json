@@ -1,0 +1,86 @@
+{
+  "tagline": "The humanitarian innovator who revolutionizes the world with detachment",
+  "intro": "Born under the influence of Uranus, Aquarius embodies the archetype of the enlightened revolutionary. This fixed Air sign moves through existence with a mission: to evolve humanity toward greater brotherhood and authenticity. Governed by the planet of mutations and flashes of genius, it possesses the rare ability to perceive the future before others. Its airy nature grants it intuitive and synthetic intelligence, while its fixed quality provides the perseverance needed to manifest its visions. Aquarius naturally vibrates on the frequency of the collective, always seeking to transcend divisions to create authentic connections. Its apparent detachment conceals a deep sensitivity to injustice and human suffering. It navigates between technological innovation and ancestral wisdom, between assumed individuality and social commitment.",
+  "strengths": [
+    "Anticipatory futuristic vision",
+    "Assumed independence of spirit",
+    "Authentic universal brotherhood",
+    "Natural technological innovation",
+    "Liberating emotional detachment"
+  ],
+  "weaknesses": [
+    "Destabilizing emotional distance",
+    "Sometimes sterile systematic rebellion",
+    "Utopianism disconnected from reality",
+    "Frustrating relational unpredictability",
+    "Paradoxical ideological rigidity"
+  ],
+  "in_love": "Aquarius loves with their mind as much as their heart, prioritizing intellectual complicity over emotional fusion. They seek a partner who respects their fundamental freedom and shares their humanistic ideals. Their way of loving passes through deep friendship, common projects, and stimulating exchanges. They flee possessive demonstrations and suffocating emotional routines. Their love feeds on surprise, mutual independence, and respect for differences. Capable of remarkable intellectual fidelity, they may nevertheless disconcert with their need for space and rejection of traditional romantic conventions.",
+  "in_friendship": "In friendship, Aquarius shines through their selfless loyalty and ability to maintain lasting bonds despite distance. They cultivate an eclectic circle of friends sharing their passions for innovation and social justice. Their friendship is characterized by absence of judgment and unconditional acceptance of differences. They know how to be present in crucial moments while respecting everyone's autonomy. Their stimulating conversation and avant-garde ideas make them a precious friend for those seeking to broaden their horizons.",
+  "at_work": "Aquarius excels in careers related to technology, scientific research, humanitarian work, or innovative media. They need autonomy and poorly tolerate arbitrary authority, preferring horizontal structures to rigid hierarchies. Their work rhythm follows their inspirations, alternating phases of intense creativity with periods of reflection. They bring a revolutionary vision to collective projects but may lack pragmatism in execution. Their professional blind spot: managing administrative details and diplomacy with conservative personalities.",
+  "best_matches": [
+    {
+      "slug": "gemeaux",
+      "score": 92,
+      "why": "Two Air signs that intellectually stimulate each other in a perpetual dance of ideas and innovations."
+    },
+    {
+      "slug": "balance",
+      "score": 88,
+      "why": "Libra's search for harmony perfectly complements Aquarius's humanistic idealism."
+    },
+    {
+      "slug": "sagittaire",
+      "score": 85,
+      "why": "Two free spirits who share a taste for intellectual adventure and grand universal ideals."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "taureau",
+      "why": "The fundamental opposition between Taurus's need for stability and Aquarius's Uranian unpredictability."
+    },
+    {
+      "slug": "scorpion",
+      "why": "Aquarian detachment clashes with Scorpio emotional intensity in a polarity difficult to reconcile."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Amethyst",
+    "animal_totem": "Eagle",
+    "flower": "Orchid",
+    "color": "Electric blue",
+    "lucky_day": "Wednesday",
+    "lucky_number": 7,
+    "metal": "Uranium"
+  },
+  "famous_people": [
+    "Oprah Winfrey",
+    "Bob Marley",
+    "Franklin Delano Roosevelt",
+    "Ellen DeGeneres",
+    "Thomas Edison"
+  ],
+  "faq": [
+    {
+      "q": "Why does Aquarius have a reputation for being distant in love?",
+      "a": "This reputation stems from their Uranian nature which prioritizes emotional independence. Aquarius loves deeply but refuses possessive fusion. Their apparent detachment actually conceals extreme sensitivity that they protect through this distance. They prefer a relationship based on intellectual complicity and mutual respect for autonomy rather than emotional dependence. This approach may confuse partners seeking traditional demonstrations, but it guarantees a more authentic and lasting relationship. Their love manifests through intellectual fidelity and unconditional support of the other's projects."
+    },
+    {
+      "q": "How do you manage an unpredictable Aquarius colleague at work?",
+      "a": "To collaborate effectively with an Aquarius, respect their need for autonomy and avoid micromanagement. Present projects from the angle of innovation and collective utility rather than personal profit. Accept their unconventional methods and irregular schedules: their best ideas often emerge off the beaten path. Give them space to experiment and don't take their questioning of the system personally. In exchange, you'll benefit from their avant-garde vision and ability to solve complex problems. The key: trust them while keeping a benevolent eye on practical details they sometimes neglect."
+    },
+    {
+      "q": "Does Aquarius rising really change your sun sign personality?",
+      "a": "Aquarius rising indeed colors the personality with a remarkable Uranian tint, regardless of the sun sign. It brings an original, nonconformist, and fraternally detached social mask. The person appears more independent, innovative, and open to humanitarian causes than they naturally are. This Uranian filter influences the first impression given to others and may even reveal hidden facets of the sun sign. For example, a Cancer with Aquarius rising will seem less maternal and more intellectual, while keeping their deep sensitivity. The ascendant acts as a developer of latent Aquarian potentialities, sometimes creating a fascinating duality between the intimate being and social appearance."
+    },
+    {
+      "q": "What careers allow Aquarius to fully express their nature?",
+      "a": "Aquarius thrives in fields related to technological innovation, scientific research, international humanitarian work, or alternative media. Software developer, renewable energy researcher, NGO coordinator, independent journalist, or digital transformation consultant: all these careers allow them to reconcile their futuristic vision with their humanistic ideals. They also excel in innovative teaching, transpersonal psychology, or conceptual art. The essential thing is to have a positive impact on the collective while maintaining their creative independence. Overly hierarchical or conservative structures quickly stifle their revolutionary potential and capacity for innovation."
+    },
+    {
+      "q": "How can Aquarius develop their spirituality authentically?",
+      "a": "Aquarian spirituality naturally feeds on synthesis between ancestral wisdom and modern scientific discoveries. They will find their path in non-dogmatic approaches that combine technological meditation and collective consciousness. Humanistic astrology, transpersonal psychology, or group meditation practices resonate with their nature. Their spiritual quest often passes through concrete humanitarian engagement and the search for universal brotherhood. They can explore teachings that transcend traditional religions to embrace a cosmic vision of existence. The important thing is to keep their critical mind while opening to subtle dimensions of reality, thus creating their own authentic spiritual synthesis."
+    }
+  ]
+}

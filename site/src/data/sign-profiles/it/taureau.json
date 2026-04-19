@@ -1,0 +1,86 @@
+{
+  "tagline": "L'architetto del concreto che trasforma i sogni in realtà tangibile",
+  "intro": "Il Toro incarna la potenza creatrice di Venere radicata nella materia. Nato nel cuore della primavera, quando la natura dispiega la sua fecondità, trasforma lo slancio pionieristico dell'Ariete in opera duratura. Questo segno fisso di Terra possiede la capacità unica di dare corpo alle idee, di offrire loro forma e sostanza. Governato da Venere, cerca la bellezza nel tangibile, l'armonia nel concreto. La sua forza risiede in questa alchimia particolare che unisce sensualità e pragmatismo, estetica ed efficienza. Il Toro avanza con la pazienza di chi costruisce per l'eternità, sapendo che le più belle cattedrali nascono pietra dopo pietra. Il suo rapporto con il tempo è diverso: dove altri corrono, lui coltiva, consapevole che la vera ricchezza si costruisce lentamente ma con sicurezza.",
+  "strengths": [
+    "Perseveranza incrollabile di fronte agli ostacoli",
+    "Senso estetico raffinato e autentico",
+    "Pragmatismo creativo e costruttivo",
+    "Lealtà incondizionata verso i propri cari",
+    "Stabilità emotiva rassicurante"
+  ],
+  "weaknesses": [
+    "Resistenza eccessiva al cambiamento necessario",
+    "Tendenza possessiva nelle relazioni",
+    "Testardaggine a volte controproducente",
+    "Attaccamento materiale talvolta eccessivo",
+    "Lentezza decisionale che frena l'azione"
+  ],
+  "in_love": "Il Toro ama con tutti i cinque sensi, cercando una comunione carnale quanto emotiva. Corteggia con pazienza, offrendo stabilità e sicurezza all'eletto del suo cuore. La sua sensualità venusiana si esprime attraverso i piaceri condivisi: pasti saporiti, massaggi, momenti coccolosi. Fugge l'instabilità affettiva e le relazioni superficiali, preferendo costruire un'intimità profonda e duratura. La sua gelosia, a volte possessiva, rivela il bisogno di sicurezza affettiva. Una volta impegnato, diventa il partner più affidabile dello zodiaco, creando un focolare armonioso dove regnano bellezza e comfort.",
+  "in_friendship": "L'amicizia taurina si costruisce sulla durata e la reciprocità. Questo segno privilegia una cerchia ristretta di amici fedeli piuttosto che una rete estesa. Esprime la sua tenerezza con gesti concreti: inviti golosi, regali ponderati, presenza costante nei momenti difficili. La sua lealtà leggendaria lo rende un confidente privilegiato, capace di mantenere i segreti e offrire consigli pragmatici. Mantiene il legame attraverso la regolarità dei contatti e la creazione di tradizioni condivise.",
+  "at_work": "Il Toro eccelle nelle professioni legate alla bellezza, all'artigianato, alla gastronomia o alla finanza. Il suo rapporto con l'autorità rimane rispettoso ma indipendente: preferisce il riconoscimento delle sue competenze agli onori gerarchici. Il suo ritmo di lavoro, metodico e regolare, può disorientare gli ambienti frenetici. Il suo punto cieco professionale risiede nella difficoltà ad adattarsi rapidamente a nuovi strumenti o metodi, privilegiando tecniche collaudate rispetto a innovazioni rischiose.",
+  "best_matches": [
+    {
+      "slug": "vierge",
+      "score": 92,
+      "why": "Terra comune e complementarità Venere-Mercurio creano un'alchimia perfetta tra sensualità e precisione."
+    },
+    {
+      "slug": "capricorne",
+      "score": 88,
+      "why": "Trigono di Terra favorisce la costruzione comune di un futuro stabile e prospero."
+    },
+    {
+      "slug": "cancer",
+      "score": 85,
+      "why": "Sestile creativo tra Venere e Luna armonizza sicurezza materiale ed emotiva."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "lion",
+      "why": "Quadrato fisso Venere-Sole crea tensioni tra bisogno di semplicità taurina e teatralità leonina."
+    },
+    {
+      "slug": "verseau",
+      "why": "Opposizione fissa Venere-Urano genera conflitti tra tradizione taurina e rivoluzione acquariana."
+    }
+  ],
+  "attributes": {
+    "gemstone": "smeraldo",
+    "animal_totem": "toro",
+    "flower": "rosa",
+    "color": "verde tenero",
+    "lucky_day": "venerdì",
+    "lucky_number": 6,
+    "metal": "rame"
+  },
+  "famous_people": [
+    "Marcello Mastroianni",
+    "Monica Bellucci",
+    "Roberto Benigni",
+    "Sophia Loren",
+    "Valentino Rossi"
+  ],
+  "faq": [
+    {
+      "q": "Perché il Toro è così legato alle sue abitudini e routine?",
+      "a": "La natura fissa del Toro, combinata alla sua governanza venusiana, crea un bisogno profondo di stabilità e armonia. Le sue routine non sono rigidità ma rituali di benessere che gli permettono di coltivare la bellezza quotidiana. Questa regolarità struttura il suo mondo interiore e gli offre i riferimenti necessari per esprimere la sua creatività. Contrariamente ai segni mutevoli che fioriscono nel cambiamento, il Toro attinge la sua forza dalla costanza, trasformando ogni gesto ripetuto in arte di vivere raffinata."
+    },
+    {
+      "q": "Come può il Toro superare la sua resistenza naturale al cambiamento?",
+      "a": "La chiave risiede nell'associare il cambiamento a benefici tangibili ed estetici. Il Toro accetterà più facilmente un'evoluzione se può visualizzare concretamente i miglioramenti che apporta al suo comfort o alla bellezza della sua vita. Bisogna lasciargli il tempo di addomesticare la novità, procedendo per tappe graduali piuttosto che per rivoluzioni brusche. La sua natura venusiana risponde favorevolmente alle transizioni armoniose che rispettano il suo ritmo naturale e preservano ciò che gli è caro nel sistema precedente."
+    },
+    {
+      "q": "Qual è l'influenza dell'ascendente sulla personalità del Toro?",
+      "a": "L'ascendente modula l'espressione della sensualità e del pragmatismo taurini. Un ascendente Gemelli apporterà più mobilità mentale e curiosità intellettuale, mentre un ascendente Scorpione intensificherà la dimensione passionale e misteriosa. Un ascendente Fuoco (Ariete, Leone, Sagittario) dinamizzerà l'energia taurina, rendendola più espressiva e intraprendente. L'ascendente Aria favorirà l'espressione artistica e sociale di Venere, mentre un ascendente Acqua amplificherà l'intuizione e la ricettività emotiva del segno solare."
+    },
+    {
+      "q": "Quali professioni permettono al Toro di esprimere pienamente i suoi talenti naturali?",
+      "a": "Il Toro fiorisce in tutti i domini dove bellezza e savoir-faire si uniscono: architettura d'interni, gioielleria, gastronomia, viticoltura, artigianato artistico. La sua connessione venusiana lo destina naturalmente alle professioni artistiche, dalla scultura alla musica. Nella finanza, il suo senso pratico e la sua pazienza lo rendono un eccellente gestore patrimoniale. L'immobiliare, l'orticoltura, la profumeria corrispondono ugualmente alla sua natura. Eccelle anche nell'accompagnamento benessere: massoterapia, estetica, coaching nell'arte del vivere."
+    },
+    {
+      "q": "Come esprime il Toro la sua spiritualità e connessione al sacro?",
+      "a": "La spiritualità taurina passa attraverso l'incarnazione e la celebrazione della bellezza divina nella materia. Meno mistico che contemplativo, trova il sacro nella natura, nei giardini, nelle opere d'arte che elevano l'anima. La sua pratica spirituale privilegia i rituali sensoriali: meditazione in una bella cornice, canto, danza sacra, creazione artistica come preghiera. Onora il divino attraverso la gratitudine per l'abbondanza terrestre e la preservazione della bellezza del mondo. La sua fede si nutre di tradizioni antiche e si esprime attraverso atti concreti di generosità e protezione dell'ambiente."
+    }
+  ]
+}

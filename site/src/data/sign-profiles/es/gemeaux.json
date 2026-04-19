@@ -1,0 +1,86 @@
+{
+  "tagline": "El explorador de ideas que hace bailar las palabras y las conexiones",
+  "intro": "Tercer signo del zodiaco, Géminis encarna el despertar intelectual del final de la primavera. Regido por Mercurio, mensajero de los dioses, este signo de aire mutable transforma cada encuentro en oportunidad de aprender y transmitir. Donde Aries arremete y Tauro consolida, Géminis establece las conexiones. Su genio reside en su capacidad para tejer vínculos entre los seres y las ideas, para traducir y divulgar los conceptos más complejos. Esta versatilidad natural lo convierte en el gran comunicador del zodiaco, aquel que anima los intercambios y nutre la curiosidad colectiva. Su naturaleza dual, simbolizada por los gemelos, le permite abrazar múltiples perspectivas simultáneamente, convirtiéndolo en un mediador nato pero también en un ser en perpetua búsqueda de equilibrio entre sus múltiples facetas.",
+  "strengths": [
+    "Adaptabilidad intelectual extraordinaria",
+    "Comunicación natural y persuasiva",
+    "Curiosidad insaciable y vivificante",
+    "Capacidad de síntesis excepcional",
+    "Versatilidad en todos los ámbitos"
+  ],
+  "weaknesses": [
+    "Dispersión crónica de las energías",
+    "Superficialidad por exceso de intereses",
+    "Inestabilidad emocional y decisional",
+    "Tendencia a la manipulación verbal",
+    "Dificultad para profundizar duraderamente"
+  ],
+  "in_love": "En el amor, Géminis seduce primero por la mente antes que por el corazón. Busca un cómplice intelectual con quien compartir sus descubrimientos y cuestionamientos infinitos. La rutina sentimental le aterra más que la soledad, necesita estimulación constante y conversaciones enriquecedoras para mantener la llama. Su enfoque lúdico del romance puede desconcertar a las almas más serias, pero esconde una búsqueda sincera de comprensión mutua. Huye de la posesividad y valora la independencia en la pareja, prefiriendo una relación de igual a igual donde cada uno mantenga su libertad de movimiento y pensamiento.",
+  "in_friendship": "La amistad de Géminis se nutre de intercambios constantes y novedades compartidas. Amigo fiel pero nunca exclusivo, mantiene una red social extensa donde cada uno aporta su especialidad. Su lealtad se expresa a través de la escucha atenta y los consejos esclarecedores más que por la presencia física constante. Destaca en el arte de retomar el contacto después de largos silencios, reanudando la conversación como si nunca hubiera cesado.",
+  "at_work": "Géminis se desarrolla en profesiones de comunicación, periodismo, enseñanza, traducción o comercio. Detesta la jerarquía rígida y prefiere entornos horizontales donde las ideas circulan libremente. Su ritmo de trabajo irregular alterna entre períodos de intensa productividad y momentos de dispersión. Brillará en la negociación y mediación pero sufrirá con tareas repetitivas o demasiado técnicas que requieran concentración prolongada.",
+  "best_matches": [
+    {
+      "slug": "balance",
+      "score": 92,
+      "why": "Dos signos de aire que comparten el gusto por la armonía intelectual y el arte de la conversación refinada."
+    },
+    {
+      "slug": "verseau",
+      "score": 88,
+      "why": "Complicidad mental perfecta entre dos espíritus libres que valoran la independencia y la originalidad."
+    },
+    {
+      "slug": "lion",
+      "score": 85,
+      "why": "La oposición creadora donde el brillo de Leo nutre la curiosidad de Géminis en una dinámica estimulante."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "vierge",
+      "why": "La precisión minuciosa de Virgo se opone a la dispersión natural de Géminis en una cuadratura exigente."
+    },
+    {
+      "slug": "poissons",
+      "why": "Lo emocional profundo de Piscis desconcierta el enfoque mental de Géminis en una oposición compleja."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Ágata",
+    "animal_totem": "Mariposa",
+    "flower": "Lavanda",
+    "color": "Amarillo",
+    "lucky_day": "Miércoles",
+    "lucky_number": 7,
+    "metal": "Mercurio"
+  },
+  "famous_people": [
+    "Shakira",
+    "Octavio Paz",
+    "Diego Velázquez",
+    "Rafael Nadal",
+    "Che Guevara"
+  ],
+  "faq": [
+    {
+      "q": "Por qué se dice que los Géminis tienen doble cara y se puede confiar en ellos como amigos",
+      "a": "La reputación de duplicidad de Géminis proviene de su simbolismo de los gemelos y su capacidad para ver múltiples ángulos de una situación. Esta versatilidad intelectual no equivale a deshonestidad sino a una complejidad asumida. En la amistad, Géminis se muestra leal mediante la escucha y el intercambio de ideas más que por la presencia constante. Su confiabilidad se expresa de manera diferente según las circunstancias, lo que puede desconcertar a los temperamentos más lineales. Hay que aceptar su naturaleza cambiante para apreciar la riqueza de su amistad, hecha de descubrimientos perpetuos y conversaciones estimulantes que nutren el espíritu."
+    },
+    {
+      "q": "Cómo reconocer un ascendente Géminis y qué influencia tiene en la personalidad general",
+      "a": "El ascendente Géminis se reconoce por una gesticulación expresiva, un andar vivaz y una mirada chispeante de curiosidad. Estos nativos dan una primera impresión de vivacidad intelectual y accesibilidad, incluso si su signo solar es más introvertido. Abordan la vida con un cuestionamiento constante y una capacidad de adaptación notable a situaciones nuevas. Este ascendente tempera los signos más rígidos aportando flexibilidad y apertura mental, mientras que puede dispersar la energía de signos ya móviles. Favorece los contactos sociales y da una soltura natural en la comunicación, transformando incluso las personalidades más reservadas en interlocutores cautivadores."
+    },
+    {
+      "q": "Cuáles son las profesiones que mejor se adaptan al temperamento Géminis y por qué",
+      "a": "Géminis destaca en todas las profesiones relacionadas con la comunicación y transmisión de información: periodismo, enseñanza, traducción, relaciones públicas, comercio o animación. Su versatilidad natural lo destina a profesiones que requieren adaptación y renovación constante de conocimientos. También brilla en la negociación, mediación y todos los roles de interfaz entre diferentes universos profesionales. Las profesiones digitales, redes sociales y marketing digital le convienen perfectamente pues combinan tecnología y comunicación. En cambio, huye de empleos demasiado rutinarios, jerarquizados o que requieran especialización técnica profunda que limitaría su sed de diversidad intelectual."
+    },
+    {
+      "q": "Cómo expresa su seducción una mujer Géminis y qué busca en una pareja",
+      "a": "La mujer Géminis seduce por su inteligencia chispeante y conversación cautivadora más que por artificios físicos. Privilegia el humor, la cultura y la originalidad para atraer la atención, creando una complicidad intelectual antes de cualquier compromiso emocional. En una pareja busca un igual mental capaz de estimular su curiosidad y seguir sus razonamientos complejos. Huye de la posesividad y valora la independencia mutua en la pareja. Su seducción se basa en su capacidad de adaptación a las diferentes personalidades que encuentra, sabiendo instintivamente adoptar el registro de comunicación que tocará a su interlocutor. Aprecia hombres cultos, abiertos de mente y suficientemente seguros de sí mismos para aceptar su libertad de movimiento."
+    },
+    {
+      "q": "Cómo manejar una relación amorosa con un Géminis que siempre parece distraído o ausente",
+      "a": "La distracción aparente del Géminis refleja en realidad una riqueza mental que necesita estimulación constante. Para mantener su atención hay que variar los placeres y evitar la rutina: proponer nuevas actividades, nutrir las conversaciones con temas inéditos, aceptar sus múltiples centros de interés. Su tendencia a mariposear no significa desinterés sino necesidad de diversidad intelectual. Conviene respetar sus momentos de dispersión mientras se crean citas privilegiadas donde el intercambio se vuelve prioritario. La paciencia y comprensión de su naturaleza compleja son esenciales, así como desarrollar la propia autonomía para no depender únicamente de su atención a menudo fragmentada pero sincera."
+    }
+  ]
+}

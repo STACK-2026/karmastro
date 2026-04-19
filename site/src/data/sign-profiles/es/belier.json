@@ -1,0 +1,86 @@
+{
+  "tagline": "Primogénito del zodíaco, Aries abre el camino con ímpetu",
+  "intro": "Nacido en el momento en que la naturaleza renace, Aries encarna el impulso vital primordial. Primer signo del zodíaco, lleva en sí la fuerza bruta del comienzo, aquella que rompe la cáscara del invierno para hacer brotar la vida nueva. Marte, su planeta regente, le confiere esta capacidad única de transformar la intención en acción inmediata. Cardinal de Fuego, Aries no conoce la vacilación: ve, quiere, actúa. Esta espontaneidad aparente oculta en realidad una inteligencia intuitiva formidable, capaz de captar lo esencial de una situación en un instante. Lejos del cliché del impulsivo temerario, el verdadero Aries posee esa presciencia del pionero que intuye los caminos antes de que sean trazados. Atraviesa el mundo como explorador, asumiendo el riesgo del error para abrir la ruta a los demás.",
+  "strengths": [
+    "Coraje frente a desafíos inéditos",
+    "Iniciativa creadora espontánea",
+    "Liderazgo natural inspirador",
+    "Franqueza desarmante y auténtica",
+    "Capacidad de regeneración rápida"
+  ],
+  "weaknesses": [
+    "Impaciencia ante la lentitud",
+    "Tendencia al individualismo excesivo",
+    "Dificultad para mantener el esfuerzo",
+    "Susceptibilidad que se hiere fácilmente",
+    "Falta de diplomacia a veces"
+  ],
+  "in_love": "Aries ama con la misma intensidad con que vive: totalmente y de inmediato. No persigue el amor, lo reconoce a primera vista y se lanza sin cálculo. Su seducción opera por la autenticidad más que por la estrategia. Busca una pareja cómplice de sus impulsos, capaz de admirar su espontaneidad sin buscar frenarla. Aries huye de las relaciones tibias o los juegos de poder sutiles. Necesita sentir esa electricidad particular que confirma que el otro está a su altura. En pareja, permanece como el iniciador de los proyectos comunes, quien propone la aventura y arrastra al otro en su estela energética.",
+  "in_friendship": "La amistad de Aries se reconoce por su lealtad inmediata y su generosidad sin condición. Elige sus amigos por un flechazo y les permanece fiel con una constancia que puede sorprender en este signo reputado inestable. Aries mantiene sus amistades por la acción común más que por las confidencias interminables. Prefiere compartir una aventura que una terapia grupal. Sus amigos aprecian su capacidad de relanzar la dinámica del grupo cuando la energía decae, y su manera directa de resolver los conflictos sin dejar que se pudran los no dichos.",
+  "at_work": "Aries sobresale en los oficios de pionero: empresario, comercial de campo, urgenciólogo, jefe de proyecto de innovación. Necesita autonomía y desafíos renovados para dar su plena medida. Frente a la autoridad, respeta la que se merece por la competencia, pero rechaza instintivamente las jerarquías rígidas. Su ritmo de trabajo funciona por impulsos intensos más que por regularidad. Su punto ciego profesional: la paciencia necesaria para las tareas de fondo y la gestión de los detalles administrativos que lo aburren profundamente.",
+  "best_matches": [
+    {
+      "slug": "lion",
+      "score": 92,
+      "why": "Dos fuegos cardinales que se admiran mutuamente y crean una dinámica de superación permanente"
+    },
+    {
+      "slug": "sagittaire",
+      "score": 88,
+      "why": "Complementariedad perfecta entre la iniciativa de Aries y la visión expansiva de Sagitario"
+    },
+    {
+      "slug": "gemeaux",
+      "score": 85,
+      "why": "Oposición creativa donde la espontaneidad de Aries estimula la inteligencia adaptativa de Géminis"
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "cancer",
+      "why": "La prudencia defensiva de Cáncer frena el impulso espontáneo de Aries, creando frustración mutua"
+    },
+    {
+      "slug": "capricorne",
+      "why": "Oposición entre la inmediatez de Aries y la paciencia estructurada de Capricornio, ritmos incompatibles"
+    }
+  ],
+  "attributes": {
+    "gemstone": "Rubí",
+    "animal_totem": "Carnero",
+    "flower": "Tulipán rojo",
+    "color": "Rojo cardinal",
+    "lucky_day": "Martes",
+    "lucky_number": 7,
+    "metal": "Hierro"
+  },
+  "famous_people": [
+    "Selena Quintanilla",
+    "Gabriel García Márquez",
+    "Mariah Carey",
+    "Lady Gaga",
+    "Elton John"
+  ],
+  "faq": [
+    {
+      "q": "¿Por qué Aries es considerado el líder natural del zodíaco?",
+      "a": "Aries ocupa esta posición por su naturaleza cardinal de Fuego, combinada con la influencia de Marte. Primer signo del ciclo zodiacal, posee la energía de iniciación pura, aquella que lanza las dinámicas nuevas. Su capacidad de liderazgo no viene de un deseo de dominación sino de una aptitud natural para ver las oportunidades antes que otros y actuar en consecuencia. Aries lidera por el ejemplo y el arrastre más que por la autoridad impuesta. Esta posición de pionero le confiere una responsabilidad particular: la de abrir los caminos que otros signos podrán luego desarrollar y estabilizar."
+    },
+    {
+      "q": "¿Cómo influye un ascendente Aries en la personalidad incluso con un sol diferente?",
+      "a": "El ascendente Aries colorea instantáneamente la forma de abordar el mundo, aunque el Sol natal temple este primer impulso. La persona desarrolla un porte decidido, una mirada directa y una tendencia a tomar iniciativas rápidas. Da la impresión de estar siempre lista para la acción, aunque su signo solar la empuje hacia más reflexión. Este ascendente confiere un carisma natural y una capacidad de motivar a otros. Puede crear tensiones internas si el Sol natal privilegia la prudencia o la diplomacia, pero siempre ofrece esa energía de arranque tan característica de Aries."
+    },
+    {
+      "q": "¿Qué profesiones permiten a Aries explotar plenamente su potencial marciano?",
+      "a": "Aries se desarrolla en las profesiones que demandan coraje, iniciativa y capacidad de gestionar la urgencia. Los oficios de la innovación tecnológica, el emprendimiento, el periodismo de investigación le convienen perfectamente. En medicina, sobresale en cirugía o medicina de urgencias. El deporte de alto nivel, el coaching, las fuerzas del orden o los oficios de seguridad corresponden a su temperamento marciano. También triunfa en ventas de campo, marketing disruptivo o cualquier área que requiera convencer y arrastrar. Lo esencial es que pueda ver rápidamente los resultados de su acción y mantener un margen de autonomía en sus decisiones."
+    },
+    {
+      "q": "¿Puede Aries desarrollar paciencia naturalmente con la edad?",
+      "a": "La paciencia de Aries evoluciona efectivamente con la madurez, pero toma una forma particular. Más que aprender la espera pasiva, el Aries maduro desarrolla una paciencia activa: comprende que ciertos objetivos requieren tiempo y aprende a estructurar su acción en etapas. La experiencia le enseña a canalizar su energía marciana hacia proyectos a más largo plazo. No se vuelve paciente en el sentido tradicional, pero adquiere una visión estratégica que le permite aceptar los plazos necesarios. Esta evolución se da a menudo a través de experiencias profesionales o personales que le muestran el valor de las realizaciones duraderas."
+    },
+    {
+      "q": "¿Cómo puede Aries armonizar su naturaleza de fuego con parejas más contemplativas?",
+      "a": "La armonización pasa por el reconocimiento mutuo de ritmos diferentes y la creación de espacios respectivos. Aries debe aprender a valorar la profundidad reflexiva de su pareja como un complemento a su espontaneidad, no como un freno. A cambio, la pareja contemplativa puede extraer del impulso de Aries una energía revitalizante. La clave reside en la alternancia: momentos de acción común iniciados por Aries, momentos de pausa y reflexión guiados por el otro. Esta complementariedad enriquece a ambas partes con tal de que cada una respete el modo de funcionamiento del otro sin buscar transformarlo. La relación se convierte entonces en un equilibrio dinámico entre impulso y profundidad."
+    }
+  ]
+}

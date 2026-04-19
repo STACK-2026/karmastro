@@ -1,0 +1,86 @@
+{
+  "tagline": "O alquimista do quotidiano que transforma o caos em harmonia perfeita",
+  "intro": "Virgem encarna a inteligência prática ao serviço da perfeição terrestre. Governada por Mercúrio na sua dimensão analítica, representa a etapa zodiacal onde a energia se refina até à excelência. Signo mutável de terra, Virgem domina a arte da adaptação através do melhoramento constante. Atravessa o mundo com uma acuidade notável, distinguindo o essencial do supérfluo, transformando o bruto em puro. O seu génio reside nesta capacidade de perceber os detalhes que outros negligenciam, organizando-os depois num conjunto coerente. Longe do perfeccionismo estéril, Virgem cultiva uma abordagem cirúrgica da existência: incide onde é preciso curar, ajusta onde é necessário harmonizar. O seu temperamento sazonal de final de verão confere-lhe esta sabedoria das colheitas, sabendo que cada grão conta para alimentar a humanidade.",
+  "strengths": [
+    "Discernimento analítico formidável",
+    "Dedicação desinteressada autêntica",
+    "Aperfeiçoamento metódico constante",
+    "Eficiência operacional notável",
+    "Humildade construtiva natural"
+  ],
+  "weaknesses": [
+    "Crítica excessiva paralisante",
+    "Perfeccionismo ansiogénico crónico",
+    "Modéstia que mascara os talentos",
+    "Controlo compulsivo dos detalhes",
+    "Pessimismo preventivo sistemático"
+  ],
+  "in_love": "Virgem ama em surdina, com uma intensidade discreta mas profunda. Não se derrama em declarações inflamadas, preferindo demonstrar os seus sentimentos através de mil atenções quotidianas. O seu amor manifesta-se na melhoria concreta da vida comum: antecipa as necessidades, organiza a felicidade doméstica, cria um casulo de bem-estar. Procura um parceiro que possa respeitar intelectualmente, alguém de confiança e construtivo. Virgem foge à instabilidade emocional e às paixões destrutivas. Precisa de tempo para confiar, mas uma vez comprometida, a sua fidelidade torna-se lendária. O seu desafio amoroso: aceitar a imperfeição do outro sem o querer corrigir.",
+  "in_friendship": "A amizade Virgem constrói-se na duração e constância. Não acumula relações superficiais mas cultiva alguns laços privilegiados com um cuidado meticuloso. Amiga de uma lealdade a toda a prova, estará sempre presente nos momentos difíceis, armada de conselhos práticos e soluções concretas. Mantém o vínculo através de gestos atenciosos, recordando-se dos detalhes importantes da vida dos seus próximos. A sua generosidade expressa-se na ação mais que nas palavras: será aquela que ajuda concretamente, que organiza, que facilita a vida dos outros.",
+  "at_work": "Virgem excele nas profissões de serviço, saúde, análise e organização. Contabilidade, medicina, edição, investigação, artesanato de precisão convêm-lhe perfeitamente. Respeita a hierarquia quando esta é competente mas não hesita em sinalizar as disfunções. O seu ritmo de trabalho é regular e sustentado, privilegiando a qualidade sobre a quantidade. O seu ponto cego profissional: pode perder-se nos detalhes e perder de vista o objetivo global. Tem também tendência a subestimar as suas contribuições e a deixar outros atribuírem-se o mérito do seu trabalho minucioso.",
+  "best_matches": [
+    {
+      "slug": "taureau",
+      "score": 92,
+      "why": "Dois signos de terra que partilham amor da estabilidade e dos prazeres simples, complementaridade perfeita entre perfeccionismo e paciência."
+    },
+    {
+      "slug": "capricorne",
+      "score": 88,
+      "why": "Aliança terra-terra que funciona sobre ambição comum e rigor partilhado, respeito mútuo da competência e excelência."
+    },
+    {
+      "slug": "scorpion",
+      "score": 85,
+      "why": "Atração dos extremos entre pureza virginal e intensidade plutoniana, fascinação mútua pela transformação e cura."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "gemeaux",
+      "why": "Duas expressões opostas de Mercúrio que se confrontam: a precisão Virgem face à dispersão Gêmeos, exaustividade contra versatilidade."
+    },
+    {
+      "slug": "sagittaire",
+      "why": "Oposição fundamental entre minúcia terra-a-terra e visão de conjunto jupiteriana, pragmatismo contra idealismo filosófico."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Safira",
+    "animal_totem": "Abelha",
+    "flower": "Alfazema",
+    "color": "Azul marinho",
+    "lucky_day": "Quarta-feira",
+    "lucky_number": 7,
+    "metal": "Platina"
+  },
+  "famous_people": [
+    "Mariza",
+    "José Saramago",
+    "Cristiano Ronaldo",
+    "Amália Rodrigues",
+    "José Mourinho"
+  ],
+  "faq": [
+    {
+      "q": "Porque é que os Virgem são frequentemente criticados pelo seu perfeccionismo?",
+      "a": "O perfeccionismo Virgem é mal compreendido porque nasce de um amor autêntico pela excelência, não de uma vontade de prejudicar. Governada por Mercúrio analítico, Virgem percebe naturalmente as melhorias possíveis onde outros já veem a perfeição. Esta acuidade pode efetivamente tornar-se problemática quando se aplica de forma compulsiva aos outros, mas permanece fundamentalmente construtiva. O desafio consiste em canalizar esta exigência para domínios onde é apreciada: artesanato, medicina, investigação. Virgem deve aprender a distinguir o que merece a sua precisão cirúrgica daquilo que pode permanecer imperfeito sem consequência."
+    },
+    {
+      "q": "Como pode Virgem gerir a sua tendência para a ansiedade e pessimismo?",
+      "a": "A ansiedade Virgem provém da sua capacidade de antecipar todos os problemas potenciais, qualidade preciosa que se torna incapacitante quando invade tudo. Esta hipervigilância mercuriana necessita de exercícios de recentragem: meditação, jardinagem, artesanato manual que apaziguam o mental analítico. Virgem deve cultivar a confiança desenvolvendo rotinas tranquilizadoras e celebrando os seus sucessos concretos. Manter um diário das realizações quotidianas ajuda-a a contrabalançar a sua tendência para se focar nas imperfeições. A atividade física regular ancora a sua energia mutável e dissipa as tensões mentais acumuladas."
+    },
+    {
+      "q": "Qual é o impacto de um ascendente Virgem na personalidade?",
+      "a": "O ascendente Virgem colore a apresentação social com uma aparência organizada, discreta e competente, qualquer que seja a natureza profunda do signo solar. Esta persona desenvolve uma abordagem metódica dos novos ambientes, privilegiando a observação antes da ação. O ascendente Virgem leva a cuidar da aparência sem ostentação, a desenvolver competências práticas valorizadas socialmente. Pode temperar os excessos de um signo de fogo impondo mais reflexão, ou pelo contrário travar a espontaneidade criativa de um signo de ar por excesso de prudência. Esta influência mercuriana refina a inteligência social e desenvolve a arte de se tornar indispensável pela sua utilidade concreta."
+    },
+    {
+      "q": "Em que domínios profissionais é que os Virgem se destacam particularmente?",
+      "a": "Os Virgem brilham em todas as profissões que necessitam precisão, análise e serviço: medicina especializada, investigação científica, edição, contabilidade, artesanato de luxo, nutrição, farmácia. A sua inteligência mercuriana excele nos domínios técnicos onde cada detalhe conta. Conseguem também notavelmente bem na assistência de direção, organização de eventos, tradução, crítica literária. A sua dedicação natural leva-os às profissões de cuidado: fisioterapia, psicologia, trabalho social. No empreendedorismo, excedem nos serviços de qualidade e produtos artesanais. O seu desafio profissional: aprender a valorizar as suas competências e a negociar o seu justo reconhecimento, frequentemente subestimado pela própria modéstia."
+    },
+    {
+      "q": "Como desenvolver uma espiritualidade adaptada ao temperamento Virgem?",
+      "a": "A espiritualidade Virgem floresce na prática concreta em vez da abstração mística. Encontra o sagrado no serviço desinteressado, no aperfeiçoamento de si, na atenção aos detalhes da criação. As práticas que lhe convêm: jardinagem meditativa, artesanato sagrado, yoga preciso, estudo aprofundado de textos espirituais. Virgem desenvolve a sua dimensão espiritual cuidando dos outros, preservando a natureza, transmitindo saberes ancestrais. Compreende que a perfeição divina se manifesta no infinitamente pequeno: cada gesto justo, cada atenção delicada torna-se um ato de devoção. O seu caminho espiritual passa pela purificação gradual das suas intenções e o alinhamento entre os seus valores profundos e as suas ações quotidianas."
+    }
+  ]
+}

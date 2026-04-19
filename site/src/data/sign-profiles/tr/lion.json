@@ -1,0 +1,86 @@
+{
+  "tagline": "Zodyağın hükümdarı, manyetik ve cömert, güneş gururuyla parıldar",
+  "intro": "Zodyağın beşinci burcu olan Aslan, yazın zirvesindeki güneş hükümdarının arketipini somutlaştırır. Kral yıldız tarafından yönetilen bu sabit Ateş burcu, ferman edilmeyen ancak ışıltıyla kendini dayatan doğal bir otoriteye sahiptir. Koç fethettiği, Yay keşfettiği yerde Aslan hükmeder ve ilham verir. Gücü, sıradanlığı gösteriye dönüştürme, dokunduğu her şeyi yalnızca varlığıyla yüceltme becerisinde yatar. Sözde narsizmi hakkındaki klişelerin aksine, gerçek Aslan hayranlıktan çok otantik değerinin tanınmasını arar. Yaşamı boyunca yaratıcı olarak ilerler, kendi hayatının dramaturgu olarak sınavları kahramanlık destanlarına dönüştürebilir. Bu ruh asaleti tam anlamıyla ifade edildiğinde, onu zorlama yerine hayranlıkla takip edilen doğal bir lider yapar.",
+  "strengths": [
+    "Karşı konulmaz doğal kişisel manyetizma",
+    "Derin özverili otantik cömertlik",
+    "Örnekle ilham veren liderlik",
+    "Spektaküler orijinal dramaturjik yaratıcılık",
+    "Yakınlarına sarsılmaz sadakat"
+  ],
+  "weaknesses": [
+    "Ego incinmelerinde aşırı duyarlılık",
+    "Bazen boğucu paternalist otoriterlik",
+    "Sürekli dış onay tanınma ihtiyacı",
+    "Durumları tiyatralleştirme melodramatik eğilim",
+    "Hataları kabul etmekte zorluk sert gurur"
+  ],
+  "in_love": "Aşkta Aslan gösterişli ve münhasır sever. Fetih koleksiyonu yapmaz, krallığını paylaşmaya layık ruh eşini arar. Baştan çıkarması strateji yerine cömertlikle işler: muhteşem hediyeler, teatral ilgiler, tutkulu itiraflar. Yarısından gurur duyduğu kadar onun da kendisiyle gurur duymasını ister. Bu karşılıklı hayranlık hayati önemdedir. Aslan sönük aşklardan, onu değer görmesini bilmeyen silik partnerlerden kaçar. Kaidesine konmaya ihtiyacı olduğu kadar sevdiğini de kendi kaidesine koyar. Gerçekten bağlandığında doğası gereği sadıktır, ancak paylaşılan büyüklük ihtiyacını beslemeyen ilişkiden bıkabilir.",
+  "in_friendship": "Aslanın arkadaşlığı klan sadakati ve gösterişçi cömertlikle karakterizedir. İsteyerek sarayı gibi davrandığı bir arkadaş çevresi toplar, görkemli davetler ve büyük jestler çoğaltır. Doğal koruyucu olarak yakınlarının sınavlar karşısında savunucusu kesilir. Ancak bu krallık arkadaşlığı tanınma ister: Aslan nankörlüğü ya da kayıtsızlığı kaldıramaz. Çok sayıda yüzeysel ilişki yerine az ama sadık arkadaş tercih eder. Teatral yanı bazen yorabilir, ama samimiyeti ve sıradan anları unutulmaz anılara dönüştürme kapasitesi bunu fazlasıyla telafi eder.",
+  "at_work": "Mesleki açıdan Aslan temsil, yaratım ve liderlik mesleklerinde parlar: tiyatro, moda, iletişim, takım yönetimi, siyaset. Bir vizyonu somutlaştırıp kişiliği etrafında birleştirebildiğinde mükemmelleşir. Doğal yönetici olarak kontrol etmekten çok ilham verir, son sorumluluğu elinde tutarak delegasyon yapmayı tercih eder. Otoriteyle ilişkisi karmaşıktır: mükemmel şef ama üstlerini beğenmezse zor astdır. Görünür mesleki tanınmaya ihtiyacı vardır ve idari anonimlik içinde acı çekebilir. Çalışma ritmi yoğun yaratıcılık anları ile egosuna gerekli toparlanma dönemleri arasında değişir.",
+  "best_matches": [
+    {
+      "slug": "belier",
+      "score": 92,
+      "why": "Karşılıklı alevlenen iki Ateş, tutku, hırs ve kahramanca eylem ihtiyacını paylaşır."
+    },
+    {
+      "slug": "sagittaire",
+      "score": 88,
+      "why": "Tam Ateş ortaklığı: Aslan Yay'a yapı kazandırır, o da onun asil macera susuzluğunu besler."
+    },
+    {
+      "slug": "gemeaux",
+      "score": 85,
+      "why": "Manyetik karşıtlık: İkizlerin parlak zekası Aslan yaratıcılığını uyarır, o da duygusal istikrar sunar."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "scorpion",
+      "why": "İki güç iradesi çarpışır: güneşli Aslan'a karşı yeraltı Akrebi, yoğun ego mücadelesi ve manipülasyonlar."
+    },
+    {
+      "slug": "taureau",
+      "why": "Ateş-Toprak çatışması: Aslan'ın dramatik dürtüselliği Boğa inatçılığıyla çarpışır, değerler ve ritimlerde anlayışsızlık."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Elmas",
+    "animal_totem": "Aslan",
+    "flower": "Ayçiçeği",
+    "color": "Altın",
+    "lucky_day": "Pazar",
+    "lucky_number": 7,
+    "metal": "Altın"
+  },
+  "famous_people": [
+    "Kemal Sunal",
+    "Tarkan",
+    "Sezen Aksu",
+    "Ferhan Şensoy",
+    "Madonna"
+  ],
+  "faq": [
+    {
+      "q": "Aslan burcu kızgınlığını nasıl ifade eder ve çiftte nasıl yönetilir?",
+      "a": "Aslan'ın öfkesi spektaküler ama nadiren kalıcıdır. Büyük jestler ve dramatik açıklamalarla teatral şekilde patlar, ancak hatalar kabul edilirse kolayca bağışlar. Çiftte yönetmek için onu toplum önünde küçük düşürmekten veya duygularını önemsizleştirmekten kaçının. Hayal kırıklığını ifade etmesine izin verin, sonra sakin şekilde gerçeklere dönün. Aslan, argümanlarına itiraz edilse bile duygusal meşruiyetinin tanınmasını takdir eder. Fırtınadan sonra cömert ve sevgi dolu olur, egosu kalıcı hasar görmemişse şikayetleri gönüllü unutur. Gururu samimi özürlerle çabuk iyileşir."
+    },
+    {
+      "q": "Aslan neden mesleki tanınmaya bu kadar ihtiyaç duyar?",
+      "a": "Aslan'ın tanınma ihtiyacı güneş doğası ve hükümdar zodyak işlevinden kaynaklanır. Güneş sistemi merkez yıldızı tarafından yönetildiği için içgüdüsel olarak merkezi ve görünür konum alma ihtiyacı hisseder. Bu arayış saf kibir değil, arketip ifadesidir: Aslan doğal olarak yaratıcı liderlik ve kolektif ilhamı somutlaştırır. Tanınma olmadan sosyal işlevini kaybeder ve hayal kırıklığına gömülür. Mesleki açıdan kişiliğini bir eser ya da takım hizmetine koyabilmelidir. Anonim ya da salt teknik meslekler onu tüketir çünkü başkalarına hizmet eden kişisel ışıltı ihtiyacını beslemez."
+    },
+    {
+      "q": "Aslan yükselen gerçekten güneş burcunun kişiliğini değiştirir mi?",
+      "a": "Aslan yükselen manyetizma, teatrallik ve tanınma ihtiyacı ekleyerek herhangi bir güneş burcunun ifadesini kökten dönüştürür. Aslan yükselen Yengeç daha dışa dönük ve karizmatik olur, hassasiyetini koruyarak daha gösterişli ifade eder. Aslan yükselen Oğlak sertliğini doğal sıcaklık ve temsil zevkiyle yumuşatır. Aslan yükselen sistematik olarak doğal prestij, dik baş taşıyışı ve durumları dramatize etme eğilimi verir. Liderlik pozisyonları aramaya ve kamusal imajını önemsemeye iter. En mütevazı burçlar bile bu yükselenle fark edilen varlık ve fark edilmeden geçmekte zorluk kazanır."
+    },
+    {
+      "q": "Geleneksel astrolojiye göre Aslan hangi mesleklerde en başarılı olur?",
+      "a": "Geleneksel astroloji Aslan'ı güneş meslekleriyle ilişkilendirir: tiyatro, sinema, siyaset, haute couture, lüks kuyumculuk, sanat yönetmenliği. Sabit Ateş doğası onu vizyon somutlaştırabileceği yaratıcı otorite pozisyonlarına yönlendirir: şirket sahibi, yönetmen, stilist, ünlü şef. Çocuklukla ilgili meslekler de uygundur: öğretmenlik, çocuk doktorluğu, animasyon. Salt teknik, insan teması ya da tanınma olmayan mesleklerden kaçınmalı. Aslan ticari temsil, halkla ilişkiler, prestijli gazetecilikti mükemmelleşir. Dekoratif sanatlar, mimarlık, etkinlik yönetimi gösteri zevkine uygundur. Olmazsa olmaz koşul: kişisel yaratıcılığı ifade etmek ve düzenli olumlu geri bildirim almak."
+    },
+    {
+      "q": "Aslan burcunun üstün niteliklerini ruhani açıdan nasıl geliştirebilir?",
+      "a": "Aslan'ın ruhani gelişimi kişisel egonun özverili hizmete dönüşümünden geçer. Karmik dersi hayranlık ihtiyacını aşarak otantik ilham kaynağına dönüşmektir. Önerilen uygulamalar: ruhani kalp meditasyonu, anonim cömertlik geliştirme, evrensel güzellik aracı olarak sanat. Evrimleşmiş Aslan doğal akıl hocası, karşılık beklemeden başkalarını yücelten iyi niyetli rehber olur. Yaratıcılığı asil amaçlar hizmetine, teatralliği ruhani pedagojiye dönüşür. Gurur alçakgönüllü onura, duyarlılık merhamete çevrilir. Meditatif sanat uygulamaları (kutsal dans, mantrik şan) yaratıcı ateşini kişisel yüceltme yerine kolektif yükselişe yöneltmesine yardım eder."
+    }
+  ]
+}

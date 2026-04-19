@@ -1,0 +1,86 @@
+{
+  "tagline": "The patient builder who climbs the mountain of their ambitions",
+  "intro": "Capricorn embodies the archetype of the wise constructor, one who transforms dreams into tangible reality. Born in the heart of winter under Saturn's governance, they draw strength from patience and perseverance. This cardinal earth sign possesses the rare art of initiating lasting projects, creating structures that will stand the test of time. Unlike other cardinal signs that charge ahead blindly, Capricorn advances methodically, each step calculated toward the summit they have set for themselves. Their natural wisdom comes from this intimate understanding of time: they know that the most beautiful achievements require years, sometimes decades. This alchemy between ambition and discipline makes them the architect of the zodiac, capable of materializing visions others would deem impossible.",
+  "strengths": [
+    "Unshakeable perseverance",
+    "Keen sense of responsibility",
+    "Long-term strategic vision",
+    "Natural integrity and reliability",
+    "Remarkable organizational ability"
+  ],
+  "weaknesses": [
+    "Rigidity in face of change",
+    "Tendency toward chronic pessimism",
+    "Difficulty expressing emotions",
+    "Sometimes paralyzing perfectionism",
+    "Excessive mistrust of others"
+  ],
+  "in_love": "Capricorn loves as they live: with seriousness and total commitment. They don't engage in fleeting adventures but seek a partner with whom to build a true emotional empire. Their courtship is patient, thoughtful, marked by concrete proof rather than grand declarations. They flee emotional instability and superficial relationships, preferring intimacy that deepens with time. In relationships, they become the solid pillar their partner can rely on, offering material and emotional security. However, they must learn to express their tenderness through more than just actions.",
+  "in_friendship": "In friendship, Capricorn cultivates lasting and authentic bonds. They prefer a few faithful friends to a wide social circle, favoring quality over quantity. Their loyalty is legendary: once they've granted you their trust, it never wavers. They show affection through concrete gestures, wise advice, and constant presence during difficult times. However, they can sometimes seem distant or preachy, as they struggle to understand their friends' lighter moments.",
+  "at_work": "Capricorn excels in all careers requiring rigor, patience, and long-term vision: architecture, finance, law, business management, politics. They naturally climb the hierarchical ladder through their seriousness and reliability. Their relationship with authority is complex: they respect it but aspire to exercise it according to their own values. Their work rhythm is steady and sustained, capable of prolonged efforts others would find exhausting. Their blind spot? The tendency to underestimate the importance of human relations in favor of pure efficiency.",
+  "best_matches": [
+    {
+      "slug": "taureau",
+      "score": 92,
+      "why": "Same earth element, same taste for stability and concrete long-term projects."
+    },
+    {
+      "slug": "vierge",
+      "score": 88,
+      "why": "Intellectual and practical compatibility, shared vision of excellence and methodical organization."
+    },
+    {
+      "slug": "poissons",
+      "score": 85,
+      "why": "Perfect complementarity between Capricorn structure and Pisces creativity, enriching opposition."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "belier",
+      "why": "Tension between Aries impulsiveness and Capricorn prudence, incompatible decision-making rhythms."
+    },
+    {
+      "slug": "balance",
+      "why": "Difficult square opposition between Libra indecision and Capricorn's natural authority."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Garnet",
+    "animal_totem": "Mountain goat",
+    "flower": "Pansy",
+    "color": "Earth brown",
+    "lucky_day": "Saturday",
+    "lucky_number": 8,
+    "metal": "Lead"
+  },
+  "famous_people": [
+    "Martin Luther King Jr.",
+    "Muhammad Ali",
+    "Kate Middleton",
+    "Stephen Hawking",
+    "Denzel Washington"
+  ],
+  "faq": [
+    {
+      "q": "How do you recognize a Capricorn rising and what are their special traits?",
+      "a": "A Capricorn rising is recognized by their natural presence, serious demeanor even when young, and tendency to appear older than their age. Physically, they often have angular features, pronounced bone structure, and a piercing gaze. This combination accentuates Saturnian qualities: early sense of responsibility, maturity in relationship approach, need for social recognition. Capricorn rising tempers the excesses of the sun sign, bringing discipline and structure even to the most whimsical signs. These natives methodically climb the social ladder, building their reputation stone by stone. Their main challenge remains avoiding excessive rigidity and cultivating spontaneity."
+    },
+    {
+      "q": "What are the ideal careers for Capricorn natives according to traditional astrology?",
+      "a": "Traditional astrology associates Capricorn with careers of power and construction: architecture, engineering, business management, politics, judiciary, banking and finance. Under Saturn's influence, this sign excels in anything requiring patience, rigor, and long-term vision. Professions related to real estate, administration, and wealth management suit them perfectly. They also succeed in teaching, scientific research, and prestigious craft professions. Their need for recognition drives them toward leadership positions where they can exercise their natural authority. Entrepreneurship works well for them, provided they surround themselves with complementary teams to offset their tendency toward excessive control."
+    },
+    {
+      "q": "Why do Capricorn and Cancer form such a unique astrological opposition?",
+      "a": "The Capricorn-Cancer opposition represents the fundamental axis between structure and emotion, public ambition and private intimacy. Capricorn, ruled by Saturn, embodies conquest of the external world, paternal authority, measurable social success. Cancer, governed by the Moon, symbolizes home, motherhood, emotional roots. This polarity creates creative tension: each sign needs its opposite for balance. Capricorn must learn Cancerian vulnerability to humanize their ambition, while Cancer benefits from adopting Capricorn structure to materialize their dreams. In relationships, this opposition can generate profound complementarity or major misunderstandings depending on the natives' maturity level."
+    },
+    {
+      "q": "How does Capricorn personality evolve with age according to Saturn cycles?",
+      "a": "Capricorn personality follows Saturn's major cycles, the ruling planet that structures existence in phases of 7 and 29 years. Young Capricorns often appear more mature than their age, already bearing the weight of responsibilities. Around 29-30 years, at Saturn's first return, they experience profound questioning of their ambitions, often accompanied by professional life restructuring. The forties typically mark their social and professional peak. Paradoxically, it's in aging that Capricorn becomes liberated, growing more spontaneous and cheerful. With Saturn having completed its disciplinary work, elderly natives of this sign often reveal hidden humor and benevolent wisdom, finally reaping the fruits of their patient efforts."
+    },
+    {
+      "q": "What's the difference between Capricorn decan 1, 2, and 3 in astrology?",
+      "a": "In traditional astrology, each Capricorn decan reveals important nuances. The first decan (December 22-31), under double Saturnian influence, embodies pure Capricorn: maximum ambition, sharp hierarchical sense, but also rigidity risk. The second decan (January 1-10), colored by Venus, develops more social charm and artistic aptitude, tempering the sign's natural severity. The third decan (January 11-19), marked by Mercury, gains strategic intelligence and communication ability, becoming more adaptable and diplomatic. These variations explain why some Capricorns seem darker and more authoritarian while others manifest more social grace or intellectual skill, while maintaining the sign's common Saturnian framework."
+    }
+  ]
+}

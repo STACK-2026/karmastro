@@ -1,0 +1,86 @@
+{
+  "tagline": "El aventurero filósofo que transforma cada horizonte en nueva sabiduría",
+  "intro": "Sagitario encarna el impulso jupiteriano hacia la expansión y la comprensión del mundo. Nacido al final del otoño, cuando la naturaleza se prepara para el invierno, lleva en sí esa urgencia de cosechar los últimos frutos de la experiencia antes del letargo. Su fuego mutable no arde para conquistar como Aries, ni para irradiar como Leo, sino para iluminar caminos desconocidos. Júpiter, su regente, le otorga esa sed de absoluto que lo impulsa a traspasar fronteras: geográficas, intelectuales, espirituales. Sagitario nunca se conforma con el statu quo. Cuestiona, explora, enseña, siempre en busca de esa verdad universal que dé sentido a la existencia. Su inteligencia sintética le permite conectar los puntos dispersos de la experiencia humana para extraer una filosofía personal, generosa y optimista.",
+  "strengths": [
+    "Optimismo natural y contagioso",
+    "Visión global y sintética",
+    "Franqueza desarmante y directa",
+    "Adaptabilidad ante los cambios",
+    "Generosidad intelectual y espiritual"
+  ],
+  "weaknesses": [
+    "Impaciencia ante los detalles",
+    "Tendencia a la dispersión",
+    "Juicios a veces categóricos",
+    "Dificultad para arraigarse duraderamente",
+    "Exceso de franqueza hiriente"
+  ],
+  "in_love": "Sagitario ama con el ímpetu de quien descubre un nuevo continente. Busca un cómplice de aventura más que un nido acogedor, alguien que comparta su curiosidad por el mundo y acepte sus necesidades de espacio. Su seducción pasa por relatos de viajes, debates filosóficos, proyectos de evasión. Huye de la posesividad y las rutinas asfixiantes, prefiriendo una complicidad basada en la libertad mutua. Su amor crece en el movimiento y el descubrimiento compartido. Cuando se compromete, es con esa generosidad jupiteriana que quiere hacer del otro su mejor compañero de exploración, ya sea geográfica o espiritual.",
+  "in_friendship": "La amistad sagitariana se nutre de intercambios estimulantes y escapadas compartidas. Este nativo colecciona relaciones auténticas, prefiriendo algunos verdaderos cómplices a una amplia red superficial. Inspira con su entusiasmo, consuela con su optimismo, pero también puede chocar por su franqueza. Leal sin ser posesivo, mantiene el vínculo incluso a distancia, siempre listo para retomar la conversación donde se había quedado. Su amistad se caracteriza por esa generosidad intelectual que empuja al otro a superar sus límites.",
+  "at_work": "Sagitario sobresale en profesiones que combinan movimiento y transmisión: enseñanza, periodismo, comercio internacional, turismo, edición. Necesita autonomía y soporta mal la microgestión. Su ritmo de trabajo sigue sus inspiraciones, con fases de intensa creatividad alternando con momentos de reflexión. Ante la autoridad, prefiere la cooperación a la sumisión. Su punto ciego profesional reside en su tendencia a descuidar las tareas repetitivas y administrativas, esenciales pero poco estimulantes para su temperamento explorador.",
+  "best_matches": [
+    {
+      "slug": "belier",
+      "score": 92,
+      "why": "Dos fuegos que se alimentan mutuamente en la acción y la aventura, compartiendo el amor por el desafío y la independencia."
+    },
+    {
+      "slug": "lion",
+      "score": 88,
+      "why": "Complicidad natural entre dos signos de fuego generosos, Leo admirando la libertad sagitariana, Sagitario respetando la nobleza leonina."
+    },
+    {
+      "slug": "balance",
+      "score": 85,
+      "why": "El equilibrio libriano tempera el impulso sagitariano mientras que el optimismo de Sagitario dinamiza la reflexión libriana."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "vierge",
+      "why": "El enfoque metódico virginiano entra en tensión con el impulso espontáneo sagitariano, creando incomprensiones sobre el ritmo de vida."
+    },
+    {
+      "slug": "poissons",
+      "why": "La intuición difusa pisciana desconcierta la búsqueda de verdad directa sagitariana, sus modos de percepción del mundo se oponen estructuralmente."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Turquesa",
+    "animal_totem": "Caballo",
+    "flower": "Narciso",
+    "color": "Azul ultramarino",
+    "lucky_day": "Jueves",
+    "lucky_number": 9,
+    "metal": "Estaño"
+  },
+  "famous_people": [
+    "Diego Rivera",
+    "Walt Disney",
+    "Thalía",
+    "Brad Pitt",
+    "Gael García Bernal"
+  ],
+  "faq": [
+    {
+      "q": "¿Por qué Sagitario necesita tanta libertad en el amor?",
+      "a": "Júpiter, regente de Sagitario, gobierna la expansión y el crecimiento. Este nativo percibe instintivamente el amor como un territorio de exploración mutua más que como una fortaleza a defender. Su naturaleza de fuego mutable lo impulsa a evolucionar constantemente, y teme que los vínculos demasiado estrechos limiten esta evolución natural. Esta búsqueda de libertad no traduce falta de compromiso, sino la necesidad vital de preservar su impulso creador. En astrología tradicional, se considera que Sagitario ama a través del prisma de la aventura compartida, buscando un compañero cómplice más que posesivo. Su amor crece en el espacio y la confianza mutua."
+    },
+    {
+      "q": "¿Cómo influye el ascendente Sagitario en la personalidad aparente?",
+      "a": "El ascendente Sagitario da una primera impresión de optimismo contagioso y curiosidad benevolente. Estos nativos abordan el mundo con una sonrisa espontánea y una tendencia natural a filosofar sobre su vivencia. Su gesticulación es amplia, su andar relajado, reflejando esa confianza jupiteriana en la vida. Hacen preguntas fácilmente, relatan voluntariamente sus experiencias, creando rápidamente una atmósfera distendida. Esta influencia puede temperar un signo solar más introvertido dándole una fachada más sociable, o amplificar la extraversión de un signo ya expansivo. El ascendente Sagitario colorea la percepción del mundo por un filtro optimista, empujando a ver oportunidades en lugar de obstáculos en cada nueva situación."
+    },
+    {
+      "q": "¿Qué profesiones permiten a Sagitario expresar plenamente su potencial?",
+      "a": "Sagitario se desarrolla en profesiones que combinan movimiento, transmisión y apertura cultural. La enseñanza superior, la investigación, el periodismo internacional corresponden perfectamente a su necesidad de síntesis y compartir. Los oficios del viaje, el comercio exterior, la traducción explotan su gusto por los intercambios interculturales. En la edición, filosofía, teología, puede desarrollar su capacidad de relacionar conceptos aparentemente dispares. Las profesiones jurídicas, particularmente el derecho internacional, atraen también a este signo amante de la justicia. Su desafío profesional consiste en evitar la dispersión eligiendo un dominio suficientemente vasto para nutrir su curiosidad permitiéndole desarrollar una pericia reconocida."
+    },
+    {
+      "q": "¿Sagitario y Géminis son realmente incompatibles a pesar de su oposición zodiacal?",
+      "a": "La oposición Sagitario-Géminis ilustra perfectamente el principio astrológico según el cual los signos opuestos pueden complementarse magníficamente o crear tensiones permanentes. Ambos son mutables e intelectualmente curiosos, pero sus enfoques difieren radicalmente. Géminis colecciona información por curiosidad pura, mientras Sagitario busca sintetizarla en una visión coherente del mundo. Esta diferencia puede crear una complementariedad enriquecedora (uno aportando detalles, el otro la perspectiva global), o malentendidos recurrentes sobre sus prioridades respectivas. El éxito de esta combinación depende de su capacidad mutua de respetar estas diferencias de enfoque sin buscar convertir al otro a su método."
+    },
+    {
+      "q": "¿Cómo puede desarrollar Sagitario su espiritualidad de manera auténtica?",
+      "a": "La espiritualidad sagitariana se nutre naturalmente de la búsqueda de sentido y la filosofía comparada. Este signo encuentra su camino espiritual explorando diferentes tradiciones, viajando a lugares sagrados, estudiando textos fundadores de diversas culturas. Su enfoque permanece intelectual y sintético más que místico o meditativo. Sagitario desarrolla su dimensión espiritual enseñando, compartiendo sus descubrimientos, creando puentes entre las sabidurías del mundo. Las peregrinaciones, retiros filosóficos, el estudio de lenguas antiguas nutren su alma tanto como los debates metafísicos. Su espiritualidad madura cuando logra transformar sus convicciones personales en sabiduría transmisible, convirtiéndose así en el guía natural que está llamado a ser por su naturaleza jupiteriana."
+    }
+  ]
+}

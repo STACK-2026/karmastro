@@ -1,0 +1,86 @@
+{
+  "tagline": "El constructor paciente que escala la montaña de sus ambiciones",
+  "intro": "Capricornio encarna el arquetipo del sabio constructor, aquel que transforma los sueños en realidad tangible. Nacido en pleno invierno, bajo el gobierno de Saturno, extrae su fuerza de la paciencia y la perseverancia. Esta tierra cardinal posee el arte raro de iniciar proyectos duraderos, de crear estructuras que atravesarán el tiempo. A diferencia de otros signos cardinales que avanzan precipitadamente, Capricornio progresa metódicamente, cada paso calculado hacia la cumbre que se ha fijado. Su sabiduría natural proviene de esta comprensión íntima del tiempo: sabe que los logros más hermosos requieren años, a veces décadas. Esta alquimia entre ambición y disciplina lo convierte en el arquitecto del zodiaco, capaz de materializar visiones que otros juzgarían imposibles.",
+  "strengths": [
+    "Perseverancia a toda prueba",
+    "Sentido agudo de las responsabilidades",
+    "Visión estratégica a largo plazo",
+    "Integridad y confiabilidad natural",
+    "Capacidad de organización notable"
+  ],
+  "weaknesses": [
+    "Rigidez ante el cambio",
+    "Tendencia al pesimismo crónico",
+    "Dificultad para expresar emociones",
+    "Perfeccionismo a veces paralizante",
+    "Desconfianza excesiva hacia otros"
+  ],
+  "in_love": "Capricornio ama como vive: con seriedad y compromiso total. No se lanza a aventuras efímeras sino que busca una pareja con quien construir un verdadero imperio afectivo. Su cortejo es paciente, reflexivo, marcado por pruebas concretas más que grandes declaraciones. Huye de la inestabilidad emocional y las relaciones superficiales, prefiriendo una intimidad que se profundiza con el tiempo. En pareja, se convierte en el pilar sólido sobre el cual su compañero puede apoyarse, ofreciendo seguridad material y emocional. Sin embargo, debe aprender a expresar su ternura de otra manera que no sea solo a través de actos.",
+  "in_friendship": "En la amistad, Capricornio cultiva vínculos duraderos y auténticos. Prefiere pocos amigos fieles a un amplio círculo social, privilegiando la calidad sobre la cantidad. Su lealtad es legendaria: una vez que te ha otorgado su confianza, nunca falla. Manifiesta su afecto mediante gestos concretos, consejos sabios y presencia constante en los momentos difíciles. Sin embargo, a veces puede parecer distante o moralizador, pues le cuesta entender las ligerezas de sus allegados.",
+  "at_work": "Capricornio sobresale en todas las profesiones que requieren rigor, paciencia y visión a largo plazo: arquitectura, finanzas, derecho, gestión empresarial, política. Asciende naturalmente por la escala jerárquica gracias a su seriedad y confiabilidad. Su relación con la autoridad es compleja: la respeta pero aspira a ejercerla según sus propios valores. Su ritmo de trabajo es regular y sostenido, capaz de esfuerzos prolongados que otros encontrarían agotadores. Su punto débil: la tendencia a subestimar la importancia de las relaciones humanas en favor de la eficiencia pura.",
+  "best_matches": [
+    {
+      "slug": "taureau",
+      "score": 92,
+      "why": "Mismo elemento tierra, mismo gusto por la estabilidad y proyectos concretos a largo plazo."
+    },
+    {
+      "slug": "vierge",
+      "score": 88,
+      "why": "Complicidad intelectual y práctica, visión compartida de la excelencia y organización metódica."
+    },
+    {
+      "slug": "poissons",
+      "score": 85,
+      "why": "Complementariedad perfecta entre estructura capricorniana y creatividad pisciana, oposición enriquecedora."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "belier",
+      "why": "Tensión entre la impulsividad ariana y la prudencia capricorniana, ritmos de decisión incompatibles."
+    },
+    {
+      "slug": "balance",
+      "why": "Oposición cuadrada difícil entre la indecisión libriana y la autoridad natural de Capricornio."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Granate",
+    "animal_totem": "Cabra montés",
+    "flower": "Pensamiento",
+    "color": "Marrón tierra",
+    "lucky_day": "Sábado",
+    "lucky_number": 8,
+    "metal": "Plomo"
+  },
+  "famous_people": [
+    "Shakira",
+    "Jaime Bayly",
+    "Kate Middleton",
+    "Ricky Martin",
+    "Michelle Obama"
+  ],
+  "faq": [
+    {
+      "q": "¿Cómo reconocer un Capricornio ascendente y cuáles son sus características?",
+      "a": "Un Capricornio ascendente se reconoce por su prestancia natural, su aire serio incluso desde joven, y su tendencia a aparentar mayor edad. Físicamente, presenta a menudo rasgos angulares, estructura ósea marcada y mirada penetrante. Esta combinación acentúa las cualidades saturnianas: sentido precoz de las responsabilidades, madurez en el enfoque de las relaciones, necesidad de reconocimiento social. El ascendente Capricornio modera los excesos del signo solar, aportando disciplina y estructura incluso a los signos más fantasiosos. Estos nativos escalan metódicamente la escala social, construyendo su reputación piedra por piedra. Su desafío principal es evitar la rigidez excesiva y cultivar la espontaneidad."
+    },
+    {
+      "q": "¿Cuáles son las mejores profesiones para Capricornio según la astrología?",
+      "a": "La astrología tradicional asocia a Capricornio con profesiones de poder y construcción: arquitectura, ingeniería, dirección empresarial, política, magistratura, banca y finanzas. Bajo la influencia de Saturno, este signo sobresale en todo lo que requiere paciencia, rigor y visión a largo plazo. Las profesiones relacionadas con bienes raíces, administración, gestión patrimonial le convienen perfectamente. También triunfa en enseñanza, investigación científica y oficios artesanales de prestigio. Su necesidad de reconocimiento lo impulsa hacia puestos de responsabilidad donde puede ejercer su autoridad natural. El emprendimiento le resulta exitoso, siempre que se rodee de equipos complementarios para compensar su tendencia al control excesivo."
+    },
+    {
+      "q": "¿Por qué Capricornio y Cáncer forman una oposición astrológica tan especial?",
+      "a": "La oposición Capricornio-Cáncer representa el eje fundamental entre estructura y emoción, ambición pública e intimidad privada. Capricornio, regido por Saturno, encarna la conquista del mundo exterior, la autoridad paterna, el éxito social medible. Cáncer, gobernado por la Luna, simboliza el hogar, la maternidad, las raíces emocionales. Esta polaridad crea tensión creativa: cada signo necesita su opuesto para equilibrarse. Capricornio debe aprender la vulnerabilidad canceriana para humanizar su ambición, mientras que Cáncer gana adoptando la estructura capricorniana para materializar sus sueños. En relación, esta oposición puede generar complementariedad profunda o incomprensiones mayores según el nivel de madurez de los nativos."
+    },
+    {
+      "q": "¿Cómo cambia la personalidad de Capricornio con la edad?",
+      "a": "La personalidad Capricornio sigue los grandes ciclos de Saturno, planeta regente que estructura la existencia por fases de 7 y 29 años. Joven, Capricornio parece a menudo más maduro que su edad, cargando ya el peso de las responsabilidades. Hacia los 29-30 años, en el primer retorno de Saturno, conoce un cuestionamiento profundo de sus ambiciones, a menudo acompañado de reestructuración de su vida profesional. Los cuarenta marcan generalmente su apogeo social y profesional. Paradójicamente, es envejeciendo que Capricornio se libera, volviéndose más espontáneo y jovial. Habiendo Saturno cumplido su obra disciplinaria, los nativos mayores de este signo revelan a menudo un humor oculto y sabiduría benevolente, cosechando finalmente los frutos de sus esfuerzos pacientes."
+    },
+    {
+      "q": "¿Qué diferencia hay entre Capricornio decanato 1, 2 y 3 en astrología?",
+      "a": "En astrología tradicional, cada decanato capricorniano revela matices importantes. El primer decanato (22-31 diciembre), bajo doble influencia saturniana, encarna al Capricornio puro: ambición máxima, sentido agudo de la jerarquía, pero también riesgo de rigidez. El segundo decanato (1-10 enero), coloreado por Venus, desarrolla más encanto social y aptitud artística, temperando la severidad natural del signo. El tercer decanato (11-19 enero), marcado por Mercurio, gana en inteligencia estratégica y capacidad comunicativa, volviéndose más adaptable y diplomático. Estas variaciones explican por qué algunos Capricornio parecen más sombríos y autoritarios mientras otros manifiestan mayor gracia social o habilidad intelectual, conservando siempre la estructura saturniana común del signo."
+    }
+  ]
+}

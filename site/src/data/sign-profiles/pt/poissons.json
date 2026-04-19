@@ -1,0 +1,86 @@
+{
+  "tagline": "A alma sensível do zodíaco que transforma a emoção em sabedoria",
+  "intro": "Último signo do zodíaco, Peixes encarna o culminar do ciclo astrológico, essa síntese última onde o indivíduo se dissolve no universal. Governados por Neptuno, planeta da inspiração e da ilusão, navegam entre duas águas: a da intuição mais pura e a da confusão mais total. Signo de água mutável, possuem esta capacidade rara de se adaptarem a todas as correntes emocionais, absorvendo as vibrações envolventes como uma esponja espiritual. A sua sensibilidade extrema não é fraqueza mas poder: o de perceber o invisível, captar os não-ditos, transformar o sofrimento em arte. Entre empatia transbordante e fuga salvadora, Peixes carregam consigo esta melancolia fértil que alimenta a criação e o amor incondicional.",
+  "strengths": [
+    "Intuição psíquica desenvolvida notável",
+    "Empatia profunda e natural",
+    "Criatividade artística sem limites",
+    "Compaixão desinteressada e curadora",
+    "Capacidade de adaptação emocional fluida"
+  ],
+  "weaknesses": [
+    "Tendência para fugir da realidade",
+    "Hipersensibilidade paralisante às críticas",
+    "Dificuldade em estabelecer limites",
+    "Indecisão crónica perante as escolhas",
+    "Propensão para vícios compensatórios"
+  ],
+  "in_love": "Peixes amam com toda a sua alma, procurando menos um parceiro que uma fusão espiritual total. Oferecem um amor sem condição nem fronteira, capazes de perdoar o imperdoável e de ver a beleza onde outros só percebem defeitos. Esta generosidade emocional pode, contudo, levá-los para relações desequilibradas onde dão sem conta nem medida. Fogem da confrontação directa, preferindo retirar-se em silêncio a enfrentar conflitos. O seu romantismo idealista leva-os por vezes a projectar no outro os seus próprios sonhos, criando desilusões quando a realidade alcança a fantasia.",
+  "in_friendship": "Na amizade, Peixes são esses confidentes preciosos que escutam sem julgar e consolam sem moralizar. A sua lealdade emocional atravessa anos e provações, mesmo que a sua presença física possa por vezes fazer-se discreta. Excedem na arte de sentir quando um amigo atravessa um período difícil, aparecendo frequentemente no momento certo com as palavras justas. A sua natureza empática faz deles amigos terapêuticos, capazes de absorver o sofrimento alheio por vezes em detrimento do seu próprio equilíbrio.",
+  "at_work": "Peixes desenvolvem-se em profissões de ajuda, arte ou cuidado: psicologia, medicina alternativa, música, pintura, cinema. Suportam mal a hierarquia rígida e os ambientes competitivos, preferindo ambientes colaborativos e benevolentes. O seu ritmo de trabalho segue os seus ciclos emocionais: períodos de inspiração fulminante alternando com fases de recolhimento necessário. A sua criatividade transbordante compensa frequentemente a sua dificuldade com tarefas administrativas e gestão do tempo, necessitando de um quadro estruturante para revelar todo o seu potencial.",
+  "best_matches": [
+    {
+      "slug": "cancer",
+      "score": 92,
+      "why": "Compreensão mútua dos mundos emocionais e necessidade partilhada de segurança afectiva profunda."
+    },
+    {
+      "slug": "scorpion",
+      "score": 88,
+      "why": "Intensidade emocional comum e fascínio pelos mistérios da alma humana."
+    },
+    {
+      "slug": "capricorne",
+      "score": 85,
+      "why": "Complementaridade perfeita entre a sensibilidade de Peixes e a estrutura estabilizadora de Capricórnio."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "gemeaux",
+      "why": "Oposição entre a abordagem racional de Gêmeos e a intuição pura de Peixes criando incompreensões recorrentes."
+    },
+    {
+      "slug": "vierge",
+      "why": "Tensão natural entre o perfeccionismo crítico de Virgem e a sensibilidade à flor da pele de Peixes."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Ametista",
+    "animal_totem": "Golfinho",
+    "flower": "Lótus",
+    "color": "Azul oceano",
+    "lucky_day": "Quinta-feira",
+    "lucky_number": 7,
+    "metal": "Platina"
+  },
+  "famous_people": [
+    "José Mourinho",
+    "Daniela Ruah",
+    "Rihanna",
+    "Albert Einstein",
+    "Steve Jobs"
+  ],
+  "faq": [
+    {
+      "q": "Porque são os Peixes tão sensíveis às energias negativas dos outros?",
+      "a": "A sensibilidade extrema de Peixes provém da sua natureza neptuniana que dissolve as fronteiras entre si e o outro. O seu sistema nervoso capta naturalmente as vibrações emocionais envolventes, funcionando como uma antena psíquica permanente. Esta permeabilidade energética, dom tanto quanto fardo, torna-os particularmente vulneráveis em ambientes carregados negativamente. Absorvem literalmente as emoções alheias, tendo por vezes dificuldade em distinguir os seus próprios sentimentos daqueles que captam. Esta hipersensibilidade necessita de períodos de solidão regulares para se recarregar e evacuar as energias parasitas acumuladas no contacto com outros."
+    },
+    {
+      "q": "Como pode um Peixes desenvolver a sua criatividade natural?",
+      "a": "A criatividade de Peixes desenvolve-se no abandono e na confiança na sua intuição primeira. Devem criar um espaço sagrado onde a inspiração pode circular livremente, sem julgamento nem constrangimento técnico imediato. A arte torna-se a sua linguagem privilegiada para expressar o inexprimível, transformar a emoção bruta em beleza tangível. As práticas meditativas, a ligação à natureza e a exploração dos seus sonhos alimentam o seu imaginário fértil. É-lhes necessário aceitar os ciclos criativos naturais, alternando fases de inspiração intensa e períodos de gestação aparentemente estéreis mas necessários. A chave reside na paciência e na aceitação do seu ritmo único."
+    },
+    {
+      "q": "Um ascendente Peixes modifica a personalidade do signo solar?",
+      "a": "O ascendente Peixes envolve a personalidade numa aura misteriosa e numa sensibilidade magnética, qualquer que seja o signo solar. Esta influência neptuniana suaviza os ângulos demasiado vivos, cria uma abordagem mais intuitiva da vida e desenvolve uma empatia natural notável. A pessoa emana uma impressão de estar noutro lugar, ligada a dimensões subtis que outros não percebem. Esta configuração amplifica as capacidades artísticas e espirituais, mas pode também gerar certa confusão identitária. O ascendente Peixes torna a personalidade mais adaptável e receptiva, por vezes em detrimento da afirmação clara das necessidades pessoais e dos limites necessários."
+    },
+    {
+      "q": "Quais são as profissões ideais para expressar a natureza de Peixes?",
+      "a": "Peixes excelem em profissões que aliam serviço ao próximo e expressão criativa: psicoterapia, arte-terapia, medicina holística, trabalho social, ensino espiritual. Os domínios artísticos oferecem-lhes um terreno de desenvolvimento natural: música, dança, pintura, escrita, cinema, fotografia. A sua capacidade de empatia faz deles excelentes cuidadores: enfermeiros, veterinários, massagistas, terapeutas energéticos. As profissões ligadas à água convêm-lhes perfeitamente: oceanografia, aquacultura, termalismo. Desenvolvem-se igualmente na investigação espiritual, astrologia, numerologia. O essencial é que possam expressar a sua sensibilidade e contribuir para o bem-estar colectivo num ambiente benevolente e não competitivo."
+    },
+    {
+      "q": "Como podem os Peixes gerir melhor a sua tendência para a evasão?",
+      "a": "A tendência para a evasão de Peixes nasce frequentemente de uma realidade demasiado dura para enfrentar directamente. Em vez de lutar contra esta natureza, devem aprender a canalizar construtivamente esta necessidade de fuga: meditação, arte, espiritualidade, viagens interiores. Trata-se de criar válvulas criativas e espirituais que nutram a alma sem prejudicar o equilíbrio de vida. O enraizamento através de práticas corporais suaves (yoga, natação, caminhada na natureza) ajuda a manter a ligação com o concreto. A chave reside na aceitação do seu ritmo particular e na criação de um ambiente de vida que respeite a sua necessidade de espaços de recolhimento e devaneio, mantendo ao mesmo tempo ligações com a realidade prática."
+    }
+  ]
+}

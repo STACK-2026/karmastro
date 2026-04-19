@@ -1,0 +1,86 @@
+{
+  "tagline": "El soberano del zodíaco, magnético y generoso, irradia de orgullo solar",
+  "intro": "Quinto signo del zodíaco, Leo encarna el arquetipo del soberano solar en el apogeo del verano. Regido por el astro rey, este signo de Fuego fijo posee una autoridad natural que no se decreta sino que se impone por su irradiación. Donde Aries conquista y Sagitario explora, Leo reina e inspira. Su fuerza reside en esta capacidad única de transformar lo ordinario en espectáculo, de elevar lo que toca por su sola presencia. Contrario a los clichés sobre su supuesto narcisismo, el verdadero Leo busca menos la admiración que el reconocimiento de su valor auténtico. Atraviesa la existencia como creador, dramaturgo de su propia vida, capaz de metamorfosear las pruebas en epopeyas heroicas. Esta nobleza de alma, cuando se expresa plenamente, hace de él un guía natural al que se sigue por admiración más que por obligación.",
+  "strengths": [
+    "Magnetismo personal irresistible natural",
+    "Generosidad auténtica desinteresada profunda",
+    "Liderazgo inspirador por el ejemplo",
+    "Creatividad dramatúrgica espectacular original",
+    "Lealtad inquebrantable hacia los cercanos"
+  ],
+  "weaknesses": [
+    "Susceptibilidad excesiva heridas de ego",
+    "Autoritarismo paternalista a veces asfixiante",
+    "Necesidad constante validación reconocimiento externo",
+    "Tendencia melodramática teatralizar situaciones",
+    "Orgullo rígido dificultad admitir errores"
+  ],
+  "in_love": "En el amor, Leo ama con elegancia y exclusividad. No colecciona conquistas sino que busca el alma gemela digna de compartir su reino. Su seducción opera por la generosidad más que por la estrategia: regalos suntuosos, atenciones teatrales, declaraciones apasionadas. Quiere estar orgulloso de su pareja tanto como que ella esté orgullosa de él. Esta reciprocidad de la admiración es crucial. Leo huye de los amores apagados, de las parejas desdibujadas que no saben valorarlo. Necesita ser puesto en un pedestal mientras coloca al ser amado en el suyo. Fiel por naturaleza cuando se compromete realmente, puede sin embargo cansarse de una relación que ya no alimenta su necesidad de grandeza compartida.",
+  "in_friendship": "La amistad de Leo se caracteriza por una lealtad de clan y una generosidad ostentosa. Colecciona voluntariamente un círculo de amigos a quienes trata como su corte, multiplicando invitaciones fastuosas y gestos grandiosos. Protector natural, se erige en defensor de sus cercanos ante las pruebas. Sin embargo, esta amistad real exige reconocimiento: Leo soporta mal la ingratitud o la indiferencia. Prefiere pocos amigos pero devotos antes que una multitud de relaciones superficiales. Su lado teatral puede a veces cansar, pero su sinceridad y su capacidad para transformar los momentos ordinarios en recuerdos memorables compensan ampliamente.",
+  "at_work": "Profesionalmente, Leo brilla en los oficios de representación, creación y liderazgo: teatro, moda, comunicación, dirección de equipo, política. Sobresale cuando puede encarnar una visión y federar en torno a su personalidad. Manager natural, inspira más que controla, prefiriendo delegar mientras mantiene la responsabilidad final. Su relación con la autoridad es compleja: excelente jefe pero subordinado difícil si no admira a sus superiores. Necesita reconocimiento profesional visible y puede sufrir en el anonimato administrativo. Su ritmo de trabajo alterna momentos de intensa creatividad y períodos de recuperación necesarios para su ego.",
+  "best_matches": [
+    {
+      "slug": "aries",
+      "score": 92,
+      "why": "Dos Fuegos que se avivan mutuamente, compartiendo pasión, ambición y necesidad de acción heroica."
+    },
+    {
+      "slug": "sagittaire",
+      "score": 88,
+      "why": "Complicidad de Fuego completa: Leo aporta estructura a Sagitario, quien nutre su sed de aventura noble."
+    },
+    {
+      "slug": "gemeaux",
+      "score": 85,
+      "why": "Oposición magnética: mental brillante de Géminis estimula creatividad de Leo, quien le ofrece estabilidad emocional."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "scorpion",
+      "why": "Dos voluntades de poder se enfrentan: Leo solar contra Escorpio subterráneo, lucha de egos intensa y manipulaciones."
+    },
+    {
+      "slug": "taureau",
+      "why": "Conflicto Fuego-Tierra: impulsividad dramática de Leo choca con obstinación de Tauro, incomprensión sobre valores y ritmos."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Diamante",
+    "animal_totem": "León",
+    "flower": "Girasol",
+    "color": "Oro",
+    "lucky_day": "Domingo",
+    "lucky_number": 7,
+    "metal": "Oro"
+  },
+  "famous_people": [
+    "Jennifer Lopez",
+    "Shakira",
+    "Antonio Banderas",
+    "Lucero",
+    "Diego Maradona"
+  ],
+  "faq": [
+    {
+      "q": "¿Cómo expresa un Leo su enojo y cómo manejarlo en pareja?",
+      "a": "La ira de Leo es espectacular pero raramente duradera. Explota teatralmente, con grandes gestos y declaraciones dramáticas, pero perdona fácilmente si se reconocen los errores. Para manejarla en pareja, evita humillarlo públicamente o minimizar sus emociones. Déjalo expresar su frustración, luego regresa calmadamente a los hechos. Leo aprecia que se reconozca su legitimidad emocional aunque se contesten sus argumentos. Después de la tormenta, vuelve a ser generoso y afectuoso, olvidando voluntariamente los reproches si su ego no ha sido herido duraderamente. Su orgullo cicatriza rápido con disculpas sinceras."
+    },
+    {
+      "q": "¿Por qué Leo necesita tanto reconocimiento profesional?",
+      "a": "La necesidad de reconocimiento de Leo deriva de su naturaleza solar y de su función zodiacal de soberano. Regido por el astro central del sistema solar, siente instintivamente la necesidad de ocupar una posición central y visible. Esta búsqueda no es pura vanidad sino expresión de un arquetipo: Leo encarna naturalmente el liderazgo creativo y la inspiración colectiva. Sin reconocimiento, pierde su función social y se hunde en la frustración. Profesionalmente, debe poder poner su personalidad al servicio de una obra o un equipo. Los oficios anónimos o puramente técnicos lo agotan porque no nutren su necesidad vital de irradiación personal al servicio de otros."
+    },
+    {
+      "q": "¿Un ascendente Leo modifica realmente la personalidad del signo solar?",
+      "a": "El ascendente Leo transforma radicalmente la expresión de cualquier signo solar añadiendo magnetismo, teatralidad y necesidad de reconocimiento. Un Cáncer ascendente Leo se vuelve más extrovertido y carismático, guardando su sensibilidad pero expresándola con más elegancia. Un Capricornio ascendente Leo tempera su austeridad con una calidez natural y gusto por la representación. El ascendente Leo da sistemáticamente una prestancia natural, un porte altivo y tendencia a dramatizar las situaciones. Empuja a buscar posiciones de liderazgo y cuidar su imagen pública. Incluso los signos más discretos adquieren con este ascendente una presencia notable y dificultad para pasar desapercibidos."
+    },
+    {
+      "q": "¿Cuáles son las profesiones donde Leo triunfa más según la astrología tradicional?",
+      "a": "La astrología tradicional asocia a Leo con oficios solares: teatro, cine, política, alta costura, joyería de lujo, dirección artística. Su naturaleza de Fuego fijo lo destina a posiciones de autoridad creativa donde puede encarnar una visión: jefe de empresa, realizador, estilista, chef reconocido. Las profesiones relacionadas con la infancia también le convienen: enseñanza, pediatría, animación. Evitar oficios puramente técnicos sin contacto humano o reconocimiento. Leo sobresale en representación comercial, relaciones públicas, periodismo de prestigio. Las artes decorativas, arquitectura, organización de eventos corresponden a su gusto por el espectáculo. Condición sine qua non: poder expresar su creatividad personal y recibir feedback positivo regular."
+    },
+    {
+      "q": "¿Cómo desarrollar espiritualmente las cualidades superiores del signo Leo?",
+      "a": "El desarrollo espiritual de Leo pasa por la transmutación del ego personal en servicio desinteresado. Su lección kármica consiste en trascender la necesidad de admiración para convertirse en fuente de inspiración auténtica. Prácticas recomendadas: meditación sobre el corazón espiritual, desarrollo de generosidad anónima, arte como vehículo de belleza universal. El Leo evolucionado se convierte en mentor natural, guía benevolente que eleva a otros sin esperar retorno. Su creatividad se pone al servicio de causas nobles, su teatralidad se vuelve pedagogía espiritual. El orgullo se transforma en dignidad humilde, la susceptibilidad en compasión. Las prácticas artísticas meditativas (danza sagrada, canto mántrico) lo ayudan a canalizar su fuego creador hacia la elevación colectiva más que la glorificación personal."
+    }
+  ]
+}

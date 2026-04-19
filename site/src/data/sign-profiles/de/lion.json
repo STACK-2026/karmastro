@@ -1,0 +1,86 @@
+{
+  "tagline": "Der Herrscher des Tierkreises, magnetisch und großzügig, strahlt in solarem Stolz",
+  "intro": "Als fünftes Zeichen des Tierkreises verkörpert der Löwe den Archetyp des solaren Herrschers auf dem Höhepunkt des Sommers. Regiert vom Sonnenkönig besitzt dieses fixe Feuerzeichen eine natürliche Autorität, die sich nicht verordnen lässt, sondern durch Ausstrahlung durchsetzt. Wo der Widder erobert und der Schütze erforscht, herrscht der Löwe und inspiriert. Seine Kraft liegt in dieser einzigartigen Fähigkeit, das Gewöhnliche in ein Schauspiel zu verwandeln, das zu erheben, was er durch seine bloße Anwesenheit berührt. Entgegen den Klischees über seinen angeblichen Narzissmus sucht der wahre Löwe weniger Bewunderung als die Anerkennung seines authentischen Wertes. Er durchschreitet das Dasein als Schöpfer, Dramaturg seines eigenen Lebens, fähig, Prüfungen in heroische Epen zu verwandeln. Diese Seelenvornehmheit macht ihn, wenn sie sich voll ausdrückt, zu einem natürlichen Führer, dem man aus Bewunderung mehr als aus Zwang folgt.",
+  "strengths": [
+    "Unwiderstehlicher natürlicher persönlicher Magnetismus",
+    "Authentische selbstlose tiefe Großzügigkeit",
+    "Inspirierender Führungsstil durch Vorbild",
+    "Spektakuläre originelle dramaturgische Kreativität",
+    "Unerschütterliche Loyalität gegenüber Nahestehenden"
+  ],
+  "weaknesses": [
+    "Übermäßige Empfindlichkeit bei Ego-Verletzungen",
+    "Paternalistischer manchmal erdrückender Autoritarismus",
+    "Ständiges Bedürfnis nach Bestätigung und äußerer Anerkennung",
+    "Melodramatische Tendenz Situationen zu theatralisieren",
+    "Starrer Stolz Schwierigkeit Fehler einzugestehen"
+  ],
+  "in_love": "In der Liebe liebt der Löwe mit Schwung und Exklusivität. Er sammelt nicht Eroberungen, sondern sucht die Seelenverwandte, die würdig ist, sein Königreich zu teilen. Seine Verführung wirkt durch Großzügigkeit statt durch Strategie: prunkvolle Geschenke, theatralische Aufmerksamkeiten, leidenschaftliche Erklärungen. Er will stolz auf seine bessere Hälfte sein, genauso wie diese auf ihn. Diese Gegenseitigkeit der Bewunderung ist entscheidend. Der Löwe flieht fade Lieben, blasse Partner, die ihn nicht zu schätzen wissen. Er braucht es, auf ein Podest gestellt zu werden, während er den Geliebten auf seines stellt. Von Natur aus treu, wenn er sich wirklich einlässt, kann er dennoch einer Beziehung überdrüssig werden, die sein Bedürfnis nach geteilter Größe nicht mehr nährt.",
+  "in_friendship": "Die Freundschaft des Löwen zeichnet sich durch Clantreue und ostentative Großzügigkeit aus. Er sammelt gerne einen Freundeskreis, den er wie seinen Hof behandelt, vervielfacht prunkvolle Einladungen und grandiose Gesten. Als natürlicher Beschützer stellt er sich als Verteidiger seiner Lieben gegen Prüfungen auf. Diese königliche Freundschaft verlangt jedoch Anerkennung: Der Löwe erträgt schlecht Undankbarkeit oder Gleichgültigkeit. Er bevorzugt wenige aber ergebene Freunde statt einer Vielzahl oberflächlicher Beziehungen. Seine theatralische Seite kann manchmal ermüden, aber seine Aufrichtigkeit und Fähigkeit, gewöhnliche Momente in unvergessliche Erinnerungen zu verwandeln, entschädigen reichlich.",
+  "at_work": "Beruflich glänzt der Löwe in Repräsentations-, Kreativ- und Führungsberufen: Theater, Mode, Kommunikation, Teamleitung, Politik. Er brilliert, wenn er eine Vision verkörpern und um seine Persönlichkeit vereinen kann. Als natürlicher Manager inspiriert er mehr als er kontrolliert, delegiert lieber, behält aber die finale Verantwortung. Sein Verhältnis zur Autorität ist komplex: exzellenter Chef, aber schwieriger Untergebener, wenn er seine Vorgesetzten nicht bewundert. Er braucht sichtbare berufliche Anerkennung und kann in der Verwaltungsanonymität leiden. Sein Arbeitsrhythmus wechselt zwischen Momenten intensiver Kreativität und Erholungsphasen, die für sein Ego nötig sind.",
+  "best_matches": [
+    {
+      "slug": "belier",
+      "score": 92,
+      "why": "Zwei Feuer, die sich gegenseitig anfachen und Leidenschaft, Ehrgeiz und Bedürfnis nach heroischer Tat teilen."
+    },
+    {
+      "slug": "sagittaire",
+      "score": 88,
+      "why": "Vollständige Feuer-Komplizenschaft: Löwe bringt dem Schützen Struktur, der seinen Durst nach edlem Abenteuer nährt."
+    },
+    {
+      "slug": "gemeaux",
+      "score": 85,
+      "why": "Magnetische Opposition: brillanter Geist der Zwillinge stimuliert Löwe-Kreativität, der emotionale Stabilität bietet."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "scorpion",
+      "why": "Zwei Machtwillen prallen aufeinander: solarer Löwe gegen unterirdischer Skorpion, intensiver Ego-Kampf und Manipulationen."
+    },
+    {
+      "slug": "taureau",
+      "why": "Feuer-Erde-Konflikt: dramatische Impulsivität des Löwen stößt auf Stier-Sturheit, Missverständnisse über Werte und Rhythmen."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Diamant",
+    "animal_totem": "Löwe",
+    "flower": "Sonnenblume",
+    "color": "Gold",
+    "lucky_day": "Sonntag",
+    "lucky_number": 7,
+    "metal": "Gold"
+  },
+  "famous_people": [
+    "Herbert Grönemeyer",
+    "Heidi Klum",
+    "Sebastian Vettel",
+    "Iris Berben",
+    "Thomas Gottschalk"
+  ],
+  "faq": [
+    {
+      "q": "Wie zeigt ein Löwe seinen Ärger und wie geht man in der Partnerschaft damit um?",
+      "a": "Der Zorn des Löwen ist spektakulär, aber selten dauerhaft. Er explodiert theatralisch mit großen Gesten und dramatischen Erklärungen, vergibt aber leicht, wenn man seine Fehler anerkennt. Um damit in der Partnerschaft umzugehen, sollten Sie ihn nicht öffentlich demütigen oder seine Emotionen kleinreden. Lassen Sie ihn seine Frustration ausdrücken, dann kehren Sie ruhig zu den Fakten zurück. Der Löwe schätzt es, wenn man seine emotionale Berechtigung anerkennt, auch wenn man seine Argumente bestreitet. Nach dem Sturm wird er wieder großzügig und liebevoll, vergisst gerne Beschwerden, wenn sein Ego nicht dauerhaft verletzt wurde. Sein Stolz heilt schnell mit aufrichtigen Entschuldigungen."
+    },
+    {
+      "q": "Warum braucht der Löwe so viel berufliche Anerkennung?",
+      "a": "Das Anerkennungsbedürfnis des Löwen entspringt seiner solaren Natur und seiner zodiacalen Funktion als Herrscher. Regiert vom zentralen Gestirn des Sonnensystems spürt er instinktiv das Bedürfnis, eine zentrale und sichtbare Position einzunehmen. Diese Suche ist nicht pure Eitelkeit, sondern Ausdruck eines Archetyps: Der Löwe verkörpert natürlich kreative Führung und kollektive Inspiration. Ohne Anerkennung verliert er seine gesellschaftliche Funktion und versinkt in Frustration. Beruflich muss er seine Persönlichkeit in den Dienst eines Werkes oder Teams stellen können. Anonyme oder rein technische Berufe erschöpfen ihn, da sie sein vitales Bedürfnis nach persönlicher Ausstrahlung im Dienste anderer nicht nähren."
+    },
+    {
+      "q": "Verändert ein Löwe-Aszendent wirklich die Persönlichkeit des Sonnenzeichens?",
+      "a": "Der Löwe-Aszendent verwandelt radikal den Ausdruck jedes Sonnenzeichens, indem er Magnetismus, Theatralik und Anerkennungsbedürfnis hinzufügt. Ein Krebs mit Löwe-Aszendent wird extravertierter und charismatischer, behält seine Sensibilität, drückt sie aber mit mehr Schwung aus. Ein Steinbock mit Löwe-Aszendent mildert seine Strenge durch natürliche Wärme und Geschmack für Repräsentation. Der Löwe-Aszendent verleiht systematisch natürliche Ausstrahlung, aufrechte Kopfhaltung und Tendenz, Situationen zu dramatisieren. Er drängt dazu, Führungspositionen zu suchen und das öffentliche Image zu pflegen. Selbst die diskretesten Zeichen erhalten mit diesem Aszendenten eine bemerkte Präsenz und Schwierigkeit, unbemerkt zu bleiben."
+    },
+    {
+      "q": "In welchen Berufen ist der Löwe laut traditioneller Astrologie am erfolgreichsten?",
+      "a": "Die traditionelle Astrologie verbindet den Löwen mit solaren Berufen: Theater, Kino, Politik, Haute Couture, Luxusschmuck, künstlerische Leitung. Seine Natur als fixes Feuer bestimmt ihn für kreative Autoritätspositionen, wo er eine Vision verkörpern kann: Unternehmer, Regisseur, Stylist, renommierter Küchenchef. Auch Berufe mit Kindern passen zu ihm: Unterricht, Pädiatrie, Animation. Rein technische Berufe ohne menschlichen Kontakt oder Anerkennung meiden. Der Löwe brilliert in Handelsvertretung, Öffentlichkeitsarbeit, Prestigejournalismus. Dekorative Künste, Architektur, Eventmanagement entsprechen seinem Geschmack für Spektakel. Grundvoraussetzung: persönliche Kreativität ausdrücken und regelmäßiges positives Feedback erhalten können."
+    },
+    {
+      "q": "Wie kann man die höheren Qualitäten des Löwen spirituell entwickeln?",
+      "a": "Die spirituelle Entwicklung des Löwen führt über die Wandlung des persönlichen Egos in selbstlosen Dienst. Seine karmische Lektion besteht darin, das Bewunderungsbedürfnis zu überwinden und authentische Inspirationsquelle zu werden. Empfohlene Praktiken: Meditation über das spirituelle Herz, Entwicklung anonymer Großzügigkeit, Kunst als Vehikel universeller Schönheit. Der entwickelte Löwe wird natürlicher Mentor, wohlwollender Führer, der andere ohne Gegenerwartung erhebt. Seine Kreativität stellt sich in den Dienst edler Sachen, seine Theatralik wird spirituelle Pädagogik. Stolz wandelt sich in bescheidene Würde, Empfindlichkeit in Mitgefühl. Meditative Kunstpraktiken (sakraler Tanz, Mantrasingen) helfen ihm, sein schöpferisches Feuer zur kollektiven Erhebung statt zur persönlichen Verherrlichung zu lenken."
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "tagline": "L'anima sensibile che trasforma l'emozione in santuario protettivo",
+  "intro": "Il Cancro incarna l'archetipo materno dello zodiaco, prima manifestazione dell'elemento Acqua nella sua forma cardinale. Governato dalla Luna, capta i cicli emotivi con un'acutezza inquietante, trasformando ogni sensazione in memoria vivente. Contrariamente ai luoghi comuni sulla sua fragilità, il Cancro possiede una forza d'iniziativa formidabile quando si tratta di creare e proteggere il suo mondo intimo. Il suo guscio non è una debolezza ma un'arte di vivere: costruisce bozzoli dove l'emozione può sbocciare senza essere giudicata. Segno del solstizio d'estate, segna l'apogeo della luce ma si volge già verso l'interiorità. Il suo genio risiede nella capacità di fare dell'emozione una bussola affidabile.",
+  "strengths": [
+    "Intuizione emotiva formidabile",
+    "Lealtà incrollabile verso persone care",
+    "Creatività nutrita da sensibilità",
+    "Capacità protettiva naturale autentica",
+    "Memoria affettiva eccezionale precisa"
+  ],
+  "weaknesses": [
+    "Suscettibilità eccessiva alle critiche",
+    "Tendenza rancore difficile perdonare",
+    "Ripiegamento difensivo paralizzante talvolta",
+    "Ansia anticipatoria cronica invadente",
+    "Manipolazione emotiva involontaria frequente"
+  ],
+  "in_love": "Il Cancro ama con le viscere, cercando di ricreare il bozzolo originale dove l'altro diventa estensione di se stesso. Seduce con la sua capacità d'ascolto e generosità emotiva, ma aspetta in cambio una fedeltà assoluta. Le sue dichiarazioni passano attraverso gesti quotidiani: cucinare, coccolare, creare un nido accogliente. Fugge gli amori di passaggio e i cuori blindati, preferendo la vulnerabilità condivisa. Possessivo senza essere geloso, ha bisogno di sentire che il partner fa davvero parte della sua famiglia elettiva.",
+  "in_friendship": "In amicizia, il Cancro tesse legami familiari con i suoi cari, creando una tribù scelta che nutre con piccole attenzioni costanti. Si ricorda di tutto: compleanni, dolori, momenti preziosi. Le sue cerchie sono ristrette ma durature, costruite su fiducia reciproca assoluta. Eccelle nell'arte dell'ascolto terapeutico e diventa spesso il confidente dei suoi amici. La sua porta rimane sempre aperta alle anime in difficoltà.",
+  "at_work": "Il Cancro si realizza nelle professioni della cura: psicologia, assistenza, educazione, ristorazione, immobiliare familiare. Ha bisogno di un ambiente rassicurante e relazioni umane autentiche per dare il meglio. Di fronte all'autorità, preferisce la collaborazione al confronto diretto. Il suo ritmo segue i cicli interni piuttosto che gli imperativi esterni. Può mancare di ambizione visibile ma sviluppa un'esperienza notevole nel suo campo per passione sincera.",
+  "best_matches": [
+    {
+      "slug": "scorpion",
+      "score": 92,
+      "why": "Alleanza acqua-acqua dove l'intensità emotiva dello Scorpione risuona con la profondità canceriana, creando un'intimità trasformativa."
+    },
+    {
+      "slug": "poissons",
+      "score": 88,
+      "why": "Comunione intuitiva naturale tra due segni d'Acqua che si comprendono senza parole e condividono la stessa sensibilità spirituale."
+    },
+    {
+      "slug": "taureau",
+      "score": 85,
+      "why": "Complementarietà terra-acqua ideale: stabilità taurina rassicura Cancro che nutre emotivamente il Toro in cambio."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "capricorne",
+      "why": "Opposizione strutturale tra emotività canceriana e razionalità capricorniana, creando incomprensione reciproca sulle priorità di vita."
+    },
+    {
+      "slug": "belier",
+      "why": "Quadratura tesa tra impulsività ariete e bisogno di sicurezza Cancro, ritmi e approcci relazionali fondamentalmente diversi."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Pietra di luna",
+    "animal_totem": "Granchio",
+    "flower": "Giglio bianco",
+    "color": "Bianco argentato",
+    "lucky_day": "Lunedì",
+    "lucky_number": 7,
+    "metal": "Argento"
+  },
+  "famous_people": [
+    "Gianluigi Buffon",
+    "Alessia Marcuzzi",
+    "Arisa",
+    "Tom Hanks",
+    "Meryl Streep"
+  ],
+  "faq": [
+    {
+      "q": "Perché il Cancro è considerato il segno più sensibile dello zodiaco?",
+      "a": "La sensibilità del Cancro deriva dal governo lunare e dal suo elemento Acqua cardinale. La Luna amplifica la sua ricettività emotiva, rendendolo permeabile alle atmosfere e ai non detti. Il suo carattere cardinale lo spinge ad agire su queste percezioni, creando talvolta reazioni intense. Questa sensibilità non è debolezza ma intelligenza emotiva: capta sfumature invisibili agli altri segni. La sua memoria affettiva eccezionale archivia ogni emozione, creando ricchezza interiore ma anche vulnerabilità alle ferite passate."
+    },
+    {
+      "q": "Quali sono i segni più compatibili con il Cancro in amore?",
+      "a": "I segni d'Acqua (Scorpione, Pesci) formano con il Cancro unioni profonde basate sull'intuizione condivisa. Lo Scorpione apporta intensità e trasformazione, i Pesci comunione spirituale. I segni di Terra (Toro, Vergine, Capricorno) offrono la stabilità cercata dal Cancro, particolarmente il Toro che condivide il suo amore per la casa. Certi segni di Fuoco come il Leone possono creare unioni appassionate se l'ascendente o la Luna addolciscono le differenze temperamentali."
+    },
+    {
+      "q": "Come si comporta un Cancro ascendente Scorpione?",
+      "a": "L'ascendente Scorpione intensifica considerevolmente la natura canceriana, creando una personalità magnetica ma complessa. L'emotività Cancro si tinge di mistero scorpionesco, rendendo questa persona affascinante ma difficile da decifrare. Sviluppa meccanismi di protezione più sofisticati, alternando vulnerabilità e corazza impenetrabile. Questa combinazione doppia Acqua crea un'intuizione fenomenale e un potere di trasformazione personale notevole. In amore, l'intensità può essere travolgente ma anche possessiva."
+    },
+    {
+      "q": "Quali professioni si adattano meglio al temperamento Cancro?",
+      "a": "Il Cancro eccelle nelle professioni della cura: psicologia, medicina, insegnamento, sociale, prima infanzia. Il suo istinto protettivo lo guida verso cure infermieristiche, ostetricia, o terapie alternative. La sua creatività nutrita dall'emozione lo orienta verso arti culinarie, decorazione, fotografia familiare, o scrittura intimista. L'immobiliare familiare, l'ospitalità di charme, o la gestione patrimoniale corrispondono al suo bisogno di creare bozzoli rassicuranti. Evita generalmente ambienti competitivi o disumanizzati."
+    },
+    {
+      "q": "Come gestire gli sbalzi d'umore di un Cancro in una relazione?",
+      "a": "Le variazioni emotive del Cancro seguono spesso i cicli lunari e i suoi ritmi interni. Bisogna capire che i suoi umori non sono capricci ma reazioni autentiche al suo ambiente energetico. L'ascolto benevolo senza giudizio rimane l'approccio migliore, con pazienza per lasciarlo esprimere i suoi sentimenti. Creare un ambiente rassicurante dove può ritirarsi senza sensi di colpa aiuta a regolare queste oscillazioni. Rispettare i suoi bisogni di solitudine periodica evita l'accumulo di tensioni emotive."
+    }
+  ]
+}

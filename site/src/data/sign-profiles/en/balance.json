@@ -1,0 +1,86 @@
+{
+  "tagline": "The cosmic peacemaker who transforms every encounter into harmony",
+  "intro": "Seventh sign of the zodiac, Libra embodies the Venusian archetype of relational harmony and shared beauty. Cardinal Air, it initiates authentic connections where others see only chaos. Ruled by Venus in her social dimension, it possesses that rare gift of instantly perceiving imbalances and proposing elegant solutions. Its genius lies in its ability to build bridges where gaps exist, to reveal hidden beauty in the most complex situations. Contrary to the cliché of indecision, authentic Libra knows exactly what it wants: a world where everyone finds their place in a collective symphony. Its existential challenge consists of maintaining this quest for balance without losing its own identity in the process.",
+  "strengths": [
+    "Instinctive natural diplomacy",
+    "Remarkable aesthetic sense",
+    "Assured equitable justice",
+    "Authentic magnetic charm",
+    "Expert relational mediation"
+  ],
+  "weaknesses": [
+    "Paralyzing chronic indecision",
+    "Systematic conflict avoidance",
+    "Subtle emotional dependency",
+    "Elegant perfectionist procrastination",
+    "Occasional aesthetic superficiality"
+  ],
+  "in_love": "Libra loves with the art of refinement and constant pursuit of perfect harmony. It seduces through its ability to make each moment precious, transforming dates into relational works of art. It flees vulgarity and brutal demonstrations, preferring subtle declarations and delicate gestures. Its romantic trap lies in idealizing partners and struggling to accept the natural rough edges of any relationship. It excels in creating romantic bubbles where beauty and complicity reign, but may sometimes sacrifice authenticity on the altar of harmony.",
+  "in_friendship": "In friendship, Libra cultivates balanced relationships where everyone finds their place without crushing others. It possesses that precious talent of reconciling antagonistic personalities and creating harmonious groups. Its loyalty expresses itself through its ability to always see the best in friends, even during difficult moments. It naturally maintains connections through delicate attention and an innate sense of hospitality.",
+  "at_work": "Libra excels in all professions related to beauty, justice, diplomacy and human relations: lawyer, mediator, decorator, marriage counselor, cultural attaché. It particularly shines in collaborative environments where its sense of equity can flourish. Its relationship with authority is nuanced: it prefers to convince rather than constrain. Its professional blind spot lies in difficulty making decisive choices under time pressure.",
+  "best_matches": [
+    {
+      "slug": "gemeaux",
+      "score": 92,
+      "why": "Two Air signs sharing love of refined communication and stimulating intellectual exchanges."
+    },
+    {
+      "slug": "verseau",
+      "score": 88,
+      "why": "Cardinal and fixed Air complicity, shared vision of a more harmonious and just world."
+    },
+    {
+      "slug": "sagittaire",
+      "score": 85,
+      "why": "Sagittarius's Jupiterian optimism perfectly matches Libra's Venusian quest for harmony."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "cancer",
+      "why": "The Cancer-Libra square creates tension between need for emotional security and quest for social harmony."
+    },
+    {
+      "slug": "capricorne",
+      "why": "The Libra-Capricorn opposition contrasts Venusian diplomacy with Saturnian authority, creating structural misunderstandings."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Opal",
+    "animal_totem": "Dove",
+    "flower": "Rose",
+    "color": "Pastel pink",
+    "lucky_day": "Friday",
+    "lucky_number": 7,
+    "metal": "Copper"
+  },
+  "famous_people": [
+    "Will Smith",
+    "Kim Kardashian",
+    "John Lennon",
+    "Gwyneth Paltrow",
+    "Hugh Jackman"
+  ],
+  "faq": [
+    {
+      "q": "How do I know if a Libra is really interested in me romantically",
+      "a": "An interested Libra will multiply refined attention and naturally integrate you into their social circle. They'll seek your opinion on aesthetic or relational subjects, a sign they value you. Contrary to cliché, a Libra in love becomes less indecisive: they know what they want and will subtly orchestrate conditions for your rapprochement. Watch for subtle signals: invitations to beautiful places, tastefully chosen gifts, deep conversations about your artistic tastes. If they introduce you to close friends, you truly matter to them."
+    },
+    {
+      "q": "Why does Libra struggle so much with making decisions",
+      "a": "Libra's indecision stems from their exceptional ability to perceive all facets of a situation. Ruled by Venus, they naturally seek the most harmonious solution for everyone, complicating their choices. Their cardinal Air mind constantly analyzes pros and cons, seeking perfect balance. This quest for justice and harmony sometimes paralyzes them, as they refuse to choose solutions that might harm someone. To help them, suggest listing important criteria and weighing each option according to their deep values rather than external expectations."
+    },
+    {
+      "q": "Does Libra rising in Leo really change their personality",
+      "a": "Leo rising considerably transforms Libra's expression. Where pure Libra favors diplomatic discretion, Leo rising adds theatrical dimension and need for recognition. This combination creates a personality that seduces through solar charm while maintaining innate harmony sense. Libra's indecisive side gets tempered by Leonine confidence, creating a more assertive Libra in aesthetic and relational choices. They become true social magnets, capable of organizing memorable events where Venusian beauty and solar generosity harmoniously combine."
+    },
+    {
+      "q": "What careers best suit Libra temperament",
+      "a": "Libra excels in all fields where beauty, harmony and human relations meet. Legal professions (lawyer, mediator, judge) correspond to their natural quest for justice. In aesthetics, they shine as interior decorators, stylists, interior architects or image consultants. Human relations attract them: psychologist, marriage counselor, cultural attaché, diplomat. They can also succeed in art (galleries, art criticism) and upscale event planning. Their sense of balance also makes them excellent corporate conflict managers or refined commercial negotiators."
+    },
+    {
+      "q": "How can Libra develop authentic spirituality",
+      "a": "Libra's spirituality passes through seeking harmony between interior and exterior, between self and others. They find their path in practices cultivating soul beauty: aesthetic meditation, artistic contemplation, serving others through social justice. Tantrism, uniting beauty and sacred, may particularly suit them. They'll develop spirituality by creating beautiful spaces for meditation, practicing gratitude for world's beauty, cultivating conscious relationship art. Their spiritual mission consists of revealing divine harmony hidden in every situation, becoming agents of peace and reconciliation."
+    }
+  ]
+}

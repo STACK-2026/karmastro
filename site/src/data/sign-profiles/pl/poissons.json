@@ -1,0 +1,86 @@
+{
+  "tagline": "Wrażliwa dusza zodiaku, która przemienia emocje w mądrość",
+  "intro": "Jako ostatni znak zodiaku, Ryby ucieleśniają zwieńczenie cyklu astrologicznego, tę ostateczną syntezę, w której jednostka rozpływa się w uniwersum. Rządzone przez Neptuna, planetę inspiracji i iluzji, płyną między dwoma wodami: najczystszą intuicją a całkowitym zamieszaniem. Jako zmienny znak wodny posiadają rzadką zdolność dostosowywania się do wszystkich prądów emocjonalnych, wchłaniając otaczające wibracje jak duchowa gąbka. Ich ekstremalna wrażliwość to nie słabość, lecz moc: percepcji tego, co niewidzialne, wychwytywania niewypowiedzianych słów, przekształcania cierpienia w sztukę. Między przepełniającą empatią a zbawienną ucieczką, Ryby niosą w sobie tę płodną melancholię, która karmi twórczość i bezwarunkową miłość.",
+  "strengths": [
+    "Niezwykła rozwinięta intuicja psychiczna",
+    "Głęboka i naturalna empatia",
+    "Nieograniczona twórczość artystyczna",
+    "Bezinteresowne i uzdrawiające współczucie",
+    "Płynna zdolność adaptacji emocjonalnej"
+  ],
+  "weaknesses": [
+    "Tendencja do ucieczki od rzeczywistości",
+    "Paraliżująca nadwrażliwość na krytykę",
+    "Trudność w wyznaczaniu granic",
+    "Chroniczna niezdecydowanie wobec wyborów",
+    "Skłonność do kompensacyjnych uzależnień"
+  ],
+  "in_love": "Ryby kochają całą swoją duszą, szukając nie tyle partnera, co całkowitego duchowego zespolenia. Oferują miłość bez warunków i granic, potrafiąc wybaczyć niewybaczalne i dostrzec piękno tam, gdzie inni widzą tylko wady. Ta emocjonalna hojność może jednak prowadzić ich do niezrównoważonych relacji, w których dają bez liczenia. Unikają bezpośredniej konfrontacji, woląc wycofać się w milczeniu niż stawić czoła konfliktom. Ich idealistyczny romantyzm czasem skłania do projektowania na drugą osobę własnych marzeń, tworząc rozczarowania, gdy rzeczywistość dogania fantazję.",
+  "in_friendship": "W przyjaźni Ryby są tymi cennymi powiernikami, którzy słuchają bez osądzania i pocieszają bez moralizowania. Ich emocjonalna lojalność przetrwa lata i próby, nawet jeśli ich fizyczna obecność może czasem być dyskretna. Doskonale wyczuwają, kiedy przyjaciel przechodzi trudny okres, często pojawiając się we właściwym momencie z odpowiednimi słowami. Ich empatyczna natura czyni z nich przyjaciół terapeutycznych, potrafiących wchłonąć cierpienie innych, czasem kosztem własnej równowagi.",
+  "at_work": "Ryby rozwijają się w zawodach pomocowych, artystycznych lub terapeutycznych: psychologia, medycyna alternatywna, muzyka, malarstwo, kino. Źle znoszą sztywną hierarchię i konkurencyjną atmosferę, preferując środowiska współpracujące i życzliwe. Ich rytm pracy podąża za cyklami emocjonalnymi: okresy błyskawicznej inspiracji przeplatają się z fazami koniecznego wycofania. Ich przepełniająca twórczość często kompensuje trudności z zadaniami administracyjnymi i zarządzaniem czasem, wymagając strukturalnych ram, by ujawnić pełny potencjał.",
+  "best_matches": [
+    {
+      "slug": "cancer",
+      "score": 92,
+      "why": "Wzajemne zrozumienie światów emocjonalnych i wspólna potrzeba głębokiego bezpieczeństwa uczuciowego."
+    },
+    {
+      "slug": "scorpion",
+      "score": 88,
+      "why": "Wspólna intensywność emocjonalna i fascynacja tajemnicami ludzkiej duszy."
+    },
+    {
+      "slug": "capricorne",
+      "score": 85,
+      "why": "Doskonała komplementarność między wrażliwością Ryb a stabilizującą strukturą Koziorożca."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "gemeaux",
+      "why": "Przeciwstawność między racjonalnym podejściem Bliźniąt a czystą intuicją Ryb tworzy powtarzające się nieporozumienia."
+    },
+    {
+      "slug": "vierge",
+      "why": "Naturalne napięcie między krytycznym perfekcjonizmem Panny a wrażliwością na wskroś Ryb."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Ametyst",
+    "animal_totem": "Delfin",
+    "flower": "Lotos",
+    "color": "Błękit oceanu",
+    "lucky_day": "Czwartek",
+    "lucky_number": 7,
+    "metal": "Platyna"
+  },
+  "famous_people": [
+    "Krzysztof Kieślowski",
+    "Fryderyk Chopin",
+    "Albert Einstein",
+    "Steve Jobs",
+    "Rihanna"
+  ],
+  "faq": [
+    {
+      "q": "Dlaczego Ryby są tak wrażliwe na negatywną energię innych?",
+      "a": "Ekstremalna wrażliwość Ryb wynika z ich neptuńskiej natury, która rozpuszcza granice między sobą a innymi. Ich system nerwowy naturalnie wychwytuje otaczające wibracje emocjonalne, funkcjonując jak permanentna antena psychiczna. Ta energetyczna przepuszczalność, dar w równej mierze co ciężar, czyni je szczególnie podatnymi w negatywnie naładowanych środowiskach. Dosłownie wchłaniają emocje innych, czasem mając trudności z odróżnieniem własnych uczuć od tych, które wychwytują. Ta nadwrażliwość wymaga regularnych okresów samotności do regeneracji i uwolnienia się od pasożytniczych energii nagromadzonych w kontakcie z innymi."
+    },
+    {
+      "q": "Jak Ryby mogą rozwijać swoją naturalną kreatywność?",
+      "a": "Kreatywność Ryb rozkwita w porzuceniu i zaufaniu do pierwszej intuicji. Muszą stworzyć świętą przestrzeń, gdzie inspiracja może swobodnie płynąć, bez osądu czy natychmiastowych ograniczeń technicznych. Sztuka staje się ich uprzywilejowanym językiem wyrażania tego, co niewyrażalne, przekształcania surowej emocji w namacalne piękno. Praktyki medytacyjne, połączenie z naturą i eksploracja snów karmią ich żyzną wyobraźnię. Muszą zaakceptować naturalne cykle twórcze, naprzemiennie fazy intensywnej inspiracji i okresy pozornie jałowe, ale konieczne do dojrzewania. Klucz leży w cierpliwości i akceptacji swojego unikalnego rytmu."
+    },
+    {
+      "q": "Czy ascendent w Rybach zmienia osobowość znaku słonecznego?",
+      "a": "Ascendent w Rybach otacza osobowość tajemniczą aurą i magnetyczną wrażliwością, niezależnie od znaku słonecznego. To neptuńskie wpływ łagodzi zbyt ostre kąty, tworzy bardziej intuicyjne podejście do życia i rozwija niezwykłą naturalną empatię. Osoba emanuje wrażeniem bycia gdzie indziej, połączoną z subtelnymi wymiarami, których inni nie postrzegają. Ta konfiguracja wzmacnia zdolności artystyczne i duchowe, ale może też generować pewne zamieszanie tożsamościowe. Ascendent w Rybach czyni osobowość bardziej adaptowalną i receptywną, czasem kosztem jasnego wyrażania osobistych potrzeb i niezbędnych granic."
+    },
+    {
+      "q": "Jakie zawody są idealne dla wyrażenia natury Ryb?",
+      "a": "Ryby doskonalą się w zawodach łączących służbę innym z twórczym wyrażaniem: psychoterapia, arteterapia, medycyna holistyczna, praca socjalna, nauczanie duchowe. Dziedziny artystyczne oferują im naturalny grunt rozwoju: muzyka, taniec, malarstwo, pisarstwo, kino, fotografia. Ich zdolność do empatii czyni z nich doskonałych terapeutów: pielęgniarki, weterynarze, masażyści, energoterapeauci. Zawody związane z wodą doskonale im odpowiadają: oceanografia, akwakultura, balneologia. Rozwijają się również w poszukiwaniach duchowych, astrologii, numerologii. Najważniejsze, by mogły wyrażać swoją wrażliwość i przyczyniać się do zbiorowego dobrostanu w życzliwym i niekonkurencyjnym środowisku."
+    },
+    {
+      "q": "Jak Ryby mogą lepiej radzić sobie ze skłonnością do ucieczki?",
+      "a": "Skłonność Ryb do ucieczki często rodzi się z rzeczywistości zbyt trudnej do bezpośredniej konfrontacji. Zamiast walczyć z tą naturą, muszą nauczyć się konstruktywnie kanalizować tę potrzebę ucieczki: medytacja, sztuka, duchowość, wewnętrzne podróże. Chodzi o stworzenie twórczych i duchowych zaworów bezpieczeństwa, które karmią duszę, nie szkodząc równowadze życiowej. Uziemienie przez łagodne praktyki cielesne (joga, pływanie, spacery w naturze) pomaga utrzymać związek z konkretem. Klucz leży w akceptacji ich szczególnego rytmu i stworzeniu środowiska życiowego szanującego potrzebę przestrzeni wycofania i marzenia, przy zachowaniu związków z praktyczną rzeczywistością."
+    }
+  ]
+}

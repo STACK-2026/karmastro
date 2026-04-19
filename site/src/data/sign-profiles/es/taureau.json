@@ -1,0 +1,86 @@
+{
+  "tagline": "El arquitecto de lo concreto que transforma los sueños en realidad tangible",
+  "intro": "Tauro encarna la fuerza creadora de Venus arraigada en la materia. Nacido en el corazón de la primavera, cuando la naturaleza despliega su fecundidad, transforma el impulso pionero de Aries en obra duradera. Este signo fijo de Tierra posee esa capacidad única de dar cuerpo a las ideas, de ofrecerles forma y sustancia. Gobernado por Venus, busca la belleza en lo tangible, la armonía en lo concreto. Su fuerza reside en esa alquimia particular que une sensualidad y pragmatismo, estética y eficacia. Tauro avanza con la paciencia de quien construye para la eternidad, sabiendo que las más bellas catedrales nacen piedra tras piedra. Su relación con el tiempo difiere: donde otros corren, él cultiva, consciente de que la verdadera riqueza se construye lenta pero seguramente.",
+  "strengths": [
+    "Perseverancia inquebrantable ante los obstáculos",
+    "Sentido estético refinado y auténtico",
+    "Pragmatismo creativo y constructivo",
+    "Lealtad inquebrantable hacia sus seres queridos",
+    "Estabilidad emocional tranquilizadora"
+  ],
+  "weaknesses": [
+    "Resistencia excesiva al cambio necesario",
+    "Tendencia posesiva en las relaciones",
+    "Obstinación a veces contraproducente",
+    "Apego material a veces excesivo",
+    "Lentitud decisiva que frena la acción"
+  ],
+  "in_love": "Tauro ama con sus cinco sentidos, buscando una comunión carnal tanto como emocional. Corteja con paciencia, ofreciendo estabilidad y seguridad al elegido de su corazón. Su sensualidad venusina se expresa a través de los placeres compartidos: comidas sabrosas, masajes, momentos íntimos. Huye de la inestabilidad afectiva y las relaciones superficiales, prefiriendo construir una intimidad profunda y duradera. Sus celos, a veces posesivos, revelan su necesidad de seguridad afectiva. Una vez comprometido, se convierte en la pareja más confiable del zodiaco, creando un hogar armonioso donde reinan belleza y comodidad.",
+  "in_friendship": "La amistad taurina se construye sobre la duración y la reciprocidad. Este signo privilegia un círculo restringido de amigos fieles antes que una red extensa. Expresa su ternura a través de gestos concretos: invitaciones gastronómicas, regalos reflexivos, presencia constante en los momentos difíciles. Su lealtad legendaria lo convierte en un confidente privilegiado, capaz de guardar secretos y ofrecer consejos pragmáticos. Mantiene el vínculo a través de la regularidad de los contactos y la creación de tradiciones compartidas.",
+  "at_work": "Tauro sobresale en profesiones relacionadas con la belleza, la artesanía, la gastronomía o las finanzas. Su relación con la autoridad permanece respetuosa pero independiente: prefiere el reconocimiento de sus competencias a los honores jerárquicos. Su ritmo de trabajo, metódico y regular, puede desconcertar en ambientes frenéticos. Su punto ciego profesional reside en su dificultad para adaptarse rápidamente a nuevas herramientas o métodos, privilegiando las técnicas probadas sobre las innovaciones arriesgadas.",
+  "best_matches": [
+    {
+      "slug": "vierge",
+      "score": 92,
+      "why": "Tierra común y complementariedad Venus-Mercurio crean una alquimia perfecta entre sensualidad y precisión."
+    },
+    {
+      "slug": "capricorne",
+      "score": 88,
+      "why": "Trígono de Tierra favorece la construcción común de un futuro estable y próspero."
+    },
+    {
+      "slug": "cancer",
+      "score": 85,
+      "why": "Sextil creativo entre Venus y Luna armoniza seguridad material y emocional."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "lion",
+      "why": "Cuadratura fija Venus-Sol crea tensiones entre la necesidad de simplicidad taurina y la teatralidad leonina."
+    },
+    {
+      "slug": "verseau",
+      "why": "Oposición fija Venus-Urano genera conflictos entre tradición taurina y revolución acuariana."
+    }
+  ],
+  "attributes": {
+    "gemstone": "esmeralda",
+    "animal_totem": "toro",
+    "flower": "rosa",
+    "color": "verde tierno",
+    "lucky_day": "viernes",
+    "lucky_number": 6,
+    "metal": "cobre"
+  },
+  "famous_people": [
+    "Penélope Cruz",
+    "David Beckham",
+    "Enrique Iglesias",
+    "Adele",
+    "Megan Thee Stallion"
+  ],
+  "faq": [
+    {
+      "q": "¿Por qué Tauro está tan apegado a sus hábitos y rutinas?",
+      "a": "La naturaleza fija de Tauro, combinada con su regencia venusina, crea una necesidad profunda de estabilidad y armonía. Sus rutinas no son rigidez sino rituales de bienestar que le permiten cultivar la belleza cotidianamente. Esta regularidad estructura su mundo interior y le ofrece las referencias necesarias para expresar su creatividad. A diferencia de los signos mutables que florecen en el cambio, Tauro extrae su fuerza de la constancia, transformando cada gesto repetido en arte de vivir refinado."
+    },
+    {
+      "q": "¿Cómo puede Tauro superar su resistencia natural al cambio?",
+      "a": "La clave reside en asociar el cambio con beneficios tangibles y estéticos. Tauro aceptará más fácilmente una evolución si puede visualizar concretamente las mejoras que aporta a su comodidad o belleza de vida. Hay que darle tiempo para familiarizarse con la novedad, procediendo por etapas graduales en lugar de revoluciones bruscas. Su naturaleza venusina responde favorablemente a transiciones armoniosas que respetan su ritmo natural y preservan lo que aprecia del sistema anterior."
+    },
+    {
+      "q": "¿Cuál es la influencia del ascendente en la personalidad de Tauro?",
+      "a": "El ascendente modula la expresión de la sensualidad y pragmatismo taurinos. Un ascendente Géminis aportará más movilidad mental y curiosidad intelectual, mientras que un ascendente Escorpio intensificará la dimensión pasional y misteriosa. Un ascendente de Fuego (Aries, Leo, Sagitario) dinamizará la energía taurina, volviéndola más expresiva y emprendedora. El ascendente Aire favorecerá la expresión artística y social de Venus, mientras que un ascendente de Agua amplificará la intuición y receptividad emocional del signo solar."
+    },
+    {
+      "q": "¿Qué profesiones permiten a Tauro expresar plenamente sus talentos naturales?",
+      "a": "Tauro florece en todos los ámbitos donde belleza y saber hacer se unen: arquitectura de interiores, joyería, gastronomía, viticultura, artesanía de arte. Su conexión venusina lo destina naturalmente a profesiones artísticas, desde la escultura hasta la música. En finanzas, su sentido práctico y paciencia lo convierten en excelente gestor patrimonial. El sector inmobiliario, la horticultura, la perfumería corresponden también a su naturaleza. También destaca en acompañamiento de bienestar: masoterapia, estética, coaching en arte de vivir."
+    },
+    {
+      "q": "¿Cómo expresa Tauro su espiritualidad y conexión con lo sagrado?",
+      "a": "La espiritualidad taurina pasa por la encarnación y celebración de la belleza divina en la materia. Menos místico que contemplativo, encuentra lo sagrado en la naturaleza, jardines, obras de arte que elevan el alma. Su práctica espiritual privilegia rituales sensoriales: meditación en entorno bello, canto, danza sagrada, creación artística como oración. Honra lo divino a través de la gratitud por la abundancia terrestre y la preservación de la belleza del mundo. Su fe se nutre de tradiciones ancestrales y se expresa mediante actos concretos de generosidad y protección del medio ambiente."
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "tagline": "L'alchimista delle profondità, maestro delle trasformazioni e custode dei misteri",
+  "intro": "Lo Scorpione incarna l'archetipo del trasformatore, colui che osa scendere agli inferi per rinascere purificato. Governato da Plutone, pianeta delle metamorfosi radicali, questo segno d'acqua fisso possiede un'intensità emotiva rara e una capacità unica di percepire il non detto. Nato nel cuore dell'autunno, quando la natura si spoglia per rivelare l'essenziale, lo Scorpione eccelle nell'arte di svelare le verità nascoste. La sua forza risiede nella capacità di trasmutare il dolore in saggezza, il caos in ordine, la distruzione in creazione. A differenza degli altri segni d'acqua che si adattano o evadono, lo Scorpione si radica nell'emozione per trascenderla. Attraversa il mondo con la certezza che solo la verità nuda può liberare, anche se prima brucia.",
+  "strengths": [
+    "Intuizione psicologica fulminante",
+    "Capacità di rigenerazione eccezionale",
+    "Lealtà assoluta verso i suoi cari",
+    "Coraggio di fronte alle crisi",
+    "Magnetismo naturale e carisma"
+  ],
+  "weaknesses": [
+    "Tendenza alla possessività eccessiva",
+    "Rancore tenace e memoria lunga",
+    "Diffidenza sistematica delle motivazioni",
+    "Bisogno compulsivo di controllo",
+    "Fascinazione per le zone oscure"
+  ],
+  "in_love": "Lo Scorpione ama con un'intensità che può spaventare o affascinare. Cerca la fusione delle anime più dell'armonia superficiale, esigendo una trasparenza totale dal partner. La sua seduzione opera per magnetismo: attrae con il suo mistero e la sua profondità emotiva. Fugge dalle relazioni leggere e privilegia i legami trasformatori, anche dolorosi. In coppia diventa protettivo fino alla possessività, fedele fino all'esclusività assoluta. La sua gelosia non è capriccio ma bisogno vitale di sicurezza affettiva. Ama appassionatamente, definitivamente, e aspetta la stessa devozione in cambio.",
+  "in_friendship": "L'amicizia scorpione si merita e si preserva con pazienza. Sceglie pochi amici ma li conserva a vita, creando legami quasi fraterni basati sulla fiducia reciproca. Eccelle nell'arte di ascoltare senza giudicare e di consigliare con giustezza, diventando spesso il confidente privilegiato del gruppo. La sua lealtà è leggendaria: difenderà i suoi cari contro venti e maree. In cambio esige sincerità e autenticità, detestando le maschere sociali e le relazioni di superficie.",
+  "at_work": "Lo Scorpione brilla nei mestieri dell'invisibile: psicologia, investigazione, chirurgia, finanza, ricerca. Eccelle là dove bisogna scavare, analizzare, trasformare. Di fronte all'autorità rispetta la competenza ma sfida l'incompetenza con ferocia. Lavora per cicli intensi, capace di sforzi sovrumani seguiti da fasi di rigenerazione. Il suo punto cieco professionale: la diplomazia di superficie e la gestione delle suscettibilità. Preferisce la verità brutale ai riguardi tattici, il che può creare tensioni gerarchiche.",
+  "best_matches": [
+    {
+      "slug": "cancer",
+      "score": 92,
+      "why": "Complementarità perfetta tra la profondità scorpione e la protezione cancro nell'elemento acqua"
+    },
+    {
+      "slug": "poissons",
+      "score": 88,
+      "why": "Unione mistica tra l'intensità plutoniana e l'intuizione nettuniana dei Pesci"
+    },
+    {
+      "slug": "vierge",
+      "score": 85,
+      "why": "Opposizione fruttuosa tra l'analisi vergine e l'istinto scorpione creando un equilibrio terra-acqua"
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "lion",
+      "why": "Scontro di ego tra due segni fissi, il Leone cerca la luce quando Scorpione preferisce l'ombra"
+    },
+    {
+      "slug": "verseau",
+      "why": "Opposizione aria-acqua tra il distacco acquario e l'intensità emotiva scorpione creando incomprensioni"
+    }
+  ],
+  "attributes": {
+    "gemstone": "Topazio rosso",
+    "animal_totem": "Scorpione e aquila",
+    "flower": "Crisantemo",
+    "color": "Rosso bordeaux",
+    "lucky_day": "Martedì",
+    "lucky_number": 7,
+    "metal": "Ferro e acciaio"
+  },
+  "famous_people": [
+    "Roberto Benigni",
+    "Luca Guadagnino",
+    "Paola Cortellesi",
+    "Marco Verratti",
+    "Katy Perry"
+  ],
+  "faq": [
+    {
+      "q": "Come riconoscere l'ascendente Scorpione nel tema natale?",
+      "a": "L'ascendente Scorpione si riconosce da uno sguardo intenso e penetrante, una presenza magnetica immediata e la tendenza a tenere segrete le proprie emozioni. Fisicamente conferisce spesso tratti marcati, occhi profondi e un'allure misteriosa. La personalità manifesta una capacità naturale di percepire il non detto e una diffidenza istintiva verso i nuovi incontri. L'ascendente Scorpione trasforma qualsiasi segno solare in versione più intensa e segreta, aggiungendo una dimensione psicologica profonda alla personalità di base. Questi nativi emanano un'aura di potere personale e di trasformazione permanente."
+    },
+    {
+      "q": "Quali professioni si addicono meglio al temperamento Scorpione?",
+      "a": "Lo Scorpione eccelle nelle professioni legate all'investigazione, alla trasformazione e alla rigenerazione. Psicologo, chirurgo, investigatore privato, analista finanziario, ricercatore scientifico, tanatologo o sessuologo corrispondono al suo bisogno di esplorare l'invisibile. Riesce bene anche nell'immobiliare, nella gestione delle crisi, nell'archeologia e in tutti i mestieri occulti o esoterici. Il suo talento nel scoprire motivazioni nascoste lo rende eccellente selezionatore o negoziatore. I settori del riciclaggio, della trasformazione dei rifiuti o dell'ecologia radicale lo attraggono per la loro dimensione rigeneratrice."
+    },
+    {
+      "q": "Lo Scorpione è compatibile con il proprio segno in amore?",
+      "a": "Due Scorpioni insieme creano una relazione di intensità eccezionale, a volte esplosiva. Si comprendono intuitivamente, condividendo la stessa sete di verità e profondità emotiva. Tuttavia questa unione può diventare possessiva all'estremo, ognuno tentando di controllare l'altro per gelosia o diffidenza. Il loro magnetismo reciproco crea un'attrazione fatale, ma i rispettivi segreti possono generare crisi di fiducia importanti. Questa combinazione funziona se entrambi i partner accettano di rivelare le proprie zone d'ombra e trasformano la loro intensità in forza creatrice comune piuttosto che in lotta di potere distruttiva."
+    },
+    {
+      "q": "Come gestisce lo Scorpione stress ed emozioni difficili?",
+      "a": "Lo Scorpione possiede una capacità di rigenerazione emotiva notevole, trasformando naturalmente la sofferenza in forza interiore. Di fronte allo stress tende prima a isolarsi per analizzare la situazione in profondità, poi mobilizza le sue risorse nascoste con determinazione feroce. Scarica le tensioni attraverso attività fisica intensa o pratiche di trasformazione personale come la meditazione profonda. A differenza degli altri segni, non evita il confronto con i propri demoni interiori ma li usa come carburante per la metamorfosi. Questa alchimia emotiva gli permette di rinascere più forte dopo ogni prova."
+    },
+    {
+      "q": "Quali sono le fasi di vita importanti per un nativo Scorpione?",
+      "a": "Lo Scorpione vive per cicli di morte e rinascita, con fasi di trasformazione radicale circa ogni sette anni. La sua prima grande metamorfosi avviene spesso verso i 28-30 anni, età del ritorno di Saturno, quando abbandona le illusioni giovanili. La quarantina segna generalmente una rinascita spirituale maggiore, momento in cui integra pienamente la sua potenza plutoniana. Ogni crisi esistenziale diventa per lui un'opportunità di evoluzione, contrariamente agli altri segni che cercano stabilità. Queste fasi trasformatrici toccano successivamente la vita emotiva, professionale poi spirituale, creando un percorso iniziatico permanente verso l'autenticità assoluta e la padronanza dei propri poteri nascosti."
+    }
+  ]
+}

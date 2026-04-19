@@ -1,0 +1,86 @@
+{
+  "tagline": "Alchemik głębin, mistrz transformacji i strażnik tajemnic",
+  "intro": "Skorpion ucieleśnia archetyp transformatora, tego który odważa się zejść do piekieł, by odrodzić się oczyszczony. Rządzony przez Plutona, planetę radykalnych metamorfoz, ten stały znak wodny posiada rzadką intensywność emocjonalną i wyjątkową zdolność dostrzegania niedopowiedzeń. Narodzony w sercu jesieni, gdy natura obnaża się, by ujawnić to, co najistotniejsze, Skorpion celuje w sztuce odkrywania ukrytych prawd. Jego siła leży w zdolności transmutacji bólu w mądrość, chaosu w porządek, destrukcji w twórczość. W przeciwieństwie do innych znaków wodnych, które się dostosowują lub uciekają, Skorpion zakorzenia się w emocjach, by je przekroczyć. Przemierza świat z przekonaniem, że tylko naga prawda może wyzwolić, nawet jeśli najpierw pali.",
+  "strengths": [
+    "Błyskawiczna intuicja psychologiczna",
+    "Wyjątkowa zdolność regeneracji",
+    "Absolutna lojalność wobec swoich",
+    "Odwaga w obliczu kryzysów",
+    "Naturalny magnetyzm i charyzma"
+  ],
+  "weaknesses": [
+    "Skłonność do nadmiernej posesywności",
+    "Uparta uraza i długa pamięć",
+    "Systematyczna nieufność wobec motywacji",
+    "Kompulsywna potrzeba kontroli",
+    "Fascynacja ciemnymi stronami"
+  ],
+  "in_love": "Skorpion kocha z intensywnością, która może przerażać lub fascynować. Szuka zespolenia dusz bardziej niż powierzchownej harmonii, wymagając całkowitej transparentności od partnera. His uwodzenie działa przez magnetyzm: przyciąga swoją tajemniczością i głębią emocjonalną. Ucieka od lekkich związków i preferuje więzi transformujące, nawet bolesne. W związku staje się opiekuńczy aż do posesywności, wierny aż do absolutnej wyłączności. Jego zazdrość to nie kaprys, ale żywotna potrzeba bezpieczeństwa emocjonalnego. Kocha namiętnie, definitywnie i oczekuje takiego samego oddania w zamian.",
+  "in_friendship": "Przyjaźń Skorpiona trzeba zasłużyć i pielęgnować cierpliwie. Wybiera niewielu przyjaciół, ale zachowuje ich na całe życie, tworząc więzi niemal braterskie oparte na wzajemnym zaufaniu. Celuje w sztuce słuchania bez osądzania i doradzania z rozsądkiem, często stając się uprzywilejowanym powiernikiem grupy. Jego lojalność jest legendarna: będzie bronił swoich bliskich przeciwko wszystkim przeciwnościom. W zamian wymaga szczerości i autentyczności, nienawidząc społecznych masek i powierzchownych relacji.",
+  "at_work": "Skorpion błyszczy w zawodach niewidzialnego: psychologia, śledztwo, chirurgia, finanse, badania. Celuje tam, gdzie trzeba kopać, analizować, transformować. Wobec władzy szanuje kompetencje, ale rzuca wyzwanie niekompetencji z żądzą krwi. Pracuje w intensywnych cyklach, zdolny do nadludzkich wysiłków, po których następują fazy regeneracji. Jego zawodowy punkt ślepy: powierzchowna dyplomacja i zarządzanie wrażliwością. Woli brutalną prawdę od taktownych oszczędności, co może tworzyć napięcia hierarchiczne.",
+  "best_matches": [
+    {
+      "slug": "cancer",
+      "score": 92,
+      "why": "Idealna komplementarność między głębią Skorpiona a opiekuńczością Raka w żywiole wody"
+    },
+    {
+      "slug": "poissons",
+      "score": 88,
+      "why": "Mistyczne połączenie między intensywnością plutońską a neptunijską intuicją Ryb"
+    },
+    {
+      "slug": "vierge",
+      "score": 85,
+      "why": "Owocna opozycja między analizą Panny a instynktem Skorpiona tworząca równowagę ziemia-woda"
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "lion",
+      "why": "Starcie ego między dwoma stałymi znakami, Lew szukający światła, gdy Skorpion preferuje cień"
+    },
+    {
+      "slug": "verseau",
+      "why": "Opozycja powietrze-woda między dystansem Wodnika a intensywnością emocjonalną Skorpiona tworząca nieporozumienia"
+    }
+  ],
+  "attributes": {
+    "gemstone": "Czerwony topaz",
+    "animal_totem": "Skorpion i orzeł",
+    "flower": "Chryzantema",
+    "color": "Bordowy",
+    "lucky_day": "Wtorek",
+    "lucky_number": 7,
+    "metal": "Żelazo i stal"
+  },
+  "famous_people": [
+    "Marie Curie",
+    "Pablo Picasso",
+    "Leonardo DiCaprio",
+    "Julia Roberts",
+    "Ryan Gosling"
+  ],
+  "faq": [
+    {
+      "q": "Jak rozpoznać ascendent w Skorpionie w horoskopie?",
+      "a": "Ascendent w Skorpionie rozpoznaje się po intensywnym i przenikliwym spojrzeniu, magnetycznej obecności i skłonności do ukrywania emocji. Fizycznie często daje wyraziste rysy, głębokie oczy i tajemniczą aurę. Osobowość przejawia naturalną zdolność dostrzegania niedopowiedzeń i instynktowną nieufność wobec nowych znajomości. Ascendent Skorpiona transformuje każdy znak słoneczny w bardziej intensywną i tajemniczą wersję, dodając głęboki wymiar psychologiczny do podstawowej osobowości. Te osoby emanują aurą osobistej władzy i permanentnej transformacji."
+    },
+    {
+      "q": "Jakie zawody najlepiej pasują do temperamentu Skorpiona?",
+      "a": "Skorpion celuje w profesjach związanych z dochodzeniem, transformacją i regeneracją. Psycholog, chirurg, detektyw, analityk finansowy, naukowiec, tanatolog czy seksuolog odpowiadają jego potrzebie eksplorowania niewidzialnego. Odnosi też sukcesy w nieruchomościach, zarządzaniu kryzysami, archeologii i wszystkich zawodach okultystycznych. Jego talent do wykrywania ukrytych motywacji czyni go doskonałym rekruterem czy negocjatorem. Dziedziny recyklingu, przekształcania odpadów czy radykalnej ekologii przyciągają go swoim wymiarem regenerującym."
+    },
+    {
+      "q": "Czy Skorpion jest kompatybilny z własnym znakiem w miłości?",
+      "a": "Dwoje Skorpionów razem tworzy związek o wyjątkowej intensywności, czasami wybuchowej. Rozumieją się intuicyjnie, dzieląc to samo pragnienie prawdy i głębi emocjonalnej. Jednak ten związek może stać się nadmiernie posesywny, każdy próbując kontrolować drugiego przez zazdrość lub nieufność. Ich wzajemny magnetyzm tworzy fatalne przyciąganie, ale ich wzajemne tajemnice mogą generować poważne kryzysy zaufania. Ta kombinacja działa, jeśli obaj partnerzy zgodzą się ujawnić swoje ciemne strony i przekształcą swoją intensywność we wspólną siłę twórczą zamiast w destrukcyjną walkę o władzę."
+    },
+    {
+      "q": "Jak Skorpion radzi sobie ze stresem i trudnymi emocjami?",
+      "a": "Skorpion posiada niezwykłą zdolność emocjonalnej regeneracji, naturalnie transformując cierpienie w wewnętrzną siłę. W obliczu stresu najpierw izoluje się, by dogłębnie przeanalizować sytuację, następnie mobilizuje swoje ukryte zasoby z żarliwą determinacją. Napięcia rozładowuje przez intensywną aktywność fizyczną lub praktyki transformacji osobistej jak głęboka medytacja. W przeciwieństwie do innych znaków, nie unika konfrontacji ze swoimi wewnętrznymi demonami, ale używa ich jako paliwa do metamorfozy. Ta emocjonalna alchemia pozwala mu odradzać się silniejszym po każdej próbie."
+    },
+    {
+      "q": "Jakie są ważne fazy życiowe dla urodzonych w znaku Skorpiona?",
+      "a": "Skorpion żyje cyklami śmierci i odrodzenia, z fazami radykalnej transformacji mniej więcej co siedem lat. Jego pierwsza wielka metamorfoza często następuje około 28-30 roku życia, w wieku powrotu Saturna, kiedy porzuca iluzje młodości. Czterdziestka zazwyczaj oznacza wielkie odrodzenie duchowe, moment gdy w pełni integruje swoją plutońską moc. Każdy kryzys egzystencjalny staje się dla niego okazją do ewolucji, w przeciwieństwie do innych znaków szukających stabilności. Te fazy transformacyjne dotykają kolejno jego życie emocjonalne, zawodowe, a następnie duchowe, tworząc permanentną drogę inicjacyjną ku absolutnej autentyczności i opanowaniu ukrytych mocy."
+    }
+  ]
+}

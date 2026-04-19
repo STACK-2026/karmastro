@@ -1,0 +1,86 @@
+{
+  "tagline": "L'alchimiste des profondeurs, maître des transformations et gardien des mystères",
+  "intro": "Le Scorpion incarne l'archétype du transformateur, celui qui ose descendre aux enfers pour renaître purifié. Gouverné par Pluton, planète des métamorphoses radicales, ce signe d'eau fixe possède une intensité émotionnelle rare et une capacité unique à percevoir les non-dits. Né au cœur de l'automne, quand la nature se dépouille pour révéler l'essentiel, le Scorpion excelle dans l'art de révéler les vérités cachées. Sa force réside dans sa capacité à transmuter la douleur en sagesse, le chaos en ordre, la destruction en création. Contrairement aux autres signes d'eau qui s'adaptent ou s'évadent, le Scorpion s'enracine dans l'émotion pour la transcender. Il traverse le monde avec la certitude que seule la vérité nue peut libérer, même si elle brûle d'abord.",
+  "strengths": [
+    "Intuition psychologique foudroyante",
+    "Capacité de régénération exceptionnelle",
+    "Loyauté absolue envers les siens",
+    "Courage face aux crises",
+    "Magnétisme naturel et charisme"
+  ],
+  "weaknesses": [
+    "Tendance à la possessivité excessive",
+    "Rancune tenace et mémoire longue",
+    "Méfiance systématique des motivations",
+    "Besoin compulsif de contrôler",
+    "Fascination pour les zones sombres"
+  ],
+  "in_love": "Le Scorpion aime avec une intensité qui peut effrayer ou fasciner. Il cherche la fusion des âmes plus que l'harmonie superficielle, exigeant une transparence totale de son partenaire. Sa séduction opère par magnétisme : il attire par son mystère et sa profondeur émotionnelle. Il fuit les relations légères et privilégie les liens transformateurs, même douloureux. En couple, il devient protecteur jusqu'à la possessivité, fidèle jusqu'à l'exclusivité absolue. Sa jalousie n'est pas caprice mais besoin vital de sécurité affective. Il aime passionnément, définitivement, et attend la même dévotion en retour.",
+  "in_friendship": "L'amitié scorpion se mérite et se préserve avec patience. Il choisit peu d'amis mais les garde à vie, créant des liens quasi fraternels basés sur la confiance mutuelle. Il excelle dans l'art d'écouter sans juger et de conseiller avec justesse, devenant souvent le confident privilégié du groupe. Sa loyauté est légendaire : il défendra ses proches contre vents et marées. En contrepartie, il exige sincérité et authenticité, détestant les masques sociaux et les relations de surface.",
+  "at_work": "Le Scorpion brille dans les métiers de l'invisible : psychologie, enquête, chirurgie, finance, recherche. Il excelle là où il faut creuser, analyser, transformer. Face à l'autorité, il respecte la compétence mais défie l'incompétence avec férocité. Il travaille par cycles intenses, capable de efforts surhumains suivis de phases de régénération. Son angle mort professionnel : la diplomatie de surface et la gestion des susceptibilités. Il préfère la vérité brutale aux ménagements tactiques, ce qui peut créer des tensions hiérarchiques.",
+  "best_matches": [
+    {
+      "slug": "cancer",
+      "score": 92,
+      "why": "Complémentarité parfaite entre la profondeur scorpion et la protection cancer dans l'élément eau"
+    },
+    {
+      "slug": "poissons",
+      "score": 88,
+      "why": "Union mystique entre l'intensité plutonienne et l'intuition neptunienne des Poissons"
+    },
+    {
+      "slug": "vierge",
+      "score": 85,
+      "why": "Opposition fructueuse entre l'analyse vierge et l'instinct scorpion créant un équilibre terre-eau"
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "lion",
+      "why": "Clash d'egos entre deux signes fixes, le Lion cherchant la lumière quand Scorpion préfère l'ombre"
+    },
+    {
+      "slug": "verseau",
+      "why": "Opposition air-eau entre le détachement verseau et l'intensité émotionnelle scorpion créant incompréhensions"
+    }
+  ],
+  "attributes": {
+    "gemstone": "Topaze rouge",
+    "animal_totem": "Scorpion et aigle",
+    "flower": "Chrysanthème",
+    "color": "Rouge bordeaux",
+    "lucky_day": "Mardi",
+    "lucky_number": 7,
+    "metal": "Fer et acier"
+  },
+  "famous_people": [
+    "Marie Curie",
+    "Pablo Picasso",
+    "Grace Kelly",
+    "Leonardo DiCaprio",
+    "Jodie Foster"
+  ],
+  "faq": [
+    {
+      "q": "Comment reconnaître l'ascendant Scorpion dans un thème astral ?",
+      "a": "L'ascendant Scorpion se reconnaît par un regard intense et pénétrant, une présence magnétique immédiate et une tendance à garder ses émotions secrètes. Physiquement, il donne souvent des traits marqués, des yeux profonds et une allure mystérieuse. La personnalité manifeste une capacité naturelle à percevoir les non-dits et une méfiance instinctive face aux nouvelles rencontres. L'ascendant Scorpion transforme n'importe quel signe solaire en version plus intense et secrète, ajoutant une dimension psychologique profonde à la personnalité de base. Ces natifs dégagent une aura de pouvoir personnel et de transformation permanente."
+    },
+    {
+      "q": "Quels métiers conviennent le mieux au tempérament Scorpion ?",
+      "a": "Le Scorpion excelle dans les professions liées à l'investigation, la transformation et la régénération. Psychologue, chirurgien, détective privé, analyste financier, chercheur scientifique, thanatologue ou sexologue correspondent à son besoin d'explorer l'invisible. Il réussit aussi dans l'immobilier, la gestion de crise, l'archéologie et tous les métiers occultes ou ésotériques. Son talent pour déceler les motivations cachées en fait un excellent recruteur ou négociateur. Les domaines du recyclage, de la transformation des déchets ou de l'écologie radicale l'attirent également par leur dimension régénératrice."
+    },
+    {
+      "q": "Le Scorpion est-il compatible avec son propre signe en amour ?",
+      "a": "Deux Scorpions ensemble créent une relation d'une intensité exceptionnelle, parfois explosive. Ils se comprennent intuitivement, partageant la même soif de vérité et de profondeur émotionnelle. Cependant, cette union peut devenir possessive à l'extrême, chacun tentant de contrôler l'autre par jalousie ou méfiance. Leur magnétisme mutuel crée une attraction fatale, mais leurs secrets respectifs peuvent générer des crises de confiance majeures. Cette combinaison fonctionne si les deux partenaires acceptent de révéler leurs zones d'ombre et transforment leur intensité en force créatrice commune plutôt qu'en lutte de pouvoir destructrice."
+    },
+    {
+      "q": "Comment le Scorpion gère-t-il le stress et les émotions difficiles ?",
+      "a": "Le Scorpion possède une capacité de régénération émotionnelle remarquable, transformant naturellement la souffrance en force intérieure. Face au stress, il tend d'abord à s'isoler pour analyser la situation en profondeur, puis mobilise ses ressources cachées avec une détermination féroce. Il évacue les tensions par l'activité physique intense ou les pratiques de transformation personnelle comme la méditation profonde. Contrairement aux autres signes, il n'évite pas la confrontation avec ses démons intérieurs mais les utilise comme carburant pour sa métamorphose. Cette alchimie émotionnelle lui permet de renaître plus fort après chaque épreuve."
+    },
+    {
+      "q": "Quelles sont les phases de vie importantes pour un natif Scorpion ?",
+      "a": "Le Scorpion vit par cycles de mort et renaissance, avec des phases de transformation radicale environ tous les sept ans. Sa première grande métamorphose survient souvent vers 28-30 ans, âge de son retour de Saturne, où il abandonne les illusions de jeunesse. La quarantaine marque généralement une renaissance spirituelle majeure, moment où il intègre pleinement sa puissance plutonienne. Chaque crise existentielle devient pour lui une opportunité d'évolution, contrairement aux autres signes qui cherchent la stabilité. Ces phases transformatrices touchent successivement sa vie émotionnelle, professionnelle puis spirituelle, créant un parcours initiatique permanent vers l'authenticité absolue et la maîtrise de ses pouvoirs cachés."
+    }
+  ]
+}

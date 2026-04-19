@@ -1,0 +1,86 @@
+{
+  "tagline": "El alma sensible del zodiaco que transforma la emoción en sabiduría",
+  "intro": "Último nacido del zodiaco, Piscis encarna la culminación del ciclo astrológico, esta síntesis última donde el individuo se disuelve en lo universal. Regidos por Neptuno, planeta de la inspiración y la ilusión, navegan entre dos aguas: la de la intuición más pura y la de la confusión más total. Signo de agua mutable, poseen esta capacidad rara de adaptarse a todas las corrientes emocionales, absorbiendo las vibraciones del entorno como una esponja espiritual. Su sensibilidad extrema no es debilidad sino poder: la de percibir lo invisible, captar lo no dicho, transformar el sufrimiento en arte. Entre empatía desbordante y huida salvadora, Piscis porta en sí esta melancolía fértil que nutre la creación y el amor incondicional.",
+  "strengths": [
+    "Intuición psíquica desarrollada notable",
+    "Empatía profunda y natural",
+    "Creatividad artística sin límites",
+    "Compasión desinteresada y sanadora",
+    "Capacidad de adaptación emocional fluida"
+  ],
+  "weaknesses": [
+    "Tendencia a huir de la realidad",
+    "Hipersensibilidad paralizante a las críticas",
+    "Dificultad para poner límites",
+    "Indecisión crónica ante las decisiones",
+    "Propensión a adicciones compensatorias"
+  ],
+  "in_love": "Piscis ama con su alma entera, buscando menos una pareja que una fusión espiritual total. Ofrece un amor sin condición ni frontera, capaz de perdonar lo imperdonable y ver la belleza donde otros perciben solo defectos. Esta generosidad emocional puede, sin embargo, llevarlos hacia relaciones desequilibradas donde dan sin medida. Huyen de la confrontación directa, prefiriendo retirarse en silencio antes que afrontar conflictos. Su romanticismo idealista los impulsa a veces a proyectar sobre el otro sus propios sueños, creando decepciones cuando la realidad alcanza la fantasía.",
+  "in_friendship": "En amistad, Piscis son esos confidentes preciosos que escuchan sin juzgar y consuelan sin moralizar. Su lealtad emocional atraviesa los años y las pruebas, aunque su presencia física pueda a veces hacerse discreta. Sobresalen en el arte de sentir cuando un amigo atraviesa un período difícil, apareciendo frecuentemente en el momento justo con las palabras precisas. Su naturaleza empática los convierte en amigos terapéuticos, capaces de absorber el sufrimiento ajeno a veces en detrimento de su propio equilibrio.",
+  "at_work": "Piscis prospera en profesiones de ayuda, arte o cuidado: psicología, medicina alternativa, música, pintura, cine. Soporta mal la jerarquía rígida y los ambientes competitivos, prefiriendo entornos colaborativos y benevolentes. Su ritmo de trabajo sigue sus ciclos emocionales: períodos de inspiración fulminante alternando con fases de retiro necesario. Su creatividad desbordante compensa frecuentemente su dificultad con tareas administrativas y gestión del tiempo, necesitando un marco estructurado para revelar todo su potencial.",
+  "best_matches": [
+    {
+      "slug": "cancer",
+      "score": 92,
+      "why": "Comprensión mutua de mundos emocionales y necesidad compartida de seguridad afectiva profunda."
+    },
+    {
+      "slug": "scorpion",
+      "score": 88,
+      "why": "Intensidad emocional común y fascinación por los misterios del alma humana."
+    },
+    {
+      "slug": "capricorne",
+      "score": 85,
+      "why": "Complementariedad perfecta entre la sensibilidad de Piscis y la estructura estabilizadora de Capricornio."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "gemeaux",
+      "why": "Oposición entre el enfoque racional de Géminis y la intuición pura de Piscis creando incomprensiones recurrentes."
+    },
+    {
+      "slug": "vierge",
+      "why": "Tensión natural entre el perfeccionismo crítico de Virgo y la sensibilidad a flor de piel de Piscis."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Amatista",
+    "animal_totem": "Delfín",
+    "flower": "Loto",
+    "color": "Azul océano",
+    "lucky_day": "Jueves",
+    "lucky_number": 7,
+    "metal": "Platino"
+  },
+  "famous_people": [
+    "Eugenio Derbez",
+    "Rihanna",
+    "Eva Longoria",
+    "Daddy Yankee",
+    "Shakira"
+  ],
+  "faq": [
+    {
+      "q": "¿Por qué Piscis es tan sensible a las energías negativas de otros?",
+      "a": "La sensibilidad extrema de Piscis proviene de su naturaleza neptuniana que disuelve las fronteras entre uno mismo y los demás. Su sistema nervioso capta naturalmente las vibraciones emocionales del entorno, funcionando como una antena psíquica permanente. Esta permeabilidad energética, don tanto como carga, los hace particularmente vulnerables en ambientes cargados negativamente. Absorben literalmente las emociones ajenas, teniendo a veces dificultad para distinguir sus propios sentimientos de los que captan. Esta hipersensibilidad necesita períodos de soledad regulares para renovarse y evacuar las energías parásitas acumuladas en contacto con otros."
+    },
+    {
+      "q": "¿Cómo puede Piscis desarrollar su creatividad natural?",
+      "a": "La creatividad de Piscis florece en el abandono y la confianza en su intuición primera. Debe crear un espacio sagrado donde la inspiración pueda circular libremente, sin juicio ni restricción técnica inmediata. El arte se convierte en su lenguaje privilegiado para expresar lo inexpresable, transformar la emoción bruta en belleza tangible. Las prácticas meditativas, la conexión con la naturaleza y la exploración de sus sueños nutren su imaginario fértil. Necesita aceptar los ciclos creativos naturales, alternando fases de inspiración intensa y períodos de gestación aparentemente estériles pero necesarios. La clave reside en la paciencia y aceptación de su ritmo único."
+    },
+    {
+      "q": "¿Un ascendente Piscis modifica la personalidad del signo solar?",
+      "a": "El ascendente Piscis envuelve la personalidad de un aura misteriosa y una sensibilidad magnética, cualquiera que sea el signo solar. Esta influencia neptuniana suaviza los ángulos demasiado agudos, crea un enfoque más intuitivo de la vida y desarrolla una empatía natural notable. La persona irradia una impresión de estar en otro lugar, conectada a dimensiones sutiles que otros no perciben. Esta configuración amplifica las capacidades artísticas y espirituales, pero puede generar cierta confusión identitaria. El ascendente Piscis hace la personalidad más adaptable y receptiva, a veces en detrimento de la afirmación clara de necesidades personales y límites necesarios."
+    },
+    {
+      "q": "¿Cuáles son las profesiones ideales para expresar la naturaleza de Piscis?",
+      "a": "Piscis sobresale en profesiones que combinan servicio a otros y expresión creativa: psicoterapia, arte-terapia, medicina holística, trabajo social, enseñanza espiritual. Los campos artísticos les ofrecen terreno de realización natural: música, danza, pintura, escritura, cine, fotografía. Su capacidad empática los convierte en excelentes cuidadores: enfermeros, veterinarios, masajistas, sanadores energéticos. Las profesiones relacionadas con agua les convienen perfectamente: oceanografía, acuicultura, termalismo. También prosperan en investigación espiritual, astrología, numerología. Lo esencial es que puedan expresar su sensibilidad y contribuir al bienestar colectivo en un ambiente benevolente y no competitivo."
+    },
+    {
+      "q": "¿Cómo puede Piscis gestionar mejor su tendencia al escape?",
+      "a": "La tendencia al escape de Piscis nace frecuentemente de una realidad demasiado dura para afrontar directamente. En lugar de luchar contra esta naturaleza, debe aprender a canalizar constructivamente esta necesidad de huida: meditación, arte, espiritualidad, viajes interiores. Se trata de crear válvulas creativas y espirituales que nutran el alma sin dañar el equilibrio vital. El anclaje por prácticas corporales suaves (yoga, natación, caminatas en naturaleza) ayuda a mantener el vínculo con lo concreto. La clave reside en aceptar su ritmo particular y crear un ambiente de vida que respete su necesidad de espacios de retiro y ensoñación, manteniendo vínculos con la realidad práctica."
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "tagline": "L'anima sensibile dello zodiaco che trasforma l'emozione in saggezza",
+  "intro": "Ultimo nato dello zodiaco, i Pesci incarnano il compimento del ciclo astrologico, questa sintesi finale dove l'individuo si dissolve nell'universale. Governati da Nettuno, pianeta dell'ispirazione e dell'illusione, navigano tra due acque: quella dell'intuizione più pura e quella della confusione più totale. Segno d'acqua mutevole, possiedono questa rara capacità di adattarsi a tutte le correnti emozionali, assorbendo le vibrazioni ambientali come una spugna spirituale. La loro sensibilità estrema non è debolezza ma potere: quello di percepire l'invisibile, di cogliere i non detti, di trasformare la sofferenza in arte. Tra empatia traboccante e fuga salvatrice, i Pesci portano in sé questa malinconia fertile che nutre la creazione e l'amore incondizionato.",
+  "strengths": [
+    "Intuizione psichica sviluppata notevole",
+    "Empatia profonda e naturale",
+    "Creatività artistica senza limiti",
+    "Compassione disinteressata e guaritrice",
+    "Capacità di adattamento emotivo fluido"
+  ],
+  "weaknesses": [
+    "Tendenza a fuggire la realtà",
+    "Ipersensibilità paralizzante alle critiche",
+    "Difficoltà a porre dei limiti",
+    "Indecisione cronica di fronte alle scelte",
+    "Propensione alle dipendenze compensatorie"
+  ],
+  "in_love": "I Pesci amano con tutta la loro anima, cercando meno un partner che una fusione spirituale totale. Offrono un amore senza condizioni né frontiere, capace di perdonare l'imperdonabile e di vedere la bellezza dove altri percepiscono solo difetti. Questa generosità emotiva può tuttavia condurli verso relazioni squilibrate dove danno senza contare. Fuggono il confronto diretto, preferendo ritirarsi in silenzio piuttosto che affrontare i conflitti. Il loro romanticismo idealista li spinge talvolta a proiettare sull'altro i propri sogni, creando delusioni quando la realtà raggiunge la fantasia.",
+  "in_friendship": "In amicizia, i Pesci sono quei confidenti preziosi che ascoltano senza giudicare e consolano senza moraleggiare. La loro lealtà emotiva attraversa gli anni e le prove, anche se la loro presenza fisica può talvolta farsi discreta. Eccellono nell'arte di sentire quando un amico attraversa un periodo difficile, apparendo spesso al momento giusto con le parole giuste. La loro natura empatica ne fa degli amici terapeutici, capaci di assorbire la sofferenza altrui talvolta a scapito del proprio equilibrio.",
+  "at_work": "I Pesci si realizzano nei mestieri dell'aiuto, dell'arte o della cura: psicologia, medicina alternativa, musica, pittura, cinema. Sopportano male la gerarchia rigida e le atmosfere competitive, preferendo gli ambienti collaborativi e benevoli. Il loro ritmo di lavoro segue i cicli emotivi: periodi di ispirazione folgorante alternati a fasi di ritiro necessario. La loro creatività traboccante compensa spesso la difficoltà con i compiti amministrativi e la gestione del tempo, necessitando di un quadro strutturante per rivelare tutto il loro potenziale.",
+  "best_matches": [
+    {
+      "slug": "cancer",
+      "score": 92,
+      "why": "Comprensione reciproca dei mondi emotivi e bisogno condiviso di sicurezza affettiva profonda."
+    },
+    {
+      "slug": "scorpion",
+      "score": 88,
+      "why": "Intensità emotiva comune e fascino per i misteri dell'anima umana."
+    },
+    {
+      "slug": "capricorne",
+      "score": 85,
+      "why": "Complementarità perfetta tra la sensibilità dei Pesci e la struttura stabilizzante del Capricorno."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "gemeaux",
+      "why": "Opposizione tra l'approccio razionale dei Gemelli e l'intuizione pura dei Pesci creando incomprensioni ricorrenti."
+    },
+    {
+      "slug": "vierge",
+      "why": "Tensione naturale tra il perfezionismo critico della Vergine e la sensibilità a fior di pelle dei Pesci."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Ametista",
+    "animal_totem": "Delfino",
+    "flower": "Loto",
+    "color": "Blu oceano",
+    "lucky_day": "Giovedì",
+    "lucky_number": 7,
+    "metal": "Platino"
+  },
+  "famous_people": [
+    "Roberto Benigni",
+    "Luciano Pavarotti",
+    "Michelangelo Buonarroti",
+    "Fabrizio De André",
+    "Cristina D'Avena"
+  ],
+  "faq": [
+    {
+      "q": "Perché i Pesci sono così sensibili alle energie negative degli altri?",
+      "a": "La sensibilità estrema dei Pesci proviene dalla loro natura nettuniana che dissolve i confini tra sé e gli altri. Il loro sistema nervoso capta naturalmente le vibrazioni emotive ambientali, funzionando come un'antenna psichica permanente. Questa permeabilità energetica, dono quanto fardello, li rende particolarmente vulnerabili negli ambienti carichi negativamente. Assorbono letteralmente le emozioni altrui, avendo talvolta difficoltà a distinguere i propri sentimenti da quelli che captano. Questa ipersensibilità necessita di periodi di solitudine regolari per ricaricarsi ed evacuare le energie parassite accumulate a contatto degli altri."
+    },
+    {
+      "q": "Come può un Pesci sviluppare la sua creatività naturale?",
+      "a": "La creatività dei Pesci si sviluppa nell'abbandono e nella fiducia nella loro intuizione prima. Devono creare uno spazio sacro dove l'ispirazione può circolare liberamente, senza giudizio né costrizioni tecniche immediate. L'arte diventa il loro linguaggio privilegiato per esprimere l'inesprimibile, trasformare l'emozione grezza in bellezza tangibile. Le pratiche meditative, la connessione alla natura e l'esplorazione dei loro sogni nutrono il loro immaginario fertile. Devono accettare i cicli creativi naturali, alternando fasi di ispirazione intensa a periodi di gestazione apparentemente sterili ma necessari. La chiave risiede nella pazienza e nell'accettazione del loro ritmo unico."
+    },
+    {
+      "q": "Un ascendente Pesci modifica la personalità del segno solare?",
+      "a": "L'ascendente Pesci avvolge la personalità di un'aura misteriosa e di una sensibilità magnetica, qualunque sia il segno solare. Questa influenza nettuniana ammorbidisce gli angoli troppo vivi, crea un approccio più intuitivo alla vita e sviluppa un'empatia naturale notevole. La persona emana un'impressione di essere altrove, connessa a dimensioni sottili che gli altri non percepiscono. Questa configurazione amplifica le capacità artistiche e spirituali, ma può anche generare una certa confusione identitaria. L'ascendente Pesci rende la personalità più adattabile e ricettiva, talvolta a scapito dell'affermazione chiara dei bisogni personali e dei limiti necessari."
+    },
+    {
+      "q": "Quali sono i mestieri ideali per esprimere la natura dei Pesci?",
+      "a": "I Pesci eccellono nelle professioni che uniscono servizio agli altri ed espressione creativa: psicoterapia, arte-terapia, medicina olistica, lavoro sociale, insegnamento spirituale. I domini artistici offrono loro un terreno di realizzazione naturale: musica, danza, pittura, scrittura, cinema, fotografia. La loro capacità di empatia ne fa degli eccellenti curatori: infermieri, veterinari, massaggiatori, operatori energetici. I mestieri legati all'acqua si adattano loro perfettamente: oceanografia, acquacoltura, termalismo. Si realizzano anche nella ricerca spirituale, l'astrologia, la numerologia. L'essenziale è che possano esprimere la loro sensibilità e contribuire al benessere collettivo in un ambiente benevolo e non competitivo."
+    },
+    {
+      "q": "Come possono i Pesci gestire meglio la loro tendenza alla fuga?",
+      "a": "La tendenza alla fuga dei Pesci nasce spesso da una realtà troppo dura da affrontare direttamente. Piuttosto che lottare contro questa natura, devono imparare a canalizzare costruttivamente questo bisogno di fuga: meditazione, arte, spiritualità, viaggi interiori. Si tratta di creare valvole creative e spirituali che nutrono l'anima senza nuocere all'equilibrio di vita. L'ancoraggio attraverso pratiche corporali dolci (yoga, nuoto, camminate nella natura) aiuta a mantenere il legame con il concreto. La chiave risiede nell'accettazione del loro ritmo particolare e nella creazione di un ambiente di vita che rispetti il loro bisogno di spazi di ritiro e di sogno, mantenendo al contempo i legami con la realtà pratica."
+    }
+  ]
+}

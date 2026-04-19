@@ -1,0 +1,86 @@
+{
+  "tagline": "Als Erstgeborener des Tierkreises bahnt der Widder mit Leidenschaft den Weg",
+  "intro": "Geboren zu dem Moment, in dem die Natur erwacht, verkörpert der Widder den ursprünglichen Lebensimpuls. Als erstes Zeichen des Tierkreises trägt er die rohe Kraft des Beginnens in sich, jene Kraft, die die Hülle des Winters aufbricht und neues Leben hervorsprudeln lässt. Mars, sein Herrscherplanet, verleiht ihm diese einzigartige Fähigkeit, Absicht in sofortige Handlung zu verwandeln. Als kardinales Feuerzeichen kennt der Widder kein Zögern: er sieht, er will, er handelt. Diese scheinbare Spontaneität verbirgt in Wahrheit eine furchtbare intuitive Intelligenz, die das Wesentliche einer Situation blitzartig erfassen kann. Weit entfernt vom Klischee des impulsiven Draufgängers besitzt der wahre Widder jene Vorahnung des Pioniers, der Wege erahnt, bevor sie beschritten sind. Er durchquert die Welt als Kundschafter, übernimmt das Risiko des Irrtums, um anderen den Weg zu bahnen.",
+  "strengths": [
+    "Mut vor unbekannten Herausforderungen",
+    "Spontane schöpferische Initiative",
+    "Natürliche inspirierende Führungsqualität",
+    "Entwaffnende und authentische Offenheit",
+    "Fähigkeit zur schnellen Regeneration"
+  ],
+  "weaknesses": [
+    "Ungeduld gegenüber Langsamkeit",
+    "Tendenz zu übermäßigem Individualismus",
+    "Schwierigkeit, Anstrengungen aufrechtzuerhalten",
+    "Leicht verletzliche Empfindlichkeit",
+    "Mangel an Diplomatie bisweilen"
+  ],
+  "in_love": "Der Widder liebt mit derselben Intensität, mit der er lebt: vollständig und sofort. Er jagt der Liebe nicht hinterher, er erkennt sie auf den ersten Blick und stürzt sich ohne Kalkül hinein. Seine Verführung wirkt durch Authentizität statt durch Strategie. Er sucht einen Partner, der Komplice seiner Impulse ist, fähig seine Spontaneität zu bewundern, ohne sie zügeln zu wollen. Der Widder flieht vor lauen Beziehungen oder subtilen Machtspielen. Er muss jene besondere Elektrizität spüren, die bestätigt, dass der andere ihm ebenbürtig ist. In der Partnerschaft bleibt er der Initiator gemeinsamer Projekte, derjenige, der das Abenteuer vorschlägt und den anderen in seinen energischen Sog hineinzieht.",
+  "in_friendship": "Die Widder-Freundschaft erkennt man an ihrer sofortigen Loyalität und ihrer bedingungslosen Großzügigkeit. Er wählt seine Freunde aus einer Herzensregung heraus und bleibt ihnen mit einer Beständigkeit treu, die bei diesem als unbeständig geltenden Zeichen überraschen kann. Der Widder pflegt seine Freundschaften durch gemeinsame Aktivitäten statt durch endlose Vertraulichkeiten. Er teilt lieber ein Abenteuer als eine Gruppentherapie. Seine Freunde schätzen seine Fähigkeit, die Dynamik der Gruppe wieder anzukurbeln, wenn die Energie nachlässt, und seine direkte Art, Konflikte zu lösen, ohne Unausgesprochenes schwären zu lassen.",
+  "at_work": "Der Widder glänzt in Pionierberufen: Unternehmer, Außendienstverkäufer, Notarzt, Innovationsprojektleiter. Er braucht Autonomie und sich erneuernde Herausforderungen, um seine volle Leistung zu entfalten. Gegenüber Autorität respektiert er jene, die sich durch Kompetenz verdient, aber weist instinktiv erstarrte Hierarchien zurück. Sein Arbeitsrhythmus funktioniert in intensiven Schüben statt durch Regelmäßigkeit. Sein beruflicher blinder Fleck: die Geduld, die für Grundlagenarbeit nötig ist, und die Verwaltung von Details, die ihn zutiefst langweilen.",
+  "best_matches": [
+    {
+      "slug": "lion",
+      "score": 92,
+      "why": "Zwei kardinale Feuer, die sich gegenseitig bewundern und eine Dynamik permanenter Überbietung schaffen"
+    },
+    {
+      "slug": "sagittaire",
+      "score": 88,
+      "why": "Perfekte Ergänzung zwischen Widder-Initiative und der expansiven Vision des Schützen"
+    },
+    {
+      "slug": "gemeaux",
+      "score": 85,
+      "why": "Kreative Opposition, wo Widder-Spontaneität die adaptive Intelligenz der Zwillinge stimuliert"
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "cancer",
+      "why": "Die defensive Vorsicht des Krebses bremst den spontanen Widder-Schwung, schafft gegenseitige Frustration"
+    },
+    {
+      "slug": "capricorne",
+      "why": "Opposition zwischen Widder-Unmittelbarkeit und strukturierter Steinbock-Geduld, unvereinbare Rhythmen"
+    }
+  ],
+  "attributes": {
+    "gemstone": "Rubin",
+    "animal_totem": "Widder",
+    "flower": "Rote Tulpe",
+    "color": "Kardinalrot",
+    "lucky_day": "Dienstag",
+    "lucky_number": 7,
+    "metal": "Eisen"
+  },
+  "famous_people": [
+    "Johann Sebastian Bach",
+    "Otto von Bismarck",
+    "Marlon Brando",
+    "Lady Gaga",
+    "Vincent van Gogh"
+  ],
+  "faq": [
+    {
+      "q": "Warum gilt der Widder als natürlicher Anführer des Tierkreises?",
+      "a": "Der Widder nimmt diese Position durch seine kardinale Feuernatur ein, kombiniert mit dem Einfluss des Mars. Als erstes Zeichen des Tierkreiszyklus besitzt er die Energie reiner Initiation, jene, die neue Dynamiken in Gang setzt. Seine Führungsqualität entspringt nicht einem Herrschaftswunsch, sondern einer natürlichen Befähigung, Gelegenheiten vor anderen zu erkennen und entsprechend zu handeln. Der Widder führt durch Beispiel und Mitreißen statt durch auferlegte Autorität. Diese Pionierstellung verleiht ihm eine besondere Verantwortung: die, Wege zu öffnen, die andere Zeichen dann entwickeln und stabilisieren können."
+    },
+    {
+      "q": "Wie beeinflusst ein Widder-Aszendent die Persönlichkeit auch bei einer anderen Sonne?",
+      "a": "Der Widder-Aszendent färbt sofort die Art, die Welt anzugehen, auch wenn die Geburtssonne diesen ersten Impuls mildert. Die Person entwickelt eine entschlossene Haltung, einen direkten Blick und die Tendenz zu schnellen Initiativen. Sie vermittelt den Eindruck, immer handlungsbereit zu sein, auch wenn ihr Sonnenzeichen sie zu mehr Besinnung drängt. Dieser Aszendent verleiht natürliches Charisma und die Fähigkeit, andere zu motivieren. Er kann innere Spannungen erzeugen, wenn die Geburtssonne Vorsicht oder Diplomatie bevorzugt, bietet aber immer jene Startenergie, die so charakteristisch für den Widder ist."
+    },
+    {
+      "q": "Welche Berufe ermöglichen es dem Widder, sein Mars-Potenzial voll auszuschöpfen?",
+      "a": "Der Widder entfaltet sich in Berufen, die Mut, Initiative und die Fähigkeit erfordern, Dringlichkeit zu bewältigen. Die Berufe der technologischen Innovation, des Unternehmertums, des investigativen Journalismus passen perfekt zu ihm. In der Medizin glänzt er in der Chirurgie oder Notfallmedizin. Leistungssport, Coaching, Ordnungskräfte oder Sicherheitsberufe entsprechen seinem marsischen Temperament. Er ist auch erfolgreich im Außendienst, im disruptiven Marketing oder jedem Bereich, der erfordert zu überzeugen und mitzureißen. Wesentlich ist, dass er schnell die Ergebnisse seines Handelns sehen und eine Autonomiespanne in seinen Entscheidungen behalten kann."
+    },
+    {
+      "q": "Kann der Widder mit dem Alter natürlich Geduld entwickeln?",
+      "a": "Die Geduld des Widders entwickelt sich tatsächlich mit der Reife, nimmt aber eine besondere Form an. Statt passives Warten zu lernen, entwickelt der reife Widder aktive Geduld: er versteht, dass bestimmte Ziele Zeit brauchen und lernt, sein Handeln in Etappen zu strukturieren. Die Erfahrung lehrt ihn, seine marsische Energie auf längerfristige Projekte zu lenken. Er wird nicht geduldig im traditionellen Sinne, erwirbt aber eine strategische Sicht, die ihm erlaubt, notwendige Verzögerungen zu akzeptieren. Diese Entwicklung geschieht oft durch berufliche oder persönliche Erfahrungen, die ihm den Wert dauerhafter Verwirklichungen zeigen."
+    },
+    {
+      "q": "Wie kann der Widder seine Feuernatur mit kontemplativeren Partnern harmonisieren?",
+      "a": "Die Harmonisierung gelingt durch gegenseitige Anerkennung der verschiedenen Rhythmen und die Schaffung jeweiliger Räume. Der Widder muss lernen, die nachdenkliche Tiefe seines Partners als Ergänzung zu seiner Spontaneität zu schätzen, nicht als Bremse. Im Gegenzug kann der kontemplative Partner aus dem Widder-Schwung revitalisierende Energie schöpfen. Der Schlüssel liegt im Wechsel: gemeinsame Aktionsmomente, die der Widder initiiert, Pausen- und Besinnungsmomente, die der andere anleitet. Diese Ergänzung bereichert beide Teile, vorausgesetzt jeder respektiert die Funktionsweise des anderen, ohne sie zu verändern zu suchen. Die Beziehung wird dann zu einem dynamischen Gleichgewicht zwischen Schwung und Tiefe."
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "tagline": "The architect of the tangible who transforms dreams into concrete reality",
+  "intro": "Taurus embodies the creative power of Venus anchored in matter. Born in the heart of spring, when nature unfolds its fertility, it transforms the pioneering drive of Aries into lasting work. This fixed Earth sign possesses the unique ability to give form to ideas, offering them shape and substance. Ruled by Venus, it seeks beauty in the tangible, harmony in the concrete. Its strength lies in this particular alchemy that unites sensuality and pragmatism, aesthetics and efficiency. Taurus advances with the patience of one who builds for eternity, knowing that the most beautiful cathedrals are born stone by stone. Its relationship with time differs: where others rush, it cultivates, conscious that true wealth is built slowly but surely.",
+  "strengths": [
+    "Unwavering perseverance in the face of obstacles",
+    "Refined and authentic aesthetic sense",
+    "Creative and constructive pragmatism",
+    "Unwavering loyalty to loved ones",
+    "Reassuring emotional stability"
+  ],
+  "weaknesses": [
+    "Excessive resistance to necessary change",
+    "Possessive tendency in relationships",
+    "Sometimes counterproductive stubbornness",
+    "Sometimes excessive material attachment",
+    "Decision-making slowness that hinders action"
+  ],
+  "in_love": "Taurus loves with all five senses, seeking physical as well as emotional communion. It courts with patience, offering stability and security to its chosen one. Its Venusian sensuality expresses itself through shared pleasures: delicious meals, massages, cozy moments. It flees emotional instability and superficial relationships, preferring to build deep and lasting intimacy. Its jealousy, sometimes possessive, reveals its need for emotional security. Once committed, it becomes the most reliable partner in the zodiac, creating a harmonious home where beauty and comfort reign.",
+  "in_friendship": "Taurus friendship is built on duration and reciprocity. This sign favors a small circle of faithful friends rather than an extensive network. It expresses tenderness through concrete gestures: gourmet invitations, thoughtful gifts, constant presence in difficult moments. Its legendary loyalty makes it a privileged confidant, capable of keeping secrets and offering pragmatic advice. It maintains bonds through regular contact and the creation of shared traditions.",
+  "at_work": "Taurus excels in careers related to beauty, craftsmanship, gastronomy, or finance. Its relationship with authority remains respectful but independent: it prefers recognition of its skills to hierarchical honors. Its methodical and regular work pace can unsettle frantic environments. Its professional blind spot lies in its difficulty adapting quickly to new tools or methods, favoring proven techniques over risky innovations.",
+  "best_matches": [
+    {
+      "slug": "vierge",
+      "score": 92,
+      "why": "Common Earth element and Venus-Mercury complementarity create perfect alchemy between sensuality and precision."
+    },
+    {
+      "slug": "capricorne",
+      "score": 88,
+      "why": "Earth trine favors the joint construction of a stable and prosperous future."
+    },
+    {
+      "slug": "cancer",
+      "score": 85,
+      "why": "Creative sextile between Venus and Moon harmonizes material and emotional security."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "lion",
+      "why": "Fixed square Venus-Sun creates tensions between Taurus need for simplicity and Leo theatricality."
+    },
+    {
+      "slug": "verseau",
+      "why": "Fixed opposition Venus-Uranus generates conflicts between Taurus tradition and Aquarian revolution."
+    }
+  ],
+  "attributes": {
+    "gemstone": "emerald",
+    "animal_totem": "bull",
+    "flower": "rose",
+    "color": "tender green",
+    "lucky_day": "Friday",
+    "lucky_number": 6,
+    "metal": "copper"
+  },
+  "famous_people": [
+    "Queen Elizabeth II",
+    "George Clooney",
+    "Adele",
+    "Robert Pattinson",
+    "Gigi Hadid"
+  ],
+  "faq": [
+    {
+      "q": "Why is Taurus so attached to habits and routines?",
+      "a": "The fixed nature of Taurus, combined with its Venusian rulership, creates a deep need for stability and harmony. Its routines are not rigidity but wellness rituals that allow it to cultivate daily beauty. This regularity structures its inner world and provides the necessary markers to express its creativity. Unlike mutable signs that flourish in change, Taurus draws strength from constancy, transforming each repeated gesture into refined art of living."
+    },
+    {
+      "q": "How can a Taurus overcome its natural resistance to change?",
+      "a": "The key lies in associating change with tangible and aesthetic benefits. Taurus will more readily accept evolution if it can concretely visualize the improvements it brings to its comfort or life's beauty. It needs time to tame novelty, proceeding through gradual steps rather than brutal revolutions. Its Venusian nature responds favorably to harmonious transitions that respect its natural rhythm and preserve what is dear to it in the old system."
+    },
+    {
+      "q": "What is the influence of the ascendant on a Taurus personality?",
+      "a": "The ascendant modulates the expression of Taurus sensuality and pragmatism. A Gemini ascendant will bring more mental mobility and intellectual curiosity, while a Scorpio ascendant will intensify the passionate and mysterious dimension. A Fire ascendant (Aries, Leo, Sagittarius) will energize Taurus energy, making it more expressive and enterprising. An Air ascendant will favor artistic and social expression of Venus, while a Water ascendant will amplify the intuition and emotional receptivity of the sun sign."
+    },
+    {
+      "q": "What careers allow Taurus to fully express its natural talents?",
+      "a": "Taurus flourishes in all domains where beauty and expertise unite: interior design, jewelry, gastronomy, viticulture, art crafts. Its Venusian connection naturally destines it for artistic careers, from sculpture to music. In finance, its practical sense and patience make it an excellent wealth manager. Real estate, horticulture, and perfumery also correspond to its nature. It also excels in wellness support: massage therapy, aesthetics, lifestyle coaching."
+    },
+    {
+      "q": "How does Taurus express its spirituality and connection to the sacred?",
+      "a": "Taurus spirituality passes through incarnation and celebration of divine beauty in matter. More contemplative than mystical, it finds the sacred in nature, gardens, and artworks that elevate the soul. Its spiritual practice favors sensory rituals: meditation in beautiful settings, singing, sacred dance, artistic creation as prayer. It honors the divine through gratitude for earthly abundance and preservation of the world's beauty. Its faith is nourished by ancient traditions and expressed through concrete acts of generosity and environmental protection."
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "tagline": "Le bâtisseur patient qui gravit la montagne de ses ambitions",
+  "intro": "Le Capricorne incarne l'archétype du sage constructeur, celui qui transforme les rêves en réalité tangible. Né au cœur de l'hiver, sous la gouverne de Saturne, il puise sa force dans la patience et la persévérance. Cette terre cardinale possède l'art rare de débuter des projets durables, d'initier des structures qui traverseront le temps. Contrairement aux autres signes cardinaux qui foncent tête baissée, le Capricorne avance méthodiquement, chaque pas calculé vers le sommet qu'il s'est fixé. Sa sagesse naturelle lui vient de cette compréhension intime du temps : il sait que les plus belles réalisations demandent des années, parfois des décennies. Cette alchimie entre ambition et discipline fait de lui l'architecte du zodiaque, capable de matérialiser des visions que d'autres jugeraient impossibles.",
+  "strengths": [
+    "Persévérance à toute épreuve",
+    "Sens aigu des responsabilités",
+    "Vision stratégique long terme",
+    "Intégrité et fiabilité naturelle",
+    "Capacité d'organisation remarquable"
+  ],
+  "weaknesses": [
+    "Rigidité face au changement",
+    "Tendance au pessimisme chronique",
+    "Difficulté à exprimer émotions",
+    "Perfectionnisme parfois paralysant",
+    "Méfiance excessive envers autrui"
+  ],
+  "in_love": "Le Capricorne aime comme il vit : avec sérieux et engagement total. Il ne se lance pas dans des aventures éphémères mais cherche un partenaire avec qui construire un véritable empire affectif. Sa cour est patiente, réfléchie, jalonnée de preuves concrètes plutôt que de grandes déclarations. Il fuit l'instabilité émotionnelle et les relations superficielles, préférant une intimité qui se deepe avec le temps. En couple, il devient le pilier solide sur lequel son partenaire peut s'appuyer, offrant sécurité matérielle et émotionnelle. Cependant, il doit apprendre à exprimer sa tendresse autrement que par les actes.",
+  "in_friendship": "En amitié, le Capricorne cultive des liens durables et authentiques. Il préfère quelques amis fidèles à un large cercle social, privilégiant la qualité à la quantité. Sa loyauté est légendaire : une fois qu'il vous a accordé sa confiance, elle ne se dément jamais. Il manifeste son affection par des gestes concrets, des conseils avisés et une présence constante dans les moments difficiles. Cependant, il peut parfois sembler distant ou moralisateur, car il peine à comprendre les légèretés de ses proches.",
+  "at_work": "Le Capricorne excelle dans tous les métiers demandant rigueur, patience et vision à long terme : architecture, finance, droit, gestion d'entreprise, politique. Il gravit naturellement les échelons hiérarchiques grâce à son sérieux et sa fiabilité. Son rapport à l'autorité est complexe : il la respecte mais aspire à l'exercer selon ses propres valeurs. Son rythme de travail est régulier et soutenu, capable d'efforts prolongés que d'autres trouveraient épuisants. Son angle mort ? La tendance à sous-estimer l'importance des relations humaines au profit de l'efficacité pure.",
+  "best_matches": [
+    {
+      "slug": "taureau",
+      "score": 92,
+      "why": "Même élément terre, même goût pour la stabilité et les projets concrets à long terme."
+    },
+    {
+      "slug": "vierge",
+      "score": 88,
+      "why": "Complicité intellectuelle et pratique, vision partagée de l'excellence et de l'organisation méthodique."
+    },
+    {
+      "slug": "poissons",
+      "score": 85,
+      "why": "Complémentarité parfaite entre structure capricornienne et créativité poissons, opposition enrichissante."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "belier",
+      "why": "Tension entre l'impulsivité bélier et la prudence capricornienne, rythmes de décision incompatibles."
+    },
+    {
+      "slug": "balance",
+      "why": "Opposition carré difficile entre l'indécision balance et l'autorité naturelle du Capricorne."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Grenat",
+    "animal_totem": "Chèvre de montagne",
+    "flower": "Pensée",
+    "color": "Brun terre",
+    "lucky_day": "Samedi",
+    "lucky_number": 8,
+    "metal": "Plomb"
+  },
+  "famous_people": [
+    "Martin Luther King",
+    "Muhammad Ali",
+    "Kate Middleton",
+    "Stephen Hawking",
+    "Denzel Washington"
+  ],
+  "faq": [
+    {
+      "q": "Comment reconnaître un Capricorne ascendant et quelles sont ses particularités ?",
+      "a": "Un Capricorne ascendant se reconnaît à sa prestance naturelle, son allure sérieuse même jeune, et sa tendance à paraître plus âgé que son âge. Physiquement, il présente souvent des traits angulaires, une ossature marquée et un regard perçant. Cette combinaison accentue les qualités saturnienne : sens des responsabilités précoce, maturité dans l'approche des relations, besoin de reconnaissance sociale. L'ascendant Capricorne tempère les excès du signe solaire, apportant discipline et structure même aux signes les plus fantaisistes. Ces natifs gravissent méthodiquement l'échelle sociale, construisant leur réputation pierre par pierre. Leur défi principal reste d'éviter la rigidité excessive et de cultiver la spontanéité."
+    },
+    {
+      "q": "Quels sont les métiers idéaux pour un natif du Capricorne selon l'astrologie traditionnelle ?",
+      "a": "L'astrologie traditionnelle associe le Capricorne aux métiers de pouvoir et de construction : architecture, ingénierie, direction d'entreprise, politique, magistrature, banque et finance. Sous l'influence de Saturne, ce signe excelle dans tout ce qui demande patience, rigueur et vision à long terme. Les professions liées à l'immobilier, à l'administration, à la gestion de patrimoine lui conviennent parfaitement. Il réussit également dans l'enseignement, la recherche scientifique et les métiers artisanaux de prestige. Son besoin de reconnaissance le pousse vers des postes à responsabilités où il peut exercer son autorité naturelle. L'entrepreneuriat lui réussit, à condition qu'il s'entoure d'équipes complémentaires pour pallier sa tendance au contrôle excessif."
+    },
+    {
+      "q": "Pourquoi le Capricorne et le Cancer forment-ils une opposition astrologique si particulière ?",
+      "a": "L'opposition Capricorne-Cancer représente l'axe fondamental entre structure et émotion, ambition publique et intimité privée. Le Capricorne, maîtrisé par Saturne, incarne la conquête du monde extérieur, l'autorité paternelle, la réussite sociale mesurable. Le Cancer, gouverné par la Lune, symbolise le foyer, la maternité, les racines émotionnelles. Cette polarité crée une tension créative : chaque signe a besoin de son opposé pour s'équilibrer. Le Capricorne doit apprendre la vulnérabilité cancérienne pour humaniser son ambition, tandis que le Cancer gagne à adopter la structure capricornienne pour matérialiser ses rêves. En relation, cette opposition peut générer une complémentarité profonde ou des incompréhensions majeures selon le niveau de maturité des natifs."
+    },
+    {
+      "q": "Comment évolue la personnalité Capricorne avec l'âge selon les cycles saturniens ?",
+      "a": "La personnalité Capricorne suit les grands cycles de Saturne, planète maîtresse qui structure l'existence par phases de 7 et 29 ans. Jeune, le Capricorne paraît souvent plus mûr que son âge, portant déjà le poids des responsabilités. Vers 29-30 ans, au premier retour de Saturne, il connaît une remise en question profonde de ses ambitions, souvent accompagnée d'une restructuration de sa vie professionnelle. La quarantaine marque généralement son apogée social et professionnel. Paradoxalement, c'est en vieillissant que le Capricorne se libère, devenant plus spontané et enjoué. Saturne ayant fait son œuvre disciplinaire, les natifs âgés de ce signe révèlent souvent un humour caché et une sagesse bienveillante, récoltant enfin les fruits de leurs efforts patients."
+    },
+    {
+      "q": "Quelle est la différence entre un Capricorne décanat 1, 2 et 3 en astrologie ?",
+      "a": "En astrologie traditionnelle, chaque décanat capricornien révèle des nuances importantes. Le premier décanat (22-31 décembre), sous double influence saturnienne, incarne le Capricorne pur : ambition maximale, sens aigu de la hiérarchie, mais aussi risque de rigidité. Le deuxième décanat (1-10 janvier), coloré par Vénus, développe plus de charme social et d'aptitude artistique, tempérant la sévérité naturelle du signe. Le troisième décanat (11-19 janvier), marqué par Mercure, gagne en intelligence stratégique et capacité de communication, devenant plus adaptable et diplomate. Ces variations expliquent pourquoi certains Capricornes semblent plus sombres et autoritaires tandis que d'autres manifestent davantage de grâce sociale ou d'habileté intellectuelle, tout en conservant l'ossature saturnienne commune du signe."
+    }
+  ]
+}

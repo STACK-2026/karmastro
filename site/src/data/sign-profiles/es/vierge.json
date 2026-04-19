@@ -1,0 +1,86 @@
+{
+  "tagline": "El alquimista de lo cotidiano que transforma el caos en armonía perfecta",
+  "intro": "Virgo encarna la inteligencia práctica al servicio de la perfección terrenal. Gobernada por Mercurio en su dimensión analítica, representa la etapa zodiacal donde la energía se refina hasta la excelencia. Signo mutable de tierra, Virgo domina el arte de la adaptación mediante el mejoramiento constante. Atraviesa el mundo con una agudeza notable, distinguiendo lo esencial de lo superfluo, transformando lo burdo en puro. Su genio reside en esta capacidad de percibir los detalles que otros pasan por alto, para luego organizarlos en un conjunto coherente. Lejos del perfeccionismo estéril, Virgo cultiva un enfoque quirúrgico de la existencia: corta donde hay que sanar, ajusta donde hay que armonizar. Su temperamento estacional de final de verano le confiere esta sabiduría de las cosechas, sabiendo que cada grano cuenta para alimentar a la humanidad.",
+  "strengths": [
+    "Discernimiento analítico formidable",
+    "Entrega desinteresada auténtica",
+    "Perfeccionamiento metódico constante",
+    "Eficacia operacional extraordinaria",
+    "Humildad constructiva natural"
+  ],
+  "weaknesses": [
+    "Crítica excesiva paralizante",
+    "Perfeccionismo ansiógeno crónico",
+    "Modestia que oculta talentos",
+    "Control compulsivo de detalles",
+    "Pesimismo preventivo sistemático"
+  ],
+  "in_love": "Virgo ama en sordina, con una intensidad discreta pero profunda. No se desborda en declaraciones apasionadas, prefiriendo demostrar sus sentimientos a través de mil atenciones cotidianas. Su amor se manifiesta en el mejoramiento concreto de la vida en común: anticipa necesidades, organiza la felicidad doméstica, crea un refugio de bienestar. Busca una pareja a quien pueda respetar intelectualmente, alguien confiable y constructivo. Virgo huye de la inestabilidad emocional y las pasiones destructivas. Necesita tiempo para confiar, pero una vez comprometida, su fidelidad se vuelve legendaria. Su desafío amoroso: aceptar la imperfección del otro sin querer corregirlo.",
+  "in_friendship": "La amistad de Virgo se construye en la duración y la constancia. No acumula relaciones superficiales sino que cultiva algunos vínculos privilegiados con cuidado meticuloso. Amiga de una lealtad a toda prueba, siempre estará presente en los momentos difíciles, armada de consejos prácticos y soluciones concretas. Mantiene el vínculo mediante gestos atentos, recordando los detalles importantes de la vida de sus allegados. Su generosidad se expresa en la acción más que en las palabras: será quien ayude concretamente, quien organice, quien facilite la vida de los demás.",
+  "at_work": "Virgo sobresale en las profesiones de servicio, salud, análisis y organización. Contabilidad, medicina, edición, investigación, artesanía de precisión le convienen perfectamente. Respeta la jerarquía cuando esta es competente pero no duda en señalar las disfunciones. Su ritmo de trabajo es regular y sostenido, privilegiando la calidad sobre la cantidad. Su punto ciego profesional: puede perderse en los detalles y perder de vista el objetivo global. También tiende a subestimar sus contribuciones y dejar que otros se atribuyan el mérito de su trabajo minucioso.",
+  "best_matches": [
+    {
+      "slug": "taureau",
+      "score": 92,
+      "why": "Dos signos de tierra que comparten amor por la estabilidad y los placeres simples, complementariedad perfecta entre perfeccionismo y paciencia."
+    },
+    {
+      "slug": "capricorne",
+      "score": 88,
+      "why": "Alianza tierra-tierra que funciona sobre la ambición común y el rigor compartido, respeto mutuo por la competencia y la excelencia."
+    },
+    {
+      "slug": "scorpion",
+      "score": 85,
+      "why": "Atracción de extremos entre pureza virginal e intensidad plutoniana, fascinación mutua por la transformación y la sanación."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "gemeaux",
+      "why": "Dos expresiones opuestas de Mercurio que se confrontan: la precisión Virgo frente a la dispersión Géminis, exhaustividad contra versatilidad."
+    },
+    {
+      "slug": "sagittaire",
+      "why": "Oposición fundamental entre minuciosidad terrenal y visión de conjunto jupiteriana, pragmatismo contra idealismo filosófico."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Zafiro",
+    "animal_totem": "Abeja",
+    "flower": "Lavanda",
+    "color": "Azul marino",
+    "lucky_day": "Miércoles",
+    "lucky_number": 7,
+    "metal": "Platino"
+  },
+  "famous_people": [
+    "Salma Hayek",
+    "Paulo Coelho",
+    "Gloria Estefan",
+    "Alejandro Sanz",
+    "Michael Jackson"
+  ],
+  "faq": [
+    {
+      "q": "¿Por qué los Virgo son tan perfeccionistas?",
+      "a": "El perfeccionismo de Virgo es incomprendido porque nace de un amor auténtico por la excelencia, no de una voluntad de dañar. Gobernado por Mercurio analítico, Virgo percibe naturalmente las mejoras posibles donde otros ya ven perfección. Esta agudeza puede volverse problemática cuando se aplica compulsivamente a otros, pero es fundamentalmente constructiva. El desafío consiste en canalizar esta exigencia hacia ámbitos donde sea apreciada: artesanía, medicina, investigación. Virgo debe aprender a distinguir lo que merece su precisión quirúrgica de lo que puede permanecer imperfecto sin consecuencias."
+    },
+    {
+      "q": "¿Cómo puede Virgo manejar su ansiedad y pesimismo?",
+      "a": "La ansiedad de Virgo proviene de su capacidad para anticipar todos los problemas potenciales, cualidad valiosa que se vuelve incapacitante cuando lo invade todo. Esta hipervigilancia mercuriana requiere ejercicios de centramiento: meditación, jardinería, artesanía manual que tranquilicen la mente analítica. Virgo debe cultivar la confianza desarrollando rutinas tranquilizadoras y celebrando sus éxitos concretos. Llevar un diario de logros diarios le ayuda a contrarrestar su tendencia a enfocarse en las imperfecciones. La actividad física regular ancla su energía mutable y disipa las tensiones mentales acumuladas."
+    },
+    {
+      "q": "¿Qué significa tener ascendente en Virgo?",
+      "a": "El ascendente Virgo colorea la presentación social con una apariencia organizada, discreta y competente, cualquiera que sea la naturaleza profunda del signo solar. Esta persona desarrolla un enfoque metódico de los nuevos entornos, privilegiando la observación antes que la acción. El ascendente Virgo impulsa a cuidar la apariencia sin ostentación, a desarrollar habilidades prácticas valoradas socialmente. Puede templar los excesos de un signo de fuego imponiendo más reflexión, o frenar la espontaneidad creativa de un signo de aire por exceso de prudencia. Esta influencia mercuriana refina la inteligencia social y desarrolla el arte de hacerse indispensable por su utilidad concreta."
+    },
+    {
+      "q": "¿En qué trabajos destacan más los Virgo?",
+      "a": "Los Virgo brillan en todas las profesiones que requieren precisión, análisis y servicio: medicina especializada, investigación científica, edición, contabilidad, artesanía de lujo, nutrición, farmacia. Su inteligencia mercuriana excele en campos técnicos donde cada detalle cuenta. También tienen éxito notable en asistencia directiva, organización de eventos, traducción, crítica literaria. Su entrega natural los lleva hacia profesiones de cuidado: fisioterapia, psicología, trabajo social. En emprendimiento, destacan en servicios de calidad y productos artesanales. Su desafío profesional: aprender a valorar sus habilidades y negociar su justo reconocimiento, a menudo subestimado por su propia modestia."
+    },
+    {
+      "q": "¿Cómo desarrollar la espiritualidad siendo Virgo?",
+      "a": "La espiritualidad de Virgo florece en la práctica concreta más que en la abstracción mística. Encuentra lo sagrado en el servicio desinteresado, el perfeccionamiento personal, la atención a los detalles de la creación. Las prácticas que le convienen: jardinería meditativa, artesanía sagrada, yoga preciso, estudio profundo de textos espirituales. Virgo desarrolla su dimensión espiritual cuidando a otros, preservando la naturaleza, transmitiendo saberes ancestrales. Comprende que la perfección divina se manifiesta en lo infinitamente pequeño: cada gesto justo, cada atención delicada se vuelve un acto de devoción. Su camino espiritual pasa por la purificación gradual de sus intenciones y la alineación entre sus valores profundos y sus acciones cotidianas."
+    }
+  ]
+}

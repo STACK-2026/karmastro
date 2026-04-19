@@ -1,0 +1,86 @@
+{
+  "tagline": "L'avventuriero filosofo che trasforma ogni orizzonte in nuova saggezza",
+  "intro": "Il Sagittario incarna lo slancio gioviano verso l'espansione e la comprensione del mondo. Nato alla fine dell'autunno, quando la natura si prepara all'inverno, porta in sé questa urgenza di cogliere gli ultimi frutti dell'esperienza prima del letargo. Il suo fuoco mutevole non brucia per conquistare come l'Ariete, né per irradiare come il Leone, ma per illuminare sentieri sconosciuti. Giove, suo signore, gli conferisce questa sete di assoluto che lo spinge a superare i confini: geografici, intellettuali, spirituali. Il Sagittario non si accontenta mai dello status quo. Questiona, esplora, insegna, sempre alla ricerca di quella verità universale che darebbe senso all'esistenza. La sua intelligenza sintetica gli permette di collegare i punti sparsi dell'esperienza umana per estrarne una filosofia personale, generosa e ottimista.",
+  "strengths": [
+    "Ottimismo naturale e contagioso",
+    "Visione globale e sintetica",
+    "Franchezza disarmante e diretta",
+    "Adattabilità di fronte ai cambiamenti",
+    "Generosità intellettuale e spirituale"
+  ],
+  "weaknesses": [
+    "Impazienza verso i dettagli",
+    "Tendenza alla dispersione",
+    "Giudizi talvolta categorici",
+    "Difficoltà ad ancorarsi durevolmente",
+    "Eccesso di franchezza ferente"
+  ],
+  "in_love": "Il Sagittario ama con lo slancio di chi scopre un nuovo continente. Cerca un complice d'avventura piuttosto che un nido accogliente, qualcuno che condivida la sua curiosità del mondo e accetti i suoi bisogni di spazio. La sua seduzione passa attraverso i racconti di viaggi, i dibattiti filosofici, i progetti di evasione. Fugge la possessività e le routine soffocanti, preferendo una complicità basata sulla libertà reciproca. Il suo amore cresce nel movimento e nella scoperta condivisa. Quando si impegna, è con quella generosità gioviana che vuole fare dell'altro il suo migliore compagno di esplorazione, sia essa geografica o spirituale.",
+  "in_friendship": "L'amicizia sagittariana si nutre di scambi stimolanti ed escapade condivise. Questo nativo colleziona relazioni autentiche, preferendo pochi veri complici a un'ampia rete superficiale. Ispira con il suo entusiasmo, conforta con il suo ottimismo, ma può anche urtare con la sua franchezza. Leale senza essere possessivo, mantiene il legame anche a distanza, sempre pronto a riprendere la conversazione dove si era fermata. La sua amicizia si caratterizza per quella generosità intellettuale che spinge l'altro a superare i propri limiti.",
+  "at_work": "Il Sagittario eccelle nei mestieri che uniscono movimento e trasmissione: insegnamento, giornalismo, commercio internazionale, turismo, editoria. Ha bisogno di autonomia e sopporta mal la microgestione. Il suo ritmo di lavoro segue le sue ispirazioni, con fasi di intensa creatività che si alternano a momenti di riflessione. Di fronte all'autorità, preferisce la cooperazione alla sottomissione. Il suo punto cieco professionale risiede nella tendenza a trascurare i compiti ripetitivi e amministrativi, essenziali ma poco stimolanti per il suo temperamento esploratore.",
+  "best_matches": [
+    {
+      "slug": "belier",
+      "score": 92,
+      "why": "Due fuochi che si alimentano reciprocamente nell'azione e nell'avventura, condividendo l'amore per la sfida e l'indipendenza."
+    },
+    {
+      "slug": "lion",
+      "score": 88,
+      "why": "Complicità naturale tra due segni di fuoco generosi, il Leone ammira la libertà sagittariana, il Sagittario rispetta la nobiltà leonina."
+    },
+    {
+      "slug": "balance",
+      "score": 85,
+      "why": "L'equilibrio bilancino tempera lo slancio sagittariano mentre l'ottimismo del Sagittario dinamizza la riflessione bilancina."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "vierge",
+      "why": "L'approccio metodico verginiano entra in tensione con lo slancio spontaneo sagittariano, creando incomprensioni sul tempo di vita."
+    },
+    {
+      "slug": "poissons",
+      "why": "L'intuizione diffusa piscina disorienta la ricerca di verità diretta sagittariana, i loro modi di percepire il mondo si oppongono strutturalmente."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Turchese",
+    "animal_totem": "Cavallo",
+    "flower": "Narciso",
+    "color": "Blu oltremare",
+    "lucky_day": "Giovedì",
+    "lucky_number": 9,
+    "metal": "Stagno"
+  },
+  "famous_people": [
+    "Monica Bellucci",
+    "Gianni Versace",
+    "Frank Sinatra",
+    "Walt Disney",
+    "Brad Pitt"
+  ],
+  "faq": [
+    {
+      "q": "Perché il Sagittario ha tanto bisogno di libertà in amore?",
+      "a": "Giove, signore del Sagittario, governa l'espansione e la crescita. Questo nativo percepisce istintivamente l'amore come un territorio di esplorazione reciproca piuttosto che come una fortezza da difendere. La sua natura di fuoco mutevole lo spinge a evolvere costantemente, e teme che legami troppo stretti limitino questa evoluzione naturale. Questa ricerca di libertà non tradisce una mancanza di impegno, ma piuttosto il bisogno vitale di preservare il suo slancio creatore. Nell'astrologia tradizionale, si considera che il Sagittario ami attraverso il prisma dell'avventura condivisa, cercando un partner complice piuttosto che un compagno possessivo. Il suo amore cresce nello spazio e nella fiducia reciproca."
+    },
+    {
+      "q": "Come influenza l'ascendente Sagittario sulla personalità apparente?",
+      "a": "L'ascendente Sagittario dà una prima impressione di ottimismo contagioso e curiosità benevola. Questi nativi abbracciano il mondo con un sorriso spontaneo e una tendenza naturale a filosofeggiare sul loro vissuto. I loro gesti sono ampi, il loro portamento rilassato, riflettendo questa fiducia gioviana nella vita. Pongono facilmente domande, raccontano volentieri le loro esperienze, creando rapidamente un'atmosfera distesa. Questa influenza può temperare un segno solare più introverso dandogli una facciata più socievole, o amplificare l'estroversione di un segno già espansivo. L'ascendente Sagittario colora la percezione del mondo con un filtro ottimista, spingendo a vedere opportunità piuttosto che ostacoli in ogni nuova situazione."
+    },
+    {
+      "q": "Quali professioni permettono al Sagittario di esprimere il suo potenziale?",
+      "a": "Il Sagittario si realizza nelle professioni che combinano movimento, trasmissione e apertura culturale. L'insegnamento superiore, la ricerca, il giornalismo internazionale corrispondono perfettamente al suo bisogno di sintesi e condivisione. I mestieri del viaggio, del commercio estero, della traduzione sfruttano il suo gusto per gli scambi interculturali. Nell'editoria, nella filosofia, nella teologia può sviluppare la sua capacità di collegare concetti apparentemente disparati. Le professioni legali, particolarmente il diritto internazionale, attraggono anche questo segno amante della giustizia. La sua sfida professionale consiste nell'evitare la dispersione scegliendo un campo abbastanza vasto da nutrire la sua curiosità permettendogli di sviluppare un'expertise riconosciuta."
+    },
+    {
+      "q": "Sagittario e Gemelli sono davvero incompatibili nonostante l'opposizione zodiacale?",
+      "a": "L'opposizione Sagittario-Gemelli illustra perfettamente il principio astrologico secondo cui i segni opposti possono sia completarsi magnificamente, sia creare tensioni permanenti. Entrambi sono mutevoli e intellettualmente curiosi, ma i loro approcci differiscono radicalmente. I Gemelli collezionano informazioni per pura curiosità, mentre il Sagittario cerca di sintetizzarle in una visione coerente del mondo. Questa differenza può creare sia una complementarità arricchente (l'uno portando i dettagli, l'altro la prospettiva globale), sia malintesi ricorrenti sulle loro priorità rispettive. Il successo di questa combinazione dipende largamente dalla loro capacità reciproca di rispettare queste differenze di approccio senza cercare di convertire l'altro al proprio metodo."
+    },
+    {
+      "q": "Come può il Sagittario sviluppare la sua spiritualità in modo autentico?",
+      "a": "La spiritualità sagittariana si nutre naturalmente della ricerca di senso e della filosofia comparata. Questo segno trova il suo cammino spirituale esplorando diverse tradizioni, viaggiando verso luoghi sacri, studiando i testi fondatori di varie culture. Il suo approccio rimane intellettuale e sintetico piuttosto che mistico o meditativo. Il Sagittario sviluppa la sua dimensione spirituale insegnando, condividendo le sue scoperte, creando ponti tra le saggezze del mondo. I pellegrinaggi, i ritiri filosofici, lo studio delle lingue antiche nutrono la sua anima quanto i dibattiti metafisici. La sua spiritualità matura quando riesce a trasformare le sue convinzioni personali in saggezza trasmissibile, diventando così la guida naturale che è chiamato a essere dalla sua natura gioviana."
+    }
+  ]
+}

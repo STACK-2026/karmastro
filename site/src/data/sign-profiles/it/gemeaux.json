@@ -1,0 +1,86 @@
+{
+  "tagline": "L'esploratore di idee che fa danzare le parole e i legami",
+  "intro": "Terzo segno dello zodiaco, i Gemelli incarnano il risveglio intellettuale della primavera che volge al termine. Governato da Mercurio, messaggero degli dei, questo segno d'aria mutevole trasforma ogni incontro in occasione per imparare e trasmettere. Dove l'Ariete si lancia e il Toro consolida, i Gemelli stabiliscono le connessioni. Il loro genio risiede nella capacità di tessere legami tra persone e idee, di tradurre e divulgare i concetti più complessi. Questa versatilità naturale ne fa il grande comunicatore dello zodiaco, colui che anima gli scambi e nutre la curiosità collettiva. La sua natura duale, simboleggiata dai gemelli, gli permette di abbracciare più prospettive simultaneamente, rendendolo un mediatore nato ma anche un essere in perpetua ricerca di equilibrio tra le sue molteplici sfaccettature.",
+  "strengths": [
+    "Adattabilità intellettuale straordinaria",
+    "Comunicazione naturale e persuasiva",
+    "Curiosità insaziabile e vivificante",
+    "Capacità di sintesi eccezionale",
+    "Versatilità in tutti i campi"
+  ],
+  "weaknesses": [
+    "Dispersione cronica delle energie",
+    "Superficialità per eccesso di interessi",
+    "Instabilità emotiva e decisionale",
+    "Tendenza alla manipolazione verbale",
+    "Difficoltà ad approfondire durevolmente"
+  ],
+  "in_love": "In amore, i Gemelli seducono prima con la mente che con il cuore. Cercano un complice intellettuale con cui condividere le proprie scoperte e i propri infiniti interrogativi. La routine sentimentale li spaventa più della solitudine, hanno bisogno di stimolazione costante e di conversazioni arricchenti per mantenere viva la fiamma. Il loro approccio ludico al romanticismo può disorientare le anime più serie, ma nasconde una ricerca sincera di comprensione reciproca. Fuggono la possessività e valorizzano l'indipendenza nella coppia, preferendo una relazione alla pari dove ciascuno mantiene la propria libertà di movimento e di pensiero.",
+  "in_friendship": "L'amicizia dei Gemelli si nutre di scambi costanti e di novità condivise. Amico fedele ma mai esclusivo, mantiene una rete sociale estesa dove ognuno apporta la propria specialità. La sua lealtà si esprime attraverso l'ascolto attento e i consigli illuminati piuttosto che con la presenza fisica costante. Eccelle nell'arte di riallacciare i contatti dopo lunghi silenzi, riprendendo la conversazione come se non si fosse mai interrotta.",
+  "at_work": "I Gemelli si realizzano nei mestieri della comunicazione, giornalismo, insegnamento, traduzione o commercio. Detestano la gerarchia rigida e preferiscono ambienti orizzontali dove le idee circolano liberamente. Il loro ritmo di lavoro irregolare alterna periodi di intensa produttività a momenti di dispersione. Brilleranno nella negoziazione e mediazione ma faticheranno con i compiti ripetitivi o troppo tecnici che richiedono concentrazione prolungata.",
+  "best_matches": [
+    {
+      "slug": "balance",
+      "score": 92,
+      "why": "Due segni d'aria che condividono il gusto per l'armonia intellettuale e l'arte della conversazione raffinata."
+    },
+    {
+      "slug": "verseau",
+      "score": 88,
+      "why": "Complicità mentale perfetta tra due spiriti liberi che valorizzano l'indipendenza e l'originalità."
+    },
+    {
+      "slug": "lion",
+      "score": 85,
+      "why": "L'opposizione creativa dove lo splendore del Leone nutre la curiosità dei Gemelli in una dinamica stimolante."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "vierge",
+      "why": "La precisione minuziosa della Vergine si oppone alla dispersione naturale dei Gemelli in una quadratura esigente."
+    },
+    {
+      "slug": "poissons",
+      "why": "L'emotività profonda dei Pesci disorienta l'approccio mentale dei Gemelli in un'opposizione complessa."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Agata",
+    "animal_totem": "Farfalla",
+    "flower": "Lavanda",
+    "color": "Giallo",
+    "lucky_day": "Mercoledì",
+    "lucky_number": 7,
+    "metal": "Mercurio"
+  },
+  "famous_people": [
+    "Marilyn Monroe",
+    "John F. Kennedy",
+    "Angelina Jolie",
+    "Clint Eastwood",
+    "Naomi Campbell"
+  ],
+  "faq": [
+    {
+      "q": "Perché si dice che i Gemelli sono a doppia faccia e ci si può fidare della loro amicizia",
+      "a": "La reputazione di duplicità dei Gemelli deriva dal loro simbolismo dei gemelli e dalla capacità di vedere più angoli di una situazione. Questa versatilità intellettuale non equivale a disonestà ma a una complessità assunta. In amicizia, i Gemelli si mostrano leali attraverso l'ascolto e la condivisione di idee piuttosto che con la presenza costante. La loro affidabilità si esprime diversamente secondo le circonstanze, il che può disorientare i temperamenti più lineari. Bisogna accettare la loro natura mutevole per apprezzare la ricchezza della loro amicizia, fatta di scoperte perpetue e conversazioni stimolanti che nutrono lo spirito."
+    },
+    {
+      "q": "Come riconoscere un ascendente Gemelli e che influenza ha sulla personalità generale",
+      "a": "L'ascendente Gemelli si riconosce da una gestualità espressiva, un'andatura vivace e uno sguardo scintillante di curiosità. Questi nativi danno una prima impressione di vivacità intellettuale e accessibilità, anche se il loro segno solare è più introverso. Affrontano la vita con un interrogarsi costante e una capacità di adattamento straordinaria alle situazioni nuove. Questo ascendente tempera i segni più rigidi apportando flessibilità e apertura mentale, mentre può disperdere l'energia dei segni già mobili. Favorisce i contatti sociali e dona una naturalezza nella comunicazione, trasformando anche le personalità più riservate in interlocutori coinvolgenti."
+    },
+    {
+      "q": "Quali sono i mestieri più adatti al temperamento dei Gemelli e perché",
+      "a": "I Gemelli eccellono in tutti i mestieri legati alla comunicazione e trasmissione di informazioni: giornalismo, insegnamento, traduzione, relazioni pubbliche, commercio o animazione. La loro versatilità naturale li destina alle professioni che richiedono adattamento e rinnovamento costante delle conoscenze. Brillano anche nella negoziazione, mediazione e in tutti i ruoli di interfaccia tra diversi universi professionali. I mestieri del digitale, dei social media e del marketing online si adattano perfettamente perché uniscono tecnologia e comunicazione. Al contrario, fuggono gli impieghi troppo routinari, gerarchici o che richiedono una specializzazione tecnica approfondita che limiterebbe la loro sete di diversità intellettuale."
+    },
+    {
+      "q": "Come esprime la sua seduzione una donna Gemelli e cosa cerca in un partner",
+      "a": "La donna Gemelli seduce con la sua intelligenza brillante e la conversazione affascinante piuttosto che con artifici fisici. Privilegia l'umorismo, la cultura e l'originalità per attirare l'attenzione, creando una complicità intellettuale prima di ogni coinvolgimento emotivo. In un partner cerca un pari mentale capace di stimolare la sua curiosità e seguire i suoi ragionamenti complessi. Fugge la possessività e valorizza l'indipendenza reciproca nella coppia. La sua seduzione si basa sulla capacità di adattarsi alle diverse personalità che incontra, sapendo istintivamente adottare il registro di comunicazione che toccherà il suo interlocutore. Apprezza gli uomini colti, di mentalità aperta e sufficientemente sicuri di sé da accettare la sua libertà di movimento."
+    },
+    {
+      "q": "Come gestire una relazione amorosa con un Gemelli che sembra sempre distratto o altrove",
+      "a": "La distrazione apparente dei Gemelli traduce in realtà una ricchezza mentale che necessita stimolazione costante. Per mantenere la loro attenzione bisogna variare i piaceri ed evitare la routine: proporre nuove attività, nutrire le conversazioni di argomenti inediti, accettare i loro molteplici centri di interesse. La loro tendenza a svolazzare non significa disinteresse ma bisogno di diversità intellettuale. Conviene rispettare i loro momenti di dispersione creando al contempo appuntamenti privilegiati dove lo scambio diventa prioritario. La pazienza e la comprensione della loro natura complessa sono essenziali, così come lo sviluppo della propria autonomia per non dipendere unicamente dalla loro attenzione spesso frammentata ma sincera."
+    }
+  ]
+}

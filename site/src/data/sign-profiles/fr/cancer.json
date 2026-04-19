@@ -1,0 +1,86 @@
+{
+  "tagline": "L'âme sensible qui transforme l'émotion en sanctuaire protecteur",
+  "intro": "Le Cancer incarne l'archétype maternel du zodiaque, première manifestation de l'élément Eau dans sa forme cardinale. Gouverné par la Lune, il capte les cycles émotionnels avec une acuité troublante, transformant chaque sensation en mémoire vivante. Contrairement aux clichés sur sa fragilité, le Cancer possède une force d'initiative redoutable quand il s'agit de créer et protéger son monde intime. Sa carapace n'est pas une faiblesse mais un art de vivre : il construit des cocons où l'émotion peut s'épanouir sans être jugée. Signe du solstice d'été, il marque l'apogée de la lumière mais se tourne déjà vers l'intériorité. Son génie réside dans sa capacité à faire de l'émotion une boussole fiable.",
+  "strengths": [
+    "Intuition émotionnelle redoutable",
+    "Loyauté indéfectible envers proches",
+    "Créativité nourrie par sensibilité",
+    "Capacité protectrice naturelle authentique",
+    "Mémoire affective exceptionnelle précise"
+  ],
+  "weaknesses": [
+    "Susceptibilité excessive face critiques",
+    "Tendance rancunière difficile pardonner",
+    "Repli défensif paralysant parfois",
+    "Anxiété anticipatrice chronique envahissante",
+    "Manipulation émotionnelle involontaire fréquente"
+  ],
+  "in_love": "Le Cancer aime avec ses tripes, cherchant à recréer le cocon originel où l'autre devient extension de lui-même. Il séduit par sa capacité d'écoute et sa générosité émotionnelle, mais attend en retour une fidélité absolue. Ses déclarations passent par les gestes quotidiens : cuisiner, dorloter, créer un nid douillet. Il fuit les amours de passage et les cœurs blindés, préférant la vulnérabilité partagée. Possessif sans être jaloux, il a besoin de sentir que son partenaire fait vraiment partie de sa famille élective.",
+  "in_friendship": "En amitié, le Cancer tisse des liens familiaux avec ses proches, créant une tribu choisie qu'il nourrit de petites attentions constantes. Il se souvient de tout : anniversaires, chagrins, moments précieux. Ses cercles sont restreints mais durables, construits sur une confiance mutuelle absolue. Il excelle dans l'art de l'écoute thérapeutique et devient souvent le confident de ses amis. Sa porte reste toujours ouverte aux âmes en détresse.",
+  "at_work": "Le Cancer s'épanouit dans les métiers du care : psychologie, soins, éducation, restauration, immobilier familial. Il a besoin d'un environnement sécurisant et de relations humaines authentiques pour donner le meilleur. Face à l'autorité, il préfère la collaboration à la confrontation directe. Son rythme suit ses cycles internes plutôt que les impératifs extérieurs. Il peut manquer d'ambition visible mais développe une expertise remarquable dans son domaine par passion sincère.",
+  "best_matches": [
+    {
+      "slug": "scorpion",
+      "score": 92,
+      "why": "Alliance eau-eau où l'intensité émotionnelle du Scorpion résonne avec la profondeur cancérienne, créant une intimité transformatrice."
+    },
+    {
+      "slug": "poissons",
+      "score": 88,
+      "why": "Communion intuitive naturelle entre deux signes d'Eau qui se comprennent sans mots et partagent la même sensibilité spirituelle."
+    },
+    {
+      "slug": "taureau",
+      "score": 85,
+      "why": "Complémentarité terre-eau idéale : stabilité taurine sécurise Cancer qui nourrit émotionnellement le Taureau en retour."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "capricorne",
+      "why": "Opposition structurelle entre émotivité cancérienne et rationalité capricornienne, créant incompréhension mutuelle sur les priorités de vie."
+    },
+    {
+      "slug": "belier",
+      "why": "Carré tendu entre impulsivité bélier et besoin de sécurité Cancer, rythmes et approches relationnelles fondamentalement différents."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Pierre de lune",
+    "animal_totem": "Crabe",
+    "flower": "Lys blanc",
+    "color": "Blanc argenté",
+    "lucky_day": "Lundi",
+    "lucky_number": 7,
+    "metal": "Argent"
+  },
+  "famous_people": [
+    "Meryl Streep",
+    "Nelson Mandela",
+    "Frida Kahlo",
+    "Tom Hanks",
+    "Princess Diana"
+  ],
+  "faq": [
+    {
+      "q": "Pourquoi le Cancer est-il considéré comme le signe le plus sensible du zodiaque ?",
+      "a": "La sensibilité du Cancer vient de sa gouvernance lunaire et de son élément Eau cardinal. La Lune amplifie sa réceptivité émotionnelle, le rendant perméable aux atmosphères et aux non-dits. Son caractère cardinal le pousse à agir sur ces perceptions, créant parfois des réactions intenses. Cette sensibilité n'est pas faiblesse mais intelligence émotionnelle : il capte des nuances invisibles aux autres signes. Sa mémoire affective exceptionnelle archive chaque émotion, créant une richesse intérieure mais aussi une vulnérabilité aux blessures passées."
+    },
+    {
+      "q": "Quels sont les signes les plus compatibles avec le Cancer en amour ?",
+      "a": "Les signes d'Eau (Scorpion, Poissons) forment avec Cancer des unions profondes basées sur l'intuition partagée. Le Scorpion apporte intensité et transformation, les Poissons communion spirituelle. Les signes de Terre (Taureau, Vierge, Capricorne) offrent la stabilité recherchée par Cancer, particulièrement le Taureau qui partage son amour du foyer. Certains signes de Feu comme le Lion peuvent créer des unions passionnées si l'ascendant ou la Lune adoucissent les différences tempéramentales."
+    },
+    {
+      "q": "Comment se comporte un Cancer ascendant Scorpion ?",
+      "a": "L'ascendant Scorpion intensifie considérablement la nature cancérienne, créant une personnalité magnétique mais complexe. L'émotivité Cancer se teinte de mystère scorpionesque, rendant cette personne fascinante mais difficile à cerner. Elle développe des mécanismes de protection plus sophistiqués, alternant vulnérabilité et cuirasse impénétrable. Cette combinaison double Eau crée une intuition phénoménale et un pouvoir de transformation personnel remarquable. En amour, l'intensité peut être bouleversante mais aussi possessive."
+    },
+    {
+      "q": "Quels métiers conviennent le mieux au tempérament Cancer ?",
+      "a": "Le Cancer excelle dans les professions du care : psychologie, médecine, enseignement, social, petite enfance. Son instinct protecteur le guide vers soins infirmiers, sage-femme, ou thérapies alternatives. Sa créativité nourrie d'émotion l'oriente vers arts culinaires, décoration, photographie de famille, ou écriture intimiste. L'immobilier familial, l'hôtellerie de charme, ou la gestion de patrimoine correspondent à son besoin de créer des cocons sécurisants. Il évite généralement les environnements compétitifs ou déshumanisés."
+    },
+    {
+      "q": "Comment gérer les sautes d'humeur d'un Cancer dans une relation ?",
+      "a": "Les variations émotionnelles du Cancer suivent souvent les cycles lunaires et ses rythmes internes. Il faut comprendre que ses humeurs ne sont pas caprices mais réactions authentiques à son environnement énergétique. L'écoute bienveillante sans jugement reste la meilleure approche, avec patience pour le laisser exprimer ses ressentis. Créer un environnement sécurisant où il peut se replier sans culpabilité aide à réguler ces oscillations. Respecter ses besoins de solitude périodiques évite l'accumulation de tensions émotionnelles."
+    }
+  ]
+}

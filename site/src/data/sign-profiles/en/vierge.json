@@ -1,0 +1,86 @@
+{
+  "tagline": "The everyday alchemist who transforms chaos into perfect harmony",
+  "intro": "Virgo embodies practical intelligence in service of earthly perfection. Governed by Mercury in its analytical dimension, it represents the zodiacal stage where energy refines itself to excellence. A mutable earth sign, Virgo masters the art of adaptation through constant improvement. It moves through the world with remarkable acuity, distinguishing the essential from the superfluous, transforming the raw into the pure. Its genius lies in this capacity to perceive details that others overlook, then organize them into a coherent whole. Far from sterile perfectionism, Virgo cultivates a surgical approach to existence: it incises where healing is needed, adjusts where harmony is required. Its late summer seasonal temperament gives it this harvest wisdom, knowing that every grain counts to nourish humanity.",
+  "strengths": [
+    "Formidable analytical discernment",
+    "Authentic selfless devotion",
+    "Constant methodical improvement",
+    "Remarkable operational efficiency",
+    "Natural constructive humility"
+  ],
+  "weaknesses": [
+    "Paralyzing excessive criticism",
+    "Chronic anxiety-inducing perfectionism",
+    "Modesty that masks talents",
+    "Compulsive control of details",
+    "Systematic preventive pessimism"
+  ],
+  "in_love": "Virgo loves quietly, with discrete but profound intensity. It doesn't pour out in passionate declarations, preferring to demonstrate feelings through a thousand daily attentions. Its love manifests in concrete improvement of shared life: it anticipates needs, organizes domestic happiness, creates a cocoon of well-being. It seeks a partner it can respect intellectually, someone reliable and constructive. Virgo flees emotional instability and destructive passions. It needs time to trust, but once committed, its fidelity becomes legendary. Its romantic challenge: accepting the other's imperfection without wanting to correct it.",
+  "in_friendship": "Virgo friendship builds through duration and constancy. It doesn't accumulate superficial relationships but cultivates a few privileged bonds with meticulous care. A friend of unwavering loyalty, it will always be present in difficult moments, armed with practical advice and concrete solutions. It maintains connections through thoughtful gestures, remembering important details of loved ones' lives. Its generosity expresses itself more in action than words: it will be the one who helps concretely, who organizes, who makes others' lives easier.",
+  "at_work": "Virgo excels in service, health, analysis, and organizational professions. Accounting, medicine, publishing, research, precision craftsmanship suit it perfectly. It respects hierarchy when competent but doesn't hesitate to signal dysfunctions. Its work rhythm is regular and sustained, prioritizing quality over quantity. Its professional blind spot: it can get lost in details and lose sight of the global objective. It also tends to underestimate its contributions and let others take credit for its meticulous work.",
+  "best_matches": [
+    {
+      "slug": "taureau",
+      "score": 92,
+      "why": "Two earth signs sharing love of stability and simple pleasures, perfect complementarity between perfectionism and patience."
+    },
+    {
+      "slug": "capricorne",
+      "score": 88,
+      "why": "Earth-earth alliance functioning on common ambition and shared rigor, mutual respect for competence and excellence."
+    },
+    {
+      "slug": "scorpion",
+      "score": 85,
+      "why": "Attraction of extremes between virginal purity and Plutonian intensity, mutual fascination for transformation and healing."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "gemeaux",
+      "why": "Two opposing expressions of Mercury confronting each other: Virgo precision facing Gemini dispersion, thoroughness against versatility."
+    },
+    {
+      "slug": "sagittaire",
+      "why": "Fundamental opposition between down-to-earth minutiae and Jupiterian overview, pragmatism against philosophical idealism."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Sapphire",
+    "animal_totem": "Bee",
+    "flower": "Lavender",
+    "color": "Navy blue",
+    "lucky_day": "Wednesday",
+    "lucky_number": 7,
+    "metal": "Platinum"
+  },
+  "famous_people": [
+    "Beyoncé",
+    "Warren Buffett",
+    "Keanu Reeves",
+    "Stephen King",
+    "Amy Poehler"
+  ],
+  "faq": [
+    {
+      "q": "Why are Virgos often criticized for their perfectionism?",
+      "a": "Virgo perfectionism is misunderstood because it stems from authentic love of excellence, not a desire to harm. Governed by analytical Mercury, Virgo naturally perceives possible improvements where others already see perfection. This acuity can indeed become problematic when applied compulsively to others, but it remains fundamentally constructive. The challenge lies in channeling this demand toward domains where it's appreciated: craftsmanship, medicine, research. Virgo must learn to distinguish what deserves its surgical precision from what can remain imperfect without consequence."
+    },
+    {
+      "q": "How can a Virgo manage their tendency toward anxiety and pessimism?",
+      "a": "Virgo anxiety stems from its ability to anticipate all potential problems, a precious quality that becomes handicapping when it invades everything. This Mercurial hypervigilance requires centering exercises: meditation, gardening, manual crafts that soothe the analytical mind. Virgo must cultivate confidence by developing reassuring routines and celebrating concrete successes. Keeping a journal of daily accomplishments helps counterbalance the tendency to focus on imperfections. Regular physical activity grounds its mutable energy and dissipates accumulated mental tensions."
+    },
+    {
+      "q": "What impact does a Virgo rising have on personality?",
+      "a": "Virgo rising colors social presentation with an organized, discrete, and competent appearance, regardless of the sun sign's deep nature. This persona develops a methodical approach to new environments, prioritizing observation before action. Virgo rising pushes one to care for appearance without ostentation, to develop practically valued social skills. It can temper fire sign excesses by imposing more reflection, or conversely slow air sign creative spontaneity through excessive caution. This Mercurial influence refines social intelligence and develops the art of making oneself indispensable through concrete usefulness."
+    },
+    {
+      "q": "In which professional fields do Virgos particularly excel?",
+      "a": "Virgos shine in all professions requiring precision, analysis, and service: specialized medicine, scientific research, editing, accounting, luxury crafts, nutrition, pharmacy. Their Mercurial intelligence excels in technical domains where every detail counts. They also succeed remarkably in executive assistance, event organization, translation, literary criticism. Their natural devotion draws them toward caring professions: physical therapy, psychology, social work. In entrepreneurship, they excel in quality services and artisanal products. Their professional challenge: learning to value their skills and negotiate fair recognition, often underestimated by their own modesty."
+    },
+    {
+      "q": "How can one develop spirituality suited to Virgo temperament?",
+      "a": "Virgo spirituality flourishes in concrete practice rather than mystical abstraction. It finds the sacred in selfless service, self-improvement, attention to creation's details. Suitable practices include: meditative gardening, sacred craftsmanship, precise yoga, deep study of spiritual texts. Virgo develops its spiritual dimension by caring for others, preserving nature, transmitting ancestral knowledge. It understands that divine perfection manifests in the infinitely small: each just gesture, each delicate attention becomes an act of devotion. Its spiritual path passes through gradual purification of intentions and alignment between deep values and daily actions."
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "tagline": "The sensitive soul of the zodiac who transforms emotion into wisdom",
+  "intro": "As the final sign of the zodiac, Pisces embodies the culmination of the astrological cycle, that ultimate synthesis where the individual dissolves into the universal. Ruled by Neptune, planet of inspiration and illusion, they navigate between two waters: that of the purest intuition and that of total confusion. As a mutable water sign, they possess this rare ability to adapt to all emotional currents, absorbing environmental vibrations like a spiritual sponge. Their extreme sensitivity is not weakness but power: the ability to perceive the invisible, to capture the unspoken, to transform suffering into art. Between overflowing empathy and saving retreat, Pisces carry within themselves this fertile melancholy that nourishes creation and unconditional love.",
+  "strengths": [
+    "Remarkably developed psychic intuition",
+    "Deep and natural empathy",
+    "Limitless artistic creativity",
+    "Selfless and healing compassion",
+    "Fluid emotional adaptability"
+  ],
+  "weaknesses": [
+    "Tendency to escape reality",
+    "Paralyzing hypersensitivity to criticism",
+    "Difficulty setting boundaries",
+    "Chronic indecision when facing choices",
+    "Propensity for compensatory addictions"
+  ],
+  "in_love": "Pisces love with their entire soul, seeking less a partner than complete spiritual fusion. They offer unconditional love without boundaries, capable of forgiving the unforgivable and seeing beauty where others perceive only flaws. This emotional generosity can however lead them toward unbalanced relationships where they give without counting. They flee direct confrontation, preferring to withdraw in silence rather than face conflicts. Their idealistic romanticism sometimes pushes them to project their own dreams onto their partner, creating disappointments when reality catches up with fantasy.",
+  "in_friendship": "In friendship, Pisces are those precious confidants who listen without judging and console without moralizing. Their emotional loyalty spans years and trials, even if their physical presence may sometimes be discreet. They excel in sensing when a friend is going through a difficult period, often appearing at the right moment with the right words. Their empathetic nature makes them therapeutic friends, capable of absorbing others' suffering sometimes at the expense of their own balance.",
+  "at_work": "Pisces flourish in careers of helping, art, or healing: psychology, alternative medicine, music, painting, cinema. They struggle with rigid hierarchy and competitive atmospheres, preferring collaborative and nurturing environments. Their work rhythm follows their emotional cycles: periods of lightning inspiration alternating with necessary withdrawal phases. Their overflowing creativity often compensates for their difficulty with administrative tasks and time management, requiring a structuring framework to reveal their full potential.",
+  "best_matches": [
+    {
+      "slug": "cancer",
+      "score": 92,
+      "why": "Mutual understanding of emotional worlds and shared need for deep emotional security."
+    },
+    {
+      "slug": "scorpion",
+      "score": 88,
+      "why": "Common emotional intensity and fascination with the mysteries of the human soul."
+    },
+    {
+      "slug": "capricorne",
+      "score": 85,
+      "why": "Perfect complementarity between Pisces sensitivity and stabilizing Capricorn structure."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "gemeaux",
+      "why": "Opposition between Gemini's rational approach and Pisces' pure intuition creating recurring misunderstandings."
+    },
+    {
+      "slug": "vierge",
+      "why": "Natural tension between Virgo's critical perfectionism and Pisces' raw sensitivity."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Amethyst",
+    "animal_totem": "Dolphin",
+    "flower": "Lotus",
+    "color": "Ocean blue",
+    "lucky_day": "Thursday",
+    "lucky_number": 7,
+    "metal": "Platinum"
+  },
+  "famous_people": [
+    "Albert Einstein",
+    "Steve Jobs",
+    "Rihanna",
+    "Kurt Cobain",
+    "Elizabeth Taylor"
+  ],
+  "faq": [
+    {
+      "q": "Why are Pisces so sensitive to negative energies from others?",
+      "a": "Pisces' extreme sensitivity stems from their Neptunian nature which dissolves boundaries between self and others. Their nervous system naturally picks up surrounding emotional vibrations, functioning like a permanent psychic antenna. This energetic permeability, both gift and burden, makes them particularly vulnerable in negatively charged environments. They literally absorb others' emotions, sometimes struggling to distinguish their own feelings from those they pick up. This hypersensitivity requires regular periods of solitude to recharge and release parasitic energies accumulated through contact with others."
+    },
+    {
+      "q": "How can Pisces develop their natural creativity?",
+      "a": "Pisces' creativity flourishes through surrender and trust in their primary intuition. They must create a sacred space where inspiration can flow freely, without judgment or immediate technical constraints. Art becomes their privileged language to express the inexpressible, transforming raw emotion into tangible beauty. Meditative practices, connection to nature, and exploration of their dreams nourish their fertile imagination. They must accept natural creative cycles, alternating intense inspiration phases with seemingly sterile but necessary gestation periods. The key lies in patience and acceptance of their unique rhythm."
+    },
+    {
+      "q": "Does a Pisces ascendant modify the sun sign personality?",
+      "a": "Pisces ascendant envelops the personality with a mysterious aura and magnetic sensitivity, regardless of the sun sign. This Neptunian influence softens sharp edges, creates a more intuitive approach to life, and develops remarkable natural empathy. The person projects an impression of being elsewhere, connected to subtle dimensions others don't perceive. This configuration amplifies artistic and spiritual capacities, but can also generate certain identity confusion. Pisces ascendant makes the personality more adaptable and receptive, sometimes at the expense of clearly asserting personal needs and necessary boundaries."
+    },
+    {
+      "q": "What are the ideal careers for expressing Pisces nature?",
+      "a": "Pisces excel in professions that combine service to others with creative expression: psychotherapy, art therapy, holistic medicine, social work, spiritual teaching. Artistic domains offer natural fulfillment: music, dance, painting, writing, cinema, photography. Their empathic capacity makes them excellent healers: nurses, veterinarians, massage therapists, energy workers. Water-related careers suit them perfectly: oceanography, aquaculture, spa therapy. They also flourish in spiritual research, astrology, numerology. The essential element is expressing their sensitivity and contributing to collective well-being in a nurturing, non-competitive environment."
+    },
+    {
+      "q": "How can Pisces better manage their tendency toward escapism?",
+      "a": "Pisces' escapist tendency often stems from reality being too harsh to face directly. Rather than fighting this nature, they must learn to constructively channel this need for flight: meditation, art, spirituality, inner journeys. It involves creating creative and spiritual outlets that nourish the soul without harming life balance. Grounding through gentle physical practices (yoga, swimming, nature walks) helps maintain connection with the concrete. The key lies in accepting their particular rhythm and creating a living environment that respects their need for retreat and reverie spaces, while maintaining ties to practical reality."
+    }
+  ]
+}

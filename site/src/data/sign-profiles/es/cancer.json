@@ -1,0 +1,86 @@
+{
+  "tagline": "El alma sensible que transforma la emoción en santuario protector",
+  "intro": "Cáncer encarna el arquetipo maternal del zodiaco, primera manifestación del elemento Agua en su forma cardinal. Regido por la Luna, capta los ciclos emocionales con una agudeza inquietante, transformando cada sensación en memoria viviente. Contrario a los clichés sobre su fragilidad, Cáncer posee una fuerza de iniciativa temible cuando se trata de crear y proteger su mundo íntimo. Su caparazón no es una debilidad sino un arte de vivir: construye capullos donde la emoción puede florecer sin ser juzgada. Signo del solsticio de verano, marca el apogeo de la luz pero ya se vuelve hacia la interioridad. Su genio reside en su capacidad de hacer de la emoción una brújula confiable.",
+  "strengths": [
+    "Intuición emocional temible",
+    "Lealtad inquebrantable hacia cercanos",
+    "Creatividad nutrida por sensibilidad",
+    "Capacidad protectora natural auténtica",
+    "Memoria afectiva excepcional precisa"
+  ],
+  "weaknesses": [
+    "Susceptibilidad excesiva ante críticas",
+    "Tendencia rencorosa difícil perdonar",
+    "Repliegue defensivo paralizante veces",
+    "Ansiedad anticipatoria crónica invasiva",
+    "Manipulación emocional involuntaria frecuente"
+  ],
+  "in_love": "Cáncer ama con las entrañas, buscando recrear el capullo original donde el otro se convierte en extensión de sí mismo. Seduce por su capacidad de escucha y su generosidad emocional, pero espera a cambio una fidelidad absoluta. Sus declaraciones pasan por los gestos cotidianos: cocinar, mimar, crear un nido acogedor. Huye de los amores pasajeros y los corazones blindados, prefiriendo la vulnerabilidad compartida. Posesivo sin ser celoso, necesita sentir que su pareja realmente forma parte de su familia electiva.",
+  "in_friendship": "En amistad, Cáncer teje vínculos familiares con sus cercanos, creando una tribu elegida que nutre con pequeñas atenciones constantes. Recuerda todo: cumpleaños, penas, momentos preciosos. Sus círculos son reducidos pero duraderos, construidos sobre una confianza mutua absoluta. Excele en el arte de la escucha terapéutica y frecuentemente se convierte en el confidente de sus amigos. Su puerta permanece siempre abierta a las almas en pena.",
+  "at_work": "Cáncer florece en los oficios del cuidado: psicología, atención sanitaria, educación, restauración, inmobiliaria familiar. Necesita un ambiente seguro y relaciones humanas auténticas para dar lo mejor. Ante la autoridad, prefiere la colaboración a la confrontación directa. Su ritmo sigue sus ciclos internos más que los imperativos externos. Puede carecer de ambición visible pero desarrolla una experiencia notable en su campo por pasión sincera.",
+  "best_matches": [
+    {
+      "slug": "scorpion",
+      "score": 92,
+      "why": "Alianza agua-agua donde la intensidad emocional de Escorpio resuena con la profundidad canceriana, creando una intimidad transformadora."
+    },
+    {
+      "slug": "poissons",
+      "score": 88,
+      "why": "Comunión intuitiva natural entre dos signos de Agua que se entienden sin palabras y comparten la misma sensibilidad espiritual."
+    },
+    {
+      "slug": "taureau",
+      "score": 85,
+      "why": "Complementariedad tierra-agua ideal: estabilidad taurina tranquiliza a Cáncer que nutre emocionalmente a Tauro a cambio."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "capricorne",
+      "why": "Oposición estructural entre emotividad canceriana y racionalidad capricorniana, creando incomprensión mutua sobre las prioridades de vida."
+    },
+    {
+      "slug": "belier",
+      "why": "Cuadratura tensa entre impulsividad ariana y necesidad de seguridad de Cáncer, ritmos y enfoques relacionales fundamentalmente diferentes."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Piedra lunar",
+    "animal_totem": "Cangrejo",
+    "flower": "Lirio blanco",
+    "color": "Blanco plateado",
+    "lucky_day": "Lunes",
+    "lucky_number": 7,
+    "metal": "Plata"
+  },
+  "famous_people": [
+    "Selena Quintanilla",
+    "Carlos Santana",
+    "Frida Kahlo",
+    "Lionel Messi",
+    "Shakira"
+  ],
+  "faq": [
+    {
+      "q": "¿Por qué Cáncer es considerado el signo más sensible del zodiaco?",
+      "a": "La sensibilidad de Cáncer proviene de su regencia lunar y de su elemento Agua cardinal. La Luna amplifica su receptividad emocional, haciéndolo permeable a las atmósferas y los no dichos. Su carácter cardinal lo impulsa a actuar sobre estas percepciones, creando a veces reacciones intensas. Esta sensibilidad no es debilidad sino inteligencia emocional: capta matices invisibles para otros signos. Su memoria afectiva excepcional archiva cada emoción, creando una riqueza interior pero también una vulnerabilidad a las heridas pasadas."
+    },
+    {
+      "q": "¿Cuáles son los signos más compatibles con Cáncer en el amor?",
+      "a": "Los signos de Agua (Escorpio, Piscis) forman con Cáncer uniones profundas basadas en la intuición compartida. Escorpio aporta intensidad y transformación, Piscis comunión espiritual. Los signos de Tierra (Tauro, Virgo, Capricornio) ofrecen la estabilidad buscada por Cáncer, particularmente Tauro que comparte su amor del hogar. Ciertos signos de Fuego como Leo pueden crear uniones apasionadas si el ascendente o la Luna suavizan las diferencias temperamentales."
+    },
+    {
+      "q": "¿Cómo se comporta un Cáncer ascendente Escorpio?",
+      "a": "El ascendente Escorpio intensifica considerablemente la naturaleza canceriana, creando una personalidad magnética pero compleja. La emotividad de Cáncer se tiñe de misterio escorpiano, volviendo a esta persona fascinante pero difícil de descifrar. Desarrolla mecanismos de protección más sofisticados, alternando vulnerabilidad y coraza impenetrable. Esta combinación doble Agua crea una intuición fenomenal y un poder de transformación personal notable. En amor, la intensidad puede ser conmovedora pero también posesiva."
+    },
+    {
+      "q": "¿Qué profesiones convienen mejor al temperamento de Cáncer?",
+      "a": "Cáncer excele en las profesiones del cuidado: psicología, medicina, enseñanza, trabajo social, primera infancia. Su instinto protector lo guía hacia enfermería, obstetricia, o terapias alternativas. Su creatividad nutrida de emoción lo orienta hacia artes culinarias, decoración, fotografía familiar, o escritura intimista. El sector inmobiliario familiar, la hotelería con encanto, o la gestión de patrimonio corresponden a su necesidad de crear capullos seguros. Generalmente evita los ambientes competitivos o deshumanizados."
+    },
+    {
+      "q": "¿Cómo manejar los cambios de humor de Cáncer en una relación?",
+      "a": "Las variaciones emocionales de Cáncer siguen frecuentemente los ciclos lunares y sus ritmos internos. Hay que entender que sus estados de ánimo no son caprichos sino reacciones auténticas a su entorno energético. La escucha benevolente sin juicio sigue siendo el mejor enfoque, con paciencia para dejarlo expresar sus sentimientos. Crear un ambiente seguro donde pueda replegarse sin culpabilidad ayuda a regular estas oscilaciones. Respetar sus necesidades de soledad periódicas evita la acumulación de tensiones emocionales."
+    }
+  ]
+}

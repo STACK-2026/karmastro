@@ -3,9 +3,11 @@ import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import ShareButton from "../../../../components/ShareButton.astro";
 import ZodiacSymbol from "../../../../components/ZodiacSymbol.astro";
 import NewsletterCapture from "../../../../components/NewsletterCapture.astro";
+import SignProfile from "../../../../components/SignProfile.astro";
 import { ZODIAC_SIGNS, SIGN_SLUGS, getSignByLocalizedSlug, getLocalizedSlug, formatFrenchDate } from "../../../../data/zodiac";
 import { LOCALES, DEFAULT_LOCALE, type Locale } from "../../../../i18n/config";
 import { t } from "../../../../i18n/translations";
+import { loadSignProfile } from "../../../../utils/sign-profile";
 import fs from "fs";
 import path from "path";
 
@@ -147,8 +149,11 @@ const compatSigns = sign.compatibilities
   .map((slug) => ZODIAC_SIGNS.find((s) => s.slug === slug))
   .filter(Boolean) as typeof ZODIAC_SIGNS;
 
+// Load the translated profile (falls back to FR if missing)
+const profile = loadSignProfile(sign.slug, lang);
+
 // ─── Rich JSON-LD schema (Article + FAQPage for LLM citation) ───
-const jsonLdArray = [
+const jsonLdArray: any[] = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -192,6 +197,18 @@ const jsonLdArray = [
     ],
   },
 ];
+
+if (profile?.faq?.length) {
+  jsonLdArray.push({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: profile.faq.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  });
+}
 ---
 
 <BaseLayout
@@ -449,23 +466,15 @@ const jsonLdArray = [
       </a>
     </div>
 
-    {/* Compatibilities */}
-    <section class="mb-10">
-      <h2 class="font-serif text-2xl mb-4">{t("horoscope.compatibilities_of", lang)} {localSignName}</h2>
-      <div class="grid grid-cols-3 gap-3">
-        {compatSigns.map((c) => (
-          <a
-            href={`/${lang}/horoscope/${getLocalizedSlug(c.slug, lang)}`}
-            class="p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:border-amber-300/40 transition-colors text-center"
-          >
-            <div class="flex justify-center mb-2">
-              <ZodiacSymbol sign={c.name} size={40} color="#D4A017" />
-            </div>
-            <p class="text-sm text-white/80">{t(signNameKeys[c.slug] as any, lang) || c.name}</p>
-          </a>
-        ))}
-      </div>
-    </section>
+    {profile && (
+      <SignProfile
+        profile={profile}
+        signSlug={sign.slug}
+        signName={localSignName}
+        locale={lang}
+        urlBase={`/${lang}`}
+      />
+    )}
 
     {/* Archives */}
     {archiveCards.length > 0 && (

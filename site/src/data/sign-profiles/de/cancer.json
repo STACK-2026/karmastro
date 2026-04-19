@@ -1,0 +1,86 @@
+{
+  "tagline": "Die sensible Seele, die Emotionen in einen schützenden Zufluchtsort verwandelt",
+  "intro": "Der Krebs verkörpert den mütterlichen Archetyp des Tierkreises, die erste Manifestation des Wasserelementes in seiner kardinalen Form. Vom Mond regiert, erfasst er emotionale Zyklen mit beunruhigender Schärfe und verwandelt jede Empfindung in lebendige Erinnerung. Entgegen den Klischees über seine Zerbrechlichkeit besitzt der Krebs eine beeindruckende Initiativkraft, wenn es darum geht, seine innere Welt zu erschaffen und zu beschützen. Sein Panzer ist keine Schwäche, sondern eine Lebenskunst: er baut Kokons, in denen sich Emotionen ohne Bewertung entfalten können. Als Zeichen der Sommersonnenwende markiert er den Höhepunkt des Lichts, wendet sich aber bereits der Innerlichkeit zu. Sein Genie liegt in der Fähigkeit, aus Emotionen einen verlässlichen Kompass zu machen.",
+  "strengths": [
+    "Beeindruckende emotionale Intuition",
+    "Unerschütterliche Loyalität gegenüber Nahestehenden",
+    "Von Sensibilität genährte Kreativität",
+    "Authentische natürliche Schutzfähigkeit",
+    "Außergewöhnlich präzises emotionales Gedächtnis"
+  ],
+  "weaknesses": [
+    "Übermäßige Empfindlichkeit gegenüber Kritik",
+    "Nachtragender Hang, schwer verzeihen",
+    "Manchmal lähmender defensiver Rückzug",
+    "Chronisch invasive Erwartungsangst",
+    "Häufige unbewusste emotionale Manipulation"
+  ],
+  "in_love": "Der Krebs liebt aus dem Bauch heraus und versucht, den ursprünglichen Kokon zu erschaffen, in dem der andere zur Erweiterung seiner selbst wird. Er verführt durch seine Zuhörfähigkeit und emotionale Großzügigkeit, erwartet aber im Gegenzug absolute Treue. Seine Liebeserklärungen erfolgen durch alltägliche Gesten: kochen, verwöhnen, ein gemütliches Nest schaffen. Er flieht vor flüchtigen Liebschaften und gepanzerten Herzen und bevorzugt geteilte Verletzlichkeit. Besitzergreifend ohne eifersüchtig zu sein, braucht er das Gefühl, dass sein Partner wirklich zu seiner gewählten Familie gehört.",
+  "in_friendship": "In der Freundschaft knüpft der Krebs familiäre Bande zu seinen Nahestehenden und erschafft einen erwählten Stamm, den er mit ständigen kleinen Aufmerksamkeiten nährt. Er erinnert sich an alles: Geburtstage, Kummer, kostbare Momente. Seine Kreise sind begrenzt, aber dauerhaft, aufgebaut auf absolutem gegenseitigem Vertrauen. Er beherrscht die Kunst des therapeutischen Zuhörens und wird oft zum Vertrauten seiner Freunde. Seine Tür steht verzweifelten Seelen immer offen.",
+  "at_work": "Der Krebs entfaltet sich in fürsorglichen Berufen: Psychologie, Pflege, Bildung, Gastronomie, Familienimmobilien. Er braucht eine sichere Umgebung und authentische menschliche Beziehungen, um sein Bestes zu geben. Gegenüber Autoritäten bevorzugt er Zusammenarbeit vor direkter Konfrontation. Sein Rhythmus folgt seinen inneren Zyklen statt äußeren Zwängen. Ihm mag sichtbarer Ehrgeiz fehlen, aber er entwickelt durch aufrichtige Leidenschaft bemerkenswerte Expertise in seinem Bereich.",
+  "best_matches": [
+    {
+      "slug": "scorpion",
+      "score": 92,
+      "why": "Wasser-Wasser-Allianz, bei der die emotionale Intensität des Skorpions mit der Tiefe des Krebses resoniert und transformierende Intimität schafft."
+    },
+    {
+      "slug": "poissons",
+      "score": 88,
+      "why": "Natürliche intuitive Gemeinschaft zwischen zwei Wasserzeichen, die sich ohne Worte verstehen und dieselbe spirituelle Sensibilität teilen."
+    },
+    {
+      "slug": "taureau",
+      "score": 85,
+      "why": "Ideale Erde-Wasser-Ergänzung: Stier-Stabilität sichert den Krebs ab, der im Gegenzug den Stier emotional nährt."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "capricorne",
+      "why": "Struktureller Gegensatz zwischen Krebs-Emotionalität und Steinbock-Rationalität, schafft gegenseitiges Unverständnis über Lebensprioritäten."
+    },
+    {
+      "slug": "belier",
+      "why": "Spannungsquadrat zwischen Widder-Impulsivität und Krebs-Sicherheitsbedürfnis, grundlegend verschiedene Rhythmen und Beziehungsansätze."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Mondstein",
+    "animal_totem": "Krebs",
+    "flower": "Weiße Lilie",
+    "color": "Silberweiß",
+    "lucky_day": "Montag",
+    "lucky_number": 7,
+    "metal": "Silber"
+  },
+  "famous_people": [
+    "Angela Merkel",
+    "Franz Kafka",
+    "Romy Schneider",
+    "Gustav Klimt",
+    "Til Schweiger"
+  ],
+  "faq": [
+    {
+      "q": "Warum gilt der Krebs als sensibelstes Sternzeichen im Tierkreis?",
+      "a": "Die Sensibilität des Krebses entspringt seiner Mondherrschaft und seinem kardinalen Wasserelement. Der Mond verstärkt seine emotionale Empfänglichkeit und macht ihn durchlässig für Atmosphären und Unausgesprochenes. Sein kardinaler Charakter drängt ihn, auf diese Wahrnehmungen zu reagieren, was manchmal intensive Reaktionen hervorruft. Diese Sensibilität ist keine Schwäche, sondern emotionale Intelligenz: er erfasst Nuancen, die anderen Zeichen unsichtbar bleiben. Sein außergewöhnliches emotionales Gedächtnis archiviert jede Emotion und schafft inneren Reichtum, aber auch Verletzlichkeit gegenüber vergangenen Wunden."
+    },
+    {
+      "q": "Welche Sternzeichen sind am besten mit dem Krebs in der Liebe kompatibel?",
+      "a": "Die Wasserzeichen (Skorpion, Fische) bilden mit dem Krebs tiefe Verbindungen basierend auf geteilter Intuition. Der Skorpion bringt Intensität und Transformation, die Fische spirituelle Gemeinschaft. Die Erdzeichen (Stier, Jungfrau, Steinbock) bieten die vom Krebs gesuchte Stabilität, besonders der Stier, der seine Liebe zum Heim teilt. Manche Feuerzeichen wie der Löwe können leidenschaftliche Verbindungen schaffen, wenn Aszendent oder Mond die temperamentellen Unterschiede mildern."
+    },
+    {
+      "q": "Wie verhält sich ein Krebs mit Skorpion-Aszendent?",
+      "a": "Der Skorpion-Aszendent intensiviert die Krebs-Natur erheblich und schafft eine magnetische, aber komplexe Persönlichkeit. Die Krebs-Emotionalität färbt sich mit Skorpion-Mysterium und macht diese Person faszinierend, aber schwer durchschaubar. Sie entwickelt raffiniertere Schutzmechanismen und wechselt zwischen Verletzlichkeit und undurchdringbarem Panzer. Diese doppelte Wasser-Kombination schafft phänomenale Intuition und bemerkenswerte persönliche Transformationskraft. In der Liebe kann die Intensität überwältigend, aber auch besitzergreifend sein."
+    },
+    {
+      "q": "Welche Berufe eignen sich am besten für das Krebs-Temperament?",
+      "a": "Der Krebs brilliert in fürsorglichen Berufen: Psychologie, Medizin, Unterricht, Sozialarbeit, Kinderbetreuung. Sein Schutzinstinkt führt ihn zu Krankenpflege, Hebammentätigkeit oder alternativen Therapien. Seine von Emotion genährte Kreativität lenkt ihn zu Kochkunst, Dekoration, Familienfotografie oder intimer Schriftstellerei. Familienimmobilien, charmante Hotellerie oder Vermögensverwaltung entsprechen seinem Bedürfnis, sichere Kokons zu schaffen. Er meidet generell konkurrenzbetontes oder entmenschlichtes Umfeld."
+    },
+    {
+      "q": "Wie geht man mit den Stimmungsschwankungen eines Krebses in einer Beziehung um?",
+      "a": "Die emotionalen Schwankungen des Krebses folgen oft Mondzyklen und seinen inneren Rhythmen. Man muss verstehen, dass seine Stimmungen keine Launen, sondern authentische Reaktionen auf sein energetisches Umfeld sind. Wohlwollendes Zuhören ohne Urteil bleibt der beste Ansatz, mit Geduld, um ihn seine Gefühle ausdrücken zu lassen. Ein sicheres Umfeld schaffen, wo er sich ohne Schuldgefühle zurückziehen kann, hilft diese Schwankungen zu regulieren. Seine periodischen Einsamkeitsbedürfnisse zu respektieren verhindert die Ansammlung emotionaler Spannungen."
+    }
+  ]
+}

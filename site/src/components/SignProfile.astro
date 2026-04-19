@@ -1,0 +1,196 @@
+---
+import type { SignProfile } from "../utils/sign-profile";
+import type { Locale } from "../i18n/config";
+import { PROFILE_LABELS } from "../i18n/profile-labels";
+import { ZODIAC_SIGNS, getLocalizedSlug } from "../data/zodiac";
+import { t } from "../i18n/translations";
+import ZodiacSymbol from "./ZodiacSymbol.astro";
+
+const SIGN_NAME_KEYS: Record<string, string> = {
+  belier: "signs.aries",
+  taureau: "signs.taurus",
+  gemeaux: "signs.gemini",
+  cancer: "signs.cancer",
+  lion: "signs.leo",
+  vierge: "signs.virgo",
+  balance: "signs.libra",
+  scorpion: "signs.scorpio",
+  sagittaire: "signs.sagittarius",
+  capricorne: "signs.capricorn",
+  verseau: "signs.aquarius",
+  poissons: "signs.pisces",
+};
+
+interface Props {
+  profile: SignProfile;
+  signSlug: string;
+  signName: string;
+  locale: Locale;
+  urlBase: string; // e.g. "" for FR root, "/en" for EN
+}
+
+const { profile, signSlug, signName, locale, urlBase } = Astro.props;
+const L = PROFILE_LABELS[locale] ?? PROFILE_LABELS.fr;
+
+function localizedSignLink(canonicalSlug: string): string {
+  const slug = getLocalizedSlug(canonicalSlug, locale);
+  return `${urlBase}/horoscope/${slug}/`;
+}
+
+function localizedSignName(canonicalSlug: string): string {
+  const frName = ZODIAC_SIGNS.find((s) => s.slug === canonicalSlug)?.name ?? canonicalSlug;
+  const key = SIGN_NAME_KEYS[canonicalSlug];
+  return (key && t(key as any, locale)) || frName;
+}
+---
+
+<section class="mt-16 space-y-12">
+  {/* ── Qui est le [signe] ── */}
+  <div>
+    <h2 class="font-serif text-3xl md:text-4xl mb-3">
+      {L.who_is} {signName}{L.who_is ? " ?" : ""}
+    </h2>
+    <p class="text-white/70 italic mb-5 text-lg">{profile.tagline}</p>
+    <p class="text-white/85 leading-relaxed text-[17px]">{profile.intro}</p>
+  </div>
+
+  {/* ── Forces / Faiblesses ── */}
+  <div class="grid md:grid-cols-2 gap-5">
+    <div class="p-6 rounded-2xl border border-emerald-300/20 bg-emerald-300/[0.03]">
+      <h3 class="font-serif text-xl mb-4 text-emerald-300">{L.strengths}</h3>
+      <ul class="space-y-2 text-white/85">
+        {profile.strengths.map((s) => (
+          <li class="flex gap-2 text-sm leading-relaxed">
+            <span class="text-emerald-300/70 shrink-0">◆</span>
+            <span>{s}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="p-6 rounded-2xl border border-amber-300/20 bg-amber-300/[0.03]">
+      <h3 class="font-serif text-xl mb-4 text-amber-300">{L.weaknesses}</h3>
+      <ul class="space-y-2 text-white/85">
+        {profile.weaknesses.map((w) => (
+          <li class="flex gap-2 text-sm leading-relaxed">
+            <span class="text-amber-300/70 shrink-0">◆</span>
+            <span>{w}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  {/* ── En amour / amitie / travail ── */}
+  <div class="grid md:grid-cols-3 gap-5">
+    <div class="p-6 rounded-2xl border border-pink-300/20 bg-pink-300/[0.03]">
+      <h3 class="font-serif text-xl mb-3 text-pink-300">{L.in_love}</h3>
+      <p class="text-white/80 leading-relaxed text-sm">{profile.in_love}</p>
+    </div>
+    <div class="p-6 rounded-2xl border border-purple-300/20 bg-purple-300/[0.03]">
+      <h3 class="font-serif text-xl mb-3 text-purple-300">{L.in_friendship}</h3>
+      <p class="text-white/80 leading-relaxed text-sm">{profile.in_friendship}</p>
+    </div>
+    <div class="p-6 rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.03]">
+      <h3 class="font-serif text-xl mb-3 text-cyan-300">{L.at_work}</h3>
+      <p class="text-white/80 leading-relaxed text-sm">{profile.at_work}</p>
+    </div>
+  </div>
+
+  {/* ── Meilleures compatibilites ── */}
+  <div>
+    <h2 class="font-serif text-2xl md:text-3xl mb-5">{L.best_matches}</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      {profile.best_matches.map((m) => (
+        <a
+          href={localizedSignLink(m.slug)}
+          class="group p-5 rounded-2xl border border-amber-300/20 bg-amber-300/[0.03] hover:border-amber-300/60 hover:bg-amber-300/[0.07] transition-all"
+        >
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2">
+              <ZodiacSymbol sign={localizedSignName(m.slug)} size={28} color="#D4A017" />
+              <span class="font-serif text-lg text-white group-hover:text-amber-300">
+                {localizedSignName(m.slug)}
+              </span>
+            </div>
+            <span class="text-xs px-2 py-1 rounded-full bg-amber-300/15 border border-amber-300/30 text-amber-300">
+              {m.score}% {L.scored}
+            </span>
+          </div>
+          <p class="text-white/75 leading-relaxed text-sm">{m.why}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+
+  {/* ── Dissonances notoires ── */}
+  <div>
+    <h2 class="font-serif text-2xl md:text-3xl mb-5">{L.challenging_matches}</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      {profile.challenging_matches.map((m) => (
+        <a
+          href={localizedSignLink(m.slug)}
+          class="group p-5 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-white/20 transition-all"
+        >
+          <div class="flex items-center gap-2 mb-3">
+            <ZodiacSymbol sign={localizedSignName(m.slug)} size={24} color="#9CA3AF" />
+            <span class="font-serif text-base text-white/85 group-hover:text-white">
+              {localizedSignName(m.slug)}
+            </span>
+          </div>
+          <p class="text-white/70 leading-relaxed text-sm">{m.why}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+
+  {/* ── Attributs cosmiques ── */}
+  <div>
+    <h2 class="font-serif text-2xl md:text-3xl mb-5">{L.attributes}</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      {[
+        { label: L.gemstone,      value: profile.attributes.gemstone },
+        { label: L.animal_totem,  value: profile.attributes.animal_totem },
+        { label: L.flower,        value: profile.attributes.flower },
+        { label: L.color,         value: profile.attributes.color },
+        { label: L.lucky_day,     value: profile.attributes.lucky_day },
+        { label: L.lucky_number,  value: String(profile.attributes.lucky_number) },
+        { label: L.metal,         value: profile.attributes.metal },
+      ].filter((a) => a.value).map((a) => (
+        <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+          <p class="text-[10px] uppercase tracking-widest text-white/50 mb-1">{a.label}</p>
+          <p class="text-base text-white/90 font-serif">{a.value}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* ── Personnalites celebres ── */}
+  {profile.famous_people.length > 0 && (
+    <div>
+      <h2 class="font-serif text-2xl md:text-3xl mb-5">{L.famous_people}</h2>
+      <div class="flex flex-wrap gap-2">
+        {profile.famous_people.map((p) => (
+          <span class="inline-flex items-center px-4 py-2 rounded-full border border-purple-300/20 bg-purple-300/[0.05] text-white/85 text-sm">
+            {p}
+          </span>
+        ))}
+      </div>
+    </div>
+  )}
+
+  {/* ── FAQ ── */}
+  <div>
+    <h2 class="font-serif text-2xl md:text-3xl mb-5">{L.faq}</h2>
+    <div class="space-y-3">
+      {profile.faq.map((item) => (
+        <details class="group p-5 rounded-2xl border border-white/10 bg-white/[0.02] open:border-amber-300/30 open:bg-amber-300/[0.03]">
+          <summary class="cursor-pointer font-serif text-lg text-white/90 group-open:text-amber-300 list-none flex items-start justify-between gap-3">
+            <span>{item.q}</span>
+            <span class="text-amber-300/70 shrink-0 mt-0.5 group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="mt-3 text-white/80 leading-relaxed text-[15px]">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

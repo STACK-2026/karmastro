@@ -1,0 +1,86 @@
+{
+  "tagline": "Le souverain du zodiaque, magnétique et généreux, rayonne de fierté solaire",
+  "intro": "Cinquième signe du zodiaque, le Lion incarne l'archétype du souverain solaire à l'apogée de l'été. Gouverné par l'astre roi, ce signe de Feu fixe possède une autorité naturelle qui ne se décrète pas mais s'impose par le rayonnement. Là où le Bélier conquiert et le Sagittaire explore, le Lion règne et inspire. Sa force réside dans cette capacité unique à transformer l'ordinaire en spectacle, à élever ce qu'il touche par sa seule présence. Contrairement aux clichés sur son narcissisme supposé, le vrai Lion cherche moins l'admiration que la reconnaissance de sa valeur authentique. Il traverse l'existence en créateur, dramaturge de sa propre vie, capable de métamorphoser les épreuves en épopées héroïques. Cette noblesse d'âme, quand elle s'exprime pleinement, fait de lui un guide naturel que l'on suit par admiration plus que par contrainte.",
+  "strengths": [
+    "Magnétisme personnel irrésistible naturel",
+    "Générosité authentique désintéressée profonde",
+    "Leadership inspirant par l'exemple",
+    "Créativité dramaturgique spectaculaire originale",
+    "Loyauté indéfectible envers proches"
+  ],
+  "weaknesses": [
+    "Susceptibilité excessive blessures d'ego",
+    "Autoritarisme paternaliste parfois étouffant",
+    "Besoin constant validation reconnaissance externe",
+    "Tendance mélodramatique théâtraliser situations",
+    "Orgueil rigide difficulté admettre erreurs"
+  ],
+  "in_love": "En amour, le Lion aime avec panache et exclusivité. Il ne collectionne pas les conquêtes mais cherche l'âme sœur digne de partager son royaume. Sa séduction opère par la générosité plutôt que la stratégie : cadeaux somptueux, attentions théâtrales, déclarations passionnées. Il veut être fier de sa moitié autant qu'en être fier. Cette réciprocité de l'admiration est cruciale. Le Lion fuit les amours ternes, les partenaires effacés qui ne savent pas le valoriser. Il a besoin d'être mis sur un piédestal tout en plaçant l'être aimé sur le sien. Fidèle par nature quand il s'engage vraiment, il peut néanmoins se lasser d'une relation qui ne nourrit plus son besoin de grandeur partagée.",
+  "in_friendship": "L'amitié du Lion se caractérise par une loyauté de clan et une générosité ostentatoire. Il collectionne volontiers un cercle d'amis qu'il traite comme sa cour, multipliant invitations fastueuses et gestes grandioses. Protecteur naturel, il se pose en défenseur de ses proches face aux épreuves. Cependant, cette amitié royale demande reconnaissance : le Lion supporte mal l'ingratitude ou l'indifférence. Il préfère peu d'amis mais dévoués plutôt qu'une multitude de relations superficielles. Son côté théâtral peut parfois lasser, mais sa sincérité et sa capacité à transformer les moments ordinaires en souvenirs mémorables compensent largement.",
+  "at_work": "Professionnellement, le Lion brille dans les métiers de représentation, création et leadership : théâtre, mode, communication, direction d'équipe, politique. Il excelle quand il peut incarner une vision et fédérer autour de sa personnalité. Manager naturel, il inspire plus qu'il ne contrôle, préférant déléguer tout en gardant la responsabilité finale. Son rapport à l'autorité est complexe : excellent chef mais subordonné difficile s'il n'admire pas ses supérieurs. Il a besoin de reconnaissance professionnelle visible et peut souffrir dans l'anonymat administratif. Son rythme de travail alterne moments d'intense créativité et périodes de récupération nécessaires à son égo.",
+  "best_matches": [
+    {
+      "slug": "belier",
+      "score": 92,
+      "why": "Deux Feux qui s'attisent mutuellement, partageant passion, ambition et besoin d'action héroïque."
+    },
+    {
+      "slug": "sagittaire",
+      "score": 88,
+      "why": "Complicité Fire complète : Lion apporte structure au Sagittaire, qui nourrit sa soif d'aventure noble."
+    },
+    {
+      "slug": "gemeaux",
+      "score": 85,
+      "why": "Opposition magnétique : mental brillant des Gémeaux stimule créativité Lion, qui lui offre stabilité émotionnelle."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "scorpion",
+      "why": "Deux volontés de pouvoir s'affrontent : Lion solaire contre Scorpion souterrain, lutte d'ego intense et manipulations."
+    },
+    {
+      "slug": "taureau",
+      "why": "Conflit Feu-Terre : impulsivité dramatique Lion heurte obstination Taureau, incompréhension sur valeurs et rythmes."
+    }
+  ],
+  "attributes": {
+    "gemstone": "Diamant",
+    "animal_totem": "Lion",
+    "flower": "Tournesol",
+    "color": "Or",
+    "lucky_day": "Dimanche",
+    "lucky_number": 7,
+    "metal": "Or"
+  },
+  "famous_people": [
+    "Napoléon Bonaparte",
+    "Alfred Hitchcock",
+    "Jacqueline Kennedy Onassis",
+    "Andy Warhol",
+    "Madonna Louise Ciccone"
+  ],
+  "faq": [
+    {
+      "q": "Comment un Lion exprime-t-il sa colère et comment la gérer en couple ?",
+      "a": "La colère du Lion est spectaculaire mais rarement durable. Il explose théâtralement, avec grands gestes et déclarations dramatiques, mais pardonne facilement si on reconnaît ses torts. Pour la gérer en couple, évitez de l'humilier publiquement ou de minimiser ses émotions. Laissez-lui exprimer sa frustration, puis revenez calmement sur les faits. Le Lion apprécie qu'on reconnaisse sa légitimité émotionnelle même si on conteste ses arguments. Après l'orage, il redevient généreux et affectueux, oubliant volontiers les griefs si son ego n'a pas été blessé durablement. Sa fierté cicatrise vite avec des excuses sincères."
+    },
+    {
+      "q": "Pourquoi le Lion a-t-il tant besoin de reconnaissance professionnelle ?",
+      "a": "Le besoin de reconnaissance du Lion découle de sa nature solaire et de sa fonction zodiacale de souverain. Gouverné par l'astre central du système solaire, il ressent instinctivement le besoin d'occuper une position centrale et visible. Cette quête n'est pas pure vanité mais expression d'un archétype : le Lion incarne naturellement le leadership créatif et l'inspiration collective. Sans reconnaissance, il perd sa fonction sociale et sombre dans la frustration. Professionnellement, il doit pouvoir mettre sa personnalité au service d'une œuvre ou d'une équipe. Les métiers anonymes ou purement techniques l'épuisent car ils ne nourrissent pas son besoin vital de rayonnement personnel au service d'autrui."
+    },
+    {
+      "q": "Un ascendant Lion modifie-t-il vraiment la personnalité du signe solaire ?",
+      "a": "L'ascendant Lion transforme radicalement l'expression de n'importe quel signe solaire en ajoutant magnétisme, théâtralité et besoin de reconnaissance. Un Cancer ascendant Lion devient plus extraverti et charismatique, gardant sa sensibilité mais l'exprimant avec plus de panache. Un Capricorne ascendant Lion tempère son austérité par une chaleur naturelle et un goût pour la représentation. L'ascendant Lion donne systématiquement une prestance naturelle, un port de tête altier et une tendance à dramatiser les situations. Il pousse à rechercher les positions de leadership et à soigner son image publique. Même les signes les plus discrets acquièrent avec cet ascendant une présence remarquée et une difficulté à passer inaperçus."
+    },
+    {
+      "q": "Quels sont les métiers où le Lion réussit le mieux selon l'astrologie traditionnelle ?",
+      "a": "L'astrologie traditionnelle associe le Lion aux métiers solaires : théâtre, cinéma, politique, haute couture, bijouterie de luxe, direction artistique. Sa nature de Feu fixe le destine aux positions d'autorité créative où il peut incarner une vision : chef d'entreprise, réalisateur, styliste, chef cuisinier renommé. Les professions liées à l'enfance lui conviennent aussi : enseignement, pédiatrie, animation. Éviter les métiers purement techniques sans contact humain ou reconnaissance. Le Lion excelle dans la représentation commerciale, les relations publiques, le journalisme de prestige. Les arts décoratifs, l'architecture, l'événementiel correspondent à son goût du spectacle. Condition sine qua non : pouvoir exprimer sa créativité personnelle et recevoir du feedback positif régulier."
+    },
+    {
+      "q": "Comment développer spirituellement les qualités supérieures du signe Lion ?",
+      "a": "Le développement spirituel du Lion passe par la transmutation de l'ego personnel en service désintéressé. Sa leçon karmique consiste à transcender le besoin d'admiration pour devenir source d'inspiration authentique. Pratiques recommandées : méditation sur le cœur spirituel, développement de la générosité anonyme, art comme véhicule de beauté universelle. Le Lion évolué devient mentor naturel, guide bienveillant qui élève autrui sans attendre de retour. Sa créativité se met au service de causes nobles, sa théâtralité devient pédagogie spirituelle. L'orgueil se mue en dignité humble, la susceptibilité en compassion. Les pratiques artistiques méditatives (danse sacrée, chant mantrique) l'aident à canaliser son feu créateur vers l'élévation collective plutôt que la glorification personnelle."
+    }
+  ]
+}

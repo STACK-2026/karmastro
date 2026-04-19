@@ -1,0 +1,86 @@
+{
+  "tagline": "Primeiro nascido do zodíaco, o Carneiro abre caminho com ardor",
+  "intro": "Nascido no momento em que a natureza renasce, o Carneiro encarna o ímpeto vital primordial. Primeiro signo do zodíaco, carrega em si a força bruta do começo, aquela que quebra o invólucro do inverno para fazer brotar vida nova. Marte, o seu regente planetário, confere-lhe esta capacidade única de transformar intenção em ação imediata. Cardinal do Fogo, o Carneiro não conhece hesitação: vê, quer, age. Esta espontaneidade aparente esconde na realidade uma inteligência intuitiva temível, capaz de captar o essencial duma situação num relâmpago. Longe do clichê do impulsivo precipitado, o verdadeiro Carneiro possui esta presciência do pioneiro que adivinha os caminhos antes de serem traçados. Atravessa o mundo como batedor, assumindo o risco do erro para abrir a estrada aos outros.",
+  "strengths": [
+    "Coragem face aos desafios inéditos",
+    "Iniciativa criadora espontânea",
+    "Liderança natural inspiradora",
+    "Franqueza desarmante e autêntica",
+    "Capacidade de regeneração rápida"
+  ],
+  "weaknesses": [
+    "Impaciência perante a lentidão",
+    "Tendência ao individualismo excessivo",
+    "Dificuldade em manter o esforço",
+    "Suscetibilidade ferida facilmente",
+    "Falta de diplomacia às vezes"
+  ],
+  "in_love": "O Carneiro ama com a mesma intensidade que vive: totalmente e imediatamente. Não corre atrás do amor, reconhece-o ao primeiro olhar e lança-se sem cálculo. A sua sedução opera pela autenticidade em vez da estratégia. Procura um parceiro cúmplice dos seus ímpetos, capaz de admirar a sua espontaneidade sem procurar travá-la. O Carneiro foge das relações tépidas ou dos jogos de poder subtis. Precisa de sentir essa eletricidade particular que confirma que o outro está à sua altura. Em casal, permanece o iniciador dos projetos comuns, aquele que propõe a aventura e arrasta o outro no seu rasto energético.",
+  "in_friendship": "A amizade Carneiro reconhece-se pela sua lealdade imediata e pela sua generosidade sem condição. Escolhe os seus amigos por paixão súbita e permanece-lhes fiel com uma constância que pode surpreender neste signo reputado instável. O Carneiro mantém as suas amizades pela ação comum em vez das confidências intermináveis. Prefere partilhar uma aventura a uma terapia de grupo. Os seus amigos apreciam a sua capacidade de relançar a dinâmica do grupo quando a energia baixa, e a sua maneira direta de resolver conflitos sem deixar apodrecer os não-ditos.",
+  "at_work": "O Carneiro destaca-se nas profissões de pioneiro: empresário, comercial de terreno, urgentista, chefe de projeto de inovação. Precisa de autonomia e desafios renovados para dar a sua plena medida. Face à autoridade, respeita aquela que se merece pela competência, mas rejeita instintivamente as hierarquias cristalizadas. O seu ritmo de trabalho funciona por impulsos intensos em vez de regularidade. O seu ponto cego profissional: a paciência necessária às tarefas de fundo e a gestão dos pormenores administrativos que o aborrecem profundamente.",
+  "best_matches": [
+    {
+      "slug": "lion",
+      "score": 92,
+      "why": "Dois fogos cardinais que se admiram mutuamente e criam uma dinâmica de superação permanente"
+    },
+    {
+      "slug": "sagittaire",
+      "score": 88,
+      "why": "Complementaridade perfeita entre a iniciativa Carneiro e a visão expansiva Sagitário"
+    },
+    {
+      "slug": "gemeaux",
+      "score": 85,
+      "why": "Oposição criativa onde a espontaneidade Carneiro estimula a inteligência adaptativa Gêmeos"
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "cancer",
+      "why": "A prudência defensiva Caranguejo trava o ímpeto espontâneo Carneiro, criando frustração mútua"
+    },
+    {
+      "slug": "capricorne",
+      "why": "Oposição entre o imediatismo Carneiro e a paciência estruturada Capricórnio, ritmos incompatíveis"
+    }
+  ],
+  "attributes": {
+    "gemstone": "Rubi",
+    "animal_totem": "Carneiro",
+    "flower": "Túlipa vermelha",
+    "color": "Vermelho cardeal",
+    "lucky_day": "Terça-feira",
+    "lucky_number": 7,
+    "metal": "Ferro"
+  },
+  "famous_people": [
+    "Marlon Brando",
+    "Lady Gaga",
+    "Leonardo da Vinci",
+    "Cristiano Ronaldo",
+    "José Saramago"
+  ],
+  "faq": [
+    {
+      "q": "Porque é que o Carneiro é considerado o líder natural do zodíaco?",
+      "a": "O Carneiro ocupa esta posição pela sua natureza cardinal de Fogo, combinada com a influência de Marte. Primeiro signo do ciclo zodiacal, possui a energia de iniciação pura, aquela que lança as dinâmicas novas. A sua capacidade de liderança não vem dum desejo de dominação mas duma aptidão natural para ver as oportunidades antes dos outros e agir em consequência. O Carneiro lidera pelo exemplo e pelo arrastamento em vez da autoridade imposta. Esta posição de pioneiro confere-lhe uma responsabilidade particular: a de abrir os caminhos que outros signos poderão depois desenvolver e estabilizar."
+    },
+    {
+      "q": "Como é que um ascendente Carneiro influencia a personalidade mesmo com um sol diferente?",
+      "a": "O ascendente Carneiro colore instantaneamente a forma de abordar o mundo, mesmo que o Sol natal tempere este primeiro impulso. A pessoa desenvolve um porte decidido, um olhar direto e uma tendência a tomar iniciativas rápidas. Dá a impressão de estar sempre pronta para a ação, mesmo que o seu signo solar a empurre para mais reflexão. Este ascendente confere um carisma natural e uma capacidade de motivar os outros. Pode criar tensões internas se o Sol natal privilegiar a prudência ou a diplomacia, mas oferece sempre esta energia de arranque tão característica do Carneiro."
+    },
+    {
+      "q": "Que profissões permitem ao Carneiro explorar plenamente o seu potencial marciano?",
+      "a": "O Carneiro floresce nas profissões que pedem coragem, iniciativa e capacidade de gerir a urgência. As profissões da inovação tecnológica, do empreendedorismo, do jornalismo de investigação convêm-lhe perfeitamente. Na medicina, destaca-se em cirurgia ou medicina de urgência. O desporto de alto nível, o coaching, as forças de ordem ou as profissões de segurança correspondem ao seu temperamento marciano. Também tem sucesso na venda no terreno, no marketing disruptivo ou qualquer área que necessite convencer e arrastar. O essencial é que possa ver rapidamente os resultados da sua ação e manter uma margem de autonomia nas suas decisões."
+    },
+    {
+      "q": "Pode o Carneiro desenvolver a sua paciência naturalmente com a idade?",
+      "a": "A paciência do Carneiro evolui efetivamente com a maturidade, mas toma uma forma particular. Em vez de aprender a espera passiva, o Carneiro maduro desenvolve uma paciência ativa: compreende que certos objetivos pedem tempo e aprende a estruturar a sua ação em etapas. A experiência ensina-lhe a canalizar a sua energia marciana para projetos a mais longo prazo. Não se torna paciente no sentido tradicional, mas adquire uma visão estratégica que lhe permite aceitar os prazos necessários. Esta evolução faz-se frequentemente através de experiências profissionais ou pessoais que lhe mostram o valor das realizações duradouras."
+    },
+    {
+      "q": "Como pode o Carneiro harmonizar a sua natureza de fogo com parceiros mais contemplativos?",
+      "a": "A harmonização passa pelo reconhecimento mútuo dos ritmos diferentes e pela criação de espaços respetivos. O Carneiro deve aprender a valorizar a profundidade reflexiva do seu parceiro como complemento à sua espontaneidade, não como travão. Em contrapartida, o parceiro contemplativo pode haurir no ímpeto Carneiro uma energia revitalizante. A chave reside na alternância: momentos de ação comum iniciados pelo Carneiro, momentos de pausa e reflexão guiados pelo outro. Esta complementaridade enriquece as duas partes desde que cada uma respeite o modo de funcionamento da outra sem procurar transformá-lo. A relação torna-se então um equilíbrio dinâmico entre ímpeto e profundidade."
+    }
+  ]
+}

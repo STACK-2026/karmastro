@@ -1,0 +1,86 @@
+{
+  "tagline": "L'architecte du concret qui transforme les rêves en réalité tangible",
+  "intro": "Le Taureau incarne la puissance créatrice de Vénus ancrée dans la matière. Né au cœur du printemps, quand la nature déploie sa fécondité, il transforme l'élan pionnier du Bélier en œuvre durable. Ce signe fixe de Terre possède cette capacité unique de donner corps aux idées, de leur offrir forme et substance. Gouverné par Vénus, il cherche la beauté dans le tangible, l'harmonie dans le concret. Sa force réside dans cette alchimie particulière qui unit sensualité et pragmatisme, esthétique et efficacité. Le Taureau avance avec la patience de celui qui bâtit pour l'éternité, sachant que les plus belles cathédrales naissent pierre après pierre. Sa relation au temps diffère : là où d'autres courent, il cultive, conscient que la véritable richesse se construit lentement mais sûrement.",
+  "strengths": [
+    "Persévérance inébranlable face aux obstacles",
+    "Sens esthétique raffiné et authentique",
+    "Pragmatisme créatif et constructif",
+    "Loyauté indéfectible envers ses proches",
+    "Stabilité émotionnelle rassurante"
+  ],
+  "weaknesses": [
+    "Résistance excessive au changement nécessaire",
+    "Tendance possessive dans les relations",
+    "Entêtement parfois contre productif",
+    "Attachement matériel parfois excessif",
+    "Lenteur décisionnelle qui freine l'action"
+  ],
+  "in_love": "Le Taureau aime avec ses cinq sens, cherchant une communion charnelle autant qu'émotionnelle. Il courtise avec patience, offrant stabilité et sécurité à l'élu de son cœur. Sa sensualité vénusienne s'exprime par les plaisirs partagés : repas savoureux, massages, moments cocooning. Il fuit l'instabilité affective et les relations superficielles, préférant construire une intimité profonde et durable. Sa jalousie, parfois possessive, révèle son besoin de sécurité affective. Une fois engagé, il devient le partenaire le plus fiable du zodiaque, créant un foyer harmonieux où règnent beauté et confort.",
+  "in_friendship": "L'amitié taurine se construit sur la durée et la réciprocité. Ce signe privilégie un cercle restreint d'amis fidèles plutôt qu'un réseau étendu. Il exprime sa tendresse par des gestes concrets : invitations gourmandes, cadeaux réfléchis, présence constante dans les moments difficiles. Sa loyauté légendaire en fait un confident privilégié, capable de garder les secrets et d'offrir des conseils pragmatiques. Il maintient le lien par la régularité des contacts et la création de traditions partagées.",
+  "at_work": "Le Taureau excelle dans les métiers liés à la beauté, l'artisanat, la gastronomie ou la finance. Sa relation à l'autorité reste respectueuse mais indépendante : il préfère la reconnaissance de ses compétences aux honneurs hiérarchiques. Son rythme de travail, méthodique et régulier, peut dérouter les environnements frénétiques. Son angle mort professionnel réside dans sa difficulté à s'adapter rapidement aux nouveaux outils ou méthodes, privilégiant les techniques éprouvées aux innovations hasardeuses.",
+  "best_matches": [
+    {
+      "slug": "vierge",
+      "score": 92,
+      "why": "Terre commune et complémentarité Vénus-Mercure créent une alchimie parfaite entre sensualité et précision."
+    },
+    {
+      "slug": "capricorne",
+      "score": 88,
+      "why": "Trigone de Terre favorise la construction commune d'un avenir stable et prospère."
+    },
+    {
+      "slug": "cancer",
+      "score": 85,
+      "why": "Sextile créatif entre Vénus et Lune harmonise sécurité matérielle et émotionnelle."
+    }
+  ],
+  "challenging_matches": [
+    {
+      "slug": "lion",
+      "why": "Carré fixe Vénus-Soleil crée des tensions entre besoin de simplicité taurine et théâtralité léonine."
+    },
+    {
+      "slug": "verseau",
+      "why": "Opposition fixe Vénus-Uranus génère conflits entre tradition taurine et révolution aquarienne."
+    }
+  ],
+  "attributes": {
+    "gemstone": "émeraude",
+    "animal_totem": "taureau",
+    "flower": "rose",
+    "color": "vert tendre",
+    "lucky_day": "vendredi",
+    "lucky_number": 6,
+    "metal": "cuivre"
+  },
+  "famous_people": [
+    "Audrey Hepburn",
+    "Salvador Dalí",
+    "Barbra Streisand",
+    "David Beckham",
+    "Adele Adkins"
+  ],
+  "faq": [
+    {
+      "q": "Pourquoi le Taureau est-il si attaché à ses habitudes et routines ?",
+      "a": "La nature fixe du Taureau, combinée à sa gouvernance vénusienne, crée un besoin profond de stabilité et d'harmonie. Ses routines ne sont pas de la rigidité mais des rituels de bien-être qui lui permettent de cultiver la beauté au quotidien. Cette régularité structure son monde intérieur et lui offre les repères nécessaires pour exprimer sa créativité. Contrairement aux signes mutables qui s'épanouissent dans le changement, le Taureau puise sa force dans la constance, transformant chaque geste répété en art de vivre raffiné."
+    },
+    {
+      "q": "Comment un Taureau peut-il surmonter sa résistance naturelle au changement ?",
+      "a": "La clé réside dans l'association du changement à des bénéfices tangibles et esthétiques. Le Taureau acceptera plus facilement une évolution s'il peut visualiser concrètement les améliorations qu'elle apporte à son confort ou à sa beauté de vie. Il faut lui laisser le temps d'apprivoiser la nouveauté, en procédant par étapes graduelles plutôt que par révolutions brutales. Sa nature vénusienne répond favorablement aux transitions harmonieuses qui respectent son rythme naturel et préservent ce qui lui est cher dans l'ancien système."
+    },
+    {
+      "q": "Quelle est l'influence de l'ascendant sur la personnalité d'un Taureau ?",
+      "a": "L'ascendant module l'expression de la sensualité et du pragmatisme taurins. Un ascendant Gémeaux apportera plus de mobilité mentale et de curiosité intellectuelle, tandis qu'un ascendant Scorpion intensifiera la dimension passionnelle et mystérieuse. Un ascendant Feu (Bélier, Lion, Sagittaire) dynamisera l'énergie taurine, la rendant plus expressive et entreprenante. L'ascendant Air favorisera l'expression artistique et sociale de Vénus, tandis qu'un ascendant Eau amplifiera l'intuition et la réceptivité émotionnelle du signe solaire."
+    },
+    {
+      "q": "Quels métiers permettent au Taureau d'exprimer pleinement ses talents naturels ?",
+      "a": "Le Taureau s'épanouit dans tous les domaines où beauté et savoir-faire s'unissent : architecture d'intérieur, joaillerie, gastronomie, viticulture, artisanat d'art. Sa connexion vénusienne le destine naturellement aux métiers artistiques, de la sculpture à la musique. Dans la finance, son sens pratique et sa patience en font un excellent gestionnaire de patrimoine. L'immobilier, l'horticulture, la parfumerie correspondent également à sa nature. Il excelle aussi dans l'accompagnement bien-être : massothérapie, esthétique, coaching en art de vivre."
+    },
+    {
+      "q": "Comment le Taureau exprime-t-il sa spiritualité et sa connexion au sacré ?",
+      "a": "La spiritualité taurine passe par l'incarnation et la célébration de la beauté divine dans la matière. Moins mystique que contemplatif, il trouve le sacré dans la nature, les jardins, les œuvres d'art qui élèvent l'âme. Sa pratique spirituelle privilégie les rituels sensoriels : méditation dans un beau cadre, chant, danse sacrée, création artistique comme prière. Il honore le divin à travers la gratitude pour l'abondance terrestre et la préservation de la beauté du monde. Sa foi se nourrit de traditions anciennes et s'exprime par des actes concrets de générosité et de protection de l'environnement."
+    }
+  ]
+}
