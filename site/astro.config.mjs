@@ -30,6 +30,11 @@ export default defineConfig({
       priority: 0.7,
       lastmod: new Date(),
       serialize(item) {
+        // Exclude dated horoscope archive/preview pages (thin content, soft paywall)
+        // Matches /horoscope/{signe}/YYYY-MM-DD[/] across FR root and /[lang]/ variants
+        if (/\/horoscope\/[^/]+\/\d{4}-\d{2}-\d{2}\/?$/.test(item.url)) {
+          return undefined;
+        }
         // Priority by path type
         if (item.url === siteConfig.url + "/") {
           item.priority = 1.0;
