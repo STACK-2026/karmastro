@@ -5,6 +5,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import CookieBanner from "../components/CookieBanner.astro";
 import { LOCALES, DEFAULT_LOCALE, extractLocale, stripLocalePrefix, isRTL } from "../i18n/config";
+import { getLocalizedSlug, getCanonicalSlugFromLocalized } from "../data/zodiac";
 import "../styles/global.css";
 
 interface Props {
@@ -37,14 +38,32 @@ const currentLocale = extractLocale(Astro.url.pathname);
 const isRightToLeft = isRTL(currentLocale);
 const pathWithoutLocale = stripLocalePrefix(Astro.url.pathname);
 
-// Build hreflang URLs for all 11 locales
+// Build hreflang URLs for all 11 locales.
+// For horoscope pages the sign slug is translated per locale (e.g. FR "cancer" vs AR "burj-al-saratan"),
+// so we must re-translate the slug when constructing each locale variant - otherwise alternates 404.
+const horoscopeMatch = pathWithoutLocale.match(/^\/horoscope\/([^/]+)(\/.*)?$/);
+const canonicalSignSlug = horoscopeMatch
+  ? (currentLocale === DEFAULT_LOCALE
+      ? horoscopeMatch[1]
+      : getCanonicalSlugFromLocalized(horoscopeMatch[1], currentLocale))
+  : undefined;
+
 const hreflangUrls = LOCALES.map((locale) => {
   const prefix = locale === DEFAULT_LOCALE ? "" : `/${locale}`;
+  let path = pathWithoutLocale;
+  if (horoscopeMatch && canonicalSignSlug) {
+    const translatedSlug = getLocalizedSlug(canonicalSignSlug, locale);
+    const tail = horoscopeMatch[2] ?? "";
+    path = `/horoscope/${translatedSlug}${tail}`;
+  }
   return {
     locale,
-    url: `${siteConfig.url}${prefix}${pathWithoutLocale}`,
+    url: `${siteConfig.url}${prefix}${path}`,
   };
 });
+
+// x-default points to the default locale variant
+const xDefaultUrl = hreflangUrls.find((h) => h.locale === DEFAULT_LOCALE)?.url;
 ---
 
 <!doctype html>
@@ -68,7 +87,7 @@ const hreflangUrls = LOCALES.map((locale) => {
     {hreflangUrls.map(({ locale, url }) => (
       <link rel="alternate" hreflang={locale} href={url} />
     ))}
-    <link rel="alternate" hreflang="x-default" href={`${siteConfig.url}${pathWithoutLocale}`} />
+    {xDefaultUrl && <link rel="alternate" hreflang="x-default" href={xDefaultUrl} />}
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />

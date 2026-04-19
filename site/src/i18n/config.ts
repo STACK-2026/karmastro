@@ -78,13 +78,16 @@ export function extractLocale(pathname: string): Locale {
 }
 
 // Strip the locale prefix from a path
-// /en/horoscope -> /horoscope
+// /en/horoscope/ -> /horoscope/ (preserves trailing slash)
 export function stripLocalePrefix(pathname: string): string {
   const parts = pathname.split("/").filter(Boolean);
   if (parts.length === 0) return "/";
   const first = parts[0];
   if (LOCALES.includes(first as Locale) && first !== DEFAULT_LOCALE) {
-    return "/" + parts.slice(1).join("/");
+    const hadTrailingSlash = pathname.endsWith("/");
+    const rest = parts.slice(1).join("/");
+    if (!rest) return "/";
+    return "/" + rest + (hadTrailingSlash ? "/" : "");
   }
   return pathname;
 }
