@@ -103,21 +103,36 @@ const KpiCard = ({
   value,
   sub,
   color = "text-primary",
+  onClick,
 }: {
   icon: typeof Users;
   label: string;
   value: string | number;
   sub?: string;
   color?: string;
-}) => (
-  <div className="p-4 rounded-xl bg-card/60 border border-border">
-    <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
-      <Icon className="h-3.5 w-3.5" /> {label}
-    </div>
-    <p className={`text-2xl font-serif ${color}`}>{value}</p>
-    {sub && <p className="text-[10px] text-muted-foreground mt-1">{sub}</p>}
-  </div>
-);
+  onClick?: () => void;
+}) => {
+  const base = "p-4 rounded-xl bg-card/60 border border-border text-left w-full";
+  const interactive = onClick ? " hover:border-primary/60 hover:bg-card/80 transition-colors cursor-pointer" : "";
+  const Body = (
+    <>
+      <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
+        <Icon className="h-3.5 w-3.5" /> {label}
+        {onClick && <ArrowRight className="h-3 w-3 ml-auto opacity-50" />}
+      </div>
+      <p className={`text-2xl font-serif ${color}`}>{value}</p>
+      {sub && <p className="text-[10px] text-muted-foreground mt-1">{sub}</p>}
+    </>
+  );
+  if (onClick) {
+    return (
+      <button type="button" onClick={onClick} className={base + interactive}>
+        {Body}
+      </button>
+    );
+  }
+  return <div className={base}>{Body}</div>;
+};
 
 const SectionCard = ({
   title,
@@ -161,7 +176,7 @@ const MiniBarChart = ({ data, color = "bg-primary" }: { data: { date: string; co
 // Overview Tab
 // ───────────────────────────────────────────────────────────────
 
-const OverviewTab = ({ periodDays }: { periodDays: number }) => {
+const OverviewTab = ({ periodDays, onNavigate }: { periodDays: number; onNavigate: (tab: string) => void }) => {
   const [kpis, setKpis] = useState<Kpis | null>(null);
   const [series, setSeries] = useState<Timeseries | null>(null);
   const [loading, setLoading] = useState(true);
@@ -187,40 +202,62 @@ const OverviewTab = ({ periodDays }: { periodDays: number }) => {
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        <KpiCard icon={Users} label="Utilisateurs" value={kpis.total_users} sub={`+${kpis.new_users_period} cette période`} />
+        <KpiCard
+          icon={Users}
+          label="Utilisateurs"
+          value={kpis.total_users}
+          sub={`+${kpis.new_users_period} cette période`}
+          onClick={() => onNavigate("users")}
+        />
         <KpiCard
           icon={Crown}
           label="Abonnés payants"
           value={kpis.paid_users}
           sub={`${paidPct}% · ${mrrEuro.toFixed(0)}€ MRR`}
           color="text-amber-300"
+          onClick={() => onNavigate("money")}
         />
         <KpiCard
           icon={MessageSquare}
           label="Messages Oracle"
           value={kpis.total_messages}
           sub={`+${kpis.messages_period} cette période`}
+          onClick={() => onNavigate("oracle")}
         />
         <KpiCard
           icon={Sparkles}
           label="Note moyenne"
           value={kpis.total_feedbacks > 0 ? `${Number(kpis.avg_rating).toFixed(2)}/3` : "-"}
           sub={`${kpis.total_feedbacks} retours`}
+          onClick={() => onNavigate("oracle")}
         />
-        <KpiCard icon={Gift} label="Parrainages" value={kpis.total_referrals} />
+        <KpiCard
+          icon={Gift}
+          label="Parrainages"
+          value={kpis.total_referrals}
+          onClick={() => onNavigate("referrals")}
+        />
         <KpiCard
           icon={CreditCard}
           label="Crédits achetés"
           value={kpis.total_credits_purchased}
           sub={`${kpis.total_credits_consumed} consommés`}
+          onClick={() => onNavigate("money")}
         />
         <KpiCard
           icon={Mail}
           label="Emails envoyés"
           value={kpis.emails_sent_period}
           sub={`${kpis.emails_failed_period} échecs`}
+          onClick={() => onNavigate("emails")}
         />
-        <KpiCard icon={TrendingUp} label="Stripe events" value={kpis.stripe_events_period} sub="période" />
+        <KpiCard
+          icon={TrendingUp}
+          label="Stripe events"
+          value={kpis.stripe_events_period}
+          sub="période"
+          onClick={() => onNavigate("money")}
+        />
       </div>
 
       {Object.keys(tierBreakdown).length > 0 && (
@@ -735,8 +772,15 @@ const OracleTab = () => {
         <SectionCard title={`Conversations (${convos.length})`}>
           {loading ? (
             <p className="text-xs text-muted-foreground">Chargement...</p>
+          ) : convos.length === 0 ? (
+            <div className="text-xs text-muted-foreground text-center py-6 space-y-1">
+              <p>Aucune conversation enregistrée.</p>
+              <p className="text-[10px] opacity-70">
+                Si tu vois des events <code>oracle_message_sent</code> dans Analytics mais 0 conversation ici, l'insert côté edge function est cassé.
+              </p>
+            </div>
           ) : (
-            <div className="space-y-1 max-h-[500px] overflow-y-auto">
+            <div className="space-y-1 max-h-[600px] overflow-y-auto">
               {convos.map((c) => (
                 <div key={c.id}>
                   <button
@@ -746,21 +790,35 @@ const OracleTab = () => {
                     <div className="flex items-center gap-2">
                       <p className="text-xs truncate flex-1">{c.title || "Sans titre"}</p>
                       <span className="text-[9px] text-muted-foreground">{c.message_count} msg</span>
+                      {selectedConvo === c.id ? (
+                        <ChevronUp className="h-3 w-3 text-muted-foreground" />
+                      ) : (
+                        <ChevronDown className="h-3 w-3 text-muted-foreground" />
+                      )}
                     </div>
                     <p className="text-[10px] text-muted-foreground">
                       {c.user_first_name || c.user_email || "anonyme"} · {formatRelative(c.updated_at)}
                     </p>
                   </button>
-                  {selectedConvo === c.id && messages.length > 0 && (
-                    <div className="mt-1 ml-2 space-y-1 border-l-2 border-primary/30 pl-2">
-                      {messages.map((m) => (
-                        <div key={m.id} className="text-[10px]">
-                          <span className={`font-medium ${m.role === "user" ? "text-primary" : "text-amber-300"}`}>
-                            {m.role === "user" ? "👤 " : "✨ "}
-                          </span>
-                          <span className="text-muted-foreground">{m.content.slice(0, 200)}{m.content.length > 200 ? "..." : ""}</span>
-                        </div>
-                      ))}
+                  {selectedConvo === c.id && (
+                    <div className="mt-1 ml-2 space-y-2 border-l-2 border-primary/30 pl-2 py-1">
+                      {messages.length === 0 ? (
+                        <p className="text-[10px] text-muted-foreground">Aucun message dans cette conversation.</p>
+                      ) : (
+                        messages.map((m) => (
+                          <div key={m.id} className="text-[11px]">
+                            <div className="flex items-center gap-1 mb-0.5">
+                              <span className={`font-medium ${m.role === "user" ? "text-primary" : "text-amber-300"}`}>
+                                {m.role === "user" ? "👤 User" : "✨ Oracle"}
+                              </span>
+                              <span className="text-[9px] text-muted-foreground ml-auto">{formatDateTime(m.created_at)}</span>
+                            </div>
+                            <p className="whitespace-pre-wrap break-words text-foreground/80 bg-background/30 rounded px-2 py-1">
+                              {m.content}
+                            </p>
+                          </div>
+                        ))
+                      )}
                     </div>
                   )}
                 </div>
@@ -804,7 +862,10 @@ const OracleTab = () => {
             ))}
           </div>
 
-          <div className="space-y-1.5 max-h-[500px] overflow-y-auto">
+          <div className="space-y-1.5 max-h-[600px] overflow-y-auto">
+            {feedbacks.length === 0 && !loading && (
+              <p className="text-xs text-muted-foreground text-center py-6">Aucun feedback pour ce filtre.</p>
+            )}
             {feedbacks.map((f) => {
               const Icon = GUIDE_ICONS[f.guide] || Star;
               const color = GUIDE_COLORS[f.guide] || "text-foreground";
@@ -1485,6 +1546,7 @@ const AdminPage = () => {
   const { user, loading: authLoading } = useAuth();
   const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
   const [periodDays, setPeriodDays] = useState(30);
+  const [activeTab, setActiveTab] = useState("overview");
   const { t } = useT();
 
   useEffect(() => {
@@ -1530,7 +1592,7 @@ const AdminPage = () => {
       <AppHeader title="Admin" subtitle="Tableau de bord complet" showBack />
 
       <div className="relative z-10 px-4 md:px-6 space-y-4">
-        <Tabs defaultValue="overview" className="w-full">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <div className="flex items-center justify-between gap-2 flex-wrap">
             <TabsList className="bg-card/60 border border-border flex-wrap h-auto">
               <TabsTrigger value="overview" className="text-xs">
@@ -1574,7 +1636,7 @@ const AdminPage = () => {
           </div>
 
           <TabsContent value="overview" className="mt-4">
-            <OverviewTab periodDays={periodDays} />
+            <OverviewTab periodDays={periodDays} onNavigate={setActiveTab} />
           </TabsContent>
           <TabsContent value="analytics" className="mt-4">
             <AnalyticsTab periodDays={periodDays} />
