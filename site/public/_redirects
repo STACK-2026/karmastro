@@ -1,8 +1,29 @@
 # Cloudflare Pages redirects
 # Format: /old-url /new-url 301
 
-# Sitemap alias — Google/bots sometimes look for /sitemap.xml directly
+# Sitemap alias, Google/bots sometimes look for /sitemap.xml directly
 /sitemap.xml /sitemap-index.xml 301
+
+# Short-URL SEO aliases (21/04/2026) for FR tools. Traffic was arriving on
+# /dette-karmique/ and hitting 404 because tools live under /outils/*.
+/dette-karmique /outils/dette-karmique 301
+/dette-karmique/ /outils/dette-karmique 301
+/theme-natal /outils/theme-natal 301
+/theme-natal/ /outils/theme-natal 301
+/ascendant /outils/ascendant 301
+/ascendant/ /outils/ascendant 301
+/chemin-de-vie /outils/chemin-de-vie 301
+/chemin-de-vie/ /outils/chemin-de-vie 301
+/annee-personnelle /outils/annee-personnelle 301
+/annee-personnelle/ /outils/annee-personnelle 301
+/nombre-expression /outils/nombre-expression 301
+/nombre-expression/ /outils/nombre-expression 301
+/transits /outils/transits 301
+/transits/ /outils/transits 301
+/synastrie /outils/synastrie 301
+/synastrie/ /outils/synastrie 301
+/compatibilite /outils/compatibilite 301
+/compatibilite/ /outils/compatibilite 301
 
 # Slug fix: premier article avait un mauvais slug
 /blog/numerologie-guide-complet-debuter /blog/qu-numerologie-guide-complet-debuter 301

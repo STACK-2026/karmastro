@@ -133,6 +133,7 @@ const OraclePage = () => {
   const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [conversationId, setConversationId] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const [guideKey, setGuideKey] = useState<GuideKey | null>(null);
@@ -251,13 +252,8 @@ const OraclePage = () => {
     setInput("");
     setIsLoading(true);
 
-    trackEvent("oracle_message_sent", {
-      guide: guideKey,
-      message_length: msgText.length,
-      conversation_depth: messages.length,
-    });
-
     let assistantSoFar = "";
+    let responseOk = false;
 
     try {
       const resp = await fetch(CHAT_URL, {
@@ -272,6 +268,7 @@ const OraclePage = () => {
           guide: guideKey,
           userId: user?.id ?? null,
           sessionId: user?.id ? null : getSessionId(),
+          conversationId,
         }),
       });
 
@@ -317,9 +314,13 @@ const OraclePage = () => {
 
           try {
             const parsed = JSON.parse(jsonStr);
+            if (parsed.conversation_id && !conversationId) {
+              setConversationId(parsed.conversation_id);
+            }
             const content = parsed.choices?.[0]?.delta?.content;
             if (content) {
               assistantSoFar += content;
+              responseOk = true;
               setMessages(prev => {
                 const last = prev[prev.length - 1];
                 if (last?.role === "assistant") {
@@ -342,6 +343,14 @@ const OraclePage = () => {
       }
     } finally {
       setIsLoading(false);
+      if (responseOk) {
+        trackEvent("oracle_message_sent", {
+          guide: guideKey,
+          message_length: msgText.length,
+          conversation_depth: messages.length,
+          conversation_id: conversationId,
+        });
+      }
     }
   };
 

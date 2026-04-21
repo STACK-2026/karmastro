@@ -324,8 +324,6 @@ if (profile?.faq?.length) {
           />
         </div>
 
-        <NewsletterCapture sign={sign.slug} variant="card" source={`${lang}-horoscope-${sign.slug}`} />
-
         {/* ═══ Tomorrow preview (premium) ═══ */}
         <section class="mb-10">
           <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
@@ -394,7 +392,13 @@ if (profile?.faq?.length) {
                       >
                         {t("horoscope.paywall_cta", lang)}
                       </a>
-                      <span class="text-xs text-white/50 flex items-center gap-1">
+                      <a
+                        href="#newsletter-capture"
+                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/15 bg-white/[0.03] text-white/80 hover:bg-white/[0.06] transition-colors text-sm"
+                      >
+                        {t("horoscope.paywall_cta_free", lang)}
+                      </a>
+                      <span class="text-xs text-white/50 flex items-center gap-1 w-full justify-center mt-1">
                         {t("horoscope.paywall_available_in", lang)} <span id="countdown-timer" class="font-mono text-amber-300">--:--:--</span>
                       </span>
                     </div>
@@ -409,6 +413,11 @@ if (profile?.faq?.length) {
             </div>
           </div>
         </section>
+
+        {/* Newsletter fallback (moved below tomorrow teaser per SXO) */}
+        <div id="newsletter-capture" class="mb-10">
+          <NewsletterCapture sign={sign.slug} variant="card" source={`${lang}-horoscope-${sign.slug}`} />
+        </div>
 
         <script is:inline>
           (function () {

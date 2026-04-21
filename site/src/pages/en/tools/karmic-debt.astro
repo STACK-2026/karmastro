@@ -78,13 +78,20 @@ const jsonLd = [
       <span class="text-white/80">Karmic Debt</span>
     </nav>
 
-    <header class="text-center mb-10">
+    <header class="text-center mb-8">
       <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Pythagorean Numerology</p>
       <h1 class="text-4xl md:text-5xl font-serif mb-4">Karmic Debt Number Calculator</h1>
       <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
         Four numbers in numerology are said to carry lessons from past lives: 13/4, 14/5, 16/7, and 19/1. Find out whether your birth chart carries any of them.
       </p>
     </header>
+
+    <aside data-speakable class="max-w-2xl mx-auto mb-10 p-5 md:p-6 rounded-2xl border border-amber-300/25 bg-gradient-to-br from-amber-300/[0.06] to-purple-400/[0.04]">
+      <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">In brief</p>
+      <p class="text-[15px] md:text-base text-white/90 leading-relaxed">
+        A <strong>karmic debt number</strong> is a behavioral pattern carried over from a past life that replays in this one. Pythagorean numerology recognizes four: <strong>13/4</strong> (laziness and shortcut-taking), <strong>14/5</strong> (misused freedom and excess), <strong>16/7</strong> (spiritual ego), <strong>19/1</strong> (misused power). They are detected inside your life path or birth day. This free calculator identifies them from your birth date in seconds.
+      </p>
+    </aside>
 
     <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
       <form id="karmic-form" class="space-y-4">
@@ -196,9 +203,33 @@ const jsonLd = [
     } else {
       noneDiv.classList.add("hidden");
       debtsDiv.classList.remove("hidden");
+      const isPremium = (() => {
+        try {
+          const tier = localStorage.getItem("km_user_tier");
+          return tier === "etoile" || tier === "cosmos";
+        } catch { return false; }
+      })();
       debtsDiv.innerHTML = debts.map((debt) => {
         const en = DEBTS_EN[debt.code];
         if (!en) return "";
+        const lockedStyle = isPremium
+          ? ""
+          : 'style="filter: blur(7px); opacity: 0.55; user-select: none; pointer-events: none;" aria-hidden="true"';
+        const paywall = isPremium ? "" : `
+          <div class="mt-5 p-5 rounded-xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30 text-center">
+            <p class="text-2xl mb-1">✦</p>
+            <p class="font-serif text-base text-white mb-1">Go beyond the diagnosis</p>
+            <p class="text-xs text-white/60 mb-4 max-w-sm mx-auto leading-relaxed">
+              Orion (karmic coach) and Sibylle (mystic oracle) translate your ${debt.code} into a concrete weekly ritual: what to stop, what to try, the question to ask before every decision.
+            </p>
+            <a
+              href="https://app.karmastro.com/oracle?tool=karmic-debt&amp;code=${encodeURIComponent(debt.code)}"
+              class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity"
+            >
+              Work my ${debt.code} with the Oracle
+            </a>
+          </div>
+        `;
         return `
           <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
             <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Karmic debt detected</p>
@@ -211,14 +242,19 @@ const jsonLd = [
               <p class="text-xs uppercase tracking-wider text-purple-300/80 mb-1">Past life echo</p>
               <p class="text-sm text-white/80 italic">${en.pastLife}</p>
             </div>
-            <div class="p-4 rounded-xl bg-pink-300/5 border border-pink-300/20 mb-3">
-              <p class="text-xs uppercase tracking-wider text-pink-300/80 mb-1">Current challenge</p>
-              <p class="text-sm text-white/80">${en.challenge}</p>
+            <div class="relative">
+              <div ${lockedStyle}>
+                <div class="p-4 rounded-xl bg-pink-300/5 border border-pink-300/20 mb-3">
+                  <p class="text-xs uppercase tracking-wider text-pink-300/80 mb-1">Current challenge</p>
+                  <p class="text-sm text-white/80">${en.challenge}</p>
+                </div>
+                <div class="p-4 rounded-xl bg-emerald-300/5 border border-emerald-300/20">
+                  <p class="text-xs uppercase tracking-wider text-emerald-300/80 mb-1">Healing path</p>
+                  <p class="text-sm text-white/80">${en.healing}</p>
+                </div>
+              </div>
             </div>
-            <div class="p-4 rounded-xl bg-emerald-300/5 border border-emerald-300/20">
-              <p class="text-xs uppercase tracking-wider text-emerald-300/80 mb-1">Healing path</p>
-              <p class="text-sm text-white/80">${en.healing}</p>
-            </div>
+            ${paywall}
           </div>
         `;
       }).join("");

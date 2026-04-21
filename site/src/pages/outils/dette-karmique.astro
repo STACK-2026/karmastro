@@ -76,13 +76,20 @@ const jsonLd = [
       <span class="text-white/80">Dette karmique</span>
     </nav>
 
-    <header class="text-center mb-10">
+    <header class="text-center mb-8">
       <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Numérologie karmique</p>
       <h1 class="text-4xl md:text-5xl font-serif mb-4">Calculateur de dette karmique</h1>
       <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
         Les dettes karmiques sont les mémoires d'une âme qui a quelque chose à résoudre. Découvre si tu portes l'une des quatre dettes reconnues par la tradition pythagoricienne et la leçon qu'elle t'invite à intégrer.
       </p>
     </header>
+
+    <aside data-speakable class="max-w-2xl mx-auto mb-10 p-5 md:p-6 rounded-2xl border border-amber-300/25 bg-gradient-to-br from-amber-300/[0.06] to-purple-400/[0.04]">
+      <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">En bref</p>
+      <p class="text-[15px] md:text-base text-white/90 leading-relaxed">
+        Une <strong>dette karmique</strong> est un schéma comportemental hérité d'une vie antérieure qui se rejoue dans celle-ci. La numérologie pythagoricienne en reconnaît quatre : <strong>13/4</strong> (paresse et abandon des autres), <strong>14/5</strong> (excès et liberté mal gérée), <strong>16/7</strong> (orgueil spirituel), <strong>19/1</strong> (pouvoir abusé). On les détecte dans le chemin de vie ou le jour de naissance. Ce calculateur les identifie à partir de ta date de naissance en quelques secondes, gratuitement.
+      </p>
+    </aside>
 
     <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
       <form id="kd-form" class="space-y-4">
@@ -258,9 +265,37 @@ const jsonLd = [
       resultNone.classList.remove("hidden");
     } else {
       resultNone.classList.add("hidden");
+      // SXO: the user's curiosity peaks the moment the debt is named. We show
+      // the debt identity + the past-life summary (the "aha") in clear, then
+      // soft-gate the three actionable layers (challenge, healing, ritual)
+      // behind a blur with a single Oracle CTA.
+      const isPremium = (() => {
+        try {
+          const tier = localStorage.getItem("km_user_tier");
+          return tier === "etoile" || tier === "cosmos";
+        } catch { return false; }
+      })();
       for (const debt of debts) {
         const card = document.createElement("div");
         card.className = "p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30";
+        const lockedStyle = isPremium
+          ? ""
+          : 'style="filter: blur(7px); opacity: 0.55; user-select: none; pointer-events: none;" aria-hidden="true"';
+        const paywallHtml = isPremium ? "" : `
+          <div class="mt-5 p-5 rounded-xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30 text-center">
+            <p class="text-2xl mb-1">✦</p>
+            <p class="font-serif text-base text-white mb-1">Va au-delà du diagnostic</p>
+            <p class="text-xs text-white/60 mb-4 max-w-sm mx-auto leading-relaxed">
+              Orion (coach karmique) et Sibylle (Oracle mystique) traduisent ton ${debt.code} en rituel concret : ce qu'il faut arrêter, ce qu'il faut tenter cette semaine, la question à te poser avant chaque décision.
+            </p>
+            <a
+              href="https://app.karmastro.com/oracle?tool=karmic-debt&amp;code=${encodeURIComponent(debt.code)}"
+              class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity"
+            >
+              Travailler mon ${debt.code} avec l'Oracle
+            </a>
+          </div>
+        `;
         card.innerHTML = `
           <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Dette karmique détectée</p>
           <div class="flex items-baseline gap-4 mb-4">
@@ -273,23 +308,20 @@ const jsonLd = [
               <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-1">Vie passée</p>
               <p class="text-white/70">${debt.pastLife}</p>
             </div>
-            <div>
-              <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-1">Défi actuel</p>
-              <p class="text-white/70">${debt.currentChallenge}</p>
-            </div>
-            <div>
-              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-1">Voie de guérison</p>
-              <p class="text-white/70">${debt.healing}</p>
+            <div class="relative pt-3 mt-1">
+              <div class="space-y-3" ${lockedStyle}>
+                <div>
+                  <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-1">Défi actuel</p>
+                  <p class="text-white/70">${debt.currentChallenge}</p>
+                </div>
+                <div>
+                  <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-1">Voie de guérison</p>
+                  <p class="text-white/70">${debt.healing}</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="mt-4 pt-4 border-t border-white/10 text-center">
-            <a
-              href="https://app.karmastro.com/oracle"
-              class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity"
-            >
-              Travailler cette dette avec l'Oracle
-            </a>
-          </div>
+          ${paywallHtml}
         `;
         resultList.appendChild(card);
       }

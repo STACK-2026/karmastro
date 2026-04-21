@@ -5,6 +5,7 @@ import { supabase } from "@/integrations/supabase/client";
 
 const SESSION_KEY = "km_session_id";
 const UTM_KEY = "km_utm";
+const BACKFILL_KEY = "km_user_backfilled";
 
 // ───────────────────────────────────────────────────────────────
 // Session helpers
@@ -180,6 +181,27 @@ export async function captureAttribution(userId: string): Promise<void> {
   } catch (e) {
     // Silent fail (ON CONFLICT (user_id) will skip duplicates)
     console.warn("[tracker] attribution insert failed", e);
+  }
+  // Back-fill anonymous page_views of the current session with the new user_id.
+  // Critical for conversion funnel analysis (pre-auth landing → post-auth onboarding).
+  await backfillSessionPageViews(userId);
+}
+
+// Attach the new user_id to every page_view of the current session that was
+// logged anonymously (pre-login landing, /auth, /onboarding). Idempotent via
+// sessionStorage flag, runs at most once per session per user.
+export async function backfillSessionPageViews(userId: string): Promise<void> {
+  if (typeof window === "undefined") return;
+  if (sessionStorage.getItem(BACKFILL_KEY) === userId) return;
+  try {
+    await (supabase as any)
+      .from("page_views")
+      .update({ user_id: userId })
+      .eq("session_id", getSessionId())
+      .is("user_id", null);
+    sessionStorage.setItem(BACKFILL_KEY, userId);
+  } catch (e) {
+    console.warn("[tracker] backfill page_views failed", e);
   }
 }
 

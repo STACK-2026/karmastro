@@ -235,7 +235,7 @@ serve(async (req) => {
   }
 
   try {
-    const { messages, profile, guide: guideKey, userId, sessionId } = await req.json();
+    const { messages, profile, guide: guideKey, userId, sessionId, conversationId } = await req.json();
     const ANTHROPIC_API_KEY = Deno.env.get("ANTHROPIC_API_KEY");
     if (!ANTHROPIC_API_KEY) throw new Error("ANTHROPIC_API_KEY non configurée");
 
@@ -498,9 +498,71 @@ serve(async (req) => {
     const data = await response.json();
     const text = data.content?.[0]?.text || `${selectedGuide.name} médite sur ta question...`;
 
+    // Persist the exchange (conversation + user msg + assistant msg). Anonymous
+    // sessions rely on session_id; authenticated users use user_id. Runs with
+    // the service role key to bypass RLS. Fire-and-forget except the first
+    // conversation INSERT, whose id we echo back to the client so it can
+    // thread subsequent turns.
+    let savedConvId: string | null = (typeof conversationId === "string" && conversationId) ? conversationId : null;
+    if (SERVICE_KEY && (userId || sessionId)) {
+      try {
+        const sbPersist = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
+        if (!savedConvId) {
+          const firstUserMsg = messages.find((m: { role: string; content: string }) => m.role === "user");
+          const title = firstUserMsg?.content?.slice(0, 80) || null;
+          const { data: conv, error: convErr } = await sbPersist
+            .from("oracle_conversations")
+            .insert({
+              user_id: userId || null,
+              session_id: userId ? null : (sessionId || null),
+              title,
+            })
+            .select("id")
+            .single();
+          if (convErr) {
+            console.error("oracle conversation insert error:", convErr);
+          } else {
+            savedConvId = conv?.id || null;
+          }
+        }
+        if (savedConvId) {
+          const lastUserMsg = messages[messages.length - 1];
+          sbPersist
+            .from("oracle_messages")
+            .insert([
+              {
+                conversation_id: savedConvId,
+                user_id: userId || null,
+                session_id: userId ? null : (sessionId || null),
+                role: "user",
+                content: lastUserMsg?.content || "",
+              },
+              {
+                conversation_id: savedConvId,
+                user_id: userId || null,
+                session_id: userId ? null : (sessionId || null),
+                role: "assistant",
+                content: text,
+              },
+            ])
+            .then(({ error }: { error: unknown }) => {
+              if (error) console.error("oracle messages insert error:", error);
+            });
+          sbPersist
+            .from("oracle_conversations")
+            .update({ updated_at: new Date().toISOString() })
+            .eq("id", savedConvId)
+            .then(() => {});
+        }
+      } catch (persistErr) {
+        console.error("oracle persist error (non-blocking):", persistErr);
+      }
+    }
+
     const sseData = JSON.stringify({
       choices: [{ delta: { content: text }, finish_reason: "stop" }],
       guide: guideKey || DEFAULT_GUIDE,
+      conversation_id: savedConvId,
     });
     const encoder = new TextEncoder();
     const stream = new ReadableStream({

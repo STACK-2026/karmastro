@@ -52,6 +52,17 @@ export default defineConfig({
           item.priority = 0.85;
           item.changefreq = "monthly";
         }
+        // Inject hreflang x-default pointing to the fr-FR variant. @astrojs/sitemap
+        // emits per-locale xhtml:link tags but no x-default, which Google expects
+        // for international sites. We derive the fr-FR URL from the alternates it
+        // has already computed, or fall back to the item itself when it's fr.
+        if (Array.isArray(item.links) && item.links.length) {
+          const frVariant = item.links.find((l) => l.lang === "fr-FR" || l.lang === "fr");
+          const xDefaultUrl = frVariant?.url || item.url;
+          if (!item.links.some((l) => l.lang === "x-default")) {
+            item.links.push({ lang: "x-default", url: xDefaultUrl });
+          }
+        }
         return item;
       },
     }),

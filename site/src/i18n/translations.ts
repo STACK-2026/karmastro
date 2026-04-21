@@ -109,6 +109,7 @@ export type TranslationKeys = {
   "horoscope.paywall_title": string;
   "horoscope.paywall_desc": string;
   "horoscope.paywall_cta": string;
+  "horoscope.paywall_cta_free": string;
   "horoscope.paywall_available_in": string;
   "horoscope.fr_translation_note": string;
   "horoscope.archive_of": string;
@@ -272,6 +273,7 @@ const fr: TranslationKeys = {
   "horoscope.paywall_title": "Accès en avant-première",
   "horoscope.paywall_desc": "L'horoscope de demain est offert aux voyageuses et voyageurs Étoile. Lis-le dès maintenant, sans attendre minuit.",
   "horoscope.paywall_cta": "Passer en Étoile",
+  "horoscope.paywall_cta_free": "Version gratuite par email",
   "horoscope.paywall_available_in": "ou disponible dans",
   "horoscope.fr_translation_note": "Lecture originale en français, traduction complète bientôt disponible",
   "horoscope.archive_of": "Archive du",
@@ -429,6 +431,7 @@ const en: TranslationKeys = {
   "horoscope.paywall_title": "Early access",
   "horoscope.paywall_desc": "Tomorrow's horoscope is offered to Star travelers. Read it now, without waiting for midnight.",
   "horoscope.paywall_cta": "Go Star",
+  "horoscope.paywall_cta_free": "Free version by email",
   "horoscope.paywall_available_in": "or available in",
   "horoscope.fr_translation_note": "Original reading in French, full translation coming soon",
   "horoscope.archive_of": "Archive of",
@@ -586,6 +589,7 @@ const es: TranslationKeys = {
   "horoscope.paywall_title": "Acceso anticipado",
   "horoscope.paywall_desc": "El horóscopo de mañana es un regalo para las viajeras y viajeros Estrella. Léelo ahora, sin esperar a medianoche.",
   "horoscope.paywall_cta": "Pasar a Estrella",
+  "horoscope.paywall_cta_free": "Versión gratuita por email",
   "horoscope.paywall_available_in": "o disponible en",
   "horoscope.fr_translation_note": "Lectura original en francés, traducción completa próximamente",
   "horoscope.archive_of": "Archivo del",
@@ -743,6 +747,7 @@ const pt: TranslationKeys = {
   "horoscope.paywall_title": "Acesso antecipado",
   "horoscope.paywall_desc": "O horóscopo de amanhã é oferecido às viajantes e aos viajantes Estrela. Lê-o agora, sem esperar pela meia-noite.",
   "horoscope.paywall_cta": "Passar a Estrela",
+  "horoscope.paywall_cta_free": "Versão gratuita por email",
   "horoscope.paywall_available_in": "ou disponível em",
   "horoscope.fr_translation_note": "Leitura original em francês, tradução completa em breve",
   "horoscope.archive_of": "Arquivo do",
@@ -900,6 +905,7 @@ const de: TranslationKeys = {
   "horoscope.paywall_title": "Vorschau-Zugang",
   "horoscope.paywall_desc": "Das Horoskop von morgen ist den Stern-Reisenden vorbehalten. Lies es jetzt, ohne auf Mitternacht zu warten.",
   "horoscope.paywall_cta": "Zu Stern wechseln",
+  "horoscope.paywall_cta_free": "Kostenlose Version per E-Mail",
   "horoscope.paywall_available_in": "oder verfügbar in",
   "horoscope.fr_translation_note": "Original-Lesung auf Französisch, vollständige Übersetzung bald verfügbar",
   "horoscope.archive_of": "Archiv vom",
@@ -1057,6 +1063,7 @@ const it: TranslationKeys = {
   "horoscope.paywall_title": "Accesso in anteprima",
   "horoscope.paywall_desc": "L'oroscopo di domani è offerto alle viaggiatrici e ai viaggiatori Stella. Leggilo ora, senza aspettare mezzanotte.",
   "horoscope.paywall_cta": "Passare a Stella",
+  "horoscope.paywall_cta_free": "Versione gratuita via email",
   "horoscope.paywall_available_in": "o disponibile tra",
   "horoscope.fr_translation_note": "Lettura originale in francese, traduzione completa presto disponibile",
   "horoscope.archive_of": "Archivio del",
@@ -1218,6 +1225,7 @@ const tr: TranslationKeys = {
   "horoscope.paywall_title": "Önizleme erişimi",
   "horoscope.paywall_desc": "Yarının burcu Yıldız yolcularına sunulur. Gece yarısını beklemeden şimdi oku.",
   "horoscope.paywall_cta": "Yıldız'a geç",
+  "horoscope.paywall_cta_free": "E-posta ile ücretsiz sürüm",
   "horoscope.paywall_available_in": "veya şu sürede:",
   "horoscope.fr_translation_note": "Orijinal Fransızca okuma, tam çeviri yakında",
   "horoscope.archive_of": "Arşiv tarihi",
@@ -1375,6 +1383,7 @@ const pl: TranslationKeys = {
   "horoscope.paywall_title": "Dostęp w przedpremierze",
   "horoscope.paywall_desc": "Jutrzejszy horoskop jest oferowany podróżnikom Gwiazda. Przeczytaj go teraz, bez czekania do północy.",
   "horoscope.paywall_cta": "Przejdź na Gwiazdę",
+  "horoscope.paywall_cta_free": "Bezpłatna wersja e-mailem",
   "horoscope.paywall_available_in": "lub dostępne za",
   "horoscope.fr_translation_note": "Oryginalne czytanie po francusku, pełne tłumaczenie wkrótce",
   "horoscope.archive_of": "Archiwum z",
@@ -1532,6 +1541,7 @@ const ru: TranslationKeys = {
   "horoscope.paywall_title": "Ранний доступ",
   "horoscope.paywall_desc": "Гороскоп на завтра предложен путешественницам и путешественникам Звезда. Читай сейчас, не дожидаясь полуночи.",
   "horoscope.paywall_cta": "Перейти на Звезду",
+  "horoscope.paywall_cta_free": "Бесплатная версия по email",
   "horoscope.paywall_available_in": "или доступно через",
   "horoscope.fr_translation_note": "Оригинальное чтение на французском, полный перевод скоро",
   "horoscope.archive_of": "Архив от",
@@ -1689,6 +1699,7 @@ const ja: TranslationKeys = {
   "horoscope.paywall_title": "先行アクセス",
   "horoscope.paywall_desc": "明日のホロスコープはスター旅人に提供されます。真夜中を待たずに今すぐお読みください。",
   "horoscope.paywall_cta": "スターに変更",
+  "horoscope.paywall_cta_free": "メールで無料版",
   "horoscope.paywall_available_in": "または",
   "horoscope.fr_translation_note": "原文はフランス語、完全翻訳は近日公開",
   "horoscope.archive_of": "アーカイブ:",
@@ -1846,6 +1857,7 @@ const ar: TranslationKeys = {
   "horoscope.paywall_title": "وصول مبكر",
   "horoscope.paywall_desc": "برج الغد مقدم لمسافرات ومسافري النجم. اقرأه الآن، دون انتظار منتصف الليل.",
   "horoscope.paywall_cta": "الانتقال إلى النجم",
+  "horoscope.paywall_cta_free": "نسخة مجانية عبر البريد",
   "horoscope.paywall_available_in": "أو متاح خلال",
   "horoscope.fr_translation_note": "قراءة أصلية بالفرنسية، الترجمة الكاملة قريباً",
   "horoscope.archive_of": "أرشيف من",

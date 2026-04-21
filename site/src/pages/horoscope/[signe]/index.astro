@@ -262,9 +262,6 @@ const jsonLd = faqJsonLd ? [articleJsonLd, faqJsonLd] : articleJsonLd;
           />
         </div>
 
-        {/* Newsletter capture : "Recevoir mon horoscope" */}
-        <NewsletterCapture sign={sign.slug} variant="card" source={`horoscope-${sign.slug}`} />
-
         {/* ═══ TOMORROW PREVIEW (Premium only) ═══ */}
         <section class="mb-10">
           <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
@@ -336,7 +333,13 @@ const jsonLd = faqJsonLd ? [articleJsonLd, faqJsonLd] : articleJsonLd;
                       >
                         Passer en Étoile
                       </a>
-                      <span class="text-xs text-white/50 flex items-center gap-1">
+                      <a
+                        href="#newsletter-capture"
+                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/15 bg-white/[0.03] text-white/80 hover:bg-white/[0.06] transition-colors text-sm"
+                      >
+                        Version gratuite par email
+                      </a>
+                      <span class="text-xs text-white/50 flex items-center gap-1 w-full justify-center mt-1">
                         ou disponible dans <span id="countdown-timer" class="font-mono text-amber-300">--:--:--</span>
                       </span>
                     </div>
@@ -351,6 +354,11 @@ const jsonLd = faqJsonLd ? [articleJsonLd, faqJsonLd] : articleJsonLd;
             </div>
           </div>
         </section>
+
+        {/* Newsletter fallback (moved below tomorrow teaser per SXO: paywall wins attention first, newsletter is the graceful fallback) */}
+        <div id="newsletter-capture" class="mb-10">
+          <NewsletterCapture sign={sign.slug} variant="card" source={`horoscope-${sign.slug}`} />
+        </div>
 
         {/* ═══ Premium unlock script ═══ */}
         <script is:inline>

@@ -71,8 +71,13 @@ export function jsonLdHomepage() {
             availableLanguage: "French",
           },
         }),
-        // sameAs will be populated as external profiles are created
-        sameAs: [],
+        // Entity resolution signals for LLMs (ChatGPT, Gemini, Claude) and
+        // Google's Knowledge Graph. Only include URLs that currently return
+        // 200 to avoid poisoning the entity with dead references.
+        sameAs: [
+          "https://x.com/karmastro",
+          "https://github.com/STACK-2026/karmastro",
+        ],
       },
       {
         "@type": "WebSite",
