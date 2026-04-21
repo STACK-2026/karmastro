@@ -158,6 +158,10 @@ export type TranslationKeys = {
   "compat.free_calc_cta": string;
   "compat.hub_title": string;
   "compat.hub_description": string;
+  "compat.section_title": string;
+  "compat.section_subtitle": string;
+  "compat.mirror_duo": string;
+  "compat.and": string;
   "compat.explore_other": string;
 
   // ===== Language switcher =====
@@ -318,6 +322,10 @@ const fr: TranslationKeys = {
   "compat.free_calc_cta": "Calculateur gratuit",
   "compat.hub_title": "Compatibilité des 12 signes du zodiaque",
   "compat.hub_description": "Explore les 144 combinaisons possibles. Amour, amitié, travail et guidance karmique pour chaque paire.",
+  "compat.section_title": "Compatibilité {sign}",
+  "compat.section_subtitle": "Découvre comment {sign} danse avec chaque signe du zodiaque.",
+  "compat.mirror_duo": "Duo de miroirs",
+  "compat.and": "et",
   "compat.explore_other": "Explore d'autres combinaisons",
 
   "lang.select": "Choisir la langue",
@@ -476,6 +484,10 @@ const en: TranslationKeys = {
   "compat.free_calc_cta": "Free calculator",
   "compat.hub_title": "Compatibility of the 12 zodiac signs",
   "compat.hub_description": "Explore all 144 possible combinations. Love, friendship, work and karmic guidance for each pair.",
+  "compat.section_title": "{sign} compatibility",
+  "compat.section_subtitle": "See how {sign} dances with every zodiac sign.",
+  "compat.mirror_duo": "Mirror duo",
+  "compat.and": "and",
   "compat.explore_other": "Explore other combinations",
 
   "lang.select": "Choose language",
@@ -634,6 +646,10 @@ const es: TranslationKeys = {
   "compat.free_calc_cta": "Calculadora gratuita",
   "compat.hub_title": "Compatibilidad de los 12 signos del zodiaco",
   "compat.hub_description": "Explora las 144 combinaciones posibles. Amor, amistad, trabajo y guía kármica para cada pareja.",
+  "compat.section_title": "Compatibilidad {sign}",
+  "compat.section_subtitle": "Descubre cómo {sign} baila con cada signo del zodíaco.",
+  "compat.mirror_duo": "Dúo de espejos",
+  "compat.and": "y",
   "compat.explore_other": "Explora otras combinaciones",
 
   "lang.select": "Elegir idioma",
@@ -792,6 +808,10 @@ const pt: TranslationKeys = {
   "compat.free_calc_cta": "Calculadora gratuita",
   "compat.hub_title": "Compatibilidade dos 12 signos do zodíaco",
   "compat.hub_description": "Explora as 144 combinações possíveis. Amor, amizade, trabalho e orientação kármica para cada par.",
+  "compat.section_title": "Compatibilidade {sign}",
+  "compat.section_subtitle": "Descobre como {sign} dança com cada signo do zodíaco.",
+  "compat.mirror_duo": "Duo de espelhos",
+  "compat.and": "e",
   "compat.explore_other": "Explora outras combinações",
 
   "lang.select": "Escolher idioma",
@@ -950,6 +970,10 @@ const de: TranslationKeys = {
   "compat.free_calc_cta": "Kostenloser Rechner",
   "compat.hub_title": "Kompatibilität der 12 Tierkreiszeichen",
   "compat.hub_description": "Entdecke alle 144 möglichen Kombinationen. Liebe, Freundschaft, Arbeit und karmische Führung für jedes Paar.",
+  "compat.section_title": "{sign} Kompatibilität",
+  "compat.section_subtitle": "Entdecke, wie {sign} mit jedem Tierkreiszeichen tanzt.",
+  "compat.mirror_duo": "Spiegel-Duo",
+  "compat.and": "und",
   "compat.explore_other": "Erkunde andere Kombinationen",
 
   "lang.select": "Sprache wählen",
@@ -1108,6 +1132,10 @@ const it: TranslationKeys = {
   "compat.free_calc_cta": "Calcolatore gratuito",
   "compat.hub_title": "Compatibilità dei 12 segni zodiacali",
   "compat.hub_description": "Esplora tutte le 144 combinazioni possibili. Amore, amicizia, lavoro e guida karmica per ogni coppia.",
+  "compat.section_title": "Compatibilità {sign}",
+  "compat.section_subtitle": "Scopri come {sign} danza con ogni segno dello zodiaco.",
+  "compat.mirror_duo": "Duo di specchi",
+  "compat.and": "e",
   "compat.explore_other": "Esplora altre combinazioni",
 
   "lang.select": "Scegli la lingua",
@@ -1270,6 +1298,10 @@ const tr: TranslationKeys = {
   "compat.free_calc_cta": "Ücretsiz hesaplayıcı",
   "compat.hub_title": "12 zodyak burcunun uyumluluğu",
   "compat.hub_description": "Tüm 144 olası kombinasyonu keşfedin. Her çift için aşk, arkadaşlık, iş ve karmik rehberlik.",
+  "compat.section_title": "{sign} uyumu",
+  "compat.section_subtitle": "{sign} burcunun zodyaktaki her burçla nasıl dans ettiğini keşfet.",
+  "compat.mirror_duo": "Ayna ikilisi",
+  "compat.and": "ve",
   "compat.explore_other": "Diğer kombinasyonları keşfet",
 
   "lang.select": "Dil seç",
@@ -1428,6 +1460,10 @@ const pl: TranslationKeys = {
   "compat.free_calc_cta": "Darmowy kalkulator",
   "compat.hub_title": "Kompatybilność 12 znaków zodiaku",
   "compat.hub_description": "Poznaj wszystkie 144 możliwe kombinacje. Miłość, przyjaźń, praca i wskazówki karmiczne dla każdej pary.",
+  "compat.section_title": "Kompatybilność {sign}",
+  "compat.section_subtitle": "Odkryj, jak {sign} tańczy z każdym znakiem zodiaku.",
+  "compat.mirror_duo": "Duet luster",
+  "compat.and": "i",
   "compat.explore_other": "Poznaj inne kombinacje",
 
   "lang.select": "Wybierz język",
@@ -1586,6 +1622,10 @@ const ru: TranslationKeys = {
   "compat.free_calc_cta": "Бесплатный калькулятор",
   "compat.hub_title": "Совместимость 12 знаков зодиака",
   "compat.hub_description": "Исследуйте все 144 возможные комбинации. Любовь, дружба, работа и кармическое руководство для каждой пары.",
+  "compat.section_title": "Совместимость {sign}",
+  "compat.section_subtitle": "Узнай, как {sign} танцует с каждым знаком зодиака.",
+  "compat.mirror_duo": "Зеркальный дуэт",
+  "compat.and": "и",
   "compat.explore_other": "Исследуй другие комбинации",
 
   "lang.select": "Выбрать язык",
@@ -1744,6 +1784,10 @@ const ja: TranslationKeys = {
   "compat.free_calc_cta": "無料計算機",
   "compat.hub_title": "12星座の相性",
   "compat.hub_description": "144通りすべての組み合わせを探索してください。各ペアの愛、友情、仕事、カルマ的ガイダンス。",
+  "compat.section_title": "{sign}の相性",
+  "compat.section_subtitle": "{sign}が各星座とどう踊るかを発見してください。",
+  "compat.mirror_duo": "鏡の二重奏",
+  "compat.and": "と",
   "compat.explore_other": "他の組み合わせを探索",
 
   "lang.select": "言語を選択",
@@ -1902,6 +1946,10 @@ const ar: TranslationKeys = {
   "compat.free_calc_cta": "آلة حاسبة مجانية",
   "compat.hub_title": "توافق الأبراج الاثني عشر",
   "compat.hub_description": "استكشف جميع التركيبات الـ 144 الممكنة. الحب والصداقة والعمل والإرشاد الكرمي لكل زوج.",
+  "compat.section_title": "توافق {sign}",
+  "compat.section_subtitle": "اكتشف كيف يرقص {sign} مع كل برج من أبراج الزودياك.",
+  "compat.mirror_duo": "ثنائي المرآة",
+  "compat.and": "و",
   "compat.explore_other": "استكشف تركيبات أخرى",
 
   "lang.select": "اختر اللغة",

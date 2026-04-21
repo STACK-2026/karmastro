@@ -35,6 +35,12 @@ export default defineConfig({
         if (/\/horoscope\/[^/]+\/\d{4}-\d{2}-\d{2}\/?$/.test(item.url)) {
           return undefined;
         }
+        // Exclude transactional newsletter endpoints : /newsletter/confirm
+        // and /newsletter/unsubscribe are reached exclusively through email
+        // links with tokens, they have no standalone content worth indexing.
+        if (/\/newsletter\/(confirm|unsubscribe)\/?$/.test(item.url)) {
+          return undefined;
+        }
         // Priority by path type
         if (item.url === siteConfig.url + "/") {
           item.priority = 1.0;

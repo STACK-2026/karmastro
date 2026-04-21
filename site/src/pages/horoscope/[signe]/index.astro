@@ -471,6 +471,43 @@ const jsonLd = faqJsonLd ? [articleJsonLd, faqJsonLd] : articleJsonLd;
       </section>
     )}
 
+    {/* ═══ COMPATIBILITÉS DU SIGNE ═══ */}
+    {/* 12 liens vers /compatibilite/{signe}-{other} couvrant toutes les paires
+       (même-signe inclus). Sans cette section les same-sign pages étaient orphelines. */}
+    <section class="mb-10 pt-8 border-t border-white/10">
+      <h2 class="font-serif text-2xl mb-2">Compatibilité {sign.name}</h2>
+      <p class="text-sm text-white/60 mb-5">
+        Découvre comment {sign.name} danse avec chaque signe du zodiaque.
+      </p>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+        {ZODIAC_SIGNS.map((other) => {
+          const isSelf = other.slug === sign.slug;
+          return (
+            <a
+              href={`/compatibilite/${sign.slug}-${other.slug}`}
+              class={`group flex items-center gap-3 p-3 rounded-xl border transition-all ${
+                isSelf
+                  ? "border-amber-300/40 bg-amber-300/[0.05] hover:border-amber-300 hover:bg-amber-300/[0.08]"
+                  : "border-white/10 bg-white/[0.02] hover:border-amber-300/40 hover:bg-amber-300/[0.04]"
+              }`}
+            >
+              <span class="opacity-70 group-hover:opacity-100 transition-opacity">
+                <ZodiacSymbol sign={other.name} size={22} color={isSelf ? "#D4A017" : "currentColor"} />
+              </span>
+              <div class="min-w-0">
+                <p class="text-xs text-white/50 leading-none mb-1">
+                  {isSelf ? "Duo de miroirs" : `${sign.name} et`}
+                </p>
+                <p class="text-sm font-medium text-white/90 group-hover:text-amber-300 transition-colors truncate">
+                  {isSelf ? `${sign.name} × ${sign.name}` : other.name}
+                </p>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </section>
+
     <nav class="flex flex-wrap gap-2 justify-center pt-6 border-t border-white/10">
       {ZODIAC_SIGNS.map((s) => (
         <a
