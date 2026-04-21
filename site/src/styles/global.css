@@ -231,3 +231,59 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
   .karma-reveal::after { display: none; }
   .karma-number-glow { animation: none; text-shadow: 0 0 10px rgba(212, 160, 23, 0.35); }
 }
+
+/* === Page enter : cosmic veil === */
+/* Each page paints its first frame as if a constellation assembled in place.
+   Applied to every <main> via the universal selector below so it runs on
+   navigation without touching per-page layouts. Cross-document View
+   Transitions (Chrome 126+) get a nicer fade with the @view-transition rule
+   at the bottom. */
+
+@keyframes karma-page-enter {
+  0%   { opacity: 0; transform: translateY(12px) scale(0.995); filter: blur(4px); }
+  60%  { opacity: 1; filter: blur(0); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+body > main,
+body > article,
+body > .page-enter {
+  animation: karma-page-enter 0.55s cubic-bezier(0.2, 0.65, 0.3, 1) both;
+}
+
+/* Browser-native cross-document View Transitions, opt-in for supporting
+   browsers only. Ignored elsewhere. */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.45s;
+  animation-timing-function: cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+::view-transition-old(root) {
+  animation-name: karma-view-fade-out;
+}
+::view-transition-new(root) {
+  animation-name: karma-view-fade-in;
+}
+@keyframes karma-view-fade-out {
+  to { opacity: 0; filter: blur(6px); }
+}
+@keyframes karma-view-fade-in {
+  from { opacity: 0; filter: blur(6px); }
+  to { opacity: 1; filter: blur(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body > main,
+  body > article,
+  body > .page-enter {
+    animation: none;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}

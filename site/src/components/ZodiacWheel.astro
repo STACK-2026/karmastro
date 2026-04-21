@@ -1,0 +1,162 @@
+---
+// Decorative rotating zodiac wheel. Lives behind hero content, opacity kept
+// low enough to stay a background texture (not compete with the H1). The
+// "current" sign derived from today's date glows in gold so visitors get a
+// subliminal link between the cosmic motif and the present moment.
+//
+// Usage : <ZodiacWheel class="absolute inset-0" /> inside a relative parent.
+
+interface Props {
+  class?: string;
+  size?: number; // pixel size of the rendered SVG at its natural scale
+}
+
+const { class: className = "", size = 720 } = Astro.props;
+
+// 12 zodiac signs ordered from Aries (0) to Pisces (11). Unicode glyphs keep
+// the SVG portable without extra icon assets. Sun ingress dates are the
+// canonical tropical boundaries used across the site.
+const SIGNS = [
+  { glyph: "♈", key: "aries",       startMonth: 3,  startDay: 21 },
+  { glyph: "♉", key: "taurus",      startMonth: 4,  startDay: 20 },
+  { glyph: "♊", key: "gemini",      startMonth: 5,  startDay: 21 },
+  { glyph: "♋", key: "cancer",      startMonth: 6,  startDay: 22 },
+  { glyph: "♌", key: "leo",         startMonth: 7,  startDay: 23 },
+  { glyph: "♍", key: "virgo",       startMonth: 8,  startDay: 23 },
+  { glyph: "♎", key: "libra",       startMonth: 9,  startDay: 23 },
+  { glyph: "♏", key: "scorpio",     startMonth: 10, startDay: 23 },
+  { glyph: "♐", key: "sagittarius", startMonth: 11, startDay: 22 },
+  { glyph: "♑", key: "capricorn",   startMonth: 12, startDay: 22 },
+  { glyph: "♒", key: "aquarius",    startMonth: 1,  startDay: 20 },
+  { glyph: "♓", key: "pisces",      startMonth: 2,  startDay: 19 },
+];
+
+// Determine the sun sign active today (build time). A daily rebuild-guard
+// already exists on this repo, so the highlight stays current.
+const now = new Date();
+const m = now.getMonth() + 1;
+const d = now.getDate();
+let currentIndex = 0;
+for (let i = 0; i < SIGNS.length; i++) {
+  const s = SIGNS[i];
+  const next = SIGNS[(i + 1) % SIGNS.length];
+  const afterStart = m > s.startMonth || (m === s.startMonth && d >= s.startDay);
+  const beforeNext = m < next.startMonth || (m === next.startMonth && d < next.startDay);
+  // Handle wrap (Capricorn starts Dec 22 and spans into January).
+  const wraps = s.startMonth > next.startMonth;
+  if (!wraps && afterStart && beforeNext) { currentIndex = i; break; }
+  if (wraps && (afterStart || beforeNext)) { currentIndex = i; break; }
+}
+
+const radius = 260;
+const center = 360;
+const strokeInner = radius - 50;
+
+// Each glyph sits on a circle positioned by polar coordinates. Angle 0 points
+// up (12 o'clock) and rotates clockwise so Aries lands where Western charts
+// place it.
+const glyphs = SIGNS.map((s, i) => {
+  const angle = (i * 30 - 90) * (Math.PI / 180);
+  const x = center + radius * Math.cos(angle);
+  const y = center + radius * Math.sin(angle);
+  return { ...s, x, y, isCurrent: i === currentIndex };
+});
+
+// Twelve spokes from inner ring to outer ring, slightly off-full so they
+// suggest a wheel without drowning the glyphs.
+const spokes = SIGNS.map((_, i) => {
+  const angle = (i * 30 - 90) * (Math.PI / 180);
+  const nextAngle = ((i + 1) * 30 - 90) * (Math.PI / 180);
+  // Divider lines sit between glyph slots, not through them.
+  const divAngle = (angle + nextAngle) / 2;
+  const x1 = center + strokeInner * Math.cos(divAngle);
+  const y1 = center + strokeInner * Math.sin(divAngle);
+  const x2 = center + (radius + 30) * Math.cos(divAngle);
+  const y2 = center + (radius + 30) * Math.sin(divAngle);
+  return { x1, y1, x2, y2 };
+});
+---
+
+<div class={`zodiac-wheel-wrapper ${className}`} aria-hidden="true" data-current-sign={SIGNS[currentIndex].key}>
+  <svg
+    viewBox="0 0 720 720"
+    class="zodiac-wheel-svg"
+    xmlns="http://www.w3.org/2000/svg"
+    style={`width: ${size}px; height: ${size}px;`}
+  >
+    <defs>
+      <radialGradient id="wheel-gold-halo" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="rgba(212,160,23,0.28)" />
+        <stop offset="50%" stop-color="rgba(139,92,246,0.18)" />
+        <stop offset="100%" stop-color="rgba(212,160,23,0)" />
+      </radialGradient>
+      <linearGradient id="wheel-ring-grad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="rgba(212,160,23,0.55)" />
+        <stop offset="50%" stop-color="rgba(139,92,246,0.35)" />
+        <stop offset="100%" stop-color="rgba(212,160,23,0.55)" />
+      </linearGradient>
+    </defs>
+
+    <!-- Soft central halo, never rotates, gives the wheel its gravity. -->
+    <circle cx={center} cy={center} r={radius + 40} fill="url(#wheel-gold-halo)" />
+
+    <!-- Rotating layer : rings + spokes + glyphs, co-rotating so the geometry stays intact. -->
+    <g class="zodiac-wheel-rotating" transform-origin={`${center} ${center}`}>
+      <!-- Outer and inner concentric rings. -->
+      <circle cx={center} cy={center} r={radius + 30} fill="none" stroke="url(#wheel-ring-grad)" stroke-width="0.8" opacity="0.65" />
+      <circle cx={center} cy={center} r={radius} fill="none" stroke="rgba(212,160,23,0.32)" stroke-width="0.6" />
+      <circle cx={center} cy={center} r={strokeInner} fill="none" stroke="rgba(139,92,246,0.22)" stroke-width="0.5" stroke-dasharray="2 4" />
+
+      <!-- Spokes between glyph slots. -->
+      {spokes.map((s) => (
+        <line x1={s.x1} y1={s.y1} x2={s.x2} y2={s.y2} stroke="rgba(212,160,23,0.18)" stroke-width="0.6" />
+      ))}
+
+      <!-- 12 glyphs. The current sun sign is rendered brighter and with a halo. -->
+      {glyphs.map((g) => (
+        <g>
+          {g.isCurrent && (
+            <circle cx={g.x} cy={g.y} r="28" fill="rgba(212,160,23,0.18)" />
+          )}
+          <text
+            x={g.x}
+            y={g.y}
+            text-anchor="middle"
+            dominant-baseline="central"
+            font-family="Outfit, serif"
+            font-size={g.isCurrent ? 34 : 28}
+            fill={g.isCurrent ? "rgba(242, 210, 125, 0.95)" : "rgba(212, 160, 23, 0.55)"}
+            style={g.isCurrent ? "filter: drop-shadow(0 0 12px rgba(212,160,23,0.6));" : ""}
+          >
+            {g.glyph}
+          </text>
+        </g>
+      ))}
+    </g>
+  </svg>
+</div>
+
+<style>
+  .zodiac-wheel-wrapper {
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .zodiac-wheel-svg {
+    max-width: 140vw;
+    opacity: 0.55;
+  }
+  .zodiac-wheel-rotating {
+    transform-origin: 360px 360px;
+    animation: zodiac-wheel-spin 180s linear infinite;
+  }
+  @keyframes zodiac-wheel-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .zodiac-wheel-rotating { animation: none; }
+  }
+</style>

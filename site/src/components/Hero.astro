@@ -3,6 +3,7 @@ import { siteConfig } from "../../site.config";
 import { extractLocale } from "../i18n/config";
 import { t } from "../i18n/translations";
 import { getContent } from "../i18n/content";
+import ZodiacWheel from "./ZodiacWheel.astro";
 
 const locale = extractLocale(Astro.url.pathname);
 const content = getContent(locale);
@@ -11,6 +12,8 @@ const content = getContent(locale);
 <section class="relative overflow-hidden py-12 md:py-32 px-3 md:px-4 bg-starfield">
   <!-- Constellation patterns background -->
   <div class="absolute inset-0 z-0" style="background-image: url('/constellations.svg'); background-size: cover; background-position: center;"></div>
+  <!-- Rotating zodiac wheel : lives in a second background layer, never competes with the H1. -->
+  <ZodiacWheel class="absolute inset-0 z-[1] opacity-70 mix-blend-screen" />
 
   <div class="max-w-4xl mx-auto text-center relative z-10">
     <p class="text-xs md:text-sm font-medium uppercase tracking-widest mb-3 md:mb-4 text-gradient-gold">{content.heroBadge}</p>
