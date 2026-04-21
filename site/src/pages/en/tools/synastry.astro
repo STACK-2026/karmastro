@@ -7,6 +7,30 @@ const description =
 
 const jsonLd = [
   {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://karmastro.com/en/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://karmastro.com/en/tools"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Synastry",
+      "item": "https://karmastro.com/en/tools/synastry"
+    }
+  ]
+},
+  {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Free Synastry Calculator",

@@ -6,6 +6,30 @@ const description =
   "Рассчитайте ваш личный год бесплатно. Каждый год несёт специфическую нумерологическую тему в цикле 1-9. Откройте энергию текущего года.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://karmastro.com/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Инструменты",
+      "item": "https://karmastro.com/ru/instrumenty"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Личный год",
+      "item": "https://karmastro.com/ru/instrumenty/lichnyi-god"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "Калькулятор личного года", description, url: "https://karmastro.com/ru/instrumenty/lichnyi-god", applicationCategory: "UtilitiesApplication", inLanguage: "ru", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "152" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "Что такое личный год?", acceptedAnswer: { "@type": "Answer", text: "Число 1-9, описывающее нумерологическую энергию текущего года. Часть девятилетнего цикла." } },

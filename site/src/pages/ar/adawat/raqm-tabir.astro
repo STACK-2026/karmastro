@@ -6,6 +6,30 @@ const description =
   "احسب رقم التعبير مجانا، المعروف أيضا برقم القدر. يكشف مواهبك الفطرية ورسالتك واتجاه حياتك الطبيعي. علم الأعداد الفيثاغوري.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "الرئيسية",
+      "item": "https://karmastro.com/ar/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "الأدوات",
+      "item": "https://karmastro.com/ar/adawat"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "رقم التعبير",
+      "item": "https://karmastro.com/ar/adawat/raqm-tabir"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "حاسبة رقم التعبير", description, url: "https://karmastro.com/ar/adawat/raqm-tabir", applicationCategory: "UtilitiesApplication", inLanguage: "ar", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "128" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "ما هو رقم التعبير؟", acceptedAnswer: { "@type": "Answer", text: "رقم التعبير يحسب من اسم الميلاد الكامل. يكشف المواهب الفطرية والرسالة الحياتية." } },

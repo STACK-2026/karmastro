@@ -26,6 +26,30 @@ const SIGNS = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "
 
 const jsonLd = [
   {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://karmastro.com/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "ツール",
+      "item": "https://karmastro.com/ja/shindan"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "アセンダント",
+      "item": "https://karmastro.com/ja/shindan/asendanto"
+    }
+  ]
+},
+  {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "アセンダント計算機",

@@ -130,6 +130,30 @@ const SIGNS = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "
 
 const jsonLd = [
   {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://karmastro.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ferramentas",
+      "item": "https://karmastro.com/pt/ferramentas"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Ascendente",
+      "item": "https://karmastro.com/pt/ferramentas/ascendente"
+    }
+  ]
+},
+  {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Calculadora de Ascendente",

@@ -6,6 +6,30 @@ const description =
   "Calcula o teu ano pessoal grátis. Cada ano traz um tema numerológico específico do ciclo 1 ao 9. Descobre a energia do ano em curso e alinha as tuas decisões.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://karmastro.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ferramentas",
+      "item": "https://karmastro.com/pt/ferramentas"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Ano pessoal",
+      "item": "https://karmastro.com/pt/ferramentas/ano-pessoal"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "Calculadora do Ano Pessoal", description, url: "https://karmastro.com/pt/ferramentas/ano-pessoal", applicationCategory: "UtilitiesApplication", inLanguage: "pt", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "231" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "O que é um ano pessoal?", acceptedAnswer: { "@type": "Answer", text: "É um número de 1 a 9 (por vezes 11, 22 ou 33) que descreve a energia numerológica do ano que estás a viver. Faz parte de um ciclo de 9 anos que se repete ao longo da vida." } },

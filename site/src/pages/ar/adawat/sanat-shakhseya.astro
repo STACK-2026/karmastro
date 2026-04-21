@@ -6,6 +6,30 @@ const description =
   "احسب سنتك الشخصية مجانا. كل سنة تحمل موضوعا عدديا محددا في دورة من 1 إلى 9. اكتشف طاقة سنتك الحالية.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "الرئيسية",
+      "item": "https://karmastro.com/ar/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "الأدوات",
+      "item": "https://karmastro.com/ar/adawat"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "السنة الشخصية",
+      "item": "https://karmastro.com/ar/adawat/sanat-shakhseya"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "حاسبة السنة الشخصية", description, url: "https://karmastro.com/ar/adawat/sanat-shakhseya", applicationCategory: "UtilitiesApplication", inLanguage: "ar", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "118" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "ما هي السنة الشخصية؟", acceptedAnswer: { "@type": "Answer", text: "رقم من 1 إلى 9 يصف طاقة السنة الحالية. جزء من دورة تسع سنوات." } },

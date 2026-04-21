@@ -8,6 +8,30 @@ const description =
 
 const jsonLd = [
   {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://karmastro.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Outils",
+      "item": "https://karmastro.com/outils"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Nombre d'expression",
+      "item": "https://karmastro.com/outils/nombre-expression"
+    }
+  ]
+},
+  {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Calculateur nombre d'expression Karmastro",

@@ -6,6 +6,30 @@ const description =
   "İfade sayınızı ücretsiz hesaplayın, kader sayısı olarak da bilinir. Doğuştan gelen yetenekleri, misyonu ve yaşamın doğal yönünü ortaya çıkarır.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana sayfa",
+      "item": "https://karmastro.com/tr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Araçlar",
+      "item": "https://karmastro.com/tr/araclar"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "İfade sayısı",
+      "item": "https://karmastro.com/tr/araclar/ifade-sayisi"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "İfade Sayısı Hesaplayıcı", description, url: "https://karmastro.com/tr/araclar/ifade-sayisi", applicationCategory: "UtilitiesApplication", inLanguage: "tr", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "149" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "İfade sayısı nedir?", acceptedAnswer: { "@type": "Answer", text: "Tam doğum adından hesaplanan sayı. Doğuştan gelen yetenekleri ve yaşam misyonunu gösterir." } },

@@ -6,6 +6,30 @@ const description =
   "Ücretsiz doğum haritası hesaplayıcı, Swiss Ephemeris ile. 10 gezegen, 12 ev, yükselen burç ve Türkçe tam yorum. Profesyonel hassasiyet, kayıt gerekmez.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana sayfa",
+      "item": "https://karmastro.com/tr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Araçlar",
+      "item": "https://karmastro.com/tr/araclar"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Doğum haritası",
+      "item": "https://karmastro.com/tr/araclar/dogum-haritasi"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "Doğum Haritası Hesaplayıcı", description, url: "https://karmastro.com/tr/araclar/dogum-haritasi", applicationCategory: "UtilitiesApplication", inLanguage: "tr", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "241" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "Doğum haritası nedir?", acceptedAnswer: { "@type": "Answer", text: "Doğum haritası, natal harita olarak da bilinir, doğduğunuz anın ve yerin gökyüzünün astronomik fotoğrafıdır. Güneş, Ay ve sekiz gezegenin konumlarını, burçlarını, 12 evi ve açıları gösterir." } },

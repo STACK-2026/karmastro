@@ -26,6 +26,30 @@ const SIGNS = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "
 
 const jsonLd = [
   {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://karmastro.com/de/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Werkzeuge",
+      "item": "https://karmastro.com/de/werkzeuge"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Aszendent",
+      "item": "https://karmastro.com/de/werkzeuge/aszendent"
+    }
+  ]
+},
+  {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Aszendent Rechner",

@@ -7,6 +7,30 @@ const description =
 
 const jsonLd = [
   {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://karmastro.com/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Herramientas",
+      "item": "https://karmastro.com/es/herramientas"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Año personal",
+      "item": "https://karmastro.com/es/herramientas/ano-personal"
+    }
+  ]
+},
+  {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Calculadora del Año Personal",

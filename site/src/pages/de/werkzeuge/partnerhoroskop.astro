@@ -6,6 +6,30 @@ const description =
   "Kostenlose Kompatibilität der Sternzeichen: Liebe, Freundschaft, Arbeit und karmische Verbindung zwischen zwei Zeichen. Basiert auf Elementen, Qualitäten und Planetenaspekten.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://karmastro.com/de/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Werkzeuge",
+      "item": "https://karmastro.com/de/werkzeuge"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Partnerhoroskop",
+      "item": "https://karmastro.com/de/werkzeuge/partnerhoroskop"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "Partnerhoroskop-Rechner", description, url: "https://karmastro.com/de/werkzeuge/partnerhoroskop", applicationCategory: "UtilitiesApplication", inLanguage: "de", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "291" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "Wie funktioniert Sternzeichen-Kompatibilität?", acceptedAnswer: { "@type": "Answer", text: "Sie analysiert Elemente (Feuer, Erde, Luft, Wasser), Qualitäten (kardinal, fix, veränderlich) und Herrscherplaneten zweier Zeichen. Zeichen desselben Elements oder komplementärer Elemente haben meist mehr natürliche Affinität." } },

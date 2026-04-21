@@ -6,6 +6,30 @@ const description =
   "Berechne deine Ausdruckszahl kostenlos, auch Schicksalszahl genannt. Sie offenbart deine angeborenen Talente, deine Mission und die natürliche Richtung deines Lebens.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://karmastro.com/de/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Werkzeuge",
+      "item": "https://karmastro.com/de/werkzeuge"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Ausdruckszahl",
+      "item": "https://karmastro.com/de/werkzeuge/ausdruckszahl"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "Ausdruckszahl-Rechner", description, url: "https://karmastro.com/de/werkzeuge/ausdruckszahl", applicationCategory: "UtilitiesApplication", inLanguage: "de", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "219" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "Was ist die Ausdruckszahl?", acceptedAnswer: { "@type": "Answer", text: "Die Ausdruckszahl, auch Schicksalszahl genannt, wird aus dem vollständigen Geburtsnamen berechnet. Sie offenbart angeborene Talente, natürliche Fähigkeiten und die Lebensmission, die du von Haus aus mitbringst." } },

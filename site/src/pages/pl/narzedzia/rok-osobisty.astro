@@ -6,6 +6,30 @@ const description =
   "Oblicz darmo swój rok osobisty. Każdy rok niesie określony temat numerologiczny w cyklu 1-9. Odkryj energię obecnego roku.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Strona główna",
+      "item": "https://karmastro.com/pl/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Narzędzia",
+      "item": "https://karmastro.com/pl/narzedzia"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Rok osobisty",
+      "item": "https://karmastro.com/pl/narzedzia/rok-osobisty"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "Kalkulator Roku Osobistego", description, url: "https://karmastro.com/pl/narzedzia/rok-osobisty", applicationCategory: "UtilitiesApplication", inLanguage: "pl", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "142" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "Czym jest rok osobisty?", acceptedAnswer: { "@type": "Answer", text: "Liczba 1-9 opisująca numerologiczną energię obecnego roku. Część dziewięcioletniego cyklu." } },

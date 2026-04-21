@@ -6,6 +6,30 @@ const description =
   "Бесплатный калькулятор натальной карты на Swiss Ephemeris. Все 10 планет, 12 домов, асцендент и полная интерпретация на русском. Профессиональная точность.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://karmastro.com/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Инструменты",
+      "item": "https://karmastro.com/ru/instrumenty"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Натальная карта",
+      "item": "https://karmastro.com/ru/instrumenty/natalnaya-karta"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "Калькулятор натальной карты", description, url: "https://karmastro.com/ru/instrumenty/natalnaya-karta", applicationCategory: "UtilitiesApplication", inLanguage: "ru", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "287" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "Что такое натальная карта?", acceptedAnswer: { "@type": "Answer", text: "Натальная карта, или карта рождения, это астрономический снимок неба в точный момент и место вашего рождения. Показывает положения Солнца, Луны и восьми планет, знаки зодиака, 12 домов и аспекты." } },

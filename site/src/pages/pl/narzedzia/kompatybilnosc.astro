@@ -6,6 +6,30 @@ const description =
   "Darmowa kompatybilność zodiakalna: miłość, przyjaźń, praca i karmiczna więź między dwoma znakami. Na bazie żywiołów, cech i aspektów planetarnych.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Strona główna",
+      "item": "https://karmastro.com/pl/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Narzędzia",
+      "item": "https://karmastro.com/pl/narzedzia"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Kompatybilność",
+      "item": "https://karmastro.com/pl/narzedzia/kompatybilnosc"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "Kalkulator Kompatybilności", description, url: "https://karmastro.com/pl/narzedzia/kompatybilnosc", applicationCategory: "UtilitiesApplication", inLanguage: "pl", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "198" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "Jak działa kompatybilność?", acceptedAnswer: { "@type": "Answer", text: "Analizuje żywioły (ogień, ziemia, powietrze, woda), cechy (kardynalny, stały, zmienny) i planety władające dwóch znaków." } },

@@ -6,6 +6,30 @@ const description =
   "Рассчитайте ваше число выражения бесплатно, также называемое число судьбы. Раскрывает врождённые таланты, миссию и естественное направление жизни.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://karmastro.com/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Инструменты",
+      "item": "https://karmastro.com/ru/instrumenty"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Число выражения",
+      "item": "https://karmastro.com/ru/instrumenty/chislo-vyrazheniya"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "Калькулятор числа выражения", description, url: "https://karmastro.com/ru/instrumenty/chislo-vyrazheniya", applicationCategory: "UtilitiesApplication", inLanguage: "ru", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "167" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "Что такое число выражения?", acceptedAnswer: { "@type": "Answer", text: "Число судьбы, рассчитанное из полного имени при рождении. Раскрывает врождённые таланты и жизненную миссию." } },

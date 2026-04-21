@@ -6,6 +6,30 @@ const description =
   "Calcola gratis il tuo numero di espressione, detto anche numero del destino. Rivela i talenti innati, la missione e la direzione naturale della tua vita.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://karmastro.com/it/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Strumenti",
+      "item": "https://karmastro.com/it/strumenti"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Numero di espressione",
+      "item": "https://karmastro.com/it/strumenti/numero-espressione"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "Calcolatore Numero di Espressione", description, url: "https://karmastro.com/it/strumenti/numero-espressione", applicationCategory: "UtilitiesApplication", inLanguage: "it", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "187" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "Cos'è il numero di espressione?", acceptedAnswer: { "@type": "Answer", text: "Detto anche numero del destino, si calcola dal nome completo di nascita. Rivela talenti innati, abilità naturali e la missione che porti con te dalla nascita." } },

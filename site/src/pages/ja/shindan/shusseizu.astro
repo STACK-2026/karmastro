@@ -6,6 +6,30 @@ const description =
   "Swiss Ephemerisで計算する無料の出生図ツール。10惑星、12ハウス、アセンダント、日本語での完全な解釈。プロフェッショナルな精度。";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://karmastro.com/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "ツール",
+      "item": "https://karmastro.com/ja/shindan"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "出生図",
+      "item": "https://karmastro.com/ja/shindan/shusseizu"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "出生図計算ツール", description, url: "https://karmastro.com/ja/shindan/shusseizu", applicationCategory: "UtilitiesApplication", inLanguage: "ja", offers: { "@type": "Offer", price: "0", priceCurrency: "JPY" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "176" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "出生図とは？", acceptedAnswer: { "@type": "Answer", text: "出生図、ネイタルチャートとも呼ばれ、あなたが生まれた正確な瞬間と場所の空の天文学的スナップショットです。太陽、月、8惑星の位置、星座、12ハウス、アスペクトを示します。" } },

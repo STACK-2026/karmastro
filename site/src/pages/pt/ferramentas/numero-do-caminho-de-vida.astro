@@ -120,6 +120,30 @@ const DISPLAY_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33];
 
 const jsonLd = [
   {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://karmastro.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ferramentas",
+      "item": "https://karmastro.com/pt/ferramentas"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Número do caminho de vida",
+      "item": "https://karmastro.com/pt/ferramentas/numero-do-caminho-de-vida"
+    }
+  ]
+},
+  {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Calculadora do Número do Caminho de Vida",

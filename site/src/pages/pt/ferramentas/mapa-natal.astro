@@ -6,6 +6,30 @@ const description =
   "Calcula o teu mapa natal grátis com Swiss Ephemeris. 10 planetas, 12 casas, ascendente e interpretação completa em português. Precisão profissional, sem registo obrigatório.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://karmastro.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ferramentas",
+      "item": "https://karmastro.com/pt/ferramentas"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Mapa natal",
+      "item": "https://karmastro.com/pt/ferramentas/mapa-natal"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "Calculadora de Mapa Natal", description, url: "https://karmastro.com/pt/ferramentas/mapa-natal", applicationCategory: "UtilitiesApplication", operatingSystem: "Any", inLanguage: "pt", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "389" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "O que é um mapa natal?", acceptedAnswer: { "@type": "Answer", text: "O mapa natal, também chamado tema natal ou mapa astral, é uma fotografia astronómica do céu no momento exato e no lugar do teu nascimento. Mostra a posição do Sol, Lua e oito planetas, os signos que ocupavam, as 12 casas e os aspetos entre eles." } },

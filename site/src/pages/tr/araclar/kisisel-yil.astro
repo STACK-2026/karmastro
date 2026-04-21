@@ -6,6 +6,30 @@ const description =
   "Kişisel yılınızı ücretsiz hesaplayın. Her yıl 1-9 döngüsünde belirli bir numerolojik tema taşır. Bu yılın enerjisini keşfedin.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana sayfa",
+      "item": "https://karmastro.com/tr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Araçlar",
+      "item": "https://karmastro.com/tr/araclar"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Kişisel yıl",
+      "item": "https://karmastro.com/tr/araclar/kisisel-yil"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "Kişisel Yıl Hesaplayıcı", description, url: "https://karmastro.com/tr/araclar/kisisel-yil", applicationCategory: "UtilitiesApplication", inLanguage: "tr", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "134" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "Kişisel yıl nedir?", acceptedAnswer: { "@type": "Answer", text: "1-9 arası sayı, içinde bulunduğunuz yılın numerolojik enerjisini açıklar. Dokuz yıllık döngünün parçası." } },

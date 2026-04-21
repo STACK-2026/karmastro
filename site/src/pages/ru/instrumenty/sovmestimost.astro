@@ -6,6 +6,30 @@ const description =
   "Бесплатная совместимость знаков зодиака: любовь, дружба, работа и кармическая связь между двумя знаками. На основе стихий, качеств и планетарных аспектов.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://karmastro.com/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Инструменты",
+      "item": "https://karmastro.com/ru/instrumenty"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Совместимость",
+      "item": "https://karmastro.com/ru/instrumenty/sovmestimost"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "Калькулятор совместимости", description, url: "https://karmastro.com/ru/instrumenty/sovmestimost", applicationCategory: "UtilitiesApplication", inLanguage: "ru", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "213" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "Как работает совместимость знаков?", acceptedAnswer: { "@type": "Answer", text: "Анализируются стихии (огонь, земля, воздух, вода), качества (кардинальные, фиксированные, мутабельные) и планеты-управители двух знаков." } },

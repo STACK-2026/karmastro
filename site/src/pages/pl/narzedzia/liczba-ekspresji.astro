@@ -6,6 +6,30 @@ const description =
   "Oblicz darmo swoją liczbę ekspresji, zwaną też liczbą przeznaczenia. Ujawnia wrodzone talenty, misję i naturalny kierunek życia. Numerologia pitagorejska.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Strona główna",
+      "item": "https://karmastro.com/pl/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Narzędzia",
+      "item": "https://karmastro.com/pl/narzedzia"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Liczba ekspresji",
+      "item": "https://karmastro.com/pl/narzedzia/liczba-ekspresji"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "Kalkulator Liczby Ekspresji", description, url: "https://karmastro.com/pl/narzedzia/liczba-ekspresji", applicationCategory: "UtilitiesApplication", inLanguage: "pl", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "156" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "Czym jest liczba ekspresji?", acceptedAnswer: { "@type": "Answer", text: "Liczba obliczana z pełnego imienia i nazwiska z narodzin. Ujawnia wrodzone talenty i życiową misję." } },

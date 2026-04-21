@@ -6,6 +6,30 @@ const description =
   "Compatibilidade zodiacal grátis: amor, amizade, trabalho e compatibilidade kármica entre dois signos. Baseada em elementos, modalidades e aspetos planetários.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://karmastro.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ferramentas",
+      "item": "https://karmastro.com/pt/ferramentas"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Compatibilidade",
+      "item": "https://karmastro.com/pt/ferramentas/compatibilidade"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "Calculadora de Compatibilidade Zodiacal", description, url: "https://karmastro.com/pt/ferramentas/compatibilidade", applicationCategory: "UtilitiesApplication", inLanguage: "pt", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "312" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "Como funciona a compatibilidade zodiacal?", acceptedAnswer: { "@type": "Answer", text: "Analisa relações entre elementos (fogo, terra, ar, água), modalidades (cardinal, fixo, mutável) e planetas regentes de dois signos. Signos do mesmo elemento ou de elementos complementares costumam ter maior afinidade natural." } },

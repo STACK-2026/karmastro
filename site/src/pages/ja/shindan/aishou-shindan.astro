@@ -6,6 +6,30 @@ const description =
   "無料の星座相性診断：恋愛、友情、仕事、カルマ的な繋がり。エレメント、クオリティ、惑星の支配と角度に基づきます。";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://karmastro.com/ja/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "ツール",
+      "item": "https://karmastro.com/ja/shindan"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "相性診断",
+      "item": "https://karmastro.com/ja/shindan/aishou-shindan"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "相性診断ツール", description, url: "https://karmastro.com/ja/shindan/aishou-shindan", applicationCategory: "UtilitiesApplication", inLanguage: "ja", offers: { "@type": "Offer", price: "0", priceCurrency: "JPY" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "134" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "星座相性はどう働きますか？", acceptedAnswer: { "@type": "Answer", text: "エレメント、クオリティ、2つの星座の支配惑星の関係を分析します。" } },

@@ -26,6 +26,30 @@ const SIGNS = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "
 
 const jsonLd = [
   {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana sayfa",
+      "item": "https://karmastro.com/tr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Araçlar",
+      "item": "https://karmastro.com/tr/araclar"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Yükselen burç",
+      "item": "https://karmastro.com/tr/araclar/yukselen-burc"
+    }
+  ]
+},
+  {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Yükselen Burç Hesaplayıcı",

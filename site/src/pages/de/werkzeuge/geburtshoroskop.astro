@@ -6,6 +6,30 @@ const description =
   "Kostenloser Geburtshoroskop-Rechner mit Swiss Ephemeris. Alle 10 Planeten, 12 Häuser, Aszendent und vollständige Interpretation auf Deutsch. Professionelle Präzision.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://karmastro.com/de/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Werkzeuge",
+      "item": "https://karmastro.com/de/werkzeuge"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Geburtshoroskop",
+      "item": "https://karmastro.com/de/werkzeuge/geburtshoroskop"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "Geburtshoroskop-Rechner", description, url: "https://karmastro.com/de/werkzeuge/geburtshoroskop", applicationCategory: "UtilitiesApplication", inLanguage: "de", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "378" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "Was ist ein Geburtshoroskop?", acceptedAnswer: { "@type": "Answer", text: "Das Geburtshoroskop, auch Natal Chart oder Radix genannt, ist eine astronomische Momentaufnahme des Himmels zum Zeitpunkt und Ort deiner Geburt. Es zeigt die Position von Sonne, Mond und acht Planeten, ihre Sternzeichen, die 12 Häuser und die Aspekte zwischen ihnen." } },

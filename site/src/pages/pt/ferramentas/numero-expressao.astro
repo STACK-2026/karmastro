@@ -6,6 +6,30 @@ const description =
   "Calcula o teu número de expressão grátis, também chamado número do destino. Revela os talentos inatos, a missão e a direção natural da tua vida. Numerologia pitagórica.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://karmastro.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ferramentas",
+      "item": "https://karmastro.com/pt/ferramentas"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Número de expressão",
+      "item": "https://karmastro.com/pt/ferramentas/numero-expressao"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "Calculadora do Número de Expressão", description, url: "https://karmastro.com/pt/ferramentas/numero-expressao", applicationCategory: "UtilitiesApplication", inLanguage: "pt", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "254" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "O que é o número de expressão?", acceptedAnswer: { "@type": "Answer", text: "É um número calculado a partir do nome completo de nascimento. Revela talentos inatos, habilidades naturais e a missão de vida que trazes de origem." } },

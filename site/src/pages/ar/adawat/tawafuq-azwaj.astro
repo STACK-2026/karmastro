@@ -6,6 +6,30 @@ const description =
   "توافق الأبراج مجانا: الحب والصداقة والعمل والتوافق الكارمي بين برجين. مبني على العناصر والطرائق والجوانب الكوكبية.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "الرئيسية",
+      "item": "https://karmastro.com/ar/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "الأدوات",
+      "item": "https://karmastro.com/ar/adawat"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "توافق الأزواج",
+      "item": "https://karmastro.com/ar/adawat/tawafuq-azwaj"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "حاسبة توافق الأبراج", description, url: "https://karmastro.com/ar/adawat/tawafuq-azwaj", applicationCategory: "UtilitiesApplication", inLanguage: "ar", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "156" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "كيف يعمل التوافق؟", acceptedAnswer: { "@type": "Answer", text: "يحلل العلاقات بين العناصر والطرائق والكواكب الحاكمة لبرجين." } },

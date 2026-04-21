@@ -6,6 +6,30 @@ const description =
   "Darmowy kalkulator horoskopu natalnego ze Swiss Ephemeris. Wszystkie 10 planet, 12 domów, ascendent i pełna interpretacja po polsku. Profesjonalna precyzja.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Strona główna",
+      "item": "https://karmastro.com/pl/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Narzędzia",
+      "item": "https://karmastro.com/pl/narzedzia"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Horoskop natalny",
+      "item": "https://karmastro.com/pl/narzedzia/horoskop-natalny"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "Kalkulator Horoskopu Natalnego", description, url: "https://karmastro.com/pl/narzedzia/horoskop-natalny", applicationCategory: "UtilitiesApplication", inLanguage: "pl", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "263" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "Czym jest horoskop natalny?", acceptedAnswer: { "@type": "Answer", text: "Horoskop natalny, zwany też kartą natalną, to astronomiczna fotografia nieba w dokładnym momencie i miejscu twoich narodzin. Pokazuje pozycje Słońca, Księżyca i ośmiu planet, znaki zodiaku, 12 domów i aspekty między nimi." } },

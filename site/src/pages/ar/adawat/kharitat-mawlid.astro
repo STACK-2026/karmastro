@@ -6,6 +6,30 @@ const description =
   "حاسبة خريطة الميلاد المجانية باستخدام Swiss Ephemeris. جميع الكواكب العشرة والبيوت الاثني عشر والطالع وتفسير كامل بالعربية. دقة احترافية.";
 
 const jsonLd = [
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "الرئيسية",
+      "item": "https://karmastro.com/ar/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "الأدوات",
+      "item": "https://karmastro.com/ar/adawat"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "خريطة المولد",
+      "item": "https://karmastro.com/ar/adawat/kharitat-mawlid"
+    }
+  ]
+},
   { "@context": "https://schema.org", "@type": "WebApplication", name: "حاسبة خريطة الميلاد", description, url: "https://karmastro.com/ar/adawat/kharitat-mawlid", applicationCategory: "UtilitiesApplication", inLanguage: "ar", offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "187" } },
   { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
     { "@type": "Question", name: "ما هي خريطة الميلاد؟", acceptedAnswer: { "@type": "Answer", text: "خريطة الميلاد صورة فلكية للسماء في اللحظة والمكان الدقيقين لولادتك. تعرض مواقع الشمس والقمر والكواكب الثمانية وأبراجها والبيوت الاثني عشر والجوانب بينها." } },

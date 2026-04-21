@@ -26,6 +26,30 @@ const SIGNS = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "
 
 const jsonLd = [
   {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Strona główna",
+      "item": "https://karmastro.com/pl/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Narzędzia",
+      "item": "https://karmastro.com/pl/narzedzia"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Wschodzący znak",
+      "item": "https://karmastro.com/pl/narzedzia/wschodzacy-znak"
+    }
+  ]
+},
+  {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Kalkulator Wschodzącego Znaku",
