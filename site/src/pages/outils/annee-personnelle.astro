@@ -278,6 +278,7 @@ const jsonLd = [
 
 <script>
   import { calculatePersonalYear, getPersonalYearMeaning } from "../../data/numerology-meanings";
+  import { revealResult, animateNumberTo } from "../../scripts/karma-reveal";
 
   const form = document.getElementById("py-form") as HTMLFormElement;
   const resultDiv = document.getElementById("result") as HTMLDivElement;
@@ -293,7 +294,7 @@ const jsonLd = [
     const meaning = getPersonalYearMeaning(result.number);
 
     (document.getElementById("result-year") as HTMLElement).textContent = String(yearVal);
-    (document.getElementById("result-number") as HTMLElement).textContent = String(result.number);
+    animateNumberTo(document.getElementById("result-number"), result.number);
     (document.getElementById("result-title") as HTMLElement).textContent = meaning.title.replace(`Année ${result.number} : `, "");
     (document.getElementById("result-theme") as HTMLElement).textContent = meaning.theme;
     (document.getElementById("result-calc") as HTMLElement).textContent = result.calculation;
@@ -324,7 +325,6 @@ const jsonLd = [
       };
     }
 
-    resultDiv.classList.remove("hidden");
-    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+    revealResult(resultDiv);
   });
 </script>

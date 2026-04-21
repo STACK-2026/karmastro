@@ -279,6 +279,7 @@ const jsonLd = [
 
 <script>
   import { calculateLifePath, getLifePathMeaning } from "../../data/numerology-meanings";
+  import { revealResult, animateNumberTo } from "../../scripts/karma-reveal";
 
   const form = document.getElementById("life-path-form") as HTMLFormElement;
   const resultDiv = document.getElementById("result") as HTMLDivElement;
@@ -293,7 +294,8 @@ const jsonLd = [
     const result = calculateLifePath(d, m, y);
     const meaning = getLifePathMeaning(result.number);
 
-    (document.getElementById("result-number") as HTMLElement).textContent = String(result.number);
+    const numberEl = document.getElementById("result-number") as HTMLElement;
+    animateNumberTo(numberEl, result.number);
     (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
     (document.getElementById("result-calc") as HTMLElement).textContent = result.calculation;
     (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
@@ -326,7 +328,6 @@ const jsonLd = [
       };
     }
 
-    resultDiv.classList.remove("hidden");
-    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+    revealResult(resultDiv);
   });
 </script>

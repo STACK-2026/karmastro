@@ -294,6 +294,7 @@ const jsonLd = [
 
 <script>
   import { calculateExpression, getExpressionMeaning } from "../../data/numerology-meanings";
+  import { revealResult, animateNumberTo } from "../../scripts/karma-reveal";
 
   const form = document.getElementById("expr-form") as HTMLFormElement;
   const resultDiv = document.getElementById("result") as HTMLDivElement;
@@ -307,7 +308,7 @@ const jsonLd = [
     const result = calculateExpression(name);
     const meaning = getExpressionMeaning(result.number);
 
-    (document.getElementById("result-number") as HTMLElement).textContent = String(result.number);
+    animateNumberTo(document.getElementById("result-number"), result.number);
     (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
     (document.getElementById("result-letters") as HTMLElement).textContent = result.letters;
     (document.getElementById("result-calc") as HTMLElement).textContent = result.calculation;
@@ -337,7 +338,6 @@ const jsonLd = [
       };
     }
 
-    resultDiv.classList.remove("hidden");
-    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+    revealResult(resultDiv);
   });
 </script>

@@ -306,6 +306,7 @@ const jsonLd = [
 
 <script>
   import { calculateLifePath } from "../../data/numerology-meanings";
+  import { revealResult, animateNumberTo } from "../../scripts/karma-reveal";
 
   // Compatibility matrix: score 0-100 + interpretation
   // Based on traditional Pythagorean numerology (with master numbers reduced for matrix lookup)
@@ -389,9 +390,9 @@ const jsonLd = [
     const lifeB = calculateLifePath(db, mb, yb);
     const compat = getCompat(lifeA.number, lifeB.number);
 
-    (document.getElementById("life-a") as HTMLElement).textContent = String(lifeA.number);
-    (document.getElementById("life-b") as HTMLElement).textContent = String(lifeB.number);
-    (document.getElementById("score-value") as HTMLElement).textContent = String(compat.score);
+    animateNumberTo(document.getElementById("life-a"), lifeA.number, { duration: 900 });
+    animateNumberTo(document.getElementById("life-b"), lifeB.number, { duration: 900 });
+    animateNumberTo(document.getElementById("score-value"), compat.score, { duration: 1600 });
     (document.getElementById("score-label") as HTMLElement).textContent = scoreLabel(compat.score);
     (document.getElementById("dynamic-text") as HTMLElement).textContent = compat.dynamic;
     (document.getElementById("lesson-text") as HTMLElement).textContent = compat.lesson;
@@ -427,7 +428,6 @@ const jsonLd = [
       };
     }
 
-    resultDiv.classList.remove("hidden");
-    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+    revealResult(resultDiv);
   });
 </script>
