@@ -455,32 +455,57 @@ const OraclePage = () => {
         )}
 
         {messages.map((msg, i) => {
-          // Paywall card
+          // Paywall "portail cosmique" : rotating conic halo behind a calm
+          // central card. The halo only animates outside of reduced-motion.
           if (msg.role === "paywall") {
             return (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="flex justify-center"
+                initial={{ opacity: 0, y: 10, scale: 0.97 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.7, ease: [0.2, 0.65, 0.3, 1] }}
+                className="flex justify-center my-2"
               >
-                <div className="w-full max-w-md p-5 rounded-2xl border border-amber-300/30 bg-gradient-to-br from-purple-500/10 to-amber-300/10 text-center">
-                  <Sparkles className="h-8 w-8 text-amber-300 mx-auto mb-2" />
-                  <h3 className="font-serif text-lg mb-2">{t("oracle.paywall_title")}</h3>
-                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{msg.content}</p>
-                  <div className="flex flex-col sm:flex-row gap-2">
-                    <button
-                      onClick={() => navigate("/pricing")}
-                      className="flex-1 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity"
+                <div className="relative w-full max-w-md">
+                  {/* Conic halo layer, motion-safe only */}
+                  <div
+                    aria-hidden="true"
+                    className="absolute -inset-4 rounded-[2rem] opacity-60 blur-2xl motion-safe:animate-[oracle-portal-spin_22s_linear_infinite]"
+                    style={{
+                      background:
+                        "conic-gradient(from 0deg, rgba(212,160,23,0.25), rgba(139,92,246,0.22), rgba(212,160,23,0.06), rgba(139,92,246,0.22), rgba(212,160,23,0.25))",
+                    }}
+                  />
+                  {/* Inner card : parchment + gold rim + soft aura */}
+                  <div className="relative oracle-parchment oracle-aura rounded-2xl p-6 text-center overflow-hidden">
+                    <motion.div
+                      initial={{ scale: 0.5, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ delay: 0.25, duration: 0.6, ease: "backOut" }}
+                      className="inline-flex items-center justify-center h-12 w-12 rounded-full mb-3"
+                      style={{
+                        background:
+                          "radial-gradient(circle, rgba(212,160,23,0.35) 0%, rgba(212,160,23,0.1) 60%, transparent 100%)",
+                      }}
                     >
-                      {t("oracle.paywall_cta_etoile")}
-                    </button>
-                    <button
-                      onClick={() => navigate("/pricing")}
-                      className="flex-1 px-4 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 font-medium text-sm hover:bg-amber-300/10 transition-colors"
-                    >
-                      {t("oracle.paywall_cta_credits")}
-                    </button>
+                      <Sparkles className="h-6 w-6 text-amber-300" />
+                    </motion.div>
+                    <h3 className="font-serif text-xl mb-2 text-gradient-gold">{t("oracle.paywall_title")}</h3>
+                    <p className="text-sm text-white/70 mb-5 leading-relaxed">{msg.content}</p>
+                    <div className="flex flex-col sm:flex-row gap-2">
+                      <button
+                        onClick={() => navigate("/pricing")}
+                        className="flex-1 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity glow-gold"
+                      >
+                        {t("oracle.paywall_cta_etoile")}
+                      </button>
+                      <button
+                        onClick={() => navigate("/pricing")}
+                        className="flex-1 px-4 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 font-medium text-sm hover:bg-amber-300/10 transition-colors"
+                      >
+                        {t("oracle.paywall_cta_credits")}
+                      </button>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -493,31 +518,42 @@ const OraclePage = () => {
             // Only show feedback for completed messages (not the currently streaming one if loading)
             !(isLoading && i === messages.length - 1);
 
+          const isUser = msg.role === "user";
+          // Only "complete" assistant bubbles breathe. The currently streaming
+          // one stays still so the text delta isn't blurred by the animation.
+          const isStreamingAssistant =
+            msg.role === "assistant" && isLoading && i === messages.length - 1;
+
           return (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className={msg.role === "user" ? "flex justify-end" : "flex justify-start flex-col items-start"}
+              transition={{ duration: 0.45, ease: [0.2, 0.65, 0.3, 1] }}
+              className={isUser ? "flex justify-end" : "flex justify-start flex-col items-start"}
             >
-              <div className={
-                msg.role === "user"
-                  ? "bg-secondary rounded-2xl rounded-br-sm px-4 py-3 max-w-[85%]"
-                  : "bg-primary/10 border border-primary/20 rounded-2xl rounded-bl-sm px-4 py-3 max-w-[85%]"
-              }>
-                {msg.role === "assistant" && (
-                  <p className={`text-xs mb-1 font-medium flex items-center gap-1 ${currentGuide.color}`}>
-                    <Icon className="h-3 w-3" /> {t(currentGuide.nameKey)}
+              {isUser ? (
+                <div className="bg-secondary/70 backdrop-blur-sm rounded-2xl rounded-br-sm px-4 py-3 max-w-[85%] border border-white/5">
+                  <p className="text-sm text-white/90">{msg.content}</p>
+                </div>
+              ) : (
+                <div
+                  className={
+                    "relative oracle-parchment rounded-2xl rounded-bl-sm px-4 py-3 max-w-[85%] overflow-hidden " +
+                    (isStreamingAssistant ? "" : "oracle-breathing")
+                  }
+                >
+                  {/* Gold sweep on first mount, decorative only */}
+                  <span aria-hidden="true" className="oracle-shimmer-sweep" />
+                  <p className={`relative text-xs mb-1 font-medium flex items-center gap-1.5 ${currentGuide.color}`}>
+                    <Icon className="h-3 w-3" />
+                    <span className="tracking-wide uppercase text-[10px]">{t(currentGuide.nameKey)}</span>
                   </p>
-                )}
-                {msg.role === "assistant" ? (
-                  <div className="text-sm prose prose-invert prose-sm max-w-none leading-relaxed [&_p]:my-1 [&_ul]:my-1 [&_li]:my-0">
+                  <div className="relative text-sm prose prose-invert prose-sm max-w-none leading-relaxed [&_p]:my-1 [&_ul]:my-1 [&_li]:my-0 [&_em]:text-amber-200/90 [&_strong]:text-amber-100 [&_blockquote]:border-l-2 [&_blockquote]:border-amber-300/40 [&_blockquote]:pl-3 [&_blockquote]:italic [&_blockquote]:text-amber-100/85">
                     <ReactMarkdown>{msg.content}</ReactMarkdown>
                   </div>
-                ) : (
-                  <p className="text-sm">{msg.content}</p>
-                )}
-              </div>
+                </div>
+              )}
 
               {showFeedback && (
                 <div className="mt-2 max-w-[85%] w-full">
@@ -583,14 +619,27 @@ const OraclePage = () => {
         })}
 
         {isLoading && messages[messages.length - 1]?.role !== "assistant" && (
-          <div className="flex justify-start">
-            <div className="bg-primary/10 border border-primary/20 rounded-2xl rounded-bl-sm px-4 py-3">
-              <p className={`text-xs mb-1 font-medium flex items-center gap-1 ${currentGuide.color}`}>
-                <Icon className="h-3 w-3 animate-spin" /> {t(currentGuide.nameKey)}
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="flex justify-start"
+          >
+            <div className="oracle-parchment rounded-2xl rounded-bl-sm px-4 py-3 min-w-[200px]">
+              <p className={`text-xs mb-1.5 font-medium flex items-center gap-1.5 ${currentGuide.color}`}>
+                <Icon className="h-3 w-3" />
+                <span className="tracking-wide uppercase text-[10px]">{t(currentGuide.nameKey)}</span>
               </p>
-              <p className="text-sm text-muted-foreground">{t(currentGuide.openerKey)}</p>
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-1">
+                  <span className="h-1.5 w-1.5 rounded-full bg-amber-300" style={{ animation: "oracle-star-pulse-1 1.8s ease-in-out infinite" }} />
+                  <span className="h-1.5 w-1.5 rounded-full bg-amber-300" style={{ animation: "oracle-star-pulse-2 1.8s ease-in-out infinite" }} />
+                  <span className="h-1.5 w-1.5 rounded-full bg-amber-300" style={{ animation: "oracle-star-pulse-3 1.8s ease-in-out infinite" }} />
+                </div>
+                <p className="text-xs text-amber-100/70 italic">{t(currentGuide.openerKey)}</p>
+              </div>
             </div>
-          </div>
+          </motion.div>
         )}
       </div>
 

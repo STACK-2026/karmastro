@@ -158,6 +158,86 @@
   to { transform: translateY(0); opacity: 1; }
 }
 
+/* ═══ Oracle mystique ═══ */
+
+/* Ample "breathing" applied to Oracle bubbles. Scale delta stays below 1%
+   so it reads as presence, not motion sickness. */
+@keyframes oracle-breathing {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.006); }
+}
+
+/* Horizontal gold sweep that paints each Oracle bubble when it first appears,
+   evoking a parchment being unfurled. */
+@keyframes oracle-shimmer {
+  0%   { background-position: -200% 0; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { background-position: 200% 0; opacity: 0; }
+}
+
+/* Three star glyphs pulsing in sequence while the guide is thinking. */
+@keyframes oracle-star-pulse-1 { 0%, 66%, 100% { opacity: 0.3; transform: scale(0.85); } 10% { opacity: 1; transform: scale(1.05); } }
+@keyframes oracle-star-pulse-2 { 0%, 33%, 100% { opacity: 0.3; transform: scale(0.85); } 43% { opacity: 1; transform: scale(1.05); } }
+@keyframes oracle-star-pulse-3 { 0%, 100% { opacity: 0.3; transform: scale(0.85); } 76% { opacity: 1; transform: scale(1.05); } }
+
+/* Portal : rotating conic halo used for the Etoile paywall card. Creates
+   the illusion of cosmic light converging through a veil. */
+@keyframes oracle-portal-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Gentle gold aura for in-chat quotes and paywall centers. */
+@keyframes oracle-aura {
+  0%, 100% { box-shadow: 0 0 18px rgba(212, 160, 23, 0.12), 0 0 36px rgba(139, 92, 246, 0.08); }
+  50%      { box-shadow: 0 0 32px rgba(212, 160, 23, 0.22), 0 0 58px rgba(139, 92, 246, 0.14); }
+}
+
+@layer utilities {
+  /* Parchemin background : diagonal brushed gold + deep violet glow under. */
+  .oracle-parchment {
+    background:
+      linear-gradient(135deg, hsl(43 40% 12% / 0.55) 0%, hsl(271 50% 10% / 0.45) 50%, hsl(43 40% 12% / 0.55) 100%),
+      radial-gradient(ellipse at top left, hsl(43 76% 53% / 0.12), transparent 60%),
+      radial-gradient(ellipse at bottom right, hsl(271 91% 65% / 0.1), transparent 60%);
+    backdrop-filter: blur(6px);
+    border: 1px solid hsl(43 76% 53% / 0.22);
+    box-shadow: inset 0 1px 0 hsl(43 76% 53% / 0.1), 0 8px 30px hsl(260 25% 3% / 0.6);
+  }
+
+  .oracle-breathing {
+    animation: oracle-breathing 4.5s ease-in-out infinite;
+  }
+
+  .oracle-shimmer-sweep {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent 0%, hsl(43 76% 70% / 0.18) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: oracle-shimmer 2.2s ease-out 0.1s 1 forwards;
+    border-radius: inherit;
+    mix-blend-mode: overlay;
+  }
+
+  .oracle-aura {
+    animation: oracle-aura 3.6s ease-in-out infinite;
+  }
+
+  /* Reduced-motion discipline : the guide still arrives, but without the
+     longer ambient loops that can bother motion-sensitive readers. */
+  @media (prefers-reduced-motion: reduce) {
+    .oracle-breathing,
+    .oracle-aura {
+      animation: none;
+    }
+    .oracle-shimmer-sweep {
+      display: none;
+    }
+  }
+}
+
 /* Section dividers , seamless gradient transitions */
 .section-divider {
   height: 80px;
