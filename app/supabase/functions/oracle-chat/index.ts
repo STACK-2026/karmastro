@@ -109,6 +109,7 @@ RÈGLES ABSOLUES :
 8. Tu ne mentionnes JAMAIS être une IA, un chatbot, un modèle ou un programme. Tu es ton personnage, point.
 9. PAS de tiret cadratin (em dash) , utilise des tirets normaux
 10. Quand une donnée manque, dis-le honnêtement plutôt que d'inventer
+11. NE REDEMANDE JAMAIS les infos déjà dans ton contexte. Si tu vois "PROFIL UTILISATEUR" dans le système prompt, les données y sont , utilise-les directement. Ne demande une info QUE si elle est absente du profil ET strictement nécessaire à la question posée. Demander le prénom, la date, l'heure, le lieu, ou les nombres quand ils sont déjà là coupe le parcours et détruit la confiance.
 
 NARRATIF KARMASTRO (à rappeler subtilement quand pertinent) :
 - Le karma n'est pas une punition , c'est un rappel que dans cet univers, tout est lié. Chaque action crée une onde. Les anciens Hindous l'appelaient dharma, les Grecs Moïra (le destin tissé par les trois Parques), les Bouddhistes la roue de l'existence.
@@ -452,14 +453,33 @@ serve(async (req) => {
       engineContext += "\n\n(Données astrologiques en temps réel temporairement indisponibles - utiliser les connaissances générales)";
     }
 
-    // Profile basics if no Engine data
+    // Profile basics if no Engine data. We inject every field the client
+    // already computed so Claude never has to ask the user again for things
+    // the app already knows.
     if (!engineContext.includes("PROFIL") && profile) {
-      engineContext += `\n\nPROFIL DÉCLARÉ :
-- Prénom : ${profile.firstName || "inconnu"}
-- Date de naissance : ${profile.birthDate || "inconnue"}
-- Signe solaire : ${profile.sunSign || "inconnu"}
-- Signe lunaire : ${profile.moonSign || "inconnu"}
-- Ascendant : ${profile.ascendant || "inconnu"}`;
+      const lines: string[] = [];
+      const push = (label: string, value: unknown) => {
+        if (value === undefined || value === null || value === "" || value === "-") return;
+        lines.push(`- ${label} : ${value}`);
+      };
+      push("Prénom", profile.firstName);
+      push("Date de naissance", profile.birthDate);
+      push("Heure de naissance", profile.birthTime);
+      push("Lieu de naissance", profile.birthPlace);
+      push("Signe solaire", profile.sunSign);
+      push("Signe lunaire", profile.moonSign);
+      push("Ascendant", profile.ascendant);
+      push("Chemin de vie", profile.lifePath);
+      push("Nombre d'expression", profile.expression);
+      push("Nombre d'âme", profile.soulUrge);
+      push("Année personnelle", profile.personalYear);
+      push("Mois personnel", profile.personalMonth);
+      push("Jour personnel", profile.personalDay);
+      push("Dettes karmiques", profile.karmicDebts);
+      push("Nœud Nord", profile.northNode);
+      if (lines.length > 0) {
+        engineContext += `\n\nPROFIL UTILISATEUR (calculé côté client, déjà à ta disposition) :\n${lines.join("\n")}\n\nIMPORTANT : Utilise ces données directement. NE REDEMANDE JAMAIS à l'utilisateur sa date, son heure, son lieu de naissance, ni ses nombres numérologiques, ni ses signes. Ils sont dans ton contexte. Si une donnée précise manque (ex : lieu vide), demande UNIQUEMENT celle-là, jamais l'ensemble.`;
+      }
     }
 
     // Convert messages
