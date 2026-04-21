@@ -6,6 +6,7 @@ import Footer from "../components/Footer.astro";
 import CookieBanner from "../components/CookieBanner.astro";
 import { LOCALES, DEFAULT_LOCALE, extractLocale, stripLocalePrefix, isRTL } from "../i18n/config";
 import { getLocalizedSlug, getCanonicalSlugFromLocalized } from "../data/zodiac";
+import { detectToolKey, toolPathFor } from "../data/tool-paths";
 import "../styles/global.css";
 
 interface Props {
@@ -39,8 +40,13 @@ const isRightToLeft = isRTL(currentLocale);
 const pathWithoutLocale = stripLocalePrefix(Astro.url.pathname);
 
 // Build hreflang URLs for all 11 locales.
-// For horoscope pages the sign slug is translated per locale (e.g. FR "cancer" vs AR "burj-al-saratan"),
-// so we must re-translate the slug when constructing each locale variant - otherwise alternates 404.
+// Three path shapes need locale-aware rewriting so alternates never 404 :
+// 1. Horoscope sign pages translate the sign slug (cancer/burj-al-saratan).
+// 2. Tool pages translate BOTH the folder segment (outils/tools/...) AND the
+//    page slug (dette-karmique/karmic-debt/...). Only 2 locales publish the
+//    full 9-tool catalog (FR + EN) ; the 9 others publish 6, so the helper
+//    returns null and we omit that locale from alternates.
+// 3. Everything else keeps the same path with only the locale prefix flipped.
 const horoscopeMatch = pathWithoutLocale.match(/^\/horoscope\/([^/]+)(\/.*)?$/);
 const canonicalSignSlug = horoscopeMatch
   ? (currentLocale === DEFAULT_LOCALE
@@ -48,22 +54,33 @@ const canonicalSignSlug = horoscopeMatch
       : getCanonicalSlugFromLocalized(horoscopeMatch[1], currentLocale))
   : undefined;
 
-const hreflangUrls = LOCALES.map((locale) => {
-  const prefix = locale === DEFAULT_LOCALE ? "" : `/${locale}`;
-  let path = pathWithoutLocale;
-  if (horoscopeMatch && canonicalSignSlug) {
-    const translatedSlug = getLocalizedSlug(canonicalSignSlug, locale);
-    const tail = horoscopeMatch[2] ?? "";
-    path = `/horoscope/${translatedSlug}${tail}`;
-  }
-  return {
-    locale,
-    url: `${siteConfig.url}${prefix}${path}`,
-  };
-});
+const currentToolKey = detectToolKey(pathWithoutLocale, currentLocale);
 
-// x-default points to the default locale variant
-const xDefaultUrl = hreflangUrls.find((h) => h.locale === DEFAULT_LOCALE)?.url;
+const hreflangUrls = LOCALES
+  .map((locale) => {
+    const prefix = locale === DEFAULT_LOCALE ? "" : `/${locale}`;
+    // For tool pages, toolPathFor returns a path already including the locale
+    // prefix (e.g. "/de/werkzeuge/geburtshoroskop"). For every other page type
+    // we prepend the prefix ourselves.
+    let fullUrl: string | null;
+    if (currentToolKey) {
+      const toolPath = toolPathFor(locale, currentToolKey); // null if not published
+      fullUrl = toolPath === null ? null : `${siteConfig.url}${toolPath}`;
+    } else if (horoscopeMatch && canonicalSignSlug) {
+      const translatedSlug = getLocalizedSlug(canonicalSignSlug, locale);
+      const tail = horoscopeMatch[2] ?? "";
+      fullUrl = `${siteConfig.url}${prefix}/horoscope/${translatedSlug}${tail}`;
+    } else {
+      fullUrl = `${siteConfig.url}${prefix}${pathWithoutLocale}`;
+    }
+    if (fullUrl === null) return null;
+    return { locale, url: fullUrl };
+  })
+  .filter((x): x is { locale: typeof LOCALES[number]; url: string } => x !== null);
+
+// x-default points to the default locale variant (fallback to current if no FR).
+const xDefaultUrl = hreflangUrls.find((h) => h.locale === DEFAULT_LOCALE)?.url
+  ?? hreflangUrls.find((h) => h.locale === currentLocale)?.url;
 ---
 
 <!doctype html>
