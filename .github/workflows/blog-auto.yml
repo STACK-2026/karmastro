@@ -58,6 +58,7 @@ jobs:
           UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
           SITE_URL: https://karmastro.com
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cd blog-auto
           if [ "${{ github.event.inputs.force }}" = "true" ]; then

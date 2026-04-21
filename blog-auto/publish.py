@@ -668,89 +668,85 @@ def write_article_file(slug: str, frontmatter: str, content: str) -> Path:
 
 
 # ============================================
-# GIT OPERATIONS
+# GIT OPERATIONS (via GitHub Contents API)
 # ============================================
 
-def git_push(slug: str) -> bool:
-    """Git add, commit and push the new article with pull-rebase retry loop.
+import base64 as _b64
 
-    Guards against 'rejected non-fast-forward' when another push lands
-    on main during the LLM generation window (10-15 min).
+def _gh_api(method, url, token, **kwargs):
+    import requests
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+    }
+    if "headers" in kwargs:
+        headers.update(kwargs.pop("headers"))
+    return requests.request(method, url, headers=headers, timeout=30, **kwargs)
+
+
+def _gh_put_file(rel_path: str, content_bytes: bytes, message: str) -> bool:
+    """Create or update a single file on main via GitHub Contents API.
+
+    Atomic per-file. Retries up to 5x with SHA refresh on 409/422 (concurrent update).
+    Returns True on success.
     """
-    try:
-        subprocess.run(
-            ["git", "add", f"site/src/content/blog/{slug}.md"],
-            cwd=REPO_DIR, check=True, capture_output=True,
-        )
-        subprocess.run(
-            ["git", "commit", "-m", f"blog: {slug} [{now_paris().strftime('%Y-%m-%d %H:%M')}]"],
-            cwd=REPO_DIR, check=True, capture_output=True,
-        )
-    except subprocess.CalledProcessError as e:
-        log.error(f"Git commit error: {e.stderr.decode() if e.stderr else e}")
+    token = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
+    repo  = os.getenv("GITHUB_REPOSITORY")  # e.g. "STACK-2026/karmastro"
+    if not token or not repo:
+        log.error(f"GITHUB_TOKEN/GITHUB_REPOSITORY manquant, fallback git push impossible")
         return False
 
-    for attempt in range(1, 4):
-        try:
-            subprocess.run(
-                ["git", "push", "origin", "main"],
-                cwd=REPO_DIR, check=True, capture_output=True,
-            )
-            log.info(f"Git push OK — {slug} (attempt {attempt})")
-            return True
-        except subprocess.CalledProcessError as e:
-            err = e.stderr.decode() if e.stderr else str(e)
-            if "non-fast-forward" in err or "rejected" in err or "fetch first" in err:
-                log.warning(f"Push rejected attempt {attempt}, pulling --rebase and retrying")
-                try:
-                    subprocess.run(
-                        ["git", "pull", "--rebase", "origin", "main"],
-                        cwd=REPO_DIR, check=True, capture_output=True,
-                    )
-                except subprocess.CalledProcessError as e2:
-                    log.error(f"Git pull --rebase failed: {e2.stderr.decode() if e2.stderr else e2}")
-                    return False
-                continue
-            log.error(f"Git push error (not rejection): {err}")
+    api_url = f"https://api.github.com/repos/{repo}/contents/{rel_path}"
+    content_b64 = _b64.b64encode(content_bytes).decode()
+
+    for attempt in range(1, 6):
+        sha = None
+        r = _gh_api("GET", api_url, token, params={"ref": "main"})
+        if r.status_code == 200:
+            sha = r.json().get("sha")
+        elif r.status_code != 404:
+            log.error(f"API GET {rel_path} status={r.status_code} body={r.text[:200]}")
             return False
 
-    log.error(f"Git push failed after 3 retries — {slug}")
+        payload = {"message": message, "content": content_b64, "branch": "main"}
+        if sha:
+            payload["sha"] = sha
+
+        r = _gh_api("PUT", api_url, token, json=payload)
+        if r.status_code in (200, 201):
+            log.info(f"API PUT OK {rel_path} (attempt {attempt})")
+            return True
+        if r.status_code in (409, 422):
+            log.warning(f"API PUT conflict {rel_path} attempt {attempt}, refetching SHA")
+            continue
+        log.error(f"API PUT {rel_path} status={r.status_code} body={r.text[:200]}")
+        return False
+
+    log.error(f"API PUT failed after 5 retries {rel_path}")
     return False
 
 
-def git_push_articles_json() -> None:
-    """Commit and push the updated articles.json with pull-rebase retry."""
-    try:
-        subprocess.run(
-            ["git", "add", "blog-auto/articles.json"],
-            cwd=REPO_DIR, check=True, capture_output=True,
-        )
-        subprocess.run(
-            ["git", "commit", "-m", f"blog-auto: update articles.json [{now_paris().strftime('%Y-%m-%d %H:%M')}]"],
-            cwd=REPO_DIR, check=True, capture_output=True,
-        )
-    except subprocess.CalledProcessError:
-        return  # Nothing to commit or commit failed
+def git_push(slug: str) -> bool:
+    """Push the generated article via GitHub Contents API (atomic, no clone-state needed)."""
+    rel_path = f"site/src/content/blog/{slug}.md"
+    full_path = REPO_DIR / rel_path
+    if not full_path.exists():
+        log.error(f"File missing: {full_path}")
+        return False
+    message = f"blog: {slug} [{(now_london if 'now_london' in globals() else now_paris)().strftime('%Y-%m-%d %H:%M')}]"
+    return _gh_put_file(rel_path, full_path.read_bytes(), message)
 
-    for attempt in range(1, 4):
-        try:
-            subprocess.run(
-                ["git", "push", "origin", "main"],
-                cwd=REPO_DIR, check=True, capture_output=True,
-            )
-            return
-        except subprocess.CalledProcessError as e:
-            err = e.stderr.decode() if e.stderr else str(e)
-            if "non-fast-forward" in err or "rejected" in err or "fetch first" in err:
-                try:
-                    subprocess.run(
-                        ["git", "pull", "--rebase", "origin", "main"],
-                        cwd=REPO_DIR, check=True, capture_output=True,
-                    )
-                    continue
-                except subprocess.CalledProcessError:
-                    return
-            return
+
+def git_push_articles_json() -> None:
+    """Push blog-auto/articles.json via API with SHA-based concurrency retry."""
+    rel_path = "blog-auto/articles.json"
+    full_path = REPO_DIR / rel_path
+    if not full_path.exists():
+        return
+    message = f"blog-auto: update articles.json [{(now_london if 'now_london' in globals() else now_paris)().strftime('%Y-%m-%d %H:%M')}]"
+    _gh_put_file(rel_path, full_path.read_bytes(), message)
+
 
 
 # ============================================
