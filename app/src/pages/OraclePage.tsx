@@ -545,13 +545,34 @@ const OraclePage = () => {
                 >
                   {/* Gold sweep on first mount, decorative only */}
                   <span aria-hidden="true" className="oracle-shimmer-sweep" />
-                  <p className={`relative text-xs mb-1 font-medium flex items-center gap-1.5 ${currentGuide.color}`}>
+                  <p className={`relative text-xs mb-1.5 font-medium flex items-center gap-1.5 ${currentGuide.color}`}>
                     <Icon className="h-3 w-3" />
                     <span className="tracking-wide uppercase text-[10px]">{t(currentGuide.nameKey)}</span>
+                    <span aria-hidden="true" className="ml-1 text-amber-300/40">✦</span>
                   </p>
-                  <div className="relative text-sm prose prose-invert prose-sm max-w-none leading-relaxed [&_p]:my-1 [&_ul]:my-1 [&_li]:my-0 [&_em]:text-amber-200/90 [&_strong]:text-amber-100 [&_blockquote]:border-l-2 [&_blockquote]:border-amber-300/40 [&_blockquote]:pl-3 [&_blockquote]:italic [&_blockquote]:text-amber-100/85">
+                  <div
+                    className={
+                      "relative text-sm prose prose-invert prose-sm max-w-none leading-relaxed " +
+                      "[&_p]:my-1.5 [&_ul]:my-2 [&_ol]:my-2 [&_li]:my-0.5 " +
+                      "[&_em]:text-amber-200/90 [&_em]:not-italic [&_em]:font-medium " +
+                      "[&_strong]:text-amber-100 [&_strong]:font-semibold " +
+                      "[&_ul]:list-none [&_ul]:pl-0 " +
+                      "[&_ul>li]:pl-4 [&_ul>li]:relative [&_ul>li]:before:content-['✦'] [&_ul>li]:before:absolute [&_ul>li]:before:left-0 [&_ul>li]:before:text-amber-300/80 [&_ul>li]:before:text-[11px] " +
+                      "[&_blockquote]:border-l-2 [&_blockquote]:border-amber-300/50 [&_blockquote]:pl-3 [&_blockquote]:italic [&_blockquote]:text-amber-100/85 [&_blockquote]:bg-amber-300/[0.03] [&_blockquote]:py-0.5 [&_blockquote]:my-2 " +
+                      "[&_hr]:border-amber-300/20 [&_hr]:my-3 " +
+                      "[&_h1]:font-serif [&_h1]:text-base [&_h1]:text-amber-100 [&_h1]:mt-3 [&_h1]:mb-1 " +
+                      "[&_h2]:font-serif [&_h2]:text-base [&_h2]:text-amber-100 [&_h2]:mt-3 [&_h2]:mb-1 " +
+                      "[&_h3]:font-serif [&_h3]:text-sm [&_h3]:text-amber-100/90 [&_h3]:mt-2 [&_h3]:mb-1 " +
+                      "[&_code]:text-amber-200 [&_code]:bg-amber-950/40 [&_code]:px-1 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-[11px]"
+                    }
+                  >
                     <ReactMarkdown>{msg.content}</ReactMarkdown>
                   </div>
+                  {!isStreamingAssistant && (
+                    <p className={`relative mt-2 pt-2 border-t border-amber-300/10 text-[9px] tracking-[0.2em] uppercase ${currentGuide.color} opacity-60 text-right`}>
+                      ~ {t(currentGuide.nameKey)} ~
+                    </p>
+                  )}
                 </div>
               )}
 

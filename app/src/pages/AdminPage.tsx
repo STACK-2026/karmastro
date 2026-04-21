@@ -35,6 +35,7 @@ import {
   Bot,
   User,
 } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 import AppHeader from "@/components/AppHeader";
 import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
@@ -813,9 +814,15 @@ const OracleTab = () => {
                               </span>
                               <span className="text-[9px] text-muted-foreground ml-auto">{formatDateTime(m.created_at)}</span>
                             </div>
-                            <p className="whitespace-pre-wrap break-words text-foreground/80 bg-background/30 rounded px-2 py-1">
-                              {m.content}
-                            </p>
+                            {m.role === "assistant" ? (
+                              <div className="prose prose-invert prose-sm max-w-none bg-background/30 rounded px-2 py-1 text-foreground/80 [&_p]:my-1 [&_ul]:my-1 [&_li]:my-0 [&_strong]:text-amber-200 [&_em]:text-amber-100/80 [&_h1]:text-sm [&_h2]:text-sm [&_h3]:text-xs">
+                                <ReactMarkdown>{m.content}</ReactMarkdown>
+                              </div>
+                            ) : (
+                              <p className="whitespace-pre-wrap break-words text-foreground/80 bg-background/30 rounded px-2 py-1">
+                                {m.content}
+                              </p>
+                            )}
                           </div>
                         ))
                       )}

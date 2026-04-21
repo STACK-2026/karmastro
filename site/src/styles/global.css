@@ -178,3 +178,56 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
   --color-secondary: #6d28d9;
   --color-accent: #d4a017;
 }
+
+/* === Karma result reveal === */
+/* Used wherever a tool result card is made visible after a calculation.
+   Scale + fade + faint gold aura, finishes in under 900ms so it stays snappy.
+   The .karma-result-number variant paints a brief halo behind the headline
+   digit, reinforcing the feeling of a number surfacing from the cosmos. */
+
+@keyframes karma-result-reveal {
+  0%   { opacity: 0; transform: scale(0.94) translateY(10px); filter: blur(6px); }
+  60%  { opacity: 1; filter: blur(0); }
+  100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+}
+
+@keyframes karma-number-glow {
+  0%   { text-shadow: 0 0 0 rgba(212, 160, 23, 0); }
+  40%  { text-shadow: 0 0 24px rgba(212, 160, 23, 0.85), 0 0 48px rgba(139, 92, 246, 0.5); }
+  100% { text-shadow: 0 0 10px rgba(212, 160, 23, 0.35); }
+}
+
+@keyframes karma-shimmer-sweep {
+  0%   { background-position: -200% 0; opacity: 0; }
+  15%  { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { background-position: 200% 0; opacity: 0; }
+}
+
+.karma-reveal {
+  animation: karma-result-reveal 0.85s cubic-bezier(0.2, 0.65, 0.3, 1) both;
+  position: relative;
+  overflow: hidden;
+}
+
+.karma-reveal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(90deg, transparent 0%, rgba(212, 160, 23, 0.22) 50%, transparent 100%);
+  background-size: 200% 100%;
+  mix-blend-mode: overlay;
+  animation: karma-shimmer-sweep 1.6s ease-out 0.2s 1 forwards;
+}
+
+.karma-number-glow {
+  animation: karma-number-glow 1.8s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .karma-reveal { animation: none; }
+  .karma-reveal::after { display: none; }
+  .karma-number-glow { animation: none; text-shadow: 0 0 10px rgba(212, 160, 23, 0.35); }
+}
