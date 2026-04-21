@@ -72,6 +72,9 @@ const xDefaultUrl = hreflangUrls.find((h) => h.locale === DEFAULT_LOCALE)?.url;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- JS enhancement flag : scroll-reveal + view transitions use this class to opt into their hidden-then-shown behaviour. No JS = content visible. -->
+    <script is:inline>document.documentElement.classList.add("js");</script>
+
     <!-- Self-hosted fonts -->
     <link rel="stylesheet" href="/fonts/fonts.css" />
 
@@ -114,6 +117,11 @@ const xDefaultUrl = hreflangUrls.find((h) => h.locale === DEFAULT_LOCALE)?.url;
 
     <!-- Analytics tracker -->
     <script src="/tracker.js" defer is:inline></script>
+
+    <!-- Scroll-reveal wiring (karma-reveal-scroll). Progressive enhancement. -->
+    <script>
+      import "../scripts/karma-reveal-scroll";
+    </script>
 
     <!-- JSON-LD -->
     {jsonLdArray.map((ld) => (

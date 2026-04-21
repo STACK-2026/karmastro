@@ -287,3 +287,93 @@ body > .page-enter {
     animation: none;
   }
 }
+
+/* === Karma micro-interactions === */
+
+/* CTA halo : soft gold+violet aura that pulses once on hover. Works on any
+   element (buttons, anchors) as long as it has relative positioning. Place
+   .karma-cta on the element to opt in without breaking existing styles. */
+.karma-cta {
+  position: relative;
+  isolation: isolate;
+  transition: transform 0.25s ease, box-shadow 0.35s ease;
+}
+.karma-cta::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 50%, rgba(212,160,23,0.35), rgba(139,92,246,0.28), transparent 70%);
+  filter: blur(12px);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.karma-cta:hover {
+  transform: translateY(-1px);
+}
+.karma-cta:hover::before {
+  opacity: 1;
+  animation: karma-cta-pulse 1.6s ease-in-out infinite;
+}
+@keyframes karma-cta-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50%      { transform: scale(1.06); opacity: 1; }
+}
+
+/* Zodiac glyph hover : gold glow + slow rotation on hover only. */
+.karma-sign-glow {
+  transition: filter 0.35s ease, transform 0.6s ease;
+}
+.karma-sign-glow:hover {
+  filter: drop-shadow(0 0 14px rgba(212,160,23,0.7));
+  transform: rotate(8deg) scale(1.05);
+}
+
+/* Scroll reveal : we only hide the element when JS is confirmed by the
+   html.js class (set by the inline bootstrap in BaseLayout). If JS never
+   loads, the element stays visible, content-first. */
+html.js .karma-reveal-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.65, 0.3, 1), transform 0.8s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+html.js .karma-reveal-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Lunar loader : crescent that waxes through 4 phases. Drop-in replacement
+   for rectangular spinners. Use .karma-lunar-loader as the container. */
+.karma-lunar-loader {
+  display: inline-block;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: inset 0 0 0 2px rgba(212,160,23,0.35);
+}
+.karma-lunar-loader::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 40%, rgba(242,210,125,0.95), rgba(212,160,23,0.55) 45%, transparent 65%);
+  animation: karma-lunar-phase 3.2s ease-in-out infinite;
+}
+@keyframes karma-lunar-phase {
+  0%   { clip-path: inset(0 50% 0 0); opacity: 0.35; }
+  25%  { clip-path: inset(0 0 0 0);   opacity: 1; }
+  50%  { clip-path: inset(0 0 0 50%); opacity: 0.9; }
+  75%  { clip-path: inset(0 100% 0 0); opacity: 0.25; }
+  100% { clip-path: inset(0 50% 0 0); opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .karma-cta:hover::before { animation: none; }
+  .karma-sign-glow:hover { transform: none; }
+  .karma-reveal-scroll { opacity: 1; transform: none; transition: none; }
+  .karma-lunar-loader::before { animation: none; }
+}
