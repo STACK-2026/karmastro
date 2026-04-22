@@ -42,6 +42,7 @@ REPO_DIR = SCRIPT_DIR.parent  # Root of the site repo
 ARTICLES_FILE = SCRIPT_DIR / "articles.json"
 PROMPT_FILE = SCRIPT_DIR / "prompts" / "article-seo.md"
 BLOG_DIR = REPO_DIR / "site" / "src" / "content" / "blog"
+QUEUE_DIR = SCRIPT_DIR / "queue"  # Pre-written articles (STACK-2026 rule)
 LOG_FILE = SCRIPT_DIR / "logs" / "publications.log"
 
 # Claude API
@@ -874,6 +875,31 @@ def _arg_value(flag: str, default: str) -> str:
     return default
 
 
+
+
+def load_queue_article(article: dict) -> dict:
+    """Load a pre-written article from blog-auto/queue/ (STACK-2026 rule)."""
+    queue_file = article.get("queue_file")
+    if not queue_file:
+        raise ValueError("article.queue_file manquant")
+    queue_path = QUEUE_DIR / queue_file
+    if not queue_path.exists():
+        raise FileNotFoundError(f"Queue file introuvable: {queue_path}")
+    content = queue_path.read_text(encoding="utf-8").strip()
+    # Strip frontmatter if present (we only want the body for content-only use)
+    if content.startswith("---"):
+        parts = content.split("---", 2)
+        if len(parts) >= 3:
+            content = parts[2].strip()
+    title_tag = article.get("title_tag") or article["title"]
+    meta_description = article.get("meta_description") or ""
+    return {
+        "title_tag": title_tag[:60],
+        "meta_description": meta_description[:160],
+        "content": content,
+    }
+
+
 def main():
     force = "--force" in sys.argv
     dry_run = "--dry-run" in sys.argv
@@ -923,8 +949,12 @@ def main():
     # Load system prompt
     system_prompt = load_system_prompt()
 
-    # Dispatch based on --engine flag (mistral default, claude fallback)
-    if engine == "mistral" and MISTRAL_API_KEY:
+    # STACK-2026 rule : check queue_file first (pre-written article)
+    queue_file = article.get("queue_file")
+    if queue_file and (QUEUE_DIR / queue_file).exists():
+        log.info(f"Mode: QUEUE (article pre-ecrit dans queue/{queue_file})")
+        generated = load_queue_article(article)
+    elif engine == "mistral" and MISTRAL_API_KEY:
         log.info("Generation via Mistral-large + Claude audit (engine=mistral)...")
         generated = generate_article_mistral(article, system_prompt)
     else:
