@@ -1,0 +1,77 @@
+name: Pre-generate articles (batch)
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'Nombre d articles a pre-generer'
+        type: string
+        default: '3'
+      engine:
+        description: 'Moteur generation'
+        required: false
+        default: 'mistral'
+        type: choice
+        options:
+          - mistral
+          - claude
+      no_serp:
+        description: 'Skip SERP brief (plus rapide)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pre-generate-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  pre-generate:
+    runs-on: self-hosted
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r blog-auto/requirements.txt
+          pip install pyyaml requests python-dotenv
+
+      - name: Run pre-generation
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          SITE_URL: https://karmastro.com
+        run: |
+          FLAGS="--count ${{ inputs.count }} --engine ${{ inputs.engine }}"
+          if [ "${{ inputs.no_serp }}" = "true" ]; then
+            FLAGS="$FLAGS --no-serp"
+          fi
+          python3 scripts/pre_generate.py $FLAGS
+
+      - name: Commit queue + articles.json updates
+        run: |
+          git config user.name "Karmastro Pre-Generator"
+          git config user.email "pre-gen@karmastro.com"
+          git add blog-auto/queue/ blog-auto/articles.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "pre-gen: batch of ${{ inputs.count }} articles (engine=${{ inputs.engine }})"
+          for i in 1 2 3; do
+            if git push; then exit 0; fi
+            git pull --rebase origin main || exit 1
+          done
+          exit 1
