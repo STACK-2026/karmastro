@@ -479,7 +479,13 @@ Puis le contenu Markdown de l'article (sans H1, commence directement par le somm
 def _strip_md_fence(text: str) -> str:
     text = re.sub(r"^```(?:markdown|md|yaml)?\s*\n", "", text.strip())
     text = re.sub(r"\n```\s*$", "", text)
-    return text
+    text = text.strip()
+    m = re.match(r"^```(?:yaml|yml|markdown|md)?\s*\n(---\s*\n[\s\S]*?\n---\s*)\n```\s*\n", text)
+    if m:
+        text = m.group(1) + "\n" + text[m.end():]
+    text = re.sub(r"^```(?:yaml|yml|markdown|md)?\s*\n(?=---\s*\n)", "", text)
+    text = re.sub(r"(\n---\s*\n)```\s*\n", r"\1", text, count=1)
+    return text.strip()
 
 
 def _audit_draft(draft: str) -> dict:
