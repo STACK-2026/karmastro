@@ -123,6 +123,7 @@ def generate_slug(title: str, max_len: int = SLUG_MAX_LEN) -> str:
 
     # Filter stop words, keep SEO intent words, min 2 chars
     words = [w for w in slug.split() if w not in STOP_WORDS_FR and len(w) > 2]
+    words = list(dict.fromkeys(words))  # dedupe preserving order (STACK-2026 slug fix)
 
     parts = []
     length = 0
