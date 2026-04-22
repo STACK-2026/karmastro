@@ -914,6 +914,7 @@ def main():
         article["published"] = True
         article["published_at"] = now_paris().isoformat()
         save_articles(articles)
+        git_push_articles_json()
         return
 
     # Load system prompt
