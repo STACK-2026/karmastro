@@ -660,6 +660,8 @@ draft: false"""
     return fm
 
 
+# STACK-2026 em-dash sanitize
+content = content.replace('\u2014', '-').replace('\u2013', '-')
 def write_article_file(slug: str, frontmatter: str, content: str) -> Path:
     """Write the markdown article file."""
     BLOG_DIR.mkdir(parents=True, exist_ok=True)
