@@ -981,6 +981,7 @@ def main():
     article_url = f"{site_url}/blog/{slug}"
     indexnow_key = os.getenv("INDEXNOW_KEY", "")
     submit_indexnow(article_url, site_url, indexnow_key)
+    submit_url_to_bing(article_url)
 
     # Sitemap ping
     ping_sitemaps(site_url)
@@ -992,3 +993,27 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+def submit_url_to_bing(url: str) -> None:
+    """Submit URL to Bing via URL Submission API (STACK-2026 shared BING_URL_SUBMISSION_KEY)."""
+    import os as _os, json as _json, urllib.request as _ur, urllib.error as _ue
+    key = _os.environ.get("BING_URL_SUBMISSION_KEY", "").strip()
+    if not key or not url:
+        return
+    site_root = "https://" + url.split("/")[2]
+    body = _json.dumps({"siteUrl": site_root, "url": url}).encode("utf-8")
+    req = _ur.Request(
+        f"https://ssl.bing.com/webmaster/api.svc/json/SubmitUrl?apikey={key}",
+        data=body,
+        headers={"Content-Type": "application/json; charset=utf-8", "User-Agent": "Mozilla/5.0"},
+        method="POST",
+    )
+    try:
+        with _ur.urlopen(req, timeout=15) as r:
+            print(f"[bing] {url} -> {r.status}")
+    except _ue.HTTPError as e:
+        print(f"[bing] {url} -> {e.code} {e.read().decode()[:100]}")
+    except Exception as e:
+        print(f"[bing] {url} -> {e}")
