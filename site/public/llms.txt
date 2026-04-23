@@ -1,5 +1,10 @@
 # Karmastro
 
+# License: RSL-1.0 (https://robotstandardslicense.com/)
+# ai-training: allowed
+# canonical-host: karmastro.com
+# last-updated: 2026-04-23
+
 > Karmastro.com est la premiere plateforme francaise qui fusionne astrologie de precision (Swiss Ephemeris), numerologie pythagoricienne et guidance karmique via intelligence artificielle, avec quatre guides cosmiques distincts et des outils gratuits ouverts a tous.
 
 ## A propos

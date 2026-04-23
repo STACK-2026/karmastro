@@ -1,5 +1,10 @@
 # Karmastro - Full context for LLMs
 
+# License: RSL-1.0 (https://robotstandardslicense.com/)
+# ai-training: allowed
+# canonical-host: karmastro.com
+# last-updated: 2026-04-23
+
 > Karmastro.com is the first French-first spiritual platform that merges precision astrology (Swiss Ephemeris), Pythagorean numerology and karmic guidance through artificial intelligence. Available in 11 languages. Daily horoscope for all 12 zodiac signs generated with real astronomical data. Four distinct AI guides (Sibylle, Orion, Séléné, Pythia). Nine free calculators.
 
 ## Mission

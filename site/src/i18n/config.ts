@@ -48,6 +48,32 @@ export const LOCALE_FLAGS: Record<Locale, string> = {
   ru: "🇷🇺",
 };
 
+// BCP-47 tag for each locale. Used by <html lang>, hreflang, and og:locale so
+// every surface sends the same region-qualified code Google expects instead
+// of a bare ISO 639-1. Must stay in lockstep with astro.config.mjs i18n map.
+export const LOCALE_BCP47: Record<Locale, string> = {
+  fr: "fr-FR",
+  en: "en-US",
+  es: "es-ES",
+  pt: "pt-PT",
+  de: "de-DE",
+  it: "it-IT",
+  tr: "tr-TR",
+  ar: "ar-SA",
+  ja: "ja-JP",
+  pl: "pl-PL",
+  ru: "ru-RU",
+};
+
+export function bcp47(locale: Locale): string {
+  return LOCALE_BCP47[locale] ?? locale;
+}
+
+// og:locale uses underscore separator (facebook/bing convention) not dash.
+export function ogLocale(locale: Locale): string {
+  return bcp47(locale).replace("-", "_");
+}
+
 // RTL locales (for CSS direction)
 export const RTL_LOCALES: Locale[] = ["ar"];
 

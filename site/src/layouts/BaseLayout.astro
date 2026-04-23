@@ -4,7 +4,7 @@ import { fontsUrl } from "../utils/config";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import CookieBanner from "../components/CookieBanner.astro";
-import { LOCALES, DEFAULT_LOCALE, extractLocale, stripLocalePrefix, isRTL } from "../i18n/config";
+import { LOCALES, DEFAULT_LOCALE, extractLocale, stripLocalePrefix, isRTL, bcp47, ogLocale } from "../i18n/config";
 import { getLocalizedSlug, getCanonicalSlugFromLocalized } from "../data/zodiac";
 import { detectToolKey, toolPathFor } from "../data/tool-paths";
 import "../styles/global.css";
@@ -84,7 +84,7 @@ const xDefaultUrl = hreflangUrls.find((h) => h.locale === DEFAULT_LOCALE)?.url
 ---
 
 <!doctype html>
-<html lang={currentLocale} dir={isRightToLeft ? "rtl" : "ltr"}>
+<html lang={bcp47(currentLocale)} dir={isRightToLeft ? "rtl" : "ltr"}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -103,9 +103,11 @@ const xDefaultUrl = hreflangUrls.find((h) => h.locale === DEFAULT_LOCALE)?.url
     <meta name="keywords" content={siteConfig.keywords.join(", ")} />
     {noIndex && <meta name="robots" content="noindex, nofollow" />}
 
-    <!-- Hreflang tags for all 11 locales -->
+    <!-- Hreflang tags for all 11 locales. BCP-47 tags (fr-FR, en-US...) ,
+         Google expects region-qualified codes and the sitemap already uses
+         these, so keep them in sync. -->
     {hreflangUrls.map(({ locale, url }) => (
-      <link rel="alternate" hreflang={locale} href={url} />
+      <link rel="alternate" hreflang={bcp47(locale)} href={url} />
     ))}
     {xDefaultUrl && <link rel="alternate" hreflang="x-default" href={xDefaultUrl} />}
 
@@ -115,7 +117,10 @@ const xDefaultUrl = hreflangUrls.find((h) => h.locale === DEFAULT_LOCALE)?.url
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={imageUrl} />
     <meta property="og:type" content={ogType} />
-    <meta property="og:locale" content={siteConfig.locale} />
+    <meta property="og:locale" content={ogLocale(currentLocale)} />
+    {LOCALES.filter((l) => l !== currentLocale).map((l) => (
+      <meta property="og:locale:alternate" content={ogLocale(l)} />
+    ))}
     <meta property="og:site_name" content={siteConfig.name} />
     {publishedTime && <meta property="article:published_time" content={publishedTime} />}
 
