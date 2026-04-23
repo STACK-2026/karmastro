@@ -140,6 +140,10 @@ const OraclePage = () => {
   const [showPicker, setShowPicker] = useState(false);
   const [feedback, setFeedback] = useState<Record<number, FeedbackState>>({});
   const [feedbackText, setFeedbackText] = useState<Record<number, string>>({});
+  // Follow-up chips parsed from the ---SUGGESTIONS--- block of each assistant
+  // reply. Keyed by the assistant message index. Cleared when that suggestion
+  // has been clicked (we don't want stale chips lingering).
+  const [suggestions, setSuggestions] = useState<Record<number, string[]>>({});
 
   // Load saved guide or show picker on first visit
   useEffect(() => {
@@ -162,6 +166,7 @@ const OraclePage = () => {
     setMessages([]);
     setFeedback({});
     setFeedbackText({});
+    setSuggestions({});
   };
 
   // Submit feedback for an assistant message
@@ -215,8 +220,12 @@ const OraclePage = () => {
 
   const currentGuide = guideKey ? GUIDES[guideKey] : null;
 
-  // Build profile context for the Oracle (uses real user profile from Supabase)
+  // Build profile context for the Oracle. Only fill in real user data. When
+  // the profile is the demo stub (user not authenticated or profile empty),
+  // return an empty object so the oracle never invents a name / birth chart.
   const buildProfileContext = () => {
+    if (userProfile.isDemo || userProfile.isLoading) return {};
+
     const bd = userProfile.birthDate;
     const now = new Date();
     const py = personalYear(bd.getDate(), bd.getMonth() + 1, now.getFullYear());
@@ -323,10 +332,16 @@ const OraclePage = () => {
               responseOk = true;
               setMessages(prev => {
                 const last = prev[prev.length - 1];
-                if (last?.role === "assistant") {
-                  return prev.map((m, i) => i === prev.length - 1 ? { ...m, content: assistantSoFar } : m);
+                const nextMessages = last?.role === "assistant"
+                  ? prev.map((m, i) => i === prev.length - 1 ? { ...m, content: assistantSoFar } : m)
+                  : [...prev, { role: "assistant" as const, content: assistantSoFar }];
+                // Attach the oracle's suggestions to this assistant bubble
+                // so the 3 follow-up chips render right below it.
+                if (Array.isArray(parsed.suggestions) && parsed.suggestions.length > 0) {
+                  const idx = nextMessages.length - 1;
+                  setSuggestions((s) => ({ ...s, [idx]: parsed.suggestions.slice(0, 3) }));
                 }
-                return [...prev, { role: "assistant", content: assistantSoFar }];
+                return nextMessages;
               });
             }
           } catch {
@@ -445,11 +460,37 @@ const OraclePage = () => {
 
       <div ref={scrollRef} className="relative z-10 flex-1 overflow-y-auto px-5 py-4 space-y-4">
         {messages.length === 0 && (
-          <div className="text-center pt-10">
+          <div className="text-center pt-10 pb-2">
             <Icon className={`h-12 w-12 ${currentGuide.color} mx-auto mb-4 opacity-60`} />
             <h2 className="font-serif text-xl mb-2">{t("oracle.empty_listens", { name: t(currentGuide.nameKey) })}</h2>
-            <p className="text-sm text-muted-foreground/70 max-w-md mx-auto">
+            <p className="text-sm text-muted-foreground/70 max-w-md mx-auto mb-6">
               {t(currentGuide.descKey)}
+            </p>
+            <p className="font-serif text-base text-amber-100/90 max-w-md mx-auto mb-4">
+              {t("oracle.empty_opener_question", {
+                name: userProfile.isDemo ? t("oracle.anon_appellation") : userProfile.firstName,
+              })}
+            </p>
+            <div className="flex flex-col gap-2 max-w-md mx-auto">
+              {([
+                "oracle.empty_choice_lost",
+                "oracle.empty_choice_precise",
+                "oracle.empty_choice_explore",
+              ] as UiKey[]).map((k) => {
+                const label = t(k);
+                return (
+                  <button
+                    key={k}
+                    onClick={() => handleSend(label)}
+                    className="text-sm text-left rounded-xl border border-amber-300/30 bg-amber-300/5 hover:bg-amber-300/10 text-amber-100/90 px-4 py-3 transition-colors"
+                  >
+                    {label}
+                  </button>
+                );
+              })}
+            </div>
+            <p className="text-[11px] text-muted-foreground/50 mt-4">
+              {t("oracle.empty_choice_hint")}
             </p>
           </div>
         )}
@@ -576,6 +617,31 @@ const OraclePage = () => {
                 </div>
               )}
 
+              {/* Follow-up chips : 3 suggestions parsed from the oracle's
+                  ---SUGGESTIONS--- block. Click to send as next user message,
+                  or ignore and type your own in the input below. */}
+              {!isUser && !isStreamingAssistant && suggestions[i]?.length > 0 && (
+                <div className="mt-2 max-w-[85%] w-full flex flex-wrap gap-1.5">
+                  {suggestions[i].map((s, si) => (
+                    <button
+                      key={si}
+                      onClick={() => {
+                        setSuggestions((prev) => {
+                          const n = { ...prev };
+                          delete n[i];
+                          return n;
+                        });
+                        handleSend(s);
+                      }}
+                      disabled={isLoading}
+                      className="text-[12px] text-left rounded-full border border-amber-300/30 bg-amber-300/5 hover:bg-amber-300/10 text-amber-100/90 px-3 py-1.5 transition-colors disabled:opacity-50"
+                    >
+                      {s}
+                    </button>
+                  ))}
+                </div>
+              )}
+
               {showFeedback && (
                 <div className="mt-2 max-w-[85%] w-full">
                   {(!fb || fb.status === "idle") && (
@@ -664,7 +730,10 @@ const OraclePage = () => {
         )}
       </div>
 
-      <div className="relative z-10 px-5 pb-2">
+      {/* Fixed guide suggestions : visible only on empty state as a secondary
+          entry path. Once the conversation starts, we rely on the dynamic
+          ---SUGGESTIONS--- chips rendered under each assistant reply. */}
+      <div className={`relative z-10 px-5 pb-2 ${messages.length === 0 ? "" : "hidden"}`}>
         <div className="flex gap-2 overflow-x-auto pb-2">
           {currentGuide.suggestionKeys.map(sk => {
             const s = t(sk);

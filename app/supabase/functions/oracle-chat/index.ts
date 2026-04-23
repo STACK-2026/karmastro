@@ -111,6 +111,13 @@ RÈGLES ABSOLUES :
 10. Quand une donnée manque, dis-le honnêtement plutôt que d'inventer
 11. NE REDEMANDE JAMAIS les infos déjà dans ton contexte. Si tu vois "PROFIL UTILISATEUR" dans le système prompt, les données y sont , utilise-les directement. Ne demande une info QUE si elle est absente du profil ET strictement nécessaire à la question posée. Demander le prénom, la date, l'heure, le lieu, ou les nombres quand ils sont déjà là coupe le parcours et détruit la confiance.
 12. TERMINE par une invitation concrète : soit une question ouverte pour approfondir, soit un rituel court (3 lignes max), soit un prochain pas numérologique/astrologique à observer cette semaine. Jamais un "n'hésite pas si tu as d'autres questions" générique.
+13. INTERDICTION ABSOLUE D'INVENTER. Si une donnée n'est PAS présente dans ton contexte (prénom, date de naissance, heure, lieu, signe solaire, signe lunaire, ascendant, chemin de vie, nombre d'expression, nœud lunaire, etc.), tu ne la fabriques JAMAIS. Tu n'appelles JAMAIS l'utilisateur par un prénom que tu n'as pas reçu. Si un bloc "UTILISATEUR ANONYME" apparaît dans ton contexte, tu utilises un appellatif doux et non-genré ("mon cœur", "âme chercheuse", "voyageur·se", "toi qui me consultes") et tu proposes poliment à l'utilisateur de partager son prénom + sa date / heure / lieu de naissance pour une lecture plus précise. Inventer = trahir la confiance.
+14. FORMAT DE RÉPONSE, suggestions de rebond. Termine TOUJOURS ta réponse par un bloc unique au format strict suivant, sur ses propres lignes, sans texte autour :
+---SUGGESTIONS---
+- <question courte 1>
+- <question courte 2>
+- <question courte 3>
+Trois suggestions maximum, courtes (8-14 mots), à la première personne ("Peux-tu me dire...", "Qu'est-ce que je peux...", "Et si je..."). Ce sont des relances que l'utilisateur pourrait naturellement te poser pour approfondir, pas des questions que TOI tu lui poses. Bienveillantes, concrètes, ancrées dans ce qui vient d'être dit. Pas de guillemets, pas de numérotation, pas de markdown dans les suggestions. Ce bloc est OBLIGATOIRE à chaque réponse.
 
 NARRATIF KARMASTRO (à rappeler subtilement quand pertinent) :
 - Le karma n'est pas une punition , c'est un rappel que dans cet univers, tout est lié. Chaque action crée une onde. Les anciens Hindous l'appelaient dharma, les Grecs Moïra (le destin tissé par les trois Parques), les Bouddhistes la roue de l'existence.
@@ -230,6 +237,32 @@ ${BASE_PROMPT}`,
 };
 
 const DEFAULT_GUIDE = "sibylle";
+
+// ============================================
+// Parse ---SUGGESTIONS--- block (rule 14). Returns the clean message body and
+// up to 3 follow-up suggestions. If the block is missing or malformed we just
+// return the text as-is with an empty suggestions array , the chat still works.
+// ============================================
+function parseSuggestions(raw: string): { text: string; suggestions: string[] } {
+  if (!raw) return { text: raw, suggestions: [] };
+  // Tolerate minor formatting drift (case, extra dashes, whitespace).
+  const marker = /\n-{2,}\s*SUGGESTIONS\s*-{2,}\s*\n/i;
+  const match = raw.split(marker);
+  if (match.length < 2) return { text: raw.trim(), suggestions: [] };
+
+  const body = match[0].trim();
+  const tail = match.slice(1).join("\n");
+
+  const suggestions = tail
+    .split("\n")
+    .map((l: string) => l.trim())
+    .filter((l: string) => l.startsWith("-") || l.startsWith("•") || l.startsWith("*"))
+    .map((l: string) => l.replace(/^[-•*]\s*/, "").trim())
+    .filter((l: string) => l.length > 0 && l.length < 200)
+    .slice(0, 3);
+
+  return { text: body, suggestions };
+}
 
 serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -401,8 +434,9 @@ serve(async (req) => {
           const n = ctx.numerology;
           const chart = ctx.natal_chart;
 
-          engineContext += `\n\nPROFIL NUMÉROLOGIQUE (calculé) :
-- Prénom : ${profile.firstName || "inconnu"}
+          engineContext += `\n\nPROFIL NUMÉROLOGIQUE (calculé) :`;
+          if (profile.firstName) engineContext += `\n- Prénom : ${profile.firstName}`;
+          engineContext += `
 - Chemin de vie : ${n?.life_path?.number} ${n?.life_path?.is_master ? "(MAÎTRE NOMBRE)" : ""} - calcul : ${n?.life_path?.calculation}
 - Année personnelle ${new Date().getFullYear()} : ${n?.personal_year}
 - Mois personnel : ${n?.personal_month}
@@ -483,6 +517,21 @@ serve(async (req) => {
       }
     }
 
+    // Anonymous fallback. If we still have no profile data, tell Claude
+    // explicitly so it never invents a name or birth chart. This catches the
+    // "Léa" bug where the demo profile was leaking for unauthenticated users.
+    if (!engineContext.includes("PROFIL")) {
+      engineContext += `\n\nUTILISATEUR ANONYME :
+- Aucun prénom, aucune date de naissance, aucune donnée astrologique ou numérologique n'a été fournie.
+- Tu NE CONNAIS PAS l'identité de la personne qui te parle.
+- RÈGLES STRICTES :
+  1. N'appelle JAMAIS l'utilisateur par un prénom (ne jamais dire "Léa", "Marie", "mon cher X", etc.) , utilise "mon cœur", "âme chercheuse", "voyageur·se", "toi qui me consultes", ou ne l'appelle pas du tout.
+  2. N'invente AUCUNE donnée astrale (pas de signe solaire, lunaire, ascendant, chemin de vie, nœud lunaire, nombre, transit, rétrograde personnel, etc.).
+  3. Réponds avec les données cosmiques du jour (phase lunaire, transits globaux, position du Soleil) qui sont publiques ET universelles.
+  4. Pour une lecture personnelle, invite doucement l'utilisateur à partager dans sa prochaine réponse : prénom + date de naissance (au minimum) ; heure et lieu si possible. Propose-le comme un choix, jamais comme une exigence.
+  5. Ton reste bienveillant, profond, humain. La curiosité de la personne est déjà un don , accueille-la.`;
+    }
+
     // Convert messages
     const anthropicMessages = messages.map((m: { role: string; content: string }) => ({
       role: m.role === "assistant" ? "assistant" : "user",
@@ -517,7 +566,13 @@ serve(async (req) => {
     }
 
     const data = await response.json();
-    const text = data.content?.[0]?.text || `${selectedGuide.name} médite sur ta question...`;
+    const rawText = data.content?.[0]?.text || `${selectedGuide.name} médite sur ta question...`;
+
+    // Split the oracle's answer from its 3 follow-up suggestions. Claude is
+    // instructed (rule 14) to end every reply with a ---SUGGESTIONS--- block.
+    // We parse it here so the client can render clickable chips and only the
+    // clean body is stored in oracle_messages.
+    const { text, suggestions } = parseSuggestions(rawText);
 
     // Persist the exchange (conversation + user msg + assistant msg). Anonymous
     // sessions rely on session_id; authenticated users use user_id. Runs with
@@ -584,6 +639,7 @@ serve(async (req) => {
       choices: [{ delta: { content: text }, finish_reason: "stop" }],
       guide: guideKey || DEFAULT_GUIDE,
       conversation_id: savedConvId,
+      suggestions,
     });
     const encoder = new TextEncoder();
     const stream = new ReadableStream({
