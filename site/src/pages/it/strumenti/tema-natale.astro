@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ToolEditorial from "../../../components/ToolEditorial.astro";
+import { getToolEditorial } from "../../../data/tool-editorials";
+const editorial_birth_chart = getToolEditorial("birth-chart", "it");
 
 const title = "Calcolatore del Tema Natale Gratis - Carta Astrale | Karmastro";
 const description =
@@ -130,5 +133,16 @@ const jsonLd = [
       <a href="/it/oroscopo" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Oroscopo</a>
       <a href="/it/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Blog</a>
     </nav>
+  
+    {editorial_birth_chart && (
+      <ToolEditorial
+        intro={editorial_birth_chart.intro}
+        sections={editorial_birth_chart.sections}
+        faq={editorial_birth_chart.faq}
+        sources={editorial_birth_chart.sources}
+        labels={editorial_birth_chart.labels}
+        dir="ltr"
+      />
+    )}
   </article>
 </BaseLayout>

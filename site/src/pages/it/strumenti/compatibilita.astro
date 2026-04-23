@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ToolEditorial from "../../../components/ToolEditorial.astro";
+import { getToolEditorial } from "../../../data/tool-editorials";
+const editorial_compatibility = getToolEditorial("compatibility", "it");
 
 const title = "Calcolatore Compatibilità Zodiacale Gratis | Karmastro";
 const description =
@@ -117,5 +120,16 @@ const jsonLd = [
       <a href="/it/oroscopo" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Oroscopo</a>
       <a href="/it/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Blog</a>
     </nav>
+  
+    {editorial_compatibility && (
+      <ToolEditorial
+        intro={editorial_compatibility.intro}
+        sections={editorial_compatibility.sections}
+        faq={editorial_compatibility.faq}
+        sources={editorial_compatibility.sources}
+        labels={editorial_compatibility.labels}
+        dir="ltr"
+      />
+    )}
   </article>
 </BaseLayout>

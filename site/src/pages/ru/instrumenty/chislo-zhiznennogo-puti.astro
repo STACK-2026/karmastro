@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ToolEditorial from "../../../components/ToolEditorial.astro";
+import { getToolEditorial } from "../../../data/tool-editorials";
+const editorial_life_path = getToolEditorial("life-path", "ru");
 
 const title = "Калькулятор Числа Жизненного Пути - Пифагорейская Нумерология | Karmastro";
 const description =
@@ -302,6 +305,17 @@ const jsonLd = [
       <a href="/ru/instrumenty" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Все инструменты</a>
       <a href="/ru/instrumenty/voskhodyaschiy-znak" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Восходящий знак</a>
     </nav>
+  
+    {editorial_life_path && (
+      <ToolEditorial
+        intro={editorial_life_path.intro}
+        sections={editorial_life_path.sections}
+        faq={editorial_life_path.faq}
+        sources={editorial_life_path.sources}
+        labels={editorial_life_path.labels}
+        dir="ltr"
+      />
+    )}
   </article>
 </BaseLayout>
 

@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ToolEditorial from "../../../components/ToolEditorial.astro";
+import { getToolEditorial } from "../../../data/tool-editorials";
+const editorial_life_path = getToolEditorial("life-path", "es");
 
 const title = "Calculadora del Número de Camino de Vida - Numerología Pitagórica | Karmastro";
 const description =
@@ -415,6 +418,17 @@ const jsonLd = [
       <a href="/es/herramientas/ascendente" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Ascendente</a>
       <a href="/es/horoscope" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Horóscopo diario</a>
     </nav>
+  
+    {editorial_life_path && (
+      <ToolEditorial
+        intro={editorial_life_path.intro}
+        sections={editorial_life_path.sections}
+        faq={editorial_life_path.faq}
+        sources={editorial_life_path.sources}
+        labels={editorial_life_path.labels}
+        dir="ltr"
+      />
+    )}
   </article>
 </BaseLayout>
 

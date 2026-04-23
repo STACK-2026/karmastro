@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ToolEditorial from "../../../components/ToolEditorial.astro";
+import { getToolEditorial } from "../../../data/tool-editorials";
+const editorial_expression_number = getToolEditorial("expression-number", "en");
 
 const title = "Expression Number Calculator - Destiny Number Free | Karmastro";
 const description =
@@ -199,6 +202,17 @@ const jsonLd = [
       <a href="/en/tools/life-path-number" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Life path number</a>
       <a href="/en/tools/karmic-debt" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Karmic debt</a>
     </nav>
+  
+    {editorial_expression_number && (
+      <ToolEditorial
+        intro={editorial_expression_number.intro}
+        sections={editorial_expression_number.sections}
+        faq={editorial_expression_number.faq}
+        sources={editorial_expression_number.sources}
+        labels={editorial_expression_number.labels}
+        dir="ltr"
+      />
+    )}
   </article>
 </BaseLayout>
 

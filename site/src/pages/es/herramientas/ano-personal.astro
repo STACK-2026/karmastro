@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ToolEditorial from "../../../components/ToolEditorial.astro";
+import { getToolEditorial } from "../../../data/tool-editorials";
+const editorial_personal_year = getToolEditorial("personal-year", "es");
 
 const title = "Calculadora del Año Personal - Numerología del año | Karmastro";
 const description =
@@ -153,5 +156,16 @@ const jsonLd = [
       <a href="/es/horoscopo" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Horóscopo</a>
       <a href="/es/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Blog</a>
     </nav>
+  
+    {editorial_personal_year && (
+      <ToolEditorial
+        intro={editorial_personal_year.intro}
+        sections={editorial_personal_year.sections}
+        faq={editorial_personal_year.faq}
+        sources={editorial_personal_year.sources}
+        labels={editorial_personal_year.labels}
+        dir="ltr"
+      />
+    )}
   </article>
 </BaseLayout>

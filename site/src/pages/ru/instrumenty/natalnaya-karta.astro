@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ToolEditorial from "../../../components/ToolEditorial.astro";
+import { getToolEditorial } from "../../../data/tool-editorials";
+const editorial_birth_chart = getToolEditorial("birth-chart", "ru");
 
 const title = "Калькулятор натальной карты бесплатно | Karmastro";
 const description =
@@ -108,5 +111,16 @@ const jsonLd = [
       <a href="/ru/goroskop" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Гороскоп</a>
       <a href="/ru/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Блог</a>
     </nav>
+  
+    {editorial_birth_chart && (
+      <ToolEditorial
+        intro={editorial_birth_chart.intro}
+        sections={editorial_birth_chart.sections}
+        faq={editorial_birth_chart.faq}
+        sources={editorial_birth_chart.sources}
+        labels={editorial_birth_chart.labels}
+        dir="ltr"
+      />
+    )}
   </article>
 </BaseLayout>

@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ToolEditorial from "../../../components/ToolEditorial.astro";
+import { getToolEditorial } from "../../../data/tool-editorials";
+const editorial_expression_number = getToolEditorial("expression-number", "tr");
 
 const title = "İfade Sayısı Hesaplayıcı (Kader Sayısı) Ücretsiz | Karmastro";
 const description =
@@ -111,5 +114,16 @@ const jsonLd = [
       <a href="/tr/burc-yorumlari" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Burç yorumları</a>
       <a href="/tr/blog" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Blog</a>
     </nav>
+  
+    {editorial_expression_number && (
+      <ToolEditorial
+        intro={editorial_expression_number.intro}
+        sections={editorial_expression_number.sections}
+        faq={editorial_expression_number.faq}
+        sources={editorial_expression_number.sources}
+        labels={editorial_expression_number.labels}
+        dir="ltr"
+      />
+    )}
   </article>
 </BaseLayout>

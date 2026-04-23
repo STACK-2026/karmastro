@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ToolEditorial from "../../../components/ToolEditorial.astro";
+import { getToolEditorial } from "../../../data/tool-editorials";
+const editorial_rising_sign = getToolEditorial("rising-sign", "it");
 
 const title = "Calcolatore dell'Ascendente - Qual è il mio ascendente? | Karmastro";
 const description =
@@ -207,6 +210,17 @@ const jsonLd = [
       <a href="/it/strumenti" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← Tutti gli strumenti</a>
       <a href="/it/strumenti/numero-del-cammino-di-vita" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Cammino di vita</a>
     </nav>
+  
+    {editorial_rising_sign && (
+      <ToolEditorial
+        intro={editorial_rising_sign.intro}
+        sections={editorial_rising_sign.sections}
+        faq={editorial_rising_sign.faq}
+        sources={editorial_rising_sign.sources}
+        labels={editorial_rising_sign.labels}
+        dir="ltr"
+      />
+    )}
   </article>
 </BaseLayout>
 

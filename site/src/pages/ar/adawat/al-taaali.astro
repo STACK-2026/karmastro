@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ToolEditorial from "../../../components/ToolEditorial.astro";
+import { getToolEditorial } from "../../../data/tool-editorials";
+const editorial_rising_sign = getToolEditorial("rising-sign", "ar");
 
 const title = "حاسبة الطالع - ما هو طالعي؟ | Karmastro";
 const description =
@@ -201,6 +204,17 @@ const jsonLd = [
       <a href="/ar/adawat" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">← جميع الأدوات</a>
       <a href="/ar/adawat/raqm-masar-al-hayat" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">رقم مسار الحياة</a>
     </nav>
+  
+    {editorial_rising_sign && (
+      <ToolEditorial
+        intro={editorial_rising_sign.intro}
+        sections={editorial_rising_sign.sections}
+        faq={editorial_rising_sign.faq}
+        sources={editorial_rising_sign.sources}
+        labels={editorial_rising_sign.labels}
+        dir="rtl"
+      />
+    )}
   </article>
 </BaseLayout>
 
