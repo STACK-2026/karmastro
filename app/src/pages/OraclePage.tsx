@@ -16,7 +16,13 @@ import StarField from "@/components/StarField";
 import ReactMarkdown from "react-markdown";
 import { useT, type UiKey } from "@/i18n/ui";
 
-type Msg = { role: "user" | "assistant" | "paywall"; content: string };
+type Msg = {
+  role: "user" | "assistant" | "paywall";
+  content: string;
+  // Only set on role === "paywall". True means the hit came from an anon
+  // session , we surface a "create an account" CTA first instead of pricing.
+  isAnonPaywall?: boolean;
+};
 
 type GuideKey = "sibylle" | "orion" | "selene" | "pythia";
 
@@ -100,6 +106,7 @@ const GUIDES: Record<GuideKey, GuideMeta> = {
 };
 
 const CHAT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/oracle-chat";
+const HISTORY_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/oracle-history";
 const STORAGE_KEY = "karmastro_oracle_guide";
 const SESSION_KEY = "karmastro_oracle_session";
 
@@ -144,6 +151,15 @@ const OraclePage = () => {
   // reply. Keyed by the assistant message index. Cleared when that suggestion
   // has been clicked (we don't want stale chips lingering).
   const [suggestions, setSuggestions] = useState<Record<number, string[]>>({});
+  // Short recap of the user's prior conversation(s). Sent back to oracle-chat
+  // so Claude can open with "the last time we spoke you were asking about…"
+  // instead of a cold start. Hydrated by oracle-history at mount.
+  const [priorSummary, setPriorSummary] = useState<string | null>(null);
+  const [hasPriorConversations, setHasPriorConversations] = useState(false);
+  // Engine status returned by the last oracle-chat reply. When degraded/offline
+  // we surface a subtle banner so the user knows their reading is partial
+  // and we don't silently pretend everything is fine.
+  const [engineStatus, setEngineStatus] = useState<"ok" | "degraded" | "offline">("ok");
 
   // Load saved guide or show picker on first visit
   useEffect(() => {
@@ -158,6 +174,45 @@ const OraclePage = () => {
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages]);
+
+  // Rehydrate the user's last oracle conversation at mount so the chat isn't
+  // a cold start on every page load. Recent threads (<7 days) are brought
+  // back in full; older ones stay as a summary-only memory injected into the
+  // next system prompt via `priorSummary`.
+  useEffect(() => {
+    if (!guideKey) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        const { data: { session } } = await supabase.auth.getSession();
+        const token = session?.access_token ?? import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+        const resp = await fetch(HISTORY_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            sessionId: user?.id ? null : getSessionId(),
+            guide: guideKey,
+          }),
+        });
+        if (!resp.ok || cancelled) return;
+        const data = await resp.json();
+        if (cancelled) return;
+        setHasPriorConversations((data.prior_conversations ?? 0) > 0);
+        if (data.summary) setPriorSummary(data.summary);
+        if (data.conversation?.id && Array.isArray(data.messages) && data.messages.length > 0) {
+          setConversationId(data.conversation.id);
+          setMessages(data.messages.map((m: any) => ({ role: m.role, content: m.content })));
+        }
+      } catch (e) {
+        console.warn("[oracle-history] hydrate failed", e);
+      }
+    })();
+    return () => { cancelled = true; };
+    // Re-run when the user logs in/out or picks a different guide.
+  }, [guideKey, user?.id]);
 
   const selectGuide = (key: GuideKey) => {
     setGuideKey(key);
@@ -278,6 +333,7 @@ const OraclePage = () => {
           userId: user?.id ?? null,
           sessionId: user?.id ? null : getSessionId(),
           conversationId,
+          priorSummary: messages.length === 0 ? priorSummary : null,
         }),
       });
 
@@ -291,6 +347,7 @@ const OraclePage = () => {
             {
               role: "paywall",
               content: errData.paywall.message || t("oracle.paywall_default_msg"),
+              isAnonPaywall: Boolean(errData.paywall.is_anon),
             },
           ]);
           return;
@@ -325,6 +382,9 @@ const OraclePage = () => {
             const parsed = JSON.parse(jsonStr);
             if (parsed.conversation_id && !conversationId) {
               setConversationId(parsed.conversation_id);
+            }
+            if (parsed.engine_status && parsed.engine_status !== engineStatus) {
+              setEngineStatus(parsed.engine_status);
             }
             const content = parsed.choices?.[0]?.delta?.content;
             if (content) {
@@ -458,6 +518,21 @@ const OraclePage = () => {
         </button>
       </div>
 
+      {/* Subtle banner when the astral engine is partial. We prefer informing
+          the user over pretending everything is fine. */}
+      {engineStatus !== "ok" && (
+        <div className="relative z-10 px-5 pt-2">
+          <div className="flex items-center gap-2 rounded-xl border border-amber-300/20 bg-amber-300/5 px-3 py-2 text-[11px] text-amber-200/80">
+            <span aria-hidden="true">☽</span>
+            <span>
+              {engineStatus === "offline"
+                ? t("oracle.engine_offline")
+                : t("oracle.engine_degraded")}
+            </span>
+          </div>
+        </div>
+      )}
+
       <div ref={scrollRef} className="relative z-10 flex-1 overflow-y-auto px-5 py-4 space-y-4">
         {messages.length === 0 && (
           <div className="text-center pt-10 pb-2">
@@ -471,7 +546,13 @@ const OraclePage = () => {
                 name: userProfile.isDemo ? t("oracle.anon_appellation") : userProfile.firstName,
               })}
             </p>
-            <div className="flex flex-col gap-2 max-w-md mx-auto">
+            <div
+              role="group"
+              aria-label={t("oracle.empty_opener_question", {
+                name: userProfile.isDemo ? t("oracle.anon_appellation") : userProfile.firstName,
+              })}
+              className="flex flex-col gap-2 max-w-md mx-auto"
+            >
               {([
                 "oracle.empty_choice_lost",
                 "oracle.empty_choice_precise",
@@ -482,7 +563,8 @@ const OraclePage = () => {
                   <button
                     key={k}
                     onClick={() => handleSend(label)}
-                    className="text-sm text-left rounded-xl border border-amber-300/30 bg-amber-300/5 hover:bg-amber-300/10 text-amber-100/90 px-4 py-3 transition-colors"
+                    aria-label={label}
+                    className="text-sm text-left rounded-xl border border-amber-300/30 bg-amber-300/5 hover:bg-amber-300/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/60 text-amber-100/90 px-4 py-3 transition-colors"
                   >
                     {label}
                   </button>
@@ -533,20 +615,37 @@ const OraclePage = () => {
                     </motion.div>
                     <h3 className="font-serif text-xl mb-2 text-gradient-gold">{t("oracle.paywall_title")}</h3>
                     <p className="text-sm text-white/70 mb-5 leading-relaxed">{msg.content}</p>
-                    <div className="flex flex-col sm:flex-row gap-2">
-                      <button
-                        onClick={() => navigate("/pricing")}
-                        className="flex-1 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity glow-gold"
-                      >
-                        {t("oracle.paywall_cta_etoile")}
-                      </button>
-                      <button
-                        onClick={() => navigate("/pricing")}
-                        className="flex-1 px-4 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 font-medium text-sm hover:bg-amber-300/10 transition-colors"
-                      >
-                        {t("oracle.paywall_cta_credits")}
-                      </button>
-                    </div>
+                    {msg.isAnonPaywall ? (
+                      <div className="flex flex-col sm:flex-row gap-2">
+                        <button
+                          onClick={() => navigate("/auth")}
+                          className="flex-1 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity glow-gold"
+                        >
+                          {t("oracle.paywall_cta_signup")}
+                        </button>
+                        <button
+                          onClick={() => navigate("/pricing")}
+                          className="flex-1 px-4 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 font-medium text-sm hover:bg-amber-300/10 transition-colors"
+                        >
+                          {t("oracle.paywall_cta_plans")}
+                        </button>
+                      </div>
+                    ) : (
+                      <div className="flex flex-col sm:flex-row gap-2">
+                        <button
+                          onClick={() => navigate("/pricing")}
+                          className="flex-1 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity glow-gold"
+                        >
+                          {t("oracle.paywall_cta_etoile")}
+                        </button>
+                        <button
+                          onClick={() => navigate("/pricing")}
+                          className="flex-1 px-4 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 font-medium text-sm hover:bg-amber-300/10 transition-colors"
+                        >
+                          {t("oracle.paywall_cta_credits")}
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -621,7 +720,11 @@ const OraclePage = () => {
                   ---SUGGESTIONS--- block. Click to send as next user message,
                   or ignore and type your own in the input below. */}
               {!isUser && !isStreamingAssistant && suggestions[i]?.length > 0 && (
-                <div className="mt-2 max-w-[85%] w-full flex flex-wrap gap-1.5">
+                <div
+                  role="group"
+                  aria-label={t("oracle.chips_group_label")}
+                  className="mt-2 max-w-[85%] w-full flex flex-wrap gap-1.5"
+                >
                   {suggestions[i].map((s, si) => (
                     <button
                       key={si}
@@ -634,7 +737,8 @@ const OraclePage = () => {
                         handleSend(s);
                       }}
                       disabled={isLoading}
-                      className="text-[12px] text-left rounded-full border border-amber-300/30 bg-amber-300/5 hover:bg-amber-300/10 text-amber-100/90 px-3 py-1.5 transition-colors disabled:opacity-50"
+                      aria-label={s}
+                      className="text-[12px] text-left rounded-full border border-amber-300/30 bg-amber-300/5 hover:bg-amber-300/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/60 text-amber-100/90 px-3 py-1.5 transition-colors disabled:opacity-50"
                     >
                       {s}
                     </button>
@@ -673,6 +777,7 @@ const OraclePage = () => {
                         value={feedbackText[i] || ""}
                         onChange={(e) => setFeedbackText((prev) => ({ ...prev, [i]: e.target.value }))}
                         placeholder={t("oracle.feedback_placeholder")}
+                        aria-label={t("oracle.feedback_placeholder")}
                         rows={2}
                         maxLength={500}
                         className="w-full text-sm bg-background/50 border border-border rounded-lg px-3 py-2 focus:outline-none focus:border-primary/50 resize-none"

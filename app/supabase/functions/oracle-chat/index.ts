@@ -118,6 +118,16 @@ RÈGLES ABSOLUES :
 - <question courte 2>
 - <question courte 3>
 Trois suggestions maximum, courtes (8-14 mots), à la première personne ("Peux-tu me dire...", "Qu'est-ce que je peux...", "Et si je..."). Ce sont des relances que l'utilisateur pourrait naturellement te poser pour approfondir, pas des questions que TOI tu lui poses. Bienveillantes, concrètes, ancrées dans ce qui vient d'être dit. Pas de guillemets, pas de numérotation, pas de markdown dans les suggestions. Ce bloc est OBLIGATOIRE à chaque réponse.
+15. EXTRACTION DE PROFIL (silencieuse). Si dans le dernier message l'utilisateur vient de te partager des données personnelles (prénom, nom, date de naissance, heure de naissance, lieu de naissance, genre), ajoute APRÈS le bloc ---SUGGESTIONS--- un bloc supplémentaire au format strict :
+---PROFILE_HINTS---
+{"first_name":"...","birth_date":"YYYY-MM-DD","birth_time":"HH:MM","birth_place":"...","gender":"..."}
+Règles d'extraction :
+- Ne mets que les champs dont tu es CERTAIN (pas de devinette).
+- birth_date au format ISO (2026-04-23), birth_time en 24h (14:30).
+- Si une date est ambigue ("15 mars" sans année), ne mets pas birth_date.
+- Si rien à extraire dans ce message, ne mets PAS le bloc (le champ reste vide, pas de bloc vide).
+- L'utilisateur ne doit JAMAIS voir ce bloc , il est parsé silencieusement côté serveur. Ne le mentionne pas dans ton texte visible.
+16. LANGUE DE RÉPONSE. Détecte la langue du DERNIER message de l'utilisateur et réponds DANS CETTE LANGUE (français, anglais, espagnol, portugais, allemand, italien, turc, polonais, russe, japonais, arabe). Les exemples et règles de ce prompt système sont en français mais ne t'obligent pas à répondre en français : ils décrivent la METHODE, pas la langue. Les blocs ---SUGGESTIONS--- et ---PROFILE_HINTS--- utilisent toujours les mêmes marqueurs, mais le CONTENU des suggestions est dans la langue de l'utilisateur. Les appellatifs "mon cœur / âme chercheuse" se traduisent naturellement ("my heart / seeker", "mi corazón / alma buscadora", etc.).
 
 NARRATIF KARMASTRO (à rappeler subtilement quand pertinent) :
 - Le karma n'est pas une punition , c'est un rappel que dans cet univers, tout est lié. Chaque action crée une onde. Les anciens Hindous l'appelaient dharma, les Grecs Moïra (le destin tissé par les trois Parques), les Bouddhistes la roue de l'existence.
@@ -239,20 +249,60 @@ ${BASE_PROMPT}`,
 const DEFAULT_GUIDE = "sibylle";
 
 // ============================================
-// Parse ---SUGGESTIONS--- block (rule 14). Returns the clean message body and
-// up to 3 follow-up suggestions. If the block is missing or malformed we just
-// return the text as-is with an empty suggestions array , the chat still works.
+// Parse ---SUGGESTIONS--- and ---PROFILE_HINTS--- blocks (rules 14 & 15).
+// Returns the clean message body for display, up to 3 follow-up suggestions,
+// and any profile hints Claude silently extracted from the last user message
+// (first_name / birth_date / etc.). Missing blocks are non-fatal , the chat
+// still works, we just get nothing to persist.
 // ============================================
-function parseSuggestions(raw: string): { text: string; suggestions: string[] } {
-  if (!raw) return { text: raw, suggestions: [] };
-  // Tolerate minor formatting drift (case, extra dashes, whitespace).
-  const marker = /\n-{2,}\s*SUGGESTIONS\s*-{2,}\s*\n/i;
-  const match = raw.split(marker);
-  if (match.length < 2) return { text: raw.trim(), suggestions: [] };
+type ProfileHints = {
+  first_name?: string;
+  last_name?: string;
+  birth_date?: string;
+  birth_time?: string;
+  birth_place?: string;
+  gender?: string;
+} & Record<string, unknown>;
 
-  const body = match[0].trim();
-  const tail = match.slice(1).join("\n");
+function parseOracleReply(raw: string): {
+  text: string;
+  suggestions: string[];
+  hints: ProfileHints | null;
+} {
+  if (!raw) return { text: raw, suggestions: [], hints: null };
 
+  // Peel off ---PROFILE_HINTS--- first (it always comes after suggestions).
+  const hintsMarker = /\n-{2,}\s*PROFILE_HINTS\s*-{2,}\s*\n/i;
+  let suggestionsAndBody = raw;
+  let hints: ProfileHints | null = null;
+  const hintsSplit = raw.split(hintsMarker);
+  if (hintsSplit.length >= 2) {
+    suggestionsAndBody = hintsSplit[0];
+    const hintsRaw = hintsSplit.slice(1).join("\n").trim();
+    // Claude usually hands us a bare JSON object. Tolerate ```json fences.
+    const cleaned = hintsRaw
+      .replace(/^```(?:json)?\s*/i, "")
+      .replace(/```\s*$/, "")
+      .trim();
+    try {
+      const parsed = JSON.parse(cleaned);
+      if (parsed && typeof parsed === "object") {
+        hints = parsed as ProfileHints;
+      }
+    } catch {
+      // Malformed JSON , just ignore the block.
+    }
+  }
+
+  // Then split the visible body from suggestions.
+  const suggMarker = /\n-{2,}\s*SUGGESTIONS\s*-{2,}\s*\n/i;
+  const suggSplit = suggestionsAndBody.split(suggMarker);
+  if (suggSplit.length < 2) {
+    return { text: suggestionsAndBody.trim(), suggestions: [], hints };
+  }
+
+  const body = suggSplit[0].trim();
+  const tail = suggSplit.slice(1).join("\n");
   const suggestions = tail
     .split("\n")
     .map((l: string) => l.trim())
@@ -261,7 +311,39 @@ function parseSuggestions(raw: string): { text: string; suggestions: string[] } 
     .filter((l: string) => l.length > 0 && l.length < 200)
     .slice(0, 3);
 
-  return { text: body, suggestions };
+  return { text: body, suggestions, hints };
+}
+
+// Sanitize hints before writing to the database. We only keep plausible values
+// and drop anything that looks like Claude guessed.
+function cleanHints(h: ProfileHints | null): Partial<ProfileHints> {
+  if (!h || typeof h !== "object") return {};
+  const out: Partial<ProfileHints> = {};
+  const str = (v: unknown, max = 120) =>
+    typeof v === "string" && v.trim().length > 0 && v.trim().length <= max
+      ? v.trim()
+      : undefined;
+
+  const fn = str(h.first_name, 60);
+  if (fn) out.first_name = fn;
+  const ln = str(h.last_name, 60);
+  if (ln) out.last_name = ln;
+
+  const bd = str(h.birth_date, 10);
+  if (bd && /^\d{4}-\d{2}-\d{2}$/.test(bd)) out.birth_date = bd;
+
+  const bt = str(h.birth_time, 5);
+  if (bt && /^\d{2}:\d{2}$/.test(bt)) out.birth_time = bt;
+
+  const bp = str(h.birth_place, 120);
+  if (bp) out.birth_place = bp;
+
+  const g = str(h.gender, 20);
+  if (g && /^(f|m|h|femme|homme|male|female|autre|other|non-binary|nb)$/i.test(g)) {
+    out.gender = g.toLowerCase();
+  }
+
+  return out;
 }
 
 serve(async (req) => {
@@ -270,7 +352,7 @@ serve(async (req) => {
   }
 
   try {
-    const { messages, profile, guide: guideKey, userId, sessionId, conversationId } = await req.json();
+    const { messages, profile, guide: guideKey, userId, sessionId, conversationId, priorSummary } = await req.json();
     const ANTHROPIC_API_KEY = Deno.env.get("ANTHROPIC_API_KEY");
     if (!ANTHROPIC_API_KEY) throw new Error("ANTHROPIC_API_KEY non configurée");
 
@@ -303,6 +385,7 @@ serve(async (req) => {
             }
 
             if (!creditConsumed) {
+              const isAnon = !userId;
               return new Response(
                 JSON.stringify({
                   error: "paywall",
@@ -310,7 +393,10 @@ serve(async (req) => {
                     reason: "daily_limit",
                     message_count,
                     limit: FREE_DAILY_LIMIT,
-                    message: `Tu as utilisé tes ${FREE_DAILY_LIMIT} messages cosmiques du jour. Les astres ne dorment jamais , passe en mode Étoile pour continuer ou recharge-toi avec un pack de crédits.`,
+                    is_anon: isAnon,
+                    message: isAnon
+                      ? `Tu as utilisé tes ${FREE_DAILY_LIMIT} messages cosmiques du jour. Crée ton compte gratuit pour continuer , tu récupères l'historique de cette conversation et tu débloques ta carte natale complète.`
+                      : `Tu as utilisé tes ${FREE_DAILY_LIMIT} messages cosmiques du jour. Les astres ne dorment jamais , passe en mode Étoile pour continuer ou recharge-toi avec un pack de crédits.`,
                   },
                 }),
                 {
@@ -335,12 +421,42 @@ serve(async (req) => {
     const feedbackContext = await buildFeedbackContext(userId ?? null, sessionId ?? null, guideKey || DEFAULT_GUIDE);
     systemPrompt += feedbackContext;
 
+    // Inject a recap of the user's prior conversation(s) when the client
+    // asks us to. This is what makes the oracle feel like a returning friend
+    // ("la dernière fois que nous avons parlé, tu évoquais ta relation
+    // karmique...") instead of a cold start on every visit.
+    if (typeof priorSummary === "string" && priorSummary.trim()) {
+      systemPrompt += `\n\nHISTORIQUE AVEC CET UTILISATEUR :\n${priorSummary.trim()}\n\nINSTRUCTION : S'il est naturel de le faire, acknowledge subtilement que vous vous êtes déjà parlé ("la dernière fois" / "je me souviens que tu me demandais"), sans jamais re-résumer tout le passé. Si le sujet du jour est totalement différent, ne force pas le rappel.`;
+    }
+
     // Fetch real-time data from the Engine API
     let engineContext = "";
+    // 'ok' = Engine served both endpoints, 'degraded' = at least one failed,
+    // 'offline' = neither responded. Surfaced to the client so the UI can
+    // show a subtle warning instead of silently serving cold answers.
+    let engineStatus: "ok" | "degraded" | "offline" = "ok";
+    let cosmicOk = false;
+    let profileOk = !profile?.birthDate; // only required when we expect it
     try {
-      // Cosmic snapshot (always available)
-      const cosmicRes = await fetch(`${ENGINE_URL}/cosmic`);
-      if (cosmicRes.ok) {
+      // Cosmic snapshot (always available). One retry on transient failure.
+      const fetchCosmic = async () => {
+        for (let attempt = 0; attempt < 2; attempt += 1) {
+          try {
+            const ctl = new AbortController();
+            const to = setTimeout(() => ctl.abort(), 6000);
+            const r = await fetch(`${ENGINE_URL}/cosmic`, { signal: ctl.signal });
+            clearTimeout(to);
+            if (r.ok) return r;
+          } catch (e) {
+            if (attempt === 1) throw e;
+            await new Promise((res) => setTimeout(res, 400));
+          }
+        }
+        return null;
+      };
+      const cosmicRes = await fetchCosmic().catch(() => null);
+      if (cosmicRes?.ok) {
+        cosmicOk = true;
         const cosmic = await cosmicRes.json();
         engineContext += `\n\nDONNÉES COSMIQUES EN TEMPS RÉEL (Swiss Ephemeris) :
 - Date : ${cosmic.date}
@@ -408,6 +524,7 @@ serve(async (req) => {
 
           if (ctxRes.ok) {
             ctx = await ctxRes.json();
+            profileOk = true;
 
             // Persist fresh result to cache (fire-and-forget)
             if (userId && SERVICE_KEY) {
@@ -486,6 +603,15 @@ serve(async (req) => {
     } catch (engineErr) {
       console.error("Engine API error (non-blocking):", engineErr);
       engineContext += "\n\n(Données astrologiques en temps réel temporairement indisponibles - utiliser les connaissances générales)";
+    }
+
+    // Summarise Engine health so the client can warn the user.
+    if (!cosmicOk && !profileOk) engineStatus = "offline";
+    else if (!cosmicOk || !profileOk) engineStatus = "degraded";
+
+    // Tell Claude explicitly when data is degraded so it doesn't invent.
+    if (engineStatus !== "ok") {
+      systemPrompt += `\n\nÉTAT DU MOTEUR ASTRAL : ${engineStatus === "offline" ? "HORS LIGNE" : "DÉGRADÉ"}. Les données temps réel de Swiss Ephemeris ne sont que partiellement disponibles. N'INVENTE AUCUNE position planétaire, phase lunaire ou transit que tu n'as pas reçue dans ton contexte. Préviens subtilement l'utilisateur que les données temps réel sont momentanément partielles, et concentre-toi sur les enseignements généraux (principes astrologiques, numérologie universelle, symbolique) sans jamais citer une position précise que tu ne peux pas vérifier.`;
     }
 
     // Profile basics if no Engine data. We inject every field the client
@@ -568,11 +694,12 @@ serve(async (req) => {
     const data = await response.json();
     const rawText = data.content?.[0]?.text || `${selectedGuide.name} médite sur ta question...`;
 
-    // Split the oracle's answer from its 3 follow-up suggestions. Claude is
-    // instructed (rule 14) to end every reply with a ---SUGGESTIONS--- block.
-    // We parse it here so the client can render clickable chips and only the
-    // clean body is stored in oracle_messages.
-    const { text, suggestions } = parseSuggestions(rawText);
+    // Extract the visible body, the 3 follow-up suggestions (rule 14), and any
+    // profile hints Claude silently captured from the last user message
+    // (rule 15). Only the clean body is shown to the user and stored in
+    // oracle_messages; hints are persisted separately for anon signup recovery.
+    const { text, suggestions, hints: rawHints } = parseOracleReply(rawText);
+    const cleanedHints = cleanHints(rawHints);
 
     // Persist the exchange (conversation + user msg + assistant msg). Anonymous
     // sessions rely on session_id; authenticated users use user_id. Runs with
@@ -592,6 +719,7 @@ serve(async (req) => {
               user_id: userId || null,
               session_id: userId ? null : (sessionId || null),
               title,
+              guide: guideKey || DEFAULT_GUIDE,
             })
             .select("id")
             .single();
@@ -630,6 +758,74 @@ serve(async (req) => {
             .eq("id", savedConvId)
             .then(() => {});
         }
+
+        // Persist any profile hints extracted from the last user message.
+        // Anon : upsert into oracle_anon_profile_hints so claim-anon-session
+        // can hydrate the profile at signup. Auth : soft-merge into profiles
+        // (only fill fields that are still empty, never overwrite).
+        if (Object.keys(cleanedHints).length > 0) {
+          try {
+            if (!userId && sessionId) {
+              // Merge semantics : refine over time (new turn may fill more fields).
+              // We fetch the existing row and overlay non-empty new values.
+              const { data: existing } = await sbPersist
+                .from("oracle_anon_profile_hints")
+                .select("first_name,last_name,birth_date,birth_time,birth_place,gender,hit_count,raw_hints")
+                .eq("session_id", sessionId)
+                .maybeSingle();
+
+              const merged = {
+                session_id: sessionId,
+                first_name: cleanedHints.first_name ?? existing?.first_name ?? null,
+                last_name: cleanedHints.last_name ?? existing?.last_name ?? null,
+                birth_date: cleanedHints.birth_date ?? existing?.birth_date ?? null,
+                birth_time: cleanedHints.birth_time ?? existing?.birth_time ?? null,
+                birth_place: cleanedHints.birth_place ?? existing?.birth_place ?? null,
+                gender: cleanedHints.gender ?? existing?.gender ?? null,
+                hit_count: (existing?.hit_count ?? 0) + 1,
+                raw_hints: { ...(existing?.raw_hints ?? {}), ...(rawHints ?? {}) },
+                updated_at: new Date().toISOString(),
+              };
+
+              const { error: upErr } = await sbPersist
+                .from("oracle_anon_profile_hints")
+                .upsert(merged, { onConflict: "session_id" });
+              if (upErr) console.error("anon hints upsert error:", upErr);
+            } else if (userId) {
+              // Authenticated user : soft-merge only. Read current profile,
+              // only patch columns that are null/empty.
+              const { data: prof } = await sbPersist
+                .from("profiles")
+                .select("first_name,last_name,birth_date,birth_time,birth_place,gender")
+                .eq("user_id", userId)
+                .maybeSingle();
+
+              const patch: Record<string, string> = {};
+              const maybeSet = (col: keyof typeof cleanedHints, current: unknown) => {
+                const next = cleanedHints[col];
+                if (typeof next === "string" && (current === null || current === undefined || current === "" || current === "-")) {
+                  patch[col] = next;
+                }
+              };
+              maybeSet("first_name", prof?.first_name);
+              maybeSet("last_name", prof?.last_name);
+              maybeSet("birth_date", prof?.birth_date);
+              maybeSet("birth_time", prof?.birth_time);
+              maybeSet("birth_place", prof?.birth_place);
+              maybeSet("gender", prof?.gender);
+
+              if (Object.keys(patch).length > 0) {
+                const { error: patchErr } = await sbPersist
+                  .from("profiles")
+                  .update(patch)
+                  .eq("user_id", userId);
+                if (patchErr) console.error("profile soft-merge error:", patchErr);
+              }
+            }
+          } catch (hintsErr) {
+            console.error("profile hints persist error (non-blocking):", hintsErr);
+          }
+        }
       } catch (persistErr) {
         console.error("oracle persist error (non-blocking):", persistErr);
       }
@@ -640,6 +836,7 @@ serve(async (req) => {
       guide: guideKey || DEFAULT_GUIDE,
       conversation_id: savedConvId,
       suggestions,
+      engine_status: engineStatus,
     });
     const encoder = new TextEncoder();
     const stream = new ReadableStream({

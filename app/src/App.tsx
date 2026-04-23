@@ -25,6 +25,7 @@ import CookieBanner from "./components/CookieBanner.tsx";
 import GoogleOneTap from "./components/GoogleOneTap.tsx";
 import SparkleCursorTrail from "./components/SparkleCursorTrail.tsx";
 import { usePageTracking } from "./hooks/usePageTracking";
+import { useClaimAnonSession } from "./hooks/useClaimAnonSession";
 import { OnboardingGate } from "./components/OnboardingGate";
 import { useEffect } from "react";
 import { detectLocale, applyLocaleToDocument } from "./lib/locale";
@@ -33,6 +34,7 @@ const queryClient = new QueryClient();
 
 const TrackingProvider = ({ children }: { children: React.ReactNode }) => {
   usePageTracking();
+  useClaimAnonSession();
   return <>{children}</>;
 };
 

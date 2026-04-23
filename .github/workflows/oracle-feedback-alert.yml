@@ -1,0 +1,24 @@
+name: oracle-feedback-alert
+
+on:
+  schedule:
+    # 09:00 UTC = 11:00 CEST. One check per day is enough for MVP volume.
+    - cron: "0 9 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run alert script
+        env:
+          SUPABASE_KARMASTRO_URL: https://nkjbmbdrvejemzrggxvr.supabase.co
+          SUPABASE_KARMASTRO_SERVICE_KEY: ${{ secrets.SUPABASE_KARMASTRO_SERVICE_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ORACLE_ALERT_TO: augustin.foucheres@gmail.com
+          ORACLE_ALERT_FROM: "Karmastro Alerts <alerts@mail.karmastro.com>"
+          ORACLE_ALERT_THRESHOLD: "3"
+        run: python3 scripts/oracle_negative_feedback_alert.py
