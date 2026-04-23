@@ -1,0 +1,94 @@
+---
+// Shared editorial block inserted at the bottom of every tool page. Wraps
+// the dense body content the audit flagged as missing on 54 locale pages
+// (JA 45-95 words, RU/PL/TR/AR 180-340, DE/IT/ES/PT 280-640). Accepts
+// localised labels so we don't hardcode "Sources" / "FAQ" in French on
+// an Arabic page.
+
+interface FaqItem {
+  q: string;
+  a: string;
+}
+
+interface Source {
+  title: string;
+  url: string;
+}
+
+interface Section {
+  title: string;
+  body: string;
+}
+
+interface Props {
+  intro: string;                 // 60-120 words, appears inside <aside data-speakable>
+  sections: Section[];           // 3-6 H2 sections, 80-200 words each
+  faq: FaqItem[];                // 3-5 FAQ items (FAQPage schema injected in parent)
+  sources?: Source[];            // 3-8 external citations
+  labels?: {
+    faq?: string;                // e.g. "Questions fréquentes"
+    sources?: string;            // e.g. "Sources"
+  };
+  dir?: "ltr" | "rtl";           // RTL pour ar/he
+}
+
+const {
+  intro,
+  sections,
+  faq,
+  sources = [],
+  labels = {},
+  dir = "ltr",
+} = Astro.props;
+
+const faqLabel = labels.faq ?? "Questions fréquentes";
+const sourcesLabel = labels.sources ?? "Sources";
+---
+
+<section class="tool-editorial mt-12 prose prose-invert max-w-none" dir={dir}>
+  {/* Speakable lead. 60-120 words, the block AI Overviews quotes. */}
+  <aside data-speakable class="not-prose rounded-xl border border-amber-300/20 bg-amber-300/[0.04] p-4 mb-8 text-sm text-amber-100/90 leading-relaxed">
+    {intro}
+  </aside>
+
+  {sections.map((s) => (
+    <section class="mb-8">
+      <h2 class="font-serif text-2xl text-amber-100/95">{s.title}</h2>
+      <p class="leading-relaxed text-white/80" set:html={s.body} />
+    </section>
+  ))}
+
+  {faq.length > 0 && (
+    <section class="mb-8">
+      <h2 class="font-serif text-2xl text-amber-100/95">{faqLabel}</h2>
+      <dl class="space-y-5 not-prose">
+        {faq.map((item) => (
+          <div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+            <dt class="font-medium text-amber-100/90 mb-1.5">{item.q}</dt>
+            <dd class="text-sm text-white/70 leading-relaxed" set:html={item.a} />
+          </div>
+        ))}
+      </dl>
+    </section>
+  )}
+
+  {sources.length > 0 && (
+    <section>
+      <h2 class="font-serif text-xl text-amber-100/90">{sourcesLabel}</h2>
+      <ul class="text-sm not-prose space-y-1.5">
+        {sources.map((s) => (
+          <li>
+            <a
+              href={s.url}
+              target="_blank"
+              rel="noopener nofollow"
+              class="text-amber-300/80 hover:text-amber-300 underline underline-offset-2"
+            >
+              {s.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+</section>
