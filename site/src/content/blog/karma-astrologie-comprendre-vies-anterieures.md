@@ -57,7 +57,7 @@ imageAlt: "A blue ball of light in the middle of a black background"
 
 ## Qu’est-ce que le karma ? Définition simple et précise
 
-Le karma est un **principe spirituel de cause à effet** qui trouve ses racines dans les traditions hindouistes et bouddhistes. En sanskrit, le mot *karma* signifie littéralement **"action"**, et il désigne la loi naturelle selon laquelle **chaque action (physique, verbale ou mentale) génère une conséquence qui influence tes vies présentes et futures**. Contrairement aux idées reçues, le karma n’est pas une punition divine, mais un **mécanisme neutre**, comparable à la gravité : si tu lâches un objet, il tombe – peu importe que tu sois "bon" ou "mauvais".
+Le karma est un **principe spirituel de cause à effet** qui trouve ses racines dans les traditions hindouistes et bouddhistes. En sanskrit, le mot *karma* signifie littéralement **"action"**, et il désigne la loi naturelle selon laquelle **chaque action (physique, verbale ou mentale) génère une conséquence qui influence tes vies présentes et futures**. Contrairement aux idées reçues, le karma n’est pas une punition divine, mais un **mécanisme neutre**, comparable à la gravité : si tu lâches un objet, il tombe - peu importe que tu sois "bon" ou "mauvais".
 
 **Exemples concrets pour illustrer le karma** :
 - **Action positive** : Si tu aides une personne âgée à traverser la rue, tu crées un "bon karma". Cette action peut se manifester plus tard par une rencontre inattendue qui t’ouvre une opportunité professionnelle, ou simplement par un sentiment de paix intérieure.
@@ -68,7 +68,7 @@ Le karma est un **principe spirituel de cause à effet** qui trouve ses racines 
 - Une **recherche publiée dans le *Journal of Personality and Social Psychology* (2018)** montre que les personnes qui croient au karma ont tendance à adopter des comportements plus altruistes, car elles anticipent des conséquences positives à long terme.
 - En astrologie, le karma se lit à travers des **points précis de ton thème natal** : les **nœuds lunaires** (Nord et Sud), **Saturne** (le "grand maître karmique"), et la **maison 12** (liée aux vies antérieures et aux épreuves karmiques).
 
-> *"Le karma n’est pas une dette à payer, mais une leçon à apprendre. Chaque expérience, bonne ou mauvaise, est une opportunité de grandir."* – **Swami Vivekananda** (philosophe et mystique hindou, 1863–1902).
+> *"Le karma n’est pas une dette à payer, mais une leçon à apprendre. Chaque expérience, bonne ou mauvaise, est une opportunité de grandir."* - **Swami Vivekananda** (philosophe et mystique hindou, 1863-1902).
 
 **Pour aller plus loin** :
 - Découvre comment [Karmastro](https://app.karmastro.com) analyse ton thème astral pour révéler tes schémas karmiques et tes leçons de vie.
@@ -84,16 +84,16 @@ Le concept de karma est l’un des piliers des traditions spirituelles indiennes
 
 | Période       | Tradition       | Texte clé               | Concept clé et contribution au karma                                                                 | Citation marquante                                                                 |
 |---------------|-----------------|-------------------------|-------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| **~1500–800 av. J.-C.** | Hindouisme (Védas) | **Rig-Véda** | Le karma est mentionné pour la première fois comme un **système de rituels** : les actions sacrificielles (*yajna*) génèrent des récompenses divines. | *"Celui qui offre des sacrifices aux dieux monte au ciel."* – Rig-Véda (1.1.1) |
-| **~800–500 av. J.-C.** | Hindouisme | **Upanishads** (ex. : Brihadaranyaka, Chandogya) | Le karma devient une **loi morale universelle** : les actions déterminent le cycle des renaissances (*samsara*), et l’âme (*atman*) est liée à ce cycle jusqu’à la libération (*moksha*). | *"L’homme devient bon par de bonnes actions, mauvais par de mauvaises actions."* – Brihadaranyaka Upanishad (4.4.5) |
-| **~500 av. J.-C.** | Bouddhisme | **Sutras de Bouddha** (ex. : Dhammapada) | Le karma est lié à **l’intention** : une action est "bonne" si elle est motivée par la compassion et l’absence d’ego. Le but est d’atteindre le *nirvana* (extinction de la souffrance). | *"Ce n’est pas par la parole ni par la pensée que l’on mesure un homme, mais par ses actes."* – Dhammapada (1.2) |
-| **~300 av. J.-C.** | Jaïnisme | **Agamas** | Le karma est une **matière subtile** (*karma-pudgala*) qui s’accumule sur l’âme (*jiva*). La libération (*kevala jnana*) passe par l’ascétisme et la non-violence (*ahimsa*). | *"L’âme est recouverte par les particules de karma, comme l’or est recouvert de boue."* – Tattvartha Sutra (6.1) |
-| **~200 av. J.-C.** | Hindouisme | **Bhagavad-Gîtâ** | Le karma est présenté comme un **devoir sacré** (*dharma*) : agir sans attachement aux résultats libère du cycle des renaissances. | *"Agis sans t’attacher aux fruits de tes actions."* – Bhagavad-Gîtâ (2.47) |
+| **~1500-800 av. J.-C.** | Hindouisme (Védas) | **Rig-Véda** | Le karma est mentionné pour la première fois comme un **système de rituels** : les actions sacrificielles (*yajna*) génèrent des récompenses divines. | *"Celui qui offre des sacrifices aux dieux monte au ciel."* - Rig-Véda (1.1.1) |
+| **~800-500 av. J.-C.** | Hindouisme | **Upanishads** (ex. : Brihadaranyaka, Chandogya) | Le karma devient une **loi morale universelle** : les actions déterminent le cycle des renaissances (*samsara*), et l’âme (*atman*) est liée à ce cycle jusqu’à la libération (*moksha*). | *"L’homme devient bon par de bonnes actions, mauvais par de mauvaises actions."* - Brihadaranyaka Upanishad (4.4.5) |
+| **~500 av. J.-C.** | Bouddhisme | **Sutras de Bouddha** (ex. : Dhammapada) | Le karma est lié à **l’intention** : une action est "bonne" si elle est motivée par la compassion et l’absence d’ego. Le but est d’atteindre le *nirvana* (extinction de la souffrance). | *"Ce n’est pas par la parole ni par la pensée que l’on mesure un homme, mais par ses actes."* - Dhammapada (1.2) |
+| **~300 av. J.-C.** | Jaïnisme | **Agamas** | Le karma est une **matière subtile** (*karma-pudgala*) qui s’accumule sur l’âme (*jiva*). La libération (*kevala jnana*) passe par l’ascétisme et la non-violence (*ahimsa*). | *"L’âme est recouverte par les particules de karma, comme l’or est recouvert de boue."* - Tattvartha Sutra (6.1) |
+| **~200 av. J.-C.** | Hindouisme | **Bhagavad-Gîtâ** | Le karma est présenté comme un **devoir sacré** (*dharma*) : agir sans attachement aux résultats libère du cycle des renaissances. | *"Agis sans t’attacher aux fruits de tes actions."* - Bhagavad-Gîtâ (2.47) |
 
 **Pourquoi ces textes sont-ils importants aujourd’hui ?**
 - Les **Upanishads** posent les bases de la **responsabilité individuelle** : tes actions ont des conséquences, et tu es le seul maître de ton destin.
 - La **Bhagavad-Gîtâ** introduit l’idée que le **détachement** est la clé pour briser le cycle karmique. Ce principe est repris dans le développement personnel moderne (ex. : la pleine conscience).
-- Les **Sutras bouddhistes** soulignent l’importance de **l’intention** – un concept central dans les thérapies cognitives actuelles (ex. : la thérapie d’acceptation et d’engagement).
+- Les **Sutras bouddhistes** soulignent l’importance de **l’intention** - un concept central dans les thérapies cognitives actuelles (ex. : la thérapie d’acceptation et d’engagement).
 
 **Exemple concret** :
 - Dans la **Bhagavad-Gîtâ**, le guerrier **Arjuna** hésite à combattre ses propres cousins lors d’une bataille. Le dieu **Krishna** lui explique que son *dharma* (devoir) est de se battre, car c’est son rôle de guerrier. S’il agit sans attachement au résultat, il ne génère pas de mauvais karma. Cette histoire illustre comment le karma est lié à **l’action juste**, et non à la moralité absolue.
@@ -108,27 +108,27 @@ Le concept de karma est l’un des piliers des traditions spirituelles indiennes
 
 Le karma n’est pas resté figé : il a évolué en fonction des contextes culturels et religieux. Voici les grandes étapes de cette transformation :
 
-1. **Période védique (~1500–800 av. J.-C.)** :
+1. **Période védique (~1500-800 av. J.-C.)** :
    - Le karma est **rituel** : il s’agit d’accomplir des sacrifices (*yajna*) pour obtenir des faveurs des dieux (ex. : pluie, prospérité).
    - **Exemple** : Un prêtre qui effectue un rituel pour la fertilité des terres génère du "bon karma" et assure une bonne récolte.
 
-2. **Période upanishadique (~800–500 av. J.-C.)** :
+2. **Période upanishadique (~800-500 av. J.-C.)** :
    - Le karma devient **moral** : il détermine ton destin dans le cycle des renaissances (*samsara*).
    - **Exemple** : Une personne qui vole dans cette vie renaîtra dans une condition inférieure (ex. : pauvreté, maladie).
 
-3. **Période bouddhiste et jaïne (~500–200 av. J.-C.)** :
+3. **Période bouddhiste et jaïne (~500-200 av. J.-C.)** :
    - Le karma est lié à **l’intention** (bouddhisme) ou à une **matière subtile** (jaïnisme).
    - **Exemple bouddhiste** : Donner de l’argent par compassion génère du bon karma, mais le faire pour impressionner les autres en génère du mauvais.
    - **Exemple jaïn** : Manger de la viande accumule du karma négatif, car cela implique de tuer des êtres vivants.
 
-4. **Période classique hindoue (~200 av. J.-C.–500 ap. J.-C.)** :
+4. **Période classique hindoue (~200 av. J.-C.-500 ap. J.-C.)** :
    - Le karma est intégré dans les **trois voies de libération** (*moksha*) :
      - **Karma yoga** : la voie de l’action désintéressée.
      - **Bhakti yoga** : la voie de la dévotion.
      - **Jnana yoga** : la voie de la connaissance.
    - **Exemple** : Un artisan qui crée des objets sacrés sans chercher la gloire pratique le *karma yoga*.
 
-5. **Période médiévale et moderne (500 ap. J.-C.–aujourd’hui)** :
+5. **Période médiévale et moderne (500 ap. J.-C.-aujourd’hui)** :
    - Le karma est **popularisé en Occident** via le mouvement New Age et le développement personnel.
    - **Exemple moderne** : La "loi de l’attraction" (popularisée par *Le Secret*) est une interprétation simplifiée du karma, où les pensées positives attirent des expériences positives.
 
@@ -270,7 +270,7 @@ Même si certaines lois sont des **simplifications**, elles peuvent t’aider à
 
 ## Vies antérieures et astrologie : décrypter ton héritage karmique
 
-L’astrologie karmique est un outil puissant pour **comprendre tes schémas de vie répétitifs, tes talents innés et tes défis actuels**. En analysant des éléments spécifiques de ton thème natal – comme les **nœuds lunaires**, **Saturne** et la **maison 12** – tu peux identifier les leçons que ton âme a choisies d’apprendre dans cette incarnation. Voici une exploration détaillée de ces concepts.
+L’astrologie karmique est un outil puissant pour **comprendre tes schémas de vie répétitifs, tes talents innés et tes défis actuels**. En analysant des éléments spécifiques de ton thème natal - comme les **nœuds lunaires**, **Saturne** et la **maison 12** - tu peux identifier les leçons que ton âme a choisies d’apprendre dans cette incarnation. Voici une exploration détaillée de ces concepts.
 
 ---
 
@@ -352,17 +352,17 @@ Saturne met **29,5 ans** à faire le tour du zodiaque. Ses **transits majeurs** 
 
 | Âge          | Transit de Saturne | Signification karmique | Défi à relever | Conseil |
 |--------------|--------------------|------------------------|----------------|---------|
-| **0–7 ans**  | Saturne en maison 1 (conjonction au Soleil natal) | Période de **construction de l’identité**. Saturne teste ta résilience dès l’enfance. | Surmonter les épreuves précoces (ex. : maladie, séparation des parents). | Les parents doivent offrir un cadre **stable et aimant** pour aider l’enfant à développer sa confiance en lui. |
-| **7–14 ans** | Saturne en maison 2 | Période de **construction des valeurs et de l’estime de soi**. | Apprendre à **gérer l’argent et les ressources** de manière responsable. | Économiser de l’argent de poche, apprendre la valeur du travail. |
-| **14–21 ans** | Saturne en maison 3 | Période de **développement intellectuel et social**. | Apprendre à **communiquer clairement** et à s’adapter à son environnement. | Lire, écrire, développer des compétences sociales. |
-| **21–28 ans** | Saturne en maison 4 | Période de **construction d’un foyer et d’une famille**. | Trouver un **équilibre entre vie personnelle et professionnelle**. | Acheter une maison, fonder une famille, ou créer un espace de vie stable. |
-| **28–35 ans** | **Premier retour de Saturne** (Saturne revient à sa position natale) | **Bilan de la première partie de ta vie**. Saturne te demande : *"As-tu construit des bases solides ?"* | Assumer tes **responsabilités** et faire des choix alignés avec tes valeurs. | Changer de carrière, te marier, ou te lancer dans un projet à long terme. |
-| **35–42 ans** | Saturne en maison 6 | Période de **travail et de santé**. | Apprendre à **prendre soin de ton corps et de ton esprit**. | Adopter une routine saine (sport, alimentation, méditation). |
-| **42–49 ans** | Saturne en maison 7 | Période de **relations et de partenariats**. | Apprendre à **négocier et à poser des limites** dans tes relations. | Travailler sur ton couple, tes amitiés ou tes collaborations professionnelles. |
-| **50–57 ans** | **Deuxième retour de Saturne** | **Bilan de la maturité**. Saturne te demande : *"As-tu accompli ce que tu voulais ?"* | Accepter tes **limites** et transmettre ton savoir. | Devenir mentor, écrire un livre, ou te lancer dans une nouvelle passion. |
-| **57–64 ans** | Saturne en maison 9 | Période de **sagesse et de spiritualité**. | Trouver un **sens plus profond** à ta vie. | Voyager, étudier la philosophie, ou t’engager dans une cause humanitaire. |
-| **64–71 ans** | Saturne en maison 10 | Période de **récolte professionnelle**. | Assumer ton **héritage** et transmettre tes connaissances. | Prendre ta retraite, mais rester actif(ve) dans un domaine qui te passionne. |
-| **71–78 ans** | **Troisième retour de Saturne** | **Bilan de fin de vie**. Saturne te demande : *"As-tu vécu en accord avec tes valeurs ?"* | Accepter la **mortalité** et faire la paix avec ton passé. | Écrire tes mémoires, pardonner, et préparer ta transition. |
+| **0-7 ans**  | Saturne en maison 1 (conjonction au Soleil natal) | Période de **construction de l’identité**. Saturne teste ta résilience dès l’enfance. | Surmonter les épreuves précoces (ex. : maladie, séparation des parents). | Les parents doivent offrir un cadre **stable et aimant** pour aider l’enfant à développer sa confiance en lui. |
+| **7-14 ans** | Saturne en maison 2 | Période de **construction des valeurs et de l’estime de soi**. | Apprendre à **gérer l’argent et les ressources** de manière responsable. | Économiser de l’argent de poche, apprendre la valeur du travail. |
+| **14-21 ans** | Saturne en maison 3 | Période de **développement intellectuel et social**. | Apprendre à **communiquer clairement** et à s’adapter à son environnement. | Lire, écrire, développer des compétences sociales. |
+| **21-28 ans** | Saturne en maison 4 | Période de **construction d’un foyer et d’une famille**. | Trouver un **équilibre entre vie personnelle et professionnelle**. | Acheter une maison, fonder une famille, ou créer un espace de vie stable. |
+| **28-35 ans** | **Premier retour de Saturne** (Saturne revient à sa position natale) | **Bilan de la première partie de ta vie**. Saturne te demande : *"As-tu construit des bases solides ?"* | Assumer tes **responsabilités** et faire des choix alignés avec tes valeurs. | Changer de carrière, te marier, ou te lancer dans un projet à long terme. |
+| **35-42 ans** | Saturne en maison 6 | Période de **travail et de santé**. | Apprendre à **prendre soin de ton corps et de ton esprit**. | Adopter une routine saine (sport, alimentation, méditation). |
+| **42-49 ans** | Saturne en maison 7 | Période de **relations et de partenariats**. | Apprendre à **négocier et à poser des limites** dans tes relations. | Travailler sur ton couple, tes amitiés ou tes collaborations professionnelles. |
+| **50-57 ans** | **Deuxième retour de Saturne** | **Bilan de la maturité**. Saturne te demande : *"As-tu accompli ce que tu voulais ?"* | Accepter tes **limites** et transmettre ton savoir. | Devenir mentor, écrire un livre, ou te lancer dans une nouvelle passion. |
+| **57-64 ans** | Saturne en maison 9 | Période de **sagesse et de spiritualité**. | Trouver un **sens plus profond** à ta vie. | Voyager, étudier la philosophie, ou t’engager dans une cause humanitaire. |
+| **64-71 ans** | Saturne en maison 10 | Période de **récolte professionnelle**. | Assumer ton **héritage** et transmettre tes connaissances. | Prendre ta retraite, mais rester actif(ve) dans un domaine qui te passionne. |
+| **71-78 ans** | **Troisième retour de Saturne** | **Bilan de fin de vie**. Saturne te demande : *"As-tu vécu en accord avec tes valeurs ?"* | Accepter la **mortalité** et faire la paix avec ton passé. | Écrire tes mémoires, pardonner, et préparer ta transition. |
 
 **Exemple concret** :
 - Si tu as **Saturne en maison 10** dans ton thème natal, tu as peut-être vécu des **échecs professionnels** dans ta jeunesse (ex. : licenciements, projets avortés). Ces épreuves t’ont appris la **persévérance** et la **responsabilité**. À 29 ans (premier retour de Saturne), tu as peut-être enfin trouvé ta voie et construit une carrière solide.
@@ -460,7 +460,7 @@ La maison 12 est un **réservoir d’épreuves, mais aussi de sagesse**. Voici d
 
 ## Numérologie karmique : tes dettes à transformer
 
-La **numérologie karmique** est un outil puissant pour identifier tes **dettes karmiques** – des schémas de vie que tu dois transformer pour évoluer spirituellement. Ces dettes sont liées à des **nombres spécifiques** dans ta date de naissance ou ton nom, et elles révèlent des défis que ton âme a choisis de travailler dans cette incarnation.
+La **numérologie karmique** est un outil puissant pour identifier tes **dettes karmiques** - des schémas de vie que tu dois transformer pour évoluer spirituellement. Ces dettes sont liées à des **nombres spécifiques** dans ta date de naissance ou ton nom, et elles révèlent des défis que ton âme a choisis de travailler dans cette incarnation.
 
 ### Les 4 nombres karmiques et leurs défis
 

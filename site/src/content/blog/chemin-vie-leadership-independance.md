@@ -370,7 +370,7 @@ Les couples où les deux partenaires ont un chemin de vie 1 peuvent être **trè
    - Exemple : Lors d’une dispute, prendre 10 minutes de pause avant de reprendre la discussion.
 
 **Témoignage** :
-*"Au début, mon mari et moi (tous les deux chemin de vie 1) passions notre temps à nous disputer pour savoir qui avait raison. Puis nous avons décidé de canaliser cette énergie dans un projet commun : notre entreprise de coaching. Aujourd’hui, nous sommes complémentaires : je m’occupe de la stratégie, il gère la relation client. Et nous avons appris à nous écouter !"* — Claire, 34 ans.
+*"Au début, mon mari et moi (tous les deux chemin de vie 1) passions notre temps à nous disputer pour savoir qui avait raison. Puis nous avons décidé de canaliser cette énergie dans un projet commun : notre entreprise de coaching. Aujourd’hui, nous sommes complémentaires : je m’occupe de la stratégie, il gère la relation client. Et nous avons appris à nous écouter !"*, Claire, 34 ans.
 
 🔹 *Pour aller plus loin* : Découvre ta [compatibilité amoureuse](https://app.karmastro.com/compatibilite) avec ton partenaire ou lis notre guide sur [les défis des couples 1+1](https://karmastro.com/blog/couples-chemin-de-vie-1).
 
@@ -505,7 +505,7 @@ Pour réussir avec un chemin de vie 1, voici des **stratégies concrètes**, val
    - **Exemple** : Un consultant 1 qui publie des articles sur LinkedIn et devient une référence dans son domaine.
 
 **Témoignage** :
-*"Quand j’ai lancé mon entreprise, je voulais tout faire moi-même : le site web, la compta, la prospection… Résultat : burnout en 6 mois. Aujourd’hui, je me concentre sur ce que je sais faire (la stratégie et la vente), et je délègue le reste. Mon chiffre d’affaires a triplé en 1 an !"* — Thomas, 32 ans, chemin de vie 1.
+*"Quand j’ai lancé mon entreprise, je voulais tout faire moi-même : le site web, la compta, la prospection… Résultat : burnout en 6 mois. Aujourd’hui, je me concentre sur ce que je sais faire (la stratégie et la vente), et je délègue le reste. Mon chiffre d’affaires a triplé en 1 an !"*, Thomas, 32 ans, chemin de vie 1.
 
 🔹 *Pour un accompagnement personnalisé* : Découvre nos [formations en leadership](https://karmastro.com/outils) ou notre [programme de mentorat](https://karmastro.com/methode).
 
