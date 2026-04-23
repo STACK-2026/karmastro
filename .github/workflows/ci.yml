@@ -1,4 +1,4 @@
-name: CI — blog-auto smoke test
+name: CI · blog-auto smoke test
 
 on:
   push:

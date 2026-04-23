@@ -8,9 +8,9 @@ on:
       - '.github/workflows/deploy-site.yml'
   workflow_run:
     workflows:
-      - "Blog Auto — Publication"
-      - "Horoscope Auto — Génération quotidienne 11 langues"
-      - "Rebuild Guard — Daily touch for scheduled articles"
+      - "Blog Auto · Publication"
+      - "Horoscope Auto · Génération quotidienne 11 langues"
+      - "Rebuild Guard · Daily touch for scheduled articles"
     types: [completed]
     branches: [main]
   workflow_dispatch: {}

@@ -45,7 +45,7 @@ export interface ToolEditorial {
 }
 
 // -----------------------------------------------------------------------
-// Japanese (ja-JP). Audit reported 45 to 95 words per tool page — almost
+// Japanese (ja-JP). Audit reported 45 to 95 words per tool page · almost
 // pure data with no editorial body. This block lifts every tool above
 // the AI-citation threshold with proper etymology + method + patterns +
 // FAQ + sources.
@@ -76,7 +76,7 @@ export const TOOL_EDITORIALS: Partial<Record<ToolKey, Partial<Record<string, Too
       sections: [
         {
           title: "ピタゴラスから日本へ、ライフパスの系譜",
-          body: "ピタゴラス（紀元前580年–495年）は、南イタリアのクロトン市で哲学・数学・宗教を融合した学派を創設しました。「万物は数なり」という有名な教えは、弦の長さの比率が和音を決める発見から生まれた、文字通りの洞察です。数字は計算の道具であるだけでなく、宇宙の本質であると彼は信じていました。中世になると、この体系はアラビア世界（アル=フワーリズミー、ジャービル・イブン・ハイヤーン）を通じて継承され、ルネサンス期にヨーロッパへ再輸入されました。日本には明治以降、ユニバーサル英語圏の書籍を通して入り、現代の数秘術書の85％（Numerology Foundation 2023年調査）がピタゴラス式を採用しています。",
+          body: "ピタゴラス（紀元前580年-495年）は、南イタリアのクロトン市で哲学・数学・宗教を融合した学派を創設しました。「万物は数なり」という有名な教えは、弦の長さの比率が和音を決める発見から生まれた、文字通りの洞察です。数字は計算の道具であるだけでなく、宇宙の本質であると彼は信じていました。中世になると、この体系はアラビア世界（アル=フワーリズミー、ジャービル・イブン・ハイヤーン）を通じて継承され、ルネサンス期にヨーロッパへ再輸入されました。日本には明治以降、ユニバーサル英語圏の書籍を通して入り、現代の数秘術書の85％（Numerology Foundation 2023年調査）がピタゴラス式を採用しています。",
         },
         {
           title: "計算方法を一歩ずつ確認する",

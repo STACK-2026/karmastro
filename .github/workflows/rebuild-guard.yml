@@ -1,4 +1,4 @@
-name: Rebuild Guard — Daily touch for scheduled articles
+name: Rebuild Guard · Daily touch for scheduled articles
 
 # Garantit qu'au moins un push/jour declenche un rebuild Cloudflare Pages,
 # pour que les articles du blog programmes (date future) deviennent live

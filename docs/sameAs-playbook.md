@@ -1,4 +1,4 @@
-# sameAs playbook — Karmastro brand entity
+# sameAs playbook · Karmastro brand entity
 
 Goal : make Karmastro resolvable as a single entity across LLMs (ChatGPT, Gemini, Claude, Perplexity) and Google's Knowledge Graph. Every new verified profile = one more sameAs URL to push back into `src/utils/seo.ts`.
 

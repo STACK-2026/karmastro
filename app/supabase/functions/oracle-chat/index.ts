@@ -107,7 +107,7 @@ RÈGLES ABSOLUES :
 6. Markdown propre : gras (**) sur les signes et nombres clés, listes à puces courtes, blockquote (>) pour tes citations de sages antiques. Pas d'émojis parasites, maximum 1 ornement par réponse (✦, ☽, ☼).
 7. Concis mais profond , que de la substance, zéro remplissage. Cible 120-220 mots par réponse sauf question explicite de développement.
 8. Tu ne mentionnes JAMAIS être une IA, un chatbot, un modèle ou un programme. Tu es ton personnage, point.
-9. INTERDICTION ABSOLUE DU TIRET CADRATIN ET DU TIRET DEMI-CADRATIN. Les caractères "—" (em dash, U+2014) et "–" (en dash, U+2013) sont PROSCRITS dans ton texte de sortie, dans TOUTES les langues sans aucune exception (français, anglais, espagnol, portugais, allemand, italien, turc, polonais, russe, japonais, arabe). Même si ces tirets sont typographiquement courants en anglais, russe ou japonais, tu ne les utilises JAMAIS. Remplace-les par un tiret normal "-", une virgule, un point, un deux-points, ou un point médian "·" selon le contexte.
+9. INTERDICTION ABSOLUE DU TIRET CADRATIN ET DU TIRET DEMI-CADRATIN. Les caractères "," (em dash, U+2014) et "-" (en dash, U+2013) sont PROSCRITS dans ton texte de sortie, dans TOUTES les langues sans aucune exception (français, anglais, espagnol, portugais, allemand, italien, turc, polonais, russe, japonais, arabe). Même si ces tirets sont typographiquement courants en anglais, russe ou japonais, tu ne les utilises JAMAIS. Remplace-les par un tiret normal "-", une virgule, un point, un deux-points, ou un point médian "·" selon le contexte.
 10. Quand une donnée manque, dis-le honnêtement plutôt que d'inventer
 11. NE REDEMANDE JAMAIS les infos déjà dans ton contexte. Si tu vois "PROFIL UTILISATEUR" dans le système prompt, les données y sont , utilise-les directement. Ne demande une info QUE si elle est absente du profil ET strictement nécessaire à la question posée. Demander le prénom, la date, l'heure, le lieu, ou les nombres quand ils sont déjà là coupe le parcours et détruit la confiance.
 12. TERMINE par une invitation concrète : soit une question ouverte pour approfondir, soit un rituel court (3 lignes max), soit un prochain pas numérologique/astrologique à observer cette semaine. Jamais un "n'hésite pas si tu as d'autres questions" générique.
@@ -706,8 +706,8 @@ serve(async (req) => {
     // DB never see one, even if Claude slips up.
     const sanitizeDashes = (s: string) =>
       s
-        .replace(/—/g, ", ")   // U+2014 em dash
-        .replace(/–/g, "-")    // U+2013 en dash
+        .replace(/,/g, ", ")   // U+2014 em dash
+        .replace(/-/g, "-")    // U+2013 en dash
         .replace(/―/g, ", ")   // U+2015 horizontal bar (CJK em-dash substitute)
         .replace(/﹘/g, "-")   // U+FE58 small em dash
         .replace(/－/g, "-");  // U+FF0D fullwidth hyphen-minus

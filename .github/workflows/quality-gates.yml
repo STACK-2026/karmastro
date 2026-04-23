@@ -3,7 +3,7 @@ name: Quality Gates
 # Runs on every push to main + every pull request.
 # Prevents regressions that hit us 14/04/2026 :
 #  - thin blog stubs (< 2500 words, missing internal mesh)
-#  - em-dashes (—, –) forbidden brand-wide
+#  - em-dashes (,, -) forbidden brand-wide
 #  - i18n coverage holes (FR baseline incomplete, non-FR blocks missing keys)
 #  - app build breakage
 #  - hardcoded FR leaking into React pages when i18n exists
@@ -26,7 +26,7 @@ jobs:
           scan() {
             local path="$1"; local max="$2"
             [ -d "$path" ] || return 0
-            OUT=$(grep -rn "[—–]" "$path" 2>/dev/null | head -"$max")
+            OUT=$(grep -rn "[,-]" "$path" 2>/dev/null | head -"$max")
             if [ -n "$OUT" ]; then
               echo "$OUT"
               FOUND=1
@@ -39,7 +39,7 @@ jobs:
           scan app/src/pages 20
           scan app/src/components 20
           if [ "$FOUND" = "1" ]; then
-            echo "::error::Em-dashes (—) or en-dashes (–) detected. Replace with ',' ':' '.' or '-'. This is a brand-wide rule."
+            echo "::error::Em-dashes (,) or en-dashes (-) detected. Replace with ',' ':' '.' or '-'. This is a brand-wide rule."
             exit 1
           fi
           echo "OK: no em/en dashes anywhere."
