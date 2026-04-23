@@ -1,0 +1,100 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { siteConfig } from "../../../site.config";
+import { fullUrl } from "../../utils/config";
+import { jsonLdBreadcrumbs } from "../../utils/seo";
+import { ALL_AUTHORS } from "../../data/authors";
+
+const pageUrl = fullUrl("/guides");
+const title = "Nos guides cosmiques | Karmastro";
+const description =
+  "Les 5 voix éditoriales de Karmastro : Sibylle l'oracle mystique, Orion le coach stoïcien, Séléné la guide relationnelle, Pythia la mathématicienne cosmique, Isis la voix arabophone.";
+
+const breadcrumbs = [
+  { name: "Accueil", url: fullUrl("/") },
+  { name: "Nos guides", url: pageUrl },
+];
+
+// CollectionPage schema listing the 5 Person entities so LLMs see this as
+// the canonical index of our editorial team.
+const collectionJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  url: pageUrl,
+  name: title,
+  description,
+  isPartOf: { "@id": `${siteConfig.url}/#website` },
+  hasPart: ALL_AUTHORS.map((a) => ({
+    "@type": "ProfilePage",
+    url: `${siteConfig.url}/guides/${a.slug}`,
+    name: `${a.name}, ${a.title}`,
+    about: {
+      "@type": "Person",
+      name: a.name,
+      jobTitle: a.jobTitle,
+      knowsAbout: a.knowsAbout,
+    },
+  })),
+};
+
+const jsonLd = [collectionJsonLd, jsonLdBreadcrumbs(breadcrumbs)];
+
+const ACCENT_CLASSES: Record<string, { ring: string; chip: string; glow: string }> = {
+  purple: { ring: "border-purple-300/40", chip: "bg-purple-300/10 border-purple-300/30 text-purple-200", glow: "from-purple-500/20" },
+  amber:  { ring: "border-amber-300/40",  chip: "bg-amber-300/10 border-amber-300/30 text-amber-200",    glow: "from-amber-400/20" },
+  rose:   { ring: "border-rose-300/40",   chip: "bg-rose-300/10 border-rose-300/30 text-rose-200",      glow: "from-rose-400/20" },
+  emerald:{ ring: "border-emerald-300/40",chip: "bg-emerald-300/10 border-emerald-300/30 text-emerald-200", glow: "from-emerald-400/20" },
+};
+---
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl={pageUrl}
+  ogType="website"
+  jsonLd={jsonLd}
+>
+  <Header />
+
+  <main class="relative z-10 max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-20">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <header class="mt-6 mb-10 text-center">
+      <p class="text-xs uppercase tracking-[0.3em] text-amber-300/70 mb-3">Équipe éditoriale</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4 text-gradient-violet" data-speakable>
+        Les 5 voix de Karmastro
+      </h1>
+      <p class="text-base text-white/70 leading-relaxed max-w-2xl mx-auto" data-speakable>
+        Chaque article de Karmastro est signé par un guide spécifique. Chacun a sa lignée, sa méthode et son domaine. Pas de plume anonyme, pas d'IA masquée : nos 5 auteurs sont des voix éditoriales incarnées que tu retrouves aussi bien dans le blog que dans l'Oracle.
+      </p>
+    </header>
+
+    <div class="grid md:grid-cols-2 gap-5">
+      {ALL_AUTHORS.map((a) => {
+        const ac = ACCENT_CLASSES[a.accent] ?? ACCENT_CLASSES.amber;
+        return (
+          <a
+            href={`/guides/${a.slug}`}
+            class={`relative block rounded-2xl border ${ac.ring} bg-gradient-to-br ${ac.glow} to-transparent p-6 overflow-hidden hover:bg-white/[0.03] transition-colors`}
+          >
+            <div class="absolute -top-10 -right-10 opacity-10 text-[140px] font-serif pointer-events-none select-none" aria-hidden="true">
+              {a.icon}
+            </div>
+            <p class="text-[11px] uppercase tracking-[0.3em] text-amber-300/70 mb-1">{a.title}</p>
+            <h2 class="text-2xl font-serif mb-2 text-white">{a.name}</h2>
+            <p class="text-sm text-white/70 leading-relaxed mb-4">{a.tagline}</p>
+            <div class="flex flex-wrap gap-1.5">
+              {a.specialties.slice(0, 3).map((s) => (
+                <span class={`text-[10px] uppercase tracking-wider rounded-full border px-2.5 py-0.5 ${ac.chip}`}>{s}</span>
+              ))}
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

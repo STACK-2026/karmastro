@@ -1,0 +1,210 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { getCollection } from "astro:content";
+import { siteConfig } from "../../../site.config";
+import { fullUrl } from "../../utils/config";
+import { jsonLdBreadcrumbs } from "../../utils/seo";
+import { AUTHORS, ALL_AUTHORS, authorSlugFor, type Author, type AuthorSlug } from "../../data/authors";
+
+// Generate the 5 persona pages at build time. One URL each, so every
+// article's author.url resolves to a real entity page that an LLM can
+// follow and cite ("according to Sibylle, astrologue hellénistique…").
+export async function getStaticPaths() {
+  return ALL_AUTHORS.map((a) => ({
+    params: { slug: a.slug },
+    props: { author: a },
+  }));
+}
+
+const { author } = Astro.props as { author: Author };
+
+// Articles signed by this persona (any name variant collapses to the slug).
+const allPosts = await getCollection("blog", ({ data }) => !data.draft);
+const frArticles = allPosts
+  .filter((p) => p.data.lang === "fr" && authorSlugFor(p.data.author) === author.slug)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 12);
+
+const articleCount = allPosts.filter(
+  (p) => !p.data.draft && authorSlugFor(p.data.author) === author.slug
+).length;
+
+const pageUrl = fullUrl(`/guides/${author.slug}`);
+const personId = `${siteConfig.url}/guides/${author.slug}#person`;
+
+// Person + ProfilePage JSON-LD. ProfilePage is the schema Google
+// introduced in 2023 to promote author pages as first-class profiles, so
+// AI Overviews can attach article attributions to a real author entity.
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": pageUrl,
+  url: pageUrl,
+  name: `${author.name}, ${author.title}`,
+  description: author.bioLead,
+  mainEntity: {
+    "@type": "Person",
+    "@id": personId,
+    name: author.name,
+    url: pageUrl,
+    description: author.bioLead,
+    jobTitle: author.jobTitle,
+    knowsAbout: author.knowsAbout,
+    worksFor: { "@id": `${siteConfig.url}/#organization` },
+    alumniOf: author.masters.slice(0, 3).map((m) => ({
+      "@type": "Organization",
+      name: `Tradition de ${m}`,
+    })),
+  },
+  breadcrumb: { "@id": `${pageUrl}#breadcrumbs` },
+};
+
+const breadcrumbs = [
+  { name: "Accueil", url: fullUrl("/") },
+  { name: "Nos guides", url: fullUrl("/guides") },
+  { name: author.name, url: pageUrl },
+];
+
+const jsonLd = [personJsonLd, jsonLdBreadcrumbs(breadcrumbs)];
+
+const title = `${author.name}, ${author.title} | Karmastro`;
+const description = author.tagline;
+
+// Accent → tailwind class tokens. Centralised here so the 5 cards share
+// the same palette vocabulary as the rest of the brand (parchment gold
+// + selective per-persona accent).
+const ACCENT_CLASSES: Record<string, { ring: string; chip: string; glow: string }> = {
+  purple: { ring: "border-purple-300/40", chip: "bg-purple-300/10 border-purple-300/30 text-purple-200", glow: "from-purple-500/20" },
+  amber:  { ring: "border-amber-300/40",  chip: "bg-amber-300/10 border-amber-300/30 text-amber-200",    glow: "from-amber-400/20" },
+  rose:   { ring: "border-rose-300/40",   chip: "bg-rose-300/10 border-rose-300/30 text-rose-200",      glow: "from-rose-400/20" },
+  emerald:{ ring: "border-emerald-300/40",chip: "bg-emerald-300/10 border-emerald-300/30 text-emerald-200", glow: "from-emerald-400/20" },
+};
+const ac = ACCENT_CLASSES[author.accent] ?? ACCENT_CLASSES.amber;
+---
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl={pageUrl}
+  ogType="website"
+  jsonLd={jsonLd}
+>
+  <Header />
+
+  <main class="relative z-10 max-w-4xl mx-auto px-5 md:px-8 pt-8 pb-20">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <article class="mt-6">
+      {/* Hero card , accent glow + persona glyph */}
+      <header class={`relative rounded-3xl border ${ac.ring} bg-gradient-to-br ${ac.glow} to-transparent p-6 md:p-10 overflow-hidden`}>
+        <div class="absolute -top-20 -right-20 opacity-10 text-[240px] font-serif pointer-events-none select-none" aria-hidden="true">
+          {author.icon}
+        </div>
+        <p class="text-xs uppercase tracking-[0.3em] text-amber-300/70 mb-2">{author.title}</p>
+        <h1 class="text-4xl md:text-5xl font-serif mb-3 text-gradient-violet" data-speakable>
+          {author.name}
+        </h1>
+        <p class="text-base text-white/80 leading-relaxed max-w-2xl" data-speakable>
+          {author.tagline}
+        </p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          {author.specialties.map((s) => (
+            <span class={`text-[11px] uppercase tracking-wider rounded-full border px-3 py-1 ${ac.chip}`}>{s}</span>
+          ))}
+        </div>
+      </header>
+
+      {/* Biography : speakable for AI Overviews */}
+      <section class="mt-10 prose prose-invert max-w-none">
+        <aside data-speakable class="not-prose rounded-xl border border-amber-300/20 bg-amber-300/5 p-4 mb-6 text-sm text-amber-100/90">
+          <strong class="text-amber-200">En bref.</strong> {author.bioLead}
+        </aside>
+        <h2>Parcours</h2>
+        <p>{author.bioBody}</p>
+
+        <h2>Méthode</h2>
+        <p>{author.method}</p>
+
+        <h2>Maîtres et lignée</h2>
+        <ul>
+          {author.masters.map((m) => (
+            <li>{m}</li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Tools the author relies on , internal linking pattern for SEO */}
+      {author.tools.length > 0 && (
+        <section class="mt-12">
+          <h2 class="text-xl font-serif mb-4">Outils que {author.name} utilise</h2>
+          <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+            {author.tools.map((t) => (
+              <a
+                href={t}
+                class={`block text-sm rounded-xl border ${ac.ring} bg-white/[0.02] hover:bg-white/[0.05] transition-colors px-4 py-3 text-white/80`}
+              >
+                <span class="text-amber-300/80 mr-2">{author.icon}</span>
+                <span class="font-mono text-xs">{t}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Latest articles by this persona */}
+      {frArticles.length > 0 && (
+        <section class="mt-12">
+          <h2 class="text-xl font-serif mb-4">
+            Derniers articles de {author.name}
+            {articleCount > frArticles.length && (
+              <span class="text-sm text-muted-foreground ml-2">
+                ({frArticles.length} sur {articleCount})
+              </span>
+            )}
+          </h2>
+          <ul class="space-y-3">
+            {frArticles.map((p) => (
+              <li class="rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-colors p-4">
+                <a href={`/blog/${p.id}`} class="block">
+                  <h3 class="text-base font-medium text-white/90 mb-1">{p.data.title}</h3>
+                  <p class="text-sm text-white/60 line-clamp-2">{p.data.description}</p>
+                  <p class="text-[11px] text-muted-foreground mt-2">
+                    {p.data.date.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}
+                  </p>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* Navigation to sibling guides */}
+      <section class="mt-12 pt-8 border-t border-white/10">
+        <h2 class="text-xl font-serif mb-4">Les autres guides Karmastro</h2>
+        <div class="grid sm:grid-cols-2 gap-3">
+          {ALL_AUTHORS.filter((a) => a.slug !== author.slug).map((a) => {
+            const oac = ACCENT_CLASSES[a.accent] ?? ACCENT_CLASSES.amber;
+            return (
+              <a
+                href={`/guides/${a.slug}`}
+                class={`block rounded-xl border ${oac.ring} bg-white/[0.02] hover:bg-white/[0.05] transition-colors px-4 py-3`}
+              >
+                <div class="flex items-center gap-3">
+                  <span class="text-2xl text-amber-300/80">{a.icon}</span>
+                  <div>
+                    <p class="text-sm font-medium text-white/90">{a.name}</p>
+                    <p class="text-xs text-white/60">{a.title}</p>
+                  </div>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <Footer />
+</BaseLayout>

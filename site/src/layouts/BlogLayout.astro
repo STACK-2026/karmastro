@@ -21,6 +21,9 @@ interface Props {
   lang?: string;
   lastReviewed?: Date;
   reviewedBy?: string;
+  /** Raw markdown body, used to derive wordCount + citation[] in the
+   *  Article JSON-LD. Optional to stay backwards-compatible. */
+  body?: string;
 }
 
 const {
@@ -37,6 +40,7 @@ const {
   lang = "fr",
   lastReviewed,
   reviewedBy,
+  body,
 } = Astro.props;
 
 const isDefault = lang === "fr";
@@ -84,6 +88,7 @@ const jsonLd = [
     keywords: keywords?.split(",").map((k) => k.trim()),
     reviewedBy,
     inLanguage: labels.locale,
+    body,
   }),
   jsonLdBreadcrumbs(breadcrumbs),
 ];

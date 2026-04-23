@@ -117,6 +117,46 @@ export function jsonLdHomepage() {
   };
 }
 
+import { AUTHORS, authorSlugFor } from "../data/authors";
+
+/** Extract external citations from an article body for schema.org citation[].
+ *  We walk markdown links of the form [title](https://…) and keep only
+ *  external domains (not karmastro.com nor app.karmastro.com), deduplicated,
+ *  capped at 12 to stay within a reasonable JSON-LD payload. */
+export function extractCitations(body: string | undefined): Array<{ title: string; url: string }> {
+  if (!body) return [];
+  const out: Array<{ title: string; url: string }> = [];
+  const seen = new Set<string>();
+  const linkRe = /\[([^\]]+?)\]\((https?:\/\/[^)\s]+?)\)/g;
+  let m: RegExpExecArray | null;
+  while ((m = linkRe.exec(body)) !== null) {
+    const title = m[1].trim();
+    const url = m[2].trim().replace(/[),.]+$/, "");
+    const host = url.replace(/^https?:\/\//, "").split("/")[0].toLowerCase();
+    if (host.endsWith("karmastro.com")) continue;
+    if (seen.has(url)) continue;
+    seen.add(url);
+    out.push({ title: title.slice(0, 140), url });
+    if (out.length >= 12) break;
+  }
+  return out;
+}
+
+/** Word count for the article body. Markdown is already human text so we
+ *  just split on whitespace after stripping code fences + tables + links. */
+export function countWords(body: string | undefined): number {
+  if (!body) return 0;
+  const stripped = body
+    .replace(/```[\s\S]*?```/g, " ")                 // code fences
+    .replace(/`[^`]+`/g, " ")                        // inline code
+    .replace(/\[([^\]]+)\]\(https?:[^)]+\)/g, "$1")  // markdown links -> label
+    .replace(/[#*_>|~\-=]+/g, " ")                   // md punctuation
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!stripped) return 0;
+  return stripped.split(" ").length;
+}
+
 /** JSON-LD for Article with E-E-A-T signals (author Person, reviewedBy, dateModified) */
 export function jsonLdArticle(article: {
   title: string;
@@ -129,14 +169,42 @@ export function jsonLdArticle(article: {
   keywords?: string[];
   reviewedBy?: string;
   inLanguage?: string;
+  /** Raw markdown body. When provided we derive wordCount + citation[]
+   *  to help AI Overviews qualify this as deep content. */
+  body?: string;
+  /** Allow callers to pre-compute wordCount/citations if the body is not
+   *  available at the call site (e.g. MDX shortcode pages). */
+  wordCount?: number;
+  citations?: Array<{ title: string; url: string }>;
 }) {
-  const authorPerson = article.author
-    ? {
-        "@type": "Person",
-        name: article.author,
-        url: `${siteConfig.url}/notre-histoire`,
-      }
-    : { "@id": `${siteConfig.url}/#organization` };
+  // Prefer the rich Person entity from src/data/authors when the byline
+  // matches a known persona. Unknown authors still get a bare Person with
+  // the name Google sees in the article (legacy posts without a tagged
+  // author fall through to Organization-as-author).
+  const slug = authorSlugFor(article.author);
+  const authorEntity = slug
+    ? (() => {
+        const a = AUTHORS[slug];
+        return {
+          "@type": "Person",
+          "@id": `${siteConfig.url}/guides/${a.slug}#person`,
+          name: a.name,
+          url: `${siteConfig.url}/guides/${a.slug}`,
+          jobTitle: a.jobTitle,
+          knowsAbout: a.knowsAbout,
+          worksFor: { "@id": `${siteConfig.url}/#organization` },
+        };
+      })()
+    : article.author
+      ? {
+          "@type": "Person",
+          name: article.author,
+          url: `${siteConfig.url}/guides`,
+        }
+      : { "@id": `${siteConfig.url}/#organization` };
+
+  const wordCount = article.wordCount ?? countWords(article.body);
+  const citations = article.citations ?? extractCitations(article.body);
 
   return {
     "@context": "https://schema.org",
@@ -151,11 +219,19 @@ export function jsonLdArticle(article: {
         ? article.image
         : fullUrl(article.image)
       : undefined,
-    author: authorPerson,
+    author: authorEntity,
     publisher: { "@id": `${siteConfig.url}/#organization` },
     mainEntityOfPage: { "@type": "WebPage", "@id": article.url },
     keywords: article.keywords?.join(", "),
     inLanguage: article.inLanguage || siteConfig.locale,
+    ...(wordCount > 0 && { wordCount }),
+    ...(citations.length > 0 && {
+      citation: citations.map((c) => ({
+        "@type": "CreativeWork",
+        name: c.title,
+        url: c.url,
+      })),
+    }),
     ...(article.reviewedBy && {
       reviewedBy: {
         "@type": "Person",
