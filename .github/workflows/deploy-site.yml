@@ -25,7 +25,9 @@ concurrency:
 
 jobs:
   build-and-deploy:
-    runs-on: self-hosted
+    # Runners VPS Hetzner périodiquement saturés (ENOSPC). Deploy est critique
+    # pour la visibilité, on tourne sur ubuntu-latest. Pattern aligné adapte-toi.
+    runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - name: Checkout
