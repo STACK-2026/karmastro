@@ -245,7 +245,8 @@ export function jsonLdArticle(article: {
   };
 }
 
-/** JSON-LD for FAQPage */
+/** JSON-LD for FAQPage. Includes a Speakable spec so AI Overviews and
+ *  voice assistants can read out the question/answer pairs. */
 export function jsonLdFaq(
   faq: Array<{ question: string; answer: string }>
 ) {
@@ -259,6 +260,52 @@ export function jsonLdFaq(
         "@type": "Answer",
         text: item.answer,
       },
+    })),
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["[itemprop='name']", "[itemprop='acceptedAnswer']"],
+    },
+  };
+}
+
+/** JSON-LD for HowTo (calculator + tutorial pages). Each step has a
+ *  position, name and text. Optional totalTime (ISO 8601 duration). */
+export function jsonLdHowTo(howto: {
+  name: string;
+  description: string;
+  url: string;
+  totalTime?: string;
+  estimatedCost?: { currency: string; value: string };
+  steps: Array<{ name: string; text: string; url?: string }>;
+  tool?: string[];
+  supply?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: howto.name,
+    description: howto.description,
+    url: howto.url,
+    ...(howto.totalTime && { totalTime: howto.totalTime }),
+    ...(howto.estimatedCost && {
+      estimatedCost: {
+        "@type": "MonetaryAmount",
+        currency: howto.estimatedCost.currency,
+        value: howto.estimatedCost.value,
+      },
+    }),
+    ...(howto.tool && howto.tool.length > 0 && {
+      tool: howto.tool.map((t) => ({ "@type": "HowToTool", name: t })),
+    }),
+    ...(howto.supply && howto.supply.length > 0 && {
+      supply: howto.supply.map((s) => ({ "@type": "HowToSupply", name: s })),
+    }),
+    step: howto.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+      ...(s.url && { url: s.url }),
     })),
   };
 }

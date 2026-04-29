@@ -36,7 +36,7 @@ const jsonLd = [
     "@type": "WebApplication",
     name: "Calculateur chemin de vie Karmastro",
     description,
-    url: "https://karmastro.com/outils/chemin-de-vie",
+    url: "https://karmastro.com/outils/chemin-de-vie/",
     applicationCategory: "UtilitiesApplication",
     operatingSystem: "Any",
     offers: {
@@ -44,6 +44,24 @@ const jsonLd = [
       price: "0",
       priceCurrency: "EUR",
     },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "Comment calculer son chemin de vie en numérologie pythagoricienne",
+    description: "Méthode classique pour obtenir un chemin de vie entre 1 et 9, ou un maître nombre 11, 22 ou 33, à partir de la date de naissance.",
+    url: "https://karmastro.com/outils/chemin-de-vie/",
+    totalTime: "PT1M",
+    estimatedCost: { "@type": "MonetaryAmount", currency: "EUR", value: "0" },
+    tool: [
+      { "@type": "HowToTool", name: "Date de naissance complète (jour, mois, année)" },
+    ],
+    step: [
+      { "@type": "HowToStep", position: 1, name: "Saisir la date de naissance", text: "Renseigne le jour, le mois et l'année de naissance. L'année doit être à 4 chiffres." },
+      { "@type": "HowToStep", position: 2, name: "Lancer le calcul", text: "Clique sur Calculer. Le calculateur additionne jour + mois + année et réduit la somme à un seul chiffre, en préservant les maîtres nombres 11, 22 et 33." },
+      { "@type": "HowToStep", position: 3, name: "Lire le résultat", text: "Le résultat s'affiche : un nombre entre 1 et 9 ou un maître nombre. Lis l'interprétation détaillée en dessous pour comprendre la mission de l'âme associée." },
+      { "@type": "HowToStep", position: 4, name: "Vérifier les détails de calcul", text: "Le calcul est transparent et reproductible : le détail des additions est affiché. Tu peux vérifier toi-même ou utiliser une autre source pour confirmer." },
+    ],
   },
   {
     "@context": "https://schema.org",
