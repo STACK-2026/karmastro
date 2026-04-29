@@ -41,6 +41,12 @@ export default defineConfig({
         if (/\/newsletter\/(confirm|unsubscribe)\/?$/.test(item.url)) {
           return undefined;
         }
+        // Withhold weak locales from the public sitemap until per-locale slug
+        // refactor lands. BaseLayout also sets noindex on these pages so the
+        // signal is consistent. FR + EN remain fully indexed.
+        if (/\/(ar|ru|ja|tr|pl)(\/|$)/.test(new URL(item.url).pathname)) {
+          return undefined;
+        }
         // Priority by path type
         if (item.url === siteConfig.url + "/") {
           item.priority = 1.0;

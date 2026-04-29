@@ -39,6 +39,13 @@ const currentLocale = extractLocale(Astro.url.pathname);
 const isRightToLeft = isRTL(currentLocale);
 const pathWithoutLocale = stripLocalePrefix(Astro.url.pathname);
 
+// Locales temporarily withheld from index until per-locale slug refactor lands.
+// FR + EN concentrate quality signal; the others use FR-derived slugs that
+// don't match local search intent (e.g. /ar/compatibilite/balance-balance/).
+// Hreflang alternates are kept so the relationship is preserved.
+const WITHHELD_LOCALES = new Set(["ar", "ru", "ja", "tr", "pl"]);
+const effectiveNoIndex = noIndex || WITHHELD_LOCALES.has(currentLocale);
+
 // Build hreflang URLs for all 11 locales.
 // Three path shapes need locale-aware rewriting so alternates never 404 :
 // 1. Horoscope sign pages translate the sign slug (cancer/burj-al-saratan).
@@ -101,7 +108,7 @@ const xDefaultUrl = hreflangUrls.find((h) => h.locale === DEFAULT_LOCALE)?.url
     <link rel="canonical" href={canonicalUrl} />
     <meta name="author" content={siteConfig.author} />
     <meta name="keywords" content={siteConfig.keywords.join(", ")} />
-    {noIndex && <meta name="robots" content="noindex, nofollow" />}
+    {effectiveNoIndex && <meta name="robots" content="noindex, follow" />}
 
     <!-- Hreflang tags for all 11 locales. BCP-47 tags (fr-FR, en-US...) ,
          Google expects region-qualified codes and the sitemap already uses
