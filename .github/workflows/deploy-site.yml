@@ -55,3 +55,10 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           workingDirectory: site
           command: pages deploy dist --project-name=karmastro-site --branch=main --commit-dirty=true
+
+      - name: Ping IndexNow
+        if: success()
+        env:
+          SITE_URL: https://karmastro.com
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: python3 scripts/indexnow_ping.py || true
