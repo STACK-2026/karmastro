@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.astro";
 import Features from "../../components/Features.astro";
 import StatsSection from "../../components/StatsSection.astro";
+import DiscoverySection from "../../components/DiscoverySection.astro";
 import FAQ from "../../components/FAQ.astro";
 import CTA from "../../components/CTA.astro";
 import { LOCALES, DEFAULT_LOCALE, type Locale } from "../../i18n/config";
@@ -27,6 +28,7 @@ const content = getContent(lang);
 >
   <Hero />
   <Features />
+  <DiscoverySection />
   <StatsSection />
   <FAQ />
   <CTA />

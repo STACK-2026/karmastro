@@ -26,12 +26,59 @@ const FR_ONLY_PAGES = new Set([
 ]);
 const safePath = (path: string) => FR_ONLY_PAGES.has(path) ? path : localizedPath(path);
 const isFrFallback = (path: string) => locale !== DEFAULT_LOCALE && FR_ONLY_PAGES.has(path);
+
+type FooterLink = { href: string; label: string; hreflang?: string };
+
+const RECENT_ARTICLES_FR: FooterLink[] = [
+  { href: "/blog/12-maisons-astrologiques-guide-complet-secteurs-vie/", label: "Les 12 maisons astrologiques" },
+  { href: "/blog/numerologie-karmique-decoder-dettes-spirituelles/", label: "Numérologie karmique : dettes" },
+  { href: "/blog/venus-taureau-amour-sensualite/", label: "Vénus en Taureau" },
+  { href: "/blog/compatibilite-amoureuse-signes-astrologiques-qui-sattirent/", label: "Compatibilité amoureuse" },
+  { href: "/blog/theme-natal-gratuit-interpreter-carte-ciel/", label: "Thème natal gratuit" },
+];
+
+const RECENT_ARTICLES_EN: FooterLink[] = [
+  { href: "/en/blog/how-to-calculate-life-path-number-step-by-step/", label: "Calculate your life path" },
+  { href: "/en/blog/what-is-numerology-complete-beginner-guide/", label: "Numerology beginner guide" },
+  { href: "/en/blog/12-astrological-houses-complete-guide-life-sectors/", label: "The 12 astrological houses" },
+  { href: "/en/blog/free-birth-chart-interpret-complete-natal-chart/", label: "Free birth chart" },
+  { href: "/en/blog/astrological-compatibility-which-signs-attract/", label: "Astrological compatibility" },
+];
+
+const POPULAR_PAIRS_FR: FooterLink[] = [
+  { href: "/compatibilite/vierge-lion/", label: "Vierge & Lion" },
+  { href: "/compatibilite/belier-cancer/", label: "Bélier & Cancer" },
+  { href: "/compatibilite/taureau-cancer/", label: "Taureau & Cancer" },
+  { href: "/compatibilite/lion-sagittaire/", label: "Lion & Sagittaire" },
+  { href: "/compatibilite/scorpion-poissons/", label: "Scorpion & Poissons" },
+];
+
+const POPULAR_PAIRS_EN: FooterLink[] = [
+  { href: "/en/compatibilite/vierge-lion/", label: "Virgo & Leo" },
+  { href: "/en/compatibilite/belier-cancer/", label: "Aries & Cancer" },
+  { href: "/en/compatibilite/taureau-cancer/", label: "Taurus & Cancer" },
+  { href: "/en/compatibilite/lion-sagittaire/", label: "Leo & Sagittarius" },
+  { href: "/en/compatibilite/scorpion-poissons/", label: "Scorpio & Pisces" },
+];
+
+const isFr = locale === DEFAULT_LOCALE;
+const isEn = locale === "en";
+const recentArticles: FooterLink[] = isEn ? RECENT_ARTICLES_EN
+  : (isFr ? RECENT_ARTICLES_FR : RECENT_ARTICLES_FR.map((l) => ({ ...l, hreflang: "fr" })));
+const popularPairs: FooterLink[] = isEn ? POPULAR_PAIRS_EN
+  : (isFr ? POPULAR_PAIRS_FR
+    : POPULAR_PAIRS_FR.map((l) => ({ href: `/${locale}/compatibilite/${l.href.split("/")[2]}/`, label: l.label })));
+
+const articlesTitle = isEn ? "Recent articles" : (isFr ? "Articles récents" : "Articles récents");
+const pairsTitle = isEn ? "Popular pairs" : (isFr ? "Compat populaires" : "Compat populaires");
+const seeAllArticles = isEn ? "All articles" : (isFr ? "Tous les articles" : "Tous les articles");
+const seeAllPairs = isEn ? "All pairs" : (isFr ? "Toutes les paires" : "Toutes les paires");
 ---
 
 <div style="height: 60px; background: linear-gradient(to bottom, transparent, var(--bg-card)); pointer-events: none;" class="relative z-10"></div>
 <footer style="background: var(--bg-card);" class="relative z-10">
   <div class="max-w-6xl mx-auto px-4 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
       <!-- Brand -->
       <div>
         <p class="text-white font-bold text-lg mb-2" style="font-family: Outfit, sans-serif;">{siteConfig.name}</p>
@@ -62,6 +109,28 @@ const isFrFallback = (path: string) => locale !== DEFAULT_LOCALE && FR_ONLY_PAGE
           <li><a href={safePath("/notre-histoire")} hreflang={isFrFallback("/notre-histoire") ? "fr" : undefined} class="hover:text-white transition-colors">{t("nav.about", locale)}</a></li>
           <li><a href={safePath("/precision")} hreflang={isFrFallback("/precision") ? "fr" : undefined} class="hover:text-white transition-colors">{t("nav.precision", locale)}</a></li>
           <li><a href={`mailto:${siteConfig.legal.email}`} class="hover:text-white transition-colors">{siteConfig.legal.email}</a></li>
+        </ul>
+      </div>
+
+      <!-- Recent articles -->
+      <div>
+        <p class="text-white font-semibold text-sm mb-3">{articlesTitle}</p>
+        <ul class="space-y-2 text-sm" style="color: rgba(255, 255, 255, 0.7);">
+          {recentArticles.map((a) => (
+            <li><a href={a.href} hreflang={a.hreflang} class="hover:text-white transition-colors">{a.label}</a></li>
+          ))}
+          <li class="pt-1"><a href={localizedPath("/blog")} class="text-amber-300/80 hover:text-amber-300 transition-colors">{seeAllArticles} →</a></li>
+        </ul>
+      </div>
+
+      <!-- Popular compat pairs -->
+      <div>
+        <p class="text-white font-semibold text-sm mb-3">{pairsTitle}</p>
+        <ul class="space-y-2 text-sm" style="color: rgba(255, 255, 255, 0.7);">
+          {popularPairs.map((p) => (
+            <li><a href={p.href} class="hover:text-white transition-colors">{p.label}</a></li>
+          ))}
+          <li class="pt-1"><a href={localizedPath("/compatibilite")} class="text-amber-300/80 hover:text-amber-300 transition-colors">{seeAllPairs} →</a></li>
         </ul>
       </div>
     </div>

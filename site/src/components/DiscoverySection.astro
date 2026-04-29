@@ -1,0 +1,178 @@
+---
+import { extractLocale, DEFAULT_LOCALE, type Locale } from "../i18n/config";
+
+const locale = extractLocale(Astro.url.pathname);
+
+type Item = { href: string; label: string; meta?: string };
+
+const ARTICLES_FR: Item[] = [
+  { href: "/blog/compatibilite-amoureuse-signes-astrologiques-qui-sattirent/", label: "Compatibilité amoureuse : quels signes s'attirent vraiment", meta: "Astrologie" },
+  { href: "/blog/12-maisons-astrologiques-guide-complet-secteurs-vie/", label: "Les 12 maisons astrologiques : guide complet", meta: "Astrologie" },
+  { href: "/blog/theme-natal-gratuit-interpreter-carte-ciel/", label: "Thème natal gratuit : interpréter sa carte du ciel", meta: "Thème natal" },
+  { href: "/blog/annee-personnelle-2026-numerologie-cycle-9-ans/", label: "Année personnelle 2026 : ton cycle de 9 ans", meta: "Numérologie" },
+  { href: "/blog/numerologie-karmique-decoder-dettes-spirituelles/", label: "Numérologie karmique : décoder les dettes spirituelles", meta: "Karma" },
+  { href: "/blog/venus-taureau-amour-sensualite/", label: "Vénus en Taureau : amour et sensualité", meta: "Vénus" },
+];
+
+const ARTICLES_EN: Item[] = [
+  { href: "/en/blog/how-to-calculate-life-path-number-step-by-step/", label: "How to calculate your life path number, step by step", meta: "Numerology" },
+  { href: "/en/blog/what-is-numerology-complete-beginner-guide/", label: "What is numerology: a complete beginner guide", meta: "Numerology" },
+  { href: "/en/blog/12-astrological-houses-complete-guide-life-sectors/", label: "The 12 astrological houses: complete guide", meta: "Astrology" },
+  { href: "/en/blog/free-birth-chart-interpret-complete-natal-chart/", label: "Free birth chart: interpret your complete natal chart", meta: "Birth chart" },
+  { href: "/en/blog/astrological-compatibility-which-signs-attract/", label: "Astrological compatibility: which signs attract", meta: "Compatibility" },
+  { href: "/en/blog/aries-zodiac-sign-personality-compatibility-traits/", label: "Aries zodiac sign: personality, compatibility, traits", meta: "Zodiac" },
+];
+
+const COMPAT_PAIRS_FR: Array<{ slug: string; label: string; meta: string }> = [
+  { slug: "vierge-lion", label: "Vierge & Lion", meta: "Terre + Feu" },
+  { slug: "belier-cancer", label: "Bélier & Cancer", meta: "Feu + Eau" },
+  { slug: "taureau-cancer", label: "Taureau & Cancer", meta: "Terre + Eau" },
+  { slug: "gemeaux-balance", label: "Gémeaux & Balance", meta: "Air + Air" },
+  { slug: "lion-sagittaire", label: "Lion & Sagittaire", meta: "Trine de feu" },
+  { slug: "scorpion-poissons", label: "Scorpion & Poissons", meta: "Trine d'eau" },
+];
+
+const COMPAT_PAIRS_EN: Array<{ slug: string; label: string; meta: string }> = [
+  { slug: "vierge-lion", label: "Virgo & Leo", meta: "Earth + Fire" },
+  { slug: "belier-cancer", label: "Aries & Cancer", meta: "Fire + Water" },
+  { slug: "taureau-cancer", label: "Taurus & Cancer", meta: "Earth + Water" },
+  { slug: "gemeaux-balance", label: "Gemini & Libra", meta: "Air + Air" },
+  { slug: "lion-sagittaire", label: "Leo & Sagittarius", meta: "Fire trine" },
+  { slug: "scorpion-poissons", label: "Scorpio & Pisces", meta: "Water trine" },
+];
+
+const TOOLS_FR: Item[] = [
+  { href: "/outils/theme-natal/", label: "Thème natal", meta: "Swiss Ephemeris" },
+  { href: "/outils/chemin-de-vie/", label: "Chemin de vie", meta: "Numérologie" },
+  { href: "/outils/synastrie/", label: "Synastrie", meta: "Couple astro" },
+  { href: "/outils/compatibilite/", label: "Compatibilité", meta: "Astro + nombres" },
+  { href: "/outils/transits/", label: "Transits", meta: "Cycles cosmiques" },
+  { href: "/outils/ascendant/", label: "Ascendant", meta: "Signe levant" },
+];
+
+const TOOLS_EN: Item[] = [
+  { href: "/en/tools/birth-chart/", label: "Birth chart", meta: "Swiss Ephemeris" },
+  { href: "/en/tools/life-path-number/", label: "Life path number", meta: "Numerology" },
+  { href: "/en/tools/synastry/", label: "Synastry", meta: "Couple astrology" },
+  { href: "/en/tools/compatibility/", label: "Compatibility", meta: "Astro + numbers" },
+  { href: "/en/tools/transits/", label: "Transits", meta: "Cosmic cycles" },
+  { href: "/en/tools/rising-sign/", label: "Rising sign", meta: "Ascendant" },
+];
+
+type Strings = {
+  kicker: string;
+  title: string;
+  subtitle: string;
+  colArticles: string;
+  colCompat: string;
+  colTools: string;
+  ctaArticles: string;
+  ctaCompat: string;
+  ctaTools: string;
+};
+
+const STRINGS_FR: Strings = {
+  kicker: "Explore Karmastro",
+  title: "Trois portes d'entrée pour décoder ton ciel",
+  subtitle: "Le Cosmos pour les guides pédagogiques, les compatibilités phares pour comprendre une relation, et les calculateurs pour calculer toi-même.",
+  colArticles: "Le Cosmos · articles guides",
+  colCompat: "Compatibilités phares",
+  colTools: "Calculateurs cosmiques",
+  ctaArticles: "Tous les articles",
+  ctaCompat: "Les 145 paires",
+  ctaTools: "Tous les outils",
+};
+
+const STRINGS_EN: Strings = {
+  kicker: "Explore Karmastro",
+  title: "Three doorways to decode your sky",
+  subtitle: "The Cosmos for in-depth guides, headline compatibilities to read a relationship, and free calculators when you want to crunch the numbers yourself.",
+  colArticles: "The Cosmos · guide articles",
+  colCompat: "Headline compatibilities",
+  colTools: "Cosmic calculators",
+  ctaArticles: "All articles",
+  ctaCompat: "All 145 pairs",
+  ctaTools: "All tools",
+};
+
+const isFR = locale === DEFAULT_LOCALE;
+const articles = isFR ? ARTICLES_FR : ARTICLES_EN;
+const pairs = isFR ? COMPAT_PAIRS_FR : COMPAT_PAIRS_EN;
+const tools = isFR ? TOOLS_FR : TOOLS_EN;
+const s = isFR ? STRINGS_FR : STRINGS_EN;
+
+const compatHref = (slug: string) => isFR ? `/compatibilite/${slug}/` : `/${locale}/compatibilite/${slug}/`;
+const compatIndexHref = isFR ? "/compatibilite/" : `/${locale}/compatibilite/`;
+const blogIndexHref = isFR ? "/blog/" : `/${locale}/blog/`;
+const toolsIndexHref = isFR ? "/outils/" : (locale === "en" ? "/en/tools/" : `/${locale}/outils/`);
+---
+
+<section class="relative z-10 max-w-6xl mx-auto px-4 py-16">
+  <div class="text-center mb-12">
+    <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">{s.kicker}</p>
+    <h2 class="text-3xl md:text-4xl font-serif mb-3 text-white">
+      {s.title}
+    </h2>
+    <p class="text-white/70 max-w-2xl mx-auto">
+      {s.subtitle}
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+      <h3 class="text-amber-300 text-xs uppercase tracking-widest mb-4 font-semibold">{s.colArticles}</h3>
+      <ul class="space-y-3 mb-5">
+        {articles.map((item) => (
+          <li>
+            <a href={item.href} class="block group">
+              <span class="block text-white/90 text-sm leading-snug group-hover:text-amber-300 transition-colors">{item.label}</span>
+              {item.meta && <span class="block text-white/40 text-xs mt-1">{item.meta}</span>}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a href={blogIndexHref} class="inline-flex items-center gap-1.5 text-sm text-amber-300/90 hover:text-amber-300 transition-colors">
+        {s.ctaArticles}
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+      <h3 class="text-amber-300 text-xs uppercase tracking-widest mb-4 font-semibold">{s.colCompat}</h3>
+      <ul class="space-y-3 mb-5">
+        {pairs.map((p) => (
+          <li>
+            <a href={compatHref(p.slug)} class="block group">
+              <span class="block text-white/90 text-sm leading-snug group-hover:text-amber-300 transition-colors">{p.label}</span>
+              <span class="block text-white/40 text-xs mt-1">{p.meta}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a href={compatIndexHref} class="inline-flex items-center gap-1.5 text-sm text-amber-300/90 hover:text-amber-300 transition-colors">
+        {s.ctaCompat}
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+      <h3 class="text-amber-300 text-xs uppercase tracking-widest mb-4 font-semibold">{s.colTools}</h3>
+      <ul class="space-y-3 mb-5">
+        {tools.map((item) => (
+          <li>
+            <a href={item.href} class="block group">
+              <span class="block text-white/90 text-sm leading-snug group-hover:text-amber-300 transition-colors">{item.label}</span>
+              {item.meta && <span class="block text-white/40 text-xs mt-1">{item.meta}</span>}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a href={toolsIndexHref} class="inline-flex items-center gap-1.5 text-sm text-amber-300/90 hover:text-amber-300 transition-colors">
+        {s.ctaTools}
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
