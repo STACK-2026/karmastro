@@ -88,7 +88,7 @@ const jsonLd = {
     <nav class="text-sm text-white/50 mb-6">
       <a href="/" class="hover:text-amber-300">Accueil</a>
       <span class="mx-2">/</span>
-      <a href="/horoscope" class="hover:text-amber-300">Horoscope</a>
+      <a href="/horoscope/" class="hover:text-amber-300">Horoscope</a>
       <span class="mx-2">/</span>
       <a href={`/horoscope/${sign.slug}`} class="hover:text-amber-300">{sign.name}</a>
       <span class="mx-2">/</span>
@@ -239,7 +239,7 @@ const jsonLd = {
 
     {entry.author && !isFuture && (
       <p class="text-center text-xs text-white/40 mb-10">
-        Lecture signée par <a href="/notre-histoire" class="text-amber-300 hover:underline">{entry.author}</a>
+        Lecture signée par <a href="/notre-histoire/" class="text-amber-300 hover:underline">{entry.author}</a>
       </p>
     )}
 

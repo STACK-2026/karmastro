@@ -9,7 +9,10 @@ const content = getContent(locale);
 const currentYear = new Date().getFullYear();
 
 // Build localized paths
-const localizedPath = (path: string) => locale === DEFAULT_LOCALE ? path : `/${locale}${path}`;
+const localizedPath = (path: string) => {
+  const p = path.endsWith("/") ? path : `${path}/`;
+  return locale === DEFAULT_LOCALE ? p : `/${locale}${p}`;
+};
 
 // Pages legales/about non encore localisees : pointer vers la version FR avec lang="fr"
 // pour eviter les 404. A retirer quand les versions localisees sont creees.
