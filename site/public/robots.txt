@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Sitemap: https://karmastro.com/sitemap-index.xml
+Sitemap: https://karmastro.com/ai-sitemap.xml
 
 # Crawlers classiques
 User-agent: Googlebot

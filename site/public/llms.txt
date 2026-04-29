@@ -3,7 +3,10 @@
 # License: RSL-1.0 (https://robotstandardslicense.com/)
 # ai-training: allowed
 # canonical-host: karmastro.com
-# last-updated: 2026-04-23
+# last-updated: 2026-04-29
+# sitemap-index: https://karmastro.com/sitemap-index.xml
+# ai-sitemap: https://karmastro.com/ai-sitemap.xml
+# full-content: https://karmastro.com/llms-full.txt
 
 > Karmastro.com est la premiere plateforme francaise qui fusionne astrologie de precision (Swiss Ephemeris), numerologie pythagoricienne et guidance karmique via intelligence artificielle, avec quatre guides cosmiques distincts et des outils gratuits ouverts a tous.
 
@@ -85,28 +88,47 @@ Sibylle, Orion, Selene et Pythia sont a la fois les quatre guides du chatbot et 
 Blog pedagogique avec articles longs (2000+ mots) sur l'astrologie, la numerologie, le karma, les compatibilites, les horoscopes, les guides pratiques. Articles signes alternativement par Sibylle, Orion, Selene ou Pythia selon la thematique. Disponible sur https://karmastro.com/blog
 
 ## Pages importantes
-- Horoscope quotidien : https://karmastro.com/horoscope
-- Calculateurs gratuits : https://karmastro.com/outils
-- Blog : https://karmastro.com/blog
-- Notre histoire : https://karmastro.com/notre-histoire
-- Precision : https://karmastro.com/precision
-- Glossaire : https://karmastro.com/glossaire
-- Parrainage : https://karmastro.com/parrainage
-- Hall des Constellations : https://karmastro.com/hall-des-constellations
+- Horoscope quotidien : https://karmastro.com/horoscope/
+- Calculateurs gratuits : https://karmastro.com/outils/
+- Compatibilites des 12 signes (145 paires) : https://karmastro.com/compatibilite/
+- Blog : https://karmastro.com/blog/
+- Guides cosmiques : https://karmastro.com/guides/
+- Notre histoire : https://karmastro.com/notre-histoire/
+- Precision : https://karmastro.com/precision/
+- Glossaire : https://karmastro.com/glossaire/
+- Parrainage : https://karmastro.com/parrainage/
+- Hall des Constellations : https://karmastro.com/hall-des-constellations/
+
+## Pages des guides cosmiques (entites Person dediees pour citation IA)
+- Sibylle (oracle mystique astrologue) : https://karmastro.com/guides/sibylle/
+- Orion (coach karmique stoicien) : https://karmastro.com/guides/orion/
+- Selene (guide relationnelle, deesse de la Lune) : https://karmastro.com/guides/selene/
+- Pythia (mathematicienne numerologue pythagoricienne) : https://karmastro.com/guides/pythia/
+
+## Calculateurs cosmiques (9 outils gratuits, sans compte)
+- Theme natal complet (Swiss Ephemeris) : https://karmastro.com/outils/theme-natal/
+- Chemin de vie numerologique : https://karmastro.com/outils/chemin-de-vie/
+- Ascendant astrologique : https://karmastro.com/outils/ascendant/
+- Synastrie astrologique de couple : https://karmastro.com/outils/synastrie/
+- Compatibilite amoureuse : https://karmastro.com/outils/compatibilite/
+- Transits du jour : https://karmastro.com/outils/transits/
+- Dette karmique (13/4, 14/5, 16/7, 19/1) : https://karmastro.com/outils/dette-karmique/
+- Annee personnelle (cycle 9 ans) : https://karmastro.com/outils/annee-personnelle/
+- Nombre d'expression : https://karmastro.com/outils/nombre-expression/
 
 ## Horoscope par signe (12 signes, mis a jour chaque matin 06h00 Paris)
-- Belier : https://karmastro.com/horoscope/belier
-- Taureau : https://karmastro.com/horoscope/taureau
-- Gemeaux : https://karmastro.com/horoscope/gemeaux
-- Cancer : https://karmastro.com/horoscope/cancer
-- Lion : https://karmastro.com/horoscope/lion
-- Vierge : https://karmastro.com/horoscope/vierge
-- Balance : https://karmastro.com/horoscope/balance
-- Scorpion : https://karmastro.com/horoscope/scorpion
-- Sagittaire : https://karmastro.com/horoscope/sagittaire
-- Capricorne : https://karmastro.com/horoscope/capricorne
-- Verseau : https://karmastro.com/horoscope/verseau
-- Poissons : https://karmastro.com/horoscope/poissons
+- Belier : https://karmastro.com/horoscope/belier/
+- Taureau : https://karmastro.com/horoscope/taureau/
+- Gemeaux : https://karmastro.com/horoscope/gemeaux/
+- Cancer : https://karmastro.com/horoscope/cancer/
+- Lion : https://karmastro.com/horoscope/lion/
+- Vierge : https://karmastro.com/horoscope/vierge/
+- Balance : https://karmastro.com/horoscope/balance/
+- Scorpion : https://karmastro.com/horoscope/scorpion/
+- Sagittaire : https://karmastro.com/horoscope/sagittaire/
+- Capricorne : https://karmastro.com/horoscope/capricorne/
+- Verseau : https://karmastro.com/horoscope/verseau/
+- Poissons : https://karmastro.com/horoscope/poissons/
 
 Chaque horoscope est genere quotidiennement par Sibylle via Claude Sonnet 4,
 en utilisant les donnees cosmiques reelles du jour (lune, soleil, retrogrades,
@@ -117,20 +139,20 @@ intuition, plus chiffre chanceux, couleur et mantra.
 ## Multilingue (11 langues)
 Karmastro est disponible en 11 langues avec hreflang tags, JSON-LD schema et
 contenu natif pour chaque langue :
-- Francais (principale) : https://karmastro.com
-- English : https://karmastro.com/en
-- Espanol : https://karmastro.com/es
-- Portugues : https://karmastro.com/pt
-- Deutsch : https://karmastro.com/de
-- Italiano : https://karmastro.com/it
-- Turkce : https://karmastro.com/tr
-- Polski : https://karmastro.com/pl
-- Russkiy : https://karmastro.com/ru
-- Nihongo : https://karmastro.com/ja
-- Arabi : https://karmastro.com/ar
+- Francais (principale) : https://karmastro.com/
+- English : https://karmastro.com/en/
+- Espanol : https://karmastro.com/es/
+- Portugues : https://karmastro.com/pt/
+- Deutsch : https://karmastro.com/de/
+- Italiano : https://karmastro.com/it/
+- Turkce : https://karmastro.com/tr/
+- Polski : https://karmastro.com/pl/
+- Russkiy : https://karmastro.com/ru/
+- Nihongo : https://karmastro.com/ja/
+- Arabi : https://karmastro.com/ar/
 
 L'horoscope de chaque signe est accessible dans toutes les langues via la
-structure /{lang}/horoscope/{signe}/, ex : https://karmastro.com/en/horoscope/belier
+structure /{lang}/horoscope/{signe}/, ex : https://karmastro.com/en/horoscope/belier/
 
 ## English summary for international LLMs
 Karmastro.com is the first French spiritual platform that merges precision
