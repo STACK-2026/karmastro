@@ -95,15 +95,20 @@ def main() -> int:
     resend_key = env("RESEND_API_KEY")
 
     since = (datetime.now(timezone.utc) - timedelta(hours=24)).isoformat()
-    feedbacks = sb_get(
-        f"oracle_feedback?rating=eq.1&created_at=gte.{since}&select=id,guide,rating,text,user_message,assistant_message,created_at,conversation_id:oracle_messages!inner(conversation_id)&order=created_at.desc",
-        service_key,
-        supabase_url,
-    )
-    # Fallback : the embedded join may not exist; re-query without it.
+    base_select = "id,guide,rating,text,user_message,assistant_message,created_at"
+    try:
+        feedbacks = sb_get(
+            f"oracle_feedback?rating=eq.1&created_at=gte.{since}&select={base_select},conversation_id:oracle_messages!inner(conversation_id)&order=created_at.desc",
+            service_key,
+            supabase_url,
+        )
+    except urllib.error.HTTPError as exc:
+        # PostgREST returns 400 if the embedded join target doesn't exist; fall back without it.
+        print(f"[oracle-alert] embed join unavailable ({exc.code}), querying without join", file=sys.stderr)
+        feedbacks = []
     if not feedbacks:
         feedbacks = sb_get(
-            f"oracle_feedback?rating=eq.1&created_at=gte.{since}&select=id,guide,rating,text,user_message,assistant_message,created_at&order=created_at.desc",
+            f"oracle_feedback?rating=eq.1&created_at=gte.{since}&select={base_select}&order=created_at.desc",
             service_key,
             supabase_url,
         )
