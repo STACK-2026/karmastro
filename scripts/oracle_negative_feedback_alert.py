@@ -21,6 +21,7 @@ import json
 import os
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
 
@@ -94,7 +95,9 @@ def main() -> int:
     service_key = env("SUPABASE_KARMASTRO_SERVICE_KEY")
     resend_key = env("RESEND_API_KEY")
 
-    since = (datetime.now(timezone.utc) - timedelta(hours=24)).isoformat()
+    # URL-encode the timestamp: isoformat() returns "...+00:00" and the unescaped
+    # "+" is decoded by PostgREST as a space, breaking the gte filter.
+    since = urllib.parse.quote((datetime.now(timezone.utc) - timedelta(hours=24)).isoformat())
     base_select = "id,guide,rating,text,user_message,assistant_message,created_at"
     try:
         feedbacks = sb_get(
