@@ -26,7 +26,9 @@ jobs:
           scan() {
             local path="$1"; local max="$2"
             [ -d "$path" ] || return 0
-            OUT=$(grep -rn "[,-]" "$path" 2>/dev/null | head -"$max")
+            # Use PCRE hex codepoints so the regex cannot be ASCII-flattened
+            # by an editor or commit hook (em-dash U+2014, en-dash U+2013).
+            OUT=$(grep -rnP "[\x{2014}\x{2013}]" "$path" 2>/dev/null | head -"$max")
             if [ -n "$OUT" ]; then
               echo "$OUT"
               FOUND=1
@@ -39,7 +41,7 @@ jobs:
           scan app/src/pages 20
           scan app/src/components 20
           if [ "$FOUND" = "1" ]; then
-            echo "::error::Em-dashes (,) or en-dashes (-) detected. Replace with ',' ':' '.' or '-'. This is a brand-wide rule."
+            echo "::error::Em-dashes (U+2014) or en-dashes (U+2013) detected. Replace with ',' ':' '.' or '-'. This is a brand-wide rule."
             exit 1
           fi
           echo "OK: no em/en dashes anywhere."
@@ -163,7 +165,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: npm
           cache-dependency-path: site/package-lock.json
       - name: Install
