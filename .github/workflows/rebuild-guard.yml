@@ -46,5 +46,13 @@ jobs:
           else
             DATE=$(date -u +%Y-%m-%d)
             git commit -m "chore: rebuild guard ${DATE}"
-            git push
+            # Resist concurrent pushes: rebase on remote, retry up to 3 times.
+            for i in 1 2 3; do
+              git pull --rebase --autostash origin main || true
+              if git push; then exit 0; fi
+              echo "push attempt $i failed, retrying..."
+              sleep 3
+            done
+            echo "push failed after 3 attempts" >&2
+            exit 1
           fi
