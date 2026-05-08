@@ -32,7 +32,19 @@ const {
 } = Astro.props;
 
 const imageUrl = ogImage?.startsWith("http") ? ogImage : `${siteConfig.url}${ogImage}`;
-const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+
+// Default Organization JSON-LD injected on EVERY page so listing/hub pages
+// (which don't pass page-specific jsonLd) still expose the brand entity.
+const defaultOrgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  description: siteConfig.description,
+};
+
+const pageJsonLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+const jsonLdArray = [defaultOrgJsonLd, ...pageJsonLd];
 
 // i18n
 const currentLocale = extractLocale(Astro.url.pathname);
