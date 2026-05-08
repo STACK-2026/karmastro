@@ -60,8 +60,6 @@ La compatibilité amoureuse ne se résume pas aux horoscopes génériques : elle
 - [Comment utiliser ces informations](#comment-utiliser-ces-informations-pour-grandir-ensemble)
 - [Questions fréquentes](#questions-fréquentes-sur-la-compatibilité-astrale-et-numérologique)
 
-![Tableau comparatif des compatibilités numérologiques entre chemins de vie 1 à 9](IMAGE_1)
-
 ## Le calculateur de compatibilité ultime : Astrologie + Numérologie
 
 La compatibilité entre deux personnes se mesure en croisant plusieurs systèmes mathématiques précis : la numérologie pythagoricienne (basée sur Pythagore, 6ème siècle av. J.C.) et l'astrologie hellénistique (développée entre le 3ème siècle av. J.C. et le 7ème siècle ap. J.C.). Karmastro utilise ces deux traditions pour créer un score de compatibilité fiable et reproductible.
@@ -194,8 +192,6 @@ Pour calculer automatiquement tes nombres, utilise notre [outil numérologique](
 
 La synastrie étudie les interactions entre deux thèmes astraux en analysant les aspects (angles) entre les planètes de chaque partenaire. Cette technique, développée par les astrologues hellénistiques, permet d'identifier précisément les zones d'harmonie et de tension dans un couple.
 
-![Graphique radar montrant la compatibilité entre deux thèmes astraux](IMAGE_2)
-
 ### Les aspects planétaires majeurs
 
 | Planète 1 | Planète 2 | Aspect (angle) | Effet sur le couple | Impact score |
@@ -287,8 +283,6 @@ Notre [article sur la guidance spirituelle](/blog/guidance-spirituelle-choisir-e
    - **9** : Compassion universelle
 
 Pour une guidance personnalisée, consulte l'[Oracle Karmastro](https://app.karmastro.com/oracle).
-
-![Infographie montrant les étapes d'amélioration de la compatibilité de couple](IMAGE_3)
 
 ## Questions fréquentes sur la compatibilité astrale et numérologique
 

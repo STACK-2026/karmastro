@@ -69,8 +69,6 @@ Vénus en Taureau représente l'union sacrée entre la déesse de l'amour (Vénu
 
 Selon une étude astronomique du [Swiss Ephemeris](https://www.astro.com/swisseph/), Vénus séjourne en Taureau environ 23 jours par an, créant une fenêtre privilégiée pour manifester cette énergie stable et sensuelle. En 2026, ce transit aura lieu du 10 avril au 3 juin, offrant une période particulièrement faste pour les natifs de cette position.
 
-![Symbole astrologique de Vénus en Taureau avec glyphes des planètes et signes](IMAGE_1)
-
 Pour explorer ta Vénus en Taureau plus en profondeur, découvre comment elle interagit avec tes autres planètes dans notre [guide du thème natal](/blog/qu-numerologie-guide-complet-debuter/).
 
 ## Signification de Vénus en Domicile : Pourquoi cette position est-elle si puissante ? {#venus-domicile-puissante}
@@ -153,8 +151,6 @@ La [numérologie chaldéenne](/blog/numerologie-pythagoricienne-chaldeenne-diffe
 En numérologie pythagoricienne, le Taureau est associé au **nombre 6**. Ce nombre renforce l'harmonie dans les relations, l'amour des belles choses, la responsabilité familiale et la créativité artistique.
 
 Pour approfondir ta compréhension numérologique, consulte notre [guide complet du chemin de vie](/blog/comment-calculer-chemin-de-vie-numerologie/).
-
-![Tableau de correspondance entre Vénus en Taureau et les nombres chaldéens](IMAGE_2)
 
 ## Compatibilité Amoureuse : Au-delà du Signe Solaire, la Science de la Synastrie {#compatibilite-amoureuse-synastrie}
 
@@ -268,8 +264,6 @@ Pour connaître ta maison Taureau et recevoir des prédictions personnalisées, 
 | **George Clooney**  | 5° Taureau           | Voyage romantique ou projet humanitaire lié au luxe                                |
 
 Découvre comment les [retours de Saturne](/blog/eclipses-astrologie-portails-transformation/) influencent ton développement personnel avec Vénus en Taureau.
-
-![Infographie récapitulative Vénus en Taureau avec symboles astrologiques et numérologiques](IMAGE_3)
 
 ## Questions fréquentes
 

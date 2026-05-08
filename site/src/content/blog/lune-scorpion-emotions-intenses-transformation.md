@@ -53,8 +53,6 @@ La <strong>Lune en Scorpion</strong> en astrologie révèle une personnalité é
 
 La **Lune en Scorpion** en astrologie indique une nature émotionnelle d'une profondeur exceptionnelle, caractérisée par des cycles de mort et de renaissance intérieure. Ce placement lunaire, présent chez environ 8% de la population mondiale, transforme radicalement la manière dont tu ressens, exprimes et gères tes émotions.
 
-![Carte du ciel montrant la position de la Lune en Scorpion avec les degrés précis et les aspects planétaires](IMAGE_1)
-
 ## Qu'est-ce que la Lune en Scorpion ? Définition et dignités astrologiques
 
 La **Lune en Scorpion** se forme quand notre satellite naturel transite dans le signe du Scorpion au moment de ta naissance. En astrologie traditionnelle héritée de [Ptolémée](https://fr.wikipedia.org/wiki/Claude_Ptol%C3%A9m%C3%A9e), ce positionnement constitue une **"chute"** de la Lune - une dignité planétaire défavorable où l'astre peine à exprimer harmonieusement son énergie.
@@ -372,8 +370,6 @@ Technique spécifique aux Lunes Scorpion, basée sur l'énergie de Pluton :
 
 Ce programme s'adapte à tes [cycles personnels numérologiques](https://app.karmastro.com/cycles-personnels) pour un maximum d'efficacité.
 
-![Carte du ciel interactif montrant les transits actuels de la Lune en Scorpion avec les degrés précis](IMAGE_2)
-
 ## Questions fréquentes
 
 ### La Lune en Scorpion est-elle vraiment un placement difficile ?
@@ -507,8 +503,6 @@ Ta **Lune en Scorpion** n'est pas une malédiction astrologique, mais une **invi
 Rappelle-toi : en astrologie karmique, la "chute" de la Lune n'indique pas un échec, mais une **descente volontaire dans la matière** pour mieux servir l'évolution collective. Comme l'enseigne la tradition hermétique : "Ce qui est en bas est comme ce qui est en haut" - tes profondeurs émotionnelles sont ton accès aux hauteurs spirituelles.
 
 **Ta Lune en Scorpion fait de toi un alchimiste des temps modernes : celui qui transforme le plomb de la souffrance en or de la sagesse.**
-
-![Infographie comparant les signes lunaires en Eau (Cancer, Scorpion, Poissons) avec leurs caractéristiques émotionnelles](IMAGE_3)
 
 ---
 

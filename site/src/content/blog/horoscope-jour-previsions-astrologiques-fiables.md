@@ -37,8 +37,6 @@ L'astrologie moderne distingue plusieurs types de **prévisions astrologiques** 
 
 Selon une étude IFOP de 2024, 62% des Français consultent leur horoscope au moins une fois par semaine, mais seuls 15% comprennent la différence entre un horoscope généraliste et personnalisé.
 
-![Calculs astronomiques précis pour horoscope quotidien fiable avec éphémérides](IMAGE_1)
-
 ### Les éléments d'un horoscope précis
 
 Un horoscope fiable intègre obligatoirement :
@@ -103,8 +101,6 @@ Toutes les planètes n'ont pas le même impact dans votre horoscope quotidien. L
 5. **Soleil** : Vitalité, ego, créativité (365 jours)
 
 Les planètes lentes (Jupiter, Saturne, Uranus, Neptune, Pluton) influencent plutôt les tendances hebdomadaires ou mensuelles.
-
-![Interprétation horoscope quotidien avec aspects planétaires majeurs](IMAGE_2)
 
 ## Transits planétaires et prévisions quotidiennes
 
@@ -184,8 +180,6 @@ Un horoscope personnalisé comme celui proposé par [Karmastro](https://app.karm
 - Révolution solaire annuelle
 
 Cette approche holistique multiplie par 4 la précision des prévisions selon les retours utilisateurs de la plateforme.
-
-![Horoscope personnalisé avec thème natal complet et transits précis](IMAGE_3)
 
 ## Les limites de l'horoscope quotidien
 

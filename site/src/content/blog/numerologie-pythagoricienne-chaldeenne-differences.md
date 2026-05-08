@@ -35,8 +35,6 @@ Pythagore considérait que "tout est nombre" et que chaque chiffre possède une 
 
 La méthode pythagoricienne privilégie la simplicité et l'accessibilité, ce qui explique sa popularité dans le monde occidental.
 
-![Tableau comparatif numérologie pythagoricienne calculs lettres nombres](IMAGE_1)
-
 ## Comment fonctionne la numérologie chaldéenne ? {#chaldeenne}
 
 La **numérologie chaldéenne** est plus ancienne que la pythagoricienne, originaire de Babylone (actuel Irak) vers 3000 av. J.-C. Ce système utilise uniquement les **chiffres de 1 à 8**, considérant le 9 comme sacré et réservé aux divinités.
@@ -126,8 +124,6 @@ La différence majeure entre les deux systèmes réside dans l'**attribution des
 
 Cette différence illustre pourquoi il est crucial de **choisir une méthode cohérente** et de s'y tenir pour tous ses calculs.
 
-![Exemples calculs numérologie prénom Marie méthodes différentes](IMAGE_2)
-
 ## Laquelle choisir selon votre profil ? {#choisir}
 
 Le **choix entre numérologie pythagoricienne et chaldéenne** dépend de plusieurs facteurs personnels et pratiques. Voici les critères de sélection recommandés par les experts :
@@ -187,8 +183,6 @@ Les **applications concrètes** de chaque système numérologique varient selon 
 ### Comparaison des résultats
 
 Une analyse menée par Karmastro sur **10 000 profils** montre que les deux méthodes concordent dans **34% des cas** pour le nombre de chemin de vie, mais divergent significativement pour les nombres secondaires.
-
-![Applications pratiques numérologie pythagoricienne chaldéenne domaines expertise](IMAGE_3)
 
 ## Questions fréquentes {#faq}
 

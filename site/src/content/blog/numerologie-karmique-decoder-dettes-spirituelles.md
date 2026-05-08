@@ -32,8 +32,6 @@ Karmastro, première plateforme française fusionnant astrologie et numérologie
 
 La distinction fondamentale avec la numérologie classique réside dans l'approche : là où un [chemin de vie 1](/blog/chemin-vie-leadership-independance/) indique une mission de leadership, une dette karmique 19 révèle un apprentissage de l'indépendance saine après des vies marquées par l'isolement excessif.
 
-![Tableau comparatif chemin de vie vs dettes karmiques avec exemples de calculs](IMAGE_1)
-
 ## Les origines historiques : de Pythagore à la numérologie karmique moderne
 
 La **numérologie karmique** puise ses racines dans trois traditions millénaires qui ont façonné notre compréhension des nombres sacrés et de leur influence sur le destin humain.
@@ -241,8 +239,6 @@ Cette dette découle de vies d'isolement excessif : ermites, moines coupés du m
 3. **Pratique de réception** : Se faire offrir un massage, un repas, un cadeau par mois
 
 Les études de suivi Karmastro montrent qu'après 6 mois de travail structuré, 84% des personnes avec dettes karmiques rapportent une amélioration significative de leur qualité de vie et de leurs relations.
-
-![Infographie dettes karmiques avec pourcentages et correspondances astrologiques](IMAGE_2)
 
 ## Chemin de vie karmique : ta mission d'âme révélée par ton nombre
 

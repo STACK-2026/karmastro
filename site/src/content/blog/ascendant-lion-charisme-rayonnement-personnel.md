@@ -28,8 +28,6 @@ L'<strong>ascendant Lion</strong> révèle un charisme naturel et une présence 
 
 ---
 
-![Calcul ascendant Lion avec éphémérides précises pour déterminer son rayonnement astrologique](IMAGE_1)
-
 ## Comment calculer ton ascendant Lion ? La méthode Karmastro
 
 L'**ascendant Lion** est le signe zodiacal qui se lève à l'horizon Est au moment exact de ta naissance, déterminant ta personnalité extérieure et ton charisme naturel. Pour calculer précisément ton ascendant Lion, trois données sont indispensables : ta date de naissance complète, ton heure de naissance (à 4 minutes près pour une précision optimale), et ton lieu de naissance avec coordonnées géographiques.
@@ -135,8 +133,6 @@ Sur un échantillon de 2 847 thèmes d'ascendant Lion analysés, voici les trait
 *Équilibrage numérologique* : Si ton [chemin de vie](/blog/comment-calculer-chemin-de-vie-numerologie/) est 7 (introspection), il tempère naturellement ce besoin extérieur.
 
 **Dramatisation** : Tendance à amplifier les situations pour maintenir l'attention, créant parfois des conflits artificiels.
-
-![Influence du Soleil maître ascendant Lion sur personnalité et rayonnement naturel](IMAGE_2)
 
 ### **L'ascendant Lion selon les autres planètes en aspect**
 
@@ -275,8 +271,6 @@ Ton **nombre d'expression** (valeur numérologique de ton nom complet) révèle 
 - **Expression 3** : Communicateur né, ton charisme passe par la parole et l'art
 - **Expression 5** : Liberté avant tout, tu refuses les conventions sociales
 - **Expression 8** : Ambition matérielle, tu vises le succès financier et social
-
-![Numérologie chemin de vie combinée ascendant Lion pour personnalité complète astrologique](IMAGE_3)
 
 ### **Pratique : harmoniser numérologie et ascendant Lion**
 

@@ -57,8 +57,6 @@ Prenons un exemple concret : une personne née le 16/07/1985 calculera ainsi :
 
 Cette personne a donc un chemin de vie 1, pas 7. Pour obtenir un chemin de vie 7, il faut que la somme finale égale exactement 7.
 
-![Calculateur numérologique avec formules pythagoriciennes et symboles du chiffre 7](IMAGE_1)
-
 ### Les Dates qui Donnent un Chemin de Vie 7
 
 Selon les calculs [numérologique de la tradition chaldéenne](https://fr.wikipedia.org/wiki/Num%C3%A9rologie), voici les combinaisons les plus fréquentes :
@@ -109,8 +107,6 @@ Selon l'Oracle IA de [Karmastro](https://app.karmastro.com/oracle), qui analyse 
 ## Vos Super-pouvoirs de Chemin de Vie 7 {#super-pouvoirs-7}
 
 Le chemin de vie 7 possède des capacités exceptionnelles qui en font l'un des profils les plus doués intellectuellement et spirituellement du système pythagoricien. Ces talents naturels se manifestent dès l'enfance et s'affinent avec l'âge.
-
-![Cerveau humain avec connexions lumineuses représentant l'analyse et l'intuition du chemin de vie 7](IMAGE_2)
 
 ### Analyse Pénétrante et Esprit Critique
 
@@ -244,8 +240,6 @@ Vous acceptez les imperfections humaines et construisez une relation basée sur 
 
 **40+ ans : L'amour transcendant**  
 Votre amour devient un chemin spirituel partagé, une quête commune de vérité et d'évolution.
-
-![Couple méditant ensemble dans un jardin zen symbolisant l'union spirituelle du chemin de vie 7](IMAGE_3)
 
 ### Conseils Pratiques pour Réussir en Amour
 

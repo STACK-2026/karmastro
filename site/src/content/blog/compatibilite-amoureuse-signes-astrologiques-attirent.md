@@ -36,8 +36,6 @@ Les astrologues utilisent quatre critères principaux pour évaluer la compatibi
 
 Selon une étude de l'Institut français d'opinion publique (2024), 73% des Français consultent leur compatibilité amoureuse avant une relation sérieuse.
 
-![Roue astrologique montrant les 12 signes et leurs éléments pour la compatibilité amoureuse](IMAGE_1)
-
 **Karmastro** calcule automatiquement votre compatibilité en croisant vos données de naissance précises avec les [éphémérides Swiss Ephemeris](https://www.astro.com/swisseph/) pour une analyse fiable au degré près.
 
 ## Les éléments astrologiques et leurs affinités
@@ -116,8 +114,6 @@ La méthode Karmastro attribue des points selon les aspects :
 - **Carré (90°)** : -1 point (tension créatrice)
 - **Opposition (180°)** : 0 point (attraction-répulsion)
 
-![Graphique de synastrie montrant les aspects entre deux thèmes nataux](IMAGE_2)
-
 **L'Oracle IA de Karmastro** intègre également la [numérologie karmique](https://karmastro.com/glossaire) pour affiner l'analyse : chemins de vie complémentaires, nombres d'expression compatibles, cycles personnels synchronisés.
 
 ## Les signes qui s'opposent mais s'attirent
@@ -165,8 +161,6 @@ Au-delà des signes solaires, **Vénus** (amour, séduction) et **Mars** (désir
 - **Vénus carré Mars** : tension érotique, passion orageuse (90°)
 
 L'analyse précise nécessite les degrés exacts. [Notre précision Swiss Ephemeris](https://karmastro.com/precision) garantit des calculs au 1/60ème de degré pour identifier ces aspects subtils mais déterminants.
-
-![Carte du ciel montrant les positions de Vénus et Mars dans différents signes](IMAGE_3)
 
 ## Compatibilité par maisons astrologiques
 

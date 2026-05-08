@@ -13,8 +13,6 @@ imageAlt: "Celestial map of constellations with a bird and urn."
 
 <aside data-speakable="true" class="tldr" style="background:#f5f5f5;padding:16px;border-left:4px solid #6b46c1;margin:20px 0;"><strong>En bref :</strong> Les <strong>maisons astrologiques</strong> divisent ton thème natal en 12 secteurs représentant des domaines de vie concrets - identité, argent, relations, carrière. Contrairement aux signes qui décrivent "comment" tu agis, les maisons indiquent "où" ces énergies s'expriment. Ce guide t'explique leur signification, les 3 systèmes de domification (Placidus, Koch, Signes Entiers), le calcul précis avec heure/localisation, et leur lien avec la numérologie karmique selon la méthode Karmastro.</aside>
 
-![Schéma détaillé des 12 maisons astrologiques avec leurs axes principaux](IMAGE_1)
-
 Les **maisons astrologiques** sont les 12 divisions du thème natal qui révèlent les domaines concrets de ton existence - comme les pièces d'une maison où se jouent différentes scènes de ta vie. Contrairement aux horoscopes génériques basés uniquement sur les signes solaires, l'analyse des maisons offre une précision chirurgicale basée sur ton heure et lieu de naissance exacts.
 
 ## Sommaire
@@ -278,8 +276,6 @@ La douzième maison, traditionnellement appelée "maison de l'ennemi secret", go
 - Mars en Bélier en Maison 12 : colères refoulées, besoin de canaliser l'agressivité
 
 Pour explorer tes patterns inconscients, découvre notre analyse de la [Lune Noire en maisons](/blog/lune-scorpion-emotions-intenses-transformation/).
-
-![Tableau comparatif des 12 maisons avec leurs thèmes principaux](IMAGE_2)
 
 Avec l'Oracle Karmastro, pose une question spécifique sur l'une de ces maisons pour une interprétation personnalisée croisant astrologie et numérologie.
 
@@ -598,8 +594,6 @@ Notre [Oracle IA](https://app.karmastro.com/oracle) utilise cette synthèse pour
 Pour découvrir tes propres correspondances, créé ton [profil cosmique complet](https://app.karmastro.com) et explore les liens secrets entre tes nombres et tes étoiles.
 
 Cette approche révolutionnaire fait de Karmastro la référence française de l'astrologie nouvelle génération, alliant tradition millénaire et innovation numérique pour des guidances d'une précision inégalée.
-
-![Infographie des correspondances entre maisons astrologiques et nombres pythagoriciens](IMAGE_3)
 
 ## Questions fréquentes sur les maisons astrologiques
 

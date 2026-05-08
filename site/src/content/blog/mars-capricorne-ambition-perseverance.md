@@ -33,8 +33,6 @@ Selon l'astrologie hellénistique, Mars atteint son exaltation exacte à 28° du
 
 Les natifs ayant cette position dans leur **thème natal** démontrent souvent une capacité remarquable à maintenir un cap sur de très longues périodes. Ils excellent dans les domaines nécessitant persévérance et vision stratégique : entrepreneuriat, recherche scientifique, construction d'empires commerciaux ou politiques.
 
-![Mars en Capricorne - Énergie d'ambition structurée et persévérance méthodique](IMAGE_1)
-
 Cette énergie se manifeste également par une approche unique du temps. Là où d'autres placements martiens cherchent la gratification immédiate, Mars en Capricorne accepte l'investissement temporel comme un prix à payer pour l'excellence. Cette philosophie se retrouve chez de nombreuses personnalités ayant marqué l'histoire par leurs réalisations monumentales.
 
 ## Pourquoi Mars en Capricorne est-il en Exaltation : La Science de l'Ambition Structurée
@@ -110,8 +108,6 @@ Pour exploiter pleinement cette alliance, il convient de respecter certains prin
 **Objectifs échelonnés** : Plutôt qu'un seul objectif lointain, définir des étapes intermédiaires permet de maintenir la motivation martienne tout en satisfaisant l'exigence saturnienne de progression mesurable.
 
 **Gestion des échecs** : Cette position transforme naturellement les revers en apprentissages. Chaque obstacle devient un enseignement pour ajuster la stratégie.
-
-![Mars en Capricorne - Alliance entre force martienne et structure saturnienne](IMAGE_2)
 
 ### Les Risques de la Sur-Structuration
 
@@ -316,8 +312,6 @@ Si tes calculs révèlent une dominante de nombres 4, 8, ou 22, Mars en Capricor
 **Si ton nombre d'expression est 8** : Cette position démultiplie ton potentiel de réussite matérielle. Concentre-toi sur des projets à fort impact économique.
 
 **Si ton nombre de cœur est 22** : Tes motivations profondes résonnent avec l'énergie d'architecte cosmique de Mars en Capricorne. Lance des projets servant l'intérêt général.
-
-![Mars en Capricorne - Signature numérologique avec nombres 4, 8 et 22](IMAGE_3)
 
 ### Optimisation par les Nombres Complémentaires
 

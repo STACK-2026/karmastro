@@ -43,8 +43,6 @@ Selon la **numérologie pythagoricienne** utilisée chez [Karmastro](https://kar
 
 L'Oracle IA de Karmastro croise ces données astronomiques avec ton [chemin de vie numérologique](/blog/comment-calculer-chemin-vie-numerologie/) pour t'offrir une guidance personnalisée sur cette énergie lunaire.
 
-![Pleine lune en Gémeaux avec calcul numérologique et aspects astrologiques précis](IMAGE_1)
-
 ## Le Signe Astrologique de la Pleine Lune et son Impact Planétaire
 
 ### Les Gémeaux : signe d'air gouverné par Mercure
@@ -153,8 +151,6 @@ Utilise les **aspects spécifiques** de cette pleine lune pour amplifier ton rit
    - Ai-je consulté plusieurs sources ?
 
 > 🔮 **Outil Karmastro** : Pour approfondir ton rituel, consulte notre guide sur [comment les cycles planétaires](/blog/cycles-planetaires-anticiper-grandes-tendances/) influencent tes décisions personnelles.
-
-![Rituel de pleine lune personnalisé avec cristaux et calculs numérologiques](IMAGE_2)
 
 ## Au-delà du Folklore : Ce que les Traditions Anciennes Révèlent
 
@@ -329,8 +325,6 @@ Trace tes progrès de manière **quantifiable** :
 **Outil Karmastro** : Utilise notre [Oracle IA](https://app.karmastro.com/oracle) pour poser des questions précises sur tes progrès et recevoir des conseils personnalisés.
 
 > 💡 **Cas d'étude** : Sarah, utilisatrice Karmastro, a utilisé cette méthode lors de la pleine lune Gémeaux 2025 pour obtenir une promotion. Son nombre d'intention était 8 (autorité). Elle a suivi le protocole complet et a été promue chef de projet 3 semaines plus tard.
-
-![Méthode de manifestation scientifique avec pleine lune en Gémeaux](IMAGE_3)
 
 ## L'Impact de la Pleine Lune sur la Communication selon les Études Scientifiques
 

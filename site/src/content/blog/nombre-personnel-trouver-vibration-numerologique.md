@@ -100,8 +100,6 @@ Si à l'étape 4 tu obtiens 11, 22 ou 33, tu t'arrêtes là - ce sont des **maî
 
 Sur [l'application Karmastro](https://app.karmastro.com), notre calculateur révèle chaque étape du calcul pour que tu comprennes exactement comment ton nombre est déterminé. Cette transparence s'inscrit dans notre approche rationnelle de la spiritualité, détaillée sur notre page [Notre précision (Swiss Ephemeris)](https://karmastro.com/precision).
 
-![Calculateur de nombre personnel Karmastro affichant les étapes intermédiaires du calcul pour le nom "Sophie Laurent"](IMAGE_1)
-
 **Fonctionnalités uniques** :
 - Prise en compte des accents français (é, è, ç, à, etc.)
 - Option pour inclure ou exclure le deuxième prénom
@@ -458,8 +456,6 @@ Ton nombre personnel évolue différemment selon tes âges de vie :
 
 **Conseil** : Adapte tes objectifs à ces phases naturelles pour un épanouissement optimal.
 
-![Tableau récapitulatif des nombres personnels de 1 à 9 avec leurs mots-clés et conseils Karmastro](IMAGE_2)
-
 ## Questions fréquentes sur le nombre personnel
 
 ### Le nombre personnel change-t-il si je modifie mon nom légalement ?
@@ -583,8 +579,6 @@ Karmastro propose une vision contemporaine de la numérologie qui respecte les t
 **Formation continue** : Notre équipe se forme régulièrement aux dernières recherches en psychologie positive et neurosciences pour enrichir nos interprétations.
 
 Cette approche moderne fait de Karmastro un pont entre sagesse ancestrale et technologies contemporaines, comme l'explique notre [manifeste](https://karmastro.com/manifeste).
-
-![Exemple de rapport Karmastro combinant nombre personnel et thème astral pour une analyse complète](IMAGE_3)
 
 ## Conclusion : révèle ta signature vibratoire unique
 

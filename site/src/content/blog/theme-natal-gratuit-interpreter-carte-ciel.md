@@ -28,8 +28,6 @@ imageAlt: "silver paper clip on persons hand"
 
 Le thème natal est une carte du ciel qui capture la position exacte des planètes au moment précis de votre naissance. Cette photographie cosmique révèle, selon l'astrologie, votre personnalité profonde, vos talents naturels et votre potentiel de développement.
 
-![Exemple de carte du ciel avec planètes et maisons astrologiques](IMAGE_1)
-
 Contrairement aux horoscopes génériques basés uniquement sur votre signe solaire, le **thème natal** nécessite trois informations précises : votre date, heure et lieu de naissance. Ces données permettent de calculer les positions planétaires avec une précision au degré près.
 
 L'[astrologie](https://fr.wikipedia.org/wiki/Astrologie) occidentale utilise le système des 12 maisons et 12 signes zodiacaux pour structurer l'interprétation. Chaque planète occupe une position unique dans votre **carte du ciel**, créant une combinaison astrologique qui vous est propre.
@@ -67,8 +65,6 @@ Découvre ton profil cosmique complet sur [Karmastro](https://app.karmastro.com)
 ## Les éléments essentiels de votre carte du ciel
 
 Votre **thème natal** se compose de plusieurs éléments fondamentaux qui interagissent pour créer votre profil astrologique unique.
-
-![Schéma des 12 maisons astrologiques et leurs significations](IMAGE_2)
 
 ### Les 10 planètes principales
 
@@ -151,8 +147,6 @@ Les maisons vides ne sont pas négatives : elles indiquent simplement des secteu
 ## Décrypter les aspects planétaires
 
 Les aspects représentent les angles formés entre les planètes dans votre **thème natal**. Ces connexions géométriques révèlent les dynamiques internes de votre personnalité.
-
-![Diagramme des aspects majeurs entre planètes dans un thème natal](IMAGE_3)
 
 ### Les cinq aspects majeurs
 
