@@ -14,8 +14,6 @@ lastReviewed: "2026-04-14"
 reviewedBy: "Orion 15 yillik deneyimli sertifikali numerolog"
 ---
 
-# Numeroloji nedir Tam baslangic rehberi
-
 Numeroloji sayilara sembolik anlamlar atayan bir yorumlama sistemidir kokeni MO 6. yuzyilda Pitagor okuluna ve Orta Cag Yahudi mistisizmi olan Kabala gelenegine kadar uzanir gunumuzde kisilik analizi uyumluluk ve hayat planlamasi icin dunyanin her yerinde kullanilir. Turkiye manevi pazar arastirmalarina gore okultizm ilgisi olan kullanicilarin yaklasik 42 yuzdesi numeroloji ile ilgilenmekte bu oran her yil artmaktadir.
 
 Bu makale tam bir baslangic rehberi olarak hazirlanmistir. Numerolojinin tanimi tarihi temel hesaplama yontemleri Pitagor ve Kaldeli sistemlerinin karsilastirmasi pratik uygulamalar ve sinirliliklari kapsamli sekilde ele alinmaktadir. Rehberin sonunda kendi yasam yolu sayini hesaplayabilecek anlamlandirabilecek ve gunluk hayata uygulayabilecek temel bilgiye sahip olacaksin.

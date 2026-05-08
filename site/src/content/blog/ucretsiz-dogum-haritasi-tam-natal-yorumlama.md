@@ -14,8 +14,6 @@ lastReviewed: "2026-04-14"
 reviewedBy: "Orion, kıdemli astronom ve astrolog"
 ---
 
-# Ücretsiz doğum haritası : tam natal yorumlama rehberi
-
 Doğum haritası, doğduğun anın ve yerin gökyüzünün anlık bir fotoğrafıdır; efemerislerden hesaplanır ve Güneş, Ay, sekiz gezegen, Yükselen ve on iki evin konumlarını dairesel bir diyagramda sabitler. Gelenek, milattan sonra ikinci yüzyılın İskenderiyeli astronomu Klaudios Ptolemaios'a kadar uzanır ; „Tetrabiblos" batı astrolojisinin temelini atmıştır. Modern dijital efemerisler (Swiss Ephemeris) milisaniye hassasiyetine ulaşır ve 2026 YouGov Türkiye anketi, Türklerin yalnızca % 36'sının [yükselen burcunu](/tr/araclar/yukselen-burc) bildiğini, buna karşın % 87'sinin güneş burcunu bildiğini göstermektedir.
 
 Bu rehber, doğum haritasını kendi başına nasıl okuyacağını açıklar : yedi pratik adım, on iki ev, on gezegen, dört ana açı, ücretsiz araçlar listesi, yeni başlayanların yaygın hataları ve Mustafa Kemal Atatürk'ün haritasının analizi. Sonunda sekiz soru ve beş doğrulanmış kaynak.
