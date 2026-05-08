@@ -11,8 +11,6 @@ image: "https://images.unsplash.com/photo-1737317311881-ddb7f52a94d2?ixid=M3w4Nz
 imageAlt: "Celestial map of constellations with a bird and urn."
 ---
 
-# Maisons astrologiques : le guide complet pour décoder ta carte du ciel
-
 <aside data-speakable="true" class="tldr" style="background:#f5f5f5;padding:16px;border-left:4px solid #6b46c1;margin:20px 0;"><strong>En bref :</strong> Les <strong>maisons astrologiques</strong> divisent ton thème natal en 12 secteurs représentant des domaines de vie concrets - identité, argent, relations, carrière. Contrairement aux signes qui décrivent "comment" tu agis, les maisons indiquent "où" ces énergies s'expriment. Ce guide t'explique leur signification, les 3 systèmes de domification (Placidus, Koch, Signes Entiers), le calcul précis avec heure/localisation, et leur lien avec la numérologie karmique selon la méthode Karmastro.</aside>
 
 ![Schéma détaillé des 12 maisons astrologiques avec leurs axes principaux](IMAGE_1)
