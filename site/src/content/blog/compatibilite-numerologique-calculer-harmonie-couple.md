@@ -11,41 +11,6 @@ image: "https://images.unsplash.com/photo-1711991812224-78eab2a3ee0d?ixid=M3w4Nz
 imageAlt: "three buttons depicting a broken heart, a man and a woman"
 ---
 
-```yaml
----
-title: "Compatibilité numérologique : calculer l'harmonie de couple (guide 2026)"
-description: "Découvre comment calculer la compatibilité numérologique et astrologique de ton couple avec Karmastro. Méthode précise, calculs détaillés et analyse des chemins de vie 1 à 9 + maîtres nombres."
-date: 2026-04-30
-lastReviewed: 2026-04-30
-reviewedBy: "Équipe Karmastro"
-author: "Karmastro"
-category: "compatibilite"
-tags:
-  - compatibilité
-  - numérologie
-  - couple
-  - astrologie
-  - chemin de vie
-  - synastrie
-  - relation amoureuse
-keywords:
-  - compatibilité numérologique
-  - calcul compatibilité couple
-  - harmonie numérologique
-  - chemin de vie couple
-  - astrologie compatibilité
-  - nombre d'expression couple
-  - synastrie astrologique
-  - compatibilité amoureuse calcul
-slug: "compatibilite-numerologique-calculer-harmonie-couple"
-draft: false
-image: "compatibilite-numerologique-couple-karmastro.jpg"
-imageAlt: "Tableau compatibilité numérologique chemins de vie 1 à 9 pour couples"
----
-```
-
-# Compatibilité numérologique : calculer l'harmonie de couple
-
 <aside data-speakable="true" class="tldr" style="background:#f5f5f5;padding:16px;border-left:4px solid #6b46c1;margin:20px 0;"><strong>En bref :</strong>
 La <strong>compatibilité</strong> numérologique se calcule en croisant ton chemin de vie (additionnant ta date de naissance) et ton nombre d'expression avec ceux de ton partenaire. Karmastro combine cette analyse avec la synastrie astrologique pour un score d'harmonie personnalisé. Par exemple, un chemin de vie 1 et 5 forment un duo dynamique (88% de compatibilité), tandis que 4 et 7 peuvent créer des tensions (58%) si non gérés consciemment.</aside>
 

@@ -9,42 +9,6 @@ keywords: "Venus Taureau, amour, astrologie, sensualité"
 draft: false
 ---
 
-```yaml
----
-title: "Vénus en Taureau : Amour, Sensualité et Stabilité Astrologique (Guide 2026)"
-description: "Découvre la signification profonde de Vénus en Taureau dans ton thème natal : amour, sensualité, argent et compatibilité. Analyse astrologique + numérologie chaldéenne pour 2026."
-date: 2026-04-28
-lastReviewed: 2026-04-28
-reviewedBy: "Équipe Astro-Numérologie Karmastro"
-author: "Dr. Élise Moreau, Astrologue Certifiée (ISAR)"
-category: "astrologie"
-tags:
-  - "Vénus Taureau"
-  - "amour astrologie"
-  - "thème natal"
-  - "numérologie chaldéenne"
-  - "compatibilité amoureuse"
-  - "astrologie hellénistique"
-  - "sensualité"
-  - "stabilité financière"
-keywords:
-  - "Vénus Taureau"
-  - "amour"
-  - "astrologie"
-  - "sensualité"
-  - "thème natal"
-  - "numérologie"
-  - "compatibilité"
-  - "2026"
-slug: "venus-taureau-amour-sensualite"
-draft: false
-image: "venus-taureau-amour-sensualite.jpg"
-imageAlt: "Illustration Vénus en Taureau avec symbole astrologique et nombres chaldéens"
----
-```
-
-# Vénus en Taureau : quand Aphrodite s'enracine dans la terre des plaisirs
-
 <aside data-speakable="true" class="tldr" style="background:#f5f5f5;padding:16px;border-left:4px solid #6b46c1;margin:20px 0;"><strong>En bref :</strong>
 **Vénus en Taureau** dans ton thème natal révèle une nature amoureuse sensuelle, fidèle et attachée aux plaisirs matériels. Cette position astrologique - domicile de Vénus depuis l'astrologie hellénistique - combine l'énergie d'Aphrodite avec l'élément terre, créant un profil amoureux stable, artistique et tourné vers l'abondance. Karmastro décrypte ses forces (loyauté, créativité tactile), ses défis (possessivité, résistance au changement) et son lien avec la numérologie chaldéenne (nombre 6, valeur numérique de Vénus).</aside>
 

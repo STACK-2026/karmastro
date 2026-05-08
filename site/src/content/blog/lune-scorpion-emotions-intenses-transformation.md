@@ -11,41 +11,6 @@ image: "https://images.unsplash.com/photo-1580407613909-edca6a6cd8e9?ixid=M3w4Nz
 imageAlt: "blue and black crab on brown rock"
 ---
 
-```yaml
----
-title: "Lune en Scorpion : Émotions Intenses et Transformation Karmique (Guide 2026)"
-description: "Découvre la signification profonde de la Lune en Scorpion en astrologie : personnalité secrète, compatibilité amoureuse, lien avec la numérologie et conseils pour transformer cette énergie intense."
-date: 2026-04-24
-lastReviewed: 2026-04-24
-reviewedBy: "Équipe Karmastro"
-author: "Karmastro"
-category: "astrologie"
-tags:
-  - "Lune Scorpion"
-  - "astrologie karmique"
-  - "thème natal"
-  - "numérologie"
-  - "émotions"
-  - "transformation"
-  - "Pluton"
-  - "Maison 8"
-keywords:
-  - "Lune Scorpion"
-  - "émotions astrologie"
-  - "transformation karmique"
-  - "compatibilité Lune Scorpion"
-  - "numérologie Scorpion"
-  - "chute de la Lune"
-  - "astrologie traditionnelle"
-slug: "lune-scorpion-emotions-intenses-transformation"
-draft: false
-image: "https://karmastro.com/uploads/lune-scorpion-emotions.jpg"
-imageAlt: "Illustration Lune en Scorpion avec symboles astrologiques et numérologiques"
----
-```
-
-# Lune en Scorpion : plonge dans les eaux profondes de ton âme
-
 <aside data-speakable="true" class="tldr" style="background:#f5f5f5;padding:16px;border-left:4px solid #6b46c1;margin:20px 0;">
 <strong>En bref :</strong>
 La <strong>Lune en Scorpion</strong> en astrologie révèle une personnalité émotionnelle intense, secrète et transformatrice. Ce placement lunaire - considéré comme une "chute" en astrologie traditionnelle - amplifie tes peurs inconscientes mais aussi ton pouvoir de régénération. Découvre comment canaliser cette énergie pour une transformation karmique, avec des correspondances en numérologie et des conseils pratiques pour les hommes et femmes concernés.
