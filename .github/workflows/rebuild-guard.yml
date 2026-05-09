@@ -33,26 +33,23 @@ jobs:
           git config user.name "Karmastro Rebuild Guard"
           git config user.email "rebuild@karmastro.com"
 
-      - name: Touch rebuild marker
+      - name: Commit and push rebuild marker
         run: |
-          DATE=$(date -u +%Y-%m-%d)
-          echo "${DATE}" > site/.last-rebuild.txt
-
-      - name: Commit and push if changed
-        run: |
-          git add site/.last-rebuild.txt
-          if git diff --cached --quiet; then
-            echo "No marker change (already touched today)"
-          else
-            DATE=$(date -u +%Y-%m-%d)
-            git commit -m "chore: rebuild guard ${DATE}"
-            # Resist concurrent pushes: rebase on remote, retry up to 3 times.
-            for i in 1 2 3; do
-              git pull --rebase --autostash origin main || true
-              if git push; then exit 0; fi
-              echo "push attempt $i failed, retrying..."
-              sleep 3
-            done
-            echo "push failed after 3 attempts" >&2
-            exit 1
-          fi
+          git config user.name "Karmastro Rebuild Guard"
+          git config user.email "rebuild@karmastro.com"
+          # Reset-then-recreate pattern: never conflict on concurrent timestamp writes.
+          # Always re-anchors to origin/main on a real branch so push from detached HEAD impossible.
+          for i in 1 2 3 4 5; do
+            git rebase --abort 2>/dev/null || true
+            git fetch origin
+            git checkout -B main origin/main
+            echo "$(date -u +%Y-%m-%d)" > site/.last-rebuild.txt
+            git add site/.last-rebuild.txt
+            if git diff --cached --quiet; then echo "no changes" && exit 0; fi
+            git commit -m "chore: rebuild guard $(date -u +%Y-%m-%d)"
+            if git push origin main; then exit 0; fi
+            echo "push attempt $i failed, retrying..."
+            sleep $((2 + RANDOM % 6))
+          done
+          echo "push failed after 5 attempts" >&2
+          exit 1
