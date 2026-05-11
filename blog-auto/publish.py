@@ -648,12 +648,15 @@ def generate_frontmatter(article: dict, generated: dict, image: dict | None) -> 
     """Generate YAML frontmatter for the markdown file."""
     tags = [t.strip() for t in article.get("keywords", "").split(",") if t.strip()]
     author = get_author(article, article.get("index", 0))
+    # STACK-2026 fix : lang field required by [...slug].astro filter (data.lang === "fr")
+    lang = article.get("lang", "fr")
 
     fm = f"""---
 title: "{generated['title_tag']}"
 description: "{generated['meta_description']}"
 date: {article.get('scheduled_date', datetime.now().strftime('%Y-%m-%d'))}
 author: "{author}"
+lang: "{lang}"
 category: "{article.get('category', '')}"
 tags: {json.dumps(tags, ensure_ascii=False)}
 keywords: "{article.get('keywords', '')}"
@@ -992,12 +995,35 @@ def main():
     log.info(f"Meta desc: {generated['meta_description'][:80]}...")
 
     # Fetch featured image
+    # STACK-2026 fix : enrichir la query avec un contexte sémantique par catégorie
+    # pour éviter les collisions (ex: "Cancer" → chef photos au lieu de zodiac)
+    UNSPLASH_CONTEXT = {
+        "astrologie": "zodiac stars night sky mystical",
+        "horoscope": "zodiac stars sky",
+        "tarot": "tarot cards mystical candles",
+        "numerologie": "numbers spiritual abstract",
+        "lithotherapie": "crystal gemstone healing",
+        "feng-shui": "zen harmony minimal interior",
+        "spiritualite": "spiritual meditation zen",
+        "voyance": "mystical crystal ball candles",
+        "reve": "dream surreal abstract",
+        "yoga": "yoga meditation calm",
+        "meditation": "meditation zen calm",
+        "guides": "esoteric mystical abstract",
+    }
     image = None
     if UNSPLASH_ACCESS_KEY:
-        query = article.get("keywords", article["title"]).split(",")[0].strip()
+        primary = article.get("keywords", article["title"]).split(",")[0].strip()
+        category = article.get("category", "").lower()
+        context = UNSPLASH_CONTEXT.get(category, "")
+        # Fallback : si la query primary est ambigüe (zodiac signs), forcer le contexte zodiac
+        AMBIGUOUS_KEYWORDS = {"cancer", "balance", "vierge", "lion", "scorpion", "verseau", "taureau", "capricorne", "poissons", "gemini", "leo"}
+        if not context and primary.lower() in AMBIGUOUS_KEYWORDS:
+            context = "zodiac stars sky"
+        query = f"{primary} {context}".strip()
         image = fetch_unsplash_image(query, article.get("index", 0))
         if image:
-            log.info(f"Image: {image['photographer']} (Unsplash)")
+            log.info(f"Image: {image['photographer']} (Unsplash, query='{query}')")
 
     # Find related articles for maillage
     related = find_related_articles(article, articles)
