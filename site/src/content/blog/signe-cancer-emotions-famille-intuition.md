@@ -3,6 +3,7 @@ title: "Cancer : signe astrologique, émotions et famille | Guide com"
 description: "Découvre le signe du Cancer (21 juin-22 juillet) : personnalité, compatibilité, mission karmique et conseils pour canaliser ton hypersensibilité lunaire. Analys"
 date: 2026-05-11
 author: "Sibylle"
+lang: "fr"
 category: "astrologie"
 tags: ["Cancer", "signe astrologique", "émotions", "famille"]
 keywords: "Cancer, signe astrologique, émotions, famille"
