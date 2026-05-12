@@ -526,9 +526,34 @@ Chaque nombre d’expression (de 1 à 9) révèle une **vibration unique**, avec
 
 **Exemples célèbres** :
 - **Elon Musk** : nombre d’expression **8** (Elon Reeve Musk → 5 + 3 + 6 + 5 + 9 + 5 + 5 + 5 + 4 + 5 + 5 + 4 + 3 + 1 + 2 = 67 → 6 + 7 = **13** → 1 + 3 = **4**). Cependant, son prénom *Elon* donne **5 + 3 + 6 + 5 = 19** → 1 + 9 = **10** → 1 + 0 = **1**, et son nom *Musk* donne **4 + 3 + 1 + 2 = 10** → 1 + 0 = **1**. La combinaison de ces vibrations (1, 4) reflète son parcours de leader (**1**) et de bâtisseur (**4**) ayant créé des empires (**8**) grâce à sa vision stratégique.
-- **Indira Gandhi** : nombre d’expression **8** (Indira Priyadarshini Gandhi → 9 + 5 + 4 + 9 + 9 + 1 + 7 + 9 + 9 + 7 + 4 + 1 + 9 + 1 + 5 + 9 + 5 + 9 + 5 + 9 + 1 + 5 + 9 = 128 → 1 + 2 + 8 = **11** (maître nombre)). Son prénom *Indira* donne **9 + 5 + 4 + 9 + 9 + 1 = 37** → 3 + 7 = **10** → 1 + 0 = **1**, et son nom *Gandhi* donne **7 + 1 + 5 + 4 + 8 + 9 = 34** → 3 + 4 = **7**. La combinaison de ces vibrations (
 
 ---
+
+## FAQ
+
+### Comment calculer précisément son nombre d'expression karmique ?
+Pour calculer votre nombre d'expression karmique, additionnez les valeurs numériques de toutes les lettres de votre nom complet de naissance (prénom + nom de famille). Utilisez la correspondance A=1, B=2, C=3... Z=26. Exemple : MARIE DUPONT = 4+1+9+9+5 + 4+3+7+6+5+2 = 28 + 27 = 55 = 10 = 1. Réduisez toujours le résultat à un chiffre unique, sauf pour les maîtres nombres 11, 22 et 33 qui conservent leur double forme.
+
+### Quelle différence entre nombre d'expression et chemin de vie en numérologie ?
+Le chemin de vie se calcule avec la date de naissance complète et révèle votre mission d'âme, votre destinée spirituelle. Le nombre d'expression utilise votre nom complet et indique vos talents innés, capacités naturelles et potentiel créatif. Par exemple, un chemin de vie 7 (recherche spirituelle) avec une expression 3 (créativité) suggère d'exprimer sa quête intérieure par l'art ou l'enseignement créatif.
+
+### Les maîtres nombres 11, 22 et 33 ont-ils une signification spéciale en expression karmique ?
+Les maîtres nombres possèdent une vibration spirituelle élevée en expression karmique. L'expression 11 indique une intuition exceptionnelle et des capacités de guérison, le 22 révèle un potentiel de réalisation matérielle au service du collectif, et le 33 exprime l'amour universel et l'enseignement spirituel. Ces nombres exigent une grande maturité émotionnelle et peuvent générer stress et hypersensibilité s'ils ne sont pas maîtrisés.
+
+### Comment utiliser mon nombre d'expression pour choisir ma carrière idéale ?
+Votre nombre d'expression révèle vos talents naturels à exploiter professionnellement. Expression 1 : leadership, entrepreneuriat. Expression 2 : médiation, ressources humaines. Expression 3 : communication, arts créatifs. Expression 4 : architecture, comptabilité. Expression 5 : journalisme, commerce international. Expression 6 : soins, éducation. Expression 7 : recherche, spiritualité. Expression 8 : finance, management. Expression 9 : humanitaire, psychologie. Alignez votre métier sur ces prédispositions naturelles.
+
+### Le nombre d'expression influence-t-il vraiment la compatibilité amoureuse ?
+En numérologie relationnelle, certaines expressions s'harmonisent naturellement. Les expressions 1-5-9 (nombres dynamiques) s'attirent mutuellement. Les expressions 2-6-8 (nombres coopératifs) forment des couples stables. L'expression 3 s'épanouit avec 5 ou 7. Cependant, la compatibilité dépend aussi du chemin de vie, de la maturité personnelle et des nombres manquants. Une différence d'expression peut créer complémentarité et croissance mutuelle plutôt qu'incompatibilité.
+
+
+## Pour aller plus loin
+
+- [Chemin de vie : guide complet du calcul et interpretation](/blog/chemin-vie-numerologie-guide-complet/)
+- [Numerologie karmique : 5 piliers fondamentaux](/blog/numerologie-karmique-piliers-fondamentaux/)
+- [Maitres nombres 11, 22, 33 : pouvoir et missions d'ame](/blog/maitres-nombres-11-22-33-pouvoir-missions/)
+- [Nombre d'ame vs nombre de personnalite : differences cles](/blog/nombre-ame-personnalite-differences/)
+- [Compatibilite amoureuse en numerologie : guide pratique](/blog/compatibilite-amoureuse-numerologie-guide/)
 
 ## Articles similaires
 
