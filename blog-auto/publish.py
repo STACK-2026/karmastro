@@ -455,25 +455,57 @@ Puis le contenu Markdown de l'article (sans H1, commence directement par le somm
     text = _strip_md_fence(text)
     parsed = parse_claude_response(text, article)
 
-    # Optional grounding audit (only if ANTHROPIC_API_KEY present)
+    # Audit-fix loop: up to MAX_FIX_PASSES iterations until CLEAN or no further progress.
     if ANTHROPIC_API_KEY:
-        try:
-            log.info("Claude grounding audit...")
-            audit = _audit_draft(parsed["content"])
+        MAX_FIX_PASSES = 2
+        current_text = text
+        for pass_idx in range(MAX_FIX_PASSES + 1):
+            try:
+                audit = _audit_draft(parsed["content"])
+            except Exception as e:
+                log.warning(f"Audit pass {pass_idx} failed: {e}")
+                break
             verdict = audit.get("verdict", "UNKNOWN")
             halls = audit.get("hallucinations", [])
-            log.info(f"  verdict={verdict} hallucinations={len(halls)}")
-            if verdict == "MAJOR" or (audit.get("issues") or halls):
-                log.info("Mistral-large fix hallucinations...")
-                fixed_text = _fix_issues(text, audit)
-                fixed_text = _strip_md_fence(fixed_text)
-                parsed = parse_claude_response(fixed_text, article)
-        except Exception as e:
-            log.warning(f"Audit skipped: {e}")
+            issues = audit.get("issues", [])
+            log.info(f"  [pass {pass_idx}] verdict={verdict} issues={len(issues)} hallucinations={len(halls)}")
+            if verdict == "CLEAN" or (verdict == "MINOR" and pass_idx >= 1):
+                break
+            if pass_idx >= MAX_FIX_PASSES:
+                log.warning(f"  Hit MAX_FIX_PASSES={MAX_FIX_PASSES}, accepting current despite verdict={verdict}")
+                break
+            if not (verdict == "MAJOR" or issues or halls):
+                break
+            log.info(f"  Mistral fix pass {pass_idx + 1}/{MAX_FIX_PASSES}...")
+            fixed_text = _fix_issues(current_text, audit)
+            fixed_text = _strip_md_fence(fixed_text)
+            current_text = fixed_text
+            parsed = parse_claude_response(fixed_text, article)
+        _validate_or_warn(parsed.get("content", ""))
     else:
         log.info("No ANTHROPIC_API_KEY, audit skipped (Mistral-only mode)")
+        _validate_or_warn(parsed.get("content", ""))
 
     return parsed
+
+
+def _validate_or_warn(body: str):
+    """STACK-2026 hard quality gates: log warnings on missing FAQ, low ext links, truncation, em-dash."""
+    flags = []
+    words = len(re.findall(r"\b\w+\b", body))
+    if words < 2500:
+        flags.append(f"WORDS_LOW={words}")
+    if not re.search(r"^##+\s*(FAQ|Questions fr|Frequently asked|F\.A\.Q)", body, re.IGNORECASE | re.MULTILINE):
+        flags.append("MISSING_FAQ")
+    ext = len(re.findall(r"\]\(https?://", body))
+    if ext < 5:
+        flags.append(f"EXT_LINKS_LOW={ext}")
+    if "—" in body or "–" in body:
+        flags.append("EM_DASH_PRESENT")
+    if not re.search(r"[\.\!\?\*\)\]]\s*$", body.rstrip()[-40:]):
+        flags.append("LIKELY_TRUNCATED")
+    if flags:
+        log.warning(f"  POST-AUDIT QUALITY WARNINGS: {', '.join(flags)}")
 
 
 def _strip_md_fence(text: str) -> str:
