@@ -12,12 +12,21 @@ const ASSET_EXT = /\.(js|mjs|css|png|jpe?g|webp|avif|gif|svg|ico|woff2?|ttf|otf|
 
 export async function onRequest(context) {
   const { request, next, env, waitUntil } = context;
+  const url = new URL(request.url);
+
+  // ---- Canonical host: www → apex 301 ----
+  if (url.hostname === "www.karmastro.com") {
+    return Response.redirect(
+      `https://karmastro.com${url.pathname}${url.search}`,
+      301,
+    );
+  }
+
   const response = await next();
 
   try {
     if (request.method !== "GET") return response;
 
-    const url = new URL(request.url);
     const path = url.pathname;
     if (ASSET_EXT.test(path)) return response;
     if (path.startsWith("/api/")) return response;
