@@ -100,6 +100,8 @@ const hreflangUrls = LOCALES
 // x-default points to the default locale variant (fallback to current if no FR).
 const xDefaultUrl = hreflangUrls.find((h) => h.locale === DEFAULT_LOCALE)?.url
   ?? hreflangUrls.find((h) => h.locale === currentLocale)?.url;
+
+const GA4_ID = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID;
 ---
 
 <!doctype html>
@@ -169,6 +171,21 @@ const xDefaultUrl = hreflangUrls.find((h) => h.locale === DEFAULT_LOCALE)?.url
     {jsonLdArray.map((ld) => (
       <script type="application/ld+json" set:html={JSON.stringify(ld)} />
     ))}
+
+    {GA4_ID && (
+      <>
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
+        <script is:inline define:vars={{ GA4_ID }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', GA4_ID, { anonymize_ip: true, send_page_view: true });
+        </script>
+      </>
+    )}
   </head>
   <body class="min-h-screen flex flex-col relative">
     <!-- Starfield - 3 couches identiques a l'app -->
