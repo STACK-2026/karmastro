@@ -188,7 +188,7 @@ function escapeHtml(s) {
 async function notifyByEmail(env, row) {
   const apiKey = env.RESEND_API_KEY;
   if (!apiKey) return;
-  const to = env.EREFERER_NOTIFY_TO || "augustin.foucheres@gmail.com";
+  const to = env.EREFERER_NOTIFY_TO || "contact@karmastro.com";
   const from = env.EREFERER_NOTIFY_FROM || "Ereferer Push <onboarding@resend.dev>";
   const refMatch = (env.SUPABASE_URL || "").match(/https?:\/\/([^.]+)/);
   const ref = refMatch ? refMatch[1] : "unknown";
