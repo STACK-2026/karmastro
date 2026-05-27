@@ -1,6 +1,8 @@
 ---
 title: "Jupiter en Poissons : expansion spirituelle et intuition"
 description: ""
+image: "https://images.unsplash.com/photo-1515462277126-2dd0c162007a?w=1200&h=630&fit=crop&crop=center&q=80"
+imageAlt: "Carte du ciel astrologique avec planètes et constellations"
 date: 2026-05-19
 author: "Sibylle"
 lang: "fr"

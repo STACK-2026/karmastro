@@ -1,6 +1,8 @@
 ---
 title: "Numérologie pythagoricienne vs chaldéenne : différences 2026"
 description: "La numérologie pythagoricienne utilise 1-9, la chaldéenne 1-8. Découvrez les 7 différences clés entre ces deux systèmes de calcul ancestraux."
+image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1200&h=630&fit=crop&crop=center&q=80"
+imageAlt: "Anciennes tablettes babyloniennes et grecques avec symboles numériques"
 date: 2026-04-17
 author: "Pythia"
 category: "numerologie"

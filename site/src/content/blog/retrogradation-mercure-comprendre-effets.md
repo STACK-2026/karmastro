@@ -1,6 +1,8 @@
 ---
 title: "Rétrogradation de Mercure : comprendre ses effets"
 description: ""
+image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&h=630&fit=crop&crop=center&q=80"
+imageAlt: "Ciel étoilé avec planète lumineuse, illustration de Mercure rétrograde et de ses effets sur la communication"
 date: 2026-05-13
 author: "Sibylle"
 lang: "fr"
