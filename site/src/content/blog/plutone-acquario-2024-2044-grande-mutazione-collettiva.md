@@ -229,7 +229,7 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 - **Enciclopedia** (it.wikipedia.org): [Astrologia](https://it.wikipedia.org/wiki/Astrologia)
 - **Britannica** (britannica.com): [Astrology](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov): [Pluto](https://science.nasa.gov/dwarf-planets/pluto/)
-- **Enciclopedia** (it.wikipedia.org): [Plutone (astronomia)](https://it.wikipedia.org/wiki/Plutone_(astronomia))
+- **Enciclopedia** (it.wikipedia.org): Plutone (astronomia))
 - **Treccani** (treccani.it): [Era dell'Acquario](https://www.treccani.it/vocabolario/acquario/)
 
 <!-- maillage:auto -->

@@ -136,7 +136,7 @@ Ek olarak astrolojik portreyi numerolojik analizle tamamlamak için [yaşam yolu
 
 **Hata 6 : retro gezegenleri unutmak.** Natalde retro Venüs farklı bir duygusal kronoloji anlamına gelir, çoğu zaman değerlerin yeniden değerlendirilmesiyle ilişkilidir.
 
-**Hata 7 : tropikal ve sideral zodyakı karıştırmak.** Batı astrolojisi tropikal zodyakı kullanır (ilkbahar noktasına bağlı). Vedik sideralı kullanır (sabit yıldızlara bağlı). [Presesyon](https://tr.wikipedia.org/wiki/Presesyon_(astronomi)) nedeniyle yaklaşık 24° fark vardır.
+**Hata 7 : tropikal ve sideral zodyakı karıştırmak.** Batı astrolojisi tropikal zodyakı kullanır (ilkbahar noktasına bağlı). Vedik sideralı kullanır (sabit yıldızlara bağlı). Presesyon) nedeniyle yaklaşık 24° fark vardır.
 
 ## Örnek : Mustafa Kemal Atatürk'ün haritası
 

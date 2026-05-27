@@ -175,7 +175,7 @@ Este artigo baseia-se em fontes enciclopédicas, astronómicas e académicas ver
 - **Wikipedia PT**: [Lua](https://pt.wikipedia.org/wiki/Lua)
 - **Britannica**: [Moon, Earth's satellite](https://www.britannica.com/place/Moon)
 - **NASA Science**: [Earth's Moon Overview](https://science.nasa.gov/moon/)
-- **Wikipedia PT**: [Selene (mitologia)](https://pt.wikipedia.org/wiki/Selene_(mitologia))
+- **Wikipedia PT**: Selene (mitologia))
 
 <!-- maillage:auto -->
 ## Para aprofundar

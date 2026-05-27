@@ -128,7 +128,7 @@ Evet. 2020 COVID yılı dünya yılı 4 (2+0+2+0 = 4) idi ve kolektif olarak ist
 
 Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
 
-- **Ansiklopedi** (tr.wikipedia.org) : [Numeroloji](https://tr.wikipedia.org/wiki/Numeroloji)
+- **Ansiklopedi** (tr.wikipedia.org) : Numeroloji
 - **Britannica** (britannica.com) : [Numeroloji](https://www.britannica.com/topic/numerology)
 
 <!-- maillage:auto -->

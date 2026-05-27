@@ -24,7 +24,7 @@ Les angles formés entre les planètes dans le thème natal. Les principaux :
 - **Opposition** (180°) : polarité et équilibre
 
 ### Transits
-Les positions actuelles des planètes par rapport à ton thème natal. Quand [Jupiter](https://fr.wikipedia.org/wiki/Jupiter_(plan%C3%A8te)) passe sur ton Soleil natal, c'est un transit. L'Oracle de Karmastro calcule tes transits en temps réel.
+Les positions actuelles des planètes par rapport à ton thème natal. Quand Jupiter) passe sur ton Soleil natal, c'est un transit. L'Oracle de Karmastro calcule tes transits en temps réel.
 
 ### Rétrograde
 Quand une planète semble reculer dans le ciel (illusion d'optique due aux orbites relatives). [Mercure rétrograde](https://fr.wikipedia.org/wiki/Mouvement_r%C3%A9trograde) est le plus connu : il revient 3 à 4 fois par an et est associé aux malentendus et pannes technologiques. Karmastro détecte les rétrogrades dynamiquement grâce à Swiss Ephemeris.
@@ -77,7 +77,7 @@ L'axe des noeuds lunaires représente ta direction de vie :
 - **Noeud Sud** : tes acquis des vies passées, ta zone de confort
 
 ### Cycle de Saturne
-[Saturne](https://fr.wikipedia.org/wiki/Saturne_(plan%C3%A8te)) met environ 29,5 ans à faire le tour du zodiaque. Son premier retour (27-30 ans) marque une grande transition vers la maturité. Le deuxième retour (56-60 ans) est le passage vers la sagesse.
+Saturne) met environ 29,5 ans à faire le tour du zodiaque. Son premier retour (27-30 ans) marque une grande transition vers la maturité. Le deuxième retour (56-60 ans) est le passage vers la sagesse.
 
 ### Part de Fortune
 Un point calculé (Ascendant + Lune - Soleil) qui indique où tu trouves ta réalisation et ton bonheur naturel.

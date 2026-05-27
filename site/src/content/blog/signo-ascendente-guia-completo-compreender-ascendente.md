@@ -185,7 +185,7 @@ O teu ascendente é apenas uma das camadas da tua carta natal, mas é talvez a m
 
 Este artigo baseia-se em fontes enciclopédicas, astronómicas e académicas verificáveis.
 
-- **Wikipedia PT**: [Ascendente (astrologia)](https://pt.wikipedia.org/wiki/Ascendente_(astrologia))
+- **Wikipedia PT**: Ascendente (astrologia))
 - **Britannica**: [Astrology](https://www.britannica.com/topic/astrology)
 - **Wikipedia PT**: [Tetrabiblos](https://pt.wikipedia.org/wiki/Tetrabiblos)
 - **Wikipedia EN**: [Claudius Ptolemy](https://en.wikipedia.org/wiki/Ptolemy)

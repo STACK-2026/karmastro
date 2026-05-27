@@ -208,7 +208,7 @@ Bilimsel açıdan numeroloji tekrarlanabilir deneysel bir yöntemle doğrulanmam
 
 ## Kaynaklar
 
-- Vikipedi, [Numeroloji](https://tr.wikipedia.org/wiki/Numeroloji) makalesi, erişim 14.04.2026
+- Vikipedi, Numeroloji makalesi, erişim 14.04.2026
 - Vikipedi, [Pisagor](https://tr.wikipedia.org/wiki/Pisagor) makalesi
 - Encyclopædia Britannica, [Numerology](https://www.britannica.com/topic/numerology)
 - Stanford Encyclopedia of Philosophy, [Pythagoreanism](https://plato.stanford.edu/entries/pythagoreanism/)

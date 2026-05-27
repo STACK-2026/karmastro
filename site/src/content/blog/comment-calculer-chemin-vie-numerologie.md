@@ -225,7 +225,7 @@ Sur le plan scientifique, la numérologie n'est pas une discipline validée par 
 - JSTOR, archives de recherche en histoire des mathématiques antiques, [jstor.org](https://www.jstor.org/)
 - Encyclopædia Britannica, [Pythagoras](https://www.britannica.com/biography/Pythagoras)
 - Bibliothèque nationale de France, fonds [Cornelius Agrippa, De occulta philosophia](https://gallica.bnf.fr/ark:/12148/bpt6k52702g)
-- Louvre, collection [tablettes cunéiformes babyloniennes](https://www.louvre.fr/en/explore/the-palace/mesopotamia)
+- Louvre, collection tablettes cunéiformes babyloniennes
 - CNRS, dossier [L'algèbre, une invention arabe](https://lejournal.cnrs.fr/articles/lalgebre-une-invention-arabe)
 
 ---

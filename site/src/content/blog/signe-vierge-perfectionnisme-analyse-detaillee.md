@@ -248,7 +248,7 @@ Pour aller plus loin :
 ---
 
 ## Sources
-- [Wikipedia - Signe astrologique de la Vierge](https://fr.wikipedia.org/wiki/Vierge_(astrologie)) - Encyclopédie libre, 2024.
+- Wikipedia - Signe astrologique de la Vierge) - Encyclopédie libre, 2024.
 - [Swiss Ephemeris - Positions planétaires](https://www.astro.com/swisseph/) - Astrodienst, 2026.
 - [IFOP - Les Français et l'astrologie](https://www.ifop.com) - Institut Français d'Opinion Publique, 2024.
 - [Karmastro - Base de données astro-numérologique](https://app.karmastro.com) - Données 2024, 10 000 thèmes analysés.

@@ -176,7 +176,7 @@ O retorno de Saturno é a iniciação astrológica mais importante da vida adult
 
 Este artigo baseia-se em fontes enciclopédicas, astronómicas e académicas verificáveis.
 
-- **Wikipedia PT**: [Saturno (planeta)](https://pt.wikipedia.org/wiki/Saturno_(planeta))
+- **Wikipedia PT**: Saturno (planeta))
 - **Britannica**: [Saturn, planet](https://www.britannica.com/place/Saturn-planet)
 - **NASA Science**: [Saturn Overview](https://science.nasa.gov/saturn/)
 - **Wikipedia PT**: [Cronos](https://pt.wikipedia.org/wiki/Cronos)

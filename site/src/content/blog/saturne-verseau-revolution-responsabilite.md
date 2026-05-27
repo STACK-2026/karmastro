@@ -405,8 +405,8 @@ Le futur ne se prédit pas - **il se construit**. Et avec Saturne en Verseau, tu
 
 - **Astrologie** :
   - [Swiss Ephemeris - Calculs astronomiques précis](https://www.astro.com/swisseph/) - Astrodienst, 2026
-  - [Liz Greene, *Saturne, un nouveau regard sur un vieux démon*](https://www.amazon.fr/Saturne-nouveau-regard-vieux-d%C3%A9mon/dp/284454033X) - Éditions du Seuil, 1997
-  - [André Barbault, *Jupiter et Saturne*](https://www.amazon.fr/Jupiter-Saturne-Andr%C3%A9-Barbault/dp/285076385X) - Éditions Traditionnelles, 1986
+  - Liz Greene, *Saturne, un nouveau regard sur un vieux démon* - Éditions du Seuil, 1997
+  - André Barbault, *Jupiter et Saturne* - Éditions Traditionnelles, 1986
   - [NASA JPL - Éphémérides planétaires](https://ssd.jpl.nasa.gov/) - Jet Propulsion Laboratory, 2026
 
 - **Numérologie** :

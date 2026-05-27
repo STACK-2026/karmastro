@@ -187,7 +187,7 @@ Plutão em Aquário é provavelmente o trânsito geracional mais importante da t
 
 Este artigo baseia-se em fontes enciclopédicas, académicas e científicas verificáveis.
 
-- **Wikipedia PT**: [Plutão (planeta anão)](https://pt.wikipedia.org/wiki/Plut%C3%A3o_(planeta_an%C3%A3o))
+- **Wikipedia PT**: Plutão (planeta anão))
 - **Britannica**: [Astrology](https://www.britannica.com/topic/astrology)
 - **NASA Science**: [Pluto Overview](https://science.nasa.gov/dwarf-planets/pluto/)
 - **Wikipedia PT**: [Revolução Francesa](https://pt.wikipedia.org/wiki/Revolu%C3%A7%C3%A3o_Francesa)

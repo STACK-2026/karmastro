@@ -230,7 +230,7 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 - **Enciclopedia** (it.wikipedia.org): [Astrologia](https://it.wikipedia.org/wiki/Astrologia)
 - **Britannica** (britannica.com): [Astrology](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov): [Saturn](https://science.nasa.gov/saturn/)
-- **Enciclopedia** (it.wikipedia.org): [Saturno (astronomia)](https://it.wikipedia.org/wiki/Saturno_(astronomia))
+- **Enciclopedia** (it.wikipedia.org): Saturno (astronomia))
 - **Treccani** (treccani.it): [Saturno](https://www.treccani.it/enciclopedia/saturno/)
 
 <!-- maillage:auto -->

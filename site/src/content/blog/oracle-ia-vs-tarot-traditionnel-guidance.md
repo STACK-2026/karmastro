@@ -119,7 +119,7 @@ La voie Éveil est offerte : profil cosmique complet + 3 messages Oracle par jou
 
 Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
 
-- **Encyclopedie** (fr.wikipedia.org) : [Oracle](https://fr.wikipedia.org/wiki/Oracle_(divination))
+- **Encyclopedie** (fr.wikipedia.org) : Oracle)
 - **Britannica** (britannica.com) : [Oracle](https://www.britannica.com/topic/oracle-religion)
 
 <!-- maillage:auto -->

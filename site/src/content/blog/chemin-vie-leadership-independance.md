@@ -84,7 +84,7 @@ Si le résultat est 11, 22 ou 33, **ne le réduis pas**. Ces nombres portent une
 
 ### Outils pour vérifier ton calcul
 - [Calculateur de chemin de vie Karmastro](https://app.karmastro.com/calcul-chemin-de-vie) : Utilise l’algorithme pythagoricien pour une précision optimale.
-- [Numérologie gratuite sur Astrotheme](https://www.astrotheme.fr/calculs_numerologie.php) : Compare les résultats avec d’autres méthodes.
+- Numérologie gratuite sur Astrotheme : Compare les résultats avec d’autres méthodes.
 
 🔹 *Pour aller plus loin* : Découvre comment ton chemin de vie interagit avec ton [thème natal astrologique](https://karmastro.com/glossaire/theme-natal) ou ton [ascendant](https://karmastro.com/blog/astrologie-ascendant).
 
@@ -262,7 +262,7 @@ Dans le **Tarot de Marseille**, le Bateleur (arcane I) est l’équivalent symbo
 - **Conseil** : Comme le Bateleur, apprends à utiliser tes "outils" (tes compétences, ton réseau, tes ressources) de manière stratégique.
 
 **Exercice pratique** :
-1. Tire une carte du Tarot (ou utilise un [générateur en ligne](https://www.tarot.com/free-tarot-reading)) et observe si le Bateleur apparaît.
+1. Tire une carte du Tarot (ou utilise un générateur en ligne) et observe si le Bateleur apparaît.
 2. Si c’est le cas, note les domaines de ta vie où tu dois "prendre les outils en main" (ex: lancer un projet, apprendre une nouvelle compétence).
 3. Si une autre carte apparaît, analyse sa relation avec le Bateleur (ex: le Pape pour la sagesse, la Roue de Fortune pour les opportunités).
 

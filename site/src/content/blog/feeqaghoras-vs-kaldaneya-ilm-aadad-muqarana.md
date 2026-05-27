@@ -431,7 +431,7 @@ Karmastro اعتمد الفيثاغورية الصارمة لأنها الأكث
 ## المصادر والمراجع
 
 - **الموسوعة العربية** (ar.wikipedia.org): [علم الأعداد](https://ar.wikipedia.org/wiki/%D8%B9%D9%84%D9%85_%D8%A7%D9%84%D8%A3%D8%B9%D8%AF%D8%A7%D8%AF)
-- **الموسوعة العربية** (ar.wikipedia.org): [حساب الجمل](https://ar.wikipedia.org/wiki/%D8%AD%D8%B3%D8%A7%D8%A8_%D8%A7%D9%84%D8%AC%D9%85%D9%91%D9%84)
+- **الموسوعة العربية** (ar.wikipedia.org): حساب الجمل
 - **بريتانيكا** (britannica.com): [Numerology](https://www.britannica.com/topic/numerology)
 - **بريتانيكا** (britannica.com): [Kabbalah and Gematria](https://www.britannica.com/topic/Kabbala)
 - **ستانفورد** (plato.stanford.edu): [Pythagoreanism](https://plato.stanford.edu/entries/pythagoreanism/)

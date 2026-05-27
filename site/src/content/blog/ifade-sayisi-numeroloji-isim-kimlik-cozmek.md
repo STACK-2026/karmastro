@@ -123,7 +123,7 @@ Bu çok sık sorulan bir sorudur. Numerolog Hans Decoz kamu figürleri üzerinde
 
 Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
 
-- **Ansiklopedi** (tr.wikipedia.org) : [Numeroloji](https://tr.wikipedia.org/wiki/Numeroloji)
+- **Ansiklopedi** (tr.wikipedia.org) : Numeroloji
 - **Britannica** (britannica.com) : [Numeroloji](https://www.britannica.com/topic/numerology)
 
 <!-- maillage:auto -->

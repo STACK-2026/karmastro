@@ -292,11 +292,11 @@ reviewedBy: "إيزيس، مستشارة فلكية"
 
 يعتمد هذا المقال على مصادر موسوعية وعلمية يمكن التحقق منها.
 
-- **الموسوعة العربية** (ar.wikipedia.org): [برج الحمل](https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AD%D9%85%D9%84_(%D8%A8%D8%B1%D8%AC))
-- **بريتانيكا** (britannica.com): [Aries, zodiac](https://www.britannica.com/topic/Aries-astrology)
+- **الموسوعة العربية** (ar.wikipedia.org): برج الحمل)
+- **بريتانيكا** (britannica.com): Aries, zodiac
 - **ناسا** (science.nasa.gov): [Mars overview](https://science.nasa.gov/mars/)
 - **المعاني** (al-maany.com): [تعريف الحمل في علم الفلك](https://www.almaany.com/ar/dict/ar-ar/%D8%A7%D9%84%D8%AD%D9%85%D9%84/)
-- **الموسوعة الفلسفية ستانفورد** (plato.stanford.edu): [Astrology and philosophy](https://plato.stanford.edu/entries/astrology/)
+- **الموسوعة الفلسفية ستانفورد** (plato.stanford.edu): Astrology and philosophy
 - **JSTOR** (jstor.org): Culpeper, Nicholas. "Astrological Judgement of Diseases", 1655, أرشيف تاريخي عن الفلك الطبي.
 
 <!-- maillage:auto -->

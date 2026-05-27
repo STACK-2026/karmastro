@@ -40,7 +40,7 @@ Premier signe du [zodiaque tropical](https://fr.wikipedia.org/wiki/Zodiaque), le
 - **Jour** : mardi
 - **Couleur** : rouge vif
 
-Le Bélier est régi par [Mars](https://fr.wikipedia.org/wiki/Mars_(astrologie)), planète de l'action, du désir et du combat. Cette domination explique le tempérament direct, l'énergie vitale débordante et la tendance à foncer sans toujours réfléchir qui caractérisent la plupart des natifs du signe.
+Le Bélier est régi par Mars), planète de l'action, du désir et du combat. Cette domination explique le tempérament direct, l'énergie vitale débordante et la tendance à foncer sans toujours réfléchir qui caractérisent la plupart des natifs du signe.
 
 ## Personnalité : feu cardinal par excellence
 
@@ -106,7 +106,7 @@ Astuce carrière pour natifs du signe : **combine un poste à fort impact avec d
 
 ## L'ascendant Bélier
 
-L'[ascendant](https://fr.wikipedia.org/wiki/Ascendant_(astrologie)) est le signe qui monte à l'horizon à l'heure exacte de ta naissance. Il détermine **ton apparence sociale** et la façon dont tu abordes le monde, alors que ton Soleil représente ton essence profonde.
+L'ascendant) est le signe qui monte à l'horizon à l'heure exacte de ta naissance. Il détermine **ton apparence sociale** et la façon dont tu abordes le monde, alors que ton Soleil représente ton essence profonde.
 
 Un ascendant Bélier donne une présence physique directe : démarche rapide, regard franc, tempo vocal affirmé. Les personnes te trouvent dynamique, parfois intimidante. Tu attaques les situations frontalement même si ton Soleil est dans un signe plus doux.
 

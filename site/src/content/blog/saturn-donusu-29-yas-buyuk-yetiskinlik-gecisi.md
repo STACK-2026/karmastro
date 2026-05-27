@@ -190,7 +190,7 @@ Satürn dönüşü yetişkin hayatta anlaşılması gereken en önemli transitti
 Bu makale doğrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadır.
 
 - **Ansiklopedi** (tr.wikipedia.org) : [Astroloji](https://tr.wikipedia.org/wiki/Astroloji)
-- **Ansiklopedi** (tr.wikipedia.org) : [Satürn (gezegen)](https://tr.wikipedia.org/wiki/Sat%C3%BCrn_(gezegen))
+- **Ansiklopedi** (tr.wikipedia.org) : Satürn (gezegen))
 - **Britannica** (britannica.com) : [Astrology](https://www.britannica.com/topic/astrology)
 - **Britannica** (britannica.com) : [Saturn planet](https://www.britannica.com/place/Saturn-planet)
 - **NASA** (science.nasa.gov) : [Saturn overview](https://science.nasa.gov/saturn/)

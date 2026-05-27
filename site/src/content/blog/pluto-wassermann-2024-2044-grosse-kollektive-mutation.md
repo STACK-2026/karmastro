@@ -231,7 +231,7 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 - **Enzyklopaedie** (de.wikipedia.org): [Astrologie](https://de.wikipedia.org/wiki/Astrologie)
 - **Britannica** (britannica.com): [Astrology](https://www.britannica.com/topic/astrology)
 - **NASA Science** (science.nasa.gov): [Pluto Overview](https://science.nasa.gov/dwarf-planets/pluto/)
-- **Enzyklopaedie** (de.wikipedia.org): [Pluto (Zwergplanet)](https://de.wikipedia.org/wiki/Pluto_(Zwergplanet))
+- **Enzyklopaedie** (de.wikipedia.org): Pluto (Zwergplanet))
 - **Enzyklopaedie** (de.wikipedia.org): [Franzoesische Revolution](https://de.wikipedia.org/wiki/Franz%C3%B6sische_Revolution)
 
 <!-- maillage:auto -->

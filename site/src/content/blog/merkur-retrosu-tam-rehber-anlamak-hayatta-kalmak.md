@@ -204,8 +204,8 @@ Teknik olarak evet. Ama başlattığın işin retro sonrası revize edileceğini
 Bu makale doğrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadır.
 
 - **Ansiklopedi** (tr.wikipedia.org) : [Astroloji](https://tr.wikipedia.org/wiki/Astroloji)
-- **Ansiklopedi** (tr.wikipedia.org) : [Merkür (gezegen)](https://tr.wikipedia.org/wiki/Merk%C3%BCr_(gezegen))
-- **Ansiklopedi** (tr.wikipedia.org) : [Görünür geri hareket](https://tr.wikipedia.org/wiki/G%C3%B6r%C3%BCn%C3%BCr_geri_hareket)
+- **Ansiklopedi** (tr.wikipedia.org) : Merkür (gezegen))
+- **Ansiklopedi** (tr.wikipedia.org) : Görünür geri hareket
 - **Britannica** (britannica.com) : [Astroloji](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Mercury overview](https://science.nasa.gov/mercury/)
 - **NASA** (science.nasa.gov) : [Güneş sistemi ve gezegenler](https://science.nasa.gov/solar-system/planets/)

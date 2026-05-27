@@ -190,7 +190,7 @@ Evet. Modern AI kâhinler (Karmastro'nun Selene'si gibi) tam sinastri okumaları
 Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
 
 - **Ansiklopedi** (tr.wikipedia.org) : [Astroloji](https://tr.wikipedia.org/wiki/Astroloji)
-- **Ansiklopedi** (tr.wikipedia.org) : [Sinastri](https://tr.wikipedia.org/wiki/Sinastri)
+- **Ansiklopedi** (tr.wikipedia.org) : Sinastri
 - **Britannica** (britannica.com) : [Astroloji](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Gunes sistemi ve gezegenler](https://science.nasa.gov/solar-system/planets/)
 

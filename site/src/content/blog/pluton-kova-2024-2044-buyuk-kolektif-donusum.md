@@ -221,8 +221,8 @@ Plüton Kova'da muhtemelen hayatının en önemli transitidir çünkü bir jener
 Bu makale doğrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadır.
 
 - **Ansiklopedi** (tr.wikipedia.org) : [Astroloji](https://tr.wikipedia.org/wiki/Astroloji)
-- **Ansiklopedi** (tr.wikipedia.org) : [Plüton (cüce gezegen)](https://tr.wikipedia.org/wiki/Pl%C3%BCton_(c%C3%BCce_gezegen))
-- **Ansiklopedi** (tr.wikipedia.org) : [Kova (takımyıldız)](https://tr.wikipedia.org/wiki/Kova_(tak%C4%B1my%C4%B1ld%C4%B1z))
+- **Ansiklopedi** (tr.wikipedia.org) : Plüton (cüce gezegen))
+- **Ansiklopedi** (tr.wikipedia.org) : Kova (takımyıldız))
 - **Britannica** (britannica.com) : [Astrology](https://www.britannica.com/topic/astrology)
 - **Britannica** (britannica.com) : [Pluto (dwarf planet)](https://www.britannica.com/place/Pluto-dwarf-planet)
 - **NASA** (science.nasa.gov) : [Pluto overview](https://science.nasa.gov/dwarf-planets/pluto/)

@@ -81,7 +81,7 @@ Le calcul du chemin de vie repose sur ta **date de naissance complète** (jour, 
 ### Vérification du calcul
 Pour éviter les erreurs, il est recommandé d’utiliser un **calculateur en ligne** qui applique l’algorithme pythagoricien et prend en compte les maîtres nombres. Voici quelques outils fiables :
 - [Karmastro - Calcul du chemin de vie](https://app.karmastro.com/calcul-chemin-de-vie) : Un outil complet qui génère également des interprétations personnalisées.
-- [Numerology.com - Life Path Number Calculator](https://www.numerology.com/numerology-numbers/life-path-number) : Un calculateur simple et précis, idéal pour les débutants.
+- Numerology.com - Life Path Number Calculator : Un calculateur simple et précis, idéal pour les débutants.
 - [AstroSeek - Numerology Calculator](https://horoscopes.astro-seek.com/numerology-calculator-life-path-number) : Un outil gratuit qui propose des explications détaillées.
 
 ### Exemples concrets
@@ -155,7 +155,7 @@ Malgré leurs talents, les personnes avec un chemin de vie 3 doivent surmonter p
        - **Semaine 2** : Publie un extrait sur un groupe Facebook privé.
        - **Semaine 3** : Publie-le sur ton profil public.
      - **Affirmations positives** : Répète des phrases comme *"Mon expression a de la valeur"* ou *"Je mérite d’être entendu(e)"* devant un miroir chaque matin.
-     - **Thérapie** : Les thérapies cognitivo-comportementales (TCC) aident à désamorcer la peur du jugement. Des plateformes comme [MonPsy](https://www.ameli.fr/assure/remboursements/remboursements-soins/psychologie) proposent des prises en charge en France.
+     - **Thérapie** : Les thérapies cognitivo-comportementales (TCC) aident à désamorcer la peur du jugement. Des plateformes comme MonPsy proposent des prises en charge en France.
 
    - **Exemple inspirant** : **J.K. Rowling** a essuyé **12 refus** avant de publier *Harry Potter*. Son parcours illustre la persévérance nécessaire pour surmonter la peur du rejet. Bien que son chemin de vie soit un **5** (31/07/1965 → 3+1+7+1+9+6+5 = **32** → 3+2 = **5**), son histoire montre que la résilience est une compétence clé pour les créatifs.
 
@@ -274,7 +274,7 @@ Le chemin de vie 3 est associé à plusieurs symboles et systèmes qui enrichiss
   - **Semaine 3** : Publie-le sur ton profil public ou un site spécialisé.
   Cette approche te permet de t’habituer progressivement aux retours et de gagner en confiance.
 - **Affirmations positives** : Répète des phrases comme *"Mon expression a de la valeur"* ou *"Je mérite d’être entendu(e)"* devant un miroir chaque matin. Ces affirmations t’aideront à renforcer ta confiance en toi.
-- **Thérapie** : Les thérapies cognitivo-comportementales (TCC) sont particulièrement efficaces pour désamorcer la peur du jugement. Des plateformes comme [MonPsy](https://www.ameli.fr/assure/remboursements/remboursements-soins/psychologie) proposent des prises en charge en France, avec des psychologues spécialisés dans les troubles anxieux.
+- **Thérapie** : Les thérapies cognitivo-comportementales (TCC) sont particulièrement efficaces pour désamorcer la peur du jugement. Des plateformes comme MonPsy proposent des prises en charge en France, avec des psychologues spécialisés dans les troubles anxieux.
 
 **Exemple inspirant** : **J.K. Rowling** a essuyé **12 refus** avant de publier *Harry Potter*. Son parcours illustre la persévérance nécessaire pour surmonter la peur du rejet. Bien que son chemin de vie soit un **5** (31/07/1965 → 3+1+7+1+9+6+5 = **32** → 3+2 = **5**), son histoire montre que la résilience est une compétence clé pour les créatifs. Elle a transformé ses échecs en opportunités et prouvé que le rejet n’est pas une fin en soi, mais une étape vers le succès.
 
@@ -357,7 +357,7 @@ Voici un tableau détaillé des métiers adaptés au chemin de vie 3, avec des i
 
 | Métier                | Pourquoi ça marche ?                          | Salaire moyen (France, 2026)* | Compétences clés                     | Formations ou ressources                  |
 |-----------------------|-----------------------------------------------|--------------------------------|---------------------------------------|-------------------------------------------|
-| Designer graphique    | Créativité + travail en équipe.               | 2 800 €/mois                   | Maîtrise des logiciels (Photoshop, Illustrator, InDesign), sens esthétique, communication. | [OpenClassrooms - Formation Designer Graphique](https://openclassrooms.com/fr/paths/47-designer-graphique) |
+| Designer graphique    | Créativité + travail en équipe.               | 2 800 €/mois                   | Maîtrise des logiciels (Photoshop, Illustrator, InDesign), sens esthétique, communication. | OpenClassrooms - Formation Designer Graphique |
 | Journaliste           | Expression écrite + variété des sujets.       | 2 500 €/mois                   | Rédaction, investigation, curiosité, maîtrise des outils numériques. | [CFJ - Centre de Formation des Journalistes](https://www.cfpj.com/) |
 | Professeur d’art      | Transmission + interaction avec les élèves.   | 2 200 €/mois                   | Pédagogie, patience, créativité, maîtrise des techniques artistiques. | [ESAD - École Supérieure d’Art et Design](https://www.esad-reims.fr/) |
 | Community manager     | Communication + réseaux sociaux.              | 2 400 €/mois                   | Rédaction, analyse de données, créativité, maîtrise des outils (Hootsuite, Canva). | [HubSpot Academy - Certification Community Management](https://academy.hubspot.com/) |

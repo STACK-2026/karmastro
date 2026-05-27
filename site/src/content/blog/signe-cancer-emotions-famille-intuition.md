@@ -421,7 +421,7 @@ Le **Cancer** est bien plus qu’un signe "émotif" : c’est un **stratège de 
 ---
 
 ## Sources
-- [Wikipedia - Signe du Cancer](https://fr.wikipedia.org/wiki/Cancer_(astrologie)) - Origines mythologiques et attributs astrologiques.
+- Wikipedia - Signe du Cancer) - Origines mythologiques et attributs astrologiques.
 - [Swiss Ephemeris (Astrodienst)](https://www.astro.com/swisseph/) - Calculs précis des dates et positions planétaires.
 - [IFOP - Les Français et l’astrologie (2024)](https://www.ifop.com/) - Statistiques sur les croyances astrologiques en France.
 - [Université de Cambridge - Étude sur l’intuition des signes d’Eau (2023)](https://www.cam.ac.uk/) - Lien entre élément Eau et détection des émotions.

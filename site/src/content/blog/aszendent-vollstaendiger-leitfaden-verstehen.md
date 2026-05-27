@@ -185,7 +185,7 @@ Dein Aszendent ist nur eine Schicht deiner Geburtskarte, aber eine der strukture
 Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaftliche Quellen.
 
 - **Enzyklopaedie** (de.wikipedia.org) : [Astrologie](https://de.wikipedia.org/wiki/Astrologie)
-- **Enzyklopaedie** (de.wikipedia.org) : [Aszendent (Astrologie)](https://de.wikipedia.org/wiki/Aszendent_(Astrologie))
+- **Enzyklopaedie** (de.wikipedia.org) : Aszendent (Astrologie))
 - **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Sonnensystem und Planeten](https://science.nasa.gov/solar-system/planets/)
 

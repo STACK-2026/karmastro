@@ -231,7 +231,7 @@ Mercurio retrogrado è solo uno dei transiti. Calcola il tuo [ascendente](/it/st
 
 Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 
-- **Enciclopedia** (it.wikipedia.org) : [Mercurio (astronomia)](https://it.wikipedia.org/wiki/Mercurio_(astronomia))
+- **Enciclopedia** (it.wikipedia.org) : Mercurio (astronomia))
 - **Britannica** (britannica.com) : [Mercury - planet](https://www.britannica.com/place/Mercury-planet)
 - **NASA** (science.nasa.gov) : [Mercury Overview](https://science.nasa.gov/mercury/)
 - **Treccani** (treccani.it) : [Mercurio](https://www.treccani.it/enciclopedia/mercurio/)

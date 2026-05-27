@@ -183,7 +183,7 @@ Mercúrio retrógrado não é uma maldição nem uma magia. É uma janela cícli
 
 Este artigo baseia-se em fontes enciclopédicas e científicas verificáveis.
 
-- **Enciclopédia** (pt.wikipedia.org): [Mercúrio (planeta)](https://pt.wikipedia.org/wiki/Merc%C3%BArio_(planeta))
+- **Enciclopédia** (pt.wikipedia.org): Mercúrio (planeta))
 - **Britannica** (britannica.com): [Mercury (planet)](https://www.britannica.com/place/Mercury-planet)
 - **NASA** (science.nasa.gov): [Mercury](https://science.nasa.gov/mercury/)
 - **Enciclopédia** (pt.wikipedia.org): [Astrologia](https://pt.wikipedia.org/wiki/Astrologia)

@@ -151,9 +151,9 @@ Son olarak, Koç için hayat temizliği önerilir : yılda bir kez "ne bitirmedi
 
 Bu makale doğrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadır.
 
-- **Ansiklopedi** (tr.wikipedia.org) : [Koç (takımyıldız)](https://tr.wikipedia.org/wiki/Ko%C3%A7_(tak%C4%B1my%C4%B1ld%C4%B1z))
+- **Ansiklopedi** (tr.wikipedia.org) : Koç (takımyıldız))
 - **Ansiklopedi** (tr.wikipedia.org) : [Astroloji](https://tr.wikipedia.org/wiki/Astroloji)
-- **Britannica** (britannica.com) : [Aries (zodiac sign)](https://www.britannica.com/topic/Aries-astrology)
+- **Britannica** (britannica.com) : Aries (zodiac sign)
 - **Britannica** (britannica.com) : [Astrology](https://www.britannica.com/topic/astrology)
 - **NASA** (science.nasa.gov) : [Güneş sistemi ve gezegenler](https://science.nasa.gov/solar-system/planets/)
 

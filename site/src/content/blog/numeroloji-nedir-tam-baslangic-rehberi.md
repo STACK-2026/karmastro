@@ -257,7 +257,7 @@ Burc bazinda gunluk falini kontrol edebilirsin.
 
 Bu makale dogrulanabilir ansiklopedik akademik ve resmi bilimsel kaynaklara dayanmaktadir. Atiflar 2026 Nisan ayi itibariyla erisilebilir birincil kaynaklardir.
 
-- Wikipedia Turkce Numeroloji maddesi [tr.wikipedia.org/wiki/Numeroloji](https://tr.wikipedia.org/wiki/Numeroloji)
+- Wikipedia Turkce Numeroloji maddesi tr.wikipedia.org/wiki/Numeroloji
 - Encyclopaedia Britannica Numerology [britannica.com/topic/numerology](https://www.britannica.com/topic/numerology)
 - Stanford Encyclopedia of Philosophy Pythagoreanism [plato.stanford.edu/entries/pythagoreanism](https://plato.stanford.edu/entries/pythagoreanism/)
 - JSTOR akademik makale veritabani [jstor.org](https://www.jstor.org/)

@@ -157,7 +157,7 @@ Yaşam yolu 1 numerolojik profilinin sadece ilk katmanıdır. Tam bir resim içi
 
 Bu makale doğrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadır.
 
-- **Ansiklopedi** (tr.wikipedia.org) : [Numeroloji](https://tr.wikipedia.org/wiki/Numeroloji)
+- **Ansiklopedi** (tr.wikipedia.org) : Numeroloji
 - **Ansiklopedi** (tr.wikipedia.org) : [Pisagor](https://tr.wikipedia.org/wiki/Pisagor)
 - **Britannica** (britannica.com) : [Numerology](https://www.britannica.com/topic/numerology)
 - **Britannica** (britannica.com) : [Pythagoras](https://www.britannica.com/biography/Pythagoras)
