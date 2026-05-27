@@ -46,7 +46,7 @@ const formId = `newsletter-${Math.random().toString(36).slice(2, 10)}`;
     <p class="text-sm text-white/70 mb-5 max-w-md mx-auto leading-relaxed">{L.sub}</p>
     <form id={formId} class="newsletter-form max-w-md mx-auto flex flex-col sm:flex-row gap-2" data-source={source} data-locale={locale} data-sign={sign || ""}>
       <input
-        type="email"
+        type="email" aria-label="Email"
         name="email"
         required
         placeholder={L.placeholder}
@@ -64,7 +64,7 @@ const formId = `newsletter-${Math.random().toString(36).slice(2, 10)}`;
     <p class="text-sm text-white/80 mb-3"><span class="text-amber-300">✦</span> {L.title}</p>
     <form id={formId} class="newsletter-form flex gap-2" data-source={source} data-locale={locale} data-sign={sign || ""}>
       <input
-        type="email"
+        type="email" aria-label="Email"
         name="email"
         required
         placeholder={L.placeholder}
