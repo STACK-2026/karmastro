@@ -52,7 +52,7 @@ L'astrologue Dane Rudhyar, dans *The Astrology of Personality* (1936), décrit l
 
 ## Forces du Bélier
 
-**Courage naturel** : le Bélier n'hésite pas face au danger, à l'adversité, à l'inconnu. Il fonce là où d'autres reculent.
+**Courage naturel** : le Bélier  face au danger, à l'adversité, à l'inconnu. Il fonce là où d'autres reculent.
 
 **Leadership instinctif** : on ne lui apprend pas à diriger, il le fait spontanément. Dans un groupe indécis, le Bélier prend la parole en premier.
 

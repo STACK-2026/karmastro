@@ -193,7 +193,7 @@ Voici 5 exemples de calculs avec leur interprétation :
    - T = 2, H = 8, O = 6, M = 4, A = 1, S = 1 → 2 + 8 + 6 + 4 + 1 + 1 = **22**
    - B = 2, E = 5, R = 9, N = 5, A = 1, R = 9, D = 4 → 2 + 5 + 9 + 5 + 1 + 9 + 4 = **35**
    - Total : 22 + 35 = **57** → 5 + 7 = **12** → 1 + 2 = **3**
-   - *Attention* : ici, le prénom *Thomas* donne **22**, mais le total final est **3**. Si le **22** apparaît dans le calcul, il est important de noter cette vibration, même si le résultat final est différent.
+   - *Attention* : ici, le prénom *Thomas* donne **22**, mais le total final est **3**. Si le **22** apparaît dans le calcul, À noter cette vibration, même si le résultat final est différent.
    - *Interprétation* : Thomas a un nombre d’expression **3**, mais la présence du **22** dans son prénom suggère une **mission de bâtisseur** à un moment de sa vie.
 
 5. **Sophie Moreau (maître nombre 22)**

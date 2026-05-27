@@ -138,7 +138,7 @@ Le nombre d'expression chaldéen de "Marie" est **4**, associé à la stabilité
 
 ### Le chemin de vie ne change pas
 
-Il est important de noter que **le chemin de vie (calculé à partir de la date de naissance) est identique dans les deux méthodes**, car il n'implique pas de conversion lettre-nombre. Seuls les nombres dérivés du nom (expression, âme, personnalité) diffèrent entre les deux écoles.
+À noter : que **le chemin de vie (calculé à partir de la date de naissance) est identique dans les deux méthodes**, car il n'implique pas de conversion lettre-nombre. Seuls les nombres dérivés du nom (expression, âme, personnalité) diffèrent entre les deux écoles.
 
 Notre [calculateur de chemin de vie](/outils/chemin-de-vie) est donc universel : il fonctionne pour les adeptes des deux traditions. Pour le nombre d'expression, c'est notre [calculateur dédié](/outils/nombre-expression) qui utilise la méthode pythagoricienne par défaut.
 

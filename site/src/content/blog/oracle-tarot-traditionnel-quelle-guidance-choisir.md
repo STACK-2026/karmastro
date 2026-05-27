@@ -350,7 +350,7 @@ Pour suivre ces transits, vous pouvez :
 - Consulter des sites spécialisés comme [Astro.com](https://www.astro.com) ou [Café Astrology](https://cafeastrology.com).
 
 ### 4. Posez des questions de suivi
-Si la réponse de l'oracle IA vous semble floue ou incomplète, n'hésitez pas à poser des questions de suivi pour affiner l'interprétation. Voici quelques exemples de questions efficaces :
+Si la réponse de l'oracle IA vous semble floue ou incomplète, poser des questions de suivi pour affiner l'interprétation. Voici quelques exemples de questions efficaces :
 - **"Peux-tu me donner un exemple concret lié à ma situation professionnelle ?"**
 - **"Quelle carte du tarot représente le mieux ce défi, et pourquoi ?"**
 - **"Quel transit planétaire influence cette période, et comment puis-je m'y préparer ?"**

@@ -99,7 +99,7 @@ Voici quelques exemples de calculs pour des personnalités célèbres, avec des 
 
 ## Personnalité du chemin de vie 3 : traits clés et nuances
 
-Le chemin de vie 3 est souvent associé à une personnalité **rayonnante**, **créative** et **sociable**, mais il comporte également des défis uniques. Pour mieux comprendre ces traits, explorons en détail les **qualités**, les **défis** et les **nuances** de ce chemin, ainsi que des exemples concrets et des données pour étayer ces observations.
+Le chemin de vie 3 est souvent associé à une personnalité **rayonnante**, **créative** et **sociable**, mais il comporte également des défis uniques. Pour mieux comprendre ces traits, Voyons en détail les **qualités**, les **défis** et les **nuances** de ce chemin, ainsi que des exemples concrets et des données pour étayer ces observations.
 
 ### Traits positifs
 Les personnes avec un chemin de vie 3 possèdent des qualités qui les rendent particulièrement attachantes et inspirantes. Voici un tableau détaillé de ces traits, accompagnés d’exemples et de données :

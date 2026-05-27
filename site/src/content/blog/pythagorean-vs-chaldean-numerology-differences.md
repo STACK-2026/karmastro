@@ -139,7 +139,7 @@ The Chaldean expression number of "Marie" is **4**, associated with stability, m
 
 ### The life path does not change
 
-It is important to note that **the life path (calculated from the birth date) is identical in both methods**, because it does not involve letter-number conversion. Only the numbers derived from the name (expression, soul, personality) differ between the two schools.
+**the life path (calculated from the birth date) is identical in both methods**, because it does not involve letter-number conversion. Only the numbers derived from the name (expression, soul, personality) differ between the two schools.
 
 Our [life path calculator](/en/tools/life-path-number) is therefore universal: it works for followers of both traditions. For the expression number, our [dedicated calculator](/en/tools/expression-number) uses the Pythagorean method by default.
 
