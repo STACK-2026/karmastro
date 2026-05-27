@@ -236,8 +236,8 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 - **Enzyklopaedie** (de.wikipedia.org): [Astrologie](https://de.wikipedia.org/wiki/Astrologie)
 - **Britannica** (britannica.com): [Astrology](https://www.britannica.com/topic/astrology)
 - **NASA Science** (science.nasa.gov): [Mercury Overview](https://science.nasa.gov/mercury/)
-- **Enzyklopaedie** (de.wikipedia.org): [Merkur (Planet)](https://de.wikipedia.org/wiki/Merkur_(Planet))
-- **Enzyklopaedie** (de.wikipedia.org): [Scheinbare Rueckwaertsbewegung](https://de.wikipedia.org/wiki/Scheinbare_R%C3%BCckw%C3%A4rtsbewegung)
+- **Enzyklopaedie** (de.wikipedia.org): Merkur (Planet))
+- **Enzyklopaedie** (de.wikipedia.org): Scheinbare Rueckwaertsbewegung
 
 <!-- maillage:auto -->
 ## Mehr erfahren
