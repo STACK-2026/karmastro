@@ -32,7 +32,7 @@
 | T7 email `reading` | ✅ déployé | `e75f70e` | live ; envoi réel dépend de Resend |
 | T8 Page calculateur (CTA) | ✅ | `7549b9c` | champ nom + bouton 4,90€, build OK, JSON-LD intact |
 | T9 Page `/lecture` | ✅ | `7549b9c` | noindex + exclue du sitemap, build OK |
-| T10 E2E + déploiement site | ⛔ bloqué | — | **n'a PAS été déployé en prod** (éviter bouton cassé) ; attend Stripe + paiement réel |
+| T10 E2E + déploiement site | ✅ DÉPLOYÉ | merge `7b8058d` | **LIVE en prod** (deploy-site GHA success 2m16s). CTA live, /lecture 200+noindex, checkout cs_live. Reste : 1 paiement réel de validation (carte Augustin). |
 
 ## Vérifications faites (preuves)
 
@@ -58,8 +58,8 @@ La génération de lecture appelle Claude avec `ANTHROPIC_API_KEY`. La clé de `
 ## Reste (décisions Augustin)
 
 - [ ] **Anthropic** ❌ : clé Supabase **sans crédit**. Impact : lectures = **fallback canonique** ; **Oracle = mode maintenance** (secret `ORACLE_MAINTENANCE=1`, message « Orion se recentre » en SSE, 0 appel Claude). **Réactivation qualité pleine = recharger l'API PUIS `npx supabase secrets unset ORACLE_MAINTENANCE`** (+ lectures repassent auto en IA). Pas de Claude serveur gratuit (sub claude.ai = CLI/interactif only).
-- [ ] **Déploiement site en prod** : décision — shipper maintenant (funnel live, lectures en fallback) OU attendre le rechargement Anthropic.
-- [ ] **Test paiement réel 4,90€** sur `/outils/dette-karmique/` (carte réelle, mode LIVE).
+- [x] **Déploiement site en prod** : FAIT (29/05, merge→main→CF Pages). Tunnel de vente LIVE, lectures en fallback.
+- [ ] **Test paiement réel 4,90€** sur https://karmastro.com/outils/dette-karmique/ (carte réelle, mode LIVE) — dernière validation E2E.
 - [ ] **Liens cross-domain résiduels** (blocs non-paid dette-karmique) : à trancher (DA).
 
 ## Audit final indépendant (sous-agent, 2026-05-29)
