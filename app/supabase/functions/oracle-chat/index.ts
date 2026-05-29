@@ -358,6 +358,31 @@ serve(async (req) => {
 
   try {
     const { messages, profile, guide: guideKey, userId, sessionId, conversationId, priorSummary } = await req.json();
+
+    // Mode maintenance : Oracle indisponible (ex : crédit API Anthropic épuisé).
+    // Renvoie un message chaleureux dans le format SSE attendu, SANS appeler Claude
+    // ni consommer le quota. Lever le secret ORACLE_MAINTENANCE quand l'API est rechargée.
+    if (Deno.env.get("ORACLE_MAINTENANCE")) {
+      const g = GUIDES[guideKey] || GUIDES[DEFAULT_GUIDE];
+      const text = `${g.name} se recentre quelques jours — l'Oracle est momentanément en pause. Je serai très bientôt de nouveau à ton écoute. ✦\n\nEn attendant, tu peux explorer ta lecture karmique personnalisée sur karmastro.com/outils/dette-karmique.`;
+      const sseData = JSON.stringify({
+        choices: [{ delta: { content: text }, finish_reason: "stop" }],
+        guide: guideKey || DEFAULT_GUIDE,
+        engine_status: "maintenance",
+      });
+      const encoder = new TextEncoder();
+      const stream = new ReadableStream({
+        start(controller) {
+          controller.enqueue(encoder.encode(`data: ${sseData}\n\n`));
+          controller.enqueue(encoder.encode("data: [DONE]\n\n"));
+          controller.close();
+        },
+      });
+      return new Response(stream, {
+        headers: { ...corsHeaders, "Content-Type": "text/event-stream" },
+      });
+    }
+
     const ANTHROPIC_API_KEY = Deno.env.get("ANTHROPIC_API_KEY");
     if (!ANTHROPIC_API_KEY) throw new Error("ANTHROPIC_API_KEY non configurée");
 
