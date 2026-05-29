@@ -6,6 +6,7 @@ import {
   badgeUnlockedEmail,
   filleulArrivedEmail,
   firstOracleEmail,
+  readingEmail,
 } from "../_shared/email-templates.ts";
 
 const corsHeaders = {
@@ -23,7 +24,8 @@ type TemplateType =
   | "payment_success"
   | "badge_unlocked"
   | "filleul_arrived"
-  | "first_oracle";
+  | "first_oracle"
+  | "reading";
 
 async function sendViaResend(to: string, subject: string, html: string, text: string): Promise<void> {
   if (!RESEND_API_KEY) {
@@ -98,6 +100,9 @@ serve(async (req) => {
         break;
       case "first_oracle":
         template = firstOracleEmail(data?.firstName ?? null, data?.guideName ?? "Sibylle");
+        break;
+      case "reading":
+        template = readingEmail(data?.token ?? "");
         break;
       default:
         return new Response(JSON.stringify({ error: `Unknown template type: ${type}` }), {

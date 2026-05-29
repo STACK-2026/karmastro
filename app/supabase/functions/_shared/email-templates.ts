@@ -287,3 +287,34 @@ https://app.karmastro.com/oracle
     text,
   };
 }
+
+export function readingEmail(token: string): EmailTemplate {
+  const url = `https://karmastro.com/lecture?token=${token}`;
+  const html = wrapHtml(
+    "Ta lecture karmique est prête",
+    `
+<h1 style="color:#fff;font-family:Georgia,serif;font-size:26px;margin:0 0 16px;">Ta lecture karmique t'attend ✦</h1>
+<p>Orion a terminé ta lecture karmique personnalisée. Elle t'est réservée et reste accessible à tout moment via le lien ci-dessous.</p>
+<p>Prends un moment au calme pour la lire : elle parle de ta mémoire d'âme, de ce qu'elle crée aujourd'hui dans ta vie, et du geste concret de la semaine.</p>
+    `,
+    "Lire ma lecture karmique",
+    url
+  );
+
+  const text = `Ta lecture karmique t'attend ✦
+
+Orion a terminé ta lecture karmique personnalisée. Elle reste accessible à tout moment ici :
+
+${url}
+
+Prends un moment au calme pour la lire.
+
+« Les astres inclinent, mais ne déterminent pas » - Thomas d'Aquin
+`;
+
+  return {
+    subject: "✦ Ta lecture karmique est prête",
+    html,
+    text,
+  };
+}
