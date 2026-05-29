@@ -133,28 +133,36 @@ export function buildKarmicDebtPrompt(input: ReadingInput): string {
   ].join("\n");
 }
 
-// Appel Claude isolé — vérifié manuellement (test E2E), pas en test unitaire (réseau + clé).
+// Génération via Gemini (tier gratuit, GOOGLE_API_KEY) — comme l'Oracle.
+// Si erreur, le webhook bascule sur buildFallbackReading (filet).
 export async function generateReading(input: ReadingInput): Promise<string> {
-  const apiKey = Deno.env.get("ANTHROPIC_API_KEY");
-  if (!apiKey) throw new Error("ANTHROPIC_API_KEY manquante");
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "x-api-key": apiKey,
-      "anthropic-version": "2023-06-01",
-      "content-type": "application/json",
+  const apiKey = Deno.env.get("GOOGLE_API_KEY");
+  if (!apiKey) throw new Error("GOOGLE_API_KEY manquante");
+  const model = "gemini-2.5-flash";
+  const res = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+    {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        contents: [{ role: "user", parts: [{ text: buildKarmicDebtPrompt(input) }] }],
+        generationConfig: { maxOutputTokens: 3500, temperature: 0.9 },
+      }),
     },
-    body: JSON.stringify({
-      model: "claude-sonnet-4-6",
-      max_tokens: 3500,
-      messages: [{ role: "user", content: buildKarmicDebtPrompt(input) }],
-    }),
-  });
+  );
   if (!res.ok) {
-    throw new Error(`Anthropic ${res.status}: ${(await res.text()).slice(0, 300)}`);
+    throw new Error(`Gemini ${res.status}: ${(await res.text()).slice(0, 300)}`);
   }
   const data = await res.json();
-  const text = data?.content?.[0]?.text ?? "";
-  if (!text) throw new Error("Réponse Claude vide");
-  return text;
+  const text = (data?.candidates?.[0]?.content?.parts ?? [])
+    .map((p: { text?: string }) => p.text || "")
+    .join("");
+  if (!text) throw new Error("Réponse Gemini vide");
+  // Standard marque Karmastro : pas de tiret cadratin/demi-cadratin.
+  return text
+    .replace(/\s*—\s*/g, ", ")
+    .replace(/–/g, "-")
+    .replace(/―/g, ", ")
+    .replace(/ +([,.;:!?])/g, "$1")
+    .replace(/[ \t]{2,}/g, " ");
 }
