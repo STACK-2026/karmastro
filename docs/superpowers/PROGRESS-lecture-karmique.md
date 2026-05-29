@@ -57,7 +57,7 @@ La génération de lecture appelle Claude avec `ANTHROPIC_API_KEY`. La clé de `
 
 ## Reste (décisions Augustin)
 
-- [ ] **Anthropic** ❌ : clé Supabase **sans crédit** (oracle-chat échoue pareil). Tant que non rechargée, chaque lecture = **fallback canonique** (cohérent, perso prénom/chemin de vie/dette, mais pas la lecture IA profonde). À recharger pour la qualité pleine.
+- [ ] **Anthropic** ❌ : clé Supabase **sans crédit**. Impact : lectures = **fallback canonique** ; **Oracle = mode maintenance** (secret `ORACLE_MAINTENANCE=1`, message « Orion se recentre » en SSE, 0 appel Claude). **Réactivation qualité pleine = recharger l'API PUIS `npx supabase secrets unset ORACLE_MAINTENANCE`** (+ lectures repassent auto en IA). Pas de Claude serveur gratuit (sub claude.ai = CLI/interactif only).
 - [ ] **Déploiement site en prod** : décision — shipper maintenant (funnel live, lectures en fallback) OU attendre le rechargement Anthropic.
 - [ ] **Test paiement réel 4,90€** sur `/outils/dette-karmique/` (carte réelle, mode LIVE).
 - [ ] **Liens cross-domain résiduels** (blocs non-paid dette-karmique) : à trancher (DA).
