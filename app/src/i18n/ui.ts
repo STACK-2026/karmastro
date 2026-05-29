@@ -415,6 +415,7 @@ export type UiKey =
 
   // profile
   | "profile.header_title"
+  | "profile.edit_info"
   | "profile.year_label"
   | "profile.karmic_debt"
   | "profile.north_node"
@@ -1001,6 +1002,7 @@ export const fr: UiStrings = {
   "learn.guide_compat_desc": "Synastrie, éléments, nombres : comment deux thèmes interagissent vraiment.",
 
   "profile.header_title": "Mon profil",
+  "profile.edit_info": "Modifier mes informations",
   "profile.year_label": "Année {year}",
   "profile.karmic_debt": "Dette karmique : {list}",
   "profile.north_node": "☊ Noeud Nord : {sign} M{house} - {lesson}",
@@ -1574,6 +1576,7 @@ export const en: Partial<UiStrings> = {
   "learn.guide_compat_desc": "Synastry, elements, numbers: how two charts really interact.",
 
   "profile.header_title": "My profile",
+  "profile.edit_info": "Edit my information",
   "profile.year_label": "Year {year}",
   "profile.karmic_debt": "Karmic debt: {list}",
   "profile.north_node": "☊ North Node: {sign} H{house} - {lesson}",
@@ -2141,6 +2144,7 @@ export const es: Partial<UiStrings> = {
   "learn.guide_compat_desc": "Sinastría, elementos, números: cómo interactúan realmente dos cartas.",
 
   "profile.header_title": "Mi perfil",
+  "profile.edit_info": "Editar mi información",
   "profile.year_label": "Año {year}",
   "profile.karmic_debt": "Deuda kármica: {list}",
   "profile.north_node": "☊ Nodo Norte: {sign} C{house} - {lesson}",
@@ -2708,6 +2712,7 @@ export const pt: Partial<UiStrings> = {
   "learn.guide_compat_desc": "Sinastria, elementos, números: como dois mapas interagem de facto.",
 
   "profile.header_title": "O meu perfil",
+  "profile.edit_info": "Editar as minhas informações",
   "profile.year_label": "Ano {year}",
   "profile.karmic_debt": "Dívida kármica: {list}",
   "profile.north_node": "☊ Nodo Norte: {sign} C{house} - {lesson}",
@@ -3275,6 +3280,7 @@ export const de: Partial<UiStrings> = {
   "learn.guide_compat_desc": "Synastrie, Elemente, Zahlen: wie zwei Horoskope wirklich miteinander spielen.",
 
   "profile.header_title": "Mein Profil",
+  "profile.edit_info": "Meine Angaben bearbeiten",
   "profile.year_label": "Jahr {year}",
   "profile.karmic_debt": "Karmische Schuld: {list}",
   "profile.north_node": "☊ Nordknoten: {sign} H{house} - {lesson}",
@@ -3842,6 +3848,7 @@ export const it: Partial<UiStrings> = {
   "learn.guide_compat_desc": "Sinastria, elementi, numeri: come due temi interagiscono davvero.",
 
   "profile.header_title": "Il mio profilo",
+  "profile.edit_info": "Modifica le mie informazioni",
   "profile.year_label": "Anno {year}",
   "profile.karmic_debt": "Debito karmico: {list}",
   "profile.north_node": "☊ Nodo Nord: {sign} C{house} - {lesson}",
@@ -4409,6 +4416,7 @@ export const tr: Partial<UiStrings> = {
   "learn.guide_compat_desc": "Sinastri, elementler, sayılar: iki harita gerçekten nasıl etkileşir.",
 
   "profile.header_title": "Profilim",
+  "profile.edit_info": "Bilgilerimi düzenle",
   "profile.year_label": "Yıl {year}",
   "profile.karmic_debt": "Karmik borç: {list}",
   "profile.north_node": "☊ Kuzey Düğümü: {sign} E{house} - {lesson}",
@@ -4976,6 +4984,7 @@ export const pl: Partial<UiStrings> = {
   "learn.guide_compat_desc": "Synastria, żywioły, liczby: jak naprawdę oddziałują dwie karty.",
 
   "profile.header_title": "Mój profil",
+  "profile.edit_info": "Edytuj moje dane",
   "profile.year_label": "Rok {year}",
   "profile.karmic_debt": "Dług karmiczny: {list}",
   "profile.north_node": "☊ Węzeł Północny: {sign} D{house} - {lesson}",
@@ -5543,6 +5552,7 @@ export const ru: Partial<UiStrings> = {
   "learn.guide_compat_desc": "Синастрия, стихии, числа: как на самом деле взаимодействуют две карты.",
 
   "profile.header_title": "Мой профиль",
+  "profile.edit_info": "Изменить мои данные",
   "profile.year_label": "Год {year}",
   "profile.karmic_debt": "Кармический долг: {list}",
   "profile.north_node": "☊ Северный узел: {sign} Д{house} - {lesson}",
@@ -6110,6 +6120,7 @@ export const ja: Partial<UiStrings> = {
   "learn.guide_compat_desc": "シナストリー、エレメント、数: 2つのチャートが本当にどう影響し合うか。",
 
   "profile.header_title": "マイプロフィール",
+  "profile.edit_info": "情報を編集する",
   "profile.year_label": "{year}年",
   "profile.karmic_debt": "カルマの負債: {list}",
   "profile.north_node": "☊ ノースノード: {sign} H{house} - {lesson}",
@@ -6677,6 +6688,7 @@ export const ar: Partial<UiStrings> = {
   "learn.guide_compat_desc": "التوافق الفلكي، العناصر، الأرقام: كيف تتفاعل خريطتان فعلاً.",
 
   "profile.header_title": "ملفي الشخصي",
+  "profile.edit_info": "تعديل معلوماتي",
   "profile.year_label": "سنة {year}",
   "profile.karmic_debt": "دين كارمي: {list}",
   "profile.north_node": "☊ العقدة الشمالية: {sign} ب{house} - {lesson}",

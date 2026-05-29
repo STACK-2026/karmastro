@@ -26,10 +26,34 @@ const description = "Ta lecture karmique personnalisée.";
 
 <script>
   const GET_READING = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/get-reading";
-  const token = new URLSearchParams(location.search).get("token");
+  const params = new URLSearchParams(location.search);
+  const token = params.get("token");
+  const lang = params.get("lang") === "en" ? "en" : "fr";
   const loading = document.getElementById("lc-loading")!;
   const content = document.getElementById("lc-content")!;
   const errEl = document.getElementById("lc-error")!;
+
+  // Localise les libellés UI (le contenu de la lecture vient déjà localisé du backend).
+  const STR = {
+    fr: {
+      loadingTitle: "Génération de ta lecture…", loadingSub: "Orion consulte les nombres. Quelques secondes.",
+      errorTitle: "Ta lecture arrive…",
+      errorSub: "Si rien ne s'affiche d'ici une minute, recharge la page. Ton paiement est bien pris en compte et ta lecture t'est aussi envoyée par email.",
+      emailNote: "Une copie t'a été envoyée par email. Garde ce lien pour retrouver ta lecture à tout moment.",
+    },
+    en: {
+      loadingTitle: "Generating your reading…", loadingSub: "Orion is consulting the numbers. A few seconds.",
+      errorTitle: "Your reading is on its way…",
+      errorSub: "If nothing shows within a minute, reload the page. Your payment went through and your reading is also sent to you by email.",
+      emailNote: "A copy has been sent to your email. Keep this link to find your reading any time.",
+    },
+  }[lang];
+  if (lang === "en") {
+    loading.children[1].textContent = STR.loadingTitle;
+    loading.children[2].textContent = STR.loadingSub;
+    errEl.children[1].textContent = STR.errorTitle;
+    errEl.children[2].textContent = STR.errorSub;
+  }
 
   function esc(s: string): string {
     return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -60,7 +84,7 @@ const description = "Ta lecture karmique personnalisée.";
       if (data.status === "ready" && data.content) {
         loading.classList.add("hidden");
         content.innerHTML = mdToHtml(data.content) +
-          `<p class="text-xs text-white/40 mt-10 border-t border-white/10 pt-4">Une copie t'a été envoyée par email. Garde ce lien pour retrouver ta lecture à tout moment.</p>`;
+          `<p class="text-xs text-white/40 mt-10 border-t border-white/10 pt-4">${STR.emailNote}</p>`;
         content.classList.remove("hidden");
         return;
       }

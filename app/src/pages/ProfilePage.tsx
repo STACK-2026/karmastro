@@ -100,6 +100,12 @@ const ProfilePage = () => {
           <p className="text-sm text-muted-foreground mt-1">
             {birthDate.toLocaleDateString(locale)} · {birthTime} · {birthPlace}
           </p>
+          <button
+            onClick={() => navigate("/onboarding")}
+            className="mt-2 text-xs text-primary/80 hover:text-primary underline underline-offset-2 transition-colors"
+          >
+            {t("profile.edit_info")}
+          </button>
 
           <div className="flex justify-center gap-6 mt-4">
             <div className="text-center flex flex-col items-center">

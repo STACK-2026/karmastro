@@ -102,7 +102,7 @@ serve(async (req) => {
         template = firstOracleEmail(data?.firstName ?? null, data?.guideName ?? "Sibylle");
         break;
       case "reading":
-        template = readingEmail(data?.token ?? "");
+        template = readingEmail(data?.token ?? "", data?.locale ?? "fr");
         break;
       default:
         return new Response(JSON.stringify({ error: `Unknown template type: ${type}` }), {

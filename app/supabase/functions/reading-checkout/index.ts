@@ -42,10 +42,12 @@ serve(async (req) => {
     }
 
     const token = crypto.randomUUID();
+    const loc = String(locale || "fr").slice(0, 5);
+    const langParam = loc !== "fr" ? `&lang=${encodeURIComponent(loc)}` : "";
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       line_items: [{ price: READING_PRICE_ID, quantity: 1 }],
-      success_url: `${SITE}/lecture/?token=${token}`,
+      success_url: `${SITE}/lecture/?token=${token}${langParam}`,
       cancel_url: `${SITE}/outils/dette-karmique/?canceled=1`,
       metadata: {
         token,

@@ -1,4 +1,4 @@
-import { Globe, Bell, Palette, Shield, LogOut } from "lucide-react";
+import { Globe, Bell, Palette, Shield, LogOut, UserCog } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import BottomNav from "@/components/BottomNav";
@@ -34,6 +34,15 @@ const SettingsPage = () => {
       <AppHeader title={t("settings.header_title")} showBack />
 
       <div className="relative z-10 px-5 space-y-3">
+        <button
+          onClick={() => navigate("/onboarding")}
+          className="w-full flex items-center gap-3 border-glow rounded-lg bg-card/40 p-4 hover:bg-card/60 transition-colors"
+        >
+          <UserCog className="h-5 w-5 text-primary" />
+          <span className="text-sm flex-1 text-left">{t("profile.edit_info")}</span>
+          <span className="text-xs text-muted-foreground">→</span>
+        </button>
+
         {settings.map((s) => (
           <button
             key={s.label}

@@ -126,6 +126,10 @@ const jsonLd = [
           <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">Your date of birth</label>
           <input type="date" id="birth-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
         </div>
+        <div>
+          <label for="full-name" class="block text-sm font-medium text-white/80 mb-2">Your full birth name <span class="text-white/40">(optional — refines your reading)</span></label>
+          <input type="text" id="full-name" autocomplete="off" class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+        </div>
         <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
           Check my karmic debts
         </button>
@@ -241,31 +245,22 @@ const jsonLd = [
     } else {
       noneDiv.classList.add("hidden");
       debtsDiv.classList.remove("hidden");
-      const isPremium = (() => {
-        try {
-          const tier = localStorage.getItem("km_user_tier");
-          return tier === "etoile" || tier === "cosmos";
-        } catch { return false; }
-      })();
       debtsDiv.innerHTML = debts.map((debt) => {
         const en = DEBTS_EN[debt.code];
         if (!en) return "";
-        const lockedStyle = isPremium
-          ? ""
-          : 'style="filter: blur(7px); opacity: 0.55; user-select: none; pointer-events: none;" aria-hidden="true"';
-        const paywall = isPremium ? "" : `
+        const lockedStyle = 'style="filter: blur(7px); opacity: 0.55; user-select: none; pointer-events: none;" aria-hidden="true"';
+        const paywall = `
           <div class="mt-5 p-5 rounded-xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30 text-center">
             <p class="text-2xl mb-1">✦</p>
-            <p class="font-serif text-base text-white mb-1">Go beyond the diagnosis</p>
+            <p class="font-serif text-base text-white mb-1">Your full karmic reading</p>
             <p class="text-xs text-white/60 mb-4 max-w-sm mx-auto leading-relaxed">
-              Orion (karmic coach) and Sibylle (mystic oracle) translate your ${debt.code} into a concrete weekly ritual: what to stop, what to try, the question to ask before every decision.
+              A personalised reading from Orion: what your ${debt.code} says about your past life, what it creates today, the concrete ritual of the week and the question to hold. Delivered on screen instantly + by email.
             </p>
-            <a
-              href="https://app.karmastro.com/oracle?tool=karmic-debt&amp;code=${encodeURIComponent(debt.code)}"
-              class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity"
-            >
-              Work my ${debt.code} with the Oracle
-            </a>
+            <button
+              type="button"
+              class="km-buy inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity"
+              data-code="${debt.code}"
+            >Unlock my full reading — €4.90</button>
           </div>
         `;
         return `
@@ -298,5 +293,31 @@ const jsonLd = [
       }).join("");
     }
     resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  // Purchase: opens the guest Stripe Checkout (site-native) for the full reading.
+  const CHECKOUT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/reading-checkout";
+  debtsDiv?.addEventListener("click", async (ev) => {
+    const btn = (ev.target as HTMLElement).closest(".km-buy") as HTMLButtonElement | null;
+    if (!btn) return;
+    btn.disabled = true;
+    const original = btn.textContent;
+    btn.textContent = "Redirecting…";
+    const dateStr = (document.getElementById("birth-date") as HTMLInputElement).value;
+    const fullName = (document.getElementById("full-name") as HTMLInputElement)?.value || "";
+    const allCodes = [...debtsDiv.querySelectorAll(".km-buy")].map((b) => (b as HTMLElement).dataset.code).filter(Boolean);
+    try {
+      const r = await fetch(CHECKOUT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ tool: "karmic-debt", birthDate: dateStr, fullName, locale: "en", debtCodes: allCodes }),
+      });
+      const data = await r.json();
+      if (data?.url) { window.location.href = data.url; } else { throw new Error(data?.error || "no url"); }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = original;
+      alert("Something went wrong, please try again in a moment.");
+    }
   });
 </script>

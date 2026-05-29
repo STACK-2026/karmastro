@@ -42,3 +42,20 @@ Deno.test("buildFallbackReading tolère birthDate vide (pas de crash)", () => {
   const r = buildFallbackReading({ fullName: "", birthDate: "", locale: "fr", debtCodes: ["19/1"] });
   assertStringIncludes(r, "## 19/1");
 });
+
+Deno.test("buildKarmicDebtPrompt EN écrit en anglais", () => {
+  const p = buildKarmicDebtPrompt({ fullName: "John Smith", birthDate: "1988-06-14", locale: "en", debtCodes: ["14/5"] });
+  assertStringIncludes(p, "IN ENGLISH");
+  assertStringIncludes(p, "Life path");
+  assertStringIncludes(p, "John");
+  assertStringIncludes(p, "14/5");
+});
+
+Deno.test("buildFallbackReading EN produit de l'anglais", () => {
+  const r = buildFallbackReading({ fullName: "John Smith", birthDate: "1988-06-14", locale: "en", debtCodes: ["14/5"] });
+  assertStringIncludes(r, "## 14/5");
+  assertStringIncludes(r, "soul memory");
+  assertStringIncludes(r, "ritual for the week");
+  assertStringIncludes(r, "John");
+  assert(!r.includes("mémoire d'âme")); // pas de FR
+});

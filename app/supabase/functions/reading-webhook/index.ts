@@ -91,7 +91,7 @@ serve(async (req) => {
       fetch(`${SUPABASE_URL}/functions/v1/send-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json", "Authorization": `Bearer ${SERVICE_KEY}` },
-        body: JSON.stringify({ type: "reading", to: email, data: { token: md.token } }),
+        body: JSON.stringify({ type: "reading", to: email, data: { token: md.token, locale: inputs.locale } }),
       }).catch(() => {});
     }
   })();
