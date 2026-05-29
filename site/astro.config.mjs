@@ -41,6 +41,12 @@ export default defineConfig({
         if (/\/newsletter\/(confirm|unsubscribe)\/?$/.test(item.url)) {
           return undefined;
         }
+        // Exclude the transactional reading delivery page : /lecture is reached
+        // only via a post-payment token, has no standalone content, and is
+        // noindex in BaseLayout. Keep the sitemap signal consistent.
+        if (/\/lecture\/?$/.test(new URL(item.url).pathname)) {
+          return undefined;
+        }
         // Withhold weak locales from the public sitemap until per-locale slug
         // refactor lands. BaseLayout also sets noindex on these pages so the
         // signal is consistent. FR + EN remain fully indexed.

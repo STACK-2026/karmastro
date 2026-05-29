@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Ta lecture karmique · Karmastro";
+const description = "Ta lecture karmique personnalisée.";
+---
+
+<BaseLayout title={title} description={description} noIndex={true}>
+  <article class="max-w-2xl mx-auto px-4 py-16 min-h-[60vh]">
+    <div id="lc-loading" class="text-center py-20">
+      <p class="text-4xl mb-4 animate-pulse">✦</p>
+      <p class="font-serif text-2xl text-white mb-2">Génération de ta lecture…</p>
+      <p class="text-sm text-white/60">Orion consulte les nombres. Quelques secondes.</p>
+    </div>
+    <div id="lc-content" class="prose prose-invert max-w-none hidden"></div>
+    <div id="lc-error" class="hidden text-center py-20">
+      <p class="text-4xl mb-4">✦</p>
+      <p class="font-serif text-2xl text-white mb-2">Ta lecture arrive…</p>
+      <p class="text-sm text-white/60 max-w-md mx-auto leading-relaxed">
+        Si rien ne s'affiche d'ici une minute, recharge la page. Ton paiement est bien pris en compte
+        et ta lecture t'est aussi envoyée par email.
+      </p>
+    </div>
+  </article>
+</BaseLayout>
+
+<script>
+  const GET_READING = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/get-reading";
+  const token = new URLSearchParams(location.search).get("token");
+  const loading = document.getElementById("lc-loading")!;
+  const content = document.getElementById("lc-content")!;
+  const errEl = document.getElementById("lc-error")!;
+
+  function esc(s: string): string {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  // Rendu markdown minimal : titres ## / # + paragraphes (le contenu vient de Claude).
+  function mdToHtml(md: string): string {
+    return md.split(/\n{2,}/).map((block) => {
+      const b = esc(block.trim());
+      if (!b) return "";
+      if (b.startsWith("## ")) return `<h2 class="font-serif text-2xl mt-8 mb-3 text-amber-300">${b.slice(3)}</h2>`;
+      if (b.startsWith("# ")) return `<h1 class="font-serif text-3xl mb-4">${b.slice(2)}</h1>`;
+      return `<p class="text-white/85 leading-relaxed mb-4">${b.replace(/\n/g, "<br>")}</p>`;
+    }).join("");
+  }
+
+  function showError() {
+    loading.classList.add("hidden");
+    errEl.classList.remove("hidden");
+  }
+
+  let tries = 0;
+  async function poll() {
+    if (!token) { showError(); return; }
+    try {
+      const r = await fetch(`${GET_READING}?token=${encodeURIComponent(token)}`);
+      const data = await r.json();
+      if (data.status === "ready" && data.content) {
+        loading.classList.add("hidden");
+        content.innerHTML = mdToHtml(data.content) +
+          `<p class="text-xs text-white/40 mt-10 border-t border-white/10 pt-4">Une copie t'a été envoyée par email. Garde ce lien pour retrouver ta lecture à tout moment.</p>`;
+        content.classList.remove("hidden");
+        return;
+      }
+      if (data.status === "error") { showError(); return; }
+    } catch { /* transient, on retente */ }
+    if (++tries > 20) { showError(); return; }
+    setTimeout(poll, 2000);
+  }
+  poll();
+</script>
