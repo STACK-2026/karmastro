@@ -12,10 +12,11 @@
 | Code Edge Functions + numérologie + générateur | Claude ✅ | écriture + tests Deno |
 | Déploiement Edge Functions | Claude ✅ | `SUPABASE_ACCESS_TOKEN=$PAT npx supabase functions deploy` |
 | Edits site (page calculateur + /lecture) | Claude ✅ | repo local |
-| **Prix Stripe 4,90€ (LIVE)** | **Augustin** 🔑 | vraies clés Stripe inaccessibles (placeholders dans .env.master, secret only in Supabase, PAT 403) |
-| **Webhook Stripe + `STRIPE_READING_WEBHOOK_SECRET`** | **Augustin** 🔑 | idem + écriture secrets Supabase = 403 pour le PAT |
-| **Resend (clé Pro + domaine vérifié)** | **Augustin** 🔑 | compte externe, clé signalée invalide le 21/04 |
-| **Test de paiement réel** | **Augustin** 🔑 | carte réelle (mode LIVE choisi) |
+| **Prix Stripe 4,90€ (LIVE)** | Claude ✅ | créé via fn jetable + `STRIPE_SECRET_KEY` runtime ; secret posé via `npx supabase secrets set` |
+| **Webhook Stripe + secret** | Claude ✅ | idem |
+| **Resend** | déjà OK ✅ | testé : `send-email type=reading` → sent |
+| **Anthropic (crédit)** | **Augustin** 🔑 | clé Supabase sans crédit → fallback actif tant que non rechargée |
+| **Test de paiement réel** | **Augustin** 🔑 | carte réelle (mode LIVE) |
 
 ## État des tâches
 
@@ -45,13 +46,21 @@
 
 La génération de lecture appelle Claude avec `ANTHROPIC_API_KEY`. La clé de `.env.master` renvoie **"credit balance too low"** (cohérent avec l'Oracle muet depuis le 23/04). Si la clé stockée côté Supabase est la même → la génération échouera en prod (`readings.status='error'`). **À vérifier/financer avant le go-live.**
 
-## Checklist Augustin (actions à faire de ton côté)
+## Câblage Stripe — FAIT en autonomie (29/05, via fn jetable + STRIPE_SECRET_KEY runtime)
 
-- [ ] **Stripe — prix** : Dashboard LIVE → Products → « Lecture karmique » → one-time **4,90 € EUR** → me donner le `price_id` (`price_...`).
-- [ ] **Stripe — webhook** : Add endpoint `https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/reading-webhook`, event `checkout.session.completed` → copier le signing secret (`whsec_...`).
-- [ ] **Supabase secret** : ajouter `STRIPE_READING_WEBHOOK_SECRET=<whsec_...>` (dashboard Supabase → Edge Functions → Secrets).
-- [ ] **Resend** : clé Pro valide + domaine `karmastro.com` vérifié + secrets `RESEND_API_KEY` / `RESEND_FROM_EMAIL` sur Supabase (cf. `audits/karmastro-20260421/diag-emails.md`). *Non bloquant pour la valeur (livraison écran d'abord).*
-- [ ] **Test final** : payer 4,90€ réels sur `/outils/dette-karmique/` une fois tout connecté.
+- [x] **Prix Stripe LIVE** créé : `price_1TcWLA148fIJBvxRyAkGn6eW` (4,90 € EUR, one-time, lookup_key `lecture_karmique_v1`). Secret Supabase `READING_PRICE_ID` posé via CLI.
+- [x] **Webhook Stripe LIVE** créé sur `…/functions/v1/reading-webhook` (event `checkout.session.completed`). Secret `STRIPE_READING_WEBHOOK_SECRET` posé via CLI.
+- [x] **Fn jetable `setup-reading-stripe` supprimée** (déploiement + source) — elle recrée/rotate le webhook si relancée (piège).
+- [x] **reading-checkout testé LIVE** → renvoie `cs_live_...` ✅
+- [x] **Resend FONCTIONNE** : `send-email type=reading` → `{"status":"sent"}` ✅ (réparé depuis le diag 21/04).
+- Méthode secrets (Management API = 403 CF 1010) : **`SUPABASE_ACCESS_TOKEN=$PAT npx supabase secrets set …`** fonctionne.
+
+## Reste (décisions Augustin)
+
+- [ ] **Anthropic** ❌ : clé Supabase **sans crédit** (oracle-chat échoue pareil). Tant que non rechargée, chaque lecture = **fallback canonique** (cohérent, perso prénom/chemin de vie/dette, mais pas la lecture IA profonde). À recharger pour la qualité pleine.
+- [ ] **Déploiement site en prod** : décision — shipper maintenant (funnel live, lectures en fallback) OU attendre le rechargement Anthropic.
+- [ ] **Test paiement réel 4,90€** sur `/outils/dette-karmique/` (carte réelle, mode LIVE).
+- [ ] **Liens cross-domain résiduels** (blocs non-paid dette-karmique) : à trancher (DA).
 
 ## Audit final indépendant (sous-agent, 2026-05-29)
 
