@@ -126,6 +126,15 @@ const jsonLd = [
             class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors"
           />
         </div>
+        <div>
+          <label for="full-name" class="block text-sm font-medium text-white/80 mb-2">Ton nom complet de naissance <span class="text-white/40">(optionnel — affine ta lecture)</span></label>
+          <input
+            type="text"
+            id="full-name"
+            autocomplete="off"
+            class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors"
+          />
+        </div>
         <button
           type="submit"
           class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity"
@@ -289,35 +298,27 @@ const jsonLd = [
       resultNone.classList.remove("hidden");
     } else {
       resultNone.classList.add("hidden");
-      // SXO: the user's curiosity peaks the moment the debt is named. We show
-      // the debt identity + the past-life summary (the "aha") in clear, then
-      // soft-gate the three actionable layers (challenge, healing, ritual)
-      // behind a blur with a single Oracle CTA.
-      const isPremium = (() => {
-        try {
-          const tier = localStorage.getItem("km_user_tier");
-          return tier === "etoile" || tier === "cosmos";
-        } catch { return false; }
-      })();
+      // SXO: curiosity peaks the moment the debt is named. We show the debt
+      // identity + past-life summary (the "aha") in clear, soft-gate the
+      // actionable layers (challenge, healing) behind a blur, and offer the
+      // paid personalized reading via site-native checkout (no cross-domain,
+      // no account before payment).
       for (const debt of debts) {
         const card = document.createElement("div");
         card.className = "p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30";
-        const lockedStyle = isPremium
-          ? ""
-          : 'style="filter: blur(7px); opacity: 0.55; user-select: none; pointer-events: none;" aria-hidden="true"';
-        const paywallHtml = isPremium ? "" : `
+        const lockedStyle = 'style="filter: blur(7px); opacity: 0.55; user-select: none; pointer-events: none;" aria-hidden="true"';
+        const paywallHtml = `
           <div class="mt-5 p-5 rounded-xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30 text-center">
             <p class="text-2xl mb-1">✦</p>
-            <p class="font-serif text-base text-white mb-1">Va au-delà du diagnostic</p>
+            <p class="font-serif text-base text-white mb-1">Ta lecture karmique complète</p>
             <p class="text-xs text-white/60 mb-4 max-w-sm mx-auto leading-relaxed">
-              Orion (coach karmique) et Sibylle (Oracle mystique) traduisent ton ${debt.code} en rituel concret : ce qu'il faut arrêter, ce qu'il faut tenter cette semaine, la question à te poser avant chaque décision.
+              Une lecture personnalisée d'Orion : ce que ton ${debt.code} dit de ta vie passée, ce qu'il crée aujourd'hui, le rituel concret de la semaine et la question à te poser. Livrée à l'écran à l'instant + par email.
             </p>
-            <a
-              href="https://app.karmastro.com/oracle?tool=karmic-debt&amp;code=${encodeURIComponent(debt.code)}"
-              class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity"
-            >
-              Travailler mon ${debt.code} avec l'Oracle
-            </a>
+            <button
+              type="button"
+              class="km-buy inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity"
+              data-code="${debt.code}"
+            >Débloquer ma lecture complète — 4,90 €</button>
           </div>
         `;
         card.innerHTML = `
@@ -352,5 +353,37 @@ const jsonLd = [
     }
 
     resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  // Achat : ouvre le Stripe Checkout invité (site-native) pour la lecture complète.
+  const CHECKOUT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/reading-checkout";
+  resultList?.addEventListener("click", async (ev) => {
+    const btn = (ev.target as HTMLElement).closest(".km-buy") as HTMLButtonElement | null;
+    if (!btn) return;
+    btn.disabled = true;
+    const original = btn.textContent;
+    btn.textContent = "Redirection…";
+    const dateVal = (document.getElementById("birth-date") as HTMLInputElement).value;
+    const fullName = (document.getElementById("full-name") as HTMLInputElement)?.value || "";
+    const allCodes = [...resultList.querySelectorAll(".km-buy")].map(
+      (b) => (b as HTMLElement).dataset.code
+    ).filter(Boolean);
+    try {
+      const r = await fetch(CHECKOUT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ tool: "karmic-debt", birthDate: dateVal, fullName, locale: "fr", debtCodes: allCodes }),
+      });
+      const data = await r.json();
+      if (data?.url) {
+        window.location.href = data.url;
+      } else {
+        throw new Error(data?.error || "no url");
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = original;
+      alert("Une erreur est survenue, réessaie dans un instant.");
+    }
   });
 </script>
