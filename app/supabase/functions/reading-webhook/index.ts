@@ -7,7 +7,11 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
 import Stripe from "https://esm.sh/stripe@17.3.0?target=deno";
-import { generateReading } from "../_shared/reading-generator.ts";
+import { generateReading, buildFallbackReading } from "../_shared/reading-generator.ts";
+
+// EdgeRuntime est fourni par le runtime Supabase (background tasks).
+// deno-lint-ignore no-explicit-any
+declare const EdgeRuntime: any;
 
 const STRIPE_SECRET_KEY = Deno.env.get("STRIPE_SECRET_KEY") || "";
 const WEBHOOK_SECRET = Deno.env.get("STRIPE_READING_WEBHOOK_SECRET") || "";
@@ -42,11 +46,6 @@ serve(async (req) => {
 
   const sb = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
 
-  // Idempotence : ne pas régénérer si déjà prête.
-  const { data: existing } = await sb
-    .from("readings").select("status").eq("token", md.token).maybeSingle();
-  if (existing?.status === "ready") return new Response("already done", { status: 200 });
-
   const email = session.customer_details?.email ?? session.customer_email ?? null;
   const inputs = {
     fullName: md.fullName || "",
@@ -55,7 +54,7 @@ serve(async (req) => {
     debtCodes: String(md.debtCodes || "").split(",").filter(Boolean),
   };
 
-  // Trace pending d'abord (même si Claude échoue ensuite).
+  // 1. S'assurer qu'une ligne pending existe (sans écraser un statut déjà avancé).
   await sb.from("readings").upsert({
     token: md.token,
     email,
@@ -64,24 +63,43 @@ serve(async (req) => {
     locale: inputs.locale,
     status: "pending",
     stripe_session_id: session.id,
-  }, { onConflict: "token" });
+  }, { onConflict: "token", ignoreDuplicates: true });
 
-  try {
-    const content = await generateReading(inputs);
+  // 2. Claim atomique pending -> generating. Si on ne claim pas, un autre rejeu
+  //    Stripe gère déjà (ou la lecture est ready/error) : on répond 200 sans rien faire.
+  //    Évite la double-génération (= double coût Claude) sur rejeu de webhook.
+  const { data: claimed } = await sb.from("readings")
+    .update({ status: "generating" })
+    .eq("token", md.token).eq("status", "pending")
+    .select("token").maybeSingle();
+  if (!claimed) return new Response("in progress or done", { status: 200 });
+
+  // 3. Génération en arrière-plan : on répond 200 à Stripe TOUT DE SUITE (la génération
+  //    Claude peut dépasser le timeout webhook ~10s). /lecture poll get-reading.
+  const task = (async () => {
+    let content: string;
+    try {
+      content = await generateReading(inputs);
+    } catch (e) {
+      // Fallback : Claude indisponible (ex crédit épuisé) -> lecture de secours canonique,
+      // le client payant reçoit quand même une vraie lecture cohérente.
+      console.error("Claude KO, fallback:", String(e).slice(0, 200));
+      content = buildFallbackReading(inputs);
+    }
     await sb.from("readings").update({ content, status: "ready" }).eq("token", md.token);
-
     if (email) {
-      // Livraison email — non bloquante (la valeur est déjà à l'écran via /lecture).
       fetch(`${SUPABASE_URL}/functions/v1/send-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json", "Authorization": `Bearer ${SERVICE_KEY}` },
         body: JSON.stringify({ type: "reading", to: email, data: { token: md.token } }),
       }).catch(() => {});
     }
-  } catch (e) {
-    await sb.from("readings").update({ status: "error" }).eq("token", md.token);
-    console.error("reading gen failed:", String(e).slice(0, 300));
-  }
+  })();
 
+  if (typeof EdgeRuntime !== "undefined" && EdgeRuntime?.waitUntil) {
+    EdgeRuntime.waitUntil(task);
+  } else {
+    await task; // fallback local/test
+  }
   return new Response("ok", { status: 200 });
 });

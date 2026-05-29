@@ -15,7 +15,7 @@ const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
 function json(body: unknown, status = 200) {
   return new Response(JSON.stringify(body), {
     status,
-    headers: { ...corsHeaders, "content-type": "application/json" },
+    headers: { ...corsHeaders, "content-type": "application/json", "cache-control": "no-store" },
   });
 }
 

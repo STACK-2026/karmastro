@@ -4,6 +4,35 @@
 
 import { calculateLifePath, calculateExpression, KARMIC_DEBTS } from "./numerology.ts";
 
+// Lecture de secours composée des textes canoniques (KARMIC_DEBTS) + chemin de vie,
+// servie SI l'appel Claude échoue (ex : crédit API épuisé). Le client payant reçoit
+// toujours une vraie lecture cohérente à l'écran (règle "livraison écran d'abord").
+export function buildFallbackReading(input: ReadingInput): string {
+  const parts = (input.birthDate || "").split("-").map(Number);
+  const prenom = input.fullName.trim().split(/\s+/)[0] || "toi";
+  let lpLine = "";
+  if (parts.length === 3 && parts.every((n) => Number.isFinite(n))) {
+    const [y, m, d] = parts;
+    const lp = calculateLifePath(d, m, y);
+    lpLine = `Ton chemin de vie ${lp.number}${lp.isMaster ? " (maître nombre)" : ""} colore la façon dont cette mémoire se rejoue aujourd'hui.`;
+  }
+  const blocks = input.debtCodes
+    .map((code) => KARMIC_DEBTS[code])
+    .filter(Boolean)
+    .map((info) => {
+      return [
+        `## ${info.code} — ${info.title}`,
+        `**La mémoire d'âme.** ${info.story} ${info.pastLife}`,
+        `**Ce que ça crée aujourd'hui.** ${info.currentChallenge} ${lpLine}`,
+        `**Le travail de cette incarnation.** ${info.healing}`,
+        `**Ton rituel de la semaine.** Chaque soir, note un moment où le schéma du ${info.code} s'est rejoué dans ta journée — sans te juger, juste pour le voir. La conscience est le premier pas du remboursement.`,
+        `**La question à te poser.** Avant chaque décision importante : « est-ce que je répète mon ${info.code}, ou est-ce que je choisis la voie de guérison ? »`,
+      ].join("\n\n");
+    });
+  const intro = `${prenom}, voici ta lecture karmique. Prends-la comme une carte, pas comme une sentence : la dette est une invitation à grandir, jamais une condamnation.`;
+  return [intro, ...blocks].join("\n\n");
+}
+
 export type ReadingInput = {
   fullName: string;
   birthDate: string; // "YYYY-MM-DD"
@@ -62,7 +91,7 @@ export async function generateReading(input: ReadingInput): Promise<string> {
     },
     body: JSON.stringify({
       model: "claude-sonnet-4-6",
-      max_tokens: 2200,
+      max_tokens: 3500,
       messages: [{ role: "user", content: buildKarmicDebtPrompt(input) }],
     }),
   });
