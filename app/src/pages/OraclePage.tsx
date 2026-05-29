@@ -24,7 +24,7 @@ type Msg = {
   isAnonPaywall?: boolean;
 };
 
-type GuideKey = "sibylle" | "orion" | "selene" | "pythia";
+type GuideKey = "oracle";
 
 type GuideMeta = {
   key: GuideKey;
@@ -39,68 +39,22 @@ type GuideMeta = {
 };
 
 const GUIDES: Record<GuideKey, GuideMeta> = {
-  sibylle: {
-    key: "sibylle",
+  // Oracle unique sans nom (décision 29/05 : 4 guides -> 1 voix). desc/strengths
+  // ne sont plus affichés (plus de picker) mais restent typés.
+  oracle: {
+    key: "oracle",
     icon: Stars,
     color: "text-purple-300",
-    nameKey: "oracle.guide_sibylle_name",
-    titleKey: "oracle.guide_sibylle_title",
+    nameKey: "oracle.name_unique",
+    titleKey: "oracle.title_unique",
     descKey: "oracle.guide_sibylle_desc",
     strengthsKey: "oracle.guide_sibylle_strengths",
-    openerKey: "oracle.guide_sibylle_opener",
+    openerKey: "oracle.opener_unique",
     suggestionKeys: [
       "oracle.guide_sibylle_sugg1",
       "oracle.guide_sibylle_sugg2",
       "oracle.guide_sibylle_sugg3",
       "oracle.guide_sibylle_sugg4",
-    ],
-  },
-  orion: {
-    key: "orion",
-    icon: Zap,
-    color: "text-amber-300",
-    nameKey: "oracle.guide_orion_name",
-    titleKey: "oracle.guide_orion_title",
-    descKey: "oracle.guide_orion_desc",
-    strengthsKey: "oracle.guide_orion_strengths",
-    openerKey: "oracle.guide_orion_opener",
-    suggestionKeys: [
-      "oracle.guide_orion_sugg1",
-      "oracle.guide_orion_sugg2",
-      "oracle.guide_orion_sugg3",
-      "oracle.guide_orion_sugg4",
-    ],
-  },
-  selene: {
-    key: "selene",
-    icon: Moon,
-    color: "text-blue-300",
-    nameKey: "oracle.guide_selene_name",
-    titleKey: "oracle.guide_selene_title",
-    descKey: "oracle.guide_selene_desc",
-    strengthsKey: "oracle.guide_selene_strengths",
-    openerKey: "oracle.guide_selene_opener",
-    suggestionKeys: [
-      "oracle.guide_selene_sugg1",
-      "oracle.guide_selene_sugg2",
-      "oracle.guide_selene_sugg3",
-      "oracle.guide_selene_sugg4",
-    ],
-  },
-  pythia: {
-    key: "pythia",
-    icon: Calculator,
-    color: "text-emerald-300",
-    nameKey: "oracle.guide_pythia_name",
-    titleKey: "oracle.guide_pythia_title",
-    descKey: "oracle.guide_pythia_desc",
-    strengthsKey: "oracle.guide_pythia_strengths",
-    openerKey: "oracle.guide_pythia_opener",
-    suggestionKeys: [
-      "oracle.guide_pythia_sugg1",
-      "oracle.guide_pythia_sugg2",
-      "oracle.guide_pythia_sugg3",
-      "oracle.guide_pythia_sugg4",
     ],
   },
 };
@@ -186,14 +140,9 @@ const OraclePage = () => {
     birthPlace: "",
   });
 
-  // Load saved guide or show picker on first visit
+  // Oracle unique : plus de choix de guide, on entre directement dans le chat.
   useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY) as GuideKey | null;
-    if (saved && GUIDES[saved]) {
-      setGuideKey(saved);
-    } else {
-      setShowPicker(true);
-    }
+    setGuideKey("oracle");
   }, []);
 
   useEffect(() => {
@@ -554,24 +503,6 @@ const OraclePage = () => {
       <StarField />
 
       <AppHeader title={t(currentGuide.nameKey)} subtitle={t(currentGuide.titleKey)} showBack />
-
-      {/* Guide switcher pill */}
-      <div className="relative z-10 px-5 pt-2">
-        <button
-          onClick={() => setShowPicker(true)}
-          className="w-full flex items-center justify-between gap-3 px-4 py-2.5 rounded-xl bg-secondary/50 border border-border/60 hover:border-primary/40 transition-colors"
-        >
-          <div className="flex items-center gap-3">
-            <div className={`p-1.5 rounded-lg bg-background/50 ${currentGuide.color}`}>
-              <Icon className="h-4 w-4" />
-            </div>
-            <span className="text-sm">
-              {t("oracle.guide_pill_talking_to", { name: t(currentGuide.nameKey) })}
-            </span>
-          </div>
-          <span className="text-xs text-muted-foreground">{t("oracle.guide_pill_change")}</span>
-        </button>
-      </div>
 
       {/* Subtle banner when the astral engine is partial. We prefer informing
           the user over pretending everything is fine. */}

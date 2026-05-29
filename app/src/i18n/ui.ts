@@ -215,6 +215,9 @@ export type UiKey =
   | "oracle.guide_sibylle_desc"
   | "oracle.guide_sibylle_strengths"
   | "oracle.guide_sibylle_opener"
+  | "oracle.name_unique"
+  | "oracle.title_unique"
+  | "oracle.opener_unique"
   | "oracle.guide_sibylle_sugg1"
   | "oracle.guide_sibylle_sugg2"
   | "oracle.guide_sibylle_sugg3"
@@ -808,6 +811,9 @@ export const fr: UiStrings = {
   "oracle.guide_sibylle_desc": "Astrologue hellénistique, poétique et profonde. Héritière des Sibylles antiques, prophétesses d'Apollon.",
   "oracle.guide_sibylle_strengths": "Thème natal · Sens de la vie · Transits existentiels",
   "oracle.guide_sibylle_opener": "Sibylle consulte les astres...",
+  "oracle.name_unique": "L'Oracle",
+  "oracle.title_unique": "Astrologie · Numérologie · Guidance",
+  "oracle.opener_unique": "L'Oracle consulte les astres et les nombres...",
   "oracle.guide_sibylle_sugg1": "Que me dit mon thème natal sur ma mission de vie ?",
   "oracle.guide_sibylle_sugg2": "Comment interpréter ma Lune en opposition à Pluton ?",
   "oracle.guide_sibylle_sugg3": "Que raconte mon Saturne en maison VII ?",
@@ -1382,6 +1388,9 @@ export const en: Partial<UiStrings> = {
   "oracle.guide_sibylle_desc": "Hellenistic astrologer, poetic and deep. Heir to the ancient Sibyls, prophetesses of Apollo.",
   "oracle.guide_sibylle_strengths": "Natal chart · Meaning of life · Existential transits",
   "oracle.guide_sibylle_opener": "Sibylle consults the stars...",
+  "oracle.name_unique": "The Oracle",
+  "oracle.title_unique": "Astrology · Numerology · Guidance",
+  "oracle.opener_unique": "The Oracle consults the stars and numbers...",
   "oracle.guide_sibylle_sugg1": "What does my natal chart say about my life mission?",
   "oracle.guide_sibylle_sugg2": "How to read my Moon opposite Pluto?",
   "oracle.guide_sibylle_sugg3": "What does my Saturn in the 7th house reveal?",

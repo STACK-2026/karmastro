@@ -140,7 +140,29 @@ NARRATIF KARMASTRO (à rappeler subtilement quand pertinent) :
 - L'astrologie est le chef d'orchestre depuis la nuit des temps. Les Mésopotamiens cartographiaient les étoiles il y a 4000 ans. Kepler, Galilée et Newton étaient tous astrologues. "Comme au-dessus, ainsi en dessous" , maxime d'Hermès Trismégiste, fondement de toute l'astrologie.`;
 
 // ============================================
-// GUIDE PROFILES , 4 distinct personas
+// ORACLE UNIQUE , persona unifiée SANS NOM (décision 29/05 : 4 guides -> 1)
+// ============================================
+
+const ORACLE_PROMPT = `Tu es **l'Oracle de Karmastro**. Tu n'as pas de prénom : tu es simplement l'Oracle, une voix unique, ancienne et vivante, qui lit le ciel et les nombres.
+
+IDENTITÉ :
+Tu réunis en une seule présence la profondeur de l'astrologie, la rigueur de la numérologie et la chaleur d'une guidance incarnée. Tu es à la fois mystique et lucide, poétique et concret : tu sais tisser une métaphore comme donner un pas d'action clair. Tu as étudié la tradition hellénistique (Ptolémée, Porphyre, Vettius Valens) autant que la philosophie stoïcienne.
+
+TON ET STYLE :
+- Voix posée, chaleureuse, sans esbroufe new-age
+- Des images justes (mythologie, éléments, cycles) sans jamais noyer le propos
+- Tu peux citer les anciens (Héraclite, Rumi, Lao Tseu, Hermès Trismégiste) quand c'est pertinent
+- Tu donnes du sens symbolique ET un appui concret
+- Appellatif doux et non-genré quand tu ne connais pas le prénom ("mon cœur", "âme chercheuse", "toi qui me consultes")
+
+DOMAINES :
+Thème natal, transits, synastrie, numérologie pythagoricienne, dettes karmiques, nœuds lunaires, cycles de vie, sens et mission.
+
+${BASE_PROMPT}`;
+
+// ============================================
+// GUIDE PROFILES , conservés pour compat historique (feedback, anciens clients).
+// La persona active est désormais ORACLE_PROMPT (voix unique sans nom).
 // ============================================
 
 const GUIDES: Record<string, { name: string; prompt: string; opener: string }> = {
@@ -363,8 +385,7 @@ serve(async (req) => {
     // Renvoie un message chaleureux dans le format SSE attendu, SANS appeler Claude
     // ni consommer le quota. Lever le secret ORACLE_MAINTENANCE quand l'API est rechargée.
     if (Deno.env.get("ORACLE_MAINTENANCE")) {
-      const g = GUIDES[guideKey] || GUIDES[DEFAULT_GUIDE];
-      const text = `${g.name} se recentre quelques jours — l'Oracle est momentanément en pause. Je serai très bientôt de nouveau à ton écoute. ✦\n\nEn attendant, tu peux explorer ta lecture karmique personnalisée sur karmastro.com/outils/dette-karmique.`;
+      const text = `L'Oracle se recentre quelques instants et sera très bientôt de nouveau à ton écoute. ✦\n\nEn attendant, tu peux explorer ta lecture karmique personnalisée sur karmastro.com/outils/dette-karmique.`;
       const sseData = JSON.stringify({
         choices: [{ delta: { content: text }, finish_reason: "stop" }],
         guide: guideKey || DEFAULT_GUIDE,
@@ -383,8 +404,9 @@ serve(async (req) => {
       });
     }
 
-    const ANTHROPIC_API_KEY = Deno.env.get("ANTHROPIC_API_KEY");
-    if (!ANTHROPIC_API_KEY) throw new Error("ANTHROPIC_API_KEY non configurée");
+    // Moteur LLM : Gemini (tier gratuit) au lieu de Claude payant (29/05).
+    const GOOGLE_API_KEY = Deno.env.get("GOOGLE_API_KEY") || "";
+    if (!GOOGLE_API_KEY) throw new Error("GOOGLE_API_KEY non configurée");
 
     // ============================================
     // USAGE CHECK : limit to 3 messages/day for free tier
@@ -445,7 +467,8 @@ serve(async (req) => {
 
     // Select guide (fallback to default if invalid)
     const selectedGuide = GUIDES[guideKey] || GUIDES[DEFAULT_GUIDE];
-    let systemPrompt = selectedGuide.prompt;
+    // Oracle unique sans nom : on ignore le guide choisi, une seule voix.
+    let systemPrompt = ORACLE_PROMPT;
 
     // Enrich with personalized feedback history (non-blocking)
     const feedbackContext = await buildFeedbackContext(userId ?? null, sessionId ?? null, guideKey || DEFAULT_GUIDE);
@@ -688,41 +711,41 @@ serve(async (req) => {
   5. Ton reste bienveillant, profond, humain. La curiosité de la personne est déjà un don , accueille-la.`;
     }
 
-    // Convert messages
-    const anthropicMessages = messages.map((m: { role: string; content: string }) => ({
-      role: m.role === "assistant" ? "assistant" : "user",
-      content: m.content,
+    // Moteur Gemini (tier gratuit). Rôles Gemini : "user" / "model".
+    const geminiContents = messages.map((m: { role: string; content: string }) => ({
+      role: m.role === "assistant" ? "model" : "user",
+      parts: [{ text: m.content }],
     }));
 
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: {
-        "x-api-key": ANTHROPIC_API_KEY,
-        "anthropic-version": "2023-06-01",
-        "content-type": "application/json",
+    const GEMINI_MODEL = "gemini-2.5-flash";
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GOOGLE_API_KEY}`,
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          system_instruction: { parts: [{ text: systemPrompt + engineContext }] },
+          contents: geminiContents,
+          generationConfig: { maxOutputTokens: 2048, temperature: 0.9 },
+        }),
       },
-      body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
-        max_tokens: 2048,
-        system: systemPrompt + engineContext,
-        messages: anthropicMessages,
-      }),
-    });
+    );
 
     if (!response.ok) {
-      console.error("Anthropic error:", response.status);
+      console.error("Gemini error:", response.status, (await response.text()).slice(0, 200));
       if (response.status === 429) {
         return new Response(JSON.stringify({ error: "Les astres sont très sollicités. Réessaie dans un instant." }), {
           status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
-      return new Response(JSON.stringify({ error: `${selectedGuide.name} médite profondément. Réessaie dans un instant.` }), {
+      return new Response(JSON.stringify({ error: "L'Oracle médite profondément. Réessaie dans un instant." }), {
         status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
 
     const data = await response.json();
-    const rawText = data.content?.[0]?.text || `${selectedGuide.name} médite sur ta question...`;
+    const rawText = data.candidates?.[0]?.content?.parts?.map((p: { text?: string }) => p.text || "").join("")
+      || "L'Oracle médite sur ta question...";
 
     // Belt + suspenders for rule 9. The prompt forbids em/en dashes in every
     // language, but Claude occasionally drifts (russian, japanese typography
@@ -735,7 +758,9 @@ serve(async (req) => {
         .replace(/-/g, "-")    // U+2013 en dash
         .replace(/―/g, ", ")   // U+2015 horizontal bar (CJK em-dash substitute)
         .replace(/﹘/g, "-")   // U+FE58 small em dash
-        .replace(/－/g, "-");  // U+FF0D fullwidth hyphen-minus
+        .replace(/－/g, "-")   // U+FF0D fullwidth hyphen-minus
+        .replace(/ +([,.;:!?])/g, "$1") // espace avant ponctuation (issu du strip de tiret)
+        .replace(/[ \t]{2,}/g, " "); // double espaces résiduels
 
     // Extract the visible body, the 3 follow-up suggestions (rule 14), and any
     // profile hints Claude silently captured from the last user message
