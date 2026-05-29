@@ -73,6 +73,16 @@ La génération de lecture appelle Claude avec `ANTHROPIC_API_KEY`. La clé de `
 
 **Vérif fraîche finale (preuves)** : 12/12 tests Deno · typecheck 4/4 `Check` · get-reading live renvoie `content` d'une lecture `ready`, header `no-store`, **email non exposé** (testé+nettoyé) · reading-checkout `READING_PRICE_ID non configuré` (attendu).
 
+## Investigations + ajouts (29/05, session 2)
+
+**« Les users sont tous Balance ? » → FAUX (vérifié data).** Signes réels : Lion ×3, Poissons ×2, Gémeaux ×2, Bélier/Sagittaire/Capricorne ×1 — aucun Balance. GSC « balance »/libra = 0 clic / 14 impr sur 90j. Trafic horoscope = Cancer/Lion/hubs PT-IT. Code signe (`getZodiacSign` day,month) correct, admin n'affiche pas de signe. → fausse impression.
+
+**Parcours users (200 sessions app/60j)** : Oracle = destination n°1 (107), onboarding 35, dashboard 27, auth 25, profil/settings 12. L'Oracle (le plus visité) est justement en maintenance.
+
+**Fix « refaire mon profil » (user)** : `/onboarding` pré-remplit + update déjà ; il manquait le bouton. Ajouté `profile.edit_info` (i18n 11 langues) + bouton dans **ProfilePage** + **SettingsPage** → `/onboarding`. App build OK. ⚠️ **à sync Lovable** pour passer live (l'app n'a pas de deploy GHA).
+
+**Traductions** : site multilingue OK (rank IT/ES/PT). Tunnel d'achat étendu au **EN** : page `en/tools/karmic-debt` branchée (CTA €4.90, locale en), générateur + fallback **bilingues** (KARMIC_DEBTS_EN), email `reading` localisé (testé « Your karmic reading is ready »), `/lecture?lang=en` localisé, checkout EN → cs_live OK. Autres langues : pas encore de page dette-karmique (Phase 2).
+
 ## Historique daté
 
 - **2026-05-29** — Diagnostic projet (GSC ×4,3, 18 users, 0€, Oracle/emails morts depuis fin avril). Brainstorming → modèle **transactionnel one-shot**, lecture IA perso, site-natif, checkout invité, prix 4,90€, app gelée. Spec + plan écrits et committés (`8e143f4`, `2e4cb26`). Branche créée. Journal initialisé.
