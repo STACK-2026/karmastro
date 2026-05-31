@@ -106,7 +106,7 @@ const KARMIC_DEBTS_EN: Record<string, { title: string; pastLife: string; challen
 export function buildFallbackReading(input: ReadingInput): string {
   // Filet générique pour les outils non-karmic (pas de dépendance debtCodes).
   if (input.tool && input.tool !== "karmic-debt") {
-    const enf = input.locale === "en";
+    const enf = input.locale !== "fr"; // filet en anglais pour toute langue ≠ fr
     const f = input.fullName.trim().split(/\s+/)[0] || (enf ? "friend" : "toi");
     return enf
       ? `${f}, here is your reading. The stars incline, they do not compel. Take a quiet moment to breathe, and let this guidance settle. Your full personalised reading is being prepared; if you are reading this, the live engine paused for a moment, but your insight is valid and yours to keep.`
@@ -190,7 +190,16 @@ export function buildReadingPrompt(input: ReadingInput, engineData = ""): string
   const tool = input.tool || "karmic-debt";
   if (tool === "karmic-debt") return buildKarmicDebtPrompt(input);
 
-  const en = input.locale === "en";
+  // Toute langue ≠ fr utilise le scaffold d'instructions EN, mais la SORTIE est
+  // rédigée dans la langue cible (outLang). Évite qu'un acheteur DE/ES/etc. reçoive
+  // une lecture en français. [2026-06-01]
+  const LANG: Record<string, string> = {
+    en: "ENGLISH", es: "SPANISH", it: "ITALIAN", de: "GERMAN", pt: "PORTUGUESE",
+    tr: "TURKISH", ru: "RUSSIAN", pl: "POLISH", ar: "ARABIC", nl: "DUTCH",
+    ja: "JAPANESE", ko: "KOREAN", zh: "CHINESE", vi: "VIETNAMESE",
+  };
+  const en = input.locale !== "fr";
+  const outLang = LANG[input.locale] || "ENGLISH";
   const [y, m, d] = input.birthDate.split("-").map(Number);
   const hasName = input.fullName.trim().length > 0;
   const first = hasName ? input.fullName.trim().split(/\s+/)[0] : (en ? "the seeker" : "toi");
@@ -239,7 +248,7 @@ export function buildReadingPrompt(input: ReadingInput, engineData = ""): string
       : `Focus : COMPATIBILITE NUMEROLOGIQUE entre ${first} (chemin de vie ${lp1.number}) et ${pname} (chemin de vie ${lp2 ? lp2.number : "?"}). Lis la dynamique entre ces deux chemins de vie : forces naturelles du lien, frictions a surveiller, comment grandir ensemble.`;
   }
 
-  const headEn = `You are Orion, the karmic coach of Karmastro: warm, lucid, grounded, never anxiety-inducing or hollow new-age. Write a personalised reading IN ENGLISH, addressing the person as "you", about 1100 to 1400 words.`;
+  const headEn = `You are Orion, the karmic coach of Karmastro: warm, lucid, grounded, never anxiety-inducing or hollow new-age. Write a personalised reading entirely IN ${outLang} (every sentence, titles included), addressing the person directly, about 1100 to 1400 words.`;
   const headFr = `Tu es Orion, coach karmique de Karmastro : voix chaleureuse, lucide, incarnee, jamais anxiogene ni new-age creux. Ecris une lecture personnalisee EN FRANCAIS, au tutoiement, d'environ 1100 a 1400 mots.`;
   const structEn = `Structure with markdown (##) section titles: 1) What this reveals about you. 2) What it means concretely in your life right now. 3) The strength to lean on. 4) Your ritual for the week (one simple concrete gesture within 7 days). 5) The question to hold before important decisions.`;
   const structFr = `Structure avec des titres markdown (##) : 1) Ce que cela revele de toi. 2) Ce que ca signifie concretement dans ta vie en ce moment. 3) La force sur laquelle t'appuyer. 4) Ton rituel de la semaine (un geste concret simple sous 7 jours). 5) La question a te poser avant chaque decision importante.`;

@@ -76,6 +76,7 @@ const jsonLd = [
     ],
   },
 ];
+import ReadingPaywallCTA from "../../../components/ReadingPaywallCTA.astro";
 ---
 
 <BaseLayout title={title} description={description} jsonLd={jsonLd}>
@@ -148,6 +149,7 @@ const jsonLd = [
             <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">Тень</p>
             <p id="result-shadow" class="text-sm text-white/80 italic leading-relaxed"></p>
           </div>
+          <ReadingPaywallCTA tool="ascendant" locale="ru" />
           <div class="mt-6 pt-4 border-t border-white/10 text-center">
             <a href="https://app.karmastro.com/oracle?lang=ru" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
               Получить полную натальную карту
