@@ -96,3 +96,14 @@ checkout e2e les 4 outils → `cs_live_` ; karmic-debt non régressé ; bad tool
 génération réelle 1650/1616/2291 mots, 0 tiret, non tronquée.
 RESTE = Augustin : (1) test paiement réel 4,90€ (seule validation webhook e2e), (2) Phase 2
 (ascendant/synastrie/theme-natal/transits) APRÈS redémarrage moteur Swiss Ephemeris.
+
+---
+## CLOSURE Phase 2 (31/05/2026) — LIVE + vérifié (moteur restauré)
+4 outils astro monétisés : ascendant, theme-natal, transits, synastrie. Le générateur
+appelle le moteur Swiss Ephemeris côté serveur (`/oracle-context` + `/compatibility`) →
+lecture bâtie sur les VRAIES positions (anti-invention). Backend whitelist passée à 9 outils
++ champs astro (birthTime/lat/long + partenaire). Front : capture date/heure/coordonnées au
+calcul → checkout invité. 18 tests Deno verts. Build 11982 pages exit 0.
+Preuves live : 4 pages 200+CTA, checkout e2e `cs_live`, génération réelle ascendant/transits/
+synastrie 1967/2115/2565 mots citant les positions réelles, 0 tiret ; Phase 1 non régressée.
+Les 9 outils numérologie+astro sont désormais monétisés. RESTE Augustin : test paiement réel 4,90€.
