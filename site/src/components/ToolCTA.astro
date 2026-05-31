@@ -51,8 +51,10 @@ const CONFIG: Record<string, Cfg> = {
       "chemin-de-vie": { url: "/en/tools/life-path-number/", name: "your life path number", hook: "The number that guides your whole life, in 30 seconds." },
       "nombre-expression": { url: "/en/tools/expression-number/", name: "your expression number", hook: "What the vibration of your name reveals about your talents." },
       "annee-personnelle": { url: "/en/tools/personal-year/", name: "your personal year", hook: "The energy of your yearly cycle, right now." },
+      "ascendant": { url: "/en/tools/rising-sign/", name: "your rising sign", hook: "The sign rising at your birth, precise to the minute (Swiss Ephemeris)." },
     },
     rules: [
+      [/(rising-sign|rising|ascendant)/, "ascendant"],
       [/(personal-year)/, "annee-personnelle"],
       [/(expression-number|expression)/, "nombre-expression"],
       [/(life-path|numerology|number-)/, "chemin-de-vie"],
