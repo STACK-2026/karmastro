@@ -43,7 +43,7 @@ const content = getContent(locale);
       )}
     </div>
     <p class="mt-4 text-[11px]" style="color: rgba(196, 184, 219, 0.5);">{content.heroFreeTeaser}</p>
-    <a href={locale === "fr" ? "/precision" : `/${locale}/precision`} id="nasa-badge" class="inline-flex items-center gap-1.5 mt-2 text-[10px] md:text-[11px] transition-colors" style="color: rgba(196, 184, 219, 0.4); border: 1px solid rgba(255,255,255,0.05); border-radius: 9999px; padding: 3px 10px;">
+    <a href="/precision/" id="nasa-badge" class="inline-flex items-center gap-1.5 mt-2 text-[10px] md:text-[11px] transition-colors" style="color: rgba(196, 184, 219, 0.4); border: 1px solid rgba(255,255,255,0.05); border-radius: 9999px; padding: 3px 10px;">
       <span style="width: 5px; height: 5px; border-radius: 50%; background: hsl(142 71% 45%); display: inline-block;" class="animate-pulse"></span>
       <span id="nasa-text">{content.nasaBadge}</span>
     </a>
