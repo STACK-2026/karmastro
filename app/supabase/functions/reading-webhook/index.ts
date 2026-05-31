@@ -40,7 +40,10 @@ serve(async (req) => {
   // deno-lint-ignore no-explicit-any
   const session = event.data.object as any;
   const md = session.metadata || {};
-  if (md.tool !== "karmic-debt" || !md.token) {
+  const READING_TOOLS = new Set([
+    "karmic-debt", "chemin-de-vie", "nombre-expression", "annee-personnelle", "compatibilite",
+  ]);
+  if (!READING_TOOLS.has(md.tool) || !md.token) {
     return new Response("not a reading", { status: 200 });
   }
 
@@ -48,10 +51,14 @@ serve(async (req) => {
 
   const email = session.customer_details?.email ?? session.customer_email ?? null;
   const inputs = {
+    tool: md.tool,
     fullName: md.fullName || "",
     birthDate: md.birthDate,
     locale: md.locale || "fr",
     debtCodes: String(md.debtCodes || "").split(",").filter(Boolean),
+    partnerBirthDate: md.partnerBirthDate || "",
+    partnerName: md.partnerName || "",
+    currentYear: new Date().getUTCFullYear(),
   };
 
   // 1. S'assurer qu'une ligne pending existe (sans écraser un statut déjà avancé).

@@ -36,9 +36,18 @@ serve(async (req) => {
       httpClient: Stripe.createFetchHttpClient(),
     });
 
-    const { tool, birthDate, fullName, locale, debtCodes } = await req.json();
-    if (tool !== "karmic-debt" || !birthDate || !Array.isArray(debtCodes) || debtCodes.length === 0) {
+    const READING_TOOLS = new Set([
+      "karmic-debt", "chemin-de-vie", "nombre-expression", "annee-personnelle", "compatibilite",
+    ]);
+    const { tool, birthDate, fullName, locale, debtCodes, partnerBirthDate, partnerName } = await req.json();
+    if (!READING_TOOLS.has(tool) || !birthDate) {
       return json({ error: "params invalides" }, 400);
+    }
+    if (tool === "karmic-debt" && (!Array.isArray(debtCodes) || debtCodes.length === 0)) {
+      return json({ error: "debtCodes requis pour karmic-debt" }, 400);
+    }
+    if (tool === "compatibilite" && !partnerBirthDate) {
+      return json({ error: "partnerBirthDate requis pour compatibilite" }, 400);
     }
 
     const token = crypto.randomUUID();
@@ -48,14 +57,16 @@ serve(async (req) => {
       mode: "payment",
       line_items: [{ price: READING_PRICE_ID, quantity: 1 }],
       success_url: `${SITE}/lecture/?token=${token}${langParam}`,
-      cancel_url: `${SITE}/outils/dette-karmique/?canceled=1`,
+      cancel_url: `${SITE}/outils/${tool === "karmic-debt" ? "dette-karmique" : tool}/?canceled=1`,
       metadata: {
         token,
         tool,
         birthDate: String(birthDate).slice(0, 20),
         fullName: String(fullName || "").slice(0, 120),
         locale: String(locale || "fr").slice(0, 5),
-        debtCodes: debtCodes.join(",").slice(0, 60),
+        debtCodes: Array.isArray(debtCodes) ? debtCodes.join(",").slice(0, 60) : "",
+        partnerBirthDate: String(partnerBirthDate || "").slice(0, 20),
+        partnerName: String(partnerName || "").slice(0, 120),
       },
     });
 
