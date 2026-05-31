@@ -186,15 +186,17 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
    digit, reinforcing the feeling of a number surfacing from the cosmos. */
 
 @keyframes karma-result-reveal {
-  0%   { opacity: 0; transform: scale(0.94) translateY(10px); filter: blur(6px); }
-  60%  { opacity: 1; filter: blur(0); }
+  0%   { opacity: 0; transform: scale(0.92) translateY(14px); filter: blur(7px); }
+  55%  { opacity: 1; transform: scale(1.015) translateY(0); filter: blur(0); }
+  78%  { transform: scale(0.997); }
   100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
 }
 
 @keyframes karma-number-glow {
-  0%   { text-shadow: 0 0 0 rgba(212, 160, 23, 0); }
-  40%  { text-shadow: 0 0 24px rgba(212, 160, 23, 0.85), 0 0 48px rgba(139, 92, 246, 0.5); }
-  100% { text-shadow: 0 0 10px rgba(212, 160, 23, 0.35); }
+  0%   { text-shadow: 0 0 0 rgba(212, 160, 23, 0); transform: scale(0.86); }
+  45%  { text-shadow: 0 0 30px rgba(212, 160, 23, 0.95), 0 0 60px rgba(139, 92, 246, 0.55); transform: scale(1.06); }
+  72%  { transform: scale(0.99); }
+  100% { text-shadow: 0 0 12px rgba(212, 160, 23, 0.4); transform: scale(1); }
 }
 
 @keyframes karma-shimmer-sweep {
@@ -204,8 +206,15 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
   100% { background-position: 200% 0; opacity: 0; }
 }
 
+/* Poussière d'étoiles : quelques points qui scintillent au moment de la révélation. */
+@keyframes karma-stardust {
+  0%   { opacity: 0; }
+  25%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
 .karma-reveal {
-  animation: karma-result-reveal 0.85s cubic-bezier(0.2, 0.65, 0.3, 1) both;
+  animation: karma-result-reveal 0.9s cubic-bezier(0.2, 0.75, 0.3, 1) both;
   position: relative;
   overflow: hidden;
 }
@@ -222,14 +231,32 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
   animation: karma-shimmer-sweep 1.6s ease-out 0.2s 1 forwards;
 }
 
+/* Scintillement cosmique : petits éclats blancs/dorés qui apparaissent brièvement. */
+.karma-reveal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 1;
+  background-image:
+    radial-gradient(1.5px 1.5px at 18% 28%, rgba(255,255,255,0.9), transparent 60%),
+    radial-gradient(1.5px 1.5px at 72% 18%, rgba(252,211,77,0.9), transparent 60%),
+    radial-gradient(1px 1px at 42% 66%, rgba(255,255,255,0.8), transparent 60%),
+    radial-gradient(1.5px 1.5px at 86% 58%, rgba(167,139,250,0.9), transparent 60%),
+    radial-gradient(1px 1px at 30% 82%, rgba(252,211,77,0.8), transparent 60%);
+  animation: karma-stardust 1.7s ease-out 0.15s 1 forwards;
+}
+
 .karma-number-glow {
-  animation: karma-number-glow 1.8s ease-out both;
+  display: inline-block;
+  animation: karma-number-glow 1.9s cubic-bezier(0.2, 0.8, 0.3, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .karma-reveal { animation: none; }
-  .karma-reveal::after { display: none; }
-  .karma-number-glow { animation: none; text-shadow: 0 0 10px rgba(212, 160, 23, 0.35); }
+  .karma-reveal::after, .karma-reveal::before { display: none; }
+  .karma-number-glow { animation: none; transform: none; text-shadow: 0 0 10px rgba(212, 160, 23, 0.35); }
 }
 
 /* === Page enter : cosmic veil === */
