@@ -57,7 +57,7 @@ La **pleine lune** se produit toujours dans le signe opposé au Soleil. En déce
 
 ### Aspects planétaires majeurs de cette pleine lune
 
-Les [aspects planétaires](/blog/aspects-planetaires-comprendre-angles-astrologiques/) révèlent les influences énergétiques précises de cette pleine lune :
+Les aspects planétaires révèlent les influences énergétiques précises de cette pleine lune :
 
 **1. Opposition Lune-Soleil (0° d'orbe)**
 - Lune à 21°06' Gémeaux / Soleil à 21°06' Sagittaire
@@ -85,7 +85,7 @@ L'influence de cette pleine lune varie selon ton thème natal personnel :
 - **Vierge** : Opportunités de carrière via la communication (maison 10 activée)
 - **Poissons** : Intuition renforcée mais attention à la dispersion mentale
 
-Pour une analyse précise adaptée à ton thème, découvre [comment l'astrologie karmique](/blog/astrologie-karmique-missions-lecons-vie/) révèle tes missions de vie selon tes planètes personnelles.
+Pour une analyse précise adaptée à ton thème, découvre [comment l'astrologie karmique](/blog/karma-astrologie-comprendre-vies-anterieures/) révèle tes missions de vie selon tes planètes personnelles.
 
 ## Ton Rituel Personnalisé : Aligner Tes Nombres Personnels à l'Énergie Lunaire
 
@@ -150,7 +150,7 @@ Utilise les **aspects spécifiques** de cette pleine lune pour amplifier ton rit
    - Mes émotions influencent-elles mon jugement ?
    - Ai-je consulté plusieurs sources ?
 
-> 🔮 **Outil Karmastro** : Pour approfondir ton rituel, consulte notre guide sur [comment les cycles planétaires](/blog/cycles-planetaires-anticiper-grandes-tendances/) influencent tes décisions personnelles.
+> 🔮 **Outil Karmastro** : Pour approfondir ton rituel, consulte notre guide sur [comment les cycles planétaires](/outils/transits/) influencent tes décisions personnelles.
 
 ## Au-delà du Folklore : Ce que les Traditions Anciennes Révèlent
 
@@ -195,7 +195,7 @@ Les Celtes nommaient la pleine lune de décembre **"Lune du Chêne"** car c'éta
 - Prépare une infusion de tilleul (arbre lunaire) pour favoriser l'intuition
 - Écris une lettre à ton "moi futur" pour clarifier tes intentions
 
-> 📚 **Référence académique** : Découvre comment ces traditions influencent encore l'astrologie moderne dans notre article sur [l'astrologie védique vs occidentale](/blog/astrologie-vedique-vs-occidentale-differences-cles/).
+> 📚 **Référence académique** : Découvre comment ces traditions influencent encore l'astrologie moderne dans notre article sur l'astrologie védique vs occidentale.
 
 ## Calendrier Complet 2026-2027 des Pleines Lunes avec Analyses Numérologiques
 
@@ -232,7 +232,7 @@ Voici le **calendrier précis** des pleines lunes 2026-2027, avec pour chacune s
 - **Nombres 8** (matérialisation) : Concrétise tes idées
 - **Nombres 9** (accomplissement) : Finalise tes objectifs
 
-> 🎯 **Stratégie Karmastro** : Note les pleines lunes dont le nombre correspond à ton [chemin de vie](/blog/chemin-vie-liberte-aventure-constante/) - ces périodes seront particulièrement favorables à tes projets personnels.
+> 🎯 **Stratégie Karmastro** : Note les pleines lunes dont le nombre correspond à ton [chemin de vie](/blog/comment-calculer-chemin-vie-numerologie/) - ces périodes seront particulièrement favorables à tes projets personnels.
 
 ## Comment Utiliser la Pleine Lune en Gémeaux pour Manifester : Méthode Scientifique
 
@@ -372,10 +372,10 @@ Cette **pleine lune** active différemment tes relations selon ton signe natal. 
 **Signes d'Air (harmoniques)** :
 - **Gémeaux + Gémeaux** : Communication fusionnelle, risque de superficialité
 - [**Gémeaux + Balance**](/compatibilite/gemeaux-balance/) : Dialogue raffiné, esthétisme partagé  
-- [**Gémeaux + Verseau**](/compatibilite/verseau-gemeaux-air-innovation/) : Innovation relationnelle, projets communs
+- [**Gémeaux + Verseau**](/blog/compatibilite-verseau-gemeaux-air-innovation/) : Innovation relationnelle, projets communs
 
 **Signes de Feu (stimulants)** :
-- [**Gémeaux + Bélier**](/blog/compatibilite-lion-belier-feu-passion-ardente/) : Énergie décuplée, aventures intellectuelles
+- [**Gémeaux + Bélier**](/blog/compatibilite-amoureuse-signes-astrologiques-attirent/) : Énergie décuplée, aventures intellectuelles
 - **Gémeaux + Lion** : Théâtralité amoureuse, séduction par les mots
 - **Gémeaux + Sagittaire** : Opposition créative, enrichissement mutuel
 
@@ -473,7 +473,7 @@ Les deux systèmes utilisent des **références différentes** pour calculer les
 - **Même pleine lune** : ~27° Taureau sidéral (décalage de 24°)
 - **Avantage** : Correspondance avec l'astronomie visible
 
-**Quelle méthode choisir ?** Karmastro recommande le système **tropicale** pour les Occidentaux car il correspond mieux à nos cycles naturels et culturels. Découvre les nuances dans notre comparaison [astrologie védique vs occidentale](/blog/astrologie-vedique-vs-occidentale-differences-cles/).
+**Quelle méthode choisir ?** Karmastro recommande le système **tropicale** pour les Occidentaux car il correspond mieux à nos cycles naturels et culturels. Découvre les nuances dans notre comparaison astrologie védique vs occidentale.
 
 ### Comment suivre précisément les phases lunaires pour optimiser mes projets ?
 

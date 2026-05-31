@@ -140,10 +140,10 @@ Pour confirmer une dette karmique, Karmastro recommande de vérifier les corresp
 
 - **Dette 13** : Saturne ou Pluton en aspect difficile, Lune Noire active
 - **Dette 14** : Neptune en dissonance, Jupiter en chute
-- **Dette 16** : [Saturne dominant](/blog/cycles-planetaires-anticiper-grandes-tendances/), aspects Soleil-Saturne difficiles
+- **Dette 16** : [Saturne dominant](/outils/transits/), aspects Soleil-Saturne difficiles
 - **Dette 19** : Soleil isolé, aspects Mars-Saturne tendus
 
-Cette approche croisée, développée par nos experts en [astrologie karmique](/blog/astrologie-karmique-missions-lecons-vie/), augmente la fiabilité de l'analyse de 73% selon nos statistiques internes.
+Cette approche croisée, développée par nos experts en [astrologie karmique](/blog/karma-astrologie-comprendre-vies-anterieures/), augmente la fiabilité de l'analyse de 73% selon nos statistiques internes.
 
 **Outil pratique :** Utilise le [calculateur Karmastro](https://app.karmastro.com) pour effectuer automatiquement ces calculs complexes et obtenir ton analyse karmique complète en quelques minutes.
 
@@ -183,7 +183,7 @@ Cette dette résulte d'abus de liberté dans des incarnations passées : excès 
 
 **Profil astrologique type :**
 - 61% ont Neptune en aspect difficile avec des planètes personnelles (illusions)
-- 37% présentent un [chemin de vie 5](/blog/chemin-vie-liberte-aventure-constante/) (amplification du besoin de liberté)
+- 37% présentent un [chemin de vie 5](/blog/comment-calculer-chemin-vie-numerologie/) (amplification du besoin de liberté)
 - 44% ont Jupiter en signe de feu mais en maison restrictive (expansion frustrée)
 
 **Stratégie de guérison structurée :**
@@ -211,7 +211,7 @@ La dette 16 est considérée comme la plus intense. Elle provient de vies où l'
 **Corrélations planétaires significatives :**
 - 72% ont Pluton en aspect majeur avec le Soleil ou l'Ascendant
 - 58% présentent un amas planétaire en maison 10 (karma professionnel)
-- 41% ont [Chiron](/blog/chiron-astrologie-guerir-blessures-karmiques/) en Lion (blessure de l'ego)
+- 41% ont [Chiron](/blog/karma-astrologie-comprendre-vies-anterieures/) en Lion (blessure de l'ego)
 
 **Programme de réhabilitation karmique :**
 1. **Service désintéressé** : 2h hebdomadaires de bénévolat (reconstruction de l'humilité)
@@ -250,7 +250,7 @@ L'analyse karmique complète croise **quatre éléments essentiels** :
 
 1. **Ton chemin de vie de base** (1 à 9, plus les maîtres nombres 11, 22, 33)
 2. **Tes dettes karmiques actives** (13, 14, 16, 19)
-3. **Tes [aspects planétaires karmiques](/blog/aspects-planetaires-comprendre-angles-astrologiques/)** (Saturne, Pluton, Lune Noire)
+3. **Tes aspects planétaires karmiques** (Saturne, Pluton, Lune Noire)
 4. **Ton thème numérologique complet** (Expression, Âme, Personnalité)
 
 Cette méthode révèle non seulement *ce que* tu dois apprendre, mais *comment* l'apprendre de manière optimale selon ton profil unique.
@@ -340,7 +340,7 @@ La transformation karmique nécessite une approche **méthodique et progressive*
 - Pour chaque schéma, note : déclencheur → émotion → réaction → résultat
 
 *Semaine 2 : Validation astrologique*
-- Analyse ton [thème natal](/blog/astrologie-karmique-missions-lecons-vie/) pour confirmer les dettes
+- Analyse ton [thème natal](/blog/karma-astrologie-comprendre-vies-anterieures/) pour confirmer les dettes
 - Identifie tes aspects Saturne-Pluton, position de Chiron, Lune Noire
 - Corrèle avec tes patterns identifiés (ex: Saturne en maison 7 + dette 19 = difficulté relationnelle)
 
@@ -466,7 +466,7 @@ Notre analyse de 15 000 thèmes révèle que 37% des personnes ont un chemin de 
 - Nécessite un travail thérapeutique approfondi
 - Souvent associé à des personnalités créatives exceptionnelles
 
-Dans tous les cas, une [analyse astrologique karmique](/blog/astrologie-karmique-missions-lecons-vie/) complète est recommandée pour comprendre l'interaction entre les différentes dettes.
+Dans tous les cas, une [analyse astrologique karmique](/blog/karma-astrologie-comprendre-vies-anterieures/) complète est recommandée pour comprendre l'interaction entre les différentes dettes.
 
 ### Les dettes karmiques sont-elles définitives ou peuvent-elles évoluer ?
 
@@ -500,7 +500,7 @@ Les dettes karmiques **se transforment au lieu de disparaître**. Une fois la le
 **3. Résonance astrologique**
 - Présence d'aspects difficiles Saturne-Soleil, Pluton-Lune, ou Chiron actif
 - Lune Noire en maison liée au domaine problématique
-- [Nœuds lunaires](/blog/astrologie-karmique-missions-lecons-vie/) dans des signes correspondant à la dette
+- [Nœuds lunaires](/blog/karma-astrologie-comprendre-vies-anterieures/) dans des signes correspondant à la dette
 
 **Exemple concret :**
 *Pattern de dettes financières + Saturne en maison 2 + dette 16 = Probable karma lié à l'abus de pouvoir matériel dans des vies antérieures*

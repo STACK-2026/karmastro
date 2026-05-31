@@ -127,7 +127,7 @@ Cet article s'appuie sur des sources encyclopediques et scientifiques verifiable
 
 **Articles connexes :**
 - [Signe astrologique Bélier : personnalité, compatibilité et traits profonds](/blog/signe-astrologique-belier-personnalite-compatibilite)
-- [Numérologie du prénom : décrypte ton nombre d](/blog/numerologie-prenom-nombre-expression-decrypter-identite)
+- [Numérologie du prénom : décrypte ton nombre d](/blog/nombre-expression-reveler-potentiel-cache/)
 - [Horoscope du jour : comment obtenir des prévisions astrologiques vraiment fiables](/blog/horoscope-du-jour-previsions-astrologiques-fiables)
 - [Le retour de Saturne : ce grand passage astrologique vers 29 ans qui change tout](/blog/retour-de-saturne-29-ans-grand-passage-adulte)
 

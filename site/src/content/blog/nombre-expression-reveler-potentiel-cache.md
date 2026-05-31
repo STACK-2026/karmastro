@@ -549,11 +549,11 @@ En numérologie relationnelle, certaines expressions s'harmonisent naturellement
 
 ## Pour aller plus loin
 
-- [Chemin de vie : guide complet du calcul et interpretation](/blog/chemin-vie-numerologie-guide-complet/)
-- [Numerologie karmique : 5 piliers fondamentaux](/blog/numerologie-karmique-piliers-fondamentaux/)
-- [Maitres nombres 11, 22, 33 : pouvoir et missions d'ame](/blog/maitres-nombres-11-22-33-pouvoir-missions/)
-- [Nombre d'ame vs nombre de personnalite : differences cles](/blog/nombre-ame-personnalite-differences/)
-- [Compatibilite amoureuse en numerologie : guide pratique](/blog/compatibilite-amoureuse-numerologie-guide/)
+- [Chemin de vie : guide complet du calcul et interpretation](/blog/comment-calculer-chemin-vie-numerologie/)
+- [Numerologie karmique : 5 piliers fondamentaux](/blog/numerologie-karmique-decoder-dettes-spirituelles/)
+- [Maitres nombres 11, 22, 33 : pouvoir et missions d'ame](/blog/chemin-vie-maitre-nombre-intuition/)
+- [Nombre d'ame vs nombre de personnalite : differences cles](/blog/nombre-personnel-trouver-vibration-numerologique/)
+- [Compatibilite amoureuse en numerologie : guide pratique](/blog/compatibilite-numerologique-calculer-harmonie-couple/)
 
 ## Articles similaires
 

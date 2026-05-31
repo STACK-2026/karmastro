@@ -261,7 +261,7 @@ Not at all. It is the chart of someone who must work on themselves a lot, but wh
 Not necessarily. An astrologically "easy" life can be a life where you are never pushed to surpass yourself. Many people with many trines drift and miss their potential. Fluidity has its trap.
 
 **What to do if I cannot see my aspects on my chart?**
-Use an online astrological software that calculates and lists your aspects for you. Our [Oracle](/oracle) can do it from your date, time, and place of birth.
+Use an online astrological software that calculates and lists your aspects for you. Our [Oracle](https://app.karmastro.com/oracle) can do it from your date, time, and place of birth.
 
 **Are aspects by sign and aspects by degree different?**
 Yes, and it is an important distinction. "By sign" aspects (two planets in two signs in aspect, without looking at exact degrees) are a broader traditional reading, used in Hellenistic astrology. "By degree" aspects are the more precise modern reading. Both are valid, as long as you do not mix them.
@@ -287,7 +287,7 @@ Aspects are the most dynamic dimension of your natal chart. They turn a list of 
 
 To go further, also read our guide on [the 12 astrological houses](/en/blog/12-astrological-houses-complete-guide-life-sectors) and our article on [the Saturn return](/en/blog/saturn-return-29-major-passage-into-adulthood), which shows how aspects replay through transits.
 
-If you want a personalized and complete reading of your main aspects, the [Oracle](/oracle) can do it for you in a few minutes, based on your precise chart.
+If you want a personalized and complete reading of your main aspects, the [Oracle](https://app.karmastro.com/oracle) can do it for you in a few minutes, based on your precise chart.
 
 And if you want to follow the transits that activate your natal aspects day by day, subscribe to our free daily horoscope. Every morning, you will know which planetary dialogues are at play in your personal sky, and therefore what is awakening inside you that day.
 

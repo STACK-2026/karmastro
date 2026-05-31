@@ -265,7 +265,7 @@ Astrological houses are one of the richest and most practical aspects of the nat
 
 To go deeper, also read our article on [the rising sign](/en/blog/rising-sign-complete-guide-understand-ascendant) and the one on [the moon sign](/en/blog/moon-sign-natal-moon-emotional-world), which give you the other essential keys of your natal chart.
 
-If you want a personalized and complete reading of your chart, with a house-by-house analysis, the [Oracle](/oracle) can do it for you. You ask your question, you receive an answer calculated from your precise chart.
+If you want a personalized and complete reading of your chart, with a house-by-house analysis, the [Oracle](https://app.karmastro.com/oracle) can do it for you. You ask your question, you receive an answer calculated from your precise chart.
 
 And if you want to follow the activation of your houses day by day through transits, subscribe to our free daily horoscope. Every morning, you will know which house is lit by the planets of the day, and therefore which area of your life is invited to speak.
 

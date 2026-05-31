@@ -268,10 +268,10 @@ Cet article s'appuie sur des sources encyclopediques et scientifiques verifiable
 ## Pour aller plus loin
 
 **Articles connexes :**
-- [Aspects astrologiques : conjonction, carré, trigone, opposition, sextile, le guide pour les comprendre](/blog/aspects-astrologiques-conjonction-carre-trigone-opposition-sextile)
+- Aspects astrologiques : conjonction, carré, trigone, opposition, sextile, le guide pour les comprendre
 - [Le retour de Saturne : ce grand passage astrologique vers 29 ans qui change tout](/blog/retour-de-saturne-29-ans-grand-passage-adulte)
 - [Signe ascendant : guide complet pour comprendre ton ascendant astrologique](/blog/signe-ascendant-guide-complet-comprendre-ascendant)
-- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/12-maisons-astrologiques-guide-complet-secteurs-vie)
+- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/maisons-astrologiques-guide-interpretation-complet/)
 
 **Outils Karmastro:**
 - [Thème natal](/outils/theme-natal)

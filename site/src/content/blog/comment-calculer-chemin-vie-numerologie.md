@@ -62,7 +62,7 @@ Les maîtres nombres sont des **exceptions à la règle de réduction**. Ils por
 
 **Chemin 33 : le maître enseignant.** Vibration de l'amour universel, de la guérison, du service désintéressé. Extrêmement rare. Défi : accepter la mission sans s'effacer.
 
-La question qui revient le plus : **"dois-je lire le 11 ou le 2 ?"**. La réponse tient en une phrase. Si tu te sens appelé par une mission qui dépasse ton confort personnel, tu vis le 11. Sinon, tu vis le 2. La vibration maître n'est pas automatique, elle se gagne par l'engagement. Pour creuser ce sujet, lis aussi [qu'est-ce que la numérologie ? Guide complet pour débuter](/blog/qu-numerologie-guide-complet-debuter) et [chemin de vie 1 : leadership, indépendance, numérologie](/blog/chemin-vie-1-leadership-independance-numerologie).
+La question qui revient le plus : **"dois-je lire le 11 ou le 2 ?"**. La réponse tient en une phrase. Si tu te sens appelé par une mission qui dépasse ton confort personnel, tu vis le 11. Sinon, tu vis le 2. La vibration maître n'est pas automatique, elle se gagne par l'engagement. Pour creuser ce sujet, lis aussi [qu'est-ce que la numérologie ? Guide complet pour débuter](/blog/qu-numerologie-guide-complet-debuter) et [chemin de vie 1 : leadership, indépendance, numérologie](/blog/chemin-de-vie-1-leadership-independance/).
 
 ## Signification des 9 chemins de vie
 
@@ -70,7 +70,7 @@ Chaque chemin de vie de 1 à 9 décrit une mission centrale, un type d'énergie 
 
 ### Chemin 1 : le pionnier
 
-Énergie d'initiation. Le 1 ouvre des voies, crée, entreprend. Son besoin fondamental est l'autonomie. Défi : ne pas confondre indépendance et isolement. Professions typiques : fondateur, inventeur, dirigeant, artiste solo. Relations : cherche un partenaire qui respecte son espace. Plus de détails dans [l'article complet chemin de vie 1](/blog/chemin-vie-1-leadership-independance-numerologie).
+Énergie d'initiation. Le 1 ouvre des voies, crée, entreprend. Son besoin fondamental est l'autonomie. Défi : ne pas confondre indépendance et isolement. Professions typiques : fondateur, inventeur, dirigeant, artiste solo. Relations : cherche un partenaire qui respecte son espace. Plus de détails dans [l'article complet chemin de vie 1](/blog/chemin-de-vie-1-leadership-independance/).
 
 ### Chemin 2 : le diplomate
 
@@ -104,7 +104,7 @@ Chaque chemin de vie de 1 à 9 décrit une mission centrale, un type d'énergie 
 
 Énergie d'accomplissement. Le 9 a déjà beaucoup vécu (au sens karmique) et revient pour transmettre. C'est un chemin d'humanisme, d'art, de service large. Défi : lâcher le passé, accepter de clore des cycles. Professions : humanitaire, psychothérapie, art engagé, enseignement supérieur.
 
-Tu peux croiser ton chemin avec ton [signe solaire](/horoscope/belier), ton [ascendant](/outils/ascendant) et ta [Lune natale](/outils/lune-natale) pour une lecture globale sur Karmastro.
+Tu peux croiser ton chemin avec ton [signe solaire](/horoscope/belier), ton [ascendant](/outils/ascendant) et ta [Lune natale](/outils/theme-natal/) pour une lecture globale sur Karmastro.
 
 ## Exemples célèbres pour chaque chemin
 
@@ -120,7 +120,7 @@ Les exemples qui suivent sont calculés à partir des dates de naissance documen
 - **Chemin 8 : Pablo Picasso** (25/10/1881). 2+5+1+0+1+8+8+1 = 26 → 8. Puissance, construction d'une œuvre colossale.
 - **Chemin 9 : Mahatma Gandhi** (02/10/1869). 0+2+1+0+1+8+6+9 = 27 → 9. Sage universel, accomplissement d'un cycle historique.
 
-Tu peux vérifier ces calculs par toi-même ou utiliser le [calculateur en ligne](/outils/chemin-de-vie). Pour explorer la dimension astrologique de ces figures, consulte aussi nos articles sur les [aspects astrologiques](/blog/aspects-astrologiques-conjonction-carre-trigone-opposition-sextile) et les [12 maisons astrologiques](/blog/12-maisons-astrologiques-guide-complet-secteurs-vie).
+Tu peux vérifier ces calculs par toi-même ou utiliser le [calculateur en ligne](/outils/chemin-de-vie). Pour explorer la dimension astrologique de ces figures, consulte aussi nos articles sur les aspects astrologiques et les [12 maisons astrologiques](/blog/maisons-astrologiques-guide-interpretation-complet/).
 
 ## Comment intégrer ton chemin de vie au quotidien
 
@@ -132,11 +132,11 @@ Un nombre ne change rien tant qu'on ne l'utilise pas. Voici cinq pratiques concr
 
 **3. Combine chemin et année personnelle.** L'année personnelle est un cycle de 9 ans calculé à partir de ta date de naissance et de l'année en cours. Lis notre [guide année personnelle 2026](/blog/annee-personnelle-2026-numerologie-cycle-9-ans) pour savoir où tu en es. Le chemin décrit ta mission globale, l'année décrit la saison actuelle.
 
-**4. Croise avec ton thème natal.** Un chemin 2 avec une Lune en Bélier vivra la sensibilité autrement qu'un chemin 2 avec une Lune en Poissons. Notre article [thème astral gratuit, interpréter son horoscope complet](/blog/theme-astral-gratuit-interpreter-horoscope-complet) explique comment combiner les deux lectures.
+**4. Croise avec ton thème natal.** Un chemin 2 avec une Lune en Bélier vivra la sensibilité autrement qu'un chemin 2 avec une Lune en Poissons. Notre article [thème astral gratuit, interpréter son horoscope complet](/blog/theme-natal-gratuit-interpreter-carte-ciel/) explique comment combiner les deux lectures.
 
 **5. Tiens un journal du chemin.** Une fois par mois, écris trois situations où tu as honoré ton chemin, et trois où tu l'as trahi. Cette pratique, inspirée du journal d'alignement utilisé en coaching jungien, développe une conscience fine de tes choix.
 
-Pour un diagnostic complet, pose la question à l'[Oracle IA de Karmastro](https://app.karmastro.com/oracle) avec ta date de naissance : il croise chemin de vie, [signe lunaire](/outils/lune-natale), [ascendant](/outils/ascendant) et transits en cours. Tu peux aussi lire notre [comparaison entre numérologie pythagoricienne et chaldéenne](/blog/numerologie-pythagoricienne-vs-chaldeenne-differences) pour comprendre pourquoi nous recommandons la méthode pythagoricienne.
+Pour un diagnostic complet, pose la question à l'[Oracle IA de Karmastro](https://app.karmastro.com/oracle) avec ta date de naissance : il croise chemin de vie, [signe lunaire](/outils/theme-natal/), [ascendant](/outils/ascendant) et transits en cours. Tu peux aussi lire notre [comparaison entre numérologie pythagoricienne et chaldéenne](/blog/numerologie-pythagoricienne-vs-chaldeenne-differences) pour comprendre pourquoi nous recommandons la méthode pythagoricienne.
 
 ## Histoire et origines de la numérologie
 
@@ -168,7 +168,7 @@ La **famille de la terre émotionnelle (2, 4, 6)** regroupe les chemins de lien,
 
 La **famille de l'eau spirituelle (7, 8, 9)** relie les chemins d'introspection, de puissance et d'accomplissement. Un 7 avec un 9 crée un duo profondément philosophique, presque monacal. Un 8 avec un 9 réussit à grande échelle quand ils partagent une cause humanitaire. Le 7 et le 8 se complètent en affaires : l'un analyse, l'autre exécute.
 
-**Les combinaisons à surveiller.** Un 1 avec un 4 peut souffrir d'un rythme incompatible (improvisation contre méthode). Un 5 avec un 6 vit une tension chronique entre liberté et foyer. Un 2 avec un 8 demande beaucoup de négociation (sensibilité contre ambition). Aucune combinaison n'est "impossible", mais certaines demandent une conscience plus aiguë des besoins de l'autre. Pour aller plus loin, utilise notre outil de [compatibilité amoureuse](/compatibilite) qui croise chemins de vie et thèmes natals, ou lis le guide complet [compatibilité amoureuse par signe](/blog/compatibilite-amoureuse-signes-zodiaque-guide-complet).
+**Les combinaisons à surveiller.** Un 1 avec un 4 peut souffrir d'un rythme incompatible (improvisation contre méthode). Un 5 avec un 6 vit une tension chronique entre liberté et foyer. Un 2 avec un 8 demande beaucoup de négociation (sensibilité contre ambition). Aucune combinaison n'est "impossible", mais certaines demandent une conscience plus aiguë des besoins de l'autre. Pour aller plus loin, utilise notre outil de [compatibilité amoureuse](/compatibilite) qui croise chemins de vie et thèmes natals, ou lis le guide complet [compatibilité amoureuse par signe](/blog/compatibilite-amoureuse-signes-astrologiques-attirent/).
 
 ## Année personnelle et cycle de 9 ans
 
@@ -184,7 +184,7 @@ Quand consulter son chemin de vie ? La réponse tient en cinq situations récurr
 
 **Mariage ou engagement long** : croiser ton chemin et celui de ton partenaire (voir la section compatibilités) évite de découvrir dix ans plus tard que vos besoins fondamentaux sont opposés. Ce n'est pas un veto, c'est une carte. **Déménagement** : un chemin 4 a besoin de stabilité géographique, un chemin 5 s'épanouit dans la mobilité, un chemin 6 cherche un foyer-refuge. Choisir une ville contre son chemin se paie en malaise diffus.
 
-**Projet créatif ou entrepreneurial** : lance au moment où ton année personnelle soutient l'initiative (année 1, 3 ou 8). Éviter de lancer un gros projet en année 7, période d'introspection où l'énergie est intérieure. **Bilan de mi-vie (autour de 40-45 ans)** : la numérologie est un outil utile pour relire les cycles de neuf ans déjà vécus et identifier où l'alignement a manqué. Combine cette relecture avec le [retour de Saturne](/blog/retour-saturne-29-ans-crise-milieu-vie) pour les décisions de transition.
+**Projet créatif ou entrepreneurial** : lance au moment où ton année personnelle soutient l'initiative (année 1, 3 ou 8). Éviter de lancer un gros projet en année 7, période d'introspection où l'énergie est intérieure. **Bilan de mi-vie (autour de 40-45 ans)** : la numérologie est un outil utile pour relire les cycles de neuf ans déjà vécus et identifier où l'alignement a manqué. Combine cette relecture avec le [retour de Saturne](/blog/retour-de-saturne-29-ans-grand-passage-adulte/) pour les décisions de transition.
 
 ## Limites et critiques de la numérologie
 
@@ -192,7 +192,7 @@ Un guide honnête précise ce que la numérologie **ne peut pas faire**. Elle ne
 
 Les sceptiques évoquent régulièrement l'**effet Barnum**, ce biais cognitif qui nous fait adhérer à des descriptions vagues applicables à presque tout le monde. Les profils de chemins de vie, lus sans rigueur, peuvent tomber dans ce travers. La parade est double : croiser avec d'autres outils (thème natal, coaching, journal) et vérifier par l'expérience vécue, pas par l'émotion de reconnaissance immédiate.
 
-Sur le plan scientifique, la numérologie n'est pas une discipline validée par méthode expérimentale reproductible. Elle relève de la **tradition symbolique et de l'auto-coaching**. C'est sa force (un outil narratif pour se comprendre) et sa limite (pas une preuve). Les praticiens sérieux l'assument et ne promettent jamais de résultats matériels. Pour une approche lucide, consulte aussi notre article [astrologie : science, tradition ou outil de développement personnel](/blog/astrologie-science-tradition-outil-developpement).
+Sur le plan scientifique, la numérologie n'est pas une discipline validée par méthode expérimentale reproductible. Elle relève de la **tradition symbolique et de l'auto-coaching**. C'est sa force (un outil narratif pour se comprendre) et sa limite (pas une preuve). Les praticiens sérieux l'assument et ne promettent jamais de résultats matériels. Pour une approche lucide, consulte aussi notre article astrologie : science, tradition ou outil de développement personnel.
 
 ## Glossaire numérologique
 
@@ -206,7 +206,7 @@ Sur le plan scientifique, la numérologie n'est pas une discipline validée par 
 
 **Que faire si deux méthodes donnent un résultat différent ?** Retiens la méthode par bloc (jour, mois, année réduits puis additionnés). Elle préserve les maîtres nombres intermédiaires, ce que la somme globale ne fait pas toujours.
 
-**Mon chemin de vie est 4 mais je me reconnais dans le 8, pourquoi ?** Lis aussi ton nombre d'expression (nom complet) et ton nombre intime. Le chemin de vie est une énergie dominante, pas la totalité du thème numérologique. Notre article [nombre d'expression : décrypter identité par le nom](/blog/nombre-expression-numerologie-nom-identite-decrypter) détaille ce point.
+**Mon chemin de vie est 4 mais je me reconnais dans le 8, pourquoi ?** Lis aussi ton nombre d'expression (nom complet) et ton nombre intime. Le chemin de vie est une énergie dominante, pas la totalité du thème numérologique. Notre article [nombre d'expression : décrypter identité par le nom](/blog/nombre-expression-reveler-potentiel-cache/) détaille ce point.
 
 **Le chemin de vie 9 est-il "meilleur" que le 1 ?** Non. Les neuf chemins portent des missions équivalentes, simplement différentes. Un chemin 1 au service de sa mission vaut un chemin 9 au service de la sienne. Les hiérarchies sont une projection culturelle, pas une règle numérologique.
 
@@ -214,7 +214,7 @@ Sur le plan scientifique, la numérologie n'est pas une discipline validée par 
 
 **Combien de temps pour maîtriser le calcul ?** Avec la méthode pas-à-pas ci-dessus, vingt minutes suffisent pour l'apprendre. Dix dates pratiquées à la main consolident l'automatisme.
 
-**Dois-je connaître mon chemin de vie avant de consulter un astrologue ?** Ce n'est pas obligatoire mais très utile. Un praticien sérieux croisera ton chemin avec tes placements planétaires, comme expliqué dans notre guide [karma et astrologie : vies antérieures et thème natal](/blog/karma-astrologie-vies-anterieures-theme-natal).
+**Dois-je connaître mon chemin de vie avant de consulter un astrologue ?** Ce n'est pas obligatoire mais très utile. Un praticien sérieux croisera ton chemin avec tes placements planétaires, comme expliqué dans notre guide [karma et astrologie : vies antérieures et thème natal](/blog/karma-astrologie-vies-anterieures/).
 
 ## Sources
 
@@ -233,18 +233,18 @@ Sur le plan scientifique, la numérologie n'est pas une discipline validée par 
 ## Articles liés sur Karmastro
 
 - [Qu'est-ce que la numérologie ? Guide complet pour débuter](/blog/qu-numerologie-guide-complet-debuter)
-- [Chemin de vie 1 : leadership, indépendance, numérologie](/blog/chemin-vie-1-leadership-independance-numerologie)
-- [Nombre d'expression : décrypter identité par le nom](/blog/nombre-expression-numerologie-nom-identite-decrypter)
+- [Chemin de vie 1 : leadership, indépendance, numérologie](/blog/chemin-de-vie-1-leadership-independance/)
+- [Nombre d'expression : décrypter identité par le nom](/blog/nombre-expression-reveler-potentiel-cache/)
 - [Année personnelle 2026 : numérologie et cycle 9 ans](/blog/annee-personnelle-2026-numerologie-cycle-9-ans)
 - [Numérologie pythagoricienne vs chaldéenne : différences](/blog/numerologie-pythagoricienne-vs-chaldeenne-differences)
-- [Thème astral gratuit : interpréter son horoscope complet](/blog/theme-astral-gratuit-interpreter-horoscope-complet)
-- [Karma et astrologie : vies antérieures et thème natal](/blog/karma-astrologie-vies-anterieures-theme-natal)
-- [Horoscope quotidien : prévisions astrologiques fiables](/blog/horoscope-quotidien-previsions-astrologiques-fiables)
-- [Aspects astrologiques : conjonction, carré, trigone, opposition, sextile](/blog/aspects-astrologiques-conjonction-carre-trigone-opposition-sextile)
-- [12 maisons astrologiques : guide complet](/blog/12-maisons-astrologiques-guide-complet-secteurs-vie)
+- [Thème astral gratuit : interpréter son horoscope complet](/blog/theme-natal-gratuit-interpreter-carte-ciel/)
+- [Karma et astrologie : vies antérieures et thème natal](/blog/karma-astrologie-vies-anterieures/)
+- [Horoscope quotidien : prévisions astrologiques fiables](/blog/horoscope-du-jour-previsions-astrologiques-fiables/)
+- Aspects astrologiques : conjonction, carré, trigone, opposition, sextile
+- [12 maisons astrologiques : guide complet](/blog/maisons-astrologiques-guide-interpretation-complet/)
 - [Ton horoscope Bélier](/horoscope/belier), [Taureau](/horoscope/taureau), [Gémeaux](/horoscope/gemeaux), [Cancer](/horoscope/cancer), [Lion](/horoscope/lion), [Vierge](/horoscope/vierge), [Balance](/horoscope/balance), [Scorpion](/horoscope/scorpion), [Sagittaire](/horoscope/sagittaire), [Capricorne](/horoscope/capricorne), [Verseau](/horoscope/verseau), [Poissons](/horoscope/poissons)
-- [Calculateur ascendant](/outils/ascendant), [calculateur Lune natale](/outils/lune-natale), [chemin de vie](/outils/chemin-de-vie), [thème natal](/outils/theme-natal)
-- [Compatibilité amoureuse](/compatibilite), [Newsletter Karmastro](/newsletter), [Hall des Constellations](/hall-des-constellations)
+- [Calculateur ascendant](/outils/ascendant), [calculateur Lune natale](/outils/theme-natal/), [chemin de vie](/outils/chemin-de-vie), [thème natal](/outils/theme-natal)
+- [Compatibilité amoureuse](/compatibilite), Newsletter Karmastro, [Hall des Constellations](/hall-des-constellations)
 
 <!-- maillage:auto -->
 ## Pour aller plus loin

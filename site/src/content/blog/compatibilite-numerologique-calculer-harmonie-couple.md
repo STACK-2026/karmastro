@@ -84,7 +84,7 @@ Vénus indique comment tu exprimes et reçois l'amour. Sa position dans ton thè
 | Vénus en Scorpion | Intense, passionnel | Vénus Cancer, Poissons |
 | Vénus en Sagittaire | Libre, aventurier | Vénus Bélier, Lion |
 
-Pour approfondir l'analyse de tes positions planétaires, consulte notre [article sur les aspects planétaires](/blog/aspects-planetaires-comprendre-angles-astrologiques/).
+Pour approfondir l'analyse de tes positions planétaires, consulte notre article sur les aspects planétaires.
 
 ## Ton ADN numérologique : comment ton chemin de vie façonne ton couple
 
@@ -125,21 +125,21 @@ Les maîtres nombres (11, 22, 33) indiquent un potentiel spirituel élevé mais 
 - Besoin d'un partenaire stable et patient
 - Compatibilité idéale : 3, 6, 9 (score moyen 91%)
 
-Découvre plus sur le [chemin de vie 11](/blog/chemin-vie-11-maitre-nombre-intuition/).
+Découvre plus sur le [chemin de vie 11](/blog/chemin-vie-maitre-nombre-intuition/).
 
 **Chemin de vie 22** : Le Bâtisseur
 - Visionnaire avec des projets ambitieux
 - Recherche un partenaire qui partage sa vision
 - Compatibilité idéale : 4, 6, 8 (score moyen 93%)
 
-Explore le [chemin de vie 22](/blog/chemin-vie-22-batisseur-visionnaire/).
+Explore le [chemin de vie 22](/blog/chemin-vie-maitre-nombre-intuition/).
 
 **Chemin de vie 33** : Le Guérisseur
 - Dévouement total aux autres, risque d'oubli de soi
 - Besoin d'un partenaire qui le préserve
 - Compatibilité idéale : 6, 9 (score moyen 95%)
 
-Approfondis avec le [chemin de vie 33](/blog/chemin-vie-33-maitre-guerisseur-compassion/).
+Approfondis avec le [chemin de vie 33](/blog/chemin-vie-maitre-nombre-intuition/).
 
 ### Le nombre d'expression : ton potentiel caché
 
@@ -202,7 +202,7 @@ Les couples avec une compatibilité moyenne peuvent créer des relations excepti
 
 **Plan d'action en 4 étapes** :
 
-1. **Identifiez vos aspects difficiles** : Utilisez notre [guide sur l'astrologie karmique](/blog/astrologie-karmique-missions-lecons-vie/) pour comprendre vos leçons de couple
+1. **Identifiez vos aspects difficiles** : Utilisez notre [guide sur l'astrologie karmique](/blog/karma-astrologie-comprendre-vies-anterieures/) pour comprendre vos leçons de couple
 2. **Créez des rituels compensatoires** : Si vous manquez d'élément Eau, intégrez méditation ou bains partagés
 3. **Exploitez vos complémentarités** : Un chemin de vie 4 (structure) + 7 (spiritualité) = projets concrets avec dimension sacrée
 4. **Consultez régulièrement** : Planifiez une analyse trimestrielle sur Karmastro pour anticiper les cycles difficiles
@@ -217,7 +217,7 @@ Les couples avec une compatibilité moyenne peuvent créer des relations excepti
 Les couples bien assortis doivent éviter la complaisance et continuer d'évoluer ensemble.
 
 **Techniques avancées** :
-- **Synchronisation des cycles** : Utilisez notre [guide sur les cycles planétaires](/blog/cycles-planetaires-anticiper-grandes-tendances/) pour prévoir vos hauts et bas
+- **Synchronisation des cycles** : Utilisez notre [guide sur les cycles planétaires](/outils/transits/) pour prévoir vos hauts et bas
 - **Projets communs alignés** : Votre chemin de vie 3+5 (88%) ? Lancez un blog de voyage créatif
 - **Développement des maîtres nombres** : Si l'un a un chemin 11, l'autre peut développer son intuition
 
@@ -324,7 +324,7 @@ Certaines combinaisons numérologiques et astrologiques créent des tensions str
 
 **Important** : Ces signaux indiquent des défis, pas des fatalités. 68% des couples "difficiles" sur le papier réussissent avec un travail conscient.
 
-Notre [article sur les défis karmiques](/blog/defis-karmiques-surmonter-epreuves-vie/) propose des solutions pratiques.
+Notre [article sur les défis karmiques](/blog/numerologie-karmique-decoder-dettes-spirituelles/) propose des solutions pratiques.
 
 ### La numérologie peut-elle prédire une rupture ?
 
@@ -429,7 +429,7 @@ Cette situation concerne environ 23% des couples analysés sur Karmastro et rév
 
 **Statistiques Karmastro** : Les couples "numéro-compatibles/astro-difficiles" ont 78% de chances de durer si ils appliquent consciemment ces stratégies, contre 34% s'ils ignorent leurs défis astrologiques.
 
-Notre [guide sur l'astrologie karmique](/blog/astrologie-karmique-missions-lecons-vie/) détaille ces techniques d'harmonisation.
+Notre [guide sur l'astrologie karmique](/blog/karma-astrologie-comprendre-vies-anterieures/) détaille ces techniques d'harmonisation.
 
 ## Conclusion : la compatibilité, un art de vivre à deux
 

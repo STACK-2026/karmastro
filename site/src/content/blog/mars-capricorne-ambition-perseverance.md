@@ -121,7 +121,7 @@ Cependant, cette alliance peut parfois devenir contre-productive si elle verse d
 
 **Isolation relationnelle** : La focalisation sur l'objectif peut négliger les aspects humains et émotionnels.
 
-Pour équilibrer ces tendances, Karmastro recommande de travailler parallèlement son [nombre de cœur](/blog/numerologie-prenom-influence-personnalite/) et de cultiver des activités développant la flexibilité émotionnelle.
+Pour équilibrer ces tendances, Karmastro recommande de travailler parallèlement son [nombre de cœur](/blog/nombre-expression-reveler-potentiel-cache/) et de cultiver des activités développant la flexibilité émotionnelle.
 
 ## Mars en Capricorne Maison par Maison : Décrypte Ton Plan d'Action Personnalisé
 
@@ -161,7 +161,7 @@ La maison astrologique occupée par Mars en Capricorne détermine le domaine de 
 
 **Défi** : Apprendre à rendre tes messages plus accessibles et chaleureux pour toucher un public plus large.
 
-Cette position bénéficie souvent d'une formation en [astrologie karmique](/blog/astrologie-karmique-missions-lecons-vie/) pour structurer sa compréhension des cycles cosmiques.
+Cette position bénéficie souvent d'une formation en [astrologie karmique](/blog/karma-astrologie-comprendre-vies-anterieures/) pour structurer sa compréhension des cycles cosmiques.
 
 ### Mars en Capricorne en Maison 4 : Le Bâtisseur du Foyer
 
@@ -193,7 +193,7 @@ Cette position bénéficie souvent d'une formation en [astrologie karmique](/blo
 
 **Défi** : Attention au burn-out. Ta capacité de travail exceptionnelle peut te faire oublier tes limites physiques.
 
-Cette position bénéficie particulièrement des enseignements sur [l'ascendant astrologique](/blog/horoscope-hebdomadaire-tendances-astrologiques/) pour équilibrer travail et identité personnelle.
+Cette position bénéficie particulièrement des enseignements sur [l'ascendant astrologique](/blog/horoscope-du-jour-previsions-astrologiques-fiables/) pour équilibrer travail et identité personnelle.
 
 ### Mars en Capricorne en Maison 7 : Le Partenaire Stratégique
 
@@ -257,7 +257,7 @@ Cette position puissante bénéficie grandement d'une consultation approfondie s
 
 **Défi** : Ne pas tout intellectualiser. Accepte que certaines transformations passent par l'émotion et l'intuition.
 
-Cette position profonde trouve souvent écho dans une étude poussée de [l'astrologie hellénistique](/blog/chiron-astrologie-guerir-blessures-karmiques/) et de ses techniques de développement spirituel.
+Cette position profonde trouve souvent écho dans une étude poussée de [l'astrologie hellénistique](/blog/karma-astrologie-comprendre-vies-anterieures/) et de ses techniques de développement spirituel.
 
 ## La Signature Numérologique de Mars en Capricorne : Révèle les Nombres de ta Puissance
 
@@ -325,7 +325,7 @@ Pour équilibrer l'intensité de Mars en Capricorne, cultive les énergies de no
 
 **Nombre 9** : Élargit la vision aux dimensions humanitaires et spirituelles.
 
-Ces nombres peuvent être renforcés par le choix d'un [prénom spirituel](/blog/calcul-ame-numerologie/), la pratique d'activités correspondantes ou la fréquentation de personnes incarnant ces énergies.
+Ces nombres peuvent être renforcés par le choix d'un [prénom spirituel](/blog/nombre-personnel-trouver-vibration-numerologique/), la pratique d'activités correspondantes ou la fréquentation de personnes incarnant ces énergies.
 
 ### Périodes d'Activation Numérologique
 
@@ -552,7 +552,7 @@ Mars en Capricorne présente trois défis principaux :
 
 **3. Froideur relationnelle** : La focalisation sur l'efficacité peut négliger les aspects humains et émotionnels, créant des tensions avec l'entourage.
 
-Pour équilibrer ces tendances, travaille ton [nombre de cœur](/blog/numerologie-prenom-influence-personnalite/) en numérologie et cultive des activités développant la flexibilité émotionnelle (art, sport, méditation).
+Pour équilibrer ces tendances, travaille ton [nombre de cœur](/blog/nombre-expression-reveler-potentiel-cache/) en numérologie et cultive des activités développant la flexibilité émotionnelle (art, sport, méditation).
 
 ### Mars en Capricorne convient-il à l'entrepreneuriat ?
 
@@ -583,7 +583,7 @@ Mars en Capricorne apporte une approche structurée et sérieuse des relations a
 - Risque de privilégier les considérations pratiques sur la passion
 - Possible froideur perçue par des partenaires plus expressifs
 
-Pour optimiser cette énergie en amour, développe ton [nombre de Vénus](/blog/calcul-ame-numerologie/) et apprends à exprimer tes sentiments de manière plus spontanée, tout en conservant ta profondeur naturelle.
+Pour optimiser cette énergie en amour, développe ton [nombre de Vénus](/blog/nombre-personnel-trouver-vibration-numerologique/) et apprends à exprimer tes sentiments de manière plus spontanée, tout en conservant ta profondeur naturelle.
 
 ### Mars en Capricorne est-il compatible avec d'autres placements planétaires ?
 

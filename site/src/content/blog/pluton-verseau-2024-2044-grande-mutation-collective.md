@@ -235,7 +235,7 @@ Pluton va activer une maison spécifique de ton thème, en fonction de ton ascen
 
 **Pluton en maison XII** : transformation profonde de l'inconscient, des secrets, des zones d'ombre. Travail psychologique majeur souvent indispensable.
 
-Pour identifier précisément quelle maison de ton thème est touchée par Pluton en Verseau, tu peux utiliser notre [calculateur d'ascendant](/outils/ascendant) puis demander à [l'Oracle](/oracle) une lecture de ce transit pour toi spécifiquement.
+Pour identifier précisément quelle maison de ton thème est touchée par Pluton en Verseau, tu peux utiliser notre [calculateur d'ascendant](/outils/ascendant) puis demander à [l'Oracle](https://app.karmastro.com/oracle) une lecture de ce transit pour toi spécifiquement.
 
 ## 15. Génération Pluton Verseau : qui sont les enfants nés sous ce ciel
 
@@ -305,11 +305,11 @@ Oui. Notamment quand Pluton entrera en aspect avec les autres planètes lentes (
 
 ## Pour aller plus loin
 
-Pluton en Verseau est sans doute le transit le plus important de ta vie, parce qu'il touche tout le monde et qu'il s'étale sur deux décennies. Pour comprendre comment il agit dans ton thème, commence par calculer ton [signe ascendant](/outils/ascendant), ton [signe lunaire](/outils/signe-lunaire) et ton [chemin de vie](/outils/chemin-de-vie). Ces trois bases te donnent le socle pour lire les transits.
+Pluton en Verseau est sans doute le transit le plus important de ta vie, parce qu'il touche tout le monde et qu'il s'étale sur deux décennies. Pour comprendre comment il agit dans ton thème, commence par calculer ton [signe ascendant](/outils/ascendant), ton [signe lunaire](/blog/signe-lunaire-lune-natale-monde-emotionnel/) et ton [chemin de vie](/outils/chemin-de-vie). Ces trois bases te donnent le socle pour lire les transits.
 
-Pour aller plus loin, lis aussi notre guide sur [le retour de Saturne](/blog/retour-de-saturne-29-ans-grand-passage-adulte), qui explique comment Saturne, autre grande planète de mutation, vient compléter le travail de Pluton, et notre article sur [les 12 maisons astrologiques](/blog/12-maisons-astrologiques-guide-complet-secteurs-vie) pour comprendre dans quel domaine de ta vie le transit va se loger.
+Pour aller plus loin, lis aussi notre guide sur [le retour de Saturne](/blog/retour-de-saturne-29-ans-grand-passage-adulte), qui explique comment Saturne, autre grande planète de mutation, vient compléter le travail de Pluton, et notre article sur [les 12 maisons astrologiques](/blog/maisons-astrologiques-guide-interpretation-complet/) pour comprendre dans quel domaine de ta vie le transit va se loger.
 
-Pour une lecture personnalisée et précise de ce que Pluton en Verseau te réserve dans les années à venir, [l'Oracle](/oracle) peut le faire pour toi en quelques minutes, en partant de ta carte exacte.
+Pour une lecture personnalisée et précise de ce que Pluton en Verseau te réserve dans les années à venir, [l'Oracle](https://app.karmastro.com/oracle) peut le faire pour toi en quelques minutes, en partant de ta carte exacte.
 
 Et si tu veux suivre les étapes clés de ce grand transit jour après jour, abonne-toi à notre horoscope quotidien gratuit. Chaque matin, tu sauras ce qui se joue dans le ciel personnel et collectif, sans dramatisation, avec des clés concrètes pour t'orienter.
 
@@ -327,7 +327,7 @@ Cet article s'appuie sur des sources encyclopediques et scientifiques verifiable
 ## Pour aller plus loin
 
 **Articles connexes :**
-- [Aspects astrologiques : conjonction, carré, trigone, opposition, sextile, le guide pour les comprendre](/blog/aspects-astrologiques-conjonction-carre-trigone-opposition-sextile)
+- Aspects astrologiques : conjonction, carré, trigone, opposition, sextile, le guide pour les comprendre
 - [Thème natal gratuit : comment interpréter sa carte du ciel](/blog/theme-natal-gratuit-interpreter-carte-ciel)
 - [Signe ascendant : guide complet pour comprendre ton ascendant astrologique](/blog/signe-ascendant-guide-complet-comprendre-ascendant)
 - [Thème natal gratuit : comment interpréter sa carte du ciel complète](/blog/theme-natal-gratuit-interpreter-carte-du-ciel)

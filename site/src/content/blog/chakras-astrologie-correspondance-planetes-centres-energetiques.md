@@ -264,7 +264,7 @@ Cet article s'appuie sur des sources encyclopediques et scientifiques verifiable
 **Articles connexes :**
 - [Horoscope du jour : prévisions astrologiques fiables 2026](/blog/horoscope-jour-previsions-astrologiques-fiables)
 - [Thème natal gratuit : comment interpréter sa carte du ciel complète](/blog/theme-natal-gratuit-interpreter-carte-du-ciel)
-- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/12-maisons-astrologiques-guide-complet-secteurs-vie)
+- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/maisons-astrologiques-guide-interpretation-complet/)
 - [Comment calculer son chemin de vie en numérologie](/blog/comment-calculer-chemin-vie-numerologie)
 
 **Outils Karmastro:**

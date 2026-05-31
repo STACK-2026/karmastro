@@ -86,8 +86,8 @@ Les **astronomes chaldéens** (VIIe siècle av. J.-C.) établirent les première
 Les manuscrits arabes du Xe siècle (Al-Biruni, Al-Kindi) décrivent l'ascendant Lion comme conférant "la noblesse du cœur et la générosité du lion", traits observés cliniquement chez 73% des natifs étudiés par l'**Institut de Recherche Astrologique de Paris** (2019).
 
 *Approfondir les fondements historiques :*
-- [L'astrologie hellénistique expliquée](/blog/chiron-astrologie-guerir-blessures-karmiques/)
-- [Le Soleil en astrologie traditionnelle](/blog/progressions-astrologiques-evolution-personnelle/)
+- [L'astrologie hellénistique expliquée](/blog/karma-astrologie-comprendre-vies-anterieures/)
+- Le Soleil en astrologie traditionnelle
 - [Glossaire des termes astrologiques](https://karmastro.com/glossaire)
 
 ---
@@ -145,9 +145,9 @@ Ton ascendant Lion s'exprime différemment selon les aspects que reçoit ton Sol
 Découvre comment ton thème natal personnel module ton ascendant Lion avec [notre calculateur gratuit](https://app.karmastro.com).
 
 *Ressources complémentaires :*
-- [Les aspects planétaires expliqués](/blog/aspects-planetaires-comprendre-angles-astrologiques/)
+- Les aspects planétaires expliqués
 - **Saturne et l'ascendant Lion**
-- [Équilibrer son énergie solaire](/blog/signe-balance-harmonie-quete-equilibre/)
+- Équilibrer son énergie solaire
 
 ---
 
@@ -213,8 +213,8 @@ Selon une étude menée par **Karmastro** sur 1 956 couples (2023-2024) :
 Alterne les moments "couple fusionnel" (Lion) avec les moments "chacun ses projets" (Verseau). Par exemple : weekend romantique, puis semaine avec sorties séparées.
 
 *Approfondis tes relations avec l'astrologie :*
-- [Le Descendant en astrologie](/blog/horoscope-hebdomadaire-tendances-astrologiques/)
-- [Compatibilité Lion-Verseau](/blog/compatibilite-lion-belier-feu-passion-ardente/)
+- [Le Descendant en astrologie](/blog/horoscope-du-jour-previsions-astrologiques-fiables/)
+- [Compatibilité Lion-Verseau](/blog/compatibilite-amoureuse-signes-astrologiques-attirent/)
 - **Les axes relationnels en astrologie**
 
 ---
@@ -463,8 +463,8 @@ L'ascendant Lion puise son énergie du Soleil, mais peut s'épuiser si mal gér�
 
 *Outils pour approfondir ton équilibre énergétique :*
 - **Méditations guidées pour ascendant Lion**
-- [Lithothérapie et astrologie](/blog/aspects-planetaires-comprendre-angles-astrologiques/)
-- [Alimentation selon ton ascendant](/blog/aspects-planetaires-comprendre-angles-astrologiques/)
+- Lithothérapie et astrologie
+- Alimentation selon ton ascendant
 
 Cette approche holistique de ton ascendant Lion t'aide à rayonner durablement sans épuisement, créant un cercle vertueux d'épanouissement personnel et professionnel.
 
@@ -547,7 +547,7 @@ Un ascendant Lion "excessif" se manifeste par : égocentrisme, besoin constant d
 
 *Ressources pour approfondir :*
 - **Méditation pour ascendant Lion**
-- [Équilibrer son ego spirituellement](/blog/neptune-poissons-spiritualite-illusions/)
+- Équilibrer son ego spirituellement
 
 ---
 

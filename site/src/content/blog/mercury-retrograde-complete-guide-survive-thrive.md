@@ -157,7 +157,7 @@ You will also be affected if the retrograde occurs in an active astrological hou
 
 If the retrograde happens in an empty and quiet zone of your chart, and it does not touch any personal planet, you may very well feel nothing. It is that simple. This is why some friends will tell you "this retrograde was hell" while you have not noticed anything: your charts are different.
 
-If you want to know precisely where Mercury falls on your chart this month, you can use the [zodiac sign](/en/tools/zodiac-sign) and [moon sign](/en/tools/moon-sign) calculators, then cross-reference with current positions. Or, more simply, ask the [Oracle](/oracle) for a personalized reading of this transit for you.
+If you want to know precisely where Mercury falls on your chart this month, you can use the [zodiac sign](/en/tools/zodiac-sign) and [moon sign](/en/tools/moon-sign) calculators, then cross-reference with current positions. Or, more simply, ask the [Oracle](https://app.karmastro.com/oracle) for a personalized reading of this transit for you.
 
 ## 10. Mercury retrograde in your natal chart (born with it)
 
@@ -281,7 +281,7 @@ Indirectly, yes. The stress linked to misunderstandings, mental fatigue, and the
 
 Mercury retrograde is only one of the many transits that punctuate your astrological year. To understand your chart as a whole and see how each planet affects you, start by calculating your [rising sign](/en/tools/rising-sign), your [moon sign](/en/tools/moon-sign), and exploring your [basic numerology](/en/tools/life-path-number).
 
-If you want a personalized reading of the next retrograde for you specifically, [consult the Oracle](/oracle). You ask your question, you receive an answer adapted to your chart, in a few minutes.
+If you want a personalized reading of the next retrograde for you specifically, [consult the Oracle](https://app.karmastro.com/oracle). You ask your question, you receive an answer adapted to your chart, in a few minutes.
 
 And if you want to never miss an important transit again, subscribe to our free daily horoscope. Every morning, you receive a personalized message that tells you what is happening in the sky and how to use it in your day. No scary predictions, just practical keys to better navigate your daily life under the stars.
 

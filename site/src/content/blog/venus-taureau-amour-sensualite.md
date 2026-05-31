@@ -194,7 +194,7 @@ Avec Vénus en Taureau, tu es fait·e pour les métiers qui stimulent les sens e
 | **Mode & Beauté**   | Styliste, maquilleur·euse professionnel·le, parfumeur·euse, esthéticien·ne         | **Dior (Christian Dior)**, **Iman**    |
 | **Finance**         | Conseiller·ère en gestion de patrimoine, expert·e en art, courtier·ère en métaux   | **Warren Buffett**                    |
 
-Explore tes talents naturels avec notre [guide des maisons astrologiques](/blog/maisons-astrologiques-guide-interpretation-complet/) et découvre comment ta [Lune Noire](/blog/calcul-ame-numerologie/) peut révéler tes dons cachés.
+Explore tes talents naturels avec notre [guide des maisons astrologiques](/blog/maisons-astrologiques-guide-interpretation-complet/) et découvre comment ta [Lune Noire](/blog/nombre-personnel-trouver-vibration-numerologique/) peut révéler tes dons cachés.
 
 ## Vénus en Taureau en 2026 : Transits et Prédictions {#venus-taureau-2026}
 
@@ -229,7 +229,7 @@ Pour connaître ta maison Taureau et recevoir des prédictions personnalisées, 
 | **Adele**           | 12° Taureau          | Nouvelle chanson ou album inspiré par une relation stable                          |
 | **George Clooney**  | 5° Taureau           | Voyage romantique ou projet humanitaire lié au luxe                                |
 
-Découvre comment les [retours de Saturne](/blog/eclipses-astrologie-portails-transformation/) influencent ton développement personnel avec Vénus en Taureau.
+Découvre comment les retours de Saturne influencent ton développement personnel avec Vénus en Taureau.
 
 ## Questions fréquentes
 
@@ -273,7 +273,7 @@ Vénus en Taureau n'est pas qu'une simple position astrologique - c'est une **b�
 2. Utilise [l'Oracle IA](https://app.karmastro.com/oracle) pour poser une question précise sur ta Vénus en Taureau
 3. Lis notre article sur [les maisons astrologiques](/blog/maisons-astrologiques-guide-interpretation-complet/) pour comprendre où s'exprime ton énergie vénusienne
 4. Découvre comment [ton chemin de vie numérologique](/blog/comment-calculer-chemin-de-vie-numerologie/) résonne avec Vénus en Taureau
-5. Explore la [compatibilité amoureuse](/blog/incompatibilites-astrologiques-signes-eviter/) en synastrie pour approfondir tes relations
+5. Explore la [compatibilité amoureuse](/blog/compatibilite-amoureuse-signes-astrologiques-attirent/) en synastrie pour approfondir tes relations
 
 **Appel à l'action** : **Vénus en Taureau** t'invite à **ancrer tes rêves dans la réalité**. Que ce soit en amour, en créativité ou en finances, cette énergie te donne le pouvoir de manifester l'abondance. **Prêt·e à découvrir comment ?** [Crée ton profil cosmique sur Karmastro](https://app.karmastro.com) et reçois une analyse personnalisée de ta Vénus en Taureau, avec des conseils sur mesure pour 2026.
 

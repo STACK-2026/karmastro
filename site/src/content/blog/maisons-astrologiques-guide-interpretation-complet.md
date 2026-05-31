@@ -113,7 +113,7 @@ La deuxième maison révèle ton rapport à l'argent, aux biens matériels, mais
 - Vénus en Taureau en Maison 2 : attrait pour les belles choses, revenus liés à l'esthétique ou au luxe
 - Saturne en Capricorne en Maison 2 : construction lente mais solide du patrimoine, crainte de manquer
 
-Pour approfondir ton analyse financière, consulte notre guide sur [l'astrologie et l'argent](/blog/astrologie-karmique-missions-lecons-vie/).
+Pour approfondir ton analyse financière, consulte notre guide sur [l'astrologie et l'argent](/blog/karma-astrologie-comprendre-vies-anterieures/).
 
 ### Maison 3 - La communication et l'entourage proche
 
@@ -163,7 +163,7 @@ La cinquième maison rayonne de joie de vivre : créativité artistique, amours,
 - Soleil en Lion en Maison 5 : besoin de reconnaissance artistique, relation privilégiée avec les enfants
 - Saturne en Capricorne en Maison 5 : difficultés créatives à surmonter, paternité/maternité tardive mais structurante
 
-Decouvre ton potentiel créatif avec notre [guide sur l'expression artistique en astrologie](/blog/incompatibilites-astrologiques-signes-eviter/).
+Decouvre ton potentiel créatif avec notre [guide sur l'expression artistique en astrologie](/blog/compatibilite-amoureuse-signes-astrologiques-attirent/).
 
 ### Maison 6 - Le travail quotidien et la santé
 
@@ -503,7 +503,7 @@ Les **quatre angles** de ton thème natal forment une croix symbolique qui struc
 Karmastro intègre ces nuances géographiques dans ses analyses. Notre méthode exclusive croise les 4 angles avec ton [chemin de vie numérologique](/blog/comment-calculer-chemin-de-vie-numerologie/) pour révéler tes missions karmiques.
 
 **Application pratique** :
-Pour identifier tes défis existentiels, observe les planètes situées près de tes angles (orbe de 5°). Ces planètes "angulaires" dominent ta personnalité et ton destin. Consulte notre guide sur les [planètes dominantes](/blog/astrologie-medicale-sante-selon-votre-theme-natal/) pour approfondir cette analyse.
+Pour identifier tes défis existentiels, observe les planètes situées près de tes angles (orbe de 5°). Ces planètes "angulaires" dominent ta personnalité et ton destin. Consulte notre guide sur les planètes dominantes pour approfondir cette analyse.
 
 ## Maisons astrologiques et numérologie : une lecture croisée exclusive Karmastro
 
@@ -644,7 +644,7 @@ Une maison "vide" n'indique pas l'absence d'événements dans ce domaine de vie,
 - Maison 8 (transformation) : 19% des thèmes  
 - Maison 12 (spiritualité) : 18% des thèmes
 
-Pour une analyse complète de tes maisons vides, utilise notre [calculateur de maîtrises planétaires](/blog/incompatibilites-astrologiques-signes-eviter/).
+Pour une analyse complète de tes maisons vides, utilise notre [calculateur de maîtrises planétaires](/blog/compatibilite-amoureuse-signes-astrologiques-attirent/).
 
 ### Une planète peut-elle être dans deux maisons différentes selon le système ?
 
@@ -737,7 +737,7 @@ Les **maisons astrologiques** constituent l'architecture invisible de ton existe
 **Tes prochaines étapes pour approfondir** :
 - Explore les **transits planétaires 2026** qui activeront tes maisons
 - Découvre ton [Ascendant détaillé](/blog/signe-astrologique-belier-personnalite-compatibilite/) et ses implications
-- Comprends tes [maîtrises planétaires](/blog/incompatibilites-astrologiques-signes-eviter/) pour les maisons vides  
+- Comprends tes [maîtrises planétaires](/blog/compatibilite-amoureuse-signes-astrologiques-attirent/) pour les maisons vides  
 - Calcule ton [chemin de vie en numérologie](/blog/comment-calculer-chemin-de-vie-numerologie/) pour la synthèse karmique
 
 **Appel à l'action personnalisé** :

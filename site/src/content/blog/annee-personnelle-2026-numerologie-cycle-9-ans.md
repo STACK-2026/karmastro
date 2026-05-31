@@ -209,7 +209,7 @@ Cela te donne une lecture beaucoup plus fine de ton année. Tu sais quand tu ser
 
 Par exemple, si tu es en année 5 et que tu veux signer un contrat important, vise un mois personnel 8 dans ton année (janvier, en l'occurrence) plutôt qu'un mois personnel 9 (février). Cela ne change pas tout, mais cela ajoute une fluidité supplémentaire.
 
-C'est un outil de pilotage fin que peu de gens connaissent, et qui peut transformer ton rapport au temps. Si tu veux explorer tes mois personnels en détail, [l'Oracle](/oracle) te calcule l'ensemble du tableau pour ton année en cours.
+C'est un outil de pilotage fin que peu de gens connaissent, et qui peut transformer ton rapport au temps. Si tu veux explorer tes mois personnels en détail, [l'Oracle](https://app.karmastro.com/oracle) te calcule l'ensemble du tableau pour ton année en cours.
 
 ## 14. Aligner ton année personnelle avec ton chemin de vie
 
@@ -273,9 +273,9 @@ C'est normal. L'année 5 est la plus mouvementée du cycle. Le conseil est de ga
 
 L'année personnelle est l'un des outils les plus pratiques de la numérologie, parce qu'elle te donne un cadre précis pour piloter ton année. Mais elle prend tout son sens dans le contexte global de ta numérologie. Si tu n'as pas encore calculé ton [chemin de vie](/outils/chemin-de-vie), c'est la première chose à faire. Cela te donnera la grande direction de ta vie, sur laquelle ton année personnelle vient ajouter un rythme annuel.
 
-Tu peux aussi explorer ta carte natale astrologique en commençant par ton [signe ascendant](/outils/ascendant) et ton [signe lunaire](/outils/signe-lunaire). Croiser numérologie et astrologie te donne une vision particulièrement riche de ce que tu traverses.
+Tu peux aussi explorer ta carte natale astrologique en commençant par ton [signe ascendant](/outils/ascendant) et ton [signe lunaire](/blog/signe-lunaire-lune-natale-monde-emotionnel/). Croiser numérologie et astrologie te donne une vision particulièrement riche de ce que tu traverses.
 
-Si tu veux une lecture personnalisée et sur mesure de ton année 2026, avec les mois clés, les périodes fastes et les pièges à éviter, [l'Oracle](/oracle) peut le faire pour toi en quelques minutes.
+Si tu veux une lecture personnalisée et sur mesure de ton année 2026, avec les mois clés, les périodes fastes et les pièges à éviter, [l'Oracle](https://app.karmastro.com/oracle) peut le faire pour toi en quelques minutes.
 
 Et si tu veux recevoir chaque matin un message qui t'aide à naviguer dans ton tempo personnel, abonne-toi à notre horoscope quotidien gratuit. Pas de prédictions figées, juste des clés douces pour t'aider à danser avec ton année plutôt que de la subir.
 
@@ -293,7 +293,7 @@ Cet article s'appuie sur des sources encyclopediques et scientifiques verifiable
 ## Pour aller plus loin
 
 **Articles connexes :**
-- [Numérologie du prénom : décrypte ton nombre d](/blog/numerologie-prenom-nombre-expression-decrypter-identite)
+- [Numérologie du prénom : décrypte ton nombre d](/blog/nombre-expression-reveler-potentiel-cache/)
 - [Thème natal gratuit : comment interpréter sa carte du ciel](/blog/theme-natal-gratuit-interpreter-carte-ciel)
 - [Karma et astrologie : comprendre ses vies antérieures à travers son thème natal](/blog/karma-astrologie-vies-anterieures)
 - [Comment calculer son chemin de vie en numérologie : méthode pythagoricienne pas à pas](/blog/comment-calculer-chemin-de-vie-numerologie)

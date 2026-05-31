@@ -253,7 +253,7 @@ Votre amour devient un chemin spirituel partagé, une quête commune de vérité
 - Pratiquez l'écoute active sans analyser immédiatement
 - Acceptez la vulnérabilité comme force spirituelle
 
-L'analyse complète de votre [compatibilité amoureuse](/blog/incompatibilites-astrologiques-signes-eviter/) selon Karmastro croise votre chemin de vie avec votre thème astral pour des conseils ultra-personnalisés.
+L'analyse complète de votre [compatibilité amoureuse](/blog/compatibilite-amoureuse-signes-astrologiques-attirent/) selon Karmastro croise votre chemin de vie avec votre thème astral pour des conseils ultra-personnalisés.
 
 ## Carrière & Vocation : Métiers pour votre Esprit Analytique {#carriere-chemin-vie-7}
 

@@ -276,7 +276,7 @@ Pour une analyse complète croisant astrologie et numerologie, découvre ton pro
 - [Signe ascendant : guide complet pour comprendre ton ascendant astrologique](/blog/signe-ascendant-guide-complet-comprendre-ascendant)
 - [Signe lunaire : ce que ta Lune natale révèle de ton monde émotionnel](/blog/signe-lunaire-lune-natale-monde-emotionnel)
 - [Le retour de Saturne : ce grand passage astrologique vers 29 ans qui change tout](/blog/retour-de-saturne-29-ans-grand-passage-adulte)
-- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/12-maisons-astrologiques-guide-complet-secteurs-vie)
+- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/maisons-astrologiques-guide-interpretation-complet/)
 
 **Outils Karmastro:**
 - [Thème natal](/outils/theme-natal)

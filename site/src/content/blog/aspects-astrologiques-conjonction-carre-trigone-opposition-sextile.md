@@ -42,7 +42,7 @@ C'est par les aspects qu'on comprend pourquoi deux personnes nées le même jour
 
 Dans cet article, on va te donner toutes les clés pour lire les aspects de ton thème, comprendre leur logique, et apprivoiser ceux qui te paraissent difficiles. Parce que oui, certains aspects sont plus exigeants que d'autres. Mais aucun aspect n'est mauvais en soi : tout dépend de ce que tu en fais.
 
-Si tu veux d'abord te familiariser avec les bases du thème, commence par calculer ton [signe ascendant](/outils/ascendant) et ton [signe lunaire](/outils/signe-lunaire). Cela te donnera le cadre dans lequel tes aspects vont jouer.
+Si tu veux d'abord te familiariser avec les bases du thème, commence par calculer ton [signe ascendant](/outils/ascendant) et ton [signe lunaire](/blog/signe-lunaire-lune-natale-monde-emotionnel/). Cela te donnera le cadre dans lequel tes aspects vont jouer.
 
 ## 2. Le principe : un aspect est une distance angulaire
 
@@ -260,7 +260,7 @@ Pas du tout. C'est le thème de quelqu'un qui doit beaucoup travailler sur lui-m
 Pas forcément. Une vie « facile » astrologiquement peut être une vie où tu n'es jamais poussé à te dépasser. Beaucoup de gens avec beaucoup de trigones se laissent porter et passent à côté de leur potentiel. La fluidité a son piège.
 
 **Que faire si je n'arrive pas à voir mes aspects sur ma carte ?**
-Utilise un logiciel astrologique en ligne qui calcule et liste tes aspects pour toi. Notre [Oracle](/oracle) peut le faire en partant de ta date, ton heure et ton lieu de naissance.
+Utilise un logiciel astrologique en ligne qui calcule et liste tes aspects pour toi. Notre [Oracle](https://app.karmastro.com/oracle) peut le faire en partant de ta date, ton heure et ton lieu de naissance.
 
 **Les aspects par signe et les aspects par degrés sont-ils différents ?**
 Oui, et c'est une distinction importante. Les aspects « par signe » (deux planètes dans deux signes en aspect, sans regarder les degrés exacts) sont une lecture plus large, traditionnelle, utilisée dans l'astrologie hellénistique. Les aspects « par degrés » sont la lecture moderne plus précise. Les deux sont valides, à condition de ne pas les mélanger.
@@ -282,11 +282,11 @@ Ils sont partagés par toute une génération et décrivent un climat collectif 
 
 ## Pour aller plus loin
 
-Les aspects sont la dimension la plus dynamique de ta carte natale. Ils transforment une liste de positions en un système vivant de dialogues internes. Pour explorer tes aspects, commence par calculer ton thème complet en partant de ton [signe ascendant](/outils/ascendant) et de ton [signe lunaire](/outils/signe-lunaire).
+Les aspects sont la dimension la plus dynamique de ta carte natale. Ils transforment une liste de positions en un système vivant de dialogues internes. Pour explorer tes aspects, commence par calculer ton thème complet en partant de ton [signe ascendant](/outils/ascendant) et de ton [signe lunaire](/blog/signe-lunaire-lune-natale-monde-emotionnel/).
 
-Pour aller plus loin, lis aussi notre guide sur [les 12 maisons astrologiques](/blog/12-maisons-astrologiques-guide-complet-secteurs-vie) et notre article sur [le retour de Saturne](/blog/retour-de-saturne-29-ans-grand-passage-adulte), qui montre comment les aspects se rejouent par les transits.
+Pour aller plus loin, lis aussi notre guide sur [les 12 maisons astrologiques](/blog/maisons-astrologiques-guide-interpretation-complet/) et notre article sur [le retour de Saturne](/blog/retour-de-saturne-29-ans-grand-passage-adulte), qui montre comment les aspects se rejouent par les transits.
 
-Si tu veux une lecture personnalisée et complète de tes aspects principaux, [l'Oracle](/oracle) peut le faire pour toi en quelques minutes, en partant de ta carte précise.
+Si tu veux une lecture personnalisée et complète de tes aspects principaux, [l'Oracle](https://app.karmastro.com/oracle) peut le faire pour toi en quelques minutes, en partant de ta carte précise.
 
 Et si tu veux suivre les transits qui activent tes aspects natals jour après jour, abonne-toi à notre horoscope quotidien gratuit. Chaque matin, tu sauras quels dialogues planétaires sont en jeu dans ton ciel personnel, et donc ce qui se réveille en toi ce jour-là.
 
@@ -304,9 +304,9 @@ Cet article s'appuie sur des sources encyclopediques et scientifiques verifiable
 ## Pour aller plus loin
 
 **Articles connexes :**
-- [Pluton en Verseau 2024-2044 : la grande mutation collective qui change tout pendant 20 ans](/blog/pluton-verseau-2024-2044-grande-mutation-collective)
+- [Pluton en Verseau 2024-2044 : la grande mutation collective qui change tout pendant 20 ans](/blog/saturne-verseau-revolution-responsabilite/)
 - [Signe ascendant : guide complet pour comprendre ton ascendant astrologique](/blog/signe-ascendant-guide-complet-comprendre-ascendant)
-- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/12-maisons-astrologiques-guide-complet-secteurs-vie)
+- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/maisons-astrologiques-guide-interpretation-complet/)
 - [Le retour de Saturne : ce grand passage astrologique vers 29 ans qui change tout](/blog/retour-de-saturne-29-ans-grand-passage-adulte)
 
 **Outils Karmastro:**

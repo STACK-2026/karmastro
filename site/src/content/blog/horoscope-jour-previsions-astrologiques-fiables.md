@@ -256,7 +256,7 @@ Découvrez votre horoscope personnalisé et créez votre [profil cosmique comple
 
 **Articles connexes :**
 - [Horoscope du jour : comment obtenir des prévisions astrologiques vraiment fiables](/blog/horoscope-du-jour-previsions-astrologiques-fiables)
-- [Numérologie du prénom : décrypte ton nombre d](/blog/numerologie-prenom-nombre-expression-decrypter-identite)
+- [Numérologie du prénom : décrypte ton nombre d](/blog/nombre-expression-reveler-potentiel-cache/)
 - [Chemin de vie 1 en numérologie : leadership, indépendance et mission d](/blog/chemin-de-vie-1-leadership-independance)
 - [Le retour de Saturne : ce grand passage astrologique vers 29 ans qui change tout](/blog/retour-de-saturne-29-ans-grand-passage-adulte)
 

@@ -40,7 +40,7 @@ Mercure rétrograde est sans doute le transit astrologique le plus médiatisé, 
 
 Dans cet article, on va remettre les choses à leur place. Pas pour minimiser le phénomène, parce qu'il est bien réel et qu'il a un impact mesurable sur certaines zones de la vie. Mais pour te donner une lecture lucide, dépoussiérée, et te permettre de transformer ces trois périodes annuelles en alliées plutôt qu'en cauchemar à traverser en apnée.
 
-Si tu veux d'abord connaître ta carte natale et savoir où Mercure se trouve chez toi, fais [ton calcul de signe astrologique](/outils/signe-astrologique) gratuitement. C'est la base pour comprendre comment chaque transit te touche personnellement.
+Si tu veux d'abord connaître ta carte natale et savoir où Mercure se trouve chez toi, fais [ton calcul de signe astrologique](/outils/theme-natal/) gratuitement. C'est la base pour comprendre comment chaque transit te touche personnellement.
 
 ## 2. La mécanique céleste : pourquoi une planète semble reculer
 
@@ -156,7 +156,7 @@ Tu seras aussi concerné si la rétrogradation se produit dans une maison astrol
 
 Si la rétro se produit dans une zone vide et calme de ton thème, et qu'elle ne touche aucune planète personnelle, tu peux très bien ne rien sentir. C'est aussi simple que ça. C'est pour cette raison que certains amis te diront « cette rétro a été l'enfer » alors que toi tu n'auras rien remarqué : vos cartes natales sont différentes.
 
-Si tu veux savoir précisément où Mercure tombe sur ta carte ce mois-ci, tu peux utiliser le calculateur de [signe astrologique](/outils/signe-astrologique) et de [signe lunaire](/outils/signe-lunaire), puis croiser avec les positions actuelles. Ou, plus simplement, demander à [l'Oracle](/oracle) une lecture personnalisée de ce transit pour toi.
+Si tu veux savoir précisément où Mercure tombe sur ta carte ce mois-ci, tu peux utiliser le calculateur de [signe astrologique](/outils/theme-natal/) et de [signe lunaire](/blog/signe-lunaire-lune-natale-monde-emotionnel/), puis croiser avec les positions actuelles. Ou, plus simplement, demander à [l'Oracle](https://app.karmastro.com/oracle) une lecture personnalisée de ce transit pour toi.
 
 ## 10. Mercure rétrograde dans ta carte natale (natif)
 
@@ -278,9 +278,9 @@ Indirectement, oui. Le stress lié aux malentendus, à la fatigue mentale, à la
 
 ## Pour aller plus loin
 
-Mercure rétrograde n'est qu'un des nombreux transits qui rythment ton année astrologique. Pour comprendre ton thème dans son ensemble et savoir comment chaque planète te touche, commence par calculer ton [signe ascendant](/outils/ascendant), ton [signe lunaire](/outils/signe-lunaire) et explorer ta [numérologie de base](/outils/chemin-de-vie).
+Mercure rétrograde n'est qu'un des nombreux transits qui rythment ton année astrologique. Pour comprendre ton thème dans son ensemble et savoir comment chaque planète te touche, commence par calculer ton [signe ascendant](/outils/ascendant), ton [signe lunaire](/blog/signe-lunaire-lune-natale-monde-emotionnel/) et explorer ta [numérologie de base](/outils/chemin-de-vie).
 
-Si tu veux une lecture personnalisée de la prochaine rétrogradation pour toi spécifiquement, [consulte l'Oracle](/oracle). Tu poses ta question, tu reçois une réponse adaptée à ton thème, en quelques minutes.
+Si tu veux une lecture personnalisée de la prochaine rétrogradation pour toi spécifiquement, [consulte l'Oracle](https://app.karmastro.com/oracle). Tu poses ta question, tu reçois une réponse adaptée à ton thème, en quelques minutes.
 
 Et si tu veux ne plus jamais rater un transit important, abonne-toi à notre horoscope quotidien gratuit. Chaque matin, tu reçois un message personnalisé qui te dit ce qui se joue dans le ciel et comment l'utiliser dans ta journée. Pas de prédictions effrayantes, juste des clés pratiques pour mieux naviguer ton quotidien sous les étoiles.
 
@@ -301,7 +301,7 @@ Cet article s'appuie sur des sources encyclopediques et scientifiques verifiable
 - [Signe astrologique Bélier : personnalité, compatibilité et traits profonds](/blog/signe-astrologique-belier-personnalite-compatibilite)
 - [Thème natal gratuit : comment interpréter sa carte du ciel complète](/blog/theme-natal-gratuit-interpreter-carte-du-ciel)
 - [Thème natal gratuit : comment interpréter sa carte du ciel](/blog/theme-natal-gratuit-interpreter-carte-ciel)
-- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/12-maisons-astrologiques-guide-complet-secteurs-vie)
+- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/maisons-astrologiques-guide-interpretation-complet/)
 
 **Outils Karmastro:**
 - [Thème natal](/outils/theme-natal)

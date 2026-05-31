@@ -43,7 +43,7 @@ Et il y a une raison à ça. C'est qu'à 29 ans, tu as fini ton premier grand cy
 
 Si la réponse est oui, le passage est doux et structurant. Si la réponse est non, il est plus violent, parce qu'il faut tout déconstruire pour rebâtir. Mais dans tous les cas, il transforme. Personne ne sort d'un retour de Saturne identique à celui qu'il était en y entrant.
 
-Pour situer Saturne dans ta carte natale et anticiper ton propre retour, tu peux commencer par [calculer ton signe astrologique](/outils/signe-astrologique) et ton [signe ascendant](/outils/ascendant). Cela te donnera déjà un cadre.
+Pour situer Saturne dans ta carte natale et anticiper ton propre retour, tu peux commencer par [calculer ton signe astrologique](/outils/theme-natal/) et ton [signe ascendant](/outils/ascendant). Cela te donnera déjà un cadre.
 
 ## 2. Saturne, planète du temps, des structures et de la maturité
 
@@ -87,7 +87,7 @@ La phase intense se déroule pendant les 18 à 24 mois où Saturne reste dans la
 
 La phase de sortie s'étale jusque vers 31 ou 32 ans. À ce moment-là, les leçons sont intégrées, les nouvelles structures sont en place, et tu sens que quelque chose s'est définitivement déplacé en toi. Ce qui te paraissait essentiel à 27 ans ne te concerne plus du tout, et tu te demandes même comment tu as pu y attacher autant d'importance.
 
-Si tu veux savoir précisément où en est Saturne dans ton ciel actuel et quand exactement il va revenir à sa position natale, tu peux demander une lecture personnalisée à [l'Oracle](/oracle), qui calcule tout pour toi.
+Si tu veux savoir précisément où en est Saturne dans ton ciel actuel et quand exactement il va revenir à sa position natale, tu peux demander une lecture personnalisée à [l'Oracle](https://app.karmastro.com/oracle), qui calcule tout pour toi.
 
 ## 5. Les trois phases du retour
 
@@ -183,7 +183,7 @@ Si Saturne est plus **discret** dans ta carte, le passage peut être plus doux, 
 
 Si tu as Saturne en aspect difficile (carré, opposition) à ton Soleil, à ta Lune ou à ton ascendant, le retour de Saturne sera l'occasion de revisiter ces tensions internes. C'est souvent dans cette configuration qu'on parle de retour de Saturne particulièrement éprouvant, mais aussi le plus transformateur, parce que c'est là qu'il y a le plus à libérer.
 
-Pour identifier la position et les aspects de ton Saturne natal, tu peux passer par notre [Oracle](/oracle) qui calcule tout cela à partir de ta date, ton heure et ton lieu de naissance.
+Pour identifier la position et les aspects de ton Saturne natal, tu peux passer par notre [Oracle](https://app.karmastro.com/oracle) qui calcule tout cela à partir de ta date, ton heure et ton lieu de naissance.
 
 ## 10. Les symptômes émotionnels du passage
 
@@ -301,7 +301,7 @@ Non, il ne change pas qui tu es au fond. Il révèle qui tu es vraiment, en enle
 
 ## Pour aller plus loin
 
-Le retour de Saturne est sans doute le transit le plus important à comprendre dans une vie d'adulte. Si tu veux explorer ta carte natale en profondeur et savoir où ton Saturne se trouve, commence par calculer ton [signe ascendant](/outils/ascendant) et ton [signe lunaire](/outils/signe-lunaire), puis demande à [l'Oracle](/oracle) une lecture personnalisée de ton retour de Saturne avec les dates exactes pour toi.
+Le retour de Saturne est sans doute le transit le plus important à comprendre dans une vie d'adulte. Si tu veux explorer ta carte natale en profondeur et savoir où ton Saturne se trouve, commence par calculer ton [signe ascendant](/outils/ascendant) et ton [signe lunaire](/blog/signe-lunaire-lune-natale-monde-emotionnel/), puis demande à [l'Oracle](https://app.karmastro.com/oracle) une lecture personnalisée de ton retour de Saturne avec les dates exactes pour toi.
 
 Pour aller plus loin sur les autres grands passages de la vie astrologique, lis aussi notre [guide complet du signe ascendant](/blog/signe-ascendant-guide-complet-comprendre-ascendant) et notre article sur [Mercure rétrograde](/blog/mercure-retrograde-guide-comprendre-survivre).
 
@@ -323,7 +323,7 @@ Cet article s'appuie sur des sources encyclopediques et scientifiques verifiable
 **Articles connexes :**
 - [Thème natal gratuit : comment interpréter sa carte du ciel](/blog/theme-natal-gratuit-interpreter-carte-ciel)
 - [Signe ascendant : guide complet pour comprendre ton ascendant astrologique](/blog/signe-ascendant-guide-complet-comprendre-ascendant)
-- [Aspects astrologiques : conjonction, carré, trigone, opposition, sextile, le guide pour les comprendre](/blog/aspects-astrologiques-conjonction-carre-trigone-opposition-sextile)
+- Aspects astrologiques : conjonction, carré, trigone, opposition, sextile, le guide pour les comprendre
 - [Signe lunaire : ce que ta Lune natale révèle de ton monde émotionnel](/blog/signe-lunaire-lune-natale-monde-emotionnel)
 
 **Outils Karmastro:**

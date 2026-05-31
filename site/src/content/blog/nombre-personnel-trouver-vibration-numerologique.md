@@ -443,7 +443,7 @@ Utilise ton nombre comme grille de lecture pour évaluer tes options importantes
 → **Si ton nombre personnel est 4** : L'offre A sera probablement plus épanouissante car elle correspond à ton besoin de sécurité et structure.
 → **Si c'est 5** : L'offre B répondra mieux à ton besoin de variété et de stimulation.
 
-**Oracle Karmastro** : Pose directement ta question spécifique à [notre Oracle IA](https://app.karmastro.com/oracle) pour une réponse personnalisée qui croise numérologie, astrologie et tes [transits planétaires](/blog/transits-astrologiques-naviguer-changements/) actuels.
+**Oracle Karmastro** : Pose directement ta question spécifique à [notre Oracle IA](https://app.karmastro.com/oracle) pour une réponse personnalisée qui croise numérologie, astrologie et tes [transits planétaires](/outils/transits/) actuels.
 
 ### 5. Cycles de vie et timing
 
@@ -607,8 +607,8 @@ La connaissance de soi est le premier pas vers l'épanouissement. Ton **nombre p
 **Rappel important** : Ton nombre personnel n'est qu'une facette de ton puzzle cosmique complet. Pour une vision globale, explore également :
 - **Ton Chemin de Vie numérologique**
 - **Ton thème astral complet**
-- [Tes transits planétaires actuels](/blog/transits-astrologiques-naviguer-changements/)
-- [Ta compatibilité amoureuse](/blog/incompatibilites-astrologiques-signes-eviter/)
+- [Tes transits planétaires actuels](/outils/transits/)
+- [Ta compatibilité amoureuse](/blog/compatibilite-amoureuse-signes-astrologiques-attirent/)
 
 L'intelligence spirituelle du XXIe siècle combine tradition et innovation - c'est exactement ce que Karmastro t'offre pour révéler ton potentiel unique.
 

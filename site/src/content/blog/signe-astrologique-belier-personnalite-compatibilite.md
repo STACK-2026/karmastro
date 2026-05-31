@@ -137,7 +137,7 @@ Cet article s'appuie sur des sources encyclopediques et scientifiques verifiable
 
 **Articles connexes :**
 - [Thème natal gratuit : comment interpréter sa carte du ciel](/blog/theme-natal-gratuit-interpreter-carte-ciel)
-- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/12-maisons-astrologiques-guide-complet-secteurs-vie)
+- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/maisons-astrologiques-guide-interpretation-complet/)
 - [Thème natal gratuit : comment interpréter sa carte du ciel complète](/blog/theme-natal-gratuit-interpreter-carte-du-ciel)
 - [Le retour de Saturne : ce grand passage astrologique vers 29 ans qui change tout](/blog/retour-de-saturne-29-ans-grand-passage-adulte)
 

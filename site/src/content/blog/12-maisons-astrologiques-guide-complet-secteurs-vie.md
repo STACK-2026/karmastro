@@ -264,7 +264,7 @@ Les maisons astrologiques sont l'un des aspects les plus riches et les plus prat
 
 Pour approfondir, lis aussi notre article sur [le signe ascendant](/blog/signe-ascendant-guide-complet-comprendre-ascendant) et celui sur [le signe lunaire](/blog/signe-lunaire-lune-natale-monde-emotionnel), qui te donnent les autres clés essentielles de ta carte natale.
 
-Si tu veux une lecture personnalisée et complète de ton thème, avec une analyse maison par maison, [l'Oracle](/oracle) peut le faire pour toi. Tu poses ta question, tu reçois une réponse calculée à partir de ta carte précise.
+Si tu veux une lecture personnalisée et complète de ton thème, avec une analyse maison par maison, [l'Oracle](https://app.karmastro.com/oracle) peut le faire pour toi. Tu poses ta question, tu reçois une réponse calculée à partir de ta carte précise.
 
 Et si tu veux suivre l'activation de tes maisons jour après jour à travers les transits, abonne-toi à notre horoscope quotidien gratuit. Chaque matin, tu sauras quelle maison est éclairée par les planètes du jour, et donc quel domaine de ta vie est invité à parler.
 
@@ -285,7 +285,7 @@ Cet article s'appuie sur des sources encyclopediques et scientifiques verifiable
 - [Signe ascendant : guide complet pour comprendre ton ascendant astrologique](/blog/signe-ascendant-guide-complet-comprendre-ascendant)
 - [Thème natal gratuit : comment interpréter sa carte du ciel complète](/blog/theme-natal-gratuit-interpreter-carte-du-ciel)
 - [Signe lunaire : ce que ta Lune natale révèle de ton monde émotionnel](/blog/signe-lunaire-lune-natale-monde-emotionnel)
-- [Pluton en Verseau 2024-2044 : la grande mutation collective qui change tout pendant 20 ans](/blog/pluton-verseau-2024-2044-grande-mutation-collective)
+- [Pluton en Verseau 2024-2044 : la grande mutation collective qui change tout pendant 20 ans](/blog/saturne-verseau-revolution-responsabilite/)
 
 **Outils Karmastro:**
 - [Thème natal](/outils/theme-natal)

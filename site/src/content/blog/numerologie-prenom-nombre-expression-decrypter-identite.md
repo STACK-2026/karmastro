@@ -361,9 +361,9 @@ Oui, totalement. Avec le tableau lettres-chiffres, c'est un exercice de cinq min
 
 Le nombre d'expression est l'un des piliers de ta numérologie personnelle. Pour avoir une lecture complète de ton thème numérologique, croise-le avec ton [chemin de vie](/outils/chemin-de-vie) et ton [année personnelle](/outils/annee-personnelle). L'ensemble te donne une cartographie précise de ton fonctionnement et de ton tempo.
 
-Tu peux aussi croiser ces lectures avec ton thème astrologique en partant de ton [signe ascendant](/outils/ascendant) et de ton [signe lunaire](/outils/signe-lunaire). Numérologie et astrologie sont deux langages complémentaires qui décrivent les mêmes réalités sous des angles différents.
+Tu peux aussi croiser ces lectures avec ton thème astrologique en partant de ton [signe ascendant](/outils/ascendant) et de ton [signe lunaire](/blog/signe-lunaire-lune-natale-monde-emotionnel/). Numérologie et astrologie sont deux langages complémentaires qui décrivent les mêmes réalités sous des angles différents.
 
-Pour une lecture personnalisée et complète qui croise tous ces niveaux, [l'Oracle](/oracle) peut le faire pour toi en quelques minutes, en partant de ton nom complet, ta date et ton lieu de naissance.
+Pour une lecture personnalisée et complète qui croise tous ces niveaux, [l'Oracle](https://app.karmastro.com/oracle) peut le faire pour toi en quelques minutes, en partant de ton nom complet, ta date et ton lieu de naissance.
 
 Et si tu veux recevoir chaque matin un message qui t'aide à incarner ton nombre d'expression au quotidien, abonne-toi à notre horoscope quotidien gratuit. C'est une manière douce d'apprivoiser ta vibration jour après jour.
 
@@ -382,7 +382,7 @@ Cet article s'appuie sur des sources encyclopediques et scientifiques verifiable
 **Articles connexes :**
 - [Année personnelle 2026 : trouve ton chiffre et comprends le cycle de 9 ans qui rythme ta vie](/blog/annee-personnelle-2026-numerologie-cycle-9-ans)
 - [Comment calculer son chemin de vie en numérologie : méthode pythagoricienne pas à pas](/blog/comment-calculer-chemin-de-vie-numerologie)
-- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/12-maisons-astrologiques-guide-complet-secteurs-vie)
+- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/maisons-astrologiques-guide-interpretation-complet/)
 - [Thème natal gratuit : comment interpréter sa carte du ciel complète](/blog/theme-natal-gratuit-interpreter-carte-du-ciel)
 
 **Outils Karmastro:**

@@ -219,9 +219,9 @@ Cet article s'appuie sur des sources encyclopediques et scientifiques verifiable
 ## Pour aller plus loin
 
 **Articles connexes :**
-- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/12-maisons-astrologiques-guide-complet-secteurs-vie)
+- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/maisons-astrologiques-guide-interpretation-complet/)
 - [Thème natal gratuit : comment interpréter sa carte du ciel](/blog/theme-natal-gratuit-interpreter-carte-ciel)
-- [Pluton en Verseau 2024-2044 : la grande mutation collective qui change tout pendant 20 ans](/blog/pluton-verseau-2024-2044-grande-mutation-collective)
+- [Pluton en Verseau 2024-2044 : la grande mutation collective qui change tout pendant 20 ans](/blog/saturne-verseau-revolution-responsabilite/)
 - [Signe ascendant : guide complet pour comprendre ton ascendant astrologique](/blog/signe-ascendant-guide-complet-comprendre-ascendant)
 
 **Outils Karmastro:**

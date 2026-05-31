@@ -88,7 +88,7 @@ The intense phase unfolds during the 18 to 24 months when Saturn stays in the ex
 
 The exit phase stretches until around 31 or 32. By then, the lessons are integrated, the new structures are in place, and you feel something has definitively shifted within you. What seemed essential at 27 no longer concerns you at all, and you even wonder how you could have attached so much importance to it.
 
-If you want to know precisely where Saturn is in your current sky and when exactly it will return to your natal position, you can request a personalized reading from the [Oracle](/oracle), which calculates everything for you.
+If you want to know precisely where Saturn is in your current sky and when exactly it will return to your natal position, you can request a personalized reading from the [Oracle](https://app.karmastro.com/oracle), which calculates everything for you.
 
 ## 5. The three phases of the return
 
@@ -184,7 +184,7 @@ If Saturn is more **discreet** in your chart, the passage may be gentler, more i
 
 If you have Saturn in difficult aspect (square, opposition) to your Sun, your Moon, or your ascendant, the Saturn return will be the chance to revisit these inner tensions. It is often in this configuration that we speak of a particularly hard Saturn return, but also the most transformative, because that is where there is the most to release.
 
-To identify the position and aspects of your natal Saturn, you can use our [Oracle](/oracle) which calculates all of this from your date, time, and place of birth.
+To identify the position and aspects of your natal Saturn, you can use our [Oracle](https://app.karmastro.com/oracle) which calculates all of this from your date, time, and place of birth.
 
 ## 10. The emotional symptoms of the passage
 
@@ -302,7 +302,7 @@ No, it does not change who you are at the core. It reveals who you really are, b
 
 ## Going further
 
-The Saturn return is probably the most important transit to understand in adult life. If you want to explore your natal chart in depth and see where your Saturn is, start by calculating your [rising sign](/en/tools/rising-sign) and your [moon sign](/en/tools/moon-sign), then ask the [Oracle](/oracle) for a personalized reading of your Saturn return with the exact dates for you.
+The Saturn return is probably the most important transit to understand in adult life. If you want to explore your natal chart in depth and see where your Saturn is, start by calculating your [rising sign](/en/tools/rising-sign) and your [moon sign](/en/tools/moon-sign), then ask the [Oracle](https://app.karmastro.com/oracle) for a personalized reading of your Saturn return with the exact dates for you.
 
 To go further on the other great passages of astrological life, also read our [complete guide to the rising sign](/en/blog/rising-sign-complete-guide-understand-ascendant) and our article on [Mercury retrograde](/en/blog/mercury-retrograde-complete-guide-survive-thrive).
 
