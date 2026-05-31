@@ -42,6 +42,7 @@ serve(async (req) => {
   const md = session.metadata || {};
   const READING_TOOLS = new Set([
     "karmic-debt", "chemin-de-vie", "nombre-expression", "annee-personnelle", "compatibilite",
+    "ascendant", "theme-natal", "transits", "synastrie",
   ]);
   if (!READING_TOOLS.has(md.tool) || !md.token) {
     return new Response("not a reading", { status: 200 });
@@ -49,6 +50,7 @@ serve(async (req) => {
 
   const sb = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
 
+  const numOrUndef = (v: string) => (v && v.trim() !== "" ? Number(v) : undefined);
   const email = session.customer_details?.email ?? session.customer_email ?? null;
   const inputs = {
     tool: md.tool,
@@ -59,6 +61,13 @@ serve(async (req) => {
     partnerBirthDate: md.partnerBirthDate || "",
     partnerName: md.partnerName || "",
     currentYear: new Date().getUTCFullYear(),
+    // Astro (Phase 2)
+    birthTime: md.birthTime || "",
+    latitude: numOrUndef(md.latitude),
+    longitude: numOrUndef(md.longitude),
+    partnerBirthTime: md.partnerBirthTime || "",
+    partnerLatitude: numOrUndef(md.partnerLatitude),
+    partnerLongitude: numOrUndef(md.partnerLongitude),
   };
 
   // 1. S'assurer qu'une ligne pending existe (sans écraser un statut déjà avancé).

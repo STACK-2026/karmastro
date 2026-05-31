@@ -14,6 +14,84 @@ function personalYear(day: number, month: number, year: number): number {
   );
 }
 
+// ── Phase 2 : outils astro (dépendent du moteur Swiss Ephemeris) ──────────────
+const ENGINE_URL = "http://168.119.229.20:8100";
+
+// deno-lint-ignore no-explicit-any
+function summarizeChart(chart: any): string {
+  if (!chart || chart.error) return "";
+  const lines: string[] = [];
+  if (chart.ascendant?.sign) {
+    lines.push(`Ascendant : ${chart.ascendant.sign} ${chart.ascendant.degree}°${chart.ascendant.minute ?? 0}'`);
+  }
+  if (chart.midheaven?.sign) lines.push(`Milieu du ciel : ${chart.midheaven.sign}`);
+  const planets = chart.planets || {};
+  for (const name of Object.keys(planets)) {
+    const p = planets[name];
+    if (!p?.sign) continue;
+    lines.push(`${name} : ${p.sign} ${p.degree}°${p.retrograde ? " (rétrograde)" : ""}${p.house ? ` — maison ${p.house}` : ""}`);
+  }
+  return lines.join("\n");
+}
+
+// Appel moteur côté serveur pour bâtir la lecture sur de VRAIES positions (anti-invention).
+// Retourne "" si le moteur échoue (le garde anti-invention du prompt prend alors le relais).
+async function buildEngineSummary(input: ReadingInput): Promise<string> {
+  const tool = input.tool;
+  try {
+    const [y, m, d] = input.birthDate.split("-").map(Number);
+    const hour = timeToHour(input.birthTime);
+    const lat = Number(input.latitude), lon = Number(input.longitude);
+    if (tool === "synastrie") {
+      const [py, pm, pd] = (input.partnerBirthDate || "").split("-").map(Number);
+      const body = {
+        person1: { year: y, month: m, day: d, hour, latitude: lat, longitude: lon },
+        person2: {
+          year: py, month: pm, day: pd, hour: timeToHour(input.partnerBirthTime),
+          latitude: Number(input.partnerLatitude), longitude: Number(input.partnerLongitude),
+        },
+      };
+      const r = await fetch(`${ENGINE_URL}/compatibility`, {
+        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body),
+      });
+      if (!r.ok) return "";
+      const dd = await r.json();
+      const asp = (dd.synastry_aspects || []).slice(0, 12)
+        .map((a: { person1_planet: string; person2_planet: string; aspect: string; nature: string }) =>
+          `${a.person1_planet} (1) ${a.aspect} ${a.person2_planet} (2) [${a.nature}]`).join("\n");
+      return [
+        `THÈME DE LA PERSONNE 1 (Swiss Ephemeris) :`, summarizeChart(dd.person1_chart),
+        ``, `THÈME DE LA PERSONNE 2 (Swiss Ephemeris) :`, summarizeChart(dd.person2_chart),
+        ``, `ASPECTS DE SYNASTRIE (les plus serrés) :`, asp,
+      ].join("\n");
+    }
+    // ascendant / theme-natal / transits : oracle-context (natal + transits)
+    const r = await fetch(`${ENGINE_URL}/oracle-context`, {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ year: y, month: m, day: d, hour, latitude: lat, longitude: lon }),
+    });
+    if (!r.ok) return "";
+    const dd = await r.json();
+    const parts = [`THÈME NATAL (Swiss Ephemeris, précision 0.001") :`, summarizeChart(dd.natal_chart)];
+    if (tool === "transits") {
+      const tr = (dd.active_transits || []).slice(0, 10)
+        .map((t: { transit_planet: string; natal_planet: string; aspect: string; nature: string }) =>
+          `${t.transit_planet} en transit ${t.aspect} ${t.natal_planet} natal [${t.nature}]`).join("\n");
+      parts.push(``, `TRANSITS ACTIFS AUJOURD'HUI :`, tr);
+      if (dd.cosmic?.moon?.name) parts.push(``, `Ciel du jour : ${dd.cosmic.moon.name}, Soleil en ${dd.cosmic.sun_position?.sign ?? "?"}.`);
+    }
+    return parts.join("\n");
+  } catch {
+    return "";
+  }
+}
+
+function timeToHour(t?: string): number {
+  if (!t) return 12;
+  const [h, mi] = String(t).split(":").map(Number);
+  return (Number.isFinite(h) ? h : 12) + (Number.isFinite(mi) ? mi / 60 : 0);
+}
+
 // Résumés canoniques EN (pour le fallback anglais — KARMIC_DEBTS source est FR).
 const KARMIC_DEBTS_EN: Record<string, { title: string; pastLife: string; challenge: string; healing: string }> = {
   "13/4": { title: "The debt of laziness", pastLife: "In a past life, your soul sought shortcuts and let others carry the weight of its existence.", challenge: "This life, everything you earn demands twice the effort; projects only bear fruit if you go the distance.", healing: "Embrace patient daily work. Each task done conscientiously pays your debt — no shortcuts, just the beauty of work well done." },
@@ -81,7 +159,8 @@ export function buildFallbackReading(input: ReadingInput): string {
 
 export type ReadingTool =
   | "karmic-debt" | "chemin-de-vie" | "nombre-expression"
-  | "annee-personnelle" | "compatibilite";
+  | "annee-personnelle" | "compatibilite"
+  | "ascendant" | "theme-natal" | "transits" | "synastrie";
 
 export type ReadingInput = {
   fullName: string;
@@ -89,16 +168,25 @@ export type ReadingInput = {
   locale: string;
   tool?: ReadingTool;          // défaut "karmic-debt" (compat héritée)
   debtCodes?: string[];        // karmic-debt
-  partnerBirthDate?: string;   // compatibilite "YYYY-MM-DD"
-  partnerName?: string;        // compatibilite (optionnel)
+  partnerBirthDate?: string;   // compatibilite / synastrie "YYYY-MM-DD"
+  partnerName?: string;        // compatibilite / synastrie (optionnel)
   currentYear?: number;        // annee-personnelle (défaut: année courante côté webhook)
+  // Outils astro (Phase 2) : heure + coordonnées déjà géocodées côté client.
+  birthTime?: string;          // "HH:MM"
+  latitude?: number;
+  longitude?: number;
+  partnerBirthTime?: string;   // synastrie
+  partnerLatitude?: number;    // synastrie
+  partnerLongitude?: number;   // synastrie
 };
+
+const ASTRO_TOOLS = new Set(["ascendant", "theme-natal", "transits", "synastrie"]);
 
 // Moteur de prompt UNIVERSEL : route par input.tool. karmic-debt reste géré par
 // buildKarmicDebtPrompt (zéro régression). Les autres outils numérologie partagent
 // un tronc commun (persona Orion, langue, 1100-1400 mots, structure, contraintes)
 // + un bloc de cadrage spécifique au tool (données calculées + angle d'interprétation).
-export function buildReadingPrompt(input: ReadingInput): string {
+export function buildReadingPrompt(input: ReadingInput, engineData = ""): string {
   const tool = input.tool || "karmic-debt";
   if (tool === "karmic-debt") return buildKarmicDebtPrompt(input);
 
@@ -108,7 +196,24 @@ export function buildReadingPrompt(input: ReadingInput): string {
   const first = hasName ? input.fullName.trim().split(/\s+/)[0] : (en ? "the seeker" : "toi");
 
   let focus = "";
-  if (tool === "chemin-de-vie") {
+  if (tool === "ascendant") {
+    focus = en
+      ? `Focus: the ASCENDANT (rising sign) and how it shapes the personality, the social mask and the path. Use the EXACT positions below; never invent a position.`
+      : `Focus : l'ASCENDANT (signe ascendant) et la façon dont il façonne la personnalité, le masque social et la trajectoire. Appuie-toi sur les positions EXACTES ci-dessous ; n'invente jamais une position.`;
+  } else if (tool === "theme-natal") {
+    focus = en
+      ? `Focus: the full NATAL CHART (the sky at birth). Read the dominant signature: Sun, Moon, Ascendant, planetary emphasis by sign and house. Use the EXACT positions below; never invent.`
+      : `Focus : le THÈME NATAL complet (le ciel de naissance). Lis la signature dominante : Soleil, Lune, Ascendant, accents planétaires par signe et maison. Appuie-toi sur les positions EXACTES ci-dessous ; n'invente jamais.`;
+  } else if (tool === "transits") {
+    focus = en
+      ? `Focus: the active TRANSITS right now on the natal chart. Read what the current sky activates, the opportunities and tensions of this period. Use the EXACT transits below; never invent.`
+      : `Focus : les TRANSITS actifs en ce moment sur le thème natal. Lis ce que le ciel actuel active, les opportunités et tensions de cette période. Appuie-toi sur les transits EXACTS ci-dessous ; n'invente jamais.`;
+  } else if (tool === "synastrie") {
+    const pname = (input.partnerName || "").trim() || (en ? "the partner" : "l'autre");
+    focus = en
+      ? `Focus: the SYNASTRY (astrological compatibility) between ${first} and ${pname}. Read the relational dynamic from the cross-aspects between the two charts below: attractions, frictions, growth. Use the EXACT data; never invent.`
+      : `Focus : la SYNASTRIE (compatibilité astrologique) entre ${first} et ${pname}. Lis la dynamique relationnelle à partir des aspects croisés entre les deux thèmes ci-dessous : attirances, frictions, croissance. Appuie-toi sur les données EXACTES ; n'invente jamais.`;
+  } else if (tool === "chemin-de-vie") {
     const lp = calculateLifePath(d, m, y);
     focus = en
       ? `Focus: the LIFE PATH. Life path number: ${lp.number}${lp.isMaster ? " (master number)" : ""} (calc: ${lp.calculation}). Read this number in depth: its gift, its shadow, its mission.`
@@ -141,9 +246,10 @@ export function buildReadingPrompt(input: ReadingInput): string {
   const constraintsEn = `Constraints: no medical/financial/miraculous promises; no fatalism; no unexplained jargon; favour inhabited prose over endless bullet lists. NEVER use em dash or en dash. Start directly with the first section.`;
   const constraintsFr = `Contraintes : aucune promesse medicale/financiere/miraculeuse ; pas de fatalisme ; pas de jargon non explique ; prose habitee plutot que listes a puces interminables. N'utilise JAMAIS de tiret cadratin ni demi-cadratin. Commence directement par la premiere section.`;
 
+  const focusBlock = engineData ? `${focus}\n\n${engineData}` : focus;
   return (en
-    ? [headEn, ``, focus, ``, structEn, ``, constraintsEn]
-    : [headFr, ``, focus, ``, structFr, ``, constraintsFr]
+    ? [headEn, ``, focusBlock, ``, structEn, ``, constraintsEn]
+    : [headFr, ``, focusBlock, ``, structFr, ``, constraintsFr]
   ).join("\n");
 }
 
@@ -218,6 +324,8 @@ export function buildKarmicDebtPrompt(input: ReadingInput): string {
 export async function generateReading(input: ReadingInput): Promise<string> {
   const apiKey = Deno.env.get("GOOGLE_API_KEY");
   if (!apiKey) throw new Error("GOOGLE_API_KEY manquante");
+  // Outils astro : récupère les VRAIES positions depuis le moteur Swiss Ephemeris.
+  const engineData = (input.tool && ASTRO_TOOLS.has(input.tool)) ? await buildEngineSummary(input) : "";
   const model = "gemini-2.5-flash";
   const res = await fetch(
     `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
@@ -225,7 +333,7 @@ export async function generateReading(input: ReadingInput): Promise<string> {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
-        contents: [{ role: "user", parts: [{ text: buildReadingPrompt(input) }] }],
+        contents: [{ role: "user", parts: [{ text: buildReadingPrompt(input, engineData) }] }],
         // gemini-2.5-flash is a "thinking" model: without a budget cap, its
         // reasoning tokens eat into maxOutputTokens and the (paid) reading gets
         // truncated mid-sentence. Cap thinking and give the answer a generous

@@ -103,6 +103,27 @@ Deno.test("buildReadingPrompt EN bascule en anglais", () => {
   assertStringIncludes(p, "LIFE PATH");
 });
 
+Deno.test("buildReadingPrompt astro (ascendant) inclut le focus + les positions injectées", () => {
+  const eng = "THÈME NATAL :\nAscendant : Cancer 2°9'\nSoleil : Poissons 23° — maison 10";
+  const p = buildReadingPrompt({ tool: "ascendant", fullName: "Augustin", birthDate: "1990-03-14", birthTime: "10:30", latitude: 47.32, longitude: 5.04, locale: "fr" }, eng);
+  assertStringIncludes(p, "ASCENDANT");
+  assertStringIncludes(p, "Ascendant : Cancer");      // données moteur injectées
+  assertStringIncludes(p, "n'invente jamais");
+});
+
+Deno.test("buildReadingPrompt synastrie inclut les deux personnes", () => {
+  const p = buildReadingPrompt({ tool: "synastrie", fullName: "Augustin", birthDate: "1990-03-14", partnerName: "Lea", partnerBirthDate: "1992-07-21", locale: "fr" }, "ASPECTS...");
+  assertStringIncludes(p, "SYNASTRIE");
+  assertStringIncludes(p, "Augustin");
+  assertStringIncludes(p, "Lea");
+});
+
+Deno.test("buildReadingPrompt transits sans données moteur reste valide (garde anti-invention)", () => {
+  const p = buildReadingPrompt({ tool: "transits", fullName: "Augustin", birthDate: "1990-03-14", locale: "fr" }, "");
+  assertStringIncludes(p, "TRANSITS");
+  assert(!p.includes("—") && !p.includes("–"));
+});
+
 Deno.test("buildFallbackReading générique pour outil non-karmic", () => {
   const r = buildFallbackReading({ tool: "chemin-de-vie", fullName: "Augustin", birthDate: "1990-03-14", locale: "fr" });
   assertStringIncludes(r, "Augustin");

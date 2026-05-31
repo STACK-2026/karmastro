@@ -38,8 +38,13 @@ serve(async (req) => {
 
     const READING_TOOLS = new Set([
       "karmic-debt", "chemin-de-vie", "nombre-expression", "annee-personnelle", "compatibilite",
+      "ascendant", "theme-natal", "transits", "synastrie",
     ]);
-    const { tool, birthDate, fullName, locale, debtCodes, partnerBirthDate, partnerName } = await req.json();
+    const ASTRO_TOOLS = new Set(["ascendant", "theme-natal", "transits", "synastrie"]);
+    const {
+      tool, birthDate, fullName, locale, debtCodes, partnerBirthDate, partnerName,
+      birthTime, latitude, longitude, partnerBirthTime, partnerLatitude, partnerLongitude,
+    } = await req.json();
     if (!READING_TOOLS.has(tool)) {
       return json({ error: "params invalides" }, 400);
     }
@@ -54,6 +59,13 @@ serve(async (req) => {
     }
     if (tool === "compatibilite" && !partnerBirthDate) {
       return json({ error: "partnerBirthDate requis pour compatibilite" }, 400);
+    }
+    // Outils astro : heure + coordonnées nécessaires au calcul Swiss Ephemeris.
+    if (ASTRO_TOOLS.has(tool) && (!birthTime || latitude == null || longitude == null)) {
+      return json({ error: "birthTime + latitude + longitude requis pour les outils astro" }, 400);
+    }
+    if (tool === "synastrie" && (!partnerBirthDate || !partnerBirthTime || partnerLatitude == null || partnerLongitude == null)) {
+      return json({ error: "données du partenaire (date+heure+coordonnées) requises pour synastrie" }, 400);
     }
 
     const token = crypto.randomUUID();
@@ -73,6 +85,12 @@ serve(async (req) => {
         debtCodes: Array.isArray(debtCodes) ? debtCodes.join(",").slice(0, 60) : "",
         partnerBirthDate: String(partnerBirthDate || "").slice(0, 20),
         partnerName: String(partnerName || "").slice(0, 120),
+        birthTime: String(birthTime || "").slice(0, 8),
+        latitude: latitude != null ? String(latitude).slice(0, 16) : "",
+        longitude: longitude != null ? String(longitude).slice(0, 16) : "",
+        partnerBirthTime: String(partnerBirthTime || "").slice(0, 8),
+        partnerLatitude: partnerLatitude != null ? String(partnerLatitude).slice(0, 16) : "",
+        partnerLongitude: partnerLongitude != null ? String(partnerLongitude).slice(0, 16) : "",
       },
     });
 
