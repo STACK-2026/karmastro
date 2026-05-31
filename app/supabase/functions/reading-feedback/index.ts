@@ -28,7 +28,7 @@ serve(async (req) => {
       // event analytics (surface site, comme tracker.js)
       sb.from("analytics_events").insert({
         session_id: "followup",
-        surface: "email",
+        surface: "site",
         event_name: "reading_feedback",
         properties: { value: v },
         path: "/lecture/",

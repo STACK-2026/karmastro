@@ -157,6 +157,22 @@ function parisDate(): string {
   }).format(new Date());
 }
 
+// Question feedback J+1 (« le ciel d'hier a-t-il résonné ? ») localisée.
+const FEEDBACK_Q: Record<string, string> = {
+  fr: "Le ciel d'hier a-t-il résonné ?",
+  en: "Did yesterday's sky resonate?",
+  es: "¿El cielo de ayer resonó contigo?",
+  pt: "O céu de ontem ressoou contigo?",
+  de: "Hat der gestrige Himmel resoniert?",
+  it: "Il cielo di ieri ha risuonato?",
+  tr: "Dünkü gökyüzü sana uydu mu?",
+  pl: "Czy wczorajsze niebo zarezonowało?",
+  ru: "Вчерашнее небо откликнулось?",
+  ja: "昨日の空は響きましたか？",
+  ar: "هل لامست سماء الأمس قلبك؟",
+};
+const FEEDBACK_FN = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/horoscope-feedback";
+
 function htmlEmail(params: {
   locale: string;
   signSlug: string;
@@ -164,8 +180,9 @@ function htmlEmail(params: {
   entry: { intro?: string; mantra?: string; luckyNumber?: number | string; color?: string; moonPhase?: string };
   unsubUrl: string;
   articleUrl: string;
+  feedbackToken: string;
 }): string {
-  const { locale, signName, entry, unsubUrl, articleUrl } = params;
+  const { locale, signName, entry, unsubUrl, articleUrl, feedbackToken } = params;
   const c = COPY[locale] || COPY.fr;
   const dir = locale === "ar" ? "rtl" : "ltr";
   const intro = entry.intro || "";
@@ -200,6 +217,11 @@ ${mantra ? `<div style="margin:20px 0;padding:16px 20px;border-left:2px solid #f
 ${(lucky || color || moon) ? `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:16px 0;"><tr>${lucky ? `<td align="center" style="padding:10px;border:1px solid rgba(255,255,255,0.08);border-radius:10px;width:33%;"><p style="margin:0;font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;">★</p><p style="margin:4px 0 0;font-size:14px;color:#fbbf24;font-weight:600;">${lucky}</p></td>` : ""}${color ? `<td align="center" style="padding:10px;border:1px solid rgba(255,255,255,0.08);border-radius:10px;width:33%;"><p style="margin:0;font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;">◐</p><p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.8);">${color}</p></td>` : ""}${moon ? `<td align="center" style="padding:10px;border:1px solid rgba(255,255,255,0.08);border-radius:10px;width:33%;"><p style="margin:0;font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;">☾</p><p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.8);">${moon}</p></td>` : ""}</tr></table>` : ""}
 <div style="text-align:center;margin:24px 0 8px;">
 <a href="${articleUrl}" style="display:inline-block;padding:12px 28px;background:linear-gradient(135deg,#a78bfa 0%,#fbbf24 100%);color:#0f0a1e;text-decoration:none;border-radius:10px;font-weight:600;font-size:14px;">${c.ctaMore}</a>
+</div>
+<div style="text-align:center;margin:22px 0 4px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.06);">
+<p style="margin:0 0 10px;font-size:12px;color:rgba(255,255,255,0.5);">${FEEDBACK_Q[locale] || FEEDBACK_Q.fr}</p>
+<a href="${FEEDBACK_FN}?t=${feedbackToken}&v=good" style="display:inline-block;margin:0 5px;padding:9px 18px;border-radius:10px;text-decoration:none;font-size:18px;border:1px solid rgba(252,211,77,0.35);">👍</a>
+<a href="${FEEDBACK_FN}?t=${feedbackToken}&v=meh" style="display:inline-block;margin:0 5px;padding:9px 18px;border-radius:10px;text-decoration:none;font-size:18px;border:1px solid rgba(255,255,255,0.12);">👎</a>
 </div>
 </td></tr>
 <tr><td style="padding:20px 40px 32px;border-top:1px solid rgba(255,255,255,0.08);text-align:center;">
@@ -304,6 +326,7 @@ serve(async (req) => {
           entry: entry as never,
           unsubUrl,
           articleUrl,
+          feedbackToken: sub.unsubscribe_token,
         });
 
         const resendResp = await fetch("https://api.resend.com/emails", {
