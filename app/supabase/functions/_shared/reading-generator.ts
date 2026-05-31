@@ -2,7 +2,17 @@
 // appelle Claude. La lecture va AU-DELÀ du teaser gratuit : elle croise la/les dette(s)
 // détectée(s) avec le chemin de vie et le nombre d'expression, personnalisée au prénom.
 
-import { calculateLifePath, calculateExpression, KARMIC_DEBTS } from "./numerology.ts";
+import { calculateLifePath, calculateExpression, reduceNumerology, KARMIC_DEBTS } from "./numerology.ts";
+
+// Universal helpers (annee-personnelle).
+function digitSum(n: number): number {
+  return String(Math.abs(n)).split("").reduce((a, c) => a + (+c || 0), 0);
+}
+function personalYear(day: number, month: number, year: number): number {
+  return reduceNumerology(
+    reduceNumerology(day) + reduceNumerology(month) + reduceNumerology(digitSum(year)),
+  );
+}
 
 // Résumés canoniques EN (pour le fallback anglais — KARMIC_DEBTS source est FR).
 const KARMIC_DEBTS_EN: Record<string, { title: string; pastLife: string; challenge: string; healing: string }> = {
@@ -16,7 +26,16 @@ const KARMIC_DEBTS_EN: Record<string, { title: string; pastLife: string; challen
 // servie SI l'appel Claude échoue (ex : crédit API épuisé). Le client payant reçoit
 // toujours une vraie lecture cohérente à l'écran (règle "livraison écran d'abord").
 export function buildFallbackReading(input: ReadingInput): string {
+  // Filet générique pour les outils non-karmic (pas de dépendance debtCodes).
+  if (input.tool && input.tool !== "karmic-debt") {
+    const enf = input.locale === "en";
+    const f = input.fullName.trim().split(/\s+/)[0] || (enf ? "friend" : "toi");
+    return enf
+      ? `${f}, here is your reading. The stars incline, they do not compel. Take a quiet moment to breathe, and let this guidance settle. Your full personalised reading is being prepared; if you are reading this, the live engine paused for a moment, but your insight is valid and yours to keep.`
+      : `${f}, voici ta lecture. Les astres inclinent mais ne determinent pas. Prends un instant pour respirer et laisser cette guidance se deposer. Ta lecture personnalisee complete se prepare ; si tu lis ce message, le moteur a marque une courte pause, mais ton eclairage reste valide et il est a toi.`;
+  }
   const en = input.locale === "en";
+  const debtCodes = input.debtCodes || [];
   const parts = (input.birthDate || "").split("-").map(Number);
   const first = input.fullName.trim().split(/\s+/)[0] || (en ? "friend" : "toi");
   let lpLine = "";
@@ -29,7 +48,7 @@ export function buildFallbackReading(input: ReadingInput): string {
   }
 
   if (en) {
-    const blocks = input.debtCodes.map((code) => KARMIC_DEBTS_EN[code] ? { code, ...KARMIC_DEBTS_EN[code] } : null)
+    const blocks = debtCodes.map((code) => KARMIC_DEBTS_EN[code] ? { code, ...KARMIC_DEBTS_EN[code] } : null)
       .filter(Boolean)
       .map((info) => [
         `## ${info!.code} — ${info!.title}`,
@@ -43,7 +62,7 @@ export function buildFallbackReading(input: ReadingInput): string {
     return [intro, ...blocks].join("\n\n");
   }
 
-  const blocks = input.debtCodes
+  const blocks = debtCodes
     .map((code) => KARMIC_DEBTS[code])
     .filter(Boolean)
     .map((info) => {
@@ -60,12 +79,73 @@ export function buildFallbackReading(input: ReadingInput): string {
   return [intro, ...blocks].join("\n\n");
 }
 
+export type ReadingTool =
+  | "karmic-debt" | "chemin-de-vie" | "nombre-expression"
+  | "annee-personnelle" | "compatibilite";
+
 export type ReadingInput = {
   fullName: string;
   birthDate: string; // "YYYY-MM-DD"
   locale: string;
-  debtCodes: string[];
+  tool?: ReadingTool;          // défaut "karmic-debt" (compat héritée)
+  debtCodes?: string[];        // karmic-debt
+  partnerBirthDate?: string;   // compatibilite "YYYY-MM-DD"
+  partnerName?: string;        // compatibilite (optionnel)
+  currentYear?: number;        // annee-personnelle (défaut: année courante côté webhook)
 };
+
+// Moteur de prompt UNIVERSEL : route par input.tool. karmic-debt reste géré par
+// buildKarmicDebtPrompt (zéro régression). Les autres outils numérologie partagent
+// un tronc commun (persona Orion, langue, 1100-1400 mots, structure, contraintes)
+// + un bloc de cadrage spécifique au tool (données calculées + angle d'interprétation).
+export function buildReadingPrompt(input: ReadingInput): string {
+  const tool = input.tool || "karmic-debt";
+  if (tool === "karmic-debt") return buildKarmicDebtPrompt(input);
+
+  const en = input.locale === "en";
+  const [y, m, d] = input.birthDate.split("-").map(Number);
+  const hasName = input.fullName.trim().length > 0;
+  const first = hasName ? input.fullName.trim().split(/\s+/)[0] : (en ? "the seeker" : "toi");
+
+  let focus = "";
+  if (tool === "chemin-de-vie") {
+    const lp = calculateLifePath(d, m, y);
+    focus = en
+      ? `Focus: the LIFE PATH. Life path number: ${lp.number}${lp.isMaster ? " (master number)" : ""} (calc: ${lp.calculation}). Read this number in depth: its gift, its shadow, its mission.`
+      : `Focus : le CHEMIN DE VIE. Nombre de chemin de vie : ${lp.number}${lp.isMaster ? " (maitre nombre)" : ""} (calcul : ${lp.calculation}). Lis ce nombre en profondeur : son don, son ombre, sa mission.`;
+  } else if (tool === "nombre-expression") {
+    const ex = calculateExpression(input.fullName);
+    focus = en
+      ? `Focus: the EXPRESSION NUMBER (from the full name "${input.fullName.trim()}"). Expression number: ${ex.number}${ex.isMaster ? " (master)" : ""}. Read what this name vibration reveals about talents, the way of acting, the life direction.`
+      : `Focus : le NOMBRE D'EXPRESSION (depuis le nom complet "${input.fullName.trim()}"). Nombre d'expression : ${ex.number}${ex.isMaster ? " (maitre)" : ""}. Lis ce que cette vibration du nom revele des talents, de la facon d'agir, de la direction de vie.`;
+  } else if (tool === "annee-personnelle") {
+    const yr = input.currentYear || y;
+    const py = personalYear(d, m, yr);
+    focus = en
+      ? `Focus: the PERSONAL YEAR ${yr}. Personal year number: ${py}. Read the energy of this 1-year cycle: themes, opportunities, what to start or close, month-by-month tone if relevant.`
+      : `Focus : l'ANNEE PERSONNELLE ${yr}. Nombre d'annee personnelle : ${py}. Lis l'energie de ce cycle d'un an : themes, opportunites, ce qu'il faut lancer ou cloturer, la couleur mois par mois si pertinent.`;
+  } else if (tool === "compatibilite") {
+    const lp1 = calculateLifePath(d, m, y);
+    const [py2, pm2, pd2] = (input.partnerBirthDate || "").split("-").map(Number);
+    const lp2 = Number.isFinite(pd2) ? calculateLifePath(pd2, pm2, py2) : null;
+    const pname = (input.partnerName || "").trim() || (en ? "the partner" : "l'autre");
+    focus = en
+      ? `Focus: NUMEROLOGICAL COMPATIBILITY between ${first} (life path ${lp1.number}) and ${pname} (life path ${lp2 ? lp2.number : "?"}). Read the dynamic between these two life paths: natural strengths of the bond, frictions to watch, how to grow together.`
+      : `Focus : COMPATIBILITE NUMEROLOGIQUE entre ${first} (chemin de vie ${lp1.number}) et ${pname} (chemin de vie ${lp2 ? lp2.number : "?"}). Lis la dynamique entre ces deux chemins de vie : forces naturelles du lien, frictions a surveiller, comment grandir ensemble.`;
+  }
+
+  const headEn = `You are Orion, the karmic coach of Karmastro: warm, lucid, grounded, never anxiety-inducing or hollow new-age. Write a personalised reading IN ENGLISH, addressing the person as "you", about 1100 to 1400 words.`;
+  const headFr = `Tu es Orion, coach karmique de Karmastro : voix chaleureuse, lucide, incarnee, jamais anxiogene ni new-age creux. Ecris une lecture personnalisee EN FRANCAIS, au tutoiement, d'environ 1100 a 1400 mots.`;
+  const structEn = `Structure with markdown (##) section titles: 1) What this reveals about you. 2) What it means concretely in your life right now. 3) The strength to lean on. 4) Your ritual for the week (one simple concrete gesture within 7 days). 5) The question to hold before important decisions.`;
+  const structFr = `Structure avec des titres markdown (##) : 1) Ce que cela revele de toi. 2) Ce que ca signifie concretement dans ta vie en ce moment. 3) La force sur laquelle t'appuyer. 4) Ton rituel de la semaine (un geste concret simple sous 7 jours). 5) La question a te poser avant chaque decision importante.`;
+  const constraintsEn = `Constraints: no medical/financial/miraculous promises; no fatalism; no unexplained jargon; favour inhabited prose over endless bullet lists. NEVER use em dash or en dash. Start directly with the first section.`;
+  const constraintsFr = `Contraintes : aucune promesse medicale/financiere/miraculeuse ; pas de fatalisme ; pas de jargon non explique ; prose habitee plutot que listes a puces interminables. N'utilise JAMAIS de tiret cadratin ni demi-cadratin. Commence directement par la premiere section.`;
+
+  return (en
+    ? [headEn, ``, focus, ``, structEn, ``, constraintsEn]
+    : [headFr, ``, focus, ``, structFr, ``, constraintsFr]
+  ).join("\n");
+}
 
 export function buildKarmicDebtPrompt(input: ReadingInput): string {
   const en = input.locale === "en";
@@ -78,7 +158,7 @@ export function buildKarmicDebtPrompt(input: ReadingInput): string {
     const exprLine = hasName
       ? `Expression number (from "${input.fullName.trim()}"): ${calculateExpression(input.fullName).number}.`
       : `Full name not provided: centre the reading on the karmic debt(s) and the life path.`;
-    const debtContext = input.debtCodes.map((code) => {
+    const debtContext = (input.debtCodes || []).map((code) => {
       const info = KARMIC_DEBTS_EN[code];
       return info ? `- ${code} (${info.title}) · memory: ${info.pastLife}` : `- ${code}`;
     }).join("\n");
@@ -105,7 +185,7 @@ export function buildKarmicDebtPrompt(input: ReadingInput): string {
   const exprLine = hasName
     ? `Nombre d'expression (depuis "${input.fullName.trim()}") : ${calculateExpression(input.fullName).number}.`
     : `Nom complet non fourni : centre la lecture sur la/les dette(s) et le chemin de vie.`;
-  const debtContext = input.debtCodes
+  const debtContext = (input.debtCodes || [])
     .map((code) => {
       const info = KARMIC_DEBTS[code];
       if (!info) return `- ${code}`;
@@ -145,7 +225,7 @@ export async function generateReading(input: ReadingInput): Promise<string> {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
-        contents: [{ role: "user", parts: [{ text: buildKarmicDebtPrompt(input) }] }],
+        contents: [{ role: "user", parts: [{ text: buildReadingPrompt(input) }] }],
         // gemini-2.5-flash is a "thinking" model: without a budget cap, its
         // reasoning tokens eat into maxOutputTokens and the (paid) reading gets
         // truncated mid-sentence. Cap thinking and give the answer a generous

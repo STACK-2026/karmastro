@@ -1,5 +1,5 @@
 import { assert, assertStringIncludes } from "https://deno.land/std@0.224.0/assert/mod.ts";
-import { buildKarmicDebtPrompt, buildFallbackReading } from "./reading-generator.ts";
+import { buildKarmicDebtPrompt, buildFallbackReading, buildReadingPrompt } from "./reading-generator.ts";
 
 Deno.test("buildKarmicDebtPrompt inclut prénom, code, chemin de vie", () => {
   const p = buildKarmicDebtPrompt({
@@ -58,4 +58,53 @@ Deno.test("buildFallbackReading EN produit de l'anglais", () => {
   assertStringIncludes(r, "ritual for the week");
   assertStringIncludes(r, "John");
   assert(!r.includes("mémoire d'âme")); // pas de FR
+});
+
+// ── Moteur universel (Phase 1 multi-outils) ──────────────────────────────────
+Deno.test("buildReadingPrompt route karmic-debt vers le builder hérité", () => {
+  const p = buildReadingPrompt({ tool: "karmic-debt", fullName: "Augustin", birthDate: "1990-03-14", locale: "fr", debtCodes: ["13/4"] });
+  assertStringIncludes(p, "Dette(s) karmique(s)");
+  assertStringIncludes(p, "13/4");
+});
+
+Deno.test("buildReadingPrompt chemin-de-vie injecte le nombre", () => {
+  const p = buildReadingPrompt({ tool: "chemin-de-vie", fullName: "Augustin", birthDate: "1990-03-14", locale: "fr" });
+  assertStringIncludes(p, "CHEMIN DE VIE");
+  assertStringIncludes(p, "Nombre de chemin de vie");
+});
+
+Deno.test("buildReadingPrompt nombre-expression utilise le nom", () => {
+  const p = buildReadingPrompt({ tool: "nombre-expression", fullName: "Marie Dupont", birthDate: "1988-06-14", locale: "fr" });
+  assertStringIncludes(p, "NOMBRE D'EXPRESSION");
+  assertStringIncludes(p, "Marie Dupont");
+});
+
+Deno.test("buildReadingPrompt annee-personnelle calcule l'année", () => {
+  const p = buildReadingPrompt({ tool: "annee-personnelle", fullName: "Lea", birthDate: "1990-03-14", locale: "fr", currentYear: 2026 });
+  assertStringIncludes(p, "ANNEE PERSONNELLE 2026");
+});
+
+Deno.test("buildReadingPrompt compatibilite inclut les deux chemins de vie", () => {
+  const p = buildReadingPrompt({ tool: "compatibilite", fullName: "Augustin", birthDate: "1990-03-14", partnerBirthDate: "1992-07-21", locale: "fr" });
+  assertStringIncludes(p, "COMPATIBILITE");
+  assertStringIncludes(p, "chemin de vie");
+});
+
+Deno.test("buildReadingPrompt n'utilise aucun tiret cadratin/demi-cadratin", () => {
+  for (const tool of ["chemin-de-vie", "nombre-expression", "annee-personnelle", "compatibilite"] as const) {
+    const p = buildReadingPrompt({ tool, fullName: "Lea Martin", birthDate: "1990-03-14", partnerBirthDate: "1992-07-21", locale: "fr" });
+    assert(!p.includes("—") && !p.includes("–"), `${tool} contient un tiret cadratin/demi`);
+  }
+});
+
+Deno.test("buildReadingPrompt EN bascule en anglais", () => {
+  const p = buildReadingPrompt({ tool: "chemin-de-vie", fullName: "John", birthDate: "1990-03-14", locale: "en" });
+  assertStringIncludes(p, "IN ENGLISH");
+  assertStringIncludes(p, "LIFE PATH");
+});
+
+Deno.test("buildFallbackReading générique pour outil non-karmic", () => {
+  const r = buildFallbackReading({ tool: "chemin-de-vie", fullName: "Augustin", birthDate: "1990-03-14", locale: "fr" });
+  assertStringIncludes(r, "Augustin");
+  assert(!r.includes("## 13/4") && !r.includes("dette"));
 });
