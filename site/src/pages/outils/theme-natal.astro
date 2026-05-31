@@ -218,6 +218,22 @@ const jsonLd = [
           <div id="aspects-list" class="space-y-1"></div>
         </div>
 
+        <div id="reading-cta" class="mt-6 pt-5 border-t border-white/10">
+          <div class="relative p-5 rounded-xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30 text-center overflow-hidden">
+            <div aria-hidden="true" style="filter: blur(6px); opacity: 0.5; user-select: none; pointer-events: none;" class="text-left text-sm text-white/70 space-y-1 mb-4">
+              <p>Ton thème natal révèle une signature dominante : un Soleil, une Lune et un Ascendant qui se répondent...</p>
+              <p>Ce que cette empreinte crée concrètement dans ta vie, le geste de la semaine et la question à te poser...</p>
+            </div>
+            <p class="text-2xl mb-1">✦</p>
+            <p class="font-serif text-base text-white mb-1">Ta lecture de thème natal complète</p>
+            <p class="text-xs text-white/60 mb-4 max-w-sm mx-auto leading-relaxed">
+              Une lecture personnalisée d'Orion (1100-1400 mots) à partir de tes positions réelles (Swiss Ephemeris) : ta signature dominante, ce qu'elle crée aujourd'hui, ton rituel de la semaine et la question à te poser. Livrée à l'écran à l'instant + par email.
+            </p>
+            <button type="button" id="km-buy" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">
+              Débloquer ma lecture complète - 4,90 €
+            </button>
+          </div>
+        </div>
         <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-2 justify-center items-center">
           <a
             href="https://app.karmastro.com"
@@ -372,6 +388,7 @@ const jsonLd = [
 
 <script>
   const ENGINE_URL = "http://168.119.229.20:8100";
+  let kmReadingData: { birthDate: string; birthTime: string; latitude: number; longitude: number } | null = null;
 
   const PLANET_GLYPHS: Record<string, string> = {
     Soleil: "☉",
@@ -662,6 +679,7 @@ const jsonLd = [
       placeStatus.textContent = "Recherche de la ville...";
       const geo = await geocode(place);
       placeStatus.textContent = `Localisation : ${geo.display}`;
+      kmReadingData = { birthDate: date, birthTime: time, latitude: geo.lat, longitude: geo.lng };
 
       const [y, m, d] = date.split("-").map(Number);
       const [h, mi] = time.split(":").map(Number);
@@ -704,6 +722,31 @@ const jsonLd = [
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = "Calculer mon thème natal";
+    }
+  });
+
+  // Achat lecture complète : Stripe Checkout invité (lecture bâtie sur les positions réelles).
+  const CHECKOUT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/reading-checkout";
+  document.getElementById("reading-cta")?.addEventListener("click", async (ev) => {
+    const btn = (ev.target as HTMLElement).closest("#km-buy") as HTMLButtonElement | null;
+    if (!btn) return;
+    if (!kmReadingData) { alert("Calcule d'abord ton thème natal ✦"); return; }
+    btn.disabled = true;
+    const original = btn.textContent;
+    btn.textContent = "Redirection…";
+    try {
+      const r = await fetch(CHECKOUT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ tool: "theme-natal", ...kmReadingData, locale: "fr" }),
+      });
+      const data = await r.json();
+      if (data?.url) { window.location.href = data.url; }
+      else { throw new Error(data?.error || "no url"); }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = original;
+      alert("Une erreur est survenue, réessaie dans un instant.");
     }
   });
 </script>
