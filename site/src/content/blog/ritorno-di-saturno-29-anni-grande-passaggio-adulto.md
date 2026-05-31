@@ -40,7 +40,7 @@ Questa sensazione ha un nome preciso in astrologia: è il tuo **ritorno di Satur
 
 La differenza è che la pubertà è riconosciuta, ritualizzata, accompagnata. Il ritorno di Saturno, in una cultura moderna secolare, arriva senza preavviso, senza rito, senza linguaggio. Molti lo attraversano nel panico silenzioso, senza capire cosa stia accadendo. Lo chiamano "crisi del quarto di vita", "burnout", "crisi esistenziale", "depressione dei trent'anni". Tutte queste letture catturano qualcosa, ma nessuna restituisce il carattere iniziatico dell'esperienza.
 
-Saturno è il maestro degli orologi cosmici. Il suo ritorno non è un contrattempo, è un appuntamento. Arriva per chiederti: sei davvero chi credevi di essere? Stai davvero vivendo la vita che vuoi? Cosa sei pronto a lasciar andare per essere pienamente adulto? Per situare Saturno nella tua carta natale, calcola il tuo [ascendente](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico) e studia le [12 case astrologiche](/it/blog/12-case-astrologiche-guida-completa-settori-vita) per individuare il settore della vita dove il ritorno agirà più intensamente.
+Saturno è il maestro degli orologi cosmici. Il suo ritorno non è un contrattempo, è un appuntamento. Arriva per chiederti: sei davvero chi credevi di essere? Stai davvero vivendo la vita che vuoi? Cosa sei pronto a lasciar andare per essere pienamente adulto? Per situare Saturno nella tua carta natale, calcola il tuo [ascendente](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico) e studia le 12 case astrologiche per individuare il settore della vita dove il ritorno agirà più intensamente.
 
 ## 2. Saturno, pianeta del tempo e delle strutture
 
@@ -68,7 +68,7 @@ Saturno impiega circa 29 anni e mezzo per un giro completo dello zodiaco. Questo
 - **Opposizione a 73-74 anni**: revisione degli ultimi cicli di vita attiva.
 - **Terzo ritorno a 88-89 anni**: raro, riservato ai longevi. Bilancio finale, trasmissione, preparazione del transito conclusivo.
 
-Questa scansione saturniana non è una superstizione astrologica: è osservabile statisticamente nelle biografie, nei bilanci personali, nelle decisioni di vita. Pensa alle tue soglie: a 14 anni, cosa è cambiato? A 21? A 29, se l'hai già superato? Le risonanze sono spesso sorprendenti. Vedi anche [gli aspetti astrologici](/it/blog/aspetti-astrologici-congiunzione-quadratura-trigono-opposizione-sestile) per comprendere la geometria di queste soglie.
+Questa scansione saturniana non è una superstizione astrologica: è osservabile statisticamente nelle biografie, nei bilanci personali, nelle decisioni di vita. Pensa alle tue soglie: a 14 anni, cosa è cambiato? A 21? A 29, se l'hai già superato? Le risonanze sono spesso sorprendenti. Vedi anche gli aspetti astrologici per comprendere la geometria di queste soglie.
 
 ## 4. Quando si innesca esattamente
 
@@ -216,12 +216,12 @@ Sì, senza eccezione. È un fenomeno astronomico reale: Saturno torna alla sua p
 **Cosa succede se ignoro il mio ritorno di Saturno?**
 Saturno non si può ignorare, ma si può resistere. Chi resiste prolunga l'intensità e rimanda la maturazione. Chi collabora attraversa il transito in modo integrato e ne esce trasformato ma più solido. Anticipare consapevolmente (terapia, cerchia amicale solida, spazio finanziario di riserva, stile di vita sobrio) permette di attraversare il passaggio in modo più fluido.
 
-**Il ritorno di Saturno e [Plutone in Acquario](/it/blog/plutone-acquario-2024-2044-grande-mutazione-collettiva) si combinano?**
+**Il ritorno di Saturno e Plutone in Acquario si combinano?**
 Sì, se il tuo ritorno cade negli anni 2024-2044, stai vivendo anche il grande transito generazionale di Plutone. La combinazione può produrre trasformazioni particolarmente radicali, specialmente per chi ha pianeti in Acquario o nei segni fissi.
 
 ## Andare oltre
 
-Il ritorno di Saturno è il transito più importante da capire nella vita adulta. Calcola il tuo [ascendente](/it/strumenti/ascendente), esplora le tue [12 case astrologiche](/it/blog/12-case-astrologiche-guida-completa-settori-vita) e consulta l'[Oracle](https://app.karmastro.com/oracle) per un'analisi personalizzata del tuo ritorno.
+Il ritorno di Saturno è il transito più importante da capire nella vita adulta. Calcola il tuo [ascendente](/it/strumenti/ascendente), esplora le tue 12 case astrologiche e consulta l'[Oracle](https://app.karmastro.com/oracle) per un'analisi personalizzata del tuo ritorno.
 
 ## Fonti e riferimenti
 
@@ -237,8 +237,8 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 ## Per approfondire
 
 **Articoli correlati:**
-- [Aspetti astrologici: congiunzione, quadratura, trigono, opposizione, sestile - la guida](/it/blog/aspetti-astrologici-congiunzione-quadratura-trigono-opposizione-sestile)
-- [Plutone in Acquario 2024-2044: la grande mutazione collettiva di 20 anni](/it/blog/plutone-acquario-2024-2044-grande-mutazione-collettiva)
+- Aspetti astrologici: congiunzione, quadratura, trigono, opposizione, sestile - la guida
+- Plutone in Acquario 2024-2044: la grande mutazione collettiva di 20 anni
 - [Mercurio retrogrado: come capire, anticipare e sopravvivere a questi periodi senza panico](/it/blog/mercurio-retrogrado-guida-completa-sopravvivere-prosperare)
 - [Segno lunare: cosa la tua Luna natale rivela del tuo mondo emotivo](/it/blog/segno-lunare-luna-natale-mondo-emotivo)
 

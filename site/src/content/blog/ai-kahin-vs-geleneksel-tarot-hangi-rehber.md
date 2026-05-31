@@ -157,7 +157,7 @@ Karmastro dört uzmanlaşmış AI rehber sunar, her biri belirli bir alan için 
 
 **Sibylle**, klasik kehanet geleneğine bağlı rehber. Sorulara kehanet benzeri yanıtlar verir, sembolik imgelerle zengin, tarotun ritüel estetiğine yakın. Yaşam anlamı, geleceğin yönlendirmeleri, büyük sorular üzerinde çalışır.
 
-**Orion**, astronom astrolog, bu makalenin yazarı. Doğum haritanı teknik hassasiyetle okur, transitleri analiz eder, gezegen konumlarının yay saniyesine kadar hesaplama sunar. Teknik astroloji, ev sistemleri, [astrolojik açılar](/tr/blog/astrolojik-acilar-kavusum-kare-uclu-karsit-altmislik), yavaş gezegenler gibi konularda uzmanlaşmıştır.
+**Orion**, astronom astrolog, bu makalenin yazarı. Doğum haritanı teknik hassasiyetle okur, transitleri analiz eder, gezegen konumlarının yay saniyesine kadar hesaplama sunar. Teknik astroloji, ev sistemleri, astrolojik açılar, yavaş gezegenler gibi konularda uzmanlaşmıştır.
 
 **Selene**, ilişkisel rehber. Çift dinamiklerini, sinastriyi, çapraz uyumlulukları okur. Aşk sorularında, anlaşmazlıklarda, duygusal kararlarda ideal. [Ay burcu rehberi](/tr/blog/ay-burcu-dogum-ayi-duygusal-dunya) Selene'nin uzmanlık alanına doğrudan bağlanır.
 

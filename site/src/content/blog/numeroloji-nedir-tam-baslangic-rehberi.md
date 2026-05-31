@@ -106,7 +106,7 @@ Turkce icin ozel harfler C G I O S U Latin alfabesinin en yakin karsiligina cevr
 
 Ruh arzu sayisi ayni isimden sadece sesli harfler A E I O Unun toplamiyla hesaplanir. Yukaridaki ornekte A E I I I toplam 1 5 9 9 9 toplam 33. Master 33 ruhun arzusu kosulsuz sevgi ve sifaci ustalik yolu.
 
-[Ifade sayisi numeroloji isim kimligi](/tr/blog/ifade-sayisi-numeroloji-isim-kimlik-cozmek) makalesinde detayli hesap ve yorum ornekleri bulabilirsin.
+Ifade sayisi numeroloji isim kimligi makalesinde detayli hesap ve yorum ornekleri bulabilirsin.
 
 ## 7. 1den 9a sayilarin anlami
 
@@ -224,18 +224,18 @@ Numeroloji icin oz anlama arastirmalari ni derinlestirecek ilgili makaleler.
 
 - [Yasam yolu hesaplama yontemi](/tr/blog/yasam-yolu-nasil-hesaplanir-adim-adim-yontem)
 - [Yasam yolu 1 liderlik](/tr/blog/yasam-yolu-1-liderlik-bagimsizlik-numeroloji)
-- [Ifade sayisi isim kimlik](/tr/blog/ifade-sayisi-numeroloji-isim-kimlik-cozmek)
+- Ifade sayisi isim kimlik
 - [Pitagor vs Kaldeli yontem farklari](/tr/blog/pitagor-vs-kaldeli-numeroloji-farklar)
 - [Kisisel yil 2026 9 dongusu](/tr/blog/kisisel-yil-2026-numeroloji-9-yil-dongusu)
 - [Ucretsiz dogum haritasi natal yorumlama](/tr/blog/ucretsiz-dogum-haritasi-tam-natal-yorumlama)
 - [Yukselen burc tam rehber](/tr/blog/yukselen-burc-tam-rehber-yukselen-anlama)
-- [12 astrolojik ev rehberi](/tr/blog/12-astrolojik-ev-tam-rehber-yasam-sektorleri)
-- [Astrolojik acilar rehberi](/tr/blog/astrolojik-acilar-kavusum-kare-uclu-karsit-altmislik)
+- 12 astrolojik ev rehberi
+- Astrolojik acilar rehberi
 - [Astrolojik uyumluluk burclari](/tr/blog/astrolojik-uyumluluk-hangi-burclar-birbirini-ceker)
 - [Ay burcu duygusal dunya](/tr/blog/ay-burcu-dogum-ayi-duygusal-dunya)
 - [Merkur retrosu rehberi](/tr/blog/merkur-retrosu-tam-rehber-anlamak-hayatta-kalmak)
 - [Saturn donusu 29 yas](/tr/blog/saturn-donusu-29-yas-buyuk-yetiskinlik-gecisi)
-- [Pluton kova 2024 2044](/tr/blog/pluton-kova-2024-2044-buyuk-kolektif-donusum)
+- Pluton kova 2024 2044
 - [Cakralar 7 gezegen](/tr/blog/cakralar-astroloji-7-gezegen-enerji-merkezleri)
 - [Karma astroloji gecmis yasamlar](/tr/blog/karma-astroloji-gecmis-yasamlar-dogum-haritasi)
 - [AI kahin vs geleneksel tarot](/tr/blog/ai-kahin-vs-geleneksel-tarot-hangi-rehber)
@@ -271,7 +271,7 @@ Bu yazi 14 Nisan 2026 tarihinde Orion tarafindan son olarak gozden gecirilmistir
 ## Daha fazlası
 
 **İlgili makaleler:**
-- [İfade sayısı: isminin kimliğin hakkında ne söylediğini çöz](/tr/blog/ifade-sayisi-numeroloji-isim-kimlik-cozmek)
+- İfade sayısı: isminin kimliğin hakkında ne söylediğini çöz
 - [Pitagor vs Kaldeli numeroloji: farklar ve karşılaştırmalı yöntemler](/tr/blog/pitagor-vs-kaldeli-numeroloji-farklar)
 - [Numerolojide yaşam yolu 1: liderlik, bağımsızlık ve enkarnasyon misyonu](/tr/blog/yasam-yolu-1-liderlik-bagimsizlik-numeroloji)
 - [Kişisel yıl 2026: numaranı bul ve 9 yıllık döngüyü anla](/tr/blog/kisisel-yil-2026-numeroloji-9-yil-dongusu)

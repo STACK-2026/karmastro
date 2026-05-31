@@ -208,7 +208,7 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 
 **Artículos relacionados :**
 - [Carta natal gratis: cómo interpretar tu tema natal completo](/es/blog/carta-natal-gratis-interpretar-tema-natal-completo)
-- [Las 12 casas astrológicas: guía completa de los 12 sectores de tu vida](/es/blog/12-casas-astrologicas-guia-completa-sectores-vida)
+- Las 12 casas astrológicas: guía completa de los 12 sectores de tu vida
 - [Año personal 2026: encuentra tu cifra y comprende el ciclo de 9 años](/es/blog/ano-personal-2026-numerologia-ciclo-9-anos)
 - [Signo lunar: lo que tu Luna natal revela de tu mundo emocional](/es/blog/signo-lunar-luna-natal-mundo-emocional)
 

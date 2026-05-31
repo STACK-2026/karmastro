@@ -96,7 +96,7 @@ L'opposizione collega due pianeti separati da 180°, cioè in segni diametralmen
 
 **Sole opposizione Luna** (la configurazione natale di una nascita a Luna Piena): oscillazione tra bisogno di affermarsi (Sole) e bisogno di sentirsi (Luna); tensione tra io e famiglia. **Venere opposizione Marte**: attrazione/repulsione nei rapporti, relazioni stormy, guerra degli amanti. **Mercurio opposizione Saturno**: tensione tra pensiero rapido e pensiero strutturato; dubbio cronico che può diventare rigore filosofico. **Giove opposizione Saturno**: alternanza tra espansione e contrazione, classico di cicli di crescita e crisi nella carriera.
 
-La saggezza consiste nell'**oscillare tra i due poli** senza bloccarsi in uno solo. La persona matura impara a integrare entrambi. Un Sole in Ariete opposto a Luna in Bilancia finisce per costruire un'identità affermativa (Sole Ariete) orientata alla relazione (Luna Bilancia). Il lavoro cosciente sull'asse di opposizione è spesso ciò che trasforma più profondamente una persona nella prima metà della vita. Vedi anche la rete di aspetti nelle [12 case astrologiche](/it/blog/12-case-astrologiche-guida-completa-settori-vita).
+La saggezza consiste nell'**oscillare tra i due poli** senza bloccarsi in uno solo. La persona matura impara a integrare entrambi. Un Sole in Ariete opposto a Luna in Bilancia finisce per costruire un'identità affermativa (Sole Ariete) orientata alla relazione (Luna Bilancia). Il lavoro cosciente sull'asse di opposizione è spesso ciò che trasforma più profondamente una persona nella prima metà della vita. Vedi anche la rete di aspetti nelle 12 case astrologiche.
 
 ## 9. Gli aspetti minori
 
@@ -142,7 +142,7 @@ Gli aspetti tra pianeti personali (Sole, Luna, Mercurio, Venere, Marte) sono i p
 
 Gli aspetti tra pianeti personali e **pianeti sociali** (Giove, Saturno) descrivono la tua relazione alla società, all'autorità, alla crescita e alla struttura. Un Sole-Saturno determina la tua relazione al potere e all'ambizione; un Sole-Giove, al successo e all'espansione.
 
-Gli aspetti tra pianeti personali e **pianeti transpersonali** (Urano, Nettuno, Plutone) descrivono la tua relazione al collettivo e agli archetipi profondi. Questi pianeti si muovono molto lentamente (Plutone impiega 248 anni a fare un giro), quindi gli aspetti che formano con i pianeti personali definiscono tratti generazionali. Un Sole-Urano rompe la tradizione familiare; un Venere-Nettuno sogna l'amore ideale; un Marte-Plutone canalizza potenze trasformatrici. Per capire come l'attuale passaggio di [Plutone in Acquario](/it/blog/plutone-acquario-2024-2044-grande-mutazione-collettiva) tocca i temi personali attraverso transiti, consulta il nostro articolo dedicato.
+Gli aspetti tra pianeti personali e **pianeti transpersonali** (Urano, Nettuno, Plutone) descrivono la tua relazione al collettivo e agli archetipi profondi. Questi pianeti si muovono molto lentamente (Plutone impiega 248 anni a fare un giro), quindi gli aspetti che formano con i pianeti personali definiscono tratti generazionali. Un Sole-Urano rompe la tradizione familiare; un Venere-Nettuno sogna l'amore ideale; un Marte-Plutone canalizza potenze trasformatrici. Per capire come l'attuale passaggio di Plutone in Acquario tocca i temi personali attraverso transiti, consulta il nostro articolo dedicato.
 
 ## 13. Caso reale: Sarah, Sole opposizione Saturno
 
@@ -180,7 +180,7 @@ No. Gli aspetti sono energie, non sentenze. Un Pluto in aspetto difficile a Vene
 
 ## Andare oltre
 
-Gli aspetti sono la dimensione più dinamica della tua carta. Calcola il tuo [ascendente](/it/strumenti/ascendente) e consulta l'[Oracle](https://app.karmastro.com/oracle) Karmastro per una lettura integrata. Per capire come gli aspetti si iscrivono nelle case della tua vita, leggi la guida alle [12 case astrologiche](/it/blog/12-case-astrologiche-guida-completa-settori-vita). Per approfondire l'asse identitario, consulta la guida all'[ascendente astrologico](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico).
+Gli aspetti sono la dimensione più dinamica della tua carta. Calcola il tuo [ascendente](/it/strumenti/ascendente) e consulta l'[Oracle](https://app.karmastro.com/oracle) Karmastro per una lettura integrata. Per capire come gli aspetti si iscrivono nelle case della tua vita, leggi la guida alle 12 case astrologiche. Per approfondire l'asse identitario, consulta la guida all'[ascendente astrologico](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico).
 
 ## Fonti e riferimenti
 
@@ -195,9 +195,9 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 ## Per approfondire
 
 **Articoli correlati :**
-- [Plutone in Acquario 2024-2044: la grande mutazione collettiva di 20 anni](/it/blog/plutone-acquario-2024-2044-grande-mutazione-collettiva)
+- Plutone in Acquario 2024-2044: la grande mutazione collettiva di 20 anni
 - [Ascendente: la guida completa per comprendere il tuo ascendente astrologico](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico)
-- [Le 12 case astrologiche: guida completa ai 12 settori della tua vita](/it/blog/12-case-astrologiche-guida-completa-settori-vita)
+- Le 12 case astrologiche: guida completa ai 12 settori della tua vita
 - [Il ritorno di Saturno: il grande passaggio astrologico a 29 anni che cambia tutto](/it/blog/ritorno-di-saturno-29-anni-grande-passaggio-adulto)
 
 **Strumenti Karmastro:**

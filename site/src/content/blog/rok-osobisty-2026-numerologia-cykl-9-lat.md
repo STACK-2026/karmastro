@@ -83,7 +83,7 @@ Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych
 ## Warto przeczytać
 
 **Powiązane artykuły:**
-- [Liczba ekspresji: odszyfruj co twoje imię mówi o twojej tożsamości](/pl/blog/liczba-ekspresji-numerologia-imie-odszyfrowac-tozsamosc)
+- Liczba ekspresji: odszyfruj co twoje imię mówi o twojej tożsamości
 - [Droga życia 1 w numerologii: przywództwo, niezależność i misja wcielenia](/pl/blog/droga-zycia-1-przywodztwo-niezaleznosc-numerologia)
 - [Czym jest numerologia: kompletny przewodnik dla poczatkujacych 2026](/pl/blog/czym-jest-numerologia-kompletny-przewodnik-dla-poczatkujacych)
 - [Numerologia pitagorejska vs chaldejska: różnice i metody porównane](/pl/blog/numerologia-pitagorejska-vs-chaldejska-roznice)

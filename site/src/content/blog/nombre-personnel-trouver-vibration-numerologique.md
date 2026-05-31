@@ -527,7 +527,7 @@ Le 8 pour une entreprise suggère une vibration d'organisation, de pouvoir struc
 - **Partenariats** : Vérifier la compatibilité numérologique des entreprises  
 - **Timing de lancement** : Croiser avec l'année personnelle du fondateur
 
-**Outil professionnel** : Karmastro propose ce service dans ses [analyses d'entreprise](https://karmastro.com/entreprises) pour optimiser l'identité vibratoire des marques.
+**Outil professionnel** : Karmastro propose ce service dans ses analyses d'entreprise pour optimiser l'identité vibratoire des marques.
 
 ### Trouve-t-on des équivalents dans d'autres traditions spirituelles ?
 
@@ -578,7 +578,7 @@ Karmastro propose une vision contemporaine de la numérologie qui respecte les t
 
 **Formation continue** : Notre équipe se forme régulièrement aux dernières recherches en psychologie positive et neurosciences pour enrichir nos interprétations.
 
-Cette approche moderne fait de Karmastro un pont entre sagesse ancestrale et technologies contemporaines, comme l'explique notre [manifeste](https://karmastro.com/manifeste).
+Cette approche moderne fait de Karmastro un pont entre sagesse ancestrale et technologies contemporaines, comme l'explique notre [manifeste](/notre-histoire/).
 
 ## Conclusion : révèle ta signature vibratoire unique
 
@@ -618,7 +618,7 @@ L'intelligence spirituelle du XXIe siècle combine tradition et innovation - c'e
 2. **Grille pythagoricienne historique** - L. Dow Balliett, *The Science of Numbers* (1911) - [Internet Archive](https://archive.org/)
 3. **Étude sociologique IFOP 2024** - *Les Français et les pratiques spirituelles alternatives* - [IFOP](https://www.ifop.com/)
 4. **Numérologie chaldéenne** - Cheiro, *Book of Numbers* (1926) - [Encyclopédie Universalis](https://www.universalis.fr/)
-5. **Base de données statistiques Karmastro** - Analyse de 12 456 profils numérologique français (2025) - [Karmastro Recherche](https://karmastro.com/recherche)
+5. **Base de données statistiques Karmastro** - Analyse de 12 456 profils numérologique français (2025) - Karmastro Recherche
 6. **Gematria et traditions hébraïques** - *Encyclopedia Judaica*, Volume 7 - [Jewish Virtual Library](https://www.jewishvirtuallibrary.org/gematria)
 7. **Swiss Ephemeris** - Calculs astronomiques de précision - [Astrodienst](https://www.astro.com/swisseph/)
 8. **Étude comparative Université Lyon III** - *Systèmes numérologiques : convergences interculturelles* (2023) - [HAL Archives](https://hal.archives-ouvertes.fr/)

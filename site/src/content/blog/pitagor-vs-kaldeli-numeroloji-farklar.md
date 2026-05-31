@@ -115,7 +115,7 @@ Bir pratik kural : eğer iki sistemi birlikte kullanmak istersen, doğum tarihi 
 
 Üçüncüsü, modern psikolojik numeroloji geleneğiyle uyum. Carol Adrienne, Kevin Quinn Avery, Dan Millman gibi güncel Pitagor pratisyenleri sistemi psikolojik öz-analiz aracı olarak rafine etmişlerdir. Karmastro'nun pedagojik yaklaşımı bu çizgide yer alır : numeroloji bir kehanet aracı değil, bir öz-farkındalık lensi olarak sunulur.
 
-[Karmastro yaşam yolu sayısı aracı](/tr/araclar/yasam-yolu-sayisi) Pitagor sistemine göre hesaplama yapar ve [ifade sayısı rehberi](/tr/blog/ifade-sayisi-numeroloji-isim-kimlik-cozmek) isim hesaplamasının mantığını detaylı açıklar. Ileri seviye Pitagor rehberleri ayrıca [yaşam yolu 1](/tr/blog/yasam-yolu-1-liderlik-bagimsizlik-numeroloji) gibi her sayı için ayrıntılı yorumlar sunar.
+[Karmastro yaşam yolu sayısı aracı](/tr/araclar/yasam-yolu-sayisi) Pitagor sistemine göre hesaplama yapar ve ifade sayısı rehberi isim hesaplamasının mantığını detaylı açıklar. Ileri seviye Pitagor rehberleri ayrıca [yaşam yolu 1](/tr/blog/yasam-yolu-1-liderlik-bagimsizlik-numeroloji) gibi her sayı için ayrıntılı yorumlar sunar.
 
 ## 8. Sık sorulan sorular
 
@@ -147,7 +147,7 @@ Fonetik temelli olduğu için, klasik Kaldeli tablo Latin alfabesi üzerine kuru
 
 İki yöntem de iki geçerli yoldur. Seçim kişisel, metodolojik ve kültürel bir tercihtir. Karmastro Pitagor'u seçer ama Kaldeli'yi de saygıyla kabul eder. Numerolojiye yeni başlıyorsan Pitagor'dan başla, derinleştikçe Kaldeli'yi de keşfet. Iki sistemi paralel öğrenmek, numerolojiye çok boyutlu bir anlama kapısı açar.
 
-[Yaşam yolu sayını](/tr/araclar/yasam-yolu-sayisi) hesapla, [doğum haritanla](/tr/araclar/dogum-haritasi) karşılaştır ve numerolojinin astrolojik haritanla nasıl örtüştüğünü gör. Daha ayrıntılı inceleme için [ifade sayısı rehberi](/tr/blog/ifade-sayisi-numeroloji-isim-kimlik-cozmek) isim temelli analizi derinleştirir.
+[Yaşam yolu sayını](/tr/araclar/yasam-yolu-sayisi) hesapla, [doğum haritanla](/tr/araclar/dogum-haritasi) karşılaştır ve numerolojinin astrolojik haritanla nasıl örtüştüğünü gör. Daha ayrıntılı inceleme için ifade sayısı rehberi isim temelli analizi derinleştirir.
 
 ## Kaynaklar ve referanslar
 
@@ -163,7 +163,7 @@ Bu makale doğrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadır.
 ## Daha fazlası
 
 **İlgili makaleler:**
-- [İfade sayısı: isminin kimliğin hakkında ne söylediğini çöz](/tr/blog/ifade-sayisi-numeroloji-isim-kimlik-cozmek)
+- İfade sayısı: isminin kimliğin hakkında ne söylediğini çöz
 - [Numeroloji nedir Tam baslangic rehberi](/tr/blog/numeroloji-nedir-tam-baslangic-rehberi)
 - [Numerolojide yaşam yolu 1: liderlik, bağımsızlık ve enkarnasyon misyonu](/tr/blog/yasam-yolu-1-liderlik-bagimsizlik-numeroloji)
 - [Yaşam yolu nasıl hesaplanır: adım adım yöntem](/tr/blog/yasam-yolu-nasil-hesaplanir-adim-adim-yontem)

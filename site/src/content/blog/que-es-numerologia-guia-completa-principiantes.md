@@ -235,7 +235,7 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 
 **Artículos relacionados :**
 - [Camino de vida 1 en numerología: liderazgo, independencia y misión de encarnación](/es/blog/camino-de-vida-1-liderazgo-independencia-numerologia)
-- [Número de expresión: descifra lo que tu nombre revela de tu identidad](/es/blog/numero-expresion-numerologia-nombre-descifrar-identidad)
+- Número de expresión: descifra lo que tu nombre revela de tu identidad
 - [Año personal 2026: encuentra tu cifra y comprende el ciclo de 9 años](/es/blog/ano-personal-2026-numerologia-ciclo-9-anos)
 - [Cómo calcular tu camino de vida: el método pitagórico paso a paso](/es/blog/como-calcular-camino-de-vida-paso-a-paso)
 

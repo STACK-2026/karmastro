@@ -139,7 +139,7 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 - [Carta natal gratis: cómo interpretar tu tema natal completo](/es/blog/carta-natal-gratis-interpretar-tema-natal-completo)
 - [Signo zodiacal Aries: personalidad, compatibilidad y rasgos profundos](/es/blog/aries-signo-zodiacal-personalidad-compatibilidad)
 - [Signo lunar: lo que tu Luna natal revela de tu mundo emocional](/es/blog/signo-lunar-luna-natal-mundo-emocional)
-- [Plutón en Acuario 2024-2044: la gran mutación colectiva de 20 años que cambia todo](/es/blog/pluton-acuario-2024-2044-gran-mutacion-colectiva)
+- Plutón en Acuario 2024-2044: la gran mutación colectiva de 20 años que cambia todo
 
 **Herramientas Karmastro:**
 - [Carta natal](/es/herramientas/carta-natal)

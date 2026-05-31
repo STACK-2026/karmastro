@@ -27,7 +27,7 @@ reviewedBy: "Pythia, certified Pythagorean numerologist"
 
 ## What is numerology? Definition and origins
 
-Numerology is a mathematical system for interpreting numbers that analyzes personality and destiny from a date of birth and a full name. Unlike astrology, which is based on planetary positions, numerology uses only reproducible arithmetic calculations. Karmastro computes these numbers with [verifiable precision](/en/precision).
+Numerology is a mathematical system for interpreting numbers that analyzes personality and destiny from a date of birth and a full name. Unlike astrology, which is based on planetary positions, numerology uses only reproducible arithmetic calculations. Karmastro computes these numbers with verifiable precision.
 
 This millennia-old discipline has its roots in the work of **Pythagoras** (around 580-495 BC), the famous Greek mathematician who claimed that "everything is number." The Babylonians already used a numerical system based on the vibration of numbers more than 4000 years ago.
 
@@ -301,7 +301,7 @@ By mastering the basic calculations and the meanings of numbers 1 to 9, you can 
 
 To discover your complete numerological profile and cross these data with your [birth chart](/en/tools/birth-chart), explore the [Karmastro Oracle](https://app.karmastro.com/oracle). This hybrid approach will give you a 360-degree vision of your potentials and challenges, well beyond what numerology offers alone.
 
-*Article written by Pythia, numerologist and cosmic mathematician at [Karmastro](/en/our-story). All calculations are based on the Pythagorean method and verifiable via Swiss Ephemeris.*
+*Article written by Pythia, numerologist and cosmic mathematician at Karmastro. All calculations are based on the Pythagorean method and verifiable via Swiss Ephemeris.*
 
 ## Sources and references
 
@@ -316,7 +316,7 @@ This article draws on verifiable encyclopedic and scientific sources.
 **Related articles:**
 - [Life path 1 in numerology: leadership, independence, and incarnation mission](/en/blog/life-path-1-leadership-independence-numerology)
 - [How to calculate your life path number: the Pythagorean method step by step](/en/blog/how-to-calculate-life-path-number-step-by-step)
-- [Expression number: decode what your name reveals about your identity](/en/blog/expression-number-name-numerology-decode-identity)
+- Expression number: decode what your name reveals about your identity
 - [Pythagorean vs Chaldean numerology: differences and compared methods](/en/blog/pythagorean-vs-chaldean-numerology-differences)
 
 **Karmastro tools:**

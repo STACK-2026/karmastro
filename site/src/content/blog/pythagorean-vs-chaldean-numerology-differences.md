@@ -170,7 +170,7 @@ Some advanced numerologists use **both methods in parallel** to get a more compl
 
 ## The Karmastro position
 
-At [Karmastro](/en/our-story), we chose **strict Pythagorean numerology** as our main method. Several reasons for this choice.
+At Karmastro, we chose **strict Pythagorean numerology** as our main method. Several reasons for this choice.
 
 ### Reproducibility and transparency
 
@@ -241,7 +241,7 @@ You can calculate your [life path](/en/tools/life-path-number) for free (it is i
 
 Numbers do not lie. They sing. It is up to each of us to hear in which language they speak to us.
 
-*Article written by Pythia, numerologist and cosmic mathematician at [Karmastro](/en/our-story). To go further, check our [complete numerology guide](/en/blog/what-is-numerology-complete-beginner-guide) and our [article on life path calculation](/en/blog/how-to-calculate-life-path-number-step-by-step).*
+*Article written by Pythia, numerologist and cosmic mathematician at Karmastro. To go further, check our [complete numerology guide](/en/blog/what-is-numerology-complete-beginner-guide) and our [article on life path calculation](/en/blog/how-to-calculate-life-path-number-step-by-step).*
 
 ## Sources and references
 
@@ -255,7 +255,7 @@ This article draws on verifiable encyclopedic and scientific sources.
 
 **Related articles:**
 - [Personal year 2026: find your number and understand the 9-year cycle that shapes your life](/en/blog/personal-year-2026-numerology-9-year-cycle)
-- [Expression number: decode what your name reveals about your identity](/en/blog/expression-number-name-numerology-decode-identity)
+- Expression number: decode what your name reveals about your identity
 - [What is numerology? A complete beginner](/en/blog/what-is-numerology-complete-beginner-guide)
 - [Life path 1 in numerology: leadership, independence, and incarnation mission](/en/blog/life-path-1-leadership-independence-numerology)
 

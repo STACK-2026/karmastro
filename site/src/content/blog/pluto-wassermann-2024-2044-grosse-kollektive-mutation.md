@@ -96,7 +96,7 @@ In der Mythologie bezieht sich Wassermann oft auf den Mythos von Ganymed, dem tr
 
 In der modernen Astrologie ist Wassermann das Zeichen der wissenschaftlichen und technologischen Revolutionen, der Demokratiebewegungen, der radikalen Utopien, der experimentellen sozialen Systeme, der Erfinder, der Dissidenten, der Außenseiter, der Genies und der Exzentriker. Das Zeichen liebt den Schock der neuen Ideen, die radikale Gleichheit, das Umgehen der Konventionen, die ungewöhnlichen Allianzen.
 
-Die Kehrseite ist dieselbe Medaille: Wassermann kann in Dogma, Ideologie, emotionale Kälte, Verleugnung der persönlichen Dimension zugunsten des Kollektiven, Verachtung der individuellen Empfindlichkeit, techno-utopische Arroganz, fanatisch theoretischen Perfektionismus abgleiten. Die extremen politischen Regime des 20. Jahrhunderts (Kommunismus, bestimmte Formen des technokratischen Liberalismus) enthalten eine wassermännige Abweichung: kollektive Befreiung, erkauft durch die Unterdrückung der individuellen Empfindlichkeit. Für die andere Seite des astrologischen Spektrums, lies unseren Artikel über die [12 astrologischen Häuser und die Lebensbereiche](/de/blog/12-astrologische-haeuser-vollstaendiger-leitfaden-lebensbereiche).
+Die Kehrseite ist dieselbe Medaille: Wassermann kann in Dogma, Ideologie, emotionale Kälte, Verleugnung der persönlichen Dimension zugunsten des Kollektiven, Verachtung der individuellen Empfindlichkeit, techno-utopische Arroganz, fanatisch theoretischen Perfektionismus abgleiten. Die extremen politischen Regime des 20. Jahrhunderts (Kommunismus, bestimmte Formen des technokratischen Liberalismus) enthalten eine wassermännige Abweichung: kollektive Befreiung, erkauft durch die Unterdrückung der individuellen Empfindlichkeit. Für die andere Seite des astrologischen Spektrums, lies unseren Artikel über die 12 astrologischen Häuser und die Lebensbereiche.
 
 ## 7. Die großen Themen der nächsten 20 Jahre
 
@@ -170,7 +170,7 @@ Das Haus, in dem Pluto transitiert, ist entscheidend für die persönliche Lesar
 
 **Haus VIII**: tiefe Transformationen, geteiltes Geld, Sexualität, verborgene Themen. Pluto ist der natürliche Regent dieses Hauses. Die Themen sind intens und oft fruchtbar. **Haus IX**: Weltsicht, Philosophie, fernes Studium, internationale Reisen. Transformation deiner existentiellen Überzeugungen. **Haus X**: Karriere, öffentlicher Ruf, soziale Berufung. Beruflicher Umbau, manchmal Entdeckung einer späten Berufung. **Haus XI**: Freundschaften, kollektive Projekte, Zukunftshoffnungen, Gruppen der Zugehörigkeit. Dies ist das natürliche wassermännige Haus, und Pluto dort transformiert radikal deine sozialen Verbindungen.
 
-**Haus XII**: Unbewusstes, Retreat, geheime Arbeit, psychische Wurzel. Intense innere Arbeit, vielleicht Psychoanalyse, spirituelles Retreat, tiefer schamanischer Weg. Für eine detaillierte Beschreibung, lies unseren [vollständigen Leitfaden zu den 12 astrologischen Häusern](/de/blog/12-astrologische-haeuser-vollstaendiger-leitfaden-lebensbereiche).
+**Haus XII**: Unbewusstes, Retreat, geheime Arbeit, psychische Wurzel. Intense innere Arbeit, vielleicht Psychoanalyse, spirituelles Retreat, tiefer schamanischer Weg. Für eine detaillierte Beschreibung, lies unseren vollständigen Leitfaden zu den 12 astrologischen Häusern.
 
 ## 15. Die Pluto-Wassermann-Generation
 

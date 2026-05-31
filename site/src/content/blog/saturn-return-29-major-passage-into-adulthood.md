@@ -44,7 +44,7 @@ And there is a reason for it. By 29, you have finished your first great Saturn c
 
 If the answer is yes, the passage is gentle and structuring. If the answer is no, it is more violent, because everything has to be deconstructed before it can be rebuilt. But in every case, it transforms. No one comes out of a Saturn return identical to the one who walked in.
 
-To locate Saturn in your natal chart and anticipate your own return, start by calculating your [zodiac sign](/en/tools/zodiac-sign) and your [rising sign](/en/tools/rising-sign). That will give you a frame.
+To locate Saturn in your natal chart and anticipate your own return, start by calculating your zodiac sign and your [rising sign](/en/tools/rising-sign). That will give you a frame.
 
 ## 2. Saturn, planet of time, structures, and maturity
 
@@ -302,7 +302,7 @@ No, it does not change who you are at the core. It reveals who you really are, b
 
 ## Going further
 
-The Saturn return is probably the most important transit to understand in adult life. If you want to explore your natal chart in depth and see where your Saturn is, start by calculating your [rising sign](/en/tools/rising-sign) and your [moon sign](/en/tools/moon-sign), then ask the [Oracle](https://app.karmastro.com/oracle) for a personalized reading of your Saturn return with the exact dates for you.
+The Saturn return is probably the most important transit to understand in adult life. If you want to explore your natal chart in depth and see where your Saturn is, start by calculating your [rising sign](/en/tools/rising-sign) and your moon sign, then ask the [Oracle](https://app.karmastro.com/oracle) for a personalized reading of your Saturn return with the exact dates for you.
 
 To go further on the other great passages of astrological life, also read our [complete guide to the rising sign](/en/blog/rising-sign-complete-guide-understand-ascendant) and our article on [Mercury retrograde](/en/blog/mercury-retrograde-complete-guide-survive-thrive).
 
@@ -324,8 +324,8 @@ This article draws on verifiable encyclopedic and scientific sources.
 **Related articles:**
 - [Rising sign: the complete guide to understand your astrological ascendant](/en/blog/rising-sign-complete-guide-understand-ascendant)
 - [Mercury retrograde: how to understand, anticipate, and survive these periods without panic](/en/blog/mercury-retrograde-complete-guide-survive-thrive)
-- [Astrological aspects: conjunction, square, trine, opposition, sextile, the guide to read them](/en/blog/astrological-aspects-conjunction-square-trine-opposition-sextile)
-- [Pluto in Aquarius 2024-2044: the 20-year collective mutation that changes everything](/en/blog/pluto-in-aquarius-2024-2044-great-collective-mutation)
+- Astrological aspects: conjunction, square, trine, opposition, sextile, the guide to read them
+- Pluto in Aquarius 2024-2044: the 20-year collective mutation that changes everything
 
 **Karmastro tools:**
 - [Birth chart](/en/tools/birth-chart)

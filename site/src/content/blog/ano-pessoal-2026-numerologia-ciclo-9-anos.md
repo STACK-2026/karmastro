@@ -225,7 +225,7 @@ Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
 
 **Artigos relacionados :**
 - [Numerologia pitagórica vs caldeia: diferenças e métodos comparados](/pt/blog/numerologia-pitagorica-vs-caldeia-diferencas)
-- [Número de expressão: decifra o que o teu nome revela da tua identidade](/pt/blog/numero-expressao-numerologia-nome-decifrar-identidade)
+- Número de expressão: decifra o que o teu nome revela da tua identidade
 - [O que é a numerologia? Guia completo para iniciantes](/pt/blog/o-que-e-numerologia-guia-completo-iniciantes)
 - [Como calcular o teu caminho de vida: o método pitagórico passo a passo](/pt/blog/como-calcular-caminho-de-vida-passo-a-passo)
 

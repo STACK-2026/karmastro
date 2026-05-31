@@ -84,7 +84,7 @@ reviewedBy: "Pythia、認定ピタゴラス数秘術師"
 
 **関連記事:**
 - [数秘術とは何か 初心者のための完全ガイド](/ja/blog/suumitsu-to-wa-nani-ka-shoshinsha-gaido)
-- [表現数:あなたの名前があなたのアイデンティティについて明かすこと](/ja/blog/hyougen-suji-suumitsu-namae-aidentiti)
+- 表現数:あなたの名前があなたのアイデンティティについて明かすこと
 - [ライフパス1:数秘術におけるリーダーシップ、独立、化身の使命](/ja/blog/raifu-pasu-1-rida-shippu-dokuritsu-suumitsu)
 - [ライフパスナンバーの計算方法:ステップバイステップ完全ガイド](/ja/blog/raifu-pasu-nanbaa-keisan-houhou-sutebai-sutebu)
 

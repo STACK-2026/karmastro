@@ -69,7 +69,7 @@ Doğum gününü ve ayını 2026'ya ekle. 1-9 arası bir rakama indir. Yöntem b
 
 **Yıl 8**: hasat, güç. Hasat yılıdır. Finansal başarı, tanınma, otorite, liderlik gelir. Risk: materyalizm, güç istismarı, insani bağları kaybetme. Pratik öneri: başarıyı kabul et ama birinci ve yedinci yılda ekilen zeminleri unutma.
 
-**Yıl 9**: sonuç, aktarım. Döngünün kapanışı. Bırakma, veda, aktarım, eskiyi tamamlama. Risk: yeni başlangıçlara zorlanma, depresyon, kayıp hissi. Pratik öneri: dokuz yılda büyük kararlar alma; dinlen, değerlendir, bırak ve gelecek yılı hazırla. [İfade sayısı rehberi](/tr/blog/ifade-sayisi-numeroloji-isim-kimlik-cozmek) ile çapraz okuma dokuz yıllık döngünün kamusal boyutunu aydınlatır.
+**Yıl 9**: sonuç, aktarım. Döngünün kapanışı. Bırakma, veda, aktarım, eskiyi tamamlama. Risk: yeni başlangıçlara zorlanma, depresyon, kayıp hissi. Pratik öneri: dokuz yılda büyük kararlar alma; dinlen, değerlendir, bırak ve gelecek yılı hazırla. İfade sayısı rehberi ile çapraz okuma dokuz yıllık döngünün kamusal boyutunu aydınlatır.
 
 ## 5. Kişisel aylar
 
@@ -118,7 +118,7 @@ Evet ve bunu yapmak numerolojinin en büyük pratik yararıdır. Eğer 2026 seni
 Bu sık rastlanan bir sorudur. Üç olası neden vardır. Birincisi: yıl enerjisi iki hafta öncesinden hissedilmeye başlar ve Aralık sonu ile Ocak sonu arası bir geçiş bölgesi vardır; ortada bazen bulanıklık olur. İkincisi: yaşam yolu ve kişisel yıl çok gergin bir kombinasyon oluşturuyorsa kişisel yıl titreşimi yaşam yolu tarafından gölgelenir. Üçüncüsü: astrolojik büyük transitler (Satürn veya Pluton yükselen burca kavuşum gibi) kişisel yılın kod enerjisini aşıp baskın hale gelir. Bu durumlarda numeroloji ve astroloji birlikte okunmalıdır.
 
 **Kolektif olaylar kişisel yılımı etkiler mi?**
-Evet. 2020 COVID yılı dünya yılı 4 (2+0+2+0 = 4) idi ve kolektif olarak istikrar, kısıtlama, yapısallaşma titreşimi taşıyordu. Kişisel yıl 4 olan insanlar bu kolektif titreşimi doğrudan yaşadı; kişisel yıl 5 olanlar değişim arzuladıkları anda dünya onları hareketsiz bıraktı ve çifte gerilim oluştu. Bu makro-mikro etkileşim numerolojinin ilerlemiş bir okumasıdır. [Pluton Kova geçişi](/tr/blog/pluton-kova-2024-2044-buyuk-kolektif-donusum) 2024-2044 arasında kolektif ve bireysel titreşimleri sürekli yeniden formüle edecek.
+Evet. 2020 COVID yılı dünya yılı 4 (2+0+2+0 = 4) idi ve kolektif olarak istikrar, kısıtlama, yapısallaşma titreşimi taşıyordu. Kişisel yıl 4 olan insanlar bu kolektif titreşimi doğrudan yaşadı; kişisel yıl 5 olanlar değişim arzuladıkları anda dünya onları hareketsiz bıraktı ve çifte gerilim oluştu. Bu makro-mikro etkileşim numerolojinin ilerlemiş bir okumasıdır. Pluton Kova geçişi 2024-2044 arasında kolektif ve bireysel titreşimleri sürekli yeniden formüle edecek.
 
 ## Daha ileri
 

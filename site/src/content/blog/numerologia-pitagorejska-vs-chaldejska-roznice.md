@@ -103,7 +103,7 @@ Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych
 - [Jak obliczyć drogę życia krok po kroku](/pl/blog/jak-obliczyc-droge-zycia-krok-po-kroku)
 - [Droga życia 1 w numerologii: przywództwo, niezależność i misja wcielenia](/pl/blog/droga-zycia-1-przywodztwo-niezaleznosc-numerologia)
 - [Rok osobisty 2026: znajdź swoją liczbę i zrozum 9-letni cykl](/pl/blog/rok-osobisty-2026-numerologia-cykl-9-lat)
-- [Liczba ekspresji: odszyfruj co twoje imię mówi o twojej tożsamości](/pl/blog/liczba-ekspresji-numerologia-imie-odszyfrowac-tozsamosc)
+- Liczba ekspresji: odszyfruj co twoje imię mówi o twojej tożsamości
 
 **Narzędzia Karmastro:**
 - [Horoskop natalny](/pl/narzedzia/horoskop-natalny)

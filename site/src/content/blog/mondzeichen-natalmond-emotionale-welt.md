@@ -114,7 +114,7 @@ Es ist der Mond, der die täglichen Rituale regelt, die Reaktionen in Streitigke
 
 Die Mondkompatibilität kann auch durch das Element gelesen werden. Mond in Feuerzeichen (Widder, Löwe, Schütze) harmonisiert oft mit Mond in Luftzeichen (Zwillinge, Waage, Wassermann): Aktionsenergie und Kommunikationsenergie nähren sich gegenseitig. Mond in Erdzeichen (Stier, Jungfrau, Steinbock) harmonisiert oft mit Mond in Wasserzeichen (Krebs, Skorpion, Fische): Struktur und Emotion ergänzen sich. Die Kreuzungen Feuer-Wasser und Erde-Luft können konflikthafter sein, ohne dass dies automatisch Inkompatibilität bedeutet.
 
-Lies unseren Artikel über die [astrologischen Aspekte](/de/blog/astrologische-aspekte-konjunktion-quadrat-trigon-opposition-sextil), um die Dynamiken von Aspekt-zu-Aspekt zwischen den Monden zweier Partner zu vertiefen. Für eine praktische Anwendung, verwende unser Werkzeug der [Partnerhoroskop-Kompatibilität](/de/werkzeuge/partnerhoroskop), das die Mond-zu-Mond-Aspekte prominent analysiert.
+Lies unseren Artikel über die astrologischen Aspekte, um die Dynamiken von Aspekt-zu-Aspekt zwischen den Monden zweier Partner zu vertiefen. Für eine praktische Anwendung, verwende unser Werkzeug der [Partnerhoroskop-Kompatibilität](/de/werkzeuge/partnerhoroskop), das die Mond-zu-Mond-Aspekte prominent analysiert.
 
 ## 9. Die Aspekte des Mondes
 
@@ -188,9 +188,9 @@ Dein Natalmond ist die Position des Mondes im Moment deiner Geburt. Die aktuelle
 
 ## Weiter gehen
 
-Dein Natalmond ist Teil eines Ganzen. Für eine vollständige Sicht brauchst du dein [interpretiertes Geburtshoroskop](/de/werkzeuge/geburtshoroskop) und die Lesung der zwölf astrologischen Häuser deiner Karte. Lies unseren [vollständigen Leitfaden zu den 12 astrologischen Häusern](/de/blog/12-astrologische-haeuser-vollstaendiger-leitfaden-lebensbereiche), um das Haus zu identifizieren, in dem sich dein Mond befindet und das der Bereich deines Lebens ist, in dem deine emotionalen Bedürfnisse sich konkret manifestieren.
+Dein Natalmond ist Teil eines Ganzen. Für eine vollständige Sicht brauchst du dein [interpretiertes Geburtshoroskop](/de/werkzeuge/geburtshoroskop) und die Lesung der zwölf astrologischen Häuser deiner Karte. Lies unseren vollständigen Leitfaden zu den 12 astrologischen Häusern, um das Haus zu identifizieren, in dem sich dein Mond befindet und das der Bereich deines Lebens ist, in dem deine emotionalen Bedürfnisse sich konkret manifestieren.
 
-Vervollständige die Lesung mit unserem Artikel zu den [Rückläufigkeiten von Merkur](/de/blog/merkur-rueckläufig-leitfaden-verstehen-ueberleben), die besonders das Denken und die Kommunikation betreffen, und zur [Saturn-Rückkehr mit 29 Jahren](/de/blog/saturn-rueckkehr-29-jahre-grosser-uebergang-erwachsensein), der oft die Mondverletzung reaktiviert, um sie zu transformieren. Für die kollektive Dimension, schaue unseren Artikel zu [Pluto im Wassermann 2024-2044](/de/blog/pluto-wassermann-2024-2044-grosse-kollektive-mutation).
+Vervollständige die Lesung mit unserem Artikel zu den [Rückläufigkeiten von Merkur](/de/blog/merkur-rueckläufig-leitfaden-verstehen-ueberleben), die besonders das Denken und die Kommunikation betreffen, und zur [Saturn-Rückkehr mit 29 Jahren](/de/blog/saturn-rueckkehr-29-jahre-grosser-uebergang-erwachsensein), der oft die Mondverletzung reaktiviert, um sie zu transformieren. Für die kollektive Dimension, schaue unseren Artikel zu Pluto im Wassermann 2024-2044.
 
 ## Quellen und Referenzen
 
@@ -206,7 +206,7 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 ## Mehr erfahren
 
 **Ähnliche Artikel:**
-- [Die 12 astrologischen Häuser: vollständiger Leitfaden der 12 Lebensbereiche](/de/blog/12-astrologische-haeuser-vollstaendiger-leitfaden-lebensbereiche)
+- Die 12 astrologischen Häuser: vollständiger Leitfaden der 12 Lebensbereiche
 - [Sternzeichen Widder: Persönlichkeit, Kompatibilität und tiefe Merkmale](/de/blog/widder-sternzeichen-persoenlichkeit-kompatibilitaet)
 - [Die Saturn-Rückkehr: der große astrologische Übergang mit 29 der alles verändert](/de/blog/saturn-rueckkehr-29-jahre-grosser-uebergang-erwachsensein)
 - [Kostenloses Geburtshoroskop: wie du dein vollständiges Natalchart interpretierst](/de/blog/kostenloses-geburtshoroskop-natalchart-interpretieren)

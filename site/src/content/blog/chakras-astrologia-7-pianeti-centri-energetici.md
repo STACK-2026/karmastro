@@ -132,7 +132,7 @@ Per leggere i tuoi chakras attraverso l'astrologia, segui un protocollo in quatt
 
 4. **Scegli un asse da lavorare**. Non puoi lavorare i sette chakras contemporaneamente. Scegli quello che il tuo tema e il tuo corpo segnalano come prioritario e impegnati per tre mesi con pratiche specifiche.
 
-Questa diagnosi non sostituisce la medicina né la psicoterapia. È una bussola per orientare la pratica quotidiana e dare senso ai blocchi ricorrenti. Per approfondire il quadro planetario, consulta la [guida agli aspetti astrologici](/it/blog/aspetti-astrologici-congiunzione-quadratura-trigono-opposizione-sestile).
+Questa diagnosi non sostituisce la medicina né la psicoterapia. È una bussola per orientare la pratica quotidiana e dare senso ai blocchi ricorrenti. Per approfondire il quadro planetario, consulta la guida agli aspetti astrologici.
 
 ## 12. Transiti e aperture energetiche
 
@@ -142,7 +142,7 @@ Quando un pianeta lento (Giove, Saturno, Urano, Nettuno, Plutone) transita un pu
 
 **Urano su Venere** (una volta nella vita, intorno a un'età variabile): attiva Anahata in modo elettrico, spesso tramite rotture amorose brusche seguite da apertura a nuove forme d'amore. **Nettuno su Mercurio** (diversi anni): attiva Vishuddha, può sciogliere parole e certezze per aprire a un linguaggio più intuitivo. Pericolo: confusione verbale durante il transito.
 
-**Plutone sul tuo Sole** (generazionale, rarissimo): attiva Manipura in modo trasformatore, produce morti simboliche dell'ego e rinascite identitarie. Periodo intenso, spesso di crisi esistenziali profonde. Questi transiti pluridecennali vanno letti in chiave di [Plutone in Acquario](/it/blog/plutone-acquario-2024-2044-grande-mutazione-collettiva) per una contestualizzazione collettiva.
+**Plutone sul tuo Sole** (generazionale, rarissimo): attiva Manipura in modo trasformatore, produce morti simboliche dell'ego e rinascite identitarie. Periodo intenso, spesso di crisi esistenziali profonde. Questi transiti pluridecennali vanno letti in chiave di Plutone in Acquario per una contestualizzazione collettiva.
 
 ## 13. Mantra, cristalli e rituali
 
@@ -184,7 +184,7 @@ Muladhara, sempre. Senza radicamento, il lavoro sugli altri centri rischia di di
 
 ## Andare oltre
 
-Calcola il tuo [ascendente](/it/strumenti/ascendente) e consulta l'[Oracle](https://app.karmastro.com/oracle) Karmastro per una lettura integrata del tuo tema. Per approfondire i collegamenti tra astrologia e dinamica interiore, leggi la [guida alle 12 case astrologiche](/it/blog/12-case-astrologiche-guida-completa-settori-vita) e la guida agli [aspetti astrologici](/it/blog/aspetti-astrologici-congiunzione-quadratura-trigono-opposizione-sestile).
+Calcola il tuo [ascendente](/it/strumenti/ascendente) e consulta l'[Oracle](https://app.karmastro.com/oracle) Karmastro per una lettura integrata del tuo tema. Per approfondire i collegamenti tra astrologia e dinamica interiore, leggi la guida alle 12 case astrologiche e la guida agli aspetti astrologici.
 
 ## Fonti e riferimenti
 
@@ -202,7 +202,7 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 - [Cammino di vita 1 in numerologia: leadership, indipendenza e missione di incarnazione](/it/blog/cammino-di-vita-1-leadership-indipendenza-numerologia)
 - [Tema natale gratuito: come interpretare la tua carta astrale completa](/it/blog/tema-natale-gratuito-interpretare-carta-astrale-completa)
 - [Segno zodiacale Ariete: personalità, compatibilità e tratti profondi](/it/blog/ariete-segno-zodiacale-personalita-compatibilita)
-- [Aspetti astrologici: congiunzione, quadratura, trigono, opposizione, sestile - la guida](/it/blog/aspetti-astrologici-congiunzione-quadratura-trigono-opposizione-sestile)
+- Aspetti astrologici: congiunzione, quadratura, trigono, opposizione, sestile - la guida
 
 **Strumenti Karmastro:**
 - [Tema natale](/it/strumenti/tema-natale)

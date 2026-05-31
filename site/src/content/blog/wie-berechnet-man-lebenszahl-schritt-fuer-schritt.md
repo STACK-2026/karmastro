@@ -209,7 +209,7 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 - [Was ist Numerologie? Vollständiger Leitfaden für Anfänger](/de/blog/was-ist-numerologie-vollstaendiger-anfaenger-leitfaden)
 - [Pythagoreische vs chaldäische Numerologie: Unterschiede und verglichene Methoden](/de/blog/pythagoreische-vs-chaldaeische-numerologie-unterschiede)
 - [Lebenszahl 1 in Numerologie: Führung, Unabhängigkeit und Inkarnationsmission](/de/blog/lebenszahl-1-fuehrung-unabhaengigkeit-numerologie)
-- [Ausdruckszahl: entschlüssele was dein Name über deine Identität verrät](/de/blog/ausdruckszahl-numerologie-name-identitaet-entschluesseln)
+- Ausdruckszahl: entschlüssele was dein Name über deine Identität verrät
 
 **Karmastro Werkzeuge:**
 - [Geburtshoroskop](/de/werkzeuge/geburtshoroskop)

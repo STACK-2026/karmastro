@@ -214,8 +214,8 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 
 **Ähnliche Artikel:**
 - [Kostenloses Geburtshoroskop: wie du dein vollständiges Natalchart interpretierst](/de/blog/kostenloses-geburtshoroskop-natalchart-interpretieren)
-- [Die 12 astrologischen Häuser: vollständiger Leitfaden der 12 Lebensbereiche](/de/blog/12-astrologische-haeuser-vollstaendiger-leitfaden-lebensbereiche)
-- [Astrologische Aspekte: Konjunktion, Quadrat, Trigon, Opposition, Sextil - der Leitfaden](/de/blog/astrologische-aspekte-konjunktion-quadrat-trigon-opposition-sextil)
+- Die 12 astrologischen Häuser: vollständiger Leitfaden der 12 Lebensbereiche
+- Astrologische Aspekte: Konjunktion, Quadrat, Trigon, Opposition, Sextil - der Leitfaden
 - [Merkur rückläufig: wie du diese Phasen verstehst, antizipierst und ohne Panik überlebst](/de/blog/merkur-rueckläufig-leitfaden-verstehen-ueberleben)
 
 **Karmastro Werkzeuge:**

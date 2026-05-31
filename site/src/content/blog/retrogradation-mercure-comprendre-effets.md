@@ -293,7 +293,7 @@ Carl Jung, le célèbre psychanalyste suisse, a associé Mercure à l’**arché
    - **Conseil** : Tenez un **journal de rêves** et prêtez attention aux synchronicités. Par exemple, notez vos rêves chaque matin et cherchez des motifs ou des messages récurrents.
    - **Exemple concret** : Imaginez que vous rêvez plusieurs fois d’un serpent pendant Mercure rétrograde. En explorant ce symbole, vous pourriez découvrir qu’il représente une peur de la transformation ou un désir de guérison. Utilisez cette révélation pour explorer ces thèmes dans votre vie éveillée.
 
-*Pour approfondir* : [Notre article sur les archétypes jungiens et l’astrologie](https://karmastro.com/blog/archetypes-jung-astrologie)
+*Pour approfondir* : Notre article sur les archétypes jungiens et l’astrologie
 
 ### 4. Mercure rétrograde et les karmas relationnels
 

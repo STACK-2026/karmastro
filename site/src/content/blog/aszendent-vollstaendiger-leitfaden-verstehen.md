@@ -144,7 +144,7 @@ Diese Konfigurationen erzeugen oft ein Identitätsgefühl von Dissonanz: "Die Le
 
 ## 11. Der Aszendent in deiner gesamten Karte
 
-Der Aszendent ist **der Ausgangspunkt** deiner Geburtskarte. Die zwölf astrologischen Häuser beginnen alle bei ihm und werden gegen den Uhrzeigersinn nummeriert. Wenn dein Aszendent auf 15° Waage steht, beginnt Haus I auf 15° Waage, Haus II auf 15° Skorpion, Haus III auf 15° Schütze und so weiter. Der Aszendent bestimmt also, welches Zeichen welches Haus regiert, was wiederum die gesamte Struktur der [12 astrologischen Häuser](/de/blog/12-astrologische-haeuser-vollstaendiger-leitfaden-lebensbereiche) deiner Karte färbt.
+Der Aszendent ist **der Ausgangspunkt** deiner Geburtskarte. Die zwölf astrologischen Häuser beginnen alle bei ihm und werden gegen den Uhrzeigersinn nummeriert. Wenn dein Aszendent auf 15° Waage steht, beginnt Haus I auf 15° Waage, Haus II auf 15° Skorpion, Haus III auf 15° Schütze und so weiter. Der Aszendent bestimmt also, welches Zeichen welches Haus regiert, was wiederum die gesamte Struktur der 12 astrologischen Häuser deiner Karte färbt.
 
 Der **Herrscher des Aszendenten** (der Planet, der das Aszendenten-Zeichen regiert) ist der wichtigste Planet deiner Karte. Wenn dein Aszendent Waage ist, ist dein Herrscher Venus. Wo Venus in deiner Karte platziert ist, welche Aspekte sie hat, in welchem Haus sie steht: das sind die zentralen Fragen deiner Lektüre. Der Herrscher des Aszendenten ist sozusagen der Dirigent des Orchesters. Wenn er schwach platziert ist (verbrannt durch die Sonne, in Fall oder Exil), wird das gesamte Selbstausdruck erschwert. Wenn er gut platziert ist (Würde, günstige Aspekte), läuft die Selbst-Expression flüssiger.
 

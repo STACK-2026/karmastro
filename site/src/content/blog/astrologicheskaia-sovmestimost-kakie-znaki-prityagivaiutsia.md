@@ -90,7 +90,7 @@ reviewedBy: "Орион, старший астроном и астролог"
 **Похожие статьи:**
 - [Пифагорейская vs халдейская нумерология: различия и методы](/ru/blog/pifagoreiskaia-vs-khaldeiskaia-numerologia-razlichia)
 - [Как рассчитать число пути жизни: пошаговый метод](/ru/blog/kak-rasschitat-put-zhizni-poshagovyi-metod)
-- [Плутон в Водолее 2024-2044: великая 20-летняя коллективная мутация](/ru/blog/pluton-vodolei-2024-2044-velikaia-kollektivnaia-mutatsiia)
+- Плутон в Водолее 2024-2044: великая 20-летняя коллективная мутация
 - [Путь жизни 1 в нумерологии: лидерство, независимость и миссия воплощения](/ru/blog/put-zhizni-1-liderstvo-nezavisimost-numerologia)
 
 **Инструменты Karmastro:**

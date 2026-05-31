@@ -92,7 +92,7 @@ Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych
 **Powiązane artykuły:**
 - [Darmowy horoskop natalny : interpretacja pełnej mapy urodzeniowej](/pl/blog/darmowy-horoskop-natalny-interpretacja-pelnej-mapy)
 - [Horoskop dzienny: jak uzyskać naprawdę wiarygodne prognozy astrologiczne](/pl/blog/horoskop-dzienny-wiarygodne-prognozy-astrologiczne)
-- [Liczba ekspresji: odszyfruj co twoje imię mówi o twojej tożsamości](/pl/blog/liczba-ekspresji-numerologia-imie-odszyfrowac-tozsamosc)
+- Liczba ekspresji: odszyfruj co twoje imię mówi o twojej tożsamości
 - [Kompatybilność astrologiczna: jakie znaki naprawdę się przyciągają](/pl/blog/kompatybilnosc-astrologiczna-jakie-znaki-sie-przyciagaja)
 
 **Narzędzia Karmastro:**

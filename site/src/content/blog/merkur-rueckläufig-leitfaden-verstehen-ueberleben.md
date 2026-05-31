@@ -59,7 +59,7 @@ Jedes Jahr neigen die drei Rückläufigkeiten von Merkur dazu, in Zeichen dessel
 
 2026 finden die Rückläufigkeiten vorwiegend in Erd- und Luftzeichen statt, was jedem Periode eine andere Färbung verleiht. In Luftzeichen betreffen die Themen Kommunikation, Verträge, Ideen, Diskussionen in Gruppen. In Wasserzeichen kehren emotionale Missverständnisse, unausgesprochene Familienkonflikte, begrabene Erinnerungen zurück. In Erdzeichen geht es um Verwaltung, Geld, Arbeit, Gesundheit, Körperroutinen. In Feuerzeichen geraten Projekte, Identität, schöpferische Impulse und Konfrontationen in Bewegung.
 
-Diese elementare Färbung ist für astrologische Praktiker wichtig. Sie erlaubt, die Qualität der drei Perioden eines Jahres zu antizipieren und die Arbeit am eigenen Himmel entsprechend auszurichten. Wer 2026 beispielsweise wichtige materielle Entscheidungen plant, weiß, dass die Erdrückläufigkeiten besonders aufmerksame Überprüfungen verlangen, während die Luftrückläufigkeiten eher die schriftlichen und mündlichen Austauschprozesse filtern. Lies unseren Artikel zu den [astrologischen Aspekten](/de/blog/astrologische-aspekte-konjunktion-quadrat-trigon-opposition-sextil), um zu verstehen, wie Merkur mit anderen Planeten in seiner Rückwärtsphase interagiert.
+Diese elementare Färbung ist für astrologische Praktiker wichtig. Sie erlaubt, die Qualität der drei Perioden eines Jahres zu antizipieren und die Arbeit am eigenen Himmel entsprechend auszurichten. Wer 2026 beispielsweise wichtige materielle Entscheidungen plant, weiß, dass die Erdrückläufigkeiten besonders aufmerksame Überprüfungen verlangen, während die Luftrückläufigkeiten eher die schriftlichen und mündlichen Austauschprozesse filtern. Lies unseren Artikel zu den astrologischen Aspekten, um zu verstehen, wie Merkur mit anderen Planeten in seiner Rückwärtsphase interagiert.
 
 ## 4. Merkur, Bote der Götter und Regent deines Geistes
 
@@ -129,7 +129,7 @@ Alle erleben Merkur rückläufig, aber nicht alle spüren es gleich intensiv. De
 
 Der **Gradbereich**, den Merkur rückläufig durchläuft, fällt vielleicht mit einem wichtigen Punkt deiner Karte zusammen: Sonne, Mond, Aszendent, Medium Coeli (Meridian), persönliche Planeten (Venus, Mars), oder Knoten des Mondes. In diesem Fall wird der Transit direkt auf diese sensible Zone treffen. Beispiel: Wenn dein Geburts-Merkur in 12 Grad Zwillinge liegt und eine Rückläufigkeit zwischen 10 und 14 Grad Zwillinge stattfindet, wirst du während dieser drei Wochen einen Merkur-Rückkehr auf deinen Natal-Merkur erleben, eine sehr bedeutungsvolle Periode für Entscheidungen, die mit deinem natürlichen Denkstil und deiner Kommunikation zu tun haben.
 
-Das **Haus** deiner Karte, in dem Merkur rückläufig transitiert, gibt das konkrete Lebensgebiet an, in dem der Effekt wirken wird. In Haus VI die Gesundheit und die tägliche Arbeit, in Haus VII die Beziehungen, in Haus X die Karriere, in Haus IV das Zuhause und die Familie. Für eine detaillierte Erkundung dieser zwölf Gebiete, lies unseren [vollständigen Leitfaden zu den 12 astrologischen Häusern](/de/blog/12-astrologische-haeuser-vollstaendiger-leitfaden-lebensbereiche).
+Das **Haus** deiner Karte, in dem Merkur rückläufig transitiert, gibt das konkrete Lebensgebiet an, in dem der Effekt wirken wird. In Haus VI die Gesundheit und die tägliche Arbeit, in Haus VII die Beziehungen, in Haus X die Karriere, in Haus IV das Zuhause und die Familie. Für eine detaillierte Erkundung dieser zwölf Gebiete, lies unseren vollständigen Leitfaden zu den 12 astrologischen Häusern.
 
 Die **Aspekte**, die der rückläufige Merkur zu deinen Geburtsplaneten bildet, modulieren ebenfalls die Erfahrung. Eine Konjunktion verdichtet das Thema, eine Opposition aktiviert eine Spannung mit einem inneren oder äußeren Gegenüber, ein Trigon erleichtert den Fluss der Überlegungen, ein Quadrat erzwingt eine Entscheidung, ein Sextil bietet kleine Gelegenheiten der Neuausrichtung.
 
@@ -227,7 +227,7 @@ Die astronomische Beobachtung der scheinbaren Rückläufigkeit von Merkur ist st
 
 Merkur rückläufig ist nur einer der vielen Transite, die dein astrologisches Jahr rhythmieren. Um ihn voll in seinem persönlichen Kontext zu verstehen, berechne deinen [Aszendenten](/de/werkzeuge/aszendent), konsultiere unseren Artikel zum [Mondzeichen und der emotionalen Welt](/de/blog/mondzeichen-natalmond-emotionale-welt), und lies unseren Leitfaden zur [Saturn-Rückkehr](/de/blog/saturn-rueckkehr-29-jahre-grosser-uebergang-erwachsensein), um den wichtigsten Transit des Erwachsenwerdens mit den jährlichen Rückläufigkeiten zu kontextualisieren.
 
-Um die kollektive Dimension zu vertiefen, schaue unseren Artikel zu [Pluto im Wassermann 2024-2044](/de/blog/pluto-wassermann-2024-2044-grosse-kollektive-mutation), der den langsamen Transit unserer Epoche beschreibt, und unseren Artikel zu den [Chakren und den 7 Planeten](/de/blog/chakras-astrologie-7-planeten-energiezentren), der die energetische Verbindung zwischen Merkur und dem Kehlchakra erklärt.
+Um die kollektive Dimension zu vertiefen, schaue unseren Artikel zu Pluto im Wassermann 2024-2044, der den langsamen Transit unserer Epoche beschreibt, und unseren Artikel zu den [Chakren und den 7 Planeten](/de/blog/chakras-astrologie-7-planeten-energiezentren), der die energetische Verbindung zwischen Merkur und dem Kehlchakra erklärt.
 
 ## Quellen und Referenzen
 

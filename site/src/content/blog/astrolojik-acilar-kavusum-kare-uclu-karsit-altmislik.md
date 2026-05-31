@@ -184,7 +184,7 @@ Astrolojide gezegenler üç kategoriye ayrılır hızlarına göre: **kişisel**
 
 **Transpersonel gezegenlerle kişisel gezegenler arası açılar** (Güneş-Plüton karesi, Ay-Neptün kavuşumu) derin dönüşüm temalarını getirir. Uranüs 84 yıl, Neptün 165 yıl, Plüton 248 yılda zodyaktan geçer. Bu yüzden transpersonel gezegenler nesil damgasıdır: 1960-1970 arası doğan kişiler Plüton Başak'ta doğmuştur, 1990-2000 arası doğanlar Plüton Yay'dadır. Bu pozisyon onların kolektif kaderini şekillendirir.
 
-**Nesil kuşakları ve kişisel açılar**: bir kişinin Plüton konumu nesil temasıdır ama Plüton kişisel gezegenle açı yaparsa (örneğin Güneş karşıt Plüton) nesil teması o kişide özellikle yoğun yaşanır. [Plüton Kova 2024-2044](/tr/blog/pluton-kova-2024-2044-buyuk-kolektif-donusum) dönemi bir kuşağı tanımlayacak ama bazı bireyler bu dönemi daha yoğun yaşayacak, çünkü doğum haritalarında transit Plüton kişisel noktaları aktive ediyor.
+**Nesil kuşakları ve kişisel açılar**: bir kişinin Plüton konumu nesil temasıdır ama Plüton kişisel gezegenle açı yaparsa (örneğin Güneş karşıt Plüton) nesil teması o kişide özellikle yoğun yaşanır. Plüton Kova 2024-2044 dönemi bir kuşağı tanımlayacak ama bazı bireyler bu dönemi daha yoğun yaşayacak, çünkü doğum haritalarında transit Plüton kişisel noktaları aktive ediyor.
 
 ## 13. Gerçek vaka: Sarah, Güneş karşıt Satürn
 
@@ -261,7 +261,7 @@ Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
 - [Ücretsiz doğum haritası : tam natal yorumlama rehberi](/tr/blog/ucretsiz-dogum-haritasi-tam-natal-yorumlama)
 - [Merkür retrosu: bu dönemleri panik olmadan anlama, öngörme ve hayatta kalma](/tr/blog/merkur-retrosu-tam-rehber-anlamak-hayatta-kalmak)
 - [Satürn dönüşü: 29 yaşındaki her şeyi değiştiren büyük astrolojik geçiş](/tr/blog/saturn-donusu-29-yas-buyuk-yetiskinlik-gecisi)
-- [Plüton Kova](/tr/blog/pluton-kova-2024-2044-buyuk-kolektif-donusum)
+- Plüton Kova
 
 **Karmastro araçları:**
 - [Doğum haritası](/tr/araclar/dogum-haritasi)

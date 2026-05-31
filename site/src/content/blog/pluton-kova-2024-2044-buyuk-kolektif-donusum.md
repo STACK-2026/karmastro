@@ -42,7 +42,7 @@ Tam bir zodyak turu için yaklaşık 248 yıl alır. Bu süre bir insan ömründ
 
 Sembolik olarak Plüton derin dönüşüm, yeniden doğuş, güç, tabu, ölüm ve yeniden kuruluşun gezegenidir. Yunan mitolojisinde Hades, Roma mitolojisinde Pluto, ölüler dünyasının efendisidir ama aynı zamanda yer altı zenginliklerinin (mineraller, metaller, bereketli toprak) sahibidir. Plüton hiçbir şeyi yüzeyde değiştirmez; kökünden söker ve yeniden oluşturur. Bu yüzden astrolojide Plüton transitleri çoğu zaman "her şey bitti, her şey yeniden doğuyor" hissi verir.
 
-[Astrolojik ev rehberimiz](/tr/blog/12-astrolojik-ev-tam-rehber-yasam-sektorleri) Plüton'un natal haritadaki konumunun kişisel olarak nereyi dönüştürdüğünü açıklar. Plüton 8. evde olan birinin ortak kaynak (miras, borç, ortak finans) alanında dönüşümü sürekli bir ders iken, Plüton 11. evde olan birinin grup dinamikleri ve arkadaşlık ağları alanında dönüşümü sürekli iştir.
+Astrolojik ev rehberimiz Plüton'un natal haritadaki konumunun kişisel olarak nereyi dönüştürdüğünü açıklar. Plüton 8. evde olan birinin ortak kaynak (miras, borç, ortak finans) alanında dönüşümü sürekli bir ders iken, Plüton 11. evde olan birinin grup dinamikleri ve arkadaşlık ağları alanında dönüşümü sürekli iştir.
 
 ## 2. Plüton Kova'da neden tarihsel bir olay
 
@@ -90,7 +90,7 @@ Kova modern olarak Uranüs (devrim) ve geleneksel olarak Satürn (yapı) tarafı
 
 Kova'nın gölge yüzü de vardır : soğuk, uzak, duygusal olarak kopuk olabilmek. Plüton'un Kova'da aktive ettiği derin dönüşüm bu gölgeyi de yüzeye çıkaracaktır : hiper-bağlantılı ama duygusal olarak izole toplumlar, yüksek teknolojili ama bağlarını kaybetmiş insanlar, algoritma bağımlı ama komşusunu tanımayan kitleler. 2025-2044 dönemi hem kolektif bağların yeniden keşfini hem bireysel yalnızlığın bir krizini birlikte üretecektir.
 
-[Astrolojik açılar rehberinde](/tr/blog/astrolojik-acilar-kavusum-kare-uclu-karsit-altmislik) Plüton Kova'nın natal Ay ya da Venüs ile yapacağı açılar, kişisel ilişki dinamiklerinin nasıl etkileneceğini anlatır.
+Astrolojik açılar rehberinde Plüton Kova'nın natal Ay ya da Venüs ile yapacağı açılar, kişisel ilişki dinamiklerinin nasıl etkileneceğini anlatır.
 
 ## 7. Önümüzdeki 20 yılın büyük temaları
 
@@ -235,7 +235,7 @@ Bu makale doğrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadır.
 - [Satürn dönüşü: 29 yaşındaki her şeyi değiştiren büyük astrolojik geçiş](/tr/blog/saturn-donusu-29-yas-buyuk-yetiskinlik-gecisi)
 - [Yükselen burç: astrolojik yükselen burcunu anlamak için tam rehber](/tr/blog/yukselen-burc-tam-rehber-yukselen-anlama)
 - [Ücretsiz doğum haritası : tam natal yorumlama rehberi](/tr/blog/ucretsiz-dogum-haritasi-tam-natal-yorumlama)
-- [Astrolojik açılar: kavuşum, kare, üçlü, karşıt, altmışlık - rehber](/tr/blog/astrolojik-acilar-kavusum-kare-uclu-karsit-altmislik)
+- Astrolojik açılar: kavuşum, kare, üçlü, karşıt, altmışlık - rehber
 
 **Karmastro araçları:**
 - [Doğum haritası](/tr/araclar/dogum-haritasi)

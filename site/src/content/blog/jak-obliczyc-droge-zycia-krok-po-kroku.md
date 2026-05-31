@@ -120,7 +120,7 @@ Poniższe daty są udokumentowane publicznie w Wikipedii i Britannice. Służą 
 - **Droga 8: Pablo Picasso** (25.10.1881). 26 → 8. Moc, kolosalna spuścizna.
 - **Droga 9: Mahatma Gandhi** (02.10.1869). 27 → 9. Powszechny mędrzec, domknięcie cyklu historycznego.
 
-Zweryfikuj obliczenia sam lub użyj [kalkulatora online](/pl/narzedzia/liczba-drogi-zycia). Dla kontekstu astrologicznego przeczytaj [aspekty astrologiczne](/pl/blog/aspekty-astrologiczne-koniunkcja-kwadratura-trygon-opozycja-sekstyl) i [12 domów astrologicznych](/pl/blog/12-domow-astrologicznych-kompletny-przewodnik-sektory-zycia).
+Zweryfikuj obliczenia sam lub użyj [kalkulatora online](/pl/narzedzia/liczba-drogi-zycia). Dla kontekstu astrologicznego przeczytaj aspekty astrologiczne i 12 domów astrologicznych.
 
 ## Jak wpleść drogę życia w codzienność
 
@@ -174,7 +174,7 @@ Cykl rozwija się przez **dziewięć kolejnych lat**. Rok 1: nowy cykl, zasiew. 
 
 Kiedy sięgać po drogę życia? Pięć sytuacji, w których ta liczba naprawdę pomaga. **Zmiana kariery**: przed odejściem lub przyjęciem oferty sprawdź zgodność z dominującą energią. Droga 5, która trzykrotnie zignorowała potrzebę ruchu, prawie zawsze kończy się wypaleniem. **Małżeństwo lub długi związek**: skrzyżowanie dróg z partnerem pomaga uniknąć dziesięcioletniego konfliktu podstawowych potrzeb.
 
-**Przeprowadzka**: czwórka potrzebuje stabilności geograficznej, piątka rozkwita w mobilności, szóstka szuka domowego ogniska. **Projekt twórczy lub przedsiębiorczy**: startuj, gdy rok osobisty wspiera inicjatywę (rok 1, 3 lub 8). Unikaj dużych startów w roku 7, okresie introspekcji. **Bilans mid-life (około 40-45 lat)**: numerologia to narzędzie ponownego czytania już przeżytych cykli dziewięcioletnich. Połącz z [powrotem Saturna](/pl/blog/powrot-saturna-29-lat-kryzys-polwiecza) dla decyzji o tranzycji.
+**Przeprowadzka**: czwórka potrzebuje stabilności geograficznej, piątka rozkwita w mobilności, szóstka szuka domowego ogniska. **Projekt twórczy lub przedsiębiorczy**: startuj, gdy rok osobisty wspiera inicjatywę (rok 1, 3 lub 8). Unikaj dużych startów w roku 7, okresie introspekcji. **Bilans mid-life (około 40-45 lat)**: numerologia to narzędzie ponownego czytania już przeżytych cykli dziewięcioletnich. Połącz z [powrotem Saturna](/pl/blog/powrot-saturna-29-lat-wielkie-przejscie-doroslosc/) dla decyzji o tranzycji.
 
 ## Granice i krytyka numerologii
 
@@ -196,7 +196,7 @@ Pod względem naukowym numerologia nie jest walidowana powtarzalną metodą eksp
 
 **Co zrobić jeśli dwie metody dają różny wynik?** Wybierz blokową (dzień, miesiąc, rok redukowane osobno, potem sumowane). Zachowuje pośrednie liczby mistrzowskie, czego suma globalna nie zawsze dokonuje.
 
-**Moja droga to 4, ale rozpoznaję się w 8, dlaczego?** Przeczytaj też liczbę ekspresji (pełne imię i nazwisko) oraz liczbę serca. Droga życia to energia dominująca, nie cały portret numerologiczny. Szczegóły w [artykule o liczbie ekspresji](/pl/blog/liczba-ekspresji-numerologia-imie-odszyfrowac-tozsamosc).
+**Moja droga to 4, ale rozpoznaję się w 8, dlaczego?** Przeczytaj też liczbę ekspresji (pełne imię i nazwisko) oraz liczbę serca. Droga życia to energia dominująca, nie cały portret numerologiczny. Szczegóły w artykule o liczbie ekspresji.
 
 **Czy droga 9 jest "lepsza" od 1?** Nie. Dziewięć dróg niesie misje równoważne, po prostu różne. Droga 1 w służbie misji jest warta drogi 9 w jej służbie. Hierarchie to projekcja kulturowa, nie zasada numerologii.
 
@@ -224,14 +224,14 @@ Pod względem naukowym numerologia nie jest walidowana powtarzalną metodą eksp
 
 - [Czym jest numerologia: kompletny przewodnik](/pl/blog/czym-jest-numerologia-kompletny-przewodnik-dla-poczatkujacych)
 - [Droga życia 1: przywództwo, niezależność](/pl/blog/droga-zycia-1-przywodztwo-niezaleznosc-numerologia)
-- [Liczba ekspresji: imię i tożsamość](/pl/blog/liczba-ekspresji-numerologia-imie-odszyfrowac-tozsamosc)
+- Liczba ekspresji: imię i tożsamość
 - [Rok osobisty 2026: numerologia i cykl 9 lat](/pl/blog/rok-osobisty-2026-numerologia-cykl-9-lat)
 - [Numerologia pitagorejska vs chaldejska](/pl/blog/numerologia-pitagorejska-vs-chaldejska-roznice)
 - [Darmowy horoskop natalny](/pl/blog/darmowy-horoskop-natalny-interpretacja-pelnej-mapy)
 - [Karma, astrologia: poprzednie życia](/pl/blog/karma-astrologia-poprzednie-zycia-mapa-natalna)
 - [Horoskop dzienny: wiarygodne prognozy](/pl/blog/horoskop-dzienny-wiarygodne-prognozy-astrologiczne)
-- [Aspekty astrologiczne](/pl/blog/aspekty-astrologiczne-koniunkcja-kwadratura-trygon-opozycja-sekstyl)
-- [12 domów astrologicznych](/pl/blog/12-domow-astrologicznych-kompletny-przewodnik-sektory-zycia)
+- Aspekty astrologiczne
+- 12 domów astrologicznych
 - [Znak wschodzący: kompletny przewodnik](/pl/blog/znak-wschodzacy-kompletny-przewodnik-zrozumienie)
 - [Znak księżycowy: Księżyc natalny, świat emocjonalny](/pl/blog/znak-ksiezycowy-ksiezyc-natalny-swiat-emocjonalny)
 - [Kalkulator liczby drogi życia](/pl/narzedzia/liczba-drogi-zycia), [kalkulator znaku wschodzącego](/pl/narzedzia/wschodzacy-znak)
@@ -240,7 +240,7 @@ Pod względem naukowym numerologia nie jest walidowana powtarzalną metodą eksp
 ## Warto przeczytać
 
 **Powiązane artykuły:**
-- [Liczba ekspresji: odszyfruj co twoje imię mówi o twojej tożsamości](/pl/blog/liczba-ekspresji-numerologia-imie-odszyfrowac-tozsamosc)
+- Liczba ekspresji: odszyfruj co twoje imię mówi o twojej tożsamości
 - [Rok osobisty 2026: znajdź swoją liczbę i zrozum 9-letni cykl](/pl/blog/rok-osobisty-2026-numerologia-cykl-9-lat)
 - [Numerologia pitagorejska vs chaldejska: różnice i metody porównane](/pl/blog/numerologia-pitagorejska-vs-chaldejska-roznice)
 - [Droga życia 1 w numerologii: przywództwo, niezależność i misja wcielenia](/pl/blog/droga-zycia-1-przywodztwo-niezaleznosc-numerologia)

@@ -144,8 +144,8 @@ reviewedBy: "Орион, старший астроном и астролог"
 
 **Похожие статьи:**
 - [Возвращение Сатурна: великий астрологический переход в 29 лет, меняющий всё](/ru/blog/vozvraschenie-saturna-29-let-bolshoi-perekhod-vzroslost)
-- [Астрологические аспекты: соединение, квадрат, тригон, оппозиция, секстиль - руководство](/ru/blog/astrologicheskie-aspekty-soedinenie-kvadrat-trigon-oppozitsia-sekstil)
-- [Плутон в Водолее 2024-2044: великая 20-летняя коллективная мутация](/ru/blog/pluton-vodolei-2024-2044-velikaia-kollektivnaia-mutatsiia)
+- Астрологические аспекты: соединение, квадрат, тригон, оппозиция, секстиль - руководство
+- Плутон в Водолее 2024-2044: великая 20-летняя коллективная мутация
 - [Бесплатная натальная карта : интерпретировать полный гороскоп](/ru/blog/besplatnaia-natalnaia-karta-interpretirovat-polnyi-goroskop)
 
 **Инструменты Karmastro:**

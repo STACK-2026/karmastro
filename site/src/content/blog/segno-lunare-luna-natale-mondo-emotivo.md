@@ -72,7 +72,7 @@ L'orario di nascita si trova generalmente nell'atto di nascita o nell'estratto d
 
 Usa il [calcolatore di tema natale gratuito di Karmastro](/it/strumenti/tema-natale) per ottenere il calcolo preciso. Lo strumento integra le effemeridi astronomiche ufficiali e tiene conto del fuso orario storico del luogo di nascita (un fattore spesso trascurato dai calcolatori amatoriali: un'ora nel 1970 non aveva sempre lo stesso offset UTC di oggi a causa delle variazioni dell'ora legale e delle modifiche legislative).
 
-Una volta ottenuto il segno lunare, esplora anche la **casa** in cui si trova la Luna (tra le [12 case astrologiche](/it/blog/12-case-astrologiche-guida-completa-settori-vita)): la casa indica il settore di vita in cui la tua Luna si esprime più visibilmente. Luna in Cancro in decima casa si esprime diversamente dalla stessa Luna in Cancro in quarta casa.
+Una volta ottenuto il segno lunare, esplora anche la **casa** in cui si trova la Luna (tra le 12 case astrologiche): la casa indica il settore di vita in cui la tua Luna si esprime più visibilmente. Luna in Cancro in decima casa si esprime diversamente dalla stessa Luna in Cancro in quarta casa.
 
 ## 5. I 12 segni lunari e i loro paesaggi interiori
 
@@ -149,13 +149,13 @@ Gli aspetti (relazioni geometriche) tra la Luna e gli altri pianeti nella carta 
 
 **Luna trigono Giove**: ampia generosità emotiva, ottimismo di fondo, capacità di confortare gli altri. Persone che fanno sentire "a casa" gli altri spontaneamente. Il rischio è l'eccesso di consolazione (mangiare, bere, spendere per compensare).
 
-**Luna opposizione Plutone**: emozioni intense, trasformative, a volte distruttive. Passioni assolute, dinamiche di controllo e perdita del controllo, relazioni karmiche intense. Il lavoro plutoniano consiste nell'accogliere l'ombra emotiva invece di reprimerla. Vedi [Plutone in Acquario](/it/blog/plutone-acquario-2024-2044-grande-mutazione-collettiva) per il contesto generazionale.
+**Luna opposizione Plutone**: emozioni intense, trasformative, a volte distruttive. Passioni assolute, dinamiche di controllo e perdita del controllo, relazioni karmiche intense. Il lavoro plutoniano consiste nell'accogliere l'ombra emotiva invece di reprimerla. Vedi Plutone in Acquario per il contesto generazionale.
 
 **Luna congiunzione Nettuno**: sensibilità medianica, confini psichici porosi, attrazione per il sacro e per l'arte. Il rischio è la difficoltà a distinguere emozioni proprie da emozioni altrui; il dono è un accesso intuitivo profondo.
 
 **Luna trigono Urano**: emozioni originali, libertà affettiva, capacità di innovare nei rapporti. Persone che non si lasciano imprigionare dalle convenzioni emotive. Il rischio è la difficoltà con l'intimità convenzionale; il dono è l'autenticità coraggiosa.
 
-Per una lettura completa degli aspetti, vedi [gli aspetti astrologici](/it/blog/aspetti-astrologici-congiunzione-quadratura-trigono-opposizione-sestile).
+Per una lettura completa degli aspetti, vedi gli aspetti astrologici.
 
 ## 10. Luna progressa
 
@@ -213,7 +213,7 @@ L'astrologia non propone una causalità fisica tra Luna e psiche. Propone una co
 
 ## Andare oltre
 
-La tua Luna natale fa parte di un tutto. Per una visione completa, hai bisogno della tua [carta natale interpretata](/it/strumenti/tema-natale), incrociata con il tuo [ascendente](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico) e le tue [12 case astrologiche](/it/blog/12-case-astrologiche-guida-completa-settori-vita). Per una lettura personalizzata, consulta l'[Oracle Karmastro](https://app.karmastro.com/oracle).
+La tua Luna natale fa parte di un tutto. Per una visione completa, hai bisogno della tua [carta natale interpretata](/it/strumenti/tema-natale), incrociata con il tuo [ascendente](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico) e le tue 12 case astrologiche. Per una lettura personalizzata, consulta l'[Oracle Karmastro](https://app.karmastro.com/oracle).
 
 ## Fonti e riferimenti
 
@@ -229,8 +229,8 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 ## Per approfondire
 
 **Articoli correlati:**
-- [Le 12 case astrologiche: guida completa ai 12 settori della tua vita](/it/blog/12-case-astrologiche-guida-completa-settori-vita)
-- [Plutone in Acquario 2024-2044: la grande mutazione collettiva di 20 anni](/it/blog/plutone-acquario-2024-2044-grande-mutazione-collettiva)
+- Le 12 case astrologiche: guida completa ai 12 settori della tua vita
+- Plutone in Acquario 2024-2044: la grande mutazione collettiva di 20 anni
 - [Ascendente: la guida completa per comprendere il tuo ascendente astrologico](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico)
 - [Segno zodiacale Ariete: personalità, compatibilità e tratti profondi](/it/blog/ariete-segno-zodiacale-personalita-compatibilita)
 

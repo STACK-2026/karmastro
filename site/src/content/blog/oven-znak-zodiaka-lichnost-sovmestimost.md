@@ -92,7 +92,7 @@ reviewedBy: "Орион, старший астроном и астролог"
 **Похожие статьи:**
 - [Возвращение Сатурна: великий астрологический переход в 29 лет, меняющий всё](/ru/blog/vozvraschenie-saturna-29-let-bolshoi-perekhod-vzroslost)
 - [Бесплатная натальная карта : интерпретировать полный гороскоп](/ru/blog/besplatnaia-natalnaia-karta-interpretirovat-polnyi-goroskop)
-- [12 астрологических домов: полное руководство по 12 секторам твоей жизни](/ru/blog/12-astrologicheskikh-domov-polnoe-rukovodstvo)
+- 12 астрологических домов: полное руководство по 12 секторам твоей жизни
 - [Лунный знак: что твоя натальная Луна говорит о твоём эмоциональном мире](/ru/blog/lunnyi-znak-natalnaia-luna-emotsionalnyi-mir)
 
 **Инструменты Karmastro:**

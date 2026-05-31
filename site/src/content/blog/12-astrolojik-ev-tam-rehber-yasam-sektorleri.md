@@ -159,7 +159,7 @@ Akrep'in doğal evidir, modern olarak Plüton tarafından, geleneksel olarak Mar
 
 Ev VIII'in klasik temaları şunlardır: bir kimliğin ölümüyle başka birinin doğması, ölümlülüğümüzün bilincine varma, başkasıyla derin füzyon (cinsellik ve duygusal teslimiyet), ortak kaynaklar (ortak banka hesabı, miras). Plüton ev VIII'de olan biri yaşamı boyunca birkaç büyük kriz yaşar, her biri daha derin bir versiyonunu doğurur.
 
-Terapötik meslekler (psikanaliz, Gestalt, EMDR, Jungçu analiz) ev VIII'de yoğun gezegenlere sahip kişileri çeker. Araştırmacılar, dedektifler, araştırmacı gazeteciler de aynı şekilde, çünkü ev VIII gizlenen şeyleri ortaya çıkarmayı temsil eder. [Plüton Kova 2024-2044](/tr/blog/pluton-kova-2024-2044-buyuk-kolektif-donusum) döneminin kolektif olarak ev VIII temalarını harekete geçirdiğini anlamak önemlidir.
+Terapötik meslekler (psikanaliz, Gestalt, EMDR, Jungçu analiz) ev VIII'de yoğun gezegenlere sahip kişileri çeker. Araştırmacılar, dedektifler, araştırmacı gazeteciler de aynı şekilde, çünkü ev VIII gizlenen şeyleri ortaya çıkarmayı temsil eder. Plüton Kova 2024-2044 döneminin kolektif olarak ev VIII temalarını harekete geçirdiğini anlamak önemlidir.
 
 ## 13. Ev IX: seyahatler, yüksek öğrenim, inançlar
 
@@ -247,7 +247,7 @@ Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
 **İlgili makaleler:**
 - [Koç burcu: kişilik, uyumluluk ve derin özellikler](/tr/blog/koc-burcu-kisilik-uyumluluk-ozellikler)
 - [Ay burcu: doğum Ay](/tr/blog/ay-burcu-dogum-ayi-duygusal-dunya)
-- [Astrolojik açılar: kavuşum, kare, üçlü, karşıt, altmışlık - rehber](/tr/blog/astrolojik-acilar-kavusum-kare-uclu-karsit-altmislik)
+- Astrolojik açılar: kavuşum, kare, üçlü, karşıt, altmışlık - rehber
 - [Yükselen burç: astrolojik yükselen burcunu anlamak için tam rehber](/tr/blog/yukselen-burc-tam-rehber-yukselen-anlama)
 
 **Karmastro araçları:**

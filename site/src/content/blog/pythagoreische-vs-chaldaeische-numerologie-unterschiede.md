@@ -129,7 +129,7 @@ Dritter Grund: wissenschaftliche und psychologische Integration. Die pythagoreis
 
 Vierter Grund: Kompatibilität mit den Karmastro-Werkzeugen. Unsere Werkzeuge der [Lebenszahl](/de/werkzeuge/lebenszahl), der Ausdruckszahl und der Persönlichkeitszahl basieren auf der pythagoreischen Tabelle. Dies gewährleistet interne Konsistenz zwischen deinen verschiedenen numerologischen Ergebnissen auf der Plattform.
 
-Wir erwähnen dennoch die chaldäische Methode in unseren Inhalten aus Respekt vor der Tradition und weil sie eine gültige Option für die Nutzer ist, die sie erforschen möchten. Unsere pädagogische Haltung ist: die pythagoreische Methode ist der empfohlene Einstiegspunkt, die chaldäische Methode ist eine interessante Ergänzung für die erfahrenen Praktizierenden. Für deinen Einstieg, beginne mit der [pythagoreischen Lebenszahl](/de/werkzeuge/lebenszahl) und lies unseren [Leitfaden zur Ausdruckszahl](/de/blog/ausdruckszahl-numerologie-name-identitaet-entschluesseln).
+Wir erwähnen dennoch die chaldäische Methode in unseren Inhalten aus Respekt vor der Tradition und weil sie eine gültige Option für die Nutzer ist, die sie erforschen möchten. Unsere pädagogische Haltung ist: die pythagoreische Methode ist der empfohlene Einstiegspunkt, die chaldäische Methode ist eine interessante Ergänzung für die erfahrenen Praktizierenden. Für deinen Einstieg, beginne mit der [pythagoreischen Lebenszahl](/de/werkzeuge/lebenszahl) und lies unseren Leitfaden zur Ausdruckszahl.
 
 ## 8. Häufige Fragen
 
@@ -160,7 +160,7 @@ Beide Methoden sind zwei gültige Wege, die dieselbe Realität berühren: die sy
 
 Wenn du beginnst, benutze die pythagoreische Methode. Sie ist besser dokumentiert, besser standardisiert, schneller zu meistern, und produziert reproduzierbare Ergebnisse. Berechne deine [Lebenszahl kostenlos auf Karmastro](/de/werkzeuge/lebenszahl) und entdecke deine Ausdruckszahl. Wenn du später die Vibration deines Namens auf einer klanglichen und mystischen Ebene vertiefen möchtest, explore die chaldäische Numerologie mit den klassischen Werken von Cheiro.
 
-Für einen umfassenderen Einstieg in die Numerologie, lies unseren [vollständigen Leitfaden für Anfänger](/de/blog/was-ist-numerologie-vollstaendiger-anfaenger-leitfaden), unsere Artikel über die verschiedenen Lebenszahlen (beginnend mit [Lebenszahl 1](/de/blog/lebenszahl-1-fuehrung-unabhaengigkeit-numerologie)), die [Ausdruckszahl](/de/blog/ausdruckszahl-numerologie-name-identitaet-entschluesseln) und das [persönliche Jahr 2026](/de/blog/persoenliches-jahr-2026-numerologie-9-jahre-zyklus). Kreuze deine numerologischen Ergebnisse mit deiner astrologischen Karte, indem du dein [Geburtshoroskop](/de/werkzeuge/geburtshoroskop) konsultierst, für eine umfassende Selbsterkenntnis.
+Für einen umfassenderen Einstieg in die Numerologie, lies unseren [vollständigen Leitfaden für Anfänger](/de/blog/was-ist-numerologie-vollstaendiger-anfaenger-leitfaden), unsere Artikel über die verschiedenen Lebenszahlen (beginnend mit [Lebenszahl 1](/de/blog/lebenszahl-1-fuehrung-unabhaengigkeit-numerologie)), die Ausdruckszahl und das [persönliche Jahr 2026](/de/blog/persoenliches-jahr-2026-numerologie-9-jahre-zyklus). Kreuze deine numerologischen Ergebnisse mit deiner astrologischen Karte, indem du dein [Geburtshoroskop](/de/werkzeuge/geburtshoroskop) konsultierst, für eine umfassende Selbsterkenntnis.
 
 ## Quellen und Referenzen
 
@@ -178,7 +178,7 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 **Ähnliche Artikel:**
 - [Was ist Numerologie? Vollständiger Leitfaden für Anfänger](/de/blog/was-ist-numerologie-vollstaendiger-anfaenger-leitfaden)
 - [Lebenszahl 1 in Numerologie: Führung, Unabhängigkeit und Inkarnationsmission](/de/blog/lebenszahl-1-fuehrung-unabhaengigkeit-numerologie)
-- [Ausdruckszahl: entschlüssele was dein Name über deine Identität verrät](/de/blog/ausdruckszahl-numerologie-name-identitaet-entschluesseln)
+- Ausdruckszahl: entschlüssele was dein Name über deine Identität verrät
 - [Persönliches Jahr 2026: finde deine Zahl und verstehe den 9-Jahre-Zyklus](/de/blog/persoenliches-jahr-2026-numerologie-9-jahre-zyklus)
 
 **Karmastro Werkzeuge:**

@@ -119,9 +119,9 @@ reviewedBy: "Orion、シニア天文学者兼占星術師"
 
 **関連記事:**
 - [無料の出生図 完全なナタルチャート解釈の実践ガイド](/ja/blog/muryou-shusseizu-kanzen-natal-kaishaku)
-- [12のアストロロジー・ハウス:人生の12セクターの完全ガイド](/ja/blog/12-no-asutoroji-hausu-kanzen-gaido)
-- [冥王星水瓶座 2024-2044:20年間の大規模な集団変容](/ja/blog/meiousei-mizugame-2024-2044-daikibo-shuudan-henyou)
-- [占星術アスペクト:合、スクエア、トライン、オポジション、セクスタイル - ガイド](/ja/blog/asutoroji-asupekuto-goukei-sukuea-torin-opposshon-sekisutairu)
+- 12のアストロロジー・ハウス:人生の12セクターの完全ガイド
+- 冥王星水瓶座 2024-2044:20年間の大規模な集団変容
+- 占星術アスペクト:合、スクエア、トライン、オポジション、セクスタイル - ガイド
 
 **Karmastro 診断ツール:**
 - [出生図](/ja/shindan/shusseizu)

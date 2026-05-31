@@ -84,7 +84,7 @@ Manipura befindet sich am Solarplexus, im Bereich zwischen Nabel und Brustbein. 
 
 Die **Sonne**, zentrales Symbol der Karte, ist das perfekte Korrelat dieses Chakras: sie ist die Identität, die Essenz, die zentrale Vitalität des Wesens. Astrologisch sagt die Sonne, wer du in deiner irreduziblen Dimension bist. Eine Person mit Sonne in Spannung (Quadrate mit Saturn, Oppositionen mit Pluto, schwierige Konjunktionen mit Neptun) lebt häufig ein geleertes Manipura: Impostor-Syndrom, Unfähigkeit, den eigenen Wert zu beanspruchen, chronische Prokrastination, wiederkehrende Verdauungsprobleme. Die klassische Astrologie verband den Solarplexus bereits durch den Namen selbst mit der Sonne.
 
-Das Haus, in dem die Sonne in deiner Karte steht, zeigt, wo deine Identität leuchten will: Sonne in Haus X sucht öffentliche Anerkennung, Sonne in Haus V sucht kreativen Ausdruck, Sonne in Haus I sucht direkte körperliche Präsenz. Um deine Sonne präzise in den [12 astrologischen Häusern](/de/blog/12-astrologische-haeuser-vollstaendiger-leitfaden-lebensbereiche) zu verorten, brauchst du eine exakte Geburtszeit. Die Sonnentransite aktivieren ebenfalls das Chakra: Episoden von [Merkur rückläufig](/de/blog/merkur-rueckläufig-leitfaden-verstehen-ueberleben) in Feuerzeichen koinzidieren häufig mit Phasen, in denen Manipura eine bewusste Neubewertung verlangt.
+Das Haus, in dem die Sonne in deiner Karte steht, zeigt, wo deine Identität leuchten will: Sonne in Haus X sucht öffentliche Anerkennung, Sonne in Haus V sucht kreativen Ausdruck, Sonne in Haus I sucht direkte körperliche Präsenz. Um deine Sonne präzise in den 12 astrologischen Häusern zu verorten, brauchst du eine exakte Geburtszeit. Die Sonnentransite aktivieren ebenfalls das Chakra: Episoden von [Merkur rückläufig](/de/blog/merkur-rueckläufig-leitfaden-verstehen-ueberleben) in Feuerzeichen koinzidieren häufig mit Phasen, in denen Manipura eine bewusste Neubewertung verlangt.
 
 ## 7. Anahata, das Herzchakra, und Venus
 
@@ -108,7 +108,7 @@ Ajna befindet sich zwischen den Augenbrauen, im Bereich der Stirn. Es ist das Ze
 
 **Jupiter**, Planet der Expansion, der Philosophie, der Vision, der inneren Richtung, ist das natürliche Korrelat in der hermetisch-modernen Schule (manche traditionelle Traditionen bevorzugen hier Merkur oder Neptun). Jupiter in der Karte sagt, wo deine innere Vision sich entfaltet, welche Weisheit du zu entwickeln eingeladen bist. Ein Jupiter in Spannung (Quadrat mit Saturn, Opposition mit Pluto) manifestiert sich oft als erzwungenes Ajna: kognitive Rigidität, Schwierigkeit, die eigene intuitive Autorität zu vertrauen, Übertriebenheit in der intellektuellen Kontrolle.
 
-Die Arbeit am dritten Auge umfasst Meditation, Traumpraxis (Tagebuch, Traumarbeit), periodisches bewusstes Fasten, und manchmal Reisen, die die gewohnten mentalen Rahmen durchbrechen. Ein [Jupiter-Transit über einen persönlichen Planeten](/de/blog/pluto-wassermann-2024-2044-grosse-kollektive-mutation) öffnet oft das Ajna und bringt plötzliche intuitive Einsichten.
+Die Arbeit am dritten Auge umfasst Meditation, Traumpraxis (Tagebuch, Traumarbeit), periodisches bewusstes Fasten, und manchmal Reisen, die die gewohnten mentalen Rahmen durchbrechen. Ein Jupiter-Transit über einen persönlichen Planeten öffnet oft das Ajna und bringt plötzliche intuitive Einsichten.
 
 ## 10. Sahasrara, das Kronenchakra, und Neptun
 
@@ -199,7 +199,7 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 **Ähnliche Artikel:**
 - [Merkur rückläufig: wie du diese Phasen verstehst, antizipierst und ohne Panik überlebst](/de/blog/merkur-rueckläufig-leitfaden-verstehen-ueberleben)
 - [KI-Orakel vs traditionelles Tarot: welche Führung 2026 wählen?](/de/blog/ki-orakel-vs-traditionelles-tarot-welche-fuehrung)
-- [Die 12 astrologischen Häuser: vollständiger Leitfaden der 12 Lebensbereiche](/de/blog/12-astrologische-haeuser-vollstaendiger-leitfaden-lebensbereiche)
+- Die 12 astrologischen Häuser: vollständiger Leitfaden der 12 Lebensbereiche
 - [Persönliches Jahr 2026: finde deine Zahl und verstehe den 9-Jahre-Zyklus](/de/blog/persoenliches-jahr-2026-numerologie-9-jahre-zyklus)
 
 **Karmastro Werkzeuge:**

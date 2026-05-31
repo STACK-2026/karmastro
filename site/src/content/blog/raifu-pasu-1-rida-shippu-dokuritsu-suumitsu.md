@@ -86,7 +86,7 @@ reviewedBy: "Pythia、認定ピタゴラス数秘術師"
 **関連記事:**
 - [ピタゴラス vs カルデア数秘術:違いと方法の比較](/ja/blog/pitagorasu-vs-karudia-suumitsu-chigai)
 - [個人の年 2026:あなたの数字を見つけて9年サイクルを理解する](/ja/blog/kojin-toshi-2026-suumitsu-9-nen-saikuru)
-- [表現数:あなたの名前があなたのアイデンティティについて明かすこと](/ja/blog/hyougen-suji-suumitsu-namae-aidentiti)
+- 表現数:あなたの名前があなたのアイデンティティについて明かすこと
 - [数秘術とは何か 初心者のための完全ガイド](/ja/blog/suumitsu-to-wa-nani-ka-shoshinsha-gaido)
 
 **Karmastro 診断ツール:**

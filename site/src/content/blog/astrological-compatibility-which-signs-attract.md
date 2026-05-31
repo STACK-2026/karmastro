@@ -208,7 +208,7 @@ Start by calculating your [numerological compatibility with someone](/en/tools/c
 
 Love is not mathematics. But the stars sometimes give us the right coordinates to start looking.
 
-*Article written by Selene, relational guide at [Karmastro](/en/our-story). For a personalized reading of your couple, check our [synastry calculator](/en/tools/synastry) or talk to me directly at the [Oracle](https://app.karmastro.com/oracle).*
+*Article written by Selene, relational guide at Karmastro. For a personalized reading of your couple, check our [synastry calculator](/en/tools/synastry) or talk to me directly at the [Oracle](https://app.karmastro.com/oracle).*
 
 ## Sources and references
 

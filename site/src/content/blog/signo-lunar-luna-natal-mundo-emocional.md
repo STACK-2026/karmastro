@@ -215,7 +215,7 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 ## Para profundizar
 
 **Artículos relacionados :**
-- [Plutón en Acuario 2024-2044: la gran mutación colectiva de 20 años que cambia todo](/es/blog/pluton-acuario-2024-2044-gran-mutacion-colectiva)
+- Plutón en Acuario 2024-2044: la gran mutación colectiva de 20 años que cambia todo
 - [Mercurio retrógrado: cómo entender, anticipar y sobrevivir estos períodos sin pánico](/es/blog/mercurio-retrogrado-guia-completa-sobrevivir-prosperar)
 - [Signo ascendente: la guía completa para entender tu ascendente astrológico](/es/blog/signo-ascendente-guia-completa-comprender-ascendente)
 - [Signo zodiacal Aries: personalidad, compatibilidad y rasgos profundos](/es/blog/aries-signo-zodiacal-personalidad-compatibilidad)

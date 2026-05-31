@@ -39,7 +39,7 @@ Yükselen burcun, doğumunun tam anında doğu ufkunda yükselen zodyak burcudur
 
 Yükselen burç genellikle **sosyal maskenin** olarak adlandırılır, ama bu formül çok indirgemecidir. Yükselen burcun, ruhunun dünyada bedenlendiği şekildir. Bir maske değil, bir mercektir. Güneş burcun sana ne olduğunu, Ay burcun nasıl hissettiğini, yükselen burcun ise dünyaya nasıl göründüğünü ve ilk tepkilerini nasıl verdiğini anlatır. Üç katmanın üçü de gerçek ve aynı anda çalışır.
 
-Yükselen aynı zamanda doğum haritanın 12 evinin başladığı noktadır, yani **birinci ev**'in sınırıdır. Bu yüzden yükselen burcunu değiştirmek, teorik olarak tüm evlerin sınırlarını kaydırır ve haritanın iç geometrisini yeniden düzenler. Bir astrolog için yükselen olmadan harita neredeyse okunamaz, bir güneş burcu listesinden ibaret kalır. [12 astrolojik ev rehberimiz](/tr/blog/12-astrolojik-ev-tam-rehber-yasam-sektorleri) bu noktayı detaylandırır.
+Yükselen aynı zamanda doğum haritanın 12 evinin başladığı noktadır, yani **birinci ev**'in sınırıdır. Bu yüzden yükselen burcunu değiştirmek, teorik olarak tüm evlerin sınırlarını kaydırır ve haritanın iç geometrisini yeniden düzenler. Bir astrolog için yükselen olmadan harita neredeyse okunamaz, bir güneş burcu listesinden ibaret kalır. 12 astrolojik ev rehberimiz bu noktayı detaylandırır.
 
 ## 2. Astroloji tarihinde yükselen
 
@@ -168,7 +168,7 @@ Bir veya daha fazla gezegen birinci evinde (yani yükselenden sonraki 30 derecel
 
 **Birinci evde Plüton**: yoğun varlık, dönüşüm teması. Başka insanlar bu kişinin etrafında "kendini açmış" hisseder. Psikoloji, derin araştırma, iyileştirme alanlarına yakın.
 
-[Astrolojik açılar rehberimiz](/tr/blog/astrolojik-acilar-kavusum-kare-uclu-karsit-altmislik) bu gezegenlerin yükselene nasıl bağlandığını (kavuşum, kare, üçlü) incelemek için temel referanstır.
+Astrolojik açılar rehberimiz bu gezegenlerin yükselene nasıl bağlandığını (kavuşum, kare, üçlü) incelemek için temel referanstır.
 
 ## 10. Güneş ve yükselen karşıt olduğunda
 
@@ -221,7 +221,7 @@ Evet, çok fazla. İki kişinin yükselenleri arasındaki açı (uyumlu, kare, k
 Eğer yükselenin bir burcun son dereceleri (28-29) veya bir sonraki burcun ilk dereceleri (0-1) civarındaysa, iki yorum arasında salınabilir. Bu durumda doğum saatinin hassasiyetini yeniden kontrol etmek gerekir. Çoğu zaman birkaç dakikalık bir kayma net bir sonuç verir. Hâlâ belirsizse, iki yükselen okumasını da deneyebilirsin.
 
 **Plüton Kova döneminde yükselen burcumun ne önemi var?**
-[Plüton Kova transiti (2024-2044)](/tr/blog/pluton-kova-2024-2044-buyuk-kolektif-donusum) döneminde Kova yükselenler doğrudan kendi birinci evlerinde Plüton'un transitini yaşayacaklar, yani bu uzun dönüşüm onların kimlik ve görünürlük algısında derin bir sarsıntı oluşturacak. Diğer yükselenler için Plüton Kova farklı evleri vurur.
+Plüton Kova transiti (2024-2044) döneminde Kova yükselenler doğrudan kendi birinci evlerinde Plüton'un transitini yaşayacaklar, yani bu uzun dönüşüm onların kimlik ve görünürlük algısında derin bir sarsıntı oluşturacak. Diğer yükselenler için Plüton Kova farklı evleri vurur.
 
 **Karmik perspektiften yükselen neyi söyler?**
 [Karma astroloji](/tr/blog/karma-astroloji-gecmis-yasamlar-dogum-haritasi) perspektifinde yükselen bu enkarnasyonda çalışılacak sıfır noktasıdır. Ruhun bu hayata hangi beden-mizaç kombinasyonunda başladığını gösterir ve genellikle önceki yaşamlarda eksik geliştirilmiş özelliklerin bu hayatta ilk yüz olarak sunulduğu okunur.
@@ -244,9 +244,9 @@ Bu makale doğrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadır.
 ## Daha fazlası
 
 **İlgili makaleler:**
-- [Plüton Kova](/tr/blog/pluton-kova-2024-2044-buyuk-kolektif-donusum)
+- Plüton Kova
 - [Koç burcu: kişilik, uyumluluk ve derin özellikler](/tr/blog/koc-burcu-kisilik-uyumluluk-ozellikler)
-- [12 astrolojik ev: hayatının 12 sektörünün tam rehberi](/tr/blog/12-astrolojik-ev-tam-rehber-yasam-sektorleri)
+- 12 astrolojik ev: hayatının 12 sektörünün tam rehberi
 - [Ay burcu: doğum Ay](/tr/blog/ay-burcu-dogum-ayi-duygusal-dunya)
 
 **Karmastro araçları:**

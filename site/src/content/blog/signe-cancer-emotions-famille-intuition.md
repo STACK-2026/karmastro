@@ -341,7 +341,7 @@ En **numérologie**, le **chemin de vie** (calculé à partir de la date de nais
 - En astrologie, la **Lune** (planète maîtresse du Cancer) gouverne l’**inconscient** et les **réflexes de survie**.
 - Un Cancer peut être **extraverti en petit comité** (famille, amis proches) et réservé en public.
 
-*Pour aller plus loin : [Notre article sur l’ascendant Cancer](https://karmastro.com/blog/ascendant-cancer).*
+*Pour aller plus loin : [Notre article sur l’ascendant Cancer](/blog/signe-ascendant-guide-complet-comprendre-ascendant/).*
 
 ---
 

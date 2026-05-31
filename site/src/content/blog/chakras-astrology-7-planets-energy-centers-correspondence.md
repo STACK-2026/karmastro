@@ -40,7 +40,7 @@ The seven chakras and the planets of your natal chart are not two separate syste
 
 Linking astrology and chakras lets you move from an abstract reading (symbols, angles, signs) to an embodied reading (what you feel in your body, where you hurt, where you breathe well). It gives you a practical tool for healing and rebalancing yourself, not just an intellectual grid.
 
-In this article, we will go through the seven chakras one by one, link each to a planet of your chart, show you how to detect your tensions, and above all how to release them. If you want to know your chart first, start by calculating your [rising sign](/en/tools/rising-sign) and your [moon sign](/en/tools/moon-sign), which are the foundations of this reading.
+In this article, we will go through the seven chakras one by one, link each to a planet of your chart, show you how to detect your tensions, and above all how to release them. If you want to know your chart first, start by calculating your [rising sign](/en/tools/rising-sign) and your moon sign, which are the foundations of this reading.
 
 ## 2. Origins: tantric yoga and Hindu astrology
 
@@ -256,7 +256,7 @@ No. Tibetan tantric tradition has slightly different variants. Western esoteric 
 
 ## Going further
 
-The chakra-astrology correspondence is a powerful key to moving from an intellectual to an embodied reading. If you want to explore your chart in this light, start by calculating your [rising sign](/en/tools/rising-sign), your [moon sign](/en/tools/moon-sign), and your [life path number](/en/tools/life-path-number). These three bases give you the framework.
+The chakra-astrology correspondence is a powerful key to moving from an intellectual to an embodied reading. If you want to explore your chart in this light, start by calculating your [rising sign](/en/tools/rising-sign), your moon sign, and your [life path number](/en/tools/life-path-number). These three bases give you the framework.
 
 For a personalized reading of your three planets in greatest tension and the chakras they correspond to, the [Oracle](https://app.karmastro.com/oracle) can do it for you in a few minutes.
 

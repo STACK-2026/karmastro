@@ -122,8 +122,8 @@ reviewedBy: "Орион, старший астроном и астролог"
 ## Читать дальше
 
 **Похожие статьи:**
-- [12 астрологических домов: полное руководство по 12 секторам твоей жизни](/ru/blog/12-astrologicheskikh-domov-polnoe-rukovodstvo)
-- [Астрологические аспекты: соединение, квадрат, тригон, оппозиция, секстиль - руководство](/ru/blog/astrologicheskie-aspekty-soedinenie-kvadrat-trigon-oppozitsia-sekstil)
+- 12 астрологических домов: полное руководство по 12 секторам твоей жизни
+- Астрологические аспекты: соединение, квадрат, тригон, оппозиция, секстиль - руководство
 - [Бесплатная натальная карта : интерпретировать полный гороскоп](/ru/blog/besplatnaia-natalnaia-karta-interpretirovat-polnyi-goroskop)
 - [Возвращение Сатурна: великий астрологический переход в 29 лет, меняющий всё](/ru/blog/vozvraschenie-saturna-29-let-bolshoi-perekhod-vzroslost)
 

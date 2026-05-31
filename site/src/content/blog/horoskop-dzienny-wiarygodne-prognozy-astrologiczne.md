@@ -76,7 +76,7 @@ Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych
 **Powiązane artykuły:**
 - [Darmowy horoskop natalny : interpretacja pełnej mapy urodzeniowej](/pl/blog/darmowy-horoskop-natalny-interpretacja-pelnej-mapy)
 - [Czym jest numerologia: kompletny przewodnik dla poczatkujacych 2026](/pl/blog/czym-jest-numerologia-kompletny-przewodnik-dla-poczatkujacych)
-- [Aspekty astrologiczne: koniunkcja, kwadratura, trygon, opozycja, sekstyl - przewodnik](/pl/blog/aspekty-astrologiczne-koniunkcja-kwadratura-trygon-opozycja-sekstyl)
+- Aspekty astrologiczne: koniunkcja, kwadratura, trygon, opozycja, sekstyl - przewodnik
 - [Merkury retrogradny: jak zrozumieć, przewidzieć i przetrwać te okresy bez paniki](/pl/blog/merkury-retrogradny-kompletny-przewodnik-przetrwac)
 
 **Narzędzia Karmastro:**

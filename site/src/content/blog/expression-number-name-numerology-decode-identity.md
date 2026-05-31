@@ -362,7 +362,7 @@ Yes, totally. With the letter-number table, it is a five-minute exercise at most
 
 The expression number is one of the pillars of your personal numerology. For a complete reading of your numerological chart, cross it with your [life path number](/en/tools/life-path-number) and your [personal year](/en/tools/personal-year). Together they give you a precise map of your functioning and your tempo.
 
-You can also cross these readings with your astrological chart by starting with your [rising sign](/en/tools/rising-sign) and your [moon sign](/en/tools/moon-sign). Numerology and astrology are two complementary languages that describe the same realities from different angles.
+You can also cross these readings with your astrological chart by starting with your [rising sign](/en/tools/rising-sign) and your moon sign. Numerology and astrology are two complementary languages that describe the same realities from different angles.
 
 For a personalized and complete reading that crosses all these levels, the [Oracle](https://app.karmastro.com/oracle) can do it for you in a few minutes, starting from your full name, your date, and your place of birth.
 

@@ -168,7 +168,7 @@ Ay diğer gezegenlerle açı yaparak karakterini modüle eder.
 
 **Ay Neptün**: duygusal hassasiyet, empati, sanatsal/mistik kapasiteler. Risk: sınır erozyonu, bağımlılıklar, yalnızlık kaçışı olarak fantezi.
 
-**Ay-Kuzey düğüm açıları**: karma ailevi temalar. Bu ömürde çözülmesi gereken atasal duygusal kalıplar. [Astrolojik açılar rehberi](/tr/blog/astrolojik-acilar-kavusum-kare-uclu-karsit-altmislik) açı yorumlamanın teknik çerçevesini sunar.
+**Ay-Kuzey düğüm açıları**: karma ailevi temalar. Bu ömürde çözülmesi gereken atasal duygusal kalıplar. Astrolojik açılar rehberi açı yorumlamanın teknik çerçevesini sunar.
 
 ## 10. İlerlemiş Ay
 
@@ -244,7 +244,7 @@ Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
 **İlgili makaleler:**
 - [Ücretsiz doğum haritası : tam natal yorumlama rehberi](/tr/blog/ucretsiz-dogum-haritasi-tam-natal-yorumlama)
 - [Satürn dönüşü: 29 yaşındaki her şeyi değiştiren büyük astrolojik geçiş](/tr/blog/saturn-donusu-29-yas-buyuk-yetiskinlik-gecisi)
-- [Plüton Kova](/tr/blog/pluton-kova-2024-2044-buyuk-kolektif-donusum)
+- Plüton Kova
 - [Yükselen burç: astrolojik yükselen burcunu anlamak için tam rehber](/tr/blog/yukselen-burc-tam-rehber-yukselen-anlama)
 
 **Karmastro araçları:**

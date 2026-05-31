@@ -31,7 +31,7 @@ The word **karma** comes from Sanskrit and literally means "**action**." In Hind
 
 Whether you take it literally or see it as a powerful psychological metaphor, the concept of karma has crossed centuries and gradually integrated into modern Western astrology, notably through the work of pioneers like **Dane Rudhyar**, **Martin Schulman**, **Steven Forrest**, and **Liz Greene**. **Karmic astrology** is today a recognized branch of psychological astrology.
 
-I am **Orion**, your karmic coach at [Karmastro](/en/our-story). A former professor of Stoic philosophy, I turned to karmic guidance after my first transformative Saturn return. In this article, I am going to explain how to read karma in a birth chart, without vague mysticism, with concrete and actionable markers.
+I am **Orion**, your karmic coach at Karmastro. A former professor of Stoic philosophy, I turned to karmic guidance after my first transformative Saturn return. In this article, I am going to explain how to read karma in a birth chart, without vague mysticism, with concrete and actionable markers.
 
 **Important**: karmic astrology does not **predict** your past life with certainty. It offers a **symbolic frame** to understand certain recurring patterns, unexplained fears, immediate affinities with certain people or places. Take it as a tool of inner exploration, not a mystical verdict.
 
@@ -234,7 +234,7 @@ To explore your own astrological karma, start by calculating your [free birth ch
 
 The ordeals you live are not punishments. They are invitations. It is up to you to respond.
 
-*Article written by Orion, karmic coach and Stoic at [Karmastro](/en/our-story). For a personalized karmic reading, consult the [Oracle](https://app.karmastro.com/oracle) and choose me as your guide.*
+*Article written by Orion, karmic coach and Stoic at Karmastro. For a personalized karmic reading, consult the [Oracle](https://app.karmastro.com/oracle) and choose me as your guide.*
 
 ## Sources and references
 
@@ -250,8 +250,8 @@ This article draws on verifiable encyclopedic and scientific sources.
 **Related articles:**
 - [What is numerology? A complete beginner](/en/blog/what-is-numerology-complete-beginner-guide)
 - [How to calculate your life path number: the Pythagorean method step by step](/en/blog/how-to-calculate-life-path-number-step-by-step)
-- [Pluto in Aquarius 2024-2044: the 20-year collective mutation that changes everything](/en/blog/pluto-in-aquarius-2024-2044-great-collective-mutation)
-- [Astrological aspects: conjunction, square, trine, opposition, sextile, the guide to read them](/en/blog/astrological-aspects-conjunction-square-trine-opposition-sextile)
+- Pluto in Aquarius 2024-2044: the 20-year collective mutation that changes everything
+- Astrological aspects: conjunction, square, trine, opposition, sextile, the guide to read them
 
 **Karmastro tools:**
 - [Birth chart](/en/tools/birth-chart)

@@ -244,7 +244,7 @@ Astrology is not a crystal ball. It is a **compass**. It does not tell you where
 
 The stars speak to those who know how to listen. I am here to help you decode what they are whispering to you today.
 
-*Article written by Sibylle, astrologer Oracle at [Karmastro](/en/our-story). For your [free daily horoscope](/en/horoscope) or a [personalized consultation](https://app.karmastro.com/oracle).*
+*Article written by Sibylle, astrologer Oracle at Karmastro. For your [free daily horoscope](/en/horoscope) or a [personalized consultation](https://app.karmastro.com/oracle).*
 
 ## Sources and references
 
@@ -258,9 +258,9 @@ This article draws on verifiable encyclopedic and scientific sources.
 ## For further reading
 
 **Related articles:**
-- [The 12 astrological houses: a complete guide to the 12 sectors of your life](/en/blog/12-astrological-houses-complete-guide-life-sectors)
+- The 12 astrological houses: a complete guide to the 12 sectors of your life
 - [Personal year 2026: find your number and understand the 9-year cycle that shapes your life](/en/blog/personal-year-2026-numerology-9-year-cycle)
-- [Pluto in Aquarius 2024-2044: the 20-year collective mutation that changes everything](/en/blog/pluto-in-aquarius-2024-2044-great-collective-mutation)
+- Pluto in Aquarius 2024-2044: the 20-year collective mutation that changes everything
 - [How to calculate your life path number: the Pythagorean method step by step](/en/blog/how-to-calculate-life-path-number-step-by-step)
 
 **Karmastro tools:**

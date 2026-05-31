@@ -79,7 +79,7 @@ Comparemos as duas escolas numa grelha clara, elemento por elemento.
 
 **Números mestres**: invenção pitagórica (11, 22, 33), ausentes da caldeia. Num tema caldeu, os 11 reduzem a 2, os 22 a 4, os 33 a 6, sem exceção. Num tema pitagórico, preservam-se e são lidos como vibrações intensificadas. **Filosofia geral**: a caldeia é mais mística, vibracional, próxima das tradições esotéricas antigas; a pitagórica é mais racional, matemática, próxima da filosofia grega clássica. Qualquer leitura séria deve explicitar qual método utiliza antes de propor interpretações.
 
-Para compreender como estas diferenças se cruzam com o cálculo do [número de expressão](/pt/blog/numero-expressao-numerologia-nome-decifrar-identidade), que depende diretamente da tabela letra-cifra, lê o nosso artigo específico sobre o tema.
+Para compreender como estas diferenças se cruzam com o cálculo do número de expressão, que depende diretamente da tabela letra-cifra, lê o nosso artigo específico sobre o tema.
 
 ## 5. Exemplo comparado
 
@@ -113,7 +113,7 @@ Em Karmastro, escolhemos deliberadamente a **numerologia pitagórica estrita** c
 
 Primeiro, **reprodutibilidade e transparência**. A tabela pitagórica é simples, verificável, ensinável. Qualquer leitor ou leitora pode refazer os nossos cálculos em menos de dois minutos com papel e caneta. Esta acessibilidade é fundamental para uma plataforma que se quer séria e desmistificadora: recusamos práticas onde o utilizador é dependente de "iniciados" para verificar um resultado. A pitagórica permite autonomia intelectual, a caldeia exige por natureza uma tradição oral de transmissão que a torna menos aberta.
 
-Segundo, **coerência com a nossa abordagem filosófica**: "o espiritual, racionalmente". Karmastro articula astronomia rigorosa (Swiss Ephemeris), psicologia simbólica contemporânea, e herança das tradições antigas, sempre num quadro de argumentação racional. A escola pitagórica encaixa naturalmente neste quadro, pois foi precisamente fundada pela tradição filosófica que defendeu a racionalidade do real. A caldeia, mais mística por natureza, seria inconsistente com o tom geral do nosso trabalho editorial. Esta coerência estende-se a outras dimensões como a interpretação dos [aspetos astrológicos](/pt/blog/aspetos-astrologicos-conjuncao-quadratura-trigono-oposicao-sextil) e das [12 casas astrológicas](/pt/blog/12-casas-astrologicas-guia-completo-setores-vida).
+Segundo, **coerência com a nossa abordagem filosófica**: "o espiritual, racionalmente". Karmastro articula astronomia rigorosa (Swiss Ephemeris), psicologia simbólica contemporânea, e herança das tradições antigas, sempre num quadro de argumentação racional. A escola pitagórica encaixa naturalmente neste quadro, pois foi precisamente fundada pela tradição filosófica que defendeu a racionalidade do real. A caldeia, mais mística por natureza, seria inconsistente com o tom geral do nosso trabalho editorial. Esta coerência estende-se a outras dimensões como a interpretação dos aspetos astrológicos e das 12 casas astrológicas.
 
 Terceiro, **acessibilidade ao maior número**. Oitenta e cinco por cento dos livros de numerologia publicados em português, espanhol, francês, inglês e italiano usam o método pitagórico. Escolher a pitagórica significa permitir aos nossos utilizadores cruzar as nossas análises com praticamente qualquer outra referência disponível, sem tradução metodológica. Os nossos leitores podem ir verificar as nossas interpretações em qualquer livro, qualquer curso, qualquer praticante externo, e encontrar a mesma linguagem.
 
@@ -141,7 +141,7 @@ Não diretamente. A astrologia opera com símbolos e ângulos planetários, não
 
 As duas escolas são dois caminhos igualmente válidos dentro das suas próprias tradições. A caldeia é mais antiga, mais mística, mais vibracional, exige transmissão tradicional. A pitagórica é mais recente, mais racional, mais aritmética, ensinável em autoaprendizagem. Nenhuma é superior à outra: são duas respostas filosóficas diferentes à mesma pergunta fundamental: "como é que os números falam das pessoas?".
 
-Se estás a começar em numerologia, a recomendação geral é simples: usa a pitagórica. É transparente, reprodutível, compatível com a maioria das referências publicadas, alinhada com os sistemas esotéricos ocidentais modernos. Começa por calcular o teu [caminho de vida](/pt/ferramentas/numero-do-caminho-de-vida), que aliás é idêntico nas duas escolas, e depois progride para o [número de expressão](/pt/blog/numero-expressao-numerologia-nome-decifrar-identidade) calculado em pitagórica.
+Se estás a começar em numerologia, a recomendação geral é simples: usa a pitagórica. É transparente, reprodutível, compatível com a maioria das referências publicadas, alinhada com os sistemas esotéricos ocidentais modernos. Começa por calcular o teu [caminho de vida](/pt/ferramentas/numero-do-caminho-de-vida), que aliás é idêntico nas duas escolas, e depois progride para o número de expressão calculado em pitagórica.
 
 Para uma leitura personalizada que cruze números pitagóricos com outras dimensões da tua vida (astrologia, momentos de trânsito, questões atuais), consulta o [Oracle Karmastro](https://app.karmastro.com/oracle), que articula várias vozes especializadas, incluindo Pythia, focada na numerologia.
 
@@ -160,7 +160,7 @@ Este artigo baseia-se em fontes enciclopédicas e científicas verificáveis.
 
 **Artigos relacionados:**
 - [O que é a numerologia? Guia completo para iniciantes](/pt/blog/o-que-e-numerologia-guia-completo-iniciantes)
-- [Número de expressão: decifra o que o teu nome revela da tua identidade](/pt/blog/numero-expressao-numerologia-nome-decifrar-identidade)
+- Número de expressão: decifra o que o teu nome revela da tua identidade
 - [Caminho de vida 1 em numerologia: liderança, independência e missão de encarnação](/pt/blog/caminho-de-vida-1-lideranca-independencia-numerologia)
 - [Ano pessoal 2026: encontra o teu número e compreende o ciclo de 9 anos](/pt/blog/ano-pessoal-2026-numerologia-ciclo-9-anos)
 

@@ -81,7 +81,7 @@ Dla polskich znakow diakrytycznych istnieja adaptacje: "A" jak "A", "C" jak "C",
 
 ### Liczba ekspresji (przeznaczenia)
 
-**Liczba ekspresji** jest obliczana z pelnego imienia urodzeniowego, lacznie z nazwiskiem i drugim imieniem. Kazda litera jest zastepowana odpowiednia cyfra, sumy redukowane do jednej cyfry. Ta liczba pokazuje naturalne talenty, sposoby wyrazania siebie i to, co powinienes urzeczywistnic w swiecie zewnetrznym. Pelny przewodnik dostepny w [Liczba ekspresji: imie i tozsamosc](/pl/blog/liczba-ekspresji-numerologia-imie-odszyfrowac-tozsamosc).
+**Liczba ekspresji** jest obliczana z pelnego imienia urodzeniowego, lacznie z nazwiskiem i drugim imieniem. Kazda litera jest zastepowana odpowiednia cyfra, sumy redukowane do jednej cyfry. Ta liczba pokazuje naturalne talenty, sposoby wyrazania siebie i to, co powinienes urzeczywistnic w swiecie zewnetrznym. Pelny przewodnik dostepny w Liczba ekspresji: imie i tozsamosc.
 
 ### Liczba intymnej duszy
 
@@ -175,7 +175,7 @@ W Polsce nie ma panstwowych standardow nauczania numerologii. Prywatne szkoly (A
 
 ### Powiazane praktyki
 
-Numerologia naturalnie laczy sie z astrologia. Zbadaj [12 domow astrologicznych: kompletny przewodnik](/pl/blog/12-domow-astrologicznych-kompletny-przewodnik-sektory-zycia), [Znak wschodzacy: kompletny przewodnik](/pl/blog/znak-wschodzacy-kompletny-przewodnik-zrozumienie), [Znak ksiezycowy: ksiezyc natalny i swiat emocjonalny](/pl/blog/znak-ksiezycowy-ksiezyc-natalny-swiat-emocjonalny) oraz [Baran: znak zodiaku, osobowosc, kompatybilnosc](/pl/horoscope/baran). Dla okresow retrogradacji: [Merkury retrogradny: kompletny przewodnik](/pl/blog/merkury-retrogradny-kompletny-przewodnik-przetrwac). Dla plutonowych transformacji: [Pluton w Wodniku 2024-2044](/pl/blog/pluton-wodnik-2024-2044-wielka-mutacja-zbiorowa). I dla rozwoju w 29 lat: [Powrot Saturna](/pl/blog/powrot-saturna-29-lat-wielkie-przejscie-doroslosc). Interesujace sa rowniez [Karma i astrologia: poprzednie zycia](/pl/blog/karma-astrologia-poprzednie-zycia-mapa-natalna) oraz [Aspekty astrologiczne](/pl/blog/aspekty-astrologiczne-koniunkcja-kwadratura-trygon-opozycja-sekstyl).
+Numerologia naturalnie laczy sie z astrologia. Zbadaj 12 domow astrologicznych: kompletny przewodnik, [Znak wschodzacy: kompletny przewodnik](/pl/blog/znak-wschodzacy-kompletny-przewodnik-zrozumienie), [Znak ksiezycowy: ksiezyc natalny i swiat emocjonalny](/pl/blog/znak-ksiezycowy-ksiezyc-natalny-swiat-emocjonalny) oraz [Baran: znak zodiaku, osobowosc, kompatybilnosc](/pl/horoscope/baran). Dla okresow retrogradacji: [Merkury retrogradny: kompletny przewodnik](/pl/blog/merkury-retrogradny-kompletny-przewodnik-przetrwac). Dla plutonowych transformacji: Pluton w Wodniku 2024-2044. I dla rozwoju w 29 lat: [Powrot Saturna](/pl/blog/powrot-saturna-29-lat-wielkie-przejscie-doroslosc). Interesujace sa rowniez [Karma i astrologia: poprzednie zycia](/pl/blog/karma-astrologia-poprzednie-zycia-mapa-natalna) oraz Aspekty astrologiczne.
 
 Nie zapomnij tez o [Czakry i astrologia: 7 planet i centra energetyczne](/pl/blog/czakry-astrologia-7-planet-centra-energetyczne) oraz [Horoskop dzienny: wiarygodne prognozy](/pl/blog/horoskop-dzienny-wiarygodne-prognozy-astrologiczne).
 
@@ -299,7 +299,7 @@ Artykul sprawdzony i zaktualizowany przez Oriona, starszego astronoma i certyfik
 ## Warto przeczytać
 
 **Powiązane artykuły:**
-- [Liczba ekspresji: odszyfruj co twoje imię mówi o twojej tożsamości](/pl/blog/liczba-ekspresji-numerologia-imie-odszyfrowac-tozsamosc)
+- Liczba ekspresji: odszyfruj co twoje imię mówi o twojej tożsamości
 - [Jak obliczyć drogę życia krok po kroku](/pl/blog/jak-obliczyc-droge-zycia-krok-po-kroku)
 - [Rok osobisty 2026: znajdź swoją liczbę i zrozum 9-letni cykl](/pl/blog/rok-osobisty-2026-numerologia-cykl-9-lat)
 - [Droga życia 1 w numerologii: przywództwo, niezależność i misja wcielenia](/pl/blog/droga-zycia-1-przywodztwo-niezaleznosc-numerologia)

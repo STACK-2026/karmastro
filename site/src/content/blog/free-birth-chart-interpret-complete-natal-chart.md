@@ -161,7 +161,7 @@ If all this seems complex, you can ask your question directly to the [Karmastro 
 
 To deepen your birth chart reading, I recommend:
 
-- Our [complete astrology glossary](/en/glossary) with definitions of all technical terms
+- Our complete astrology glossary with definitions of all technical terms
 - Our [rising sign calculator](/en/tools/rising-sign) if you just want to quickly check your ascendant
 - Our [synastry calculator](/en/tools/synastry) to cross your chart with someone else's
 - Our [daily transits calculator](/en/tools/transits) to see which planets are activating your chart today
@@ -206,7 +206,7 @@ And when you need a living, embodied reading that crosses your birth chart with 
 
 The stars predict nothing. They reflect. It is up to you to decide what you do with that reflection.
 
-*Article written by Sibylle, astrologer Oracle at [Karmastro](/en/our-story). To go deeper, check our [glossary](/en/glossary), our [Swiss Ephemeris methodology](/en/precision), or try the [Oracle](https://app.karmastro.com/oracle).*
+*Article written by Sibylle, astrologer Oracle at Karmastro. To go deeper, check our glossary, our Swiss Ephemeris methodology, or try the [Oracle](https://app.karmastro.com/oracle).*
 
 ## Sources and references
 
@@ -220,8 +220,8 @@ This article draws on verifiable encyclopedic and scientific sources.
 ## For further reading
 
 **Related articles:**
-- [Astrological aspects: conjunction, square, trine, opposition, sextile, the guide to read them](/en/blog/astrological-aspects-conjunction-square-trine-opposition-sextile)
-- [Pluto in Aquarius 2024-2044: the 20-year collective mutation that changes everything](/en/blog/pluto-in-aquarius-2024-2044-great-collective-mutation)
+- Astrological aspects: conjunction, square, trine, opposition, sextile, the guide to read them
+- Pluto in Aquarius 2024-2044: the 20-year collective mutation that changes everything
 - [Mercury retrograde: how to understand, anticipate, and survive these periods without panic](/en/blog/mercury-retrograde-complete-guide-survive-thrive)
 - [The Saturn return: the great astrological passage at 29 that changes everything](/en/blog/saturn-return-29-major-passage-into-adulthood)
 

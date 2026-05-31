@@ -274,7 +274,7 @@ It is normal. Year 5 is the most eventful of the cycle. The advice is to keep a 
 
 The personal year is one of the most practical tools in numerology, because it gives you a precise frame to pilot your year. But it only makes full sense in the context of your overall numerology. If you have not yet calculated your [life path number](/en/tools/life-path-number), that is the first thing to do. It gives you the grand direction of your life, on which the personal year adds an annual rhythm.
 
-You can also explore your natal astrological chart by starting with your [rising sign](/en/tools/rising-sign) and your [moon sign](/en/tools/moon-sign). Crossing numerology and astrology gives you a particularly rich view of what you are going through.
+You can also explore your natal astrological chart by starting with your [rising sign](/en/tools/rising-sign) and your moon sign. Crossing numerology and astrology gives you a particularly rich view of what you are going through.
 
 If you want a personalized and tailored reading of your 2026 year, with key months, favorable periods, and traps to avoid, the [Oracle](https://app.karmastro.com/oracle) can do it for you in a few minutes.
 

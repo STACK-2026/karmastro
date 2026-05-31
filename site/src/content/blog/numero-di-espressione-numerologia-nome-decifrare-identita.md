@@ -110,7 +110,7 @@ Il numero 33 è il grande servitore, il maestro dell'amore universale. Porta la 
 
 **9 - L'umanista**: compassione, universalità, trasmissione. Il 9 è il numero della saggezza finale, della comprensione globale. Spesso presente in profili spirituali, umanitari, artistici. Il rischio è l'idealismo disconnesso dal reale.
 
-Questi nove archetipi non vanno letti come categorie rigide ma come energie predominanti. Ognuno di noi porta, in proporzioni variabili, tutti e nove i numeri nel proprio tema completo (data di nascita, nome, vocali, consonanti, numero personale dell'anno in corso). Il numero di espressione è solo uno dei tasselli. Per una lettura ricca, integra questa informazione con [gli aspetti astrologici](/it/blog/aspetti-astrologici-congiunzione-quadratura-trigono-opposizione-sestile) del tuo tema natale e con il tuo [segno lunare](/it/blog/segno-lunare-luna-natale-mondo-emotivo), che illumina la dimensione emotiva complementare.
+Questi nove archetipi non vanno letti come categorie rigide ma come energie predominanti. Ognuno di noi porta, in proporzioni variabili, tutti e nove i numeri nel proprio tema completo (data di nascita, nome, vocali, consonanti, numero personale dell'anno in corso). Il numero di espressione è solo uno dei tasselli. Per una lettura ricca, integra questa informazione con gli aspetti astrologici del tuo tema natale e con il tuo [segno lunare](/it/blog/segno-lunare-luna-natale-mondo-emotivo), che illumina la dimensione emotiva complementare.
 
 ## 7. I numeri maestri nel dettaglio
 
@@ -136,7 +136,7 @@ No, assolutamente no. Ogni numero di espressione ha le sue qualità e le sue tra
 Il nome completo di nascita, come registrato all'anagrafe: nome di battesimo, secondi nomi (se presenti) e cognome. Omettere un secondo nome distorce il calcolo. Per i cognomi composti ("De Luca", "Di Marco"), somma tutte le lettere come un'unica parola, senza considerare la particella separatamente.
 
 **Cosa succede se il numero di espressione contraddice il cammino di vita?**
-È un pattern frequente e non problematico. Un cammino di vita 5 (avventura) con un'espressione 4 (struttura) indica qualcuno che cerca libertà ma si esprime con metodo: creatività organizzata, nomadismo pianificato. Le "contraddizioni" numerologiche sono in realtà sfumature ricche. Vedi anche [le 12 case astrologiche](/it/blog/12-case-astrologiche-guida-completa-settori-vita) per incrociare numerologia e astrologia.
+È un pattern frequente e non problematico. Un cammino di vita 5 (avventura) con un'espressione 4 (struttura) indica qualcuno che cerca libertà ma si esprime con metodo: creatività organizzata, nomadismo pianificato. Le "contraddizioni" numerologiche sono in realtà sfumature ricche. Vedi anche le 12 case astrologiche per incrociare numerologia e astrologia.
 
 **Il numero di espressione predice la carriera?**
 Indica una predisposizione, non un destino. Un'espressione 3 eccellerà nella comunicazione ma può essere giornalista, insegnante, attore, venditore o influencer. Il numero suggerisce il registro, non il mestiere preciso.
@@ -149,7 +149,7 @@ Entrambi descrivono la "maschera sociale" o l'immagine pubblica. Il numero di es
 
 ## Andare oltre
 
-Incrocia il tuo numero di espressione con il tuo [cammino di vita](/it/strumenti/numero-del-cammino-di-vita), esplora le [case astrologiche](/it/blog/12-case-astrologiche-guida-completa-settori-vita) e consulta l'[Oracle](https://app.karmastro.com/oracle) per un'analisi integrata.
+Incrocia il tuo numero di espressione con il tuo [cammino di vita](/it/strumenti/numero-del-cammino-di-vita), esplora le case astrologiche e consulta l'[Oracle](https://app.karmastro.com/oracle) per un'analisi integrata.
 
 ## Fonti e riferimenti
 

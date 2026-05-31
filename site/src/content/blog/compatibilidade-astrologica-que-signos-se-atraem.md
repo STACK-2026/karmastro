@@ -194,7 +194,7 @@ Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
 - [Signo ascendente: o guia completo para entender o teu ascendente astrológico](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente)
 - [Signo zodiacal Carneiro: personalidade, compatibilidade e traços profundos](/pt/blog/carneiro-signo-zodiacal-personalidade-compatibilidade)
 - [O que é a numerologia? Guia completo para iniciantes](/pt/blog/o-que-e-numerologia-guia-completo-iniciantes)
-- [Número de expressão: decifra o que o teu nome revela da tua identidade](/pt/blog/numero-expressao-numerologia-nome-decifrar-identidade)
+- Número de expressão: decifra o que o teu nome revela da tua identidade
 
 **Ferramentas Karmastro:**
 - [Mapa natal](/pt/ferramentas/mapa-natal)

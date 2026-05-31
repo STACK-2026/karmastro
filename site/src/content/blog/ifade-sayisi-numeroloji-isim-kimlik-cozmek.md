@@ -96,7 +96,7 @@ Bir master sayının aktivasyonu genellikle hayat transitinin belirli bir anınd
 
 Bu dokuz profilin hiçbiri hapishane değil, başlangıç noktasıdır. [Kişisel yıl 2026 rehberi](/tr/blog/kisisel-yil-2026-numeroloji-9-yil-dongusu) ile çapraz okursan ifade sayının hangi yılda nasıl aktive olacağını öğrenirsin.
 
-Profillerin ötesine geçmek için iki ek okuma önerilir. Birincisi: ifade sayısını astrolojik [yükselen burçla](/tr/blog/yukselen-burc-tam-rehber-yukselen-anlama) karşılaştır. Yükselen burç da kamusal algıyı yönetir ve ifade sayısıyla sinerji ya da çelişki gösterebilir. Örneğin ifade sayısı 3 (yaratıcı) ve yükselen Başak (detaycı) olan birinde iki farklı kamusal profil paralel çalışır ve gerginlik yaratabilir. İkincisi: ifade sayısını [astrolojik evlerle](/tr/blog/12-astrolojik-ev-tam-rehber-yasam-sektorleri), özellikle onuncu ev (MC) kariyer evi ile, karşılaştır. Onuncu ev burcu ve ifade sayısı hizalandığında profesyonel yol pürüzsüzdür; hizalanmadığında uyum için bilinçli bir çalışma gerekir.
+Profillerin ötesine geçmek için iki ek okuma önerilir. Birincisi: ifade sayısını astrolojik [yükselen burçla](/tr/blog/yukselen-burc-tam-rehber-yukselen-anlama) karşılaştır. Yükselen burç da kamusal algıyı yönetir ve ifade sayısıyla sinerji ya da çelişki gösterebilir. Örneğin ifade sayısı 3 (yaratıcı) ve yükselen Başak (detaycı) olan birinde iki farklı kamusal profil paralel çalışır ve gerginlik yaratabilir. İkincisi: ifade sayısını astrolojik evlerle, özellikle onuncu ev (MC) kariyer evi ile, karşılaştır. Onuncu ev burcu ve ifade sayısı hizalandığında profesyonel yol pürüzsüzdür; hizalanmadığında uyum için bilinçli bir çalışma gerekir.
 
 ## 7. Sık sorulan sorular
 

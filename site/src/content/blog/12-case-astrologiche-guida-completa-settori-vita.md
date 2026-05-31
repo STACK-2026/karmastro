@@ -131,7 +131,7 @@ La casa VIII è la più misteriosa e temuta della ruota. Governa le **grandi tra
 
 Plutone in casa VIII intensifica tutti i processi di trasformazione: crisi ricorrenti, morti e rinascite psichiche, rapporto intenso con il potere e la sessualità. Marte in casa VIII dà una libido forte e una capacità di affrontare le crisi frontalmente. Nettuno in casa VIII apre a esperienze mistiche, medianiche, oppure a confusioni attorno al denaro condiviso. Saturno in casa VIII indica spesso controllo stretto della sessualità o delle eredità, paura della perdita, ma anche capacità di gestire crisi prolungate.
 
-In astrologia ellenistica, la casa VIII era chiamata *porta dell'Ade*. Gli antichi le associavano la morte letterale e il mondo dei defunti. La lettura moderna post-junghiana, soprattutto quella di Liz Greene, l'ha trasformata in casa dei processi iniziatici: tutto ciò che ti costringe a lasciar morire una parte di te per rinascere altrove. I grandi lutti, le crisi di coppia profonde, i passaggi spirituali sono inscritti qui. Questo dominio si incrocia con il cammino evolutivo del [ritorno di Saturno](/it/blog/ritorno-di-saturno-29-anni-grande-passaggio-adulto) e con le trasformazioni plutoniane collettive come [Plutone in Acquario 2024-2044](/it/blog/plutone-acquario-2024-2044-grande-mutazione-collettiva).
+In astrologia ellenistica, la casa VIII era chiamata *porta dell'Ade*. Gli antichi le associavano la morte letterale e il mondo dei defunti. La lettura moderna post-junghiana, soprattutto quella di Liz Greene, l'ha trasformata in casa dei processi iniziatici: tutto ciò che ti costringe a lasciar morire una parte di te per rinascere altrove. I grandi lutti, le crisi di coppia profonde, i passaggi spirituali sono inscritti qui. Questo dominio si incrocia con il cammino evolutivo del [ritorno di Saturno](/it/blog/ritorno-di-saturno-29-anni-grande-passaggio-adulto) e con le trasformazioni plutoniane collettive come Plutone in Acquario 2024-2044.
 
 ## 13. Casa IX: viaggi, studi superiori, credenze
 
@@ -155,7 +155,7 @@ La casa XI governa il **collettivo scelto**. Comprende le amicizie di lunga dura
 
 Urano in casa XI rinforza la vocazione innovatrice e l'inscrizione in movimenti di avanguardia. Giove in casa XI moltiplica le amicizie e favorisce la protezione reticolare. Saturno in casa XI può ridurre il numero di amicizie ma renderle stabili e durature nel tempo. Mercurio in casa XI favorisce le reti intellettuali, le liste di diffusione, le comunità di scambio. Nettuno in casa XI crea ideali collettivi forti ma anche delusioni per tradimento di gruppo.
 
-Con l'ingresso di Plutone in Acquario (2024-2044), la casa XI acquista un'importanza inedita per una generazione intera. I temi di governance collettiva, reti digitali, movimenti ideologici e intelligenza collettiva si radicano qui. Approfondisci nella nostra analisi di [Plutone in Acquario 2024-2044](/it/blog/plutone-acquario-2024-2044-grande-mutazione-collettiva). La casa XI è anche il luogo in cui si inscrivono i sogni a lungo termine, gli obiettivi progettati su decenni.
+Con l'ingresso di Plutone in Acquario (2024-2044), la casa XI acquista un'importanza inedita per una generazione intera. I temi di governance collettiva, reti digitali, movimenti ideologici e intelligenza collettiva si radicano qui. Approfondisci nella nostra analisi di Plutone in Acquario 2024-2044. La casa XI è anche il luogo in cui si inscrivono i sogni a lungo termine, gli obiettivi progettati su decenni.
 
 ## 16. Casa XII: inconscio, ritiro, segreti
 
@@ -189,7 +189,7 @@ No. Significa soltanto che nessun pianeta principale è posizionato in quella ca
 
 ## Andare oltre
 
-Per esplorare la tua carta, inizia calcolando il tuo [ascendente](/it/strumenti/ascendente) e consulta l'[Oracle](https://app.karmastro.com/oracle) di Karmastro per un'interpretazione integrata. Per capire come gli aspetti tra pianeti dialogano con le case, leggi la guida agli [aspetti astrologici](/it/blog/aspetti-astrologici-congiunzione-quadratura-trigono-opposizione-sestile).
+Per esplorare la tua carta, inizia calcolando il tuo [ascendente](/it/strumenti/ascendente) e consulta l'[Oracle](https://app.karmastro.com/oracle) di Karmastro per un'interpretazione integrata. Per capire come gli aspetti tra pianeti dialogano con le case, leggi la guida agli aspetti astrologici.
 
 ## Fonti e riferimenti
 

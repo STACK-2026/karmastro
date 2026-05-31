@@ -39,7 +39,7 @@ Mercurio retrogrado è probabilmente il transito astrologico più mediatizzato, 
 
 La verità è più sottile e più utile. Mercurio retrogrado non produce catastrofi. Produce un *rallentamento dei processi mercuriali*, cioè di tutto ciò che riguarda la circolazione dell'informazione, della parola, dello scambio e del pensiero veloce. In questo rallentamento, errori di comunicazione, dimenticanze e tensioni aumentano statisticamente, ma nulla di catastrofico se sei preparato. L'errore comune è usare Mercurio retrogrado come scusa per non agire. L'approccio corretto è adattare il ritmo della tua azione al ritmo pianetario del momento.
 
-Se vuoi prima conoscere la tua carta natale e capire dove Mercurio agisce in modo specifico nel tuo tema, calcola il tuo [ascendente](/it/strumenti/ascendente) e leggi la nostra guida alle [12 case astrologiche](/it/blog/12-case-astrologiche-guida-completa-settori-vita). La casa dove si trova Mercurio natale ti dice dove il transito retrogrado si farà sentire di più per te personalmente.
+Se vuoi prima conoscere la tua carta natale e capire dove Mercurio agisce in modo specifico nel tuo tema, calcola il tuo [ascendente](/it/strumenti/ascendente) e leggi la nostra guida alle 12 case astrologiche. La casa dove si trova Mercurio natale ti dice dove il transito retrogrado si farà sentire di più per te personalmente.
 
 ## 2. La meccanica celeste
 
@@ -133,9 +133,9 @@ Per interpretare finemente un transito, incrocia il segno di Mercurio retrogrado
 
 Tutti vivono Mercurio retrogrado ma non tutti lo sentono allo stesso modo. L'intensità dipende da tre fattori del tuo tema:
 
-**Primo**, la **casa natale** in cui Mercurio retrograda per te. Se retrograda nella tua casa VII (coppia), vivrai tensioni di coppia. Se è nella tua casa X (carriera), tensioni professionali. Se è nella casa XII, tensioni sotterranee e inconsce. Per capire le case, vedi la nostra guida alle [12 case astrologiche](/it/blog/12-case-astrologiche-guida-completa-settori-vita).
+**Primo**, la **casa natale** in cui Mercurio retrograda per te. Se retrograda nella tua casa VII (coppia), vivrai tensioni di coppia. Se è nella tua casa X (carriera), tensioni professionali. Se è nella casa XII, tensioni sotterranee e inconsce. Per capire le case, vedi la nostra guida alle 12 case astrologiche.
 
-**Secondo**, gli **aspetti esatti** che Mercurio retrogrado forma con i tuoi pianeti natali. Una congiunzione esatta di Mercurio retrogrado sul tuo Sole natale produce un transito intenso e personale. Un'opposizione di Mercurio retrogrado alla tua Luna natale produce tensioni emotive-comunicative per qualche giorno. Per capire gli [aspetti astrologici](/it/blog/aspetti-astrologici-congiunzione-quadratura-trigono-opposizione-sestile), leggi la guida dedicata.
+**Secondo**, gli **aspetti esatti** che Mercurio retrogrado forma con i tuoi pianeti natali. Una congiunzione esatta di Mercurio retrogrado sul tuo Sole natale produce un transito intenso e personale. Un'opposizione di Mercurio retrogrado alla tua Luna natale produce tensioni emotive-comunicative per qualche giorno. Per capire gli aspetti astrologici, leggi la guida dedicata.
 
 **Terzo**, la **posizione del tuo Mercurio natale**. Se il tuo Mercurio natale è forte (domicilio, aspetti armoniosi), ammortizzi meglio i transiti retrogradi. Se è afflitto (in caduta, quadrato a Saturno o Nettuno), i transiti sono più ruvidi.
 
@@ -225,7 +225,7 @@ Sì, soprattutto attraverso il ritorno di ex partner e i malintesi di coppia. Se
 
 ## Andare oltre
 
-Mercurio retrogrado è solo uno dei transiti. Calcola il tuo [ascendente](/it/strumenti/ascendente) e consulta l'[Oracle](https://app.karmastro.com/oracle) Karmastro per una lettura integrata. Per comprendere le grandi traiettorie, leggi anche il [ritorno di Saturno](/it/blog/ritorno-di-saturno-29-anni-grande-passaggio-adulto) e la guida alle [12 case astrologiche](/it/blog/12-case-astrologiche-guida-completa-settori-vita). Per approfondire la trama delle relazioni tra pianeti, consulta gli [aspetti astrologici](/it/blog/aspetti-astrologici-congiunzione-quadratura-trigono-opposizione-sestile).
+Mercurio retrogrado è solo uno dei transiti. Calcola il tuo [ascendente](/it/strumenti/ascendente) e consulta l'[Oracle](https://app.karmastro.com/oracle) Karmastro per una lettura integrata. Per comprendere le grandi traiettorie, leggi anche il [ritorno di Saturno](/it/blog/ritorno-di-saturno-29-anni-grande-passaggio-adulto) e la guida alle 12 case astrologiche. Per approfondire la trama delle relazioni tra pianeti, consulta gli aspetti astrologici.
 
 ## Fonti e riferimenti
 
@@ -242,8 +242,8 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 **Articoli correlati :**
 - [Il ritorno di Saturno: il grande passaggio astrologico a 29 anni che cambia tutto](/it/blog/ritorno-di-saturno-29-anni-grande-passaggio-adulto)
 - [Tema natale gratuito: come interpretare la tua carta astrale completa](/it/blog/tema-natale-gratuito-interpretare-carta-astrale-completa)
-- [Le 12 case astrologiche: guida completa ai 12 settori della tua vita](/it/blog/12-case-astrologiche-guida-completa-settori-vita)
-- [Aspetti astrologici: congiunzione, quadratura, trigono, opposizione, sestile - la guida](/it/blog/aspetti-astrologici-congiunzione-quadratura-trigono-opposizione-sestile)
+- Le 12 case astrologiche: guida completa ai 12 settori della tua vita
+- Aspetti astrologici: congiunzione, quadratura, trigono, opposizione, sestile - la guida
 
 **Strumenti Karmastro:**
 - [Tema natale](/it/strumenti/tema-natale)

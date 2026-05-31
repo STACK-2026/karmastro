@@ -103,7 +103,7 @@ reviewedBy: "Орион, старший астроном и астролог"
 ## Читать дальше
 
 **Похожие статьи:**
-- [12 астрологических домов: полное руководство по 12 секторам твоей жизни](/ru/blog/12-astrologicheskikh-domov-polnoe-rukovodstvo)
+- 12 астрологических домов: полное руководство по 12 секторам твоей жизни
 - [Знак зодиака Овен: личность, совместимость и глубокие черты](/ru/blog/oven-znak-zodiaka-lichnost-sovmestimost)
 - [Возвращение Сатурна: великий астрологический переход в 29 лет, меняющий всё](/ru/blog/vozvraschenie-saturna-29-let-bolshoi-perekhod-vzroslost)
 - [Восходящий знак: полное руководство к пониманию твоего астрологического асцендента](/ru/blog/voskhodiaschii-znak-polnoe-rukovodstvo-ponimaniie)

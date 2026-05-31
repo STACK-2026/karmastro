@@ -204,7 +204,7 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 - [Segno lunare: cosa la tua Luna natale rivela del tuo mondo emotivo](/it/blog/segno-lunare-luna-natale-mondo-emotivo)
 - [Tema natale gratuito: come interpretare la tua carta astrale completa](/it/blog/tema-natale-gratuito-interpretare-carta-astrale-completa)
 - [Mercurio retrogrado: come capire, anticipare e sopravvivere a questi periodi senza panico](/it/blog/mercurio-retrogrado-guida-completa-sopravvivere-prosperare)
-- [Aspetti astrologici: congiunzione, quadratura, trigono, opposizione, sestile - la guida](/it/blog/aspetti-astrologici-congiunzione-quadratura-trigono-opposizione-sestile)
+- Aspetti astrologici: congiunzione, quadratura, trigono, opposizione, sestile - la guida
 
 **Strumenti Karmastro:**
 - [Tema natale](/it/strumenti/tema-natale)

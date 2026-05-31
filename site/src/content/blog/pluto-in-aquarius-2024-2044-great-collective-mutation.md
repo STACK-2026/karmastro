@@ -306,9 +306,9 @@ Yes. Especially when Pluto comes into aspect with the other slow planets (Saturn
 
 ## Going further
 
-Pluto in Aquarius is probably the most important transit of your lifetime, because it touches everyone and stretches over two decades. To understand how it acts in your chart, start by calculating your [rising sign](/en/tools/rising-sign), your [moon sign](/en/tools/moon-sign), and your [life path number](/en/tools/life-path-number). These three bases give you the foundation to read the transits.
+Pluto in Aquarius is probably the most important transit of your lifetime, because it touches everyone and stretches over two decades. To understand how it acts in your chart, start by calculating your [rising sign](/en/tools/rising-sign), your moon sign, and your [life path number](/en/tools/life-path-number). These three bases give you the foundation to read the transits.
 
-To go further, also read our guide on [the Saturn return](/en/blog/saturn-return-29-major-passage-into-adulthood), which explains how Saturn, another great mutation planet, completes Pluto's work, and our article on [the 12 astrological houses](/en/blog/12-astrological-houses-complete-guide-life-sectors) to understand in which area of life the transit will land.
+To go further, also read our guide on [the Saturn return](/en/blog/saturn-return-29-major-passage-into-adulthood), which explains how Saturn, another great mutation planet, completes Pluto's work, and our article on the 12 astrological houses to understand in which area of life the transit will land.
 
 For a personalized and precise reading of what Pluto in Aquarius has in store for you in the coming years, the [Oracle](https://app.karmastro.com/oracle) can do it for you in a few minutes, based on your exact chart.
 

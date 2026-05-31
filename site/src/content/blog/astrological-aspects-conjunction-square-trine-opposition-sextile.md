@@ -43,7 +43,7 @@ It is through aspects that we understand why two people born on the same day, wi
 
 In this article, we are going to give you all the keys to read the aspects of your chart, understand their logic, and befriend the ones that seem difficult. Because yes, some aspects are more demanding than others. But no aspect is bad in itself: it all depends on what you do with it.
 
-If you want to get familiar with the basics of the chart first, start by calculating your [rising sign](/en/tools/rising-sign) and your [moon sign](/en/tools/moon-sign). That will give you the frame in which your aspects will play out.
+If you want to get familiar with the basics of the chart first, start by calculating your [rising sign](/en/tools/rising-sign) and your moon sign. That will give you the frame in which your aspects will play out.
 
 ## 2. The principle: an aspect is an angular distance
 
@@ -283,9 +283,9 @@ They are shared by an entire generation and describe a collective climate more t
 
 ## Going further
 
-Aspects are the most dynamic dimension of your natal chart. They turn a list of positions into a living system of inner dialogues. To explore your aspects, start by calculating your full chart from your [rising sign](/en/tools/rising-sign) and your [moon sign](/en/tools/moon-sign).
+Aspects are the most dynamic dimension of your natal chart. They turn a list of positions into a living system of inner dialogues. To explore your aspects, start by calculating your full chart from your [rising sign](/en/tools/rising-sign) and your moon sign.
 
-To go further, also read our guide on [the 12 astrological houses](/en/blog/12-astrological-houses-complete-guide-life-sectors) and our article on [the Saturn return](/en/blog/saturn-return-29-major-passage-into-adulthood), which shows how aspects replay through transits.
+To go further, also read our guide on the 12 astrological houses and our article on [the Saturn return](/en/blog/saturn-return-29-major-passage-into-adulthood), which shows how aspects replay through transits.
 
 If you want a personalized and complete reading of your main aspects, the [Oracle](https://app.karmastro.com/oracle) can do it for you in a few minutes, based on your precise chart.
 
@@ -308,7 +308,7 @@ This article draws on verifiable encyclopedic and scientific sources.
 - [The Saturn return: the great astrological passage at 29 that changes everything](/en/blog/saturn-return-29-major-passage-into-adulthood)
 - [Moon sign: what your natal Moon reveals about your emotional world](/en/blog/moon-sign-natal-moon-emotional-world)
 - [Aries zodiac sign: personality, compatibility and deep traits](/en/blog/aries-zodiac-sign-personality-compatibility-traits)
-- [Pluto in Aquarius 2024-2044: the 20-year collective mutation that changes everything](/en/blog/pluto-in-aquarius-2024-2044-great-collective-mutation)
+- Pluto in Aquarius 2024-2044: the 20-year collective mutation that changes everything
 
 **Karmastro tools:**
 - [Birth chart](/en/tools/birth-chart)

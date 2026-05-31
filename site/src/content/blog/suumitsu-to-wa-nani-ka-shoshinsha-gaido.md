@@ -106,7 +106,7 @@ reviewedBy: "Orion 数秘術歴15年の認定プラクティショナー"
 
 魂の欲求数は同じ名前から母音A E I O Uだけを抜き出して合計します 先ほどの例ではA A O O A A Oの7文字 1+1+6+6+1+1+6=22 マスターナンバー22 魂が求めるのはマスタービルダーとしての壮大な達成ということになります。
 
-[表現数の完全ガイド](/ja/blog/hyougen-suji-suumitsu-namae-aidentiti)でさらに詳細な計算と解釈事例を学べます。
+表現数の完全ガイドでさらに詳細な計算と解釈事例を学べます。
 
 ## 7. 1から9までの数字の意味
 
@@ -228,18 +228,18 @@ reviewedBy: "Orion 数秘術歴15年の認定プラクティショナー"
 
 - [ライフパスナンバー計算方法](/ja/blog/raifu-pasu-nanbaa-keisan-houhou-sutebai-sutebu)
 - [ライフパス1の完全解釈](/ja/blog/raifu-pasu-1-rida-shippu-dokuritsu-suumitsu)
-- [表現数 名前とアイデンティティ](/ja/blog/hyougen-suji-suumitsu-namae-aidentiti)
+- 表現数 名前とアイデンティティ
 - [ピタゴラス式vsカルデア式](/ja/blog/pitagorasu-vs-karudia-suumitsu-chigai)
 - [2026年個人年9サイクル](/ja/blog/kojin-toshi-2026-suumitsu-9-nen-saikuru)
 - [無料出生図と完全ナタル解釈](/ja/blog/muryou-shusseizu-kanzen-natal-kaishaku)
 - [アセンダント完全ガイド](/ja/blog/asendanto-kanzen-gaido-rikai)
-- [12の占星術ハウス](/ja/blog/12-no-asutoroji-hausu-kanzen-gaido)
-- [占星術アスペクト完全ガイド](/ja/blog/asutoroji-asupekuto-goukei-sukuea-torin-opposshon-sekisutairu)
+- 12の占星術ハウス
+- 占星術アスペクト完全ガイド
 - [占星術相性 どの星座が惹かれあうか](/ja/blog/asutoroji-aishou-dono-seiza-ga-hikitsukeau)
 - [月星座 出生の月 感情世界](/ja/blog/tsuki-no-seiza-shussei-tsuki-kanjou-sekai)
 - [水星逆行完全ガイド](/ja/blog/suisei-gyakkou-kanzen-gaido-rikai-ikinobi)
 - [土星回帰 29歳の重大な大人移行](/ja/blog/dosei-kaiki-29sai-juudai-otona-ikou)
-- [冥王星水瓶座 2024-2044大規模集団変容](/ja/blog/meiousei-mizugame-2024-2044-daikibo-shuudan-henyou)
+- 冥王星水瓶座 2024-2044大規模集団変容
 - [チャクラ占星術 7惑星エネルギー中心](/ja/blog/chakura-asutoroji-7-wakusei-enerugi-chushin)
 - [カルマ占星術 過去世と出生図](/ja/blog/karuma-asutoroji-kako-no-jinsei-shusseizu)
 - [AIオラクルvs伝統的タロット](/ja/blog/ai-orakuru-vs-dentouteki-tarotto-dochira-gaido)
@@ -275,7 +275,7 @@ reviewedBy: "Orion 数秘術歴15年の認定プラクティショナー"
 
 **関連記事:**
 - [ライフパス1:数秘術におけるリーダーシップ、独立、化身の使命](/ja/blog/raifu-pasu-1-rida-shippu-dokuritsu-suumitsu)
-- [表現数:あなたの名前があなたのアイデンティティについて明かすこと](/ja/blog/hyougen-suji-suumitsu-namae-aidentiti)
+- 表現数:あなたの名前があなたのアイデンティティについて明かすこと
 - [個人の年 2026:あなたの数字を見つけて9年サイクルを理解する](/ja/blog/kojin-toshi-2026-suumitsu-9-nen-saikuru)
 - [ピタゴラス vs カルデア数秘術:違いと方法の比較](/ja/blog/pitagorasu-vs-karudia-suumitsu-chigai)
 

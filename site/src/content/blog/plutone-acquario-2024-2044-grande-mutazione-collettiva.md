@@ -42,7 +42,7 @@ In astrologia Plutone rappresenta le **trasformazioni profonde**, la **morte sim
 
 I grandi transiti generazionali di Plutone corrispondono a svolte storiche documentabili. Plutone in Leone (1939-1957): seconda guerra mondiale, bomba atomica, emergere dei regimi totalitari e loro caduta. Plutone in Vergine (1957-1972): rivoluzione sessuale, contraccezione, movimenti studenteschi, informatica nascente. Plutone in Bilancia (1972-1984): divorzi, femminismo, riequilibri relazionali. Plutone in Scorpione (1984-1995): AIDS, caduta del muro di Berlino, esplosione del mondo sotterraneo nella cultura pop. Plutone in Sagittario (1995-2008): globalizzazione, internet, fondamentalismi religiosi. Plutone in Capricorno (2008-2024): crisi finanziaria, crollo delle strutture verticali, pandemia.
 
-Ora tocca all'Acquario. E i prossimi venti anni ridefiniranno il significato stesso di "collettivo", "rete", "tecnologia" e "libertà". Per capire come questo transito dialoga con la tua carta personale, è utile conoscere il tuo [ascendente](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico) e la posizione delle tue [12 case astrologiche](/it/blog/12-case-astrologiche-guida-completa-settori-vita).
+Ora tocca all'Acquario. E i prossimi venti anni ridefiniranno il significato stesso di "collettivo", "rete", "tecnologia" e "libertà". Per capire come questo transito dialoga con la tua carta personale, è utile conoscere il tuo [ascendente](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico) e la posizione delle tue 12 case astrologiche.
 
 ## 2. Perché Plutone in Acquario è un evento storico
 
@@ -108,7 +108,7 @@ Sintetizzo qui i campi in cui Plutone in Acquario produrrà le trasformazioni pi
 
 **Politica**: democrazia diretta digitale, movimenti cittadini transnazionali, crisi dei partiti classici, ridefinizione della cittadinanza oltre lo Stato-nazione.
 
-**Spiritualità**: declino ulteriore delle religioni istituzionali, emergere di spiritualità orizzontali, esperienziali, scientificamente dialoganti. La pratica astrologica stessa entrerà in una fase nuova, più diffusa ma anche più esigente sul piano del rigore. Per capire come la tua pratica personale si allinea ai grandi transiti, vedi [gli aspetti astrologici](/it/blog/aspetti-astrologici-congiunzione-quadratura-trigono-opposizione-sestile).
+**Spiritualità**: declino ulteriore delle religioni istituzionali, emergere di spiritualità orizzontali, esperienziali, scientificamente dialoganti. La pratica astrologica stessa entrerà in una fase nuova, più diffusa ma anche più esigente sul piano del rigore. Per capire come la tua pratica personale si allinea ai grandi transiti, vedi gli aspetti astrologici.
 
 **Salute**: medicina personalizzata genetica, biotecnologie, AI diagnostica, longevità. Ma anche nuove pandemie potenziali e patologie digitali.
 
@@ -220,7 +220,7 @@ Plutone entrerà in Pesci, segno della dissoluzione, della compassione universal
 
 ## Andare oltre
 
-Plutone in Acquario è probabilmente il transito più importante della tua vita. Calcola il tuo [ascendente](/it/strumenti/ascendente) e la posizione delle tue [12 case astrologiche](/it/blog/12-case-astrologiche-guida-completa-settori-vita), studia il tuo [segno lunare](/it/blog/segno-lunare-luna-natale-mondo-emotivo) e consulta l'[Oracle](https://app.karmastro.com/oracle) per un'analisi personalizzata del transito.
+Plutone in Acquario è probabilmente il transito più importante della tua vita. Calcola il tuo [ascendente](/it/strumenti/ascendente) e la posizione delle tue 12 case astrologiche, studia il tuo [segno lunare](/it/blog/segno-lunare-luna-natale-mondo-emotivo) e consulta l'[Oracle](https://app.karmastro.com/oracle) per un'analisi personalizzata del transito.
 
 ## Fonti e riferimenti
 
@@ -237,8 +237,8 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 
 **Articoli correlati:**
 - [Mercurio retrogrado: come capire, anticipare e sopravvivere a questi periodi senza panico](/it/blog/mercurio-retrogrado-guida-completa-sopravvivere-prosperare)
-- [Aspetti astrologici: congiunzione, quadratura, trigono, opposizione, sestile - la guida](/it/blog/aspetti-astrologici-congiunzione-quadratura-trigono-opposizione-sestile)
-- [Le 12 case astrologiche: guida completa ai 12 settori della tua vita](/it/blog/12-case-astrologiche-guida-completa-settori-vita)
+- Aspetti astrologici: congiunzione, quadratura, trigono, opposizione, sestile - la guida
+- Le 12 case astrologiche: guida completa ai 12 settori della tua vita
 - [Il ritorno di Saturno: il grande passaggio astrologico a 29 anni che cambia tutto](/it/blog/ritorno-di-saturno-29-anni-grande-passaggio-adulto)
 
 **Strumenti Karmastro:**

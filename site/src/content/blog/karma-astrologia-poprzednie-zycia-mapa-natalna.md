@@ -98,7 +98,7 @@ Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych
 - [Rok osobisty 2026: znajdź swoją liczbę i zrozum 9-letni cykl](/pl/blog/rok-osobisty-2026-numerologia-cykl-9-lat)
 - [Kompatybilność astrologiczna: jakie znaki naprawdę się przyciągają](/pl/blog/kompatybilnosc-astrologiczna-jakie-znaki-sie-przyciagaja)
 - [Czym jest numerologia: kompletny przewodnik dla poczatkujacych 2026](/pl/blog/czym-jest-numerologia-kompletny-przewodnik-dla-poczatkujacych)
-- [Pluton w Wodniku 2024-2044: wielka 20-letnia mutacja zbiorowa](/pl/blog/pluton-wodnik-2024-2044-wielka-mutacja-zbiorowa)
+- Pluton w Wodniku 2024-2044: wielka 20-letnia mutacja zbiorowa
 
 **Narzędzia Karmastro:**
 - [Horoskop natalny](/pl/narzedzia/horoskop-natalny)

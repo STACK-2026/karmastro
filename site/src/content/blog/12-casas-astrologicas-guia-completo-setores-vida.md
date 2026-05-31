@@ -131,7 +131,7 @@ A casa VIII é tradicionalmente a casa mais misteriosa e densa do mapa. Rege as 
 
 Plutão é o seu planeta moderno, Marte o seu corregente tradicional, Escorpião o seu signo de afinidade. Plutão na casa VIII confere frequentemente uma intensidade existencial extrema: pessoas atraídas pelas profundezas, capazes de regeneração após colapsos que destruiriam outros. Saturno na casa VIII pode manifestar-se como medos profundos da morte ou da sexualidade, mas também como solidez psíquica notável após trabalho de fundo.
 
-A casa VIII é também a casa do **oculto** no sentido amplo: psicanálise, esoterismo sério, terapias profundas, investigação criminal, pesquisa científica nas margens. É a casa onde se ganha autoridade ao atravessar a sombra. As leituras da casa VIII tocam frequentemente terrenos ligados aos [aspetos astrológicos densos](/pt/blog/aspetos-astrologicos-conjuncao-quadratura-trigono-oposicao-sextil) (quadraturas, oposições) que reativam recorrentemente os seus temas.
+A casa VIII é também a casa do **oculto** no sentido amplo: psicanálise, esoterismo sério, terapias profundas, investigação criminal, pesquisa científica nas margens. É a casa onde se ganha autoridade ao atravessar a sombra. As leituras da casa VIII tocam frequentemente terrenos ligados aos aspetos astrológicos densos (quadraturas, oposições) que reativam recorrentemente os seus temas.
 
 ## 13. Casa IX: viagens, estudos superiores, crenças
 
@@ -155,7 +155,7 @@ A casa XI é o domínio das **redes** e dos **projetos coletivos**. Engloba as a
 
 Uma casa XI bem habitada favorece a integração em coletivos significativos. Júpiter em casa XI multiplica as redes e atrai oportunidades através de amigos influentes. Saturno em casa XI pode dar amizades raras mas profundas, com tendência a assumir posição de responsabilidade nos grupos. Vénus em casa XI orienta para amizades amorosas e por vezes para apaixonamentos a partir de círculos de amigos.
 
-Os astrólogos contemporâneos leem também a casa XI como o **lugar da utopia pessoal**: as visões de futuro, os ideais coletivos pelos quais cada um aceita comprometer-se. Numa época em que as redes sociais reconfiguram as amizades e os pertencimentos, a casa XI tornou-se uma das casas mais relevantes para entender as dinâmicas relacionais contemporâneas. Períodos como o atual de [Plutão em Aquário 2024-2044](/pt/blog/plutao-aquario-2024-2044-grande-mutacao-coletiva) ativam massivamente esta casa para todas as gerações vivas.
+Os astrólogos contemporâneos leem também a casa XI como o **lugar da utopia pessoal**: as visões de futuro, os ideais coletivos pelos quais cada um aceita comprometer-se. Numa época em que as redes sociais reconfiguram as amizades e os pertencimentos, a casa XI tornou-se uma das casas mais relevantes para entender as dinâmicas relacionais contemporâneas. Períodos como o atual de Plutão em Aquário 2024-2044 ativam massivamente esta casa para todas as gerações vivas.
 
 ## 16. Casa XII: inconsciente, retiro, segredos
 
@@ -214,7 +214,7 @@ Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
 - [O retorno de Saturno: a grande passagem astrológica aos 29 anos que muda tudo](/pt/blog/retorno-saturno-29-anos-grande-passagem-adulto)
 - [Mercúrio retrógrado: como entender, antecipar e sobreviver a estes períodos sem pânico](/pt/blog/mercurio-retrogrado-guia-completo-sobreviver-prosperar)
 - [Signo ascendente: o guia completo para entender o teu ascendente astrológico](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente)
-- [Plutão em Aquário 2024-2044: a grande mutação coletiva de 20 anos](/pt/blog/plutao-aquario-2024-2044-grande-mutacao-coletiva)
+- Plutão em Aquário 2024-2044: a grande mutação coletiva de 20 anos
 
 **Ferramentas Karmastro:**
 - [Mapa natal](/pt/ferramentas/mapa-natal)

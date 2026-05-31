@@ -75,7 +75,7 @@ Merkür hem İkizler'in hem Başak'ın yönetici gezegenidir. İkizler'deki Merk
 
 **Seyahatler**: gecikmeler. Uçuş iptalleri, tren rötarları, valiz kayıpları klasiktir ama bunların hepsi retrodan değil, hava yolu operasyonel sorunlarından kaynaklanır. Retronun etkisi daha çok şudur : zaten marjinal olarak riskli olan yolculukların gerçekleşme oranı artar. Pratik öneri : en az iki saat buffer bırakın, mümkünse daha erken uçuş alın, cep telefonunuzu şarjlı tutun, pasaport ve bileti bir önceki gün gözden geçirin.
 
-**Geçmişten dönüşler**: eski iş arkadaşları, eski sevgililer, eski öğretmenler, terk edilmiş projeler, yarım kalmış kitaplar. Bu Merkür retrosunun en zengin yüzüdür. Reconsider, revise, return, reconnect, reconnect kelimelerinin hepsi "re-" öneki ile başlar ve bu dönemlerin esas hediyesi budur. [12 astrolojik ev rehberinde](/tr/blog/12-astrolojik-ev-tam-rehber-yasam-sektorleri) geçmişten dönüşlerin hangi yaşam alanında olacağını, retronun transit ettiği evden okuyabilirsin.
+**Geçmişten dönüşler**: eski iş arkadaşları, eski sevgililer, eski öğretmenler, terk edilmiş projeler, yarım kalmış kitaplar. Bu Merkür retrosunun en zengin yüzüdür. Reconsider, revise, return, reconnect, reconnect kelimelerinin hepsi "re-" öneki ile başlar ve bu dönemlerin esas hediyesi budur. 12 astrolojik ev rehberinde geçmişten dönüşlerin hangi yaşam alanında olacağını, retronun transit ettiği evden okuyabilirsin.
 
 ## 6. Ünlü mitler
 
@@ -122,7 +122,7 @@ Herkes Merkür retrosunu yaşar ama herkes aynı şekilde hissetmez. Bu, doğum 
 
 Transit Merkür retrosu, natal haritanda hangi evi geziyorsa o evin teması belirgin hale gelir. 1. ev retrosu : kimlik, görünüm, beden. 2. ev : para, değerler. 3. ev : kardeşler, kısa seyahat, günlük iletişim. 4. ev : aile, ev, kök. 5. ev : yaratıcılık, çocuk, romantizm. 6. ev : sağlık, iş rutini. 7. ev : partner, açık düşmanlar. 8. ev : ortak kaynak, dönüşüm, sezgi. 9. ev : felsefe, uzun seyahat, yayıncılık. 10. ev : kariyer, toplumsal rol. 11. ev : arkadaş, grup, hedef. 12. ev : bilinçdışı, geri çekilme, tesellim.
 
-Natal gezegene transit açı yapan retro çok daha yoğundur. Retro Merkür natal Güneş'e karşıt yaptığında kimlik revizyonu, natal Ay'a kare yaptığında duygusal gerilim, natal Satürn'e kavuşum yaptığında otorite / yapı sorgusu belirgin olur. [Astrolojik açılar rehberinde](/tr/blog/astrolojik-acilar-kavusum-kare-uclu-karsit-altmislik) açı tiplerinin enerji farklarını inceleyebilirsin.
+Natal gezegene transit açı yapan retro çok daha yoğundur. Retro Merkür natal Güneş'e karşıt yaptığında kimlik revizyonu, natal Ay'a kare yaptığında duygusal gerilim, natal Satürn'e kavuşum yaptığında otorite / yapı sorgusu belirgin olur. Astrolojik açılar rehberinde açı tiplerinin enerji farklarını inceleyebilirsin.
 
 ## 10. Doğuştan Merkür retrosu
 
@@ -193,7 +193,7 @@ Hayır. Hissetme yoğunluğu natal haritaya bağlıdır. Natal Merkür'ü fazla 
 Teknik olarak evet. Ama başlattığın işin retro sonrası revize edileceğini kabul et. Bu bazen avantajdır (pazar geri bildirimi erken gelir), bazen dezavantajdır (ilk versiyonun pazarlaması dolaylı olarak ikinci versiyonun pazarlamasını bozar). Lansman tarihlerini belirlerken, retro takvimiyle görüş bir avantajdır ama tek kriter olamaz.
 
 **Retro Plüton Kova ile nasıl etkileşir?**
-İyi soru. [Plüton Kova rehberinde](/tr/blog/pluton-kova-2024-2044-buyuk-kolektif-donusum) anlatıldığı üzere Plüton Kova döneminde Hava elementi yoğundur ve Merkür (hava mantığı yönetici) ile Plüton arasındaki transit açılar, kolektif iletişim dönüşümünü ivmelendirir. Merkür retroları bu dönemde, bilgi mimarisi revizyonu ve dijital güven krizleri ile örtüşebilir.
+İyi soru. Plüton Kova rehberinde anlatıldığı üzere Plüton Kova döneminde Hava elementi yoğundur ve Merkür (hava mantığı yönetici) ile Plüton arasındaki transit açılar, kolektif iletişim dönüşümünü ivmelendirir. Merkür retroları bu dönemde, bilgi mimarisi revizyonu ve dijital güven krizleri ile örtüşebilir.
 
 ## Daha ileri
 
@@ -214,10 +214,10 @@ Bu makale doğrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadır.
 ## Daha fazlası
 
 **İlgili makaleler:**
-- [12 astrolojik ev: hayatının 12 sektörünün tam rehberi](/tr/blog/12-astrolojik-ev-tam-rehber-yasam-sektorleri)
+- 12 astrolojik ev: hayatının 12 sektörünün tam rehberi
 - [Satürn dönüşü: 29 yaşındaki her şeyi değiştiren büyük astrolojik geçiş](/tr/blog/saturn-donusu-29-yas-buyuk-yetiskinlik-gecisi)
 - [Koç burcu: kişilik, uyumluluk ve derin özellikler](/tr/blog/koc-burcu-kisilik-uyumluluk-ozellikler)
-- [Plüton Kova](/tr/blog/pluton-kova-2024-2044-buyuk-kolektif-donusum)
+- Plüton Kova
 
 **Karmastro araçları:**
 - [Doğum haritası](/tr/araclar/dogum-haritasi)

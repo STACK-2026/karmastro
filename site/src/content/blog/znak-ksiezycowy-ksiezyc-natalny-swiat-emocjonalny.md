@@ -117,9 +117,9 @@ Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych
 ## Warto przeczytać
 
 **Powiązane artykuły:**
-- [Aspekty astrologiczne: koniunkcja, kwadratura, trygon, opozycja, sekstyl - przewodnik](/pl/blog/aspekty-astrologiczne-koniunkcja-kwadratura-trygon-opozycja-sekstyl)
-- [12 domów astrologicznych: kompletny przewodnik po 12 sektorach twojego życia](/pl/blog/12-domow-astrologicznych-kompletny-przewodnik-sektory-zycia)
-- [Pluton w Wodniku 2024-2044: wielka 20-letnia mutacja zbiorowa](/pl/blog/pluton-wodnik-2024-2044-wielka-mutacja-zbiorowa)
+- Aspekty astrologiczne: koniunkcja, kwadratura, trygon, opozycja, sekstyl - przewodnik
+- 12 domów astrologicznych: kompletny przewodnik po 12 sektorach twojego życia
+- Pluton w Wodniku 2024-2044: wielka 20-letnia mutacja zbiorowa
 - [Znak zodiaku Baran: osobowość, kompatybilność i głębokie cechy](/pl/blog/baran-znak-zodiaku-osobowosc-kompatybilnosc)
 
 **Narzędzia Karmastro:**

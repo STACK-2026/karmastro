@@ -118,7 +118,7 @@ reviewedBy: "Orion、シニア天文学者兼占星術師"
 **関連記事:**
 - [土星回帰:29歳ですべてを変える大きな占星術的移行](/ja/blog/dosei-kaiki-29sai-juudai-otona-ikou)
 - [無料の出生図 完全なナタルチャート解釈の実践ガイド](/ja/blog/muryou-shusseizu-kanzen-natal-kaishaku)
-- [12のアストロロジー・ハウス:人生の12セクターの完全ガイド](/ja/blog/12-no-asutoroji-hausu-kanzen-gaido)
+- 12のアストロロジー・ハウス:人生の12セクターの完全ガイド
 - [牡羊座:性格、相性、深い特徴](/ja/blog/ohitsuji-seiza-seikaku-aishou-tokuchou)
 
 **Karmastro 診断ツール:**

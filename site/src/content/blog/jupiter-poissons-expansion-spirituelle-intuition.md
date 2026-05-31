@@ -18,7 +18,7 @@ draft: false
 - En transit (comme en 2026), il ouvre des opportunités de croissance spirituelle, artistique et relationnelle, à condition de rester ancré·e et de vérifier les sources d’information.
 - Les défis incluent la fuite de la réalité, la victimisation et la tendance à se sacrifier pour les autres, nécessitant des pratiques comme la méditation, le journaling intuitif et la fixation de limites saines.
 - Ce guide combine astrologie, numérologie, exemples concrets et exercices pratiques pour t’aider à canaliser cette énergie puissante et aligner tes actions avec tes valeurs.
-- Pour une analyse personnalisée, consulte ton [thème natal](https://app.karmastro.com) ou calcule ton [chemin de vie](https://karmastro.com/blog/chemin-de-vie-numerologie).
+- Pour une analyse personnalisée, consulte ton [thème natal](https://app.karmastro.com) ou calcule ton [chemin de vie](/blog/comment-calculer-chemin-de-vie-numerologie/).
 
 ---
 
@@ -203,7 +203,7 @@ Même les dons les plus précieux ont leurs ombres. Voici les **pièges courants
   - Tu attends que les choses s’arrangent "par magie" sans agir, ou tu te réfugies dans des fantasmes pour échapper à la réalité.
 - **Solutions** :
   - **Outils concrets** :
-    - **Numérologie** : Calcule ton [chemin de vie](https://karmastro.com/blog/chemin-de-vie-numerologie) pour identifier tes leçons karmiques et les domaines où tu as tendance à te voiler la face.
+    - **Numérologie** : Calcule ton [chemin de vie](/blog/comment-calculer-chemin-de-vie-numerologie/) pour identifier tes leçons karmiques et les domaines où tu as tendance à te voiler la face.
     - **Astrologie horaire** : Pose une question précise à un astrologue pour obtenir une réponse claire et objective. Par exemple, "Dois-je quitter mon emploi actuel ?".
   - **Exercice** : Écris une liste des **faits** vs des **interprétations** dans une situation problématique. Par exemple :
     | **Fait**                          | **Interprétation**                          |
@@ -468,7 +468,7 @@ Jupiter en Poissons t’offre une **fenêtre d’opportunités**, mais c’est �
 
 ## Jupiter en Poissons et numérologie : quels chemins de vie sont impactés ?
 
-La numérologie et l’astrologie sont deux outils complémentaires pour comprendre ton **destin** et tes **leçons de vie**. Voici comment **Jupiter en Poissons** résonne avec chaque **chemin de vie** (calcule le tien [ici](https://karmastro.com/blog/chemin-de-vie-numerologie)) :
+La numérologie et l’astrologie sont deux outils complémentaires pour comprendre ton **destin** et tes **leçons de vie**. Voici comment **Jupiter en Poissons** résonne avec chaque **chemin de vie** (calcule le tien [ici](/blog/comment-calculer-chemin-de-vie-numerologie/)) :
 
 ### Chemin de vie 1 : Le leader intuitif
 - **Impact** : Jupiter en Poissons **amplifie ton intuition** et t’aide à devenir un·e leader **inspirant·e et bienveillant·e**. Ce placement te donne une vision claire de tes objectifs et une capacité à motiver les autres.

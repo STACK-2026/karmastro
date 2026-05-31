@@ -229,8 +229,8 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 
 **Artículos relacionados :**
 - [Mercurio retrógrado: cómo entender, anticipar y sobrevivir estos períodos sin pánico](/es/blog/mercurio-retrogrado-guia-completa-sobrevivir-prosperar)
-- [Plutón en Acuario 2024-2044: la gran mutación colectiva de 20 años que cambia todo](/es/blog/pluton-acuario-2024-2044-gran-mutacion-colectiva)
-- [Las 12 casas astrológicas: guía completa de los 12 sectores de tu vida](/es/blog/12-casas-astrologicas-guia-completa-sectores-vida)
+- Plutón en Acuario 2024-2044: la gran mutación colectiva de 20 años que cambia todo
+- Las 12 casas astrológicas: guía completa de los 12 sectores de tu vida
 - [El retorno de Saturno: el gran paso astrológico a los 29 años que lo cambia todo](/es/blog/retorno-saturno-29-anos-gran-pasaje-adulto)
 
 **Herramientas Karmastro:**

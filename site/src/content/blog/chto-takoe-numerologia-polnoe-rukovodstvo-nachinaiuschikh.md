@@ -81,7 +81,7 @@ reviewedBy: "Орион, старший астроном, сертифициро
 
 ### Число выражения (судьбы)
 
-**Число выражения** вычисляется из полного имени при рождении, включая фамилию и отчество. Каждая буква заменяется на соответствующую цифру, суммы приводятся к одной цифре. Это число показывает природные таланты, способы самовыражения и то, что ты должен воплотить во внешнем мире. Полное руководство доступно по ссылке [Число выражения: имя и идентичность](/ru/blog/chislo-vyrazheniia-numerologia-imia-rasshifrovat-lichnost).
+**Число выражения** вычисляется из полного имени при рождении, включая фамилию и отчество. Каждая буква заменяется на соответствующую цифру, суммы приводятся к одной цифре. Это число показывает природные таланты, способы самовыражения и то, что ты должен воплотить во внешнем мире. Полное руководство доступно по ссылке Число выражения: имя и идентичность.
 
 ### Число интимной души
 
@@ -175,7 +175,7 @@ reviewedBy: "Орион, старший астроном, сертифициро
 
 ### Связанные практики
 
-Нумерология естественно сочетается с астрологией. Исследуй [12 астрологических домов: полное руководство](/ru/blog/12-astrologicheskikh-domov-polnoe-rukovodstvo), [Восходящий знак: полное руководство](/ru/blog/voskhodiaschii-znak-polnoe-rukovodstvo-ponimaniie), [Лунный знак: натальная Луна и эмоциональный мир](/ru/blog/lunnyi-znak-natalnaia-luna-emotsionalnyi-mir) и [Овен: знак зодиака, личность, совместимость](/ru/horoscope/oven). Для ретроградных периодов: [Меркурий ретроградный: полный гид](/ru/blog/merkurii-retrograd-polnyi-gid-perezhit). Для плутоновских трансформаций: [Плутон в Водолее 2024-2044](/ru/blog/pluton-vodolei-2024-2044-velikaia-kollektivnaia-mutatsiia). И для саморазвития в 29 лет: [Возвращение Сатурна](/ru/blog/vozvraschenie-saturna-29-let-bolshoi-perekhod-vzroslost). Также интересны [Карма и астрология: прошлые жизни](/ru/blog/karma-astrologia-proshlye-zhizni-natalnaia-karta) и [Астрологические аспекты](/ru/blog/astrologicheskie-aspekty-soedinenie-kvadrat-trigon-oppozitsia-sekstil).
+Нумерология естественно сочетается с астрологией. Исследуй 12 астрологических домов: полное руководство, [Восходящий знак: полное руководство](/ru/blog/voskhodiaschii-znak-polnoe-rukovodstvo-ponimaniie), [Лунный знак: натальная Луна и эмоциональный мир](/ru/blog/lunnyi-znak-natalnaia-luna-emotsionalnyi-mir) и [Овен: знак зодиака, личность, совместимость](/ru/horoscope/oven). Для ретроградных периодов: [Меркурий ретроградный: полный гид](/ru/blog/merkurii-retrograd-polnyi-gid-perezhit). Для плутоновских трансформаций: Плутон в Водолее 2024-2044. И для саморазвития в 29 лет: [Возвращение Сатурна](/ru/blog/vozvraschenie-saturna-29-let-bolshoi-perekhod-vzroslost). Также интересны [Карма и астрология: прошлые жизни](/ru/blog/karma-astrologia-proshlye-zhizni-natalnaia-karta) и Астрологические аспекты.
 
 Не забудь также [Чакры и астрология: 7 планет и энергетические центры](/ru/blog/chakry-astrologia-7-planet-energeticheskie-tsentry) и [Ежедневный гороскоп: надёжные прогнозы](/ru/blog/ezhednevnyi-goroskop-nadezhnye-astrologicheskie-prognozy).
 
@@ -302,7 +302,7 @@ reviewedBy: "Орион, старший астроном, сертифициро
 
 **Похожие статьи:**
 - [Путь жизни 1 в нумерологии: лидерство, независимость и миссия воплощения](/ru/blog/put-zhizni-1-liderstvo-nezavisimost-numerologia)
-- [Число выражения: расшифруй что твоё имя говорит о твоей идентичности](/ru/blog/chislo-vyrazheniia-numerologia-imia-rasshifrovat-lichnost)
+- Число выражения: расшифруй что твоё имя говорит о твоей идентичности
 - [Как рассчитать число пути жизни: пошаговый метод](/ru/blog/kak-rasschitat-put-zhizni-poshagovyi-metod)
 - [Пифагорейская vs халдейская нумерология: различия и методы](/ru/blog/pifagoreiskaia-vs-khaldeiskaia-numerologia-razlichia)
 

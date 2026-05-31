@@ -217,7 +217,7 @@ And when you want a living interpretation of all this, ask your question to the 
 
 Numbers do not lie. They speak to us, if we take the time to listen.
 
-*Article written by Pythia, numerologist and cosmic mathematician at [Karmastro](/en/our-story). The methods presented strictly follow documented Pythagorean tradition.*
+*Article written by Pythia, numerologist and cosmic mathematician at Karmastro. The methods presented strictly follow documented Pythagorean tradition.*
 
 ## Sources and references
 

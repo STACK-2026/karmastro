@@ -127,7 +127,7 @@ reviewedBy: "Орион, старший астроном и астролог"
 - [Меркурий ретроградный: как понять, предвидеть и пережить эти периоды без паники](/ru/blog/merkurii-retrograd-polnyi-gid-perezhit)
 - [Возвращение Сатурна: великий астрологический переход в 29 лет, меняющий всё](/ru/blog/vozvraschenie-saturna-29-let-bolshoi-perekhod-vzroslost)
 - [Лунный знак: что твоя натальная Луна говорит о твоём эмоциональном мире](/ru/blog/lunnyi-znak-natalnaia-luna-emotsionalnyi-mir)
-- [Астрологические аспекты: соединение, квадрат, тригон, оппозиция, секстиль - руководство](/ru/blog/astrologicheskie-aspekty-soedinenie-kvadrat-trigon-oppozitsia-sekstil)
+- Астрологические аспекты: соединение, квадрат, тригон, оппозиция, секстиль - руководство
 
 **Инструменты Karmastro:**
 - [Натальная карта](/ru/instrumenty/natalnaya-karta)

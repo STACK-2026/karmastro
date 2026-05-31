@@ -254,7 +254,7 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 ## Mehr erfahren
 
 **Ähnliche Artikel:**
-- [Astrologische Aspekte: Konjunktion, Quadrat, Trigon, Opposition, Sextil - der Leitfaden](/de/blog/astrologische-aspekte-konjunktion-quadrat-trigon-opposition-sextil)
+- Astrologische Aspekte: Konjunktion, Quadrat, Trigon, Opposition, Sextil - der Leitfaden
 - [Aszendent: der vollständige Leitfaden zum Verständnis deines astrologischen Aszendenten](/de/blog/aszendent-vollstaendiger-leitfaden-verstehen)
 - [Sternzeichen Widder: Persönlichkeit, Kompatibilität und tiefe Merkmale](/de/blog/widder-sternzeichen-persoenlichkeit-kompatibilitaet)
 - [Mondzeichen: was dein Natalmond über deine Gefühlswelt verrät](/de/blog/mondzeichen-natalmond-emotionale-welt)

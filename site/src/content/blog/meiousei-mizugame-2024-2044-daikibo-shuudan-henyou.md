@@ -122,7 +122,7 @@ reviewedBy: "Orion、シニア天文学者兼占星術師"
 ## さらに詳しく
 
 **関連記事:**
-- [占星術アスペクト:合、スクエア、トライン、オポジション、セクスタイル - ガイド](/ja/blog/asutoroji-asupekuto-goukei-sukuea-torin-opposshon-sekisutairu)
+- 占星術アスペクト:合、スクエア、トライン、オポジション、セクスタイル - ガイド
 - [土星回帰:29歳ですべてを変える大きな占星術的移行](/ja/blog/dosei-kaiki-29sai-juudai-otona-ikou)
 - [水星逆行:パニックなしにこれらの期間を理解し、予測し、生き延びる方法](/ja/blog/suisei-gyakkou-kanzen-gaido-rikai-ikinobi)
 - [アセンダント:あなたの占星術上昇星座を理解する完全ガイド](/ja/blog/asendanto-kanzen-gaido-rikai)

@@ -338,7 +338,7 @@ Choisir entre astrologie et numérologie pour ta guidance spirituelle dépend de
 | Découvrir ta mission de vie    | Numérologie                   | [Calcul du chemin de vie](https://app.karmastro.com/numerologie) |
 | Résoudre des schémas répétitifs| Guidance karmique (Astro+Numé)| [Oracle Karmique](https://app.karmastro.com/oracle) |
 | Prendre des décisions rapides  | Numérologie (nombre annuel)   | [Nombre du jour](https://app.karmastro.com/numerologie) |
-| Préparer 2026                  | Astrologie (transits)         | [Horoscope 2026](https://karmastro.com/blog/horoscope-2026) |
+| Préparer 2026                  | Astrologie (transits)         | [Horoscope 2026](/horoscope/) |
 
 **Le meilleur choix en 2026 ?** Combine les deux approches avec **Karmastro**, la seule plateforme qui fusionne astrologie, numérologie et intelligence artificielle pour une guidance spirituelle précise et personnalisée.
 

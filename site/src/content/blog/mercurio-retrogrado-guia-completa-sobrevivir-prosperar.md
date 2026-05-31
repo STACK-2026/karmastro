@@ -232,8 +232,8 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 **Artículos relacionados :**
 - [Carta natal gratis: cómo interpretar tu tema natal completo](/es/blog/carta-natal-gratis-interpretar-tema-natal-completo)
 - [Signo zodiacal Aries: personalidad, compatibilidad y rasgos profundos](/es/blog/aries-signo-zodiacal-personalidad-compatibilidad)
-- [Aspectos astrológicos: conjunción, cuadratura, trígono, oposición, sextil - la guía](/es/blog/aspectos-astrologicos-conjuncion-cuadratura-trigono-oposicion-sextil)
-- [Las 12 casas astrológicas: guía completa de los 12 sectores de tu vida](/es/blog/12-casas-astrologicas-guia-completa-sectores-vida)
+- Aspectos astrológicos: conjunción, cuadratura, trígono, oposición, sextil - la guía
+- Las 12 casas astrológicas: guía completa de los 12 sectores de tu vida
 
 **Herramientas Karmastro:**
 - [Carta natal](/es/herramientas/carta-natal)

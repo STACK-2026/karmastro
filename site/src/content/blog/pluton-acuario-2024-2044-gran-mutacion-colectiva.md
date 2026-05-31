@@ -191,7 +191,7 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 - [Mercurio retrógrado: cómo entender, anticipar y sobrevivir estos períodos sin pánico](/es/blog/mercurio-retrogrado-guia-completa-sobrevivir-prosperar)
 - [El retorno de Saturno: el gran paso astrológico a los 29 años que lo cambia todo](/es/blog/retorno-saturno-29-anos-gran-pasaje-adulto)
 - [Signo lunar: lo que tu Luna natal revela de tu mundo emocional](/es/blog/signo-lunar-luna-natal-mundo-emocional)
-- [Aspectos astrológicos: conjunción, cuadratura, trígono, oposición, sextil - la guía](/es/blog/aspectos-astrologicos-conjuncion-cuadratura-trigono-oposicion-sextil)
+- Aspectos astrológicos: conjunción, cuadratura, trígono, oposición, sextil - la guía
 
 **Herramientas Karmastro:**
 - [Carta natal](/es/herramientas/carta-natal)

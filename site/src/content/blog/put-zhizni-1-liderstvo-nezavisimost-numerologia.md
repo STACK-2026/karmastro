@@ -87,7 +87,7 @@ reviewedBy: "Пифия, сертифицированный пифагорейс
 - [Что такое нумерология: полное руководство для начинающих в 2026 году](/ru/blog/chto-takoe-numerologia-polnoe-rukovodstvo-nachinaiuschikh)
 - [Пифагорейская vs халдейская нумерология: различия и методы](/ru/blog/pifagoreiskaia-vs-khaldeiskaia-numerologia-razlichia)
 - [Как рассчитать число пути жизни: пошаговый метод](/ru/blog/kak-rasschitat-put-zhizni-poshagovyi-metod)
-- [Число выражения: расшифруй что твоё имя говорит о твоей идентичности](/ru/blog/chislo-vyrazheniia-numerologia-imia-rasshifrovat-lichnost)
+- Число выражения: расшифруй что твоё имя говорит о твоей идентичности
 
 **Инструменты Karmastro:**
 - [Натальная карта](/ru/instrumenty/natalnaya-karta)

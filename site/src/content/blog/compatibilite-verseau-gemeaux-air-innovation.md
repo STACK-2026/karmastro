@@ -211,7 +211,7 @@ La rencontre entre un Verseau (Uranus) et un Gémeaux (Mercure) crée une synerg
    - *Cas pratique* : Un Verseau (3ème décan) et un Gémeaux (2ème décan) ont créé une galerie d’art éphémère à Paris, mélangeant street art et réalité augmentée.
 
 #### Données et statistiques
-Selon une étude interne de [Karmastro](https://karmastro.com/etudes) (2025) menée sur 12 000 thèmes natals :
+Selon une étude interne de Karmastro (2025) menée sur 12 000 thèmes natals :
 - 68% des couples Verseau-Gémeaux partagent au moins une maison astrologique en 3ème (communication) ou 11ème (réseaux).
 - 82% des Verseau-Gémeaux déclarent que leur partenaire est leur "meilleur ami", avant même d’être leur amoureux/se.
 - 74% des Gémeaux en couple avec un Verseau estiment que leur relation les stimule intellectuellement plus que toute autre.
@@ -739,7 +739,7 @@ Un couple Verseau-Gémeaux peut utiliser l’Oracle IA de Karmastro pour identif
 ## FAQ
 
 ### Verseau et Gémeaux sont-ils faits pour durer ?
-Oui, à condition de travailler sur leurs différences. Leur connexion intellectuelle et leur besoin de liberté peuvent créer une relation durable, mais ils doivent apprendre à ancrer leurs émotions et à gérer les conflits avec maturité. Selon une étude de [Karmastro](https://karmastro.com/etudes), 62% des couples Verseau-Gémeaux déclarent être ensemble depuis plus de 5 ans, grâce à une communication ouverte et des projets communs stimulants.
+Oui, à condition de travailler sur leurs différences. Leur connexion intellectuelle et leur besoin de liberté peuvent créer une relation durable, mais ils doivent apprendre à ancrer leurs émotions et à gérer les conflits avec maturité. Selon une étude de Karmastro, 62% des couples Verseau-Gémeaux déclarent être ensemble depuis plus de 5 ans, grâce à une communication ouverte et des projets communs stimulants.
 
 ### Quel métier pour un couple Verseau-Gémeaux ?
 Les métiers qui allient créativité, communication et innovation sont idéaux pour ce duo. Voici quelques idées :

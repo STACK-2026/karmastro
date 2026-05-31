@@ -197,7 +197,7 @@ Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
 
 **Artigos relacionados :**
 - [O que é a numerologia? Guia completo para iniciantes](/pt/blog/o-que-e-numerologia-guia-completo-iniciantes)
-- [Número de expressão: decifra o que o teu nome revela da tua identidade](/pt/blog/numero-expressao-numerologia-nome-decifrar-identidade)
+- Número de expressão: decifra o que o teu nome revela da tua identidade
 - [Como calcular o teu caminho de vida: o método pitagórico passo a passo](/pt/blog/como-calcular-caminho-de-vida-passo-a-passo)
 - [Ano pessoal 2026: encontra o teu número e compreende o ciclo de 9 anos](/pt/blog/ano-pessoal-2026-numerologia-ciclo-9-anos)
 

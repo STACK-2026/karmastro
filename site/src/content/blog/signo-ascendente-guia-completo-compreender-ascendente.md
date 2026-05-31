@@ -45,7 +45,7 @@ O conceito de ascendente (em grego *Horoskopos*, literalmente "aquele que observ
 
 **Cláudio Ptolomeu**, no seu *Tetrabiblos* (c. 150 d.C.), livro fundador da astrologia ocidental durante os quinze séculos seguintes, dá ao ascendente um lugar central para determinar o físico, o temperamento e a constituição geral de uma pessoa. Dedica-lhe capítulos sobre as correspondências anatómicas e temperamentais. **Doroteu de Sídon** (século I d.C.) e **Vétio Valente** (século II d.C.) aprofundam esta leitura em obras como o *Carmen Astrologicum* e as *Antologias*. Em todos estes autores, o ascendente é mais importante que o signo solar para a caracterização pessoal, uma posição que a astrologia popular moderna inverteu durante o século XX.
 
-A prevalência do signo solar como único marcador veio apenas com a imprensa popular do século XX: o horóscopo diário publicado por **R. H. Naylor** no *Sunday Express* em agosto de 1930, sobre o nascimento da princesa Margaret, foi o primeiro horóscopo massa. Como a posição solar é a única que se pode calcular sem saber a hora, impôs-se por conveniência jornalística, não por razão astrológica. A astrologia séria, de **Dane Rudhyar** a **Liz Greene** e **Steven Forrest**, nunca abandonou a importância primeira do ascendente e da Lua. Para aprofundar a sequência histórica, explora o nosso [guia das 12 casas astrológicas](/pt/blog/12-casas-astrologicas-guia-completo-setores-vida), que detalha a matriz helenística de onde o ascendente emergiu.
+A prevalência do signo solar como único marcador veio apenas com a imprensa popular do século XX: o horóscopo diário publicado por **R. H. Naylor** no *Sunday Express* em agosto de 1930, sobre o nascimento da princesa Margaret, foi o primeiro horóscopo massa. Como a posição solar é a única que se pode calcular sem saber a hora, impôs-se por conveniência jornalística, não por razão astrológica. A astrologia séria, de **Dane Rudhyar** a **Liz Greene** e **Steven Forrest**, nunca abandonou a importância primeira do ascendente e da Lua. Para aprofundar a sequência histórica, explora o nosso guia das 12 casas astrológicas, que detalha a matriz helenística de onde o ascendente emergiu.
 
 ## 3. Porque o teu ascendente importa tanto como o teu signo solar
 
@@ -123,7 +123,7 @@ Se um ou mais planetas estão colocados na tua casa I (os graus imediatamente de
 
 **Marte em casa I**: energia intensa percetível, musculatura e postura combativa, por vezes cicatrizes, tendência a acidentes se a energia não é canalizada. **Júpiter em casa I**: expansão física (morfologia generosa ou estatura alta), presença calorosa, otimismo visível, tendência ao excesso de peso. **Saturno em casa I**: reserva, maturidade precoce, responsabilidade visível, morfologia seca. Pode dar timidez ou autocontrole forte.
 
-**Úrano em casa I**: originalidade que se vê, estilo atípico, postura eléctrica, imprevisibilidade. **Neptuno em casa I**: aura nebulosa, difícil de definir, charme mediúnico, fronteiras psicológicas permeáveis. **Plutão em casa I**: magnetismo intenso, presença transformadora, olhar penetrante, vida marcada por crises de identidade profundas. Para aprofundar a leitura dos planetas, lê o nosso [guia dos aspetos astrológicos](/pt/blog/aspetos-astrologicos-conjuncao-quadratura-trigono-oposicao-sextil).
+**Úrano em casa I**: originalidade que se vê, estilo atípico, postura eléctrica, imprevisibilidade. **Neptuno em casa I**: aura nebulosa, difícil de definir, charme mediúnico, fronteiras psicológicas permeáveis. **Plutão em casa I**: magnetismo intenso, presença transformadora, olhar penetrante, vida marcada por crises de identidade profundas. Para aprofundar a leitura dos planetas, lê o nosso guia dos aspetos astrológicos.
 
 ## 10. Quando o teu signo solar e o teu ascendente se opõem
 
@@ -179,7 +179,7 @@ Não. Tens um único ascendente natal. Mas se nasceste perto de uma mudança de 
 
 ## Ir mais longe
 
-O teu ascendente é apenas uma das camadas da tua carta natal, mas é talvez a mais visível no quotidiano. Para uma leitura completa que cruze Sol, Lua, ascendente, planetas e casas, calcula o teu [mapa natal completo](/pt/ferramentas/mapa-natal) e lê o nosso [guia do signo lunar](/pt/blog/signo-lunar-lua-natal-mundo-emocional). Se queres também perceber como o teu ascendente reage aos grandes trânsitos em curso, o [artigo sobre Plutão em Aquário 2024-2044](/pt/blog/plutao-aquario-2024-2044-grande-mutacao-coletiva) oferece a chave.
+O teu ascendente é apenas uma das camadas da tua carta natal, mas é talvez a mais visível no quotidiano. Para uma leitura completa que cruze Sol, Lua, ascendente, planetas e casas, calcula o teu [mapa natal completo](/pt/ferramentas/mapa-natal) e lê o nosso [guia do signo lunar](/pt/blog/signo-lunar-lua-natal-mundo-emocional). Se queres também perceber como o teu ascendente reage aos grandes trânsitos em curso, o artigo sobre Plutão em Aquário 2024-2044 oferece a chave.
 
 ## Fontes e referências
 
@@ -194,10 +194,10 @@ Este artigo baseia-se em fontes enciclopédicas, astronómicas e académicas ver
 ## Para aprofundar
 
 **Artigos relacionados :**
-- [Plutão em Aquário 2024-2044: a grande mutação coletiva de 20 anos](/pt/blog/plutao-aquario-2024-2044-grande-mutacao-coletiva)
+- Plutão em Aquário 2024-2044: a grande mutação coletiva de 20 anos
 - [Signo lunar: o que a tua Lua natal revela do teu mundo emocional](/pt/blog/signo-lunar-lua-natal-mundo-emocional)
-- [Aspetos astrológicos: conjunção, quadratura, trígono, oposição, sextil - o guia](/pt/blog/aspetos-astrologicos-conjuncao-quadratura-trigono-oposicao-sextil)
-- [As 12 casas astrológicas: guia completo dos 12 setores da tua vida](/pt/blog/12-casas-astrologicas-guia-completo-setores-vida)
+- Aspetos astrológicos: conjunção, quadratura, trígono, oposição, sextil - o guia
+- As 12 casas astrológicas: guia completo dos 12 setores da tua vida
 
 **Ferramentas Karmastro:**
 - [Mapa natal](/pt/ferramentas/mapa-natal)

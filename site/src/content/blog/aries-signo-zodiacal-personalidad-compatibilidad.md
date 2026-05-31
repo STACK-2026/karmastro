@@ -240,7 +240,7 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 - [Mercurio retrógrado: cómo entender, anticipar y sobrevivir estos períodos sin pánico](/es/blog/mercurio-retrogrado-guia-completa-sobrevivir-prosperar)
 - [Signo ascendente: la guía completa para entender tu ascendente astrológico](/es/blog/signo-ascendente-guia-completa-comprender-ascendente)
 - [Carta natal gratis: cómo interpretar tu tema natal completo](/es/blog/carta-natal-gratis-interpretar-tema-natal-completo)
-- [Aspectos astrológicos: conjunción, cuadratura, trígono, oposición, sextil - la guía](/es/blog/aspectos-astrologicos-conjuncion-cuadratura-trigono-oposicion-sextil)
+- Aspectos astrológicos: conjunción, cuadratura, trígono, oposición, sextil - la guía
 
 **Herramientas Karmastro:**
 - [Carta natal](/es/herramientas/carta-natal)

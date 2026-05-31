@@ -129,7 +129,7 @@ Haus VIII ist das geheimnisvollste und intensivste Haus der Karte. Es regiert di
 
 Dieses Haus entspricht dem Skorpion und hat Pluto als modernen Herrscher (traditionell Mars). Es war in der hellenistischen Astrologie ebenfalls als "schwieriges Haus" klassifiziert, weil es mit dem Tod und dem Unsichtbaren verbunden war. In der modernen Interpretation ist es das Haus der tiefen Transformation: die Krisen, die dich zu einem anderen Menschen machen, die Übergänge, in denen etwas stirbt, damit etwas anderes geboren werden kann.
 
-Planeten in Haus VIII bringen diese Dimension der Intensität in dein Leben. Sonne in Haus VIII macht die Persönlichkeit diskret, aber mit einer inneren Tiefe, die die anderen spüren, ohne sie benennen zu können. Mond in Haus VIII ist ein emotionales Leben von großer Intensität, oft mit frühen Verlusterfahrungen und einer natürlichen Begabung für psychologische oder therapeutische Arbeit. Mars in Haus VIII bringt eine starke sexuelle Energie und eine Neigung zu Krisensituationen. Die transitorischen Durchgänge großer Planeten (besonders [Pluto im Wassermann 2024-2044](/de/blog/pluto-wassermann-2024-2044-grosse-kollektive-mutation), wenn er dein achtes Haus aktiviert) markieren oft die tiefsten Lebensumbrüche.
+Planeten in Haus VIII bringen diese Dimension der Intensität in dein Leben. Sonne in Haus VIII macht die Persönlichkeit diskret, aber mit einer inneren Tiefe, die die anderen spüren, ohne sie benennen zu können. Mond in Haus VIII ist ein emotionales Leben von großer Intensität, oft mit frühen Verlusterfahrungen und einer natürlichen Begabung für psychologische oder therapeutische Arbeit. Mars in Haus VIII bringt eine starke sexuelle Energie und eine Neigung zu Krisensituationen. Die transitorischen Durchgänge großer Planeten (besonders Pluto im Wassermann 2024-2044, wenn er dein achtes Haus aktiviert) markieren oft die tiefsten Lebensumbrüche.
 
 ## 13. Haus IX: Reisen, höhere Studien, Glauben
 
@@ -169,7 +169,7 @@ Eine der häufigsten Anfänger-Sorgen: "ich habe ein leeres Haus, fehlt mir dies
 
 Ein leeres Haus bedeutet nicht, dass dieser Lebensbereich fehlt. Es bedeutet, dass er keinen persönlichen planetarischen Schwerpunkt hat. Um ein leeres Haus zu lesen, schaust du auf das Zeichen an der Hausspitze und auf den Herrscher-Planeten dieses Zeichens, wo auch immer er in der Karte platziert ist. Wenn dein Haus VII leer ist mit Zwillinge-Deszendent, schaust du auf Merkur: wo ist Merkur, in welchem Haus, in welchem Zeichen, mit welchen Aspekten? Merkur trägt dann die Signatur deiner Haus-VII-Angelegenheiten.
 
-Ein beladenes Haus (drei oder mehr Planeten) deutet dagegen auf einen Lebensbereich, in dem viel Energie konzentriert ist, viel passiert, viel Arbeit verrichtet werden muss. Ein beladenes Haus X markiert oft eine intensive Karriere-Dynamik, ein beladenes Haus IV eine familiäre Konzentration, ein beladenes Haus XI ein sehr aktives soziales und kollektives Leben. Die Kombination dieser Konfigurationen mit den [wichtigsten Aspekten zwischen den Planeten](/de/blog/astrologische-aspekte-konjunktion-quadrat-trigon-opposition-sextil) gibt die fortgeschrittene Lektüre der Karte.
+Ein beladenes Haus (drei oder mehr Planeten) deutet dagegen auf einen Lebensbereich, in dem viel Energie konzentriert ist, viel passiert, viel Arbeit verrichtet werden muss. Ein beladenes Haus X markiert oft eine intensive Karriere-Dynamik, ein beladenes Haus IV eine familiäre Konzentration, ein beladenes Haus XI ein sehr aktives soziales und kollektives Leben. Die Kombination dieser Konfigurationen mit den wichtigsten Aspekten zwischen den Planeten gibt die fortgeschrittene Lektüre der Karte.
 
 ## 18. Häufige Fragen
 
@@ -203,7 +203,7 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 
 **Ähnliche Artikel:**
 - [Merkur rückläufig: wie du diese Phasen verstehst, antizipierst und ohne Panik überlebst](/de/blog/merkur-rueckläufig-leitfaden-verstehen-ueberleben)
-- [Pluto im Wassermann 2024-2044: die große kollektive Mutation von 20 Jahren](/de/blog/pluto-wassermann-2024-2044-grosse-kollektive-mutation)
+- Pluto im Wassermann 2024-2044: die große kollektive Mutation von 20 Jahren
 - [Kostenloses Geburtshoroskop: wie du dein vollständiges Natalchart interpretierst](/de/blog/kostenloses-geburtshoroskop-natalchart-interpretieren)
 - [Mondzeichen: was dein Natalmond über deine Gefühlswelt verrät](/de/blog/mondzeichen-natalmond-emotionale-welt)
 

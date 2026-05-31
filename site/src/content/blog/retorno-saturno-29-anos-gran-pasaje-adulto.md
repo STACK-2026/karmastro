@@ -229,9 +229,9 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 ## Para profundizar
 
 **Artículos relacionados :**
-- [Plutón en Acuario 2024-2044: la gran mutación colectiva de 20 años que cambia todo](/es/blog/pluton-acuario-2024-2044-gran-mutacion-colectiva)
+- Plutón en Acuario 2024-2044: la gran mutación colectiva de 20 años que cambia todo
 - [Carta natal gratis: cómo interpretar tu tema natal completo](/es/blog/carta-natal-gratis-interpretar-tema-natal-completo)
-- [Las 12 casas astrológicas: guía completa de los 12 sectores de tu vida](/es/blog/12-casas-astrologicas-guia-completa-sectores-vida)
+- Las 12 casas astrológicas: guía completa de los 12 sectores de tu vida
 - [Signo lunar: lo que tu Luna natal revela de tu mundo emocional](/es/blog/signo-lunar-luna-natal-mundo-emocional)
 
 **Herramientas Karmastro:**

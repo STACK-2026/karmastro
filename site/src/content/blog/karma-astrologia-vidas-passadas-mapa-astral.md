@@ -203,7 +203,7 @@ Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
 
 **Artigos relacionados :**
 - [O que é a numerologia? Guia completo para iniciantes](/pt/blog/o-que-e-numerologia-guia-completo-iniciantes)
-- [As 12 casas astrológicas: guia completo dos 12 setores da tua vida](/pt/blog/12-casas-astrologicas-guia-completo-setores-vida)
+- As 12 casas astrológicas: guia completo dos 12 setores da tua vida
 - [Horóscopo diário: como obter previsões astrológicas realmente fiáveis](/pt/blog/horoscopo-diario-como-obter-previsoes-fiaveis)
 - [Caminho de vida 1 em numerologia: liderança, independência e missão de encarnação](/pt/blog/caminho-de-vida-1-lideranca-independencia-numerologia)
 

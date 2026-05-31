@@ -63,7 +63,7 @@ Para entender o que significa Mercúrio retrógrado, é preciso primeiro entende
 
 Simbolicamente, o nome vem do deus romano **Mercúrio** (equivalente do grego **Hermes**), mensageiro dos deuses, guia das almas, deus das estradas, do comércio, da palavra e da escrita. Na mitologia grega, Hermes é o único deus autorizado a circular entre o mundo dos vivos e o dos mortos; é o arquétipo da **circulação**, da ligação, da mediação. Esta riqueza mitológica fundamenta a leitura astrológica.
 
-Em astrologia, Mercúrio rege tudo o que tem a ver com **circulação da informação** no sentido mais amplo: pensamento, comunicação, palavra falada e escrita, aprendizagem, escolaridade, contratos, compromissos escritos, trocas comerciais, deslocações curtas, redes de transporte, correio, tecnologia, sistemas informáticos, interfaces. Regem-se por Mercúrio os signos de **Gémeos** e **Virgem**, dois signos dedicados respectivamente à comunicação ágil e à análise precisa. Quando Mercúrio retrograda, todo este universo entra em revisão, não em paralisação. Para cruzar esta dimensão com o conhecimento mais fino dos aspetos, consulta o nosso guia dos [aspetos astrológicos](/pt/blog/aspetos-astrologicos-conjuncao-quadratura-trigono-oposicao-sextil).
+Em astrologia, Mercúrio rege tudo o que tem a ver com **circulação da informação** no sentido mais amplo: pensamento, comunicação, palavra falada e escrita, aprendizagem, escolaridade, contratos, compromissos escritos, trocas comerciais, deslocações curtas, redes de transporte, correio, tecnologia, sistemas informáticos, interfaces. Regem-se por Mercúrio os signos de **Gémeos** e **Virgem**, dois signos dedicados respectivamente à comunicação ágil e à análise precisa. Quando Mercúrio retrograda, todo este universo entra em revisão, não em paralisação. Para cruzar esta dimensão com o conhecimento mais fino dos aspetos, consulta o nosso guia dos aspetos astrológicos.
 
 ## 5. As verdadeiras zonas afetadas
 
@@ -103,7 +103,7 @@ Toda a gente vive Mercúrio retrógrado, mas nem toda a gente o sente da mesma m
 
 A regra prática: identifica onde Mercúrio retrograda nos próximos meses (qualquer calendário astrológico serio dá as datas e os graus), e observa se essa zona zodiacal coincide com um planeta natal teu, um dos ângulos (ascendente, descendente, meio do céu, fundo do céu), ou um ponto sensível (lua progressiva, regente da carta, nodo lunar norte). Se coincide, o trânsito vai afinar-te particularmente sobre o tema correspondente.
 
-Por exemplo: se tens o teu Sol natal em Balança a 15°, e Mercúrio retrograda em Balança atravessando esse grau, o trânsito ativa fortemente a tua identidade pessoal e as tuas relações íntimas. Se tens Mercúrio natal em Gémeos e Mercúrio do céu retrograda em Gémeos em aspeto ao teu Mercúrio natal, o trânsito afina especificamente o teu modo de pensar e de comunicar. A leitura fina deste tipo de interação pressupõe conhecer bem as tuas [12 casas astrológicas](/pt/blog/12-casas-astrologicas-guia-completo-setores-vida) e a posição exata dos teus planetas natais.
+Por exemplo: se tens o teu Sol natal em Balança a 15°, e Mercúrio retrograda em Balança atravessando esse grau, o trânsito ativa fortemente a tua identidade pessoal e as tuas relações íntimas. Se tens Mercúrio natal em Gémeos e Mercúrio do céu retrograda em Gémeos em aspeto ao teu Mercúrio natal, o trânsito afina especificamente o teu modo de pensar e de comunicar. A leitura fina deste tipo de interação pressupõe conhecer bem as tuas 12 casas astrológicas e a posição exata dos teus planetas natais.
 
 ## 10. Nativos com Mercúrio retrógrado
 
@@ -195,7 +195,7 @@ Este artigo baseia-se em fontes enciclopédicas e científicas verificáveis.
 - [Mapa astral grátis: como interpretar a tua carta natal completa](/pt/blog/mapa-astral-gratis-interpretar-carta-natal-completo)
 - [Signo lunar: o que a tua Lua natal revela do teu mundo emocional](/pt/blog/signo-lunar-lua-natal-mundo-emocional)
 - [Signo ascendente: o guia completo para entender o teu ascendente astrológico](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente)
-- [Plutão em Aquário 2024-2044: a grande mutação coletiva de 20 anos](/pt/blog/plutao-aquario-2024-2044-grande-mutacao-coletiva)
+- Plutão em Aquário 2024-2044: a grande mutação coletiva de 20 anos
 
 **Ferramentas Karmastro:**
 - [Mapa natal](/pt/ferramentas/mapa-natal)

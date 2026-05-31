@@ -73,7 +73,7 @@ Yaşam yolu 1'in başlıca dört gücü vardır ve her biri enkarnasyon misyonuy
 
 **Kararlılık**. Seçimi netleştikten sonra geri dönmezler. Diğerleri kararsızken onlar hareket ederler. Bu kalite bazen dışarıdan "inatçılık" olarak algılanır ama içeriden bakıldığında vizyona sadakat olarak okunur.
 
-**Uzun vadeli vizyon**. Hedef belirleme kapasiteleri genellikle ortalamanın üstündedir. 5 yıl, 10 yıl sonra nerede olmak istediklerini kelimelerle tarif edebilirler. Bu vizyon bazen gerçekleşmez, bazen gerçekleşir ama varlığı bile hayatlarına bir yön verir. [İfade sayınla](/tr/blog/ifade-sayisi-numeroloji-isim-kimlik-cozmek) çapraz okumak, bu vizyonun hangi alanda ifade edileceğini netleştirir.
+**Uzun vadeli vizyon**. Hedef belirleme kapasiteleri genellikle ortalamanın üstündedir. 5 yıl, 10 yıl sonra nerede olmak istediklerini kelimelerle tarif edebilirler. Bu vizyon bazen gerçekleşmez, bazen gerçekleşir ama varlığı bile hayatlarına bir yön verir. İfade sayınla çapraz okumak, bu vizyonun hangi alanda ifade edileceğini netleştirir.
 
 ## 5. Zorluklar ve tuzaklar
 
@@ -166,7 +166,7 @@ Bu makale doğrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadır.
 ## Daha fazlası
 
 **İlgili makaleler:**
-- [İfade sayısı: isminin kimliğin hakkında ne söylediğini çöz](/tr/blog/ifade-sayisi-numeroloji-isim-kimlik-cozmek)
+- İfade sayısı: isminin kimliğin hakkında ne söylediğini çöz
 - [Numeroloji nedir Tam baslangic rehberi](/tr/blog/numeroloji-nedir-tam-baslangic-rehberi)
 - [Kişisel yıl 2026: numaranı bul ve 9 yıllık döngüyü anla](/tr/blog/kisisel-yil-2026-numeroloji-9-yil-dongusu)
 - [Yaşam yolu nasıl hesaplanır: adım adım yöntem](/tr/blog/yasam-yolu-nasil-hesaplanir-adim-adim-yontem)

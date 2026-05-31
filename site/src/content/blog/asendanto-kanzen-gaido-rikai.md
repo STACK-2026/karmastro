@@ -146,7 +146,7 @@ reviewedBy: "Orion、シニア天文学者兼占星術師"
 - [無料の出生図 完全なナタルチャート解釈の実践ガイド](/ja/blog/muryou-shusseizu-kanzen-natal-kaishaku)
 - [土星回帰:29歳ですべてを変える大きな占星術的移行](/ja/blog/dosei-kaiki-29sai-juudai-otona-ikou)
 - [月の星座:あなたの出生月があなたの感情世界について語ること](/ja/blog/tsuki-no-seiza-shussei-tsuki-kanjou-sekai)
-- [冥王星水瓶座 2024-2044:20年間の大規模な集団変容](/ja/blog/meiousei-mizugame-2024-2044-daikibo-shuudan-henyou)
+- 冥王星水瓶座 2024-2044:20年間の大規模な集団変容
 
 **Karmastro 診断ツール:**
 - [出生図](/ja/shindan/shusseizu)

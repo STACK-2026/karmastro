@@ -143,9 +143,9 @@ Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych
 ## Warto przeczytać
 
 **Powiązane artykuły:**
-- [12 domów astrologicznych: kompletny przewodnik po 12 sektorach twojego życia](/pl/blog/12-domow-astrologicznych-kompletny-przewodnik-sektory-zycia)
+- 12 domów astrologicznych: kompletny przewodnik po 12 sektorach twojego życia
 - [Powrót Saturna: wielkie astrologiczne przejście w wieku 29 lat które zmienia wszystko](/pl/blog/powrot-saturna-29-lat-wielkie-przejscie-doroslosc)
-- [Pluton w Wodniku 2024-2044: wielka 20-letnia mutacja zbiorowa](/pl/blog/pluton-wodnik-2024-2044-wielka-mutacja-zbiorowa)
+- Pluton w Wodniku 2024-2044: wielka 20-letnia mutacja zbiorowa
 - [Merkury retrogradny: jak zrozumieć, przewidzieć i przetrwać te okresy bez paniki](/pl/blog/merkury-retrogradny-kompletny-przewodnik-przetrwac)
 
 **Narzędzia Karmastro:**

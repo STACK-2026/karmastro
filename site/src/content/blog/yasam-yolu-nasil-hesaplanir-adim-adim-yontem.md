@@ -120,7 +120,7 @@ Aşağıdaki tarihler Vikipedi ve Britannica'da kamuya açık biçimde belgelenm
 - **Yol 8: Pablo Picasso** (25.10.1881). 26 → 8. Güç, devasa bir eserin inşası.
 - **Yol 9: Mahatma Gandhi** (02.10.1869). 27 → 9. Evrensel bilge, tarihi bir döngünün tamamlanması.
 
-Hesaplamaları kendin doğrula ya da [çevrimiçi hesaplayıcıyı](/tr/araclar/yasam-yolu-sayisi) kullan. Astrolojik bağlam için [astrolojik açılar](/tr/blog/astrolojik-acilar-kavusum-kare-uclu-karsit-altmislik) ve [12 astrolojik ev](/tr/blog/12-astrolojik-ev-tam-rehber-yasam-sektorleri) yazılarını da oku.
+Hesaplamaları kendin doğrula ya da [çevrimiçi hesaplayıcıyı](/tr/araclar/yasam-yolu-sayisi) kullan. Astrolojik bağlam için astrolojik açılar ve 12 astrolojik ev yazılarını da oku.
 
 ## Yaşam yolunu günlük hayata nasıl entegre edersin
 
@@ -174,7 +174,7 @@ Döngü **dokuz ardışık yıl** boyunca açılır. Yıl 1: yeni döngü, ekim.
 
 Yaşam yoluna ne zaman başvurmalı? Bu sayının gerçekten fark yarattığı beş durum. **Kariyer değişikliği**: bir pozisyondan ayrılmadan ya da bir teklifi kabul etmeden önce baskın enerjiyle hizalanmayı doğrula. Hareket ihtiyacını üç kez görmezden gelen bir yol 5 neredeyse her zaman tükenmişlikte biter. **Evlilik veya uzun taahhüt**: yolları partnerinle çaprazlamak on yıllık temel ihtiyaç çatışmasından korur.
 
-**Taşınma**: dört coğrafi istikrara, beş hareketliliğe, altı yuvaya ihtiyaç duyar. **Yaratıcı ya da girişimci proje**: kişisel yıl inisiyatifi desteklediğinde (yıl 1, 3 ya da 8) başlat. Yıl 7'de büyük lansmanlardan kaçın. **Orta yaş değerlendirmesi (40-45 civarı)**: numeroloji yaşanmış dokuz yıllık döngüleri yeniden okumak için bir araçtır. Geçiş kararları için [Satürn dönüşüyle](/tr/blog/saturn-donusu-29-yas-orta-yas-krizi) birleştir.
+**Taşınma**: dört coğrafi istikrara, beş hareketliliğe, altı yuvaya ihtiyaç duyar. **Yaratıcı ya da girişimci proje**: kişisel yıl inisiyatifi desteklediğinde (yıl 1, 3 ya da 8) başlat. Yıl 7'de büyük lansmanlardan kaçın. **Orta yaş değerlendirmesi (40-45 civarı)**: numeroloji yaşanmış dokuz yıllık döngüleri yeniden okumak için bir araçtır. Geçiş kararları için Satürn dönüşüyle birleştir.
 
 ## Sınırlar ve eleştiri
 
@@ -196,7 +196,7 @@ Bilimsel açıdan numeroloji tekrarlanabilir deneysel bir yöntemle doğrulanmam
 
 **İki yöntem farklı sonuç verirse ne yapmalı?** Blok yöntemini tercih et (gün, ay, yıl ayrı ayrı indirgenir sonra toplanır). Ara master sayıları korur, genel toplam her zaman korumaz.
 
-**Yolum 4 ama 8'de kendimi tanıyorum, neden?** İsimden hesaplanan ifade sayısını ve kalp sayısını da oku. Yaşam yolu baskın bir enerjidir, tüm numeroloji portresi değil. Detay [ifade sayısı makalesinde](/tr/blog/ifade-sayisi-numeroloji-isim-kimlik-cozmek).
+**Yolum 4 ama 8'de kendimi tanıyorum, neden?** İsimden hesaplanan ifade sayısını ve kalp sayısını da oku. Yaşam yolu baskın bir enerjidir, tüm numeroloji portresi değil. Detay ifade sayısı makalesinde.
 
 **Yol 9, 1'den "daha iyi" mi?** Hayır. Dokuz yol eşdeğer ama farklı misyonlar taşır. Misyonuna hizmet eden bir yol 1, misyonuna hizmet eden bir yol 9 kadar değerlidir. Hiyerarşiler kültürel yansıma, numeroloji kuralı değil.
 
@@ -224,14 +224,14 @@ Bilimsel açıdan numeroloji tekrarlanabilir deneysel bir yöntemle doğrulanmam
 
 - [Numeroloji nedir: tam başlangıç rehberi](/tr/blog/numeroloji-nedir-tam-baslangic-rehberi)
 - [Yaşam yolu 1: liderlik, bağımsızlık](/tr/blog/yasam-yolu-1-liderlik-bagimsizlik-numeroloji)
-- [İfade sayısı: isimle kimliği çözmek](/tr/blog/ifade-sayisi-numeroloji-isim-kimlik-cozmek)
+- İfade sayısı: isimle kimliği çözmek
 - [Kişisel yıl 2026: numeroloji ve 9 yıl döngüsü](/tr/blog/kisisel-yil-2026-numeroloji-9-yil-dongusu)
 - [Pisagor vs Kaldeli numeroloji: farklar](/tr/blog/pitagor-vs-kaldeli-numeroloji-farklar)
 - [Ücretsiz doğum haritası yorumu](/tr/blog/ucretsiz-dogum-haritasi-tam-natal-yorumlama)
 - [Karma astroloji: geçmiş yaşamlar ve harita](/tr/blog/karma-astroloji-gecmis-yasamlar-dogum-haritasi)
 - [Günlük burç: güvenilir tahminler](/tr/blog/gunluk-burc-guvenilir-astrolojik-tahminler)
-- [Astrolojik açılar](/tr/blog/astrolojik-acilar-kavusum-kare-uclu-karsit-altmislik)
-- [12 astrolojik ev: tam rehber](/tr/blog/12-astrolojik-ev-tam-rehber-yasam-sektorleri)
+- Astrolojik açılar
+- 12 astrolojik ev: tam rehber
 - [Yükselen burç: tam rehber](/tr/blog/yukselen-burc-tam-rehber-yukselen-anlama)
 - [Ay burcu: doğum Ay'ı, duygusal dünya](/tr/blog/ay-burcu-dogum-ayi-duygusal-dunya)
 - [Yaşam yolu sayısı hesaplayıcısı](/tr/araclar/yasam-yolu-sayisi), [yükselen burç hesaplayıcısı](/tr/araclar/yukselen-burc)
@@ -243,7 +243,7 @@ Bilimsel açıdan numeroloji tekrarlanabilir deneysel bir yöntemle doğrulanmam
 - [Numeroloji nedir Tam baslangic rehberi](/tr/blog/numeroloji-nedir-tam-baslangic-rehberi)
 - [Kişisel yıl 2026: numaranı bul ve 9 yıllık döngüyü anla](/tr/blog/kisisel-yil-2026-numeroloji-9-yil-dongusu)
 - [Numerolojide yaşam yolu 1: liderlik, bağımsızlık ve enkarnasyon misyonu](/tr/blog/yasam-yolu-1-liderlik-bagimsizlik-numeroloji)
-- [İfade sayısı: isminin kimliğin hakkında ne söylediğini çöz](/tr/blog/ifade-sayisi-numeroloji-isim-kimlik-cozmek)
+- İfade sayısı: isminin kimliğin hakkında ne söylediğini çöz
 
 **Karmastro araçları:**
 - [Doğum haritası](/tr/araclar/dogum-haritasi)

@@ -142,7 +142,7 @@ This article draws on verifiable encyclopedic and scientific sources.
 - [Mercury retrograde: how to understand, anticipate, and survive these periods without panic](/en/blog/mercury-retrograde-complete-guide-survive-thrive)
 - [Free birth chart: how to interpret your complete natal chart](/en/blog/free-birth-chart-interpret-complete-natal-chart)
 - [Moon sign: what your natal Moon reveals about your emotional world](/en/blog/moon-sign-natal-moon-emotional-world)
-- [Astrological aspects: conjunction, square, trine, opposition, sextile, the guide to read them](/en/blog/astrological-aspects-conjunction-square-trine-opposition-sextile)
+- Astrological aspects: conjunction, square, trine, opposition, sextile, the guide to read them
 
 **Karmastro tools:**
 - [Birth chart](/en/tools/birth-chart)

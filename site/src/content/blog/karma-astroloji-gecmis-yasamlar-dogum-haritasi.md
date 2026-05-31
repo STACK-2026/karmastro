@@ -31,7 +31,7 @@ reviewedBy: "Orion, kidemli astronom ve astrolog"
 
 Ben **Orion**, Karmastro'da karmik koçunum. Bu makalede karmaik astrolojinin altı ana bileşenini açıklayacağım: Ay düğümleri, Satürn, Pluton, on ikinci ev, sabit yıldızlar ve karmik burçlar. Bu bileşenler birlikte ruhun yörüngesinin astrolojik haritasını oluşturur. Karmik astroloji reenkarnasyonu kanıtlamaz, ancak mevcut yaşamın örüntülerini geçmişin izdüşümleri olarak okumak için kullanışlı bir araçtır ve bu yaklaşım ampirik olarak ölçülebilen sonuçlar üretir.
 
-Karmik yaklaşım modern astrolojinin üç büyük okuluyla da uyumludur. Klasik (Ptolemy, Lilly) okul karma kavramını "neden ve sonuç" olarak okur; psikolojik (Jung, Rudhyar, Arroyo) okul karma kavramını bilinçaltı arşetipler olarak tanımlar; evolucionist (Jeff Green) okul ise karmaya doğrudan reenkarnasyon açısı ile bakar. Karmastro üç yaklaşımı da entegre eder ve kullanıcının hangi çerçevede okumak istediğine bağlı olarak analizi ayarlar. [Astroloji başlangıç rehberinde](/tr/blog/12-astrolojik-ev-tam-rehber-yasam-sektorleri) temel astrolojik kavramları daha derin bulabilirsin.
+Karmik yaklaşım modern astrolojinin üç büyük okuluyla da uyumludur. Klasik (Ptolemy, Lilly) okul karma kavramını "neden ve sonuç" olarak okur; psikolojik (Jung, Rudhyar, Arroyo) okul karma kavramını bilinçaltı arşetipler olarak tanımlar; evolucionist (Jeff Green) okul ise karmaya doğrudan reenkarnasyon açısı ile bakar. Karmastro üç yaklaşımı da entegre eder ve kullanıcının hangi çerçevede okumak istediğine bağlı olarak analizi ayarlar. Astroloji başlangıç rehberinde temel astrolojik kavramları daha derin bulabilirsin.
 
 ## 2. Ay düğümleri: ruhun hafızası ve misyonu
 
@@ -49,7 +49,7 @@ Güney Düğüm'ün burcu ve evi ne tür kapasitelerin kolayca eriştiğini söy
 
 Bu enkarnasyondaki **ruh misyonunu** temsil eder. Kuzey Düğüm zorlayıcıdır çünkü ruhun hiç yaşamadığı bir alanı deneyimlemesi beklenir. İlk kez bir çalgıyı öğrenmek gibi: başlangıçta hantal, sonra giderek hakim. Kuzey Düğüm'ün burcu ve evi hangi alanda ruhsal evrimin yaşanacağını gösterir.
 
-Düğümlerin ekseni 180 derece karşıttır; Kuzey Düğüm Aslan'da olan birinin Güney Düğüm'ü Kova'dadır. Bu karşıtlık ruhsal gerilim yaratır: geçmişten gelen (Güney) ile gitmesi gereken (Kuzey) arasındaki köprüyü kurmak yaşamın görevi olur. Karmastro'nun [doğum haritası](/tr/araclar/dogum-haritasi) aracı her iki düğümü koordinat bazında hesaplar ve yorumlar. [Pluton Kova geçişi](/tr/blog/pluton-kova-2024-2044-buyuk-kolektif-donusum) boyunca kolektif Kuzey Düğümler insan eyleminin yeniden tanımlanmasını işaret eder.
+Düğümlerin ekseni 180 derece karşıttır; Kuzey Düğüm Aslan'da olan birinin Güney Düğüm'ü Kova'dadır. Bu karşıtlık ruhsal gerilim yaratır: geçmişten gelen (Güney) ile gitmesi gereken (Kuzey) arasındaki köprüyü kurmak yaşamın görevi olur. Karmastro'nun [doğum haritası](/tr/araclar/dogum-haritasi) aracı her iki düğümü koordinat bazında hesaplar ve yorumlar. Pluton Kova geçişi boyunca kolektif Kuzey Düğümler insan eyleminin yeniden tanımlanmasını işaret eder.
 
 ## 3. Satürn ve Plüton, büyük karmik ustalar
 
@@ -88,7 +88,7 @@ Bu on iki cümle karmik astrolojinin özetidir. Her burç bir ruhsal test sunar 
 
 Pratik uygulama: Güneş, Ay ve Yükselen burcunu oku ve bu üçünün karmik dersini birleştir. Örneğin Güneş Akrep, Ay Koç, Yükselen Terazi olan biri üç dersi birden alır: dönüştürmek ama yıkmamak (Akrep), ifade etmek ama ezmemek (Koç), dengelemek ama kaçmamak (Terazi). Bu üç test hayatın farklı aşamalarında sırayla yaşanır; genellikle çocuklukta yükselen testi başlar, 29-42 yaş arası Güneş testi öne çıkar, Ay testi yaşam boyunca ince bir katmanda çalışır.
 
-Karmik burç sistemiyle [astrolojik açılar rehberi](/tr/blog/astrolojik-acilar-kavusum-kare-uclu-karsit-altmislik) arasındaki bağlantı önemlidir. Aynı burçta bulunan iki gezegen (kavuşum) tek bir karmik dersi iki yönden öğretir; karşıt burçlarda (karşıt açı) olan iki gezegen iki karşıt dersi dengeleme zorunluluğu yaratır; kare açıdaki gezegenler karmik gerilimi yüzeye çıkarır ve krizle çözülmesini zorlar. Bu açısal yapı ruhun kendi kendine verdiği ders programıdır.
+Karmik burç sistemiyle astrolojik açılar rehberi arasındaki bağlantı önemlidir. Aynı burçta bulunan iki gezegen (kavuşum) tek bir karmik dersi iki yönden öğretir; karşıt burçlarda (karşıt açı) olan iki gezegen iki karşıt dersi dengeleme zorunluluğu yaratır; kare açıdaki gezegenler karmik gerilimi yüzeye çıkarır ve krizle çözülmesini zorlar. Bu açısal yapı ruhun kendi kendine verdiği ders programıdır.
 
 ## 6. Astroloji ve karmik numerolojiyi çaprazlama
 

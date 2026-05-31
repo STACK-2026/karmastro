@@ -72,7 +72,7 @@ Le karma est un **principe spirituel de cause à effet** qui trouve ses racines 
 
 **Pour aller plus loin** :
 - Découvre comment [Karmastro](https://app.karmastro.com) analyse ton thème astral pour révéler tes schémas karmiques et tes leçons de vie.
-- Consulte notre [guide sur les nœuds lunaires](https://karmastro.com/blog/noeuds-lunaires) pour comprendre ton contrat karmique.
+- Consulte notre [guide sur les nœuds lunaires](/blog/nuds-lunaires-karma-mission-vie/) pour comprendre ton contrat karmique.
 
 ---
 
@@ -330,7 +330,7 @@ Voici des interprétations pour chaque combinaison de **Nœud Sud/Nœud Nord** (
 | **Nœud Sud en Poissons (maison 12)** | Nœud Nord en Vierge (maison 6) | Tu as été très spirituel(le) ou rêveur(se), peut-être un(e) mystique ou un(e) artiste. Tu as du mal à t’ancrer dans la réalité et à prendre soin de toi. | Apprendre à **structurer ta vie quotidienne** et à prendre soin de ton corps. | Crée des routines (ex. : sport, alimentation saine) et organise ton espace de vie. |
 
 **Pour approfondir** :
-- Consulte notre [guide complet sur les nœuds lunaires](https://karmastro.com/blog/noeuds-lunaires) pour une interprétation détaillée.
+- Consulte notre [guide complet sur les nœuds lunaires](/blog/nuds-lunaires-karma-mission-vie/) pour une interprétation détaillée.
 - Utilise [l’Oracle IA de Karmastro](https://app.karmastro.com/oracle) pour poser des questions sur ton Nœud Nord (ex. : *"Quelle est la première étape pour incarner mon Nœud Nord en Capricorne ?"*).
 
 ---
@@ -454,7 +454,7 @@ La maison 12 est un **réservoir d’épreuves, mais aussi de sagesse**. Voici d
 
 **Pour aller plus loin** :
 - Lis *La Maison 12 en astrologie* de **Howard Sasportas** pour une analyse approfondie.
-- Explore notre [guide sur la maison 12](https://karmastro.com/blog/maison-12) pour des conseils personnalisés.
+- Explore notre [guide sur la maison 12](/blog/maisons-astrologiques-guide-interpretation-complet/) pour des conseils personnalisés.
 
 ---
 

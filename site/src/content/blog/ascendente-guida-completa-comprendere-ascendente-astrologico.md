@@ -37,7 +37,7 @@ Il tuo ascendente è il segno zodiacale che sorgeva all'orizzonte est nel moment
 
 Una persona nata alle 7 del mattino non avrà lo stesso ascendente di una nata alle 9, anche nello stesso giorno e nella stessa città. Due Arieti nati lo stesso giorno possono essere estranei l'uno all'altro. Uno sarà esplosivo, diretto, quasi brutale nella sua franchezza (ascendente Ariete o Leone). L'altro sarà dolce, quasi timido all'inizio, e ti servirà tempo per vedere l'energia marziana dell'Ariete sotto (ascendente Pesci o Cancro). Stesso segno solare, mondi opposti.
 
-L'ascendente è spesso chiamato *la tua maschera sociale*, ma questa formula è troppo riduttiva. L'ascendente è il modo in cui la tua anima si incarna nel mondo, la porta attraverso cui la tua energia entra in questa vita. Non è una maschera, è una lente. Tutto ciò che sei passa attraverso quella lente prima di raggiungere gli altri. Influenza la morfologia, il temperamento di base, l'approccio motorio al mondo, e la prima impressione che susciti. Per collocarlo nel suo contesto completo del tema, leggi la nostra guida alle [12 case astrologiche](/it/blog/12-case-astrologiche-guida-completa-settori-vita).
+L'ascendente è spesso chiamato *la tua maschera sociale*, ma questa formula è troppo riduttiva. L'ascendente è il modo in cui la tua anima si incarna nel mondo, la porta attraverso cui la tua energia entra in questa vita. Non è una maschera, è una lente. Tutto ciò che sei passa attraverso quella lente prima di raggiungere gli altri. Influenza la morfologia, il temperamento di base, l'approccio motorio al mondo, e la prima impressione che susciti. Per collocarlo nel suo contesto completo del tema, leggi la nostra guida alle 12 case astrologiche.
 
 ## 2. L'ascendente nella storia dell'astrologia
 
@@ -170,7 +170,7 @@ L'ascendente è **il punto di partenza** della tua carta natale. Le dodici case 
 
 I pianeti vicini all'ascendente (entro 10 gradi di orbita) sono detti **angolari** e acquistano un peso sproporzionato nel tema. Un Marte a 3 gradi dall'ascendente domina la lettura anche se è in un segno discreto come Pesci. Michel Gauquelin ha dimostrato statisticamente che i pianeti angolari coincidono con tratti vocazionali marcati: Marte angolare negli sportivi, Giove angolare negli attori, Saturno angolare negli scienziati.
 
-Il **rettore dell'ascendente** (il pianeta che governa il segno ascendente) va letto con particolare cura: la sua posizione per casa, per segno e per aspetti racconta dove e come la tua identità si manifesta. Ascendente Vergine con Mercurio in decima casa in Leone indica una vocazione pubblica (casa X) attraverso la parola o la scrittura (Mercurio) espresse con scenografia (Leone). Per esplorare la trama completa degli [aspetti astrologici](/it/blog/aspetti-astrologici-congiunzione-quadratura-trigono-opposizione-sestile), consulta la nostra guida dedicata.
+Il **rettore dell'ascendente** (il pianeta che governa il segno ascendente) va letto con particolare cura: la sua posizione per casa, per segno e per aspetti racconta dove e come la tua identità si manifesta. Ascendente Vergine con Mercurio in decima casa in Leone indica una vocazione pubblica (casa X) attraverso la parola o la scrittura (Mercurio) espresse con scenografia (Leone). Per esplorare la trama completa degli aspetti astrologici, consulta la nostra guida dedicata.
 
 ## 12. Ascendente progresso
 
@@ -200,11 +200,11 @@ Puoi stimare, ma per una lettura seria l'ora esatta è indispensabile. Ricorri a
 Sì, enormemente. L'attrazione fisica iniziale dipende molto dall'ascendente, poiché è ciò che vedi per primo. La dinamica di coppia durevole dipende dall'insieme del tema: Sole, Luna, Venere, Marte e ascendenti di entrambi. Una compatibilità forte tra ascendenti (ad esempio ascendente Bilancia e ascendente Ariete, opposti complementari) facilita la prima fase. Il resto si gioca nelle configurazioni planetarie profonde. Prova il nostro calcolatore di [compatibilità](/it/strumenti/compatibilita).
 
 **Qual è il legame tra ascendente e medio cielo (MC)?**
-L'ascendente e il MC sono i due punti angolari principali del tema. Mentre l'ascendente descrive come ti manifesti nel mondo (personalità, fisicità), il MC descrive dove vai socialmente (vocazione, carriera, status). Un tema è davvero letto quando entrambi sono analizzati insieme. Vedi anche casa X nella nostra guida alle [12 case astrologiche](/it/blog/12-case-astrologiche-guida-completa-settori-vita).
+L'ascendente e il MC sono i due punti angolari principali del tema. Mentre l'ascendente descrive come ti manifesti nel mondo (personalità, fisicità), il MC descrive dove vai socialmente (vocazione, carriera, status). Un tema è davvero letto quando entrambi sono analizzati insieme. Vedi anche casa X nella nostra guida alle 12 case astrologiche.
 
 ## Andare oltre
 
-Il tuo ascendente è solo uno strato della tua carta natale. Per una visione completa, hai bisogno della tua [carta natale interpretata](/it/strumenti/). Per una lettura personalizzata, consulta l'[Oracle Karmastro](https://app.karmastro.com/oracle). Per continuare l'esplorazione dei fondamentali, leggi anche la nostra guida al [segno lunare](/it/blog/segno-lunare-luna-natale-mondo-emotivo) e agli [aspetti astrologici](/it/blog/aspetti-astrologici-congiunzione-quadratura-trigono-opposizione-sestile).
+Il tuo ascendente è solo uno strato della tua carta natale. Per una visione completa, hai bisogno della tua [carta natale interpretata](/it/strumenti/). Per una lettura personalizzata, consulta l'[Oracle Karmastro](https://app.karmastro.com/oracle). Per continuare l'esplorazione dei fondamentali, leggi anche la nostra guida al [segno lunare](/it/blog/segno-lunare-luna-natale-mondo-emotivo) e agli aspetti astrologici.
 
 ## Fonti e riferimenti
 
@@ -219,9 +219,9 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 ## Per approfondire
 
 **Articoli correlati :**
-- [Aspetti astrologici: congiunzione, quadratura, trigono, opposizione, sestile - la guida](/it/blog/aspetti-astrologici-congiunzione-quadratura-trigono-opposizione-sestile)
+- Aspetti astrologici: congiunzione, quadratura, trigono, opposizione, sestile - la guida
 - [Il ritorno di Saturno: il grande passaggio astrologico a 29 anni che cambia tutto](/it/blog/ritorno-di-saturno-29-anni-grande-passaggio-adulto)
-- [Le 12 case astrologiche: guida completa ai 12 settori della tua vita](/it/blog/12-case-astrologiche-guida-completa-settori-vita)
+- Le 12 case astrologiche: guida completa ai 12 settori della tua vita
 - [Tema natale gratuito: come interpretare la tua carta astrale completa](/it/blog/tema-natale-gratuito-interpretare-carta-astrale-completa)
 
 **Strumenti Karmastro:**

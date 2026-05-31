@@ -98,7 +98,7 @@ Mais preciso ainda do que o signo é a **casa astrológica** onde Saturno se enc
 
 **Casa V**: criatividade, amores românticos, filhos, prazer, jogo. **Casa VI**: trabalho quotidiano, saúde, rotinas, serviço. **Casa VII**: parceria conjugal ou profissional, contratos, casamento, associações. **Casa VIII**: transformações profundas, morte, sexualidade, heranças, dinheiro partilhado. **Casa IX**: estudos superiores, viagens longas, filosofia, estrangeiro.
 
-**Casa X**: **carreira pública, vocação, reputação**, a casa mais comum de impacto forte no retorno, porque Saturno rege a casa X por afinidade natural. **Casa XI**: amizades, projetos coletivos, esperanças a longo prazo, grupos de pertença. **Casa XII**: inconsciente, retiro, instituições fechadas, trabalho invisível. Para identificar em que casa o teu Saturno se encontra, lê o nosso [guia completo das 12 casas astrológicas](/pt/blog/12-casas-astrologicas-guia-completo-setores-vida).
+**Casa X**: **carreira pública, vocação, reputação**, a casa mais comum de impacto forte no retorno, porque Saturno rege a casa X por afinidade natural. **Casa XI**: amizades, projetos coletivos, esperanças a longo prazo, grupos de pertença. **Casa XII**: inconsciente, retiro, instituições fechadas, trabalho invisível. Para identificar em que casa o teu Saturno se encontra, lê o nosso guia completo das 12 casas astrológicas.
 
 ## 9. Saturno e a tua carta natal
 
@@ -170,7 +170,7 @@ Duas hipóteses. Ou o teu retorno foi discreto e passou sem convulsão visível 
 
 ## Ir mais longe
 
-O retorno de Saturno é a iniciação astrológica mais importante da vida adulta, e conhecê-lo antes de o atravessar ou durante a sua passagem muda inteiramente a experiência. Calcula o teu [mapa natal](/pt/ferramentas/mapa-natal), identifica a posição de Saturno, e lê o nosso [artigo sobre Plutão em Aquário 2024-2044](/pt/blog/plutao-aquario-2024-2044-grande-mutacao-coletiva) para cruzares o teu retorno com o trânsito coletivo em curso.
+O retorno de Saturno é a iniciação astrológica mais importante da vida adulta, e conhecê-lo antes de o atravessar ou durante a sua passagem muda inteiramente a experiência. Calcula o teu [mapa natal](/pt/ferramentas/mapa-natal), identifica a posição de Saturno, e lê o nosso artigo sobre Plutão em Aquário 2024-2044 para cruzares o teu retorno com o trânsito coletivo em curso.
 
 ## Fontes e referências
 
@@ -185,7 +185,7 @@ Este artigo baseia-se em fontes enciclopédicas, astronómicas e académicas ver
 ## Para aprofundar
 
 **Artigos relacionados :**
-- [As 12 casas astrológicas: guia completo dos 12 setores da tua vida](/pt/blog/12-casas-astrologicas-guia-completo-setores-vida)
+- As 12 casas astrológicas: guia completo dos 12 setores da tua vida
 - [Mercúrio retrógrado: como entender, antecipar e sobreviver a estes períodos sem pânico](/pt/blog/mercurio-retrogrado-guia-completo-sobreviver-prosperar)
 - [Signo zodiacal Carneiro: personalidade, compatibilidade e traços profundos](/pt/blog/carneiro-signo-zodiacal-personalidade-compatibilidade)
 - [Mapa astral grátis: como interpretar a tua carta natal completa](/pt/blog/mapa-astral-gratis-interpretar-carta-natal-completo)

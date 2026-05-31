@@ -60,7 +60,7 @@ Para calcular o teu signo lunar com rigor, precisas de três dados não negociá
 
 Em Portugal, como descrito no artigo sobre o [ascendente](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente), a hora de nascimento está em princípio registada no assento de nascimento da Conservatória do Registo Civil. Se a tua data de nascimento estiver perto da mudança de signo lunar, a hora ao minuto torna-se crítica: pedi a certidão original em vez de confiar em memórias familiares. Se a diferença entre duas horas possíveis (por exemplo 6h00 ou 6h30) cair entre dois signos lunares, é impossível decidir sem o registo.
 
-Os cálculos modernos usam efemérides precisas como as **DE441** do Jet Propulsion Laboratory da NASA, que indicam a posição da Lua ao segundo de arco. Os softwares profissionais (Solar Fire, Kepler, AstroGold) e os principais calculadores online são fiáveis. Utiliza o nosso [calculador de mapa natal gratuito](/pt/ferramentas/mapa-natal) para obter a posição exata da tua Lua, o seu signo, os graus e minutos, e a casa astrológica em que se encontra. Para ter uma leitura integrada com os outros planetas, consulta também o [guia dos aspetos astrológicos](/pt/blog/aspetos-astrologicos-conjuncao-quadratura-trigono-oposicao-sextil).
+Os cálculos modernos usam efemérides precisas como as **DE441** do Jet Propulsion Laboratory da NASA, que indicam a posição da Lua ao segundo de arco. Os softwares profissionais (Solar Fire, Kepler, AstroGold) e os principais calculadores online são fiáveis. Utiliza o nosso [calculador de mapa natal gratuito](/pt/ferramentas/mapa-natal) para obter a posição exata da tua Lua, o seu signo, os graus e minutos, e a casa astrológica em que se encontra. Para ter uma leitura integrada com os outros planetas, consulta também o guia dos aspetos astrológicos.
 
 ## 5. Os 12 signos lunares e os seus paisagens interiores
 
@@ -118,7 +118,7 @@ Os aspetos que a tua Lua forma com outros planetas natais nuanceiam profundament
 
 **Lua em conjunção a Vénus**: associas facilmente amor e emoção, és afetuoso, artístico, sensível ao belo, normalmente com relação materna calorosa. **Lua em quadratura a Marte**: mundo emocional explosivo, zangas que passam depressa mas intensas, reações físicas (bater, atirar coisas, sair a bater a porta). Trabalho: aprender a nomear a zanga antes dela escapar. **Lua em trígono a Júpiter**: generosidade emocional ampla, otimismo contagioso, relação materna expansiva, por vezes dificuldade em dizer não por excesso de amor.
 
-**Lua em oposição a Plutão**: emoções intensas, transformadoras, frequentemente com história materna de poder (mãe controladora, fusional, ou ausente por trauma). Aprendes vida inteira a regular a intensidade sem a reprimir. **Lua em sextil a Mercúrio**: capacidade de articular emoções verbalmente, útil em terapia, em escrita, em comunicação íntima. **Lua em conjunção a Neptuno**: sensibilidade psíquica alta, intuição forte, risco de dissolução nas emoções dos outros. Para um mapa completo dos teus aspetos lunares, consulta o [guia dos aspetos astrológicos](/pt/blog/aspetos-astrologicos-conjuncao-quadratura-trigono-oposicao-sextil).
+**Lua em oposição a Plutão**: emoções intensas, transformadoras, frequentemente com história materna de poder (mãe controladora, fusional, ou ausente por trauma). Aprendes vida inteira a regular a intensidade sem a reprimir. **Lua em sextil a Mercúrio**: capacidade de articular emoções verbalmente, útil em terapia, em escrita, em comunicação íntima. **Lua em conjunção a Neptuno**: sensibilidade psíquica alta, intuição forte, risco de dissolução nas emoções dos outros. Para um mapa completo dos teus aspetos lunares, consulta o guia dos aspetos astrológicos.
 
 ## 10. Lua progredida
 
@@ -166,7 +166,7 @@ Observa-o nos momentos de baixa defesa: fim de um dia cansativo, manhãs, doenç
 
 ## Ir mais longe
 
-A tua Lua natal é uma das três chaves mestras da tua carta (com Sol e ascendente). Para a ver em contexto completo e compreender como dialoga com os outros planetas, calcula o teu [mapa natal](/pt/ferramentas/mapa-natal) e lê o nosso [guia do ascendente](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente). Para compreender também como os grandes trânsitos atuais tocam a tua vida emocional, o [artigo sobre Plutão em Aquário 2024-2044](/pt/blog/plutao-aquario-2024-2044-grande-mutacao-coletiva) oferece uma chave geracional essencial.
+A tua Lua natal é uma das três chaves mestras da tua carta (com Sol e ascendente). Para a ver em contexto completo e compreender como dialoga com os outros planetas, calcula o teu [mapa natal](/pt/ferramentas/mapa-natal) e lê o nosso [guia do ascendente](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente). Para compreender também como os grandes trânsitos atuais tocam a tua vida emocional, o artigo sobre Plutão em Aquário 2024-2044 oferece uma chave geracional essencial.
 
 ## Fontes e referências
 
@@ -182,8 +182,8 @@ Este artigo baseia-se em fontes enciclopédicas, astronómicas e académicas ver
 
 **Artigos relacionados :**
 - [O retorno de Saturno: a grande passagem astrológica aos 29 anos que muda tudo](/pt/blog/retorno-saturno-29-anos-grande-passagem-adulto)
-- [Plutão em Aquário 2024-2044: a grande mutação coletiva de 20 anos](/pt/blog/plutao-aquario-2024-2044-grande-mutacao-coletiva)
-- [As 12 casas astrológicas: guia completo dos 12 setores da tua vida](/pt/blog/12-casas-astrologicas-guia-completo-setores-vida)
+- Plutão em Aquário 2024-2044: a grande mutação coletiva de 20 anos
+- As 12 casas astrológicas: guia completo dos 12 setores da tua vida
 - [Mapa astral grátis: como interpretar a tua carta natal completa](/pt/blog/mapa-astral-gratis-interpretar-carta-natal-completo)
 
 **Ferramentas Karmastro:**

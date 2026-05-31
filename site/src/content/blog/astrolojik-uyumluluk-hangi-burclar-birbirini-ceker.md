@@ -115,7 +115,7 @@ Plüton sinastride yoğun ve dönüştürücü ilişkileri işaret eder. Bir par
 
 Plüton-Venüs açıları büyük aşklar yaratır ama aynı zamanda güç mücadeleleri, kıskançlık, takıntı da yaratır. Bu tür ilişkiler uzun süreli olma veya kısa süreli olma yeteneğine sahiptir ama bir kişinin diğerini ömür boyu değiştirme kapasitesine sahiptir.
 
-Plüton-Mars açıları cinsel yoğunluk ve rekabet yaratır. Çekim patlayıcı olabilir ama aynı zamanda güç savaşı olarak dönüşebilir. Bu açılar 'twin flame' edebiyatında popülerleşmiştir ama gerçek astrolojik yorumu daha nüanslıdır. [Astrolojik açılar rehberi](/tr/blog/astrolojik-acilar-kavusum-kare-uclu-karsit-altmislik) bu açı türlerini teknik detaylarıyla ele alır.
+Plüton-Mars açıları cinsel yoğunluk ve rekabet yaratır. Çekim patlayıcı olabilir ama aynı zamanda güç savaşı olarak dönüşebilir. Bu açılar 'twin flame' edebiyatında popülerleşmiştir ama gerçek astrolojik yorumu daha nüanslıdır. Astrolojik açılar rehberi bu açı türlerini teknik detaylarıyla ele alır.
 
 ## 5. İşleyen olası olmayan çiftler
 
@@ -147,7 +147,7 @@ Ciddi uyumluluk analizi için tam sinastri gereklidir. İki kişinin tam doğum 
 
 Sinastri okumada önemli adımlar: (1) dört element dağılımını karşılaştır; (2) Güneş-Ay çapraz açılarına bak; (3) Venüs-Mars çapraz açılarına bak; (4) Satürn'ün kişisel gezegenlerle açılarına bak; (5) Plüton'un kişisel gezegenlerle açılarına bak; (6) haritaları ev kaplaması açısından incele (A'nın Venüs'ü B'nin hangi evinde?).
 
-**Ev kaplaması** nüans katar. A'nın Venüs'ü B'nin 7. evine (ortaklık evi) düşerse romantik kader; B'nin 5. evine (yaratıcılık ve aşk) düşerse tutku; B'nin 12. evine (bilinçdışı) düşerse ruhsal bağlantı veya gizli aşk yaratır. Bu ayrıntılar sıralamayı derinleştirir. [Doğum haritası hesaplayıcısı](/tr/araclar/dogum-haritasi) ve sonrasında manuel sinastri bu düzeyi mümkün kılar. [12 astrolojik ev rehberi](/tr/blog/12-astrolojik-ev-tam-rehber-yasam-sektorleri) ev kaplamalarını doğru yorumlamak için temel referanstır.
+**Ev kaplaması** nüans katar. A'nın Venüs'ü B'nin 7. evine (ortaklık evi) düşerse romantik kader; B'nin 5. evine (yaratıcılık ve aşk) düşerse tutku; B'nin 12. evine (bilinçdışı) düşerse ruhsal bağlantı veya gizli aşk yaratır. Bu ayrıntılar sıralamayı derinleştirir. [Doğum haritası hesaplayıcısı](/tr/araclar/dogum-haritasi) ve sonrasında manuel sinastri bu düzeyi mümkün kılar. 12 astrolojik ev rehberi ev kaplamalarını doğru yorumlamak için temel referanstır.
 
 **Kompozit harita** (composite chart) sinastride ileri düzey bir araçtır. İki partnerin her gezegeninin orta noktası alınarak yeni bir "üçüncü harita" oluşturulur. Bu kompozit harita çiftin ortak varlığını temsil eder, her iki bireyin ayrı varlıklarına ek olarak. Robert Hand kompozit yöntemini 1975'te *Planets in Composite* kitabında sistemleştirmiş ve modern astrolojide standartlaştırmıştır. Kompozit harita özellikle evlilik ilişkilerinin uzun vadeli karakterini analiz etmek için kullanılır.
 
@@ -201,7 +201,7 @@ Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
 - [AI kâhin vs geleneksel tarot: 2026](/tr/blog/ai-kahin-vs-geleneksel-tarot-hangi-rehber)
 - [Pitagor vs Kaldeli numeroloji: farklar ve karşılaştırmalı yöntemler](/tr/blog/pitagor-vs-kaldeli-numeroloji-farklar)
 - [Numerolojide yaşam yolu 1: liderlik, bağımsızlık ve enkarnasyon misyonu](/tr/blog/yasam-yolu-1-liderlik-bagimsizlik-numeroloji)
-- [Astrolojik açılar: kavuşum, kare, üçlü, karşıt, altmışlık - rehber](/tr/blog/astrolojik-acilar-kavusum-kare-uclu-karsit-altmislik)
+- Astrolojik açılar: kavuşum, kare, üçlü, karşıt, altmışlık - rehber
 
 **Karmastro araçları:**
 - [Doğum haritası](/tr/araclar/dogum-haritasi)

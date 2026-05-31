@@ -96,7 +96,7 @@ M(4) + A(1) + R(2) + I(1) + A(1) = 9 → **9** (ma 9 è sacro, quindi non si ass
 
 In realtà, nel sistema caldeo stretto, se il totale è 9, si considera che la parola "risuoni" con la vibrazione sacra del 9, cosa piuttosto rara e interpretata come segno di missione spirituale particolare. Alcuni praticanti caldei moderni, per semplicità, lasciano il 9 come risultato finale, ma la tradizione ortodossa lo esclude dal conteggio letterale.
 
-Il risultato è che per "Maria", i due metodi danno **6 (pitagorico) vs 9 (caldeo)**: due letture completamente diverse della stessa persona. Questo illustra bene perché non si possono mescolare i due sistemi nello stesso tema. Scegli un metodo, studialo a fondo, applicalo con coerenza. Per il tema numerologico completo, puoi usare il [numero di espressione](/it/blog/numero-di-espressione-numerologia-nome-decifrare-identita) e incrociarlo con il cammino di vita.
+Il risultato è che per "Maria", i due metodi danno **6 (pitagorico) vs 9 (caldeo)**: due letture completamente diverse della stessa persona. Questo illustra bene perché non si possono mescolare i due sistemi nello stesso tema. Scegli un metodo, studialo a fondo, applicalo con coerenza. Per il tema numerologico completo, puoi usare il numero di espressione e incrociarlo con il cammino di vita.
 
 **Il cammino di vita (calcolato dalla data di nascita) resta identico in entrambi i metodi.** Questa è una rassicurazione: il tuo numero di vita è stabile, qualunque scuola tu adotti per l'analisi del nome.
 
@@ -120,7 +120,7 @@ Abbiamo scelto di adottare la **numerologia pitagorica stretta** per tutti i nos
 
 **Coerenza con il pubblico**: il pubblico occidentale contemporaneo è familiare con la logica sequenziale pitagorica. I libri di numerologia più diffusi in italiano, francese e inglese seguono questa scuola. Usare il sistema caldeo creerebbe incoerenze con le risorse che i nostri utenti consultano altrove.
 
-**Compatibilità con l'astrologia moderna**: i numeri maestri 11, 22, 33 entrano in risonanza con concetti astrologici come il [ritorno di Saturno](/it/blog/ritorno-di-saturno-29-anni-grande-passaggio-adulto) (a 29-30 anni), il [Mercurio retrogrado](/it/blog/mercurio-retrogrado-guida-completa-sopravvivere-prosperare) (ciclico nel tema) o i grandi transiti come [Plutone in Acquario](/it/blog/plutone-acquario-2024-2044-grande-mutazione-collettiva). L'ecosistema interpretativo è più ricco e interconnesso.
+**Compatibilità con l'astrologia moderna**: i numeri maestri 11, 22, 33 entrano in risonanza con concetti astrologici come il [ritorno di Saturno](/it/blog/ritorno-di-saturno-29-anni-grande-passaggio-adulto) (a 29-30 anni), il [Mercurio retrogrado](/it/blog/mercurio-retrogrado-guida-completa-sopravvivere-prosperare) (ciclico nel tema) o i grandi transiti come Plutone in Acquario. L'ecosistema interpretativo è più ricco e interconnesso.
 
 Questa scelta non significa che la numerologia caldea sia meno valida. È una scelta di strumento, come scegliere il sistema metrico invece di quello imperiale. Entrambi misurano la realtà, ma non si mescolano senza errore.
 
@@ -148,7 +148,7 @@ Sì. La numerologia cabalistica (basata sull'alfabeto ebraico e sulla ghematria)
 
 I due metodi sono due vie valide per leggere la vibrazione di un nome. Non sono in competizione: sono in distribuzione, come due lingue che parlano dello stesso concetto in modo diverso. Se inizi nel mondo della numerologia, usa la pitagorica. Se hai già una base e cerchi profondità mistica, esplora la caldea. In entrambi i casi, applica il sistema con rigore e coerenza.
 
-Calcola il tuo [cammino di vita](/it/strumenti/numero-del-cammino-di-vita) gratuitamente, scopri il tuo [numero di espressione](/it/blog/numero-di-espressione-numerologia-nome-decifrare-identita) e consulta l'[Oracle](https://app.karmastro.com/oracle) per un'analisi personalizzata. Per incrociare numerologia e astrologia, esplora le [12 case astrologiche](/it/blog/12-case-astrologiche-guida-completa-settori-vita) e il tuo [segno lunare](/it/blog/segno-lunare-luna-natale-mondo-emotivo).
+Calcola il tuo [cammino di vita](/it/strumenti/numero-del-cammino-di-vita) gratuitamente, scopri il tuo numero di espressione e consulta l'[Oracle](https://app.karmastro.com/oracle) per un'analisi personalizzata. Per incrociare numerologia e astrologia, esplora le 12 case astrologiche e il tuo [segno lunare](/it/blog/segno-lunare-luna-natale-mondo-emotivo).
 
 ## Fonti e riferimenti
 

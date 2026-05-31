@@ -214,8 +214,8 @@ Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
 **Artigos relacionados :**
 - [Mercúrio retrógrado: como entender, antecipar e sobreviver a estes períodos sem pânico](/pt/blog/mercurio-retrogrado-guia-completo-sobreviver-prosperar)
 - [Mapa astral grátis: como interpretar a tua carta natal completa](/pt/blog/mapa-astral-gratis-interpretar-carta-natal-completo)
-- [Plutão em Aquário 2024-2044: a grande mutação coletiva de 20 anos](/pt/blog/plutao-aquario-2024-2044-grande-mutacao-coletiva)
-- [As 12 casas astrológicas: guia completo dos 12 setores da tua vida](/pt/blog/12-casas-astrologicas-guia-completo-setores-vida)
+- Plutão em Aquário 2024-2044: a grande mutação coletiva de 20 anos
+- As 12 casas astrológicas: guia completo dos 12 setores da tua vida
 
 **Ferramentas Karmastro:**
 - [Mapa natal](/pt/ferramentas/mapa-natal)

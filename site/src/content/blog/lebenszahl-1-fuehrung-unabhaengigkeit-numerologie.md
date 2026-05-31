@@ -201,7 +201,7 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 **Ähnliche Artikel:**
 - [Was ist Numerologie? Vollständiger Leitfaden für Anfänger](/de/blog/was-ist-numerologie-vollstaendiger-anfaenger-leitfaden)
 - [Wie berechnet man die Lebenszahl: die pythagoreische Methode Schritt für Schritt](/de/blog/wie-berechnet-man-lebenszahl-schritt-fuer-schritt)
-- [Ausdruckszahl: entschlüssele was dein Name über deine Identität verrät](/de/blog/ausdruckszahl-numerologie-name-identitaet-entschluesseln)
+- Ausdruckszahl: entschlüssele was dein Name über deine Identität verrät
 - [Persönliches Jahr 2026: finde deine Zahl und verstehe den 9-Jahre-Zyklus](/de/blog/persoenliches-jahr-2026-numerologie-9-jahre-zyklus)
 
 **Karmastro Werkzeuge:**

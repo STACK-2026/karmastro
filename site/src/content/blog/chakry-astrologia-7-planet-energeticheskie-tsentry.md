@@ -117,7 +117,7 @@ reviewedBy: "Орион, старший астроном и астролог"
 **Похожие статьи:**
 - [Возвращение Сатурна: великий астрологический переход в 29 лет, меняющий всё](/ru/blog/vozvraschenie-saturna-29-let-bolshoi-perekhod-vzroslost)
 - [Знак зодиака Овен: личность, совместимость и глубокие черты](/ru/blog/oven-znak-zodiaka-lichnost-sovmestimost)
-- [Астрологические аспекты: соединение, квадрат, тригон, оппозиция, секстиль - руководство](/ru/blog/astrologicheskie-aspekty-soedinenie-kvadrat-trigon-oppozitsia-sekstil)
+- Астрологические аспекты: соединение, квадрат, тригон, оппозиция, секстиль - руководство
 - [Лунный знак: что твоя натальная Луна говорит о твоём эмоциональном мире](/ru/blog/lunnyi-znak-natalnaia-luna-emotsionalnyi-mir)
 
 **Инструменты Karmastro:**

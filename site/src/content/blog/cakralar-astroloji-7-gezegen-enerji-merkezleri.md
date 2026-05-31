@@ -46,7 +46,7 @@ Pratik fayda çok basittir: doğum haritanı okurken zorluk çeken gezegenlerini
 
 Hindu astrolojisi Jyotish da aynı kültürel zeminden doğdu. Vedanga Jyotisha'nın en eski el yazmaları MÖ 1400'lere tarihlenir ve gezegenlerin (*grahalar*) insan bedeni üzerindeki etkilerini doğrudan çakralar ve *nadi* kanallarıyla ilişkilendirir. Dokuz *grahas* sistemi (Güneş, Ay, Mars, Merkür, Jüpiter, Venüs, Satürn, Rahu, Ketu) insan enerji alanının mikrokosmosunu temsil eder.
 
-Batı'da çakralar ile gezegenler arasındaki köprüyü kuran iki önemli figür vardır. Helena Petrovna Blavatsky 1888'de *The Secret Doctrine*'da tantrik kavramları teozofiye taşıdı ve Carl Jung bu sistemi psikanalizle birleştirdi. Jung'un 1932'de Zürih'te verdiği "The Psychology of Kundalini Yoga" seminerleri modern bütüncül astrolojinin temelidir. [Pluton'un Kova'ya geçişi](/tr/blog/pluton-kova-2024-2044-buyuk-kolektif-donusum) gibi kolektif dönüşümleri beden diliyle okumak bu geleneğe dayanır.
+Batı'da çakralar ile gezegenler arasındaki köprüyü kuran iki önemli figür vardır. Helena Petrovna Blavatsky 1888'de *The Secret Doctrine*'da tantrik kavramları teozofiye taşıdı ve Carl Jung bu sistemi psikanalizle birleştirdi. Jung'un 1932'de Zürih'te verdiği "The Psychology of Kundalini Yoga" seminerleri modern bütüncül astrolojinin temelidir. Pluton'un Kova'ya geçişi gibi kolektif dönüşümleri beden diliyle okumak bu geleneğe dayanır.
 
 ## 3. 7 çakra ve yönetici gezegenleri
 
@@ -108,7 +108,7 @@ Sezgi, iç görü merkezi. Kaşların arasında konumlanan Ajna zihnin ötesine 
 
 Jüpiter'in doğum haritandaki evi ve burcu hangi alanda sezgisel bir genişleme yaşadığını söyler. Jüpiter Yay'da dokuzuncu evde olduğunda açıkça felsefi bir Ajna üretir; Jüpiter Başak'ta altıncı evde daha pratik ama metodolojik bir iç görü yaratır. Jüpiter retrosu (yılda yaklaşık 120 gün) içsel vizyonun dinlendirildiği dönemlerdir.
 
-Ajna blokajı genellikle başağrısı, görme bozukluğu, rüya yokluğu, karar felci olarak kendini gösterir. [12 astrolojik ev rehberinde](/tr/blog/12-astrolojik-ev-tam-rehber-yasam-sektorleri) dokuzuncu ve on ikinci evlerin Ajna ile bağlantısını derinleştirebilirsin. Pratik araçlar: Nadi Shodhana (alternatif burun nefesi), karanlık oda pratikleri, çivit mavisi mumlar, lapis lazuli taşı.
+Ajna blokajı genellikle başağrısı, görme bozukluğu, rüya yokluğu, karar felci olarak kendini gösterir. 12 astrolojik ev rehberinde dokuzuncu ve on ikinci evlerin Ajna ile bağlantısını derinleştirebilirsin. Pratik araçlar: Nadi Shodhana (alternatif burun nefesi), karanlık oda pratikleri, çivit mavisi mumlar, lapis lazuli taşı.
 
 ## 10. Sahasrara, taç çakra ve Neptün
 
@@ -116,13 +116,13 @@ Ruh ile bağlantı merkezi. Başın tepesinde konumlanan Sahasrara "bin taçlı"
 
 Neptün'ün doğum haritandaki burcu kuşağın kolektif arketipini çizer (Neptün Balık'ta 2011-2026, Neptün Koç'ta 2026-2038). Evi ise hangi yaşam alanında ruhsal geçirgenliğin yüksek olduğunu gösterir. Neptün on ikinci evde olduğunda Sahasrara doğal olarak açıktır ama aynı zamanda sınır kaybı ve bağımlılık riski üretir.
 
-Sahasrara blokajı nadirdir; daha çok Sahasrara aşırı açıklığı tehlikelidir. Uyku bozuklukları, gerçeklikten kopma, maddi yaşama bağlanmakta zorluk. Pratik araçlar: günlük sessizlik (en az 20 dakika), beyaz kuvars, tarçın ve sandal kokusu. Kozmik ölçekte [Pluton Kova transiti](/tr/blog/pluton-kova-2024-2044-buyuk-kolektif-donusum) taç çakranın kolektif olarak yeniden şekillenmesini hızlandırır.
+Sahasrara blokajı nadirdir; daha çok Sahasrara aşırı açıklığı tehlikelidir. Uyku bozuklukları, gerçeklikten kopma, maddi yaşama bağlanmakta zorluk. Pratik araçlar: günlük sessizlik (en az 20 dakika), beyaz kuvars, tarçın ve sandal kokusu. Kozmik ölçekte Pluton Kova transiti taç çakranın kolektif olarak yeniden şekillenmesini hızlandırır.
 
 ## 11. Haritan aracılığıyla teşhis
 
 En gergin üç gezegeni belirle. Her birini bir çakraya çevir. Bedeninle çaprazla. Bu üç adımlı protokol Batı astrolojisini bedensel bir haritaya dönüştürür ve soyut yorumlardan somut bir eylem planına geçiş sağlar.
 
-Gerginlik kriteri üç kategoriye bölünür. Birinci kategori: zor açılar (kare, karşıt açı, quincunx) alan gezegenler. İkinci kategori: yönetici olduğu evde olmayan, düşmüş veya zararlı pozisyonda olan gezegenler (örneğin Mars Yengeç'te, Satürn Koç'ta). Üçüncü kategori: retrograt veya sabit yıldızlarla temas halindeki gezegenler. [Astrolojik açılar rehberi](/tr/blog/astrolojik-acilar-kavusum-kare-uclu-karsit-altmislik) bu çözümleme için referans sağlar.
+Gerginlik kriteri üç kategoriye bölünür. Birinci kategori: zor açılar (kare, karşıt açı, quincunx) alan gezegenler. İkinci kategori: yönetici olduğu evde olmayan, düşmüş veya zararlı pozisyonda olan gezegenler (örneğin Mars Yengeç'te, Satürn Koç'ta). Üçüncü kategori: retrograt veya sabit yıldızlarla temas halindeki gezegenler. Astrolojik açılar rehberi bu çözümleme için referans sağlar.
 
 Bedensel çaprazlama pratik yapılır. Kök ağrıları (bel, sakrum, dizler) Muladhara/Satürn hattı; karın sorunları (adet, prostat, sindirim) Svadhisthana/Ay hattı; sindirim ve enerji Manipura/Güneş; göğüs ve solunum Anahata/Venüs; boğaz ve işitme Vishuddha/Merkür; baş ağrısı ve göz Ajna/Jüpiter; uyku ve sınır Sahasrara/Neptün. Bu eşleme tıbbi teşhis değildir ama bedensel semptomların astrolojik bir bağlamı vardır ve bu bağlam sıklıkla çözümü hızlandırır.
 
@@ -132,7 +132,7 @@ Yavaş bir gezegen haritanın önemli bir noktasını geçtiğinde karşılık g
 
 Örneğin Satürn transit Boğa'da beşinci evde üç yıl kalacak ve bu dönemde Muladhara-Manipura ekseni çalışacak: sınır koyma (Satürn) ve yaratıcı kimlik (beşinci ev). Bu transit sırasında sıklıkla dikkatli iskelet bakımı, kalça operasyonları veya finansal yeniden yapılandırma gözlenir. Uranüs transitleri ise Vishuddha'yı (boğaz) hızla açar; boğaz titremesi, ses değişikliği, nöropatik atakları tipiktir.
 
-Neptün transitleri Sahasrara'yı çözer ve Pluton transitleri Muladhara'yı dönüştürür. [Pluton Kova dönemi](/tr/blog/pluton-kova-2024-2044-buyuk-kolektif-donusum) 2024-2044 arası tüm kuşağın kök çakrasını (Muladhara), toplumsal yapıları, yönetim sistemlerini, ekonomik tabanları yeniden şekillendirecek. Bedensel plan kolektif plana ayna tutar.
+Neptün transitleri Sahasrara'yı çözer ve Pluton transitleri Muladhara'yı dönüştürür. Pluton Kova dönemi 2024-2044 arası tüm kuşağın kök çakrasını (Muladhara), toplumsal yapıları, yönetim sistemlerini, ekonomik tabanları yeniden şekillendirecek. Bedensel plan kolektif plana ayna tutar.
 
 ## 13. Mantralar, kristaller, ritüeller
 
@@ -177,7 +177,7 @@ Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
 ## Daha fazlası
 
 **İlgili makaleler:**
-- [12 astrolojik ev: hayatının 12 sektörünün tam rehberi](/tr/blog/12-astrolojik-ev-tam-rehber-yasam-sektorleri)
+- 12 astrolojik ev: hayatının 12 sektörünün tam rehberi
 - [Satürn dönüşü: 29 yaşındaki her şeyi değiştiren büyük astrolojik geçiş](/tr/blog/saturn-donusu-29-yas-buyuk-yetiskinlik-gecisi)
 - [Ücretsiz doğum haritası : tam natal yorumlama rehberi](/tr/blog/ucretsiz-dogum-haritasi-tam-natal-yorumlama)
 - [AI kâhin vs geleneksel tarot: 2026](/tr/blog/ai-kahin-vs-geleneksel-tarot-hangi-rehber)

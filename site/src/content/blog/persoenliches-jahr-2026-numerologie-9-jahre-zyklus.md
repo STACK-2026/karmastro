@@ -215,7 +215,7 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 ## Mehr erfahren
 
 **Ähnliche Artikel:**
-- [Ausdruckszahl: entschlüssele was dein Name über deine Identität verrät](/de/blog/ausdruckszahl-numerologie-name-identitaet-entschluesseln)
+- Ausdruckszahl: entschlüssele was dein Name über deine Identität verrät
 - [Was ist Numerologie? Vollständiger Leitfaden für Anfänger](/de/blog/was-ist-numerologie-vollstaendiger-anfaenger-leitfaden)
 - [Pythagoreische vs chaldäische Numerologie: Unterschiede und verglichene Methoden](/de/blog/pythagoreische-vs-chaldaeische-numerologie-unterschiede)
 - [Wie berechnet man die Lebenszahl: die pythagoreische Methode Schritt für Schritt](/de/blog/wie-berechnet-man-lebenszahl-schritt-fuer-schritt)

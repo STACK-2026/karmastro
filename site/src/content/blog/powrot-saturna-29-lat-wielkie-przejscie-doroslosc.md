@@ -118,9 +118,9 @@ Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych
 ## Warto przeczytać
 
 **Powiązane artykuły:**
-- [Aspekty astrologiczne: koniunkcja, kwadratura, trygon, opozycja, sekstyl - przewodnik](/pl/blog/aspekty-astrologiczne-koniunkcja-kwadratura-trygon-opozycja-sekstyl)
+- Aspekty astrologiczne: koniunkcja, kwadratura, trygon, opozycja, sekstyl - przewodnik
 - [Znak zodiaku Baran: osobowość, kompatybilność i głębokie cechy](/pl/blog/baran-znak-zodiaku-osobowosc-kompatybilnosc)
-- [12 domów astrologicznych: kompletny przewodnik po 12 sektorach twojego życia](/pl/blog/12-domow-astrologicznych-kompletny-przewodnik-sektory-zycia)
+- 12 domów astrologicznych: kompletny przewodnik po 12 sektorach twojego życia
 - [Znak księżycowy: co twój natalny Księżyc mówi o twoim świecie emocjonalnym](/pl/blog/znak-ksiezycowy-ksiezyc-natalny-swiat-emocjonalny)
 
 **Narzędzia Karmastro:**

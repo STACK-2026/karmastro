@@ -89,7 +89,7 @@ reviewedBy: "Orion、シニア天文学者兼占星術師"
 
 **関連記事:**
 - [アセンダント:あなたの占星術上昇星座を理解する完全ガイド](/ja/blog/asendanto-kanzen-gaido-rikai)
-- [占星術アスペクト:合、スクエア、トライン、オポジション、セクスタイル - ガイド](/ja/blog/asutoroji-asupekuto-goukei-sukuea-torin-opposshon-sekisutairu)
+- 占星術アスペクト:合、スクエア、トライン、オポジション、セクスタイル - ガイド
 - [数秘術とは何か 初心者のための完全ガイド](/ja/blog/suumitsu-to-wa-nani-ka-shoshinsha-gaido)
 - [月の星座:あなたの出生月があなたの感情世界について語ること](/ja/blog/tsuki-no-seiza-shussei-tsuki-kanjou-sekai)
 

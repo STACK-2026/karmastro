@@ -115,10 +115,10 @@ reviewedBy: "Orion、シニア天文学者兼占星術師"
 ## さらに詳しく
 
 **関連記事:**
-- [占星術アスペクト:合、スクエア、トライン、オポジション、セクスタイル - ガイド](/ja/blog/asutoroji-asupekuto-goukei-sukuea-torin-opposshon-sekisutairu)
+- 占星術アスペクト:合、スクエア、トライン、オポジション、セクスタイル - ガイド
 - [個人の年 2026:あなたの数字を見つけて9年サイクルを理解する](/ja/blog/kojin-toshi-2026-suumitsu-9-nen-saikuru)
 - [土星回帰:29歳ですべてを変える大きな占星術的移行](/ja/blog/dosei-kaiki-29sai-juudai-otona-ikou)
-- [表現数:あなたの名前があなたのアイデンティティについて明かすこと](/ja/blog/hyougen-suji-suumitsu-namae-aidentiti)
+- 表現数:あなたの名前があなたのアイデンティティについて明かすこと
 
 **Karmastro 診断ツール:**
 - [出生図](/ja/shindan/shusseizu)

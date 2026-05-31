@@ -41,7 +41,7 @@ Mercury retrograde is probably the most publicized, most feared, and most misund
 
 In this article, we are going to put things back in perspective. Not to minimize the phenomenon, because it is very real and has a measurable impact on certain areas of life. But to give you a clear, dust-off reading, and to let you transform these three annual periods into allies rather than nightmares to be endured holding your breath.
 
-If you want to know your chart first and see where Mercury sits in it, calculate your [zodiac sign](/en/tools/zodiac-sign) for free. That is the basis for understanding how each transit affects you personally.
+If you want to know your chart first and see where Mercury sits in it, calculate your zodiac sign for free. That is the basis for understanding how each transit affects you personally.
 
 ## 2. The celestial mechanics: why a planet appears to move backward
 
@@ -157,7 +157,7 @@ You will also be affected if the retrograde occurs in an active astrological hou
 
 If the retrograde happens in an empty and quiet zone of your chart, and it does not touch any personal planet, you may very well feel nothing. It is that simple. This is why some friends will tell you "this retrograde was hell" while you have not noticed anything: your charts are different.
 
-If you want to know precisely where Mercury falls on your chart this month, you can use the [zodiac sign](/en/tools/zodiac-sign) and [moon sign](/en/tools/moon-sign) calculators, then cross-reference with current positions. Or, more simply, ask the [Oracle](https://app.karmastro.com/oracle) for a personalized reading of this transit for you.
+If you want to know precisely where Mercury falls on your chart this month, you can use the zodiac sign and moon sign calculators, then cross-reference with current positions. Or, more simply, ask the [Oracle](https://app.karmastro.com/oracle) for a personalized reading of this transit for you.
 
 ## 10. Mercury retrograde in your natal chart (born with it)
 
@@ -279,7 +279,7 @@ Indirectly, yes. The stress linked to misunderstandings, mental fatigue, and the
 
 ## Going further
 
-Mercury retrograde is only one of the many transits that punctuate your astrological year. To understand your chart as a whole and see how each planet affects you, start by calculating your [rising sign](/en/tools/rising-sign), your [moon sign](/en/tools/moon-sign), and exploring your [basic numerology](/en/tools/life-path-number).
+Mercury retrograde is only one of the many transits that punctuate your astrological year. To understand your chart as a whole and see how each planet affects you, start by calculating your [rising sign](/en/tools/rising-sign), your moon sign, and exploring your [basic numerology](/en/tools/life-path-number).
 
 If you want a personalized reading of the next retrograde for you specifically, [consult the Oracle](https://app.karmastro.com/oracle). You ask your question, you receive an answer adapted to your chart, in a few minutes.
 
@@ -300,7 +300,7 @@ This article draws on verifiable encyclopedic and scientific sources.
 
 **Related articles:**
 - [Rising sign: the complete guide to understand your astrological ascendant](/en/blog/rising-sign-complete-guide-understand-ascendant)
-- [Astrological aspects: conjunction, square, trine, opposition, sextile, the guide to read them](/en/blog/astrological-aspects-conjunction-square-trine-opposition-sextile)
+- Astrological aspects: conjunction, square, trine, opposition, sextile, the guide to read them
 - [Free birth chart: how to interpret your complete natal chart](/en/blog/free-birth-chart-interpret-complete-natal-chart)
 - [Aries zodiac sign: personality, compatibility and deep traits](/en/blog/aries-zodiac-sign-personality-compatibility-traits)
 

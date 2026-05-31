@@ -206,7 +206,7 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 **Articoli correlati :**
 - [Come calcolare il tuo cammino di vita: il metodo pitagorico passo passo](/it/blog/come-calcolare-cammino-di-vita-passo-passo)
 - [Numerologia pitagorica vs caldea: differenze e metodi a confronto](/it/blog/numerologia-pitagorica-vs-caldea-differenze)
-- [Le 12 case astrologiche: guida completa ai 12 settori della tua vita](/it/blog/12-case-astrologiche-guida-completa-settori-vita)
+- Le 12 case astrologiche: guida completa ai 12 settori della tua vita
 - [Cos](/it/blog/cos-e-numerologia-guida-completa-principianti)
 
 **Strumenti Karmastro:**

@@ -213,7 +213,7 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 - [Karma e astrologia: leggere le tue vite passate attraverso il tema natale](/it/blog/karma-astrologia-vite-passate-tema-natale)
 - [Cos](/it/blog/cos-e-numerologia-guida-completa-principianti)
 - [Tema natale gratuito: come interpretare la tua carta astrale completa](/it/blog/tema-natale-gratuito-interpretare-carta-astrale-completa)
-- [Numero di espressione: decifra cosa il tuo nome rivela della tua identità](/it/blog/numero-di-espressione-numerologia-nome-decifrare-identita)
+- Numero di espressione: decifra cosa il tuo nome rivela della tua identità
 
 **Strumenti Karmastro:**
 - [Tema natale](/it/strumenti/tema-natale)

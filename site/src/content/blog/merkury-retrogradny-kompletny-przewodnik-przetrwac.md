@@ -127,7 +127,7 @@ Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych
 - [Darmowy horoskop natalny : interpretacja pełnej mapy urodzeniowej](/pl/blog/darmowy-horoskop-natalny-interpretacja-pelnej-mapy)
 - [Znak wschodzący: kompletny przewodnik do zrozumienia twojego astrologicznego ascendentu](/pl/blog/znak-wschodzacy-kompletny-przewodnik-zrozumienie)
 - [Powrót Saturna: wielkie astrologiczne przejście w wieku 29 lat które zmienia wszystko](/pl/blog/powrot-saturna-29-lat-wielkie-przejscie-doroslosc)
-- [12 domów astrologicznych: kompletny przewodnik po 12 sektorach twojego życia](/pl/blog/12-domow-astrologicznych-kompletny-przewodnik-sektory-zycia)
+- 12 domów astrologicznych: kompletny przewodnik po 12 sektorach twojego życia
 
 **Narzędzia Karmastro:**
 - [Horoskop natalny](/pl/narzedzia/horoskop-natalny)

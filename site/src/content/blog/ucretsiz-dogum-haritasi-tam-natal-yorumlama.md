@@ -22,7 +22,7 @@ Bu rehber, doğum haritasını kendi başına nasıl okuyacağını açıklar : 
 
 Doğum haritası, natal harita veya radix olarak da bilinir ; yenidoğanın ilk nefesi anına ekliptiğin geosentrik projeksiyonudur. Astronom her gezegenin ilkbahar noktasına göre boylamını hesaplar, ardından astrolog yerel ufuk ve meridyene bağlı on iki evli sistemi üst üste bindirir. Sonuç, her gezegenin zodyakta belirli bir dereceyi ve belirli bir evi işgal ettiği dairesel bir şemadır.
 
-Neden okumak gerekir ? Çünkü harita bir karakter aynası, öz-düşünüm aracı ve yaşam döngüleri içinde yön bulma pusulası işlevi görür. Carl Gustav Jung hastalarının doğum haritalarını Rorschach testine benzer bir projektif materyal olarak kullanıyordu. Modern koçlar astrolojiyi MBTI veya Enneagram'a benzer bir tipoloji dili olarak kullanır. Başlangıç için paralel olarak [yükselen burç üzerine tam rehberi](/tr/blog/yukselen-burc-tam-rehber-yukselen-anlama) ve [12 astrolojik ev](/tr/blog/12-astrolojik-ev-tam-rehber-yasam-sektorleri) makalesini okumanızı öneririz.
+Neden okumak gerekir ? Çünkü harita bir karakter aynası, öz-düşünüm aracı ve yaşam döngüleri içinde yön bulma pusulası işlevi görür. Carl Gustav Jung hastalarının doğum haritalarını Rorschach testine benzer bir projektif materyal olarak kullanıyordu. Modern koçlar astrolojiyi MBTI veya Enneagram'a benzer bir tipoloji dili olarak kullanır. Başlangıç için paralel olarak [yükselen burç üzerine tam rehberi](/tr/blog/yukselen-burc-tam-rehber-yukselen-anlama) ve 12 astrolojik ev makalesini okumanızı öneririz.
 
 Önemli uyarı : astroloji sıkı anlamda bir bilim değildir ve Stanford Felsefe Ansiklopedisi onu sözde bilimler arasına yerleştirir. Ancak sembolik bir sistem ve yorumbilim pratiği olarak, Babil rahip-astronomlarından Rönesans dönemine kadar uzanan dört bin yıllık zengin bir kültürel tarihe sahiptir.
 
@@ -46,7 +46,7 @@ Yükselen Aslan'daysa, yöneticisi Güneş'tir. Bu Güneş'in evi ve burcu, yaş
 
 ### Adım 5 : açıları analiz et
 
-Açılar, gezegenler arasındaki açısal ilişkilerdir. Anahtar olanlar : kavuşum (0°), altmışlık (60°), kare (90°), üçlü (120°) ve karşıt (180°). Kabul edilebilir orb, gezegene göre 4° ila 10° arasındadır. Tam anlamak için [açılar rehberine](/tr/blog/astrolojik-acilar-kavusum-kare-uclu-karsit-altmislik) bak.
+Açılar, gezegenler arasındaki açısal ilişkilerdir. Anahtar olanlar : kavuşum (0°), altmışlık (60°), kare (90°), üçlü (120°) ve karşıt (180°). Kabul edilebilir orb, gezegene göre 4° ila 10° arasındadır. Tam anlamak için açılar rehberine bak.
 
 ### Adım 6 : evleri oku
 
@@ -54,7 +54,7 @@ Her ev belirli bir yaşam alanını yönetir. Evdeki gezegen o alanı etkinleşt
 
 ### Adım 7 : transitlerle karşılaştır
 
-Mevcut gezegen konumları (transitler) o an hangi temaların aktif olduğunu gösterir. 29 yaşında [Satürn dönüşünün](/tr/blog/saturn-donusu-29-yas-buyuk-yetiskinlik-gecisi) yaşamı nasıl yeniden yapılandırdığını veya [Plüton Kova'da 2024-2044](/tr/blog/pluton-kova-2024-2044-buyuk-kolektif-donusum) döneminin kolektif dönüşümü nasıl şekillendirdiğini anlamak için uzmanlık rehberlerini oku.
+Mevcut gezegen konumları (transitler) o an hangi temaların aktif olduğunu gösterir. 29 yaşında [Satürn dönüşünün](/tr/blog/saturn-donusu-29-yas-buyuk-yetiskinlik-gecisi) yaşamı nasıl yeniden yapılandırdığını veya Plüton Kova'da 2024-2044 döneminin kolektif dönüşümü nasıl şekillendirdiğini anlamak için uzmanlık rehberlerini oku.
 
 ## 12 astrolojik ev : kısa açıklama
 
@@ -73,7 +73,7 @@ Ev sistemi, milattan önce birinci yüzyıl helenistik astrologların icadıdır
 - **XI. ev** : arkadaşlar, gruplar, projeler, umutlar.
 - **XII. ev** : bilinçdışı, izolasyon, gizli düşmanlar, maneviyat.
 
-Derinleştirilmiş analiz için [12 ev rehberinin](/tr/blog/12-astrolojik-ev-tam-rehber-yasam-sektorleri) tamamını oku.
+Derinleştirilmiş analiz için 12 ev rehberinin tamamını oku.
 
 ## 10 gezegen ve anlamları
 
@@ -232,7 +232,7 @@ Carl Gustav Jung, astrolojinin ciddi bir okuyucusuydu ve onu klinik pratiğinde 
 
 Dane Rudhyar, Liz Greene, Stephen Arroyo ve Howard Sasportas tarafından temsil edilen bu psikolojik okul, kehanet modelini dönüşümcü model lehine reddeder. Doğum haritası „başına ne gelecek" demez, „neyle çalışman gerek" der. Bu yaklaşım, çağdaş astrolog neslini ve astrolojik haritaları kullanan koçluk pratiklerini büyük ölçüde etkilemiştir.
 
-Astroloji ile psikolojiyi entegre etmekle ilgilenen Türk okurlar için [çakralar ile 7 gezegen ilişkisi](/tr/blog/cakralar-astroloji-7-gezegen-enerji-merkezleri) rehberini ve kimliğin ek bir analiz katmanı olarak [numerolojide ifade sayısı](/tr/blog/ifade-sayisi-numeroloji-isim-kimlik-cozmek) makalesini de incelemelerini öneririz.
+Astroloji ile psikolojiyi entegre etmekle ilgilenen Türk okurlar için [çakralar ile 7 gezegen ilişkisi](/tr/blog/cakralar-astroloji-7-gezegen-enerji-merkezleri) rehberini ve kimliğin ek bir analiz katmanı olarak numerolojide ifade sayısı makalesini de incelemelerini öneririz.
 
 ## Pratik egzersiz : kendi haritanı bir saatte analiz etmek
 
@@ -270,7 +270,7 @@ Egzersizi tamamladığında, yıllar boyunca geliştirilebilecek yorumlamanın t
 **İlgili makaleler:**
 - [Ay burcu: doğum Ay](/tr/blog/ay-burcu-dogum-ayi-duygusal-dunya)
 - [Koç burcu: kişilik, uyumluluk ve derin özellikler](/tr/blog/koc-burcu-kisilik-uyumluluk-ozellikler)
-- [12 astrolojik ev: hayatının 12 sektörünün tam rehberi](/tr/blog/12-astrolojik-ev-tam-rehber-yasam-sektorleri)
+- 12 astrolojik ev: hayatının 12 sektörünün tam rehberi
 - [Satürn dönüşü: 29 yaşındaki her şeyi değiştiren büyük astrolojik geçiş](/tr/blog/saturn-donusu-29-yas-buyuk-yetiskinlik-gecisi)
 
 **Karmastro araçları:**

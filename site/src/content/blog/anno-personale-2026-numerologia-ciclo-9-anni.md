@@ -186,7 +186,7 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 
 **Articoli correlati :**
 - [Cammino di vita 1 in numerologia: leadership, indipendenza e missione di incarnazione](/it/blog/cammino-di-vita-1-leadership-indipendenza-numerologia)
-- [Numero di espressione: decifra cosa il tuo nome rivela della tua identità](/it/blog/numero-di-espressione-numerologia-nome-decifrare-identita)
+- Numero di espressione: decifra cosa il tuo nome rivela della tua identità
 - [Cos](/it/blog/cos-e-numerologia-guida-completa-principianti)
 - [Numerologia pitagorica vs caldea: differenze e metodi a confronto](/it/blog/numerologia-pitagorica-vs-caldea-differenze)
 

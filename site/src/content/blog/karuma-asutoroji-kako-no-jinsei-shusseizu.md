@@ -95,10 +95,10 @@ reviewedBy: "Orion、シニア天文学者兼占星術師"
 ## さらに詳しく
 
 **関連記事:**
-- [占星術アスペクト:合、スクエア、トライン、オポジション、セクスタイル - ガイド](/ja/blog/asutoroji-asupekuto-goukei-sukuea-torin-opposshon-sekisutairu)
+- 占星術アスペクト:合、スクエア、トライン、オポジション、セクスタイル - ガイド
 - [ピタゴラス vs カルデア数秘術:違いと方法の比較](/ja/blog/pitagorasu-vs-karudia-suumitsu-chigai)
 - [ライフパスナンバーの計算方法:ステップバイステップ完全ガイド](/ja/blog/raifu-pasu-nanbaa-keisan-houhou-sutebai-sutebu)
-- [冥王星水瓶座 2024-2044:20年間の大規模な集団変容](/ja/blog/meiousei-mizugame-2024-2044-daikibo-shuudan-henyou)
+- 冥王星水瓶座 2024-2044:20年間の大規模な集団変容
 
 **Karmastro 診断ツール:**
 - [出生図](/ja/shindan/shusseizu)

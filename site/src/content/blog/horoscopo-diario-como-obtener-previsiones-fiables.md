@@ -200,7 +200,7 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 
 **Artículos relacionados :**
 - [El retorno de Saturno: el gran paso astrológico a los 29 años que lo cambia todo](/es/blog/retorno-saturno-29-anos-gran-pasaje-adulto)
-- [Número de expresión: descifra lo que tu nombre revela de tu identidad](/es/blog/numero-expresion-numerologia-nombre-descifrar-identidad)
+- Número de expresión: descifra lo que tu nombre revela de tu identidad
 - [Numerología pitagórica vs caldea: diferencias y métodos comparados](/es/blog/numerologia-pitagorica-vs-caldea-diferencias)
 - [Chakras y astrología: la correspondencia entre los 7 centros energéticos y los planetas](/es/blog/chakras-astrologia-7-planetas-centros-energeticos)
 

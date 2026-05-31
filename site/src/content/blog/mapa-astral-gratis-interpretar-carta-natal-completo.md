@@ -222,8 +222,8 @@ Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
 
 **Artigos relacionados :**
 - [Signo ascendente: o guia completo para entender o teu ascendente astrológico](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente)
-- [Aspetos astrológicos: conjunção, quadratura, trígono, oposição, sextil - o guia](/pt/blog/aspetos-astrologicos-conjuncao-quadratura-trigono-oposicao-sextil)
-- [Plutão em Aquário 2024-2044: a grande mutação coletiva de 20 anos](/pt/blog/plutao-aquario-2024-2044-grande-mutacao-coletiva)
+- Aspetos astrológicos: conjunção, quadratura, trígono, oposição, sextil - o guia
+- Plutão em Aquário 2024-2044: a grande mutação coletiva de 20 anos
 - [Signo zodiacal Carneiro: personalidade, compatibilidade e traços profundos](/pt/blog/carneiro-signo-zodiacal-personalidade-compatibilidade)
 
 **Ferramentas Karmastro:**

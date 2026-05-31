@@ -206,9 +206,9 @@ Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
 ## Para aprofundar
 
 **Artigos relacionados :**
-- [Plutão em Aquário 2024-2044: a grande mutação coletiva de 20 anos](/pt/blog/plutao-aquario-2024-2044-grande-mutacao-coletiva)
+- Plutão em Aquário 2024-2044: a grande mutação coletiva de 20 anos
 - [Como calcular o teu caminho de vida: o método pitagórico passo a passo](/pt/blog/como-calcular-caminho-de-vida-passo-a-passo)
-- [Número de expressão: decifra o que o teu nome revela da tua identidade](/pt/blog/numero-expressao-numerologia-nome-decifrar-identidade)
+- Número de expressão: decifra o que o teu nome revela da tua identidade
 - [Caminho de vida 1 em numerologia: liderança, independência e missão de encarnação](/pt/blog/caminho-de-vida-1-lideranca-independencia-numerologia)
 
 **Ferramentas Karmastro:**

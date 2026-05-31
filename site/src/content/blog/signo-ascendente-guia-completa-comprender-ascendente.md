@@ -254,7 +254,7 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 **Artículos relacionados :**
 - [El retorno de Saturno: el gran paso astrológico a los 29 años que lo cambia todo](/es/blog/retorno-saturno-29-anos-gran-pasaje-adulto)
 - [Mercurio retrógrado: cómo entender, anticipar y sobrevivir estos períodos sin pánico](/es/blog/mercurio-retrogrado-guia-completa-sobrevivir-prosperar)
-- [Las 12 casas astrológicas: guía completa de los 12 sectores de tu vida](/es/blog/12-casas-astrologicas-guia-completa-sectores-vida)
+- Las 12 casas astrológicas: guía completa de los 12 sectores de tu vida
 - [Signo zodiacal Aries: personalidad, compatibilidad y rasgos profundos](/es/blog/aries-signo-zodiacal-personalidad-compatibilidad)
 
 **Herramientas Karmastro:**

@@ -218,7 +218,7 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 **Artículos relacionados :**
 - [¿Qué es la numerología? Guía completa para principiantes](/es/blog/que-es-numerologia-guia-completa-principiantes)
 - [Camino de vida 1 en numerología: liderazgo, independencia y misión de encarnación](/es/blog/camino-de-vida-1-liderazgo-independencia-numerologia)
-- [Número de expresión: descifra lo que tu nombre revela de tu identidad](/es/blog/numero-expresion-numerologia-nombre-descifrar-identidad)
+- Número de expresión: descifra lo que tu nombre revela de tu identidad
 - [Cómo calcular tu camino de vida: el método pitagórico paso a paso](/es/blog/como-calcular-camino-de-vida-paso-a-paso)
 
 **Herramientas Karmastro:**

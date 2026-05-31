@@ -62,7 +62,7 @@ Wenn zwei Planeten in Konjunktion stehen (Winkelabstand 0° oder nah daran), ver
 
 Die Farbe der Konjunktion hängt von den beteiligten Planeten ab. **Sonne-Merkur** ist eine klassische Konjunktion (die beiden sind nie mehr als 28° auseinander), die scharfes Denken und starke Identifikation mit der eigenen Stimme bedeutet. **Venus-Mars** bringt Leidenschaft, schöpferische sexuelle Energie, oft künstlerisches Talent. **Mond-Saturn** ist eine schwere Konjunktion, die oft eine melancholische, strukturierte Gefühlswelt erzeugt, mit früher Verantwortung und später, tiefer emotionaler Reife. **Jupiter-Uranus** (die 2024 exakt im Stier stattfand) markiert kollektive Momente plötzlicher Expansion und technologischer Durchbrüche.
 
-Konjunktionen werden durch das Haus verstärkt, in dem sie liegen. Eine Sonne-Pluto-Konjunktion in Haus X gibt eine starke öffentliche Transformations-Berufung. Dieselbe Konjunktion in Haus XII wird als mystische oder psychotherapeutische Berufung gelesen. Um das Haus deiner wichtigsten Konjunktionen zu finden, beginne mit der Berechnung deines [Aszendenten](/de/werkzeuge/aszendent) und der [12 astrologischen Häuser](/de/blog/12-astrologische-haeuser-vollstaendiger-leitfaden-lebensbereiche).
+Konjunktionen werden durch das Haus verstärkt, in dem sie liegen. Eine Sonne-Pluto-Konjunktion in Haus X gibt eine starke öffentliche Transformations-Berufung. Dieselbe Konjunktion in Haus XII wird als mystische oder psychotherapeutische Berufung gelesen. Um das Haus deiner wichtigsten Konjunktionen zu finden, beginne mit der Berechnung deines [Aszendenten](/de/werkzeuge/aszendent) und der 12 astrologischen Häuser.
 
 ## 5. Das Sextil (60°): sanfte Chance
 
@@ -124,7 +124,7 @@ Autoren wie **Bil Tierney** haben in *Dynamics of Aspect Analysis* (1983) diese 
 
 Die Aspekte zwischen persönlichen Planeten (Sonne, Mond, Merkur, Venus, Mars) sind die prägendsten für die Alltagspersönlichkeit. Sie bilden die Signatur, mit der du tagtäglich lebst. Die Aspekte zwischen einem persönlichen Planeten und einem langsamen Planeten (Jupiter, Saturn, Uranus, Neptun, Pluto) fügen eine tiefere, oft unbewusste Dimension hinzu.
 
-Aspekte zwischen ausschließlich langsamen Planeten (Uranus-Pluto-Quadrat 2012-2015, Jupiter-Saturn-Konjunktion 2020, Neptun-Pluto-Sextil der gesamten Generation Y) sind **generationelle Signaturen**: sie teilen sich mit allen Menschen, die in derselben Epoche geboren wurden, und definieren kollektive Aufgaben mehr als persönliche Züge. Die aktuelle [Pluto-Wassermann-Phase 2024-2044](/de/blog/pluto-wassermann-2024-2044-grosse-kollektive-mutation) ist eine solche generationelle Konfiguration, die ganze Kohorten prägt.
+Aspekte zwischen ausschließlich langsamen Planeten (Uranus-Pluto-Quadrat 2012-2015, Jupiter-Saturn-Konjunktion 2020, Neptun-Pluto-Sextil der gesamten Generation Y) sind **generationelle Signaturen**: sie teilen sich mit allen Menschen, die in derselben Epoche geboren wurden, und definieren kollektive Aufgaben mehr als persönliche Züge. Die aktuelle Pluto-Wassermann-Phase 2024-2044 ist eine solche generationelle Konfiguration, die ganze Kohorten prägt.
 
 Bei der Lektüre deiner eigenen Karte konzentrierst du dich zuerst auf die Aspekte deiner persönlichen Planeten untereinander, dann auf die Aspekte zwischen persönlichen Planeten und langsamen Planeten. Die rein-kollektiven Aspekte behandelst du als Hintergrund.
 

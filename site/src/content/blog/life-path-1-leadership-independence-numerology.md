@@ -150,7 +150,7 @@ This article draws on verifiable encyclopedic and scientific sources.
 ## For further reading
 
 **Related articles:**
-- [Expression number: decode what your name reveals about your identity](/en/blog/expression-number-name-numerology-decode-identity)
+- Expression number: decode what your name reveals about your identity
 - [Personal year 2026: find your number and understand the 9-year cycle that shapes your life](/en/blog/personal-year-2026-numerology-9-year-cycle)
 - [Pythagorean vs Chaldean numerology: differences and compared methods](/en/blog/pythagorean-vs-chaldean-numerology-differences)
 - [How to calculate your life path number: the Pythagorean method step by step](/en/blog/how-to-calculate-life-path-number-step-by-step)

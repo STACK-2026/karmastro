@@ -254,7 +254,7 @@ Karmastro propose un **outil d'oracle IA gratuit** qui se distingue par sa capac
    Karmastro propose d'autres fonctionnalités pour approfondir votre exploration spirituelle :
    - [Calculateur de thème natal](https://app.karmastro.com) : Pour comprendre vos forces et vos défis astrologiques.
    - [Compatibilité amoureuse](https://app.karmastro.com/compatibilite) : Pour analyser la dynamique entre deux thèmes astraux.
-   - [Générateur de rituels](https://karmastro.com/blog/rituels-personnalises) : Pour créer des rituels basés sur votre chemin de vie ou vos transits.
+   - Générateur de rituels : Pour créer des rituels basés sur votre chemin de vie ou vos transits.
    - [Blog et guides](https://karmastro.com/blog) : Pour apprendre à interpréter les symboles du tarot, de l'astrologie et de la numérologie.
 
 ### Témoignages d'utilisateurs
@@ -439,7 +439,7 @@ L'IA ne peut pas **ressentir** vos émotions ou capter votre langage corporel, c
 
 **Solutions** :
 - **Utilisez l'oracle IA pour des questions pratiques** : Par exemple, "Quel est le meilleur moment pour lancer mon entreprise en 2026 ?" ou "Quels transits influencent ma créativité ce mois-ci ?".
-- **Complétez avec une consultation humaine** : Si la question est émotionnelle ou complexe, envisagez une séance avec un [tarologue Karmastro](https://karmastro.com/astrologues) ou un thérapeute spécialisé en astrologie.
+- **Complétez avec une consultation humaine** : Si la question est émotionnelle ou complexe, envisagez une séance avec un tarologue Karmastro ou un thérapeute spécialisé en astrologie.
 - **Exprimez vos émotions dans votre question** : Par exemple, "Je me sens perdu et anxieux à propos de mon avenir professionnel. Quel conseil peux-tu me donner pour retrouver confiance en moi ?".
 
 ### 3. Dépendance et passivité

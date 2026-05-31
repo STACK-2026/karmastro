@@ -22,7 +22,7 @@ Ten przewodnik wyjaśnia, jak samodzielnie odczytać mapę natalną : siedem pra
 
 Horoskop natalny, zwany także mapą urodzeniową lub radixem, to geocentryczna projekcja ekliptyki na moment pierwszego oddechu noworodka. Astronom oblicza długość każdej planety względem punktu równonocy wiosennej, następnie astrolog nakłada system dwunastu domów, zakotwiczony w lokalnym horyzoncie i południku. Wynikiem jest kołowy schemat, gdzie każda planeta zajmuje konkretny stopień zodiaku i konkretny dom.
 
-Dlaczego warto go czytać ? Ponieważ mapa służy jako lustro charakteru, narzędzie autorefleksji i punkt orientacyjny w cyklach życia. Carl Gustav Jung używał map natalnych pacjentów jako materiału projekcyjnego, porównywalnego z testem Rorschacha. Współcześni coachowie sięgają po astrologię jako język typologii, podobny do MBTI. Dla początkujących polecamy równoległą lekturę [pełnego przewodnika po znaku wschodzącym](/pl/blog/znak-wschodzacy-kompletny-przewodnik-zrozumienie) oraz [12 domów astrologicznych](/pl/blog/12-domow-astrologicznych-kompletny-przewodnik-sektory-zycia).
+Dlaczego warto go czytać ? Ponieważ mapa służy jako lustro charakteru, narzędzie autorefleksji i punkt orientacyjny w cyklach życia. Carl Gustav Jung używał map natalnych pacjentów jako materiału projekcyjnego, porównywalnego z testem Rorschacha. Współcześni coachowie sięgają po astrologię jako język typologii, podobny do MBTI. Dla początkujących polecamy równoległą lekturę [pełnego przewodnika po znaku wschodzącym](/pl/blog/znak-wschodzacy-kompletny-przewodnik-zrozumienie) oraz 12 domów astrologicznych.
 
 Ważne zastrzeżenie : astrologia nie jest nauką w ścisłym sensie, a Stanford Encyclopedia of Philosophy klasyfikuje ją jako pseudonaukę. Jednak jako system symboliczny i praktyka hermeneutyczna posiada bogatą historię kulturową liczącą cztery tysiące lat, od babilońskich kapłanów-astronomów po renesansowego Keplera.
 
@@ -46,7 +46,7 @@ Jeśli Ascendent jest we Lwie, władcą jest Słońce. Dom i znak tego Słońca 
 
 ### Krok 5 : analizować aspekty
 
-Aspekty to kątowe relacje między planetami. Kluczowe : koniunkcja (0°), sekstyl (60°), kwadratura (90°), trygon (120°) i opozycja (180°). Dopuszczalny orbis wynosi od 4° do 10° w zależności od planet. Dla pełnego zanurzenia zobacz [przewodnik po aspektach](/pl/blog/aspekty-astrologiczne-koniunkcja-kwadratura-trygon-opozycja-sekstyl).
+Aspekty to kątowe relacje między planetami. Kluczowe : koniunkcja (0°), sekstyl (60°), kwadratura (90°), trygon (120°) i opozycja (180°). Dopuszczalny orbis wynosi od 4° do 10° w zależności od planet. Dla pełnego zanurzenia zobacz przewodnik po aspektach.
 
 ### Krok 6 : przeczytać domy
 
@@ -54,7 +54,7 @@ Każdy dom rządzi konkretną sferą życia. Planeta w domu aktywuje tę sferę.
 
 ### Krok 7 : skonfrontować z tranzytami
 
-Obecne pozycje planet (tranzyty) pokazują, które tematy są aktywne w danej chwili. Aby zrozumieć, jak [powrót Saturna](/pl/blog/powrot-saturna-29-lat-wielkie-przejscie-doroslosc) przebudowuje życie w wieku 29 lat, lub jak [Pluton w Wodniku 2024-2044](/pl/blog/pluton-wodnik-2024-2044-wielka-mutacja-zbiorowa) kształtuje zbiorową mutację, czytaj wyspecjalizowane przewodniki.
+Obecne pozycje planet (tranzyty) pokazują, które tematy są aktywne w danej chwili. Aby zrozumieć, jak [powrót Saturna](/pl/blog/powrot-saturna-29-lat-wielkie-przejscie-doroslosc) przebudowuje życie w wieku 29 lat, lub jak Pluton w Wodniku 2024-2044 kształtuje zbiorową mutację, czytaj wyspecjalizowane przewodniki.
 
 ## 12 domów astrologicznych : krótki opis
 
@@ -73,7 +73,7 @@ System domów to wynalazek astrologów hellenistycznych z pierwszego wieku przed
 - **Dom XI** : przyjaciele, grupy, projekty, nadzieje.
 - **Dom XII** : nieświadomość, izolacja, ukryci wrogowie, duchowość.
 
-Dla pogłębionej analizy przeczytaj pełny [przewodnik po 12 domach](/pl/blog/12-domow-astrologicznych-kompletny-przewodnik-sektory-zycia).
+Dla pogłębionej analizy przeczytaj pełny przewodnik po 12 domach.
 
 ## 10 planet i ich znaczenia
 
@@ -232,7 +232,7 @@ Carl Gustav Jung był poważnym czytelnikiem astrologii i używał jej w praktyc
 
 Ta szkoła psychologiczna, reprezentowana przez Dane'a Rudhyara, Liz Greene, Stephena Arroyo i Howarda Sasportasa, odrzuca model predykcyjny na rzecz transformacyjnego. Mapa natalna nie mówi, „co ci się przydarzy", mówi, „z czym masz pracować". Podejście to wywarło duży wpływ na współczesne pokolenie astrologów i na praktyki coachingowe wykorzystujące mapy astrologiczne.
 
-Polskim czytelnikom zainteresowanym integracją astrologii i psychologii polecamy także studiowanie [związku czakr z 7 planetami](/pl/blog/czakry-astrologia-7-planet-centra-energetyczne) oraz [liczby ekspresji w numerologii](/pl/blog/liczba-ekspresji-numerologia-imie-odszyfrowac-tozsamosc) jako dodatkowej warstwy analizy tożsamości.
+Polskim czytelnikom zainteresowanym integracją astrologii i psychologii polecamy także studiowanie [związku czakr z 7 planetami](/pl/blog/czakry-astrologia-7-planet-centra-energetyczne) oraz liczby ekspresji w numerologii jako dodatkowej warstwy analizy tożsamości.
 
 ## Ćwiczenie praktyczne : analiza własnej mapy w godzinę
 
@@ -269,8 +269,8 @@ Po zakończeniu ćwiczenia otrzymasz podstawowy szkielet interpretacji, który m
 
 **Powiązane artykuły:**
 - [Powrót Saturna: wielkie astrologiczne przejście w wieku 29 lat które zmienia wszystko](/pl/blog/powrot-saturna-29-lat-wielkie-przejscie-doroslosc)
-- [12 domów astrologicznych: kompletny przewodnik po 12 sektorach twojego życia](/pl/blog/12-domow-astrologicznych-kompletny-przewodnik-sektory-zycia)
-- [Aspekty astrologiczne: koniunkcja, kwadratura, trygon, opozycja, sekstyl - przewodnik](/pl/blog/aspekty-astrologiczne-koniunkcja-kwadratura-trygon-opozycja-sekstyl)
+- 12 domów astrologicznych: kompletny przewodnik po 12 sektorach twojego życia
+- Aspekty astrologiczne: koniunkcja, kwadratura, trygon, opozycja, sekstyl - przewodnik
 - [Znak księżycowy: co twój natalny Księżyc mówi o twoim świecie emocjonalnym](/pl/blog/znak-ksiezycowy-ksiezyc-natalny-swiat-emocjonalny)
 
 **Narzędzia Karmastro:**

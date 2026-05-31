@@ -40,7 +40,7 @@ Dieses Gefühl hat einen technischen Namen in der Astrologie: es ist deine Satur
 
 Die zeitgenössische Astrologie verdankt einen großen Teil ihrer modernen Formulierung dieses Phänomens den Astrologen Liz Greene (in Saturn: A New Look at an Old Devil, 1976), Dane Rudhyar und Stephen Arroyo. Alle drei bestehen auf demselben Punkt: Die Saturn-Rückkehr ist keine Strafe, sie ist die symbolische Gelegenheit, die dem jungen Erwachsenen angeboten wird, sein Leben um das zu reorganisieren, was wirklich sein eigenes ist, und das hinter sich zu lassen, was ererbt, aufgezwungen oder aus Trägheit gewählt worden war.
 
-Um Saturn in deiner Geburtskarte zu verorten, berechne deinen [Aszendenten](/de/werkzeuge/aszendent), dein [Geburtshoroskop](/de/werkzeuge/geburtshoroskop) und deine [Lebenszahl](/de/werkzeuge/lebenszahl), um die Position dieses Planeten genau zu identifizieren. Lies auch unseren [vollständigen Leitfaden zum Aszendenten](/de/blog/aszendent-vollstaendiger-leitfaden-verstehen) und unseren [Leitfaden zu den 12 astrologischen Häusern](/de/blog/12-astrologische-haeuser-vollstaendiger-leitfaden-lebensbereiche), um zu verstehen, in welchem Lebensbereich dein Saturn transitiert.
+Um Saturn in deiner Geburtskarte zu verorten, berechne deinen [Aszendenten](/de/werkzeuge/aszendent), dein [Geburtshoroskop](/de/werkzeuge/geburtshoroskop) und deine [Lebenszahl](/de/werkzeuge/lebenszahl), um die Position dieses Planeten genau zu identifizieren. Lies auch unseren [vollständigen Leitfaden zum Aszendenten](/de/blog/aszendent-vollstaendiger-leitfaden-verstehen) und unseren Leitfaden zu den 12 astrologischen Häusern, um zu verstehen, in welchem Lebensbereich dein Saturn transitiert.
 
 ## 2. Saturn, Planet der Zeit und der Strukturen
 
@@ -90,7 +90,7 @@ Die **Beziehung zur Zeit und zum Tod** erscheint mit Klarheit: erste echte Bewus
 
 Die **Beziehung zum Körper** ändert sich. Der Stoffwechsel verändert sich um 28-30 Jahre herum, was vorher funktionierte, funktioniert nicht mehr auf dieselbe Weise. Viele beginnen dauerhafte Körperdisziplinen (Sport, Yoga, Meditation, bewusste Ernährung) genau in diesem Fenster.
 
-Schließlich werden die **Freundschaften** gefiltert: Oberflächliche Freundschaften verlieren ihr Interesse, tiefe Freundschaften vertiefen sich, neue Freundschaften entstehen um geteilte erwachsene Werte. Um deinen Zyklus der Beziehungen zu vertiefen, konsultiere unseren Artikel zur [astrologischen Kompatibilität](/de/blog/widder-sternzeichen-persoenlichkeit-kompatibilitaet) und zu [astrologischen Aspekten](/de/blog/astrologische-aspekte-konjunktion-quadrat-trigon-opposition-sextil).
+Schließlich werden die **Freundschaften** gefiltert: Oberflächliche Freundschaften verlieren ihr Interesse, tiefe Freundschaften vertiefen sich, neue Freundschaften entstehen um geteilte erwachsene Werte. Um deinen Zyklus der Beziehungen zu vertiefen, konsultiere unseren Artikel zur [astrologischen Kompatibilität](/de/blog/widder-sternzeichen-persoenlichkeit-kompatibilitaet) und zu astrologischen Aspekten.
 
 ## 7. Die Saturn-Rückkehr in jedem Zeichen
 
@@ -110,7 +110,7 @@ Präziser als das Zeichen ist das astrologische Haus, in dem sich Saturn befinde
 
 **Haus X**: öffentliche Karriere, Berufung, Ruf, das häufigste Haus starker Auswirkungen auf die Rückkehr, weil Saturn das Haus X durch natürliche Affinität regiert. **Haus XI**: Freundschaften, kollektive Projekte, langfristige Hoffnungen, Zugehörigkeitsgruppen. **Haus XII**: Unbewusstes, Rückzug, geschlossene Institutionen, unsichtbare Arbeit. Psychoanalytische Arbeit, spirituelles Retreat.
 
-Um zu identifizieren, in welchem Haus dein Saturn sich befindet, lies unseren [vollständigen Leitfaden zu den 12 astrologischen Häusern](/de/blog/12-astrologische-haeuser-vollstaendiger-leitfaden-lebensbereiche) und konsultiere dein kostenloses [Geburtshoroskop](/de/werkzeuge/geburtshoroskop).
+Um zu identifizieren, in welchem Haus dein Saturn sich befindet, lies unseren vollständigen Leitfaden zu den 12 astrologischen Häusern und konsultiere dein kostenloses [Geburtshoroskop](/de/werkzeuge/geburtshoroskop).
 
 ## 9. Saturn und deine Geburtskarte
 
@@ -144,7 +144,7 @@ Die von erfahrenen Astrologen empfohlenen Praktiken, um die Rückkehr gut zu dur
 
 **Die Wurzeln ehren**. Saturn ist auch der Senex, der alte Weise, der Archetyp des inneren Ältesten. Sich mit der Herkunftsfamilie zu versöhnen, wenn möglich, die Toten zu ehren, seine Familiengeschichte zu schreiben, die Orte der Kindheit zu besuchen: das sind starke saturnische Gesten. **Die Geduld kultivieren** als Disziplin. Es ist keine passive Tugend, es ist die aktive Wahl, der Zeit zu vertrauen. **Eine dauerhafte Körperdisziplin praktizieren**: regelmäßiger Sport, Yoga, Wandern, Kampfkünste. Saturn verankert sich im Körper und belohnt jene, die sich um ihn kümmern.
 
-Um deine Rückkehr mit einer Lesart des Natalmondes zu kreuzen, konsultiere unseren [Leitfaden zum Mondzeichen](/de/blog/mondzeichen-natalmond-emotionale-welt) und die Reaktivierung der Mondwunde während der Saturn-Rückkehr. Kreuze sie auch mit den [Rückläufigkeiten von Merkur](/de/blog/merkur-rueckläufig-leitfaden-verstehen-ueberleben) und mit dem [Pluto-Transit im Wassermann](/de/blog/pluto-wassermann-2024-2044-grosse-kollektive-mutation).
+Um deine Rückkehr mit einer Lesart des Natalmondes zu kreuzen, konsultiere unseren [Leitfaden zum Mondzeichen](/de/blog/mondzeichen-natalmond-emotionale-welt) und die Reaktivierung der Mondwunde während der Saturn-Rückkehr. Kreuze sie auch mit den [Rückläufigkeiten von Merkur](/de/blog/merkur-rueckläufig-leitfaden-verstehen-ueberleben) und mit dem Pluto-Transit im Wassermann.
 
 ## 13. Fallbeispiel: Antoine, 29 Jahre
 
@@ -189,9 +189,9 @@ Nein, das sind zwei verschiedene Transite. Die Saturn-Rückkehr mit 29-30 markie
 
 ## Weiter gehen
 
-Die Saturn-Rückkehr ist die wichtigste astrologische Initiation des Erwachsenenlebens, und sie vor oder während ihrer Durchquerung zu kennen, verändert die Erfahrung vollständig. Berechne dein [Geburtshoroskop](/de/werkzeuge/geburtshoroskop), identifiziere die Position von Saturn, und lies unseren [Artikel über Pluto im Wassermann 2024-2044](/de/blog/pluto-wassermann-2024-2044-grosse-kollektive-mutation), um deine Rückkehr mit dem kollektiven Transit, der gerade stattfindet, zu kreuzen.
+Die Saturn-Rückkehr ist die wichtigste astrologische Initiation des Erwachsenenlebens, und sie vor oder während ihrer Durchquerung zu kennen, verändert die Erfahrung vollständig. Berechne dein [Geburtshoroskop](/de/werkzeuge/geburtshoroskop), identifiziere die Position von Saturn, und lies unseren Artikel über Pluto im Wassermann 2024-2044, um deine Rückkehr mit dem kollektiven Transit, der gerade stattfindet, zu kreuzen.
 
-Vertiefe deinen Natalmond, der in der Saturn-Rückkehr oft reaktiviert wird, mit unserem [Leitfaden zum Mondzeichen](/de/blog/mondzeichen-natalmond-emotionale-welt). Zur Verwaltung der dreijährlichen Rückläufigkeiten von Merkur während deiner Saturn-Rückkehr, lies unseren [Leitfaden zu Merkur rückläufig](/de/blog/merkur-rueckläufig-leitfaden-verstehen-ueberleben). Um die Struktur deiner Karte vollständig zu verstehen, konsultiere unseren [vollständigen Leitfaden zu den 12 astrologischen Häusern](/de/blog/12-astrologische-haeuser-vollstaendiger-leitfaden-lebensbereiche) und unseren [Leitfaden zum Aszendenten](/de/blog/aszendent-vollstaendiger-leitfaden-verstehen).
+Vertiefe deinen Natalmond, der in der Saturn-Rückkehr oft reaktiviert wird, mit unserem [Leitfaden zum Mondzeichen](/de/blog/mondzeichen-natalmond-emotionale-welt). Zur Verwaltung der dreijährlichen Rückläufigkeiten von Merkur während deiner Saturn-Rückkehr, lies unseren [Leitfaden zu Merkur rückläufig](/de/blog/merkur-rueckläufig-leitfaden-verstehen-ueberleben). Um die Struktur deiner Karte vollständig zu verstehen, konsultiere unseren vollständigen Leitfaden zu den 12 astrologischen Häusern und unseren [Leitfaden zum Aszendenten](/de/blog/aszendent-vollstaendiger-leitfaden-verstehen).
 
 ## Quellen und Referenzen
 
@@ -208,9 +208,9 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 
 **Ähnliche Artikel:**
 - [Sternzeichen Widder: Persönlichkeit, Kompatibilität und tiefe Merkmale](/de/blog/widder-sternzeichen-persoenlichkeit-kompatibilitaet)
-- [Astrologische Aspekte: Konjunktion, Quadrat, Trigon, Opposition, Sextil - der Leitfaden](/de/blog/astrologische-aspekte-konjunktion-quadrat-trigon-opposition-sextil)
+- Astrologische Aspekte: Konjunktion, Quadrat, Trigon, Opposition, Sextil - der Leitfaden
 - [Kostenloses Geburtshoroskop: wie du dein vollständiges Natalchart interpretierst](/de/blog/kostenloses-geburtshoroskop-natalchart-interpretieren)
-- [Pluto im Wassermann 2024-2044: die große kollektive Mutation von 20 Jahren](/de/blog/pluto-wassermann-2024-2044-grosse-kollektive-mutation)
+- Pluto im Wassermann 2024-2044: die große kollektive Mutation von 20 Jahren
 
 **Karmastro Werkzeuge:**
 - [Geburtshoroskop](/de/werkzeuge/geburtshoroskop)

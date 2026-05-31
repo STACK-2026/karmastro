@@ -144,7 +144,7 @@ Plutão transita as doze casas da tua carta de forma sucessiva durante a vida. S
 
 **Casa IV**: remodelagem das raízes, da relação à família de origem, do lar íntimo. Mudanças habitacionais profundas são frequentes. **Casa V**: reinvenção da vida criativa, amorosa, lúdica, da parentalidade. **Casa VI**: transformação radical do trabalho quotidiano e da relação ao corpo, por vezes através de crises de saúde. **Casa VII**: restruturação dos contratos de parceria, casamentos, associações. **Casa VIII**: transformações profundas no domínio do tabu: morte, sexualidade, heranças, finanças partilhadas. É a casa própria de Plutão.
 
-**Casa IX**: reconfiguração da visão do mundo, filosofia, ideologia, relação com o estrangeiro, estudos superiores. **Casa X**: transformação da vocação e da imagem pública, mudanças de carreira radicais. **Casa XI**: transformação das amizades, das redes, dos projetos coletivos. É a casa natural de Aquário, portanto uma sinergia particularmente poderosa durante este trânsito. **Casa XII**: trabalho profundo do inconsciente, da relação ao invisível, por vezes retiros voluntários ou involuntários. Para identificares a casa afetada no teu próprio mapa, consulta o nosso [guia das 12 casas astrológicas](/pt/blog/12-casas-astrologicas-guia-completo-setores-vida).
+**Casa IX**: reconfiguração da visão do mundo, filosofia, ideologia, relação com o estrangeiro, estudos superiores. **Casa X**: transformação da vocação e da imagem pública, mudanças de carreira radicais. **Casa XI**: transformação das amizades, das redes, dos projetos coletivos. É a casa natural de Aquário, portanto uma sinergia particularmente poderosa durante este trânsito. **Casa XII**: trabalho profundo do inconsciente, da relação ao invisível, por vezes retiros voluntários ou involuntários. Para identificares a casa afetada no teu próprio mapa, consulta o nosso guia das 12 casas astrológicas.
 
 ## 15. A geração Plutão-Aquário
 
@@ -197,9 +197,9 @@ Este artigo baseia-se em fontes enciclopédicas, académicas e científicas veri
 ## Para aprofundar
 
 **Artigos relacionados :**
-- [Aspetos astrológicos: conjunção, quadratura, trígono, oposição, sextil - o guia](/pt/blog/aspetos-astrologicos-conjuncao-quadratura-trigono-oposicao-sextil)
+- Aspetos astrológicos: conjunção, quadratura, trígono, oposição, sextil - o guia
 - [O retorno de Saturno: a grande passagem astrológica aos 29 anos que muda tudo](/pt/blog/retorno-saturno-29-anos-grande-passagem-adulto)
-- [As 12 casas astrológicas: guia completo dos 12 setores da tua vida](/pt/blog/12-casas-astrologicas-guia-completo-setores-vida)
+- As 12 casas astrológicas: guia completo dos 12 setores da tua vida
 - [Mercúrio retrógrado: como entender, antecipar e sobreviver a estes períodos sem pânico](/pt/blog/mercurio-retrogrado-guia-completo-sobreviver-prosperar)
 
 **Ferramentas Karmastro:**

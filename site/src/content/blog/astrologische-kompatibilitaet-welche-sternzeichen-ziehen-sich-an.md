@@ -233,9 +233,9 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 
 **Ähnliche Artikel:**
 - [Persönliches Jahr 2026: finde deine Zahl und verstehe den 9-Jahre-Zyklus](/de/blog/persoenliches-jahr-2026-numerologie-9-jahre-zyklus)
-- [Pluto im Wassermann 2024-2044: die große kollektive Mutation von 20 Jahren](/de/blog/pluto-wassermann-2024-2044-grosse-kollektive-mutation)
+- Pluto im Wassermann 2024-2044: die große kollektive Mutation von 20 Jahren
 - [Mondzeichen: was dein Natalmond über deine Gefühlswelt verrät](/de/blog/mondzeichen-natalmond-emotionale-welt)
-- [Die 12 astrologischen Häuser: vollständiger Leitfaden der 12 Lebensbereiche](/de/blog/12-astrologische-haeuser-vollstaendiger-leitfaden-lebensbereiche)
+- Die 12 astrologischen Häuser: vollständiger Leitfaden der 12 Lebensbereiche
 
 **Karmastro Werkzeuge:**
 - [Geburtshoroskop](/de/werkzeuge/geburtshoroskop)

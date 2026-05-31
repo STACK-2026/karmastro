@@ -185,7 +185,7 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 
 **Artículos relacionados :**
 - [Camino de vida 1 en numerología: liderazgo, independencia y misión de encarnación](/es/blog/camino-de-vida-1-liderazgo-independencia-numerologia)
-- [Las 12 casas astrológicas: guía completa de los 12 sectores de tu vida](/es/blog/12-casas-astrologicas-guia-completa-sectores-vida)
+- Las 12 casas astrológicas: guía completa de los 12 sectores de tu vida
 - [Numerología pitagórica vs caldea: diferencias y métodos comparados](/es/blog/numerologia-pitagorica-vs-caldea-diferencias)
 - [¿Qué es la numerología? Guía completa para principiantes](/es/blog/que-es-numerologia-guia-completa-principiantes)
 

@@ -111,8 +111,8 @@ Ten artykul opiera sie na weryfikowalnych zrodlach encyklopedycznych i naukowych
 **Powiązane artykuły:**
 - [Znak księżycowy: co twój natalny Księżyc mówi o twoim świecie emocjonalnym](/pl/blog/znak-ksiezycowy-ksiezyc-natalny-swiat-emocjonalny)
 - [Powrót Saturna: wielkie astrologiczne przejście w wieku 29 lat które zmienia wszystko](/pl/blog/powrot-saturna-29-lat-wielkie-przejscie-doroslosc)
-- [Pluton w Wodniku 2024-2044: wielka 20-letnia mutacja zbiorowa](/pl/blog/pluton-wodnik-2024-2044-wielka-mutacja-zbiorowa)
-- [12 domów astrologicznych: kompletny przewodnik po 12 sektorach twojego życia](/pl/blog/12-domow-astrologicznych-kompletny-przewodnik-sektory-zycia)
+- Pluton w Wodniku 2024-2044: wielka 20-letnia mutacja zbiorowa
+- 12 domów astrologicznych: kompletny przewodnik po 12 sektorach twojego życia
 
 **Narzędzia Karmastro:**
 - [Horoskop natalny](/pl/narzedzia/horoskop-natalny)

@@ -235,7 +235,7 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 - [Mercurio retrogrado: come capire, anticipare e sopravvivere a questi periodi senza panico](/it/blog/mercurio-retrogrado-guida-completa-sopravvivere-prosperare)
 - [Il ritorno di Saturno: il grande passaggio astrologico a 29 anni che cambia tutto](/it/blog/ritorno-di-saturno-29-anni-grande-passaggio-adulto)
 - [Segno zodiacale Ariete: personalità, compatibilità e tratti profondi](/it/blog/ariete-segno-zodiacale-personalita-compatibilita)
-- [Aspetti astrologici: congiunzione, quadratura, trigono, opposizione, sestile - la guida](/it/blog/aspetti-astrologici-congiunzione-quadratura-trigono-opposizione-sestile)
+- Aspetti astrologici: congiunzione, quadratura, trigono, opposizione, sestile - la guida
 
 **Strumenti Karmastro:**
 - [Tema natale](/it/strumenti/tema-natale)
