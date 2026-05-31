@@ -341,3 +341,34 @@ Prends un moment au calme pour la lire.
     text,
   };
 }
+
+// Suivi J+1 : "ta lecture d'hier a-t-elle résonné ?" — feedback + re-engagement.
+export function readingFollowupEmail(token: string, locale = "fr"): EmailTemplate {
+  const FB = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/reading-feedback";
+  const yes = `${FB}?token=${token}&v=good`;
+  const no = `${FB}?token=${token}&v=meh`;
+  const btn = (href: string, label: string, primary: boolean) =>
+    `<a href="${href}" style="display:inline-block;margin:6px;padding:13px 26px;border-radius:12px;text-decoration:none;font-weight:600;font-size:15px;${primary ? "background:linear-gradient(135deg,#a78bfa,#fcd34d);color:#0f0a1e;" : "border:1px solid rgba(252,211,77,0.4);color:#fcd34d;"}">${label}</a>`;
+
+  if (locale === "en") {
+    const content = `
+<h1 style="color:#fff;font-family:Georgia,serif;font-size:26px;margin:0 0 16px;">Did it resonate? ✨</h1>
+<p>Yesterday, Orion placed your reading in your hands. Since then, has something quietly echoed, a word, an image, a small click of recognition?</p>
+<p>Tell Orion in one tap. It helps the Oracle read you better next time.</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:18px 0;">
+${btn(yes, "Yes, it resonated ✨", true)}${btn(no, "Not really", false)}
+</td></tr></table>
+<p style="font-size:13px;color:rgba(255,255,255,0.5);">Your reading stays accessible any time, and a fresh calculation is always one step away on karmastro.com.</p>`;
+    return { subject: "Did Orion's reading resonate? ✨", html: wrapHtml("Did it resonate?", content), text: `Did yesterday's reading resonate?\n\nYes: ${yes}\nNot really: ${no}` };
+  }
+
+  const content = `
+<h1 style="color:#fff;font-family:Georgia,serif;font-size:26px;margin:0 0 16px;">Est-ce que ça a résonné ? ✨</h1>
+<p>Hier, Orion a déposé ta lecture entre tes mains. Depuis, est-ce que quelque chose a fait écho, un mot, une image, un petit déclic de reconnaissance ?</p>
+<p>Dis-le à Orion en un clic. Ça aide l'Oracle à mieux te lire la prochaine fois.</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:18px 0;">
+${btn(yes, "Oui, ça a résonné ✨", true)}${btn(no, "Pas vraiment", false)}
+</td></tr></table>
+<p style="font-size:13px;color:rgba(255,255,255,0.5);">Ta lecture reste accessible à tout moment, et un nouveau calcul n'est jamais qu'à un pas sur karmastro.com.</p>`;
+  return { subject: "Ta lecture d'hier a-t-elle résonné ? ✨", html: wrapHtml("Est-ce que ça a résonné ?", content), text: `Ta lecture d'hier a-t-elle résonné ?\n\nOui : ${yes}\nPas vraiment : ${no}` };
+}

@@ -1,0 +1,16 @@
+name: Email Follow-ups · J+1 reading feedback
+on:
+  schedule:
+    - cron: '0 9 * * *'   # tous les jours 09:00 UTC
+  workflow_dispatch: {}
+jobs:
+  send:
+    runs-on: self-hosted
+    steps:
+      - name: Trigger send-followups
+        run: |
+          code=$(curl -s -o /tmp/out.json -w "%{http_code}" -X POST \
+            "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/send-followups" \
+            -H "x-cron-secret: ${{ secrets.CRON_SECRET }}")
+          echo "HTTP $code"; cat /tmp/out.json
+          [ "$code" = "200" ] || exit 1
