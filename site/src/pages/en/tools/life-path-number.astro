@@ -296,6 +296,22 @@ const jsonLd = [
             <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">Mission</p>
             <p id="result-mission" class="text-sm text-white/80 italic leading-relaxed"></p>
           </div>
+          <div id="reading-cta" class="mt-6 pt-5 border-t border-white/10">
+            <div class="relative p-5 rounded-xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30 text-center overflow-hidden">
+              <div aria-hidden="true" style="filter: blur(6px); opacity: 0.5; user-select: none; pointer-events: none;" class="text-left text-sm text-white/70 space-y-1 mb-4">
+                <p>Your life path reveals a thread it has woven since childhood, shaping your most important choices...</p>
+                <p>What it creates in your life today, the exact gesture to make this week, and the question to hold before each decision...</p>
+              </div>
+              <p class="text-2xl mb-1">✦</p>
+              <p class="font-serif text-base text-white mb-1">Your full life path reading</p>
+              <p class="text-xs text-white/60 mb-4 max-w-sm mx-auto leading-relaxed">
+                A personalized reading by Orion (1100-1400 words): the gift and the shadow of your life path, what it creates today, your ritual for the week and the question to hold. Delivered on screen instantly + by email.
+              </p>
+              <button type="button" id="km-buy" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">
+                Unlock my full reading - €4.90
+              </button>
+            </div>
+          </div>
           <div class="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-2 justify-center items-center">
             <a
               href="https://app.karmastro.com/oracle?lang=en"
@@ -473,5 +489,30 @@ const jsonLd = [
 
     resultDiv.classList.remove("hidden");
     resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  // Paid reading checkout: site-native guest Stripe Checkout (no account).
+  const CHECKOUT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/reading-checkout";
+  document.getElementById("reading-cta")?.addEventListener("click", async (ev) => {
+    const btn = (ev.target as HTMLElement).closest("#km-buy") as HTMLButtonElement | null;
+    if (!btn) return;
+    btn.disabled = true;
+    const original = btn.textContent;
+    btn.textContent = "Redirecting…";
+    const birthDate = (document.getElementById("birth-date") as HTMLInputElement).value;
+    try {
+      const r = await fetch(CHECKOUT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ tool: "chemin-de-vie", birthDate, locale: "en" }),
+      });
+      const data = await r.json();
+      if (data?.url) { window.location.href = data.url; }
+      else { throw new Error(data?.error || "no url"); }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = original;
+      alert("Something went wrong, please try again.");
+    }
   });
 </script>
