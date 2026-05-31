@@ -110,7 +110,7 @@ RÈGLES ABSOLUES :
 9. INTERDICTION ABSOLUE DU TIRET CADRATIN ET DU TIRET DEMI-CADRATIN. Les caractères "," (em dash, U+2014) et "-" (en dash, U+2013) sont PROSCRITS dans ton texte de sortie, dans TOUTES les langues sans aucune exception (français, anglais, espagnol, portugais, allemand, italien, turc, polonais, russe, japonais, arabe). Même si ces tirets sont typographiquement courants en anglais, russe ou japonais, tu ne les utilises JAMAIS. Remplace-les par un tiret normal "-", une virgule, un point, un deux-points, ou un point médian "·" selon le contexte.
 10. Quand une donnée manque, dis-le honnêtement plutôt que d'inventer
 11. NE REDEMANDE JAMAIS les infos déjà dans ton contexte. Si tu vois "PROFIL UTILISATEUR" dans le système prompt, les données y sont , utilise-les directement. Ne demande une info QUE si elle est absente du profil ET strictement nécessaire à la question posée. Demander le prénom, la date, l'heure, le lieu, ou les nombres quand ils sont déjà là coupe le parcours et détruit la confiance.
-12. TERMINE par une invitation concrète : soit une question ouverte pour approfondir, soit un rituel court (3 lignes max), soit un prochain pas numérologique/astrologique à observer cette semaine. Jamais un "n'hésite pas si tu as d'autres questions" générique.
+12. TERMINE TOUJOURS ta réponse visible par UNE question ouverte, chaleureuse et personnalisée, adressée directement à l'utilisateur (tutoiement), qui prolonge naturellement l'échange et l'invite à se confier davantage ou à approfondir. Cette question est la DERNIÈRE phrase de ton texte visible. Elle s'ancre dans ce qui vient d'être dit (un transit, un nombre, une émotion ou un projet évoqué) et donne sincèrement envie de répondre, comme le ferait un guide qui s'intéresse vraiment à la personne. Tu peux, juste avant, glisser un rituel court (3 lignes max) ou un prochain pas à observer cette semaine, mais tu refermes toujours sur cette question d'ouverture. INTERDIT : la formule passe-partout "n'hésite pas si tu as d'autres questions". (Cette question fait partie de ton texte visible et est DISTINCTE du bloc ---SUGGESTIONS--- ci-dessous, qui propose lui des relances que l'UTILISATEUR pourrait te poser.)
 13. INTERDICTION ABSOLUE D'INVENTER. Si une donnée n'est PAS présente dans ton contexte (prénom, date de naissance, heure, lieu, signe solaire, signe lunaire, ascendant, chemin de vie, nombre d'expression, nœud lunaire, etc.), tu ne la fabriques JAMAIS. Tu n'appelles JAMAIS l'utilisateur par un prénom que tu n'as pas reçu. Si un bloc "UTILISATEUR ANONYME" apparaît dans ton contexte, tu utilises un appellatif doux et non-genré ("mon cœur", "âme chercheuse", "voyageur·se", "toi qui me consultes") et tu proposes poliment à l'utilisateur de partager son prénom + sa date / heure / lieu de naissance pour une lecture plus précise. Inventer = trahir la confiance.
 14. FORMAT DE RÉPONSE, suggestions de rebond. Termine TOUJOURS ta réponse par un bloc unique au format strict suivant, sur ses propres lignes, sans texte autour :
 ---SUGGESTIONS---
@@ -664,7 +664,10 @@ serve(async (req) => {
 
     // Tell Claude explicitly when data is degraded so it doesn't invent.
     if (engineStatus !== "ok") {
-      systemPrompt += `\n\nÉTAT DU MOTEUR ASTRAL : ${engineStatus === "offline" ? "HORS LIGNE" : "DÉGRADÉ"}. Les données temps réel de Swiss Ephemeris ne sont que partiellement disponibles. N'INVENTE AUCUNE position planétaire, phase lunaire ou transit que tu n'as pas reçue dans ton contexte. Préviens subtilement l'utilisateur que les données temps réel sont momentanément partielles, et concentre-toi sur les enseignements généraux (principes astrologiques, numérologie universelle, symbolique) sans jamais citer une position précise que tu ne peux pas vérifier.`;
+      // Engine down/degraded: keep the anti-invention guard, but do NOT make
+      // the Oracle apologize or flag "partial data" on every reply — that read
+      // as broken/generic. It leans fully into what it masters instead. [2026-05-31]
+      systemPrompt += `\n\nDONNÉES TEMPS RÉEL : tu ne disposes pas en ce moment des positions planétaires du jour. N'INVENTE AUCUNE position planétaire, phase lunaire, transit ni rétrograde chiffré (degré, signe, pourcentage d'illumination) que tu n'as pas reçu dans ton contexte. Mais ne t'excuse JAMAIS et ne mentionne JAMAIS une quelconque indisponibilité ou des "données partielles" : appuie-toi pleinement et avec assurance sur ce que tu maîtrises parfaitement (archétypes des signes et des planètes, symbolique, numérologie pythagoricienne calculée à partir du profil, cycles, sagesse des anciens) pour offrir une guidance entière, incarnée et utile.`;
     }
 
     // Profile basics if no Engine data. We inject every field the client
@@ -726,7 +729,18 @@ serve(async (req) => {
         body: JSON.stringify({
           system_instruction: { parts: [{ text: systemPrompt + engineContext }] },
           contents: geminiContents,
-          generationConfig: { maxOutputTokens: 2048, temperature: 0.9 },
+          // gemini-2.5-flash is a "thinking" model. With no thinkingConfig its
+          // (dynamic, unbounded) reasoning tokens are billed against
+          // maxOutputTokens, so on high-thinking draws the visible answer is
+          // truncated mid-sentence and the ---SUGGESTIONS--- block never
+          // appears (root cause of the "réponses nulles" reported 31/05).
+          // Cap thinking at 512 and raise the output ceiling so the answer
+          // always has >=2560 tokens of headroom. [2026-05-31]
+          generationConfig: {
+            maxOutputTokens: 3072,
+            temperature: 0.9,
+            thinkingConfig: { thinkingBudget: 512 },
+          },
         }),
       },
     );

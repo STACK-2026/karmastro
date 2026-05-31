@@ -146,7 +146,15 @@ export async function generateReading(input: ReadingInput): Promise<string> {
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
         contents: [{ role: "user", parts: [{ text: buildKarmicDebtPrompt(input) }] }],
-        generationConfig: { maxOutputTokens: 3500, temperature: 0.9 },
+        // gemini-2.5-flash is a "thinking" model: without a budget cap, its
+        // reasoning tokens eat into maxOutputTokens and the (paid) reading gets
+        // truncated mid-sentence. Cap thinking and give the answer a generous
+        // floor (6144 - 1024 = 5120 tokens >> the 1100-1400 word target). [2026-05-31]
+        generationConfig: {
+          maxOutputTokens: 6144,
+          temperature: 0.9,
+          thinkingConfig: { thinkingBudget: 1024 },
+        },
       }),
     },
   );
