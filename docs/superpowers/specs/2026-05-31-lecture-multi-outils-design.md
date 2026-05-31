@@ -85,3 +85,14 @@ Personne ne quitte sans offre.
 - DB lecture : Mgmt API + UA Mozilla (CF 1010).
 - Site Astro : commit→push main → CF Pages (deploy-site.yml).
 - Stripe price 4,90€ : `READING_PRICE_ID` (déjà posé). Webhook secret `STRIPE_READING_WEBHOOK_SECRET`.
+
+---
+## CLOSURE Phase 1 (31/05/2026) — LIVE + vérifié
+Commits : T1 moteur universel + 15 tests Deno ; T2/T3 checkout+webhook tool-agnostiques ;
+T4-8 CTA 4 outils + fix no-debt. Build Astro 11982 pages exit 0. Déployé (functions
+`--no-verify-jwt` + push main → CF Pages self-hosted `karmastro-site`).
+Preuves live : 4 pages HTTP 200 + CTA présent ; dette-karmique no-debt → offre chemin-de-vie ;
+checkout e2e les 4 outils → `cs_live_` ; karmic-debt non régressé ; bad tool rejeté ;
+génération réelle 1650/1616/2291 mots, 0 tiret, non tronquée.
+RESTE = Augustin : (1) test paiement réel 4,90€ (seule validation webhook e2e), (2) Phase 2
+(ascendant/synastrie/theme-natal/transits) APRÈS redémarrage moteur Swiss Ephemeris.
