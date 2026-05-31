@@ -292,41 +292,41 @@ export function readingEmail(token: string, locale = "fr"): EmailTemplate {
   if (locale === "en") {
     const urlEn = `https://karmastro.com/lecture/?token=${token}&lang=en`;
     const htmlEn = wrapHtml(
-      "Your karmic reading is ready",
+      "Your personalised reading is ready",
       `
-<h1 style="color:#fff;font-family:Georgia,serif;font-size:26px;margin:0 0 16px;">Your karmic reading awaits ✦</h1>
-<p>Orion has finished your personalised karmic reading. It is reserved for you and stays accessible any time via the link below.</p>
-<p>Take a quiet moment to read it: it speaks of your soul memory, what it creates in your life today, and the concrete gesture of the week.</p>
+<h1 style="color:#fff;font-family:Georgia,serif;font-size:26px;margin:0 0 16px;">Your reading awaits ✦</h1>
+<p>Orion has finished your personalised reading. It is reserved for you and stays accessible any time via the link below.</p>
+<p>Take a quiet moment to read it: it speaks of who you are, what it creates in your life today, and the concrete gesture of the week.</p>
       `,
-      "Read my karmic reading",
+      "Read my reading",
       urlEn
     );
-    const textEn = `Your karmic reading awaits
+    const textEn = `Your reading awaits
 
-Orion has finished your personalised karmic reading. It stays accessible any time here:
+Orion has finished your personalised reading. It stays accessible any time here:
 
 ${urlEn}
 
 Take a quiet moment to read it.
 `;
-    return { subject: "✦ Your karmic reading is ready", html: htmlEn, text: textEn };
+    return { subject: "✦ Your personalised reading is ready", html: htmlEn, text: textEn };
   }
 
   const url = `https://karmastro.com/lecture/?token=${token}`;
   const html = wrapHtml(
-    "Ta lecture karmique est prête",
+    "Ta lecture personnalisée est prête",
     `
-<h1 style="color:#fff;font-family:Georgia,serif;font-size:26px;margin:0 0 16px;">Ta lecture karmique t'attend ✦</h1>
-<p>Orion a terminé ta lecture karmique personnalisée. Elle t'est réservée et reste accessible à tout moment via le lien ci-dessous.</p>
-<p>Prends un moment au calme pour la lire : elle parle de ta mémoire d'âme, de ce qu'elle crée aujourd'hui dans ta vie, et du geste concret de la semaine.</p>
+<h1 style="color:#fff;font-family:Georgia,serif;font-size:26px;margin:0 0 16px;">Ta lecture t'attend ✦</h1>
+<p>Orion a terminé ta lecture personnalisée. Elle t'est réservée et reste accessible à tout moment via le lien ci-dessous.</p>
+<p>Prends un moment au calme pour la lire : elle parle de qui tu es, de ce que ça crée aujourd'hui dans ta vie, et du geste concret de la semaine.</p>
     `,
-    "Lire ma lecture karmique",
+    "Lire ma lecture",
     url
   );
 
-  const text = `Ta lecture karmique t'attend ✦
+  const text = `Ta lecture t'attend ✦
 
-Orion a terminé ta lecture karmique personnalisée. Elle reste accessible à tout moment ici :
+Orion a terminé ta lecture personnalisée. Elle reste accessible à tout moment ici :
 
 ${url}
 
@@ -336,7 +336,7 @@ Prends un moment au calme pour la lire.
 `;
 
   return {
-    subject: "✦ Ta lecture karmique est prête",
+    subject: "✦ Ta lecture personnalisée est prête",
     html,
     text,
   };
