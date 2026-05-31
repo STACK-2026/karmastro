@@ -40,8 +40,14 @@ serve(async (req) => {
       "karmic-debt", "chemin-de-vie", "nombre-expression", "annee-personnelle", "compatibilite",
     ]);
     const { tool, birthDate, fullName, locale, debtCodes, partnerBirthDate, partnerName } = await req.json();
-    if (!READING_TOOLS.has(tool) || !birthDate) {
+    if (!READING_TOOLS.has(tool)) {
       return json({ error: "params invalides" }, 400);
+    }
+    // nombre-expression part du nom (pas de date) ; les autres exigent la date de naissance.
+    if (tool === "nombre-expression") {
+      if (!fullName) return json({ error: "fullName requis pour nombre-expression" }, 400);
+    } else if (!birthDate) {
+      return json({ error: "birthDate requis" }, 400);
     }
     if (tool === "karmic-debt" && (!Array.isArray(debtCodes) || debtCodes.length === 0)) {
       return json({ error: "debtCodes requis pour karmic-debt" }, 400);

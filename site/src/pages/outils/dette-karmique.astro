@@ -148,8 +148,18 @@ const jsonLd = [
           <p class="text-4xl mb-3">✦</p>
           <h3 class="font-serif text-2xl mb-2 text-emerald-300">Aucune dette karmique détectée</h3>
           <p class="text-white/80 leading-relaxed mb-4">
-            Ta date de naissance ne contient aucune des quatre dettes karmiques pythagoriciennes (13/4, 14/5, 16/7, 19/1). Cela ne signifie pas que ton âme n'a pas de leçons à apprendre, mais qu'elles ne sont pas portées par les archétypes de dette les plus lourds.
+            Ta date de naissance ne contient aucune des quatre dettes karmiques pythagoriciennes (13/4, 14/5, 16/7, 19/1). C'est une bonne nouvelle : ton âme n'est pas lestée par les archétypes de dette les plus lourds.
           </p>
+          <div class="mt-2 mb-5 p-5 rounded-xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30 text-center">
+            <p class="text-2xl mb-1">✦</p>
+            <p class="font-serif text-base text-white mb-1">Découvre plutôt ce que ton chemin de vie révèle</p>
+            <p class="text-xs text-white/60 mb-4 max-w-sm mx-auto leading-relaxed">
+              Une lecture personnalisée d'Orion (1100-1400 mots) sur ton chemin de vie : ton don, ton ombre, ta mission, ton rituel de la semaine et la question à te poser. Livrée à l'écran à l'instant + par email.
+            </p>
+            <button type="button" id="km-buy-lifepath" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">
+              Débloquer ma lecture de chemin de vie - 4,90 €
+            </button>
+          </div>
           <p class="text-sm text-white/60 mb-4">
             Pour une analyse karmique complète qui inclut les nœuds lunaires astrologiques et d'autres patterns subtils, consulte l'Oracle.
           </p>
@@ -380,6 +390,29 @@ const jsonLd = [
       } else {
         throw new Error(data?.error || "no url");
       }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = original;
+      alert("Une erreur est survenue, réessaie dans un instant.");
+    }
+  });
+
+  // Cas "aucune dette" : on propose une lecture chemin-de-vie (plus de cul-de-sac).
+  document.getElementById("km-buy-lifepath")?.addEventListener("click", async (ev) => {
+    const btn = ev.currentTarget as HTMLButtonElement;
+    btn.disabled = true;
+    const original = btn.textContent;
+    btn.textContent = "Redirection…";
+    const birthDate = (document.getElementById("birth-date") as HTMLInputElement).value;
+    try {
+      const r = await fetch(CHECKOUT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ tool: "chemin-de-vie", birthDate, locale: "fr" }),
+      });
+      const data = await r.json();
+      if (data?.url) { window.location.href = data.url; }
+      else { throw new Error(data?.error || "no url"); }
     } catch {
       btn.disabled = false;
       btn.textContent = original;

@@ -184,6 +184,22 @@ const jsonLd = [
             </div>
           </div>
 
+          <div id="reading-cta" class="mt-6 pt-5 border-t border-white/10">
+            <div class="relative p-5 rounded-xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30 text-center overflow-hidden">
+              <div aria-hidden="true" style="filter: blur(6px); opacity: 0.5; user-select: none; pointer-events: none;" class="text-left text-sm text-white/70 space-y-1 mb-4">
+                <p>La rencontre de vos deux chemins de vie dessine une force naturelle, et une friction précise à apprivoiser...</p>
+                <p>Comment grandir ensemble concrètement, le geste à poser cette semaine et la question à vous poser à deux...</p>
+              </div>
+              <p class="text-2xl mb-1">✦</p>
+              <p class="font-serif text-base text-white mb-1">Ta lecture de compatibilité complète</p>
+              <p class="text-xs text-white/60 mb-4 max-w-sm mx-auto leading-relaxed">
+                Une lecture personnalisée d'Orion (1100-1400 mots) : la dynamique entre vos deux chemins de vie, vos forces, les frictions à surveiller, comment grandir ensemble, votre rituel de la semaine et la question à vous poser. Livrée à l'écran à l'instant + par email.
+              </p>
+              <button type="button" id="km-buy" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">
+                Débloquer notre lecture complète - 4,90 €
+              </button>
+            </div>
+          </div>
           <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row flex-wrap gap-2 justify-center items-center">
             <a
               href="https://app.karmastro.com"
@@ -453,5 +469,31 @@ const jsonLd = [
     }
 
     revealResult(resultDiv);
+  });
+
+  // Achat lecture complète : Stripe Checkout invité site-natif (sans compte).
+  const CHECKOUT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/reading-checkout";
+  document.getElementById("reading-cta")?.addEventListener("click", async (ev) => {
+    const btn = (ev.target as HTMLElement).closest("#km-buy") as HTMLButtonElement | null;
+    if (!btn) return;
+    btn.disabled = true;
+    const original = btn.textContent;
+    btn.textContent = "Redirection…";
+    const birthDate = (document.getElementById("date-a") as HTMLInputElement).value;
+    const partnerBirthDate = (document.getElementById("date-b") as HTMLInputElement).value;
+    try {
+      const r = await fetch(CHECKOUT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ tool: "compatibilite", birthDate, partnerBirthDate, locale: "fr" }),
+      });
+      const data = await r.json();
+      if (data?.url) { window.location.href = data.url; }
+      else { throw new Error(data?.error || "no url"); }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = original;
+      alert("Une erreur est survenue, réessaie dans un instant.");
+    }
   });
 </script>
