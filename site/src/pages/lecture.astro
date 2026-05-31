@@ -40,12 +40,16 @@ const description = "Ta lecture personnalisée.";
       errorTitle: "Ta lecture arrive…",
       errorSub: "Si rien ne s'affiche d'ici une minute, recharge la page. Ton paiement est bien pris en compte et ta lecture t'est aussi envoyée par email.",
       emailNote: "Une copie t'a été envoyée par email. Garde ce lien pour retrouver ta lecture à tout moment.",
+      crossTitle: "Continue ton exploration",
+      tools: [["/outils/chemin-de-vie/", "Chemin de vie"], ["/outils/ascendant/", "Ascendant"], ["/outils/compatibilite/", "Compatibilité"], ["/outils/transits/", "Transits du jour"]],
     },
     en: {
       loadingTitle: "Generating your reading…", loadingSub: "Orion is consulting the numbers. A few seconds.",
       errorTitle: "Your reading is on its way…",
       errorSub: "If nothing shows within a minute, reload the page. Your payment went through and your reading is also sent to you by email.",
       emailNote: "A copy has been sent to your email. Keep this link to find your reading any time.",
+      crossTitle: "Keep exploring",
+      tools: [["/en/tools/life-path-number/", "Life path"], ["/en/tools/rising-sign/", "Rising sign"], ["/en/tools/personal-year/", "Personal year"], ["/en/tools/expression-number/", "Expression number"]],
     },
   }[lang];
   if (lang === "en") {
@@ -83,9 +87,18 @@ const description = "Ta lecture personnalisée.";
       const data = await r.json();
       if (data.status === "ready" && data.content) {
         loading.classList.add("hidden");
+        const crossLinks = STR.tools
+          .map(([href, label]) => `<a href="${href}" class="px-4 py-2 rounded-xl border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors no-underline">${label}</a>`)
+          .join("");
         content.innerHTML = mdToHtml(data.content) +
-          `<p class="text-xs text-white/40 mt-10 border-t border-white/10 pt-4">${STR.emailNote}</p>`;
+          `<p class="text-xs text-white/40 mt-10 border-t border-white/10 pt-4">${STR.emailNote}</p>` +
+          `<div class="mt-12 pt-8 border-t border-white/10 text-center not-prose">
+             <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-4">${STR.crossTitle}</p>
+             <div class="flex flex-wrap gap-2 justify-center">${crossLinks}</div>
+           </div>`;
         content.classList.remove("hidden");
+        // Conversion event : lecture payée ET livrée à l'écran.
+        try { (window as any).km?.trackEvent("reading_delivered", { tool: data.tool_type || "", locale: lang, path: location.pathname }); } catch { /* noop */ }
         return;
       }
       if (data.status === "error") { showError(); return; }

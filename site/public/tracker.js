@@ -214,6 +214,63 @@
   // Initial pageview
   trackPageView();
 
+  // ── Funnel auto-instrumentation (outils → lecture payante 4,90€) ──────────
+  // Aucune édition par page : s'appuie sur les IDs partagés #result / #reading-cta
+  // / #km-buy. Émet activation (tool_calculated), offre vue (reading_cta_view),
+  // intention d'achat (reading_cta_click). [2026-06-01]
+  function ctaTool() {
+    var c = document.getElementById("reading-cta");
+    return (c && c.getAttribute("data-tool")) || "";
+  }
+  function ctaLocale() {
+    var c = document.getElementById("reading-cta");
+    return (c && c.getAttribute("data-locale")) || (document.documentElement.lang || "fr");
+  }
+  function setupFunnel() {
+    var path = location.pathname;
+    // Activation : le bloc résultat passe de hidden à visible.
+    var result = document.getElementById("result");
+    if (result && "MutationObserver" in window) {
+      var fired = false;
+      var mo = new MutationObserver(function () {
+        if (!fired && !result.classList.contains("hidden")) {
+          fired = true;
+          trackEvent("tool_calculated", { path: path });
+        }
+      });
+      mo.observe(result, { attributes: true, attributeFilter: ["class"] });
+    }
+    // Offre payante entrée dans le viewport.
+    var cta = document.getElementById("reading-cta");
+    if (cta && "IntersectionObserver" in window) {
+      var viewed = false;
+      var io = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting && !viewed) {
+            viewed = true;
+            trackEvent("reading_cta_view", { tool: ctaTool(), locale: ctaLocale(), path: path });
+            io.disconnect();
+          }
+        }
+      }, { threshold: 0.4 });
+      io.observe(cta);
+    }
+    // Intention d'achat : clic (délégué — gère #km-buy, .km-buy dynamiques, no-debt).
+    document.addEventListener("click", function (ev) {
+      var t = ev.target;
+      var btn = t && t.closest ? t.closest("#km-buy, .km-buy, #km-buy-lifepath") : null;
+      if (!btn) return;
+      var tool = btn.getAttribute("data-code") || ctaTool() ||
+        (btn.id === "km-buy-lifepath" ? "chemin-de-vie" : "");
+      trackEvent("reading_cta_click", { tool: tool, locale: ctaLocale(), path: path });
+    }, true);
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupFunnel);
+  } else {
+    setupFunnel();
+  }
+
   // Expose API globally for custom events from other scripts / components
   window.km = {
     trackPageView: trackPageView,
