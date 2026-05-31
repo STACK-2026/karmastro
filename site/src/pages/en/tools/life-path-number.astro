@@ -224,6 +224,7 @@ const jsonLd = [
     ],
   },
 ];
+import NewsletterCapture from "../../../components/NewsletterCapture.astro";
 ---
 
 <BaseLayout title={title} description={description} jsonLd={jsonLd}>
@@ -312,6 +313,7 @@ const jsonLd = [
               </button>
             </div>
           </div>
+          <NewsletterCapture variant="inline" source="tool-life-path" />
           <div class="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-2 justify-center items-center">
             <a
               href="https://app.karmastro.com/oracle?lang=en"

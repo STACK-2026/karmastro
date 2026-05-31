@@ -3,6 +3,7 @@
 // Gère le checkout invité (Stripe) côté client via data-attributs : pour l'ascendant,
 // géocode le lieu (Nominatim) au clic. Copy i18n pour les langues sans CTA inline
 // (es/it/de/pt/tr/ru/pl/ar). FR/EN gardent leur CTA inline. [2026-06-01]
+import NewsletterCapture from "./NewsletterCapture.astro";
 interface Props {
   tool: "chemin-de-vie" | "ascendant";
   locale: string;
@@ -33,6 +34,7 @@ const dir = locale === "ar" ? "rtl" : undefined;
       <p class="text-xs text-white/60 mb-4 max-w-sm mx-auto leading-relaxed">{c.desc}</p>
       <button type="button" id="km-buy" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">{c.button}</button>
     </div>
+    <NewsletterCapture variant="inline" source={`tool-${tool}`} />
   </div>
 )}
 
