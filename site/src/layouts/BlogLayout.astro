@@ -3,6 +3,7 @@ import BaseLayout from "./BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import ShareButton from "../components/ShareButton.astro";
 import NewsletterCapture from "../components/NewsletterCapture.astro";
+import ToolCTA from "../components/ToolCTA.astro";
 import { siteConfig } from "../../site.config";
 import { fullUrl } from "../utils/config";
 import { jsonLdArticle, jsonLdBreadcrumbs } from "../utils/seo";
@@ -208,6 +209,8 @@ if (faqPairs.length > 0) {
     <div class="prose max-w-none">
       <slot />
     </div>
+
+    <ToolCTA slug={slug} lang={lang} />
 
     <NewsletterCapture variant="card" source={`blog-${slug}`} />
 

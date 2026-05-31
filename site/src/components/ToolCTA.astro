@@ -1,0 +1,64 @@
+---
+// CTA contextuel "passe à la pratique" injecté en fin d'article de blog.
+// Choisit l'outil le plus pertinent selon le slug, et renvoie vers le calculateur
+// gratuit (qui porte l'upsell lecture 4,90€). Phase A : FR uniquement, car seuls
+// les outils FR portent le tunnel payant. [2026-06-01]
+interface Props {
+  slug: string;
+  lang?: string;
+}
+const { slug, lang = "fr" } = Astro.props;
+
+const TOOLS: Record<string, { url: string; name: string; hook: string }> = {
+  "chemin-de-vie": { url: "/outils/chemin-de-vie/", name: "ton chemin de vie", hook: "Le nombre qui guide toute ta vie, calculé en 30 secondes." },
+  "nombre-expression": { url: "/outils/nombre-expression/", name: "ton nombre d'expression", hook: "Ce que la vibration de ton nom révèle de tes talents." },
+  "annee-personnelle": { url: "/outils/annee-personnelle/", name: "ton année personnelle", hook: "L'énergie de ton cycle de l'année, à l'instant." },
+  "dette-karmique": { url: "/outils/dette-karmique/", name: "ta dette karmique", hook: "Découvre si ton âme porte une mémoire karmique à libérer." },
+  "compatibilite": { url: "/outils/compatibilite/", name: "votre compatibilité", hook: "L'harmonie entre vos deux profils, en 30 secondes." },
+  "synastrie": { url: "/outils/synastrie/", name: "votre synastrie", hook: "Vos deux thèmes croisés, aspect par aspect (Swiss Ephemeris)." },
+  "ascendant": { url: "/outils/ascendant/", name: "ton ascendant", hook: "Le signe qui se levait à ta naissance, précis à la minute." },
+  "theme-natal": { url: "/outils/theme-natal/", name: "ton thème natal", hook: "La carte complète du ciel à ta naissance (Swiss Ephemeris)." },
+  "transits": { url: "/outils/transits/", name: "tes transits du jour", hook: "Ce que le ciel active dans ta vie en ce moment." },
+};
+
+// slug keyword -> tool (premier match = priorité)
+const RULES: [RegExp, string][] = [
+  [/synastr/, "synastrie"],
+  [/ascendant/, "ascendant"],
+  [/(theme-natal|maisons?|carte-ciel|carte-du-ciel|chakras)/, "theme-natal"],
+  [/(retrograd|transit|mercure|saturne|pluton|jupiter|neptune|uranus|\bmars\b|venus|lune|pleine-lune|eclipse|cycles-planetaires)/, "transits"],
+  [/(compatibilit|amoureuse|\bcouple|attir|sattir|signes-zodiaque|incompat)/, "compatibilite"],
+  [/(annee-personnelle|cycle-9|fin-cycle)/, "annee-personnelle"],
+  [/(dette|karmiqu|\bkarma|noeud|nud|vies-anterieures)/, "dette-karmique"],
+  [/(expression|prenom|nom-identite|nombre-personnel)/, "nombre-expression"],
+  [/(chemin-de-vie|chemin-vie|life-path)/, "chemin-de-vie"],
+  [/(numerolog|maitres?-nombres?|maitre-nombre)/, "chemin-de-vie"],
+  [/(signe-ascendant|horoscope|signe-)/, "theme-natal"],
+];
+
+function pickTool(s: string): string | null {
+  const low = s.toLowerCase();
+  for (const [re, t] of RULES) if (re.test(low)) return t;
+  return null;
+}
+
+const tool = lang === "fr" ? pickTool(slug) : null;
+const data = tool ? TOOLS[tool] : null;
+---
+{data && (
+  <aside class="not-prose my-10 p-6 rounded-2xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30">
+    <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+      <div class="flex-1">
+        <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-1">Passe à la pratique</p>
+        <p class="font-serif text-lg text-white mb-1">Calcule {data.name} gratuitement</p>
+        <p class="text-sm text-white/65 leading-relaxed">{data.hook}</p>
+      </div>
+      <a
+        href={data.url}
+        class="shrink-0 inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity"
+      >
+        Calculer ✦
+      </a>
+    </div>
+  </aside>
+)}
