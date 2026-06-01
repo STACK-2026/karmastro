@@ -155,4 +155,8 @@ const jsonLd = [
   document.querySelectorAll(".oracle-chip").forEach((c) => {
     c.addEventListener("click", () => send((c as HTMLElement).dataset.q || ""));
   });
+
+  // Question pré-remplie via ?q= (depuis le glossaire, un article…) : auto-envoi.
+  const preQ = new URLSearchParams(location.search).get("q");
+  if (preQ) { send(preQ); }
 </script>
