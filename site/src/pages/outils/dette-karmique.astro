@@ -159,6 +159,11 @@ const jsonLd = [
             <button type="button" id="km-buy-lifepath" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">
               Débloquer ma lecture de chemin de vie - 4,90 €
             </button>
+            <p class="text-[11px] text-white/40 my-2">ou, pour le portrait complet</p>
+            <button type="button" id="km-buy-complete" class="inline-block px-5 py-2.5 rounded-xl border border-amber-300/50 text-amber-300 font-semibold text-sm hover:bg-amber-300/10 transition-colors">
+              ★ Ton profil numérologique complet - 12,90 €
+            </button>
+            <p class="text-[11px] text-white/45 mt-2 max-w-xs mx-auto leading-relaxed">Les 4 nombres réunis : chemin de vie + nombre d'expression + année personnelle + dettes karmiques.</p>
           </div>
           <p class="text-sm text-white/60 mb-4">
             Pour une analyse karmique complète qui inclut les nœuds lunaires astrologiques et d'autres patterns subtils, consulte l'Oracle.
@@ -409,6 +414,30 @@ const jsonLd = [
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ tool: "chemin-de-vie", birthDate, locale: "fr" }),
+      });
+      const data = await r.json();
+      if (data?.url) { window.location.href = data.url; }
+      else { throw new Error(data?.error || "no url"); }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = original;
+      alert("Une erreur est survenue, réessaie dans un instant.");
+    }
+  });
+
+  // Profil complet 12,90€ : ici on a date ET nom → portrait 4/4 idéal.
+  document.getElementById("km-buy-complete")?.addEventListener("click", async (ev) => {
+    const btn = ev.currentTarget as HTMLButtonElement;
+    btn.disabled = true;
+    const original = btn.textContent;
+    btn.textContent = "Redirection…";
+    const birthDate = (document.getElementById("birth-date") as HTMLInputElement).value;
+    const fullName = (document.getElementById("full-name") as HTMLInputElement)?.value || "";
+    try {
+      const r = await fetch(CHECKOUT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ tool: "profil-complet", birthDate, fullName, locale: "fr" }),
       });
       const data = await r.json();
       if (data?.url) { window.location.href = data.url; }
