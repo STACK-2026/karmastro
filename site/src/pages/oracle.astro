@@ -1,0 +1,158 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Parle à l'Oracle gratuitement - guidance astro & numérologie en ligne";
+const description =
+  "Pose ta question à l'Oracle de Karmastro et reçois une guidance instantanée mêlant astrologie et numérologie. Gratuit, sans inscription, écrit en direct par une IA nourrie de Swiss Ephemeris.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Oracle de Karmastro",
+    description,
+    url: "https://karmastro.com/oracle/",
+    applicationCategory: "LifestyleApplication",
+    operatingSystem: "Any",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-2xl mx-auto px-4 py-12">
+    <header class="text-center mb-8">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Guidance en direct</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Parle à l'Oracle</h1>
+      <p class="text-lg text-white/70 max-w-xl mx-auto leading-relaxed">
+        Pose ta question. L'Oracle lit le ciel et les nombres pour te répondre, à l'instant. Gratuit, sans inscription.
+      </p>
+    </header>
+
+    <div id="oracle-box" class="rounded-3xl border border-amber-300/20 bg-[#0f0a1e]/40 overflow-hidden">
+      <div id="oracle-thread" class="px-4 md:px-6 py-6 space-y-4 min-h-[280px] max-h-[60vh] overflow-y-auto">
+        <div id="oracle-empty" class="text-center py-8">
+          <p class="text-4xl mb-4">✦</p>
+          <p class="text-white/70 mb-5 text-sm">Par quoi commencer ? Essaie une de ces questions :</p>
+          <div class="flex flex-wrap gap-2 justify-center" id="oracle-starters">
+            <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-q="Que disent les astres pour moi en ce moment ?">Que disent les astres pour moi ?</button>
+            <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-q="Je suis né(e) le 14 mars 1990, que révèle mon chemin de vie ?">Mon chemin de vie ?</button>
+            <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-q="Un conseil pour ma semaine ?">Un conseil pour ma semaine ?</button>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 p-3 flex gap-2">
+        <input id="oracle-input" type="text" maxlength="500" placeholder="Pose ta question à l'Oracle…" class="flex-1 px-4 py-3 rounded-xl bg-white/[0.05] border border-white/15 text-white placeholder:text-white/40 focus:border-amber-300/60 focus:outline-none text-sm" />
+        <button id="oracle-send" type="button" class="px-5 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity whitespace-nowrap">Envoyer ✦</button>
+      </div>
+    </div>
+
+    <div id="oracle-suggestions" class="flex flex-wrap gap-2 justify-center mt-4"></div>
+
+    <div class="mt-10 p-5 rounded-2xl border border-amber-300/30 bg-gradient-to-r from-purple-400/10 to-amber-300/10 text-center">
+      <p class="font-serif text-base text-white mb-1">Envie d'aller plus loin que quelques messages ?</p>
+      <p class="text-xs text-white/60 mb-4 max-w-md mx-auto leading-relaxed">L'Oracle te donne un aperçu. Pour une lecture complète, écrite et personnalisée de ton profil, calcule-le gratuitement, puis débloque ta lecture.</p>
+      <div class="flex flex-wrap gap-2 justify-center">
+        <a href="/outils/" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm">Mes outils gratuits</a>
+        <a href="/abonnement/" class="px-5 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors">Une guidance chaque mois</a>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<script>
+  const CHAT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/oracle-chat";
+  const thread = document.getElementById("oracle-thread")!;
+  const empty = document.getElementById("oracle-empty");
+  const input = document.getElementById("oracle-input") as HTMLInputElement;
+  const sendBtn = document.getElementById("oracle-send") as HTMLButtonElement;
+  const sugWrap = document.getElementById("oracle-suggestions")!;
+
+  function sessionId(): string {
+    let s = localStorage.getItem("km_oracle_session");
+    if (!s) { s = "site-" + Math.random().toString(36).slice(2) + Date.now().toString(36); localStorage.setItem("km_oracle_session", s); }
+    return s;
+  }
+  const history: { role: string; content: string }[] = [];
+  let busy = false;
+
+  function bubble(role: string, text: string): HTMLElement {
+    const wrap = document.createElement("div");
+    wrap.className = role === "user" ? "text-right" : "text-left";
+    const b = document.createElement("div");
+    b.className = role === "user"
+      ? "inline-block max-w-[85%] px-4 py-2.5 rounded-2xl bg-purple-400/20 text-white text-sm text-left"
+      : "inline-block max-w-[90%] px-4 py-2.5 rounded-2xl bg-white/[0.04] border border-white/10 text-white/90 text-sm text-left leading-relaxed";
+    b.textContent = text;
+    wrap.appendChild(b);
+    thread.appendChild(wrap);
+    thread.scrollTop = thread.scrollHeight;
+    return b;
+  }
+
+  function renderSuggestions(items: string[]) {
+    sugWrap.innerHTML = "";
+    (items || []).slice(0, 3).forEach((q) => {
+      const btn = document.createElement("button");
+      btn.className = "px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors";
+      btn.textContent = q;
+      btn.onclick = () => { if (!busy) send(q); };
+      sugWrap.appendChild(btn);
+    });
+  }
+
+  async function send(text: string) {
+    if (busy || !text.trim()) return;
+    busy = true; sendBtn.disabled = true;
+    if (empty) empty.remove();
+    sugWrap.innerHTML = "";
+    history.push({ role: "user", content: text });
+    bubble("user", text);
+    input.value = "";
+    try { (window as any).km?.trackEvent("oracle_message_sent", { n: history.filter((m) => m.role === "user").length }); } catch {}
+    const out = bubble("assistant", "…");
+    let full = "";
+    try {
+      const resp = await fetch(CHAT_URL, {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: history, guide: "oracle", sessionId: sessionId() }),
+      });
+      const reader = resp.body!.getReader();
+      const dec = new TextDecoder();
+      let buf = "";
+      let suggestions: string[] = [];
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buf += dec.decode(value, { stream: true });
+        const lines = buf.split("\n");
+        buf = lines.pop() || "";
+        for (const line of lines) {
+          const l = line.trim();
+          if (!l.startsWith("data:")) continue;
+          const p = l.slice(5).trim();
+          if (p === "[DONE]") continue;
+          try {
+            const d = JSON.parse(p);
+            const delta = d.choices?.[0]?.delta?.content;
+            if (delta) { full += delta; out.textContent = full; thread.scrollTop = thread.scrollHeight; }
+            if (d.suggestions) suggestions = d.suggestions;
+          } catch {}
+        }
+      }
+      if (full) history.push({ role: "assistant", content: full });
+      else out.textContent = "L'Oracle médite… réessaie dans un instant.";
+      renderSuggestions(suggestions);
+    } catch {
+      out.textContent = "Une brume cosmique passe. Réessaie dans un instant.";
+    } finally {
+      busy = false; sendBtn.disabled = false; input.focus();
+    }
+  }
+
+  sendBtn.addEventListener("click", () => send(input.value));
+  input.addEventListener("keydown", (e) => { if (e.key === "Enter") send(input.value); });
+  document.querySelectorAll(".oracle-chip").forEach((c) => {
+    c.addEventListener("click", () => send((c as HTMLElement).dataset.q || ""));
+  });
+</script>
