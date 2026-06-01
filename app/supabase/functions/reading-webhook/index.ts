@@ -42,7 +42,7 @@ serve(async (req) => {
   const md = session.metadata || {};
   const READING_TOOLS = new Set([
     "karmic-debt", "chemin-de-vie", "nombre-expression", "annee-personnelle", "compatibilite",
-    "ascendant", "theme-natal", "transits", "synastrie",
+    "ascendant", "theme-natal", "transits", "synastrie", "profil-complet",
   ]);
   if (!READING_TOOLS.has(md.tool) || !md.token) {
     return new Response("not a reading", { status: 200 });

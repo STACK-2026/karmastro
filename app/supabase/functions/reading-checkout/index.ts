@@ -16,6 +16,7 @@ const corsHeaders = {
 
 const STRIPE_SECRET_KEY = Deno.env.get("STRIPE_SECRET_KEY") || "";
 const READING_PRICE_ID = Deno.env.get("READING_PRICE_ID") || "";
+const COMPLETE_PRICE_ID = Deno.env.get("READING_COMPLETE_PRICE_ID") || "";
 const SITE = "https://karmastro.com";
 
 function json(body: unknown, status = 200) {
@@ -38,7 +39,7 @@ serve(async (req) => {
 
     const READING_TOOLS = new Set([
       "karmic-debt", "chemin-de-vie", "nombre-expression", "annee-personnelle", "compatibilite",
-      "ascendant", "theme-natal", "transits", "synastrie",
+      "ascendant", "theme-natal", "transits", "synastrie", "profil-complet",
     ]);
     const ASTRO_TOOLS = new Set(["ascendant", "theme-natal", "transits", "synastrie"]);
     const {
@@ -68,14 +69,19 @@ serve(async (req) => {
       return json({ error: "données du partenaire (date+heure+coordonnées) requises pour synastrie" }, 400);
     }
 
+    // Tarif : profil complet = offre premium 12,90€, sinon lecture simple 4,90€.
+    const priceId = tool === "profil-complet" ? COMPLETE_PRICE_ID : READING_PRICE_ID;
+    if (!priceId) return json({ error: "prix non configuré pour ce tool" }, 500);
+    const cancelSlug = tool === "karmic-debt" ? "dette-karmique" : (tool === "profil-complet" ? "chemin-de-vie" : tool);
+
     const token = crypto.randomUUID();
     const loc = String(locale || "fr").slice(0, 5);
     const langParam = loc !== "fr" ? `&lang=${encodeURIComponent(loc)}` : "";
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
-      line_items: [{ price: READING_PRICE_ID, quantity: 1 }],
+      line_items: [{ price: priceId, quantity: 1 }],
       success_url: `${SITE}/lecture/?token=${token}${langParam}`,
-      cancel_url: `${SITE}/outils/${tool === "karmic-debt" ? "dette-karmique" : tool}/?canceled=1`,
+      cancel_url: `${SITE}/outils/${cancelSlug}/?canceled=1`,
       metadata: {
         token,
         tool,

@@ -2,7 +2,7 @@
 // appelle Claude. La lecture va AU-DELÀ du teaser gratuit : elle croise la/les dette(s)
 // détectée(s) avec le chemin de vie et le nombre d'expression, personnalisée au prénom.
 
-import { calculateLifePath, calculateExpression, reduceNumerology, KARMIC_DEBTS } from "./numerology.ts";
+import { calculateLifePath, calculateExpression, reduceNumerology, detectKarmicDebts, KARMIC_DEBTS } from "./numerology.ts";
 
 // Universal helpers (annee-personnelle).
 function digitSum(n: number): number {
@@ -159,7 +159,7 @@ export function buildFallbackReading(input: ReadingInput): string {
 
 export type ReadingTool =
   | "karmic-debt" | "chemin-de-vie" | "nombre-expression"
-  | "annee-personnelle" | "compatibilite"
+  | "annee-personnelle" | "compatibilite" | "profil-complet"
   | "ascendant" | "theme-natal" | "transits" | "synastrie";
 
 export type ReadingInput = {
@@ -246,10 +246,32 @@ export function buildReadingPrompt(input: ReadingInput, engineData = ""): string
     focus = en
       ? `Focus: NUMEROLOGICAL COMPATIBILITY between ${first} (life path ${lp1.number}) and ${pname} (life path ${lp2 ? lp2.number : "?"}). Read the dynamic between these two life paths: natural strengths of the bond, frictions to watch, how to grow together.`
       : `Focus : COMPATIBILITE NUMEROLOGIQUE entre ${first} (chemin de vie ${lp1.number}) et ${pname} (chemin de vie ${lp2 ? lp2.number : "?"}). Lis la dynamique entre ces deux chemins de vie : forces naturelles du lien, frictions a surveiller, comment grandir ensemble.`;
+  } else if (tool === "profil-complet") {
+    const lp = calculateLifePath(d, m, y);
+    const ex = input.fullName.trim() ? calculateExpression(input.fullName) : null;
+    const yr = input.currentYear || y;
+    const py = personalYear(d, m, yr);
+    const debts = detectKarmicDebts(d, m, y);
+    const debtList = debts.length ? debts.map((x) => `${x.code} (${x.title})`).join(", ") : (en ? "none" : "aucune");
+    focus = en
+      ? `Focus: the COMPLETE NUMEROLOGY PROFILE. Weave ALL of these numbers into ONE coherent, flowing portrait (not four separate blocks):
+- Life path: ${lp.number}${lp.isMaster ? " (master number)" : ""} (the core mission)
+- Expression number: ${ex ? ex.number + (ex.isMaster ? " (master)" : "") : "(full name not provided, focus on the others)"} (innate talents and way of acting)
+- Personal year ${yr}: ${py} (the energy of the current cycle)
+- Karmic debts: ${debtList}
+Show how these reinforce or tension each other, what archetype emerges from their combination, what it means concretely today, and where the person is being invited to grow. This is the premium reading: deeper, longer, and synthesised.`
+      : `Focus : le PROFIL NUMÉROLOGIQUE COMPLET. Tisse TOUS ces nombres en UN portrait cohérent et fluide (pas quatre blocs séparés) :
+- Chemin de vie : ${lp.number}${lp.isMaster ? " (maitre nombre)" : ""} (la mission de fond)
+- Nombre d'expression : ${ex ? ex.number + (ex.isMaster ? " (maitre)" : "") : "(nom complet non fourni, concentre-toi sur les autres)"} (talents innés et façon d'agir)
+- Année personnelle ${yr} : ${py} (l'énergie du cycle en cours)
+- Dettes karmiques : ${debtList}
+Montre comment ces nombres se renforcent ou se tendent, quel archétype émerge de leur combinaison, ce que ça signifie concrètement aujourd'hui, et où la personne est invitée à grandir. C'est la lecture premium : plus profonde, plus longue, synthétisée.`;
   }
 
-  const headEn = `You are Orion, the karmic coach of Karmastro: warm, lucid, grounded, never anxiety-inducing or hollow new-age. Write a personalised reading entirely IN ${outLang} (every sentence, titles included), addressing the person directly, about 1100 to 1400 words.`;
-  const headFr = `Tu es Orion, coach karmique de Karmastro : voix chaleureuse, lucide, incarnee, jamais anxiogene ni new-age creux. Ecris une lecture personnalisee EN FRANCAIS, au tutoiement, d'environ 1100 a 1400 mots.`;
+  const words = tool === "profil-complet" ? "1600 to 2100" : "1100 to 1400";
+  const motsFr = tool === "profil-complet" ? "1600 a 2100" : "1100 a 1400";
+  const headEn = `You are Orion, the karmic coach of Karmastro: warm, lucid, grounded, never anxiety-inducing or hollow new-age. Write a personalised reading entirely IN ${outLang} (every sentence, titles included), addressing the person directly, about ${words} words.`;
+  const headFr = `Tu es Orion, coach karmique de Karmastro : voix chaleureuse, lucide, incarnee, jamais anxiogene ni new-age creux. Ecris une lecture personnalisee EN FRANCAIS, au tutoiement, d'environ ${motsFr} mots.`;
   const structEn = `Structure with markdown (##) section titles: 1) What this reveals about you. 2) What it means concretely in your life right now. 3) The strength to lean on. 4) Your ritual for the week (one simple concrete gesture within 7 days). 5) The question to hold before important decisions.`;
   const structFr = `Structure avec des titres markdown (##) : 1) Ce que cela revele de toi. 2) Ce que ca signifie concretement dans ta vie en ce moment. 3) La force sur laquelle t'appuyer. 4) Ton rituel de la semaine (un geste concret simple sous 7 jours). 5) La question a te poser avant chaque decision importante.`;
   const constraintsEn = `Constraints: no medical/financial/miraculous promises; no fatalism; no unexplained jargon; favour inhabited prose over endless bullet lists. NEVER use em dash or en dash. Start directly with the first section.`;
