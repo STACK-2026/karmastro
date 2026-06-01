@@ -104,7 +104,7 @@ const seeAllPairs = isEn ? "All pairs" : (isFr ? "Toutes les paires" : "Toutes l
         <p class="text-white font-semibold text-sm mb-3">{content.footerExploreTitle}</p>
         <ul class="space-y-2 text-sm" style="color: rgba(255, 255, 255, 0.7);">
           <li><a href={localizedPath("/blog")} class="hover:text-white transition-colors">{t("nav.blog", locale)}</a></li>
-          <li><a href={`${siteConfig.appUrl}/oracle`} class="hover:text-white transition-colors">{t("nav.oracle", locale)}</a></li>
+          <li><a href="/oracle/" class="hover:text-white transition-colors">{t("nav.oracle", locale)}</a></li>
           <li><a href={safePath("/glossaire")} hreflang={isFrFallback("/glossaire") ? "fr" : undefined} class="hover:text-white transition-colors">{t("nav.glossary", locale)}</a></li>
           <li><a href={safePath("/notre-histoire")} hreflang={isFrFallback("/notre-histoire") ? "fr" : undefined} class="hover:text-white transition-colors">{t("nav.about", locale)}</a></li>
           <li><a href={safePath("/precision")} hreflang={isFrFallback("/precision") ? "fr" : undefined} class="hover:text-white transition-colors">{t("nav.precision", locale)}</a></li>

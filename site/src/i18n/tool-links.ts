@@ -83,7 +83,7 @@ const KARMIC: Partial<Record<Locale, string>> = {
 export function getToolUrl(key: ToolKey, locale: Locale): string {
   switch (key) {
     case "oracle":
-      return `${siteConfig.appUrl}/oracle`;
+      return "/oracle/";
     case "tools-index":
       return TOOLS_INDEX[locale];
     case "blog-index":
