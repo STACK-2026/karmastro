@@ -7,6 +7,15 @@ import ZodiacWheel from "./ZodiacWheel.astro";
 
 const locale = extractLocale(Astro.url.pathname);
 const content = getContent(locale);
+
+// CTA principal → les OUTILS gratuits (entrée du tunnel monétisé), pas l'app gelée.
+// Hub d'outils localisé ; les langues sans outils retombent sur l'app. [2026-06-01]
+const TOOLS_HUB: Record<string, string> = {
+  fr: "/outils/", en: "/en/tools/", es: "/es/herramientas/", it: "/it/strumenti/",
+  de: "/de/werkzeuge/", pt: "/pt/ferramentas/", tr: "/tr/araclar/", ru: "/ru/instrumenty/",
+  pl: "/pl/narzedzia/", ar: "/ar/adawat/",
+};
+const primaryCtaHref = TOOLS_HUB[locale] || siteConfig.appUrl;
 ---
 
 <section class="relative overflow-hidden py-12 md:py-32 px-3 md:px-4 bg-starfield">
@@ -29,9 +38,9 @@ const content = getContent(locale);
     </p>
 
     <div class="flex justify-center">
-      {siteConfig.appUrl && (
+      {primaryCtaHref && (
         <a
-          href={siteConfig.appUrl}
+          href={primaryCtaHref}
           class="karma-cta inline-flex items-center justify-center gap-2 text-white font-semibold px-6 md:px-8 py-3.5 md:py-4 rounded-xl text-base md:text-lg glow-violet"
           style="background: hsl(271 91% 65%);"
         >
