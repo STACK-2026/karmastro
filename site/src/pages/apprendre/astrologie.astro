@@ -1,0 +1,106 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Débuter en astrologie : le cours complet pour partir de zéro";
+const description =
+  "Apprends l'astrologie de zéro : ton signe solaire, l'ascendant, les 12 maisons, les planètes, les aspects et les transits. Avec des explications simples et ton thème natal à calculer gratuitement.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    name: "Débuter en astrologie",
+    description,
+    educationalLevel: "Beginner",
+    learningResourceType: "Course",
+    teaches: ["Signe solaire", "Ascendant", "Maisons astrologiques", "Planètes", "Aspects", "Transits"],
+    url: "https://karmastro.com/apprendre/astrologie/",
+    provider: { "@type": "Organization", name: "Karmastro", url: "https://karmastro.com" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://karmastro.com/" },
+      { "@type": "ListItem", position: 2, name: "Apprendre", item: "https://karmastro.com/apprendre/" },
+      { "@type": "ListItem", position: 3, name: "Astrologie", item: "https://karmastro.com/apprendre/astrologie/" },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-2xl mx-auto px-4 py-12">
+    <nav class="text-sm text-white/50 mb-6">
+      <a href="/" class="hover:text-amber-300">Accueil</a><span class="mx-2">/</span>
+      <a href="/apprendre/" class="hover:text-amber-300">Apprendre</a><span class="mx-2">/</span>
+      <span class="text-white/80">Astrologie</span>
+    </nav>
+
+    <header class="mb-8">
+      <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Cours · niveau débutant · ~10 min</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Débuter en astrologie</h1>
+      <p class="text-lg text-white/70 leading-relaxed">Au-delà de ton signe : comprends ce qu'il y a vraiment dans une carte du ciel, étape par étape, et apprends à lire la tienne.</p>
+    </header>
+
+    <div class="prose-block space-y-6 text-white/85 leading-relaxed">
+      <section>
+        <h2 class="font-serif text-2xl text-amber-300 mb-2">1. C'est quoi, l'astrologie ?</h2>
+        <p>L'astrologie part d'une observation millénaire : le ciel bouge avec régularité, et les humains ont, de tout temps, lu du sens dans ces cycles. Loin du cliché du « voyant », elle repose sur des <a href="/glossaire/ephemerides/" class="text-amber-300 hover:underline">calculs astronomiques précis</a>. Kepler, Galilée et Newton la pratiquaient. Le talent de l'astrologue, c'est de traduire ces positions en sens, jamais en fatalité : « les astres inclinent, mais ne déterminent pas ».</p>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-2xl text-amber-300 mb-2">2. Ton signe solaire (et pourquoi il ne suffit pas)</h2>
+        <p>Ton « signe », c'est la position du Soleil à ta naissance. Il décrit ton élan vital, ton ego, ce qui t'anime. Mais le réduire à ça, c'est lire la première page d'un roman : il te manque l'ascendant, la Lune, et neuf autres planètes. C'est pour ça que deux Béliers peuvent sembler si différents.</p>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-2xl text-amber-300 mb-2">3. L'ascendant, ta porte d'entrée</h2>
+        <p>L'<a href="/glossaire/ascendant/" class="text-amber-300 hover:underline">ascendant</a> est le signe qui se levait à l'est à l'instant exact de ta naissance. C'est ton masque social, la première impression que tu donnes. Il change toutes les deux heures : c'est pourquoi l'heure de naissance est cruciale.</p>
+        <p class="text-center">
+          <a href="/outils/ascendant/" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm">✦ Calcule ton ascendant</a>
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-2xl text-amber-300 mb-2">4. Les 12 maisons : les domaines de ta vie</h2>
+        <p>Si les signes disent <em>comment</em>, les <a href="/glossaire/maisons-astrologiques/" class="text-amber-300 hover:underline">maisons</a> disent <em>où</em>. Ce sont 12 secteurs de vie : l'argent, l'amour, le travail, le foyer… Une planète dans une maison vient activer ce domaine. La maison 1, c'est toi ; la 7, en face, c'est l'autre, ton miroir.</p>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-2xl text-amber-300 mb-2">5. Les planètes : les acteurs</h2>
+        <p>Chaque planète joue un rôle : le Soleil (l'identité), la Lune (les émotions), Mercure (le mental), Vénus (l'amour), Mars (l'action), Jupiter (l'expansion), Saturne (la structure et le temps). Leurs positions par signe et par maison composent ta pièce intérieure.</p>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-2xl text-amber-300 mb-2">6. Les aspects : les dialogues</h2>
+        <p>Les <a href="/glossaire/aspects/" class="text-amber-300 hover:underline">aspects</a> sont les angles entre les planètes : c'est là que tout se joue. Un trigone (120°) fait couler les choses ; un carré (90°) crée de la friction… donc de la croissance. Ce sont les aspects, plus que les planètes seules, qui donnent sa dynamique à un thème.</p>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-2xl text-amber-300 mb-2">7. Le mouvement : les transits</h2>
+        <p>Ton thème natal est figé, mais le ciel, lui, continue de tourner. Les <a href="/glossaire/transits/" class="text-amber-300 hover:underline">transits</a> sont les planètes d'aujourd'hui qui viennent activer ton thème. C'est ce qui explique pourquoi certaines périodes te portent et d'autres te bousculent, comme le fameux <a href="/glossaire/cycle-de-saturne/" class="text-amber-300 hover:underline">retour de Saturne</a> vers 29 ans.</p>
+        <p class="text-center">
+          <a href="/outils/transits/" class="inline-block px-5 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 font-medium text-sm hover:bg-amber-300/10 transition-colors">Découvre tes transits du jour</a>
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-2xl text-amber-300 mb-2">8. Et maintenant : ta carte du ciel</h2>
+        <p>Tu as les pièces du puzzle. Le moment magique, c'est de les voir s'assembler sur <em>ton</em> thème natal, calculé à la seconde d'arc près.</p>
+      </section>
+    </div>
+
+    <div class="mt-8 p-6 rounded-2xl border border-amber-300/30 bg-gradient-to-r from-purple-400/10 to-amber-300/10 text-center">
+      <p class="font-serif text-lg text-white mb-3">Lis ta carte du ciel</p>
+      <div class="flex flex-wrap gap-2 justify-center">
+        <a href="/outils/theme-natal/" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm">Calculer mon thème natal</a>
+        <a href="/oracle/?q=Que%20r%C3%A9v%C3%A8le%20mon%20th%C3%A8me%20natal%20%3F" class="px-5 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 font-medium text-sm hover:bg-amber-300/10 transition-colors">Demander à l'Oracle</a>
+      </div>
+    </div>
+
+    <p class="text-sm text-white/50 mt-8">
+      <a href="/apprendre/" class="text-amber-300 hover:underline">← Tous les cours</a> · <a href="/apprendre/numerologie/" class="text-amber-300 hover:underline">Découvrir la numérologie →</a>
+    </p>
+  </article>
+</BaseLayout>

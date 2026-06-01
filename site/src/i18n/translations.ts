@@ -15,6 +15,7 @@ export type TranslationKeys = {
   "nav.profile": string;
   "nav.about": string;
   "nav.glossary": string;
+  "nav.learn": string;
   "nav.precision": string;
 
   // ===== Header / common =====
@@ -189,6 +190,7 @@ const fr: TranslationKeys = {
   "nav.profile": "Mon profil",
   "nav.about": "Notre histoire",
   "nav.glossary": "Glossaire",
+  "nav.learn": "Apprendre",
   "nav.precision": "Précision",
 
   "common.menu": "Menu",
@@ -351,6 +353,7 @@ const en: TranslationKeys = {
   "nav.profile": "My profile",
   "nav.about": "Our story",
   "nav.glossary": "Glossary",
+  "nav.learn": "Learn",
   "nav.precision": "Accuracy",
 
   "common.menu": "Menu",
@@ -513,6 +516,7 @@ const es: TranslationKeys = {
   "nav.profile": "Mi perfil",
   "nav.about": "Nuestra historia",
   "nav.glossary": "Glosario",
+  "nav.learn": "Aprender",
   "nav.precision": "Precisión",
 
   "common.menu": "Menú",
@@ -675,6 +679,7 @@ const pt: TranslationKeys = {
   "nav.profile": "O meu perfil",
   "nav.about": "A nossa história",
   "nav.glossary": "Glossário",
+  "nav.learn": "Aprender",
   "nav.precision": "Precisão",
 
   "common.menu": "Menu",
@@ -837,6 +842,7 @@ const de: TranslationKeys = {
   "nav.profile": "Mein Profil",
   "nav.about": "Unsere Geschichte",
   "nav.glossary": "Glossar",
+  "nav.learn": "Lernen",
   "nav.precision": "Genauigkeit",
 
   "common.menu": "Menü",
@@ -999,6 +1005,7 @@ const it: TranslationKeys = {
   "nav.profile": "Il mio profilo",
   "nav.about": "La nostra storia",
   "nav.glossary": "Glossario",
+  "nav.learn": "Imparare",
   "nav.precision": "Precisione",
 
   "common.menu": "Menu",
@@ -1165,6 +1172,7 @@ const tr: TranslationKeys = {
   "nav.profile": "Profilim",
   "nav.about": "Hikayemiz",
   "nav.glossary": "Sözlük",
+  "nav.learn": "Öğren",
   "nav.precision": "Doğruluk",
 
   "common.menu": "Menü",
@@ -1327,6 +1335,7 @@ const pl: TranslationKeys = {
   "nav.profile": "Mój profil",
   "nav.about": "Nasza historia",
   "nav.glossary": "Słownik",
+  "nav.learn": "Nauka",
   "nav.precision": "Dokładność",
 
   "common.menu": "Menu",
@@ -1489,6 +1498,7 @@ const ru: TranslationKeys = {
   "nav.profile": "Мой профиль",
   "nav.about": "Наша история",
   "nav.glossary": "Глоссарий",
+  "nav.learn": "Обучение",
   "nav.precision": "Точность",
 
   "common.menu": "Меню",
@@ -1651,6 +1661,7 @@ const ja: TranslationKeys = {
   "nav.profile": "プロフィール",
   "nav.about": "私たちについて",
   "nav.glossary": "用語集",
+  "nav.learn": "学ぶ",
   "nav.precision": "精度",
 
   "common.menu": "メニュー",
@@ -1813,6 +1824,7 @@ const ar: TranslationKeys = {
   "nav.profile": "ملفي",
   "nav.about": "قصتنا",
   "nav.glossary": "قاموس",
+  "nav.learn": "تعلّم",
   "nav.precision": "الدقة",
 
   "common.menu": "القائمة",

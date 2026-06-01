@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Apprendre l'astrologie et la numérologie - Cours gratuits Karmastro";
+const description =
+  "Des cours clairs pour partir de zéro : comprendre la numérologie et l'astrologie pas à pas, avec des exemples et de quoi calculer le tien. Gratuit, sans jargon.";
+
+const courses = [
+  { slug: "numerologie", emoji: "🔢", title: "Débuter en numérologie", desc: "La table de Pythagore, le chemin de vie, les nombres du nom, l'année personnelle. De zéro à ton premier profil.", level: "Débutant", time: "~10 min" },
+  { slug: "astrologie", emoji: "✦", title: "Débuter en astrologie", desc: "Au-delà de ton signe : l'ascendant, les maisons, les planètes, les aspects et les transits. Apprends à lire ta carte du ciel.", level: "Débutant", time: "~10 min" },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Cours Karmastro",
+    itemListElement: courses.map((c, i) => ({
+      "@type": "ListItem", position: i + 1, name: c.title, url: `https://karmastro.com/apprendre/${c.slug}/`,
+    })),
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-2xl mx-auto px-4 py-12">
+    <header class="text-center mb-12">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Apprendre</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Comprends, puis vis-le</h1>
+      <p class="text-lg text-white/70 max-w-xl mx-auto leading-relaxed">
+        Pas besoin d'être initié. Ces cours partent vraiment de zéro, sans jargon, avec des exemples concrets et de quoi calculer le tien à chaque étape.
+      </p>
+    </header>
+
+    <div class="space-y-4">
+      {courses.map((c) => (
+        <a href={`/apprendre/${c.slug}/`} class="block p-6 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-amber-300/40 transition-colors">
+          <div class="flex items-start gap-4">
+            <span class="text-3xl">{c.emoji}</span>
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-1">
+                <h2 class="font-serif text-xl text-white">{c.title}</h2>
+              </div>
+              <p class="text-sm text-white/65 leading-relaxed mb-2">{c.desc}</p>
+              <p class="text-[11px] uppercase tracking-widest text-amber-300/70">{c.level} · {c.time}</p>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-10 p-5 rounded-2xl border border-amber-300/30 bg-gradient-to-r from-purple-400/10 to-amber-300/10 text-center">
+      <p class="text-sm text-white/70 mb-3">Une question pendant que tu apprends ? L'Oracle répond en direct.</p>
+      <a href="/oracle/" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm">Parler à l'Oracle ✦</a>
+    </div>
+
+    <p class="text-center text-sm text-white/50 mt-8">
+      Besoin d'une définition précise ? <a href="/glossaire/" class="text-amber-300 hover:underline">Le glossaire cosmique</a>.
+    </p>
+  </article>
+</BaseLayout>
