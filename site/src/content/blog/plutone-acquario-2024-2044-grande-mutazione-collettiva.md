@@ -220,7 +220,7 @@ Plutone entrerà in Pesci, segno della dissoluzione, della compassione universal
 
 ## Andare oltre
 
-Plutone in Acquario è probabilmente il transito più importante della tua vita. Calcola il tuo [ascendente](/it/strumenti/ascendente) e la posizione delle tue 12 case astrologiche, studia il tuo [segno lunare](/it/blog/segno-lunare-luna-natale-mondo-emotivo) e consulta l'[Oracle](https://app.karmastro.com/oracle) per un'analisi personalizzata del transito.
+Plutone in Acquario è probabilmente il transito più importante della tua vita. Calcola il tuo [ascendente](/it/strumenti/ascendente) e la posizione delle tue 12 case astrologiche, studia il tuo [segno lunare](/it/blog/segno-lunare-luna-natale-mondo-emotivo) e consulta l'[Oracle](https://karmastro.com/oracle/) per un'analisi personalizzata del transito.
 
 ## Fonti e riferimenti
 

@@ -188,7 +188,7 @@ Não. São exigentes. As lições saturninas e plutonianas são as mais transfor
 
 ## 14. Para ir mais longe
 
-O karma em astrologia não é uma prisão. É um terreno. Para descobrir o teu, calcula o teu [mapa astral completo](/pt/ferramentas/) e observa onde estão os teus nodos lunares, Saturno e Plutão. Lê também o [guia do signo ascendente](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente) para compreender a tua porta de entrada nesta encarnação, e o [guia do signo de Carneiro](/pt/blog/carneiro-signo-zodiacal-personalidade-compatibilidade) se tens Sol, Lua ou nodos em Carneiro. Para uma leitura personalizada em tempo real, o [Oracle Karmastro](https://app.karmastro.com/oracle) cruza astrologia kármica, numerologia e as tuas perguntas atuais.
+O karma em astrologia não é uma prisão. É um terreno. Para descobrir o teu, calcula o teu [mapa astral completo](/pt/ferramentas/) e observa onde estão os teus nodos lunares, Saturno e Plutão. Lê também o [guia do signo ascendente](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente) para compreender a tua porta de entrada nesta encarnação, e o [guia do signo de Carneiro](/pt/blog/carneiro-signo-zodiacal-personalidade-compatibilidade) se tens Sol, Lua ou nodos em Carneiro. Para uma leitura personalizada em tempo real, o [Oracle Karmastro](https://karmastro.com/oracle/) cruza astrologia kármica, numerologia e as tuas perguntas atuais.
 
 ## Fontes e referencias
 

@@ -163,7 +163,7 @@ Para os aspetos entre planetas lentos (Júpiter a Plutão), uma hora aproximada 
 
 ## Ir mais longe
 
-Os aspetos são a dimensão mais dinâmica e mais reveladora da tua carta. Começa por calcular o teu [ascendente](/pt/ferramentas/ascendente) com hora e lugar exatos, depois explora o teu [mapa natal completo](/pt/ferramentas/mapa-natal), que apresenta a grelha completa dos aspetos entre todos os planetas. Para uma leitura interpretativa que cruze os aspetos com as tuas perguntas atuais, consulta o [Oracle Karmastro](https://app.karmastro.com/oracle), que integra Swiss Ephemeris e quatro vozes especializadas (Sibylle, Orion, Selene, Pythia).
+Os aspetos são a dimensão mais dinâmica e mais reveladora da tua carta. Começa por calcular o teu [ascendente](/pt/ferramentas/ascendente) com hora e lugar exatos, depois explora o teu [mapa natal completo](/pt/ferramentas/mapa-natal), que apresenta a grelha completa dos aspetos entre todos os planetas. Para uma leitura interpretativa que cruze os aspetos com as tuas perguntas atuais, consulta o [Oracle Karmastro](https://karmastro.com/oracle/), que integra Swiss Ephemeris e quatro vozes especializadas (Sibylle, Orion, Selene, Pythia).
 
 A astrologia dos aspetos é o coração técnico da prática. Uma vez que a dominas, os mapas deixam de ser listas de posições e tornam-se paisagens dinâmicas, cheias de tensões e de promessas. A partir dali, qualquer leitura torna-se mais fina, mais pessoal, mais útil.
 

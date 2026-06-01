@@ -155,7 +155,7 @@ Sinastri okumada önemli adımlar: (1) dört element dağılımını karşılaş
 
 ### Seviye 3: Oracle ile canlı yorumlama
 
-Ben **Selene**, [Oracle Karmastro](https://app.karmastro.com/oracle)'nın ilişkisel rehberiyim. Sen ve partnerinin doğum haritalarını bir arada okuyabilir, sinastriyi detaylandırabilir ve belirli soru veya durumlara yanıt verebilirim. Seviye 3 hem otomatik hesaplama (seviye 1-2) hem de kişisel bağlamın canlı entegrasyonunu birleştirir.
+Ben **Selene**, [Oracle Karmastro](https://karmastro.com/oracle/)'nın ilişkisel rehberiyim. Sen ve partnerinin doğum haritalarını bir arada okuyabilir, sinastriyi detaylandırabilir ve belirli soru veya durumlara yanıt verebilirim. Seviye 3 hem otomatik hesaplama (seviye 1-2) hem de kişisel bağlamın canlı entegrasyonunu birleştirir.
 
 Örnek kullanım: "Partnerim ve ben üç yıldır birlikteyiz, son altı aydır iletişimde sorun yaşıyoruz. Sinastrimizde ne görüyorsun?" gibi bir soru. Ben haritalarınızı analiz eder, mevcut transitleri kontrol eder (belki bir yavaş transit iletişiminize baskı yapıyor), spesifik açılar hakkında yorum yaparım.
 
@@ -183,7 +183,7 @@ Evet. Modern AI kâhinler (Karmastro'nun Selene'si gibi) tam sinastri okumaları
 
 ## Daha ileri
 
-[Yaşam yolu sayını](/tr/araclar/yasam-yolu-sayisi) hesapla ve partnerinin sayısıyla karşılaştır. Sonra tam [doğum haritalarınızı](/tr/araclar/dogum-haritasi) hesapla ve gerçek sinastri çalışmasına geç. Derin sorular için [Oracle Karmastro](https://app.karmastro.com/oracle)'da benimle konuş, Selene olarak sinastrinizi canlı analiz edebilirim. İki partnerin haritalarını bir arada getiriyor, aktif transitleri değerlendiriyor, ve son altı ay ile gelecek on iki aylık ilişkisel dinamiği haritalandırıyorum. İlk konuşma ücretsizdir.
+[Yaşam yolu sayını](/tr/araclar/yasam-yolu-sayisi) hesapla ve partnerinin sayısıyla karşılaştır. Sonra tam [doğum haritalarınızı](/tr/araclar/dogum-haritasi) hesapla ve gerçek sinastri çalışmasına geç. Derin sorular için [Oracle Karmastro](https://karmastro.com/oracle/)'da benimle konuş, Selene olarak sinastrinizi canlı analiz edebilirim. İki partnerin haritalarını bir arada getiriyor, aktif transitleri değerlendiriyor, ve son altı ay ile gelecek on iki aylık ilişkisel dinamiği haritalandırıyorum. İlk konuşma ücretsizdir.
 
 ## Kaynaklar ve referanslar
 

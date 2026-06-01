@@ -265,7 +265,7 @@ Yes, indirectly. Your ascendant determines the tenth house (career, public vocat
 
 ## Going further
 
-Your rising sign is only one layer of your birth chart. To get the full picture, you need your [birth chart interpreted in depth](/en/tools/birth-chart). And if you want to understand how your ascendant dialogues with the current planetary transits, the [Karmastro Oracle](https://app.karmastro.com/oracle) can cross your chart with the celestial movements of the moment and give you a personalized reading.
+Your rising sign is only one layer of your birth chart. To get the full picture, you need your [birth chart interpreted in depth](/en/tools/birth-chart). And if you want to understand how your ascendant dialogues with the current planetary transits, the [Karmastro Oracle](https://karmastro.com/oracle/) can cross your chart with the celestial movements of the moment and give you a personalized reading.
 
 Your rising sign is not a detail. It is the doorway your soul chose to enter this lifetime. Learning to know it is learning to inhabit your incarnation with more accuracy. It is letting go of the fight against how others perceive you, and beginning to consciously use what you radiate.
 

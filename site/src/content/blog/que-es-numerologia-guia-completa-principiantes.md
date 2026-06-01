@@ -219,7 +219,7 @@ Cuando atraviesas una transición importante de vida, cuando dudas en un cambio 
 
 ## Ir más lejos
 
-Calcula ya tu [camino de vida](/es/herramientas/) en Karmastro gratis. Luego lee nuestra guía detallada sobre [cómo calcular tu camino de vida paso a paso](/es/blog/como-calcular-camino-de-vida-paso-a-paso). Y para una lectura cruzada con tu carta astral, consulta el [Oracle](https://app.karmastro.com/oracle).
+Calcula ya tu [camino de vida](/es/herramientas/) en Karmastro gratis. Luego lee nuestra guía detallada sobre [cómo calcular tu camino de vida paso a paso](/es/blog/como-calcular-camino-de-vida-paso-a-paso). Y para una lectura cruzada con tu carta astral, consulta el [Oracle](https://karmastro.com/oracle/).
 
 La numerología no te dice quién eres. Te da un lenguaje para describirte mejor. Y a veces, un lenguaje bien elegido cambia la vida entera.
 

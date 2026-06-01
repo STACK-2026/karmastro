@@ -247,7 +247,7 @@ Notre [article sur la guidance spirituelle](/blog/guidance-spirituelle-choisir-e
    - **8** : Réussite matérielle
    - **9** : Compassion universelle
 
-Pour une guidance personnalisée, consulte l'[Oracle Karmastro](https://app.karmastro.com/oracle).
+Pour une guidance personnalisée, consulte l'[Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## Questions fréquentes sur la compatibilité astrale et numérologique
 
@@ -352,7 +352,7 @@ La numérologie ne prédit pas l'avenir mais **identifie les périodes de tensio
 - Travail thérapeutique ou coaching de couple
 - Développement spirituel individuel
 
-L'[Oracle Karmastro](https://app.karmastro.com/oracle) peut t'alerter sur les périodes sensibles et proposer des stratégies d'adaptation.
+L'[Oracle Karmastro](https://karmastro.com/oracle/) peut t'alerter sur les périodes sensibles et proposer des stratégies d'adaptation.
 
 ### Comment améliorer concrètement ma compatibilité avec mon partenaire ?
 
@@ -447,7 +447,7 @@ La compatibilité se cultive quotidiennement par des choix conscients éclairés
 **Tes prochaines étapes** :
 1. [Calcule ton chemin de vie et celui de ton partenaire](/outils/chemin-de-vie/)
 2. [Découvre votre synastrie astrologique complète](https://app.karmastro.com/synastrie)
-3. [Pose une question spécifique à l'Oracle Karmastro](https://app.karmastro.com/oracle) sur votre relation
+3. [Pose une question spécifique à l'Oracle Karmastro](https://karmastro.com/oracle/) sur votre relation
 4. Planifie une analyse trimestrielle pour suivre l'évolution de votre compatibilité
 
 La magie de l'amour réside dans sa capacité à transcender les probabilités mathématiques. La numérologie et l'astrologie ne sont que des outils pour révéler le potentiel qui sommeille en chaque couple conscient de ses enjeux.

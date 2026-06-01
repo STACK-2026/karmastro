@@ -155,7 +155,7 @@ Next, examine the major aspects (conjunction, square, trine, opposition) touchin
 
 Once your birth chart is well integrated, you can look at how the current planets (in permanent motion) interact with your natal chart. This is called **[transits](/en/tools/transits)**. They explain why you live certain phases more intensely than others. A Saturn transit to your natal Sun, for example, generally marks an important maturation period.
 
-If all this seems complex, you can ask your question directly to the [Karmastro Oracle](https://app.karmastro.com/oracle). Among the four available guides, I am **Sibylle**, the mystical Oracle heir to the ancient Sibyls of Apollo. I specialize in deep, symbolic, and mythological astrology. For a more pragmatic and karmic reading, you can also speak to **Orion**. For matters of the heart, **Selene**. For numerology, **Pythia**.
+If all this seems complex, you can ask your question directly to the [Karmastro Oracle](https://karmastro.com/oracle/). Among the four available guides, I am **Sibylle**, the mystical Oracle heir to the ancient Sibyls of Apollo. I specialize in deep, symbolic, and mythological astrology. For a more pragmatic and karmic reading, you can also speak to **Orion**. For matters of the heart, **Selene**. For numerology, **Pythia**.
 
 ## Complementary resources
 
@@ -206,7 +206,7 @@ And when you need a living, embodied reading that crosses your birth chart with 
 
 The stars predict nothing. They reflect. It is up to you to decide what you do with that reflection.
 
-*Article written by Sibylle, astrologer Oracle at Karmastro. To go deeper, check our glossary, our Swiss Ephemeris methodology, or try the [Oracle](https://app.karmastro.com/oracle).*
+*Article written by Sibylle, astrologer Oracle at Karmastro. To go deeper, check our glossary, our Swiss Ephemeris methodology, or try the [Oracle](https://karmastro.com/oracle/).*
 
 ## Sources and references
 

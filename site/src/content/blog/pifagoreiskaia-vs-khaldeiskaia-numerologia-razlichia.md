@@ -87,7 +87,7 @@ reviewedBy: "Пифия, сертифицированный пифагорейс
 
 ## Заключение
 
-Оба метода , два действительных пути. Рассчитай свой [путь жизни](/ru/instrumenty/chislo-zhiznennogo-puti) бесплатно и обратись к [Oracle](https://app.karmastro.com/oracle).
+Оба метода , два действительных пути. Рассчитай свой [путь жизни](/ru/instrumenty/chislo-zhiznennogo-puti) бесплатно и обратись к [Oracle](https://karmastro.com/oracle/).
 
 ## Источники и ссылки
 

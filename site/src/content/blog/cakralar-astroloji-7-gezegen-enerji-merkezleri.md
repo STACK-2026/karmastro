@@ -163,7 +163,7 @@ Hayır, asla. Çakra-gezegen çalışması tıbbi teşhisin yerine geçmez. Beli
 
 ## Daha ileri
 
-[Yükselen burcunu](/tr/araclar/yukselen-burc) hesapla ve [Oracle](https://app.karmastro.com/oracle)'ya danış.
+[Yükselen burcunu](/tr/araclar/yukselen-burc) hesapla ve [Oracle](https://karmastro.com/oracle/)'ya danış.
 
 ## Kaynaklar ve referanslar
 

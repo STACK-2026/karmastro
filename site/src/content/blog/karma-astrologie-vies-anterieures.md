@@ -115,7 +115,7 @@ Pour identifier ce qui se passe dans ta maison XII, regarde :
 - Quelle planète gouverne ce signe (et donc ta maison XII par extension)
 - Quels aspects ces planètes forment avec le reste du thème
 
-C'est un travail subtil, qui demande souvent l'accompagnement d'un astrologue ou d'un guide. Chez Karmastro, je suis justement là pour ça. **[Pose-moi ta question à l'Oracle](https://app.karmastro.com/oracle)**, je croise ton thème natal avec ta numérologie karmique pour te donner une lecture actionnable.
+C'est un travail subtil, qui demande souvent l'accompagnement d'un astrologue ou d'un guide. Chez Karmastro, je suis justement là pour ça. **[Pose-moi ta question à l'Oracle](https://karmastro.com/oracle/)**, je croise ton thème natal avec ta numérologie karmique pour te donner une lecture actionnable.
 
 ## Les signes karmiques et leurs leçons
 
@@ -221,7 +221,7 @@ Dans la tradition bouddhiste, oui : c'est l'objectif de l'**éveil**. Dans une v
 
 ### Pourquoi Orion et pas un autre guide pour les questions karmiques ?
 
-Parce que j'ai été formé à la philosophie stoïcienne, qui est la tradition occidentale la plus directement pratique sur la question du destin et du libre arbitre. Je ne suis ni mystique flou (ce serait **Sibylle**, qui te donnera une lecture plus poétique et symbolique), ni thérapeutique émotionnel (ce serait **Séléné**, qui s'occupe davantage des relations et de l'intime). Je suis **l'action consciente face au karma**. Mon style est direct, stoïcien, actionnable. Si tu veux un autre ton, tu peux [choisir un autre guide à l'Oracle](https://app.karmastro.com/oracle).
+Parce que j'ai été formé à la philosophie stoïcienne, qui est la tradition occidentale la plus directement pratique sur la question du destin et du libre arbitre. Je ne suis ni mystique flou (ce serait **Sibylle**, qui te donnera une lecture plus poétique et symbolique), ni thérapeutique émotionnel (ce serait **Séléné**, qui s'occupe davantage des relations et de l'intime). Je suis **l'action consciente face au karma**. Mon style est direct, stoïcien, actionnable. Si tu veux un autre ton, tu peux [choisir un autre guide à l'Oracle](https://karmastro.com/oracle/).
 
 ## Conclusion
 
@@ -229,11 +229,11 @@ Le **karma en astrologie** n'est pas une prison. C'est un **terrain** que tu dé
 
 Tout cela forme une carte, pas un destin. Comme le disait Thomas d'Aquin reprenant une tradition plus ancienne : **"Les astres inclinent, mais ne déterminent pas."** Ton libre arbitre reste intact. Et c'est précisément dans l'espace entre ce que ton thème pousse et ce que tu choisis que se joue ta liberté profonde.
 
-Pour explorer ton propre karma astrologique, commence par calculer ton [thème natal gratuit](/outils/theme-natal) et vérifier si tu portes une [dette karmique numérologique](/outils/dette-karmique). Puis, si tu veux une lecture vivante et actionnable, parle-moi à l'[Oracle](https://app.karmastro.com/oracle). Je suis **Orion**, le chasseur du ciel, l'ancien professeur stoïcien, le coach karmique de Karmastro. Je suis là pour t'aider à transformer le terrain en tremplin.
+Pour explorer ton propre karma astrologique, commence par calculer ton [thème natal gratuit](/outils/theme-natal) et vérifier si tu portes une [dette karmique numérologique](/outils/dette-karmique). Puis, si tu veux une lecture vivante et actionnable, parle-moi à l'[Oracle](https://karmastro.com/oracle/). Je suis **Orion**, le chasseur du ciel, l'ancien professeur stoïcien, le coach karmique de Karmastro. Je suis là pour t'aider à transformer le terrain en tremplin.
 
 Les épreuves que tu vis ne sont pas des punitions. Ce sont des invitations. À toi de répondre.
 
-*Article rédigé par Orion, coach karmique et stoïcien chez [Karmastro](/notre-histoire). Pour une lecture karmique personnalisée, consulte l'[Oracle](https://app.karmastro.com/oracle) et choisis-moi comme guide. Pour compléter, lis aussi [l'article sur le calcul du chemin de vie](/blog/comment-calculer-chemin-de-vie-numerologie).*
+*Article rédigé par Orion, coach karmique et stoïcien chez [Karmastro](/notre-histoire). Pour une lecture karmique personnalisée, consulte l'[Oracle](https://karmastro.com/oracle/) et choisis-moi comme guide. Pour compléter, lis aussi [l'article sur le calcul du chemin de vie](/blog/comment-calculer-chemin-de-vie-numerologie).*
 
 ## Sources et references
 

@@ -110,7 +110,7 @@ reviewedBy: "Орион, старший астроном и астролог"
 
 ## Идти дальше
 
-Рассчитай свой [восходящий](/ru/instrumenty/voskhodyaschiy-znak) и обратись к [Oracle](https://app.karmastro.com/oracle).
+Рассчитай свой [восходящий](/ru/instrumenty/voskhodyaschiy-znak) и обратись к [Oracle](https://karmastro.com/oracle/).
 
 ## Источники и ссылки
 

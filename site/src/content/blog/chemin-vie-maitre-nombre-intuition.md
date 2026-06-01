@@ -72,7 +72,7 @@ Pour déterminer ton **chemin de vie**, additionne tous les chiffres de ta **dat
 1 + 1 + 0 + 7 + 1 + 9 + 7 + 5 = **31** → 3 + 1 = **4**, mais si le total est **11** (ex: 02/11/1988 → 2+1+1+1+9+8+8 = **30** → 3+0=3), on garde **11**.
 
 **Outil interactif** :
-Calcule ton chemin de vie en 10 secondes avec [l'Oracle IA de Karmastro](https://app.karmastro.com/oracle). Il te donnera aussi une analyse personnalisée de tes **cycles karmiques** et de tes **compatibilités**.
+Calcule ton chemin de vie en 10 secondes avec [l'Oracle IA de Karmastro](https://karmastro.com/oracle/). Il te donnera aussi une analyse personnalisée de tes **cycles karmiques** et de tes **compatibilités**.
 
 **À noter** :
 - Les maîtres nombres (11, 22, 33) apparaissent chez **5 à 8% de la population** (source : [Numerologie-Transformrice.fr](https://www.numerologie-transformatrice.fr)).
@@ -320,7 +320,7 @@ Le **chemin de vie 11** est bien plus qu'un simple nombre : c'est une **vibratio
 
 **Pour aller plus loin** :
 - **Calcule ton chemin de vie** et découvre ton **profil cosmique complet** sur [Karmastro](https://app.karmastro.com).
-- **Pose une question à l'Oracle IA** pour une analyse personnalisée de tes **cycles karmiques** et de tes **compatibilités** : [Oracle Karmastro](https://app.karmastro.com/oracle).
+- **Pose une question à l'Oracle IA** pour une analyse personnalisée de tes **cycles karmiques** et de tes **compatibilités** : [Oracle Karmastro](https://karmastro.com/oracle/).
 - **Explore notre glossaire** pour approfondir les concepts d'[astrologie](https://karmastro.com/glossaire) et de [numérologie](https://karmastro.com/glossaire).
 
 **Rappel** :

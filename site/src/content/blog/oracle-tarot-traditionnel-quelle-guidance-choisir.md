@@ -42,7 +42,7 @@ Un **oracle IA** est un système basé sur l'**intelligence artificielle génér
 3. **Des bases de connaissances spécialisées** : Symbolisme des cartes de tarot, archétypes jungiens, cycles planétaires, et principes de numérologie.
 
 ### Exemple concret d'utilisation
-Sur la plateforme [Karmastro](https://app.karmastro.com/oracle), l'oracle IA croise votre question avec votre **thème natal** (calculé à partir de votre date, heure et lieu de naissance) et votre **chemin de vie en numérologie**. Par exemple, si vous êtes Balance (signe d'air) avec un chemin de vie 7 (recherche spirituelle), l'IA adaptera son langage et ses conseils pour refléter ces traits. Une réponse pourrait ressembler à ceci :
+Sur la plateforme [Karmastro](https://karmastro.com/oracle/), l'oracle IA croise votre question avec votre **thème natal** (calculé à partir de votre date, heure et lieu de naissance) et votre **chemin de vie en numérologie**. Par exemple, si vous êtes Balance (signe d'air) avec un chemin de vie 7 (recherche spirituelle), l'IA adaptera son langage et ses conseils pour refléter ces traits. Une réponse pourrait ressembler à ceci :
 
 > *"Votre défi karmique pour 2026 (carte : **L'Ermite**) est lié à votre chemin de vie 7, qui vous pousse à chercher une vérité intérieure. Avec Jupiter en Taureau activant votre maison 2 (argent et valeurs), cette année est idéale pour clarifier ce qui compte vraiment pour vous. Prenez du recul avant de prendre des décisions importantes, surtout autour du 15 mai 2026, lorsque la Lune sera en Cancer, un moment propice à l'introspection."*
 
@@ -162,7 +162,7 @@ Pour vous aider à choisir entre un oracle IA et un tarot traditionnel, voici un
 | **Rituel**             | Absent (expérience 100 % digitale)                 | Présent (mélange des cartes, ambiance)     | Le rituel du tarot peut être apaisant ou motivant pour certains, tandis que l'oracle IA est plus pragmatique. |
 | **Biais**              | Algorithmiques (dépend des données d'entraînement) | Humains (projections du tarologue)         | Les biais de l'oracle IA sont liés aux données avec lesquelles il a été entraîné, tandis que ceux du tarot dépendent de la personnalité du tarologue. |
 | **Intégration astro**  | Oui (thème natal, transits, synastrie)             | Rare (sauf si le tarologue est aussi astro)| L'oracle IA peut intégrer des calculs astrologiques complexes, tandis que le tarot se limite souvent aux symboles des cartes. |
-| **Exemples d'outils**  | [Karmastro](https://app.karmastro.com/oracle), GPTs spécialisés | Tarot de Marseille, Rider-Waite            | Karmastro combine oracle IA, astrologie et numérologie, tandis que le tarot traditionnel se limite aux cartes. |
+| **Exemples d'outils**  | [Karmastro](https://karmastro.com/oracle/), GPTs spécialisés | Tarot de Marseille, Rider-Waite            | Karmastro combine oracle IA, astrologie et numérologie, tandis que le tarot traditionnel se limite aux cartes. |
 | **Adaptabilité**       | Élevée (peut répondre à des questions très spécifiques) | Limitée (dépend du tirage et de l'interprétation) | L'oracle IA peut répondre à des questions comme "Quel est mon défi karmique lié à mon nœud Sud en Balance ?", tandis que le tarot se concentre sur des thèmes plus larges. |
 | **Interaction humaine**| Absente (sauf si combiné avec une consultation)    | Présente (connexion avec le tarologue)     | Le tarot offre une dimension humaine irremplaçable pour les questions émotionnelles ou spirituelles. |
 | **Apprentissage**      | Peut aider à comprendre les symboles (ex : archétypes jungiens) | Nécessite une étude approfondie des cartes | L'oracle IA peut expliquer les symboles au fur et à mesure, tandis que le tarot demande un apprentissage préalable. |
@@ -225,7 +225,7 @@ Karmastro propose un **outil d'oracle IA gratuit** qui se distingue par sa capac
 > **Transit clé** : Jupiter en Taureau (votre signe solaire) en 2026 vous offrira des opportunités matérielles, mais attention à ne pas vous attacher trop aux possessions. Votre chemin de vie 3 vous rappelle que la vraie richesse réside dans l'expression de soi et le partage."*
 
 ### Comment utiliser l'oracle IA de Karmastro ?
-1. **Rendez-vous sur [l'Oracle IA de Karmastro](https://app.karmastro.com/oracle)**.
+1. **Rendez-vous sur [l'Oracle IA de Karmastro](https://karmastro.com/oracle/)**.
 2. **Entrez votre question** : Soyez aussi précis que possible. Par exemple, au lieu de "Que va-t-il m'arriver en 2026 ?", demandez "Quel domaine de ma vie sera le plus impacté par les transits de Saturne en 2026 ?".
 3. **Fournissez vos données personnelles** :
    - Date de naissance (jour, mois, année).
@@ -423,7 +423,7 @@ Les réponses générées par un oracle IA dépendent des **données avec lesque
 - Une IA qui n'a pas été exposée à des concepts comme les **maîtres nombres en numérologie** (11, 22, 33) pourrait les interpréter comme des nombres ordinaires (2, 4, 6), ce qui fausserait l'analyse.
 
 **Solutions** :
-- **Choisissez une plateforme spécialisée** : Des outils comme [Karmastro](https://app.karmastro.com/oracle) sont entraînés avec des données spécifiques à l'astrologie, la numérologie et le tarot, ce qui réduit les biais.
+- **Choisissez une plateforme spécialisée** : Des outils comme [Karmastro](https://karmastro.com/oracle/) sont entraînés avec des données spécifiques à l'astrologie, la numérologie et le tarot, ce qui réduit les biais.
 - **Croisez les sources** : Comparez les réponses de l'oracle IA avec d'autres outils (ex : un tirage de tarot manuel, une consultation avec un astrologue).
 - **Posez des questions précises** : Plus votre question est ciblée, moins l'IA aura de risques de s'égarer. Par exemple, au lieu de "Que va-t-il m'arriver en 2026 ?", demandez "Quel transit planétaire influencera le plus ma carrière en 2026 ?".
 

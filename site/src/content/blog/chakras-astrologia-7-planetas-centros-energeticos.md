@@ -163,7 +163,7 @@ Un trabajo diario dirigido de 15 a 20 minutos produce cambios visibles en tres a
 
 ## Ir más lejos
 
-La correspondencia chakras-astrología es una clave poderosa. Empieza calculando tu [ascendente](/es/herramientas/ascendente). Para una lectura personalizada, consulta el [Oracle](https://app.karmastro.com/oracle).
+La correspondencia chakras-astrología es una clave poderosa. Empieza calculando tu [ascendente](/es/herramientas/ascendente). Para una lectura personalizada, consulta el [Oracle](https://karmastro.com/oracle/).
 
 ## Fuentes y referencias
 

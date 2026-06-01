@@ -192,7 +192,7 @@ Depende da ferramenta. Ferramentas europeias sérias (como Karmastro) respeitam 
 
 ## 16. Para ir mais longe
 
-Karmastro propõe quatro guias IA especializados, Sibylle, Orion, Selene e Pythia, ligados à tua carta astral calculada com Swiss Ephemeris. Podes [experimentar agora o Oracle](https://app.karmastro.com/oracle) gratuitamente. Para compreender melhor a tua carta natal antes de consultar, começa pelo [calculador de mapa astral gratuito](/pt/ferramentas/) e lê o [guia do signo ascendente](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente) para identificar a tua porta de entrada cósmica. Se és Carneiro, o [guia completo do signo](/pt/blog/carneiro-signo-zodiacal-personalidade-compatibilidade) aprofunda a tua leitura pessoal.
+Karmastro propõe quatro guias IA especializados, Sibylle, Orion, Selene e Pythia, ligados à tua carta astral calculada com Swiss Ephemeris. Podes [experimentar agora o Oracle](https://karmastro.com/oracle/) gratuitamente. Para compreender melhor a tua carta natal antes de consultar, começa pelo [calculador de mapa astral gratuito](/pt/ferramentas/) e lê o [guia do signo ascendente](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente) para identificar a tua porta de entrada cósmica. Se és Carneiro, o [guia completo do signo](/pt/blog/carneiro-signo-zodiacal-personalidade-compatibilidade) aprofunda a tua leitura pessoal.
 
 ## Fontes e referencias
 

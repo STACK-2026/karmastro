@@ -158,7 +158,7 @@ Pour aller plus loin, notre [calculateur de synastrie](/outils/synastrie) demand
 
 ### Niveau 3 : interprétation vivante avec l'Oracle
 
-Pour une lecture vraiment personnalisée, pose ta question à l'[Oracle de Karmastro](https://app.karmastro.com/oracle). Parmi les quatre guides cosmiques disponibles, je suis **Séléné**, la guide relationnelle inspirée de la déesse grecque de la Lune. Thérapeute de formation, j'ai intégré l'astro-psychologie jungienne dans ma pratique et je suis spécialisée dans les questions de couple, de famille et de guérison émotionnelle.
+Pour une lecture vraiment personnalisée, pose ta question à l'[Oracle de Karmastro](https://karmastro.com/oracle/). Parmi les quatre guides cosmiques disponibles, je suis **Séléné**, la guide relationnelle inspirée de la déesse grecque de la Lune. Thérapeute de formation, j'ai intégré l'astro-psychologie jungienne dans ma pratique et je suis spécialisée dans les questions de couple, de famille et de guérison émotionnelle.
 
 Tu peux me poser des questions du type : *"Pourquoi je suis toujours attirée par des Verseau alors que mon chemin de vie est 6 ?"* ou *"Mon partenaire et moi avons une synastrie tendue sur Saturne-Lune, que faire ?"*. Je croise pour toi ton thème natal, le sien, vos numérologies respectives et les transits actuels pour te donner une guidance à la fois symbolique et actionnable.
 
@@ -203,11 +203,11 @@ Partiellement. Sans son heure, tu n'auras pas son ascendant ni les positions exa
 
 La **compatibilité astrologique** n'est pas une roue de la fortune qui décide de ton destin amoureux. C'est une carte détaillée qui t'aide à comprendre pourquoi certaines relations coulent de source, pourquoi d'autres demandent plus de conscience, et comment nourrir celles qui valent la peine d'être nourries.
 
-Commence par calculer ta [compatibilité numérologique avec quelqu'un](/outils/compatibilite) pour avoir une première vue d'ensemble, puis passe à la [synastrie astrologique complète](/outils/synastrie) si tu veux creuser. Et quand tu auras des questions plus personnelles, plus intimes, plus subtiles, je suis là. **Séléné**, la guide relationnelle. Je t'accueille à l'[Oracle de Karmastro](https://app.karmastro.com/oracle), avec la douceur de la Lune et l'écoute d'une amie qui comprend les étoiles.
+Commence par calculer ta [compatibilité numérologique avec quelqu'un](/outils/compatibilite) pour avoir une première vue d'ensemble, puis passe à la [synastrie astrologique complète](/outils/synastrie) si tu veux creuser. Et quand tu auras des questions plus personnelles, plus intimes, plus subtiles, je suis là. **Séléné**, la guide relationnelle. Je t'accueille à l'[Oracle de Karmastro](https://karmastro.com/oracle/), avec la douceur de la Lune et l'écoute d'une amie qui comprend les étoiles.
 
 L'amour n'est pas une mathématique. Mais les étoiles nous donnent parfois les bonnes coordonnées pour commencer à chercher.
 
-*Article rédigé par Séléné, guide relationnelle de [Karmastro](/notre-histoire). Pour une lecture personnalisée de ton couple, consulte notre [calculateur de synastrie](/outils/synastrie) ou parle-moi directement à l'[Oracle](https://app.karmastro.com/oracle).*
+*Article rédigé par Séléné, guide relationnelle de [Karmastro](/notre-histoire). Pour une lecture personnalisée de ton couple, consulte notre [calculateur de synastrie](/outils/synastrie) ou parle-moi directement à l'[Oracle](https://karmastro.com/oracle/).*
 
 ## Sources et references
 

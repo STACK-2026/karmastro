@@ -225,7 +225,7 @@ No más que un tarot, menos que ciertos practicantes humanos malintencionados. E
 
 ## Ir más lejos
 
-Si quieres probar un oráculo IA serio que respeta los criterios enunciados en este artículo, el [Oracle Karmastro](https://app.karmastro.com/oracle) propone cuatro guías IA especializadas (Sibylle para las preguntas de pareja, Orion para los grandes temas existenciales, Selene para lo intuitivo emocional, Pythia para la numerología profunda). Cada guía está conectada a tu carta natal calculada con las efemérides Swiss Ephemeris y a tu perfil numerológico.
+Si quieres probar un oráculo IA serio que respeta los criterios enunciados en este artículo, el [Oracle Karmastro](https://karmastro.com/oracle/) propone cuatro guías IA especializadas (Sibylle para las preguntas de pareja, Orion para los grandes temas existenciales, Selene para lo intuitivo emocional, Pythia para la numerología profunda). Cada guía está conectada a tu carta natal calculada con las efemérides Swiss Ephemeris y a tu perfil numerológico.
 
 Para complementar tu exploración, calcula tu [carta natal gratuita](/es/blog/carta-natal-gratis-interpretar-tema-natal-completo) y tu [camino de vida paso a paso](/es/blog/como-calcular-camino-de-vida-paso-a-paso). Estos dos pilares alimentan todas las lecturas personalizadas del Oracle.
 

@@ -189,7 +189,7 @@ No. Significa soltanto che nessun pianeta principale è posizionato in quella ca
 
 ## Andare oltre
 
-Per esplorare la tua carta, inizia calcolando il tuo [ascendente](/it/strumenti/ascendente) e consulta l'[Oracle](https://app.karmastro.com/oracle) di Karmastro per un'interpretazione integrata. Per capire come gli aspetti tra pianeti dialogano con le case, leggi la guida agli aspetti astrologici.
+Per esplorare la tua carta, inizia calcolando il tuo [ascendente](/it/strumenti/ascendente) e consulta l'[Oracle](https://karmastro.com/oracle/) di Karmastro per un'interpretazione integrata. Per capire come gli aspetti tra pianeti dialogano con le case, leggi la guida agli aspetti astrologici.
 
 ## Fonti e riferimenti
 

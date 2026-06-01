@@ -186,7 +186,7 @@ Nicht absolut, aber sehr schwere Hierarchien, Ketten-Arbeit und streng ausführe
 
 Deine Lebenszahl 1 zu kennen ist ein wertvoller Anfang. Um ein vollständiges Bild deines Profils zu erhalten, kreuze sie mit deinem Geburtshoroskop. Eine 1 mit Sonne im Widder ist nicht dieselbe Person wie eine 1 mit Sonne in den Fischen. Eine 1 mit Widder-Aszendent verstärkt die Mars-Energie, eine 1 mit Krebs-Aszendent mildert die äußere Präsenz, während das Innere pionierhaft bleibt. Lies dazu unseren [Leitfaden zum Aszendenten](/de/blog/aszendent-vollstaendiger-leitfaden-verstehen) oder, wenn deine Sonne im Widder ist, den [Widder-Leitfaden](/de/blog/widder-sternzeichen-persoenlichkeit-kompatibilitaet).
 
-Berechne dein vollständiges Profil mit unseren [kostenlosen Werkzeugen](/de/werkzeuge/). Für eine lebendige, personalisierte Lesung, die deine Lebenszahl mit deinem Geburtshoroskop kreuzt, konsultiere das [Oracle Karmastro](https://app.karmastro.com/oracle). Unsere vier Begleiter (Pythia, Orion, Sibylle, Selene) lesen deine Vibrationen in Echtzeit. Und jeden Morgen findest du dein [Tageshoroskop](/de/horoscope), um die aktuellen Transite zu verfolgen.
+Berechne dein vollständiges Profil mit unseren [kostenlosen Werkzeugen](/de/werkzeuge/). Für eine lebendige, personalisierte Lesung, die deine Lebenszahl mit deinem Geburtshoroskop kreuzt, konsultiere das [Oracle Karmastro](https://karmastro.com/oracle/). Unsere vier Begleiter (Pythia, Orion, Sibylle, Selene) lesen deine Vibrationen in Echtzeit. Und jeden Morgen findest du dein [Tageshoroskop](/de/horoscope), um die aktuellen Transite zu verfolgen.
 
 ## Quellen und Referenzen
 

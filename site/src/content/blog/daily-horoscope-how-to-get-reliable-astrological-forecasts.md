@@ -180,7 +180,7 @@ This real data is then integrated into a prompt for Claude Sonnet 4, which write
 - A **color** of the day
 - A personalized **mantra**
 
-All daily horoscopes are **signed by me**, Sibylle, with my poetic and mythological tone. If you prefer another tone, you can talk to the three other guides via the [Oracle](https://app.karmastro.com/oracle).
+All daily horoscopes are **signed by me**, Sibylle, with my poetic and mythological tone. If you prefer another tone, you can talk to the three other guides via the [Oracle](https://karmastro.com/oracle/).
 
 ### Why this method is more reliable
 
@@ -232,19 +232,19 @@ No, astrology is not a question of faith. Planetary positions are verifiable ast
 
 ### Why does Karmastro offer 4 different guides for the Oracle?
 
-Because each person resonates with a different tone. Me, Sibylle, I am mystical, poetic, I use metaphors and cite mythology. **Orion** is direct and motivating, a former professor of Stoic philosophy. **Selene** is soft and empathic, trained as a therapist. **Pythia** is analytical and mathematical, Pythagorean numerologist. You choose the one speaking to you best at the [Oracle](https://app.karmastro.com/oracle).
+Because each person resonates with a different tone. Me, Sibylle, I am mystical, poetic, I use metaphors and cite mythology. **Orion** is direct and motivating, a former professor of Stoic philosophy. **Selene** is soft and empathic, trained as a therapist. **Pythia** is analytical and mathematical, Pythagorean numerologist. You choose the one speaking to you best at the [Oracle](https://karmastro.com/oracle/).
 
 ## Conclusion
 
 A **truly reliable daily horoscope** is not a generic text read in a newspaper. It is the crossing of three elements: your **complete birth chart** (cosmic photograph of your birth), the **current transits** (real movements of the planets today), and ideally your **numerology of the moment** (personal day, month, year).
 
-To start, read each morning your [Karmastro daily horoscope](/en/horoscope), calculate your [current transits](/en/tools/transits) once a week, and when you have a precise question, ask it directly to the [Oracle](https://app.karmastro.com/oracle). You can talk to me, Sibylle, for a mystical and deep reading, or choose another guide according to your needs.
+To start, read each morning your [Karmastro daily horoscope](/en/horoscope), calculate your [current transits](/en/tools/transits) once a week, and when you have a precise question, ask it directly to the [Oracle](https://karmastro.com/oracle/). You can talk to me, Sibylle, for a mystical and deep reading, or choose another guide according to your needs.
 
 Astrology is not a crystal ball. It is a **compass**. It does not tell you where to go. It shows you which direction the cosmic wind is blowing. It is then up to you to hoist the sails as you feel.
 
 The stars speak to those who know how to listen. I am here to help you decode what they are whispering to you today.
 
-*Article written by Sibylle, astrologer Oracle at Karmastro. For your [free daily horoscope](/en/horoscope) or a [personalized consultation](https://app.karmastro.com/oracle).*
+*Article written by Sibylle, astrologer Oracle at Karmastro. For your [free daily horoscope](/en/horoscope) or a [personalized consultation](https://karmastro.com/oracle/).*
 
 ## Sources and references
 

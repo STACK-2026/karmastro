@@ -254,7 +254,7 @@ I calcoli di base si imparano in un'ora. Il significato profondo dei numeri rich
 
 ## 16. Per approfondire
 
-La numerologia è un linguaggio magnifico per chi ama il pensiero razionale ma cerca anche un senso simbolico alla propria vita. Inizia calcolando il tuo [cammino di vita gratuito](/it/strumenti/numero-del-cammino-di-vita) con il nostro calcolatore. Approfondisci con il tuo [tema natale completo](/it/strumenti/) per incrociare numerologia e astrologia. E per un profilo integrato che mescoli i due linguaggi in una conversazione personalizzata, parla con l'[Oracle Karmastro](https://app.karmastro.com/oracle), che combina astrologia, numerologia e saggezza simbolica in un'unica lettura.
+La numerologia è un linguaggio magnifico per chi ama il pensiero razionale ma cerca anche un senso simbolico alla propria vita. Inizia calcolando il tuo [cammino di vita gratuito](/it/strumenti/numero-del-cammino-di-vita) con il nostro calcolatore. Approfondisci con il tuo [tema natale completo](/it/strumenti/) per incrociare numerologia e astrologia. E per un profilo integrato che mescoli i due linguaggi in una conversazione personalizzata, parla con l'[Oracle Karmastro](https://karmastro.com/oracle/), che combina astrologia, numerologia e saggezza simbolica in un'unica lettura.
 
 ## Fonti e riferimenti
 

@@ -66,7 +66,7 @@ Nie.
 
 ## Idź dalej
 
-Skrzyżuj swoją liczbę ekspresji z [drogą życia](/pl/narzedzia/liczba-drogi-zycia) i skonsultuj [Oracle](https://app.karmastro.com/oracle).
+Skrzyżuj swoją liczbę ekspresji z [drogą życia](/pl/narzedzia/liczba-drogi-zycia) i skonsultuj [Oracle](https://karmastro.com/oracle/).
 
 ## Zrodla i odnosniki
 

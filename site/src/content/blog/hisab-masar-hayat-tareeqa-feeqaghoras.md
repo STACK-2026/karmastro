@@ -337,7 +337,7 @@ reviewedBy: "إيزيس، مستشارة علم الأعداد"
 
 - جرّب [حاسبة مسار الحياة](/ar/adawat/raqm-masar-al-hayat) المجانية.
 - استكشف [حاسبة الطالع](/ar/adawat/al-taaali).
-- اكتشف [Oracle Karmastro](https://app.karmastro.com/oracle) لقراءة روحية فورية.
+- اكتشف [Oracle Karmastro](https://karmastro.com/oracle/) لقراءة روحية فورية.
 - اقرأ [مسار الحياة 1: القيادة](/ar/blog/masar-hayat-1-qaid-mubadir-ilm-aadad).
 - اطّلع على [رقم التعبير من الاسم](/ar/blog/raqm-taabir-ismak-kamel-ilm-aadad).
 - افهم [السنة الشخصية 2026](/ar/blog/sana-shakhseya-2026-hisab-maana).

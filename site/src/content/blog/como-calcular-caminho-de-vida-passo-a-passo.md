@@ -205,7 +205,7 @@ Sim. O sistema pitagórico (ocidental), o sistema védico (indiano) e o sistema 
 
 ## 14. Para ir mais longe
 
-Calcular o teu caminho de vida é um gesto simples que abre uma porta enorme. Para uma leitura completa, combina a tua cifra com a tua carta astral através do [calculador gratuito Karmastro](/pt/ferramentas/). Lê também o [guia completo do caminho de vida 1](/pt/blog/caminho-de-vida-1-lideranca-independencia-numerologia) se obtiveste esse número, e o [guia do signo ascendente](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente) para compreender a camada astrológica complementar. Para uma interpretação interativa e personalizada, o [Oracle Karmastro](https://app.karmastro.com/oracle) combina numerologia e astrologia em tempo real.
+Calcular o teu caminho de vida é um gesto simples que abre uma porta enorme. Para uma leitura completa, combina a tua cifra com a tua carta astral através do [calculador gratuito Karmastro](/pt/ferramentas/). Lê também o [guia completo do caminho de vida 1](/pt/blog/caminho-de-vida-1-lideranca-independencia-numerologia) se obtiveste esse número, e o [guia do signo ascendente](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente) para compreender a camada astrológica complementar. Para uma interpretação interativa e personalizada, o [Oracle Karmastro](https://karmastro.com/oracle/) combina numerologia e astrologia em tempo real.
 
 ## Fontes e referencias
 

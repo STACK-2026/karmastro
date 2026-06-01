@@ -110,7 +110,7 @@ Camille, 31 lat. Przed retrogradacją w Bliźniętach przygotowaliśmy plan: wyk
 
 ## Idź dalej
 
-Skonsultuj [Oracle](https://app.karmastro.com/oracle).
+Skonsultuj [Oracle](https://karmastro.com/oracle/).
 
 ## Zrodla i odnosniki
 

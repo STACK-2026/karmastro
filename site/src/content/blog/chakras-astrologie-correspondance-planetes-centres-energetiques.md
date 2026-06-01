@@ -181,7 +181,7 @@ Quand **Pluton** transite une planète personnelle, plusieurs chakras peuvent ê
 
 Quand **Neptune** transite ta maison 12, ton chakra couronne s'ouvre. C'est souvent une période d'éveil spirituel profond, de rencontre avec le mystère, de dissolution des identités rigides.
 
-Ces périodes ne sont pas aléatoires. Tu peux les anticiper en consultant les [transits actuels de ta carte](https://app.karmastro.com/oracle) et préparer consciemment ton travail énergétique en conséquence.
+Ces périodes ne sont pas aléatoires. Tu peux les anticiper en consultant les [transits actuels de ta carte](https://karmastro.com/oracle/) et préparer consciemment ton travail énergétique en conséquence.
 
 ## Mantras, cristaux et rituels par chakra
 
@@ -246,7 +246,7 @@ Les deux fonctionnent. L'astrologie védique a l'avantage d'intégrer nativement
 
 ## Pour aller plus loin
 
-Pour identifier tes chakras dominants et bloqués, tu as besoin de ta carte natale complète. Utilise notre [calculateur de thème natal gratuit](/outils/theme-natal) pour obtenir les positions de tes sept planètes correspondantes et leurs aspects. Si tu veux une lecture personnalisée croisant tes chakras et les transits actuels, l'[Oracle Karmastro](https://app.karmastro.com/oracle) peut analyser ta carte et te dire quel centre énergétique est le plus activé en ce moment.
+Pour identifier tes chakras dominants et bloqués, tu as besoin de ta carte natale complète. Utilise notre [calculateur de thème natal gratuit](/outils/theme-natal) pour obtenir les positions de tes sept planètes correspondantes et leurs aspects. Si tu veux une lecture personnalisée croisant tes chakras et les transits actuels, l'[Oracle Karmastro](https://karmastro.com/oracle/) peut analyser ta carte et te dire quel centre énergétique est le plus activé en ce moment.
 
 Les chakras et les planètes ne sont pas deux vocabulaires concurrents. Ce sont deux langues pour parler de la même réalité : l'architecture subtile de l'être humain. Apprendre les deux, c'est se donner les moyens de se connaître plus profondément, et d'aligner sa vie intérieure sur les cycles plus vastes qui l'entourent.
 

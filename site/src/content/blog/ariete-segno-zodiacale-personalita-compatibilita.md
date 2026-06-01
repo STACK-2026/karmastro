@@ -187,7 +187,7 @@ Sì, se impara a canalizzare Marte in progetti costruttivi. Gli Arieti che non i
 
 ## 16. Per approfondire
 
-Il tuo segno solare Ariete è solo una parte della tua identità astrologica. Per avere un quadro completo, calcola il tuo [tema natale gratuito](/it/strumenti/) con il nostro calcolatore basato su Swiss Ephemeris. Se vuoi capire il ruolo del tuo ascendente nell'espressione del tuo Ariete, la nostra [guida all'ascendente](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico) è il punto di partenza migliore. Per una lettura personalizzata dei tuoi transiti attuali e dei prossimi mesi, consulta l'[Oracle Karmastro](https://app.karmastro.com/oracle), la nostra guida astrologica AI nutrita di astrologia ellenistica, medievale e moderna.
+Il tuo segno solare Ariete è solo una parte della tua identità astrologica. Per avere un quadro completo, calcola il tuo [tema natale gratuito](/it/strumenti/) con il nostro calcolatore basato su Swiss Ephemeris. Se vuoi capire il ruolo del tuo ascendente nell'espressione del tuo Ariete, la nostra [guida all'ascendente](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico) è il punto di partenza migliore. Per una lettura personalizzata dei tuoi transiti attuali e dei prossimi mesi, consulta l'[Oracle Karmastro](https://karmastro.com/oracle/), la nostra guida astrologica AI nutrita di astrologia ellenistica, medievale e moderna.
 
 ## Fonti e riferimenti
 

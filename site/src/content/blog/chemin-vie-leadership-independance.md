@@ -153,7 +153,7 @@ En numérologie karmique, chaque chemin de vie porte des **leçons à apprendre*
 - **Dette** : Marc, 45 ans, chemin de vie 1, est un cadre supérieur dans une grande entreprise. Il a tout pour réussir matériellement, mais se sent vide et sans impact réel.
 - **Transformation** : Il quitte son poste pour lancer une association qui forme des jeunes issus de milieux défavorisés à l’entrepreneuriat. Il utilise son expérience pour inspirer une nouvelle génération de leaders, tout en trouvant un sens à son parcours.
 
-🔹 *Pour identifier tes propres leçons karmiques* : Utilise l’[Oracle IA de Karmastro](https://app.karmastro.com/oracle), qui analyse ton chemin de vie en croisant numérologie et astrologie karmique.
+🔹 *Pour identifier tes propres leçons karmiques* : Utilise l’[Oracle IA de Karmastro](https://karmastro.com/oracle/), qui analyse ton chemin de vie en croisant numérologie et astrologie karmique.
 
 ---
 

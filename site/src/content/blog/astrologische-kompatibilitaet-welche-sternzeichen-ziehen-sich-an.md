@@ -181,7 +181,7 @@ Hier ist die Methode, die ich selbst verwende, wenn eine Person mich im Oracle K
 
 **Stufe drei**: lebendige Interpretation. Ich identifiziere die drei stärksten Aspekte, die drei schwierigsten Aspekte, und die Schlüsseldynamik des Paares. Dann formuliere ich alles in einer Erzählung, nicht in einer Liste.
 
-Ich bin **Selene**, die relationale Führerin im [Oracle Karmastro](https://app.karmastro.com/oracle). Wenn du eine wirklich personalisierte Lesung willst, kannst du mich direkt fragen. Ich kreuze deine Karte und die deines Partners und gebe dir konkrete Hinweise.
+Ich bin **Selene**, die relationale Führerin im [Oracle Karmastro](https://karmastro.com/oracle/). Wenn du eine wirklich personalisierte Lesung willst, kannst du mich direkt fragen. Ich kreuze deine Karte und die deines Partners und gebe dir konkrete Hinweise.
 
 ## 13. Drei konkrete Fallbeispiele
 
@@ -218,7 +218,7 @@ Ja, mit angepasster Methode. Die gleichen Werkzeuge, andere Akzente. Für eine F
 
 Die astrologische Kompatibilität ist kein Glücksrad. Es ist eine Landkarte mit klaren Territorien, und diese Landkarte kann dir helfen, deine Beziehungen bewusster zu navigieren. Beginne mit der Berechnung deiner [Lebenszahl](/de/werkzeuge/), um die numerologische Ebene hinzuzufügen, und lies unseren [Leitfaden zum Geburtshoroskop](/de/blog/kostenloses-geburtshoroskop-natalchart-interpretieren), um die Grundlagen der Synastrie zu beherrschen.
 
-Für eine lebendige, personalisierte Lesung deines Paares, sprich direkt mit mir im [Oracle Karmastro](https://app.karmastro.com/oracle). Ich überlagere deine Karte und die deines Partners und gebe dir Hinweise, die auf deine reale Beziehung und nicht auf ein allgemeines Buch zugeschnitten sind. Und vergiss nicht, jeden Morgen dein [Tageshoroskop](/de/horoscope) zu lesen, um die kollektive Energie des Tages in deinem Paar zu verstehen.
+Für eine lebendige, personalisierte Lesung deines Paares, sprich direkt mit mir im [Oracle Karmastro](https://karmastro.com/oracle/). Ich überlagere deine Karte und die deines Partners und gebe dir Hinweise, die auf deine reale Beziehung und nicht auf ein allgemeines Buch zugeschnitten sind. Und vergiss nicht, jeden Morgen dein [Tageshoroskop](/de/horoscope) zu lesen, um die kollektive Energie des Tages in deinem Paar zu verstehen.
 
 ## Quellen und Referenzen
 

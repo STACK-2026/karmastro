@@ -322,7 +322,7 @@ Trace tes progrès de manière **quantifiable** :
 2. **Mesure hebdomadaire** : Évalue tes progrès sur 10
 3. **Bilan mensuel** : Ajuste ta stratégie selon les résultats
 
-**Outil Karmastro** : Utilise notre [Oracle IA](https://app.karmastro.com/oracle) pour poser des questions précises sur tes progrès et recevoir des conseils personnalisés.
+**Outil Karmastro** : Utilise notre [Oracle IA](https://karmastro.com/oracle/) pour poser des questions précises sur tes progrès et recevoir des conseils personnalisés.
 
 > 💡 **Cas d'étude** : Sarah, utilisatrice Karmastro, a utilisé cette méthode lors de la pleine lune Gémeaux 2025 pour obtenir une promotion. Son nombre d'intention était 8 (autorité). Elle a suivi le protocole complet et a été promue chef de projet 3 semaines plus tard.
 
@@ -560,7 +560,7 @@ Karmastro t'offre une **méthode complète et reproductible** pour optimiser cet
 
 > 🌙 **Prêt à explorer ton potentiel cosmique ?**  
 > - [**Génère ton thème natal complet**](https://app.karmastro.com/theme-natal) pour voir comment cette pleine lune active tes maisons astrologiques personnelles  
-> - [**Consulte l'Oracle IA de Karmastro**](https://app.karmastro.com/oracle) pour une guidance précise sur tes défis communicationnels  
+> - [**Consulte l'Oracle IA de Karmastro**](https://karmastro.com/oracle/) pour une guidance précise sur tes défis communicationnels  
 > - [**Calcule ton profil numérologique**](https://app.karmastro.com/profil-complet) pour découvrir tous tes nombres personnels
 
 **N'oublie pas** : La prochaine pleine lune en Gémeaux aura lieu le **28 novembre 2027** - marque ton calendrier dès maintenant ! Pour ne rien manquer de tes phases lunaires personnalisées, active les notifications dans [ton espace Karmastro](https://app.karmastro.com).

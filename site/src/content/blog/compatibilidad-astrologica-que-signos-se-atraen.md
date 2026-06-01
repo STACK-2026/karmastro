@@ -189,7 +189,7 @@ No. La sinastría no es una sentencia. Es una radiografía. Lo que hagas con ell
 
 ## Ir más lejos
 
-Para profundizar, calcula tu [carta natal gratis](/es/herramientas/) y la de tu pareja, y usa el [Oracle Karmastro](https://app.karmastro.com/oracle) para obtener una lectura cruzada automatizada a partir de Swiss Ephemeris.
+Para profundizar, calcula tu [carta natal gratis](/es/herramientas/) y la de tu pareja, y usa el [Oracle Karmastro](https://karmastro.com/oracle/) para obtener una lectura cruzada automatizada a partir de Swiss Ephemeris.
 
 Recuerda también leer nuestro artículo sobre el [signo ascendente](/es/blog/signo-ascendente-guia-completa-comprender-ascendente), porque sin ascendente, cualquier lectura de pareja queda a medias.
 

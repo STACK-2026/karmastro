@@ -232,7 +232,7 @@ Sim, completamente. A numerologia chinesa assenta em lógica diferente (números
 
 ## 15. Para ir mais longe
 
-A numerologia é um sistema acessível que oferece uma leitura racional da personalidade, enraizada numa tradição matemática de 2500 anos. Começa pelo nosso [calculador de caminho de vida](/pt/ferramentas/numero-do-caminho-de-vida) para obter o teu número principal. Explora depois o nosso [calculador de compatibilidade numerológica](/pt/ferramentas/) para cruzar o teu caminho com o de alguém próximo. Para uma leitura personalizada interativa que cruza numerologia e astrologia, fala com o [Oracle Karmastro](https://app.karmastro.com/oracle).
+A numerologia é um sistema acessível que oferece uma leitura racional da personalidade, enraizada numa tradição matemática de 2500 anos. Começa pelo nosso [calculador de caminho de vida](/pt/ferramentas/numero-do-caminho-de-vida) para obter o teu número principal. Explora depois o nosso [calculador de compatibilidade numerológica](/pt/ferramentas/) para cruzar o teu caminho com o de alguém próximo. Para uma leitura personalizada interativa que cruza numerologia e astrologia, fala com o [Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## Fontes e referencias
 

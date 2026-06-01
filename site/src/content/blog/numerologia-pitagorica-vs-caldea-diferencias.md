@@ -203,7 +203,7 @@ No. Ni la caldea ni la pitagórica han sido validadas por la ciencia moderna. Am
 
 Ambos métodos son dos caminos válidos con sus raíces históricas y su coherencia interna. Si empiezas, usa la pitagórica: es más fácil, más documentada, y te permite verificar por ti mismo cada resultado. Puedes calcular tu [camino de vida](/es/blog/como-calcular-camino-de-vida-paso-a-paso) gratuitamente, ya que el resultado es idéntico en ambos métodos.
 
-Para cruzar tu numerología con tu astrología, explora también nuestra guía del [signo ascendente](/es/blog/signo-ascendente-guia-completa-comprender-ascendente), que es el complemento natural del camino de vida. Para una lectura personalizada profunda, el [Oracle Karmastro](https://app.karmastro.com/oracle) combina numerología pitagórica y astrología occidental moderna en una interpretación cruzada. Y para seguir la energía numerológica del día, consulta tu [horóscopo diario](/es/horoscope).
+Para cruzar tu numerología con tu astrología, explora también nuestra guía del [signo ascendente](/es/blog/signo-ascendente-guia-completa-comprender-ascendente), que es el complemento natural del camino de vida. Para una lectura personalizada profunda, el [Oracle Karmastro](https://karmastro.com/oracle/) combina numerología pitagórica y astrología occidental moderna en una interpretación cruzada. Y para seguir la energía numerológica del día, consulta tu [horóscopo diario](/es/horoscope).
 
 ## Fuentes y referencias
 

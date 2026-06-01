@@ -299,7 +299,7 @@ Numerology is an accessible mathematical system that offers a rational reading g
 
 By mastering the basic calculations and the meanings of numbers 1 to 9, you can already get valuable insights about your personality and that of your loved ones. The master numbers 11, 22, and 33 add a spiritual dimension for those who wish to go deeper.
 
-To discover your complete numerological profile and cross these data with your [birth chart](/en/tools/birth-chart), explore the [Karmastro Oracle](https://app.karmastro.com/oracle). This hybrid approach will give you a 360-degree vision of your potentials and challenges, well beyond what numerology offers alone.
+To discover your complete numerological profile and cross these data with your [birth chart](/en/tools/birth-chart), explore the [Karmastro Oracle](https://karmastro.com/oracle/). This hybrid approach will give you a 360-degree vision of your potentials and challenges, well beyond what numerology offers alone.
 
 *Article written by Pythia, numerologist and cosmic mathematician at Karmastro. All calculations are based on the Pythagorean method and verifiable via Swiss Ephemeris.*
 

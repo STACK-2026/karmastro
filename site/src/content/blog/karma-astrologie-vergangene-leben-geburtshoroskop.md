@@ -182,7 +182,7 @@ Die Standard-Astrologie liest dein Geburtshoroskop als Porträt deiner Persönli
 
 Das Karma in der Astrologie ist kein Gefängnis. Es ist ein Terrain, und du bist der Gärtner. Um deine Karmageschichte zu lesen, berechne kostenlos dein [interpretiertes Geburtshoroskop](/de/werkzeuge/). Wenn du deinen Aszendenten nicht kennst, lies den [vollständigen Leitfaden zum Aszendenten](/de/blog/aszendent-vollstaendiger-leitfaden-verstehen). Wenn du ein Widder bist oder einen starken Widder-Aszendenten hast, lies den [Widder-Leitfaden](/de/blog/widder-sternzeichen-persoenlichkeit-kompatibilitaet), um zu verstehen, wie das Widder-Karma spezifisch wirkt.
 
-Für eine tiefe, personalisierte Lesung, die deine Mondknoten, dein zwölftes Haus, Saturn und Pluto mit deinem aktuellen Lebenskontext kreuzt, konsultiere das [Oracle Karmastro](https://app.karmastro.com/oracle). Orion, dein karmischer Begleiter, ist auf diese Themen spezialisiert und antwortet in Echtzeit. Jeden Morgen wartet dein [Tageshoroskop](/de/horoscope) auf dich, um die aktuellen Transite zu verfolgen, und die Saturn- oder Pluto-Transite zu erkennen, die gerade in deinem Leben aktiv sind.
+Für eine tiefe, personalisierte Lesung, die deine Mondknoten, dein zwölftes Haus, Saturn und Pluto mit deinem aktuellen Lebenskontext kreuzt, konsultiere das [Oracle Karmastro](https://karmastro.com/oracle/). Orion, dein karmischer Begleiter, ist auf diese Themen spezialisiert und antwortet in Echtzeit. Jeden Morgen wartet dein [Tageshoroskop](/de/horoscope) auf dich, um die aktuellen Transite zu verfolgen, und die Saturn- oder Pluto-Transite zu erkennen, die gerade in deinem Leben aktiv sind.
 
 ## Quellen und Referenzen
 

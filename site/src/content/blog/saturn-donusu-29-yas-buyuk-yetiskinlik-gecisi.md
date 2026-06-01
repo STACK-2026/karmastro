@@ -183,7 +183,7 @@ Doğum Satürn'ü haritada güçlü açılarla (özellikle Güneş, Ay, yüksele
 
 ## Daha ileri
 
-Satürn dönüşü yetişkin hayatta anlaşılması gereken en önemli transittir. [Yükselen burcunu](/tr/blog/yukselen-burc-tam-rehber-yukselen-anlama) öğren, [ay burcunun iç duygusal dünyanda ne yaptığını](/tr/blog/ay-burcu-dogum-ayi-duygusal-dunya) incele, [Merkür retrosunun](/tr/blog/merkur-retrosu-tam-rehber-anlamak-hayatta-kalmak) Satürn dönüşüyle üst üste geldiği dönemlerde iletişim-karar dengeni gözlemle. Kişiselleştirilmiş yorumlama için [Oracle Karmastro](https://app.karmastro.com/oracle)'ya danışabilirsin.
+Satürn dönüşü yetişkin hayatta anlaşılması gereken en önemli transittir. [Yükselen burcunu](/tr/blog/yukselen-burc-tam-rehber-yukselen-anlama) öğren, [ay burcunun iç duygusal dünyanda ne yaptığını](/tr/blog/ay-burcu-dogum-ayi-duygusal-dunya) incele, [Merkür retrosunun](/tr/blog/merkur-retrosu-tam-rehber-anlamak-hayatta-kalmak) Satürn dönüşüyle üst üste geldiği dönemlerde iletişim-karar dengeni gözlemle. Kişiselleştirilmiş yorumlama için [Oracle Karmastro](https://karmastro.com/oracle/)'ya danışabilirsin.
 
 ## Kaynaklar ve referanslar
 

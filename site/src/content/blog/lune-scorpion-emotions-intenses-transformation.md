@@ -99,7 +99,7 @@ La méthode de calcul Karmastro croise ton signe lunaire avec tes nombres person
 - **Piège** : Épuisement par hyper-vigilance constante
 - **Guérison** : Apprentissage du lâcher-prise via les **transits de Neptune**
 
-Ces défis ne sont pas des fatalités, mais des **invitations à l'évolution**. Karmastro propose des [exercices personnalisés](https://app.karmastro.com/oracle) basés sur ton thème natal complet.
+Ces défis ne sont pas des fatalités, mais des **invitations à l'évolution**. Karmastro propose des [exercices personnalisés](https://karmastro.com/oracle/) basés sur ton thème natal complet.
 
 Découvrons maintenant comment cette énergie se manifeste différemment selon ton genre...
 
@@ -405,7 +405,7 @@ La **jalousie** est le défi #1 des Lunes Scorpion. Voici une méthode en 4 éta
 - Peur de dévalorisation → Développer mes talents uniques
 - Peur de trahison → Communiquer mes besoins clairement
 
-L'[Oracle Karmastro](https://app.karmastro.com/oracle) propose des conseils personnalisés selon tes défis émotionnels spécifiques.
+L'[Oracle Karmastro](https://karmastro.com/oracle/) propose des conseils personnalisés selon tes défis émotionnels spécifiques.
 
 ### Peut-on changer les défis de sa Lune natale ?
 
@@ -462,7 +462,7 @@ Ta **Lune en Scorpion** n'est pas une malédiction astrologique, mais une **invi
 
 1. **[Calcule ton thème natal complet](https://app.karmastro.com)** pour découvrir comment ta Lune Scorpion interagit avec tes autres placements
 2. **[Explore tes correspondances numérologiques](/blog/comment-calculer-chemin-de-vie-numerologie/)** pour révéler ton contrat d'âme
-3. **[Consulte l'Oracle Karmastro](https://app.karmastro.com/oracle)** pour des conseils personnalisés sur ta transformation émotionnelle
+3. **[Consulte l'Oracle Karmastro](https://karmastro.com/oracle/)** pour des conseils personnalisés sur ta transformation émotionnelle
 4. ****Rejoins notre communauté**** d'âmes en évolution pour partager tes expériences
 
 Rappelle-toi : en astrologie karmique, la "chute" de la Lune n'indique pas un échec, mais une **descente volontaire dans la matière** pour mieux servir l'évolution collective. Comme l'enseigne la tradition hermétique : "Ce qui est en bas est comme ce qui est en haut" - tes profondeurs émotionnelles sont ton accès aux hauteurs spirituelles.

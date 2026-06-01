@@ -129,7 +129,7 @@ Malgré leurs talents, les personnes avec un chemin de vie 3 doivent surmonter p
        - **Lundi 9h-11h** : Écriture.
        - **Mardi 14h-16h** : Peinture.
        - **Mercredi 10h-12h** : Réseautage.
-     - **Outil** : Utilise l’[Oracle IA de Karmastro](https://app.karmastro.com/oracle) pour identifier les blocages énergétiques liés à la procrastination.
+     - **Outil** : Utilise l’[Oracle IA de Karmastro](https://karmastro.com/oracle/) pour identifier les blocages énergétiques liés à la procrastination.
 
    - **Témoignage** : *"Avant, je commençais un nouveau projet chaque semaine sans jamais rien terminer. Depuis que j’applique la règle des 3 tâches, j’ai enfin publié mon premier roman !"* - Sophie, 32 ans, chemin de vie 3.
 
@@ -232,7 +232,7 @@ Le chemin de vie 3 est associé à plusieurs symboles et systèmes qui enrichiss
   - **Mardi 14h-16h** : Peinture.
   - **Mercredi 10h-12h** : Réseautage.
   Cette méthode permet de structurer ta journée sans te sentir étouffé par la routine.
-- **Outil** : Utilise l’[Oracle IA de Karmastro](https://app.karmastro.com/oracle) pour identifier les blocages énergétiques liés à la procrastination. Cet outil peut t’aider à comprendre les raisons profondes de ta dispersion et à trouver des solutions adaptées.
+- **Outil** : Utilise l’[Oracle IA de Karmastro](https://karmastro.com/oracle/) pour identifier les blocages énergétiques liés à la procrastination. Cet outil peut t’aider à comprendre les raisons profondes de ta dispersion et à trouver des solutions adaptées.
 
 **Témoignage** : *"Avant, je commençais un nouveau projet chaque semaine sans jamais rien terminer. Depuis que j’applique la règle des 3 tâches, j’ai enfin publié mon premier roman !"* - Sophie, 32 ans, chemin de vie 3.
 

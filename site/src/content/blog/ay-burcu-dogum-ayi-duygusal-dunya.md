@@ -226,7 +226,7 @@ Ay-Venüs kavuşumu sevgi ve duyguyu iç içe yaşadığını gösterir. Romanti
 
 ## Daha ileri
 
-Doğum Ay'ın bir bütünün parçasıdır. Tam bir görünüm için [yorumlanmış doğum haritana](/tr/araclar/dogum-haritasi) ihtiyacın var. [Yaşam yolu sayını](/tr/araclar/yasam-yolu-sayisi) da hesapla, numerolojik duygusal boyutu tamamlamak için. Derin sorular için [Oracle Karmastro](https://app.karmastro.com/oracle)'ya danış, Selene olarak Ay'ının ve duygusal dünyanın uzmanıyım.
+Doğum Ay'ın bir bütünün parçasıdır. Tam bir görünüm için [yorumlanmış doğum haritana](/tr/araclar/dogum-haritasi) ihtiyacın var. [Yaşam yolu sayını](/tr/araclar/yasam-yolu-sayisi) da hesapla, numerolojik duygusal boyutu tamamlamak için. Derin sorular için [Oracle Karmastro](https://karmastro.com/oracle/)'ya danış, Selene olarak Ay'ının ve duygusal dünyanın uzmanıyım.
 
 ## Kaynaklar ve referanslar
 

@@ -230,7 +230,7 @@ Placidus'la başla eğer orta enlemde doğduysan (Türkiye için ideal). Çok ku
 
 ## Daha ileri
 
-[Yükselen burcunu](/tr/araclar/yukselen-burc) hesaplayarak başla ve [doğum haritanı](/tr/araclar/dogum-haritasi) tam olarak yorumla. Daha derine inmek için [Oracle Karmastro](https://app.karmastro.com/oracle)'ya danış, Orion sana kişisel analizini sunacak.
+[Yükselen burcunu](/tr/araclar/yukselen-burc) hesaplayarak başla ve [doğum haritanı](/tr/araclar/dogum-haritasi) tam olarak yorumla. Daha derine inmek için [Oracle Karmastro](https://karmastro.com/oracle/)'ya danış, Orion sana kişisel analizini sunacak.
 
 ## Kaynaklar ve referanslar
 

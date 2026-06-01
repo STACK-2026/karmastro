@@ -73,7 +73,7 @@ reviewedBy: "أوريون، عالم فلك ومنجم كبير"
 
 ## للذهاب أبعد
 
-استكشف خريطتك مع [Oracle](https://app.karmastro.com/oracle).
+استكشف خريطتك مع [Oracle](https://karmastro.com/oracle/).
 
 ## المصادر والمراجع
 

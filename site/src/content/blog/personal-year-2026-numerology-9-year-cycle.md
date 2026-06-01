@@ -210,7 +210,7 @@ This gives you a much finer reading of your year. You know when you will be in a
 
 For example, if you are in year 5 and you want to sign an important contract, aim for a personal month 8 in your year (January, in this case) rather than a personal month 9 (February). This does not change everything, but it adds extra fluidity.
 
-It is a fine piloting tool that few people know about, and that can transform your relationship to time. If you want to explore your personal months in detail, the [Oracle](https://app.karmastro.com/oracle) calculates the whole table for your current year.
+It is a fine piloting tool that few people know about, and that can transform your relationship to time. If you want to explore your personal months in detail, the [Oracle](https://karmastro.com/oracle/) calculates the whole table for your current year.
 
 ## 14. Aligning your personal year with your life path
 
@@ -276,7 +276,7 @@ The personal year is one of the most practical tools in numerology, because it g
 
 You can also explore your natal astrological chart by starting with your [rising sign](/en/tools/rising-sign) and your moon sign. Crossing numerology and astrology gives you a particularly rich view of what you are going through.
 
-If you want a personalized and tailored reading of your 2026 year, with key months, favorable periods, and traps to avoid, the [Oracle](https://app.karmastro.com/oracle) can do it for you in a few minutes.
+If you want a personalized and tailored reading of your 2026 year, with key months, favorable periods, and traps to avoid, the [Oracle](https://karmastro.com/oracle/) can do it for you in a few minutes.
 
 And if you want to receive every morning a message that helps you navigate your personal tempo, subscribe to our free daily horoscope. No frozen predictions, just soft keys to help you dance with your year rather than endure it.
 

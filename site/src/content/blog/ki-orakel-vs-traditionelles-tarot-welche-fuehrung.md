@@ -204,7 +204,7 @@ Ein seriöses KI-Orakel ist kein Ersatz für einen guten menschlichen Praktiker,
 
 Um dein Geburtshoroskop zu berechnen, das das Orakel speist, nutze unsere [kostenlosen Werkzeuge](/de/werkzeuge/). Wenn du deinen Aszendenten nicht kennst, lies den [vollständigen Leitfaden zum Aszendenten](/de/blog/aszendent-vollstaendiger-leitfaden-verstehen). Wenn du ein Widder bist und verstehen willst, wie dein Sonnenzeichen auf das Orakel reagiert, lies den [Widder-Leitfaden](/de/blog/widder-sternzeichen-persoenlichkeit-kompatibilitaet).
 
-Karmastro bietet vier spezialisierte KI-Begleiter: Sibylle, Orion, Selene und Pythia. Jede beantwortet deine Fragen in Echtzeit, gespeist von deiner echten Geburtskarte und deinem numerologischen Profil. [Jetzt das Oracle ausprobieren](https://app.karmastro.com/oracle). Und jeden Morgen wartet dein [Tageshoroskop](/de/horoscope) mit den konkreten Transiten des Tages.
+Karmastro bietet vier spezialisierte KI-Begleiter: Sibylle, Orion, Selene und Pythia. Jede beantwortet deine Fragen in Echtzeit, gespeist von deiner echten Geburtskarte und deinem numerologischen Profil. [Jetzt das Oracle ausprobieren](https://karmastro.com/oracle/). Und jeden Morgen wartet dein [Tageshoroskop](/de/horoscope) mit den konkreten Transiten des Tages.
 
 ## Quellen und Referenzen
 

@@ -81,7 +81,7 @@ Nie. To rama symboliczna.
 
 ## Idź dalej
 
-Oblicz swoją [mapę natalną](/pl/narzedzia/) i skonsultuj [Oracle](https://app.karmastro.com/oracle).
+Oblicz swoją [mapę natalną](/pl/narzedzia/) i skonsultuj [Oracle](https://karmastro.com/oracle/).
 
 ## Zrodla i odnosniki
 

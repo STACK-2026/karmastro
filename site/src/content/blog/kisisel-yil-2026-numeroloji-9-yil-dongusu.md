@@ -122,7 +122,7 @@ Evet. 2020 COVID yılı dünya yılı 4 (2+0+2+0 = 4) idi ve kolektif olarak ist
 
 ## Daha ileri
 
-[Yaşam yolu sayını](/tr/araclar/yasam-yolu-sayisi) hesapla ve [Oracle](https://app.karmastro.com/oracle)'ya danış.
+[Yaşam yolu sayını](/tr/araclar/yasam-yolu-sayisi) hesapla ve [Oracle](https://karmastro.com/oracle/)'ya danış.
 
 ## Kaynaklar ve referanslar
 

@@ -70,7 +70,7 @@ Większość używa 1 stycznia.
 
 ## Idź dalej
 
-Oblicz swoją [liczbę drogi życia](/pl/narzedzia/liczba-drogi-zycia) i skonsultuj [Oracle](https://app.karmastro.com/oracle).
+Oblicz swoją [liczbę drogi życia](/pl/narzedzia/liczba-drogi-zycia) i skonsultuj [Oracle](https://karmastro.com/oracle/).
 
 ## Zrodla i odnosniki
 

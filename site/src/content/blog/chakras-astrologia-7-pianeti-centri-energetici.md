@@ -184,7 +184,7 @@ Muladhara, sempre. Senza radicamento, il lavoro sugli altri centri rischia di di
 
 ## Andare oltre
 
-Calcola il tuo [ascendente](/it/strumenti/ascendente) e consulta l'[Oracle](https://app.karmastro.com/oracle) Karmastro per una lettura integrata del tuo tema. Per approfondire i collegamenti tra astrologia e dinamica interiore, leggi la guida alle 12 case astrologiche e la guida agli aspetti astrologici.
+Calcola il tuo [ascendente](/it/strumenti/ascendente) e consulta l'[Oracle](https://karmastro.com/oracle/) Karmastro per una lettura integrata del tuo tema. Per approfondire i collegamenti tra astrologia e dinamica interiore, leggi la guida alle 12 case astrologiche e la guida agli aspetti astrologici.
 
 ## Fonti e riferimenti
 

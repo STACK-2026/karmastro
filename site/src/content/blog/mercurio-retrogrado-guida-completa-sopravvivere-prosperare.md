@@ -225,7 +225,7 @@ Sì, soprattutto attraverso il ritorno di ex partner e i malintesi di coppia. Se
 
 ## Andare oltre
 
-Mercurio retrogrado è solo uno dei transiti. Calcola il tuo [ascendente](/it/strumenti/ascendente) e consulta l'[Oracle](https://app.karmastro.com/oracle) Karmastro per una lettura integrata. Per comprendere le grandi traiettorie, leggi anche il [ritorno di Saturno](/it/blog/ritorno-di-saturno-29-anni-grande-passaggio-adulto) e la guida alle 12 case astrologiche. Per approfondire la trama delle relazioni tra pianeti, consulta gli aspetti astrologici.
+Mercurio retrogrado è solo uno dei transiti. Calcola il tuo [ascendente](/it/strumenti/ascendente) e consulta l'[Oracle](https://karmastro.com/oracle/) Karmastro per una lettura integrata. Per comprendere le grandi traiettorie, leggi anche il [ritorno di Saturno](/it/blog/ritorno-di-saturno-29-anni-grande-passaggio-adulto) e la guida alle 12 case astrologiche. Per approfondire la trama delle relazioni tra pianeti, consulta gli aspetti astrologici.
 
 ## Fonti e riferimenti
 

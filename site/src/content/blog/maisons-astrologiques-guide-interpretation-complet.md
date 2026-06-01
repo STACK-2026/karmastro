@@ -39,7 +39,7 @@ Les **maisons astrologiques** sont les 12 divisions de la sphère céleste au mo
 - Ton lieu de naissance (latitude/longitude)
 - La saison (les maisons "respirent" avec l'inclinaison terrestre)
 
-Karmastro, la première plateforme française d'astrologie intelligente, utilise les [éphémérides Swiss Ephemeris](https://www.astro.com/swisseph/) pour calculer tes maisons avec une précision de 0,01°. Cette exactitude permet à notre [Oracle IA](https://app.karmastro.com/oracle) de croiser astrologie et numérologie pour des analyses ultra-personnalisées.
+Karmastro, la première plateforme française d'astrologie intelligente, utilise les [éphémérides Swiss Ephemeris](https://www.astro.com/swisseph/) pour calculer tes maisons avec une précision de 0,01°. Cette exactitude permet à notre [Oracle IA](https://karmastro.com/oracle/) de croiser astrologie et numérologie pour des analyses ultra-personnalisées.
 
 Les maisons se répartissent en trois catégories selon leur "angularité" :
 - **Angulaires** (1, 4, 7, 10) : les plus puissantes, liées aux "angles" du thème
@@ -581,7 +581,7 @@ Cette méthode permet de prédire les périodes clés avec une précision de 95%
 
 ### Application pratique exclusive
 
-Notre [Oracle IA](https://app.karmastro.com/oracle) utilise cette synthèse pour répondre à tes questions :
+Notre [Oracle IA](https://karmastro.com/oracle/) utilise cette synthèse pour répondre à tes questions :
 
 **Question type** : "Quand vais-je rencontrer l'amour ?"
 **Analyse Karmastro** :
@@ -747,7 +747,7 @@ Prêt(e) à découvrir comment tes maisons influencent concrètement ta vie quot
 - La correspondance numérologique de tes maisons selon ta date de naissance
 - Les prédictions de transits 2026 spécifiques à ton thème
 
-Pour une guidance immédiate, pose une question précise à notre [Oracle IA](https://app.karmastro.com/oracle) qui analysera automatiquement tes maisons, planètes et nombres pour une réponse sur-mesure en quelques secondes.
+Pour une guidance immédiate, pose une question précise à notre [Oracle IA](https://karmastro.com/oracle/) qui analysera automatiquement tes maisons, planètes et nombres pour une réponse sur-mesure en quelques secondes.
 
 ## Sources
 

@@ -170,7 +170,7 @@ Ayuda, especialmente al principio. Un buen astrólogo kármico puede ver en una 
 
 El karma en astrología no es una prisión. Es un terreno que descubres en tu nacimiento y que trabajas con tus decisiones diarias. Para explorar tu propio karma astrológico, empieza por calcular tu [carta natal completa](/es/herramientas/) y familiarizarte con tu [signo ascendente](/es/blog/signo-ascendente-guia-completa-comprender-ascendente), que es el punto de partida de todo.
 
-Para una lectura personalizada cruzando tus nodos, tu Saturno y tu Plutón con los tránsitos actuales, el [Oracle Karmastro](https://app.karmastro.com/oracle) te ofrece una interpretación detallada en pocos minutos. Y para seguir la influencia kármica del día, consulta tu [horóscopo diario](/es/horoscope).
+Para una lectura personalizada cruzando tus nodos, tu Saturno y tu Plutón con los tránsitos actuales, el [Oracle Karmastro](https://karmastro.com/oracle/) te ofrece una interpretación detallada en pocos minutos. Y para seguir la influencia kármica del día, consulta tu [horóscopo diario](/es/horoscope).
 
 ## Fuentes y referencias
 

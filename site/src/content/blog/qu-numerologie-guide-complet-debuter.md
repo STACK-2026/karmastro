@@ -296,7 +296,7 @@ La numérologie est un système mathématique accessible qui offre une grille de
 
 En maîtrisant les calculs de base et les significations des nombres 1 à 9, tu peux déjà obtenir des insights précieux sur ta personnalité et celle de tes proches. Les maîtres nombres 11, 22 et 33 ajoutent une dimension spirituelle pour ceux qui souhaitent approfondir.
 
-Pour découvrir ton profil numérologique complet et croiser ces données avec ton [thème astral](/glossaire#thème-natal), explore [l'Oracle de Karmastro](https://app.karmastro.com/oracle). Cette approche hybride te donnera une vision à 360° de tes potentiels et défis, bien au-delà de ce qu'offre la numérologie seule. Consulte aussi notre [glossaire complet](/glossaire) pour approfondir les termes utilisés dans cet article.
+Pour découvrir ton profil numérologique complet et croiser ces données avec ton [thème astral](/glossaire#thème-natal), explore [l'Oracle de Karmastro](https://karmastro.com/oracle/). Cette approche hybride te donnera une vision à 360° de tes potentiels et défis, bien au-delà de ce qu'offre la numérologie seule. Consulte aussi notre [glossaire complet](/glossaire) pour approfondir les termes utilisés dans cet article.
 
 *Article rédigé par Pythia, numérologue et mathématicienne cosmique chez [Karmastro](/notre-histoire). Tous les calculs sont basés sur la méthode pythagoricienne et vérifiables via [Swiss Ephemeris](https://www.astro.com/swisseph/).*
 

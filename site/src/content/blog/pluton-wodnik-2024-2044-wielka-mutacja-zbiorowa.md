@@ -108,7 +108,7 @@ Nie, to dwie różne rzeczy.
 
 ## Idź dalej
 
-Pluton w Wodniku jest prawdopodobnie najważniejszym tranzytem twojego życia. Skonsultuj [Oracle](https://app.karmastro.com/oracle).
+Pluton w Wodniku jest prawdopodobnie najważniejszym tranzytem twojego życia. Skonsultuj [Oracle](https://karmastro.com/oracle/).
 
 ## Zrodla i odnosniki
 

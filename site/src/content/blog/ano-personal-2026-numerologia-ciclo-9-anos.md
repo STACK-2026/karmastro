@@ -165,7 +165,7 @@ No, cada persona tiene el suyo según su fecha de nacimiento. Es por eso que una
 
 El año personal es una de las herramientas más prácticas de la numerología. Se entiende mejor cuando conoces tu [camino de vida](/es/blog/como-calcular-camino-de-vida-paso-a-paso) y tu [ascendente astrológico](/es/blog/signo-ascendente-guia-completa-comprender-ascendente), que dan el contexto profundo de tu recorrido.
 
-Para una lectura personalizada de tu año 2026 cruzada con tus tránsitos planetarios actuales, el [Oracle Karmastro](https://app.karmastro.com/oracle) puede darte una interpretación precisa en unos minutos. Y para seguir la energía general del mes, consulta tu [horóscopo diario](/es/horoscope).
+Para una lectura personalizada de tu año 2026 cruzada con tus tránsitos planetarios actuales, el [Oracle Karmastro](https://karmastro.com/oracle/) puede darte una interpretación precisa en unos minutos. Y para seguir la energía general del mes, consulta tu [horóscopo diario](/es/horoscope).
 
 ## Fuentes y referencias
 

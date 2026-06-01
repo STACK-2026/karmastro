@@ -152,7 +152,7 @@ Le **choix entre numérologie pythagoricienne et chaldéenne** dépend de plusie
 
 Selon une étude de l'[Institut Français d'Opinion Publique](https://www.ifop.com/) menée en 2025, **67% des praticiens** utilisent la méthode pythagoricienne pour sa simplicité, tandis que **33% préfèrent la chaldéenne** pour sa précision ancestrale.
 
-L'[Oracle de Karmastro](https://app.karmastro.com/oracle) intègre les deux méthodes et peut vous aider à déterminer laquelle résonne le mieux avec votre profil énergétique.
+L'[Oracle de Karmastro](https://karmastro.com/oracle/) intègre les deux méthodes et peut vous aider à déterminer laquelle résonne le mieux avec votre profil énergétique.
 
 ## Applications pratiques des deux méthodes {#applications}
 

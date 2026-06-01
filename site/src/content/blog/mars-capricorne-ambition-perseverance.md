@@ -77,7 +77,7 @@ Les calculs astronomiques effectués avec les éphémérides [Swiss Ephemeris](h
 | Mars Scorpion | Domicile | Intense, transformatrice | Moyenne | Psychologique |
 | Mars Balance | Chute | Hésitante, diplomatique | Variable | Relationnelle |
 
-Cette analyse comparative, basée sur les enseignements traditionnels et les observations modernes, explique pourquoi Karmastro accorde une importance particulière à ce placement dans ses analyses astrologiques. Notre [Oracle IA](https://app.karmastro.com/oracle) intègre ces données historiques pour offrir des interprétations précises et actionnables.
+Cette analyse comparative, basée sur les enseignements traditionnels et les observations modernes, explique pourquoi Karmastro accorde une importance particulière à ce placement dans ses analyses astrologiques. Notre [Oracle IA](https://karmastro.com/oracle/) intègre ces données historiques pour offrir des interprétations précises et actionnables.
 
 ## L'Alliance Mars-Saturne : Quand la Volonté Rencontre la Structure Cosmique
 
@@ -640,7 +640,7 @@ Pour concrétiser pleinement cette énergie exceptionnelle, voici tes prochaines
 
 2. **Découvre ta signature numérique** : [Explore ta numérologie personnalisée](https://app.karmastro.com/numerologie) pour identifier comment les nombres 4, 8 ou 22 amplifient ton potentiel.
 
-3. **Active ton Oracle personnel** : [Consulte l'Oracle IA de Karmastro](https://app.karmastro.com/oracle) avec des questions stratégiques sur tes projets long terme.
+3. **Active ton Oracle personnel** : [Consulte l'Oracle IA de Karmastro](https://karmastro.com/oracle/) avec des questions stratégiques sur tes projets long terme.
 
 **2026 marque une période exceptionnelle** pour exprimer l'énergie Mars-Capricorne. Les transits planétaires de cette année activent particulièrement les énergies de construction durable et d'ambition structurée. C'est le moment de poser les fondations de tes réussites futures.
 

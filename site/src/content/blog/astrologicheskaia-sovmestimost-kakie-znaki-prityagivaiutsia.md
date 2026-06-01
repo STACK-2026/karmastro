@@ -65,7 +65,7 @@ reviewedBy: "Орион, старший астроном и астролог"
 
 ### Уровень 3: интерпретация с Oracle
 
-Я **Селена**, реляционный гид в [Oracle Karmastro](https://app.karmastro.com/oracle).
+Я **Селена**, реляционный гид в [Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## 7. Частые вопросы
 

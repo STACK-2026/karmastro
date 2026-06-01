@@ -363,7 +363,7 @@ Le nombre d'expression est l'un des piliers de ta numérologie personnelle. Pour
 
 Tu peux aussi croiser ces lectures avec ton thème astrologique en partant de ton [signe ascendant](/outils/ascendant) et de ton [signe lunaire](/blog/signe-lunaire-lune-natale-monde-emotionnel/). Numérologie et astrologie sont deux langages complémentaires qui décrivent les mêmes réalités sous des angles différents.
 
-Pour une lecture personnalisée et complète qui croise tous ces niveaux, [l'Oracle](https://app.karmastro.com/oracle) peut le faire pour toi en quelques minutes, en partant de ton nom complet, ta date et ton lieu de naissance.
+Pour une lecture personnalisée et complète qui croise tous ces niveaux, [l'Oracle](https://karmastro.com/oracle/) peut le faire pour toi en quelques minutes, en partant de ton nom complet, ta date et ton lieu de naissance.
 
 Et si tu veux recevoir chaque matin un message qui t'aide à incarner ton nombre d'expression au quotidien, abonne-toi à notre horoscope quotidien gratuit. C'est une manière douce d'apprivoiser ta vibration jour après jour.
 

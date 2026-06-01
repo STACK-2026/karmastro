@@ -143,7 +143,7 @@ As duas escolas são dois caminhos igualmente válidos dentro das suas próprias
 
 Se estás a começar em numerologia, a recomendação geral é simples: usa a pitagórica. É transparente, reprodutível, compatível com a maioria das referências publicadas, alinhada com os sistemas esotéricos ocidentais modernos. Começa por calcular o teu [caminho de vida](/pt/ferramentas/numero-do-caminho-de-vida), que aliás é idêntico nas duas escolas, e depois progride para o número de expressão calculado em pitagórica.
 
-Para uma leitura personalizada que cruze números pitagóricos com outras dimensões da tua vida (astrologia, momentos de trânsito, questões atuais), consulta o [Oracle Karmastro](https://app.karmastro.com/oracle), que articula várias vozes especializadas, incluindo Pythia, focada na numerologia.
+Para uma leitura personalizada que cruze números pitagóricos com outras dimensões da tua vida (astrologia, momentos de trânsito, questões atuais), consulta o [Oracle Karmastro](https://karmastro.com/oracle/), que articula várias vozes especializadas, incluindo Pythia, focada na numerologia.
 
 ## Fontes e referências
 

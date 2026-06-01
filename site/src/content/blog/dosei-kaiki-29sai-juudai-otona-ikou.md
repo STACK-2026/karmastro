@@ -104,7 +104,7 @@ reviewedBy: "Orion、シニア天文学者兼占星術師"
 
 ## さらに進む
 
-土星回帰は大人の生活で理解すべき最も重要なトランジットです。[Oracle](https://app.karmastro.com/oracle)に相談してください。
+土星回帰は大人の生活で理解すべき最も重要なトランジットです。[Oracle](https://karmastro.com/oracle/)に相談してください。
 
 ## 参考文献と出典
 

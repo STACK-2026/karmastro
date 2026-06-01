@@ -144,7 +144,7 @@ No. Las casas natales son fijas.
 
 Las casas astrológicas son uno de los aspectos más ricos y prácticos de la carta natal. Para explorar tu carta partiendo de tus casas, empieza calculando tu [ascendente](/es/herramientas/ascendente).
 
-Para una lectura personalizada, consulta el [Oracle](https://app.karmastro.com/oracle).
+Para una lectura personalizada, consulta el [Oracle](https://karmastro.com/oracle/).
 
 ## Fuentes y referencias
 

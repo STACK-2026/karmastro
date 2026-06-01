@@ -71,7 +71,7 @@ Steve Jobs, Lady Gaga, Martin Luther King, Walt Disney. Wszyscy **otworzyli drog
 
 ## 10. Idź dalej
 
-Skrzyżuj z [mapą natalną](/pl/narzedzia/) i skonsultuj [Oracle](https://app.karmastro.com/oracle).
+Skrzyżuj z [mapą natalną](/pl/narzedzia/) i skonsultuj [Oracle](https://karmastro.com/oracle/).
 
 ## Zrodla i odnosniki
 

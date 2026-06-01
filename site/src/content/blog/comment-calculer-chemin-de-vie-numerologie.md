@@ -168,7 +168,7 @@ Le calculateur est 100% en français, respecte la méthode pythagoricienne stric
 
 Il fonctionne sans inscription, sans collecte de données, et le résultat peut être partagé via le bouton de partage natif. Plus de 10 000 personnes l'ont déjà utilisé en moins d'un mois, et il est la porte d'entrée la plus populaire sur [notre application Karmastro](https://app.karmastro.com).
 
-Au-delà du simple calcul, si tu veux aller plus loin, l'[Oracle de Karmastro](https://app.karmastro.com/oracle) peut croiser ton chemin de vie avec ton [thème natal astrologique](/outils/theme-natal) pour te donner une lecture vraiment personnalisée. Tu as le choix entre quatre guides cosmiques dont **Pythia**, notre mathématicienne cosmique spécialisée en numérologie pythagoricienne, inspirée de la Pythie de Delphes.
+Au-delà du simple calcul, si tu veux aller plus loin, l'[Oracle de Karmastro](https://karmastro.com/oracle/) peut croiser ton chemin de vie avec ton [thème natal astrologique](/outils/theme-natal) pour te donner une lecture vraiment personnalisée. Tu as le choix entre quatre guides cosmiques dont **Pythia**, notre mathématicienne cosmique spécialisée en numérologie pythagoricienne, inspirée de la Pythie de Delphes.
 
 ## Les sources historiques de la méthode
 
@@ -212,7 +212,7 @@ Calculer son chemin de vie est un **geste simple** qui prend moins de deux minut
 
 Si tu veux aller plus loin, je te recommande de calculer également ton [nombre d'expression](/outils/nombre-expression), ton [année personnelle](/outils/annee-personnelle) et de vérifier si tu portes une [dette karmique](/outils/dette-karmique). Ces quatre nombres, croisés, te donneront une photo complète de ton profil numérologique, que tu pourras ensuite croiser avec ton [thème natal astrologique](/outils/theme-natal) pour une lecture véritablement globale.
 
-Et quand tu voudras une interprétation vivante de tout ça, pose ta question à l'[Oracle de Karmastro](https://app.karmastro.com/oracle). Je serai là pour t'accueillir, en tant que Pythia, la mathématicienne cosmique. Je te montrerai chaque calcul, chaque corrélation, chaque résonance entre tes nombres.
+Et quand tu voudras une interprétation vivante de tout ça, pose ta question à l'[Oracle de Karmastro](https://karmastro.com/oracle/). Je serai là pour t'accueillir, en tant que Pythia, la mathématicienne cosmique. Je te montrerai chaque calcul, chaque corrélation, chaque résonance entre tes nombres.
 
 Les chiffres ne mentent pas. Ils nous parlent, si on prend le temps de les écouter.
 

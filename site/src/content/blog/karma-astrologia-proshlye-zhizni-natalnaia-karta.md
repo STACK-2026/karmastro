@@ -81,7 +81,7 @@ reviewedBy: "Орион, старший астроном и астролог"
 
 ## Идти дальше
 
-Рассчитай свою [натальную карту](/ru/instrumenty/) и обратись к [Oracle](https://app.karmastro.com/oracle).
+Рассчитай свою [натальную карту](/ru/instrumenty/) и обратись к [Oracle](https://karmastro.com/oracle/).
 
 ## Источники и ссылки
 

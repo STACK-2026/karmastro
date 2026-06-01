@@ -252,7 +252,7 @@ Non. Tu ne changes pas ta Lune, tu apprends à vivre avec elle. L'évolution per
 
 ## Pour aller plus loin
 
-Ta Lune natale fait partie d'un tout. Pour la voir en contexte complet, tu as besoin de ton [thème natal interprété](/blog/theme-natal-gratuit-interpreter-carte-du-ciel) avec toutes les planètes, les maisons et les aspects. Si tu veux comprendre comment ta Lune dialogue avec celle d'un partenaire, ou avec les transits actuels, tu peux consulter l'[Oracle Karmastro](https://app.karmastro.com/oracle), qui te proposera une lecture personnalisée croisant ta carte natale et le ciel du jour.
+Ta Lune natale fait partie d'un tout. Pour la voir en contexte complet, tu as besoin de ton [thème natal interprété](/blog/theme-natal-gratuit-interpreter-carte-du-ciel) avec toutes les planètes, les maisons et les aspects. Si tu veux comprendre comment ta Lune dialogue avec celle d'un partenaire, ou avec les transits actuels, tu peux consulter l'[Oracle Karmastro](https://karmastro.com/oracle/), qui te proposera une lecture personnalisée croisant ta carte natale et le ciel du jour.
 
 Ta Lune n'est pas un détail émotionnel. C'est le cœur battant de ton intériorité. Apprends-la, honore-la, et ta paix intérieure aura enfin un langage.
 

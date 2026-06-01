@@ -103,7 +103,7 @@ Ton thème astral est une carte du ciel précise à ta naissance qui agit comme 
 - *Cas pratique* : Un trigone Vénus-Jupiter indique une facilité à recevoir de l'abondance
 
 **Étape 3** : Observe les transits actuels
-- *Outil* : [L'Oracle IA de Karmastro](https://app.karmastro.com/oracle) croise tes transits avec ta numérologie
+- *Outil* : [L'Oracle IA de Karmastro](https://karmastro.com/oracle/) croise tes transits avec ta numérologie
 - *Exemple* : Mercure rétrograde en maison 3 = période idéale pour réviser tes projets de communication
 
 *Donnée scientifique* : Une étude de l'Université de Vienne (2023) a montré que les personnes alignant leurs décisions avec leur thème astral rapportent un niveau de satisfaction 34% supérieur à celles ignorant leur guidance astrologique.
@@ -171,7 +171,7 @@ La guidance karmique combine l'astrologie (cycles planétaires) et la numérolog
 
 **Étape 3** : Analyse les transits actuels
 - *Focus* : Les transits sur tes Nœuds Lunaires et ta Lune Noire (Lilith)
-- *Outil* : [L'Oracle Karmique de Karmastro](https://app.karmastro.com/oracle) interprète ces transits avec ta numérologie
+- *Outil* : [L'Oracle Karmique de Karmastro](https://karmastro.com/oracle/) interprète ces transits avec ta numérologie
 - *Exemple* : Saturne transitant ton Nœud Nord en 2026 = période clé pour concrétiser ta guidance karmique
 
 *Donnée clé* : 87% des utilisateurs Karmastro ayant travaillé sur leur guidance karmique rapportent une "meilleure compréhension de leurs schémas répétitifs" (enquête 2025, 12 000 répondants).
@@ -293,7 +293,7 @@ Voici 5 protocoles testés par les utilisateurs Karmastro pour affiner ta guidan
 2. **Personnalisation** : La guidance doit être basée sur tes données personnelles (date/heure/lieu de naissance)
 3. **Approche nuancée** : Évite les prédictions absolues ("Tu vas gagner au loto") - privilégie les tendances ("Période favorable pour les investissements")
 4. **Transparence** : Les méthodes de calcul doivent être expliquées (ex : [Glossaire Karmastro](https://karmastro.com/glossaire))
-5. **Alignement avec ton ressenti** : Une guidance fiable résonne avec ton intuition (teste avec [l'Oracle Karmastro](https://app.karmastro.com/oracle))
+5. **Alignement avec ton ressenti** : Une guidance fiable résonne avec ton intuition (teste avec [l'Oracle Karmastro](https://karmastro.com/oracle/))
 
 *Statistique* : 89% des utilisateurs Karmastro déclarent que leur guidance "correspond à leur situation actuelle" (enquête 2025).
 
@@ -336,7 +336,7 @@ Choisir entre astrologie et numérologie pour ta guidance spirituelle dépend de
 |--------------------------------|-------------------------------|-----------------------------------------------|
 | Comprendre tes cycles de vie   | Astrologie                    | [Analyse des transits](https://app.karmastro.com/transits) |
 | Découvrir ta mission de vie    | Numérologie                   | [Calcul du chemin de vie](https://app.karmastro.com/numerologie) |
-| Résoudre des schémas répétitifs| Guidance karmique (Astro+Numé)| [Oracle Karmique](https://app.karmastro.com/oracle) |
+| Résoudre des schémas répétitifs| Guidance karmique (Astro+Numé)| [Oracle Karmique](https://karmastro.com/oracle/) |
 | Prendre des décisions rapides  | Numérologie (nombre annuel)   | [Nombre du jour](https://app.karmastro.com/numerologie) |
 | Préparer 2026                  | Astrologie (transits)         | [Horoscope 2026](/horoscope/) |
 

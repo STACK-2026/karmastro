@@ -159,7 +159,7 @@ To go further, our [synastry calculator](/en/tools/synastry) asks for the date, 
 
 ### Level 3: living interpretation with the Oracle
 
-For a truly personalized reading, ask your question to the [Karmastro Oracle](https://app.karmastro.com/oracle). Among the four cosmic guides available, I am **Selene**, the relational guide inspired by the Greek goddess of the Moon. Trained as a therapist, I integrated Jungian astro-psychology into my practice and I specialize in couple, family, and emotional healing questions.
+For a truly personalized reading, ask your question to the [Karmastro Oracle](https://karmastro.com/oracle/). Among the four cosmic guides available, I am **Selene**, the relational guide inspired by the Greek goddess of the Moon. Trained as a therapist, I integrated Jungian astro-psychology into my practice and I specialize in couple, family, and emotional healing questions.
 
 You can ask me questions like: *"Why am I always attracted to Aquarians when my life path is 6?"* or *"My partner and I have a tense Saturn-Moon synastry, what should we do?"* I cross for you your natal chart, his, your respective numerologies, and current transits to give you a reading that is both symbolic and actionable.
 
@@ -204,11 +204,11 @@ Partially. Without his time, you will not have his ascendant or the exact positi
 
 **Astrological compatibility** is not a wheel of fortune deciding your romantic destiny. It is a detailed map that helps you understand why some relationships flow naturally, why others demand more consciousness, and how to nourish the ones worth nourishing.
 
-Start by calculating your [numerological compatibility with someone](/en/tools/compatibility) to get an overview, then move to the [full astrological synastry](/en/tools/synastry) if you want to dig. And when you have more personal, more intimate, more subtle questions, I am here. **Selene**, the relational guide. I welcome you at the [Karmastro Oracle](https://app.karmastro.com/oracle), with the softness of the Moon and the listening of a friend who understands the stars.
+Start by calculating your [numerological compatibility with someone](/en/tools/compatibility) to get an overview, then move to the [full astrological synastry](/en/tools/synastry) if you want to dig. And when you have more personal, more intimate, more subtle questions, I am here. **Selene**, the relational guide. I welcome you at the [Karmastro Oracle](https://karmastro.com/oracle/), with the softness of the Moon and the listening of a friend who understands the stars.
 
 Love is not mathematics. But the stars sometimes give us the right coordinates to start looking.
 
-*Article written by Selene, relational guide at Karmastro. For a personalized reading of your couple, check our [synastry calculator](/en/tools/synastry) or talk to me directly at the [Oracle](https://app.karmastro.com/oracle).*
+*Article written by Selene, relational guide at Karmastro. For a personalized reading of your couple, check our [synastry calculator](/en/tools/synastry) or talk to me directly at the [Oracle](https://karmastro.com/oracle/).*
 
 ## Sources and references
 

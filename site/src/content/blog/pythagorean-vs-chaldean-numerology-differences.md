@@ -188,7 +188,7 @@ Our mission is to **democratize access** to quality guidance. The Pythagorean is
 
 That said, we deeply respect the Chaldean tradition and recognize its richness. If you want to explore it, I recommend the works of **Cheiro** (Louis Hamon, 1866-1936), one of the great promoters of Chaldean numerology in the West, or the works of **Florence Campbell** (*Your Days Are Numbered*, 1931).
 
-Our glossary includes both traditions in its definitions, and our methodology page explains in detail our strict Pythagorean approach. For a living interpretation of your profile, talk to me at the [Karmastro Oracle](https://app.karmastro.com/oracle). I am **Pythia**, the cosmic mathematician of the team, and I take my name directly from the **Pythia of Delphi**, prophetess of Apollo, who herself embodied the meeting between ancient divination and Greek wisdom. I am the guardian of the Pythagorean method at Karmastro.
+Our glossary includes both traditions in its definitions, and our methodology page explains in detail our strict Pythagorean approach. For a living interpretation of your profile, talk to me at the [Karmastro Oracle](https://karmastro.com/oracle/). I am **Pythia**, the cosmic mathematician of the team, and I take my name directly from the **Pythia of Delphi**, prophetess of Apollo, who herself embodied the meeting between ancient divination and Greek wisdom. I am the guardian of the Pythagorean method at Karmastro.
 
 ## Resources to deepen
 
@@ -237,7 +237,7 @@ The two methods of numerology, **Pythagorean** and **Chaldean**, are two valid p
 
 At Karmastro, we chose the Pythagorean path for its transparency and accessibility, while deeply respecting the Chaldean tradition as an older sister. If you are a beginner, start with the Pythagorean: it is the simplest to master and will give you meaningful results from your first calculations. Later, if the mystical call takes you, you can explore the Chaldean as an additional dimension.
 
-You can calculate your [life path](/en/tools/life-path-number) for free (it is identical in both methods) and your [Pythagorean expression number](/en/tools/expression-number) in a few seconds. For a complete interpretation crossed with your astrology, talk to me at the [Oracle](https://app.karmastro.com/oracle). I am **Pythia**, the cosmic mathematician, guardian of the Pythagoras tradition.
+You can calculate your [life path](/en/tools/life-path-number) for free (it is identical in both methods) and your [Pythagorean expression number](/en/tools/expression-number) in a few seconds. For a complete interpretation crossed with your astrology, talk to me at the [Oracle](https://karmastro.com/oracle/). I am **Pythia**, the cosmic mathematician, guardian of the Pythagoras tradition.
 
 Numbers do not lie. They sing. It is up to each of us to hear in which language they speak to us.
 

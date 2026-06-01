@@ -75,7 +75,7 @@ Contrairement aux clichés ("timide", "pleurnichard"), le Cancer est avant tout 
   - **2e décan (1-11 juillet)** : Lune + Pluton → intensité émotionnelle.
   - **3e décan (12-22 juillet)** : Lune + Neptune → créativité et spiritualité.
 
-*Calcule ton décan précis avec [l’Oracle IA de Karmastro](https://app.karmastro.com/oracle).*
+*Calcule ton décan précis avec [l’Oracle IA de Karmastro](https://karmastro.com/oracle/).*
 
 ---
 
@@ -191,7 +191,7 @@ Contrairement aux stéréotypes, l’**homme Cancer** est **ultra-émotif** - ma
 **Cas pratique** :
 > *"Un couple Cancer-Bélier peut fonctionner… à condition que le Bélier apprenne à **tourner 7 fois sa langue avant de parler**, et que le Cancer accepte de **sortir de sa zone de confort**."*
 
-*Teste ta compatibilité avec [l’Oracle IA de Karmastro](https://app.karmastro.com/oracle).*
+*Teste ta compatibilité avec [l’Oracle IA de Karmastro](https://karmastro.com/oracle/).*
 
 ---
 
@@ -414,7 +414,7 @@ Le **Cancer** est bien plus qu’un signe "émotif" : c’est un **stratège de 
 
 **Prêt à explorer ton thème natal ?**
 - [Calcule ton **profil cosmique complet** sur Karmastro](https://app.karmastro.com) (astrologie + numérologie + guidance karmique).
-- [Pose une question à l’**Oracle IA**](https://app.karmastro.com/oracle) pour des réponses personnalisées.
+- [Pose une question à l’**Oracle IA**](https://karmastro.com/oracle/) pour des réponses personnalisées.
 
 *"Le Cancer n’est pas fragile - il est **résilient comme la marée**, qui revient toujours, quoi qu’il arrive."*
 

@@ -158,7 +158,7 @@ Ja, wenn der Orbis stimmt. Ein Planet auf 29° Widder und ein anderer auf 2° Kr
 
 ## Weiter gehen
 
-Die Aspekte sind die dynamischste Dimension deiner Karte. Berechne deinen [Aszendenten](/de/werkzeuge/aszendent) und dein [vollständiges Geburtshoroskop](/de/werkzeuge/geburtshoroskop). Für eine personalisierte Lektüre deiner wichtigsten Aspekte konsultiere das [Oracle Karmastro](https://app.karmastro.com/oracle).
+Die Aspekte sind die dynamischste Dimension deiner Karte. Berechne deinen [Aszendenten](/de/werkzeuge/aszendent) und dein [vollständiges Geburtshoroskop](/de/werkzeuge/geburtshoroskop). Für eine personalisierte Lektüre deiner wichtigsten Aspekte konsultiere das [Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## Quellen und Referenzen
 

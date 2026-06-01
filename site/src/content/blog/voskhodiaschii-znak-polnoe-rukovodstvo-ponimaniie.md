@@ -129,7 +129,7 @@ reviewedBy: "Орион, старший астроном и астролог"
 
 ## Идти дальше
 
-Твой восходящий , это только один слой. Обратись к [Oracle Karmastro](https://app.karmastro.com/oracle).
+Твой восходящий , это только один слой. Обратись к [Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## Источники и ссылки
 

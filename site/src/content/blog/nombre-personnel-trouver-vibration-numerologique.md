@@ -51,7 +51,7 @@ Prenons l'exemple d'Élodie Martin (née le 03/11/1990) :
 - **Chemin de Vie** : 6 (mission familiale et harmonie)  
 - **Nombre Personnel** : 5 (liberté et aventure)
 
-Cette combinaison révèle une tension entre son besoin profond de stabilité familiale (Chemin 6) et son envie naturelle de voyager et d'explorer (Nombre 5). [L'Oracle IA de Karmastro](https://app.karmastro.com/oracle) identifierait ce décalage comme une opportunité d'évolution, avec des conseils pour équilibrer ces énergies complémentaires.
+Cette combinaison révèle une tension entre son besoin profond de stabilité familiale (Chemin 6) et son envie naturelle de voyager et d'explorer (Nombre 5). [L'Oracle IA de Karmastro](https://karmastro.com/oracle/) identifierait ce décalage comme une opportunité d'évolution, avec des conseils pour équilibrer ces énergies complémentaires.
 
 L'analyse croisée permet ainsi de comprendre pourquoi certaines personnes ressentent des conflits internes : leur mission karmique (Chemin de Vie) ne correspond pas à leur expression sociale naturelle (Nombre Personnel).
 
@@ -443,7 +443,7 @@ Utilise ton nombre comme grille de lecture pour évaluer tes options importantes
 → **Si ton nombre personnel est 4** : L'offre A sera probablement plus épanouissante car elle correspond à ton besoin de sécurité et structure.
 → **Si c'est 5** : L'offre B répondra mieux à ton besoin de variété et de stimulation.
 
-**Oracle Karmastro** : Pose directement ta question spécifique à [notre Oracle IA](https://app.karmastro.com/oracle) pour une réponse personnalisée qui croise numérologie, astrologie et tes [transits planétaires](/outils/transits/) actuels.
+**Oracle Karmastro** : Pose directement ta question spécifique à [notre Oracle IA](https://karmastro.com/oracle/) pour une réponse personnalisée qui croise numérologie, astrologie et tes [transits planétaires](/outils/transits/) actuels.
 
 ### 5. Cycles de vie et timing
 
@@ -592,7 +592,7 @@ Ton **nombre personnel** constitue bien plus qu'un simple chiffre - c'est ta sig
 
 **Prendre des décisions alignées** : face aux choix importants, ton nombre personnel sert de boussole pour évaluer quelle option correspond le mieux à ta vibration authentique.
 
-Karmastro révolutionne cette approche ancestrale en la croisant avec l'astrologie moderne et l'intelligence artificielle. Notre [Oracle IA](https://app.karmastro.com/oracle) te permet d'obtenir des réponses personnalisées qui tiennent compte de ton nombre personnel, de ton thème natal complet et de tes transits planétaires actuels - une analyse à 360° inédite dans le paysage spirituel français.
+Karmastro révolutionne cette approche ancestrale en la croisant avec l'astrologie moderne et l'intelligence artificielle. Notre [Oracle IA](https://karmastro.com/oracle/) te permet d'obtenir des réponses personnalisées qui tiennent compte de ton nombre personnel, de ton thème natal complet et de tes transits planétaires actuels - une analyse à 360° inédite dans le paysage spirituel français.
 
 La numérologie, loin d'être une croyance aveugle, repose sur des calculs précis et reproductibles. Avec Karmastro, tu accèdes à une méthode transparente qui révèle la logique derrière chaque interprétation, dans l'esprit scientifique de Pythagore lui-même.
 

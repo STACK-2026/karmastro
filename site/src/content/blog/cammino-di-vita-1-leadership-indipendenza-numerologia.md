@@ -161,7 +161,7 @@ No. Il cammino è fissato dalla data di nascita e non si muove. Solo i numeri se
 
 ## 15. Per approfondire
 
-Prima di tutto, se hai dubbi sul calcolo, rileggi la nostra [guida passo passo al metodo pitagorico](/it/blog/come-calcolare-cammino-di-vita-passo-passo). Una volta confermato il tuo cammino, incrocia con il tuo tema natale usando il nostro [calcolatore gratuito](/it/strumenti/) basato su Swiss Ephemeris: un cammino 1 con Sole in Ariete non vive la stessa missione di un cammino 1 con Sole in Pesci. Leggi anche la nostra [guida all'ascendente](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico) per capire come la tua maschera sociale amplifica o tempera la tua vibrazione numerologica. E per una lettura viva, adattata al tuo momento presente, consulta l'[Oracle Karmastro](https://app.karmastro.com/oracle), che incrocia numerologia e astrologia in tempo reale.
+Prima di tutto, se hai dubbi sul calcolo, rileggi la nostra [guida passo passo al metodo pitagorico](/it/blog/come-calcolare-cammino-di-vita-passo-passo). Una volta confermato il tuo cammino, incrocia con il tuo tema natale usando il nostro [calcolatore gratuito](/it/strumenti/) basato su Swiss Ephemeris: un cammino 1 con Sole in Ariete non vive la stessa missione di un cammino 1 con Sole in Pesci. Leggi anche la nostra [guida all'ascendente](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico) per capire come la tua maschera sociale amplifica o tempera la tua vibrazione numerologica. E per una lettura viva, adattata al tuo momento presente, consulta l'[Oracle Karmastro](https://karmastro.com/oracle/), che incrocia numerologia e astrologia in tempo reale.
 
 ## Fonti e riferimenti
 

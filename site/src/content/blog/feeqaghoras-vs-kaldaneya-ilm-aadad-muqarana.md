@@ -403,7 +403,7 @@ Karmastro اعتمد الفيثاغورية الصارمة لأنها الأكث
 
 - احسب [رقم مسار حياتك](/ar/adawat/raqm-masar-al-hayat) الآن.
 - استكشف [حاسبة الطالع](/ar/adawat/al-taaali).
-- جرّب [Oracle Karmastro](https://app.karmastro.com/oracle) للعمق الروحي.
+- جرّب [Oracle Karmastro](https://karmastro.com/oracle/) للعمق الروحي.
 - اقرأ [حساب مسار الحياة الفيثاغوري](/ar/blog/hisab-masar-hayat-tareeqa-feeqaghoras).
 - افهم [رقم التعبير من اسمك](/ar/blog/raqm-taabir-ismak-kamel-ilm-aadad).
 - اقرأ [السنة الشخصية 2026](/ar/blog/sana-shakhseya-2026-hisab-maana).

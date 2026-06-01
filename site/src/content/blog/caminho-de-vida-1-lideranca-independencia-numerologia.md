@@ -183,7 +183,7 @@ Depende da capacidade de transmitir. Um 1 que aprende a passar o testemunho aos 
 
 ## 16. Para ir mais longe
 
-Conhecer o teu caminho de vida é um excelente ponto de partida, mas a numerologia ganha toda a sua profundidade quando a cruzas com a tua carta astral. Começa pelo nosso [calculador de mapa astral gratuito](/pt/ferramentas/) e combina os dois olhares. Lê também o [guia do ascendente](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente) para descobrir como te apresentas ao mundo, e o [guia do signo de Carneiro](/pt/blog/carneiro-signo-zodiacal-personalidade-compatibilidade) se também tens Sol ou Lua em Carneiro, combinação frequente com o caminho 1. Para uma leitura interativa personalizada, o [Oracle Karmastro](https://app.karmastro.com/oracle) cruza astrologia e numerologia em tempo real.
+Conhecer o teu caminho de vida é um excelente ponto de partida, mas a numerologia ganha toda a sua profundidade quando a cruzas com a tua carta astral. Começa pelo nosso [calculador de mapa astral gratuito](/pt/ferramentas/) e combina os dois olhares. Lê também o [guia do ascendente](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente) para descobrir como te apresentas ao mundo, e o [guia do signo de Carneiro](/pt/blog/carneiro-signo-zodiacal-personalidade-compatibilidade) se também tens Sol ou Lua em Carneiro, combinação frequente com o caminho 1. Para uma leitura interativa personalizada, o [Oracle Karmastro](https://karmastro.com/oracle/) cruza astrologia e numerologia em tempo real.
 
 ## Fontes e referencias
 

@@ -89,7 +89,7 @@ Prenons l'exemple d'une personne avec un **Nœud Sud en Cancer en maison 4** :
 - **Dettes karmiques** : Elle peut avoir des dettes liées à des relations familiales non résolues ou à un besoin excessif de sécurité affective. Par exemple, elle peut reproduire des schémas de dépendance affective avec ses partenaires ou ses enfants.
 - **Mission actuelle** : Dans cette incarnation, son âme l'invite à utiliser ces talents de manière équilibrée, sans tomber dans la dépendance affective ou l'isolement. Elle doit apprendre à exprimer ses émotions de manière saine et à créer un foyer qui soit un espace de croissance plutôt qu'une prison.
 
-Pour identifier tes schémas liés au Nœud Sud, Karmastro propose un [module d'analyse karmique](https://app.karmastro.com/oracle) qui croise ta position nodale avec ton thème natal complet. Ce module t'aide à repérer les situations où tu réagis de manière automatique (par exemple, en évitant les conflits ou en cherchant constamment l'approbation des autres) et te donne des pistes pour agir différemment. Par exemple, si tu as un Nœud Sud en Vierge, l'outil peut te suggérer de lâcher prise sur le perfectionnisme et de t'autoriser à faire des erreurs.
+Pour identifier tes schémas liés au Nœud Sud, Karmastro propose un [module d'analyse karmique](https://karmastro.com/oracle/) qui croise ta position nodale avec ton thème natal complet. Ce module t'aide à repérer les situations où tu réagis de manière automatique (par exemple, en évitant les conflits ou en cherchant constamment l'approbation des autres) et te donne des pistes pour agir différemment. Par exemple, si tu as un Nœud Sud en Vierge, l'outil peut te suggérer de lâcher prise sur le perfectionnisme et de t'autoriser à faire des erreurs.
 
 ### Exercice pour transcender ton Nœud Sud
 Voici un exercice concret pour t'aider à prendre conscience de tes schémas liés au Nœud Sud et à les transcender. Cet exercice est inspiré des travaux de **Jan Spiller** et adapté par Karmastro pour une approche plus pratique :
@@ -145,7 +145,7 @@ Pour activer son Nœud Nord en Balance, cette personne pourrait suivre ces conse
 - **S'engager dans des projets collaboratifs** : Rejoindre une équipe de travail, une association ou un club pour développer son sens de la coopération. Par exemple, elle pourrait s'inscrire à un cours de danse en couple ou participer à un projet de groupe dans son entreprise.
 - **Explorer des activités artistiques** : La Balance est un signe lié à l'art et à l'esthétique. Pratiquer la peinture, la musique ou la danse peut l'aider à développer son sens de l'harmonie. Par exemple, elle pourrait s'inscrire à un cours de peinture ou rejoindre une chorale.
 
-L'Oracle IA de Karmastro génère des [recommandations personnalisées](https://app.karmastro.com/oracle) pour activer ton Nœud Nord en fonction de ton thème complet. Par exemple, si tu as un Nœud Nord en Balance, l'Oracle pourrait te suggérer des exercices pour améliorer ta communication, des lectures sur la gestion des conflits ou des activités pour développer ton sens de l'équilibre.
+L'Oracle IA de Karmastro génère des [recommandations personnalisées](https://karmastro.com/oracle/) pour activer ton Nœud Nord en fonction de ton thème complet. Par exemple, si tu as un Nœud Nord en Balance, l'Oracle pourrait te suggérer des exercices pour améliorer ta communication, des lectures sur la gestion des conflits ou des activités pour développer ton sens de l'équilibre.
 
 ---
 

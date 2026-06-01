@@ -221,7 +221,7 @@ No. El Sol en Aries es un elemento capital pero incompleto. Necesitas al menos e
 
 Conocer tu signo solar Aries es un comienzo, no un final. Tu carta natal contiene nueve planetas más, doce casas y numerosos aspectos que matizan o intensifican tu naturaleza Aries. Para una imagen completa, usa el [calculador de carta natal de Karmastro](/es/herramientas/) que genera tu mapa astral en unos segundos.
 
-Si quieres un diálogo vivo con tu carta, el [Oracle Karmastro](https://app.karmastro.com/oracle) conecta tus datos astrales con los tránsitos del momento y te da una lectura personalizada. Y para entender cómo tu ascendente modifica tu naturaleza Aries, lee la [guía del ascendente](/es/blog/signo-ascendente-guia-completa-comprender-ascendente).
+Si quieres un diálogo vivo con tu carta, el [Oracle Karmastro](https://karmastro.com/oracle/) conecta tus datos astrales con los tránsitos del momento y te da una lectura personalizada. Y para entender cómo tu ascendente modifica tu naturaleza Aries, lee la [guía del ascendente](/es/blog/signo-ascendente-guia-completa-comprender-ascendente).
 
 Tu Aries es un don: una chispa inaugural que el mundo necesita. Cuidarla es tu responsabilidad.
 

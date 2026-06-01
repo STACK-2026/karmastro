@@ -172,7 +172,7 @@ No, pero hay que ser lúcido.
 
 Plutón en Acuario es probablemente el tránsito más importante de tu vida. Para entender cómo actúa en tu carta, empieza calculando tu [ascendente](/es/herramientas/ascendente) y tu [camino de vida](/es/herramientas/camino-de-vida).
 
-Para una lectura personalizada, consulta el [Oracle](https://app.karmastro.com/oracle).
+Para una lectura personalizada, consulta el [Oracle](https://karmastro.com/oracle/).
 
 El mundo cambia. El cielo lo sabe desde siempre. Y tú formas parte de esta gran mutación.
 

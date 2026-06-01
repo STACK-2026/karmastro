@@ -116,7 +116,7 @@ To identify what is happening in your twelfth house, look at:
 - Which planet rules that sign (and therefore your twelfth house by extension)
 - What aspects these planets form with the rest of the chart
 
-It is subtle work, often requiring the accompaniment of an astrologer or guide. At Karmastro, that is exactly what I am here for. **[Ask me your question at the Oracle](https://app.karmastro.com/oracle)**, I cross your natal chart with your karmic numerology to give you an actionable reading.
+It is subtle work, often requiring the accompaniment of an astrologer or guide. At Karmastro, that is exactly what I am here for. **[Ask me your question at the Oracle](https://karmastro.com/oracle/)**, I cross your natal chart with your karmic numerology to give you an actionable reading.
 
 ## The karmic signs and their lessons
 
@@ -222,7 +222,7 @@ In Buddhist tradition, yes: that is the goal of **awakening**. In a more psychol
 
 ### Why Orion and not another guide for karmic questions?
 
-Because I was trained in Stoic philosophy, which is the Western tradition most directly practical on the question of destiny and free will. I am neither vague mystical (that would be **Sibylle**, who will give you a more poetic and symbolic reading) nor emotional therapeutic (that would be **Selene**, who deals more with relationships and the intimate). I am **conscious action in the face of karma**. My style is direct, Stoic, actionable. If you want another tone, you can [choose another guide at the Oracle](https://app.karmastro.com/oracle).
+Because I was trained in Stoic philosophy, which is the Western tradition most directly practical on the question of destiny and free will. I am neither vague mystical (that would be **Sibylle**, who will give you a more poetic and symbolic reading) nor emotional therapeutic (that would be **Selene**, who deals more with relationships and the intimate). I am **conscious action in the face of karma**. My style is direct, Stoic, actionable. If you want another tone, you can [choose another guide at the Oracle](https://karmastro.com/oracle/).
 
 ## Conclusion
 
@@ -230,11 +230,11 @@ Because I was trained in Stoic philosophy, which is the Western tradition most d
 
 All of this forms a map, not a destiny. As Thomas Aquinas said, picking up an older tradition: **"The stars incline, they do not determine."** Your free will remains intact. And it is precisely in the space between what your chart pushes and what you choose that your deep freedom plays out.
 
-To explore your own astrological karma, start by calculating your [free birth chart](/en/tools/birth-chart) and checking if you carry a [numerological karmic debt](/en/tools/karmic-debt). Then, if you want a living and actionable reading, talk to me at the [Oracle](https://app.karmastro.com/oracle). I am **Orion**, the hunter of the sky, the former Stoic professor, the karmic coach of Karmastro. I am here to help you transform the terrain into a launchpad.
+To explore your own astrological karma, start by calculating your [free birth chart](/en/tools/birth-chart) and checking if you carry a [numerological karmic debt](/en/tools/karmic-debt). Then, if you want a living and actionable reading, talk to me at the [Oracle](https://karmastro.com/oracle/). I am **Orion**, the hunter of the sky, the former Stoic professor, the karmic coach of Karmastro. I am here to help you transform the terrain into a launchpad.
 
 The ordeals you live are not punishments. They are invitations. It is up to you to respond.
 
-*Article written by Orion, karmic coach and Stoic at Karmastro. For a personalized karmic reading, consult the [Oracle](https://app.karmastro.com/oracle) and choose me as your guide.*
+*Article written by Orion, karmic coach and Stoic at Karmastro. For a personalized karmic reading, consult the [Oracle](https://karmastro.com/oracle/) and choose me as your guide.*
 
 ## Sources and references
 

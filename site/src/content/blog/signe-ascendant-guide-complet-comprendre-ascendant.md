@@ -264,7 +264,7 @@ Oui, indirectement. Ton ascendant détermine la maison 10 (carrière, vocation p
 
 ## Pour aller plus loin
 
-Ton ascendant n'est qu'une des couches de ta carte natale. Pour avoir une vision complète, il te faut ton [thème natal interprété en profondeur](/blog/theme-natal-gratuit-interpreter-carte-du-ciel). Et si tu veux comprendre comment ton ascendant dialogue avec les transits planétaires actuels, l'[Oracle Karmastro](https://app.karmastro.com/oracle) peut croiser ta carte avec les mouvements célestes du moment et te donner une lecture personnalisée.
+Ton ascendant n'est qu'une des couches de ta carte natale. Pour avoir une vision complète, il te faut ton [thème natal interprété en profondeur](/blog/theme-natal-gratuit-interpreter-carte-du-ciel). Et si tu veux comprendre comment ton ascendant dialogue avec les transits planétaires actuels, l'[Oracle Karmastro](https://karmastro.com/oracle/) peut croiser ta carte avec les mouvements célestes du moment et te donner une lecture personnalisée.
 
 Ton ascendant n'est pas un détail. C'est la porte par laquelle ton âme a choisi d'entrer dans cette vie. Apprendre à la connaître, c'est apprendre à habiter ton incarnation avec plus de justesse. C'est cesser de te battre contre la façon dont les autres te perçoivent, et commencer à utiliser consciemment ce que tu irradies.
 

@@ -229,7 +229,7 @@ Sí, si lo usas de manera habitual. Producirá una vibración adicional. Pero el
 
 El número de expresión es uno de los pilares de tu numerología personal, junto con tu [camino de vida](/es/blog/como-calcular-camino-de-vida-paso-a-paso) y tu [signo ascendente](/es/blog/signo-ascendente-guia-completa-comprender-ascendente). Los tres juntos dan un retrato tridimensional mucho más preciso que cualquiera de ellos solo.
 
-Para una lectura personalizada cruzando tu número de expresión con tus tránsitos planetarios actuales, el [Oracle Karmastro](https://app.karmastro.com/oracle) te ofrece una interpretación completa. Y para descubrir el color del día según tu numerología, consulta tu [horóscopo diario](/es/horoscope).
+Para una lectura personalizada cruzando tu número de expresión con tus tránsitos planetarios actuales, el [Oracle Karmastro](https://karmastro.com/oracle/) te ofrece una interpretación completa. Y para descubrir el color del día según tu numerología, consulta tu [horóscopo diario](/es/horoscope).
 
 ## Fuentes y referencias
 

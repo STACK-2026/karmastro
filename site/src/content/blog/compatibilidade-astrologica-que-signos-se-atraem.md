@@ -142,7 +142,7 @@ O mapa composto é uma técnica avançada que calcula os pontos médios entre os
 
 ### Nível 4: interpretação viva com o Oracle
 
-A interpretação cruzada exige experiência. Sou **Selene**, a guia relacional no [Oracle Karmastro](https://app.karmastro.com/oracle). Trabalho a camada relacional do Oracle cruzando sinastria, mapa composto e dados numerológicos em linguagem natural.
+A interpretação cruzada exige experiência. Sou **Selene**, a guia relacional no [Oracle Karmastro](https://karmastro.com/oracle/). Trabalho a camada relacional do Oracle cruzando sinastria, mapa composto e dados numerológicos em linguagem natural.
 
 ## 14. Três casos concretos de sinastria
 
@@ -177,7 +177,7 @@ Não exatamente. Para amizade os aspetos de Mercúrio, Júpiter e Lua são mais 
 
 ## 16. Para ir mais longe
 
-A compatibilidade astrológica não é uma roda da fortuna. É um mapa detalhado que precisa de leitura atenta. Começa calculando o teu [caminho de vida numerológico](/pt/ferramentas/numero-do-caminho-de-vida) e o do teu parceiro para uma primeira pista. Explora depois o teu próprio mapa astral no nosso [calculador gratuito](/pt/ferramentas/). Para uma leitura sinástrica viva, com duas cartas cruzadas e interpretação em linguagem natural, fala comigo no [Oracle Karmastro](https://app.karmastro.com/oracle).
+A compatibilidade astrológica não é uma roda da fortuna. É um mapa detalhado que precisa de leitura atenta. Começa calculando o teu [caminho de vida numerológico](/pt/ferramentas/numero-do-caminho-de-vida) e o do teu parceiro para uma primeira pista. Explora depois o teu próprio mapa astral no nosso [calculador gratuito](/pt/ferramentas/). Para uma leitura sinástrica viva, com duas cartas cruzadas e interpretação em linguagem natural, fala comigo no [Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## Fontes e referencias
 

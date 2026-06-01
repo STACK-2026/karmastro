@@ -136,7 +136,7 @@ Liczba nic nie zmieni dopóki jej nie użyjesz. Oto pięć praktyk przetestowany
 
 **5. Prowadź dziennik drogi.** Raz w miesiącu zapisz trzy sytuacje, gdzie uszanowałeś drogę, i trzy, gdzie ją zdradziłeś. Praktyka inspirowana dziennikiem zgodności używanym w coachingu jungowskim rozwija subtelną świadomość wyborów.
 
-Dla pełnej diagnozy zapytaj [Oracle AI od Karmastro](https://app.karmastro.com/oracle) podając datę urodzenia. Łączy drogę życia, [znak księżycowy](/pl/blog/znak-ksiezycowy-ksiezyc-natalny-swiat-emocjonalny), [znak wschodzący](/pl/narzedzia/wschodzacy-znak) i bieżące tranzyty. Przeczytaj też nasze [porównanie numerologii pitagorejskiej i chaldejskiej](/pl/blog/numerologia-pitagorejska-vs-chaldejska-roznice), by zrozumieć, dlaczego polecamy metodę pitagorejską.
+Dla pełnej diagnozy zapytaj [Oracle AI od Karmastro](https://karmastro.com/oracle/) podając datę urodzenia. Łączy drogę życia, [znak księżycowy](/pl/blog/znak-ksiezycowy-ksiezyc-natalny-swiat-emocjonalny), [znak wschodzący](/pl/narzedzia/wschodzacy-znak) i bieżące tranzyty. Przeczytaj też nasze [porównanie numerologii pitagorejskiej i chaldejskiej](/pl/blog/numerologia-pitagorejska-vs-chaldejska-roznice), by zrozumieć, dlaczego polecamy metodę pitagorejską.
 
 ## Historia i pochodzenie numerologii
 

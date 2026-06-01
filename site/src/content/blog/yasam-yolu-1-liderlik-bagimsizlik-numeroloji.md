@@ -151,7 +151,7 @@ Yaşam yolu 1 numerolojik profilinin sadece ilk katmanıdır. Tam bir resim içi
 
 [Yükselen burcun](/tr/blog/yukselen-burc-tam-rehber-yukselen-anlama) da yaşam yolu 1'i inceltir: örneğin Oğlak yükselen bir yaşam yolu 1, disiplinli ve stratejik bir liderdir; Balık yükselen bir yaşam yolu 1 ise daha sezgisel ve sanatsal bir liderdir. [Satürn dönüşün](/tr/blog/saturn-donusu-29-yas-buyuk-yetiskinlik-gecisi) 29 yaş civarı bu sayının gerçek misyonunun kristalleştiği dönem olur.
 
-[Doğum haritanla](/tr/araclar/dogum-haritasi) numerolojiyi çaprazla: Güneş burcun, yükselenin ve ay burcun yaşam yolu 1'le nasıl rezonansa girer. [Numeroloji nedir tam başlangıç rehberi](/tr/blog/numeroloji-nedir-tam-baslangic-rehberi) tüm sistemin temellerini tek yerde toparlar. Kişiselleştirilmiş yorumlama için [Oracle Karmastro](https://app.karmastro.com/oracle)'ya danışabilirsin.
+[Doğum haritanla](/tr/araclar/dogum-haritasi) numerolojiyi çaprazla: Güneş burcun, yükselenin ve ay burcun yaşam yolu 1'le nasıl rezonansa girer. [Numeroloji nedir tam başlangıç rehberi](/tr/blog/numeroloji-nedir-tam-baslangic-rehberi) tüm sistemin temellerini tek yerde toparlar. Kişiselleştirilmiş yorumlama için [Oracle Karmastro](https://karmastro.com/oracle/)'ya danışabilirsin.
 
 ## Kaynaklar ve referanslar
 

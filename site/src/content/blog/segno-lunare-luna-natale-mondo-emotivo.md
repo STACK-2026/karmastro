@@ -213,7 +213,7 @@ L'astrologia non propone una causalità fisica tra Luna e psiche. Propone una co
 
 ## Andare oltre
 
-La tua Luna natale fa parte di un tutto. Per una visione completa, hai bisogno della tua [carta natale interpretata](/it/strumenti/tema-natale), incrociata con il tuo [ascendente](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico) e le tue 12 case astrologiche. Per una lettura personalizzata, consulta l'[Oracle Karmastro](https://app.karmastro.com/oracle).
+La tua Luna natale fa parte di un tutto. Per una visione completa, hai bisogno della tua [carta natale interpretata](/it/strumenti/tema-natale), incrociata con il tuo [ascendente](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico) e le tue 12 case astrologiche. Per una lettura personalizzata, consulta l'[Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## Fonti e riferimenti
 

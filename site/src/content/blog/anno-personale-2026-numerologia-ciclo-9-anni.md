@@ -172,7 +172,7 @@ Sì, ed è uno dei suoi usi più pratici. Lancia i grandi progetti in anno 1. Co
 
 ## 18. Per approfondire
 
-Prima di tutto, conferma il tuo calcolo leggendo la nostra [guida passo passo al metodo pitagorico](/it/blog/come-calcolare-cammino-di-vita-passo-passo), che spiega gli stessi principi base. Calcola poi il tuo cammino di vita gratuitamente con il nostro [calcolatore](/it/strumenti/), e incrocia cammino e anno personale per una lettura davvero ricca. Per una lettura viva del tuo momento presente, con incrocio automatico tra anno personale e transiti astrologici reali, consulta l'[Oracle Karmastro](https://app.karmastro.com/oracle).
+Prima di tutto, conferma il tuo calcolo leggendo la nostra [guida passo passo al metodo pitagorico](/it/blog/come-calcolare-cammino-di-vita-passo-passo), che spiega gli stessi principi base. Calcola poi il tuo cammino di vita gratuitamente con il nostro [calcolatore](/it/strumenti/), e incrocia cammino e anno personale per una lettura davvero ricca. Per una lettura viva del tuo momento presente, con incrocio automatico tra anno personale e transiti astrologici reali, consulta l'[Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## Fonti e riferimenti
 

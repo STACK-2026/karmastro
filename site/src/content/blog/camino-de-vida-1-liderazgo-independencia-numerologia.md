@@ -193,7 +193,7 @@ Indirectamente. El 1 estresado por la falta de libertad desarrolla a menudo tens
 
 ## Ir más lejos
 
-Tu camino de vida es una de las piezas centrales de tu mapa numerológico, pero no es la única. Cruza este resultado con tu [carta natal completa](/es/herramientas/) para ver cómo tu número 1 dialoga con tu Sol, tu Luna y tu ascendente. Si quieres una lectura viva y personalizada, el [Oracle Karmastro](https://app.karmastro.com/oracle) puede tejer tu numerología con tus tránsitos astrológicos actuales.
+Tu camino de vida es una de las piezas centrales de tu mapa numerológico, pero no es la única. Cruza este resultado con tu [carta natal completa](/es/herramientas/) para ver cómo tu número 1 dialoga con tu Sol, tu Luna y tu ascendente. Si quieres una lectura viva y personalizada, el [Oracle Karmastro](https://karmastro.com/oracle/) puede tejer tu numerología con tus tránsitos astrológicos actuales.
 
 Y si dudas de tu cálculo, vuelve al método pitagórico detallado en [cómo calcular tu camino de vida paso a paso](/es/blog/como-calcular-camino-de-vida-paso-a-paso). Dos minutos de cálculo, toda una vida para recorrer ese número.
 

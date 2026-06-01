@@ -240,7 +240,7 @@ Direkt nein, indirekt ja. Das Geburtshoroskop zeigt deine Potenziale und deine M
 
 Das Geburtshoroskop ist der Schlüssel zur personalisierten Astrologie. Sobald du es beherrschst, verlierst du das Interesse an vagen Pressehoroskopen und beginnst, deine persönlichen Transite und deine Synastrien zu lesen. Beginne mit unserem [kostenlosen Geburtshoroskop-Rechner](/de/werkzeuge/), der auf Swiss Ephemeris und NASA-JPL-Präzision basiert. Um die Kunst des Aszendenten zu vertiefen, lies unseren [vollständigen Leitfaden zum Aszendenten](/de/blog/aszendent-vollstaendiger-leitfaden-verstehen).
 
-Für eine lebendige, personalisierte Lesung deiner Karte, konsultiere das [Oracle Karmastro](https://app.karmastro.com/oracle). Unsere vier Begleiter (Sibylle, Selene, Orion, Pythia) lesen deine Karte in Echtzeit und beantworten deine Fragen mit der Tiefe, die ein algorithmischer Text nicht geben kann. Und vergiss nicht, jeden Morgen dein [Tageshoroskop](/de/horoscope) zu lesen, um die aktiven Transite zu erfassen.
+Für eine lebendige, personalisierte Lesung deiner Karte, konsultiere das [Oracle Karmastro](https://karmastro.com/oracle/). Unsere vier Begleiter (Sibylle, Selene, Orion, Pythia) lesen deine Karte in Echtzeit und beantworten deine Fragen mit der Tiefe, die ein algorithmischer Text nicht geben kann. Und vergiss nicht, jeden Morgen dein [Tageshoroskop](/de/horoscope) zu lesen, um die aktiven Transite zu erfassen.
 
 ## Quellen und Referenzen
 

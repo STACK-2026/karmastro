@@ -212,7 +212,7 @@ Cruzar é a base da leitura séria. Se são o mesmo número, tens alinhamento fo
 
 ## Ir mais longe
 
-Cruza o teu número de expressão com o teu [caminho de vida](/pt/ferramentas/numero-do-caminho-de-vida), ferramenta gratuita que calcula ambos em segundos. Para uma leitura personalizada que articule estas dimensões com a tua pergunta atual, consulta o [Oracle Karmastro](https://app.karmastro.com/oracle), que integra várias vozes especializadas (Sibylle, Orion, Selene, Pythia).
+Cruza o teu número de expressão com o teu [caminho de vida](/pt/ferramentas/numero-do-caminho-de-vida), ferramenta gratuita que calcula ambos em segundos. Para uma leitura personalizada que articule estas dimensões com a tua pergunta atual, consulta o [Oracle Karmastro](https://karmastro.com/oracle/), que integra várias vozes especializadas (Sibylle, Orion, Selene, Pythia).
 
 O teu nome não é acaso. Todos os dias, pessoas à tua volta pronunciam-no, escrevem-no, memorizam-no. Essa repetição constrói uma vibração ao longo da vida. Conhecer o número de expressão que o teu nome carrega é um dos gestos mais simples e mais profundos de autoconhecimento que a tradição numerológica oferece.
 

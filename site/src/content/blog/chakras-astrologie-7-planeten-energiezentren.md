@@ -175,14 +175,14 @@ Nein. Die Chakras sind ein nützliches Modell, ein Raster, um die Realität zu l
 Ja, völlig. Das Chakra-System existierte tausendfach vor der westlichen Astrologie. Der Mehrwert der kombinierten Lektüre ist die Personalisierung: deine Karte zeigt, auf welche Chakras du prioritär arbeiten solltest, anstatt das generische Programm aller sieben abzuarbeiten.
 
 **Welche Ressource für den Start?**
-Beginne mit dem Lesen deiner Karte, um deine drei gespanntesten Planeten zu identifizieren. Anschließend wähle einen dieser Planeten und arbeite drei Monate lang auf dem entsprechenden Chakra. Berechne dein [Geburtshoroskop](/de/werkzeuge/geburtshoroskop) und konsultiere das [Oracle Karmastro](https://app.karmastro.com/oracle) für eine personalisierte Lektüre.
+Beginne mit dem Lesen deiner Karte, um deine drei gespanntesten Planeten zu identifizieren. Anschließend wähle einen dieser Planeten und arbeite drei Monate lang auf dem entsprechenden Chakra. Berechne dein [Geburtshoroskop](/de/werkzeuge/geburtshoroskop) und konsultiere das [Oracle Karmastro](https://karmastro.com/oracle/) für eine personalisierte Lektüre.
 
 **Gibt es Widersprüche zwischen östlicher und westlicher Zuschreibung?**
 Ja, manche. Die jyotish hat ihre eigene Planeten-Chakra-Zuordnung, die sich leicht von der westlichen hermetischen Synthese unterscheidet. Für die Anfänger-Praxis empfehlen wir die westliche Synthese, weil sie mit deiner westlichen Geburtskarte koherent ist. Fortgeschrittene Praktikerinnen können die beiden Systeme vergleichen.
 
 ## Weiter gehen
 
-Berechne deinen [Aszendenten](/de/werkzeuge/aszendent) und dein [vollständiges Geburtshoroskop](/de/werkzeuge/geburtshoroskop) und konsultiere für eine personalisierte Chakra-Planeten-Lektüre das [Oracle Karmastro](https://app.karmastro.com/oracle).
+Berechne deinen [Aszendenten](/de/werkzeuge/aszendent) und dein [vollständiges Geburtshoroskop](/de/werkzeuge/geburtshoroskop) und konsultiere für eine personalisierte Chakra-Planeten-Lektüre das [Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## Quellen und Referenzen
 

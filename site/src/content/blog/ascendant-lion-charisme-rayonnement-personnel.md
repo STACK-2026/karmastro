@@ -288,7 +288,7 @@ Cette approche intégrée astrologie-numérologie est au cœur de la méthode **
 *Découvre ta combinaison unique :*
 - [Calcul gratuit chemin de vie](/blog/comment-calculer-chemin-de-vie-numerologie/)
 - [Nombre d'expression détaillé](/blog/nombre-expression-reveler-potentiel-cache/)
-- [Oracle IA personnalisé](https://app.karmastro.com/oracle) pour une interprétation sur-mesure
+- [Oracle IA personnalisé](https://karmastro.com/oracle/) pour une interprétation sur-mesure
 
 ---
 
@@ -570,7 +570,7 @@ La plateforme Karmastro va au-delà de l'interprétation classique en croisant t
 
 1. [Découvre ton thème natal complet](https://app.karmastro.com) pour voir comment ton ascendant Lion interagit avec tes autres placements
 2. [Calcule ta numérologie karmique](/blog/numerologie-karmique-decoder-dettes-spirituelles/) pour comprendre comment elle module ton ascendant
-3. [Consulte l'Oracle IA](https://app.karmastro.com/oracle) pour une guidance sur comment canaliser ton énergie solaire selon les transits actuels
+3. [Consulte l'Oracle IA](https://karmastro.com/oracle/) pour une guidance sur comment canaliser ton énergie solaire selon les transits actuels
 
 N'oublie jamais : ton ascendant Lion n'est pas là pour que tu brilles seul(e), mais pour que tu allumes la lumière chez les autres. C'est cette alchimie entre rayonnement personnel et service collectif qui révèle la véritable noblesse du Lion.
 

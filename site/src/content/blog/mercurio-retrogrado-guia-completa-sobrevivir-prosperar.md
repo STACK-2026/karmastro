@@ -214,7 +214,7 @@ No. Es una fase de pausa, de retorno, de revisión.
 
 Mercurio retrógrado es solo uno de los muchos tránsitos que ritman tu año astrológico. Para entender tu carta en su conjunto, empieza calculando tu [ascendente](/es/herramientas/ascendente) y tu [camino de vida](/es/herramientas/camino-de-vida).
 
-Si quieres una lectura personalizada, [consulta el Oracle](https://app.karmastro.com/oracle).
+Si quieres una lectura personalizada, [consulta el Oracle](https://karmastro.com/oracle/).
 
 Mercurio ralentiza, el cielo se repliega un poco, y está bien. Aprovecha esta pausa para respirar, releer, recoser las piezas.
 

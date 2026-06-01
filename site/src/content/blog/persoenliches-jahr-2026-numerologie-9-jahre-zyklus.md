@@ -202,7 +202,7 @@ Dein persönliches Jahr 2026 zu kennen ist eine mächtige Werkzeug, aber es ist 
 
 Wenn du deinen Aszendenten nicht kennst, lies unseren [Leitfaden zum Aszendenten](/de/blog/aszendent-vollstaendiger-leitfaden-verstehen). Wenn du ein Widder bist, lies den detaillierten [Widder-Leitfaden](/de/blog/widder-sternzeichen-persoenlichkeit-kompatibilitaet), um zu verstehen, wie deine Sonne mit deinem persönlichen Jahr interagiert.
 
-Berechne deine vollständige Karte mit unseren [kostenlosen Werkzeugen](/de/werkzeuge/). Für eine lebendige, personalisierte Lesung, die dein persönliches Jahr mit deinen Transiten und deinem natalen Profil kreuzt, konsultiere das [Oracle Karmastro](https://app.karmastro.com/oracle). Unsere vier Begleiter (Pythia, Orion, Sibylle, Selene) beantworten deine Fragen in Echtzeit. Jeden Morgen wartet dein [Tageshoroskop](/de/horoscope) mit den konkreten Transiten des Tages.
+Berechne deine vollständige Karte mit unseren [kostenlosen Werkzeugen](/de/werkzeuge/). Für eine lebendige, personalisierte Lesung, die dein persönliches Jahr mit deinen Transiten und deinem natalen Profil kreuzt, konsultiere das [Oracle Karmastro](https://karmastro.com/oracle/). Unsere vier Begleiter (Pythia, Orion, Sibylle, Selene) beantworten deine Fragen in Echtzeit. Jeden Morgen wartet dein [Tageshoroskop](/de/horoscope) mit den konkreten Transiten des Tages.
 
 ## Quellen und Referenzen
 

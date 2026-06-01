@@ -122,7 +122,7 @@ Los aspectos natales no cambian.
 
 Los aspectos son la dimensión más dinámica de tu carta natal. Para explorarlos, calcula tu carta completa empezando por tu [ascendente](/es/herramientas/ascendente).
 
-Para una lectura personalizada, consulta el [Oracle](https://app.karmastro.com/oracle).
+Para una lectura personalizada, consulta el [Oracle](https://karmastro.com/oracle/).
 
 ## Fuentes y referencias
 

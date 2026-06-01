@@ -187,7 +187,7 @@ Notre mission est de **démocratiser l'accès** à une guidance de qualité. La 
 
 Cela dit, nous respectons profondément la tradition chaldéenne et reconnaissons sa richesse. Si tu veux l'explorer, je te recommande les travaux de **Cheiro** (Louis Hamon, 1866-1936), un des grands promoteurs de la numérologie chaldéenne en Occident, ou les ouvrages de **Florence Campbell** (*Your Days Are Numbered*, 1931). Il existe aussi quelques praticiens français spécialisés en numérologie chaldéenne, mais ils sont rares.
 
-Notre [glossaire](/glossaire) inclut les deux traditions dans ses définitions, et notre [page méthodologie](/precision) explique en détail notre approche stricte pythagoricienne. Pour une interprétation vivante de ton profil, parle-moi à l'[Oracle de Karmastro](https://app.karmastro.com/oracle). Je suis **Pythia**, la mathématicienne cosmique de l'équipe, et je tire mon nom directement de la **Pythie de Delphes**, prophétesse d'Apollon, qui incarnait elle-même la rencontre entre divination antique et sagesse grecque. Je suis la gardienne de la méthode pythagoricienne chez Karmastro.
+Notre [glossaire](/glossaire) inclut les deux traditions dans ses définitions, et notre [page méthodologie](/precision) explique en détail notre approche stricte pythagoricienne. Pour une interprétation vivante de ton profil, parle-moi à l'[Oracle de Karmastro](https://karmastro.com/oracle/). Je suis **Pythia**, la mathématicienne cosmique de l'équipe, et je tire mon nom directement de la **Pythie de Delphes**, prophétesse d'Apollon, qui incarnait elle-même la rencontre entre divination antique et sagesse grecque. Je suis la gardienne de la méthode pythagoricienne chez Karmastro.
 
 ## Les ressources pour approfondir
 
@@ -243,7 +243,7 @@ Les deux méthodes de numérologie, **pythagoricienne** et **chaldéenne**, sont
 
 Chez Karmastro, nous avons choisi la voie pythagoricienne pour sa transparence et son accessibilité, tout en respectant profondément la tradition chaldéenne comme une sœur aînée. Si tu débutes, commence par la pythagoricienne : c'est la plus simple à maîtriser et elle te donnera des résultats significatifs dès tes premiers calculs. Plus tard, si l'appel mystique te prend, tu pourras explorer la chaldéenne comme une dimension supplémentaire.
 
-Tu peux calculer ton [chemin de vie](/outils/chemin-de-vie) gratuitement (il est identique dans les deux méthodes) et ton [nombre d'expression pythagoricien](/outils/nombre-expression) en quelques secondes. Pour une interprétation complète croisée avec ton astrologie, parle-moi à l'[Oracle](https://app.karmastro.com/oracle). Je suis **Pythia**, la mathématicienne cosmique, gardienne de la tradition de Pythagore.
+Tu peux calculer ton [chemin de vie](/outils/chemin-de-vie) gratuitement (il est identique dans les deux méthodes) et ton [nombre d'expression pythagoricien](/outils/nombre-expression) en quelques secondes. Pour une interprétation complète croisée avec ton astrologie, parle-moi à l'[Oracle](https://karmastro.com/oracle/). Je suis **Pythia**, la mathématicienne cosmique, gardienne de la tradition de Pythagore.
 
 Les nombres ne mentent pas. Ils chantent. À chacun d'entendre dans quelle langue ils lui parlent.
 

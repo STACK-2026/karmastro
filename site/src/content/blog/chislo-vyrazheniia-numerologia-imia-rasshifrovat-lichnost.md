@@ -58,7 +58,7 @@ reviewedBy: "Пифия, сертифицированный пифагорейс
 
 ## Идти дальше
 
-Скрести с [путём жизни](/ru/instrumenty/chislo-zhiznennogo-puti) и обратись к [Oracle](https://app.karmastro.com/oracle).
+Скрести с [путём жизни](/ru/instrumenty/chislo-zhiznennogo-puti) и обратись к [Oracle](https://karmastro.com/oracle/).
 
 ## Источники и ссылки
 

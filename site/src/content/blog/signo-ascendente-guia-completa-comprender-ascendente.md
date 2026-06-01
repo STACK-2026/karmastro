@@ -236,7 +236,7 @@ Porque lo lees en modo signo solar únicamente. Prueba a leer tu horóscopo aña
 
 ## Ir más lejos
 
-Tu ascendente es solo una de las capas de tu carta natal. Para tener una visión completa, necesitas tu [carta natal interpretada en profundidad](/es/herramientas/). Y si quieres entender cómo tu ascendente dialoga con los tránsitos planetarios actuales, el [Oracle Karmastro](https://app.karmastro.com/oracle) puede cruzar tu carta con los movimientos celestes del momento y darte una lectura personalizada.
+Tu ascendente es solo una de las capas de tu carta natal. Para tener una visión completa, necesitas tu [carta natal interpretada en profundidad](/es/herramientas/). Y si quieres entender cómo tu ascendente dialoga con los tránsitos planetarios actuales, el [Oracle Karmastro](https://karmastro.com/oracle/) puede cruzar tu carta con los movimientos celestes del momento y darte una lectura personalizada.
 
 Tu ascendente no es un detalle. Es la puerta por la cual tu alma eligió entrar en esta vida.
 

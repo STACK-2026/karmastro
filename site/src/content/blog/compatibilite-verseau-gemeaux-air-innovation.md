@@ -16,7 +16,7 @@ imageAlt: "Astronomical chart of the constellation virgo"
 - Verseau (20 janvier-18 février) et Gémeaux (21 mai-20 juin) forment un duo d’Air marqué par une **communication fluide**, une **curiosité intellectuelle insatiable** et un **besoin de liberté**. Leur compatibilité repose sur trois piliers : stimulation mentale, liberté mutuelle et innovation partagée.
 - En 2026, leur relation sera influencée par des **transits clés** : Jupiter en Gémeaux (expansion, projets) et Saturne en Poissons (épreuves émotionnelles et financières). Ces énergies offrent des opportunités, mais exigent aussi de la vigilance.
 - **Points de vigilance** : manque d’ancrage émotionnel, instabilité financière et difficulté à concilier routine et spontanéité. La numérologie révèle une dynamique entre le chemin de vie 5 (Gémeaux) et le 4 ou 8 (Verseau), exigeant un équilibre entre aventure et stabilité.
-- **Conseils pratiques** : exploiter les transits favorables pour concrétiser des projets, utiliser des outils comme l’[Oracle IA de Karmastro](https://app.karmastro.com/oracle) pour naviguer les périodes sensibles, et appliquer des méthodes de communication structurées (ex : méthode des 3 questions).
+- **Conseils pratiques** : exploiter les transits favorables pour concrétiser des projets, utiliser des outils comme l’[Oracle IA de Karmastro](https://karmastro.com/oracle/) pour naviguer les périodes sensibles, et appliquer des méthodes de communication structurées (ex : méthode des 3 questions).
 - **Outils recommandés** : applications de budget (Bankin’), plateformes de gestion de projets (Trello), et ressources astrologiques (Astro.com, Karmastro) pour optimiser leur alchimie.
 
 ---
@@ -633,7 +633,7 @@ Les signes d’Air excellent dans la communication intellectuelle, mais ont parf
 - **Pour le Verseau** : Cela lui permet d’exprimer ses besoins sans paraître froid.
 
 **Outil complémentaire** :
-Utilisez l’[Oracle IA de Karmastro](https://app.karmastro.com/oracle) pour identifier les blocages de communication dans votre thème astral.
+Utilisez l’[Oracle IA de Karmastro](https://karmastro.com/oracle/) pour identifier les blocages de communication dans votre thème astral.
 
 ---
 

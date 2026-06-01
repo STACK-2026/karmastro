@@ -58,7 +58,7 @@ reviewedBy: "Pythia、認定ピタゴラス数秘術師"
 
 ## さらに進む
 
-あなたの[ライフパスナンバー](/ja/shindan/raifu-pasu-nanbaa)と交差させ、[Oracle](https://app.karmastro.com/oracle)に相談してください。
+あなたの[ライフパスナンバー](/ja/shindan/raifu-pasu-nanbaa)と交差させ、[Oracle](https://karmastro.com/oracle/)に相談してください。
 
 ## 参考文献と出典
 

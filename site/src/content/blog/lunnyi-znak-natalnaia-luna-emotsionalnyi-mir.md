@@ -102,7 +102,7 @@ reviewedBy: "Орион, старший астроном и астролог"
 
 ## Идти дальше
 
-Обратись к [Oracle Karmastro](https://app.karmastro.com/oracle).
+Обратись к [Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## Источники и ссылки
 

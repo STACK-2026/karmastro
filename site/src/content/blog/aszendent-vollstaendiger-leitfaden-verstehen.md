@@ -178,7 +178,7 @@ Ja, und du solltest oft dein Aszendenten-Horoskop parallel zu deinem Sonnenzeich
 
 ## Weiter gehen
 
-Dein Aszendent ist nur eine Schicht deiner Geburtskarte, aber eine der strukturell wichtigsten. Für eine vollständige Sicht brauchst du die Kombination mit deinem Sonnenzeichen, deinem Mondzeichen und den wichtigsten Aspekten. Berechne dein [interpretiertes Geburtshoroskop](/de/werkzeuge/geburtshoroskop) und konsultiere für eine personalisierte, tiefe Lesung das [Oracle Karmastro](https://app.karmastro.com/oracle).
+Dein Aszendent ist nur eine Schicht deiner Geburtskarte, aber eine der strukturell wichtigsten. Für eine vollständige Sicht brauchst du die Kombination mit deinem Sonnenzeichen, deinem Mondzeichen und den wichtigsten Aspekten. Berechne dein [interpretiertes Geburtshoroskop](/de/werkzeuge/geburtshoroskop) und konsultiere für eine personalisierte, tiefe Lesung das [Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## Quellen und Referenzen
 

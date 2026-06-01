@@ -60,7 +60,7 @@ Karmastro создаёт **уникальный гороскоп каждый д
 
 ## Идти дальше
 
-Обратись к [Oracle](https://app.karmastro.com/oracle).
+Обратись к [Oracle](https://karmastro.com/oracle/).
 
 ## Источники и ссылки
 

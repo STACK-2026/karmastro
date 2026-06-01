@@ -83,7 +83,7 @@ reviewedBy: "أوريون، عالم فلك ومنجم كبير"
 
 ## للذهاب أبعد
 
-استشر [Oracle](https://app.karmastro.com/oracle) لتفسير شخصي.
+استشر [Oracle](https://karmastro.com/oracle/) لتفسير شخصي.
 
 ## المصادر والمراجع
 

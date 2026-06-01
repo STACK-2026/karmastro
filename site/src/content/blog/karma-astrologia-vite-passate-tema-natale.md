@@ -189,7 +189,7 @@ No. La casa XII è scomoda solo quando è ignorata. Una volta illuminata, divent
 
 ## 15. Per approfondire
 
-Il karma in astrologia non è una prigione, è una mappa. Il primo passo concreto è calcolare il tuo tema natale completo con il nostro [calcolatore gratuito](/it/strumenti/) basato su Swiss Ephemeris, che ti darà posizioni planetarie al secondo d'arco e tutte le case astrologiche. Leggi poi la nostra [guida all'ascendente](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico), perché l'ascendente è strettamente legato alla traiettoria karmica. Per una lettura viva dei tuoi nodi, di Saturno, di Plutone e della tua casa XII, consulta l'[Oracle Karmastro](https://app.karmastro.com/oracle): Orion, la voce di astrologia tradizionale, è specializzato in letture karmiche basate su Dorotheus di Sidone, Al-Biruni e la scuola evolutiva moderna di Jeff Green.
+Il karma in astrologia non è una prigione, è una mappa. Il primo passo concreto è calcolare il tuo tema natale completo con il nostro [calcolatore gratuito](/it/strumenti/) basato su Swiss Ephemeris, che ti darà posizioni planetarie al secondo d'arco e tutte le case astrologiche. Leggi poi la nostra [guida all'ascendente](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico), perché l'ascendente è strettamente legato alla traiettoria karmica. Per una lettura viva dei tuoi nodi, di Saturno, di Plutone e della tua casa XII, consulta l'[Oracle Karmastro](https://karmastro.com/oracle/): Orion, la voce di astrologia tradizionale, è specializzato in letture karmiche basate su Dorotheus di Sidone, Al-Biruni e la scuola evolutiva moderna di Jeff Green.
 
 ## Fonti e riferimenti
 

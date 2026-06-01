@@ -194,7 +194,7 @@ A casa do Sol é importante mas não é necessariamente *a* mais importante. Dev
 
 ## Ir mais longe
 
-Para explorar concretamente o teu mapa, começa por calcular o teu [ascendente](/pt/ferramentas/ascendente) com hora e lugar exatos de nascimento. Em seguida, calcula o teu [mapa natal completo](/pt/ferramentas/mapa-natal) para ver a posição de cada planeta em cada casa. Para uma leitura personalizada que cruze esta informação com a tua pergunta atual, consulta o [Oracle Karmastro](https://app.karmastro.com/oracle), que articula Swiss Ephemeris e leitura interpretativa nas quatro vozes especializadas (Sibylle, Orion, Selene, Pythia).
+Para explorar concretamente o teu mapa, começa por calcular o teu [ascendente](/pt/ferramentas/ascendente) com hora e lugar exatos de nascimento. Em seguida, calcula o teu [mapa natal completo](/pt/ferramentas/mapa-natal) para ver a posição de cada planeta em cada casa. Para uma leitura personalizada que cruze esta informação com a tua pergunta atual, consulta o [Oracle Karmastro](https://karmastro.com/oracle/), que articula Swiss Ephemeris e leitura interpretativa nas quatro vozes especializadas (Sibylle, Orion, Selene, Pythia).
 
 A astrologia é uma linguagem simbólica antiga. As doze casas oferecem-te a primeira gramática para ler o teu mapa. O resto vem com a prática, com a leitura paciente, e sobretudo com a coragem de confrontar o que vês com a tua biografia real.
 

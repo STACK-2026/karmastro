@@ -136,7 +136,7 @@ keywords: "путь жизни, расчёт пути жизни, пифагор
 
 **5. Веди дневник пути.** Раз в месяц записывай три ситуации, где ты уважал путь, и три, где предал. Эта практика, вдохновлённая дневником выравнивания в юнгианском коучинге, развивает тонкое осознание.
 
-Для полного диагноза задай вопрос [Oracle IA от Karmastro](https://app.karmastro.com/oracle) с твоей датой рождения: он сводит путь жизни, [лунный знак](/ru/blog/lunnyi-znak-natalnaia-luna-emotsionalnyi-mir), [восходящий знак](/ru/instrumenty/voskhodyaschiy-znak) и актуальные транзиты. Также прочти наше [сравнение пифагорейской и халдейской нумерологии](/ru/blog/pifagoreiskaia-vs-khaldeiskaia-numerologia-razlichia), чтобы понять, почему мы рекомендуем пифагорейский метод.
+Для полного диагноза задай вопрос [Oracle IA от Karmastro](https://karmastro.com/oracle/) с твоей датой рождения: он сводит путь жизни, [лунный знак](/ru/blog/lunnyi-znak-natalnaia-luna-emotsionalnyi-mir), [восходящий знак](/ru/instrumenty/voskhodyaschiy-znak) и актуальные транзиты. Также прочти наше [сравнение пифагорейской и халдейской нумерологии](/ru/blog/pifagoreiskaia-vs-khaldeiskaia-numerologia-razlichia), чтобы понять, почему мы рекомендуем пифагорейский метод.
 
 ## История и истоки нумерологии
 

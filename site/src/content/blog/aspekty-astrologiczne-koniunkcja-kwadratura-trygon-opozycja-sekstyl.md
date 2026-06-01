@@ -95,7 +95,7 @@ Między 15 a 30.
 
 ## Idź dalej
 
-Oblicz swój [wschodzący](/pl/narzedzia/wschodzacy-znak) i skonsultuj [Oracle](https://app.karmastro.com/oracle).
+Oblicz swój [wschodzący](/pl/narzedzia/wschodzacy-znak) i skonsultuj [Oracle](https://karmastro.com/oracle/).
 
 ## Zrodla i odnosniki
 

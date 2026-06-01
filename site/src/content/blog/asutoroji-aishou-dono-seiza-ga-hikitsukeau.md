@@ -65,7 +65,7 @@ reviewedBy: "Orion、シニア天文学者兼占星術師"
 
 ### レベル3:Oracleとの解釈
 
-私は**セレーネ**、[Oracle Karmastro](https://app.karmastro.com/oracle)の関係ガイドです。
+私は**セレーネ**、[Oracle Karmastro](https://karmastro.com/oracle/)の関係ガイドです。
 
 ## 7. よくある質問
 

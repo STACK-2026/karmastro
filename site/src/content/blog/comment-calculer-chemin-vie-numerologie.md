@@ -136,7 +136,7 @@ Un nombre ne change rien tant qu'on ne l'utilise pas. Voici cinq pratiques concr
 
 **5. Tiens un journal du chemin.** Une fois par mois, écris trois situations où tu as honoré ton chemin, et trois où tu l'as trahi. Cette pratique, inspirée du journal d'alignement utilisé en coaching jungien, développe une conscience fine de tes choix.
 
-Pour un diagnostic complet, pose la question à l'[Oracle IA de Karmastro](https://app.karmastro.com/oracle) avec ta date de naissance : il croise chemin de vie, [signe lunaire](/outils/theme-natal/), [ascendant](/outils/ascendant) et transits en cours. Tu peux aussi lire notre [comparaison entre numérologie pythagoricienne et chaldéenne](/blog/numerologie-pythagoricienne-vs-chaldeenne-differences) pour comprendre pourquoi nous recommandons la méthode pythagoricienne.
+Pour un diagnostic complet, pose la question à l'[Oracle IA de Karmastro](https://karmastro.com/oracle/) avec ta date de naissance : il croise chemin de vie, [signe lunaire](/outils/theme-natal/), [ascendant](/outils/ascendant) et transits en cours. Tu peux aussi lire notre [comparaison entre numérologie pythagoricienne et chaldéenne](/blog/numerologie-pythagoricienne-vs-chaldeenne-differences) pour comprendre pourquoi nous recommandons la méthode pythagoricienne.
 
 ## Histoire et origines de la numérologie
 

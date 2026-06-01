@@ -142,7 +142,7 @@ Un **horoscope personnalisé** fiable nécessite votre thème natal complet (dat
 - **Mars** : Action, colère, désirs (10%)
 - **Mercure** : Mental, communication (5%)
 
-[L'Oracle de Karmastro](https://app.karmastro.com/oracle) croise votre thème natal avec la numérologie karmique pour des prévisions encore plus précises.
+[L'Oracle de Karmastro](https://karmastro.com/oracle/) croise votre thème natal avec la numérologie karmique pour des prévisions encore plus précises.
 
 ### Dominantes planétaires personnelles
 

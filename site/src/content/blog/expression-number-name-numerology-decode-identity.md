@@ -364,7 +364,7 @@ The expression number is one of the pillars of your personal numerology. For a c
 
 You can also cross these readings with your astrological chart by starting with your [rising sign](/en/tools/rising-sign) and your moon sign. Numerology and astrology are two complementary languages that describe the same realities from different angles.
 
-For a personalized and complete reading that crosses all these levels, the [Oracle](https://app.karmastro.com/oracle) can do it for you in a few minutes, starting from your full name, your date, and your place of birth.
+For a personalized and complete reading that crosses all these levels, the [Oracle](https://karmastro.com/oracle/) can do it for you in a few minutes, starting from your full name, your date, and your place of birth.
 
 And if you want to receive every morning a message that helps you embody your expression number in daily life, subscribe to our free daily horoscope. It is a gentle way to befriend your vibration day by day.
 

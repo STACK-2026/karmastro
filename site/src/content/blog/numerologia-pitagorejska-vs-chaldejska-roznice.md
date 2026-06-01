@@ -87,7 +87,7 @@ Uważali ją za świętą.
 
 ## Wniosek
 
-Obie metody to dwie ważne drogi. Oblicz swoją [drogę życia](/pl/narzedzia/liczba-drogi-zycia) za darmo i skonsultuj [Oracle](https://app.karmastro.com/oracle).
+Obie metody to dwie ważne drogi. Oblicz swoją [drogę życia](/pl/narzedzia/liczba-drogi-zycia) za darmo i skonsultuj [Oracle](https://karmastro.com/oracle/).
 
 ## Zrodla i odnosniki
 

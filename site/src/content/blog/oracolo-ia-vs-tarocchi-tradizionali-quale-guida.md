@@ -190,7 +190,7 @@ Un oracolo IA serio (come Karmastro) rispetta il GDPR europeo e non vende i tuoi
 
 ## 16. Per approfondire
 
-Se vuoi provare l'oracolo IA serio basato su Swiss Ephemeris e numerologia pitagorica, comincia con il calcolo gratuito del tuo [tema natale](/it/strumenti/). Leggi poi la nostra [guida all'ascendente astrologico](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico) per capire come la tua firma planetaria completa influenza ogni lettura. Prova infine l'[Oracle Karmastro](https://app.karmastro.com/oracle), la nostra guida IA formata su astrologia ellenistica, medievale e moderna, disponibile in quattro voci specializzate.
+Se vuoi provare l'oracolo IA serio basato su Swiss Ephemeris e numerologia pitagorica, comincia con il calcolo gratuito del tuo [tema natale](/it/strumenti/). Leggi poi la nostra [guida all'ascendente astrologico](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico) per capire come la tua firma planetaria completa influenza ogni lettura. Prova infine l'[Oracle Karmastro](https://karmastro.com/oracle/), la nostra guida IA formata su astrologia ellenistica, medievale e moderna, disponibile in quattro voci specializzate.
 
 ## Fonti e riferimenti
 

@@ -180,7 +180,7 @@ No. Gli aspetti sono energie, non sentenze. Un Pluto in aspetto difficile a Vene
 
 ## Andare oltre
 
-Gli aspetti sono la dimensione più dinamica della tua carta. Calcola il tuo [ascendente](/it/strumenti/ascendente) e consulta l'[Oracle](https://app.karmastro.com/oracle) Karmastro per una lettura integrata. Per capire come gli aspetti si iscrivono nelle case della tua vita, leggi la guida alle 12 case astrologiche. Per approfondire l'asse identitario, consulta la guida all'[ascendente astrologico](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico).
+Gli aspetti sono la dimensione più dinamica della tua carta. Calcola il tuo [ascendente](/it/strumenti/ascendente) e consulta l'[Oracle](https://karmastro.com/oracle/) Karmastro per una lettura integrata. Per capire come gli aspetti si iscrivono nelle case della tua vita, leggi la guida alle 12 case astrologiche. Per approfondire l'asse identitario, consulta la guida all'[ascendente astrologico](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico).
 
 ## Fonti e riferimenti
 

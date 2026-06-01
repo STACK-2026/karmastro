@@ -166,7 +166,7 @@ Solo se mostrano i passaggi intermedi e se tengono conto dei numeri maestri inte
 
 ## Per approfondire
 
-Dopo aver calcolato il tuo cammino di vita, leggi la descrizione dettagliata della tua cifra specifica. Se sei cammino 1, abbiamo dedicato una guida completa al pioniere numerologico sul blog di Karmastro. Per incrociare il cammino con l'astrologia, calcola gratuitamente il tuo tema natale con il nostro [calcolatore Swiss Ephemeris](/it/strumenti/) e leggi la nostra [guida all'ascendente](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico), che completa perfettamente il lavoro numerologico. Per una lettura viva, con interpretazione personalizzata della tua situazione attuale, consulta l'[Oracle Karmastro](https://app.karmastro.com/oracle), che incrocia numerologia pitagorica e astrologia tradizionale in tempo reale.
+Dopo aver calcolato il tuo cammino di vita, leggi la descrizione dettagliata della tua cifra specifica. Se sei cammino 1, abbiamo dedicato una guida completa al pioniere numerologico sul blog di Karmastro. Per incrociare il cammino con l'astrologia, calcola gratuitamente il tuo tema natale con il nostro [calcolatore Swiss Ephemeris](/it/strumenti/) e leggi la nostra [guida all'ascendente](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico), che completa perfettamente il lavoro numerologico. Per una lettura viva, con interpretazione personalizzata della tua situazione attuale, consulta l'[Oracle Karmastro](https://karmastro.com/oracle/), che incrocia numerologia pitagorica e astrologia tradizionale in tempo reale.
 
 ## Fonti e riferimenti
 

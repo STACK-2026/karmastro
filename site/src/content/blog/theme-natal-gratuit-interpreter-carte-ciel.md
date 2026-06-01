@@ -209,7 +209,7 @@ Les quatre angles de votre **carte du ciel** forment deux axes perpendiculaires 
 - **Axe Ascendant-Descendant** : relation entre le moi et l'autre
 - **Axe Fond du Ciel-Milieu du Ciel** : équilibre entre racines privées et accomplissement public
 
-L'Oracle IA de [Karmastro](https://app.karmastro.com/oracle) analyse ces axes en croisant votre astrologie natale avec votre numerologie karmique pour une guidance personnalisée.
+L'Oracle IA de [Karmastro](https://karmastro.com/oracle/) analyse ces axes en croisant votre astrologie natale avec votre numerologie karmique pour une guidance personnalisée.
 
 ## Erreurs d'interprétation à éviter
 

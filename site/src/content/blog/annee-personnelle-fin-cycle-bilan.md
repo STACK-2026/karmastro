@@ -88,7 +88,7 @@ L’année 9 est une **opportunité unique** pour **faire le point** sur les 8 a
 
 **Exercice pratique** :
 - Écris une lettre (que tu ne enverras pas) à une personne qui t’a blessé·e pendant ce cycle. **Pardonne** (pour toi, pas pour elle) et brûle la lettre symboliquement.
-- *Outils* : L’[Oracle IA de Karmastro](https://app.karmastro.com/oracle) peut t’aider à identifier les **blocages karmiques** dans tes relations.
+- *Outils* : L’[Oracle IA de Karmastro](https://karmastro.com/oracle/) peut t’aider à identifier les **blocages karmiques** dans tes relations.
 
 ### 2. **Carrière et projets**
 - **Année 1** : As-tu lancé un projet qui te tient à cœur ?
@@ -269,7 +269,7 @@ L’**année personnelle 9** est bien plus qu’une simple étape en numérologi
 4. **Prépare ton année 1** en clôturant les boucles et en définissant tes intentions.
 
 **Prochaine étape** :
-- 🔮 **Pose une question à l’Oracle IA de Karmastro** pour recevoir une guidance personnalisée sur ton année 9 : [Accéder à l’Oracle](https://app.karmastro.com/oracle).
+- 🔮 **Pose une question à l’Oracle IA de Karmastro** pour recevoir une guidance personnalisée sur ton année 9 : [Accéder à l’Oracle](https://karmastro.com/oracle/).
 - 📊 **Découvre ton profil cosmique complet** (thème natal + numérologie + karma) : [Créer mon profil](https://app.karmastro.com).
 
 *"L’année 9 n’est pas une fin, mais un passage. Comme le phénix, tu renaîtras de tes cendres en année 1."*

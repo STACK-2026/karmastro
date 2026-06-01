@@ -156,7 +156,7 @@ Tu seras aussi concerné si la rétrogradation se produit dans une maison astrol
 
 Si la rétro se produit dans une zone vide et calme de ton thème, et qu'elle ne touche aucune planète personnelle, tu peux très bien ne rien sentir. C'est aussi simple que ça. C'est pour cette raison que certains amis te diront « cette rétro a été l'enfer » alors que toi tu n'auras rien remarqué : vos cartes natales sont différentes.
 
-Si tu veux savoir précisément où Mercure tombe sur ta carte ce mois-ci, tu peux utiliser le calculateur de [signe astrologique](/outils/theme-natal/) et de [signe lunaire](/blog/signe-lunaire-lune-natale-monde-emotionnel/), puis croiser avec les positions actuelles. Ou, plus simplement, demander à [l'Oracle](https://app.karmastro.com/oracle) une lecture personnalisée de ce transit pour toi.
+Si tu veux savoir précisément où Mercure tombe sur ta carte ce mois-ci, tu peux utiliser le calculateur de [signe astrologique](/outils/theme-natal/) et de [signe lunaire](/blog/signe-lunaire-lune-natale-monde-emotionnel/), puis croiser avec les positions actuelles. Ou, plus simplement, demander à [l'Oracle](https://karmastro.com/oracle/) une lecture personnalisée de ce transit pour toi.
 
 ## 10. Mercure rétrograde dans ta carte natale (natif)
 
@@ -280,7 +280,7 @@ Indirectement, oui. Le stress lié aux malentendus, à la fatigue mentale, à la
 
 Mercure rétrograde n'est qu'un des nombreux transits qui rythment ton année astrologique. Pour comprendre ton thème dans son ensemble et savoir comment chaque planète te touche, commence par calculer ton [signe ascendant](/outils/ascendant), ton [signe lunaire](/blog/signe-lunaire-lune-natale-monde-emotionnel/) et explorer ta [numérologie de base](/outils/chemin-de-vie).
 
-Si tu veux une lecture personnalisée de la prochaine rétrogradation pour toi spécifiquement, [consulte l'Oracle](https://app.karmastro.com/oracle). Tu poses ta question, tu reçois une réponse adaptée à ton thème, en quelques minutes.
+Si tu veux une lecture personnalisée de la prochaine rétrogradation pour toi spécifiquement, [consulte l'Oracle](https://karmastro.com/oracle/). Tu poses ta question, tu reçois une réponse adaptée à ton thème, en quelques minutes.
 
 Et si tu veux ne plus jamais rater un transit important, abonne-toi à notre horoscope quotidien gratuit. Chaque matin, tu reçois un message personnalisé qui te dit ce qui se joue dans le ciel et comment l'utiliser dans ta journée. Pas de prédictions effrayantes, juste des clés pratiques pour mieux naviguer ton quotidien sous les étoiles.
 

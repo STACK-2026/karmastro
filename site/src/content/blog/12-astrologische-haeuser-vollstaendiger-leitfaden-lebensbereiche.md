@@ -187,7 +187,7 @@ Diese Position nennt sich "Cusp-Konjunktion". Der Planet hat dann Einfluss auf b
 
 ## Weiter gehen
 
-Um deine Karte präzise zu erkunden, beginne damit, deinen [Aszendenten](/de/werkzeuge/aszendent) zu berechnen und dann das [vollständige Geburtshoroskop](/de/werkzeuge/geburtshoroskop) zu interpretieren. Für eine vertiefte, personalisierte Lesung deiner Haus-Dynamik konsultiere das [Oracle Karmastro](https://app.karmastro.com/oracle).
+Um deine Karte präzise zu erkunden, beginne damit, deinen [Aszendenten](/de/werkzeuge/aszendent) zu berechnen und dann das [vollständige Geburtshoroskop](/de/werkzeuge/geburtshoroskop) zu interpretieren. Für eine vertiefte, personalisierte Lesung deiner Haus-Dynamik konsultiere das [Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## Quellen und Referenzen
 

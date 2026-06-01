@@ -148,7 +148,7 @@ Sì. La numerologia cabalistica (basata sull'alfabeto ebraico e sulla ghematria)
 
 I due metodi sono due vie valide per leggere la vibrazione di un nome. Non sono in competizione: sono in distribuzione, come due lingue che parlano dello stesso concetto in modo diverso. Se inizi nel mondo della numerologia, usa la pitagorica. Se hai già una base e cerchi profondità mistica, esplora la caldea. In entrambi i casi, applica il sistema con rigore e coerenza.
 
-Calcola il tuo [cammino di vita](/it/strumenti/numero-del-cammino-di-vita) gratuitamente, scopri il tuo numero di espressione e consulta l'[Oracle](https://app.karmastro.com/oracle) per un'analisi personalizzata. Per incrociare numerologia e astrologia, esplora le 12 case astrologiche e il tuo [segno lunare](/it/blog/segno-lunare-luna-natale-mondo-emotivo).
+Calcola il tuo [cammino di vita](/it/strumenti/numero-del-cammino-di-vita) gratuitamente, scopri il tuo numero di espressione e consulta l'[Oracle](https://karmastro.com/oracle/) per un'analisi personalizzata. Per incrociare numerologia e astrologia, esplora le 12 case astrologiche e il tuo [segno lunare](/it/blog/segno-lunare-luna-natale-mondo-emotivo).
 
 ## Fonti e riferimenti
 

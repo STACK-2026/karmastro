@@ -150,7 +150,7 @@ Karmastro usa il motore Swiss Ephemeris, le stesse effemeridi utilizzate da NASA
 
 Il nostro [calcolatore di tema natale](/it/strumenti/) genera gratuitamente la tua carta astrale completa in meno di 10 secondi. Ti serviranno: data di nascita esatta, ora di nascita (preferibilmente al minuto), luogo di nascita (città, paese). Se non conosci l'ora esatta, puoi cercarla sul tuo certificato di nascita presso l'anagrafe del tuo comune di nascita. In Italia le nascite in ospedale sono registrate al minuto dagli anni '40.
 
-Il risultato include: posizione dei dieci pianeti nei segni, le dodici case (sistema Placidus), ascendente e MC, aspetti maggiori, elementi dominanti, modalità dominanti. Per un'interpretazione guidata e dialogata, puoi poi rivolgerti all'[Oracle Karmastro](https://app.karmastro.com/oracle).
+Il risultato include: posizione dei dieci pianeti nei segni, le dodici case (sistema Placidus), ascendente e MC, aspetti maggiori, elementi dominanti, modalità dominanti. Per un'interpretazione guidata e dialogata, puoi poi rivolgerti all'[Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## 10. Gli errori da evitare nell'auto-lettura
 
@@ -218,7 +218,7 @@ No. L'astrologia moderna non fa previsioni di morte. Era una pratica tradizional
 
 ## 15. Per approfondire
 
-Il tema natale è la chiave dell'astrologia personalizzata, la mappa di base da cui parte ogni lettura successiva. Inizia con il nostro [calcolatore di tema natale gratuito](/it/strumenti/) basato su Swiss Ephemeris, precisione massima. Approfondisci con la nostra [guida all'ascendente](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico) per capire il primo punto angolare del tuo tema. E per una lettura completa, dialogata, che integra pianeti, case, aspetti, transiti e numerologia, parla con l'[Oracle Karmastro](https://app.karmastro.com/oracle), la nostra guida AI nutrita di astrologia ellenistica, medievale e moderna.
+Il tema natale è la chiave dell'astrologia personalizzata, la mappa di base da cui parte ogni lettura successiva. Inizia con il nostro [calcolatore di tema natale gratuito](/it/strumenti/) basato su Swiss Ephemeris, precisione massima. Approfondisci con la nostra [guida all'ascendente](/it/blog/ascendente-guida-completa-comprendere-ascendente-astrologico) per capire il primo punto angolare del tuo tema. E per una lettura completa, dialogata, che integra pianeti, case, aspetti, transiti e numerologia, parla con l'[Oracle Karmastro](https://karmastro.com/oracle/), la nostra guida AI nutrita di astrologia ellenistica, medievale e moderna.
 
 ## Fonti e riferimenti
 

@@ -228,7 +228,7 @@ Plüton Kova transiti (2024-2044) döneminde Kova yükselenler doğrudan kendi b
 
 ## Daha ileri
 
-Yükselen burcun, doğum haritanın sadece bir katmanıdır. Tam bir görünüm için [yorumlanmış doğum haritana](/tr/araclar/dogum-haritasi) ihtiyacın var, çünkü yükselen ancak Güneş, Ay, gezegenler ve evlerin tamamıyla birlikte anlam kazanır. [Çakralar ve gezegenler ilişkisi](/tr/blog/cakralar-astroloji-7-gezegen-enerji-merkezleri) yükselen üzerinden beden enerji okumasını da ekler. Kişiselleştirilmiş bir okuma için [Oracle Karmastro](https://app.karmastro.com/oracle)'ya danış.
+Yükselen burcun, doğum haritanın sadece bir katmanıdır. Tam bir görünüm için [yorumlanmış doğum haritana](/tr/araclar/dogum-haritasi) ihtiyacın var, çünkü yükselen ancak Güneş, Ay, gezegenler ve evlerin tamamıyla birlikte anlam kazanır. [Çakralar ve gezegenler ilişkisi](/tr/blog/cakralar-astroloji-7-gezegen-enerji-merkezleri) yükselen üzerinden beden enerji okumasını da ekler. Kişiselleştirilmiş bir okuma için [Oracle Karmastro](https://karmastro.com/oracle/)'ya danış.
 
 ## Kaynaklar ve referanslar
 

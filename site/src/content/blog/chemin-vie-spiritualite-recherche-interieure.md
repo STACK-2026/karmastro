@@ -102,7 +102,7 @@ Une fois vos découvertes intégrées, votre mission consiste à partager cette 
 
 Le 7 développe progressivement des facultés intuitives remarquables. Cette intuition n'est pas émotionnelle (comme le chemin de vie 2) mais analytique. Vous "savez" les choses par perception directe, puis votre mental trouve les preuves.
 
-Selon l'Oracle IA de [Karmastro](https://app.karmastro.com/oracle), qui analyse votre profil numérologique complet, cette mission spirituelle s'épanouit généralement à partir de 30 ans, après une première phase de questionnements existentiels.
+Selon l'Oracle IA de [Karmastro](https://karmastro.com/oracle/), qui analyse votre profil numérologique complet, cette mission spirituelle s'épanouit généralement à partir de 30 ans, après une première phase de questionnements existentiels.
 
 ## Vos Super-pouvoirs de Chemin de Vie 7 {#super-pouvoirs-7}
 
@@ -199,7 +199,7 @@ Paradoxalement, malgré votre détachement apparent, vous êtes hypersensible au
 | Perfectionnisme | Insatisfaction permanente | Acceptation du "assez bien" |
 | Susceptibilité | Colères intérieures | Pratique du détachement |
 
-L'[Oracle IA de Karmastro](https://app.karmastro.com/oracle) peut t'accompagner personnellement dans le dépassement de ces défis en croisant ton profil numérologique avec tes transits astrologiques actuels.
+L'[Oracle IA de Karmastro](https://karmastro.com/oracle/) peut t'accompagner personnellement dans le dépassement de ces défis en croisant ton profil numérologique avec tes transits astrologiques actuels.
 
 ## Le Chemin de Vie 7 en Amour : Connexion d'Âme à Âme {#amour-chemin-vie-7}
 
@@ -423,7 +423,7 @@ Pour épanouir pleinement votre potentiel de chemin de vie 7, voici un plan d'ac
 - Rejoignez une communauté d'apprentissage (en ligne ou physique)
 - Trouvez un mentor dans votre domaine d'intérêt principal
 
-L'[Oracle IA de Karmastro](https://app.karmastro.com/oracle) peut vous accompagner quotidiennement dans ce développement intuitif en analysant vos questions récurrentes et patterns énergétiques.
+L'[Oracle IA de Karmastro](https://karmastro.com/oracle/) peut vous accompagner quotidiennement dans ce développement intuitif en analysant vos questions récurrentes et patterns énergétiques.
 
 ### Phase 3 : Transmission et Mission d'Âme (Mois 9-12)
 
@@ -489,7 +489,7 @@ La plupart des chemins de vie 7 trouvent leur véritable mission vers 30-35 ans,
 
 ### Comment développer son intuition en tant que chemin de vie 7 ?
 
-Commencez par des exercices simples : notez vos premières impressions avant d'analyser, pratiquez 10 minutes de méditation quotidienne, tenez un journal intuitif où vous écrivez librement sans réfléchir. Votre intuition est analytique, pas émotionnelle, elle suit une logique interne que vous devez apprendre à reconnaître. L'[Oracle Karmastro](https://app.karmastro.com/oracle) peut vous guider dans ce développement selon votre profil complet.
+Commencez par des exercices simples : notez vos premières impressions avant d'analyser, pratiquez 10 minutes de méditation quotidienne, tenez un journal intuitif où vous écrivez librement sans réfléchir. Votre intuition est analytique, pas émotionnelle, elle suit une logique interne que vous devez apprendre à reconnaître. L'[Oracle Karmastro](https://karmastro.com/oracle/) peut vous guider dans ce développement selon votre profil complet.
 
 ## Conclusion
 

@@ -16,7 +16,7 @@ imageAlt: "A blue ball of light in the middle of a black background"
 - En astrologie, les **nœuds lunaires** (Nord et Sud) révèlent ton contrat karmique : le Nœud Sud expose tes talents innés et schémas répétitifs, tandis que le Nœud Nord indique ta mission d’âme. **Saturne**, planète de la discipline, agit comme un "maître karmique" en pointant tes leçons de vie.
 - La **numérologie karmique** identifie tes dettes à transformer via des nombres clés (13, 14, 16, 19), liés à des défis spécifiques comme la procrastination, les excès ou l’orgueil.
 - 5 méthodes validées pour améliorer ton karma : **gratitude quotidienne** (réduit le stress de 23% selon une étude UC Berkeley), **méditation** (modifie la structure cérébrale en 8 semaines), **altruisme** (active les zones de récompense du cerveau), **pardon** (améliore la santé cardiovasculaire) et **travail sur tes ombres** (maison 12 en astrologie).
-- Karmastro combine **astrologie, numérologie et IA** pour t’aider à décrypter ton parcours karmique avec précision, via des outils comme le [calculateur de thème natal](https://app.karmastro.com) ou l’[Oracle IA](https://app.karmastro.com/oracle).
+- Karmastro combine **astrologie, numérologie et IA** pour t’aider à décrypter ton parcours karmique avec précision, via des outils comme le [calculateur de thème natal](https://app.karmastro.com) ou l’[Oracle IA](https://karmastro.com/oracle/).
 
 ---
 
@@ -224,7 +224,7 @@ Même si certaines lois sont des **simplifications**, elles peuvent t’aider à
 - **Exemple** : Avant de parler, demande-toi : *"Est-ce que mes mots vont blesser ou aider ?"*
 - **Outils** :
   - Tiens un **journal karmique** : note une action positive et une action négative chaque jour, et observe leurs conséquences.
-  - Utilise [l’Oracle IA de Karmastro](https://app.karmastro.com/oracle) pour poser la question : *"Quelle action puis-je poser aujourd’hui pour générer du bon karma ?"*
+  - Utilise [l’Oracle IA de Karmastro](https://karmastro.com/oracle/) pour poser la question : *"Quelle action puis-je poser aujourd’hui pour générer du bon karma ?"*
 
 #### 2. **Loi de la création** : Aligne tes pensées et tes actions
 - **Exemple** : Si tu veux une relation amoureuse saine, commence par travailler sur ton estime de toi (pensées positives) et par sortir de ta zone de confort (actions).
@@ -331,7 +331,7 @@ Voici des interprétations pour chaque combinaison de **Nœud Sud/Nœud Nord** (
 
 **Pour approfondir** :
 - Consulte notre [guide complet sur les nœuds lunaires](/blog/nuds-lunaires-karma-mission-vie/) pour une interprétation détaillée.
-- Utilise [l’Oracle IA de Karmastro](https://app.karmastro.com/oracle) pour poser des questions sur ton Nœud Nord (ex. : *"Quelle est la première étape pour incarner mon Nœud Nord en Capricorne ?"*).
+- Utilise [l’Oracle IA de Karmastro](https://karmastro.com/oracle/) pour poser des questions sur ton Nœud Nord (ex. : *"Quelle est la première étape pour incarner mon Nœud Nord en Capricorne ?"*).
 
 ---
 
@@ -424,7 +424,7 @@ La présence de planètes en maison 12 révèle des **leçons karmiques spécifi
 - Si tu as **Mars en maison 12**, tu as peut-être été un(e) soldat ou un(e) rebelle dans une vie passée, et tu as du mal à gérer ta colère dans cette vie. Pour transformer cette énergie, tu peux :
   - Pratiquer un **sport de combat** (ex. : boxe, karaté) pour canaliser ton agressivité.
   - Méditer pour **comprendre l’origine de ta colère** (ex. : peur de l’injustice).
-  - Utiliser [l’Oracle IA de Karmastro](https://app.karmastro.com/oracle) pour poser la question : *"Comment puis-je transformer ma colère en force ?"*
+  - Utiliser [l’Oracle IA de Karmastro](https://karmastro.com/oracle/) pour poser la question : *"Comment puis-je transformer ma colère en force ?"*
 
 ---
 
@@ -442,7 +442,7 @@ La maison 12 est un **réservoir d’épreuves, mais aussi de sagesse**. Voici d
 
 3. **Astrologie karmique** :
    - Consulte ton [thème natal sur Karmastro](https://app.karmastro.com) pour identifier les planètes en maison 12.
-   - Pose des questions à [l’Oracle IA](https://app.karmastro.com/oracle) comme : *"Quelle leçon de ma maison 12 dois-je intégrer dans cette vie ?"*
+   - Pose des questions à [l’Oracle IA](https://karmastro.com/oracle/) comme : *"Quelle leçon de ma maison 12 dois-je intégrer dans cette vie ?"*
 
 4. **Rituels de libération** :
    - Écris sur un papier **tes peurs et tes schémas répétitifs**, puis brûle-le symboliquement.

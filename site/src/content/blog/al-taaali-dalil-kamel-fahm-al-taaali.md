@@ -129,7 +129,7 @@ reviewedBy: "أوريون، عالم فلك ومنجم كبير"
 
 ## للذهاب أبعد
 
-طالعك هو مجرد طبقة واحدة من خريطة ميلادك. استشر [Oracle Karmastro](https://app.karmastro.com/oracle).
+طالعك هو مجرد طبقة واحدة من خريطة ميلادك. استشر [Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## المصادر والمراجع
 

@@ -146,7 +146,7 @@ Voici les **aspects les plus puissants** en synastrie (comparaison de deux thèm
 
 **Exemple concret** : Dans le couple **Beyoncé (Vénus en Taureau)** et **Jay-Z (Vénus en Scorpion)**, leurs Vénus sont en **opposition** (180°). Cette configuration explique leur attraction magnétique mais aussi leurs crises publiques, suivies de réconciliations profondes.
 
-Pour analyser ta compatibilité en profondeur, utilise [l'Oracle de Synastrie de Karmastro](https://app.karmastro.com/oracle) qui croise automatiquement les thèmes natals selon les règles de l'astrologie hellénistique.
+Pour analyser ta compatibilité en profondeur, utilise [l'Oracle de Synastrie de Karmastro](https://karmastro.com/oracle/) qui croise automatiquement les thèmes natals selon les règles de l'astrologie hellénistique.
 
 Découvre aussi comment ton [ascendant astrologique](/blog/maisons-astrologiques-guide-interpretation-complet/) influence tes relations amoureuses.
 
@@ -237,7 +237,7 @@ Découvre comment les retours de Saturne influencent ton développement personne
 Vénus en Taureau est une position astrologique où la planète Vénus se trouve dans le signe du Taureau dans ton thème natal. Cela signifie que ton approche de l'amour, de la beauté et de l'argent est marquée par les qualités du Taureau : **stabilité, sensualité, fidélité et attachement aux plaisirs matériels**. Dans l'astrologie traditionnelle, c'est un **domicile** de Vénus, ce qui en fait une position particulièrement puissante.
 
 ### Vénus en Taureau est-elle compatible avec Vénus en Scorpion ?
-Oui, mais c'est une compatibilité **passionnée et intense** qui demande du travail. Vénus en Taureau apporte la stabilité et la sensualité, tandis que Vénus en Scorpion ajoute de la profondeur et de la transformation. **Points forts** : alchimie physique, loyauté, projets communs durables. **Défis** : jalousie, possessivité, besoin de travailler la communication. **Conseil Karmastro** : Utilise [l'Oracle de Synastrie](https://app.karmastro.com/oracle) pour analyser les aspects précis entre vos Vénus.
+Oui, mais c'est une compatibilité **passionnée et intense** qui demande du travail. Vénus en Taureau apporte la stabilité et la sensualité, tandis que Vénus en Scorpion ajoute de la profondeur et de la transformation. **Points forts** : alchimie physique, loyauté, projets communs durables. **Défis** : jalousie, possessivité, besoin de travailler la communication. **Conseil Karmastro** : Utilise [l'Oracle de Synastrie](https://karmastro.com/oracle/) pour analyser les aspects précis entre vos Vénus.
 
 ### Comment savoir si j'ai Vénus en Taureau ?
 Pour connaître la position de Vénus dans ton thème natal, tu as besoin de ta date, heure et lieu de naissance exactes. Avec ces informations, tu peux utiliser le [calculateur de thème natal de Karmastro](https://app.karmastro.com) (gratuit), consulter un·e astrologue professionnel·le, ou utiliser des sites comme [Astro.com](https://www.astro.com/horoscope). Si tu es né·e entre le **20 avril et le 20 mai**, Vénus était probablement en Taureau (mais vérifie les dates exactes pour ton année de naissance).
@@ -270,7 +270,7 @@ Vénus en Taureau n'est pas qu'une simple position astrologique - c'est une **b�
 
 **Prochaine étape** : Pour aller plus loin, explore ces ressources Karmastro :
 1. [Calcule ton thème natal complet](https://app.karmastro.com) et découvre où se situe Vénus dans tes maisons
-2. Utilise [l'Oracle IA](https://app.karmastro.com/oracle) pour poser une question précise sur ta Vénus en Taureau
+2. Utilise [l'Oracle IA](https://karmastro.com/oracle/) pour poser une question précise sur ta Vénus en Taureau
 3. Lis notre article sur [les maisons astrologiques](/blog/maisons-astrologiques-guide-interpretation-complet/) pour comprendre où s'exprime ton énergie vénusienne
 4. Découvre comment [ton chemin de vie numérologique](/blog/comment-calculer-chemin-de-vie-numerologie/) résonne avec Vénus en Taureau
 5. Explore la [compatibilité amoureuse](/blog/compatibilite-amoureuse-signes-astrologiques-attirent/) en synastrie pour approfondir tes relations

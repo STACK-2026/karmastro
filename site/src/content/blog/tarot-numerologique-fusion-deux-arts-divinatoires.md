@@ -297,7 +297,7 @@ Karmastro révolutionne cette approche avec son **Oracle IA**, qui analyse tes c
 **Maillage interne intégré** :
 1. [Glossaire astrologie et numérologie](https://karmastro.com/glossaire)
 2. [Notre précision (Swiss Ephemeris)](https://karmastro.com/precision)
-3. [L’Oracle IA de Karmastro](https://app.karmastro.com/oracle)
+3. [L’Oracle IA de Karmastro](https://karmastro.com/oracle/)
 4. [Calculer mon chemin de vie](https://app.karmastro.com/outils/chemin-de-vie)
 5. [Blog : Comment interpréter les arcanes mineurs](/blog/tarot-numerologique-fusion-deux-arts-divinatoires/)
 6. [Notre histoire](https://karmastro.com/notre-histoire)

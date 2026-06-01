@@ -213,7 +213,7 @@ Sí. Conocer su existencia y saber dónde se encuentra Saturno en tu carta natal
 
 ## Ir más lejos
 
-El retorno de Saturno es sin duda el tránsito más importante para entender en una vida de adulto. Si quieres explorar tu carta natal en profundidad, empieza calculando tu [ascendente](/es/herramientas/ascendente) y tu [camino de vida](/es/herramientas/camino-de-vida), luego pide al [Oracle](https://app.karmastro.com/oracle) una lectura personalizada.
+El retorno de Saturno es sin duda el tránsito más importante para entender en una vida de adulto. Si quieres explorar tu carta natal en profundidad, empieza calculando tu [ascendente](/es/herramientas/ascendente) y tu [camino de vida](/es/herramientas/camino-de-vida), luego pide al [Oracle](https://karmastro.com/oracle/) una lectura personalizada.
 
 El retorno de Saturno asusta porque no se habla de él. Ahora que sabes, asusta menos. Lo que te espera ahí es precioso.
 

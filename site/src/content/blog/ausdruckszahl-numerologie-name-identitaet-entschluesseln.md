@@ -144,7 +144,7 @@ Beobachte über einen Monat, wann deine Ausdrucksqualitäten in der Spitze sind 
 
 ## Weiter gehen
 
-Kreuze deine Ausdruckszahl mit deiner [Lebenszahl](/de/werkzeuge/lebenszahl) und mit deiner Seelenzahl, um dein vollständiges numerologisches Profil zu bauen. Für eine personalisierte Lektüre, die auch deinen astrologischen Kontext berücksichtigt, konsultiere das [Oracle Karmastro](https://app.karmastro.com/oracle).
+Kreuze deine Ausdruckszahl mit deiner [Lebenszahl](/de/werkzeuge/lebenszahl) und mit deiner Seelenzahl, um dein vollständiges numerologisches Profil zu bauen. Für eine personalisierte Lektüre, die auch deinen astrologischen Kontext berücksichtigt, konsultiere das [Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## Quellen und Referenzen
 

@@ -204,7 +204,7 @@ L'ascendente e il MC sono i due punti angolari principali del tema. Mentre l'asc
 
 ## Andare oltre
 
-Il tuo ascendente è solo uno strato della tua carta natale. Per una visione completa, hai bisogno della tua [carta natale interpretata](/it/strumenti/). Per una lettura personalizzata, consulta l'[Oracle Karmastro](https://app.karmastro.com/oracle). Per continuare l'esplorazione dei fondamentali, leggi anche la nostra guida al [segno lunare](/it/blog/segno-lunare-luna-natale-mondo-emotivo) e agli aspetti astrologici.
+Il tuo ascendente è solo uno strato della tua carta natale. Per una visione completa, hai bisogno della tua [carta natale interpretata](/it/strumenti/). Per una lettura personalizzata, consulta l'[Oracle Karmastro](https://karmastro.com/oracle/). Per continuare l'esplorazione dei fondamentali, leggi anche la nostra guida al [segno lunare](/it/blog/segno-lunare-luna-natale-mondo-emotivo) e agli aspetti astrologici.
 
 ## Fonti e riferimenti
 

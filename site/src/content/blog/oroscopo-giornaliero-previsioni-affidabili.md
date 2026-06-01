@@ -196,7 +196,7 @@ Dipende da quanti pianeti hai in certi segni, ma in media una persona ha 4-6 tra
 
 ## 15. Per approfondire
 
-Un oroscopo affidabile è l'incrocio di tre elementi: il tuo tema natale, i transiti reali di oggi, e il tuo ciclo numerologico personale. Inizia leggendo ogni mattina il tuo [oroscopo Karmastro](/it/horoscope), calcolato in base ai veri transiti. Approfondisci con il tuo [tema natale completo](/it/strumenti/) per capire su quali punti natali i transiti stanno agendo. E per una lettura personalizzata dei transiti del mese e dell'anno, parla con l'[Oracle Karmastro](https://app.karmastro.com/oracle), che integra astrologia, numerologia e sfumatura karmica in un'unica conversazione.
+Un oroscopo affidabile è l'incrocio di tre elementi: il tuo tema natale, i transiti reali di oggi, e il tuo ciclo numerologico personale. Inizia leggendo ogni mattina il tuo [oroscopo Karmastro](/it/horoscope), calcolato in base ai veri transiti. Approfondisci con il tuo [tema natale completo](/it/strumenti/) per capire su quali punti natali i transiti stanno agendo. E per una lettura personalizzata dei transiti del mese e dell'anno, parla con l'[Oracle Karmastro](https://karmastro.com/oracle/), che integra astrologia, numerologia e sfumatura karmica in un'unica conversazione.
 
 ## Fonti e riferimenti
 

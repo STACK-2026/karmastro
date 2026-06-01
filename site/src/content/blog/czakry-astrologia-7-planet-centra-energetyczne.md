@@ -101,7 +101,7 @@ Nie. To użyteczny model.
 
 ## Idź dalej
 
-Skonsultuj [Oracle](https://app.karmastro.com/oracle).
+Skonsultuj [Oracle](https://karmastro.com/oracle/).
 
 ## Zrodla i odnosniki
 

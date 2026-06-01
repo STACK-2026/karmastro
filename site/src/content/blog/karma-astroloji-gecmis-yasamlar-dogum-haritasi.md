@@ -131,7 +131,7 @@ Evet. Ay düğümleri 18,6 yılda bir zodyağı tamamlar ve her 9,3 yılda bir b
 
 ## Daha ileri
 
-**Karma** bir hapishane değildir. [Doğum haritanı](/tr/araclar/) hesapla ve [Oracle](https://app.karmastro.com/oracle)'ya danış.
+**Karma** bir hapishane değildir. [Doğum haritanı](/tr/araclar/) hesapla ve [Oracle](https://karmastro.com/oracle/)'ya danış.
 
 ## Kaynaklar ve referanslar
 

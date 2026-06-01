@@ -58,7 +58,7 @@ La numérologie, et plus particulièrement le nombre d’expression, a influenc�
 
 ### Outils pour explorer ton nombre d’expression
 Pour aller plus loin, voici des ressources fiables :
-1. **Oracle IA de Karmastro** : [https://app.karmastro.com/oracle](https://app.karmastro.com/oracle)
+1. **Oracle IA de Karmastro** : [https://karmastro.com/oracle/](https://karmastro.com/oracle/)
    - Calcule ton nombre d’expression en quelques clics et reçois un **mini-rapport personnalisé gratuit** (300 mots), incluant une analyse de sa synergie avec ton chemin de vie.
    - L’outil utilise la **table pythagoricienne officielle** et vérifie automatiquement les maîtres nombres.
    - En échange de ton email, accède à un **rapport complet** (1500 mots) avec des conseils pour exploiter ton nombre au quotidien.
@@ -137,7 +137,7 @@ Additionne les chiffres du résultat jusqu’à obtenir un nombre entre 1 et 9, 
 
 ### Vérification des calculs : outils et astuces
 Pour éviter les erreurs, utilise ces méthodes :
-1. **Outil en ligne** : [Calculateur de nombre d’expression de Karmastro](https://app.karmastro.com/oracle)
+1. **Outil en ligne** : [Calculateur de nombre d’expression de Karmastro](https://karmastro.com/oracle/)
    - Saisis ton nom complet et ta date de naissance pour obtenir ton nombre d’expression **et** un mini-rapport personnalisé.
    - L’outil vérifie automatiquement les maîtres nombres et propose une interprétation détaillée.
 
@@ -272,7 +272,7 @@ Bien que le calcul manuel soit possible, des erreurs peuvent survenir, surtout p
    - Il est optimisé pour mobile, tablette et ordinateur.
 
 **Comment l’utiliser ?**
-1. Rends-toi sur [https://app.karmastro.com/oracle](https://app.karmastro.com/oracle).
+1. Rends-toi sur [https://karmastro.com/oracle/](https://karmastro.com/oracle/).
 2. Saisis ton **nom complet** (tel qu’il apparaît sur ton acte de naissance) et ta **date de naissance**.
 3. Clique sur "Calculer".
 4. Reçois instantanément ton **nombre d’expression** et ton mini-rapport.

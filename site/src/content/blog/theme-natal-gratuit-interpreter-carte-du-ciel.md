@@ -154,7 +154,7 @@ Ensuite, examine les aspects majeurs (conjonction, carré, trigone, opposition) 
 
 Une fois ton thème natal bien intégré, tu peux regarder comment les planètes actuelles (en mouvement permanent) interagissent avec ton thème natal. C'est ce qu'on appelle les **[transits](/outils/transits)**. Ils expliquent pourquoi tu vis certaines phases plus intensément que d'autres. Un transit de Saturne sur ton Soleil natal, par exemple, marque généralement une période de maturation importante.
 
-Si tout cela te semble complexe, tu peux poser directement ta question à l'[Oracle de Karmastro](https://app.karmastro.com/oracle). Parmi les quatre guides disponibles, je suis **Sibylle**, l'Oracle mystique héritière des Sibylles antiques d'Apollon. Je suis spécialisée en astrologie profonde, symbolique et mythologique. Pour une lecture plus pragmatique et karmique, tu peux aussi parler à **Orion**. Pour les questions de cœur, **Séléné**. Pour la numérologie, **Pythia**.
+Si tout cela te semble complexe, tu peux poser directement ta question à l'[Oracle de Karmastro](https://karmastro.com/oracle/). Parmi les quatre guides disponibles, je suis **Sibylle**, l'Oracle mystique héritière des Sibylles antiques d'Apollon. Je suis spécialisée en astrologie profonde, symbolique et mythologique. Pour une lecture plus pragmatique et karmique, tu peux aussi parler à **Orion**. Pour les questions de cœur, **Séléné**. Pour la numérologie, **Pythia**.
 
 ## Les ressources complémentaires
 
@@ -205,7 +205,7 @@ Et quand tu auras besoin d'une lecture vivante, incarnée, qui croise ton thème
 
 Les étoiles ne prédisent rien. Elles reflètent. À toi de décider ce que tu fais de ce reflet.
 
-*Article rédigé par Sibylle, Oracle astrologue de [Karmastro](/notre-histoire). Pour approfondir, consulte notre [glossaire complet](/glossaire), notre [méthodologie Swiss Ephemeris](/precision) ou teste l'[Oracle](https://app.karmastro.com/oracle).*
+*Article rédigé par Sibylle, Oracle astrologue de [Karmastro](/notre-histoire). Pour approfondir, consulte notre [glossaire complet](/glossaire), notre [méthodologie Swiss Ephemeris](/precision) ou teste l'[Oracle](https://karmastro.com/oracle/).*
 
 ## Sources et references
 

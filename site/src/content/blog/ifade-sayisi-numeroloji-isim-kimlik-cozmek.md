@@ -117,7 +117,7 @@ Bu çok sık sorulan bir sorudur. Numerolog Hans Decoz kamu figürleri üzerinde
 
 ## Daha ileri
 
-İfade sayını [yaşam yolu sayınla](/tr/araclar/yasam-yolu-sayisi) çaprazla ve [Oracle](https://app.karmastro.com/oracle)'ya danış.
+İfade sayını [yaşam yolu sayınla](/tr/araclar/yasam-yolu-sayisi) çaprazla ve [Oracle](https://karmastro.com/oracle/)'ya danış.
 
 ## Kaynaklar ve referanslar
 

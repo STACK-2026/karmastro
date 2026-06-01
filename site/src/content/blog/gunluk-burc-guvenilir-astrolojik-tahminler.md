@@ -33,7 +33,7 @@ Birinci kusur: Güneş burcu kimlik çekirdeğini temsil eder ama kişiliğin sa
 
 İkinci kusur: editoryal üretim. *Le Parisien*, *Closer*, *Hürriyet* gibi yaygın basın organlarında burçlar stajyerler ya da yapay zeka üreticileri tarafından birkaç dakikada yazılır. Astrolog sertifikası olan kimse yoktur ve efemeris (gezegen konum tablosu) sorgulanmaz. Üçüncü kusur: belirsizlik kasıtlıdır. "Bugün önemli bir karşılaşma yaşayabilirsin" tipi cümleler tüm okuyuculara uyar, dolayısıyla hiçbir okuyucuya öngörü sunmaz.
 
-Gerçek bir günlük tahmin tam tersi üretir: belirli transitlere, belirli evlere, belirli açılara bağlı doğrulanabilir önermeler. Karmastro [Oracle aracı](https://app.karmastro.com/oracle) bu prensibi takip eder.
+Gerçek bir günlük tahmin tam tersi üretir: belirli transitlere, belirli evlere, belirli açılara bağlı doğrulanabilir önermeler. Karmastro [Oracle aracı](https://karmastro.com/oracle/) bu prensibi takip eder.
 
 Batı basınında dergi burcu formatı 1930'da *The Sunday Express* gazetesinde Richard Harold Naylor tarafından başlatıldı. Naylor o yıl yeni doğan Prenses Margaret için bir tahmin yazdı, başarılı oldu ve gazete ona kalıcı bir köşe açtı. Ancak Naylor astroloji uygulamasını ilk yıllardan itibaren sadeleştirmek zorunda kaldı: her haftada üç cümle yazması gerekti, tam harita analizi imkansızdı, on iki Güneş burcu basit bir sınıflandırma haline geldi. Doksan yıl sonra tüm dünya basını hâlâ aynı şablonu kullanıyor. Bu şablonun astrolojik değeri Naylor'un kendi döneminde bile tartışmalıydı; bugün ise yapısal olarak geçersizdir.
 
@@ -87,7 +87,7 @@ Karmastro **her gün 12 burç için benzersiz bir burç** üretir. [Ücretsiz Ka
 
 Metodoloji dört aşamada çalışır. Birinci aşamada Swiss Ephemeris API gerçek zamanlı gezegen koordinatları sağlar (aynı motor Astrodienst ve çoğu profesyonel astrolog tarafından kullanılır). İkinci aşamada bir algoritma bugünün Ay pozisyonunu, ana transitlerin burcunu ve her yükselen burca en çok etki eden transit kombinasyonunu çıkarır. Üçüncü aşamada dil modeli (insan astrolog tarafından denetlenir) bu teknik verileri okuyucunun anlayacağı somut cümlelere çevirir. Dördüncü aşamada her burç için bir "niyet kartı" ve "önlem kartı" üretilir.
 
-[Karmastro Oracle](https://app.karmastro.com/oracle) aboneler için bir adım daha ileri gider: sadece yükselen burca değil, senin tam doğum haritana göre kişiselleştirilmiş günlük bir oturum açar. Bu farkı test etmek için [ücretsiz doğum haritası](/tr/araclar/dogum-haritasi) ile başla.
+[Karmastro Oracle](https://karmastro.com/oracle/) aboneler için bir adım daha ileri gider: sadece yükselen burca değil, senin tam doğum haritana göre kişiselleştirilmiş günlük bir oturum açar. Bu farkı test etmek için [ücretsiz doğum haritası](/tr/araclar/dogum-haritasi) ile başla.
 
 Karmastro metinlerinin üretiminde kullanılan dört prensibi burada açıklıyoruz çünkü okuyucunun içeriği doğru bağlamda alması gerekir. Birinci prensip: her cümle bir transite ya da numerolojik bir koşula bağlıdır; süsleyici bir sıfat kullanmıyoruz. İkinci prensip: astrolojik jargon minimumda tutulur ama teknik kelime (efemeris, transit, kavuşum) atılmaz çünkü sadeleştirme doğruluğu azaltır. Üçüncü prensip: tahmin yüzde yüz olmaz; her önerme bir olasılık sunar ve okur çaprazlama yaparak değerlendirir. Dördüncü prensip: her burç üç parçadan oluşur, enerji analizi, kaçınılacak davranış, yapılabilecek eylem. Bu yapı 2026 boyunca sabit kalacak ve okuma alışkanlığı oluşturacak.
 
@@ -114,7 +114,7 @@ Evet, belirli sınırlarla. Büyük olaylar astroloji için genellikle üç gös
 
 ## Daha ileri
 
-[Karmastro burcunu](/tr/horoscope) oku ve [Oracle](https://app.karmastro.com/oracle)'ya danış.
+[Karmastro burcunu](/tr/horoscope) oku ve [Oracle](https://karmastro.com/oracle/)'ya danış.
 
 ## Kaynaklar ve referanslar
 

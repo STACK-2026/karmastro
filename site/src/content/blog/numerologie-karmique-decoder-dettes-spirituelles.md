@@ -62,7 +62,7 @@ Lama Yeshe, maître tibétain du XXe siècle, a modernisé cette approche en cr�
 | Chaldéenne | 1000 av. J.-C. | 14, 16 | Tablettes de Babylone |
 | Tibétaine | VIIe siècle | 13, 14, 16, 19 | *Bardo Thödol* |
 
-Cette convergence de traditions séparées par des millénaires et des continents témoigne de l'universalité de ces patterns énergétiques. Karmastro intègre ces trois approches dans son [Oracle IA](https://app.karmastro.com/oracle) pour une analyse karmique complète et précise.
+Cette convergence de traditions séparées par des millénaires et des continents témoigne de l'universalité de ces patterns énergétiques. Karmastro intègre ces trois approches dans son [Oracle IA](https://karmastro.com/oracle/) pour une analyse karmique complète et précise.
 
 La numérologie karmique moderne, telle que pratiquée par les experts de notre plateforme, respecte scrupuleusement ces sources historiques tout en bénéficiant des outils de calcul contemporains pour une précision inégalée.
 
@@ -442,7 +442,7 @@ La transformation karmique nécessite une approche **méthodique et progressive*
 **Témoignage de transformation (dette 14) :**
 *"Avant, je changeais de travail tous les 18 mois maximum. Impossible de tenir en place. Grâce au protocole Karmastro, j'ai compris que ma soif de liberté masquait une peur de l'engagement. Aujourd'hui, cela fait 3 ans que je développe ma propre entreprise. Je voyage 6 mois par an GRÂCE à ma stabilité professionnelle, pas MALGRÉ elle. Le chiffre d'affaires a été multiplié par 4 en 2 ans."*
 
-Ce protocole n'est pas une recette magique, mais un **chemin d'apprentissage progressif**. L'essentiel est la régularité et la bienveillance envers soi-même. Comme le rappelle l'[Oracle Karmastro](https://app.karmastro.com/oracle), chaque petit pas compte dans la transformation de tes dettes en forces.
+Ce protocole n'est pas une recette magique, mais un **chemin d'apprentissage progressif**. L'essentiel est la régularité et la bienveillance envers soi-même. Comme le rappelle l'[Oracle Karmastro](https://karmastro.com/oracle/), chaque petit pas compte dans la transformation de tes dettes en forces.
 
 ## Questions fréquentes sur la numérologie karmique
 
@@ -520,7 +520,7 @@ Les dettes karmiques **se transforment au lieu de disparaître**. Une fois la le
 **Exemple d'analyse croisée réussie :**
 *Saturne en maison 7 (karma relationnel) + dette 19 (isolement) + Lune Noire en Balance = Difficulté à faire confiance en amour, tendance à l'auto-sabotage relationnel par peur de la dépendance.*
 
-Cette approche intégrée permet une **guidance personnalisée** unique, disponible via [l'Oracle Karmastro](https://app.karmastro.com/oracle) qui combine intelligence artificielle, numérologie et astrologie pour des réponses d'une précision inégalée.
+Cette approche intégrée permet une **guidance personnalisée** unique, disponible via [l'Oracle Karmastro](https://karmastro.com/oracle/) qui combine intelligence artificielle, numérologie et astrologie pour des réponses d'une précision inégalée.
 
 ## Conclusion : de tes dettes karmiques vers ton génie spirituel
 

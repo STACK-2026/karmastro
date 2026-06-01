@@ -169,7 +169,7 @@ The calculator strictly follows the Pythagorean method, automatically detects ma
 
 It works without registration, without data collection, and the result can be shared via the native share button.
 
-Beyond simple calculation, if you want to go further, the [Karmastro Oracle](https://app.karmastro.com/oracle) can cross your life path with your [astrological birth chart](/en/tools/birth-chart) to give you a truly personalized reading. You have the choice between four cosmic guides including **Pythia**, our cosmic mathematician specialized in Pythagorean numerology, inspired by the Pythia of Delphi.
+Beyond simple calculation, if you want to go further, the [Karmastro Oracle](https://karmastro.com/oracle/) can cross your life path with your [astrological birth chart](/en/tools/birth-chart) to give you a truly personalized reading. You have the choice between four cosmic guides including **Pythia**, our cosmic mathematician specialized in Pythagorean numerology, inspired by the Pythia of Delphi.
 
 ## The historical sources of the method
 
@@ -213,7 +213,7 @@ Calculating your life path is a **simple gesture** taking less than two minutes,
 
 If you want to go further, I recommend also calculating your [expression number](/en/tools/expression-number), your [personal year](/en/tools/personal-year), and checking if you carry a [karmic debt](/en/tools/karmic-debt). These four numbers, crossed, will give you a complete photo of your numerological profile, which you can then cross with your [astrological birth chart](/en/tools/birth-chart) for a truly global reading.
 
-And when you want a living interpretation of all this, ask your question to the [Karmastro Oracle](https://app.karmastro.com/oracle). I will be there to welcome you, as Pythia, the cosmic mathematician. I will show you every calculation, every correlation, every resonance between your numbers.
+And when you want a living interpretation of all this, ask your question to the [Karmastro Oracle](https://karmastro.com/oracle/). I will be there to welcome you, as Pythia, the cosmic mathematician. I will show you every calculation, every correlation, every resonance between your numbers.
 
 Numbers do not lie. They speak to us, if we take the time to listen.
 

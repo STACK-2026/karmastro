@@ -221,7 +221,7 @@ Sì, se il tuo ritorno cade negli anni 2024-2044, stai vivendo anche il grande t
 
 ## Andare oltre
 
-Il ritorno di Saturno è il transito più importante da capire nella vita adulta. Calcola il tuo [ascendente](/it/strumenti/ascendente), esplora le tue 12 case astrologiche e consulta l'[Oracle](https://app.karmastro.com/oracle) per un'analisi personalizzata del tuo ritorno.
+Il ritorno di Saturno è il transito più importante da capire nella vita adulta. Calcola il tuo [ascendente](/it/strumenti/ascendente), esplora le tue 12 case astrologiche e consulta l'[Oracle](https://karmastro.com/oracle/) per un'analisi personalizzata del tuo ritorno.
 
 ## Fonti e riferimenti
 

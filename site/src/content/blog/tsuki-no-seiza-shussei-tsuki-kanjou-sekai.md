@@ -102,7 +102,7 @@ reviewedBy: "Orion、シニア天文学者兼占星術師"
 
 ## さらに進む
 
-[Oracle Karmastro](https://app.karmastro.com/oracle)に相談してください。
+[Oracle Karmastro](https://karmastro.com/oracle/)に相談してください。
 
 ## 参考文献と出典
 

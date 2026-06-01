@@ -103,7 +103,7 @@ Nie.
 
 ## Idź dalej
 
-Twój natalny Księżyc jest częścią całości. Skonsultuj [Oracle Karmastro](https://app.karmastro.com/oracle).
+Twój natalny Księżyc jest częścią całości. Skonsultuj [Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## Zrodla i odnosniki
 

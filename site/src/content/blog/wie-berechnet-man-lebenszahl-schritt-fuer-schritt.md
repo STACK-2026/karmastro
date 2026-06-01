@@ -193,7 +193,7 @@ Ja. Die Lebenszahl ist nur ein Teil des Profils. Deine Ausdruckszahl, deine Seel
 
 Deine Lebenszahl zu berechnen ist eine einfache Geste, aber sie ist der Beginn eines längeren Abenteuers. Sobald du deine Zahl hast, lies den spezifischen Leitfaden, der ihr gewidmet ist. Wir haben bereits einen detaillierten Leitfaden zur [Lebenszahl 1](/de/blog/lebenszahl-1-fuehrung-unabhaengigkeit-numerologie), und weitere folgen.
 
-Für ein vollständiges Profil kreuze deine Lebenszahl mit deinem Geburtshoroskop. Berechne kostenlos deine [interpretierte Geburtskarte](/de/werkzeuge/) und lies den [Leitfaden zum Aszendenten](/de/blog/aszendent-vollstaendiger-leitfaden-verstehen). Für eine personalisierte Lesung, die deine Lebenszahl mit deinen Transiten und deinen persönlichen Jahren kreuzt, konsultiere das [Oracle Karmastro](https://app.karmastro.com/oracle). Unsere vier Begleiter (Pythia, Orion, Sibylle, Selene) lesen dein vollständiges Profil in Echtzeit. Und jeden Morgen wartet dein [Tageshoroskop](/de/horoscope) auf dich.
+Für ein vollständiges Profil kreuze deine Lebenszahl mit deinem Geburtshoroskop. Berechne kostenlos deine [interpretierte Geburtskarte](/de/werkzeuge/) und lies den [Leitfaden zum Aszendenten](/de/blog/aszendent-vollstaendiger-leitfaden-verstehen). Für eine personalisierte Lesung, die deine Lebenszahl mit deinen Transiten und deinen persönlichen Jahren kreuzt, konsultiere das [Oracle Karmastro](https://karmastro.com/oracle/). Unsere vier Begleiter (Pythia, Orion, Sibylle, Selene) lesen dein vollständiges Profil in Echtzeit. Und jeden Morgen wartet dein [Tageshoroskop](/de/horoscope) auf dich.
 
 ## Quellen und Referenzen
 

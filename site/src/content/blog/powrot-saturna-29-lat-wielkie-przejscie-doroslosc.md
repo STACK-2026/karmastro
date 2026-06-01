@@ -104,7 +104,7 @@ Intensywna faza trwa około dwóch lat.
 
 ## Idź dalej
 
-Powrót Saturna to najważniejszy tranzyt do zrozumienia w dorosłym życiu. Oblicz swój [wschodzący](/pl/narzedzia/wschodzacy-znak) i skonsultuj [Oracle](https://app.karmastro.com/oracle).
+Powrót Saturna to najważniejszy tranzyt do zrozumienia w dorosłym życiu. Oblicz swój [wschodzący](/pl/narzedzia/wschodzacy-znak) i skonsultuj [Oracle](https://karmastro.com/oracle/).
 
 ## Zrodla i odnosniki
 

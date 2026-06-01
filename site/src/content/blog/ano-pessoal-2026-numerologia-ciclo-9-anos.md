@@ -211,7 +211,7 @@ Lê os teus três últimos anos à luz da grelha. Se vês que a descrição corr
 
 ## 18. Para ir mais longe
 
-Calcular o teu ano pessoal 2026 é o ponto de partida. Para uma leitura completa, cruza-o com o teu [caminho de vida](/pt/ferramentas/) e com o teu [mapa astral](/pt/ferramentas/). Lê também o [guia do caminho de vida 1](/pt/blog/caminho-de-vida-1-lideranca-independencia-numerologia), o [método de cálculo do caminho de vida](/pt/blog/como-calcular-caminho-de-vida-passo-a-passo) e o [guia do signo ascendente](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente) para compor uma visão multi-camadas. Para uma interpretação personalizada que cruza numerologia temporal e trânsitos astrológicos em tempo real, consulta o [Oracle Karmastro](https://app.karmastro.com/oracle).
+Calcular o teu ano pessoal 2026 é o ponto de partida. Para uma leitura completa, cruza-o com o teu [caminho de vida](/pt/ferramentas/) e com o teu [mapa astral](/pt/ferramentas/). Lê também o [guia do caminho de vida 1](/pt/blog/caminho-de-vida-1-lideranca-independencia-numerologia), o [método de cálculo do caminho de vida](/pt/blog/como-calcular-caminho-de-vida-passo-a-passo) e o [guia do signo ascendente](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente) para compor uma visão multi-camadas. Para uma interpretação personalizada que cruza numerologia temporal e trânsitos astrológicos em tempo real, consulta o [Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## Fontes e referencias
 

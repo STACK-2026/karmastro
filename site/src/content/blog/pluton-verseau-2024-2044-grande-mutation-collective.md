@@ -235,7 +235,7 @@ Pluton va activer une maison spécifique de ton thème, en fonction de ton ascen
 
 **Pluton en maison XII** : transformation profonde de l'inconscient, des secrets, des zones d'ombre. Travail psychologique majeur souvent indispensable.
 
-Pour identifier précisément quelle maison de ton thème est touchée par Pluton en Verseau, tu peux utiliser notre [calculateur d'ascendant](/outils/ascendant) puis demander à [l'Oracle](https://app.karmastro.com/oracle) une lecture de ce transit pour toi spécifiquement.
+Pour identifier précisément quelle maison de ton thème est touchée par Pluton en Verseau, tu peux utiliser notre [calculateur d'ascendant](/outils/ascendant) puis demander à [l'Oracle](https://karmastro.com/oracle/) une lecture de ce transit pour toi spécifiquement.
 
 ## 15. Génération Pluton Verseau : qui sont les enfants nés sous ce ciel
 
@@ -309,7 +309,7 @@ Pluton en Verseau est sans doute le transit le plus important de ta vie, parce q
 
 Pour aller plus loin, lis aussi notre guide sur [le retour de Saturne](/blog/retour-de-saturne-29-ans-grand-passage-adulte), qui explique comment Saturne, autre grande planète de mutation, vient compléter le travail de Pluton, et notre article sur [les 12 maisons astrologiques](/blog/maisons-astrologiques-guide-interpretation-complet/) pour comprendre dans quel domaine de ta vie le transit va se loger.
 
-Pour une lecture personnalisée et précise de ce que Pluton en Verseau te réserve dans les années à venir, [l'Oracle](https://app.karmastro.com/oracle) peut le faire pour toi en quelques minutes, en partant de ta carte exacte.
+Pour une lecture personnalisée et précise de ce que Pluton en Verseau te réserve dans les années à venir, [l'Oracle](https://karmastro.com/oracle/) peut le faire pour toi en quelques minutes, en partant de ta carte exacte.
 
 Et si tu veux suivre les étapes clés de ce grand transit jour après jour, abonne-toi à notre horoscope quotidien gratuit. Chaque matin, tu sauras ce qui se joue dans le ciel personnel et collectif, sans dramatisation, avec des clés concrètes pour t'orienter.
 

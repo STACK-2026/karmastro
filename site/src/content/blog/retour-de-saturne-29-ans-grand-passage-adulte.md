@@ -87,7 +87,7 @@ La phase intense se déroule pendant les 18 à 24 mois où Saturne reste dans la
 
 La phase de sortie s'étale jusque vers 31 ou 32 ans. À ce moment-là, les leçons sont intégrées, les nouvelles structures sont en place, et tu sens que quelque chose s'est définitivement déplacé en toi. Ce qui te paraissait essentiel à 27 ans ne te concerne plus du tout, et tu te demandes même comment tu as pu y attacher autant d'importance.
 
-Si tu veux savoir précisément où en est Saturne dans ton ciel actuel et quand exactement il va revenir à sa position natale, tu peux demander une lecture personnalisée à [l'Oracle](https://app.karmastro.com/oracle), qui calcule tout pour toi.
+Si tu veux savoir précisément où en est Saturne dans ton ciel actuel et quand exactement il va revenir à sa position natale, tu peux demander une lecture personnalisée à [l'Oracle](https://karmastro.com/oracle/), qui calcule tout pour toi.
 
 ## 5. Les trois phases du retour
 
@@ -183,7 +183,7 @@ Si Saturne est plus **discret** dans ta carte, le passage peut être plus doux, 
 
 Si tu as Saturne en aspect difficile (carré, opposition) à ton Soleil, à ta Lune ou à ton ascendant, le retour de Saturne sera l'occasion de revisiter ces tensions internes. C'est souvent dans cette configuration qu'on parle de retour de Saturne particulièrement éprouvant, mais aussi le plus transformateur, parce que c'est là qu'il y a le plus à libérer.
 
-Pour identifier la position et les aspects de ton Saturne natal, tu peux passer par notre [Oracle](https://app.karmastro.com/oracle) qui calcule tout cela à partir de ta date, ton heure et ton lieu de naissance.
+Pour identifier la position et les aspects de ton Saturne natal, tu peux passer par notre [Oracle](https://karmastro.com/oracle/) qui calcule tout cela à partir de ta date, ton heure et ton lieu de naissance.
 
 ## 10. Les symptômes émotionnels du passage
 
@@ -301,7 +301,7 @@ Non, il ne change pas qui tu es au fond. Il révèle qui tu es vraiment, en enle
 
 ## Pour aller plus loin
 
-Le retour de Saturne est sans doute le transit le plus important à comprendre dans une vie d'adulte. Si tu veux explorer ta carte natale en profondeur et savoir où ton Saturne se trouve, commence par calculer ton [signe ascendant](/outils/ascendant) et ton [signe lunaire](/blog/signe-lunaire-lune-natale-monde-emotionnel/), puis demande à [l'Oracle](https://app.karmastro.com/oracle) une lecture personnalisée de ton retour de Saturne avec les dates exactes pour toi.
+Le retour de Saturne est sans doute le transit le plus important à comprendre dans une vie d'adulte. Si tu veux explorer ta carte natale en profondeur et savoir où ton Saturne se trouve, commence par calculer ton [signe ascendant](/outils/ascendant) et ton [signe lunaire](/blog/signe-lunaire-lune-natale-monde-emotionnel/), puis demande à [l'Oracle](https://karmastro.com/oracle/) une lecture personnalisée de ton retour de Saturne avec les dates exactes pour toi.
 
 Pour aller plus loin sur les autres grands passages de la vie astrologique, lis aussi notre [guide complet du signe ascendant](/blog/signe-ascendant-guide-complet-comprendre-ascendant) et notre article sur [Mercure rétrograde](/blog/mercure-retrograde-guide-comprendre-survivre).
 

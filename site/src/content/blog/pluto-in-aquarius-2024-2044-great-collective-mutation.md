@@ -236,7 +236,7 @@ Pluto will activate a specific house of your chart, based on your ascendant. Her
 
 **Pluto in house XII**: deep transformation of the unconscious, secrets, shadow zones. Major psychological work often indispensable.
 
-To identify precisely which house of your chart is touched by Pluto in Aquarius, you can use our [rising sign calculator](/en/tools/rising-sign) then request a reading of this transit for you specifically from the [Oracle](https://app.karmastro.com/oracle).
+To identify precisely which house of your chart is touched by Pluto in Aquarius, you can use our [rising sign calculator](/en/tools/rising-sign) then request a reading of this transit for you specifically from the [Oracle](https://karmastro.com/oracle/).
 
 ## 15. Pluto-Aquarius generation: the children born under this sky
 
@@ -310,7 +310,7 @@ Pluto in Aquarius is probably the most important transit of your lifetime, becau
 
 To go further, also read our guide on [the Saturn return](/en/blog/saturn-return-29-major-passage-into-adulthood), which explains how Saturn, another great mutation planet, completes Pluto's work, and our article on the 12 astrological houses to understand in which area of life the transit will land.
 
-For a personalized and precise reading of what Pluto in Aquarius has in store for you in the coming years, the [Oracle](https://app.karmastro.com/oracle) can do it for you in a few minutes, based on your exact chart.
+For a personalized and precise reading of what Pluto in Aquarius has in store for you in the coming years, the [Oracle](https://karmastro.com/oracle/) can do it for you in a few minutes, based on your exact chart.
 
 And if you want to follow the key steps of this great transit day after day, subscribe to our free daily horoscope. Every morning, you will know what is happening in the personal and collective sky, without drama, with concrete keys to orient yourself.
 

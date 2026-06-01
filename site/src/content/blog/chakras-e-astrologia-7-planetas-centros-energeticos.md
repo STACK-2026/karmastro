@@ -171,7 +171,7 @@ Observa três indicadores: sintomas físicos associados ao chakra (diminuem?), e
 
 ## Ir mais longe
 
-Para construir o teu próprio programa chakra-astrologia, começa por calcular o teu [mapa natal completo](/pt/ferramentas/mapa-natal) com hora e lugar exatos de nascimento. Identifica os três planetas mais tensos, traduz em chakras, escolhe um eixo prioritário. Se precisares de leitura interpretativa personalizada, consulta o [Oracle Karmastro](https://app.karmastro.com/oracle), que cruza Swiss Ephemeris com quatro vozes especializadas. O teu [ascendente](/pt/ferramentas/ascendente) dá também pistas importantes sobre o teu corpo e os teus bloqueios dominantes.
+Para construir o teu próprio programa chakra-astrologia, começa por calcular o teu [mapa natal completo](/pt/ferramentas/mapa-natal) com hora e lugar exatos de nascimento. Identifica os três planetas mais tensos, traduz em chakras, escolhe um eixo prioritário. Se precisares de leitura interpretativa personalizada, consulta o [Oracle Karmastro](https://karmastro.com/oracle/), que cruza Swiss Ephemeris com quatro vozes especializadas. O teu [ascendente](/pt/ferramentas/ascendente) dá também pistas importantes sobre o teu corpo e os teus bloqueios dominantes.
 
 A aliança entre chakras e astrologia é uma das pontes mais fecundas entre tradições orientais e ocidentais. Praticada com rigor, oferece uma ferramenta concreta de conhecimento de si e de trabalho pessoal. Praticada mal, degenera em New Age flutuante sem efeitos. A diferença está sempre na constância, na disciplina, e na honestidade com os próprios sintomas reais.
 

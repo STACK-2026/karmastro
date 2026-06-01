@@ -208,7 +208,7 @@ Nicht im strengen Sinne des wissenschaftlichen Paradigmas. Es ist ein symbolisch
 
 ## 14. Weiterführend
 
-Ein zuverlässiges Horoskop ist die Kreuzung von drei Elementen: deiner Geburtskarte, den aktuellen Transiten und deiner Numerologie. Karmastro vereint diese drei Ebenen in einem [kostenlosen Tageshoroskop](/de/horoscope), das jeden Morgen aktualisiert wird. Für eine personalisierte Tageslesung, basierend auf deiner exakten Geburtskarte, [berechne dein interpretiertes Geburtshoroskop](/de/werkzeuge/) und konsultiere das [Oracle Karmastro](https://app.karmastro.com/oracle). Unsere vier Begleiter antworten in Echtzeit, kreuzen Transite und Numerologie und helfen dir, den Himmel des Tages auf deine eigene Situation zu beziehen.
+Ein zuverlässiges Horoskop ist die Kreuzung von drei Elementen: deiner Geburtskarte, den aktuellen Transiten und deiner Numerologie. Karmastro vereint diese drei Ebenen in einem [kostenlosen Tageshoroskop](/de/horoscope), das jeden Morgen aktualisiert wird. Für eine personalisierte Tageslesung, basierend auf deiner exakten Geburtskarte, [berechne dein interpretiertes Geburtshoroskop](/de/werkzeuge/) und konsultiere das [Oracle Karmastro](https://karmastro.com/oracle/). Unsere vier Begleiter antworten in Echtzeit, kreuzen Transite und Numerologie und helfen dir, den Himmel des Tages auf deine eigene Situation zu beziehen.
 
 ## Quellen und Referenzen
 

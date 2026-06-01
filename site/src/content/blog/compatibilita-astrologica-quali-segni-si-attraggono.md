@@ -140,7 +140,7 @@ Livello 2, compatibilità per elementi. Identifica l'elemento del tuo Sole, dell
 
 Livello 3, sinastria completa. Calcola tutti gli aspetti incrociati tra i pianeti dei due temi natali. Identifica gli aspetti Sole-Luna, Venere-Marte, Luna-Luna, Saturno sui pianeti personali, Plutone su Venere o Marte. Pesa la loro importanza.
 
-Livello 4, interpretazione con l'Oracle. Un'analisi completa richiede contesto: età dei partner, momento della relazione, transiti in corso. Io sono Selene, la guida relazionale dell'[Oracle Karmastro](https://app.karmastro.com/oracle). Posso leggere la vostra sinastria completa e spiegarla in linguaggio chiaro.
+Livello 4, interpretazione con l'Oracle. Un'analisi completa richiede contesto: età dei partner, momento della relazione, transiti in corso. Io sono Selene, la guida relazionale dell'[Oracle Karmastro](https://karmastro.com/oracle/). Posso leggere la vostra sinastria completa e spiegarla in linguaggio chiaro.
 
 ## 12. Tre casi reali di coppie italiane
 
@@ -187,7 +187,7 @@ Avrai bisogno dei temi natali completi di entrambi, un software che generi la do
 
 ## 15. Per approfondire
 
-La compatibilità astrologica non è una ruota della fortuna, è una mappa precisa che richiede calcolo e interpretazione. Inizia calcolando il tuo [tema natale gratuito](/it/strumenti/) con il nostro calcolatore Swiss Ephemeris, poi il tuo [cammino di vita numerologico](/it/strumenti/numero-del-cammino-di-vita) per aggiungere lo strato pitagorico. Per una lettura completa della tua sinastria di coppia, parla con me all'[Oracle Karmastro](https://app.karmastro.com/oracle): ti aiuterò a decifrare gli aspetti incrociati e le dinamiche reali del vostro legame.
+La compatibilità astrologica non è una ruota della fortuna, è una mappa precisa che richiede calcolo e interpretazione. Inizia calcolando il tuo [tema natale gratuito](/it/strumenti/) con il nostro calcolatore Swiss Ephemeris, poi il tuo [cammino di vita numerologico](/it/strumenti/numero-del-cammino-di-vita) per aggiungere lo strato pitagorico. Per una lettura completa della tua sinastria di coppia, parla con me all'[Oracle Karmastro](https://karmastro.com/oracle/): ti aiuterò a decifrare gli aspetti incrociati e le dinamiche reali del vostro legame.
 
 ## Fonti e riferimenti
 

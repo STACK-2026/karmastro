@@ -175,7 +175,7 @@ Se podes, sim. Se não podes, redobra a atenção a contratos de arrendamento, e
 
 ## Ir mais longe
 
-Mercúrio retrógrado é apenas um dos trânsitos que ritmam o teu ano astrológico. Calcula o teu [ascendente](/pt/ferramentas/ascendente) e o teu [mapa natal completo](/pt/ferramentas/mapa-natal) para ver como cada retrogradação interage especificamente com a tua carta. Para uma leitura interpretativa personalizada antes do próximo episódio retrógrado, consulta o [Oracle Karmastro](https://app.karmastro.com/oracle), que cruza Swiss Ephemeris com quatro vozes especializadas (Sibylle, Orion, Selene, Pythia).
+Mercúrio retrógrado é apenas um dos trânsitos que ritmam o teu ano astrológico. Calcula o teu [ascendente](/pt/ferramentas/ascendente) e o teu [mapa natal completo](/pt/ferramentas/mapa-natal) para ver como cada retrogradação interage especificamente com a tua carta. Para uma leitura interpretativa personalizada antes do próximo episódio retrógrado, consulta o [Oracle Karmastro](https://karmastro.com/oracle/), que cruza Swiss Ephemeris com quatro vozes especializadas (Sibylle, Orion, Selene, Pythia).
 
 Mercúrio retrógrado não é uma maldição nem uma magia. É uma janela cíclica de revisão, proposta pelo próprio movimento dos planetas. Bem compreendida, torna-se uma das ferramentas mais úteis do calendário astrológico anual. Bem praticada, ensina a ler o tempo de forma mais fina, mais rítmica, mais respiratória, o que é, afinal, o objetivo profundo da astrologia: reconciliar a vida humana com os ritmos cósmicos que a atravessam.
 

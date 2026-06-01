@@ -180,7 +180,7 @@ Now that you know the correspondences, here is a simple method to diagnose your 
 
 This diagnostic method is simple but powerful. Many people, after a reading like this, are surprised to see that the body had been saying for years what the chart confirms, and that a targeted work on one single chakra relieves what therapy had not reached.
 
-If you want a personalized reading of your three planets in greatest tension and their corresponding chakras, the [Oracle](https://app.karmastro.com/oracle) can do it for you in a few minutes, starting from your date, time and place of birth.
+If you want a personalized reading of your three planets in greatest tension and their corresponding chakras, the [Oracle](https://karmastro.com/oracle/) can do it for you in a few minutes, starting from your date, time and place of birth.
 
 ## 12. Transits and energetic openings
 
@@ -258,7 +258,7 @@ No. Tibetan tantric tradition has slightly different variants. Western esoteric 
 
 The chakra-astrology correspondence is a powerful key to moving from an intellectual to an embodied reading. If you want to explore your chart in this light, start by calculating your [rising sign](/en/tools/rising-sign), your moon sign, and your [life path number](/en/tools/life-path-number). These three bases give you the framework.
 
-For a personalized reading of your three planets in greatest tension and the chakras they correspond to, the [Oracle](https://app.karmastro.com/oracle) can do it for you in a few minutes.
+For a personalized reading of your three planets in greatest tension and the chakras they correspond to, the [Oracle](https://karmastro.com/oracle/) can do it for you in a few minutes.
 
 And if you want to receive every morning a message that reminds you which chakra to work on according to the sky of the day, subscribe to our free daily horoscope. It is a simple way to keep the practice alive day after day.
 

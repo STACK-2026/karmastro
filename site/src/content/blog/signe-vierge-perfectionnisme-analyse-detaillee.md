@@ -94,7 +94,7 @@ Le perfectionnisme de la Vierge a deux faces :
 | Fiabilité                   | Stress et anxiété                    |
 | Sens du détail              | Difficulté à déléguer                |
 
-**Conseil Karmastro** : Pour canaliser ce trait, fixe-toi des **deadlines strictes** et accepte que "fait" soit mieux que "parfait". L'Oracle IA de [Karmastro](https://app.karmastro.com/oracle) propose des affirmations personnalisées pour t'aider à lâcher prise.
+**Conseil Karmastro** : Pour canaliser ce trait, fixe-toi des **deadlines strictes** et accepte que "fait" soit mieux que "parfait". L'Oracle IA de [Karmastro](https://karmastro.com/oracle/) propose des affirmations personnalisées pour t'aider à lâcher prise.
 
 ---
 
@@ -171,7 +171,7 @@ Selon l'astrologie karmique, la Vierge doit travailler sur **3 leçons majeures*
 3. **Exprimer ses émotions** :
    - *Défis* : La Vierge intellectualise ses sentiments au lieu de les vivre.
    - *Leçon* : Apprendre à les nommer (ex : "Je me sens vulnérable").
-   - *Outil* : L'Oracle IA de [Karmastro](https://app.karmastro.com/oracle) propose des méditations guidées pour connecter cœur et raison.
+   - *Outil* : L'Oracle IA de [Karmastro](https://karmastro.com/oracle/) propose des méditations guidées pour connecter cœur et raison.
 
 ---
 

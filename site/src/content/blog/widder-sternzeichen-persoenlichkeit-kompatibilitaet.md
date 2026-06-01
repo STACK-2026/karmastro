@@ -199,7 +199,7 @@ Eine sehr intensive Kombination. Der Widder handelt, der Skorpion gräbt. Die Pe
 
 Deine Sonne im Widder zu kennen ist der erste Schritt. Dein vollständiges Geburtshoroskop offenbart die Nuancen, die dich wirklich einzigartig machen: dein Mond, dein Aszendent, deine Venus, dein Mars und alle Aspekte zwischen ihnen. Berechne es kostenlos mit unserem [interpretierten Geburtshoroskop](/de/werkzeuge/) oder lies unseren [Leitfaden zum Aszendenten](/de/blog/aszendent-vollstaendiger-leitfaden-verstehen), um deine astrologische Trinität zu vervollständigen.
 
-Für eine lebendige, personalisierte Lesung konsultiere das [Oracle Karmastro](https://app.karmastro.com/oracle). Unsere vier Begleiter (Sibylle, Selene, Orion, Pythia) beantworten deine Fragen in Echtzeit, basierend auf deiner echten Geburtskarte und nicht auf einem Cookie-Cutter-Text. Und jeden Morgen findest du dein [Tageshoroskop](/de/horoscope) mit den konkreten Transiten deines Tages.
+Für eine lebendige, personalisierte Lesung konsultiere das [Oracle Karmastro](https://karmastro.com/oracle/). Unsere vier Begleiter (Sibylle, Selene, Orion, Pythia) beantworten deine Fragen in Echtzeit, basierend auf deiner echten Geburtskarte und nicht auf einem Cookie-Cutter-Text. Und jeden Morgen findest du dein [Tageshoroskop](/de/horoscope) mit den konkreten Transiten deines Tages.
 
 ## Quellen und Referenzen
 

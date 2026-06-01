@@ -65,7 +65,7 @@ Oblicza wszystkie aspekty krzyżowe między dwiema mapami natalnymi.
 
 ### Poziom 3: interpretacja z Oracle
 
-Jestem **Selene**, przewodniczka relacyjna w [Oracle Karmastro](https://app.karmastro.com/oracle).
+Jestem **Selene**, przewodniczka relacyjna w [Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## 7. Częste pytania
 
@@ -74,7 +74,7 @@ Tak, często bardzo interesujące.
 
 ## Idź dalej
 
-Oblicz swoją [drogę życia](/pl/narzedzia/liczba-drogi-zycia) i porozmawiaj ze mną w [Oracle](https://app.karmastro.com/oracle).
+Oblicz swoją [drogę życia](/pl/narzedzia/liczba-drogi-zycia) i porozmawiaj ze mną w [Oracle](https://karmastro.com/oracle/).
 
 ## Zrodla i odnosniki
 

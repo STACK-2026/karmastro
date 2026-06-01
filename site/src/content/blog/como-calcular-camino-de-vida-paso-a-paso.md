@@ -170,7 +170,7 @@ Cada uno de estos caminos merece su propia guía detallada. Si tu resultado es 1
 
 Si prefieres evitar los cálculos manuales o si quieres verificar tu resultado, [Karmastro ofrece un calculador gratuito de camino de vida](/es/herramientas/camino-de-vida) que hace el cálculo en tiempo real a partir de tu fecha de nacimiento. El resultado te da además una breve interpretación inmediata y te propone cruzarlo con otros elementos de tu perfil numerológico.
 
-El algoritmo del calculador respeta la regla de los números maestros y aplica el método pitagórico clásico. Lo usamos también como base para las lecturas personalizadas del [Oracle Karmastro](https://app.karmastro.com/oracle), que cruza tu numerología con tu carta natal y los tránsitos planetarios del momento.
+El algoritmo del calculador respeta la regla de los números maestros y aplica el método pitagórico clásico. Lo usamos también como base para las lecturas personalizadas del [Oracle Karmastro](https://karmastro.com/oracle/), que cruza tu numerología con tu carta natal y los tránsitos planetarios del momento.
 
 ## 11. El camino de vida en la historia de la numerología
 
@@ -215,7 +215,7 @@ Dos hipótesis: o tu cálculo es erróneo (verifica dos veces), o estás viviend
 
 Calcular tu camino de vida es un **gesto simple** que toma menos de dos minutos. Pero interpretarlo y vivirlo plenamente es el trabajo de toda una vida. Si tu resultado es 1, profundiza con la [guía completa del camino de vida 1](/es/blog/camino-de-vida-1-liderazgo-independencia-numerologia). Si quieres cruzar este número con tu perfil astrológico, calcula tu [carta natal gratuita](/es/blog/carta-natal-gratis-interpretar-tema-natal-completo) y observa cómo dialogan.
 
-Para una interpretación viva, personalizada y cruzada con los tránsitos actuales, consulta el [Oracle Karmastro](https://app.karmastro.com/oracle): tejerá tu camino de vida con tu carta astral para darte una lectura coherente y accionable.
+Para una interpretación viva, personalizada y cruzada con los tránsitos actuales, consulta el [Oracle Karmastro](https://karmastro.com/oracle/): tejerá tu camino de vida con tu carta astral para darte una lectura coherente y accionable.
 
 Tu número es una brújula, no un destino. Te dice dónde apunta tu norte cósmico. A ti caminar.
 

@@ -264,7 +264,7 @@ Les maisons astrologiques sont l'un des aspects les plus riches et les plus prat
 
 Pour approfondir, lis aussi notre article sur [le signe ascendant](/blog/signe-ascendant-guide-complet-comprendre-ascendant) et celui sur [le signe lunaire](/blog/signe-lunaire-lune-natale-monde-emotionnel), qui te donnent les autres clés essentielles de ta carte natale.
 
-Si tu veux une lecture personnalisée et complète de ton thème, avec une analyse maison par maison, [l'Oracle](https://app.karmastro.com/oracle) peut le faire pour toi. Tu poses ta question, tu reçois une réponse calculée à partir de ta carte précise.
+Si tu veux une lecture personnalisée et complète de ton thème, avec une analyse maison par maison, [l'Oracle](https://karmastro.com/oracle/) peut le faire pour toi. Tu poses ta question, tu reçois une réponse calculée à partir de ta carte précise.
 
 Et si tu veux suivre l'activation de tes maisons jour après jour à travers les transits, abonne-toi à notre horoscope quotidien gratuit. Chaque matin, tu sauras quelle maison est éclairée par les planètes du jour, et donc quel domaine de ta vie est invité à parler.
 

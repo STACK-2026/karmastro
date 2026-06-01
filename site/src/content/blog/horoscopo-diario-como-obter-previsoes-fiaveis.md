@@ -143,7 +143,7 @@ A maioria é entretenimento. Alguns astrólogos sérios estão nestas plataforma
 
 ## 14. Para ir mais longe
 
-Um horóscopo fiável é o cruzamento entre trânsitos reais, carta natal pessoal e numerologia. Começa por calcular o teu [mapa astral grátis](/pt/ferramentas/) para teres a base de partida correta. Lê depois o teu [horóscopo diário Karmastro](/pt/horoscope) todas as manhãs e compara com o teu dia real durante um mês. Para uma leitura interativa e completa, consulta o [Oracle Karmastro](https://app.karmastro.com/oracle), que te responde em linguagem natural cruzando todos os níveis.
+Um horóscopo fiável é o cruzamento entre trânsitos reais, carta natal pessoal e numerologia. Começa por calcular o teu [mapa astral grátis](/pt/ferramentas/) para teres a base de partida correta. Lê depois o teu [horóscopo diário Karmastro](/pt/horoscope) todas as manhãs e compara com o teu dia real durante um mês. Para uma leitura interativa e completa, consulta o [Oracle Karmastro](https://karmastro.com/oracle/), que te responde em linguagem natural cruzando todos os níveis.
 
 ## Fontes e referencias
 

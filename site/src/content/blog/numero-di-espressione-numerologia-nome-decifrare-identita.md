@@ -78,7 +78,7 @@ Totale: 32 + 26 = 58 → 5 + 8 = 13 → 1 + 3 = **4**
 
 Il numero di espressione di Giulia Rossi è 4, il numero del costruttore. La riduzione va fatta cifra per cifra, un passo alla volta, mai sommando direttamente 58 senza passare da 13. Se durante la riduzione ottieni 11, 22 o 33, ti fermi: sono numeri maestri e vanno interpretati come tali. Questa regola è condivisa da tutta la scuola pitagorica moderna.
 
-Se hai dubbi sul tuo calcolo, usa lo [strumento numero del cammino di vita](/it/strumenti/numero-del-cammino-di-vita) di Karmastro o chiedi all'[Oracle](https://app.karmastro.com/oracle) una verifica incrociata. Il calcolo manuale resta però una pratica formativa utile perché ti costringe a contemplare le lettere del tuo nome una per una.
+Se hai dubbi sul tuo calcolo, usa lo [strumento numero del cammino di vita](/it/strumenti/numero-del-cammino-di-vita) di Karmastro o chiedi all'[Oracle](https://karmastro.com/oracle/) una verifica incrociata. Il calcolo manuale resta però una pratica formativa utile perché ti costringe a contemplare le lettere del tuo nome una per una.
 
 ## 5. I numeri maestri 11, 22, 33
 
@@ -149,7 +149,7 @@ Entrambi descrivono la "maschera sociale" o l'immagine pubblica. Il numero di es
 
 ## Andare oltre
 
-Incrocia il tuo numero di espressione con il tuo [cammino di vita](/it/strumenti/numero-del-cammino-di-vita), esplora le case astrologiche e consulta l'[Oracle](https://app.karmastro.com/oracle) per un'analisi integrata.
+Incrocia il tuo numero di espressione con il tuo [cammino di vita](/it/strumenti/numero-del-cammino-di-vita), esplora le case astrologiche e consulta l'[Oracle](https://karmastro.com/oracle/) per un'analisi integrata.
 
 ## Fonti e riferimenti
 

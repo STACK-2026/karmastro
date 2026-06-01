@@ -198,7 +198,7 @@ Não, essa etiqueta é injusta. É o signo mais focado no próximo objetivo. A d
 
 ## 16. Para ir mais longe
 
-O teu signo solar Carneiro é só o primeiro nível da tua assinatura astrológica. A verdadeira leitura começa quando cruzas Sol, Lua, ascendente e Marte. Começa pelo nosso [calculador de mapa astral gratuito](/pt/ferramentas/) para visualizar a tua carta completa. Depois, aprofunda com o [guia do ascendente](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente) para entender como te mostras aos outros. Para uma leitura interativa e personalizada, fala com o [Oracle Karmastro](https://app.karmastro.com/oracle), que cruza astrologia e numerologia em tempo real.
+O teu signo solar Carneiro é só o primeiro nível da tua assinatura astrológica. A verdadeira leitura começa quando cruzas Sol, Lua, ascendente e Marte. Começa pelo nosso [calculador de mapa astral gratuito](/pt/ferramentas/) para visualizar a tua carta completa. Depois, aprofunda com o [guia do ascendente](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente) para entender como te mostras aos outros. Para uma leitura interativa e personalizada, fala com o [Oracle Karmastro](https://karmastro.com/oracle/), que cruza astrologia e numerologia em tempo real.
 
 ## Fontes e referencias
 

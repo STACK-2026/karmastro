@@ -129,7 +129,7 @@ Możesz oszacować, ale dla poważnej lektury dokładna godzina jest niezbędna.
 
 ## Idź dalej
 
-Twój wschodzący to tylko jedna warstwa twojej mapy natalnej. Skonsultuj [Oracle Karmastro](https://app.karmastro.com/oracle).
+Twój wschodzący to tylko jedna warstwa twojej mapy natalnej. Skonsultuj [Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## Zrodla i odnosniki
 

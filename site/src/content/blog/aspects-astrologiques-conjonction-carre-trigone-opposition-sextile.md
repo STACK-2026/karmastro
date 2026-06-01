@@ -260,7 +260,7 @@ Pas du tout. C'est le thème de quelqu'un qui doit beaucoup travailler sur lui-m
 Pas forcément. Une vie « facile » astrologiquement peut être une vie où tu n'es jamais poussé à te dépasser. Beaucoup de gens avec beaucoup de trigones se laissent porter et passent à côté de leur potentiel. La fluidité a son piège.
 
 **Que faire si je n'arrive pas à voir mes aspects sur ma carte ?**
-Utilise un logiciel astrologique en ligne qui calcule et liste tes aspects pour toi. Notre [Oracle](https://app.karmastro.com/oracle) peut le faire en partant de ta date, ton heure et ton lieu de naissance.
+Utilise un logiciel astrologique en ligne qui calcule et liste tes aspects pour toi. Notre [Oracle](https://karmastro.com/oracle/) peut le faire en partant de ta date, ton heure et ton lieu de naissance.
 
 **Les aspects par signe et les aspects par degrés sont-ils différents ?**
 Oui, et c'est une distinction importante. Les aspects « par signe » (deux planètes dans deux signes en aspect, sans regarder les degrés exacts) sont une lecture plus large, traditionnelle, utilisée dans l'astrologie hellénistique. Les aspects « par degrés » sont la lecture moderne plus précise. Les deux sont valides, à condition de ne pas les mélanger.
@@ -286,7 +286,7 @@ Les aspects sont la dimension la plus dynamique de ta carte natale. Ils transfor
 
 Pour aller plus loin, lis aussi notre guide sur [les 12 maisons astrologiques](/blog/maisons-astrologiques-guide-interpretation-complet/) et notre article sur [le retour de Saturne](/blog/retour-de-saturne-29-ans-grand-passage-adulte), qui montre comment les aspects se rejouent par les transits.
 
-Si tu veux une lecture personnalisée et complète de tes aspects principaux, [l'Oracle](https://app.karmastro.com/oracle) peut le faire pour toi en quelques minutes, en partant de ta carte précise.
+Si tu veux une lecture personnalisée et complète de tes aspects principaux, [l'Oracle](https://karmastro.com/oracle/) peut le faire pour toi en quelques minutes, en partant de ta carte précise.
 
 Et si tu veux suivre les transits qui activent tes aspects natals jour après jour, abonne-toi à notre horoscope quotidien gratuit. Chaque matin, tu sauras quels dialogues planétaires sont en jeu dans ton ciel personnel, et donc ce qui se réveille en toi ce jour-là.
 

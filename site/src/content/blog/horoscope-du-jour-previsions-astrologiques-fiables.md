@@ -179,7 +179,7 @@ Ces données réelles sont ensuite intégrées dans un prompt pour Claude Sonnet
 - Une **couleur** du jour
 - Un **mantra** personnalisé
 
-Tous les horoscopes du jour sont **signés par moi**, Sibylle, avec mon ton poétique et mythologique. Si tu préfères un autre ton, tu peux parler aux trois autres guides via l'[Oracle](https://app.karmastro.com/oracle).
+Tous les horoscopes du jour sont **signés par moi**, Sibylle, avec mon ton poétique et mythologique. Si tu préfères un autre ton, tu peux parler aux trois autres guides via l'[Oracle](https://karmastro.com/oracle/).
 
 ### Pourquoi cette méthode est plus fiable
 
@@ -231,19 +231,19 @@ Non, l'astrologie n'est pas une question de foi. Les positions planétaires sont
 
 ### Pourquoi Karmastro propose 4 guides différents pour l'Oracle ?
 
-Parce que chaque personne résonne avec un ton différent. Moi, Sibylle, je suis mystique, poétique, j'utilise des métaphores et cite la mythologie. **Orion** est direct et motivant, ancien professeur de philosophie stoïcienne. **Séléné** est douce et empathique, thérapeute de formation. **Pythia** est analytique et mathématique, numérologue pythagoricienne. Tu choisis celle ou celui qui te parle le mieux à l'[Oracle](https://app.karmastro.com/oracle).
+Parce que chaque personne résonne avec un ton différent. Moi, Sibylle, je suis mystique, poétique, j'utilise des métaphores et cite la mythologie. **Orion** est direct et motivant, ancien professeur de philosophie stoïcienne. **Séléné** est douce et empathique, thérapeute de formation. **Pythia** est analytique et mathématique, numérologue pythagoricienne. Tu choisis celle ou celui qui te parle le mieux à l'[Oracle](https://karmastro.com/oracle/).
 
 ## Conclusion
 
 Un **horoscope du jour vraiment fiable** n'est pas un texte générique lu dans un journal. C'est le croisement de trois éléments : ton **thème natal complet** (photographie cosmique de ta naissance), les **transits actuels** (mouvements réels des planètes aujourd'hui), et idéalement ta **numérologie du moment** (jour, mois, année personnels).
 
-Pour commencer, lis chaque matin ton [horoscope quotidien Karmastro](/horoscope), calcule tes [transits actuels](/outils/transits) une fois par semaine, et quand tu as une question précise, pose-la directement à l'[Oracle](https://app.karmastro.com/oracle). Tu peux me parler, Sibylle, pour une lecture mystique et profonde, ou choisir un autre guide selon tes besoins.
+Pour commencer, lis chaque matin ton [horoscope quotidien Karmastro](/horoscope), calcule tes [transits actuels](/outils/transits) une fois par semaine, et quand tu as une question précise, pose-la directement à l'[Oracle](https://karmastro.com/oracle/). Tu peux me parler, Sibylle, pour une lecture mystique et profonde, ou choisir un autre guide selon tes besoins.
 
 L'astrologie n'est pas une boule de cristal. C'est une **boussole**. Elle ne te dit pas où tu dois aller. Elle te montre de quelle direction souffle le vent cosmique. À toi ensuite de hisser les voiles comme tu le sens.
 
 Les étoiles parlent à ceux qui savent les écouter. Je suis là pour t'aider à décrypter ce qu'elles te murmurent aujourd'hui.
 
-*Article rédigé par Sibylle, Oracle astrologue de [Karmastro](/notre-histoire). Pour ton [horoscope quotidien gratuit](/horoscope) ou une [consultation personnalisée](https://app.karmastro.com/oracle).*
+*Article rédigé par Sibylle, Oracle astrologue de [Karmastro](/notre-histoire). Pour ton [horoscope quotidien gratuit](/horoscope) ou une [consultation personnalisée](https://karmastro.com/oracle/).*
 
 ## Sources et references
 

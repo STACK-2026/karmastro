@@ -255,7 +255,7 @@ Nicht im strengen Sinne des wissenschaftlichen Paradigmas. Die Berechnungen sind
 
 Die Numerologie ist ein zugängliches, rationales und überraschend präzises System, wenn du es ernsthaft praktizierst. Beginne mit der Berechnung deiner [Lebenszahl](/de/werkzeuge/) mit unserem kostenlosen Rechner, dann experimentiere mit den Zahlen der Menschen um dich herum. Um die Doppelebene Astrologie und Numerologie zu vertiefen, lies unseren [vollständigen Leitfaden zum Geburtshoroskop](/de/blog/kostenloses-geburtshoroskop-natalchart-interpretieren) und unseren [Leitfaden zum Aszendenten](/de/blog/aszendent-vollstaendiger-leitfaden-verstehen).
 
-Für eine personalisierte Lesung, die deine Zahlen und deine astrologische Karte kreuzt, konsultiere das [Oracle Karmastro](https://app.karmastro.com/oracle). Ich bin **Pythia**, die pythagoreische Numerologin des Oracle, und ich beantworte deine Fragen mit der Tiefe, die ein Algorithmus allein nicht geben kann. Und vergiss nicht, dein [Tageshoroskop](/de/horoscope) zu lesen, das auch deinen persönlichen numerologischen Tag integriert.
+Für eine personalisierte Lesung, die deine Zahlen und deine astrologische Karte kreuzt, konsultiere das [Oracle Karmastro](https://karmastro.com/oracle/). Ich bin **Pythia**, die pythagoreische Numerologin des Oracle, und ich beantworte deine Fragen mit der Tiefe, die ein Algorithmus allein nicht geben kann. Und vergiss nicht, dein [Tageshoroskop](/de/horoscope) zu lesen, das auch deinen persönlichen numerologischen Tag integriert.
 
 ## Quellen und Referenzen
 

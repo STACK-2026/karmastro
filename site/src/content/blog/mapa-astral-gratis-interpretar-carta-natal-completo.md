@@ -203,11 +203,11 @@ Sim, com paciência. Um bom livro de introdução, a tua carta impressa, seis me
 Em inglês, Stephen Arroyo "Astrology, Psychology, and the Four Elements". Em francês, Yves Lenoble e o trabalho de Marc Fournier. Em português, traduções da coleção de Liz Greene.
 
 **Karmastro dá uma interpretação completa?**
-Sim. O [calculador de mapa astral](/pt/ferramentas/) gera a carta visual e um resumo escrito. Para ir mais fundo e fazer perguntas em linguagem natural, usa o [Oracle Karmastro](https://app.karmastro.com/oracle).
+Sim. O [calculador de mapa astral](/pt/ferramentas/) gera a carta visual e um resumo escrito. Para ir mais fundo e fazer perguntas em linguagem natural, usa o [Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## 15. Para ir mais longe
 
-O **mapa astral** é a chave da astrologia personalizada, aquilo que distingue a previsão séria da superstição. Começa pelo nosso [calculador gratuito](/pt/ferramentas/) para obter a tua carta precisa. Aprofunda depois a leitura do [ascendente](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente), que é o primeiro ponto de entrada da carta. Consulta todas as manhãs o teu [horóscopo Karmastro](/pt/horoscope) para veres os trânsitos ativos. Para uma interpretação viva e conversacional, fala com o [Oracle Karmastro](https://app.karmastro.com/oracle).
+O **mapa astral** é a chave da astrologia personalizada, aquilo que distingue a previsão séria da superstição. Começa pelo nosso [calculador gratuito](/pt/ferramentas/) para obter a tua carta precisa. Aprofunda depois a leitura do [ascendente](/pt/blog/signo-ascendente-guia-completo-compreender-ascendente), que é o primeiro ponto de entrada da carta. Consulta todas as manhãs o teu [horóscopo Karmastro](/pt/horoscope) para veres os trânsitos ativos. Para uma interpretação viva e conversacional, fala com o [Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## Fontes e referencias
 

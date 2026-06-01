@@ -199,7 +199,7 @@ No. No cambias tu Luna, aprendes a vivir con ella.
 
 ## Ir más lejos
 
-Tu Luna natal forma parte de un todo. Para verla en contexto completo, necesitas tu [carta natal interpretada](/es/herramientas/) con todos los planetas. Si quieres entender cómo tu Luna dialoga con la de una pareja, o con los tránsitos actuales, puedes consultar el [Oracle Karmastro](https://app.karmastro.com/oracle).
+Tu Luna natal forma parte de un todo. Para verla en contexto completo, necesitas tu [carta natal interpretada](/es/herramientas/) con todos los planetas. Si quieres entender cómo tu Luna dialoga con la de una pareja, o con los tránsitos actuales, puedes consultar el [Oracle Karmastro](https://karmastro.com/oracle/).
 
 Tu Luna no es un detalle emocional. Es el corazón latente de tu interioridad.
 

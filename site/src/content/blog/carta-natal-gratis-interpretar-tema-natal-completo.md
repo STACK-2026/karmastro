@@ -212,7 +212,7 @@ Si es un buen profesional, sí. Una consulta seria vale cien horas de lectura au
 
 ## Ir más lejos
 
-Calcula tu [carta natal gratis](/es/herramientas/) con Karmastro, que usa **Swiss Ephemeris** (precisión científica profesional). Luego lee nuestro artículo sobre el [signo ascendente](/es/blog/signo-ascendente-guia-completa-comprender-ascendente) para entender la puerta de entrada de tu carta, y consulta el [Oracle](https://app.karmastro.com/oracle) para obtener una lectura narrativa personalizada.
+Calcula tu [carta natal gratis](/es/herramientas/) con Karmastro, que usa **Swiss Ephemeris** (precisión científica profesional). Luego lee nuestro artículo sobre el [signo ascendente](/es/blog/signo-ascendente-guia-completa-comprender-ascendente) para entender la puerta de entrada de tu carta, y consulta el [Oracle](https://karmastro.com/oracle/) para obtener una lectura narrativa personalizada.
 
 Tu carta natal es el mapa de tu interior. Aprende a leerlo. No para obedecerlo, sino para habitarlo con más conciencia.
 

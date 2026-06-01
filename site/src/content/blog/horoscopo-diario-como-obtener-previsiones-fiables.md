@@ -139,7 +139,7 @@ Karmastro genera **un horóscopo único cada día** para cada uno de los 12 sign
 
 No prometemos magia. Prometemos que lo que leas esté **calculado con rigor**, formulado con honestidad, y pensado para ayudarte a habitar mejor tu día, no a someterte a él.
 
-Accede a tu [horóscopo diario Karmastro gratuito](/es/horoscope) cada mañana. Si quieres ir más lejos con una lectura personal cruzada con tu carta natal, el [Oracle Karmastro](https://app.karmastro.com/oracle) genera cada día una lectura adaptada a tu cielo exacto.
+Accede a tu [horóscopo diario Karmastro gratuito](/es/horoscope) cada mañana. Si quieres ir más lejos con una lectura personal cruzada con tu carta natal, el [Oracle Karmastro](https://karmastro.com/oracle/) genera cada día una lectura adaptada a tu cielo exacto.
 
 ## 11. Frecuencia recomendada y rutina matinal
 
@@ -183,7 +183,7 @@ La astrología predictiva real funciona a semanas e incluso meses de antelación
 
 Un **horóscopo realmente fiable** es el cruce de tres elementos: tu carta natal completa, los tránsitos actuales, y tu numerología del momento. Todo lo demás es decoración.
 
-Para empezar, lee tu [horóscopo Karmastro](/es/horoscope) cada mañana, utiliza tu [ascendente](/es/herramientas/) como filtro, y consulta el [Oracle](https://app.karmastro.com/oracle) para preguntas precisas cruzadas con tu cielo exacto.
+Para empezar, lee tu [horóscopo Karmastro](/es/horoscope) cada mañana, utiliza tu [ascendente](/es/herramientas/) como filtro, y consulta el [Oracle](https://karmastro.com/oracle/) para preguntas precisas cruzadas con tu cielo exacto.
 
 La astrología no te dice lo que va a pasar. Te ayuda a ser más consciente de lo que ya está pasando. Esa es su función real, y es suficiente.
 
