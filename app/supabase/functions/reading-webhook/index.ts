@@ -40,6 +40,25 @@ serve(async (req) => {
   // deno-lint-ignore no-explicit-any
   const session = event.data.object as any;
   const md = session.metadata || {};
+  const sb = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
+
+  // Abonnement « Guide mensuel » : enregistre l'abonné à la création du checkout.
+  if (md.kind === "guide_mensuel" || session.mode === "subscription") {
+    const email = session.customer_details?.email ?? session.customer_email ?? null;
+    if (email && session.subscription) {
+      await sb.from("subscriptions").upsert({
+        email,
+        birth_date: md.birthDate || null,
+        full_name: md.fullName || null,
+        locale: md.locale || "fr",
+        stripe_customer_id: session.customer || null,
+        stripe_subscription_id: session.subscription,
+        status: "active",
+      }, { onConflict: "stripe_subscription_id", ignoreDuplicates: false });
+    }
+    return new Response("subscription stored", { status: 200 });
+  }
+
   const READING_TOOLS = new Set([
     "karmic-debt", "chemin-de-vie", "nombre-expression", "annee-personnelle", "compatibilite",
     "ascendant", "theme-natal", "transits", "synastrie", "profil-complet",
@@ -47,8 +66,6 @@ serve(async (req) => {
   if (!READING_TOOLS.has(md.tool) || !md.token) {
     return new Response("not a reading", { status: 200 });
   }
-
-  const sb = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
 
   const numOrUndef = (v: string) => (v && v.trim() !== "" ? Number(v) : undefined);
   const email = session.customer_details?.email ?? session.customer_email ?? null;

@@ -1,0 +1,16 @@
+name: Monthly Guidance · Guide mensuel abonnés
+on:
+  schedule:
+    - cron: '0 8 1 * *'   # le 1er de chaque mois, 08:00 UTC
+  workflow_dispatch: {}
+jobs:
+  send:
+    runs-on: self-hosted
+    steps:
+      - name: Trigger send-monthly-guidance
+        run: |
+          code=$(curl -s -o /tmp/mg.json -w "%{http_code}" -X POST \
+            "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/send-monthly-guidance" \
+            -H "x-cron-secret: ${{ secrets.CRON_SECRET }}")
+          echo "HTTP $code"; cat /tmp/mg.json
+          [ "$code" = "200" ] || exit 1

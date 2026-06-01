@@ -1,0 +1,82 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Guide mensuel Karmastro - ta guidance personnalisée chaque mois";
+const description =
+  "Reçois chaque mois ta guidance numérologique personnalisée par email : ton mois personnel, l'énergie du mois, ton focus et ton rituel. 4,90€/mois, sans engagement, écrit par Orion.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Guide mensuel Karmastro",
+    description,
+    offers: { "@type": "Offer", price: "4.90", priceCurrency: "EUR", availability: "https://schema.org/InStock" },
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <article class="max-w-2xl mx-auto px-4 py-16">
+    <header class="text-center mb-10">
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Abonnement</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Ton guide mensuel</h1>
+      <p class="text-lg text-white/70 max-w-xl mx-auto leading-relaxed">
+        Chaque mois, Orion t'écrit une guidance qui n'appartient qu'à toi : l'énergie de ton mois personnel, ce qu'il faut lancer ou lâcher, ton focus et un rituel court. Directement dans ta boîte mail.
+      </p>
+    </header>
+
+    <div class="grid sm:grid-cols-3 gap-3 mb-10 text-center text-sm">
+      <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+        <p class="text-2xl mb-1">☽</p>
+        <p class="text-white/70">Ton mois personnel calculé chaque mois</p>
+      </div>
+      <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+        <p class="text-2xl mb-1">✦</p>
+        <p class="text-white/70">Un focus concret + un rituel pour les semaines à venir</p>
+      </div>
+      <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
+        <p class="text-2xl mb-1">✉</p>
+        <p class="text-white/70">Livré par email, sans engagement, résiliable en un clic</p>
+      </div>
+    </div>
+
+    <div class="p-6 md:p-8 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/[0.06] to-purple-400/[0.04] text-center">
+      <p class="font-serif text-2xl text-white mb-1">4,90 € <span class="text-base text-white/50">/ mois</span></p>
+      <p class="text-sm text-white/60 mb-5">Sans engagement. Annule quand tu veux.</p>
+      <div class="max-w-sm mx-auto text-left mb-4">
+        <label for="sub-date" class="block text-sm font-medium text-white/80 mb-2">Ta date de naissance</label>
+        <input type="date" id="sub-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+        <label for="sub-name" class="block text-sm font-medium text-white/80 mb-2 mt-4">Ton nom complet <span class="text-white/40">(optionnel, affine ta guidance)</span></label>
+        <input type="text" id="sub-name" autocomplete="off" class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+      </div>
+      <button id="sub-go" type="button" class="w-full max-w-sm px-6 py-3.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+        M'abonner — recevoir ma guidance chaque mois
+      </button>
+      <p class="text-[11px] text-white/40 mt-3">Paiement sécurisé Stripe. Email demandé au paiement.</p>
+    </div>
+  </article>
+</BaseLayout>
+
+<script>
+  const SUB_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/subscription-checkout";
+  document.getElementById("sub-go")?.addEventListener("click", async () => {
+    const btn = document.getElementById("sub-go") as HTMLButtonElement;
+    const birthDate = (document.getElementById("sub-date") as HTMLInputElement).value;
+    const fullName = (document.getElementById("sub-name") as HTMLInputElement)?.value || "";
+    if (!birthDate) { (document.getElementById("sub-date") as HTMLInputElement).focus(); return; }
+    btn.disabled = true;
+    const original = btn.textContent;
+    btn.textContent = "Redirection…";
+    try {
+      const r = await fetch(SUB_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ birthDate, fullName, locale: "fr" }) });
+      const data = await r.json();
+      if (data?.url) { window.location.href = data.url; }
+      else { throw new Error(data?.error || "no url"); }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = original;
+      alert("Une erreur est survenue, réessaie dans un instant.");
+    }
+  });
+</script>

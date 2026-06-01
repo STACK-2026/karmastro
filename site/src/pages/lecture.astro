@@ -90,12 +90,19 @@ const description = "Ta lecture personnalisée.";
         const crossLinks = STR.tools
           .map(([href, label]) => `<a href="${href}" class="px-4 py-2 rounded-xl border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors no-underline">${label}</a>`)
           .join("");
+        const subCta = lang === "fr"
+          ? `<div class="mt-8 p-5 rounded-2xl border border-amber-300/30 bg-gradient-to-r from-purple-400/10 to-amber-300/10 not-prose text-center">
+               <p class="font-serif text-base text-white mb-1">Et si Orion t'écrivait chaque mois ?</p>
+               <p class="text-xs text-white/60 mb-3 max-w-sm mx-auto leading-relaxed">Ta guidance personnalisée du mois, livrée par email. 4,90€/mois, sans engagement.</p>
+               <a href="/abonnement/" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm">Recevoir ma guidance chaque mois ✦</a>
+             </div>`
+          : "";
         content.innerHTML = mdToHtml(data.content) +
           `<p class="text-xs text-white/40 mt-10 border-t border-white/10 pt-4">${STR.emailNote}</p>` +
           `<div class="mt-12 pt-8 border-t border-white/10 text-center not-prose">
              <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-4">${STR.crossTitle}</p>
              <div class="flex flex-wrap gap-2 justify-center">${crossLinks}</div>
-           </div>`;
+           </div>` + subCta;
         content.classList.remove("hidden");
         // Conversion event : lecture payée ET livrée à l'écran.
         try { (window as any).km?.trackEvent("reading_delivered", { tool: data.tool_type || "", locale: lang, path: location.pathname }); } catch { /* noop */ }

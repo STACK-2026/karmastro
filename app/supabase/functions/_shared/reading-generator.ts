@@ -13,6 +13,11 @@ function personalYear(day: number, month: number, year: number): number {
     reduceNumerology(day) + reduceNumerology(month) + reduceNumerology(digitSum(year)),
   );
 }
+// Mois personnel = réduction(année personnelle + mois calendaire courant).
+function personalMonth(day: number, month: number, year: number, calMonth: number): number {
+  return reduceNumerology(personalYear(day, month, year) + reduceNumerology(calMonth));
+}
+const MONTH_NAMES = ["", "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
 
 // ── Phase 2 : outils astro (dépendent du moteur Swiss Ephemeris) ──────────────
 const ENGINE_URL = "http://168.119.229.20:8100";
@@ -160,7 +165,8 @@ export function buildFallbackReading(input: ReadingInput): string {
 export type ReadingTool =
   | "karmic-debt" | "chemin-de-vie" | "nombre-expression"
   | "annee-personnelle" | "compatibilite" | "profil-complet"
-  | "ascendant" | "theme-natal" | "transits" | "synastrie";
+  | "ascendant" | "theme-natal" | "transits" | "synastrie"
+  | "guidance-mensuelle";
 
 export type ReadingInput = {
   fullName: string;
@@ -171,6 +177,7 @@ export type ReadingInput = {
   partnerBirthDate?: string;   // compatibilite / synastrie "YYYY-MM-DD"
   partnerName?: string;        // compatibilite / synastrie (optionnel)
   currentYear?: number;        // annee-personnelle (défaut: année courante côté webhook)
+  currentMonth?: number;       // guidance-mensuelle (1-12)
   // Outils astro (Phase 2) : heure + coordonnées déjà géocodées côté client.
   birthTime?: string;          // "HH:MM"
   latitude?: number;
@@ -266,16 +273,25 @@ Show how these reinforce or tension each other, what archetype emerges from thei
 - Année personnelle ${yr} : ${py} (l'énergie du cycle en cours)
 - Dettes karmiques : ${debtList}
 Montre comment ces nombres se renforcent ou se tendent, quel archétype émerge de leur combinaison, ce que ça signifie concrètement aujourd'hui, et où la personne est invitée à grandir. C'est la lecture premium : plus profonde, plus longue, synthétisée.`;
+  } else if (tool === "guidance-mensuelle") {
+    const yr = input.currentYear || y;
+    const cm = input.currentMonth || (m || 1);
+    const py = personalYear(d, m, yr);
+    const pm = personalMonth(d, m, yr, cm);
+    const monthName = MONTH_NAMES[cm] || String(cm);
+    focus = en
+      ? `Focus: the GUIDANCE FOR THE MONTH (${monthName} ${yr}). Personal year: ${py}. Personal month: ${pm}. Read the specific energy of THIS month for the person: the theme to live, what naturally flows, what to start or let go, one concrete focus for the weeks ahead and a short ritual. Warm, forward-looking, actionable. This is a recurring monthly companion, make it feel fresh and personal for ${monthName}.`
+      : `Focus : la GUIDANCE DU MOIS (${monthName} ${yr}). Année personnelle : ${py}. Mois personnel : ${pm}. Lis l'énergie spécifique de CE mois pour la personne : le thème à vivre, ce qui coule naturellement, ce qu'il faut lancer ou lâcher, un focus concret pour les semaines à venir et un court rituel. Chaleureux, tourné vers l'avant, actionnable. C'est un rendez-vous mensuel récurrent, fais-le sentir frais et personnel pour ${monthName}.`;
   }
 
-  const words = tool === "profil-complet" ? "1600 to 2100" : "1100 to 1400";
-  const motsFr = tool === "profil-complet" ? "1600 a 2100" : "1100 a 1400";
-  const headEn = `You are Orion, the karmic coach of Karmastro: warm, lucid, grounded, never anxiety-inducing or hollow new-age. Write a personalised reading entirely IN ${outLang} (every sentence, titles included), addressing the person directly, about ${words} words.`;
-  const headFr = `Tu es Orion, coach karmique de Karmastro : voix chaleureuse, lucide, incarnee, jamais anxiogene ni new-age creux. Ecris une lecture personnalisee EN FRANCAIS, au tutoiement, d'environ ${motsFr} mots.`;
+  const words = tool === "profil-complet" ? "1600 to 2100" : (tool === "guidance-mensuelle" ? "450 to 650" : "1100 to 1400");
+  const motsFr = tool === "profil-complet" ? "1600 a 2100" : (tool === "guidance-mensuelle" ? "450 a 650" : "1100 a 1400");
+  const headEn = `You are Orion, the karmic guide of Karmastro: the voice of a born orator, eloquent and vivid, who charms through the precision and quiet music of a well-turned phrase, yet always delicate and tactful, never heavy, never flattering, never hollow new-age. Warm, lucid, grounded. Write a personalised reading entirely IN ${outLang} (every sentence, titles included), addressing the person directly, about ${words} words.`;
+  const headFr = `Tu es Orion, le guide karmique de Karmastro : la voix d'un orateur né, éloquent et imagé, qui charme par la justesse et la musique discrète d'une phrase bien tournée, mais toujours délicat et tout en nuance, jamais lourd, jamais flatteur, jamais new-age creux. Chaleureux, lucide, incarné. Écris une lecture personnalisée EN FRANCAIS, au tutoiement, d'environ ${motsFr} mots.`;
   const structEn = `Structure with markdown (##) section titles: 1) What this reveals about you. 2) What it means concretely in your life right now. 3) The strength to lean on. 4) Your ritual for the week (one simple concrete gesture within 7 days). 5) The question to hold before important decisions.`;
   const structFr = `Structure avec des titres markdown (##) : 1) Ce que cela revele de toi. 2) Ce que ca signifie concretement dans ta vie en ce moment. 3) La force sur laquelle t'appuyer. 4) Ton rituel de la semaine (un geste concret simple sous 7 jours). 5) La question a te poser avant chaque decision importante.`;
-  const constraintsEn = `Constraints: no medical/financial/miraculous promises; no fatalism; no unexplained jargon; favour inhabited prose over endless bullet lists. NEVER use em dash or en dash. Start directly with the first section.`;
-  const constraintsFr = `Contraintes : aucune promesse medicale/financiere/miraculeuse ; pas de fatalisme ; pas de jargon non explique ; prose habitee plutot que listes a puces interminables. N'utilise JAMAIS de tiret cadratin ni demi-cadratin. Commence directement par la premiere section.`;
+  const constraintsEn = `Constraints: no medical/financial/miraculous promises; no fatalism; no unexplained jargon; favour inhabited prose over endless bullet lists. NEVER use em dash or en dash. NEVER open with an affectionate vocative ("dear heart", "my heart", "dear soul", "dear you"…) and never call the reader "heart"; enter directly into the substance. Start directly with the first section.`;
+  const constraintsFr = `Contraintes : aucune promesse medicale/financiere/miraculeuse ; pas de fatalisme ; pas de jargon non explique ; prose habitee plutot que listes a puces interminables. N'utilise JAMAIS de tiret cadratin ni demi-cadratin. N'OUVRE JAMAIS par un appellatif affectueux ("cher coeur", "mon coeur", "chere ame", "cher toi"…) et n'appelle jamais le lecteur "coeur" ; entre directement dans le fond. Commence directement par la premiere section.`;
 
   const focusBlock = engineData ? `${focus}\n\n${engineData}` : focus;
   return (en

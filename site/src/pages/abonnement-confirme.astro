@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const title = "Bienvenue dans ton guide mensuel · Karmastro";
+const description = "Ton abonnement au guide mensuel Karmastro est confirmé.";
+---
+
+<BaseLayout title={title} description={description} noIndex={true}>
+  <article class="max-w-xl mx-auto px-4 py-24 text-center">
+    <p class="text-5xl mb-5">✦</p>
+    <h1 class="font-serif text-3xl md:text-4xl mb-4">Bienvenue parmi nous</h1>
+    <p class="text-white/75 leading-relaxed mb-6">
+      Ton abonnement au <strong>guide mensuel</strong> est confirmé. Orion t'écrira ta première guidance personnalisée très bientôt, puis chaque mois, directement dans ta boîte mail.
+    </p>
+    <p class="text-sm text-white/55 mb-8">
+      Tu peux te désabonner à tout moment, sans question. En attendant, le ciel n'attend que toi.
+    </p>
+    <div class="flex flex-wrap gap-2 justify-center">
+      <a href="/outils/" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm">Explorer les outils</a>
+      <a href="/horoscope/" class="px-5 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors">Mon horoscope du jour</a>
+    </div>
+  </article>
+</BaseLayout>
