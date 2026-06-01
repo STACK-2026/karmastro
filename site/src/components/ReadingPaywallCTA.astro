@@ -5,21 +5,21 @@
 // (es/it/de/pt/tr/ru/pl/ar). FR/EN gardent leur CTA inline. [2026-06-01]
 import NewsletterCapture from "./NewsletterCapture.astro";
 interface Props {
-  tool: "chemin-de-vie" | "ascendant";
+  tool: "chemin-de-vie" | "ascendant" | "annee-personnelle" | "nombre-expression";
   locale: string;
 }
 const { tool, locale } = Astro.props;
 
 // title par {locale}{tool}, le reste générique par locale.
 const COPY: Record<string, { eyebrow: string; desc: string; button: string; titles: Record<string, string> }> = {
-  es: { eyebrow: "Pasa a la práctica", desc: "Una lectura personalizada de Orion (1100-1400 palabras), entregada al instante en pantalla y por email.", button: "Desbloquear mi lectura completa - 4,90 €", titles: { "chemin-de-vie": "Tu lectura completa del camino de vida", "ascendant": "Tu lectura completa del ascendente" } },
-  it: { eyebrow: "Passa alla pratica", desc: "Una lettura personalizzata di Orion (1100-1400 parole), consegnata subito a schermo e via email.", button: "Sblocca la mia lettura completa - 4,90 €", titles: { "chemin-de-vie": "La tua lettura completa del percorso di vita", "ascendant": "La tua lettura completa dell'ascendente" } },
-  de: { eyebrow: "In die Praxis", desc: "Eine persönliche Lesung von Orion (1100-1400 Wörter), sofort auf dem Bildschirm und per E-Mail geliefert.", button: "Meine vollständige Lesung freischalten - 4,90 €", titles: { "chemin-de-vie": "Deine vollständige Lebensweg-Lesung", "ascendant": "Deine vollständige Aszendenten-Lesung" } },
-  pt: { eyebrow: "Passa à prática", desc: "Uma leitura personalizada de Orion (1100-1400 palavras), entregue na hora no ecrã e por email.", button: "Desbloquear a minha leitura completa - 4,90 €", titles: { "chemin-de-vie": "A tua leitura completa do caminho de vida", "ascendant": "A tua leitura completa do ascendente" } },
-  tr: { eyebrow: "Uygulamaya geç", desc: "Orion'dan kişisel bir okuma (1100-1400 kelime), anında ekranda ve e-posta ile.", button: "Tam okumamı aç - 4,90 €", titles: { "chemin-de-vie": "Tam yaşam yolu okuman", "ascendant": "Tam yükselen burç okuman" } },
-  ru: { eyebrow: "К практике", desc: "Персональное чтение от Ориона (1100-1400 слов), сразу на экране и по электронной почте.", button: "Открыть мое полное чтение - 4,90 €", titles: { "chemin-de-vie": "Твое полное чтение жизненного пути", "ascendant": "Твое полное чтение асцендента" } },
-  pl: { eyebrow: "Przejdź do praktyki", desc: "Spersonalizowane odczytanie od Oriona (1100-1400 słów), od razu na ekranie i e-mailem.", button: "Odblokuj moje pełne odczytanie - 4,90 €", titles: { "chemin-de-vie": "Twoje pełne odczytanie drogi życia", "ascendant": "Twoje pełne odczytanie ascendentu" } },
-  ar: { eyebrow: "إلى التطبيق", desc: "قراءة شخصية من أوريون (1100-1400 كلمة)، تصلك فورًا على الشاشة وبالبريد الإلكتروني.", button: "افتح قراءتي الكاملة - 4,90 €", titles: { "chemin-de-vie": "قراءتك الكاملة لمسار الحياة", "ascendant": "قراءتك الكاملة للطالع" } },
+  es: { eyebrow: "Pasa a la práctica", desc: "Una lectura personalizada de Orion (1100-1400 palabras), entregada al instante en pantalla y por email.", button: "Desbloquear mi lectura completa - 4,90 €", titles: { "chemin-de-vie": "Tu lectura completa del camino de vida", "ascendant": "Tu lectura completa del ascendente", "annee-personnelle": "Tu lectura completa del año personal", "nombre-expression": "Tu lectura completa del número de expresión" } },
+  it: { eyebrow: "Passa alla pratica", desc: "Una lettura personalizzata di Orion (1100-1400 parole), consegnata subito a schermo e via email.", button: "Sblocca la mia lettura completa - 4,90 €", titles: { "chemin-de-vie": "La tua lettura completa del percorso di vita", "ascendant": "La tua lettura completa dell'ascendente", "annee-personnelle": "La tua lettura completa dell'anno personale", "nombre-expression": "La tua lettura completa del numero di espressione" } },
+  de: { eyebrow: "In die Praxis", desc: "Eine persönliche Lesung von Orion (1100-1400 Wörter), sofort auf dem Bildschirm und per E-Mail geliefert.", button: "Meine vollständige Lesung freischalten - 4,90 €", titles: { "chemin-de-vie": "Deine vollständige Lebensweg-Lesung", "ascendant": "Deine vollständige Aszendenten-Lesung", "annee-personnelle": "Deine vollständige Lesung des persönlichen Jahres", "nombre-expression": "Deine vollständige Lesung der Ausdruckszahl" } },
+  pt: { eyebrow: "Passa à prática", desc: "Uma leitura personalizada de Orion (1100-1400 palavras), entregue na hora no ecrã e por email.", button: "Desbloquear a minha leitura completa - 4,90 €", titles: { "chemin-de-vie": "A tua leitura completa do caminho de vida", "ascendant": "A tua leitura completa do ascendente", "annee-personnelle": "A tua leitura completa do ano pessoal", "nombre-expression": "A tua leitura completa do número de expressão" } },
+  tr: { eyebrow: "Uygulamaya geç", desc: "Orion'dan kişisel bir okuma (1100-1400 kelime), anında ekranda ve e-posta ile.", button: "Tam okumamı aç - 4,90 €", titles: { "chemin-de-vie": "Tam yaşam yolu okuman", "ascendant": "Tam yükselen burç okuman", "annee-personnelle": "Tam kişisel yıl okuman", "nombre-expression": "Tam ifade sayısı okuman" } },
+  ru: { eyebrow: "К практике", desc: "Персональное чтение от Ориона (1100-1400 слов), сразу на экране и по электронной почте.", button: "Открыть мое полное чтение - 4,90 €", titles: { "chemin-de-vie": "Твое полное чтение жизненного пути", "ascendant": "Твое полное чтение асцендента", "annee-personnelle": "Твое полное чтение личного года", "nombre-expression": "Твое полное чтение числа выражения" } },
+  pl: { eyebrow: "Przejdź do praktyki", desc: "Spersonalizowane odczytanie od Oriona (1100-1400 słów), od razu na ekranie i e-mailem.", button: "Odblokuj moje pełne odczytanie - 4,90 €", titles: { "chemin-de-vie": "Twoje pełne odczytanie drogi życia", "ascendant": "Twoje pełne odczytanie ascendentu", "annee-personnelle": "Twoje pełne odczytanie roku osobistego", "nombre-expression": "Twoje pełne odczytanie liczby ekspresji" } },
+  ar: { eyebrow: "إلى التطبيق", desc: "قراءة شخصية من أوريون (1100-1400 كلمة)، تصلك فورًا على الشاشة وبالبريد الإلكتروني.", button: "افتح قراءتي الكاملة - 4,90 €", titles: { "chemin-de-vie": "قراءتك الكاملة لمسار الحياة", "ascendant": "قراءتك الكاملة للطالع", "annee-personnelle": "قراءتك الكاملة للسنة الشخصية", "nombre-expression": "قراءتك الكاملة لرقم التعبير" } },
 };
 
 const c = COPY[locale];
@@ -54,13 +54,21 @@ const dir = locale === "ar" ? "rtl" : undefined;
     if (!btn) return;
     const tool = cta.getAttribute("data-tool")!;
     const locale = cta.getAttribute("data-locale")!;
-    const dateEl = document.getElementById("birth-date") as HTMLInputElement | null;
-    const birthDate = dateEl?.value || "";
-    if (!birthDate) { btn.classList.add("animate-pulse"); setTimeout(() => btn.classList.remove("animate-pulse"), 1000); return; }
+    const pulse = () => { btn.classList.add("animate-pulse"); setTimeout(() => btn.classList.remove("animate-pulse"), 1000); };
+    const body: Record<string, unknown> = { tool, locale };
+    // nombre-expression is name-based; every other tool is date-based.
+    if (tool === "nombre-expression") {
+      const name = (document.getElementById("full-name") as HTMLInputElement | null)?.value?.trim() || "";
+      if (!name) { pulse(); return; }
+      body.fullName = name;
+    } else {
+      const birthDate = (document.getElementById("birth-date") as HTMLInputElement | null)?.value || "";
+      if (!birthDate) { pulse(); return; }
+      body.birthDate = birthDate;
+    }
     const original = btn.textContent;
     btn.disabled = true; btn.textContent = "…";
     try {
-      const body: Record<string, unknown> = { tool, locale, birthDate };
       if (tool === "ascendant") {
         const time = (document.getElementById("birth-time") as HTMLInputElement | null)?.value || "12:00";
         const place = (document.getElementById("birth-place") as HTMLInputElement | null)?.value || "";

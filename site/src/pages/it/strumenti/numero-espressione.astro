@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import ToolEditorial from "../../../components/ToolEditorial.astro";
+import ReadingPaywallCTA from "../../../components/ReadingPaywallCTA.astro";
 import { getToolEditorial } from "../../../data/tool-editorials";
 const editorial_expression_number = getToolEditorial("expression-number", "it");
 
@@ -64,11 +65,39 @@ const jsonLd = [
       </p>
     </aside>
 
-    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
-      <div class="text-5xl mb-4">A</div>
-      <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">Calcola il tuo numero di espressione</h2>
-      <p class="text-white/70 mb-6 max-w-xl mx-auto leading-relaxed">Ti serve il nome completo di nascita. L'app applica la tavola pitagorica lettera per lettera e riduce fino al numero finale.</p>
-      <a href="https://karmastro.com/oracle/" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">Calcolare il mio numero</a>
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="expr-form" class="space-y-4">
+        <div>
+          <label for="full-name" class="block text-sm font-medium text-white/80 mb-2">Il tuo nome completo di nascita</label>
+          <input type="text" id="full-name" required placeholder="es. Maria Elena Rossi" class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white placeholder-white/30 focus:border-amber-300 focus:outline-none transition-colors" />
+          <p class="text-xs text-white/50 mt-1">Usa il nome completo del tuo certificato di nascita, inclusi i secondi nomi.</p>
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          Calcola il mio numero di espressione
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Il tuo numero di espressione</p>
+          <div class="flex items-baseline gap-4 mb-4">
+            <span id="result-number" class="text-7xl font-serif text-amber-300"></span>
+            <span id="result-title" class="text-xl font-serif text-white/90"></span>
+          </div>
+          <p class="text-xs text-white/50 mb-4">Lettere: <span id="result-letters" class="text-white/70"></span></p>
+          <p class="text-xs text-white/50 mb-4">Calcolo: <span id="result-calc" class="text-white/70"></span></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div>
+            <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">I tuoi talenti naturali</p>
+            <ul id="result-talents" class="text-sm text-white/70 space-y-1 mb-4"></ul>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">Il tuo cammino</p>
+            <p id="result-path" class="text-sm text-white/80 italic leading-relaxed"></p>
+          </div>
+          <ReadingPaywallCTA tool="nombre-expression" locale="it" />
+        </div>
+      </div>
     </div>
 
     <section class="prose prose-invert max-w-none mb-10">
@@ -137,3 +166,42 @@ const jsonLd = [
     )}
   </article>
 </BaseLayout>
+
+<script>
+  import { calculateExpression } from "../../../data/numerology-meanings";
+
+  const MEANINGS_IT: Record<number, { title: string; talents: string[]; path: string; summary: string }> = {
+    1: { title: "Il Pioniere", talents: ["Leadership", "Innovazione", "Indipendenza", "Coraggio"], path: "Aprire nuove strade, avviare progetti, distinguersi.", summary: "Il tuo nome vibra di energia pioniera. Sei qui per guidare, per dare origine, per essere il primo. Il tuo talento è trasformare la visione in azione prima ancora che gli altri intravedano l'opportunità." },
+    2: { title: "Il Mediatore", talents: ["Diplomazia", "Intuizione", "Cooperazione", "Sensibilità artistica"], path: "Costruire ponti, mediare, creare armonia.", summary: "Il tuo nome vibra di intelligenza relazionale. Leggi gli ambienti come gli altri leggono i libri. Il tuo talento è intrecciare persone e idee senza che nessuno noti il filo." },
+    3: { title: "Il Comunicatore", talents: ["Espressione creativa", "Scrittura", "Performance", "Carisma"], path: "Rendere visibili le idee, intrattenere, ispirare.", summary: "Il tuo nome vibra di genio espressivo. Parole, immagini, musica, storie: questi sono i tuoi strumenti. Il tuo talento è far provare alle persone qualcosa che non sapevano di aver bisogno di sentire." },
+    4: { title: "L'Architetto", talents: ["Disciplina", "Artigianalità", "Organizzazione", "Solidità"], path: "Costruire sistemi e strutture che durano.", summary: "Il tuo nome vibra di energia solida, paziente, fondante. Costruisci ciò che gli altri si limitano a sognare. Il tuo talento è trasformare il caos in un progetto, e poi il progetto in qualcosa di reale." },
+    5: { title: "L'Avventuriero", talents: ["Adattabilità", "Comunicazione", "Viaggio", "Vendita"], path: "Movimento, varietà, mettere in contatto mondi diversi.", summary: "Il tuo nome vibra di curiosità inquieta. Prosperi nel movimento. Il tuo talento è fare da ponte tra culture, sistemi o idee che normalmente non si incontrano mai." },
+    6: { title: "Il Custode", talents: ["Insegnamento", "Cura", "Ascolto", "Creare bellezza"], path: "Nutrire, proteggere, abbellire.", summary: "Il tuo nome vibra di responsabilità e amore. Le persone ti portano i loro problemi perché qualcosa in te resta saldo. Il tuo talento è far sentire gli altri a casa." },
+    7: { title: "Il Ricercatore", talents: ["Analisi profonda", "Ricerca", "Spiritualità", "Padronanza"], path: "Svelare verità nascoste, trasmettere saggezza.", summary: "Il tuo nome vibra dell'energia di chi cerca. Vai sempre oltre la superficie. Il tuo talento è trovare schemi che nessun altro nota e saperli esprimere con chiarezza." },
+    8: { title: "Lo Stratega", talents: ["Acume negli affari", "Leadership", "Strategia", "Padronanza finanziaria"], path: "Costruire ricchezza e influenza, organizzare su larga scala.", summary: "Il tuo nome vibra di padronanza materiale. Comprendi il potere senza esserne corrotto. Il tuo talento è trasformare la visione in struttura e la struttura in eredità." },
+    9: { title: "L'Umanitario", talents: ["Compassione", "Insegnamento", "Arte", "Pensiero globale"], path: "Servire la collettività, ispirare con l'esempio.", summary: "Il tuo nome vibra della saggezza di un'anima antica. Vedi oltre i confini di gruppo, fino all'insieme. Il tuo talento è servire cause più grandi di te senza perdere il tuo centro." },
+    11: { title: "L'Illuminatore (Numero Maestro)", talents: ["Intuizione spirituale", "Ispirazione", "Visione", "Magnetismo"], path: "Risvegliare gli altri con la presenza e l'esempio.", summary: "Il tuo nome vibra del numero maestro 11, un 2 raddoppiato. Sei un canale di ispirazione. Il tuo talento è entrare in una stanza e cambiarne l'energia senza dire una parola." },
+    22: { title: "Il Maestro Costruttore", talents: ["Pragmatismo visionario", "Progetti su larga scala", "Leadership", "Resistenza"], path: "Trasformare grandi visioni in realtà durature.", summary: "Il tuo nome vibra del numero maestro 22, un 4 raddoppiato. Sei qui per costruire su grande scala. Il tuo talento è prendere sogni impossibili e trasformarli in sistemi che funzionano." },
+    33: { title: "Il Maestro Guaritore", talents: ["Amore incondizionato", "Guarigione", "Insegnamento", "Servizio disinteressato"], path: "Guarire il mondo attraverso un insegnamento compassionevole.", summary: "Il tuo nome vibra del numero maestro 33, il più raro di tutti. Sei qui per amare senza condizioni e insegnare senza ego. Il tuo talento è la presenza stessa." },
+  };
+
+  const form = document.getElementById("expr-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = (document.getElementById("full-name") as HTMLInputElement).value;
+    if (!name.trim()) return;
+    const result = calculateExpression(name);
+    const meaning = MEANINGS_IT[result.number] || MEANINGS_IT[1];
+    (document.getElementById("result-number") as HTMLElement).textContent = String(result.number);
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-letters") as HTMLElement).textContent = result.letters;
+    (document.getElementById("result-calc") as HTMLElement).textContent = result.calculation;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+    (document.getElementById("result-talents") as HTMLElement).innerHTML = meaning.talents.map((t) => `<li>✦ ${t}</li>`).join("");
+    (document.getElementById("result-path") as HTMLElement).textContent = meaning.path;
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import ToolEditorial from "../../../components/ToolEditorial.astro";
+import ReadingPaywallCTA from "../../../components/ReadingPaywallCTA.astro";
 import { getToolEditorial } from "../../../data/tool-editorials";
 const editorial_expression_number = getToolEditorial("expression-number", "de");
 
@@ -64,11 +65,39 @@ const jsonLd = [
       </p>
     </aside>
 
-    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
-      <div class="text-5xl mb-4">A</div>
-      <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">Berechne deine Ausdruckszahl</h2>
-      <p class="text-white/70 mb-6 max-w-xl mx-auto leading-relaxed">Du brauchst deinen vollständigen Geburtsnamen. Die App wendet die pythagoreische Tabelle Buchstabe für Buchstabe an und reduziert bis zur Endzahl (außer Meisterzahlen 11, 22, 33).</p>
-      <a href="https://karmastro.com/oracle/" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">Meine Ausdruckszahl berechnen</a>
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="expr-form" class="space-y-4">
+        <div>
+          <label for="full-name" class="block text-sm font-medium text-white/80 mb-2">Dein vollständiger Geburtsname</label>
+          <input type="text" id="full-name" required placeholder="z. B. Anna Maria Schmidt" class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white placeholder-white/30 focus:border-amber-300 focus:outline-none transition-colors" />
+          <p class="text-xs text-white/50 mt-1">Verwende den vollständigen Namen aus deiner Geburtsurkunde, inklusive Zweitnamen.</p>
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          Meine Ausdruckszahl berechnen
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Deine Ausdruckszahl</p>
+          <div class="flex items-baseline gap-4 mb-4">
+            <span id="result-number" class="text-7xl font-serif text-amber-300"></span>
+            <span id="result-title" class="text-xl font-serif text-white/90"></span>
+          </div>
+          <p class="text-xs text-white/50 mb-4">Buchstaben: <span id="result-letters" class="text-white/70"></span></p>
+          <p class="text-xs text-white/50 mb-4">Berechnung: <span id="result-calc" class="text-white/70"></span></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div>
+            <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Deine natürlichen Talente</p>
+            <ul id="result-talents" class="text-sm text-white/70 space-y-1 mb-4"></ul>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">Dein Weg</p>
+            <p id="result-path" class="text-sm text-white/80 italic leading-relaxed"></p>
+          </div>
+          <ReadingPaywallCTA tool="nombre-expression" locale="de" />
+        </div>
+      </div>
     </div>
 
     <section class="prose prose-invert max-w-none mb-10">
@@ -137,3 +166,42 @@ const jsonLd = [
     )}
   </article>
 </BaseLayout>
+
+<script>
+  import { calculateExpression } from "../../../data/numerology-meanings";
+
+  const MEANINGS_DE: Record<number, { title: string; talents: string[]; path: string; summary: string }> = {
+    1: { title: "Der Pionier", talents: ["Führung", "Innovation", "Unabhängigkeit", "Mut"], path: "Neue Wege bahnen, Vorhaben starten, herausstechen.", summary: "Dein Name schwingt mit Pioniergeist. Du bist hier, um zu führen, Neues zu begründen, der Erste zu sein. Dein Talent ist es, Vision in Handlung zu übersetzen, bevor andere die Gelegenheit überhaupt sehen." },
+    2: { title: "Der Friedensstifter", talents: ["Diplomatie", "Intuition", "Zusammenarbeit", "Kunstfertigkeit"], path: "Brücken bauen, vermitteln, Harmonie schaffen.", summary: "Dein Name schwingt mit zwischenmenschlicher Intelligenz. Du liest Räume, wie andere Bücher lesen. Dein Talent ist es, Menschen und Ideen zu verweben, ohne dass jemand den Faden bemerkt." },
+    3: { title: "Der Kommunikator", talents: ["Kreativer Ausdruck", "Schreiben", "Bühne", "Charisma"], path: "Ideen sichtbar machen, unterhalten, inspirieren.", summary: "Dein Name schwingt mit ausdrucksstarkem Genie. Worte, Bilder, Musik, Geschichten sind deine Werkzeuge. Dein Talent ist es, Menschen etwas fühlen zu lassen, von dem sie nicht wussten, dass sie es fühlen mussten." },
+    4: { title: "Der Architekt", talents: ["Disziplin", "Handwerk", "Organisation", "Beständigkeit"], path: "Systeme und Strukturen bauen, die Bestand haben.", summary: "Dein Name schwingt mit solider, geduldiger, grundlegender Energie. Du baust, wovon andere nur träumen. Dein Talent ist es, Chaos in einen Plan zu verwandeln und den Plan dann in etwas Reales." },
+    5: { title: "Der Freiheitssucher", talents: ["Anpassungsfähigkeit", "Kommunikation", "Reisen", "Verkauf"], path: "Bewegung, Vielfalt, Welten verbinden.", summary: "Dein Name schwingt mit rastloser Neugier. In Bewegung blühst du auf. Dein Talent ist es, zwischen Kulturen, Systemen oder Ideen zu übersetzen, die sich normalerweise nie begegnen." },
+    6: { title: "Der Fürsorgende", talents: ["Lehren", "Heilen", "Begleiten", "Schönheit schaffen"], path: "Nähren, beschützen, verschönern.", summary: "Dein Name schwingt mit Verantwortung und Liebe. Menschen bringen dir ihre Sorgen, weil etwas in dir Halt gibt. Dein Talent ist es, anderen ein Gefühl von Geborgenheit zu schenken." },
+    7: { title: "Der Mystiker", talents: ["Tiefe Analyse", "Forschung", "Spiritualität", "Meisterschaft"], path: "Verborgene Wahrheiten aufdecken, Weisheit lehren.", summary: "Dein Name schwingt mit der Energie des Suchenden. Du gehst immer tiefer als die Oberfläche. Dein Talent ist es, Muster zu erkennen, die sonst niemand bemerkt, und sie klar in Worte zu fassen." },
+    8: { title: "Der Macher", talents: ["Geschäftssinn", "Führung", "Strategie", "Finanzielle Meisterschaft"], path: "Wohlstand und Einfluss aufbauen, im Großen organisieren.", summary: "Dein Name schwingt mit materieller Meisterschaft. Du verstehst Macht, ohne dich von ihr verderben zu lassen. Dein Talent ist es, Vision in Struktur und Struktur in Vermächtnis zu verwandeln." },
+    9: { title: "Der Humanist", talents: ["Mitgefühl", "Lehren", "Kunst", "Globales Denken"], path: "Dem Ganzen dienen, durch das eigene Vorbild inspirieren.", summary: "Dein Name schwingt mit der Weisheit einer alten Seele. Du siehst über jede Grenze hinaus auf das Ganze. Dein Talent ist es, Anliegen zu dienen, die größer sind als du selbst, ohne deine Mitte zu verlieren." },
+    11: { title: "Der Erleuchter (Meisterzahl)", talents: ["Spirituelle Einsicht", "Inspiration", "Vision", "Ausstrahlung"], path: "Andere durch Präsenz und Vorbild erwecken.", summary: "Dein Name schwingt mit der Meisterzahl 11, einer verdoppelten 2. Du bist ein Kanal für Inspiration. Dein Talent ist es, einen Raum zu betreten und die Energie zu verändern, ohne ein Wort zu sagen." },
+    22: { title: "Der Meisterbauer", talents: ["Visionäre Bodenständigkeit", "Großprojekte", "Führung", "Ausdauer"], path: "Große Visionen in bleibende Wirklichkeit verwandeln.", summary: "Dein Name schwingt mit der Meisterzahl 22, einer verdoppelten 4. Du bist hier, um im Großen zu bauen. Dein Talent ist es, unmögliche Träume zu nehmen und sie in funktionierende Systeme zu verwandeln." },
+    33: { title: "Der Meisterheiler", talents: ["Bedingungslose Liebe", "Heilung", "Lehren", "Selbstloser Dienst"], path: "Die Welt durch mitfühlendes Lehren heilen.", summary: "Dein Name schwingt mit der Meisterzahl 33, der seltensten von allen. Du bist hier, um bedingungslos zu lieben und ohne Ego zu lehren. Dein Talent ist die Präsenz selbst." },
+  };
+
+  const form = document.getElementById("expr-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = (document.getElementById("full-name") as HTMLInputElement).value;
+    if (!name.trim()) return;
+    const result = calculateExpression(name);
+    const meaning = MEANINGS_DE[result.number] || MEANINGS_DE[1];
+    (document.getElementById("result-number") as HTMLElement).textContent = String(result.number);
+    (document.getElementById("result-title") as HTMLElement).textContent = meaning.title;
+    (document.getElementById("result-letters") as HTMLElement).textContent = result.letters;
+    (document.getElementById("result-calc") as HTMLElement).textContent = result.calculation;
+    (document.getElementById("result-summary") as HTMLElement).textContent = meaning.summary;
+    (document.getElementById("result-talents") as HTMLElement).innerHTML = meaning.talents.map((t) => `<li>✦ ${t}</li>`).join("");
+    (document.getElementById("result-path") as HTMLElement).textContent = meaning.path;
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>

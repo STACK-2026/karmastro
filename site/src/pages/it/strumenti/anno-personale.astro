@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import ToolEditorial from "../../../components/ToolEditorial.astro";
+import ReadingPaywallCTA from "../../../components/ReadingPaywallCTA.astro";
 import { getToolEditorial } from "../../../data/tool-editorials";
 const editorial_personal_year = getToolEditorial("personal-year", "it");
+const currentYear = 2026;
 
 const title = "Calcolatore dell'Anno Personale - Numerologia dell'anno | Karmastro";
 const description =
@@ -64,11 +66,50 @@ const jsonLd = [
       </p>
     </aside>
 
-    <div class="p-8 md:p-10 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/10 to-purple-400/10 mb-10 text-center">
-      <div class="text-5xl mb-4">★</div>
-      <h2 class="text-2xl md:text-3xl font-serif text-white mb-3">Calcola il tuo anno personale</h2>
-      <p class="text-white/70 mb-6 max-w-xl mx-auto leading-relaxed">Solo la tua data di nascita e l'anno in corso.</p>
-      <a href="https://karmastro.com/oracle/" class="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">Calcolare il mio anno personale</a>
+    <div id="calculator" class="p-6 md:p-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 mb-10">
+      <form id="py-form" class="space-y-4">
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label for="birth-date" class="block text-sm font-medium text-white/80 mb-2">La tua data di nascita</label>
+            <input type="date" id="birth-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+          </div>
+          <div>
+            <label for="target-year" class="block text-sm font-medium text-white/80 mb-2">Anno da analizzare</label>
+            <input type="number" id="target-year" value={currentYear} min="1900" max="2100" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
+          </div>
+        </div>
+        <button type="submit" class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+          Calcola il mio anno personale
+        </button>
+      </form>
+
+      <div id="result" class="mt-6 hidden">
+        <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
+          <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Il tuo anno personale <span id="result-year" class="text-white"></span></p>
+          <div class="flex items-baseline gap-4 mb-4">
+            <span id="result-number" class="text-7xl font-serif text-amber-300"></span>
+            <span id="result-title" class="text-xl font-serif text-white/90"></span>
+          </div>
+          <p class="text-xs text-white/50 mb-1">Tema: <span id="result-theme" class="text-amber-300/80"></span></p>
+          <p class="text-xs text-white/50 mb-4">Calcolo: <span id="result-calc" class="text-white/70"></span></p>
+          <p id="result-summary" class="text-white/80 leading-relaxed mb-6"></p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-emerald-300/80 mb-2">Su cosa concentrarti</p>
+              <ul id="result-focus" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-pink-300/80 mb-2">Cosa è meglio evitare</p>
+              <ul id="result-avoid" class="text-sm text-white/70 space-y-1"></ul>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs uppercase tracking-widest text-purple-300/80 mb-2">Mesi più favorevoli</p>
+            <p id="result-months" class="text-sm text-white/80"></p>
+          </div>
+          <ReadingPaywallCTA tool="annee-personnelle" locale="it" />
+        </div>
+      </div>
     </div>
 
     <section class="prose prose-invert max-w-none mb-10">
@@ -134,3 +175,47 @@ const jsonLd = [
     )}
   </article>
 </BaseLayout>
+
+<script>
+  import { calculatePersonalYear } from "../../../data/numerology-meanings";
+
+  type PY = { title: string; theme: string; summary: string; focus: string[]; avoid: string[]; months: string };
+  const MEANINGS_IT: Record<number, PY> = {
+    1: { title: "Anno 1: il grande inizio", theme: "Nuovo ciclo di 9 anni", summary: "È l'inizio di un ciclo di 9 anni. Pianti i semi di ciò che crescerà fino all'anno 9. Tutto ciò che cominci ora ha una portata amplificata. Prendi iniziative, anche piccole.", focus: ["Lanciare un nuovo progetto", "Prendere decisioni", "Affermarti", "Rinnovare la tua identità"], avoid: ["L'immobilismo", "Restare nell'ombra", "Rimandare"], months: "Marzo, giugno, ottobre" },
+    2: { title: "Anno 2: pazienza e legami", theme: "Consolidamento delle relazioni", summary: "Anno dolce che chiede pazienza. Non spingi più, lasci maturare. Le relazioni passano in primo piano: amicizie profonde, amore, collaborazioni. Evita di forzare le cose.", focus: ["Coltivare le relazioni", "Ascoltare", "Avere pazienza", "Curare i dettagli"], avoid: ["La fretta", "Il conflitto frontale", "Le decisioni impulsive"], months: "Febbraio, maggio, settembre" },
+    3: { title: "Anno 3: espressione e gioia", theme: "Creatività e comunicazione", summary: "Anno solare, leggero, creativo. È l'anno ideale per scrivere, parlare, creare, mostrarti. Irradi in modo naturale e le occasioni sociali si moltiplicano. Goditelo, ma senza disperderti troppo.", focus: ["Creare", "Comunicare", "Viaggiare", "Divertirti con intelligenza"], avoid: ["La dispersione", "La superficialità", "Le spese compulsive"], months: "Marzo, luglio, dicembre" },
+    4: { title: "Anno 4: costruzione e disciplina", theme: "Lavoro metodico", summary: "Anno di sforzo e struttura. Costruisci pietra dopo pietra. Non è l'anno più affascinante, ma è quello che crea le fondamenta solide dei cicli successivi. Disciplina e perseveranza.", focus: ["Strutturare", "Risparmiare", "Lavorare sodo", "Costruire a lungo termine"], avoid: ["La routine spenta", "Le scorciatoie", "La rigidità eccessiva"], months: "Aprile, agosto, gennaio" },
+    5: { title: "Anno 5: cambiamento e libertà", theme: "Movimento e trasformazione", summary: "Anno di movimento. Cambiamenti, viaggi, imprevisti, nuove opportunità. Tutto si muove, a volte troppo in fretta. La tua missione è cogliere le aperture senza perdere il tuo centro.", focus: ["Viaggiare", "Cambiare ciò che deve cambiare", "Correre rischi calcolati", "Aprirti"], avoid: ["L'instabilità caotica", "Le dipendenze", "La fuga"], months: "Maggio, settembre, febbraio" },
+    6: { title: "Anno 6: responsabilità e amore", theme: "Famiglia e impegno", summary: "Anno in cui le responsabilità familiari, affettive e domestiche passano in primo piano. Ideale per impegnarti, sposarti, fondare una famiglia, creare un focolare. Attento a non dimenticarti di te nel prenderti cura degli altri.", focus: ["Impegnarti", "Prenderti cura", "Creare un focolare", "Risolvere conflitti familiari"], avoid: ["Il sacrificio eccessivo", "La possessività", "L'intromissione"], months: "Giugno, settembre, marzo" },
+    7: { title: "Anno 7: introspezione e saggezza", theme: "Ritiro e approfondimento", summary: "Anno più solitario, più interiore. È il momento di studiare, meditare, cercare. Evita le grandi decisioni affrettate. È una pausa feconda prima dell'anno 8 di realizzazione materiale.", focus: ["Studiare", "Meditare", "Ricaricarti", "Approfondire la spiritualità"], avoid: ["L'isolamento tossico", "Le decisioni affrettate", "Il cinismo"], months: "Luglio, ottobre, gennaio" },
+    8: { title: "Anno 8: potere e raccolto materiale", theme: "Realizzazione finanziaria e professionale", summary: "Anno di raccolto. Ciò che hai seminato dall'anno 1 torna amplificato. Ideale per i grandi progetti professionali, gli investimenti, i riconoscimenti pubblici. Anno impegnativo ma gratificante.", focus: ["Investire", "Negoziare", "Firmare grandi contratti", "Costruire la tua autorità"], avoid: ["Il materialismo puro", "L'autoritarismo", "L'esaurimento da eccesso di ambizione"], months: "Agosto, novembre, marzo" },
+    9: { title: "Anno 9: fine del ciclo e lasciar andare", theme: "Compimento e trasmissione", summary: "Anno di chiusura. Chiudi un ciclo di 9 anni. È il momento di concludere ciò che è rimasto in sospeso, perdonare, trasmettere, dare. Anno emotivo e riflessivo. Lascia andare ciò che deve andare per poter rinascere nell'anno 1.", focus: ["Concludere", "Trasmettere", "Perdonare", "Fare un bilancio"], avoid: ["Iniziare nuovi grandi progetti", "Aggrapparti", "I rimpianti"], months: "Settembre, dicembre, aprile" },
+  };
+
+  const form = document.getElementById("py-form") as HTMLFormElement;
+  const resultDiv = document.getElementById("result") as HTMLDivElement;
+  const $ = (id: string) => document.getElementById(id) as HTMLElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const dateStr = (document.getElementById("birth-date") as HTMLInputElement).value;
+    const yearVal = parseInt((document.getElementById("target-year") as HTMLInputElement).value, 10);
+    if (!dateStr || !yearVal) return;
+    const [, m, d] = dateStr.split("-").map(Number);
+    const result = calculatePersonalYear(d, m, yearVal);
+    const meaning = MEANINGS_IT[result.number] || MEANINGS_IT[9];
+
+    $("result-year").textContent = String(yearVal);
+    $("result-number").textContent = String(result.number);
+    $("result-title").textContent = meaning.title;
+    $("result-theme").textContent = meaning.theme;
+    $("result-calc").textContent = result.calculation.replace(/jour/g, "giorno").replace(/mois/g, "mese").replace(/année/g, "anno");
+    $("result-summary").textContent = meaning.summary;
+    $("result-focus").innerHTML = meaning.focus.map((q) => `<li>✦ ${q}</li>`).join("");
+    $("result-avoid").innerHTML = meaning.avoid.map((c) => `<li>◆ ${c}</li>`).join("");
+    $("result-months").textContent = meaning.months;
+
+    resultDiv.classList.remove("hidden");
+    resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>
