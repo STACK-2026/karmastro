@@ -1,5 +1,5 @@
 ---
-title: "Horoscope chinois vs occidental : 7 différences clés à conna"
+title: "Horoscope chinois vs occidental : 7 différences clés à connaître"
 description: "Découvre les 7 différences majeures entre horoscope chinois et occidental : origines, calcul, éléments, compatibilité et prévisions 2026. Tableau inclus."
 date: 2026-06-02
 author: "Sibylle"
@@ -9,7 +9,7 @@ tags: ["horoscope chinois", "occidental", "différence", "comparatif"]
 keywords: "horoscope chinois, occidental, différence, comparatif"
 draft: false
 image: "https://images.unsplash.com/photo-1569123518634-2c054ff73053?ixid=M3w4Nzg4MzB8MHwxfHNlYXJjaHwzNXx8aG9yb3Njb3BlJTIwY2hpbm9pcyUyMHpvZGlhYyUyMHN0YXJzJTIwc2t5fGVufDB8MHx8fDE3ODAzOTExMTV8MA&ixlib=rb-4.1.0&w=1200&h=630&fit=crop&crop=center&q=80"
-imageAlt: "silhouette of trees at night"
+imageAlt: "Ciel étoilé cosmique évoquant les signes du zodiaque chinois et occidental"
 ---
 
 ---
@@ -20,11 +20,11 @@ imageAlt: "silhouette of trees at night"
 - Les éléments chinois (Bois, Feu, Terre, Métal, Eau) influencent la personnalité et les prévisions, absents en astrologie occidentale classique.
 - Karmastro fusionne les deux systèmes avec la numérologie pour un profil cosmique unique.
 - 2026 est l'année du **Cheval de Feu** (17/02/2026 - 05/02/2027), idéale pour l'audace et l'aventure.
-- Utilise [notre outil](https://app.karmastro.com) pour calculer ton signe chinois, ton élément et ton nombre Kua en 30 secondes.
+- Utilise [notre outil](/outils/) pour calculer ton signe chinois, ton élément et ton nombre Kua en 30 secondes.
 
 ---
 
-![Horoscope chinois et occidental comparés avec les 12 animaux et signes](IMAGE_1)
+![Horoscope chinois et occidental comparés avec les 12 animaux et signes](https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&h=450&fit=crop&crop=center&q=80)
 
 ## Sommaire
 - [Qu’est-ce que l’horoscope chinois ? Origines et légendes](#quest-ce-que-lhoroscope-chinois--origines-et-légendes)
@@ -60,7 +60,7 @@ L’horoscope chinois est un système astrologique millénaire basé sur un **ca
 **Différence fondamentale avec l’occidental** :
 L’astrologie occidentale se base sur la position du **Soleil** au moment de ta naissance (ex : Bélier si né entre le 21 mars et le 19 avril). L’horoscope chinois, lui, dépend de ton **année de naissance** et de l’**élément associé**.
 
-> *Karmastro, la plateforme française d’astrologie intelligente, croise ces deux systèmes avec la numérologie pour t’offrir une analyse karmique complète. Découvre [ton profil cosmique ici](https://app.karmastro.com).*
+> *Karmastro, la plateforme française d’astrologie intelligente, croise ces deux systèmes avec la numérologie pour t’offrir une analyse karmique complète. Découvre [ton profil cosmique ici](/oracle/).*
 
 ---
 
@@ -121,13 +121,13 @@ L’**ascendant chinois** (ou "heure de naissance") ajoute une couche supplémen
 
 *Exemple* : Si tu es né à **14h**, ton ascendant est le **Singe**.
 
-> *Pour une analyse complète, utilise [l’Oracle IA de Karmastro](https://app.karmastro.com/oracle) qui croise ton signe chinois, ton élément, ton ascendant et ta numérologie karmique.*
+> *Pour une analyse complète, utilise [l’Oracle IA de Karmastro](/oracle/) qui croise ton signe chinois, ton élément, ton ascendant et ta numérologie karmique.*
 
 ---
 
 ## Horoscope chinois vs occidental : 7 différences clés
 
-![Tableau comparatif horoscope chinois et occidental avec icônes](IMAGE_2)
+![Tableau comparatif horoscope chinois et occidental avec icônes](https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&h=450&fit=crop&crop=center&q=80)
 
 ### 1. Base temporelle : année lunaire vs mois solaire
 - **Chinois** : Basé sur le **calendrier luni-solaire** (année de 354 jours, ajustée avec des mois intercalaires). L’année commence entre fin janvier et mi-février.
@@ -232,7 +232,7 @@ L’**ascendant chinois** (ou "heure de naissance") ajoute une couche supplémen
 - *Chinois* : Un **Serpent de Terre** (1989) avec un Bazi déséquilibré en **Métal** pourrait avoir des défis relationnels.
 - *Occidental* : Une **Lune en Scorpion** indique une sensibilité intense.
 
-> *Découvre ton profil Bazi et tes leçons karmiques avec [l’Oracle IA de Karmastro](https://app.karmastro.com/oracle).*
+> *Découvre ton profil Bazi et tes leçons karmiques avec [l’Oracle IA de Karmastro](/oracle/).*
 
 ---
 
@@ -406,7 +406,7 @@ Voici un guide détaillé pour comprendre tes affinités avec les autres signes 
 - **Défis** : Évite les excès - le Feu du Cheval peut te pousser à trop dépenser.
 - **Conseil** : Profite de la vie, mais avec modération.
 
-> *Pour des prévisions personnalisées, consulte [l’Oracle IA de Karmastro](https://app.karmastro.com/oracle).*
+> *Pour des prévisions personnalisées, consulte [l’Oracle IA de Karmastro](/oracle/).*
 
 ---
 
@@ -443,7 +443,7 @@ Le **nombre Kua** (ou "nombre de destin") se calcule à partir de ton **année d
 - **Rat + Kua 4** : Apprendre à lâcher prise sur le contrôle.
 - **Tigre + Kua 7** : Faire confiance à ton intuition plutôt qu’à ton impulsivité.
 
-> *Calcule ton profil karmique complet sur [Karmastro](https://app.karmastro.com).*
+> *Calcule ton profil karmique complet sur [nos outils Karmastro](/outils/).*
 
 ---
 
@@ -473,7 +473,7 @@ Consulte le tableau des **5 éléments** :
 Selon la tradition chinoise, ton **signe** et ton **élément** influencent ton énergie annuelle. Par exemple, les **Dragons** sont considérés comme chanceux, surtout en 2024.
 
 ### Où trouver mon horoscope chinois 2026 personnalisé ?
-Karmastro propose des [prévisions annuelles détaillées](https://app.karmastro.com/oracle) qui croisent ton signe, ton élément et ta numérologie karmique.
+Karmastro propose des [prévisions annuelles détaillées](/oracle/) qui croisent ton signe, ton élément et ta numérologie karmique.
 
 ---
 
@@ -483,9 +483,9 @@ L’horoscope chinois et l’astrologie occidentale offrent deux perspectives un
 - **Chinois** : Une vision **annuelle et karmique**, basée sur les animaux et les éléments.
 - **Occidental** : Une analyse **mensuelle et psychologique**, centrée sur les signes et les planètes.
 
-**Karmastro** va plus loin en fusionnant ces deux systèmes avec la **numérologie karmique** pour te révéler ton **profil cosmique complet**. Que tu sois un **Tigre de Bois** ou un **Lion ascendant Vierge**, notre [Oracle IA](https://app.karmastro.com/oracle) t’aide à naviguer 2026 avec sagesse.
+**Karmastro** va plus loin en fusionnant ces deux systèmes avec la **numérologie karmique** pour te révéler ton **profil cosmique complet**. Que tu sois un **Tigre de Bois** ou un **Lion ascendant Vierge**, notre [Oracle IA](/oracle/) t’aide à naviguer 2026 avec sagesse.
 
-👉 **Prêt à découvrir ton destin ?** [Calcule ton profil cosmique maintenant](https://app.karmastro.com).
+👉 **Prêt à découvrir ton destin ?** [Calcule ton profil cosmique maintenant](/oracle/).
 
 ---
 
