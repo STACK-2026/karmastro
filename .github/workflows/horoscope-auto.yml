@@ -1,4 +1,4 @@
-name: Horoscope Auto · Génération quotidienne 11 langues
+name: Horoscope Auto · Génération quotidienne (Gemini, FR+EN)
 
 on:
   schedule:
@@ -13,7 +13,7 @@ on:
       lang:
         description: "Langues à générer (csv ou 'all')"
         type: string
-        default: 'all'
+        default: 'fr,en'
       backfill_days:
         description: "Backfill N derniers jours (0 = désactivé, normal today+J+1)"
         type: string
@@ -49,42 +49,42 @@ jobs:
       - name: Install dependencies
         run: pip install -r horoscope-auto/requirements.txt
 
-      - name: Generate today in all languages
+      - name: Generate today (Gemini backend)
         if: github.event.inputs.backfill_days == '' || github.event.inputs.backfill_days == '0'
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           ENGINE_URL: http://168.119.229.20:8100
         run: |
           cd horoscope-auto
-          LANG_ARG="${{ github.event.inputs.lang || 'all' }}"
+          LANG_ARG="${{ github.event.inputs.lang || 'fr,en' }}"
           FORCE_ARG=""
           if [ "${{ github.event.inputs.force }}" = "true" ]; then FORCE_ARG="--force"; fi
-          python generate.py --lang "${LANG_ARG}" ${FORCE_ARG}
+          python generate_gemini.py --lang "${LANG_ARG}" ${FORCE_ARG}
 
-      - name: Generate tomorrow preview in all languages
+      - name: Generate tomorrow preview (Gemini backend)
         if: github.event.inputs.backfill_days == '' || github.event.inputs.backfill_days == '0'
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           ENGINE_URL: http://168.119.229.20:8100
         run: |
           cd horoscope-auto
           TOMORROW=$(date -u -d tomorrow +%Y-%m-%d 2>/dev/null || date -u -v+1d +%Y-%m-%d)
-          LANG_ARG="${{ github.event.inputs.lang || 'all' }}"
-          python generate.py --date "${TOMORROW}" --lang "${LANG_ARG}"
+          LANG_ARG="${{ github.event.inputs.lang || 'fr,en' }}"
+          python generate_gemini.py --date "${TOMORROW}" --lang "${LANG_ARG}"
 
       - name: Backfill last N days (skip existing files)
         if: github.event.inputs.backfill_days != '' && github.event.inputs.backfill_days != '0'
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           ENGINE_URL: http://168.119.229.20:8100
         run: |
           cd horoscope-auto
-          LANG_ARG="${{ github.event.inputs.lang || 'all' }}"
+          LANG_ARG="${{ github.event.inputs.lang || 'fr,en' }}"
           N="${{ github.event.inputs.backfill_days }}"
           for i in $(seq 1 "$N"); do
             d=$(date -u -d "-$i days" +%Y-%m-%d 2>/dev/null || date -u -v-${i}d +%Y-%m-%d)
             echo "[backfill] $d in langs=$LANG_ARG"
-            python generate.py --date "$d" --lang "$LANG_ARG" || echo "[warn] $d failed, continuing"
+            python generate_gemini.py --date "$d" --lang "$LANG_ARG" || echo "[warn] $d failed, continuing"
           done
 
       - name: Commit and push if changed
@@ -94,6 +94,6 @@ jobs:
             echo "No horoscope changes to commit"
           else
             DATE=$(date -u +%Y-%m-%d)
-            git commit -m "horoscope: génération quotidienne ${DATE} (11 langues + J+1)"
+            git commit -m "horoscope: génération quotidienne ${DATE} (Gemini FR+EN + J+1)"
             git push
           fi
