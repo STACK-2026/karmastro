@@ -13,6 +13,7 @@ const corsHeaders = {
 const ENGINE_URL = "http://168.119.229.20:8100";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "https://nkjbmbdrvejemzrggxvr.supabase.co";
 const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
+const ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY") || "";
 
 serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -29,7 +30,11 @@ serve(async (req) => {
       });
     }
 
-    const sbUser = createClient(SUPABASE_URL, authHeader.replace("Bearer ", ""), {
+    // Validate the caller's JWT. The anon key must be the client apikey (2nd arg);
+    // the user's bearer token goes in the Authorization header. Passing the user
+    // JWT as the apikey is rejected under the new Supabase key system (was the
+    // root cause of every call returning 401 since ~Apr 2026 → no natal charts).
+    const sbUser = createClient(SUPABASE_URL, ANON_KEY, {
       global: { headers: { Authorization: authHeader } },
       auth: { persistSession: false },
     });
