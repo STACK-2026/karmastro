@@ -80,7 +80,7 @@ const breadcrumbs = [
 function extractFaq(md: string | undefined): { q: string; a: string }[] {
   if (!md) return [];
   // Match FAQ section in multiple languages
-  const m = md.match(/^##\s+(FAQ|Foire aux questions|Questions fr[ée]quentes|Frequently asked questions|Preguntas frecuentes|Domande frequenti|H[äa]ufige Fragen)[^\n]*$/im);
+  const m = md.match(/^##\s+(?:\d+\.\s+)?(FAQ|Foire aux questions|Questions fr[ée]quentes|Frequently asked questions|Preguntas frecuentes|Domande frequenti|H[äa]ufige Fragen)[^\n]*$/im);
   if (!m || m.index === undefined) return [];
   let section = md.slice(m.index + m[0].length);
   const nextH2 = section.match(/^##\s+/m);
