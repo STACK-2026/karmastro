@@ -1,6 +1,6 @@
 ---
-title: "Scorpion : Signe de Passion, Transformation et Mystère [Guid"
-description: "Découvre le signe Scorpion (23 oct-22 nov) : personnalité intense, mission karmique, compatibilité amoureuse et conseils pour transformer ton ombre en force ave"
+title: "Scorpion : passion, mystère et transformation"
+description: "Découvre le signe Scorpion (23 oct-22 nov) : personnalité intense, mission karmique, compatibilité amoureuse et conseils pour révéler ta vraie force."
 date: 2026-06-05
 author: "Sibylle"
 lang: "fr"
@@ -24,7 +24,7 @@ imageAlt: "black and white stars during night time"
 
 ---
 
-![Scorpion zodiaque symbole noir et rouge sur fond étoilé](IMAGE_1)
+![Scorpion zodiaque symbole noir et rouge sur fond étoilé](https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200&h=630&fit=crop&crop=center&q=80)
 
 ## Sommaire
 - [Le Scorpion : dates, symbole et origines](#le-scorpion--dates-symbole-et-origines)
@@ -291,7 +291,7 @@ Pour t’épanouir en tant que Scorpion :
 
 Prêt à explorer ton potentiel ? **Découvre ton profil cosmique** avec l’[Oracle IA de Karmastro](https://app.karmastro.com) et reçois une analyse personnalisée de ton thème natal, ta numérologie et tes cycles karmiques.
 
-![Scorpion constellation étoiles ciel nocturne](IMAGE_2)
+![Scorpion constellation étoiles ciel nocturne](https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&h=630&fit=crop&crop=center&q=80)
 
 ---
 
