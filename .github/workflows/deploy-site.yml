@@ -9,7 +9,7 @@ on:
   workflow_run:
     workflows:
       - "Blog Auto · Publication"
-      - "Horoscope Auto · Génération quotidienne 11 langues"
+      - "Horoscope Auto · Génération quotidienne (Gemini, FR+EN)"
       - "Rebuild Guard · Daily touch for scheduled articles"
     types: [completed]
     branches: [main]
