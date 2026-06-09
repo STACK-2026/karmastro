@@ -1,5 +1,5 @@
 ---
-title: "Numérologie et prénom : comment ils influencent ta personnal"
+title: "Numérologie du prénom : influence sur la personnalité"
 description: "Découvre comment la numérologie de ton prénom révèle ta personnalité, tes talents et défis karmiques. Calculs précis, exemples concrets et guide complet 2026."
 date: 2026-06-09
 author: "Pythia"
@@ -9,7 +9,7 @@ tags: ["numérologie", "prénom", "personnalité", "influence"]
 keywords: "numérologie, prénom, personnalité, influence"
 draft: false
 image: "https://images.unsplash.com/photo-1669755522901-703862e9ad5b?ixid=M3w4Nzg4MzB8MHwxfHNlYXJjaHwzN3x8bnVtJUMzJUE5cm9sb2dpZSUyMG51bWJlcnMlMjBzcGlyaXR1YWwlMjBhYnN0cmFjdHxlbnwwfDB8fHwxNzgwOTkzNjMyfDA&ixlib=rb-4.1.0&w=1200&h=630&fit=crop&crop=center&q=80"
-imageAlt: "a group of colorful objects"
+imageAlt: "Lettres et chiffres lumineux symbolisant la numérologie du prénom"
 ---
 
 ---
@@ -174,7 +174,7 @@ Les **nombres karmiques** révèlent des défis ou dettes issues de vies passée
 
 **Outils Karmastro** :
 - [Analyse karmique gratuite](https://app.karmastro.com/karmique) pour identifier tes nombres karmiques.
-- [Guide des dettes karmiques](https://karmastro.com/blog/dettes-karmique) pour approfondir.
+- [Guide des dettes karmiques](https://karmastro.com/blog/numerologie-karmique-decoder-dettes-spirituelles) pour approfondir.
 
 ---
 
@@ -237,7 +237,7 @@ La numérologie et l’astrologie sont deux outils complémentaires pour compren
 
 **Découvre ta synergie unique** :
 - [Calcule ton thème numérologique complet](https://app.karmastro.com)
-- [Lis notre guide astro-numérologique](https://karmastro.com/blog/astrologie-numerologie)
+- [Lis notre guide astro-numérologique](https://karmastro.com/blog/guidance-spirituelle-choisir-entre-astrologie-numerologie)
 
 ---
 
@@ -278,7 +278,7 @@ La numérologie du prénom est bien plus qu’un simple calcul : c’est une **f
 **Pour aller plus loin** :
 - [Calcule ton thème numérologique complet](https://app.karmastro.com) (gratuit).
 - [Découvre l’Oracle IA](https://app.karmastro.com/oracle) pour poser tes questions.
-- [Lis notre guide des prénoms et personnalité](https://karmastro.com/blog/prenom-personnalite).
+- [Lis notre guide des prénoms et personnalité](https://karmastro.com/blog/numerologie-prenom-nombre-expression-decrypter-identite).
 
 La numérologie n’est pas une fatalité, mais un **outil d’éveil** - à toi de l’utiliser pour écrire ton histoire !
 
@@ -307,9 +307,9 @@ La numérologie n’est pas une fatalité, mais un **outil d’éveil** - à toi
 - [L’Oracle IA](https://app.karmastro.com/oracle)
 - [Calculateur de thème numérologique](https://app.karmastro.com/calculateur)
 - [Analyse karmique gratuite](https://app.karmastro.com/karmique)
-- [Guide des dettes karmiques](https://karmastro.com/blog/dettes-karmique)
-- [Blog : Astrologie et numérologie](https://karmastro.com/blog/astrologie-numerologie)
-- [Blog : Prénom et personnalité](https://karmastro.com/blog/prenom-personnalite)
+- [Guide des dettes karmiques](https://karmastro.com/blog/numerologie-karmique-decoder-dettes-spirituelles)
+- [Blog : Astrologie et numérologie](https://karmastro.com/blog/guidance-spirituelle-choisir-entre-astrologie-numerologie)
+- [Blog : Prénom et personnalité](https://karmastro.com/blog/numerologie-prenom-nombre-expression-decrypter-identite)
 - [Créer mon profil cosmique](https://app.karmastro.com)
 
 **Maillage externe** (5+ liens) :

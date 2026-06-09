@@ -240,3 +240,39 @@ export function formatFrenchDate(dateStr: string): string {
   ];
   return `${d} ${months[m - 1]} ${y}`;
 }
+
+// BCP47 tags per app locale, used to format dates in the reader's language.
+const DATE_LOCALE_BCP47: Record<string, string> = {
+  fr: "fr-FR",
+  en: "en-US",
+  es: "es-ES",
+  pt: "pt-PT",
+  de: "de-DE",
+  it: "it-IT",
+  tr: "tr-TR",
+  ar: "ar-SA",
+  ja: "ja-JP",
+  pl: "pl-PL",
+  ru: "ru-RU",
+};
+
+// Locale-aware long date ("June 9, 2026", "9 juin 2026", ...).
+// Falls back to the French formatter for the default locale to keep
+// the existing FR output byte-for-byte identical.
+export function formatLocalizedDate(dateStr: string, locale: string): string {
+  if (locale === "fr") return formatFrenchDate(dateStr);
+  const [y, m, d] = dateStr.split("-").map(Number);
+  // Build a UTC date to avoid timezone day-shift.
+  const date = new Date(Date.UTC(y, m - 1, d));
+  const bcp = DATE_LOCALE_BCP47[locale] ?? locale;
+  try {
+    return new Intl.DateTimeFormat(bcp, {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      timeZone: "UTC",
+    }).format(date);
+  } catch {
+    return formatFrenchDate(dateStr);
+  }
+}
