@@ -9,7 +9,9 @@
     "dev": "astro dev",
     "build": "astro build && node scripts/gen-ai-sitemap.mjs",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "guard:content": "bash scripts/guard-content.sh",
+    "prebuild": "npm run guard:content"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.18",
