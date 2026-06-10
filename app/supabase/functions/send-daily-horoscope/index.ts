@@ -15,7 +15,9 @@ const corsHeaders = {
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "https://nkjbmbdrvejemzrggxvr.supabase.co";
 const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY") || "";
-const FROM_EMAIL = "Karmastro <noreply@karmastro.com>";
+// Apex karmastro.com n'est PAS verifie chez Resend (seul mail.karmastro.com l'est).
+// On lit le secret partage (= oracle@mail.karmastro.com) avec fallback verifie. [2026-06-10]
+const FROM_EMAIL = Deno.env.get("RESEND_FROM_EMAIL") || "Karmastro <oracle@mail.karmastro.com>";
 const SITE_URL = "https://karmastro.com";
 
 // Sign slug → localized display name (FR base + translations where needed).
