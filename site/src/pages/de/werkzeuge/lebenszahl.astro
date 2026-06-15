@@ -12,7 +12,7 @@ const MEANINGS: Record<number, { title: string; archetype: string; summary: stri
   1: {
     title: "Der Pionier",
     archetype: "Der einsame Anführer, der Initiator, derjenige, der neue Wege eröffnet.",
-    summary: "Du bist geboren, um zu führen, nicht um zu folgen. Die Lebenszahl 1 trägt die reine Energie der Initiative. Wenn du einen Raum betrittst, verändert sich etwas. Deine Mission ist es, diese Kraft in Schöpfung zu verwandeln, nicht in Dominanz.",
+    summary: "Du bist geboren, um zu führen, nicht um zu folgen. Die Lebenszahl 1 trägt die reine Énergie der Initiative. Wenn du einen Raum betrittst, verändert sich etwas. Deine Mission ist es, diese Kraft in Schöpfung zu verwandeln, nicht in Dominanz.",
     qualities: ["Natürliche Führung", "Unabhängigkeit", "Ehrgeiz", "Mut", "Originalität"],
     challenges: ["Egozentrik", "Ungeduld", "Einsamkeit", "Autoritarismus", "Starrheit"],
     mission: "Lerne zu führen, ohne zu zerquetschen, stark zu sein, ohne hart zu werden. Die 1 ist hier, um neues Terrain zu erschaffen, um zu wagen, wo andere warten.",
@@ -50,7 +50,7 @@ const MEANINGS: Record<number, { title: string; archetype: string; summary: stri
     archetype: "Der freie Geist, die Reisende, die niemals anhält.",
     summary: "Du brauchst Freiheit, wie andere Luft brauchen. Die Lebenszahl 5 ist der Weg der Veränderung, der Erfahrung und der persönlichen Freiheit. Deine Mission ist es, Bewegung in Weisheit zu verwandeln.",
     qualities: ["Neugier", "Anpassungsfähigkeit", "Charme", "Vielseitigkeit", "Mut zur Veränderung"],
-    challenges: ["Ruhelosigkeit", "Bindungsprobleme", "Impulsivität", "Suchttendenzen", "Zerstreute Energie"],
+    challenges: ["Ruhelosigkeit", "Bindungsprobleme", "Impulsivität", "Suchttendenzen", "Zerstreute Énergie"],
     mission: "Lerne, dass Freiheit ohne Richtung nur Treibenlassen ist. Die 5 ist hier, um mit Absicht zu erkunden, Erfahrung in Einsicht zu verwandeln.",
     famousExamples: "Abraham Lincoln, Angelina Jolie, Mick Jagger",
   },
@@ -162,7 +162,7 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "HowTo",
     name: "Wie du deine Lebenszahl berechnest",
-    description: "Schritt-für-Schritt pythagoreische Methode, um deine Lebenszahl aus deinem Geburtsdatum zu finden.",
+    description: "Schritt-für-Schritt pythagoreische Méthode, um deine Lebenszahl aus deinem Geburtsdatum zu finden.",
     inLanguage: "de",
     step: [
       { "@type": "HowToStep", position: 1, name: "Schreibe dein Geburtsdatum auf", text: "Schreibe dein vollständiges Geburtsdatum im Format TT/MM/JJJJ. Beispiel: 14/04/1992." },
@@ -200,7 +200,7 @@ import ReadingPaywallCTA from "../../../components/ReadingPaywallCTA.astro";
       <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Pythagoreische Numerologie</p>
       <h1 class="text-4xl md:text-5xl font-serif mb-4">Lebenszahl Rechner</h1>
       <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
-        Deine Lebenszahl ist die wichtigste Ziffer der Numerologie. Sie offenbart deine Mission, deine angeborenen Gaben und die karmischen Lektionen dieser Existenz. Kostenlose Berechnung, transparente pythagoreische Methode, vollständige Interpretation.
+        Deine Lebenszahl ist die wichtigste Ziffer der Numerologie. Sie offenbart deine Mission, deine angeborenen Gaben und die karmischen Lektionen dieser Existenz. Kostenlose Berechnung, transparente pythagoreische Méthode, vollständige Interpretation.
       </p>
     </header>
 
@@ -300,7 +300,7 @@ import ReadingPaywallCTA from "../../../components/ReadingPaywallCTA.astro";
         Die Numerologie begann nicht mit <a href="https://de.wikipedia.org/wiki/Pythagoras" class="text-amber-300 hover:underline">Pythagoras</a>. Die <strong>Babylonier</strong> verwendeten bereits vor mehr als 4.000 Jahren ein heiliges Zahlensystem. Die Hebräer entwickelten die <em>Gematria</em>, eine Entsprechung zwischen Buchstaben und Zahlen, die sich noch in der Kabbala findet. Die Ägypter richteten ihre Pyramiden nach mathematischen Proportionen aus, die sie für kosmisch hielten.
       </p>
       <p class="text-white/80 leading-relaxed mb-4">
-        Pythagoras synthetisierte diese Traditionen im 6. Jahrhundert v. Chr. zu einem kohärenten System. Sein berühmter Ausspruch «alles ist Zahl» war keine Metapher: Er sah das Universum buchstäblich als mathematische Komposition. Seine Schüler, die Pythagoreer, kodifizierten, was wir heute <strong>pythagoreische Numerologie</strong> nennen. Dies ist die Methode, die Karmastro mit der Strenge und Transparenz anwendet, die sie verdient.
+        Pythagoras synthetisierte diese Traditionen im 6. Jahrhundert v. Chr. zu einem kohärenten System. Sein berühmter Ausspruch «alles ist Zahl» war keine Metapher: Er sah das Universum buchstäblich als mathematische Komposition. Seine Schüler, die Pythagoreer, kodifizierten, was wir heute <strong>pythagoreische Numerologie</strong> nennen. Dies ist die Méthode, die Karmastro mit der Strenge und Transparenz anwendet, die sie verdient.
       </p>
     </section>
 
@@ -336,11 +336,11 @@ import ReadingPaywallCTA from "../../../components/ReadingPaywallCTA.astro";
   import { calculateLifePath } from "../../../data/numerology-meanings";
 
   const MEANINGS_DE: Record<number, { title: string; summary: string; qualities: string[]; challenges: string[]; mission: string }> = {
-    1: { title: "Der Pionier", summary: "Du bist geboren, um zu führen, nicht um zu folgen. Die Lebenszahl 1 trägt die reine Energie der Initiative. Wenn du einen Raum betrittst, verändert sich etwas.", qualities: ["Natürliche Führung", "Unabhängigkeit", "Ehrgeiz", "Mut", "Originalität"], challenges: ["Egozentrik", "Ungeduld", "Einsamkeit", "Autoritarismus", "Starrheit"], mission: "Lerne zu führen, ohne zu zerquetschen. Die 1 ist hier, um neues Terrain zu erschaffen." },
+    1: { title: "Der Pionier", summary: "Du bist geboren, um zu führen, nicht um zu folgen. Die Lebenszahl 1 trägt die reine Énergie der Initiative. Wenn du einen Raum betrittst, verändert sich etwas.", qualities: ["Natürliche Führung", "Unabhängigkeit", "Ehrgeiz", "Mut", "Originalität"], challenges: ["Egozentrik", "Ungeduld", "Einsamkeit", "Autoritarismus", "Starrheit"], mission: "Lerne zu führen, ohne zu zerquetschen. Die 1 ist hier, um neues Terrain zu erschaffen." },
     2: { title: "Die Diplomatin", summary: "Du nimmst Energien wahr, wie andere Klänge hören. Die Lebenszahl 2 ist der Weg des Friedens, der Harmonie und der Vereinigung.", qualities: ["Diplomatie", "Sensibilität", "Empathie", "Geduld", "Kooperation"], challenges: ["Emotionale Abhängigkeit", "Unentschlossenheit", "Überempfindlichkeit", "Konfliktvermeidung", "Unterwürfigkeit"], mission: "Verstehe, dass Sanftheit Stärke ist, nicht Schwäche." },
     3: { title: "Die Künstlerin", summary: "Du verwandelst alles in Farbe, Worte oder Musik. Die Lebenszahl 3 ist der Weg des kreativen Ausdrucks.", qualities: ["Kreativität", "Kommunikation", "Optimismus", "Charisma", "Freude"], challenges: ["Zerstreuung", "Oberflächlichkeit", "Klatsch", "Emotionale Unreife", "Flucht"], mission: "Lerne, dass Tiefe die Freude nicht tötet." },
     4: { title: "Der Erbauer", summary: "Du baust, wovon andere nur träumen. Die Lebenszahl 4 ist der Weg der Stabilität, der Struktur und dauerhafter Ergebnisse.", qualities: ["Disziplin", "Zuverlässigkeit", "Geduld", "Loyalität", "Praktische Fertigkeit"], challenges: ["Starrheit", "Workaholismus", "Sturheit", "Angst vor Veränderung", "Übertriebene Ernsthaftigkeit"], mission: "Lerne, dass Struktur der Freiheit dient, nicht umgekehrt." },
-    5: { title: "Die Abenteurerin", summary: "Du brauchst Freiheit, wie andere Luft brauchen. Die Lebenszahl 5 ist der Weg der Veränderung, der Erfahrung und der persönlichen Freiheit.", qualities: ["Neugier", "Anpassungsfähigkeit", "Charme", "Vielseitigkeit", "Mut zur Veränderung"], challenges: ["Ruhelosigkeit", "Bindungsprobleme", "Impulsivität", "Suchttendenzen", "Zerstreute Energie"], mission: "Lerne, dass Freiheit ohne Richtung nur Treibenlassen ist." },
+    5: { title: "Die Abenteurerin", summary: "Du brauchst Freiheit, wie andere Luft brauchen. Die Lebenszahl 5 ist der Weg der Veränderung, der Erfahrung und der persönlichen Freiheit.", qualities: ["Neugier", "Anpassungsfähigkeit", "Charme", "Vielseitigkeit", "Mut zur Veränderung"], challenges: ["Ruhelosigkeit", "Bindungsprobleme", "Impulsivität", "Suchttendenzen", "Zerstreute Énergie"], mission: "Lerne, dass Freiheit ohne Richtung nur Treibenlassen ist." },
     6: { title: "Der Fürsorger", summary: "Du trägst andere, wie Atlas die Welt trug. Die Lebenszahl 6 ist der Weg der Verantwortung, der Liebe und des Dienstes.", qualities: ["Fürsorgeinstinkt", "Verantwortung", "Loyalität", "Lehrfähigkeit", "Kreative Gaben"], challenges: ["Märtyrertum", "Übermäßige Beteiligung", "Perfektionismus", "Selbstaufopferung", "Einmischung"], mission: "Lerne, dass du nicht aus einem leeren Becher gießen kannst." },
     7: { title: "Der Suchende", summary: "Du wurdest geboren und fragtest bereits warum. Die Lebenszahl 7 ist der Weg der Weisheit, der Introspektion und des spirituellen Verständnisses.", qualities: ["Tiefes Denken", "Intuition", "Unabhängigkeit", "Analytischer Geist", "Spirituelles Bewusstsein"], challenges: ["Isolation", "Zynismus", "Überanalyse", "Misstrauen", "Emotionale Distanz"], mission: "Lerne, dass Wahrheit ohne Liebe steril ist." },
     8: { title: "Die Strategin", summary: "Du verstehst Macht, ohne dich von ihr verführen zu lassen. Die Lebenszahl 8 ist der Weg materieller Meisterschaft, des Überflusses und des Einflusses.", qualities: ["Führung", "Finanzielle Intuition", "Organisationsfähigkeiten", "Ausdauer", "Autorität"], challenges: ["Gier", "Workaholismus", "Kontrollbedürfnis", "Materialismus", "Einschüchterung"], mission: "Lerne, dass wahre Macht daran gemessen wird, was sie erschafft." },
