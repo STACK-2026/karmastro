@@ -1,7 +1,7 @@
 ---
 title: "Choisir la pierre qui correspond à mon signe astrologique ? Le guide complet"
 description: "Quelle pierre pour votre signe astrologique ? Le guide de lithothérapie : la pierre de chaque signe du zodiaque, comment la porter, la purifier et la recharger."
-date: 2026-06-17T07:30:00+02:00
+date: 2026-06-17
 author: "Sibylle"
 lang: "fr"
 category: "astrologie"
