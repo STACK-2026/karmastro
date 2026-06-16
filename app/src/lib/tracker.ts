@@ -194,11 +194,11 @@ export async function backfillSessionPageViews(userId: string): Promise<void> {
   if (typeof window === "undefined") return;
   if (sessionStorage.getItem(BACKFILL_KEY) === userId) return;
   try {
+    // SECURITY DEFINER RPC: claims this session's anonymous page_views for the
+    // caller via auth.uid() server-side (no SELECT grant needed, and the client
+    // cannot spoof another user_id). Only null-user rows of the session are taken.
     await (supabase as any)
-      .from("page_views")
-      .update({ user_id: userId })
-      .eq("session_id", getSessionId())
-      .is("user_id", null);
+      .rpc("claim_session_pageviews", { p_session_id: getSessionId() });
     sessionStorage.setItem(BACKFILL_KEY, userId);
   } catch (e) {
     console.warn("[tracker] backfill page_views failed", e);
