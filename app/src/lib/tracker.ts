@@ -88,10 +88,10 @@ export async function trackPageView(path: string, title?: string): Promise<void>
   // Flush time-on-page for previous view
   if (state.lastInsertId && state.timerStart) {
     const timeMs = Date.now() - state.timerStart;
+    // SECURITY DEFINER RPC: anon/authenticated have no SELECT grant, so a direct
+    // .update().eq("id") is denied (42501). The RPC updates the row server-side.
     (supabase as any)
-      .from("page_views")
-      .update({ time_on_page_ms: timeMs })
-      .eq("id", state.lastInsertId)
+      .rpc("track_page_metrics", { p_id: state.lastInsertId, p_time_on_page_ms: timeMs })
       .then(() => {});
   }
 
@@ -213,10 +213,10 @@ if (typeof window !== "undefined") {
   window.addEventListener("beforeunload", () => {
     if (state.lastInsertId && state.timerStart) {
       const timeMs = Date.now() - state.timerStart;
-      const url = `${(supabase as any).supabaseUrl || ""}/rest/v1/page_views?id=eq.${state.lastInsertId}`;
+      const url = `${(supabase as any).supabaseUrl || ""}/rest/v1/rpc/track_page_metrics`;
       const key = (supabase as any).supabaseKey || "";
       try {
-        const blob = new Blob([JSON.stringify({ time_on_page_ms: timeMs })], {
+        const blob = new Blob([JSON.stringify({ p_id: state.lastInsertId, p_time_on_page_ms: timeMs })], {
           type: "application/json",
         });
         const headers: Record<string, string> = {
@@ -227,7 +227,7 @@ if (typeof window !== "undefined") {
         };
         // sendBeacon ne supporte pas les headers custom, fallback sur fetch keepalive
         fetch(url, {
-          method: "PATCH",
+          method: "POST",
           headers,
           body: blob,
           keepalive: true,

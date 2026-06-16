@@ -104,9 +104,12 @@
     });
   }
 
-  function patch(endpoint, body) {
-    return fetch(SUPABASE_URL + "/rest/v1/" + endpoint, {
-      method: "PATCH",
+  // Enrichment updates go through a SECURITY DEFINER RPC: anon has no SELECT
+  // grant, so a direct PATCH with a WHERE filter is denied (42501). The RPC
+  // updates page_views.{time_on_page_ms,country_code} by id, server-side.
+  function rpc(fn, body) {
+    return fetch(SUPABASE_URL + "/rest/v1/rpc/" + fn, {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
         apikey: SUPABASE_KEY,
@@ -125,7 +128,7 @@
     // Flush time for previous page
     if (lastInsertId && lastTimerStart) {
       var timeMs = Date.now() - lastTimerStart;
-      patch("page_views?id=eq." + lastInsertId, { time_on_page_ms: timeMs }).catch(function () {});
+      rpc("track_page_metrics", { p_id: lastInsertId, p_time_on_page_ms: timeMs }).catch(function () {});
     }
 
     captureUtm();
@@ -171,7 +174,7 @@
         cachedCountry = cc;
         try { sessionStorage.setItem(COUNTRY_KEY, cc); } catch (e) {}
         // Patch the row we just inserted
-        patch("page_views?id=eq." + newId, { country_code: cc }).catch(function () {});
+        rpc("track_page_metrics", { p_id: newId, p_country_code: cc }).catch(function () {});
       });
     }
   }
@@ -190,7 +193,7 @@
   window.addEventListener("beforeunload", function () {
     if (lastInsertId && lastTimerStart) {
       var timeMs = Date.now() - lastTimerStart;
-      patch("page_views?id=eq." + lastInsertId, { time_on_page_ms: timeMs }).catch(function () {});
+      rpc("track_page_metrics", { p_id: lastInsertId, p_time_on_page_ms: timeMs }).catch(function () {});
     }
   });
 
@@ -198,7 +201,7 @@
   document.addEventListener("visibilitychange", function () {
     if (document.visibilityState === "hidden" && lastInsertId && lastTimerStart) {
       var timeMs = Date.now() - lastTimerStart;
-      patch("page_views?id=eq." + lastInsertId, { time_on_page_ms: timeMs }).catch(function () {});
+      rpc("track_page_metrics", { p_id: lastInsertId, p_time_on_page_ms: timeMs }).catch(function () {});
     }
   });
 
