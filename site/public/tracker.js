@@ -267,6 +267,14 @@
         (btn.id === "km-buy-lifepath" ? "chemin-de-vie" : "");
       trackEvent("reading_cta_click", { tool: tool, locale: ctaLocale(), path: path });
     }, true);
+    // Activation Oracle : clic sur le CTA primaire « interroger l'Oracle » (reroute
+    // fin d'outil → /oracle/). Mesure le levier #1 du plan MRR. [2026-06-17]
+    document.addEventListener("click", function (ev) {
+      var t = ev.target;
+      var link = t && t.closest ? t.closest("#km-oracle, .km-oracle") : null;
+      if (!link) return;
+      trackEvent("oracle_cta_click", { tool: ctaTool(), locale: ctaLocale(), path: path });
+    }, true);
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", setupFunnel);

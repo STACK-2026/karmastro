@@ -97,7 +97,7 @@ jobs:
           curl -fsS -X POST "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/purge_cache" \
             -H "Authorization: Bearer $CF_PURGE_TOKEN" \
             -H "Content-Type: application/json" \
-            --data "{\"files\":[\"$SITE_URL/robots.txt\",\"$SITE_URL/sitemap.xml\",\"$SITE_URL/sitemap-index.xml\",\"$SITE_URL/llms.txt\",\"$SITE_URL/llms-full.txt\",\"$SITE_URL/ai-sitemap.xml\"]}" || true
+            --data "{\"files\":[\"$SITE_URL/robots.txt\",\"$SITE_URL/sitemap.xml\",\"$SITE_URL/sitemap-index.xml\",\"$SITE_URL/llms.txt\",\"$SITE_URL/llms-full.txt\",\"$SITE_URL/ai-sitemap.xml\",\"$SITE_URL/tracker.js\"]}" || true
 
       - name: Ping IndexNow
         if: success()
