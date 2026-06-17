@@ -267,18 +267,19 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
           </div>
           <div id="reading-cta" class="mt-6 pt-5 border-t border-white/10">
             <div class="relative p-5 rounded-xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30 text-center overflow-hidden">
-              <div aria-hidden="true" style="filter: blur(6px); opacity: 0.5; user-select: none; pointer-events: none;" class="text-left text-sm text-white/70 space-y-1 mb-4">
-                <p>Ton ascendant colore tout ton thème : la façon dont les autres te perçoivent et le masque que tu portes...</p>
-                <p>Ce que ce signe ascendant crée concrètement dans ta vie, le geste de la semaine et la question à te poser...</p>
-              </div>
               <p class="text-2xl mb-1">✦</p>
-              <p class="font-serif text-base text-white mb-1">Ta lecture d'ascendant complète</p>
+              <p class="font-serif text-base text-white mb-1">Et concrètement, ça change quoi pour toi ?</p>
               <p class="text-xs text-white/60 mb-4 max-w-sm mx-auto leading-relaxed">
-                Une lecture personnalisée d'Orion (1100-1400 mots) à partir de tes positions réelles (Swiss Ephemeris) : ce que ton ascendant révèle de ta personnalité, ta trajectoire, ton rituel de la semaine et la question à te poser. Livrée à l'écran à l'instant + par email.
+                Pose ta question à l'Oracle : il lit ton ascendant et te répond à l'instant, gratuitement et sans inscription.
               </p>
-              <button type="button" id="km-buy" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">
-                Débloquer ma lecture complète - 4,90 €
-              </button>
+              <a id="km-oracle" href="/oracle/?q=Explique-moi%20mon%20ascendant%20%3A%20ce%20qu%27il%20r%C3%A9v%C3%A8le%20de%20ma%20personnalit%C3%A9%2C%20de%20l%27image%20que%20je%20projette%20et%20de%20ma%20trajectoire." class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">
+                Interroger l'Oracle sur mon ascendant
+              </a>
+              <div class="mt-4 pt-3 border-t border-white/10">
+                <button type="button" id="km-buy" class="text-xs text-amber-300/80 hover:text-amber-300 underline underline-offset-2 transition-colors">
+                  Ou recevoir ma lecture complète écrite par Orion (1100-1400 mots) - 4,90 €
+                </button>
+              </div>
             </div>
           </div>
           <NewsletterCapture variant="inline" source="tool-ascendant" />
