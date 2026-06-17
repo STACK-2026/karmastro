@@ -3,7 +3,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const title = "Étoile - l'abonnement Karmastro : Oracle illimité + ta guidance mensuelle";
 const description =
-  "Passe en Étoile : l'Oracle en illimité jour et nuit, des lectures complètes et approfondies, et ta guidance personnalisée chaque mois. 4,90€/mois, sans engagement, résiliable en un clic.";
+  "Passe en Étoile : l'Oracle en illimité jour et nuit, des lectures complètes et approfondies, et ta guidance personnalisée chaque mois. 5,99€/mois, sans engagement, résiliable en un clic.";
+
+// Le checkout authentifié (compte + entitlement Oracle illimité) vit dans l'app.
+const APP_PRICING = "https://app.karmastro.com/pricing";
 
 const jsonLd = [
   {
@@ -11,7 +14,7 @@ const jsonLd = [
     "@type": "Product",
     name: "Abonnement Étoile - Karmastro",
     description,
-    offers: { "@type": "Offer", price: "4.90", priceCurrency: "EUR", availability: "https://schema.org/InStock" },
+    offers: { "@type": "Offer", price: "5.99", priceCurrency: "EUR", availability: "https://schema.org/InStock", url: APP_PRICING },
   },
 ];
 
@@ -52,7 +55,7 @@ const etoile = [
       <div class="p-6 rounded-2xl border border-amber-300/40 bg-gradient-to-br from-amber-300/[0.08] to-purple-400/[0.05] relative">
         <p class="absolute -top-3 left-6 px-3 py-0.5 rounded-full bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] text-xs font-semibold">Recommandé</p>
         <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-1">Étoile</p>
-        <p class="font-serif text-2xl text-white mb-4">4,90 € <span class="text-base text-white/50">/ mois</span></p>
+        <p class="font-serif text-2xl text-white mb-4">5,99 € <span class="text-base text-white/50">/ mois</span></p>
         <ul class="space-y-2 text-sm text-white/85">
           {etoile.map((f) => (
             <li class="flex items-start gap-2"><span class="text-amber-300 mt-0.5">✦</span><span>{f}</span></li>
@@ -61,44 +64,21 @@ const etoile = [
       </div>
     </div>
 
-    <!-- Carte d'abonnement -->
+    <!-- Carte d'abonnement : le checkout se fait dans l'app (compte requis pour débloquer l'Oracle) -->
     <div id="subscribe" class="p-6 md:p-8 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/[0.06] to-purple-400/[0.04] text-center">
       <p class="font-serif text-2xl text-white mb-1">Rejoins Étoile</p>
-      <p class="text-sm text-white/60 mb-5">4,90 € / mois. Sans engagement, résiliable en un clic.</p>
-      <div class="max-w-sm mx-auto text-left mb-4">
-        <label for="sub-date" class="block text-sm font-medium text-white/80 mb-2">Ta date de naissance</label>
-        <input type="date" id="sub-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
-        <label for="sub-name" class="block text-sm font-medium text-white/80 mb-2 mt-4">Ton nom complet <span class="text-white/40">(optionnel, affine ta guidance)</span></label>
-        <input type="text" id="sub-name" autocomplete="off" class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
-      </div>
-      <button id="sub-go" type="button" class="w-full max-w-sm px-6 py-3.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
+      <p class="text-sm text-white/60 mb-1">5,99 € / mois, ou 49,99 € / an (2 mois offerts).</p>
+      <p class="text-sm text-white/60 mb-5">Sans engagement, résiliable en un clic.</p>
+      <a id="sub-go" href={APP_PRICING} class="inline-block w-full max-w-sm px-6 py-3.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
         Passer en Étoile
-      </button>
-      <p class="text-[11px] text-white/40 mt-3">Calculs de précision Swiss Ephemeris · paiement sécurisé Stripe · email demandé au paiement.</p>
+      </a>
+      <p class="text-[11px] text-white/40 mt-3">Tu crées ou retrouves ton compte, puis tu débloques l'Oracle illimité. Paiement sécurisé Stripe.</p>
     </div>
   </article>
 </BaseLayout>
 
 <script>
-  const SUB_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/subscription-checkout";
-  document.getElementById("sub-go")?.addEventListener("click", async () => {
-    const btn = document.getElementById("sub-go") as HTMLButtonElement;
-    const birthDate = (document.getElementById("sub-date") as HTMLInputElement).value;
-    const fullName = (document.getElementById("sub-name") as HTMLInputElement)?.value || "";
-    if (!birthDate) { (document.getElementById("sub-date") as HTMLInputElement).focus(); return; }
-    try { (window as any).km?.trackEvent("subscribe_click", { tier: "etoile", price: "4.90" }); } catch {}
-    btn.disabled = true;
-    const original = btn.textContent;
-    btn.textContent = "Redirection…";
-    try {
-      const r = await fetch(SUB_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ birthDate, fullName, locale: "fr" }) });
-      const data = await r.json();
-      if (data?.url) { window.location.href = data.url; }
-      else { throw new Error(data?.error || "no url"); }
-    } catch {
-      btn.disabled = false;
-      btn.textContent = original;
-      alert("Une erreur est survenue, réessaie dans un instant.");
-    }
+  document.getElementById("sub-go")?.addEventListener("click", () => {
+    try { (window as any).km?.trackEvent("subscribe_click", { tier: "etoile", price: "5.99", dest: "app" }); } catch {}
   });
 </script>
