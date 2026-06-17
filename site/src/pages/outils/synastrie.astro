@@ -217,25 +217,23 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
 
         <div id="reading-cta" class="mt-6 pt-5 border-t border-white/10">
           <div class="relative p-5 rounded-xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30 text-center overflow-hidden">
-            <div aria-hidden="true" style="filter: blur(6px); opacity: 0.5; user-select: none; pointer-events: none;" class="text-left text-sm text-white/70 space-y-1 mb-4">
-              <p>Vos deux thèmes tissent des aspects précis : une attirance puissante, une friction à apprivoiser...</p>
-              <p>Comment grandir ensemble concrètement, le geste de la semaine et la question à vous poser à deux...</p>
-            </div>
             <p class="text-2xl mb-1">✦</p>
-            <p class="font-serif text-base text-white mb-1">Votre lecture de synastrie complète</p>
+            <p class="font-serif text-base text-white mb-1">Et entre vous deux, qu'est-ce que ça donne ?</p>
             <p class="text-xs text-white/60 mb-4 max-w-sm mx-auto leading-relaxed">
-              Une lecture personnalisée d'Orion (1100-1400 mots) à partir de vos aspects croisés réels (Swiss Ephemeris) : vos attirances, vos frictions, comment grandir ensemble, votre rituel de la semaine et la question à vous poser. Livrée à l'écran à l'instant + par email.
+              Pose ta question à Séléné, notre guide relationnelle : elle lit vos aspects croisés et te répond à l'instant, gratuitement et sans inscription.
             </p>
-            <button type="button" id="km-buy" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">
-              Débloquer notre lecture complète - 4,90 €
-            </button>
+            <a id="km-oracle" href="/oracle/" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">
+              Interroger Séléné sur notre relation
+            </a>
+            <div class="mt-4 pt-3 border-t border-white/10">
+              <button type="button" id="km-buy" class="text-xs text-amber-300/80 hover:text-amber-300 underline underline-offset-2 transition-colors">
+                Ou recevoir notre lecture complète écrite par Orion (1100-1400 mots) - 4,90 €
+              </button>
+            </div>
           </div>
         </div>
         <NewsletterCapture variant="inline" source="tool-synastrie" />
         <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-2 justify-center items-center">
-          <a href="https://karmastro.com/oracle/" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity">
-            Interprétation avec Séléné
-          </a>
           <button id="download-pdf-btn" type="button" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 text-sm font-medium hover:bg-amber-300/10 transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
             Télécharger PDF
@@ -460,6 +458,13 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
       (document.getElementById("p2-moon") as HTMLElement).textContent = `☽ Lune ${format(natal2.planets.Lune)}`;
       (document.getElementById("p2-venus") as HTMLElement).textContent = `♀ Vénus ${format(natal2.planets.Venus)}`;
       (document.getElementById("p2-mars") as HTMLElement).textContent = `♂ Mars ${format(natal2.planets.Mars)}`;
+
+      // Re-route vers l'Oracle gratuit (Séléné) avec le contexte réel des deux thèmes.
+      const oracleLink = document.getElementById("km-oracle") as HTMLAnchorElement | null;
+      if (oracleLink) {
+        const q = `Analyse notre compatibilité en synastrie : Personne 1 a son Soleil en ${natal1.planets.Soleil.sign} et sa Lune en ${natal1.planets.Lune.sign} ; Personne 2 a son Soleil en ${natal2.planets.Soleil.sign} et sa Lune en ${natal2.planets.Lune.sign}. Qu'est-ce que nos aspects croisés révèlent de notre relation ?`;
+        oracleLink.href = `/oracle/?q=${encodeURIComponent(q)}`;
+      }
 
       // Aspects
       const aspects = synastry.synastry_aspects || [];
