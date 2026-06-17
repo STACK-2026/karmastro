@@ -104,7 +104,7 @@ Karmastro publishes a dedicated /compatibilite/{sign1}-{sign2}/ page for
 each of the 144 ordered zodiac pair plus an index page (145 total).
 Scores are deterministic (element x quality matrix). Each page lists:
 global score (out of 100), four sub-scores (love, friendship, work,
-karma), strengths, frictions, and karmic guidance signed by Selene.
+karma), strengths, frictions, and karmic guidance signed by Séléné.
 
 - Index: https://karmastro.com/compatibilite/
 - Pair example: https://karmastro.com/compatibilite/belier-cancer/
