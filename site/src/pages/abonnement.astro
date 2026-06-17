@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const title = "Étoile - l'abonnement Karmastro : Oracle illimité + ta guidance mensuelle";
 const description =
-  "Passe en Étoile : l'Oracle en illimité jour et nuit, des lectures complètes et approfondies, et ta guidance personnalisée chaque mois. 5,99€/mois, sans engagement, résiliable en un clic.";
+  "Passe en Étoile : l'Oracle en illimité avec 4 guides au choix, la compatibilité astro-numérologique illimitée, le calendrier cosmique détaillé et les notifications de transits. 5,99€/mois, sans engagement, résiliable en un clic.";
 
 // Le checkout authentifié (compte + entitlement Oracle illimité) vit dans l'app.
 const APP_PRICING = "https://app.karmastro.com/pricing";
@@ -19,15 +19,16 @@ const jsonLd = [
 ];
 
 const eveil = [
+  "Profil cosmique complet (thème natal + numérologie)",
   "3 messages avec l'Oracle par jour",
-  "Tous les calculs et outils gratuits",
-  "Ton horoscope quotidien",
+  "Horoscope quotidien détaillé",
+  "Calendrier cosmique basique",
 ];
 const etoile = [
-  "L'Oracle en illimité, jour et nuit",
-  "Des lectures complètes et approfondies",
-  "Ta guidance personnalisée chaque mois par email",
-  "Ton historique de conversations conservé",
+  "L'Oracle en illimité (4 guides au choix)",
+  "Compatibilité astro-numérologique illimitée",
+  "Calendrier cosmique détaillé (transits, rétrogrades)",
+  "Notifications de transits en temps réel",
 ];
 ---
 
@@ -37,7 +38,7 @@ const etoile = [
       <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Abonnement Étoile</p>
       <h1 class="text-4xl md:text-5xl font-serif mb-4">Passe en Étoile</h1>
       <p class="text-lg text-white/70 max-w-xl mx-auto leading-relaxed">
-        L'Oracle sans limite, des lectures qui vont au fond des choses, et chaque mois une guidance qui n'appartient qu'à toi. Tout ce que les astres ont à te dire, quand tu en as besoin.
+        L'Oracle sans limite avec tes 4 guides, la compatibilité illimitée, et tout le ciel en détail : transits, rétrogrades, notifications en temps réel. Tout ce que les astres ont à te dire, quand tu en as besoin.
       </p>
     </header>
 
