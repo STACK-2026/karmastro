@@ -1,49 +1,70 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title = "Guide mensuel Karmastro - ta guidance personnalisée chaque mois";
+const title = "Étoile - l'abonnement Karmastro : Oracle illimité + ta guidance mensuelle";
 const description =
-  "Reçois chaque mois ta guidance numérologique personnalisée par email : ton mois personnel, l'énergie du mois, ton focus et ton rituel. 4,90€/mois, sans engagement, écrit par Orion.";
+  "Passe en Étoile : l'Oracle en illimité jour et nuit, des lectures complètes et approfondies, et ta guidance personnalisée chaque mois. 4,90€/mois, sans engagement, résiliable en un clic.";
 
 const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "Guide mensuel Karmastro",
+    name: "Abonnement Étoile - Karmastro",
     description,
     offers: { "@type": "Offer", price: "4.90", priceCurrency: "EUR", availability: "https://schema.org/InStock" },
   },
 ];
+
+const eveil = [
+  "3 messages avec l'Oracle par jour",
+  "Tous les calculs et outils gratuits",
+  "Ton horoscope quotidien",
+];
+const etoile = [
+  "L'Oracle en illimité, jour et nuit",
+  "Des lectures complètes et approfondies",
+  "Ta guidance personnalisée chaque mois par email",
+  "Ton historique de conversations conservé",
+];
 ---
 
 <BaseLayout title={title} description={description} jsonLd={jsonLd}>
-  <article class="max-w-2xl mx-auto px-4 py-16">
+  <article class="max-w-3xl mx-auto px-4 py-16">
     <header class="text-center mb-10">
-      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Abonnement</p>
-      <h1 class="text-4xl md:text-5xl font-serif mb-4">Ton guide mensuel</h1>
+      <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Abonnement Étoile</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-4">Passe en Étoile</h1>
       <p class="text-lg text-white/70 max-w-xl mx-auto leading-relaxed">
-        Chaque mois, Orion t'écrit une guidance qui n'appartient qu'à toi : l'énergie de ton mois personnel, ce qu'il faut lancer ou lâcher, ton focus et un rituel court. Directement dans ta boîte mail.
+        L'Oracle sans limite, des lectures qui vont au fond des choses, et chaque mois une guidance qui n'appartient qu'à toi. Tout ce que les astres ont à te dire, quand tu en as besoin.
       </p>
     </header>
 
-    <div class="grid sm:grid-cols-3 gap-3 mb-10 text-center text-sm">
-      <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-        <p class="text-2xl mb-1">☽</p>
-        <p class="text-white/70">Ton mois personnel calculé chaque mois</p>
+    <!-- Comparatif Éveil (gratuit) vs Étoile -->
+    <div class="grid md:grid-cols-2 gap-4 mb-10">
+      <div class="p-6 rounded-2xl border border-white/10 bg-white/[0.02]">
+        <p class="text-sm uppercase tracking-widest text-white/50 mb-1">Éveil</p>
+        <p class="font-serif text-2xl text-white mb-4">Gratuit</p>
+        <ul class="space-y-2 text-sm text-white/70">
+          {eveil.map((f) => (
+            <li class="flex items-start gap-2"><span class="text-white/40 mt-0.5">○</span><span>{f}</span></li>
+          ))}
+        </ul>
       </div>
-      <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-        <p class="text-2xl mb-1">✦</p>
-        <p class="text-white/70">Un focus concret + un rituel pour les semaines à venir</p>
-      </div>
-      <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-        <p class="text-2xl mb-1">✉</p>
-        <p class="text-white/70">Livré par email, sans engagement, résiliable en un clic</p>
+      <div class="p-6 rounded-2xl border border-amber-300/40 bg-gradient-to-br from-amber-300/[0.08] to-purple-400/[0.05] relative">
+        <p class="absolute -top-3 left-6 px-3 py-0.5 rounded-full bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] text-xs font-semibold">Recommandé</p>
+        <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-1">Étoile</p>
+        <p class="font-serif text-2xl text-white mb-4">4,90 € <span class="text-base text-white/50">/ mois</span></p>
+        <ul class="space-y-2 text-sm text-white/85">
+          {etoile.map((f) => (
+            <li class="flex items-start gap-2"><span class="text-amber-300 mt-0.5">✦</span><span>{f}</span></li>
+          ))}
+        </ul>
       </div>
     </div>
 
-    <div class="p-6 md:p-8 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/[0.06] to-purple-400/[0.04] text-center">
-      <p class="font-serif text-2xl text-white mb-1">4,90 € <span class="text-base text-white/50">/ mois</span></p>
-      <p class="text-sm text-white/60 mb-5">Sans engagement. Annule quand tu veux.</p>
+    <!-- Carte d'abonnement -->
+    <div id="subscribe" class="p-6 md:p-8 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/[0.06] to-purple-400/[0.04] text-center">
+      <p class="font-serif text-2xl text-white mb-1">Rejoins Étoile</p>
+      <p class="text-sm text-white/60 mb-5">4,90 € / mois. Sans engagement, résiliable en un clic.</p>
       <div class="max-w-sm mx-auto text-left mb-4">
         <label for="sub-date" class="block text-sm font-medium text-white/80 mb-2">Ta date de naissance</label>
         <input type="date" id="sub-date" required class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
@@ -51,9 +72,9 @@ const jsonLd = [
         <input type="text" id="sub-name" autocomplete="off" class="w-full px-4 py-3 rounded-xl bg-[#0f0a1e]/50 border border-white/10 text-white focus:border-amber-300 focus:outline-none transition-colors" />
       </div>
       <button id="sub-go" type="button" class="w-full max-w-sm px-6 py-3.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
-        M'abonner — recevoir ma guidance chaque mois
+        Passer en Étoile
       </button>
-      <p class="text-[11px] text-white/40 mt-3">Paiement sécurisé Stripe. Email demandé au paiement.</p>
+      <p class="text-[11px] text-white/40 mt-3">Calculs de précision Swiss Ephemeris · paiement sécurisé Stripe · email demandé au paiement.</p>
     </div>
   </article>
 </BaseLayout>
@@ -65,6 +86,7 @@ const jsonLd = [
     const birthDate = (document.getElementById("sub-date") as HTMLInputElement).value;
     const fullName = (document.getElementById("sub-name") as HTMLInputElement)?.value || "";
     if (!birthDate) { (document.getElementById("sub-date") as HTMLInputElement).focus(); return; }
+    try { (window as any).km?.trackEvent("subscribe_click", { tier: "etoile", price: "4.90" }); } catch {}
     btn.disabled = true;
     const original = btn.textContent;
     btn.textContent = "Redirection…";
