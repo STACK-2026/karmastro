@@ -77,6 +77,7 @@ export function jsonLdHomepage() {
         sameAs: [
           "https://x.com/karmastro",
           "https://github.com/STACK-2026/karmastro",
+          "https://www.wikidata.org/wiki/Q140289925",
         ],
       },
       {
