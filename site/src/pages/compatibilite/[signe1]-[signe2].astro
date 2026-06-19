@@ -44,6 +44,39 @@ const description = isSameSign
 
 const scoreColor = (n: number) => n >= 80 ? "text-emerald-300" : n >= 60 ? "text-amber-300" : n >= 40 ? "text-orange-300" : "text-rose-300";
 
+// Front-load answer + data-driven FAQ. Same `faq` array feeds the visible block
+// and the FAQPage JSON-LD (schema <-> HTML parity for AI extraction). The scores
+// are first-party data -> also exposed as a Dataset.
+const verdict = scores.global >= 80 ? "une compatibilité très forte"
+  : scores.global >= 60 ? "une compatibilité solide"
+  : scores.global >= 40 ? "une compatibilité modérée"
+  : "une compatibilité exigeante";
+
+const tldr = `${sign1.name} et ${sign2.name} affichent ${verdict} de ${scores.global}% selon Karmastro : ${scores.love}% en amour, ${scores.friendship}% en amitié, ${scores.work}% au travail et ${scores.karma}% sur le plan karmique. Le score croise l'affinité des éléments (60%) et des modalités (40%).`;
+
+const faq = [
+  {
+    q: `${sign1.name} et ${sign2.name} sont-ils compatibles ?`,
+    a: `${sign1.name} et ${sign2.name} obtiennent un score de compatibilité global de ${scores.global}% sur Karmastro, soit ${verdict}.${interp.strengths[0] ? ` Atout principal : ${interp.strengths[0].charAt(0).toLowerCase()}${interp.strengths[0].slice(1)}` : ""}`,
+  },
+  {
+    q: `Quel est le score de compatibilité amoureuse entre ${sign1.name} et ${sign2.name} ?`,
+    a: `Sur le plan amoureux, ${sign1.name} et ${sign2.name} atteignent ${scores.love}%. En amitié le score est de ${scores.friendship}%, au travail ${scores.work}% et sur le plan karmique ${scores.karma}%.`,
+  },
+  {
+    q: `Quels sont les points de friction entre ${sign1.name} et ${sign2.name} ?`,
+    a: interp.frictions[0]
+      ? `Principal point de vigilance : ${interp.frictions[0].charAt(0).toLowerCase()}${interp.frictions[0].slice(1)}`
+      : `${sign1.name} et ${sign2.name} présentent peu de frictions structurelles, mais chaque couple reste unique.`,
+  },
+  {
+    q: `Comment Karmastro calcule la compatibilité entre deux signes ?`,
+    a: `Le score croise l'affinité des éléments (feu, terre, air, eau) pour 60% et des modalités (cardinal, fixe, mutable) pour 40%, complété par une lecture karmique. La compatibilité des signes solaires ne couvre qu'environ 30% de la dynamique réelle : une synastrie complète croise les 10 planètes, les ascendants et les aspects.`,
+  },
+];
+
+const canonical = `https://karmastro.com/compatibilite/${signe1}-${signe2}`;
+
 const jsonLd = [
   {
     "@context": "https://schema.org",
@@ -78,6 +111,34 @@ const jsonLd = [
       { "@type": "ListItem", position: 3, name: `${sign1.name} × ${sign2.name}`, item: `https://karmastro.com/compatibilite/${signe1}-${signe2}` },
     ],
   },
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: `Compatibilité ${sign1.name} et ${sign2.name} : scores Karmastro`,
+    description: `Scores de compatibilité (0 à 100) entre ${sign1.name} et ${sign2.name} : global ${scores.global}, amour ${scores.love}, amitié ${scores.friendship}, travail ${scores.work}, karma ${scores.karma}.`,
+    url: canonical,
+    isAccessibleForFree: true,
+    creator: { "@type": "Organization", name: "Karmastro", url: "https://karmastro.com" },
+    measurementTechnique: "Karmastro : affinité des éléments (60%) et des modalités (40%) entre deux signes du zodiaque, complétée par une lecture karmique.",
+    variableMeasured: [
+      { "@type": "PropertyValue", name: "Compatibilité globale (0-100)", value: scores.global },
+      { "@type": "PropertyValue", name: "Amour (0-100)", value: scores.love },
+      { "@type": "PropertyValue", name: "Amitié (0-100)", value: scores.friendship },
+      { "@type": "PropertyValue", name: "Travail (0-100)", value: scores.work },
+      { "@type": "PropertyValue", name: "Karma (0-100)", value: scores.karma },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    url: canonical,
+    speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", "[data-speakable='true']"] },
+  },
 ];
 ---
 
@@ -108,6 +169,10 @@ const jsonLd = [
       <h1 class="text-4xl md:text-5xl font-serif mb-2">Compatibilité {sign1.name} & {sign2.name}</h1>
       <p class="text-sm text-white/50">Analyse croisée élément, modalité · karma</p>
     </header>
+
+    <p data-speakable="true" class="mb-8 p-5 rounded-2xl border border-white/10 bg-white/[0.03] text-white/85 leading-relaxed">
+      {tldr}
+    </p>
 
     <div class="p-6 rounded-2xl border border-amber-300/20 bg-amber-300/5 mb-8 text-center">
       <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Score global</p>
@@ -176,6 +241,18 @@ const jsonLd = [
         </a>
       </div>
     </div>
+
+    <section class="mb-10">
+      <h2 class="font-serif text-2xl mb-4">Questions fréquentes</h2>
+      <div class="space-y-3">
+        {faq.map((item) => (
+          <div class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
+            <h3 class="font-semibold text-white mb-2">{item.q}</h3>
+            <p class="text-white/75 leading-relaxed">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
 
     <section class="mb-10">
       <h2 class="font-serif text-xl mb-4">Explore d'autres combinaisons pour {sign1.name}</h2>
