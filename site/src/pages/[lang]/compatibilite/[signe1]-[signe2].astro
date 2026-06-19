@@ -35,10 +35,42 @@ const scores = compatibilityScore(
   sign1.element as any, sign1.quality as any,
   sign2.element as any, sign2.quality as any
 );
-const interp = compatibilityInterpretation(
-  sign1.name, sign1.element as any, sign1.quality as any,
-  sign2.name, sign2.element as any, sign2.quality as any
-);
+// English content is fully translated -> indexable + GEO. Other locales keep the
+// FR interpretation text and stay noindex until translated.
+const isEn = lang === "en";
+const interp = isEn
+  ? compatibilityInterpretation(name1, sign1.element as any, sign1.quality as any, name2, sign2.element as any, sign2.quality as any, "en")
+  : compatibilityInterpretation(sign1.name, sign1.element as any, sign1.quality as any, sign2.name, sign2.element as any, sign2.quality as any, "fr");
+
+const canonical = `https://karmastro.com/${lang}/compatibilite/${signe1}-${signe2}`;
+const lcFirst = (s: string) => (s ? s.charAt(0).toLowerCase() + s.slice(1) : s);
+
+// EN-only answer-first block + FAQ (data-driven, parity with the FAQPage schema).
+const verdictEn = scores.global >= 80 ? "a very strong compatibility"
+  : scores.global >= 60 ? "a solid compatibility"
+  : scores.global >= 40 ? "a moderate compatibility"
+  : "a challenging compatibility";
+const tldrEn = `${name1} and ${name2} have ${verdictEn} of ${scores.global}% according to Karmastro: ${scores.love}% in love, ${scores.friendship}% in friendship, ${scores.work}% at work and ${scores.karma}% karmically. The score combines elemental affinity (60%) and modality affinity (40%).`;
+const faqEn = [
+  {
+    q: `Are ${name1} and ${name2} compatible?`,
+    a: `${name1} and ${name2} score ${scores.global}% overall compatibility on Karmastro, ${verdictEn}.${interp.strengths[0] ? ` Main strength: ${lcFirst(interp.strengths[0])}` : ""}`,
+  },
+  {
+    q: `What is the love compatibility between ${name1} and ${name2}?`,
+    a: `In love, ${name1} and ${name2} reach ${scores.love}%. Friendship scores ${scores.friendship}%, work ${scores.work}% and karma ${scores.karma}%.`,
+  },
+  {
+    q: `What are the friction points between ${name1} and ${name2}?`,
+    a: interp.frictions[0]
+      ? `Main point to watch: ${lcFirst(interp.frictions[0])}`
+      : `${name1} and ${name2} show few structural frictions, but every couple is unique.`,
+  },
+  {
+    q: `How does Karmastro calculate compatibility between two signs?`,
+    a: `The score combines elemental affinity (fire, earth, air, water) for 60% and modality affinity (cardinal, fixed, mutable) for 40%, completed by a karmic reading. Sun-sign compatibility only covers about 30% of the real dynamic: a full synastry crosses the 10 planets, the rising signs and the aspects.`,
+  },
+];
 
 const title = `${t("compat.page_title", lang).replace("{s1}", name1).replace("{s2}", name2)} - Karmastro`;
 const description = `${name1} & ${name2}: ${t("compat.global_score", lang)} ${scores.global}/100.`;
@@ -76,12 +108,42 @@ const jsonLd = [
       { "@type": "ListItem", position: 3, name: `${name1} × ${name2}`, item: `https://karmastro.com/${lang}/compatibilite/${signe1}-${signe2}` },
     ],
   },
+  ...(isEn ? [
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      name: `${name1} and ${name2} compatibility: Karmastro scores`,
+      description: `Compatibility scores (0 to 100) between ${name1} and ${name2}: overall ${scores.global}, love ${scores.love}, friendship ${scores.friendship}, work ${scores.work}, karma ${scores.karma}.`,
+      url: canonical,
+      isAccessibleForFree: true,
+      creator: { "@type": "Organization", name: "Karmastro", url: "https://karmastro.com" },
+      measurementTechnique: "Karmastro: elemental affinity (60%) and modality affinity (40%) between two zodiac signs, completed by a karmic reading.",
+      variableMeasured: [
+        { "@type": "PropertyValue", name: "Overall compatibility (0-100)", value: scores.global },
+        { "@type": "PropertyValue", name: "Love (0-100)", value: scores.love },
+        { "@type": "PropertyValue", name: "Friendship (0-100)", value: scores.friendship },
+        { "@type": "PropertyValue", name: "Work (0-100)", value: scores.work },
+        { "@type": "PropertyValue", name: "Karma (0-100)", value: scores.karma },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqEn.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      url: canonical,
+      speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", "[data-speakable='true']"] },
+    },
+  ] : []),
 ];
 ---
 
 {/* noIndex : the strengths/frictions/guidance text is still in FR until Claude-translated.
     We index only the FR canonical version + the [lang] hubs until full multilang content. */}
-<BaseLayout title={title} description={description} jsonLd={jsonLd} ogType="article" noIndex={true}>
+<BaseLayout title={title} description={description} jsonLd={jsonLd} ogType="article" noIndex={!isEn}>
   <article class="max-w-3xl mx-auto px-4 py-12">
     <nav class="text-sm text-white/50 mb-6" aria-label="breadcrumb">
       <a href={`/${lang}`} class="hover:text-amber-300">Karmastro</a>
@@ -131,16 +193,24 @@ const jsonLd = [
       ))}
     </div>
 
-    {/* FR-content disclaimer */}
-    <div class="mb-6 px-4 py-2 rounded-lg bg-white/[0.02] border border-white/10 text-center">
-      <p class="text-[10px] text-white/40">
-        <span class="text-amber-300/60">✦</span> {t("horoscope.fr_translation_note", lang)}
+    {isEn && (
+      <p data-speakable="true" class="mb-8 p-5 rounded-2xl border border-white/10 bg-white/[0.03] text-white/85 leading-relaxed">
+        {tldrEn}
       </p>
-    </div>
+    )}
+
+    {/* FR-content disclaimer (hidden once the locale is fully translated) */}
+    {!isEn && (
+      <div class="mb-6 px-4 py-2 rounded-lg bg-white/[0.02] border border-white/10 text-center">
+        <p class="text-[10px] text-white/40">
+          <span class="text-amber-300/60">✦</span> {t("horoscope.fr_translation_note", lang)}
+        </p>
+      </div>
+    )}
 
     <section class="mb-10">
       <h2 class="font-serif text-2xl text-emerald-300 mb-4">{t("compat.strengths", lang)}</h2>
-      <ul lang="fr" class="space-y-3">
+      <ul lang={isEn ? "en" : "fr"} class="space-y-3">
         {interp.strengths.map((s) => (
           <li class="p-4 rounded-xl border border-emerald-300/20 bg-emerald-300/5 text-white/85 leading-relaxed">
             <span class="text-emerald-300 mr-2">✦</span>{s}
@@ -151,7 +221,7 @@ const jsonLd = [
 
     <section class="mb-10">
       <h2 class="font-serif text-2xl text-rose-300 mb-4">{t("compat.frictions", lang)}</h2>
-      <ul lang="fr" class="space-y-3">
+      <ul lang={isEn ? "en" : "fr"} class="space-y-3">
         {interp.frictions.map((f) => (
           <li class="p-4 rounded-xl border border-rose-300/20 bg-rose-300/5 text-white/85 leading-relaxed">
             <span class="text-rose-300 mr-2">⚠</span>{f}
@@ -162,7 +232,7 @@ const jsonLd = [
 
     <section class="mb-10">
       <h2 class="font-serif text-2xl text-amber-300 mb-4">{t("compat.guidance", lang)}</h2>
-      <p lang="fr" class="p-5 rounded-xl border border-amber-300/20 bg-amber-300/5 text-white/85 leading-relaxed italic">
+      <p lang={isEn ? "en" : "fr"} class="p-5 rounded-xl border border-amber-300/20 bg-amber-300/5 text-white/85 leading-relaxed italic">
         "{interp.guidance}"
       </p>
     </section>
@@ -178,6 +248,20 @@ const jsonLd = [
         </a>
       </div>
     </div>
+
+    {isEn && (
+      <section class="mb-10">
+        <h2 class="font-serif text-2xl mb-4">Frequently asked questions</h2>
+        <div class="space-y-3">
+          {faqEn.map((item) => (
+            <div class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
+              <h3 class="font-semibold text-white mb-2">{item.q}</h3>
+              <p class="text-white/75 leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
 
     <section class="mb-10">
       <h2 class="font-serif text-xl mb-4">{t("compat.explore_other", lang)}</h2>
