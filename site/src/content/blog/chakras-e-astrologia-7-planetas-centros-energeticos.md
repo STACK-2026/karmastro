@@ -8,7 +8,7 @@ tags: ["chakras", "astrologia espiritual", "energia", "mapa astral", "cura"]
 keywords: "chakras e astrologia, 7 chakras planetas, correspondencia chakras astrologia"
 draft: false
 lang: "pt"
-image: "https://images.unsplash.com/photo-1474418397713-2f1091953b21?w=1200&h=630&fit=crop&crop=center&q=80"
+image: "https://images.unsplash.com/photo-1499578124509-1611b77778c8?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Coluna luminosa com as sete cores dos chakras"
 lastReviewed: "2026-04-11"
 reviewedBy: "Orion, astronomo e astrologo senior"

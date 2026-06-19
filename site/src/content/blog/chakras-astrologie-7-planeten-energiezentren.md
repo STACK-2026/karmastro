@@ -8,7 +8,7 @@ tags: ["chakras", "spirituelle astrologie", "energie", "geburtshoroskop", "heilu
 keywords: "chakras und astrologie, 7 chakras planeten, chakra astrologie korrespondenz"
 draft: false
 lang: "de"
-image: "https://images.unsplash.com/photo-1474418397713-2f1091953b21?w=1200&h=630&fit=crop&crop=center&q=80"
+image: "https://images.unsplash.com/photo-1499578124509-1611b77778c8?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Leuchtende Säule mit den sieben Chakra-Farben"
 lastReviewed: "2026-04-11"
 reviewedBy: "Orion, Senior-Astronom und Astrologe"

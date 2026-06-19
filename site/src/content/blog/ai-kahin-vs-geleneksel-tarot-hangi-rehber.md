@@ -8,7 +8,7 @@ tags: ["kahin", "tarot", "rehber", "AI", "karsilastirma"]
 keywords: "ai kahin, tarot, ruhsal rehber"
 draft: false
 lang: "tr"
-image: "https://images.unsplash.com/photo-1600021538866-20d1f6f3bd7a?w=1200&h=630&fit=crop&crop=center&q=80"
+image: "https://images.unsplash.com/photo-1528353518104-dbd48bee7bc4?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Tarot kartları ve AI kâhin arayüzü"
 lastReviewed: "2026-04-11"
 reviewedBy: "Orion, kidemli astronom ve astrolog"

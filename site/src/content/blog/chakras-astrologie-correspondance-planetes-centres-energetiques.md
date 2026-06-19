@@ -7,7 +7,7 @@ category: "spiritualité"
 tags: ["chakras", "astrologie spirituelle", "energie", "thème natal", "guérison"]
 keywords: "chakras et astrologie, 7 chakras planètes, correspondance chakras astrologie, blocage énergétique carte natale, rééquilibrer chakras"
 draft: false
-image: "https://images.unsplash.com/photo-1474418397713-2f1091953b21?w=1200&h=630&fit=crop&crop=center&q=80"
+image: "https://images.unsplash.com/photo-1499578124509-1611b77778c8?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Colonne lumineuse avec les sept couleurs des chakras, correspondance entre énergie subtile et astrologie"
 lastReviewed: "2026-04-11"
 reviewedBy: "Orion, astronome et astrologue senior"

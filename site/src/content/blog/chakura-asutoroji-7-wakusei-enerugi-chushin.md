@@ -8,7 +8,7 @@ tags: ["chakura", "supirichuaru asutoroji"]
 keywords: "chakura asutoroji"
 draft: false
 lang: "ja"
-image: "https://images.unsplash.com/photo-1474418397713-2f1091953b21?w=1200&h=630&fit=crop&crop=center&q=80"
+image: "https://images.unsplash.com/photo-1499578124509-1611b77778c8?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "7つのチャクラの色を持つ輝く柱"
 lastReviewed: "2026-04-11"
 reviewedBy: "Orion、シニア天文学者兼占星術師"

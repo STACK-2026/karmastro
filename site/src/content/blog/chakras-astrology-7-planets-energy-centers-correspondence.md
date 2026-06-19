@@ -8,7 +8,7 @@ tags: ["chakras", "spiritual astrology", "energy", "natal chart", "healing"]
 keywords: "chakras and astrology, 7 chakras planets, chakra astrology correspondence, energy block natal chart, rebalance chakras"
 draft: false
 lang: "en"
-image: "https://images.unsplash.com/photo-1474418397713-2f1091953b21?w=1200&h=630&fit=crop&crop=center&q=80"
+image: "https://images.unsplash.com/photo-1499578124509-1611b77778c8?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Luminous column with the seven chakra colors, correspondence between subtle energy and astrology"
 lastReviewed: "2026-04-11"
 reviewedBy: "Orion, senior astronomer and astrologer"

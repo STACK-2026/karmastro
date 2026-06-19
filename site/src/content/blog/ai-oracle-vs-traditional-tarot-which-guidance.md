@@ -8,7 +8,7 @@ tags: ["oracle", "tarot", "guidance", "AI", "comparison"]
 keywords: "AI oracle, tarot, spiritual guidance, comparison, modern divination"
 draft: false
 lang: "en"
-image: "https://images.unsplash.com/photo-1600021538866-20d1f6f3bd7a?w=1200&h=630&fit=crop&crop=center&q=80"
+image: "https://images.unsplash.com/photo-1528353518104-dbd48bee7bc4?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Tarot cards and AI oracle interface on a mystical background"
 lastReviewed: "2026-04-11"
 reviewedBy: "Sibylle, divinatory guide"

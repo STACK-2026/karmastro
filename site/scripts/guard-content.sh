@@ -41,7 +41,7 @@ fi
 if [ -n "$CHANGED" ]; then
   echo "guard:content -> checking $(echo "$CHANGED" | wc -l | tr -d ' ') file(s) from last commit"
   # shellcheck disable=SC2046
-  ( cd "$ROOT" && python3 "$GUARD" --check $CHANGED )
+  ( cd "$ROOT" && python3 "$GUARD" --check --strict-images $CHANGED )
 else
   echo "guard:content -> no changed content file in last commit, full scan of $REL_CONTENT"
   python3 "$GUARD" --check "$CONTENT_DIR"

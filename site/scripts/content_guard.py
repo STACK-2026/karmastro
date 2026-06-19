@@ -230,6 +230,17 @@ def analyze(path: Path, fix: bool, check_links: bool):
                 fm_inner = fm_inner[:dm.start()] + f'{dm.group(1)}"{esc}"' + fm_inner[dm.end():]
                 fixes.append(f"normalized description -> {len(new_val)}c")
 
+    # ---- 3b. dead hero image (frontmatter image: URL must resolve) ----
+    # Catches dead Unsplash IDs (404) the model hallucinates into frontmatter
+    # (23 article pages on karmastro shipped a broken hero, 19/06). Network-
+    # resilient: only a definitive 404/410 blocks; offline build hosts return 0.
+    if fm_inner is not None:
+        _im, ival, _iq = fm_field(fm_inner, "image")
+        if ival and ival.startswith("http"):
+            code = _http_status(ival)
+            if code in (404, 410):
+                issues.append(("IMG_DEAD", f"{code} hero image unreachable: {ival}"))
+
     # ---- 4. body-level H1 (=> double H1 with template title) ----
     h1s = re.findall(r"(?m)^#[ \t]+\S", body)
     if h1s:
@@ -283,6 +294,23 @@ def analyze(path: Path, fix: bool, check_links: bool):
     return issues, fixes, (new_text if changed else None)
 
 
+def _http_status(url: str) -> int:
+    """HEAD a URL, return status (0 on any network error so a build host without
+    network is never falsely blocked). One light retry to absorb transient blips."""
+    import urllib.request, urllib.error
+    UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
+    for _ in range(2):
+        try:
+            req = urllib.request.Request(url, headers=UA, method="HEAD")
+            return urllib.request.urlopen(req, timeout=10).status
+        except urllib.error.HTTPError as e:
+            return e.code
+        except Exception:
+            continue
+    return 0
+
+
 def _check_links(text: str, path: Path):
     import urllib.request, urllib.error
     out = []
@@ -312,6 +340,9 @@ def main():
     ap.add_argument("--with-accents", action="store_true", help="also run check_accents.py")
     ap.add_argument("--site", default=None, help="site slug (for --with-accents)")
     ap.add_argument("--check-links", action="store_true", help="HEAD-check external links (slow)")
+    ap.add_argument("--strict-images", action="store_true",
+                    help="treat IMG_DEAD as blocking (use on freshly-changed files only; on a "
+                         "full scan dead images are warn-only since 3rd-party photos rot over time)")
     args = ap.parse_args()
 
     files = []
@@ -323,6 +354,11 @@ def main():
             files.append(pp)
     # blocking = anything except the flag-only TITLE_LONG / TITLE_TRUNCATED?
     NON_BLOCKING = {"TITLE_LONG", "DESC_QUOTE_ARTIFACT"}
+    # Dead external hero images block only on freshly-changed files (publish-time
+    # gate). On a full scan they are warn-only: a 3rd-party Unsplash photo removed
+    # months later must never halt an unrelated daily rebuild.
+    if not args.strict_images:
+        NON_BLOCKING = NON_BLOCKING | {"IMG_DEAD"}
 
     total_block = 0
     total_fixed = 0
