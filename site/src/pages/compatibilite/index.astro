@@ -2,87 +2,29 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ZodiacSymbol from "../../components/ZodiacSymbol.astro";
 import { ZODIAC_SIGNS } from "../../data/zodiac";
-import { compatibilityScore } from "../../data/compatibility-matrix";
 
 const title = "Compatibilité des 12 signes astrologiques - 144 combinaisons - Karmastro";
 const description =
   "Découvre la compatibilité amoureuse, amicale et karmique entre les 12 signes du zodiaque. 144 combinaisons analysées avec scores et guidance détaillée. Analyse Swiss Ephemeris gratuite.";
-const canonical = "https://karmastro.com/compatibilite";
 
-// First-party aggregate over the 66 distinct sign pairs (real, computed from the
-// same engine as the detail pages) -> citable answers for "signes les plus
-// compatibles" + a Dataset.
-const pairs: { a: any; b: any; global: number }[] = [];
-for (let i = 0; i < ZODIAC_SIGNS.length; i++) {
-  for (let j = i + 1; j < ZODIAC_SIGNS.length; j++) {
-    const a = ZODIAC_SIGNS[i], b = ZODIAC_SIGNS[j];
-    const s = compatibilityScore(a.element as any, a.quality as any, b.element as any, b.quality as any);
-    pairs.push({ a, b, global: s.global });
-  }
-}
-const avgGlobal = Math.round(pairs.reduce((s, p) => s + p.global, 0) / pairs.length);
-const sortedPairs = [...pairs].sort((x, y) => y.global - x.global);
-const bestPair = sortedPairs[0];
-const worstPair = sortedPairs[sortedPairs.length - 1];
-
-const tldr = `Karmastro a calculé la compatibilité des 144 combinaisons des 12 signes du zodiaque. Sur les 66 paires de signes différents, le score moyen est de ${avgGlobal}/100. La paire la plus compatible est ${bestPair.a.name} et ${bestPair.b.name} (${bestPair.global}%), la moins compatible ${worstPair.a.name} et ${worstPair.b.name} (${worstPair.global}%). Le score croise l'affinité des éléments (60%) et des modalités (40%).`;
-
-const faq = [
-  {
-    q: "Quels signes du zodiaque sont les plus compatibles ?",
-    a: `D'après les scores Karmastro, la paire de signes différents la plus compatible est ${bestPair.a.name} et ${bestPair.b.name}, avec ${bestPair.global}% de compatibilité globale. Les affinités les plus fortes apparaissent entre signes de même élément ou d'éléments complémentaires (feu et air, terre et eau).`,
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: title,
+  description,
+  url: "https://karmastro.com/compatibilite",
+  inLanguage: "fr-FR",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Karmastro",
+    url: "https://karmastro.com",
   },
-  {
-    q: "Quels signes sont les moins compatibles ?",
-    a: `La paire la moins compatible selon Karmastro est ${worstPair.a.name} et ${worstPair.b.name} (${worstPair.global}%). Un score faible n'interdit pas la relation : il signale surtout des modes de fonctionnement différents à concilier.`,
+  about: {
+    "@type": "Thing",
+    name: "Compatibilité astrologique",
+    description: "Analyse de la compatibilité entre les 12 signes du zodiaque tropical",
   },
-  {
-    q: "Quel est le score de compatibilité moyen entre les signes ?",
-    a: `Sur les 66 paires de signes différents, le score de compatibilité moyen calculé par Karmastro est de ${avgGlobal}/100.`,
-  },
-  {
-    q: "Comment Karmastro calcule la compatibilité entre deux signes ?",
-    a: "Le score croise l'affinité des éléments (feu, terre, air, eau) pour 60% et des modalités (cardinal, fixe, mutable) pour 40%, complété par une lecture karmique. La compatibilité des signes solaires ne couvre qu'environ 30% de la dynamique réelle : une synastrie complète croise les 10 planètes, les ascendants et les aspects.",
-  },
-];
-
-const jsonLd = [
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: title,
-    description,
-    url: canonical,
-    inLanguage: "fr-FR",
-    isPartOf: { "@type": "WebSite", name: "Karmastro", url: "https://karmastro.com" },
-    about: {
-      "@type": "Thing",
-      name: "Compatibilité astrologique",
-      description: "Analyse de la compatibilité entre les 12 signes du zodiaque tropical",
-    },
-    speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", "[data-speakable='true']"] },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Dataset",
-    name: "Compatibilité des 12 signes du zodiaque : scores Karmastro",
-    description: `Scores de compatibilité (0 à 100) des 66 paires de signes du zodiaque. Score moyen ${avgGlobal}/100, paire la plus compatible ${bestPair.a.name} et ${bestPair.b.name} (${bestPair.global}).`,
-    url: canonical,
-    isAccessibleForFree: true,
-    creator: { "@type": "Organization", name: "Karmastro", url: "https://karmastro.com" },
-    measurementTechnique: "Karmastro : affinité des éléments (60%) et des modalités (40%) entre deux signes, complétée par une lecture karmique.",
-    variableMeasured: [
-      { "@type": "PropertyValue", name: "Paires de signes analysées", value: pairs.length },
-      { "@type": "PropertyValue", name: "Score de compatibilité moyen (0-100)", value: avgGlobal },
-      { "@type": "PropertyValue", name: "Meilleur score de paire (0-100)", value: bestPair.global },
-    ],
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-  },
-];
+};
 
 // JSON serialisé pour le client JS
 const signsForClient = ZODIAC_SIGNS.map((s) => ({
@@ -107,10 +49,6 @@ const signsForClient = ZODIAC_SIGNS.map((s) => ({
         Sélectionne deux signes, découvre leur dynamique. 144 combinaisons, analyse hellénistique gratuite.
       </p>
     </header>
-
-    <p data-speakable="true" class="mb-10 p-5 rounded-2xl border border-white/10 bg-white/[0.03] text-white/85 leading-relaxed max-w-3xl mx-auto">
-      {tldr}
-    </p>
 
     {/* ═══ PICKER 2 ETAPES ═══ */}
     <section class="mb-10 p-6 md:p-8 rounded-2xl border border-amber-300/30 bg-gradient-to-b from-amber-300/[0.04] to-transparent">
@@ -222,18 +160,6 @@ const signsForClient = ZODIAC_SIGNS.map((s) => ({
         Synastrie complète
       </a>
     </div>
-
-    <section class="mb-10 max-w-3xl mx-auto">
-      <h2 class="font-serif text-2xl mb-4">Questions fréquentes</h2>
-      <div class="space-y-3">
-        {faq.map((item) => (
-          <div class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
-            <h3 class="font-semibold text-white mb-2">{item.q}</h3>
-            <p class="text-white/75 leading-relaxed">{item.a}</p>
-          </div>
-        ))}
-      </div>
-    </section>
   </article>
 
   <script is:inline define:vars={{ signsForClient, basePath: "/compatibilite" }}>
