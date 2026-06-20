@@ -244,6 +244,14 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
         </button>
       </form>
 
+      <p class="mt-3 text-center text-xs text-white/50">
+        Tu ne connais pas ton heure de naissance ?
+        <a
+          href={`/oracle/?q=${encodeURIComponent("Je ne connais pas mon heure de naissance exacte. Comment découvrir ou estimer mon ascendant ?")}`}
+          class="km-oracle text-amber-300 hover:underline"
+        >Demande à l'Oracle</a>, c'est gratuit et sans inscription.
+      </p>
+
       <div id="result" class="mt-6 hidden">
         <div class="p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30">
           <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-2">Ton ascendant</p>

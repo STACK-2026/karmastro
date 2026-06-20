@@ -474,19 +474,19 @@ if (profile?.faq?.length) {
       <p class="text-white/70 mb-4 text-sm leading-relaxed">
         {t("horoscope.personalised_cta_desc", lang)}
       </p>
+      <a
+        href={`/oracle/?lang=${lang}&q=${encodeURIComponent(t("horoscope.oracle_q", lang))}`}
+        class="km-oracle inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity mb-2"
+      >
+        {t("horoscope.personalised_cta_button", lang)}
+      </a>
       {toolsHub && (
-        <a
-          href={toolsHub}
-          class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity mb-2"
-        >
-          {t("hero.cta_secondary", lang)}
-        </a>
+        <p class="text-xs text-white/50 mt-2">
+          <a href={toolsHub} class="text-amber-300 hover:underline">
+            {t("hero.cta_secondary", lang)}
+          </a>
+        </p>
       )}
-      <p class="text-xs text-white/50 mt-2">
-        <a href={`https://karmastro.com/oracle/?lang=${lang}`} class="text-amber-300 hover:underline">
-          {t("horoscope.personalised_cta_button", lang)}
-        </a>
-      </p>
     </div>
 
     {profile && (

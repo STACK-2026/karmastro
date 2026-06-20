@@ -98,6 +98,7 @@ export type TranslationKeys = {
   "horoscope.personalised_cta_title": string;
   "horoscope.personalised_cta_desc": string;
   "horoscope.personalised_cta_button": string;
+  "horoscope.oracle_q": string;
   "horoscope.compatibilities_of": string;
   "horoscope.recent_archives": string;
   "horoscope.past_readings": string;
@@ -267,6 +268,7 @@ const fr: TranslationKeys = {
   "horoscope.personalised_cta_title": "Besoin d'une lecture plus personnelle ?",
   "horoscope.personalised_cta_desc": "L'horoscope est une lecture générale. Pour une guidance qui prend en compte ton thème natal complet, pose ta question à l'un de nos quatre guides.",
   "horoscope.personalised_cta_button": "Pose ta question à l'Oracle",
+  "horoscope.oracle_q": "Que disent les astres pour moi aujourd'hui, et comment en tirer le meilleur ?",
   "horoscope.compatibilities_of": "Compatibilités du",
   "horoscope.recent_archives": "Archives récentes",
   "horoscope.past_readings": "lectures passées",
@@ -430,6 +432,7 @@ const en: TranslationKeys = {
   "horoscope.personalised_cta_title": "Need a more personal reading?",
   "horoscope.personalised_cta_desc": "The horoscope is a general reading. For guidance that takes into account your complete birth chart, ask one of our four cosmic guides.",
   "horoscope.personalised_cta_button": "Ask the Oracle",
+  "horoscope.oracle_q": "What do the stars hold for me today, and how can I make the most of it?",
   "horoscope.compatibilities_of": "Compatibilities of",
   "horoscope.recent_archives": "Recent archives",
   "horoscope.past_readings": "past readings",
@@ -593,6 +596,7 @@ const es: TranslationKeys = {
   "horoscope.personalised_cta_title": "¿Necesitas una lectura más personal?",
   "horoscope.personalised_cta_desc": "El horóscopo es una lectura general. Para una guía que tenga en cuenta tu carta astral completa, haz tu pregunta a uno de nuestros cuatro guías cósmicos.",
   "horoscope.personalised_cta_button": "Pregunta al Oráculo",
+  "horoscope.oracle_q": "¿Qué dicen los astros para mí hoy y cómo puedo aprovecharlo al máximo?",
   "horoscope.compatibilities_of": "Compatibilidades de",
   "horoscope.recent_archives": "Archivos recientes",
   "horoscope.past_readings": "lecturas pasadas",
@@ -756,6 +760,7 @@ const pt: TranslationKeys = {
   "horoscope.personalised_cta_title": "Precisas de uma leitura mais pessoal?",
   "horoscope.personalised_cta_desc": "O horóscopo é uma leitura geral. Para um guia que tenha em conta o teu mapa astral completo, faz a tua pergunta a um dos nossos quatro guias cósmicos.",
   "horoscope.personalised_cta_button": "Pergunta ao Oráculo",
+  "horoscope.oracle_q": "O que os astros dizem para mim hoje e como posso aproveitar ao máximo?",
   "horoscope.compatibilities_of": "Compatibilidades do",
   "horoscope.recent_archives": "Arquivos recentes",
   "horoscope.past_readings": "leituras passadas",
@@ -919,6 +924,7 @@ const de: TranslationKeys = {
   "horoscope.personalised_cta_title": "Brauchst du eine persönlichere Lesung?",
   "horoscope.personalised_cta_desc": "Das Horoskop ist eine allgemeine Lesung. Für eine Führung, die dein komplettes Geburtshoroskop berücksichtigt, stelle deine Frage an einen unserer vier kosmischen Führer.",
   "horoscope.personalised_cta_button": "Frage das Orakel",
+  "horoscope.oracle_q": "Was sagen die Sterne heute für mich, und wie mache ich das Beste daraus?",
   "horoscope.compatibilities_of": "Kompatibilitäten des",
   "horoscope.recent_archives": "Aktuelle Archive",
   "horoscope.past_readings": "vergangene Lesungen",
@@ -1082,6 +1088,7 @@ const it: TranslationKeys = {
   "horoscope.personalised_cta_title": "Hai bisogno di una lettura più personale?",
   "horoscope.personalised_cta_desc": "L'oroscopo è una lettura generale. Per una guida che tenga conto del tuo tema natale completo, fai la tua domanda a una delle nostre quattro guide cosmiche.",
   "horoscope.personalised_cta_button": "Chiedi all'Oracolo",
+  "horoscope.oracle_q": "Cosa dicono gli astri per me oggi e come posso trarne il meglio?",
   "horoscope.compatibilities_of": "Compatibilità del",
   "horoscope.recent_archives": "Archivi recenti",
   "horoscope.past_readings": "letture passate",
@@ -1249,6 +1256,7 @@ const tr: TranslationKeys = {
   "horoscope.personalised_cta_title": "Daha kişisel bir okumaya mı ihtiyacın var?",
   "horoscope.personalised_cta_desc": "Burç genel bir okumadır. Tam doğum haritanı dikkate alan bir rehberlik için, dört kozmik rehberimizden birine soru sor.",
   "horoscope.personalised_cta_button": "Kahin'e sor",
+  "horoscope.oracle_q": "Yıldızlar bugün benim için ne söylüyor ve bundan en iyi şekilde nasıl yararlanabilirim?",
   "horoscope.compatibilities_of": "Uyumluluklar",
   "horoscope.recent_archives": "Son arşivler",
   "horoscope.past_readings": "geçmiş okumalar",
@@ -1412,6 +1420,7 @@ const pl: TranslationKeys = {
   "horoscope.personalised_cta_title": "Potrzebujesz bardziej osobistej lektury?",
   "horoscope.personalised_cta_desc": "Horoskop to ogólna lektura. Aby uzyskać wskazówki uwzględniające pełny horoskop urodzeniowy, zadaj pytanie jednemu z naszych czterech kosmicznych przewodników.",
   "horoscope.personalised_cta_button": "Zapytaj Wyrocznię",
+  "horoscope.oracle_q": "Co mówią dziś dla mnie gwiazdy i jak najlepiej to wykorzystać?",
   "horoscope.compatibilities_of": "Kompatybilności",
   "horoscope.recent_archives": "Ostatnie archiwa",
   "horoscope.past_readings": "poprzednie czytania",
@@ -1575,6 +1584,7 @@ const ru: TranslationKeys = {
   "horoscope.personalised_cta_title": "Нужно более личное чтение?",
   "horoscope.personalised_cta_desc": "Гороскоп - это общее чтение. Для руководства, учитывающего твою полную натальную карту, задай вопрос одному из наших четырёх космических проводников.",
   "horoscope.personalised_cta_button": "Спроси Оракула",
+  "horoscope.oracle_q": "Что говорят звёзды для меня сегодня и как извлечь из этого максимум?",
   "horoscope.compatibilities_of": "Совместимости",
   "horoscope.recent_archives": "Недавние архивы",
   "horoscope.past_readings": "прошлые чтения",
@@ -1738,6 +1748,7 @@ const ja: TranslationKeys = {
   "horoscope.personalised_cta_title": "もっとパーソナルな占いが必要?",
   "horoscope.personalised_cta_desc": "ホロスコープは一般的な占いです。あなたの完全な出生図を考慮したガイダンスのために、4人のコスミックガイドの一人に質問してください。",
   "horoscope.personalised_cta_button": "オラクルに質問",
+  "horoscope.oracle_q": "今日、星々は私に何を告げているのでしょう。どう活かせばいいですか?",
   "horoscope.compatibilities_of": "相性",
   "horoscope.recent_archives": "最近のアーカイブ",
   "horoscope.past_readings": "過去の占い",
@@ -1901,6 +1912,7 @@ const ar: TranslationKeys = {
   "horoscope.personalised_cta_title": "هل تحتاج إلى قراءة أكثر شخصية؟",
   "horoscope.personalised_cta_desc": "البرج قراءة عامة. للحصول على إرشاد يأخذ في الاعتبار خريطة ميلادك الكاملة، اطرح سؤالك على أحد مرشدينا الكونيين الأربعة.",
   "horoscope.personalised_cta_button": "اسأل العرّاف",
+  "horoscope.oracle_q": "ماذا تقول النجوم لي اليوم، وكيف أستفيد منها إلى أقصى حد؟",
   "horoscope.compatibilities_of": "توافقات",
   "horoscope.recent_archives": "الأرشيف الحديث",
   "horoscope.past_readings": "قراءات سابقة",
