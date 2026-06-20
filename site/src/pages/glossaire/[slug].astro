@@ -65,7 +65,7 @@ const jsonLd = [
           <a href={term.toolUrl} class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">{term.toolLabel || "Calcule le tien"}</a>
         )}
         {term.oracleQ && (
-          <a href={`/oracle/?q=${encodeURIComponent(term.oracleQ)}`} class="px-5 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 font-medium text-sm hover:bg-amber-300/10 transition-colors">Demande à l'Oracle</a>
+          <a href={`/oracle/?q=${encodeURIComponent(term.oracleQ)}`} class="km-oracle px-5 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 font-medium text-sm hover:bg-amber-300/10 transition-colors">Demande à l'Oracle</a>
         )}
       </div>
     </div>

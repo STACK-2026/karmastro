@@ -66,6 +66,26 @@ const LABELS: Record<string, { home: string; blog: string; share: string; shareB
   ar: { home: "الرئيسية", blog: "المدونة", share: "هل أعجبك المقال؟ شاركه", shareBtn: "شارك المقال", locale: "ar-SA", reviewed: "تمت المراجعة في", reviewedBy: "راجعه" },
 };
 const labels = LABELS[lang] ?? LABELS.fr;
+
+// Pont Oracle en fin d'article : question pré-remplie depuis le titre (?q= auto-send).
+// FR + EN rédigés ; autres langues retombent sur EN (pas de traduction non vérifiée).
+const ORACLE: Record<string, { eyebrow: string; cta: string; lead: string; q: string }> = {
+  fr: {
+    eyebrow: "Et pour toi, concrètement ?",
+    cta: "Interroger l'Oracle",
+    lead: "Pose ta question à l'Oracle : il part de cet article et te répond à l'instant, gratuitement et sans inscription.",
+    q: `Je viens de lire un article sur « ${title} ». Qu'est-ce que ça signifie concrètement pour moi ?`,
+  },
+  en: {
+    eyebrow: "And for you?",
+    cta: "Ask the Oracle",
+    lead: "Ask the Oracle your question: it starts from this article and answers instantly, free and without signing up.",
+    q: `I just read an article about "${title}". What does it concretely mean for me?`,
+  },
+};
+const oracle = ORACLE[lang] ?? ORACLE.en;
+const oracleQuery = isDefault ? `?q=${encodeURIComponent(oracle.q)}` : `?lang=${lang}&q=${encodeURIComponent(oracle.q)}`;
+const oracleBlogHref = `/oracle/${oracleQuery}`;
 const reviewedDateStr = lastReviewed ? lastReviewed.toISOString().split("T")[0] : undefined;
 const reviewedDateDisplay = lastReviewed
   ? lastReviewed.toLocaleDateString(labels.locale, { day: "numeric", month: "long", year: "numeric" })
@@ -211,6 +231,14 @@ if (faqPairs.length > 0) {
     </div>
 
     <ToolCTA slug={slug} lang={lang} />
+
+    <aside class="not-prose my-10 p-6 rounded-2xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30 text-center">
+      <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-1">{oracle.eyebrow}</p>
+      <p class="text-sm text-white/65 leading-relaxed mb-4 max-w-xl mx-auto">{oracle.lead}</p>
+      <a href={oracleBlogHref} class="km-oracle inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">
+        {oracle.cta}
+      </a>
+    </aside>
 
     <NewsletterCapture variant="card" source={`blog-${slug}`} />
 
