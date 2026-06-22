@@ -205,3 +205,21 @@ Este artigo baseia-se em fontes enciclopédicas, astronómicas e académicas ver
 - [Compatibilidade](/pt/ferramentas/compatibilidade)
 
 [Explore todo o blog e todas as ferramentas](/pt/blog/) · [Ferramentas Karmastro](/pt/ferramentas/)
+
+## Perguntas frequentes
+
+### Como calcular o meu ascendente com precisão e quais dados são essenciais para isso?
+
+Para calcular o seu ascendente com precisão, é fundamental conhecer a data completa do seu nascimento, a hora exata (com minutos e segundos, se possível) e o local geográfico (cidade e país) onde nasceu. Estes dados permitem determinar o signo do zodíaco que se erguia no horizonte leste no momento exato do seu nascimento. Uma diferença de poucos minutos ou quilómetros pode alterar significativamente o resultado, pois o ascendente muda aproximadamente a cada duas horas.
+
+### Qual a diferença entre o signo solar e o ascendente na astrologia e por que ambos são importantes para o autoconhecimento?
+
+O signo solar representa a sua essência, o seu ego e a sua identidade central, enquanto o ascendente simboliza a sua personalidade exterior, a forma como se apresenta ao mundo e a sua primeira impressão. Ambos são cruciais porque o signo solar revela quem você é por dentro, e o ascendente mostra como você interage com o ambiente e como os outros o percebem inicialmente. O ascendente atua como a "máscara" ou o "filtro" através do qual a sua energia solar é expressa.
+
+### O ascendente realmente influencia a aparência física de uma pessoa ou isso é mais um mito astrológico?
+
+Embora haja uma crença popular de que o ascendente influencia a aparência física, a astrologia moderna considera essa ligação mais uma nuance do que uma regra estrita. O ascendente pode, de facto, indicar certas características posturais, maneirismos ou a forma como uma pessoa se veste e se apresenta, contribuindo para uma "impressão" geral. Contudo, não determina traços faciais específicos ou a estrutura corporal de forma direta e inegável, sendo mais um reflexo do estilo pessoal e da energia que se projeta.
+
+### O que significa ter o signo solar e o ascendente em oposição astrológica e como isso se manifesta na personalidade?
+
+Ter o signo solar e o ascendente em oposição astrológica significa que a sua essência interna (signo solar) e a sua expressão externa (ascendente) podem parecer contraditórias ou em conflito. Isso pode manifestar-se como uma pessoa que age de forma diferente do que realmente sente, ou que projeta uma imagem inicial que não corresponde à sua verdadeira natureza. Este posicionamento oferece um desafio para integrar essas duas energias, buscando um equilíbrio entre o que se é e como se é percebido, promovendo um crescimento pessoal significativo.

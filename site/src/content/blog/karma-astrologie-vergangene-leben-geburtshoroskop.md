@@ -208,3 +208,20 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 
 [Entdecke das ganze Blog und alle Werkzeuge](/de/blog/) · [Karmastro Werkzeuge](/de/werkzeuge/)
 
+## Häufig gestellte Fragen
+
+### Was ist der Hauptunterschied zwischen Karma Astrologie und traditioneller Astrologie?
+
+Die Karma Astrologie konzentriert sich darauf, vergangene Lebenserfahrungen und daraus resultierende karmische Muster im Geburtshoroskop zu identifizieren, während die traditionelle Astrologie eher gegenwärtige Persönlichkeitsmerkmale und zukünftige Tendenzen beleuchtet. Sie interpretiert Planetenstellungen und Aspekte als Hinweise auf ungelöste Lektionen und die Seelenmission in diesem Leben. Dies bietet eine tiefere Perspektive auf die persönliche Entwicklung und den Lebensweg.
+
+### Welche Elemente im Geburtshoroskop deuten auf karmische Verbindungen oder Lektionen hin?
+
+Karmische Verbindungen und Lektionen werden im Geburtshoroskop hauptsächlich durch die Mondknoten (Südknoten und Nordknoten), Saturn, Pluto, Chiron und das zwölfte Haus angezeigt. Der Südknoten repräsentiert dabei mitgebrachte Talente und Herausforderungen aus früheren Leben, während der Nordknoten die Richtung der Seelenentwicklung in diesem Leben aufzeigt. Saturn weist auf Lernaufgaben und Begrenzungen hin, die es zu überwinden gilt.
+
+### Welche Bedeutung haben die Mondknoten für die Bestimmung meiner Seelenmission in der Karma Astrologie?
+
+Die Mondknoten sind in der Karma Astrologie die Hauptachse des Karmas und entscheidend für die Bestimmung der Seelenmission. Der Südknoten symbolisiert die aus vergangenen Leben mitgebrachten Fähigkeiten und Gewohnheiten, die oft unbewusst wirken. Der Nordknoten hingegen zeigt den Entwicklungspfad und die Lernaufgaben an, die für die Erfüllung der Seelenmission in diesem Leben notwendig sind, und weist auf neue Erfahrungen hin.
+
+### Kann man karmische Muster, die im Geburtshoroskop sichtbar sind, aktiv beeinflussen oder verändern?
+
+Ja, karmische Muster sind keine unveränderlichen Schicksalsgesetze, sondern energetische Kontexte, die durch bewusste Handlungen und freien Willen beeinflusst werden können. Obwohl bestimmte Lektionen und Tendenzen mitgebracht werden, liegt es in der menschlichen Freiheit, wie man darauf reagiert und ob man alte Muster durchbricht. Die stoische Philosophie betont hierbei die Akzeptanz des Unveränderlichen und die Gestaltung des Veränderbaren.

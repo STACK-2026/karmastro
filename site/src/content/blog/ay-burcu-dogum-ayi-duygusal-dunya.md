@@ -253,3 +253,21 @@ Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
 - [Uyumluluk](/tr/araclar/uyumluluk)
 
 [Tüm blogu ve araçları keşfet](/tr/blog/) · [Karmastro araçları](/tr/araclar/)
+
+## Sıkça sorulan sorular
+
+### Doğum Ay burcumu kendim nasıl hesaplayabilirim?
+
+Doğum Ay burcunuzu hesaplamak için doğum tarihiniz, saatiniz ve yeriniz gibi kesin bilgilere ihtiyacınız vardır. Bu bilgilerle birlikte online astroloji hesaplayıcıları veya bir astrologdan yardım alarak Ay'ın doğum anınızda hangi burçta olduğunu öğrenebilirsiniz. Ay, her burçta yaklaşık iki buçuk gün kaldığı için doğru saat bilgisi kritik öneme sahiptir.
+
+### Astrolojide Güneş burcu ile Ay burcu arasındaki temel fark nedir?
+
+Astrolojide Güneş burcu dış dünyaya gösterdiğimiz bilinçli kişiliğimizi ve irademizi temsil ederken, Ay burcu iç dünyamızı, duygusal ihtiyaçlarımızı ve bilinçaltı tepkilerimizi ifade eder. Güneş "ne istiyorum?" sorusuna yanıt verirken, Ay "neye ihtiyacım var?" sorusunu yanıtlar ve derin duygusal güvenliğimizi şekillendirir. Bu yüzden Ay, yalnız kaldığımızda veya yakın ilişkilerimizde daha belirgin hale gelir.
+
+### Ay burcum duygusal ihtiyaçlarım ve güvenlik hissim hakkında bana neler anlatır?
+
+Ay burcunuz, duygusal dünyanızın çekirdeğini, içgüdüsel tepkilerinizi ve kendinizi güvende hissetmek için neye ihtiyaç duyduğunuzu ortaya koyar. Çocukluktan gelen alışkanlıklarınızı, stresle başa çıkma yöntemlerinizi ve duygusal olarak beslenme şeklinizi gösterir. Bu bilgi, kendinizi nasıl sakinleştirdiğinizi ve "ev" hissini nerede bulduğunuzu anlamanıza yardımcı olur.
+
+### Ay burcu neden özellikle yalnızken veya özel anlarda Güneş burcumuzdan daha baskın hissedilir?
+
+Ay burcu, en derin ve kişisel duygusal ihtiyaçlarımızı, içgüdüsel tepkilerimizi ve güvenlik arayışımızı temsil ettiği için yalnız kaldığımızda veya yakın ilişkilerimizde daha belirgin hale gelir. Güneş burcu dışarıya yansıttığımız kimliğimizken, Ay burcu içsel, mahrem dünyamızı ve kendimizle baş başa kaldığımızda ortaya çıkan gerçek duygusal halimizi yansıtır. Bu, kendimizi en rahat ve savunmasız hissettiğimiz anlarda Ay'ın rehberliğini daha net hissetmemizi sağlar.

@@ -532,3 +532,20 @@ La numérologie et l’astrologie sont deux outils complémentaires pour compren
 - [Lune en Scorpion : émotions intenses et transformation](https://karmastro.com/blog/lune-scorpion-emotions-intenses-transformation)
 - [Venus en Taureau : amour et sensualité](https://karmastro.com/blog/venus-taureau-amour-sensualite)
 
+## Questions fréquentes
+
+### Quels sont les principaux défis ou pièges à éviter lorsque Jupiter est en Poissons, que ce soit en thème natal ou en transit ?
+
+Les principaux défis de Jupiter en Poissons incluent la fuite de la réalité, la tendance à la victimisation et le sacrifice excessif pour autrui. Il est crucial de se méfier de l'illusion, du manque de limites personnelles et d'une crédulité excessive face aux informations ou aux personnes. Un manque d'ancrage peut mener à la confusion ou à des désillusions.
+
+### Comment peut-on concrètement canaliser l'énergie de Jupiter en Poissons pour favoriser sa croissance spirituelle et créative ?
+
+Pour canaliser l'énergie de Jupiter en Poissons, il est recommandé de pratiquer la méditation, le journaling intuitif et de fixer des limites saines. Ces pratiques aident à rester ancré tout en explorant l'intuition et la spiritualité. Développer sa créativité et s'engager dans des activités artistiques permet également d'exprimer cette énergie expansive de manière constructive.
+
+### Quelle est la différence entre avoir Jupiter en Poissons dans son thème natal et un transit actuel de Jupiter en Poissons ?
+
+Avoir Jupiter en Poissons dans son thème natal révèle des talents empathiques, artistiques et une mission karmique liée à la compassion, constituant une énergie de fond permanente. Un transit de Jupiter en Poissons, comme en 2026, représente une période temporaire d'opportunités de croissance spirituelle, artistique et relationnelle, invitant à une expansion spécifique durant cette période.
+
+### Quand Jupiter sera-t-il à nouveau en Poissons et quelles opportunités cela représente-t-il ?
+
+Jupiter sera à nouveau en Poissons en 2026, offrant une période propice à l'expansion spirituelle, artistique et relationnelle. Ce transit ouvre des opportunités uniques de connexion profonde aux dimensions subtiles et d'amplification de l'intuition. Il est essentiel de rester ancré et de vérifier les sources d'information pour pleinement bénéficier de cette énergie sans tomber dans l'illusion.

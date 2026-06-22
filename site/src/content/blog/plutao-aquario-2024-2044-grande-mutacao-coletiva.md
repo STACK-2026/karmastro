@@ -208,3 +208,21 @@ Este artigo baseia-se em fontes enciclopédicas, académicas e científicas veri
 - [Compatibilidade](/pt/ferramentas/compatibilidade)
 
 [Explore todo o blog e todas as ferramentas](/pt/blog/) · [Ferramentas Karmastro](/pt/ferramentas/)
+
+## Perguntas frequentes
+
+### Qual é a duração exata do trânsito de Plutão em Aquário e quando ele começa?
+
+O trânsito de Plutão em Aquário ocorre de 2024 a 2044, marcando um período de aproximadamente 20 anos de profundas transformações coletivas. Este evento astrológico crucial iniciou-se em janeiro de 2024, após um breve período de retrogradação, e consolidar-se-á plenamente ao longo do ano, influenciando diversas esferas da sociedade global.
+
+### Que eventos históricos importantes ocorreram na última vez que Plutão esteve em Aquário, entre 1778 e 1798?
+
+Na última vez que Plutão transitou por Aquário, entre 1778 e 1798, ocorreram eventos históricos de grande rutura e revolução, como a Revolução Francesa e a Revolução Americana. Este período foi marcado por ideais de liberdade, igualdade e fraternidade, que desafiaram as estruturas de poder estabelecidas e impulsionaram mudanças sociais e políticas radicais em todo o mundo ocidental.
+
+### Como a passagem de Plutão em Aquário pode influenciar o desenvolvimento da tecnologia e da inteligência artificial nas próximas décadas?
+
+A passagem de Plutão em Aquário, de 2024 a 2044, é esperada para catalisar uma reestruturação profunda no campo da tecnologia e da inteligência artificial. Este trânsito pode impulsionar avanços tecnológicos sem precedentes, mas também levantar questões éticas e sociais críticas sobre o seu uso, privacidade e impacto na humanidade, levando a uma redefinição do nosso relacionamento com a tecnologia.
+
+### De que forma posso preparar-me ou navegar as energias de Plutão em Aquário na minha vida pessoal?
+
+Para navegar as energias de Plutão em Aquário na sua vida pessoal, é aconselhável focar-se na adaptabilidade e na abertura a mudanças profundas. Este período convida a questionar estruturas obsoletas, tanto internas quanto externas, e a abraçar a inovação e a conexão com a comunidade. Trabalhar na sua autonomia e na sua contribuição para o coletivo pode ser particularmente recompensador.

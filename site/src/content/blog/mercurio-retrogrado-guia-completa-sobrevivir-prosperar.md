@@ -242,3 +242,20 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 
 [Explora el blog completo y todas las herramientas](/es/blog/) · [Herramientas Karmastro](/es/herramientas/)
 
+## Preguntas frecuentes
+
+### ¿Cuánto tiempo suele durar el período de Mercurio retrógrado y con qué frecuencia se presenta este fenómeno astrológico cada año?
+
+Mercurio retrógrado generalmente dura aproximadamente tres semanas y ocurre entre tres y cuatro veces al año. Este tránsito se caracteriza por un aparente movimiento hacia atrás del planeta desde la perspectiva terrestre, influyendo en áreas como la comunicación y los viajes. Aunque su duración es relativamente corta, sus efectos pueden sentirse en las semanas previas y posteriores, conocidas como fases de sombra.
+
+### ¿Qué precauciones prácticas debo tomar durante el período de Mercurio retrógrado para minimizar problemas en la comunicación, contratos y viajes?
+
+Durante Mercurio retrógrado, es aconsejable revisar minuciosamente todos los documentos importantes antes de firmar, confirmar detalles de viaje con antelación y ser especialmente claro en la comunicación para evitar malentendidos. Se recomienda posponer la compra de tecnología nueva o vehículos, y evitar iniciar proyectos importantes si es posible. En su lugar, es un buen momento para revisar, reorganizar y finalizar tareas pendientes, aprovechando la energía de introspección.
+
+### ¿Es el fenómeno de Mercurio retrógrado siempre negativo o existen oportunidades y aspectos positivos que se pueden aprovechar durante este tránsito?
+
+Aunque Mercurio retrógrado es comúnmente asociado con desafíos, también ofrece valiosas oportunidades para la reflexión, la revisión y la reevaluación de planes y proyectos. Es un período ideal para reconectar con viejos amigos o ideas, corregir errores pasados y finalizar tareas que quedaron inconclusas. Permite una pausa necesaria para la introspección y la mejora personal antes de avanzar con nuevas iniciativas.
+
+### ¿De qué manera específica puede afectar Mercurio retrógrado a la tecnología, los dispositivos electrónicos y las máquinas en general?
+
+Mercurio retrógrado a menudo se asocia con un aumento de fallos técnicos, averías de dispositivos electrónicos y problemas con sistemas de comunicación y transporte. Esto puede manifestarse en computadoras que funcionan lento, teléfonos que fallan, correos electrónicos perdidos o retrasos en el transporte público. Es prudente hacer copias de seguridad de datos importantes, revisar el mantenimiento de vehículos y ser paciente con posibles interrupciones tecnológicas.

@@ -230,3 +230,21 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 - [Compatibilità](/it/strumenti/compatibilita)
 
 [Esplora tutto il blog e gli strumenti](/it/blog/) · [Strumenti Karmastro](/it/strumenti/)
+
+## Domande frequenti
+
+### Come si calcola l'ascendente e quali dati sono necessari per una precisione accurata?
+
+L'ascendente si calcola determinando il segno zodiacale che sorgeva all'orizzonte est nel momento esatto e nel luogo specifico della propria nascita. Per un calcolo preciso sono indispensabili la data di nascita completa, l'ora esatta di nascita (fino al minuto) e il luogo di nascita (città e paese). Senza questi dati precisi, qualsiasi calcolo risulterà approssimativo, poiché l'ascendente cambia segno circa ogni due ore.
+
+### Perché l'ascendente è considerato importante quanto il segno solare in astrologia?
+
+L'ascendente è fondamentale in astrologia perché rappresenta la nostra personalità esteriore, il modo in cui ci presentiamo al mondo e la prima impressione che diamo agli altri. Mentre il segno solare descrive la nostra essenza più profonda e la nostra volontà, l'ascendente governa il nostro aspetto fisico, il comportamento istintivo e il modo in cui iniziamo nuove esperienze, rendendolo cruciale per una comprensione completa dell'individuo.
+
+### Cosa significa avere un ascendente in opposizione o molto diverso dal proprio segno solare?
+
+Avere un ascendente in opposizione o molto diverso dal segno solare indica spesso una dinamica interiore complessa tra la propria essenza e il modo in cui ci si presenta. Questo può manifestarsi come una persona che appare in un certo modo (ascendente) ma che interiormente si sente o desidera esprimere qualcosa di differente (sole). Tale contrasto può generare sfide ma anche opportunità di crescita, spingendo l'individuo a integrare queste due parti della propria personalità per un'espressione più autentica.
+
+### In che modo l'ascendente influenza l'aspetto fisico o lo stile personale di una persona?
+
+L'ascendente ha un'influenza significativa sull'aspetto fisico e sullo stile personale, agendo come una sorta di "maschera" o filtro attraverso cui il mondo ci percepisce. Determina spesso tratti somatici distintivi, la corporatura, il portamento e persino il tipo di abbigliamento e accessori che una persona tende a preferire. Questo perché l'ascendente governa la prima casa astrologica, che è associata all'identità, al corpo e alla presentazione di sé.

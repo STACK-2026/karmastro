@@ -287,6 +287,24 @@ And if you want to never miss an important transit again, subscribe to our free 
 
 Mercury slows down, the sky folds in a little, and that is good. Take advantage of this pause to breathe, reread, glue the pieces back together. The three weeks pass quickly, and on the other side, you are often clearer than before.
 
+## Frequently asked questions
+
+### How often does Mercury retrograde occur each year, and what is its typical duration?
+
+Mercury retrograde typically occurs three times a year, with each period of apparent backward motion lasting approximately three weeks. These periods are preceded and followed by "shadow phases," which extend the overall influence, making the entire cycle of its lead-up, actual retrograde, and aftermath span about six to eight weeks. The central three-week window marks the direct retrograde motion.
+
+### What specific types of activities or decisions should I be cautious about during Mercury retrograde periods?
+
+During Mercury retrograde, it is generally advised to exercise caution with new contracts, significant travel plans, and major technology purchases. Communication can become muddled, leading to misunderstandings, and mechanical devices or digital systems may experience unexpected malfunctions. Reviewing existing agreements and backing up data are often more favorable activities than initiating brand new ventures or making irreversible decisions.
+
+### Beyond its challenges, are there any positive aspects or hidden opportunities associated with Mercury retrograde?
+
+Yes, Mercury retrograde offers unique opportunities for reflection, revision, and the completion of unfinished tasks. It encourages revisiting past projects, re-evaluating decisions, and reconnecting with old acquaintances to gain new perspectives. This period is ideal for introspection, planning, and refining existing strategies rather than launching new ones, allowing for deeper understanding and necessary course correction.
+
+### What does it mean if someone is born with Mercury retrograde in their astrological natal chart?
+
+Being born with Mercury retrograde in one's natal chart suggests an individual processes information and communicates in a unique, often internal or unconventional way. These individuals may think deeply before speaking, possess a strong inner dialogue, or revisit ideas multiple times to ensure clarity. It can indicate a natural inclination towards introspection, thorough research, and a distinct, sometimes non-linear, perspective on learning and expression.
+
 ## Sources and references
 
 This article draws on verifiable encyclopedic and scientific sources.

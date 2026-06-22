@@ -258,6 +258,24 @@ Les maisons angulaires (I, IV, VII, X) sont traditionnellement considérées com
 **Les maisons changent-elles au cours de ma vie ?**
 Non. Les maisons natales sont fixées à ta naissance et restent les mêmes toute ta vie. Ce qui change, ce sont les transits : les planètes du ciel actuel passent dans tes maisons natales, activant tour à tour différents domaines.
 
+## Questions fréquentes
+
+### Quelle est la distinction principale entre les maisons astrologiques, les signes du zodiaque et les planètes dans un thème natal ?
+
+Les maisons astrologiques représentent les douze secteurs de l'expérience humaine, décrivant les domaines concrets de notre vie où l'énergie s'exprime. Les signes du zodiaque, eux, décrivent la manière dont cette énergie s'exprime, agissant comme des filtres psychologiques. Enfin, les planètes sont les acteurs ou les forces dynamiques qui activent et animent ces domaines et ces modes d'expression.
+
+### Comment interpréter une maison astrologique qui ne contient aucune planète dans mon thème natal personnel ?
+
+Une maison astrologique vide de planètes ne signifie absolument pas que ce domaine de vie est inactif ou sans importance ; cela indique plutôt une approche plus fluide et moins focalisée sur ce secteur. Pour l'interpréter, il faut analyser le signe astrologique qui se trouve sur la cuspide de cette maison, ainsi que le maître planétaire de ce signe. La position et les aspects de ce maître planétaire révéleront comment l'énergie de cette maison se manifeste dans votre vie.
+
+### Pourquoi la position des maisons astrologiques dans un thème natal est-elle si sensible à l'heure de naissance précise ?
+
+La position des maisons astrologiques est extrêmement sensible à l'heure de naissance car elle est calculée en fonction de la rotation de la Terre sur son axe au moment exact de la naissance. Chaque maison se déplace d'environ un degré toutes les quatre minutes, ce qui signifie qu'un décalage de quelques minutes seulement peut modifier l'ascendant et la disposition de toutes les maisons. C'est pourquoi une heure de naissance précise est cruciale pour un thème natal exact.
+
+### Quels sont les différents systèmes de domification utilisés pour calculer les maisons astrologiques et lequel est le plus recommandé ?
+
+Il existe plusieurs systèmes de domification pour calculer les maisons astrologiques, les plus courants étant Placidus, les Maisons Égales et Whole Sign (Signe Entier). Le système Placidus est le plus répandu en astrologie occidentale moderne, tandis que Whole Sign est très utilisé en astrologie hellénistique et védique. Il n'y a pas de système "le plus recommandé" universellement ; le choix dépend souvent de la tradition astrologique suivie ou de la préférence personnelle, chacun offrant une perspective légèrement différente sur les domaines de vie.
+
 ## Pour aller plus loin
 
 Les maisons astrologiques sont l'un des aspects les plus riches et les plus pratiques du thème natal. Elles te montrent où, dans ta vie concrète, ton ciel s'incarne. Pour explorer ton thème en partant de tes maisons, commence par calculer ton [signe ascendant](/outils/ascendant), qui définit le début de ta maison I et donc l'ensemble de ton découpage en maisons.

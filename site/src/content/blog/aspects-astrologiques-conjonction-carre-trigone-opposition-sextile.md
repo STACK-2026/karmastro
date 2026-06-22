@@ -280,6 +280,24 @@ Les aspects natals ne changent pas. Mais les aspects par transit (ce que les pla
 **Que penser des aspects entre les planètes lentes (Pluton-Neptune par exemple) ?**
 Ils sont partagés par toute une génération et décrivent un climat collectif plus qu'une caractéristique personnelle. Pour qu'ils deviennent personnels, il faut qu'une planète personnelle (Soleil, Lune, Mercure, Vénus, Mars) ou un angle (ascendant, milieu du ciel) soit relié à eux par un autre aspect.
 
+## Questions fréquentes
+
+### Comment les aspects astrologiques permettent-ils de mieux comprendre ma personnalité au-delà des signes des planètes ?
+
+Les aspects astrologiques sont cruciaux car ils révèlent la dynamique et l'interaction entre les planètes dans votre thème natal, allant au-delà de la simple position des planètes en signes. Ils décrivent comment les différentes énergies planétaires collaborent ou s'affrontent, offrant une lecture plus nuancée et complexe de votre psyché et de vos potentiels. C'est cette interaction qui donne vie à la carte et explique les défis ou les facilités d'une personne.
+
+### Qu'est-ce que la notion d'orbe en astrologie et pourquoi est-elle essentielle pour déterminer la validité d'un aspect ?
+
+L'orbe représente la marge de tolérance angulaire autour d'un aspect exact, indiquant jusqu'à quel point deux planètes peuvent s'éloigner de l'angle parfait tout en conservant une influence significative. Cette notion est essentielle car elle permet de déterminer si un aspect est suffisamment puissant pour être pris en compte dans l'interprétation d'une carte natale. Sans orbe, seuls les aspects parfaitement exacts seraient considérés, ce qui limiterait considérablement la lecture.
+
+### Comment interpréter et "apprivoiser" les aspects considérés comme difficiles, tels que le carré ou l'opposition, dans une carte natale ?
+
+Les aspects difficiles comme le carré (90 degrés) et l'opposition (180 degrés) ne sont pas nécessairement négatifs, mais représentent des zones de tension, de défi ou de dualité qui nécessitent un travail conscient. Le carré indique une tension créatrice qui pousse à l'action et au dépassement, tandis que l'opposition révèle un axe de conscience invitant à l'équilibre entre deux pôles. Les apprivoiser implique de reconnaître ces dynamiques pour les transformer en opportunités de croissance personnelle et d'intégration.
+
+### Quelle est la distinction entre les aspects astrologiques majeurs et mineurs, et comment leur importance diffère-t-elle dans l'analyse d'un thème ?
+
+Les aspects majeurs (conjonction, sextile, carré, trigone, opposition) sont considérés comme les plus puissants et fondamentaux, structurant les dynamiques principales de la personnalité. Les aspects mineurs (quinconce, semi-carré, sesqui-carré, etc.) sont plus subtils, apportant des nuances et des détails moins évidents mais significatifs à l'interprétation. Bien que moins intenses, les aspects mineurs peuvent révéler des talents cachés ou des défis spécifiques qui contribuent à la complexité unique d'un individu.
+
 ## Pour aller plus loin
 
 Les aspects sont la dimension la plus dynamique de ta carte natale. Ils transforment une liste de positions en un système vivant de dialogues internes. Pour explorer tes aspects, commence par calculer ton thème complet en partant de ton [signe ascendant](/outils/ascendant) et de ton [signe lunaire](/blog/signe-lunaire-lune-natale-monde-emotionnel/).

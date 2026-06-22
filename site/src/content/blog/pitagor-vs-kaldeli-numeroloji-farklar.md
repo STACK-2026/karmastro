@@ -174,3 +174,21 @@ Bu makale doğrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadır.
 - [Uyumluluk](/tr/araclar/uyumluluk)
 
 [Tüm blogu ve araçları keşfet](/tr/blog/) · [Karmastro araçları](/tr/araclar/)
+
+## Sıkça sorulan sorular
+
+### Pitagor ve Kaldeli numerolojisi arasındaki temel hesaplama farklılıkları nelerdir?
+
+Pitagor ve Kaldeli numerolojisi, harfleri sayılara eşleştirme mantığında ve 9 rakamının konumunda ciddi biçimde ayrışır. Pitagor sisteminde 9 rakamı özel bir konuma sahipken, Kaldeli sisteminde bu durum farklıdır. Bu temel fark, aynı isim için tamamen farklı numerolojik okumalar ortaya çıkarabilir.
+
+### Hangi numeroloji sistemi Batı'da daha yaygın olarak kullanılmaktadır ve bunun nedenleri nelerdir?
+
+Batı'da numerologların yaklaşık %85'i Pitagor yöntemini kullanmaktadır. Bu yaygınlık, sistemin 20. yüzyılın başlarında Julia Stenton, Florence Campbell ve Dan Millman gibi isimler tarafından sistemleştirilmesiyle pekişmiştir. Günümüzde satılan kitapların, online hesaplayıcıların ve sertifikasyon programlarının büyük çoğunluğu Pitagor geleneğine dayanmaktadır.
+
+### Aynı ismin Pitagor ve Kaldeli numerolojisinde neden farklı sonuçlar verdiği nasıl açıklanabilir?
+
+Aynı ismin Pitagor ve Kaldeli numerolojisinde farklı sonuçlar vermesi, iki sistemin harflere atadığı sayısal değerler ve özellikle 9 rakamına yüklediği sembolik anlamdaki ayrılıklardan kaynaklanır. Kaldeli numerolojisi daha eski ve mistik bir yaklaşıma sahipken, Pitagor sistemi daha modern ve Batı'da standardize edilmiştir. Bu felsefi ve metodolojik farklılıklar, okumalarda belirgin ayrışmalara yol açar.
+
+### Kaldeli numerolojisi, Pitagor sistemine göre daha niş kalmasına rağmen hangi tür pratisyenler için hâlâ tercih edilmektedir?
+
+Kaldeli numerolojisi, Pitagor sistemine göre daha niş ve ezoterik bir alanda kalmasına rağmen, mistik yaklaşıma ve eski geleneklere önem veren pratisyenler için hâlâ canlıdır. Bu sistem, 4000 yıllık kökenleriyle daha derin ve sembolik anlamlar arayanlar tarafından tercih edilir. Geleneksel ve ezoterik bilgiyi ön planda tutan numerologlar için değerli bir yöntem olmaya devam etmektedir.

@@ -357,6 +357,24 @@ Oui, dès la naissance. Ce qu'ils en font évolue avec l'âge, mais la vibration
 **Puis-je calculer mon nombre d'expression sans utiliser de calculette ?**
 Oui, totalement. Avec le tableau lettres-chiffres, c'est un exercice de cinq minutes maximum. Et le faire à la main est précieux : tu intègres mieux le calcul et le chiffre obtenu.
 
+## Questions fréquentes
+
+### Comment réaliser le calcul de son nombre d'expression en tenant compte des accents et du nom de famille ?
+
+Le calcul du nombre d'expression s'effectue en additionnant les valeurs numériques de chaque lettre de votre nom complet de naissance. Il est crucial d'inclure toutes les lettres de votre prénom et de votre nom de famille, tel qu'il apparaît sur votre acte de naissance, sans omettre les accents qui sont généralement pris en compte pour leur valeur intrinsèque dans la table de correspondance. Le total est ensuite réduit à un chiffre unique, sauf pour les nombres maîtres.
+
+### Quelle est la particularité des nombres maîtres comme 11, 22 ou 33 lors du calcul du nombre d'expression ?
+
+Les nombres maîtres 11, 22 et 33 sont des exceptions dans le processus de réduction numérologique et ne sont pas réduits à un seul chiffre lorsqu'ils apparaissent comme somme finale avant la dernière réduction. Ils conservent leur valeur double car ils représentent un potentiel plus élevé, des défis uniques et des aptitudes spirituelles ou de leadership accrues. Leur présence indique une personnalité avec des responsabilités et des opportunités plus grandes.
+
+### Que révèle précisément le nombre d'expression sur la personnalité d'un individu et comment l'utiliser au quotidien ?
+
+Le nombre d'expression révèle les talents innés, les capacités, les forces et les faiblesses d'une personne, ainsi que son potentiel et la manière dont elle interagit avec le monde. Il décrit la personnalité extérieure, la façon de s'exprimer et les aspirations profondes. Comprendre son propre nombre permet de mieux exploiter ses atouts, de travailler sur ses défis et d'aligner ses actions avec sa véritable nature pour une vie plus épanouie.
+
+### Comment le nombre d'expression peut-il éclairer la dynamique au sein d'un couple, d'une équipe ou d'une famille ?
+
+Le nombre d'expression peut éclairer les dynamiques relationnelles en révélant les compatibilités et les défis potentiels entre les individus. En comprenant les traits de personnalité et les modes d'expression de chaque membre d'un couple, d'une équipe ou d'une famille, il est possible d'anticiper les interactions, de mieux communiquer et de résoudre les conflits. Cela favorise une meilleure compréhension mutuelle et renforce les liens.
+
 ## Pour aller plus loin
 
 Le nombre d'expression est l'un des piliers de ta numérologie personnelle. Pour avoir une lecture complète de ton thème numérologique, croise-le avec ton [chemin de vie](/outils/chemin-de-vie) et ton [année personnelle](/outils/annee-personnelle). L'ensemble te donne une cartographie précise de ton fonctionnement et de ton tempo.

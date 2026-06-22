@@ -214,3 +214,20 @@ Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
 
 [Explore todo o blog e todas as ferramentas](/pt/blog/) · [Ferramentas Karmastro](/pt/ferramentas/)
 
+## Perguntas frequentes
+
+### Como posso identificar as lições kármicas presentes no meu mapa astral?
+
+Para identificar as lições kármicas no seu mapa astral, deve-se focar principalmente nos Nodos Lunares, Saturno, Plutão e a Casa XII. Os Nodos Lunares indicam padrões de vidas passadas e o caminho evolutivo atual, enquanto Saturno revela os desafios e as responsabilidades que precisam ser aprendidas. Plutão aponta para transformações profundas e a Casa XII representa a "mochila kármica" invisível, contendo legados e dívidas de encarnações anteriores. A análise conjunta destes elementos oferece uma visão clara das suas tarefas evolutivas.
+
+### Qual a principal diferença entre a astrologia kármica e a astrologia tradicional?
+
+A principal diferença reside no foco: a astrologia kármica concentra-se na evolução da alma, nas vidas passadas e nas lições a serem aprendidas para o crescimento espiritual, enquanto a astrologia tradicional tende a focar-se mais na personalidade, eventos da vida presente e previsões. A astrologia kármica utiliza elementos como os Nodos Lunares e a Casa XII para desvendar padrões de encarnações anteriores e o propósito da alma nesta vida. Ela busca compreender o "porquê" por trás dos desafios e talentos atuais.
+
+### O livre arbítrio pode alterar o caminho kármico revelado pela astrologia?
+
+Sim, o livre arbítrio desempenha um papel fundamental na forma como vivenciamos e respondemos ao nosso karma. Embora a astrologia kármica revele tendências e lições de vidas passadas, a mensagem estoica subjacente é que temos a capacidade de fazer escolhas conscientes no presente. Não se trata de um destino predeterminado, mas sim de uma oportunidade para aprender, crescer e reequilibrar ações passadas através de novas atitudes e decisões. O karma é um convite à ação consciente, não uma condenação.
+
+### Como os Nodos Lunares revelam informações sobre vidas passadas e a missão da alma?
+
+Os Nodos Lunares são cruciais na astrologia kármica para desvendar informações sobre vidas passadas e a missão da alma. O Nodo Sul representa as habilidades, padrões e zonas de conforto desenvolvidas em encarnações anteriores, indicando o que a alma já dominou. Por outro lado, o Nodo Norte aponta para o caminho evolutivo desta vida, as novas lições a serem aprendidas e as qualidades a serem desenvolvidas para o crescimento espiritual. Eles funcionam como um mapa da jornada da alma através do tempo.

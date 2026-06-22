@@ -509,3 +509,20 @@ Chaque rétrogradation de Mercure en 2026 aura un **impact spécifique** sur les
 - [Lune en Scorpion : émotions intenses et transformation](https://karmastro.com/blog/lune-scorpion-emotions-intenses-transformation)
 - [Venus en Taureau : amour et sensualité](https://karmastro.com/blog/venus-taureau-amour-sensualite)
 
+## Questions fréquentes
+
+### Combien de fois par an Mercure rétrograde-t-il et quelle est la durée typique de ce phénomène ?
+
+Mercure rétrograde est un phénomène astronomique apparent qui se produit généralement trois à quatre fois par an. Chaque période de rétrogradation dure environ 21 jours, mais elle est précédée et suivie de phases dites "d'ombre", où les effets peuvent déjà se faire sentir ou persister, prolongeant ainsi l'influence globale.
+
+### Quels sont les effets les plus courants et les défis à anticiper pendant une période de Mercure rétrograde ?
+
+Les effets les plus courants de Mercure rétrograde incluent des retards, des malentendus dans la communication, et des pannes ou dysfonctionnements technologiques. Cette période peut également perturber les déplacements et favoriser l'introspection, révélant des schémas répétitifs et des leçons karmiques à travers des révisions personnelles.
+
+### Quels conseils pratiques peut-on suivre pour bien traverser la rétrogradation de Mercure et en tirer des bénéfices ?
+
+Pour traverser au mieux la rétrogradation de Mercure, il est conseillé d'éviter les signatures importantes de contrats et de privilégier la révision de projets existants. Cette période est propice à l'introspection, à la méditation, au journaling et aux rituels de clarification, offrant des opportunités de transformation personnelle et de résolution de thèmes karmiques.
+
+### Quelles sont les dates spécifiques de la rétrogradation de Mercure pour l'année 2026 et quels thèmes sont associés à chaque période ?
+
+En 2026, Mercure rétrograde quatre fois : du 22 janvier au 11 février (Verseau), du 18 mai au 8 juin (Gémeaux), du 10 septembre au 2 octobre (Vierge), et du 29 décembre au 18 janvier 2027 (Capricorne). Chaque période active des thèmes karmiques uniques, influencés par le signe astrologique dans lequel la rétrogradation se produit.

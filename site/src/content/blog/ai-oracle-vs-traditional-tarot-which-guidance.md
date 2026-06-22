@@ -116,6 +116,24 @@ Karmastro offers 4 specialized AI guides - Sibylle (mystical astrologer), Orion 
 
 The Awakening tier is free: full cosmic profile + 3 Oracle messages per day. [Try now](https://app.karmastro.com) to compare for yourself the quality of personalized guidance versus a random tarot reading. You will see the difference from the very first question.
 
+## Frequently asked questions
+
+### What is the fundamental difference between an AI oracle and traditional tarot for guidance?
+
+The fundamental difference lies in their approach to guidance: traditional tarot relies on centuries of archetypal symbolism interpreted by a human, while an AI oracle generates personalized insights based on your unique data, such as natal chart and personal numerology. Tarot offers symbolic reflection, whereas AI provides data driven, individualized analysis for decision making.
+
+### How does an AI oracle personalize its guidance for a user?
+
+An AI oracle personalizes guidance by processing specific individual data points, primarily your natal chart and personal numerology. This allows the system to generate insights that are uniquely tailored to your astrological and numerological profile, offering a data driven perspective distinct from the generalized archetypes of traditional methods.
+
+### What are the historical origins of traditional tarot?
+
+Traditional tarot originated in 15th century Italy, initially serving as an aristocratic card game before evolving into a divinatory tool in the 18th century. Its 78 cards are imbued with centuries of archetypal symbols, providing a rich tapestry for human interpretation and reflection. This long history contrasts with the modern development of AI oracles.
+
+### Can an AI oracle and traditional tarot be used together for guidance?
+
+Yes, an AI oracle and traditional tarot can be used complementarily rather than as opposing forces. The article suggests that setting these two worlds against each other makes no sense, emphasizing that each approach offers unique strengths. Combining them can provide both symbolic depth from tarot and data driven personalization from an AI oracle.
+
 ## Sources and references
 
 This article draws on verifiable encyclopedic and scientific sources.

@@ -127,6 +127,24 @@ Knowing your sun sign is a start, not an end. Your [complete birth chart](/en/bl
 
 Karmastro calculates your birth chart for free with Swiss Ephemeris ephemerides (NASA JPL precision), in 30 seconds, ad-free. [Start your analysis](/en/tools/birth-chart) to discover all your planets and understand your complete cosmic architecture.
 
+## Frequently asked questions
+
+### What are the defining personality traits of the Aries zodiac sign?
+
+Aries individuals are primarily characterized by their direct temperament, overflowing vital energy, and a strong tendency to charge ahead without always considering consequences. As the first sign of the zodiac, ruled by Mars and a cardinal fire sign, they embody pure creative impulse, asserting their "I" with passion and enthusiasm. This makes them natural initiators, driven by action and desire.
+
+### How does the planet Mars specifically influence the behavior of an Aries?
+
+The planet Mars, as Aries' ruling planet, profoundly influences their behavior by imbuing them with a direct temperament, overflowing vital energy, and a strong drive for action and combat. This planetary rulership explains their characteristic tendency to initiate and charge ahead with determination, often acting on instinct and desire. Mars fuels their inherent passion and pioneering spirit.
+
+### What are some common challenges or downsides associated with the Aries personality?
+
+A common challenge for Aries individuals is their tendency to charge ahead impulsively without always thinking through the potential consequences of their actions. This direct and raw energy, while a strength, can sometimes lead to rash decisions or a lack of nuance in their approach. Their strong assertion of "I" might also make them appear overly self-focused at times.
+
+### What are the astrological dates for the Aries zodiac sign each year?
+
+The Aries zodiac sign period annually runs from March 21 to April 19, marking the spring equinox and the beginning of the astrological year. This timeframe signifies the creative impulse and the assertion of individual identity. Individuals born within these dates fall under the Aries astrological profile.
+
 ## Sources and references
 
 This article draws on verifiable encyclopedic and scientific sources.

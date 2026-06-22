@@ -252,3 +252,20 @@ Bilimsel açıdan numeroloji tekrarlanabilir deneysel bir yöntemle doğrulanmam
 
 [Tüm blogu ve araçları keşfet](/tr/blog/) · [Karmastro araçları](/tr/araclar/)
 
+## Sıkça sorulan sorular
+
+### Yaşam yolu sayısı hesaplamasında doğum tarihi nasıl doğru bir şekilde kullanılır?
+
+Doğum tarihi, gün, ay ve yıl rakamlarının tamamı toplanarak kullanılır ve bu toplam tek bir rakama (1-9 arası) veya ana sayılara (11, 22, 33) indirgenir. Örneğin, 3 Mart 1990 tarihi mutlaka 03.03.1990 olarak sekiz rakamla yazılmalı ve sıfırlar atlanmamalıdır. Bu disiplin, Pisagor yönteminin tekrarlanabilir ve güvenilir sonuçlar vermesini sağlar.
+
+### Yaşam yolu sayısını hesaplarken ana sayılar (master sayılar) nelerdir ve onlara nasıl yaklaşılmalıdır?
+
+Yaşam yolu hesaplamasında ana sayılar 11, 22 ve 33'tür ve bunlar diğer sayılardan farklı olarak tek haneye indirgenmeden bırakılırlar. Bu sayılar, daha yoğun bir enerji ve potansiyel taşıdığına inanılan özel titreşimleri temsil eder. Hesaplama sırasında toplam bu sayılardan birine ulaştığında, indirgeme işlemi durdurulur ve bu ana sayı yaşam yolu sayısı olarak kabul edilir.
+
+### Yaşam yolu sayısı hesaplamasında kullanılan farklı yöntemler var mıdır ve hangisi daha yaygındır?
+
+Evet, yaşam yolu sayısı hesaplamasında Pisagor yöntemi ve blok yöntemi gibi farklı yaklaşımlar bulunmaktadır. Pisagor yöntemi, doğum tarihinin tüm rakamlarını tek tek toplayıp tek haneye indirgemeyi esas alırken, blok yöntemi gün, ay ve yılı ayrı ayrı indirgeyerek farklı sonuçlar verebilir. Türkiye'deki numerologların %73'ü tam indirgemeli saf Pisagor yöntemini tercih etmektedir.
+
+### Yaşam yolu sayısını hesaplarken en sık yapılan hatalar nelerdir?
+
+En sık yapılan hatalardan biri, doğum tarihini yanlış formatta yazmak veya sıfırları atlamaktır; örneğin "3 Mart" yerine "03" yerine sadece "3" yazmak. Diğer bir hata ise, ara toplam 11, 22 veya 33 gibi bir ana sayıya ulaştığında indirgeme işlemine devam etmektir; bu sayılar özel kabul edilir ve daha fazla indirgenmez. Doğru formülü takip etmek tutarlı sonuçlar için önemlidir.

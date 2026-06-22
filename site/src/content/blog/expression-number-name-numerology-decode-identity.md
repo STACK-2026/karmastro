@@ -370,6 +370,24 @@ And if you want to receive every morning a message that helps you embody your ex
 
 Your name is more than a word. It is a little music that has been following you since birth. Learn to listen to it, and you will see it has much to say about who you are and what you came to bring to the world.
 
+## Frequently asked questions
+
+### How do I calculate my expression number using my name?
+
+The expression number is calculated by converting each letter of your full birth name into a corresponding single digit number and then summing these digits. You use a specific numerology chart to assign a numerical value to each letter, then reduce the total sum to a single digit, unless it's a Master Number (11, 22, or 33). This process reveals your innate talents and life path.
+
+### Which name should be used when calculating the expression number?
+
+You should always use your full birth name exactly as it appears on your birth certificate for the most accurate expression number calculation. This includes all given names and surnames, even if you commonly use a different name or a shortened version. Using a nickname or a married name will yield a different, less foundational numerological insight.
+
+### How are Master Numbers 11, 22, and 33 handled in expression number calculations?
+
+Master Numbers 11, 22, and 33 are not reduced to a single digit during the calculation of your expression number; they are kept as double digits. If the sum of your name's letters reduces to one of these numbers, it indicates a heightened potential and greater challenges. These numbers signify a more intense and impactful life purpose compared to single-digit expression numbers.
+
+### What does an expression number reveal about a person's identity?
+
+An expression number reveals your innate talents, abilities, and potential that you bring into the world. It highlights your natural strengths, weaknesses, and the way you express yourself in life, often influencing your career path, hobbies, and social interactions. This number provides insight into your true self and how you are perceived by others.
+
 ## Sources and references
 
 This article draws on verifiable encyclopedic and scientific sources.

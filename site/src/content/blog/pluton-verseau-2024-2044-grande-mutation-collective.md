@@ -303,6 +303,24 @@ Oui, autant qu'elle peut aider à traverser n'importe quelle période. Elle ne c
 **Y aura-t-il des moments particulièrement intenses pendant ces vingt ans ?**
 Oui. Notamment quand Pluton entrera en aspect avec les autres planètes lentes (Saturne, Neptune, Uranus). Ces conjonctions ou oppositions créeront des pics historiques. Surveiller particulièrement les années où plusieurs planètes lentes s'alignent : ces moments peuvent marquer des bascules majeures.
 
+## Questions fréquentes
+
+### Combien de temps Pluton restera-t-il dans le signe du Verseau et quelles sont les dates importantes de ce transit ?
+
+Pluton transitera dans le signe du Verseau pendant environ vingt ans, initiant une période de profondes mutations collectives et individuelles. Ce transit a débuté en 2024 et se poursuivra jusqu'en 2044, avec des entrées et sorties temporaires entre le Capricorne et le Verseau au début et à la fin de la période. Les dates précises de ces mouvements sont cruciales pour comprendre les phases d'intégration des nouvelles énergies.
+
+### Quels événements historiques majeurs ont marqué le précédent passage de Pluton en Verseau entre 1778 et 1798 ?
+
+Le précédent transit de Pluton en Verseau, entre 1778 et 1798, fut marqué par des révolutions et des bouleversements sociétaux profonds, notamment la Révolution française et la guerre d'indépendance américaine. Ces périodes ont vu l'émergence de nouveaux idéaux de liberté, d'égalité et de fraternité, ainsi qu'une redistribution des pouvoirs, reflétant les thèmes de rupture et de collectif associés au Verseau.
+
+### Quelles sont les principales sphères de notre société qui seront les plus impactées par l'énergie de Pluton en Verseau durant les deux prochaines décennies ?
+
+Les principales sphères sociétales impactées par Pluton en Verseau durant les vingt prochaines années incluent la technologie, l'intelligence artificielle, le transhumanisme, le climat, l'énergie, le travail, l'économie, la politique et la spiritualité. Ce transit favorisera des ruptures avec les anciens systèmes, poussant à une transition écologique forcée, la fin de l'employé classique et l'émergence de contre-pouvoirs distribués.
+
+### Comment puis-je comprendre l'influence personnelle de Pluton en Verseau sur ma propre carte natale et m'adapter à cette période de mutation ?
+
+Pour comprendre l'influence personnelle de Pluton en Verseau, il est essentiel d'analyser la maison astrologique de votre carte natale où se situe le signe du Verseau, car c'est là que les transformations les plus profondes se manifesteront. S'adapter à cette période de mutation implique d'embrasser le changement, de remettre en question les structures existantes et de participer activement à l'évolution collective, tout en cultivant une conscience de soi accrue.
+
 ## Pour aller plus loin
 
 Pluton en Verseau est sans doute le transit le plus important de ta vie, parce qu'il touche tout le monde et qu'il s'étale sur deux décennies. Pour comprendre comment il agit dans ton thème, commence par calculer ton [signe ascendant](/outils/ascendant), ton [signe lunaire](/blog/signe-lunaire-lune-natale-monde-emotionnel/) et ton [chemin de vie](/outils/chemin-de-vie). Ces trois bases te donnent le socle pour lire les transits.

@@ -240,3 +240,21 @@ Este artigo baseia-se em fontes enciclopédicas e científicas verificáveis.
 - [Compatibilidade](/pt/ferramentas/compatibilidade)
 
 [Explore todo o blog e todas as ferramentas](/pt/blog/) · [Ferramentas Karmastro](/pt/ferramentas/)
+
+## Perguntas frequentes
+
+### Como se calcula o número de expressão e que dados são necessários para o fazer corretamente?
+
+O número de expressão calcula-se atribuindo um valor numérico a cada letra do seu nome completo de nascimento e, em seguida, somando esses valores até obter um único dígito (ou um número mestre 11, 22, 33). Para um cálculo preciso, é necessário o seu nome completo tal como aparece na certidão de nascimento, incluindo todos os nomes próprios e apelidos. Cada letra corresponde a um dígito específico de acordo com uma tabela numerológica.
+
+### O que o número de expressão revela sobre a minha identidade e potencial?
+
+O número de expressão revela os talentos inatos, as habilidades e o potencial que uma pessoa traz consigo desde o nascimento, influenciando a sua forma de se expressar no mundo. Ele descreve a sua verdadeira identidade, a sua vocação e os desafios que provavelmente enfrentará, atuando como um guia para o autoconhecimento e desenvolvimento pessoal.
+
+### Que nome devo usar para calcular o meu número de expressão, o de batismo ou o nome atual?
+
+Para calcular o número de expressão, deve-se utilizar o nome completo de batismo, exatamente como consta na certidão de nascimento, pois este é considerado o nome original e imutável que carrega a vibração fundamental da sua identidade. Alterações posteriores no nome, como casamento ou adoção, não modificam o número de expressão original, que reflete a sua essência desde o início.
+
+### Qual é a particularidade dos números mestres 11, 22 e 33 no cálculo do número de expressão?
+
+Os números mestres 11, 22 e 33 são exceções na numerologia do número de expressão, pois não são reduzidos a um único dígito, indicando um potencial maior e desafios mais significativos. Eles representam um nível elevado de intuição, capacidade de liderança e responsabilidade, respetivamente, sugerindo uma missão de vida mais ampla e um impacto profundo no mundo. Pessoas com estes números são frequentemente vistas como tendo um propósito superior.

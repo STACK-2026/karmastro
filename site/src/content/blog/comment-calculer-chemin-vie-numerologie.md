@@ -216,6 +216,24 @@ Sur le plan scientifique, la numérologie n'est pas une discipline validée par 
 
 **Dois-je connaître mon chemin de vie avant de consulter un astrologue ?** Ce n'est pas obligatoire mais très utile. Un praticien sérieux croisera ton chemin avec tes placements planétaires, comme expliqué dans notre guide [karma et astrologie : vies antérieures et thème natal](/blog/karma-astrologie-vies-anterieures/).
 
+## Questions fréquentes
+
+### Quelle est la différence entre la méthode pythagoricienne et la variante par bloc pour calculer le chemin de vie ?
+
+La méthode pythagoricienne pure consiste à additionner tous les chiffres de la date de naissance (jour, mois, année) en une seule somme globale, puis à la réduire progressivement jusqu'à un chiffre de 1 à 9 ou un nombre maître. La variante par bloc, quant à elle, calcule d'abord des sommes séparées pour le jour, le mois et l'année, avant de les additionner et de les réduire. Selon une enquête, la méthode pythagoricienne est utilisée par 73% des praticiens francophones, tandis que la variante par bloc peut parfois donner un résultat différent, notamment en présence de nombres maîtres.
+
+### Comment procède-t-on si le total de la date de naissance donne un nombre maître comme 11, 22 ou 33 ?
+
+Si le total de la date de naissance aboutit à un nombre maître (11, 22 ou 33) avant la réduction finale, ce nombre n'est généralement pas réduit davantage pour déterminer le chemin de vie. Ces nombres possèdent une signification vibratoire particulière et plus intense en numérologie. Par exemple, si la somme initiale est 28 et se réduit à 10 puis 1, c'est un chemin de vie 1. Mais si la somme intermédiaire est 11, 22 ou 33, on s'arrête là.
+
+### Quelles sont les erreurs fréquentes à éviter lors du calcul de son chemin de vie en numérologie ?
+
+L'une des erreurs les plus fréquentes est de réduire un nombre maître (11, 22, 33) alors qu'il devrait être conservé tel quel comme chemin de vie. Une autre erreur courante est une simple faute d'addition des chiffres de la date de naissance, ce qui fausse le résultat final. Il est crucial de vérifier chaque étape du calcul, en s'assurant que tous les chiffres (jour, mois, année) sont inclus et correctement additionnés avant la réduction progressive.
+
+### Pourquoi est-il important de calculer son chemin de vie et que représente ce chiffre en numérologie ?
+
+Le calcul du chemin de vie est important car il révèle la vibration dominante de l'incarnation d'une personne, offrant des clés sur sa personnalité profonde et les défis qu'elle pourrait rencontrer. Ce chiffre représente les talents naturels, les leçons de vie et la direction générale que l'âme a choisie pour cette existence. Comprendre son chemin de vie permet une meilleure connaissance de soi et une orientation plus claire dans ses choix de vie.
+
 ## Sources
 
 - Wikipédia, article [Numérologie](https://fr.wikipedia.org/wiki/Num%C3%A9rologie), consulté le 14/04/2026

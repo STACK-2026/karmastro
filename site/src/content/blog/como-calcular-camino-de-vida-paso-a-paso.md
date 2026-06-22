@@ -242,3 +242,20 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 
 [Explora el blog completo y todas las herramientas](/es/blog/) · [Herramientas Karmastro](/es/herramientas/)
 
+## Preguntas frecuentes
+
+### ¿Cómo se calcula el Camino de Vida según el método pitagórico paso a paso?
+
+El Camino de Vida pitagórico se calcula sumando todos los dígitos de tu fecha de nacimiento completa (día, mes y año) hasta reducir el resultado a un único dígito, entre 1 y 9. Es crucial mantener los números maestros 11, 22 y 33 sin reducir. Por ejemplo, si tu fecha es 12/03/1980, sumarías 1+2+3+1+9+8+0 = 24, y luego 2+4 = 6. Este proceso se conoce como reducción teosófica.
+
+### ¿Qué particularidad tienen los números maestros 11, 22 y 33 en el cálculo del Camino de Vida?
+
+Los números maestros 11, 22 y 33 son la única excepción a la regla de reducción en el cálculo del Camino de Vida, conservando su valor original. Estos números indican un potencial espiritual y de liderazgo superior, a menudo con mayores desafíos y responsabilidades. Representan una vibración más intensa que los números de un solo dígito, ofreciendo una misión de vida de mayor alcance y un propósito más elevado.
+
+### ¿Cuál es la importancia del Camino de Vida en comparación con otros números numerológicos?
+
+El Camino de Vida es considerado el número más importante en el perfil numerológico, similar al Sol natal en astrología. Representa la vibración fundamental que define tu existencia, la lección principal que tu alma debe aprender y tu misión cósmica en esta encarnación. A diferencia de otros números numerológicos que pueden variar, el Camino de Vida es una constante que colorea tu ser esencial y tu propósito vital.
+
+### ¿Cuáles son los errores más frecuentes al intentar calcular el Camino de Vida?
+
+Uno de los errores más frecuentes al calcular el Camino de Vida es reducir incorrectamente los números maestros 11, 22 o 33 a un solo dígito cuando aparecen en la suma intermedia. Otro error común es no sumar correctamente todos los dígitos de la fecha de nacimiento, o reducir los componentes (día, mes, año) por separado antes de la suma final, lo cual es un método alternativo pero no el oficial pitagórico. La precisión en la suma es crucial.

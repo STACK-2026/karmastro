@@ -222,3 +222,20 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 
 [Esplora tutto il blog e gli strumenti](/it/blog/) · [Strumenti Karmastro](/it/strumenti/)
 
+## Domande frequenti
+
+### Perché gli oroscopi che si trovano su riviste o siti generici non sono considerati affidabili?
+
+Gli oroscopi generici non sono affidabili perché si basano esclusivamente sul segno solare, che rappresenta solo circa il 15% dell'identità astrologica di una persona. Questa semplificazione ignora l'influenza di Luna, ascendente, Mercurio, Venere, Marte e dei pianeti lenti, rendendo le previsioni troppo vaghe e applicabili a chiunque, un fenomeno noto come effetto Barnum.
+
+### Cosa rende un oroscopo davvero personalizzato e quali elementi lo distinguono dalle previsioni generiche?
+
+Un oroscopo è davvero personalizzato quando considera l'intera carta natale di un individuo, includendo non solo il segno solare ma anche la posizione di Luna, ascendente, Mercurio, Venere, Marte e i pianeti lenti al momento della nascita. Questo approccio approfondito permette di analizzare i transiti planetari specifici, offrendo previsioni molto più accurate e pertinenti alla situazione personale.
+
+### Qual è il ruolo dei transiti planetari e delle retrogradazioni nel formulare previsioni astrologiche affidabili?
+
+I transiti planetari sono la chiave delle previsioni affidabili, poiché descrivono il movimento attuale dei pianeti nel cielo e come questi interagiscono con la carta natale individuale, influenzando specifici settori della vita. Le retrogradazioni, invece, indicano periodi di revisione e rallentamento in determinate aree, offrendo opportunità per riflettere e rielaborare situazioni, piuttosto che prevedere eventi negativi in sé.
+
+### Quali sono gli errori comuni da evitare quando si cercano previsioni astrologiche e come si possono ottenere letture più accurate?
+
+L'errore più comune è affidarsi a oroscopi basati unicamente sul segno solare, che sono per natura troppo generici e privi di valore predittivo reale. Per ottenere letture più accurate, è fondamentale cercare previsioni che considerino la carta natale completa, inclusi Luna, ascendente e tutti i pianeti, e che analizzino i transiti specifici. È consigliabile anche evitare di interpretare le retrogradazioni come eventi puramente negativi.

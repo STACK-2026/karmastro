@@ -169,3 +169,20 @@ Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
 
 [Explore todo o blog e todas as ferramentas](/pt/blog/) · [Ferramentas Karmastro](/pt/ferramentas/)
 
+## Perguntas frequentes
+
+### Como posso distinguir um horóscopo fiável de um genérico de revista?
+
+A principal diferença reside na personalização e na profundidade dos dados astrológicos utilizados. Horóscopos fiáveis baseiam-se na sua carta natal completa, considerando a posição de todos os planetas, casas e aspetos no momento exato do seu nascimento, enquanto os de revista consideram apenas o signo solar. Além disso, previsões autênticas são elaboradas por astrólogos qualificados que interpretam trânsitos planetários complexos, evitando a generalidade do efeito Barnum.
+
+### Quais são os erros mais comuns ao interpretar horóscopos diários e como evitá-los?
+
+O erro mais comum é tomar previsões genéricas como verdades absolutas e aplicá-las cegamente à sua vida pessoal. Para evitar isso, procure horóscopos que considerem a sua carta natal completa e que expliquem os trânsitos planetários específicos do dia. É crucial entender que um horóscopo fiável oferece tendências energéticas e não destinos fixos, incentivando a reflexão e a ação consciente.
+
+### Qual a importância dos trânsitos planetários na elaboração de previsões astrológicas precisas?
+
+Os trânsitos planetários são a espinha dorsal das previsões astrológicas precisas, pois descrevem as posições atuais dos planetas em relação à sua carta natal. Eles indicam as energias e influências que estão a atuar no presente, permitindo aos astrólogos interpretar como estas interagem com as suas energias inatas e prever potenciais desafios ou oportunidades. Sem a análise dos trânsitos, qualquer previsão seria meramente genérica e desprovida de valor pessoal.
+
+### O que é o método Karmastro e como ele garante a fiabilidade de um horóscopo?
+
+O método Karmastro é uma abordagem específica para construir horóscopos fiáveis que integra a análise detalhada da carta natal com os trânsitos planetários atuais e outros fatores astrológicos complexos. Ele garante a fiabilidade ao ir muito além do signo solar, considerando a totalidade da configuração astrológica individual e as interações dinâmicas entre os planetas. Este método foca-se em fornecer insights personalizados e acionáveis, distanciando-se das previsões vagas e generalistas.

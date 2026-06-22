@@ -203,3 +203,20 @@ Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
 
 [Explore todo o blog e todas as ferramentas](/pt/blog/) · [Ferramentas Karmastro](/pt/ferramentas/)
 
+## Perguntas frequentes
+
+### O que é a sinastria e qual a sua principal diferença em relação aos horóscopos de revista?
+
+A sinastria é a verdadeira técnica de compatibilidade astrológica que compara integralmente dois mapas astrais para entender a dinâmica de um casal. Ao contrário dos horóscopos de revista, que geralmente se baseiam apenas no signo solar, a sinastria analisa múltiplos fatores planetários e aspetos entre os mapas. Esta abordagem profunda oferece uma visão muito mais precisa e personalizada das afinidades e desafios de uma relação.
+
+### Por que o signo solar sozinho não é suficiente para determinar a compatibilidade astrológica de um casal?
+
+O signo solar representa apenas cerca de 5% da história da compatibilidade astrológica, pois ele descreve a essência do ego, mas não a totalidade da personalidade. Para uma análise completa, a sinastria considera a posição de Vénus para a química física, Marte para a paixão e a Lua para a conexão emocional diária. Outros planetas e os aspetos entre eles também são cruciais para revelar as complexidades de uma relação.
+
+### Quais planetas e aspetos sinástricos são mais relevantes para avaliar a química física e a duração de um relacionamento?
+
+Para a química física verdadeira, Vénus e Marte são os planetas mais importantes na sinastria, indicando atração e paixão. Já para a duração e estabilidade a longo prazo de um relacionamento, a posição de Saturno no mapa sinástrico é crucial, pois revela os compromissos e os desafios estruturais. A Lua também é fundamental para o quotidiano emocional e a sensação de conforto mútuo.
+
+### Como se pode calcular a compatibilidade astrológica de um casal passo a passo utilizando a sinastria?
+
+Para calcular a compatibilidade astrológica passo a passo através da sinastria, é necessário primeiro obter os mapas astrais completos de ambos os indivíduos, incluindo a hora e local exatos de nascimento. Em seguida, um astrólogo compara os dois mapas, analisando as posições planetárias de um em relação às casas e planetas do outro, e os aspetos formados entre eles. Este processo revela as áreas de harmonia e tensão.

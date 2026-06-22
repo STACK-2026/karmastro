@@ -247,3 +247,21 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 - [Compatibilità](/it/strumenti/compatibilita)
 
 [Esplora tutto il blog e gli strumenti](/it/blog/) · [Strumenti Karmastro](/it/strumenti/)
+
+## Domande frequenti
+
+### Quando inizia esattamente il transito di Plutone in Acquario e per quanto tempo influenzerà i segni zodiacali?
+
+Il transito di Plutone nel segno dell'Acquario inizia nel 2024 e si protrarrà fino al 2044, influenzando i segni zodiacali per un periodo di circa vent'anni. Questo lungo periodo è dovuto all'orbita eccentrica di Plutone, che fa variare la sua permanenza in ogni segno tra i 12 e i 31 anni, rendendo questo un evento significativo per un'intera generazione.
+
+### Quali eventi storici importanti si sono verificati l'ultima volta che Plutone ha transitato nel segno dell'Acquario?
+
+L'ultima volta che Plutone ha transitato in Acquario, tra il 1778 e il 1798, il mondo ha assistito a eventi epocali come la Rivoluzione Americana e la Rivoluzione Francese. Questi periodi furono caratterizzati da profonde rotture sociali e politiche, l'emergere di nuovi ideali di libertà e uguaglianza, e la ridefinizione delle strutture di potere, riflettendo la natura trasformativa di Plutone e l'energia rivoluzionaria dell'Acquario.
+
+### Quali sono i principali settori della società che subiranno le maggiori trasformazioni durante il transito di Plutone in Acquario?
+
+Durante il transito di Plutone in Acquario, i principali settori che subiranno trasformazioni profonde includono la tecnologia e l'intelligenza artificiale, il clima e l'energia, il lavoro e l'economia, e la politica e la democrazia. Ci si aspetta una mutazione collettiva che ridefinirà le strutture esistenti, promuovendo innovazioni radicali e nuove forme di organizzazione sociale, spesso attraverso rotture con il passato.
+
+### Come può una persona prepararsi o navigare al meglio le energie di Plutone in Acquario a livello personale?
+
+Per navigare al meglio le energie di Plutone in Acquario a livello personale, è utile abbracciare il cambiamento e la trasformazione, riconoscendo le aree della propria vita che richiedono una profonda revisione. Questo transito invita a liberarsi da vecchie strutture e credenze limitanti, aprendosi a nuove idee e partecipando attivamente alla costruzione di un futuro più equo e innovativo. L'adattabilità e la disponibilità a evolvere saranno chiavi fondamentali.

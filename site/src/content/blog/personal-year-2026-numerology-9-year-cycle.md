@@ -282,6 +282,24 @@ And if you want to receive every morning a message that helps you navigate your 
 
 2026 lies ahead of you. You now know what energy you will cross it in. It is up to you to align, dare, build, let go, according to what your number asks of you. The sky and the numbers are with you.
 
+## Frequently asked questions
+
+### How do I calculate my personal year for 2026 using numerology?
+
+To calculate your personal year for 2026, you add your birth day, birth month, and the current year (2026), then reduce the sum to a single digit or a master number (11, 22, 33). For example, if you were born on March 15, you would add 15 + 3 + 2 + 0 + 2 + 6 = 28, then 2 + 8 = 10, then 1 + 0 = 1. This method reveals the specific energetic theme influencing your individual year.
+
+### What is the difference between a personal year and a universal year in numerology?
+
+A personal year in numerology describes the unique energetic theme and opportunities specific to an individual based on their birth date, while a universal year represents the collective energy influencing everyone globally. The universal year is calculated by summing the digits of the current calendar year, providing a general backdrop for the year. Your personal year, calculated with your birth month and day, offers a more tailored forecast for your individual journey within that broader universal energy.
+
+### Why is it important to understand the energy of your personal year?
+
+Understanding the energy of your personal year is important because it allows you to align your actions and decisions with the prevailing numerical vibrations, fostering greater flow and success in your life. Each personal year carries distinct themes, such as new beginnings, cooperation, or introspection, as outlined in the nine-year cycle. Recognizing these themes helps you anticipate challenges, leverage opportunities, and make choices that resonate with your individual path, reducing resistance and maximizing potential.
+
+### Does the personal year cycle reset at a specific age, or does it continue indefinitely?
+
+The personal year cycle does not reset at a specific age; instead, it continues indefinitely in a repeating nine-year sequence from the moment of your birth throughout your entire life. Each nine-year cycle builds upon the previous one, with the energies of personal year 1 initiating new beginnings and personal year 9 bringing conclusions. This continuous progression means you will experience each personal year number multiple times, offering recurring lessons and growth opportunities.
+
 ## Sources and references
 
 This article draws on verifiable encyclopedic and scientific sources.

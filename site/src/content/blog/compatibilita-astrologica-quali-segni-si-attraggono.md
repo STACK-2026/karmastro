@@ -213,3 +213,20 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 
 [Esplora tutto il blog e gli strumenti](/it/blog/) · [Strumenti Karmastro](/it/strumenti/)
 
+## Domande frequenti
+
+### Come si calcola la vera compatibilità astrologica tra due persone?
+
+La vera compatibilità astrologica, nota come sinastria, si calcola confrontando integralmente i temi natali completi di entrambe le persone. Questo processo implica sovrapporre i pianeti di una persona su quelli dell'altra e analizzare gli aspetti che si formano tra di essi. Sono indispensabili la data, l'ora e il luogo di nascita precisi per entrambi per ottenere un'analisi accurata e non limitarsi ai soli segni solari.
+
+### Qual è la differenza tra la compatibilità basata sui segni solari e la sinastria astrologica?
+
+La compatibilità basata sui segni solari offre un'indicazione molto generica, mentre la sinastria astrologica fornisce un'analisi profonda e personalizzata della dinamica di coppia. I segni solari rappresentano solo una piccola parte della personalità e delle interazioni. La sinastria, invece, considera la posizione di tutti i pianeti, gli aspetti che formano tra le due carte natali e le case astrologiche, rivelando la vera chimica e le sfide di una relazione.
+
+### Quali sono gli errori più comuni da evitare quando si interpreta la compatibilità astrologica di una coppia?
+
+L'errore più comune nell'interpretare la compatibilità astrologica è basarsi esclusivamente sui segni solari, ignorando la complessità della sinastria. Altri errori includono dare troppo peso agli aspetti tesi senza considerare quelli armonici, non analizzare l'intero tema natale di ciascuno, e credere che l'astrologia determini il destino anziché indicare potenziali dinamiche. È fondamentale considerare l'interazione di tutti i pianeti e le case.
+
+### Oltre al segno solare, quali sono gli aspetti astrologici più importanti da considerare per una relazione duratura?
+
+Oltre al segno solare, gli aspetti astrologici più importanti per una relazione duratura includono la posizione di Venere e Marte, la Luna, l'Ascendente e la settima casa in sinastria. Venere e Marte indicano la chimica e l'attrazione fisica, la Luna rivela la compatibilità emotiva, l'Ascendente mostra come ci si presenta e si interagisce, mentre la settima casa descrive il tipo di partner che si cerca. Anche gli aspetti tra i pianeti personali sono cruciali per comprendere le dinamiche relazionali.

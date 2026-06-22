@@ -209,3 +209,21 @@ Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
 - [Uyumluluk](/tr/araclar/uyumluluk)
 
 [Tüm blogu ve araçları keşfet](/tr/blog/) · [Karmastro araçları](/tr/araclar/)
+
+## Sıkça sorulan sorular
+
+### Sadece Güneş burcuna bakarak astrolojik uyumluluk değerlendirmek neden yanıltıcıdır?
+
+Sadece Güneş burcuna bakmak, astrolojik uyumluluğun çok yüzeysel bir değerlendirmesidir çünkü bu, bir kişinin doğum haritasının sadece küçük bir bölümünü temsil eder. Gerçek astrolojik uyumluluk olan sinastri, iki bireyin tam doğum haritalarını, yani Güneş, Ay, Venüs gibi tüm gezegenlerin konumlarını ve aralarındaki açıları analiz eder. Bu derinlemesine analiz, ilişkinin dinamiklerini, çekimini ve potansiyel zorluklarını çok daha kapsamlı bir şekilde ortaya koyar.
+
+### Sinastri nedir ve geleneksel burç uyumu hesaplamalarından farkı nelerdir?
+
+Sinastri, iki bireyin doğum haritalarını üst üste bindirerek aralarındaki astrolojik uyumu detaylı bir şekilde inceleyen derinlemesine bir tekniktir. Geleneksel burç uyumu hesaplamaları genellikle sadece Güneş burçlarını karşılaştırırken, sinastri her iki kişinin doğum anındaki tüm gezegen konumlarını, yükselen burçlarını ve ev yerleşimlerini dikkate alır. Bu kapsamlı yöntem, ilişkinin romantik çekimini, duygusal bağını ve uzun vadeli potansiyelini çok daha doğru bir şekilde analiz etmeyi sağlar.
+
+### Astrolojik uyumluluk değerlendirirken en sık yapılan hatalar nelerdir?
+
+Astrolojik uyumluluk değerlendirirken en sık yapılan hata, analizi sadece Güneş burçlarına veya popüler burç özelliklerine indirgemektir. Bu yaklaşım, bir ilişkinin karmaşıklığını ve bireylerin çok katmanlı kişiliklerini göz ardı eder. Diğer bir hata ise, olumsuz görünen bazı açıları ilişkinin tamamen kötü olduğu şeklinde yorumlamak yerine, bu açıların büyüme ve öğrenme potansiyeli taşıdığını anlamamaktır. Gerçek uyumluluk, zorlukların üstesinden gelme yeteneğini de içerir.
+
+### Gerçek astrolojik uyumluluğu (sinastri) hesaplamak için hangi bilgilere ihtiyaç duyulur?
+
+Gerçek astrolojik uyumluluğu, yani sinastriyi hesaplamak için her iki bireyin de doğum tarihi, doğum saati ve doğum yeri bilgilerine kesin olarak ihtiyaç duyulur. Bu bilgiler, doğru doğum haritalarının çıkarılması ve gezegenlerin burçlardaki ve evlerdeki kesin konumlarının belirlenmesi için hayati öneme sahiptir. Doğum saati ne kadar doğru olursa, yükselen burç ve ev sistemleri de o kadar isabetli olur, bu da sinastri analizinin derinliğini ve doğruluğunu artırır.

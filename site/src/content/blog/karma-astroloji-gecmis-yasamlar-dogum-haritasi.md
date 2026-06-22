@@ -156,3 +156,21 @@ Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
 - [Uyumluluk](/tr/araclar/uyumluluk)
 
 [Tüm blogu ve araçları keşfet](/tr/blog/) · [Karmastro araçları](/tr/araclar/)
+
+## Sıkça sorulan sorular
+
+### Karmik astroloji, geçmiş yaşamlarımızın etkilerini günümüzdeki hayatımızda nasıl anlamamıza yardımcı olur?
+
+Karmik astroloji, doğum haritasındaki Ay düğümleri, Satürn, Plüton ve on ikinci ev gibi bileşenleri inceleyerek ruhun geçmiş deneyimlerinin mevcut yaşamdaki yansımalarını yorumlar. Bu analiz, kişinin tekrarlayan yaşam kalıplarını, öğrenmesi gereken dersleri ve ruhsal misyonunu keşfetmesine olanak tanır. Böylece birey, geçmişten gelen karmik yükleri anlayarak kişisel gelişim yolculuğunda bilinçli adımlar atabilir.
+
+### Karmik astrolojide Ay düğümleri, ruhun hafızasını ve misyonunu nasıl temsil eder?
+
+Ay düğümleri, karmik astrolojide ruhun geçmiş yaşam deneyimlerinden getirdiği dersleri ve bu yaşamda ulaşması gereken hedefleri gösteren önemli noktalardır. Güney Ay düğümü geçmişten gelen alışkanlıkları ve konfor alanını, Kuzey Ay düğümü ise ruhun bu hayattaki büyüme yönünü ve yeni öğrenmesi gereken dersleri simgeler. Bu iki nokta, bireyin karmik yolculuğunun ana eksenini belirler.
+
+### Karmik astroloji, reenkarnasyonu bilimsel olarak kanıtlar mı yoksa farklı bir amaçla mı kullanılır?
+
+Karmik astroloji, reenkarnasyonu bilimsel olarak kanıtlamaz; ancak mevcut yaşamdaki örüntüleri geçmişin izdüşümleri olarak okumak için kullanılan ampirik bir araçtır. Bu yaklaşım, bireyin doğum haritasındaki karmik göstergeler aracılığıyla ruhsal gelişim yolculuğunu anlamasına yardımcı olur. Amacı, geçmişten gelen etkileri fark ederek şimdiki zamanda daha bilinçli seçimler yapmaya teşvik etmektir.
+
+### Karmik astroloji analizinden elde edilen bilgiler, kişinin özgür iradesini kullanarak hayatında nasıl somut değişiklikler yapmasına yardımcı olabilir?
+
+Karmik astroloji analizi, bireyin geçmişten gelen karmik etkileri ve öğrenmesi gereken dersleri fark etmesini sağlayarak özgür iradesini daha bilinçli kullanmasına zemin hazırlar. Bu farkındalık, kişinin tekrarlayan olumsuz kalıpları kırmasına ve yeni, daha yapıcı seçimler yapmasına olanak tanır. Böylece kişi, kaderci bir yaklaşımdan ziyade, kendi yaşamının aktif bir yaratıcısı olma yolunda ilerleyebilir.

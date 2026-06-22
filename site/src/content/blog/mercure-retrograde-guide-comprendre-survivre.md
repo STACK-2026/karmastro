@@ -276,6 +276,24 @@ Respire avant de répondre. Demande-toi si tu as bien compris ce que l'autre vou
 **Mercure rétrograde affecte-t-il ma santé ?**
 Indirectement, oui. Le stress lié aux malentendus, à la fatigue mentale, à la sensation que tout coince peut peser sur le système nerveux. Prends soin de ton sommeil, hydrate-toi, accorde-toi des pauses. Le corps est solidaire du mental.
 
+## Questions fréquentes
+
+### Quelles sont les meilleures pratiques pour gérer la période de Mercure rétrograde et éviter les problèmes courants ?
+
+La meilleure pratique pour gérer Mercure rétrograde est de ralentir, de réviser et de réfléchir plutôt que d'initier de nouvelles choses importantes. Il est conseillé de relire attentivement les contrats, de vérifier les communications avant de les envoyer et de prévoir des marges de temps pour les déplacements. Cette période est propice à la réévaluation des projets en cours, à la résolution de problèmes anciens et à la reconnexion avec d'anciens contacts, plutôt qu'à la signature de nouveaux engagements ou l'achat de technologies.
+
+### Combien de temps dure une période de Mercure rétrograde et à quelle fréquence se produit-elle dans l'année ?
+
+Une période de Mercure rétrograde dure généralement environ trois semaines, précédée et suivie de phases d'ombre d'une à deux semaines chacune. Ce phénomène se produit environ trois à quatre fois par an, ce qui signifie que Mercure est rétrograde pendant environ 20% de l'année. Chaque cycle se déroule dans un élément astrologique spécifique (feu, terre, air, eau), influençant les thèmes dominants de la rétrogradation.
+
+### Quels sont les mythes les plus répandus concernant Mercure rétrograde et quelles en sont les vérités astrologiques ?
+
+Le mythe le plus répandu est que Mercure rétrograde est une période de malchance universelle où tout va de travers, mais la vérité astrologique est plus nuancée. Ce n'est pas une période de fatalité, mais plutôt une invitation à la révision, à l'introspection et à la rectification. Les problèmes de communication ou de technologie ne sont pas des punitions, mais des signaux pour ralentir et être plus attentif aux détails et aux processus.
+
+### Y a-t-il des opportunités ou des aspects positifs à tirer de la période de Mercure rétrograde, malgré sa réputation ?
+
+Oui, Mercure rétrograde offre de nombreuses opportunités positives, notamment pour la réévaluation, la réorganisation et la finalisation de projets en suspens. C'est un excellent moment pour revisiter d'anciennes idées, renouer avec des amis ou des collègues perdus de vue, et approfondir la réflexion sur des sujets importants. Cette période favorise l'introspection, permettant de mieux comprendre ses propres motivations et de corriger des erreurs passées avant d'aller de l'avant.
+
 ## Pour aller plus loin
 
 Mercure rétrograde n'est qu'un des nombreux transits qui rythment ton année astrologique. Pour comprendre ton thème dans son ensemble et savoir comment chaque planète te touche, commence par calculer ton [signe ascendant](/outils/ascendant), ton [signe lunaire](/blog/signe-lunaire-lune-natale-monde-emotionnel/) et explorer ta [numérologie de base](/outils/chemin-de-vie).

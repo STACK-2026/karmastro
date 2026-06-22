@@ -550,3 +550,20 @@ Le chemin de vie 1 a marqué l’Histoire à travers des **leaders charismatique
 - [Qu'est-ce que la numérologie ? Guide complet pour débuter](https://karmastro.com/blog/qu-numerologie-guide-complet-debuter)
 - [Numérologie pythagoricienne vs chaldéenne : différences](https://karmastro.com/blog/numerologie-pythagoricienne-chaldeenne-differences)
 
+## Questions fréquentes
+
+### Comment puis-je calculer mon chemin de vie pour savoir si je suis un chemin de vie 1 ?
+
+Pour calculer votre chemin de vie, vous devez additionner tous les chiffres de votre date de naissance (jour, mois, année) jusqu'à obtenir un seul chiffre. Par exemple, si vous êtes né le 15/08/1985, vous additionnerez 1+5+0+8+1+9+8+5, ce qui donne 37, puis 3+7 égale 10, et enfin 1+0 égale 1. Ce dernier chiffre représente votre chemin de vie.
+
+### Quels sont les principaux défis ou difficultés rencontrés par les personnes ayant un chemin de vie 1 ?
+
+Les personnes avec un chemin de vie 1 sont souvent confrontées à l'impatience, une tendance à l'autoritarisme et des difficultés à déléguer, ce qui peut freiner leur progression. Leur besoin prononcé d'indépendance peut également entraîner un risque d'isolement s'ils ne veillent pas à maintenir des liens sociaux équilibrés.
+
+### Avec quels autres chemins de vie le chemin de vie 1 est-il le plus compatible ou rencontre-t-il des tensions ?
+
+Le chemin de vie 1 est généralement harmonieux avec les chemins de vie 3, 5 et 7, car ces combinaisons favorisent la créativité, la liberté et la réflexion. En revanche, des tensions peuvent surgir avec le chemin de vie 8 en raison de conflits de pouvoir, et avec le chemin de vie 4 à cause de la confrontation entre la flexibilité du 1 et la rigidité du 4.
+
+### Comment une personne avec un chemin de vie 1 peut-elle utiliser son leadership de manière positive et éviter l'autoritarisme ?
+
+Une personne avec un chemin de vie 1 peut développer un leadership positif en transformant son ego en source d'inspiration pour autrui et en canalisant son ambition vers des projets porteurs de sens. Il est essentiel d'apprendre à diriger avec humilité et à déléguer efficacement pour éviter les pièges de l'autoritarisme et de l'isolement.

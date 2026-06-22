@@ -210,3 +210,21 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 - [Compatibilità](/it/strumenti/compatibilita)
 
 [Esplora tutto il blog e gli strumenti](/it/blog/) · [Strumenti Karmastro](/it/strumenti/)
+
+## Domande frequenti
+
+### Chi ha formalizzato per primo la correlazione tra i sette chakra e i sette pianeti nell'astrologia occidentale?
+
+La sistematizzazione della corrispondenza tra i sette chakra e i pianeti è avvenuta nel XX secolo, grazie all'incontro tra i pionieri dello yoga occidentale e gli astrologi. John Woodroffe, noto anche come Arthur Avalon, con la sua traduzione del "Shat-Chakra-Nirupana" nel 1919, ha giocato un ruolo cruciale nel rendere accessibili questi concetti al pubblico occidentale. Questo ha facilitato le successive integrazioni con l'astrologia.
+
+### Come posso scoprire quali dei miei chakra sono più attivi o bloccati in base alla mia carta natale?
+
+Per scoprire i chakra attivi o bloccati tramite la carta natale, si analizzano le posizioni dei pianeti e gli aspetti che formano, poiché ogni pianeta governa un chakra specifico. Un astrologo esperto può interpretare questi dati per identificare le aree energetiche che richiedono maggiore attenzione o che sono intrinsecamente forti. Questa diagnosi astrologica fornisce una mappa personalizzata per il lavoro energetico e spirituale.
+
+### In che modo i transiti planetari influenzano l'apertura o il blocco dei miei chakra e come posso usarlo a mio vantaggio?
+
+I transiti planetari influenzano l'apertura o il blocco dei chakra attivando le energie associate ai pianeti reggenti, creando periodi di maggiore sensibilità o sfida per specifici centri energetici. Comprendere questi transiti permette di anticipare le influenze e di usare pratiche mirate, come mantra o meditazioni, per sostenere l'armonizzazione del chakra interessato. Questo approccio proattivo favorisce il benessere psico-energetico.
+
+### Quali strumenti o pratiche specifiche, oltre a mantra e cristalli, vengono suggeriti per armonizzare i chakra in base alle influenze planetarie?
+
+Oltre a mantra e cristalli, per armonizzare i chakra in base alle influenze planetarie si suggeriscono pratiche come la meditazione focalizzata, lo yoga specifico per chakra e l'aromaterapia. Anche l'alimentazione mirata e l'esposizione a colori specifici possono supportare l'equilibrio dei centri energetici. L'obiettivo è allineare le vibrazioni personali con quelle planetarie per favorire il flusso energetico e il benessere complessivo.

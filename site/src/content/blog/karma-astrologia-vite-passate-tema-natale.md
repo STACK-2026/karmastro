@@ -215,3 +215,20 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 
 [Esplora tutto il blog e gli strumenti](/it/blog/) · [Strumenti Karmastro](/it/strumenti/)
 
+## Domande frequenti
+
+### Come si svolge una lettura karmica personale e cosa posso aspettarmi di scoprire?
+
+Una lettura karmica personale analizza il tuo tema natale per rivelare le lezioni e i talenti acquisiti dalle vite passate, indicando la direzione evolutiva per l'incarnazione attuale. Questo processo si concentra sui Nodi Lunari, Saturno, Plutone e la Casa XII, offrendo una profonda comprensione delle sfide e delle opportunità karmiche. L'obiettivo è acquisire consapevolezza per orientare le scelte future in linea con la propria missione animica.
+
+### Qual è il ruolo dei Nodi Lunari, Nord e Sud, nell'interpretazione astrologica karmica?
+
+I Nodi Lunari, Nord e Sud, sono punti chiave nell'astrologia karmica che indicano rispettivamente il bagaglio di esperienze e talenti acquisiti nelle vite passate e la direzione evolutiva dell'anima nella vita presente. Il Nodo Sud rappresenta ciò che l'anima porta già con sé, le zone di comfort e le abitudini consolidate, mentre il Nodo Nord indica la crescita necessaria e la missione da intraprendere. Comprendere la loro posizione nel tema natale aiuta a bilanciare il passato con il potenziale futuro.
+
+### Il karma in astrologia è inteso come una punizione per errori commessi in vite passate?
+
+No, il karma in astrologia non è una punizione, bensì una legge di causa ed effetto applicata al piano dell'anima, simile alla gravità sul piano fisico. Esso descrive le conseguenze delle azioni passate che si manifestano nelle incarnazioni successive, offrendo opportunità di apprendimento e crescita. Non si tratta di un giudizio morale, ma di un meccanismo evolutivo che spinge l'anima verso la sua piena realizzazione.
+
+### Oltre ai Nodi Lunari, quali altri pianeti o elementi del tema natale sono fondamentali per un'analisi karmica?
+
+Oltre ai Nodi Lunari, Saturno e Plutone sono considerati i principali indicatori karmici nel tema natale, insieme alla Casa XII. Saturno, il "grande maestro karmico", rivela le sfide e le responsabilità che l'anima deve affrontare per maturare, mentre Plutone indica le trasformazioni radicali e lezioni profonde legate al potere e alla rigenerazione. La Casa XII, infine, rappresenta lo "zaino karmico invisibile", contenente memorie e schemi inconsci delle vite precedenti.

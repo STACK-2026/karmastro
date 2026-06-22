@@ -200,3 +200,20 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 
 [Explora el blog completo y todas las herramientas](/es/blog/) · [Herramientas Karmastro](/es/herramientas/)
 
+## Preguntas frecuentes
+
+### ¿Cuánto tiempo durará el tránsito de Plutón por Acuario y cuál es su calendario preciso?
+
+El tránsito de Plutón por Acuario durará aproximadamente 20 años, marcando un periodo de profundas transformaciones sociales y tecnológicas. Este ciclo comenzó con su primera entrada en marzo de 2023, aunque tendrá movimientos retrógrados entre Acuario y Capricornio hasta su asentamiento definitivo en enero de 2024. Su salida de Acuario se espera para el año 2044, completando así una era de cambios radicales en la humanidad.
+
+### ¿Qué eventos históricos relevantes se produjeron durante el anterior tránsito de Plutón en Acuario?
+
+El anterior tránsito de Plutón en Acuario ocurrió entre 1778 y 1798, un periodo que coincidió con la Revolución Francesa y la Revolución Americana. Estos eventos históricos simbolizan la ruptura con estructuras de poder antiguas y el surgimiento de nuevos ideales de libertad, igualdad y fraternidad. Se caracterizaron por grandes movimientos colectivos que buscaban la independencia y la redefinición de la sociedad, reflejando la energía de Acuario.
+
+### ¿Cuáles son los principales temas y áreas de cambio que Plutón en Acuario impulsará globalmente?
+
+Plutón en Acuario impulsará transformaciones radicales en áreas como la tecnología, la inteligencia artificial, el clima, la energía, el trabajo y la economía. También impactará la política, la democracia y la espiritualidad, fomentando la ruptura con lo establecido y la búsqueda de soluciones colectivas e innovadoras. Este tránsito promoverá una reestructuración profunda de los sistemas y valores que rigen la sociedad moderna.
+
+### ¿Cómo puedo prepararme o navegar los cambios personales que traerá Plutón en Acuario?
+
+Para navegar los cambios personales que traerá Plutón en Acuario, es fundamental abrazar la adaptabilidad y la apertura a nuevas ideas y tecnologías. Este tránsito invita a la liberación de estructuras obsoletas y a la conexión con comunidades afines que promuevan la innovación y el progreso. Reflexionar sobre las áreas de tu vida que necesitan una profunda renovación y estar dispuesto a soltar lo que ya no sirve será clave para esta mutación.

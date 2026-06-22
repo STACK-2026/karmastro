@@ -283,3 +283,20 @@ Bu yazi 14 Nisan 2026 tarihinde Orion tarafindan son olarak gozden gecirilmistir
 
 [Tüm blogu ve araçları keşfet](/tr/blog/) · [Karmastro araçları](/tr/araclar/)
 
+## Sıkça sorulan sorular
+
+### Yaşam yolu sayımı nasıl hesaplarım ve ne anlama gelir?
+
+Yaşam yolu sayınızı hesaplamak için doğum tarihinizi (gün, ay, yıl) tek haneli sayılara indirgeyerek toplamanız gerekir. Örneğin, 15.03.1985 doğumlu biri için 1+5+3+1+9+8+5 = 32, sonra 3+2 = 5 olur. Bu sayı, bireyin hayattaki temel potansiyelini, güçlü yönlerini, zorluklarını ve genel yaşam amacını temsil eder. Kendi yaşam yolunuzu anlamak, kişisel gelişiminizde size rehberlik edebilir.
+
+### Pitagor ve Kaldeli numeroloji sistemleri arasındaki temel farklar nelerdir?
+
+Pitagor ve Kaldeli numeroloji sistemleri arasındaki temel fark, harflere atanan sayı değerleri ve hesaplama yöntemleridir. Pitagor sistemi genellikle 1'den 9'a kadar olan sayıları kullanırken, Kaldeli sistemi 1'den 8'e kadar olan sayıları temel alır ve 9'u özel bir sayı olarak görür. Pitagor sistemi daha çok bireyin içsel potansiyeline odaklanırken, Kaldeli sistemi dışsal etkileşimleri ve kaderi vurgular. Her iki sistem de farklı bakış açıları sunarak kişisel analizi zenginleştirir.
+
+### Numerolojinin bilimsel bir temeli var mıdır ve sınırlılıkları nelerdir?
+
+Numerolojinin modern bilimsel yöntemlerle kanıtlanmış bir temeli bulunmamaktadır; daha ziyade sembolik bir yorumlama sistemi ve kişisel gelişim aracı olarak kabul edilir. Sınırlılıkları arasında, kesin tahminler yerine eğilimleri ve potansiyelleri belirtmesi, yorumlamaların kişiden kişiye değişebilmesi ve bilimsel geçerliliğinin olmaması yer alır. Numeroloji, kişisel içgörü sağlamak için kullanılsa da, hayat kararları için tek başına bir rehber olarak görülmemelidir.
+
+### Numeroloji günlük hayatımda hangi alanlarda pratik faydalar sağlayabilir?
+
+Numeroloji, günlük hayatınızda kendinizi daha iyi tanımanıza, ilişkilerinizdeki uyumu anlamanıza ve kariyer seçimlerinizde potansiyel yönelimleri keşfetmenize yardımcı olabilir. Örneğin, yaşam yolu sayınız aracılığıyla güçlü ve zayıf yönlerinizi fark edebilir, bu bilgiyi kişisel gelişim hedeflerinizi belirlemede kullanabilirsiniz. Ayrıca, farklı sayıların enerjilerini anlayarak önemli tarihleri veya kararları daha bilinçli bir şekilde değerlendirebilirsiniz.

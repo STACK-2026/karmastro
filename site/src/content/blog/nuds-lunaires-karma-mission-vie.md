@@ -406,3 +406,20 @@ Si tu as un Nœud Sud en Cancer, tu as probablement passé des vies à te concen
 - [Numérologie karmique : décoder ses dettes spirituelles](https://karmastro.com/blog/numerologie-karmique-decoder-dettes-spirituelles)
 - [Thème natal gratuit : interpréter sa carte du ciel](https://karmastro.com/blog/theme-natal-gratuit-interpreter-carte-ciel)
 
+## Questions fréquentes
+
+### Quelle est la différence fondamentale entre le Nœud Sud et le Nœud Nord en astrologie karmique ?
+
+Le Nœud Sud représente les acquis passés, les talents innés et les schémas répétitifs hérités de vies antérieures, tandis que le Nœud Nord indique la mission d'évolution et les défis à relever pour la croissance spirituelle dans cette vie. Le Nœud Sud est une zone de confort à dépasser, alors que le Nœud Nord est la direction vers laquelle il faut tendre pour accomplir son karma. Comprendre cet axe aide à identifier les leçons karmiques spécifiques à intégrer.
+
+### À quels âges clés les retours des nœuds lunaires se manifestent-ils et quel est leur impact ?
+
+Les retours des nœuds lunaires se produisent environ tous les 18,6 ans, marquant des périodes charnières vers 19, 37 et 56 ans, qui activent des leçons karmiques spécifiques. Ces moments sont cruciaux pour faire le bilan de sa trajectoire de vie, ajuster son chemin et intégrer les apprentissages nécessaires à son évolution spirituelle. Ils sont souvent accompagnés de transits importants sur les planètes natales.
+
+### Comment la position de mon Nœud Nord dans un signe astrologique spécifique révèle-t-elle ma mission d'évolution ?
+
+La position de votre Nœud Nord dans un signe astrologique colore votre chemin karmique en indiquant les qualités à développer et les défis à relever pour votre croissance spirituelle. Par exemple, un Nœud Nord en Balance suggère de développer la collaboration et l'équilibre relationnel, tandis qu'un Nœud Nord en Scorpion invite à une transformation profonde et au lâcher-prise des attachements matériels. Chaque signe propose une voie unique d'évolution.
+
+### En quoi l'approche Karmastro permet-elle une analyse plus approfondie des nœuds lunaires ?
+
+L'approche Karmastro combine l'astrologie et la numérologie pour offrir une analyse unique et plus précise de l'axe karmique des nœuds lunaires. En croisant la position de vos nœuds lunaires avec votre chemin de vie ou votre nombre d'expression numérologique, cette méthode permet d'obtenir une lecture encore plus personnalisée et détaillée de votre mission d'évolution et de vos défis karmiques.

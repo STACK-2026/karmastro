@@ -175,3 +175,21 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 - [Compatibilità](/it/strumenti/compatibilita)
 
 [Esplora tutto il blog e gli strumenti](/it/blog/) · [Strumenti Karmastro](/it/strumenti/)
+
+## Domande frequenti
+
+### Come si calcola esattamente il numero di espressione partendo dal proprio nome completo?
+
+Il numero di espressione si calcola sommando i valori numerici corrispondenti a ciascuna lettera del proprio nome completo di battesimo, inclusi tutti i nomi e i cognomi. Ogni lettera dell'alfabeto ha un valore da 1 a 9 secondo la tabella pitagorica. Dopo aver sommato tutti i valori, si riduce il totale a una singola cifra (da 1 a 9), a meno che non si ottengano i numeri maestri 11, 22 o 33, che non vengono ridotti. Questo processo rivela le vibrazioni energetiche associate al nome.
+
+### Qual è la differenza principale tra il numero di espressione e il numero del cammino di vita nella numerologia?
+
+Il numero di espressione, derivato dal nome completo, rivela i talenti, le abilità innate e le potenzialità che si manifestano nel modo in cui una persona si esprime e interagisce con il mondo. Al contrario, il numero del cammino di vita, calcolato dalla data di nascita, indica la lezione principale da apprendere e il percorso generale della vita. Entrambi sono pilastri fondamentali del tema numerologico, ma descrivono aspetti complementari della personalità e del destino individuale.
+
+### Cosa indicano i numeri maestri 11, 22 e 33 nel contesto del numero di espressione?
+
+I numeri maestri 11, 22 e 33, quando ottenuti come numero di espressione, indicano un potenziale elevato e sfide significative, suggerendo una missione di vita più grande. L'11 è associato all'intuizione e all'ispirazione, il 22 al "Maestro Costruttore" con la capacità di realizzare grandi progetti, e il 33 al "Maestro Guaritore", focalizzato sul servizio e l'amore universale. Questi numeri richiedono un maggiore impegno per manifestare pienamente le loro potenti energie.
+
+### Da dove trae origine la pratica di attribuire valori numerici alle lettere per calcolare il numero di espressione?
+
+La pratica di attribuire valori numerici alle lettere ha radici antiche, risalendo a sistemi come la ghematria ebraica, l'abjad arabo e l'isopsefia greca, dove le lettere avevano un peso matematico. Il sistema moderno più riconosciuto per il numero di espressione si basa sulla tradizione pitagorica, formalizzata da Pitagora nel VI secolo a.C. e riscoperta in Occidente da numerologi come L. Dow Balliett e Juno Jordan, che hanno riadattato questi principi antichi.

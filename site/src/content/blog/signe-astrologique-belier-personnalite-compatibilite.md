@@ -124,6 +124,24 @@ Connaître ton signe solaire est un début, pas une fin. Ton [thème natal compl
 
 Karmastro calcule ton thème natal gratuitement avec les éphémérides Swiss Ephemeris (précision NASA JPL), en 30 secondes, sans publicité. [Démarre ton analyse](/) pour découvrir toutes tes planètes et comprendre ton architecture cosmique complète.
 
+## Questions fréquentes
+
+### Quelles sont les caractéristiques principales de la personnalité du Bélier ?
+
+La personnalité du Bélier est principalement caractérisée par son dynamisme, son courage et son esprit d'initiative, étant le premier signe du zodiaque. Les Béliers sont des leaders nés, dotés d'une grande énergie et d'une détermination farouche à atteindre leurs objectifs. Ils sont souvent impulsifs, passionnés et n'hésitent pas à prendre des risques pour défendre leurs idées ou leurs proches, incarnant l'énergie du feu cardinal.
+
+### Avec quels signes le Bélier a-t-il la meilleure compatibilité amoureuse ?
+
+Le Bélier trouve généralement une excellente compatibilité amoureuse avec les signes de Feu comme le Lion et le Sagittaire, ainsi qu'avec les signes d'Air tels que les Gémeaux et le Verseau. Les signes de Feu partagent son enthousiasme et sa passion, créant des relations intenses et stimulantes. Les signes d'Air, quant à eux, apportent la légèreté et la communication nécessaire pour équilibrer l'impulsivité du Bélier, favorisant des échanges intellectuels enrichissants.
+
+### Quelles sont les faiblesses typiques du signe astrologique du Bélier et comment les gérer ?
+
+Les faiblesses typiques du Bélier incluent l'impulsivité, l'impatience, une certaine agressivité et une tendance à l'égocentrisme, souvent dues à leur énergie débordante. Pour les gérer, le Bélier peut apprendre à développer la patience et l'écoute active, à canaliser son énergie dans des activités constructives et à pratiquer l'introspection pour mieux comprendre l'impact de ses actions sur autrui. La méditation ou des sports intenses peuvent aider à équilibrer cette énergie.
+
+### Quels types de carrières conviennent le mieux à la personnalité dynamique du Bélier ?
+
+Les carrières qui conviennent le mieux à la personnalité dynamique du Bélier sont celles qui offrent de l'autonomie, des défis et des opportunités de leadership, où ils peuvent prendre des initiatives. Ils excellent souvent dans des domaines comme l'entrepreneuriat, le sport de haut niveau, le management, les professions militaires ou de police, la chirurgie ou tout rôle nécessitant courage et décision rapide. Les environnements qui valorisent l'innovation et l'action sont idéaux pour leur épanouissement professionnel.
+
 ## Sources et references
 
 Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.

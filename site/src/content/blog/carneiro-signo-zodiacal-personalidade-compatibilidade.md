@@ -224,3 +224,20 @@ Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
 
 [Explore todo o blog e todas as ferramentas](/pt/blog/) · [Ferramentas Karmastro](/pt/ferramentas/)
 
+## Perguntas frequentes
+
+### Com quais signos Carneiro apresenta maior compatibilidade amorosa e profissional?
+
+Carneiro geralmente encontra maior compatibilidade amorosa com signos de Fogo como Leão e Sagitário, devido à partilha de entusiasmo e paixão, e com signos de Ar como Gémeos e Aquário, que estimulam a sua mente. No âmbito profissional, a sua energia e iniciativa alinham-se bem com parceiros que valorizam a liderança e a ação. A compatibilidade pode variar significativamente dependendo do ascendente e de outros posicionamentos planetários no mapa astral individual.
+
+### Quais são as principais fraquezas do signo de Carneiro e como podem ser geridas?
+
+As principais fraquezas de Carneiro incluem impulsividade, impaciência e uma tendência a ser excessivamente competitivo ou agressivo. Estas características podem levar a decisões precipitadas ou a conflitos desnecessários. Para gerir estas fraquezas, é crucial desenvolver a paciência, praticar a reflexão antes de agir e canalizar a sua energia competitiva para desafios construtivos, aprendendo a ceder e a colaborar quando necessário.
+
+### Como se comporta o nativo de Carneiro na sua vida profissional e na gestão das suas finanças?
+
+Na vida profissional, o nativo de Carneiro é um líder nato, impulsionado pela ambição e pela necessidade de iniciar projetos, destacando-se em funções que exigem coragem e dinamismo. No que toca à gestão financeira, tendem a ser impulsivos com o dinheiro, gastando com entusiasmo e por vezes de forma imprudente, embora também sejam capazes de trabalhar arduamente para o conquistar. É importante que desenvolvam um planeamento financeiro mais estruturado para evitar gastos excessivos.
+
+### O que significa ter o ascendente em Carneiro e como influencia a primeira impressão que se causa?
+
+Ter o ascendente em Carneiro significa que a pessoa projeta uma imagem inicial de energia, assertividade e iniciativa, sendo vista como alguém corajoso e direto. Esta influência astrológica dita a forma como os outros a percebem à primeira vista e como ela aborda novas situações e desafios. O ascendente em Carneiro confere uma postura destemida e um espírito pioneiro, muitas vezes levando a pessoa a ser a primeira a agir ou a tomar a frente em diversas circunstâncias.

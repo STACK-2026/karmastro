@@ -264,6 +264,24 @@ And if you want to receive every morning a message that reminds you which chakra
 
 Your body is not separate from your chart. Your chart is not separate from your body. When you begin to read them together, something beautiful happens: you stop seeing the sky as an abstraction, and you start feeling it exactly where it has always been, inside you.
 
+## Frequently asked questions
+
+### How can an astrological birth chart reveal insights about my personal chakra energy?
+
+An astrological birth chart can reveal insights into your personal chakra energy by indicating which planetary influences are strong or challenged, thereby reflecting the state of corresponding energy centers. For example, a challenging Saturn placement might suggest imbalances in the Muladhara (root chakra), while a well-aspected Venus could point to harmony in the Anahata (heart chakra). Analyzing planetary positions, aspects, and house placements helps diagnose energetic strengths and weaknesses.
+
+### Do chakras and astrology originate from the same ancient cultural traditions?
+
+Chakras and astrology do not originate from the exact same ancient cultural traditions, with chakras stemming primarily from Tantric yoga and Indian traditions, and astrology having diverse origins including Hindu astrology. However, these two systems are seen as speaking the same energetic language, offering complementary perspectives on the subtle body and planetary influences. They represent different frameworks for understanding the same underlying energetic realities.
+
+### What practical methods can be used to balance specific chakras based on their planetary rulers?
+
+Practical methods for balancing specific chakras based on their planetary rulers include using targeted mantras, crystals, and rituals aligned with each chakra's energetic needs. For instance, meditating with a specific mantra associated with a chakra, wearing a crystal corresponding to its ruling planet, or performing rituals that honor its planetary influence can help restore equilibrium and enhance well-being.
+
+### Why are specific planets associated with particular chakras, and what does this connection signify?
+
+Specific planets are associated with particular chakras because each planet's energetic qualities and archetypal themes resonate directly with the functions and attributes of a corresponding energy center. This connection signifies that planetary influences in astrology offer a deeper understanding of the energetic dynamics within each chakra, revealing how cosmic forces manifest within our subtle body and impact our physical, emotional, and spiritual well-being.
+
 ## Sources and references
 
 This article draws on verifiable encyclopedic and scientific sources.

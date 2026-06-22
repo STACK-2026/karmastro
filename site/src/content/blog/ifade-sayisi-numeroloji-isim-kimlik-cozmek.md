@@ -141,3 +141,21 @@ Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
 - [Uyumluluk](/tr/araclar/uyumluluk)
 
 [Tüm blogu ve araçları keşfet](/tr/blog/) · [Karmastro araçları](/tr/araclar/)
+
+## Sıkça sorulan sorular
+
+### İfade sayımı kendim nasıl hesaplayabilirim?
+
+İfade sayınızı hesaplamak için adınızdaki her harfin numerolojik karşılığını bulup toplamanız ve tek bir rakama indirgemeniz gerekir. Her harfin 1'den 9'a kadar bir sayıya karşılık geldiği özel bir tablo kullanılır. Bu toplam sonucunda çift haneli bir sayı elde ederseniz (11, 22, 33 hariç), rakamları tekrar toplayarak tek haneli bir sayıya ulaşana kadar devam edersiniz.
+
+### İfade sayısı 9 olan bir kişinin temel özellikleri nelerdir?
+
+İfade sayısı 9 olan kişiler genellikle şefkatli, insancıl ve evrensel sevgiye açık bireyler olarak tanımlanır. Bu kişiler, başkalarına yardım etme, toplumsal adalet ve dünya barışı gibi büyük ideallere bağlılık gösterirler. Geniş bir bakış açısına sahip olup, genellikle sanatsal yetenekleri ve derin bir anlayışları bulunur, ancak bazen hayal kırıklığına uğramaya meyilli olabilirler.
+
+### İfade sayısını bilmek hayatımda ne gibi bir fark yaratır veya ne işe yarar?
+
+İfade sayınızı bilmek, kişiliğinizin derinliklerini, doğal yeteneklerinizi ve yaşam yolunuzdaki potansiyel zorlukları anlamanıza yardımcı olabilir. Bu numerolojik bilgi, kendinizi daha iyi tanımanızı, kariyer seçimlerinizde veya kişisel ilişkilerinizde daha bilinçli kararlar almanızı sağlayabilir. İsminizin taşıdığı titreşimsel enerjiyi fark ederek, güçlü yönlerinizi vurgulayabilir ve zayıf yönleriniz üzerinde çalışabilirsiniz.
+
+### Numerolojideki 'Master Sayılar' (11, 22, 33) ne anlama gelir ve neden özel kabul edilirler?
+
+Numerolojide Master Sayılar (11, 22, 33), diğer sayılardan farklı olarak tek haneye indirgenmeyen, yüksek potansiyel ve daha büyük bir sorumluluk taşıyan özel sayılardır. Bu sayılar, bireylere ilham verme, büyük projeleri hayata geçirme ve topluma hizmet etme gibi olağanüstü yetenekler ve zorluklar sunar. 11 sezgiyi, 22 inşa etme gücünü, 33 ise şifacılığı ve evrensel sevgiyi temsil eder; bu nedenle taşıyıcılarının yaşamlarında önemli bir etki yaratır.

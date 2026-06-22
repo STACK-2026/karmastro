@@ -316,6 +316,24 @@ And if you want to follow the key steps of this great transit day after day, sub
 
 The world is changing. The sky has always known. And you are part of this great mutation. Not as a spectator, but as an actor. What you choose, what you build, what you refuse, will matter. Pluto in Aquarius is the invitation to become conscious of this historical moment and to take your place in it. Your own place, exactly as you are. The sky expects nothing else.
 
+## Frequently asked questions
+
+### How long will Pluto remain in the sign of Aquarius, and what are the significant dates for this astrological transit?
+
+Pluto will transit through Aquarius for approximately 20 years, marking a period of profound collective transformation. This significant astrological event began with its initial entry into Aquarius in March 2023, with subsequent retrograde periods and final entry in late 2024, continuing until early 2044. This long duration ensures deep, systemic changes across global structures.
+
+### What historical events characterized the last time Pluto was in Aquarius, and what insights can we draw from that period?
+
+The last time Pluto was in Aquarius, from 1778 to 1798, it coincided with major revolutionary periods such as the American and French Revolutions, alongside the Enlightenment era's emphasis on reason and individual rights. This historical precedent suggests a period of radical societal restructuring, the questioning of established powers, and the emergence of new collective ideals and technologies.
+
+### What major societal and technological transformations are anticipated during Pluto's transit through Aquarius?
+
+During Pluto's transit through Aquarius, significant transformations are anticipated in technology, artificial intelligence, and transhumanism, alongside a forced ecological transition and shifts in work and economic models. This era is expected to challenge traditional political structures, foster distributed counter-powers, and redefine spirituality towards more horizontal, collective forms.
+
+### How can individuals personally adapt to and navigate the profound changes associated with Pluto's journey through Aquarius?
+
+Individuals can best navigate Pluto in Aquarius by embracing innovation, adapting to technological advancements, and actively participating in collective movements for social change. Cultivating flexibility, questioning established norms, and finding personal agency within evolving societal structures will be key to thriving during this period of intense mutation.
+
 ## Sources and references
 
 This article draws on verifiable encyclopedic and scientific sources.

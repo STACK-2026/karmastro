@@ -148,3 +148,20 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 
 [Explora el blog completo y todas las herramientas](/es/blog/) · [Herramientas Karmastro](/es/herramientas/)
 
+## Preguntas frecuentes
+
+### ¿Cuál es la diferencia fundamental entre una conjunción, una cuadratura y un trígono en astrología?
+
+Las conjunciones (0°) fusionan las energías planetarias, las cuadraturas (90°) crean tensión y desafíos para el crecimiento, mientras que los trígonos (120°) representan armonía y fluidez natural. Las conjunciones indican una mezcla intensa de las energías involucradas, las cuadraturas exigen esfuerzo para resolver conflictos internos o externos, y los trígonos ofrecen talentos innatos o áreas de facilidad. Cada uno describe un tipo distinto de interacción entre planetas.
+
+### ¿Cómo se aplica el concepto de orbe al interpretar los aspectos astrológicos en una carta natal?
+
+El orbe define el rango de grados de separación angular dentro del cual dos planetas se consideran en aspecto, permitiendo una interpretación significativa de su interacción. Cuanto menor sea el orbe, más potente y directa será la influencia del aspecto entre los planetas involucrados en la carta natal. Es crucial para determinar la fuerza y relevancia de la interacción planetaria, ya que un orbe amplio puede debilitar su impacto.
+
+### ¿Qué implicaciones tiene tener aspectos astrológicos difíciles o tensos en una carta natal y cómo se pueden abordar?
+
+Los aspectos difíciles o tensos, como las cuadraturas y oposiciones, indican áreas de conflicto, desafío y fricción que impulsan el crecimiento personal y la evolución del individuo. Aunque pueden generar frustración o bloqueos, también son fuentes poderosas de motivación para desarrollar nuevas habilidades y superar obstáculos. Abordarlos implica reconocer las tensiones y trabajar conscientemente para integrar las energías planetarias en conflicto.
+
+### ¿Por qué se considera que los aspectos astrológicos son el elemento más crucial para una interpretación profunda de la carta natal?
+
+Los aspectos son cruciales porque revelan cómo los planetas y sus energías interactúan entre sí, creando una narrativa dinámica y compleja de la personalidad y el destino de un individuo. A diferencia de las posiciones planetarias aisladas en signos, los aspectos muestran los diálogos, tensiones y armonías que definen el carácter y las experiencias de vida. Son el corazón de la interpretación astrológica, aportando profundidad y matices.

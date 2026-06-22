@@ -479,3 +479,20 @@ Les nombres karmiques sont **13, 14, 16 et 19**. Chacun d’eux est associé à 
 - [Horoscope du jour : prévisions astrologiques fiables](https://karmastro.com/blog/horoscope-jour-previsions-astrologiques-fiables)
 - [Qu'est-ce que la numérologie ? Guide complet pour débuter](https://karmastro.com/blog/qu-numerologie-guide-complet-debuter)
 
+## Questions fréquentes
+
+### Comment puis-je concrètement agir pour améliorer mon karma et transformer mes défis de vie ?
+
+Vous pouvez améliorer votre karma et transformer vos défis de vie en adoptant des pratiques quotidiennes telles que la gratitude, la méditation, l'altruisme et le pardon. La gratitude quotidienne, par exemple, réduit le stress, tandis que la méditation peut modifier la structure cérébrale. Travailler sur vos "ombres" ou aspects inconscients, souvent liés à la maison 12 en astrologie, est également une méthode efficace pour progresser. Ces actions visent à créer des causes positives pour des effets bénéfiques.
+
+### Comment les nœuds lunaires en astrologie peuvent-ils révéler des informations sur mes vies antérieures et ma mission d'âme ?
+
+En astrologie, les nœuds lunaires révèlent votre contrat karmique et des informations sur vos vies antérieures. Le Nœud Sud indique les talents innés et les schémas répétitifs hérités de vos vies passées, montrant ce qui vous est familier. Le Nœud Nord, quant à lui, pointe votre mission d'âme et la direction à prendre pour votre évolution actuelle. Comprendre leur position dans votre thème natal permet de décrypter votre parcours karmique.
+
+### Quels sont les nombres clés en numérologie karmique qui indiquent des dettes à transformer et quels défis y sont associés ?
+
+En numérologie karmique, les nombres clés indiquant des dettes à transformer sont le 13, le 14, le 16 et le 19. Chacun de ces nombres est lié à des défis spécifiques : le 13 peut concerner la procrastination ou la paresse, le 14 les excès et l'abus de liberté, le 16 l'orgueil et la destruction, et le 19 l'abus de pouvoir ou l'indépendance excessive. Identifier ces nombres dans votre profil permet de prendre conscience des leçons karmiques à intégrer.
+
+### Le karma est-il une forme de punition divine ou un mécanisme naturel de cause à effet ?
+
+Le karma n'est pas une punition divine, mais plutôt une loi universelle de cause à effet, similaire à la gravité. Issu de l'hindouisme et du bouddhisme, il stipule que toutes vos actions, qu'elles soient physiques, verbales ou mentales, influencent vos vies présentes et futures. C'est un mécanisme naturel qui vise l'équilibre et l'apprentissage, et non une sanction punitive.

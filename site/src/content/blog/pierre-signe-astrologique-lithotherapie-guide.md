@@ -72,6 +72,24 @@ Les pierres sont de véritables éponges énergétiques. Pour qu'elles continuen
 - **La purification (le nettoyage) :** Passez tout simplement votre bijou ou votre pierre dans la fumée d'un bâton de sauge blanche ou de palo santo. Cette méthode de fumigation est très douce et sécurisée pour tous les types d'accessoires.
 - **Le rechargement (le plein d'énergie) :** Déposez vos trésors sur le rebord d'une fenêtre les soirs de **Pleine Lune**. La lumière lunaire est une énergie douce et universelle qui convient à toutes les pierres sans risquer de ternir leurs jolies couleurs (contrairement au soleil qui peut décolorer l'améthyste ou le quartz rose).
 
+## Questions fréquentes
+
+### Comment puis-je déterminer la pierre principale qui correspond à mon signe astrologique ?
+
+Pour déterminer la pierre principale de votre signe astrologique, il est nécessaire de connaître votre date de naissance qui définit votre signe zodiacal. Chaque signe du zodiaque est traditionnellement lié à une ou plusieurs pierres spécifiques dont les vibrations résonnent avec ses caractéristiques uniques. Ces associations sont souvent listées dans des guides de lithothérapie ou des ressources spécialisées en astrologie.
+
+### Quel est le but de combiner l'astrologie et la lithothérapie pour choisir une pierre ?
+
+Le but de combiner l'astrologie et la lithothérapie est de créer une harmonie énergétique en associant les influences célestes de votre signe à l'énergie stable et bienveillante d'une pierre naturelle. L'astrologie révèle votre "carte d'identité céleste" et vos traits de caractère, tandis que la pierre choisie peut amplifier vos qualités innées ou vous aider à relever certains défis spécifiques à votre signe, favorisant ainsi votre bien-être quotidien.
+
+### Quelles sont les méthodes essentielles pour entretenir et recharger l'énergie de ma pierre astrologique ?
+
+Les méthodes essentielles pour entretenir votre pierre astrologique incluent la purification régulière et le rechargement de son énergie vibratoire. La purification peut se faire par l'eau distillée, la fumigation avec de la sauge, ou en la plaçant sur un amas de quartz. Pour le rechargement, exposez-la à la lumière lunaire (particulièrement la pleine lune) ou solaire douce, ou posez-la sur une géode d'améthyste ou de cristal de roche.
+
+### Existe-t-il plusieurs pierres associées à un même signe astrologique, et comment choisir la bonne ?
+
+Oui, il existe souvent plusieurs pierres associées à un même signe astrologique, offrant différentes facettes pour soutenir les qualités ou équilibrer les défis du natif. Pour choisir la bonne, fiez-vous à votre intuition et à l'attirance que vous ressentez pour une pierre. Considérez également les propriétés spécifiques de chaque minéral et comment elles résonnent avec vos besoins personnels du moment, au-delà de l'association générale.
+
 ## Conclusion
 
 Choisir un cristal en accord avec son ciel de naissance, c'est s'offrir un joli rendez-vous avec soi-même. Écoutez simplement votre cœur : si une pierre d'un autre signe vous attire irrésistiblement aujourd'hui, c'est sûrement qu'elle a un joli message à vous transmettre. Faites confiance à votre intuition !

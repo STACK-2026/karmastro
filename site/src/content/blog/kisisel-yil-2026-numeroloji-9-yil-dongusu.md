@@ -146,3 +146,21 @@ Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
 - [Uyumluluk](/tr/araclar/uyumluluk)
 
 [Tüm blogu ve araçları keşfet](/tr/blog/) · [Karmastro araçları](/tr/araclar/)
+
+## Sıkça sorulan sorular
+
+### Kişisel yıl numaramı 2026 için nasıl hesaplayabilirim?
+
+Kişisel yıl numaranızı hesaplamak için doğum gününüzün ve ayınızın rakamlarını, içinde bulunduğunuz yılın (örneğin 2026) rakamlarıyla toplamanız gerekir. Elde edilen toplamı tek bir rakama indirgeyene kadar (1'den 9'a kadar) basamaklarını tekrar toplayın. Bu basit toplama işlemi, her bireyin o yıl için özel enerjisini ve temalarını belirler.
+
+### Numerolojide 9 yıllık kişisel yıl döngüsü ne anlama gelir ve her yılın teması nedir?
+
+Numerolojide 9 yıllık kişisel yıl döngüsü, her bireyin yaşamında tekrar eden bir büyüme ve gelişim sürecini temsil eder. Bu döngü, tohum ekme (1. yıl) ile başlayıp hasat ve bırakma (9. yıl) ile sona eren doğal aşamalardan oluşur. Her yılın kendine özgü bir enerjisi ve teması vardır; örneğin, 1. yıl yeni başlangıçları, 5. yıl değişimi, 9. yıl ise tamamlanmayı ve kapanışı simgeler.
+
+### Kişisel yıl kavramı, evrensel yıl veya genel takvim yılından nasıl farklılık gösterir?
+
+Kişisel yıl kavramı, her bireyin doğum tarihine özel olarak hesaplanan ve kişisel gelişim yolculuğunu yansıtan bir numerolojik döngüdür. Evrensel yıl ise belirli bir takvim yılının (örneğin 2026) tüm dünya üzerindeki insanlar için geçerli olan genel enerjisini ifade eder. Kişisel yıl, astrolojideki bireysel transitler gibi kişiye özel etkileri vurgularken, evrensel yıl daha geniş kolektif temaları belirler.
+
+### Kişisel yıl numaramı bilmek bana ne gibi pratik faydalar sağlar veya neye yardımcı olur?
+
+Kişisel yıl numaranızı bilmek, o yıl içinde karşılaşacağınız potansiyel fırsatları ve zorlukları önceden anlamanıza yardımcı olur. Bu bilgi, kişisel hedeflerinizi belirlerken, önemli kararlar alırken veya yaşamınızdaki değişikliklere uyum sağlarken daha bilinçli adımlar atmanızı sağlar. Her yılın enerjisini anlayarak, eylemlerinizi bu enerjilerle hizalayabilir ve daha verimli bir yaşam süreci deneyimleyebilirsiniz.

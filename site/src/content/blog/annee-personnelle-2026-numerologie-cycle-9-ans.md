@@ -269,6 +269,24 @@ Très bien. La numérologie te donne le tempo, l'astrologie te donne les énergi
 **Je suis en année 5 et tout va trop vite, que faire ?**
 C'est normal. L'année 5 est la plus mouvementée du cycle. Le conseil est de garder quelques piliers stables (santé, sommeil, une relation sécurisante) tout en t'autorisant à bouger sur le reste. Ne casse pas tout en même temps. Choisis ton chambardement.
 
+## Questions fréquentes
+
+### Comment déterminer précisément son année personnelle pour 2026 en numérologie ?
+
+Pour calculer votre année personnelle 2026, vous devez additionner le jour et le mois de votre naissance à l'année universelle en cours, qui est 2026. Réduisez ensuite ce total à un seul chiffre (de 1 à 9) ou à un Maître Nombre (11, 22, 33). Par exemple, si vous êtes né le 15 mars, vous additionnez 15 (jour) + 3 (mois) + 2 + 0 + 2 + 6 (année 2026). Le résultat final réduit sera votre année personnelle.
+
+### Quelle est la distinction fondamentale entre l'année personnelle et le chemin de vie en numérologie ?
+
+L'année personnelle représente l'énergie et les thèmes dominants d'une année spécifique, influençant les expériences et les opportunités pour une période de douze mois. En revanche, le chemin de vie est un nombre fixe, calculé à partir de votre date de naissance complète, qui révèle votre but existentiel, vos talents naturels et les leçons majeures à apprendre tout au long de votre vie. L'année personnelle est un cycle transitoire, tandis que le chemin de vie est une trajectoire permanente.
+
+### Comment puis-je concrètement utiliser les prévisions de mon année personnelle 2026 pour prendre de meilleures décisions ?
+
+Pour utiliser les prévisions de votre année personnelle 2026, identifiez les thèmes et les énergies associés à votre chiffre pour l'année et alignez vos actions en conséquence. Par exemple, une année 1 favorise les nouveaux départs, tandis qu'une année 4 encourage la construction et la discipline. En comprenant ces influences, vous pouvez planifier vos projets, vos relations et vos objectifs de manière plus harmonieuse, évitant ainsi de nager à contre-courant des énergies dominantes.
+
+### Quel est l'impact d'un cycle de neuf ans en numérologie sur les différentes années personnelles ?
+
+Le cycle de neuf ans en numérologie représente une progression naturelle où chaque année personnelle (de 1 à 9) apporte des énergies et des leçons distinctes, culminant vers une phase de complétion. Chaque année s'appuie sur la précédente et prépare la suivante, formant une spirale d'évolution. Ce cycle permet une compréhension holistique de votre parcours, aidant à contextualiser les défis et les opportunités de chaque période.
+
 ## Pour aller plus loin
 
 L'année personnelle est l'un des outils les plus pratiques de la numérologie, parce qu'elle te donne un cadre précis pour piloter ton année. Mais elle prend tout son sens dans le contexte global de ta numérologie. Si tu n'as pas encore calculé ton [chemin de vie](/outils/chemin-de-vie), c'est la première chose à faire. Cela te donnera la grande direction de ta vie, sur laquelle ton année personnelle vient ajouter un rythme annuel.

@@ -203,3 +203,21 @@ Este artigo baseia-se em fontes enciclopédicas e científicas verificáveis.
 - [Compatibilidade](/pt/ferramentas/compatibilidade)
 
 [Explore todo o blog e todas as ferramentas](/pt/blog/) · [Ferramentas Karmastro](/pt/ferramentas/)
+
+## Perguntas frequentes
+
+### Quantas vezes por ano ocorre o Mercúrio retrógrado e qual a sua duração média?
+
+O Mercúrio retrógrado ocorre aproximadamente três vezes por ano, com cada período a durar cerca de três semanas. Esta frequência e duração são consistentes, proporcionando oportunidades regulares para revisão e introspeção em vez de serem eventos caóticos imprevisíveis. É um ciclo astrológico bem estabelecido.
+
+### Quais são os efeitos práticos mais comuns do Mercúrio retrógrado na comunicação e como posso minimizá-los?
+
+Durante o Mercúrio retrógrado, é comum experienciar desafios na comunicação, como mal-entendidos, falhas tecnológicas e atrasos em viagens ou contratos. Para minimizá-los, é aconselhável rever cuidadosamente mensagens, documentos e planos de viagem, e praticar a escuta ativa. Este período favorece a revisão e a clareza nas interações.
+
+### Existem aspetos positivos ou oportunidades ocultas que podem ser aproveitadas durante o Mercúrio retrógrado?
+
+Sim, o Mercúrio retrógrado oferece uma oportunidade valiosa para revisão, reflexão e reavaliação de projetos, planos e relacionamentos. Em vez de iniciar algo novo, é um período ideal para corrigir erros, finalizar pendências e aprofundar a compreensão de situações. Esta fase pode ser produtiva para a introspeção e o planeamento estratégico.
+
+### Que precauções devo tomar com a tecnologia e máquinas durante o período de Mercúrio retrógrado para evitar problemas?
+
+Durante o Mercúrio retrógrado, é prudente fazer backups regulares dos seus dados e verificar a manutenção dos seus dispositivos eletrónicos e máquinas. Evite assinar contratos importantes relacionados com tecnologia ou fazer grandes compras de equipamentos novos, se possível. Este período é mais propício para a reparação e atualização do que para aquisições significativas.

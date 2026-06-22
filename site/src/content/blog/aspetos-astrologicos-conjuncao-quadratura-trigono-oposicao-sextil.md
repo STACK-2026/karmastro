@@ -192,3 +192,21 @@ Este artigo baseia-se em fontes enciclopédicas e científicas verificáveis.
 - [Compatibilidade](/pt/ferramentas/compatibilidade)
 
 [Explore todo o blog e todas as ferramentas](/pt/blog/) · [Ferramentas Karmastro](/pt/ferramentas/)
+
+## Perguntas frequentes
+
+### Qual a diferença prática entre um trígono e um sextil numa carta natal e como se manifestam?
+
+O trígono (120°) representa uma harmonia natural, fluida e espontânea, indicando talentos ou áreas de facilidade inata que se manifestam sem grande esforço consciente. O sextil (60°), por outro lado, simboliza uma oportunidade suave que requer alguma ação ou consciência para ser plenamente aproveitada, sugerindo potenciais a desenvolver através da colaboração ou do uso criativo de recursos. Ambos são aspetos benéficos, mas o trígono é mais passivo e o sextil mais ativo na sua expressão.
+
+### Como se deve abordar a interpretação de aspetos desafiadores como a quadratura ou a oposição?
+
+Aspetos desafiadores como a quadratura (90°) e a oposição (180°) não são inerentemente negativos, mas sim indicadores de tensão e áreas que exigem trabalho e desenvolvimento contínuo. A quadratura aponta para um conflito interno ou externo que, quando enfrentado e superado, gera crescimento significativo e força criativa. A oposição revela um eixo de consciência, onde é preciso equilibrar duas energias opostas, levando a uma maior objetividade e perspetiva na vida.
+
+### O que significa a 'noção de orbe' na análise dos aspetos astrológicos e qual a sua importância?
+
+A 'noção de orbe' refere-se à margem de tolerância angular permitida para que dois planetas sejam considerados em aspeto, mesmo que não estejam exatamente no ângulo perfeito. Por exemplo, para uma conjunção de 0°, um orbe de 8° significa que planetas entre -8° e +8° de distância angular ainda formam uma conjunção. A sua importância reside na determinação da força e da relevância de um aspeto, pois quanto menor o orbe, mais potente e direto é o seu efeito na carta natal.
+
+### É possível que uma pessoa tenha apenas aspetos 'fáceis' ou apenas 'difíceis' na sua carta natal?
+
+Não, é extremamente raro e praticamente impossível que uma carta natal contenha apenas aspetos considerados 'fáceis' (como trígonos e sextis) ou apenas 'difíceis' (como quadraturas e oposições). A maioria das cartas natais é uma combinação complexa de ambos, refletindo a natureza multifacetada e dinâmica da experiência humana. Os aspetos desafiadores impulsionam o crescimento e a aprendizagem, enquanto os aspetos harmoniosos indicam talentos e áreas de facilidade, criando um equilíbrio essencial na personalidade.

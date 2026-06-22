@@ -139,6 +139,24 @@ Knowing your life path is an excellent starting point, but numerology does not s
 
 Karmastro calculates your full numerological profile in less than a minute, for free, and crosses it with your [astrological birth chart](/en/blog/free-birth-chart-interpret-complete-natal-chart) for a unique reading. [Launch your analysis](/en/tools/life-path-number) now and discover if your life path 1 is aligned with the rest of your cosmic signature.
 
+## Frequently asked questions
+
+### How do you calculate your Life Path number to determine if it's a 1?
+
+To calculate your Life Path number, you sum the individual digits of your birth date (month, day, and full year) and reduce the total to a single digit, unless it's a master number (11, 22, 33). For example, if your birth date is October 26, 1985 (10/26/1985), you would add 1+0+2+6+1+9+8+5, then reduce the sum. If the final single digit is 1, then you have a Life Path 1.
+
+### What are the primary strengths and positive attributes associated with Life Path 1?
+
+Individuals with a Life Path 1 are primarily characterized by their pioneering spirit, strong individuality, and natural leadership abilities. They possess an innate drive to initiate projects, create innovative solutions, and assert their unique vision in the world. This vibration empowers them to be self-reliant, courageous, and determined, often leading the way where others hesitate.
+
+### What are the common challenges or potential pitfalls for individuals with a Life Path 1?
+
+Life Path 1 individuals often face challenges related to their strong independence, which can sometimes lead to feelings of isolation or a tendency towards excessive self-reliance. They may struggle with impatience, a desire for control, or an inability to delegate tasks effectively. Overcoming a fear of failure or the pressure of always being first are also common hurdles for those with this powerful number.
+
+### What kind of career or professional roles are generally recommended for a Life Path 1?
+
+Life Path 1 individuals thrive in careers that allow them to lead, innovate, and work independently, leveraging their natural pioneering spirit. Roles such as entrepreneurs, managers, inventors, or leaders in any field where new ideas and strong direction are valued are highly suitable. They excel in positions that offer autonomy and the opportunity to forge new paths rather than simply following established routines.
+
 ## Sources and references
 
 This article draws on verifiable encyclopedic and scientific sources.

@@ -269,3 +269,21 @@ Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
 - [Uyumluluk](/tr/araclar/uyumluluk)
 
 [Tüm blogu ve araçları keşfet](/tr/blog/) · [Karmastro araçları](/tr/araclar/)
+
+## Sıkça sorulan sorular
+
+### Astroloji haritasında açılar ne anlama gelir ve neden önemlidir?
+
+Bir doğum haritasında açılar, gezegenler arasındaki dinamik etkileşimleri ve diyalogları ifade eder. Bu etkileşimler, bir haritanın gerçek yapısını ve hikayenin nasıl aktığını belirleyerek burçlar ve evlerin sunduğu sahneyi canlandırır. Açılar, bireyin içsel dinamiklerini, potansiyellerini ve yaşamındaki temel temaları anlamak için kritik öneme sahiptir.
+
+### Astroloji haritasındaki beş ana açı türü nelerdir ve her birinin temel anlamı nedir?
+
+Batı astrolojisinin temelini oluşturan beş ana açı kavuşum (0°), altmışlık (60°), kare (90°), üçlü (120°) ve karşıt (180°)'dır. Kavuşum füzyonu, altmışlık yumuşak fırsatları, kare yaratıcı gerilimi, üçlü doğal uyumu ve karşıt ise bilinç eksenini temsil eder. Bu açılar, gezegenlerin birbirleriyle olan ilişkilerinin doğasını ve ifade biçimlerini gösterir.
+
+### Kare ve karşıt gibi zorlayıcı açılar bir kişinin karakterini veya yaşam yolunu nasıl etkiler?
+
+Kare (90°) ve karşıt (180°) gibi zorlayıcı açılar, bir bireyin karakterinde ve yaşam yolunda içsel gerilimler veya dışsal çatışmalar yaratabilir. Kare açılar genellikle çözülmesi gereken engelleri ve kişisel gelişimi tetikleyen yaratıcı bir baskıyı simgelerken, karşıt açılar denge bulma ihtiyacını ve farklı kutuplar arasında bilinçli bir seçim yapma zorunluluğunu gösterir. Bu açılar, kişinin büyüme ve dönüşüm potansiyelini barındırır.
+
+### Klasik astrolojik açıları ilk tanımlayan önemli astrolog kimdir ve bu ne zaman gerçekleşmiştir?
+
+Klasik astrolojik açıları ilk tanımlayan önemli astrolog Claudius Ptolemaios'tur. Bu tanım, İ.S. 100-170 yılları arasında yazdığı "Tetrabiblos" adlı eserinde yapılmıştır. Ptolemaios, Batı astrolojisinin temelini oluşturan beş klasik açıyı (kavuşum, altmışlık, kare, üçlü, karşıt) belirleyerek astrolojik yorumlamanın yüzyıllar boyunca sürecek temellerini atmıştır.

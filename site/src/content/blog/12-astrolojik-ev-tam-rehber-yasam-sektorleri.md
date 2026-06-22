@@ -256,3 +256,21 @@ Bu makale dogrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadir.
 - [Uyumluluk](/tr/araclar/uyumluluk)
 
 [Tüm blogu ve araçları keşfet](/tr/blog/) · [Karmastro araçları](/tr/araclar/)
+
+## Sıkça sorulan sorular
+
+### Astrolojik evler, burçlar ve gezegenler arasındaki temel fark nedir?
+
+Gezegenler doğum haritasındaki "oyuncuları" (kim), burçlar bu oyuncuların "nasıl" davrandığını (kostümler), evler ise bu eylemlerin "hangi yaşam alanında" gerçekleştiğini (sahneler) gösterir. Gezegenler temel enerjileri ve işlevleri, burçlar bu enerjilerin ifade biçimini, evler ise hayatın belirli sektörlerini temsil eder. Bu üç katman, bir kişinin potansiyelini ve deneyimlerini anlamak için birbiriyle etkileşim halindedir.
+
+### Doğum haritasındaki boş veya dolu evler ne anlama gelir ve yorumlarken nelere dikkat etmeliyim?
+
+Doğum haritasında gezegen içermeyen boş evler, o yaşam alanında daha fazla özgürlük ve esneklik olduğunu, ancak aynı zamanda daha az odaklanma gerektiren bir alan olabileceğini gösterir. Gezegenlerle dolu evler ise, o yaşam sektöründe yoğun enerji, deneyim ve gelişim potansiyeli bulunduğunu işaret eder. Yorumlarken, evin yöneticisi olan burcun ve o burcun yöneticisi gezegenin konumuna bakmak, boş evin enerjisini anlamak için önemlidir.
+
+### Astrolojik evlerin her iki saatte bir değişmesi doğum haritası yorumunu nasıl etkiler?
+
+Astrolojik evlerin her iki saatte bir değişmesi, doğum haritasının kişiye özel ve benzersiz olmasının en önemli nedenlerinden biridir. Bu durum, aynı gün doğan ancak farklı saatlerde dünyaya gelen kişilerin bile farklı yükselen burçlara ve dolayısıyla farklı ev yerleşimlerine sahip olmasını sağlar. Doğum saatinin doğru bilinmesi, evlerin kesin konumunu belirleyerek hayatın hangi alanlarında hangi enerjilerin etkili olduğunu anlamak için kritik öneme sahiptir.
+
+### Astrolojik ev bilgisi kişisel gelişim ve kendini tanıma yolculuğunda nasıl kullanılabilir?
+
+Astrolojik evler, hayatın farklı alanlarındaki güçlü ve zayıf yönlerimizi, potansiyellerimizi ve zorluklarımızı anlamak için bir harita sunar. Her evin temsil ettiği yaşam sektörünü (ilişkiler, kariyer, sağlık vb.) inceleyerek, hangi alanlarda daha fazla enerji harcadığımızı veya hangi alanlarda gelişim ihtiyacımız olduğunu fark edebiliriz. Bu bilgi, bilinçli seçimler yapmamıza ve kişisel büyüme hedeflerimize ulaşmamıza yardımcı olur.

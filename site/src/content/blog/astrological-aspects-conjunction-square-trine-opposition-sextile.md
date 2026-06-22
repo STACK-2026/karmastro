@@ -293,6 +293,24 @@ And if you want to follow the transits that activate your natal aspects day by d
 
 Learn to read your aspects the way you learn to read a musical score. At first, it is strange and a bit discouraging. With time, you begin to hear the music. And one day, you realize that this music is yours.
 
+## Frequently asked questions
+
+### How do I interpret a square aspect in my birth chart?
+
+A square aspect in a birth chart indicates areas of significant tension and challenge, often representing internal or external conflicts that demand resolution. These aspects highlight dynamic friction between two planetary energies, prompting growth through effort and conscious integration. While initially difficult, squares are powerful catalysts for developing resilience and new skills by forcing confrontation with inherent imbalances.
+
+### What is an "orb" in astrological aspect analysis?
+
+An "orb" in astrological aspect analysis refers to the permissible degree of deviation from an exact angular distance between two planets for an aspect to still be considered active. This tolerance range determines the strength and influence of an aspect; a smaller orb indicates a more potent connection, while a larger orb suggests a weaker, less impactful interaction. Different aspects and astrologers may use varying orb values.
+
+### What is the difference between major and minor astrological aspects?
+
+Major astrological aspects, such as conjunctions, squares, trines, oppositions, and sextiles, are considered the most powerful and fundamental influences in a birth chart due to their strong angular relationships and frequent occurrence. Minor aspects, including quincunxes, semi-squares, and sesquiquadrates, represent more subtle energies or less direct influences. While less prominent, minor aspects can add nuanced layers of understanding to a chart's dynamics.
+
+### How can I work constructively with challenging astrological aspects in my natal chart?
+
+Working constructively with challenging astrological aspects involves recognizing the inherent tensions they represent and consciously developing strategies to integrate their energies rather than resisting them. This often means embracing the growth opportunities presented by squares or oppositions, understanding that these aspects highlight areas for personal development and mastery. By acknowledging and actively addressing these dynamics, individuals can transform potential weaknesses into sources of strength and wisdom.
+
 ## Sources and references
 
 This article draws on verifiable encyclopedic and scientific sources.

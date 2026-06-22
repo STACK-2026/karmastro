@@ -255,3 +255,21 @@ Bu makale doğrulanabilir ansiklopedik ve bilimsel kaynaklara dayanmaktadır.
 - [Uyumluluk](/tr/araclar/uyumluluk)
 
 [Tüm blogu ve araçları keşfet](/tr/blog/) · [Karmastro araçları](/tr/araclar/)
+
+## Sıkça sorulan sorular
+
+### Yükselen burcumu doğru bir şekilde hesaplamak için hangi bilgilere ihtiyacım var?
+
+Yükselen burcunuzu kesin olarak hesaplamak için doğum tarihiniz, doğum saatiniz (dakika hassasiyetinde) ve doğum yeriniz (şehir ve ülke) olmak üzere üç temel bilgiye ihtiyacınız vardır. Doğum anınızdaki doğu ufkunda yükselen burcu belirleyen bu veriler, kişisel astroloji haritanızın temelini oluşturur. Saatinizdeki küçük bir sapma bile yükselen burcunuzu değiştirebilir, bu yüzden doğum belgesi gibi resmi kaynaklardan teyit etmek önemlidir.
+
+### Yükselen burcumun kişiliğim üzerindeki etkisi Güneş burcumdan neden daha fazla olabilir?
+
+Yükselen burcunuz, dış dünyaya yansıttığınız ilk izlenimi, fiziksel görünümünüzü ve başkalarıyla etkileşim kurma şeklinizi temsil ettiği için kişiliğiniz üzerindeki etkisi Güneş burcunuzdan daha belirgin olabilir. Güneş burcu içsel benliğinizi ve temel motivasyonlarınızı yansıtırken, yükselen burç sizin "maskeniz" veya dış kabuğunuz gibidir. Bu nedenle, insanlar sizi ilk tanıdıklarında genellikle yükselen burcunuzun özelliklerini gözlemler.
+
+### Güneş burcumun özelliklerini kendimde bulamıyorsam bunun sebebi yükselen burcum olabilir mi?
+
+Evet, Güneş burcunuzun tanımlayıcı özelliklerini kendinizde tam olarak bulamamanızın en yaygın nedenlerinden biri, yükselen burcunuzun bu özellikleri maskelemesi veya farklı bir şekilde ifade etmesidir. Yükselen burç, dünyaya nasıl yaklaştığınızı ve tepki verdiğinizi gösterir; bu da Güneş burcunuzun temel niteliklerinin dışa vurumunu değiştirebilir. Örneğin, bir Koç Güneş burcuna sahip olup Yengeç yükselenli biri, tipik Koç cesaretini daha çekingen bir tavırla sergileyebilir.
+
+### Yükselen burcum gün içinde ne sıklıkla değişir ve bu ne anlama gelir?
+
+Yükselen burç, Dünya'nın kendi ekseni etrafında dönmesi nedeniyle doğu ufkunda yaklaşık her iki saatte bir değişir, bu da 24 saat içinde 12 zodyak burcunun tamamının ufuktan geçmesi anlamına gelir. Bu hızlı değişim, doğum saatinin dakika hassasiyetinde bilinmesinin neden kritik olduğunu gösterir; çünkü sadece birkaç dakikalık bir sapma bile tamamen farklı bir yükselen burç ve dolayısıyla farklı bir astrolojik profil ortaya çıkarabilir.

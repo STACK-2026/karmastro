@@ -311,3 +311,20 @@ Artykul sprawdzony i zaktualizowany przez Oriona, starszego astronoma i certyfik
 
 [Zobacz cały blog i wszystkie narzędzia](/pl/blog/) · [Narzędzia Karmastro](/pl/narzedzia/)
 
+## Questions fréquentes
+
+### Comment calcule-t-on son nombre de chemin de vie en numérologie ?
+
+Pour calculer son nombre de chemin de vie, il faut additionner tous les chiffres de sa date de naissance complète (jour, mois, année) et réduire le total à un seul chiffre, sauf si le résultat est 11, 22 ou 33. Par exemple, pour le 15 août 1985 (15/08/1985), on additionne 1+5+8+1+9+8+5 = 37, puis 3+7 = 10, et enfin 1+0 = 1. Ce nombre révèle les traits de personnalité et les défis majeurs d'une personne.
+
+### Quelles sont les principales distinctions entre la numérologie pythagoricienne et la numérologie chaldéenne ?
+
+La numérologie pythagoricienne attribue des valeurs numériques aux lettres de l'alphabet de 1 à 9, en utilisant une grille simple, tandis que la numérologie chaldéenne utilise des valeurs de 1 à 8, excluant le 9, et accorde une grande importance aux noms complets. La méthode chaldéenne est souvent considérée comme plus ancienne et plus complexe, se concentrant davantage sur l'aspect karmique et les vibrations cachées. La pythagoricienne est plus répandue et axée sur la personnalité.
+
+### La numérologie est-elle reconnue comme une science et quelles sont ses limites ?
+
+Non, la numérologie n'est pas reconnue comme une science exacte et n'est pas étayée par des preuves empiriques ou des recherches scientifiques validées. Ses limites résident dans son statut de système symbolique et interprétatif, ne fournissant pas de prédictions concrètes ou vérifiables. Elle est plutôt utilisée comme un outil de développement personnel et de connaissance de soi, offrant des perspectives sur les tendances et les potentiels plutôt que des certitudes.
+
+### Comment la numérologie peut-elle aider à mieux comprendre son sens de vie pour l'année 2026 ?
+
+La numérologie peut aider à comprendre le sens de vie pour l'année 2026 en calculant l'année personnelle, qui indique les thèmes et les énergies dominantes de cette période. En additionnant le jour et le mois de naissance avec les chiffres de l'année universelle (2+0+2+6 = 10 = 1), on obtient un nombre qui suggère les opportunités, les défis et les domaines de croissance. Cette interprétation offre une feuille de route pour naviguer les douze prochains mois.

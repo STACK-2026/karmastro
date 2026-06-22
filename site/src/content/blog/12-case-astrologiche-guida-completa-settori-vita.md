@@ -215,3 +215,21 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 - [Compatibilità](/it/strumenti/compatibilita)
 
 [Esplora tutto il blog e gli strumenti](/it/blog/) · [Strumenti Karmastro](/it/strumenti/)
+
+## Domande frequenti
+
+### Qual è la differenza fondamentale tra case astrologiche, segni zodiacali e pianeti nell'astrologia?
+
+In astrologia, i pianeti rappresentano il "chi agisce" (le energie e le funzioni psicologiche), i segni zodiacali indicano il "come" (le modalità espressive di tali energie), e le case astrologiche descrivono il "dove" (gli ambiti della vita in cui queste energie si manifestano). I pianeti sono gli attori (es. Marte la volontà), i segni sono i costumi che indossano (es. Marte in Ariete agisce impulsivamente), e le case sono i palcoscenici della vita (es. Marte in Casa V agisce negli amori o nella creatività). Questa distinzione è cruciale per una corretta interpretazione.
+
+### Come si interpreta la presenza di case astrologiche vuote o cariche di pianeti nel proprio tema natale?
+
+Una casa astrologica "vuota" (senza pianeti) non significa assenza di quell'area di vita, ma indica che quell'ambito non è un focus primario di energia planetaria, richiedendo spesso un'attivazione più consapevole o attraverso altri aspetti del tema. Al contrario, una casa "carica" (con più pianeti) evidenzia un'area della vita di grande importanza, dove si concentrano molte energie e sfide evolutive. La sua interpretazione dipende dai pianeti coinvolti, dai loro aspetti e dal segno in cui la casa inizia.
+
+### Perché la posizione delle case astrologiche varia approssimativamente ogni due ore e quale impatto ha questo sul calcolo del tema natale?
+
+La posizione delle case astrologiche cambia circa ogni due ore a causa della rotazione terrestre, che fa sì che i segni zodiacali sorgano e tramontino all'orizzonte, influenzando direttamente il punto dell'Ascendente e, di conseguenza, l'intero sistema delle case. Questo significa che l'ora di nascita esatta è fondamentale per calcolare un tema natale preciso, poiché anche pochi minuti di differenza possono alterare l'Ascendente e la cuspide delle case, modificando l'interpretazione degli ambiti di vita. Per questo motivo, è consigliabile conoscere l'orario di nascita con la massima precisione possibile.
+
+### Cosa indica la Casa X (Decima Casa) nel tema natale e in che modo influenza la carriera e la realizzazione professionale?
+
+La Casa X, o Decima Casa, nel tema natale rappresenta la carriera, la vocazione, la reputazione pubblica, lo status sociale e il modo in cui una persona si realizza nel mondo esterno, spesso associata alla figura genitoriale dominante o al modello sociale. Essa descrive le ambizioni professionali, il successo pubblico e il senso di direzione nella vita. I pianeti e i segni presenti in questa casa indicano le qualità e le sfide che influenzano il percorso lavorativo e la percezione che gli altri hanno di noi.

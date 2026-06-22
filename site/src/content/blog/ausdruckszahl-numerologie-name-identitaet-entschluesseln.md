@@ -169,3 +169,21 @@ Dieser Artikel stuetzt sich auf verifizierbare enzyklopaedische und wissenschaft
 - [Partnerhoroskop](/de/werkzeuge/partnerhoroskop)
 
 [Entdecke das ganze Blog und alle Werkzeuge](/de/blog/) · [Karmastro Werkzeuge](/de/werkzeuge/)
+
+## Häufig gestellte Fragen
+
+### Wie berechne ich meine Ausdruckszahl korrekt nach der pythagoreischen Numerologie?
+
+Die Ausdruckszahl wird berechnet, indem man den numerischen Wert jedes Buchstabens im vollständigen Geburtsnamen (wie auf der Geburtsurkunde) addiert. Man verwendet dabei eine spezifische Tabelle der Buchstaben-Ziffern-Korrespondenz, die jedem Buchstaben eine Zahl von 1 bis 9 zuweist. Die Summe wird dann auf eine einzelne Ziffer reduziert, es sei denn, es handelt sich um eine Meisterzahl (11, 22, 33).
+
+### Was sagt die Ausdruckszahl über meine Persönlichkeit oder mein Schicksal aus?
+
+Die Ausdruckszahl repräsentiert die angeborenen Talente, Fähigkeiten und Potenziale, die eine Person besitzt, sowie die Herausforderungen, denen sie im Leben begegnen wird. Sie spiegelt die Schwingung wider, die der vollständige Geburtsname trägt, und gibt Aufschluss über den Lebensweg und die Art und Weise, wie man sich in der Welt ausdrückt.
+
+### Was sind Meisterzahlen in der Numerologie und wie unterscheiden sie sich von den regulären Ausdruckszahlen?
+
+Meisterzahlen sind spezielle, nicht reduzierte Doppelziffern wie 11, 22 und 33, die eine höhere Schwingung und größere Potenziale, aber auch größere Herausforderungen darstellen. Im Gegensatz zu den regulären Ausdruckszahlen, die auf eine einzelne Ziffer reduziert werden, behalten Meisterzahlen ihre Doppelziffernform bei der Berechnung der Ausdruckszahl bei, da sie eine intensivere und anspruchsvollere Lebensaufgabe symbolisieren.
+
+### Warum wird mein Geburtsname in der Numerologie als so bedeutsam angesehen?
+
+Dein vollständiger Geburtsname wird in der Numerologie als eine "vibrierende Signatur" betrachtet, die von deinen Eltern gewählt wurde und eine numerologische Schwingung trägt. Diese Idee hat tiefe historische Wurzeln in Traditionen wie der jüdischen Gematria und der griechischen Isopsephie, die Buchstaben numerische Werte zuwiesen und eine Verbindung zwischen Namen und tieferer Bedeutung sahen.

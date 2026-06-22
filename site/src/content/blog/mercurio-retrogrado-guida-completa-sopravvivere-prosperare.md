@@ -251,3 +251,21 @@ Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
 - [Compatibilità](/it/strumenti/compatibilita)
 
 [Esplora tutto il blog e gli strumenti](/it/blog/) · [Strumenti Karmastro](/it/strumenti/)
+
+## Domande frequenti
+
+### Quanto dura tipicamente il periodo di Mercurio retrogrado e quante volte all'anno si verifica?
+
+Mercurio retrogrado si verifica tipicamente tre volte all'anno, con ogni periodo che dura circa tre settimane e mezzo. Questa frequenza regolare lo rende un transito comune, ma la sua percezione di impatto è spesso esagerata dalla cultura popolare. Comprendere la sua cadenza aiuta a prepararsi e a non attribuire ogni piccolo inconveniente solo a questo fenomeno.
+
+### Quali sono gli errori più comuni da evitare durante Mercurio retrogrado, specialmente in comunicazione e contratti?
+
+Durante Mercurio retrogrado, gli errori più comuni da evitare riguardano la fretta nelle comunicazioni e la superficialità nella revisione di contratti e documenti importanti. È consigliabile rileggere attentamente messaggi, email e accordi prima di inviarli o firmarli, e posticipare decisioni significative se possibile. La tendenza a fraintendimenti e rallentamenti è maggiore, quindi la cautela è fondamentale per prevenire problemi.
+
+### Quali opportunità inaspettate o vantaggi si possono trarre dal periodo di Mercurio retrogrado, nonostante la sua reputazione negativa?
+
+Nonostante la sua reputazione, Mercurio retrogrado offre l'opportunità di riflettere, revisionare e riconsiderare progetti, relazioni e decisioni passate. È un periodo eccellente per rivedere vecchi piani, riorganizzare documenti, riconnettersi con persone del passato o completare compiti lasciati in sospeso. Questo rallentamento invita all'introspezione e alla correzione di rotta, trasformando potenziali ostacoli in momenti di crescita personale.
+
+### È vero che Mercurio retrogrado causa solo sfortune e disastri, o c'è una spiegazione più sottile?
+
+Non è vero che Mercurio retrogrado causi solo sfortune e disastri; la sua influenza è più sottile e non catastrofica. In realtà, produce un rallentamento dei processi legati alla comunicazione, allo scambio e al pensiero veloce, portando a possibili fraintendimenti o ritardi. Questo periodo non è una condanna, ma piuttosto un invito a rallentare, rivedere e prestare maggiore attenzione ai dettagli.

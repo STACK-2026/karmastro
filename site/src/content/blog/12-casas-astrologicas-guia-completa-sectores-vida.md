@@ -170,3 +170,20 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 
 [Explora el blog completo y todas las herramientas](/es/blog/) · [Herramientas Karmastro](/es/herramientas/)
 
+## Preguntas frecuentes
+
+### ¿Cómo influyen las casas astrológicas en mi carta natal en comparación con los signos y planetas?
+
+Las casas astrológicas representan los escenarios o áreas de vida donde se manifiestan las energías de los planetas y los signos en tu carta natal. Mientras los planetas son los "actores" (quién) y los signos son el "cómo" actúan, las casas determinan "dónde" ocurren estos eventos. Por ejemplo, un planeta en un signo específico tendrá un impacto distinto si se encuentra en la casa de la comunicación (Casa III) que en la casa de la carrera (Casa X), delineando así las experiencias vitales en esos ámbitos.
+
+### ¿Qué factores determinan la asignación de las casas astrológicas en una carta natal y por qué varían con el tiempo?
+
+La asignación de las casas astrológicas en una carta natal se determina principalmente por la hora y el lugar exacto de nacimiento, ya que estos datos establecen el Ascendente y el Descendente. Las casas varían aproximadamente cada dos horas debido a la rotación de la Tierra sobre su eje, lo que provoca que diferentes signos y grados zodiacales asciendan por el horizonte. Este movimiento constante es crucial para calcular la posición precisa de cada casa y su influencia en las distintas áreas de la vida.
+
+### ¿Qué implicaciones tiene para mi personalidad y destino tener casas astrológicas vacías o con múltiples planetas en mi carta natal?
+
+Tener casas astrológicas vacías no significa que esa área de vida sea insignificante o inexistente, sino que carece de la energía planetaria directa que la impulse, sugiriendo una menor concentración de atención en ese sector. Por otro lado, una casa con múltiples planetas ("cargada") indica un énfasis significativo y una gran actividad en esa área vital. Esto puede manifestarse como un foco importante de experiencia y aprendizaje, o como un desafío que requiere mayor dedicación y desarrollo personal.
+
+### ¿Existen diferentes métodos para calcular las casas astrológicas y cuál es el más utilizado o recomendado para interpretar una carta natal?
+
+Sí, existen varios sistemas de domificación para calcular las casas astrológicas, siendo los más conocidos Placidus, Casas Iguales y Whole Sign (Signo Completo). Cada sistema utiliza un método matemático distinto para dividir el círculo zodiacal en doce casas, lo que puede resultar en diferentes cúspides (inicios) de casa y, por ende, en interpretaciones ligeramente variadas. Aunque Placidus es tradicionalmente uno de los más populares en la astrología occidental, la elección del sistema a menudo depende de la preferencia del astrólogo y la tradición astrológica que siga.

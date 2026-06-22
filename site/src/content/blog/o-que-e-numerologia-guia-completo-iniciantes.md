@@ -257,3 +257,20 @@ Este artigo baseia-se em fontes enciclopedicas e cientificas verificaveis.
 
 [Explore todo o blog e todas as ferramentas](/pt/blog/) · [Ferramentas Karmastro](/pt/ferramentas/)
 
+## Perguntas frequentes
+
+### Qual é o passo a passo para calcular o meu número de Caminho de Vida na numerologia e o que ele revela sobre mim?
+
+Para calcular o seu número de Caminho de Vida, deve somar todos os dígitos da sua data de nascimento (dia, mês e ano), reduzindo cada componente e depois o total a um único dígito, exceto se o resultado for 11, 22 ou 33. Este número fundamental revela as suas tendências inatas, os desafios que provavelmente enfrentará e as lições que veio aprender ao longo da vida. Ele indica o propósito central da sua existência e as qualidades essenciais que o guiam.
+
+### A numerologia é considerada uma ciência ou é mais uma ferramenta de autoconhecimento e qual a diferença em sua abordagem?
+
+A numerologia não é considerada uma ciência no sentido empírico, pois não se baseia em métodos científicos de verificação e reprodutibilidade, mas sim num sistema de interpretação simbólica. Ela funciona como uma ferramenta de autoconhecimento, oferecendo uma perspetiva sobre padrões de personalidade e ciclos de vida através do significado atribuído aos números. A sua abordagem é mais filosófica e interpretativa do que experimental ou preditiva.
+
+### O que significam os números mestres 11, 22 e 33 na numerologia e como eles se diferenciam dos outros números?
+
+Os números mestres 11, 22 e 33 representam um potencial elevado e desafios maiores, indicando uma missão de vida com impacto significativo no coletivo. Eles diferenciam-se dos números de 1 a 9 por não serem reduzidos a um único dígito durante os cálculos fundamentais. Quem possui um número mestre geralmente tem uma intuição aguçada, capacidade de liderança e um propósito de vida que transcende o pessoal, exigindo maior responsabilidade e superação.
+
+### De que forma a numerologia pode ser aplicada na vida diária para auxiliar na tomada de decisões concretas ou no autoconhecimento?
+
+A numerologia pode ser aplicada na vida diária para o autoconhecimento, ajudando a compreender pontos fortes, fracos e tendências pessoais, o que facilita a tomada de decisões alinhadas com o seu propósito. Ao analisar o ano pessoal ou os ciclos de nove anos, por exemplo, é possível identificar os momentos mais propícios para iniciar projetos, fazer mudanças ou focar em certas áreas da vida. Ela oferece uma estrutura para refletir sobre escolhas e planeamento.
