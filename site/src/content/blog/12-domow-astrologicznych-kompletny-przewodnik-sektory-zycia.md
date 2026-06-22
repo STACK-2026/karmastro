@@ -1,5 +1,5 @@
 ---
-title: "12 domów astrologicznych: kompletny przewodnik po 12 sektorach twojego życia"
+title: "12 maisons astrologiques : comprenez les secteurs de vie"
 description: "Planety mówią jak funkcjonujesz, znaki w jakim stylu, a domy gdzie w twoim życiu to wszystko się rozgrywa."
 date: 2026-06-01T07:30:00+02:00
 author: "Orion"

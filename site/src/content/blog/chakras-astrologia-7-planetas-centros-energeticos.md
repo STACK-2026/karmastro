@@ -1,5 +1,5 @@
 ---
-title: "Chakras y astrología: la correspondencia entre los 7 centros energéticos y los planetas"
+title: "Chakras et astrologie : la correspondance planétaire"
 description: "Los 7 chakras y los planetas de tu carta natal no son sistemas separados. Cómo se responden y cómo usar tu tema astral para tus bloqueos energéticos."
 date: 2026-05-18T07:45:00+02:00
 author: "Sibylle"

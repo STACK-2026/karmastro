@@ -1,5 +1,5 @@
 ---
-title: "How to calculate your life path number: the Pythagorean method step by step"
+title: "Chemin de vie : calcul pythagoricien étape par étape"
 description: "Calculate your life path in Pythagorean numerology. Step-by-step method, examples, master numbers 11/22/33 and interpretation."
 date: 2026-04-10T08:15:00+02:00
 author: "Pythia"

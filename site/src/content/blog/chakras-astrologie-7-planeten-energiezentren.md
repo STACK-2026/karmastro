@@ -1,5 +1,5 @@
 ---
-title: "Chakras und Astrologie: die Korrespondenz zwischen den 7 Energiezentren und den Planeten"
+title: "Chakras et Astrologie : Les 7 planètes qui vous gouvernent"
 description: "Die 7 Chakras und die Planeten deiner Geburtskarte sind keine getrennten Systeme. Wie sie einander antworten und wie du deine Blockaden nutzt."
 date: 2026-05-18T07:45:00+02:00
 author: "Sibylle"

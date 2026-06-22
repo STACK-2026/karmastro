@@ -1,5 +1,5 @@
 ---
-title: "Astrologische Kompatibilität: welche Sternzeichen ziehen sich wirklich an"
+title: "Compatibilité astrologique : quels signes s'attirent ?"
 description: "Astrologische Kompatibilität in der Partnerschaft: welche Zeichen ziehen sich an, welche Paare funktionieren, wie liest man eine Synastrie."
 date: 2026-04-16T08:04:00+02:00
 author: "Selene"

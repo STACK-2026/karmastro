@@ -1,5 +1,5 @@
 ---
-title: "Tageshoroskop: wie du wirklich zuverlässige astrologische Vorhersagen bekommst"
+title: "Horoscope fiable : obtenez vos prédictions astro vraies"
 description: "Warum klassische Horoskope enttäuschen und wie du zuverlässige astrologische Vorhersagen basierend auf echten planetarischen Transiten erhältst."
 date: 2026-04-20T07:21:00+02:00
 author: "Sibylle"

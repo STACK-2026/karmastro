@@ -1,5 +1,5 @@
 ---
-title: "Die Saturn-Rückkehr: der große astrologische Übergang mit 29 der alles verändert"
+title: "Retour de Saturne : à 29 ans, le tournant de votre vie"
 description: "Mit 29 kehrt Saturn an seine Geburtsposition zurück und räumt auf. Karriere, Liebe, Identität: wie du diese Initiation durchschreitest."
 date: 2026-05-25T07:30:00+02:00
 author: "Orion"

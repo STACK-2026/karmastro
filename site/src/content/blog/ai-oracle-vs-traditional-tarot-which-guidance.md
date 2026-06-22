@@ -1,5 +1,5 @@
 ---
-title: "AI Oracle vs traditional tarot: which guidance should you choose in 2026?"
+title: "Oracle IA vs Tarot : Quelle guidance choisir 2026 ?"
 description: "Honest comparison between modern AI oracle and classic tarot. Precision, personalization, accessibility: find the guidance that fits you."
 date: 2026-04-30T08:12:00+02:00
 author: "Orion"

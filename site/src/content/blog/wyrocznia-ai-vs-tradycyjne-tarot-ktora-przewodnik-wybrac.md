@@ -1,5 +1,5 @@
 ---
-title: "Wyrocznia AI vs tradycyjny tarot: którego przewodnika wybrać w 2026?"
+title: "Oracle IA vs tarot traditionnel : lequel choisir en 2026 ?"
 description: "Szczere porównanie między nowoczesną wyrocznią AI a klasycznym tarotem. Precyzja, personalizacja, dostępność."
 date: 2026-04-30T08:12:00+02:00
 author: "Orion"

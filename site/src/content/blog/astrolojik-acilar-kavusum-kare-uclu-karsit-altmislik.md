@@ -1,5 +1,5 @@
 ---
-title: "Astrolojik açılar: kavuşum, kare, üçlü, karşıt, altmışlık - rehber"
+title: "Aspects astrologiques : Décryptez leur signification"
 description: "Gezegenler asla izole olarak hareket etmez. Açılarla diyalog kurar, çatışır, uyum sağlar. Okumak için tam rehber."
 date: 2026-06-04T07:30:00+02:00
 author: "Orion"

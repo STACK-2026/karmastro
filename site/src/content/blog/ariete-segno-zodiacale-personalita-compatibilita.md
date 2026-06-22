@@ -1,5 +1,5 @@
 ---
-title: "Segno zodiacale Ariete: personalità, compatibilità e tratti profondi"
+title: "Bélier : Personnalité, traits, compatibilité amour 2026"
 description: "Tutto sul segno dell'Ariete: personalità, forze, debolezze, compatibilità amorosa e professionale. Guida astrologica completa 2026."
 date: 2026-05-04T07:43:00+02:00
 author: "Sibylle"

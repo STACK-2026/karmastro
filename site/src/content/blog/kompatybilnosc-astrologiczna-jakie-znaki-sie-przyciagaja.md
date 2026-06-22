@@ -1,5 +1,5 @@
 ---
-title: "Kompatybilność astrologiczna: jakie znaki naprawdę się przyciągają"
+title: "Compatibilité astrologique : signes qui s'attirent vraiment"
 description: "Kompatybilność astrologiczna w parze: jakie znaki się przyciągają, które pary działają, jak czytać synastrie."
 date: 2026-04-16T08:04:00+02:00
 author: "Selene"

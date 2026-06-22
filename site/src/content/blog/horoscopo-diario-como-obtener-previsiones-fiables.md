@@ -1,5 +1,5 @@
 ---
-title: "Horóscopo diario: cómo obtener previsiones astrológicas realmente fiables"
+title: "Horoscope fiable : vos prévisions astro personnalisées"
 description: "Por qué los horóscopos clásicos decepcionan y cómo obtener previsiones astrológicas fiables basadas en los verdaderos tránsitos planetarios."
 date: 2026-04-20T07:21:00+02:00
 author: "Sibylle"

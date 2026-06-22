@@ -1,5 +1,5 @@
 ---
-title: "Oroscopo giornaliero: come ottenere previsioni astrologiche davvero affidabili"
+title: "Horoscope : comment avoir des prévisions fiables en 2026"
 description: "Perché gli oroscopi classici deludono e come ottenere previsioni astrologiche affidabili basate sui veri transiti planetari."
 date: 2026-04-20T07:21:00+02:00
 author: "Sibylle"

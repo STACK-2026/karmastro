@@ -1,5 +1,5 @@
 ---
-title: "Signo zodiacal Carneiro: personalidade, compatibilidade e traços profundos"
+title: "Bélier : Personnalité, compatibilité, forces & faiblesses"
 description: "Tudo sobre o signo de Carneiro: personalidade, forças, fraquezas, compatibilidade amorosa e profissional. Guia astrológico completo 2026."
 date: 2026-05-04T07:43:00+02:00
 author: "Sibylle"

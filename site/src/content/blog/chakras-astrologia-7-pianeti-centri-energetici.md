@@ -1,5 +1,5 @@
 ---
-title: "Chakras e astrologia: la corrispondenza tra i 7 centri energetici e i pianeti"
+title: "Chakras, Astrologie : Les 7 planètes et leurs liens"
 description: "I 7 chakras e i pianeti della tua carta natale non sono sistemi separati. Come si rispondono e come usare il tuo tema astrale per i tuoi blocchi."
 date: 2026-05-18T07:45:00+02:00
 author: "Sibylle"

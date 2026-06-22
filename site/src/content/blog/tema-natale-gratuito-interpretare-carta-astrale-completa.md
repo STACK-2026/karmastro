@@ -1,5 +1,5 @@
 ---
-title: "Tema natale gratuito: come interpretare la tua carta astrale completa"
+title: "Thème astral gratuit : Guide d'interprétation complet"
 description: "Interpreta il tuo tema natale gratuitamente: 12 pianeti, 12 case, aspetti, ascendente. Metodo Swiss Ephemeris, precisione NASA."
 date: 2026-04-13T07:48:00+02:00
 author: "Sibylle"

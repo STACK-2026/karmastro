@@ -1,5 +1,5 @@
 ---
-title: "Oracolo IA vs tarocchi tradizionali: quale guida scegliere nel 2026?"
+title: "Oracle IA vs Tarots traditionnels: Quel guide choisir 2026"
 description: "Confronto onesto tra oracolo IA moderno e tarocchi classici. Precisione, personalizzazione, accessibilità: trova la guida che ti corrisponde."
 date: 2026-04-30T08:12:00+02:00
 author: "Orion"

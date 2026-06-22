@@ -1,5 +1,5 @@
 ---
-title: "Powrót Saturna: wielkie astrologiczne przejście w wieku 29 lat które zmienia wszystko"
+title: "Retour de Saturne à 29 ans : Le grand tournant de votre vie"
 description: "W wieku 29 lat Saturn wraca na swoją natalną pozycję i robi porządek. Jak przejść przez tę inicjację."
 date: 2026-05-25T07:30:00+02:00
 author: "Orion"

@@ -1,5 +1,5 @@
 ---
-title: "Signo zodiacal Aries: personalidad, compatibilidad y rasgos profundos"
+title: "Bélier : Personnalité, compatibilité, amour, guide 2026"
 description: "Todo sobre el signo de Aries: personalidad, fortalezas, debilidades, compatibilidad amorosa y profesional. Guía astrológica completa 2026."
 date: 2026-05-04T07:43:00+02:00
 author: "Sibylle"

@@ -1,5 +1,5 @@
 ---
-title: "Numérologie du prénom : décrypte ton nombre d'expression et ce qu'il révèle de ton identité"
+title: "Nombre d'expression : calcule et découvre ta personnalité"
 description: "Le nombre d'expression, calculé à partir des lettres de ton nom, révèle ta personnalité publique, tes talents et ta mission. Le guide complet."
 date: 2026-06-08T07:30:00+02:00
 author: "Pythia"

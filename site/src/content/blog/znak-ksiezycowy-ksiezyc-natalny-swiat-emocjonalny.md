@@ -1,5 +1,5 @@
 ---
-title: "Znak księżycowy: co twój natalny Księżyc mówi o twoim świecie emocjonalnym"
+title: "Signe lunaire : ce que votre Lune natale révèle de vous"
 description: "Twój znak księżycowy jest strażnikiem twojego wewnętrznego życia. Co mówi o twoich potrzebach emocjonalnych i bezpieczeństwie."
 date: 2026-05-14T08:00:00+02:00
 author: "Selene"

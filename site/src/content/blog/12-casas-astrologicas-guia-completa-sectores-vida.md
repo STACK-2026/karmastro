@@ -1,5 +1,5 @@
 ---
-title: "Las 12 casas astrológicas: guía completa de los 12 sectores de tu vida"
+title: "Casas astrologiques : signification des 12 secteurs de vie"
 description: "Los planetas dicen cómo funcionas, los signos con qué estilo, y las casas dónde en tu vida todo eso se juega. La guía para domesticarlas una a una."
 date: 2026-06-01T07:30:00+02:00
 author: "Orion"

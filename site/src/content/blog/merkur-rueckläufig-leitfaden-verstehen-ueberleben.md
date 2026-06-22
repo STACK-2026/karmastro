@@ -1,5 +1,5 @@
 ---
-title: "Merkur rückläufig: wie du diese Phasen verstehst, antizipierst und ohne Panik überlebst"
+title: "Mercure rétrograde : Transformez-le en allié, sans panique"
 description: "Dreimal im Jahr scheint Merkur zurückzugehen und alle geraten in Panik. Was rückläufig wirklich bedeutet und wie du es zum Verbündeten machst."
 date: 2026-05-21T07:30:00+02:00
 author: "Orion"

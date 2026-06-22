@@ -1,5 +1,5 @@
 ---
-title: "Horoskop dzienny: jak uzyskać naprawdę wiarygodne prognozy astrologiczne"
+title: "Horoscope : comment obtenir des prévisions fiables"
 description: "Dlaczego klasyczne horoskopy rozczarowują i jak uzyskać wiarygodne prognozy astrologiczne oparte na prawdziwych tranzytach planetarnych."
 date: 2026-04-20T07:21:00+02:00
 author: "Sibylle"

@@ -1,5 +1,5 @@
 ---
-title: "Segno lunare: cosa la tua Luna natale rivela del tuo mondo emotivo"
+title: "Lune natale : décryptez votre monde émotionnel"
 description: "Il tuo segno lunare è il guardiano della tua vita interiore. Cosa dice dei tuoi bisogni affettivi, del tuo modo di amare e della sicurezza che ti serve."
 date: 2026-05-14T08:00:00+02:00
 author: "Selene"

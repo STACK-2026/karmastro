@@ -1,5 +1,5 @@
 ---
-title: "Como calcular o teu caminho de vida: o método pitagórico passo a passo"
+title: "Comment calculer son chemin de vie : méthode pythagoricienne"
 description: "Calcula o teu caminho de vida em numerologia pitagórica. Método passo a passo, exemplos, números mestres 11/22/33 e interpretação."
 date: 2026-04-10T08:15:00+02:00
 author: "Pythia"

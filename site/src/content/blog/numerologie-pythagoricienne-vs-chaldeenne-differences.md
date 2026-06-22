@@ -1,5 +1,5 @@
 ---
-title: "Numérologie pythagoricienne vs chaldéenne : différences et méthodes comparées"
+title: "Numérologie pythagoricienne vs chaldéenne : calculs"
 description: "Comparaison des deux grandes écoles de numérologie : pythagoricienne et chaldéenne. Méthodes, origines, différences de calcul et laquelle choisir."
 date: 2026-04-23T08:37:00+02:00
 author: "Pythia"

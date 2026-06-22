@@ -1,5 +1,5 @@
 ---
-title: "Número de expressão: decifra o que o teu nome revela da tua identidade"
+title: "Numéro d'expression : calculez et découvrez votre identité"
 description: "O número de expressão, calculado a partir das letras do teu nome, revela a tua personalidade pública, os teus talentos e a tua missão."
 date: 2026-06-08T07:30:00+02:00
 author: "Pythia"

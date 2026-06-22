@@ -1,5 +1,5 @@
 ---
-title: "Günlük burç: gerçekten güvenilir astrolojik tahminler nasıl alınır"
+title: "Vrai horoscope : prévisions astro fiables et personnalisées"
 description: "Klasik burçların neden hayal kırıklığı yarattığını ve gerçek gezegen transitlerine dayalı güvenilir astrolojik tahminlerin nasıl alınacağını öğren."
 date: 2026-04-20T07:21:00+02:00
 author: "Sibylle"

@@ -1,5 +1,5 @@
 ---
-title: "Mapa astral grátis: como interpretar a tua carta natal completa"
+title: "Thème astral gratuit : interprétez votre thème natal complet"
 description: "Interpreta o teu mapa astral grátis: 12 planetas, 12 casas, aspetos, ascendente. Método Swiss Ephemeris, precisão nível NASA."
 date: 2026-04-13T07:48:00+02:00
 author: "Sibylle"

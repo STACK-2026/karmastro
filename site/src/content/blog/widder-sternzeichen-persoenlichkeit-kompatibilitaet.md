@@ -1,5 +1,5 @@
 ---
-title: "Sternzeichen Widder: Persönlichkeit, Kompatibilität und tiefe Merkmale"
+title: "Bélier : Personnalité, caractéristiques, compatibilité 2026"
 description: "Alles über das Sternzeichen Widder: Persönlichkeit, Stärken, Schwächen, Liebes- und Berufskompatibilität. Vollständiger astrologischer Leitfaden 2026."
 date: 2026-05-04T07:43:00+02:00
 author: "Sibylle"

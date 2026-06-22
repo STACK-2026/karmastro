@@ -1,5 +1,5 @@
 ---
-title: "O retorno de Saturno: a grande passagem astrológica aos 29 anos que muda tudo"
+title: "Retour de Saturne à 29 ans : comprendre et traverser"
 description: "Aos 29, Saturno volta à sua posição natal e faz limpeza. Carreira, amor, identidade, valores: como atravessar esta iniciação."
 date: 2026-05-25T07:30:00+02:00
 author: "Orion"

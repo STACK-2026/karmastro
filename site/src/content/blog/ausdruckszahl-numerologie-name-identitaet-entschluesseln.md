@@ -1,5 +1,5 @@
 ---
-title: "Ausdruckszahl: entschlüssele was dein Name über deine Identität verrät"
+title: "Nombre d'Expression : calculez et décryptez votre nom"
 description: "Die Ausdruckszahl, berechnet aus den Buchstaben deines Namens, offenbart deine öffentliche Persönlichkeit, deine Talente und deine Mission."
 date: 2026-06-08T07:30:00+02:00
 author: "Pythia"

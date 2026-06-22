@@ -1,5 +1,5 @@
 ---
-title: "Rising sign: the complete guide to understand your astrological ascendant"
+title: "Ascendant : Calcul, signification et impact"
 description: "Your rising sign is far more than a secondary detail. What it reveals, how to calculate it, and why it changes everything in your birth chart."
 date: 2026-05-11T07:30:00+02:00
 author: "Orion"

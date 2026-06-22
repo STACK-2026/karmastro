@@ -1,5 +1,5 @@
 ---
-title: "Aspekty astrologiczne: koniunkcja, kwadratura, trygon, opozycja, sekstyl - przewodnik"
+title: "Aspects astrologiques : Guide pour comprendre les 5 majeurs"
 description: "Planety nigdy nie działają w izolacji. Dialogują, przeciwstawiają się, harmonizują przez aspekty. Kompletny przewodnik."
 date: 2026-06-04T07:30:00+02:00
 author: "Orion"

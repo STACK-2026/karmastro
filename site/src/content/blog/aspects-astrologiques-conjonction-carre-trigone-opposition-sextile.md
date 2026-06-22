@@ -1,5 +1,5 @@
 ---
-title: "Aspects astrologiques : conjonction, carré, trigone, opposition, sextile, le guide pour les comprendre"
+title: "Aspects astrologiques : décryptez votre carte natale"
 description: "Les planètes dialoguent par les aspects : conjonction, carré, trigone, opposition, sextile. Le guide complet pour les lire dans ta carte natale."
 date: 2026-06-04T07:30:00+02:00
 author: "Orion"

@@ -1,5 +1,5 @@
 ---
-title: "Wie berechnet man die Lebenszahl: die pythagoreische Methode Schritt für Schritt"
+title: "Calcul Chemin de Vie : Méthode Pythagore pas à pas"
 description: "Berechne deine Lebenszahl in pythagoreischer Numerologie. Methode Schritt für Schritt, Beispiele, Meisterzahlen 11/22/33 und Interpretation."
 date: 2026-04-10T08:15:00+02:00
 author: "Pythia"

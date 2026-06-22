@@ -1,5 +1,5 @@
 ---
-title: "Signe astrologique Bélier : personnalité, compatibilité et traits profonds"
+title: "Bélier : Personnalité, compatibilité, forces et faiblesses"
 description: "Tout savoir sur le signe du Bélier : personnalité, forces, faiblesses, compatibilité amoureuse et professionnelle. Guide astrologique complet 2026."
 date: 2026-05-04T07:43:00+02:00
 author: "Sibylle"

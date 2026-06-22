@@ -1,5 +1,5 @@
 ---
-title: "Signe ascendant : guide complet pour comprendre ton ascendant astrologique"
+title: "Signe ascendant : Comprendre, calculer, décrypter"
 description: "Ton ascendant est bien plus qu'un signe secondaire. Ce qu'il révèle de toi, comment le calculer et pourquoi il change tout dans ta carte du ciel."
 date: 2026-05-11T07:30:00+02:00
 author: "Orion"

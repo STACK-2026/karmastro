@@ -1,5 +1,5 @@
 ---
-title: "Karma und Astrologie: deine vergangenen Leben durch dein Geburtshoroskop lesen"
+title: "Karma astrologie : vos vies passées dans le thème natal"
 description: "Lies Karma und vergangene Leben in deinem Geburtshoroskop: Mondknoten, karmische Schulden, Saturn und Pluto. Ein Leitfaden."
 date: 2026-04-27T07:55:00+02:00
 author: "Orion"

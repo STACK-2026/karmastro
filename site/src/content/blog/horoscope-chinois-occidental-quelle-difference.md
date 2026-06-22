@@ -1,5 +1,5 @@
 ---
-title: "Horoscope chinois vs occidental : 7 différences clés à connaître"
+title: "Horoscope chinois vs occidental : 7 différences clés 2026"
 description: "Découvre les 7 différences majeures entre horoscope chinois et occidental : origines, calcul, éléments, compatibilité et prévisions 2026. Tableau inclus."
 date: 2026-06-02
 author: "Sibylle"

@@ -1,5 +1,5 @@
 ---
-title: "Le 12 case astrologiche: guida completa ai 12 settori della tua vita"
+title: "12 maisons astrologiques : le guide complet de votre vie"
 description: "I pianeti dicono come funzioni, i segni in quale stile, e le case dove nella tua vita tutto questo si gioca. La guida per addomesticarle."
 date: 2026-06-01T07:30:00+02:00
 author: "Orion"

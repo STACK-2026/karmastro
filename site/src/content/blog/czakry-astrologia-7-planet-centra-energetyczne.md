@@ -1,5 +1,5 @@
 ---
-title: "Czakry i astrologia: korespondencja między 7 centrami energetycznymi a planetami"
+title: "Chakras, Astrologie : Planètes & équilibre énergétique"
 description: "7 czakr i planety twojej mapy natalnej nie są oddzielnymi systemami. Jak sobie odpowiadają i jak używać ich do blokad energetycznych."
 date: 2026-05-18T07:45:00+02:00
 author: "Sibylle"

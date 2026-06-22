@@ -1,5 +1,5 @@
 ---
-title: "Cammino di vita 1 in numerologia: leadership, indipendenza e missione di incarnazione"
+title: "Chemin de vie 1 en numérologie : signification complète"
 description: "Tutto sul cammino di vita 1 in numerologia pitagorica: personalità, missione, forze, trappole e compatibilità. Guida completa del pioniere."
 date: 2026-05-07T08:29:00+02:00
 author: "Pythia"

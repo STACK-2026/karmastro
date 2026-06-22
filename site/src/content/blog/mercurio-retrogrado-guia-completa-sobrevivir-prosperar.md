@@ -1,5 +1,5 @@
 ---
-title: "Mercurio retrógrado: cómo entender, anticipar y sobrevivir estos períodos sin pánico"
+title: "Mercure rétrograde : Signification, effets et comment gérer"
 description: "Tres veces al año, Mercurio parece retroceder y todo el mundo entra en pánico. Qué significa realmente y cómo convertirlo en un aliado."
 date: 2026-05-21T07:30:00+02:00
 author: "Orion"

@@ -1,5 +1,5 @@
 ---
-title: "Czym jest numerologia: kompletny przewodnik dla poczatkujacych 2026"
+title: "Numérologie : Définition, calcul et sens de vie 2026"
 description: "Numerologia to symboliczny system przypisujacy znaczenie liczbom. Korzenie u Pitagorasa VI w p.n.e., obliczenie drogi zycia, 3 szkoly, granice i zastosowania."
 date: 2026-04-09T07:32:00+02:00
 author: "Orion"

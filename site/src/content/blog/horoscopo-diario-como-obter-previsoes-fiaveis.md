@@ -1,5 +1,5 @@
 ---
-title: "Horóscopo diário: como obter previsões astrológicas realmente fiáveis"
+title: "Prévisions astrologiques fiables : stop aux faux horoscopes"
 description: "Porque os horóscopos clássicos desiludem e como obter previsões astrológicas fiáveis baseadas nos verdadeiros trânsitos planetários."
 date: 2026-04-20T07:21:00+02:00
 author: "Sibylle"

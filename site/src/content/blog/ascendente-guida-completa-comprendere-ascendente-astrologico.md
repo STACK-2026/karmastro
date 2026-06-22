@@ -1,5 +1,5 @@
 ---
-title: "Ascendente: la guida completa per comprendere il tuo ascendente astrologico"
+title: "Ascendant : Tout savoir pour le calculer et le comprendre"
 description: "Il tuo ascendente è molto più di un segno secondario. Cosa rivela di te, come calcolarlo e perché cambia tutto nel tuo tema natale."
 date: 2026-05-11T07:30:00+02:00
 author: "Orion"

@@ -1,5 +1,5 @@
 ---
-title: "Chakras e astrologia: a correspondência entre os 7 centros energéticos e os planetas"
+title: "Chakras, Astrologie : 7 centres et leurs planètes régentes"
 description: "Os 7 chakras e os planetas do teu mapa astral não são sistemas separados. Como se respondem e como usar o teu tema astral para os teus bloqueios."
 date: 2026-05-18T07:45:00+02:00
 author: "Sibylle"

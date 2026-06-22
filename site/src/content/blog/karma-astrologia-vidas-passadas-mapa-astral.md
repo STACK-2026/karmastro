@@ -1,5 +1,5 @@
 ---
-title: "Karma e astrologia: ler as tuas vidas passadas através do mapa astral"
+title: "Karma astrologie : lisez vos vies passées dans votre thème"
 description: "Ler o karma e as vidas passadas no teu mapa astral: nodos lunares, dívidas kármicas, Saturno e Plutão. Um guia da trajetória da tua alma."
 date: 2026-04-27T07:55:00+02:00
 author: "Orion"

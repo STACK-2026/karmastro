@@ -1,5 +1,5 @@
 ---
-title: "The 12 astrological houses: a complete guide to the 12 sectors of your life"
+title: "Maisons astrologiques : Comprendre les 12 secteurs de vie"
 description: "Planets tell you how you function, signs tell you in what style, and houses tell you where in your life it all plays out. The guide to tame them one by one."
 date: 2026-06-01T07:30:00+02:00
 author: "Orion"

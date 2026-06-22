@@ -1,5 +1,5 @@
 ---
-title: "Die 12 astrologischen Häuser: vollständiger Leitfaden der 12 Lebensbereiche"
+title: "Maisons astrologiques : guide complet des 12 domaines"
 description: "Planeten sagen wie du funktionierst, Zeichen in welchem Stil, und Häuser wo in deinem Leben sich das alles abspielt. Der Leitfaden, sie zu zähmen."
 date: 2026-06-01T07:30:00+02:00
 author: "Orion"

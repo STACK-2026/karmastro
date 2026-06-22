@@ -1,5 +1,5 @@
 ---
-title: "Aszendent: der vollständige Leitfaden zum Verständnis deines astrologischen Aszendenten"
+title: "Ascendant : comprendre, calculer, révéler votre personnalité"
 description: "Dein Aszendent ist viel mehr als ein Nebenzeichen. Was er über dich verrät, wie du ihn berechnest und warum er alles in deinem Geburtshoroskop verändert."
 date: 2026-05-11T07:30:00+02:00
 author: "Orion"

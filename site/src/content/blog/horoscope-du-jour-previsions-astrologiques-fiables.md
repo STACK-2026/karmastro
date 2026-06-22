@@ -1,5 +1,5 @@
 ---
-title: "Horoscope du jour : comment obtenir des prévisions astrologiques vraiment fiables"
+title: "Horoscope du jour : vos prévisions fiables et personnalisées"
 description: "Pourquoi les horoscopes classiques déçoivent et comment obtenir des prévisions astrologiques fiables basées sur les vrais transits planétaires."
 date: 2026-04-20T07:21:00+02:00
 author: "Sibylle"

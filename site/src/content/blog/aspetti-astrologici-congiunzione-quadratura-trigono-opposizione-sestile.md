@@ -1,5 +1,5 @@
 ---
-title: "Aspetti astrologici: congiunzione, quadratura, trigono, opposizione, sestile - la guida"
+title: "Aspects astrologiques : Guide pour interpréter les 5 majeurs"
 description: "I pianeti non agiscono mai isolatamente. Dialogano, si oppongono, si armonizzano tramite gli aspetti. La guida completa per leggerli."
 date: 2026-06-04T07:30:00+02:00
 author: "Orion"

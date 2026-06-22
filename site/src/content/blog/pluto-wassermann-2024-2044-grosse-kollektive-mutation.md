@@ -1,5 +1,5 @@
 ---
-title: "Pluto im Wassermann 2024-2044: die große kollektive Mutation von 20 Jahren"
+title: "Pluton en Verseau 2024-2044 : La grande mutation collective"
 description: "Zum ersten Mal seit 1798 tritt Pluto für 20 Jahre in den Wassermann ein. Was auf planetarischer Ebene geschieht und wie du dich ausrichtest."
 date: 2026-06-11T07:30:00+02:00
 author: "Sibylle"

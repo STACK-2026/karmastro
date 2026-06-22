@@ -1,5 +1,5 @@
 ---
-title: "Astrological compatibility: which signs actually attract each other"
+title: "Compatibilité amoureuse : vos meilleurs signes"
 description: "Astrological compatibility in couples: which signs attract, which couples work, how to read a synastry. Complete guide with method and examples."
 date: 2026-04-16T08:04:00+02:00
 author: "Selene"

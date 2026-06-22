@@ -1,5 +1,5 @@
 ---
-title: "Astrologische Aspekte: Konjunktion, Quadrat, Trigon, Opposition, Sextil - der Leitfaden"
+title: "Aspects astrologiques majeurs : Comprendre et interpréter"
 description: "Die Planeten handeln nie isoliert. Sie dialogieren, widersprechen sich, harmonieren durch Aspekte. Der vollständige Leitfaden zum Lesen."
 date: 2026-06-04T07:30:00+02:00
 author: "Orion"

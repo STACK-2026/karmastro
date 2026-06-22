@@ -1,5 +1,5 @@
 ---
-title: "Pluto in Aquarius 2024-2044: the 20-year collective mutation that changes everything"
+title: "Pluton en Verseau : Comprendre la mutation des 20 ans"
 description: "For the first time since 1798, Pluto enters Aquarius for 20 years. What is at play on a planetary scale and how to align yourself with the great mutation."
 date: 2026-06-11T07:30:00+02:00
 author: "Sibylle"

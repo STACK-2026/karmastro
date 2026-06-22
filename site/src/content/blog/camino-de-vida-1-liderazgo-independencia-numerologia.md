@@ -1,5 +1,5 @@
 ---
-title: "Camino de vida 1 en numerología: liderazgo, independencia y misión de encarnación"
+title: "Chemin de Vie 1 Numérologie : L'Essence du Leader Pionnier"
 description: "Todo sobre el camino de vida 1 en numerología pitagórica: personalidad, misión, fortalezas, trampas y compatibilidades. Guía completa del pionero."
 date: 2026-05-07T08:29:00+02:00
 author: "Pythia"

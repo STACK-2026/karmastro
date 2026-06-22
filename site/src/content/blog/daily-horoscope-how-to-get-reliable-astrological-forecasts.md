@@ -1,5 +1,5 @@
 ---
-title: "Daily horoscope: how to get astrological forecasts that are actually reliable"
+title: "Horoscope fiable : comment avoir des prévisions précises ?"
 description: "Why classic horoscopes disappoint and how to get reliable astrological forecasts based on real planetary transits."
 date: 2026-04-20T07:21:00+02:00
 author: "Sibylle"

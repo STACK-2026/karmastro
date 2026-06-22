@@ -1,5 +1,5 @@
 ---
-title: "Pluton en Verseau 2024-2044 : la grande mutation collective qui change tout pendant 20 ans"
+title: "Pluton en Verseau 2024 : votre guide pour 20 ans de mutation"
 description: "Pour la première fois depuis 1798, Pluton entre en Verseau et y reste 20 ans. Ce qui se joue à l'échelle planétaire et comment t'y aligner."
 date: 2026-06-11T07:30:00+02:00
 author: "Sibylle"

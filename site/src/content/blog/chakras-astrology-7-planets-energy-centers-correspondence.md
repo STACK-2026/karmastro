@@ -1,5 +1,5 @@
 ---
-title: "Chakras and astrology: the correspondence between the 7 energy centers and the planets"
+title: "Chakras et Astrologie : Comprendre les Liens Planétaires"
 description: "The 7 chakras and the planets of your natal chart are not separate systems. How they mirror each other and how to read your blocks through astrology."
 date: 2026-05-18T07:45:00+02:00
 author: "Sibylle"

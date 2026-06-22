@@ -1,5 +1,5 @@
 ---
-title: "Come calcolare il tuo cammino di vita: il metodo pitagorico passo passo"
+title: "Chemin de Vie : Calcul pas à pas, méthode pythagoricienne"
 description: "Calcola il tuo cammino di vita in numerologia pitagorica. Metodo passo passo, esempi, numeri maestri 11/22/33 e interpretazione."
 date: 2026-04-10T08:15:00+02:00
 author: "Pythia"

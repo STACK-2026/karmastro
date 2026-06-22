@@ -1,5 +1,5 @@
 ---
-title: "Merkury retrogradny: jak zrozumieć, przewidzieć i przetrwać te okresy bez paniki"
+title: "Mercure rétrograde : Survivre et tirer parti sans stress"
 description: "Trzy razy w roku Merkury wydaje się cofać i wszyscy wpadają w panikę. Co retrogradacja naprawdę oznacza i jak uczynić z niej sprzymierzeńca."
 date: 2026-05-21T07:30:00+02:00
 author: "Orion"

@@ -1,5 +1,5 @@
 ---
-title: "Satürn dönüşü: 29 yaşındaki her şeyi değiştiren büyük astrolojik geçiş"
+title: "Retour de Saturne : comprendre et gérer vos 29 ans"
 description: "29'da Satürn doğum pozisyonuna döner ve temizlik yapar. Kariyer, aşk, kimlik: bu inisiyasyonu nasıl geçirirsin."
 date: 2026-05-25T07:30:00+02:00
 author: "Orion"

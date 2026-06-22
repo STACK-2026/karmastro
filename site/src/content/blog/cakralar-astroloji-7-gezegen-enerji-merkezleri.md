@@ -1,5 +1,5 @@
 ---
-title: "Çakralar ve astroloji: 7 enerji merkezi ve gezegenler arasındaki karşılık"
+title: "Chakras et Astrologie : Les 7 chakras et leurs planètes"
 description: "7 çakra ve doğum haritanın gezegenleri ayrı sistemler değildir. Nasıl birbirine yanıt verirler ve enerji blokajlarını nasıl kullanırsın."
 date: 2026-05-18T07:45:00+02:00
 author: "Sibylle"

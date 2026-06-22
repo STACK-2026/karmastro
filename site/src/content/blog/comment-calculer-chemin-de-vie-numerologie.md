@@ -1,5 +1,5 @@
 ---
-title: "Comment calculer son chemin de vie en numérologie : méthode pythagoricienne pas à pas"
+title: "Calcul chemin de vie : Numérologie pythagoricienne pas à pas"
 description: "Calcule ton chemin de vie en numérologie pythagoricienne. Méthode étape par étape, exemples, maîtres nombres 11/22/33 et interprétation."
 date: 2026-04-10T08:15:00+02:00
 author: "Pythia"

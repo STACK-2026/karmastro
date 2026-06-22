@@ -1,5 +1,5 @@
 ---
-title: "Life path 1 in numerology: leadership, independence, and incarnation mission"
+title: "Chemin de vie 1 numérologie : Sens, défis, personnalité"
 description: "Everything about life path 1 in Pythagorean numerology: personality, mission, strengths, traps, and compatibilities. Complete pioneer guide."
 date: 2026-05-07T08:29:00+02:00
 author: "Pythia"

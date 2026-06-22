@@ -1,5 +1,5 @@
 ---
-title: "Anno personale 2026: trova il tuo numero e comprendi il ciclo di 9 anni"
+title: "Année personnelle 2026 : Calculez votre nombre et sens"
 description: "Ogni anno il tuo anno personale cambia e porta un'energia specifica. Come calcolare il tuo numero 2026 e allinearti con il ciclo di 9 anni."
 date: 2026-05-28T07:30:00+02:00
 author: "Pythia"

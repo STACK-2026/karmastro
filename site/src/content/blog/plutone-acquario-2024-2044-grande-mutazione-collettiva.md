@@ -1,5 +1,5 @@
 ---
-title: "Plutone in Acquario 2024-2044: la grande mutazione collettiva di 20 anni"
+title: "Pluton en Verseau 2024-2044 : Mutation collective"
 description: "Per la prima volta dal 1798, Plutone entra in Acquario per 20 anni. Cosa si gioca a scala planetaria e come allinearti alla grande mutazione."
 date: 2026-06-11T07:30:00+02:00
 author: "Sibylle"
