@@ -1,6 +1,6 @@
 ---
-title: "Chiron en astrologie : guérir ses blessures karmiques (guide"
-description: "Chiron, l'astéroïde du "guérisseur blessé", révèle tes blessures karmiques et ton potentiel de guérison. Découvre son mythe, son rôle en thème natal, ses transi"
+title: "Chiron en astrologie : guérir ses blessures karmiques"
+description: "Chiron, l'astéroïde du « guérisseur blessé », révèle tes blessures karmiques et ton potentiel de guérison : mythe, rôle en thème natal et transits."
 date: 2026-06-23
 author: "Orion"
 lang: "fr"
