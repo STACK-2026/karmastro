@@ -72,6 +72,7 @@ jobs:
         working-directory: site
         env:
           PUBLIC_GA4_MEASUREMENT_ID: ${{ vars.PUBLIC_GA4_MEASUREMENT_ID }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: npm run build
 
       - name: Deploy to Cloudflare Pages
@@ -105,3 +106,9 @@ jobs:
           SITE_URL: https://karmastro.com
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
         run: python3 scripts/indexnow_ping.py || true
+
+      - name: Alert on deploy failure
+        if: failure()
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: python3 blog-auto/alert_cron_failure.py "${{ github.workflow }}" "${{ github.run_id }}"
