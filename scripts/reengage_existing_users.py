@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""reengage_existing_users.py — invitation unique opt-in horoscope quotidien
+"""reengage_existing_users.py - invitation unique opt-in horoscope quotidien
 aux comptes karmastro existants (rétention).
 
 Cible : les comptes (auth.users + profiles) avec email + birth_date qui ne sont
