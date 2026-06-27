@@ -1,0 +1,128 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Ta lecture Âme Sœur · Karmastro";
+const description = "Indique la personne concernée pour révéler ta lecture Âme Sœur.";
+---
+
+<BaseLayout title={title} description={description} noIndex={true}>
+  <article class="max-w-xl mx-auto px-4 py-16 min-h-[60vh]">
+    <header class="text-center mb-10">
+      <p class="text-4xl mb-3">✦</p>
+      <h1 id="as-title" class="font-serif text-3xl text-white mb-3">Ta lecture Âme Sœur</h1>
+      <p id="as-sub" class="text-sm text-white/70 max-w-md mx-auto leading-relaxed">
+        Séléné a besoin d'une dernière chose : la personne dont parle ce lien. Indique son prénom
+        et sa date de naissance, ta lecture est composée en quelques secondes.
+      </p>
+    </header>
+
+    <form id="as-form" class="space-y-5">
+      <div>
+        <label for="as-name" id="as-name-label" class="block text-sm text-amber-300/90 mb-1.5">Son prénom <span class="text-white/40">(facultatif)</span></label>
+        <input id="as-name" type="text" maxlength="60" autocomplete="off"
+          class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder-white/30 focus:border-amber-300/60 focus:outline-none" />
+      </div>
+      <div>
+        <label for="as-date" id="as-date-label" class="block text-sm text-amber-300/90 mb-1.5">Sa date de naissance</label>
+        <input id="as-date" type="date" required
+          class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white focus:border-amber-300/60 focus:outline-none" />
+      </div>
+      <p id="as-err" class="hidden text-sm text-rose-300"></p>
+      <button id="as-submit" type="submit"
+        class="w-full px-5 py-3.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm disabled:opacity-60 disabled:cursor-not-allowed">
+        Révéler ma lecture ✦
+      </button>
+    </form>
+
+    <div id="as-missing" class="hidden text-center py-10">
+      <p class="text-sm text-white/60 max-w-md mx-auto leading-relaxed">
+        Ce lien semble incomplet. Ouvre le lien reçu par email après ton achat Âme Sœur,
+        ou écris-nous à contact@karmastro.com.
+      </p>
+    </div>
+  </article>
+</BaseLayout>
+
+<script>
+  const GENERATE = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/ame-soeur-generate";
+  const params = new URLSearchParams(location.search);
+  const token = params.get("token");
+  const lang = params.get("lang") === "en" ? "en" : "fr";
+  const langParam = lang === "en" ? "&lang=en" : "";
+
+  const STR = {
+    fr: {
+      title: "Ta lecture Âme Sœur",
+      sub: "Séléné a besoin d'une dernière chose : la personne dont parle ce lien. Indique son prénom et sa date de naissance, ta lecture est composée en quelques secondes.",
+      nameLabel: "Son prénom", nameOpt: "(facultatif)", dateLabel: "Sa date de naissance",
+      submit: "Révéler ma lecture ✦", loading: "Séléné compose ta lecture…",
+      errDate: "Indique une date de naissance valide.",
+      errGeneric: "Une erreur est survenue. Réessaie dans un instant.",
+      errToken: "Ce lien n'est pas valide ou a expiré. Écris-nous à contact@karmastro.com.",
+    },
+    en: {
+      title: "Your Soulmate reading",
+      sub: "Séléné needs one last thing: the person this bond is about. Enter their first name and date of birth, your reading is crafted within seconds.",
+      nameLabel: "Their first name", nameOpt: "(optional)", dateLabel: "Their date of birth",
+      submit: "Reveal my reading ✦", loading: "Séléné is crafting your reading…",
+      errDate: "Please enter a valid date of birth.",
+      errGeneric: "Something went wrong. Please try again in a moment.",
+      errToken: "This link is invalid or expired. Write to us at contact@karmastro.com.",
+    },
+  }[lang];
+
+  const form = document.getElementById("as-form") as HTMLFormElement;
+  const missing = document.getElementById("as-missing")!;
+  const nameInput = document.getElementById("as-name") as HTMLInputElement;
+  const dateInput = document.getElementById("as-date") as HTMLInputElement;
+  const submitBtn = document.getElementById("as-submit") as HTMLButtonElement;
+  const errEl = document.getElementById("as-err")!;
+
+  if (lang === "en") {
+    document.getElementById("as-title")!.textContent = STR.title;
+    document.getElementById("as-sub")!.textContent = STR.sub;
+    document.getElementById("as-name-label")!.innerHTML = `${STR.nameLabel} <span class="text-white/40">${STR.nameOpt}</span>`;
+    document.getElementById("as-date-label")!.textContent = STR.dateLabel;
+    submitBtn.textContent = STR.submit;
+  }
+
+  if (!token) {
+    form.classList.add("hidden");
+    missing.classList.remove("hidden");
+  }
+
+  function showErr(msg: string) {
+    errEl.textContent = msg;
+    errEl.classList.remove("hidden");
+  }
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!token) return;
+    errEl.classList.add("hidden");
+    const partnerBirthDate = dateInput.value;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(partnerBirthDate)) { showErr(STR.errDate); return; }
+    submitBtn.disabled = true;
+    submitBtn.textContent = STR.loading;
+    try {
+      const r = await fetch(GENERATE, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token, partnerName: nameInput.value.trim(), partnerBirthDate }),
+      });
+      const data = await r.json().catch(() => ({}));
+      if (r.ok && (data.status === "ready" || data.status === "generating")) {
+        try { (window as any).km?.trackEvent("ame_soeur_submitted", { locale: lang }); } catch { /* noop */ }
+        location.href = `/lecture/?token=${encodeURIComponent(token)}${langParam}`;
+        return;
+      }
+      if (r.status === 404 || data.error === "token non éligible") { showErr(STR.errToken); }
+      else if (data.error && /date/.test(String(data.error))) { showErr(STR.errDate); }
+      else { showErr(STR.errGeneric); }
+    } catch {
+      showErr(STR.errGeneric);
+    }
+    submitBtn.disabled = false;
+    submitBtn.textContent = STR.submit;
+  });
+</script>

@@ -19,6 +19,27 @@ function personalMonth(day: number, month: number, year: number, calMonth: numbe
 }
 const MONTH_NAMES = ["", "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
 
+// Signe solaire tropical depuis la date (déterministe, sans heure ni lieu) — sert à
+// la lecture Âme Sœur, qui n'a PAS besoin du moteur Swiss Ephemeris.
+function sunSign(month: number, day: number, en: boolean): string {
+  if (!Number.isFinite(month) || !Number.isFinite(day)) return en ? "unknown" : "inconnu";
+  const md = month * 100 + day; // ex : 18 juillet -> 718
+  let fr: string, eng: string;
+  if (md >= 1222 || md <= 119) { fr = "Capricorne"; eng = "Capricorn"; }
+  else if (md <= 218) { fr = "Verseau"; eng = "Aquarius"; }
+  else if (md <= 320) { fr = "Poissons"; eng = "Pisces"; }
+  else if (md <= 419) { fr = "Bélier"; eng = "Aries"; }
+  else if (md <= 520) { fr = "Taureau"; eng = "Taurus"; }
+  else if (md <= 620) { fr = "Gémeaux"; eng = "Gemini"; }
+  else if (md <= 722) { fr = "Cancer"; eng = "Cancer"; }
+  else if (md <= 822) { fr = "Lion"; eng = "Leo"; }
+  else if (md <= 922) { fr = "Vierge"; eng = "Virgo"; }
+  else if (md <= 1022) { fr = "Balance"; eng = "Libra"; }
+  else if (md <= 1121) { fr = "Scorpion"; eng = "Scorpio"; }
+  else { fr = "Sagittaire"; eng = "Sagittarius"; }
+  return en ? eng : fr;
+}
+
 // ── Phase 2 : outils astro (dépendent du moteur Swiss Ephemeris) ──────────────
 const ENGINE_URL = "http://168.119.229.20:8100";
 
@@ -166,7 +187,7 @@ export type ReadingTool =
   | "karmic-debt" | "chemin-de-vie" | "nombre-expression"
   | "annee-personnelle" | "compatibilite" | "profil-complet"
   | "ascendant" | "theme-natal" | "transits" | "synastrie"
-  | "guidance-mensuelle";
+  | "guidance-mensuelle" | "ame-soeur";
 
 export type ReadingInput = {
   fullName: string;
@@ -273,6 +294,16 @@ Show how these reinforce or tension each other, what archetype emerges from thei
 - Année personnelle ${yr} : ${py} (l'énergie du cycle en cours)
 - Dettes karmiques : ${debtList}
 Montre comment ces nombres se renforcent ou se tendent, quel archétype émerge de leur combinaison, ce que ça signifie concrètement aujourd'hui, et où la personne est invitée à grandir. C'est la lecture premium : plus profonde, plus longue, synthétisée.`;
+  } else if (tool === "ame-soeur") {
+    const lp1 = calculateLifePath(d, m, y);
+    const [py2, pm2, pd2] = (input.partnerBirthDate || "").split("-").map(Number);
+    const lp2 = Number.isFinite(pd2) ? calculateLifePath(pd2, pm2, py2) : null;
+    const sun1 = sunSign(m, d, en);
+    const sun2 = Number.isFinite(pm2) && Number.isFinite(pd2) ? sunSign(pm2, pd2, en) : (en ? "unknown" : "inconnu");
+    const pname = (input.partnerName || "").trim() || (en ? "the partner" : "l'autre");
+    focus = en
+      ? `Focus: the SOULMATE reading (a karmic relationship reading) between ${first} and ${pname}. Cross TWO layers: (1) numerological compatibility, life path ${lp1.number}${lp1.isMaster ? " (master)" : ""} for ${first} and life path ${lp2 ? lp2.number : "?"}${lp2?.isMaster ? " (master)" : ""} for ${pname}; (2) the relational dynamic of their sun signs, ${sun1} (${first}) and ${sun2} (${pname}). Read the karmic bond between these two people: what draws them together, the strengths of the bond, the frictions to bring to awareness, and the soul lesson this relationship comes to teach. Use ONLY this computed data; never invent a birth time, house or full chart (these were not provided).`
+      : `Focus : la lecture ÂME SŒUR (lecture de relation karmique) entre ${first} et ${pname}. Croise DEUX couches : (1) la compatibilité numérologique, chemin de vie ${lp1.number}${lp1.isMaster ? " (maitre nombre)" : ""} pour ${first} et chemin de vie ${lp2 ? lp2.number : "?"}${lp2?.isMaster ? " (maitre nombre)" : ""} pour ${pname} ; (2) la dynamique relationnelle de leurs signes solaires, ${sun1} (${first}) et ${sun2} (${pname}). Lis le lien karmique entre ces deux personnes : ce qui les attire, les forces du lien, les frictions à conscientiser, et la leçon d'âme que cette relation vient enseigner. Appuie-toi UNIQUEMENT sur ces données calculées ; n'invente jamais une heure de naissance, une maison ni un thème complet (ils n'ont pas été fournis).`;
   } else if (tool === "guidance-mensuelle") {
     const yr = input.currentYear || y;
     const cm = input.currentMonth || (m || 1);
@@ -284,12 +315,22 @@ Montre comment ces nombres se renforcent ou se tendent, quel archétype émerge 
       : `Focus : la GUIDANCE DU MOIS (${monthName} ${yr}). Année personnelle : ${py}. Mois personnel : ${pm}. Lis l'énergie spécifique de CE mois pour la personne : le thème à vivre, ce qui coule naturellement, ce qu'il faut lancer ou lâcher, un focus concret pour les semaines à venir et un court rituel. Chaleureux, tourné vers l'avant, actionnable. C'est un rendez-vous mensuel récurrent, fais-le sentir frais et personnel pour ${monthName}.`;
   }
 
-  const words = tool === "profil-complet" ? "1600 to 2100" : (tool === "guidance-mensuelle" ? "450 to 650" : "1100 to 1400");
-  const motsFr = tool === "profil-complet" ? "1600 a 2100" : (tool === "guidance-mensuelle" ? "450 a 650" : "1100 a 1400");
-  const headEn = `You are Orion, the karmic guide of Karmastro: the voice of a born orator, eloquent and vivid, who charms through the precision and quiet music of a well-turned phrase, yet always delicate and tactful, never heavy, never flattering, never hollow new-age. Warm, lucid, grounded. Write a personalised reading entirely IN ${outLang} (every sentence, titles included), addressing the person directly, about ${words} words.`;
-  const headFr = `Tu es Orion, le guide karmique de Karmastro : la voix d'un orateur né, éloquent et imagé, qui charme par la justesse et la musique discrète d'une phrase bien tournée, mais toujours délicat et tout en nuance, jamais lourd, jamais flatteur, jamais new-age creux. Chaleureux, lucide, incarné. Écris une lecture personnalisée EN FRANCAIS, au tutoiement, d'environ ${motsFr} mots.`;
-  const structEn = `Structure with markdown (##) section titles: 1) What this reveals about you. 2) What it means concretely in your life right now. 3) The strength to lean on. 4) Your ritual for the week (one simple concrete gesture within 7 days). 5) The question to hold before important decisions.`;
-  const structFr = `Structure avec des titres markdown (##) : 1) Ce que cela revele de toi. 2) Ce que ca signifie concretement dans ta vie en ce moment. 3) La force sur laquelle t'appuyer. 4) Ton rituel de la semaine (un geste concret simple sous 7 jours). 5) La question a te poser avant chaque decision importante.`;
+  const isAme = tool === "ame-soeur";
+  const words = tool === "profil-complet" ? "1600 to 2100" : (tool === "guidance-mensuelle" ? "450 to 650" : (isAme ? "1500 to 1900" : "1100 to 1400"));
+  const motsFr = tool === "profil-complet" ? "1600 a 2100" : (tool === "guidance-mensuelle" ? "450 a 650" : (isAme ? "1500 a 1900" : "1100 a 1400"));
+  const pnameH = (input.partnerName || "").trim() || (en ? "the partner" : "l'autre");
+  const headEn = isAme
+    ? `You are Séléné, the guide of bonds and relationships at Karmastro: a lunar voice, gentle and lucid, who speaks of the heart without sentimentality, always nuanced and tactful, never heavy, never flattering, never hollow new-age. Write a personalised couple reading entirely IN ${outLang} (every sentence, titles included), addressing ${first} directly about the relationship with ${pnameH}, about ${words} words.`
+    : `You are Orion, the karmic guide of Karmastro: the voice of a born orator, eloquent and vivid, who charms through the precision and quiet music of a well-turned phrase, yet always delicate and tactful, never heavy, never flattering, never hollow new-age. Warm, lucid, grounded. Write a personalised reading entirely IN ${outLang} (every sentence, titles included), addressing the person directly, about ${words} words.`;
+  const headFr = isAme
+    ? `Tu es Séléné, la guide des liens et des relations de Karmastro : une voix lunaire, douce et lucide, qui parle du coeur sans mièvrerie, toujours nuancée et délicate, jamais lourde, jamais flatteuse, jamais new-age creux. Écris une lecture de couple personnalisée EN FRANCAIS, au tutoiement, en t'adressant à ${first} à propos de sa relation avec ${pnameH}, d'environ ${motsFr} mots.`
+    : `Tu es Orion, le guide karmique de Karmastro : la voix d'un orateur né, éloquent et imagé, qui charme par la justesse et la musique discrète d'une phrase bien tournée, mais toujours délicat et tout en nuance, jamais lourd, jamais flatteur, jamais new-age creux. Chaleureux, lucide, incarné. Écris une lecture personnalisée EN FRANCAIS, au tutoiement, d'environ ${motsFr} mots.`;
+  const structEn = isAme
+    ? `Structure with markdown (##) section titles: 1) Where your two souls meet (what the crossing of your numbers and signs reveals). 2) The strengths of your bond. 3) The frictions to bring to awareness (without drama, with tenderness). 4) The karmic lesson of this relationship. 5) Your shared ritual for the week (one simple concrete gesture for the two of you within 7 days). 6) The question to hold together.`
+    : `Structure with markdown (##) section titles: 1) What this reveals about you. 2) What it means concretely in your life right now. 3) The strength to lean on. 4) Your ritual for the week (one simple concrete gesture within 7 days). 5) The question to hold before important decisions.`;
+  const structFr = isAme
+    ? `Structure avec des titres markdown (##) : 1) La ou vos deux ames se rencontrent (ce que revele le croisement de vos nombres et de vos signes). 2) Les forces de votre lien. 3) Les frictions a conscientiser (sans dramatiser, avec tendresse). 4) La lecon karmique de cette relation. 5) Votre rituel a deux pour la semaine (un geste concret simple pour vous deux sous 7 jours). 6) La question a vous poser ensemble.`
+    : `Structure avec des titres markdown (##) : 1) Ce que cela revele de toi. 2) Ce que ca signifie concretement dans ta vie en ce moment. 3) La force sur laquelle t'appuyer. 4) Ton rituel de la semaine (un geste concret simple sous 7 jours). 5) La question a te poser avant chaque decision importante.`;
   const constraintsEn = `Constraints: no medical/financial/miraculous promises; no fatalism; no unexplained jargon; favour inhabited prose over endless bullet lists. NEVER use em dash or en dash. NEVER open with an affectionate vocative ("dear heart", "my heart", "dear soul", "dear you"…) and never call the reader "heart"; enter directly into the substance. Start directly with the first section.`;
   const constraintsFr = `Contraintes : aucune promesse medicale/financiere/miraculeuse ; pas de fatalisme ; pas de jargon non explique ; prose habitee plutot que listes a puces interminables. N'utilise JAMAIS de tiret cadratin ni demi-cadratin. N'OUVRE JAMAIS par un appellatif affectueux ("cher coeur", "mon coeur", "chere ame", "cher toi"…) et n'appelle jamais le lecteur "coeur" ; entre directement dans le fond. Commence directement par la premiere section.`;
 

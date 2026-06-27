@@ -6,6 +6,7 @@ const STRIPE_SECRET_KEY = Deno.env.get("STRIPE_SECRET_KEY") || "";
 const STRIPE_WEBHOOK_SECRET = Deno.env.get("STRIPE_WEBHOOK_SECRET") || "";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "";
 const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
+const ADMIN_EMAIL = Deno.env.get("ADMIN_NOTIFY_EMAIL") || "augustin.foucheres@gmail.com";
 
 const CREDITS_BY_PRICE: Record<string, number> = {
   pack_lune: 10,
@@ -117,10 +118,10 @@ serve(async (req) => {
 
         if (!userId || !priceKey) break;
 
-        // Fetch profile for email data
+        // Fetch profile for email data + birth data (Âme Sœur reading needs it)
         const { data: profile } = await supabase
           .from("profiles")
-          .select("credits, first_name")
+          .select("credits, first_name, birth_date, language")
           .eq("user_id", userId)
           .maybeSingle();
 
@@ -160,28 +161,52 @@ serve(async (req) => {
             });
           }
         }
-        // Âme Soeur one-shot : unlock the tier temporarily (metadata flag, no status)
+        // Âme Sœur (lecture one-shot d'une relation) : ce n'est PAS un abonnement, donc on
+        // ne pose AUCUN tier. On crée une lecture en attente de la personne concernée + on
+        // invite l'acheteur à la renseigner (page /ame-soeur token-gated). Idempotent sur la
+        // session Stripe (le webhook peut être rejoué, on ne recrée pas de lecture).
         else if (priceKey === "ame_soeur") {
-          await supabase
-            .from("profiles")
-            .update({
-              subscription_tier: "ame_soeur",
-              subscription_status: "active",
-              subscription_period_end: null,
-            })
-            .eq("user_id", userId);
-
-          // Email: payment success for Âme Sœur
-          if (userEmail) {
-            await triggerEmail("payment_success", userEmail, {
-              firstName: profile?.first_name,
-              productName: PRODUCT_NAMES.ame_soeur,
-              amount: PRICE_AMOUNTS.ame_soeur,
-              isSubscription: false,
+          const { data: existingReading } = await supabase
+            .from("readings")
+            .select("token")
+            .eq("stripe_session_id", session.id)
+            .maybeSingle();
+          if (!existingReading) {
+            const token = crypto.randomUUID();
+            const locale = String(profile?.language || session.metadata?.locale || "fr").slice(0, 5);
+            await supabase.from("readings").insert({
+              token,
+              email: userEmail,
+              tool_type: "ame-soeur",
+              status: "awaiting_partner",
+              locale,
+              stripe_session_id: session.id,
+              user_id: userId,
+              inputs_json: {
+                tool: "ame-soeur",
+                fullName: profile?.first_name || "",
+                birthDate: profile?.birth_date || "",
+                locale,
+              },
             });
+            if (userEmail) {
+              await triggerEmail("ame_soeur_collect", userEmail, {
+                firstName: profile?.first_name,
+                token,
+                locale,
+              });
+            }
           }
         }
         // Subscriptions handled by customer.subscription.created/updated
+
+        // Notification interne : une vente vient d'être encaissée (tout produit one-shot/pack).
+        // Les abonnements notifient aussi ici (checkout.session.completed fire une fois par vente).
+        await triggerEmail("admin_sale", ADMIN_EMAIL, {
+          productName: PRODUCT_NAMES[priceKey] || priceKey,
+          amount: PRICE_AMOUNTS[priceKey] || "",
+          customerEmail: userEmail || "",
+        });
         break;
       }
 

@@ -288,22 +288,23 @@ https://app.karmastro.com/oracle
   };
 }
 
-export function readingEmail(token: string, locale = "fr"): EmailTemplate {
+export function readingEmail(token: string, locale = "fr", guideName = "Orion"): EmailTemplate {
+  const guide = guideName || "Orion";
   if (locale === "en") {
     const urlEn = `https://karmastro.com/lecture/?token=${token}&lang=en`;
     const htmlEn = wrapHtml(
       "Your personalised reading is ready",
       `
 <h1 style="color:#fff;font-family:Georgia,serif;font-size:26px;margin:0 0 16px;">Your reading awaits ✦</h1>
-<p>Orion has finished your personalised reading. It is reserved for you and stays accessible any time via the link below.</p>
-<p>Take a quiet moment to read it: it speaks of who you are, what it creates in your life today, and the concrete gesture of the week.</p>
+<p>${guide} has finished your personalised reading. It is reserved for you and stays accessible any time via the link below.</p>
+<p>Take a quiet moment to read it.</p>
       `,
       "Read my reading",
       urlEn
     );
     const textEn = `Your reading awaits
 
-Orion has finished your personalised reading. It stays accessible any time here:
+${guide} has finished your personalised reading. It stays accessible any time here:
 
 ${urlEn}
 
@@ -317,8 +318,8 @@ Take a quiet moment to read it.
     "Ta lecture personnalisée est prête",
     `
 <h1 style="color:#fff;font-family:Georgia,serif;font-size:26px;margin:0 0 16px;">Ta lecture t'attend ✦</h1>
-<p>Orion a terminé ta lecture personnalisée. Elle t'est réservée et reste accessible à tout moment via le lien ci-dessous.</p>
-<p>Prends un moment au calme pour la lire : elle parle de qui tu es, de ce que ça crée aujourd'hui dans ta vie, et du geste concret de la semaine.</p>
+<p>${guide} a terminé ta lecture personnalisée. Elle t'est réservée et reste accessible à tout moment via le lien ci-dessous.</p>
+<p>Prends un moment au calme pour la lire.</p>
     `,
     "Lire ma lecture",
     url
@@ -326,7 +327,7 @@ Take a quiet moment to read it.
 
   const text = `Ta lecture t'attend ✦
 
-Orion a terminé ta lecture personnalisée. Elle reste accessible à tout moment ici :
+${guide} a terminé ta lecture personnalisée. Elle reste accessible à tout moment ici :
 
 ${url}
 
@@ -371,4 +372,57 @@ ${btn(yes, "Oui, ça a résonné ✨", true)}${btn(no, "Pas vraiment", false)}
 </td></tr></table>
 <p style="font-size:13px;color:rgba(255,255,255,0.5);">Ta lecture reste accessible à tout moment, et un nouveau calcul n'est jamais qu'à un pas sur karmastro.com.</p>`;
   return { subject: "Ta lecture d'hier a-t-elle résonné ? ✨", html: wrapHtml("Est-ce que ça a résonné ?", content), text: `Ta lecture d'hier a-t-elle résonné ?\n\nOui : ${yes}\nPas vraiment : ${no}` };
+}
+
+// ============================================================
+// Âme Sœur : invitation à renseigner la personne concernée (après achat one-shot).
+// ============================================================
+export function ameSoeurCollectEmail(firstName: string | null, token: string, locale = "fr"): EmailTemplate {
+  const langParam = locale && locale !== "fr" ? `&lang=${encodeURIComponent(locale)}` : "";
+  const url = `https://karmastro.com/ame-soeur/?token=${token}${langParam}`;
+
+  if (locale === "en") {
+    const contentEn = `
+<h1 style="color:#fff;font-family:Georgia,serif;font-size:26px;margin:0 0 16px;">Your Soulmate reading ✦</h1>
+<p>Thank you, your Soulmate reading is reserved. To weave it, Séléné needs one last thing: the person this bond is about.</p>
+<p>Open the link below and enter their first name and date of birth. Your reading is then crafted and sent to you within minutes.</p>`;
+    const textEn = `Your Soulmate reading awaits.
+
+Séléné needs one last thing: the person this bond is about. Enter their first name and date of birth here:
+
+${url}
+
+Your reading is crafted and sent within minutes.`;
+    return { subject: "✦ One last step for your Soulmate reading", html: wrapHtml("Your Soulmate reading", contentEn, "Reveal my reading", url), text: textEn };
+  }
+
+  const name = firstName ? firstName : "cher voyageur";
+  const content = `
+<h1 style="color:#fff;font-family:Georgia,serif;font-size:26px;margin:0 0 16px;">Ta lecture Âme Sœur ✦</h1>
+<p>Merci ${name}, ta lecture Âme Sœur t'est réservée. Pour la tisser, Séléné a besoin d'une dernière chose : la personne dont parle ce lien.</p>
+<p>Ouvre le lien ci-dessous et indique son prénom et sa date de naissance. Ta lecture est ensuite composée et t'est envoyée en quelques minutes.</p>`;
+  const text = `Ta lecture Âme Sœur t'attend.
+
+Séléné a besoin d'une dernière chose : la personne dont parle ce lien. Indique son prénom et sa date de naissance ici :
+
+${url}
+
+Ta lecture est composée et envoyée en quelques minutes.
+
+« Les astres inclinent, mais ne déterminent pas » - Thomas d'Aquin`;
+  return { subject: "✦ Une dernière étape pour ta lecture Âme Sœur", html: wrapHtml("Ta lecture Âme Sœur", content, "Révéler ma lecture", url), text };
+}
+
+// ============================================================
+// Notification interne : une vente vient d'être encaissée.
+// ============================================================
+export function adminSaleEmail(productName: string, amount: string, customerEmail: string): EmailTemplate {
+  const amt = amount ? ` (${amount})` : "";
+  const content = `
+<h1 style="color:#fff;font-family:Georgia,serif;font-size:24px;margin:0 0 16px;">Nouvelle vente Karmastro ✦</h1>
+<p><strong>Produit :</strong> ${productName}${amt}</p>
+<p><strong>Client :</strong> ${customerEmail || "inconnu"}</p>
+<p style="font-size:13px;color:#9CA3AF;">Notification automatique du webhook Stripe.</p>`;
+  const text = `Nouvelle vente Karmastro\n\nProduit : ${productName}${amt}\nClient : ${customerEmail || "inconnu"}\n\nNotification automatique du webhook Stripe.`;
+  return { subject: `Karmastro, nouvelle vente : ${productName}${amt}`, html: wrapHtml("Nouvelle vente", content), text };
 }
