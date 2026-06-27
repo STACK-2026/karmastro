@@ -15,7 +15,7 @@ const corsHeaders = {
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "https://nkjbmbdrvejemzrggxvr.supabase.co";
 const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY") || "";
-const FROM_EMAIL = "Karmastro <noreply@karmastro.com>";
+const FROM_EMAIL = Deno.env.get("RESEND_FROM_EMAIL") || "Karmastro <oracle@mail.karmastro.com>";
 const SITE_URL = "https://karmastro.com";
 
 // Minimal i18n for the confirmation email subject + body

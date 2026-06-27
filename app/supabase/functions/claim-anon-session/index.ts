@@ -96,7 +96,7 @@ serve(async (req) => {
         .from("oracle_daily_usage")
         .select("message_count")
         .eq("session_id", sessionId)
-        .eq("day", today)
+        .eq("usage_date", today)
         .maybeSingle();
       if (anonUsage?.message_count) {
         await sb.rpc("increment_oracle_usage", {

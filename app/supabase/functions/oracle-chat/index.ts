@@ -409,17 +409,47 @@ serve(async (req) => {
     if (!GOOGLE_API_KEY) throw new Error("GOOGLE_API_KEY non configurée");
 
     // ============================================
-    // USAGE CHECK : limit to 3 messages/day for free tier
+    // USAGE CHECK : limit to 2 messages/day for free tier
     // ============================================
-    const FREE_DAILY_LIMIT = 3;
+    const FREE_DAILY_LIMIT = 2;
+    const IP_DAILY_CAP = 6;
+
+    // Anti-bypass : un appel anonyme DOIT porter un sessionId non vide, sinon le
+    // comptage RPC recoit (null, null) et n'incremente jamais (Oracle gratuit infini).
+    const anonSession = typeof sessionId === "string" ? sessionId.trim() : "";
+    if (!userId && anonSession.length < 8) {
+      return new Response(
+        JSON.stringify({ error: "session_required", message: "Session requise pour un usage anonyme." }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+      );
+    }
+
     if (SERVICE_KEY) {
       try {
         const sbCheck = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
 
+        // Backstop IP (anonymes) : limite le contournement par reset localStorage.
+        if (!userId) {
+          const ip = (req.headers.get("cf-connecting-ip")
+            || (req.headers.get("x-forwarded-for") || "").split(",")[0].trim());
+          if (ip) {
+            const { data: ipCount } = await sbCheck.rpc("bump_oracle_ip", { p_ip: ip });
+            if (typeof ipCount === "number" && ipCount > IP_DAILY_CAP) {
+              return new Response(
+                JSON.stringify({
+                  error: "paywall",
+                  paywall: { reason: "ip_cap", is_anon: true, message: "Tu as atteint la limite quotidienne. Crée ton compte gratuit pour continuer ✨" },
+                }),
+                { status: 402, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+              );
+            }
+          }
+        }
+
         // Increment + check via RPC
         const { data: usageData, error: usageErr } = await sbCheck.rpc("increment_oracle_usage", {
           p_user_id: userId ?? null,
-          p_session_id: userId ? null : sessionId ?? null,
+          p_session_id: userId ? null : (anonSession || null),
         });
 
         if (!usageErr && usageData && usageData[0]) {
@@ -460,8 +490,14 @@ serve(async (req) => {
           }
         }
       } catch (usageCheckErr) {
-        console.error("Usage check error (non-blocking):", usageCheckErr);
-        // Don't block chat on usage check failures
+        console.error("Usage check error:", usageCheckErr);
+        // Fail-secure pour les anonymes : pas de comptage fiable => pas de message gratuit.
+        if (!userId) {
+          return new Response(
+            JSON.stringify({ error: "usage_unavailable", message: "Service momentanément indisponible, réessaie dans un instant." }),
+            { status: 503, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+          );
+        }
       }
     }
 
