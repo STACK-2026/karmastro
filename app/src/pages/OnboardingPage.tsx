@@ -47,7 +47,7 @@ const OnboardingPage = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { toast } = useToast();
-  const { t } = useT();
+  const { t, locale } = useT();
   const [step, setStep] = useState(0);
   const [saving, setSaving] = useState(false);
 
@@ -69,6 +69,7 @@ const OnboardingPage = () => {
   const [gender, setGender] = useState("");
   const [interests, setInterests] = useState<string[]>([]);
   const [level, setLevel] = useState("débutant");
+  const [dailyOptIn, setDailyOptIn] = useState(true);
 
   // Step 4: Reveal
   const [revealPhase, setRevealPhase] = useState(0);
@@ -245,6 +246,21 @@ const OnboardingPage = () => {
         interests_count: interests.length,
         level,
       });
+      // Opt-in horoscope quotidien (retention) : inscrit le compte a la newsletter
+      // (double opt-in via email de confirmation). Non-bloquant pour l'onboarding.
+      if (dailyOptIn && user.email && birthDate) {
+        try {
+          const [, mm, dd] = birthDate.split("-").map((n) => parseInt(n, 10));
+          const signName = getZodiacSign(dd, mm).sign;
+          const signSlug = signName.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+          await fetch("https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/newsletter-subscribe", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: user.email, locale, sign_slug: signSlug, source: "onboarding_optin" }),
+          });
+          trackEvent("daily_optin_subscribed", { sign: signSlug });
+        } catch { /* non-blocking */ }
+      }
       // Clean up session storage now that data is in DB
       try { sessionStorage.removeItem(ONBOARDING_STORAGE_KEY); } catch {}
       navigate("/dashboard");
@@ -480,6 +496,16 @@ const OnboardingPage = () => {
                   ))}
                 </div>
               </div>
+
+              <label className="flex items-start gap-3 mt-2 p-3 rounded-lg border border-border bg-secondary/50 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={dailyOptIn}
+                  onChange={(e) => setDailyOptIn(e.target.checked)}
+                  className="mt-0.5 accent-primary"
+                />
+                <span className="text-sm text-muted-foreground">{t("onboarding.daily_optin")}</span>
+              </label>
             </motion.div>
           )}
 

@@ -117,6 +117,7 @@ export type UiKey =
   | "onboarding.interest_lune"
   | "onboarding.interest_meditation"
   | "onboarding.level_label"
+  | "onboarding.daily_optin"
   | "onboarding.level_beginner"
   | "onboarding.level_beginner_desc"
   | "onboarding.level_intermediate"
@@ -715,6 +716,7 @@ export const fr: UiStrings = {
   "onboarding.interest_lune": "Cycles lunaires",
   "onboarding.interest_meditation": "Méditation",
   "onboarding.level_label": "Niveau",
+  "onboarding.daily_optin": "Reçois ton horoscope personnalisé chaque matin par email ✨",
   "onboarding.level_beginner": "Débutant",
   "onboarding.level_beginner_desc": "Je découvre",
   "onboarding.level_intermediate": "Intermédiaire",
@@ -1292,6 +1294,7 @@ export const en: Partial<UiStrings> = {
   "onboarding.interest_lune": "Lunar cycles",
   "onboarding.interest_meditation": "Meditation",
   "onboarding.level_label": "Level",
+  "onboarding.daily_optin": "Get your personalized horoscope every morning by email ✨",
   "onboarding.level_beginner": "Beginner",
   "onboarding.level_beginner_desc": "I'm discovering",
   "onboarding.level_intermediate": "Intermediate",
