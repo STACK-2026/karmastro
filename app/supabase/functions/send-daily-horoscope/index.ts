@@ -175,6 +175,21 @@ const FEEDBACK_Q: Record<string, string> = {
 };
 const FEEDBACK_FN = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/horoscope-feedback";
 
+// Question contextuelle pour ramener vers l'Oracle (reengagement quotidien).
+const ORACLE_Q: Record<string, string> = {
+  fr: "Que me réservent les astres aujourd'hui ?",
+  en: "What do the stars hold for me today?",
+  es: "¿Qué me deparan los astros hoy?",
+  pt: "O que os astros reservam para mim hoje?",
+  de: "Was halten die Sterne heute für mich bereit?",
+  it: "Cosa mi riservano gli astri oggi?",
+  tr: "Yıldızlar bugün bana ne getiriyor?",
+  pl: "Co gwiazdy mają dla mnie dziś?",
+  ru: "Что готовят мне звёзды сегодня?",
+  ja: "今日、星々は私に何をもたらすでしょう？",
+  ar: "ماذا تخبئ لي النجوم اليوم؟",
+};
+
 function htmlEmail(params: {
   locale: string;
   signSlug: string;
@@ -185,6 +200,7 @@ function htmlEmail(params: {
   feedbackToken: string;
 }): string {
   const { locale, signName, entry, unsubUrl, articleUrl, feedbackToken } = params;
+  const oracleUrl = `${SITE_URL}/oracle/?lang=${locale}&q=${encodeURIComponent(ORACLE_Q[locale] || ORACLE_Q.fr)}`;
   const c = COPY[locale] || COPY.fr;
   const dir = locale === "ar" ? "rtl" : "ltr";
   const intro = entry.intro || "";
@@ -219,6 +235,9 @@ ${mantra ? `<div style="margin:20px 0;padding:16px 20px;border-left:2px solid #f
 ${(lucky || color || moon) ? `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:16px 0;"><tr>${lucky ? `<td align="center" style="padding:10px;border:1px solid rgba(255,255,255,0.08);border-radius:10px;width:33%;"><p style="margin:0;font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;">★</p><p style="margin:4px 0 0;font-size:14px;color:#fbbf24;font-weight:600;">${lucky}</p></td>` : ""}${color ? `<td align="center" style="padding:10px;border:1px solid rgba(255,255,255,0.08);border-radius:10px;width:33%;"><p style="margin:0;font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;">◐</p><p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.8);">${color}</p></td>` : ""}${moon ? `<td align="center" style="padding:10px;border:1px solid rgba(255,255,255,0.08);border-radius:10px;width:33%;"><p style="margin:0;font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;">☾</p><p style="margin:4px 0 0;font-size:13px;color:rgba(255,255,255,0.8);">${moon}</p></td>` : ""}</tr></table>` : ""}
 <div style="text-align:center;margin:24px 0 8px;">
 <a href="${articleUrl}" style="display:inline-block;padding:12px 28px;background:linear-gradient(135deg,#a78bfa 0%,#fbbf24 100%);color:#0f0a1e;text-decoration:none;border-radius:10px;font-weight:600;font-size:14px;">${c.ctaMore}</a>
+</div>
+<div style="text-align:center;margin:10px 0 8px;">
+<a href="${oracleUrl}" style="display:inline-block;padding:11px 26px;background:transparent;border:1px solid rgba(251,191,36,0.5);color:#fbbf24;text-decoration:none;border-radius:10px;font-weight:600;font-size:13px;">${c.ctaApp} ✦</a>
 </div>
 <div style="text-align:center;margin:22px 0 4px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.06);">
 <p style="margin:0 0 10px;font-size:12px;color:rgba(255,255,255,0.5);">${FEEDBACK_Q[locale] || FEEDBACK_Q.fr}</p>
