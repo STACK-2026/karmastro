@@ -110,7 +110,9 @@ const description = "Ta lecture personnalisée.";
       }
       if (data.status === "error") { showError(); return; }
     } catch { /* transient, on retente */ }
-    if (++tries > 20) { showError(); return; }
+    // Une lecture longue (Âme Sœur, profil complet) peut prendre plus d'une minute.
+    // On garde l'animation jusqu'à ~2,5 min avant d'afficher le message de repli.
+    if (++tries > 75) { showError(); return; }
     setTimeout(poll, 2000);
   }
   poll();

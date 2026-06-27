@@ -8,6 +8,10 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
 import { generateReading, buildFallbackReading } from "../_shared/reading-generator.ts";
 
+// EdgeRuntime fourni par le runtime Supabase (background tasks).
+// deno-lint-ignore no-explicit-any
+declare const EdgeRuntime: any;
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
@@ -87,28 +91,34 @@ serve(async (req) => {
     partnerBirthDate,
   };
 
-  // 4. Générer (Gemini) avec filet de secours si le moteur échoue : le client payant
-  //    reçoit toujours une vraie lecture cohérente à l'écran.
-  let content: string;
-  try {
-    content = await generateReading(inputs);
-  } catch (e) {
-    console.error("Gemini KO, fallback ame-soeur:", String(e).slice(0, 200));
-    content = buildFallbackReading(inputs);
+  // 4. Génération EN ARRIÈRE-PLAN : on répond TOUT DE SUITE (generating). Une lecture de
+  //    ~1700 mots peut dépasser le temps d'attente d'une requête navigateur, donc /lecture
+  //    poll get-reading jusqu'à ready (animation maintenue). Filet de secours si Gemini KO.
+  const task = (async () => {
+    let content: string;
+    try {
+      content = await generateReading(inputs);
+    } catch (e) {
+      console.error("Gemini KO, fallback ame-soeur:", String(e).slice(0, 200));
+      content = buildFallbackReading(inputs);
+    }
+    await sb.from("readings")
+      .update({ content, status: "ready", inputs_json: inputs })
+      .eq("token", token);
+    if (row.email) {
+      fetch(`${SUPABASE_URL}/functions/v1/send-email`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Authorization": `Bearer ${SERVICE_KEY}` },
+        body: JSON.stringify({ type: "reading", to: row.email, data: { token, locale: inputs.locale, guideName: "Séléné" } }),
+      }).catch(() => {});
+    }
+  })();
+
+  if (typeof EdgeRuntime !== "undefined" && EdgeRuntime?.waitUntil) {
+    EdgeRuntime.waitUntil(task);
+  } else {
+    await task; // fallback local/test
   }
 
-  await sb.from("readings")
-    .update({ content, status: "ready", inputs_json: inputs })
-    .eq("token", token);
-
-  // 5. Email du lien de lecture (non bloquant).
-  if (row.email) {
-    fetch(`${SUPABASE_URL}/functions/v1/send-email`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "Authorization": `Bearer ${SERVICE_KEY}` },
-      body: JSON.stringify({ type: "reading", to: row.email, data: { token, locale: inputs.locale, guideName: "Séléné" } }),
-    }).catch(() => {});
-  }
-
-  return json({ status: "ready" });
+  return json({ status: "generating" });
 });
