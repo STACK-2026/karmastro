@@ -96,7 +96,12 @@ def resend_send(to_email, subject, html):
     req = urllib.request.Request(
         "https://api.resend.com/emails",
         data=json.dumps({"from": FROM_EMAIL, "to": [to_email], "subject": subject, "html": html}).encode(),
-        headers={"Authorization": f"Bearer {RESEND_API_KEY}", "Content-Type": "application/json"},
+        headers={
+            "Authorization": f"Bearer {RESEND_API_KEY}",
+            "Content-Type": "application/json",
+            # Cloudflare WAF devant Resend bloque le User-Agent par defaut de urllib (403 code 1010).
+            "User-Agent": "karmastro-reengage/1.0",
+        },
         method="POST",
     )
     with urllib.request.urlopen(req, timeout=20) as r:
