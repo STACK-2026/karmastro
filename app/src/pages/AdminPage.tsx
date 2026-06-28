@@ -12,6 +12,7 @@ import {
   Gift,
   Mail,
   CreditCard,
+  Coins,
   TrendingUp,
   Search,
   ChevronDown,
@@ -215,6 +216,14 @@ const OverviewTab = ({ periodDays, onNavigate }: { periodDays: number; onNavigat
           label="Abonnés payants"
           value={kpis.paid_users}
           sub={`${paidPct}% · ${mrrEuro.toFixed(0)}€ MRR`}
+          color="text-amber-300"
+          onClick={() => onNavigate("money")}
+        />
+        <KpiCard
+          icon={Coins}
+          label="Revenu ponctuel"
+          value={`${Number(kpis.oneshot_revenue_total ?? 0).toFixed(2)}€`}
+          sub={`+${kpis.oneshot_sales_period ?? 0} vente${(kpis.oneshot_sales_period ?? 0) > 1 ? "s" : ""} cette période`}
           color="text-amber-300"
           onClick={() => onNavigate("money")}
         />

@@ -21,6 +21,9 @@ export type Kpis = {
   stripe_events_period: number;
   emails_sent_period: number;
   emails_failed_period: number;
+  oneshot_revenue_total: number;
+  oneshot_revenue_period: number;
+  oneshot_sales_period: number;
 };
 
 export type TimeseriesPoint = { date: string; count: number };
