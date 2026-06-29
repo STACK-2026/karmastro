@@ -916,7 +916,7 @@ const OracleTab = () => {
           )}
           {reviews.map((rv) => {
             const n = rv.rating || 0;
-            const stars = n > 0 ? "★".repeat(n) + "☆".repeat(5 - n) : (rv.feedback === "good" ? "👍" : rv.feedback === "meh" ? "👎" : "—");
+            const stars = n > 0 ? "★".repeat(n) + "☆".repeat(5 - n) : (rv.feedback === "good" ? "👍" : rv.feedback === "meh" ? "👎" : "·");
             return (
               <div key={rv.token} className="p-2 rounded-lg bg-background/40 border border-border/30">
                 <div className="flex items-center gap-1.5 text-[10px] mb-0.5">

@@ -15,7 +15,7 @@ select
   r.feedback_text,
   r.tool_type,
   r.locale,
-  coalesce(nullif(split_part(r.inputs_json->>'fullName', ' ', 1), ''), split_part(r.email, '@', 1)) as first_name,
+  nullif(split_part(r.inputs_json->>'fullName', ' ', 1), '') as first_name,
   r.feedback_at
 from readings r
 where r.feedback_public = true
