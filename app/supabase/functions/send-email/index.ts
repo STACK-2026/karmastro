@@ -8,6 +8,7 @@ import {
   firstOracleEmail,
   readingEmail,
   readingFollowupEmail,
+  readingReviewEmail,
   ameSoeurCollectEmail,
   adminSaleEmail,
 } from "../_shared/email-templates.ts";
@@ -30,6 +31,7 @@ type TemplateType =
   | "first_oracle"
   | "reading"
   | "reading_followup"
+  | "reading_review"
   | "ame_soeur_collect"
   | "admin_sale";
 
@@ -112,6 +114,9 @@ serve(async (req) => {
         break;
       case "reading_followup":
         template = readingFollowupEmail(data?.token ?? "", data?.locale ?? "fr");
+        break;
+      case "reading_review":
+        template = readingReviewEmail(data?.token ?? "", data?.locale ?? "fr", data?.firstName ?? null);
         break;
       case "ame_soeur_collect":
         template = ameSoeurCollectEmail(data?.firstName ?? null, data?.token ?? "", data?.locale ?? "fr");

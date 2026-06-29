@@ -27,7 +27,7 @@ serve(async (req) => {
 
   const { data: rows, error } = await sb
     .from("readings")
-    .select("token, email, locale, created_at")
+    .select("token, email, locale, created_at, inputs_json")
     .eq("status", "ready")
     .is("followup_sent_at", null)
     .not("email", "is", null)
@@ -43,11 +43,13 @@ serve(async (req) => {
   const candidates = rows || [];
   for (const r of candidates) {
     if (dry) continue;
+    const fullName = (r.inputs_json && typeof r.inputs_json === "object" ? (r.inputs_json as Record<string, unknown>).fullName : null);
+    const firstName = typeof fullName === "string" && fullName.trim() ? fullName.trim().split(/\s+/)[0] : null;
     try {
       const resp = await fetch(`${SUPABASE_URL}/functions/v1/send-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json", "Authorization": `Bearer ${SERVICE_KEY}`, "apikey": SERVICE_KEY },
-        body: JSON.stringify({ type: "reading_followup", to: r.email, data: { token: r.token, locale: r.locale || "fr" } }),
+        body: JSON.stringify({ type: "reading_review", to: r.email, data: { token: r.token, locale: r.locale || "fr", firstName } }),
       });
       if (resp.ok) {
         await sb.from("readings").update({ followup_sent_at: new Date().toISOString() }).eq("token", r.token);

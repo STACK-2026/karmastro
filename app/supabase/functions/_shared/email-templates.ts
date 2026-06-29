@@ -375,6 +375,40 @@ ${btn(yes, "Oui, ça a résonné ✨", true)}${btn(no, "Pas vraiment", false)}
 }
 
 // ============================================================
+// Demande d'avis (note 1-5 + commentaire) : chaque etoile mene a la page /avis,
+// la note est pre-cochee et capturee au clic, l'utilisateur peut ajouter un mot.
+// ============================================================
+export function readingReviewEmail(token: string, locale = "fr", firstName: string | null = null): EmailTemplate {
+  const lang = locale && locale !== "fr" ? `&lang=${encodeURIComponent(locale)}` : "";
+  const star = (n: number) =>
+    `<a href="https://karmastro.com/avis/?token=${token}&note=${n}${lang}" style="text-decoration:none;color:#fcd34d;font-size:34px;line-height:1;padding:0 3px;">&#9733;</a>`;
+  const starsRow = `<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:14px 0 6px;">${star(1)}${star(2)}${star(3)}${star(4)}${star(5)}</td></tr></table>`;
+
+  const en = locale === "en";
+  const hi = firstName ? `${en ? "Hi" : "Coucou"} ${firstName},` : (en ? "Hi," : "Coucou,");
+
+  if (en) {
+    const content = `
+<h1 style="color:#fff;font-family:Georgia,serif;font-size:26px;margin:0 0 16px;">How did your reading feel? ✦</h1>
+<p>${hi}</p>
+<p>You took the time to receive a reading from us, and your honest impression matters a lot. How much did it resonate?</p>
+${starsRow}
+<p style="text-align:center;font-size:13px;color:rgba(255,255,255,0.5);margin-top:4px;">Tap a star, then add a word if you like.</p>
+<p style="font-size:13px;color:rgba(255,255,255,0.45);">Your reading stays accessible any time on karmastro.com.</p>`;
+    return { subject: "Your opinion matters to us ✦", html: wrapHtml("How did your reading feel?", content), text: `How did your reading feel? Rate it here:\nhttps://karmastro.com/avis/?token=${token}${lang}` };
+  }
+
+  const content = `
+<h1 style="color:#fff;font-family:Georgia,serif;font-size:26px;margin:0 0 16px;">Ta lecture, ça a donné quoi&nbsp;? ✦</h1>
+<p>${hi}</p>
+<p>Tu as pris le temps de recevoir une lecture chez nous, et ton ressenti honnête compte beaucoup pour nous. À quel point ça a résonné&nbsp;?</p>
+${starsRow}
+<p style="text-align:center;font-size:13px;color:rgba(255,255,255,0.5);margin-top:4px;">Clique une étoile, puis ajoute un mot si tu veux.</p>
+<p style="font-size:13px;color:rgba(255,255,255,0.45);">Ta lecture reste accessible à tout moment sur karmastro.com.</p>`;
+  return { subject: "Ton avis compte pour nous ✦", html: wrapHtml("Ta lecture, ça a donné quoi ?", content), text: `Ton avis compte pour nous. Note ta lecture ici :\nhttps://karmastro.com/avis/?token=${token}${lang}` };
+}
+
+// ============================================================
 // Âme Sœur : invitation à renseigner la personne concernée (après achat one-shot).
 // ============================================================
 export function ameSoeurCollectEmail(firstName: string | null, token: string, locale = "fr"): EmailTemplate {

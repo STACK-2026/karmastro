@@ -65,6 +65,12 @@ const etoile = [
       </div>
     </div>
 
+    <!-- Preuve sociale : avis clients consentis (s'affiche seulement s'il y en a) -->
+    <section id="reviews" class="hidden mb-10">
+      <p class="text-center text-sm uppercase tracking-widest text-amber-300/80 mb-5">Ce qu'ils en disent</p>
+      <div id="reviews-list" class="grid sm:grid-cols-2 gap-4"></div>
+    </section>
+
     <!-- Carte d'abonnement : le checkout se fait dans l'app (compte requis pour débloquer l'Oracle) -->
     <div id="subscribe" class="p-6 md:p-8 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/[0.06] to-purple-400/[0.04] text-center">
       <p class="font-serif text-2xl text-white mb-1">Rejoins Étoile</p>
@@ -82,4 +88,29 @@ const etoile = [
   document.getElementById("sub-go")?.addEventListener("click", () => {
     try { (window as any).km?.trackEvent("subscribe_click", { tier: "etoile", price: "5.99", dest: "app" }); } catch {}
   });
+
+  // Preuve sociale : charge les avis publics consentis (note >= 4 + commentaire).
+  (async () => {
+    const ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ramJtYmRydmVqZW16cmdneHZyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU3NzE1MjUsImV4cCI6MjA5MTM0NzUyNX0.KYc8rXIC0RPMskW6eJIE_EranUcLK6nckCAWEph-340";
+    try {
+      const r = await fetch("https://nkjbmbdrvejemzrggxvr.supabase.co/rest/v1/v_public_reviews?select=rating,feedback_text,first_name&limit=6", {
+        headers: { apikey: ANON, Authorization: `Bearer ${ANON}` },
+      });
+      if (!r.ok) return;
+      const rows: Array<{ rating: number; feedback_text: string; first_name: string }> = await r.json();
+      if (!Array.isArray(rows) || rows.length === 0) return;
+      const esc = (s: string) => (s || "").replace(/[<>&"]/g, (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;" }[c] as string));
+      const list = document.getElementById("reviews-list")!;
+      list.innerHTML = rows.map((rv) => {
+        const stars = "★".repeat(Math.max(1, Math.min(5, rv.rating))) + "☆".repeat(5 - Math.max(1, Math.min(5, rv.rating)));
+        const name = esc(rv.first_name || "Anonyme");
+        return `<figure class="p-5 rounded-2xl border border-white/10 bg-white/[0.02]">
+          <div class="text-amber-300 text-sm mb-2">${stars}</div>
+          <blockquote class="text-sm text-white/80 leading-relaxed mb-3">${esc(rv.feedback_text)}</blockquote>
+          <figcaption class="text-xs text-white/45">${name}</figcaption>
+        </figure>`;
+      }).join("");
+      document.getElementById("reviews")!.classList.remove("hidden");
+    } catch { /* preuve sociale optionnelle */ }
+  })();
 </script>

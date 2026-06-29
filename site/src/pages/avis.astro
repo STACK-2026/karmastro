@@ -1,0 +1,136 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Ton avis · Karmastro";
+const description = "Partage ton ressenti sur ta lecture.";
+---
+
+<BaseLayout title={title} description={description} noIndex={true}>
+  <article class="max-w-xl mx-auto px-4 py-16 min-h-[60vh]">
+    <div id="av-form">
+      <h1 class="font-serif text-3xl text-white mb-3 text-center" id="av-title">Est-ce que ça a résonné&nbsp;?</h1>
+      <p class="text-white/70 text-center mb-8 leading-relaxed" id="av-sub">
+        Ton ressenti aide l'Oracle à mieux te lire. Une note, et un mot si le cœur t'en dit.
+      </p>
+
+      <div class="flex justify-center gap-2 mb-8 text-4xl select-none" id="av-stars" role="radiogroup" aria-label="Note">
+        <button type="button" data-v="1" class="av-star transition-transform hover:scale-110" aria-label="1 étoile">☆</button>
+        <button type="button" data-v="2" class="av-star transition-transform hover:scale-110" aria-label="2 étoiles">☆</button>
+        <button type="button" data-v="3" class="av-star transition-transform hover:scale-110" aria-label="3 étoiles">☆</button>
+        <button type="button" data-v="4" class="av-star transition-transform hover:scale-110" aria-label="4 étoiles">☆</button>
+        <button type="button" data-v="5" class="av-star transition-transform hover:scale-110" aria-label="5 étoiles">☆</button>
+      </div>
+
+      <label for="av-text" class="block text-sm text-white/60 mb-2" id="av-label">En quelques mots (optionnel)</label>
+      <textarea id="av-text" rows="4" maxlength="2000"
+        class="w-full rounded-xl bg-white/5 border border-white/15 text-white p-3 placeholder-white/30 focus:border-amber-300/60 focus:outline-none"
+        placeholder="Ce qui t'a touchée, ce qui a fait écho…"></textarea>
+
+      <label class="flex items-start gap-2 mt-4 text-sm text-white/60 cursor-pointer">
+        <input type="checkbox" id="av-public" class="mt-1 accent-amber-300" />
+        <span id="av-consent">J'autorise Karmastro à publier mon avis (avec mon prénom seulement).</span>
+      </label>
+
+      <button id="av-submit"
+        class="mt-7 w-full rounded-xl py-3 font-semibold text-[#0f0a1e] bg-gradient-to-r from-violet-400 to-amber-300 hover:opacity-95 disabled:opacity-50 transition"
+        >Envoyer mon avis</button>
+      <p id="av-err" class="hidden text-center text-rose-300 text-sm mt-3"></p>
+    </div>
+
+    <div id="av-thanks" class="hidden text-center py-16">
+      <p class="text-4xl mb-4">✦</p>
+      <p class="font-serif text-2xl text-white mb-2" id="av-thanks-title">Merci, c'est noté.</p>
+      <p class="text-sm text-white/60 mb-8" id="av-thanks-sub">Ton retour compte vraiment pour nous.</p>
+      <a id="av-back" href="/lecture/" class="text-amber-300 hover:underline">Revoir ma lecture →</a>
+    </div>
+  </article>
+</BaseLayout>
+
+<script>
+  const FN = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/reading-feedback";
+  const params = new URLSearchParams(location.search);
+  const token = params.get("token") || "";
+  const lang = params.get("lang") === "en" ? "en" : "fr";
+  const noteParam = parseInt(params.get("note") || "0", 10);
+
+  const STR = {
+    fr: {
+      title: "Est-ce que ça a résonné ?",
+      sub: "Ton ressenti aide l'Oracle à mieux te lire. Une note, et un mot si le cœur t'en dit.",
+      label: "En quelques mots (optionnel)",
+      placeholder: "Ce qui t'a touchée, ce qui a fait écho…",
+      consent: "J'autorise Karmastro à publier mon avis (avec mon prénom seulement).",
+      submit: "Envoyer mon avis", sending: "Envoi…",
+      needNote: "Choisis une note d'abord ✦",
+      thanksTitle: "Merci, c'est noté.", thanksSub: "Ton retour compte vraiment pour nous.",
+      back: "Revoir ma lecture →", noToken: "Lien d'avis invalide.",
+    },
+    en: {
+      title: "Did it resonate?",
+      sub: "Your feedback helps the Oracle read you better. A rating, and a word if you feel like it.",
+      label: "In a few words (optional)",
+      placeholder: "What touched you, what echoed…",
+      consent: "I allow Karmastro to publish my review (first name only).",
+      submit: "Send my review", sending: "Sending…",
+      needNote: "Pick a rating first ✦",
+      thanksTitle: "Thank you, noted.", thanksSub: "Your feedback truly matters to us.",
+      back: "See my reading again →", noToken: "Invalid review link.",
+    },
+  }[lang];
+
+  const $ = (id: string) => document.getElementById(id)!;
+  const stars = Array.from(document.querySelectorAll<HTMLButtonElement>(".av-star"));
+  const errEl = $("av-err");
+  let rating = 0;
+  let lastSentRating = 0;
+
+  // Localise les libellés
+  $("av-title").textContent = STR.title;
+  $("av-sub").textContent = STR.sub;
+  $("av-label").textContent = STR.label;
+  ($("av-text") as HTMLTextAreaElement).placeholder = STR.placeholder;
+  $("av-consent").textContent = STR.consent;
+  $("av-submit").textContent = STR.submit;
+  $("av-thanks-title").textContent = STR.thanksTitle;
+  $("av-thanks-sub").textContent = STR.thanksSub;
+  $("av-back").textContent = STR.back;
+  $("av-back").setAttribute("href", `/lecture/?token=${encodeURIComponent(token)}${lang === "en" ? "&lang=en" : ""}`);
+
+  function paint(n: number) {
+    stars.forEach((s, i) => { s.textContent = i < n ? "★" : "☆"; s.style.color = i < n ? "#fcd34d" : "rgba(255,255,255,0.35)"; });
+  }
+  function post(extra: Record<string, unknown>) {
+    return fetch(FN, {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token, ...extra }),
+    });
+  }
+  function setRating(n: number) {
+    rating = n; paint(n); errEl.classList.add("hidden");
+    // capture immediate de la note (meme si l'utilisateur ne soumet pas le texte)
+    if (token && n !== lastSentRating) { lastSentRating = n; post({ rating: n }).catch(() => {}); }
+  }
+
+  stars.forEach((s) => s.addEventListener("click", () => setRating(parseInt(s.dataset.v!, 10))));
+  paint(0);
+  if (noteParam >= 1 && noteParam <= 5) setRating(noteParam);
+
+  $("av-submit").addEventListener("click", async () => {
+    if (!token) { errEl.textContent = STR.noToken; errEl.classList.remove("hidden"); return; }
+    if (rating < 1) { errEl.textContent = STR.needNote; errEl.classList.remove("hidden"); return; }
+    const btn = $("av-submit") as HTMLButtonElement;
+    btn.disabled = true; btn.textContent = STR.sending;
+    try {
+      await post({
+        rating,
+        text: ($("av-text") as HTMLTextAreaElement).value,
+        public_ok: ($("av-public") as HTMLInputElement).checked,
+      });
+      $("av-form").classList.add("hidden");
+      $("av-thanks").classList.remove("hidden");
+    } catch {
+      btn.disabled = false; btn.textContent = STR.submit;
+      errEl.textContent = STR.noToken; errEl.classList.remove("hidden");
+    }
+  });
+</script>
