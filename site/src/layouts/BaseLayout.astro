@@ -93,6 +93,9 @@ const hreflangUrls = LOCALES
       fullUrl = `${siteConfig.url}${prefix}${pathWithoutLocale}`;
     }
     if (fullUrl === null) return null;
+    // Aligne les alternates hreflang sur le canonical (trailing slash) : sans ca,
+    // tool/horoscope emettaient des URLs sans slash qui 308-redirigent.
+    if (!fullUrl.endsWith("/")) fullUrl = `${fullUrl}/`;
     return { locale, url: fullUrl };
   })
   .filter((x): x is { locale: typeof LOCALES[number]; url: string } => x !== null);
