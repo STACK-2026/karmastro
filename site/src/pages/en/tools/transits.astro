@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ToolEditorial from "../../../components/ToolEditorial.astro";
+import { getToolEditorial } from "../../../data/tool-editorials";
+const editorial_transits = getToolEditorial("transits", "en");
 
 const title = "Free Transit Calculator - Current Planetary Transits | Karmastro";
 const description =
@@ -165,5 +168,15 @@ const jsonLd = [
       <a href="/en/tools/birth-chart/" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Birth chart</a>
       <a href="/en/horoscope/" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Daily horoscope</a>
     </nav>
+      {editorial_transits && (
+      <ToolEditorial
+        intro={editorial_transits.intro}
+        sections={editorial_transits.sections}
+        faq={editorial_transits.faq}
+        sources={editorial_transits.sources}
+        labels={editorial_transits.labels}
+        dir="ltr"
+      />
+    )}
   </article>
 </BaseLayout>

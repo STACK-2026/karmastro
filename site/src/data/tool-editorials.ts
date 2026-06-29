@@ -19,7 +19,9 @@ export type ToolKey =
   | "birth-chart"
   | "rising-sign"
   | "compatibility"
-  | "karmic-debt";
+  | "karmic-debt"
+  | "synastry"
+  | "transits";
 
 export interface EditorialSection {
   title: string;
@@ -69,6 +71,71 @@ const JA_LABELS = { faq: "よくある質問", sources: "参考文献" };
 
 export const TOOL_EDITORIALS: Partial<Record<ToolKey, Partial<Record<string, ToolEditorial>>>> = {
   "life-path": {
+    en: {
+        "intro": "A <strong>life path number</strong> is the single most important number in Pythagorean numerology, derived by reducing your full birth date to a single digit (1 through 9) or one of three master numbers (11, 22, or 33). It reveals the central lesson, innate talents, and overarching direction of your life. The system traces to the Greek philosopher Pythagoras (c. 570 to 495 BC), whose school in Croton held that numerical relationships underlie all reality. To calculate yours, reduce each component of your birth date separately, then sum and reduce again until you reach a single digit or master number.",
+        "sections": [
+          {
+            "title": "How to Calculate Your Life Path Number: A Worked Example",
+            "body": "The Pythagorean method reduces the month, day, and year separately before combining them. Take 14 March 1995 as an example. The month (March) is 3, already a single digit. The day 14 reduces as 1 plus 4 equals 5. The year 1995 reduces as 1 plus 9 plus 9 plus 5 equals 24, then 2 plus 4 equals 6. Adding the three results: 3 plus 5 plus 6 equals 14, and 1 plus 4 equals 5. The life path number for someone born on 14 March 1995 is therefore 5. Critically, never reduce 11, 22, or 33 at any intermediate step; these are master numbers and retain their expanded vibration rather than collapsing to 2, 4, or 6."
+          },
+          {
+            "title": "The 12 Life Path Numbers and Their Core Meanings",
+            "body": "Pythagorean numerology recognises nine standard paths and three master numbers. Path 1 represents leadership and independence; Path 2 is diplomacy and partnership; Path 3 channels creative expression and communication; Path 4 is the builder, focused on structure and discipline; Path 5 embodies freedom, adaptability, and sensory experience; Path 6 centres on nurturing, responsibility, and community; Path 7 pursues wisdom, solitude, and spiritual inquiry; Path 8 is associated with material mastery and executive power; Path 9 carries humanitarian vision and completion. Master number 11 amplifies intuition and spiritual sensitivity far beyond Path 2. Master number 22, the Master Builder, combines vision with practical execution. Master number 33, the rarest, represents selfless teaching and compassionate service at a collective level."
+          },
+          {
+            "title": "Master Numbers: When You Do Not Reduce",
+            "body": "The rule governing master numbers is precise: if any intermediate subtotal, or the final sum, equals 11, 22, or 33, stop reduction there. A person born on 29 November 1992 would produce a year reduction of 1 plus 9 plus 9 plus 2 equals 21, then 3. The day 29 reduces to 2 plus 9 equals 11, which is retained as 11, not reduced to 2. The month 11 is also retained. Final sum: 11 plus 11 plus 3 equals 25, then 2 plus 5 equals 7. Note that 11 appeared twice but the final sum was not 11, 22, or 33, so ordinary reduction applies. Master numbers appear in roughly 10 to 15 percent of birth dates depending on century, making 33 statistically the rarest life path."
+          },
+          {
+            "title": "Historical Roots: Pythagoras and the Principle That All Is Number",
+            "body": "Pythagoras founded his philosophical school at Croton, in what is now southern Italy, around 530 BC. Central to Pythagorean thought was the axiom that numerical ratios govern music, astronomy, and the cosmos. The school assigned qualities to numbers: the monad (1) as unity and origin, the dyad (2) as duality and matter, the triad (3) as harmony. These ideas were transmitted through Neoplatonist writers and later through Renaissance occultists before consolidating into modern Western numerology in the nineteenth and twentieth centuries. The contemporary Pythagorean system used in life path calculation standardises the assignment of the digits 1 through 9 to the Western alphabet, distinguishing it from the Chaldean system, which uses 1 through 8 and weights the sound of names differently."
+          },
+          {
+            "title": "Life Path Number vs. Expression Number: A Key Distinction",
+            "body": "The life path number and the expression number (also called the destiny number) are frequently confused. The life path is calculated entirely from the birth date and describes the journey: the conditions you were born into and the lessons you are here to master. The expression number is calculated from the full birth name as it appears on a birth certificate, with each letter converted to a digit using the Pythagorean chart (A equals 1, B equals 2, through to Z equals 8), then reduced to a single digit or master number. Where the life path shows the road, the expression number reveals the innate abilities and characteristic approach you bring to that road. Together, the two numbers form the foundation of a complete Pythagorean numerology profile."
+          }
+        ],
+        "faq": [
+          {
+            "q": "How do I calculate my life path number?",
+            "a": "Reduce your birth month, birth day, and birth year each to a single digit or master number (11, 22, 33). Then add those three results together and reduce again. For example, 14 March 1995 gives month 3, day 5 (1 plus 4), year 6 (1 plus 9 plus 9 plus 5 equals 24, then 2 plus 4). Sum: 3 plus 5 plus 6 equals 14, then 1 plus 4 equals 5. Life path: 5."
+          },
+          {
+            "q": "What is the rarest life path number?",
+            "a": "Life path 33 is the rarest master number. Because 33 requires the three intermediate sums (month, day, and reduced year) to total exactly 33 before any further reduction, the statistical occurrence across twentieth and twenty-first century birth dates is estimated at less than 1 percent of the population, making it significantly less common than paths 11 or 22."
+          },
+          {
+            "q": "Are master numbers ever reduced in a life path calculation?",
+            "a": "No. If any intermediate total (month subtotal, day subtotal, year subtotal, or the final combined sum) equals 11, 22, or 33, Pythagorean numerology instructs you to stop and retain that number. Reducing 11 to 2, 22 to 4, or 33 to 6 would discard the amplified resonance that defines master numbers and produce an incorrect result."
+          },
+          {
+            "q": "What is the difference between a life path number and a destiny number?",
+            "a": "The life path number comes from your birth date and represents the overarching theme and lessons of your lifetime. The destiny number (expression number) comes from your full birth name converted to digits using the Pythagorean letter chart. The life path describes the journey; the destiny number describes the talents and approach you carry into it."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Numerology (Wikipedia)",
+            "url": "https://en.wikipedia.org/wiki/Numerology"
+          },
+          {
+            "title": "Pythagoras (Encyclopaedia Britannica)",
+            "url": "https://www.britannica.com/biography/Pythagoras"
+          },
+          {
+            "title": "Pythagoras (Stanford Encyclopedia of Philosophy)",
+            "url": "https://plato.stanford.edu/entries/pythagoras/"
+          },
+          {
+            "title": "Pythagoreanism (Wikipedia)",
+            "url": "https://en.wikipedia.org/wiki/Pythagoreanism"
+          }
+        ],
+        "labels": {
+          "faq": "Frequently asked questions",
+          "sources": "Sources"
+        }
+      },
     ja: {
       labels: JA_LABELS,
       intro:
@@ -764,6 +831,71 @@ export const TOOL_EDITORIALS: Partial<Record<ToolKey, Partial<Record<string, Too
   },
 
   "birth-chart": {
+    en: {
+        "intro": "A <strong>birth chart</strong> (also called a natal chart or horoscope chart) is a precise map of the sky as seen from your exact birth location at the moment you were born. It plots the positions of the Sun, Moon, and eight planets across the 12 signs of the zodiac and divides the sky into 12 houses. Astrologers read this snapshot to interpret personality, life themes, and timing cycles. Calculated with <strong>Swiss Ephemeris</strong> precision (derived from NASA JPL planetary data), your natal chart is unique to your birth date, time, and place.",
+        "sections": [
+          {
+            "title": "What a Natal Chart Actually Shows",
+            "body": "A natal chart is a 360-degree wheel representing the ecliptic, the apparent path the Sun and planets trace across Earth's sky. At any given moment, each planet occupies a specific degree of one of the 12 zodiac signs. The chart freezes that arrangement for your birth moment. Ten bodies are plotted: the Sun, the Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, and Pluto. Each carries a symbolic meaning in Western astrology, from the Sun representing core identity and vitality to Saturn representing discipline, responsibility, and long-term structure. The outer ring of zodiac signs (Aries through Pisces) and the inner division into houses together give each planet a two-dimensional address, sign plus house, that astrologers interpret as a layered portrait of the individual."
+          },
+          {
+            "title": "Why Birth Time and Place Are Essential",
+            "body": "Birth date alone yields only approximate planet positions, but birth time and geographic coordinates are required to calculate the Ascendant (rising sign) and the house cusps. The Ascendant is the zodiac degree rising on the eastern horizon at the moment of birth. Because Earth rotates roughly one degree every four minutes, the Ascendant shifts sign approximately every two hours. Without an accurate birth time, the entire house system collapses to a rough estimate. Place matters because the same Universal Time moment produces a different local horizon line in Paris than in Buenos Aires. Latitude and longitude are converted to Local Sidereal Time, which then determines which degree of the ecliptic is rising, anchoring the whole house framework. This is why birth records and hospital certificates are the preferred source for a reliable chart."
+          },
+          {
+            "title": "The 12 Houses and What They Govern",
+            "body": "The 12 houses divide the sky into sectors timed by Earth's daily rotation, each ruling a distinct life domain. The First House begins at the Ascendant and covers self-image and physical appearance. The Second covers money and personal values. The Third governs communication and local travel. The Fourth rules home, family, and roots. The Fifth covers creativity, romance, and children. The Sixth addresses work routines and health. The Seventh governs committed partnerships. The Eighth rules shared resources, inheritance, and transformation. The Ninth covers philosophy, higher education, and long travel. The Tenth (the Midheaven) rules career and public reputation. The Eleventh covers friendships and collective goals. The Twelfth governs solitude, the unconscious, and hidden matters. The most widely used house system is Placidus, which divides the ecliptic based on time arcs. Whole Sign houses, an older Hellenistic method, assigns one entire zodiac sign to each house."
+          },
+          {
+            "title": "Major Aspects: How Planets Relate to Each Other",
+            "body": "Aspects are angular relationships between planets measured in degrees along the ecliptic. They describe how two planetary energies interact. A conjunction (0 degrees) merges two planets' qualities, intensifying their combined effect. An opposition (180 degrees) creates polarity and tension between two placements, often mirrored in external relationships. A trine (120 degrees) links planets in the same elemental family (fire, earth, air, or water), producing a flow of cooperative energy. A square (90 degrees) generates friction and challenge, often a driver of action and growth. A sextile (60 degrees) offers opportunity and mild harmony. Each aspect operates within an orb of allowable deviation, typically 6 to 8 degrees for major aspects involving the Sun or Moon. Ptolemy catalogued these geometric relationships in the Tetrabiblos (2nd century CE), the foundational text of Western astrological tradition."
+          },
+          {
+            "title": "Swiss Ephemeris and Computational Precision",
+            "body": "Modern birth chart calculators use the Swiss Ephemeris library, developed by Astrodienst (astro.com) and originally derived from the NASA Jet Propulsion Laboratory DE406 planetary ephemerides. It provides sub-arcsecond accuracy for planet positions across thousands of years, far exceeding the precision needed for natal chart work. The ephemeris computes heliocentric positions and then converts them to geocentric ecliptic longitude (the zodiac degree as seen from Earth), applying corrections for light-travel time and gravitational deflection. House cusps are then computed by combining the Sidereal Time at birth with the geographic latitude. The result is a reproducible, mathematically rigorous chart that is consistent across any compliant software. This precision matters because even a one-degree error in the Ascendant can shift the interpretation of chart sensitivity points."
+          }
+        ],
+        "faq": [
+          {
+            "q": "What do I need to calculate my birth chart?",
+            "a": "You need three pieces of information: your date of birth (day, month, year), your time of birth as precisely as possible (ideally to the minute), and your place of birth (city and country). The time and place are required to compute the Ascendant and house cusps. If you do not know your birth time, a noon chart is sometimes used as a fallback, but house positions and the Ascendant will be unreliable."
+          },
+          {
+            "q": "Why does birth time matter so much for a natal chart?",
+            "a": "The Ascendant, which sets the entire house framework of the chart, changes zodiac sign roughly every two hours as Earth rotates. An error of even 15 minutes can shift sensitive chart points by 3 to 4 degrees. The Moon also moves about 12 to 14 degrees per day, so an incorrect time can place it in the wrong sign for someone born near a sign boundary. Birth time accuracy is the single biggest variable in chart precision."
+          },
+          {
+            "q": "What is the difference between my Sun sign and my birth chart?",
+            "a": "Your Sun sign is determined solely by your birth date and reflects which zodiac sign the Sun occupied at the time (it remains in each sign for roughly 30 days). A full birth chart shows all 10 planets, the Ascendant, the Midheaven, 12 houses, and the aspects between every planet. The Sun sign is one data point within that larger map. Many people find their Moon sign, Ascendant, or dominant house placements feel equally or more descriptive of their personality than the Sun sign alone."
+          },
+          {
+            "q": "What is the difference between Placidus and Whole Sign house systems?",
+            "a": "Placidus divides the ecliptic into 12 unequal houses based on the time it takes degrees to rise above the horizon, anchored to your birth latitude and time. It is the most common system in modern Western astrology. Whole Sign houses assign one complete zodiac sign to each house, starting with the Ascendant's sign as the entire First House. Whole Sign is older, rooted in Hellenistic practice, and tends to work more cleanly at high latitudes where Placidus can produce very distorted house sizes."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Natal chart (Wikipedia)",
+            "url": "https://en.wikipedia.org/wiki/Natal_chart"
+          },
+          {
+            "title": "Astrology (Encyclopaedia Britannica)",
+            "url": "https://www.britannica.com/topic/astrology"
+          },
+          {
+            "title": "Swiss Ephemeris (Astrodienst / astro.com)",
+            "url": "https://www.astro.com/swisseph/swephinfo_e.htm"
+          },
+          {
+            "title": "Horoscope (Wikipedia)",
+            "url": "https://en.wikipedia.org/wiki/Horoscope"
+          }
+        ],
+        "labels": {
+          "faq": "Frequently asked questions",
+          "sources": "Sources"
+        }
+      },
     ja: {
       labels: JA_LABELS,
       intro:
@@ -1001,6 +1133,67 @@ export const TOOL_EDITORIALS: Partial<Record<ToolKey, Partial<Record<string, Too
   },
 
   "rising-sign": {
+    en: {
+        "intro": "Your <strong>rising sign</strong>, also called the <strong>Ascendant</strong>, is the zodiac sign that was climbing above the eastern horizon at the exact moment you were born. Because the horizon shifts roughly one degree every four minutes and cycles through all twelve signs in approximately 24 hours, each sign occupies the Ascendant for only about two hours. This makes your precise birth time and birthplace essential inputs. Without them, no calculator can determine your Ascendant reliably. The rising sign rules the <strong>1st house</strong> of your natal chart and shapes how others perceive you on first meeting.",
+        "sections": [
+          {
+            "title": "What the Ascendant Actually Measures",
+            "body": "The Ascendant is a mathematical point, not a planet. It marks the intersection of the ecliptic (the apparent path of the Sun across the sky) with the eastern horizon at the moment and location of birth. Our calculator derives this point using algorithms compatible with the Swiss Ephemeris, itself grounded in NASA JPL planetary data, which ensures arc-second precision. The calculation requires three inputs: date of birth (to place the Sun and planets correctly), time of birth (to establish which degree of the ecliptic is rising), and geographic coordinates of the birthplace (because the local horizon depends on latitude and longitude)."
+          },
+          {
+            "title": "Rising Sign Versus Sun Sign",
+            "body": "Your Sun sign is determined solely by the calendar date you were born, because the Sun spends roughly 30 days in each zodiac sign. Everyone born on the same day in the same year shares an identical Sun sign regardless of location or hour. The Ascendant is far more time-sensitive. Two people born on the same date but two hours apart can have entirely different rising signs. In astrological tradition, the Sun sign describes your core identity, creative drive, and life purpose, while the Ascendant describes the persona you project outward, your physical appearance tendencies, and the energy others sense when they first meet you."
+          },
+          {
+            "title": "Why Birth Time Precision Matters So Much",
+            "body": "The Ascendant advances approximately one degree every four minutes of clock time. A birth certificate rounded to the nearest half-hour introduces up to a seven-degree uncertainty, which can easily place the Ascendant in the wrong sign when a cusp is nearby. Astrologers call the process of working backward from known life events to refine the birth time rectification. For the most accurate reading, use the time recorded on an official birth certificate rather than a family recollection. Hospital records from the delivering physician or midwife are the gold standard. Even a 15-minute difference matters when the Ascendant is near a sign boundary."
+          },
+          {
+            "title": "The 1st House and What It Governs",
+            "body": "In the framework of a natal chart, the Ascendant is the cusp of the 1st house. The 1st house is associated with self-image, the physical body, instinctive reactions, and the way you initiate action in the world. Its ruling planet (the planet that rules the rising sign) is called the chart ruler and carries special interpretive weight throughout the entire horoscope. For example, if Scorpio is rising, Pluto (and traditionally Mars) serve as chart rulers. Planets placed in or near the 1st house color the Ascendant energy significantly, which is why two people with the same rising sign can still present very differently."
+          },
+          {
+            "title": "Historical and Astronomical Context",
+            "body": "The concept of the Ascendant dates to Hellenistic astrology of the second century BCE, codified in texts such as Ptolemy's Tetrabiblos. Ancient astrologers observed that the rotating sphere of fixed stars produced a continuously changing horoskopos (literally the hour-watcher), the point rising at any given moment. Modern calculations rely on established positional astronomy: the obliquity of the ecliptic, the geographic latitude, and sidereal time at birth are combined to solve the house cusp equation. This is why the same computation method used by professional astrologers and by this tool produces results consistent with those of major ephemeris publishers."
+          }
+        ],
+        "faq": [
+          {
+            "q": "What is my rising sign?",
+            "a": "Your rising sign is the zodiac sign that was on the eastern horizon at your exact moment of birth. It is also called the Ascendant. To find it you need your birth date, birth time (ideally to the minute), and birthplace. Enter those three details into the calculator above and it will compute your Ascendant using precision ephemeris data."
+          },
+          {
+            "q": "Do I need my birth time for my rising sign?",
+            "a": "Yes, an accurate birth time is essential. The rising sign changes approximately every two hours, meaning a difference of even 30 minutes can shift the Ascendant by several degrees and sometimes into a different sign entirely. Without a birth time, no calculator can determine your Ascendant reliably. Your best source is an official birth certificate or hospital record."
+          },
+          {
+            "q": "Why is my rising sign different from my Sun sign?",
+            "a": "The Sun sign is based only on your birth date, because the Sun moves slowly through the zodiac (about one sign per month). The rising sign depends on the rotation of Earth, which moves the horizon through all twelve signs every 24 hours. This means rising signs are far more time-sensitive than Sun signs, and people born hours apart on the same day can have completely different Ascendants."
+          },
+          {
+            "q": "How often does the rising sign change?",
+            "a": "The Ascendant shifts at roughly one degree every four minutes and moves through an entire zodiac sign in approximately two hours. It completes a full cycle through all twelve signs once every 24 hours. Near the equator the signs rise and set in more equal intervals; at high latitudes some signs spend considerably more or less time on the horizon due to the angle of the ecliptic."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Ascendant (Wikipedia)",
+            "url": "https://en.wikipedia.org/wiki/Ascendant"
+          },
+          {
+            "title": "Horoscope (Britannica)",
+            "url": "https://www.britannica.com/topic/horoscope"
+          },
+          {
+            "title": "Zodiac (Britannica)",
+            "url": "https://www.britannica.com/topic/zodiac"
+          }
+        ],
+        "labels": {
+          "faq": "Frequently asked questions",
+          "sources": "Sources"
+        }
+      },
     ja: {
       labels: JA_LABELS,
       intro:
@@ -1211,6 +1404,71 @@ export const TOOL_EDITORIALS: Partial<Record<ToolKey, Partial<Record<string, Too
   },
 
   "compatibility": {
+    en: {
+        "intro": "Zodiac compatibility compares two sun signs using <strong>elemental affinity</strong> (Fire, Earth, Air, Water) and <strong>modality rhythm</strong> (Cardinal, Fixed, Mutable) to produce a fast, meaningful first read of relational chemistry. A Fire-Air pairing tends to energize and inspire; an Earth-Water combination tends to ground and sustain. That said, sun-sign compatibility captures roughly 30 percent of actual relational dynamics. A complete picture requires full synastry: cross-comparing all ten planets, the Moon, Venus, Mars, both Ascendants, and the aspects between them.",
+        "sections": [
+          {
+            "title": "The Four Elements and What They Share",
+            "body": "Every zodiac sign belongs to one of four elements, each describing a fundamental mode of engaging with the world. Fire signs (Aries, Leo, Sagittarius) are driven by enthusiasm, vision, and immediacy. Earth signs (Taurus, Virgo, Capricorn) prioritize stability, practicality, and sensory reality. Air signs (Gemini, Libra, Aquarius) operate through ideas, communication, and social connection. Water signs (Cancer, Scorpio, Pisces) navigate through emotion, intuition, and depth. Same-element pairs share a natural shorthand: two Earth signs understand each other's need for security without explanation, while two Air signs can sustain hours of intellectual exchange. Complementary-element pairs (Fire plus Air, Earth plus Water) introduce enough contrast to keep attraction alive while still supporting each other's core needs."
+          },
+          {
+            "title": "Modality: How Signs Move Through Time",
+            "body": "Beyond element, each sign operates in one of three modalities. Cardinal signs (Aries, Cancer, Libra, Capricorn) initiate: they launch projects, open conversations, and drive change. Fixed signs (Taurus, Leo, Scorpio, Aquarius) consolidate: they hold ground, sustain effort, and resist disruption. Mutable signs (Gemini, Virgo, Sagittarius, Pisces) adapt: they pivot, synthesize, and bridge transitions. Modality compatibility shapes how two people pace a relationship. Two Cardinal signs can power each other forward but may compete for the lead. Two Fixed signs build extraordinary loyalty yet can calcify into standoff. A Cardinal-Mutable pair tends to flow well: one initiates, the other adjusts. Recognizing modality friction explains many relationship tensions that element analysis alone misses."
+          },
+          {
+            "title": "Same-Element and Cross-Element Dynamics",
+            "body": "Same-element pairs (for example Taurus and Virgo, both Earth) share values and communication styles, which makes daily life feel effortless. The risk is an echo chamber: two Water signs may amplify anxiety rather than ground it; two Fire signs may escalate conflict rather than cool it. Cross-element pairings introduce productive tension. Fire and Air: the Air sign fans the Fire sign's inspiration while the Fire sign gives Air something to champion. Earth and Water: Earth provides the container, Water provides the emotional current. Less intuitive pairings (Fire and Water, Earth and Air) require more conscious translation but can produce lasting bonds precisely because each partner offers something the other genuinely lacks. Compatibility is always a negotiation, not a destiny."
+          },
+          {
+            "title": "Why Sun-Sign Compatibility Is Only a Starting Point",
+            "body": "The sun represents identity and ego, but relationships are primarily conducted through the Moon (emotional needs), Venus (love style and aesthetic values), Mars (desire, assertion, and physical energy), and the Ascendant (the social face each person presents). A Scorpio sun with a Gemini Venus and an Aquarius Moon operates very differently from a Scorpio sun with a Taurus Venus and a Cancer Moon, even though both share the same sun sign. Sun-sign compatibility scores are a useful orientation, comparable to reading the back cover of a book before deciding to open it. Full synastry, which overlays one complete birth chart on another and studies all applying and separating aspects, gives the actual narrative. Without birth time and location, any compatibility reading remains a sketch."
+          },
+          {
+            "title": "Moving From Sun-Sign Scores to Full Synastry",
+            "body": "Full synastry requires both partners' exact birth date, time, and location, used to cast individual natal charts and then overlay them. Key synastry contacts to prioritize: Moon to Moon aspects (emotional resonance), Venus to Mars aspects (romantic and physical attraction), and Ascendant to Ascendant angles (how each person experiences the other's presence). Composite charts, which average the two charts into a single entity representing the relationship itself, add another layer of insight. Many professional astrologers also study Davison charts (calculated from the midpoint in time between the two birth moments) for long-term relational themes. The sun-sign compatibility calculator here is the right first step. For decisions that matter, a full synastry reading with a qualified astrologer or a detailed chart service is worth the investment."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Which zodiac signs are most compatible with each other?",
+            "a": "At the sun-sign level, same-element pairs (Aries, Leo, Sagittarius among themselves; Taurus, Virgo, Capricorn; Gemini, Libra, Aquarius; Cancer, Scorpio, Pisces) show the highest baseline affinity because they share elemental values. Complementary pairs (Fire with Air, Earth with Water) also score well because their energies support rather than neutralize each other. However, no two signs are inherently incompatible: the full birth chart determines actual relational potential."
+          },
+          {
+            "q": "Is sun sign compatibility accurate for predicting relationships?",
+            "a": "Sun-sign compatibility is a useful first filter but covers only about 30 percent of the astrological factors that shape a relationship. The Moon, Venus, Mars, and Ascendant positions, as well as the aspects between one person's planets and the other's, carry equal or greater weight. Studies attempting to validate sun-sign matching as a standalone predictor have found no statistically significant effect, which is consistent with how astrologers themselves frame its limits."
+          },
+          {
+            "q": "What is more accurate than sun sign compatibility?",
+            "a": "Full synastry analysis, which cross-compares every planet in both birth charts and examines the aspects (conjunctions, oppositions, trines, squares, sextiles) between them, is the standard method for astrological relationship assessment. Composite charts and Davison charts add further depth by modeling the relationship as its own entity. All of these methods require an accurate birth time in addition to date and location."
+          },
+          {
+            "q": "Do opposite zodiac signs attract each other?",
+            "a": "Opposite signs (Aries and Libra, Taurus and Scorpio, Gemini and Sagittarius, Cancer and Capricorn, Leo and Aquarius, Virgo and Pisces) share the same modality and sit on the same elemental axis, which creates a strong polarity pull. Each supplies what the other underexpresses. Attraction is genuine and often intense, but long-term harmony depends on whether both partners value the differences rather than trying to convert each other to their own approach."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Astrological compatibility (Wikipedia)",
+            "url": "https://en.wikipedia.org/wiki/Astrological_compatibility"
+          },
+          {
+            "title": "Zodiac (Wikipedia)",
+            "url": "https://en.wikipedia.org/wiki/Zodiac"
+          },
+          {
+            "title": "Astrology (Britannica)",
+            "url": "https://www.britannica.com/topic/astrology"
+          },
+          {
+            "title": "Synastry (Wikipedia)",
+            "url": "https://en.wikipedia.org/wiki/Synastry"
+          }
+        ],
+        "labels": {
+          "faq": "Frequently asked questions",
+          "sources": "Sources"
+        }
+      },
     ja: {
       labels: JA_LABELS,
       intro:
@@ -1438,6 +1696,141 @@ export const TOOL_EDITORIALS: Partial<Record<ToolKey, Partial<Record<string, Too
 
   },
 
+
+  "synastry": {
+    en: {
+        "intro": "Synastry is the branch of astrology that compares two natal charts by overlaying them and reading the <strong>inter-aspects</strong> formed between one person's planets and the other's. Where your Venus falls on their Mars, where their Moon touches your Sun, these contacts reveal the precise texture of attraction, emotional resonance, and friction between two people. Our calculator uses <strong>Swiss Ephemeris</strong> precision (derived from NASA JPL data) to compute every major aspect across both charts, giving you a complete, aspect-by-aspect map of the relationship dynamic.",
+        "sections": [
+          {
+            "title": "How Synastry Works: Two Charts, One Overlay",
+            "body": "Synastry does not create a new chart. It places both natal wheels side by side and calculates the angular relationships (aspects) that form between Person A's planets and Person B's planets. These inter-aspects are distinct from each person's internal chart dynamics. A square between your natal Moon and your partner's Saturn, for example, is an inter-aspect that only exists in the context of your relationship. The analysis spans all ten classical planets plus the lunar nodes and the major angles (Ascendant, Midheaven) when accurate birth times are provided. The result is a layered portrait of compatibility that no single planet or aspect can summarize alone."
+          },
+          {
+            "title": "Key Synastry Aspects to Watch",
+            "body": "Certain inter-aspects carry particular weight in relationship analysis. <strong>Sun conjunct or trine Moon</strong> between partners signals deep complementarity: one person's core identity harmonizes with the other's emotional nature. <strong>Venus conjunct or sextile Mars</strong> is the classic attraction signature, pointing to physical and romantic chemistry. <strong>Moon conjunct Moon</strong> or Moon in the same sign suggests instinctive emotional attunement and shared domestic rhythms. <strong>Saturn aspects</strong> to personal planets (Sun, Moon, Venus) introduce themes of commitment, responsibility, and sometimes restriction: these bonds tend toward longevity but require conscious effort. <strong>Pluto inter-aspects</strong> (especially conjunctions to the Moon or Venus) signal intensity, transformation, and a relationship that fundamentally changes both people."
+          },
+          {
+            "title": "Inter-House Overlays: Where You Land in Each Other's Lives",
+            "body": "Beyond aspects, synastry reads <strong>inter-house overlays</strong>: the houses of Person B's chart where Person A's planets fall. If your Venus lands in your partner's seventh house, you naturally embody partnership and beauty in their life. If your Saturn falls in their fourth house, you may become a structuring or stabilizing force in their domestic world. Inter-house overlays explain why certain people feel instantly significant in a specific life domain, even before a relationship fully develops. This layer of synastry requires accurate birth times for both individuals, because house positions shift roughly one degree every four minutes."
+          },
+          {
+            "title": "The Lunar Nodes and Karmic Dimensions",
+            "body": "The <strong>lunar nodes</strong> (North Node and South Node) occupy a special place in synastry because they point to the evolutionary and karmic dimension of a bond. When one person's personal planet, especially the Sun, Moon, or Venus, conjuncts the other's North Node, astrologers interpret this as a forward-moving contact: the planet person helps the Node person grow toward their soul's direction. South Node conjunctions feel intensely familiar, as if you have known each other before, but they can also pull both partners toward comfortable old patterns rather than growth. Node contacts do not require precise birth times since the nodes move only about three minutes of arc per day."
+          },
+          {
+            "title": "Synastry vs. Composite Chart: Two Different Questions",
+            "body": "Synastry and the composite chart are complementary but distinct tools. <strong>Synastry</strong> keeps both charts separate and examines how two individuals interact: it answers the question, what happens between these two people? The <strong>composite chart</strong>, by contrast, calculates the midpoint of each planetary pair (your Sun and their Sun, your Moon and their Moon, and so on) to produce a single merged chart representing the relationship as its own entity. Think of synastry as the chemistry between two people and the composite as the personality of the relationship itself. Most astrologers read both before drawing conclusions about long-term compatibility or timing."
+          }
+        ],
+        "faq": [
+          {
+            "q": "What is synastry in astrology?",
+            "a": "Synastry is the astrological practice of comparing two natal charts by overlaying them and analyzing the inter-aspects (angular relationships) formed between one person's planets and the other's. It maps how two individuals affect each other emotionally, romantically, intellectually, and spiritually, producing a relationship-specific portrait that neither chart contains alone."
+          },
+          {
+            "q": "Which synastry aspects indicate soulmates?",
+            "a": "No single aspect defines a soulmate, but several contacts recur in bonds that feel fated or deeply transformative: Sun conjunct Moon (identity meets emotion), Venus conjunct or trine Mars (attraction and desire), personal planets conjunct the North or South Node (karmic resonance), and Pluto conjunct Venus or Moon (profound, life-altering intensity). A cluster of these contacts across both charts carries more weight than any one aspect in isolation."
+          },
+          {
+            "q": "What is the difference between synastry and the composite chart?",
+            "a": "Synastry keeps both natal charts separate and reads the inter-aspects between them, showing how two individuals interact with each other. The composite chart calculates midpoints between each planetary pair to create a single merged chart that represents the relationship itself as an entity. Synastry answers how do these two people affect each other, while the composite chart answers what kind of relationship is this."
+          },
+          {
+            "q": "Do I need birth times for synastry?",
+            "a": "Accurate birth times are strongly recommended for both people. Without them, house positions and the Ascendant cannot be calculated, eliminating inter-house overlays and angular aspects to the Ascendant and Midheaven. Planet-to-planet inter-aspects remain valid without exact times, but the analysis loses a significant layer of precision. The Moon also moves roughly 12 to 13 degrees per day, so an uncertain birth time can place it in the wrong sign."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Synastry (Wikipedia)",
+            "url": "https://en.wikipedia.org/wiki/Synastry"
+          },
+          {
+            "title": "Astrological compatibility (Wikipedia)",
+            "url": "https://en.wikipedia.org/wiki/Astrological_compatibility"
+          },
+          {
+            "title": "Astrology (Britannica)",
+            "url": "https://www.britannica.com/topic/astrology"
+          },
+          {
+            "title": "Swiss Ephemeris (Astrodienst)",
+            "url": "https://www.astro.com/swisseph/swephprg.htm"
+          }
+        ],
+        "labels": {
+          "faq": "Frequently asked questions",
+          "sources": "Sources"
+        }
+      },
+  },
+  "transits": {
+    en: {
+        "intro": "A <strong>transit</strong> occurs when a planet moving through the sky today forms a precise geometric angle to a planet or sensitive point in your fixed natal chart. Unlike your birth chart, which captures the sky at the moment you were born, transits represent the live, ever-moving heavens interacting with that frozen snapshot. This calculator computes those real-time angles using Swiss Ephemeris data derived from NASA JPL planetary positions, so you see exactly which natal placements are being activated right now and how intensely.",
+        "sections": [
+          {
+            "title": "What a Transit Actually Measures",
+            "body": "Your natal chart is a map of where every planet stood relative to Earth at the precise second of your birth. It never changes. Transits measure the angle between a planet moving through the sky today and each position in that birth chart. When transiting Saturn reaches the exact degree your natal Sun occupies, a Saturn-Sun conjunction transit is exact. The calculator checks all major aspects: conjunction (0 degrees), sextile (60), square (90), trine (120), and opposition (180). Each aspect carries a distinct quality. Conjunctions merge energies, trines offer ease, squares create pressure that demands action, and oppositions highlight tensions between opposing needs. The angle itself is geometry, but its interpretation draws on centuries of observed correlation between planetary cycles and human experience."
+          },
+          {
+            "title": "Outer Planets Drive the Most Significant Transits",
+            "body": "Not all transits carry equal weight. The Moon moves roughly 13 degrees per day, passing through an entire sign in about 2.5 days, so lunar transits are brief mood shifts rather than turning points. Mercury and Venus move fast enough that their transits rarely last more than a week. Jupiter takes about 12 years to orbit the Sun, spending roughly one year in each sign, making Jupiter transits meaningful windows of expansion or opportunity lasting several months when accounting for orb. Saturn, with its 29.5-year orbit, creates the most structurally significant transits. Uranus, Neptune, and Pluto move so slowly that their transits to sensitive natal points can stay within orb for one to three years, correlating with deep, sustained periods of change, dissolution, or transformation that reshape entire chapters of life."
+          },
+          {
+            "title": "The Saturn Return: Astrology's Most Recognized Cycle",
+            "body": "The Saturn return is the single most discussed transit in astrology, and for measurable reasons. Saturn takes approximately 29.5 years to complete one full orbit and return to the exact degree it occupied at your birth. This means everyone experiences their first Saturn return roughly between ages 28 and 30, a second around ages 57 to 60, and potentially a third near age 87. During each return, Saturn conjuncts its own natal position, a moment astrologers associate with a reckoning between the life you have built and the responsibilities or structures you actually need. The first Saturn return is particularly studied because it coincides with the psychological shift many cultures recognize as the transition from extended youth into full adult accountability. The transit can last up to three years when retrograde cycles are included."
+          },
+          {
+            "title": "Retrograde Motion and What It Means for Transits",
+            "body": "Retrograde motion is apparent, not literal. No planet physically reverses course. From Earth's vantage point, however, planets periodically appear to move backward through the zodiac because of the geometry of differing orbital speeds. Mercury, the fastest inner planet, stations retrograde three to four times per year for roughly three weeks each time. When a planet retrogrades, it can cross the same natal degree multiple times, creating a transit that happens in three passes: the first direct hit, the retrograde pass back over the same degree, and the final direct pass. This triple-hit pattern is why transits from a retrograding outer planet can linger for months or years. The retrograde phase is not inherently harmful. It prolongs the window during which a transit theme is active, giving more time to integrate whatever the aspect is asking of you."
+          },
+          {
+            "title": "Applying vs. Separating Aspects and Orbs",
+            "body": "Transit timing depends on two concepts: orb and direction. The orb is the allowable degree of separation between the transiting planet and the natal point before the aspect is considered active. Most astrologers use tighter orbs for transits than for natal interpretation, typically one to three degrees for outer planets and up to five degrees for slower, major transits. An applying aspect is one where the transiting planet is moving toward exact alignment with the natal point. This phase is generally considered the period of building tension or anticipation. A separating aspect means the planet has already passed the exact degree and is moving away. The peak moment is the exact hit, and the energy gradually diminishes as the planet separates. Knowing whether a transit is applying or separating tells you whether you are approaching a cycle's peak or already moving through its resolution."
+          }
+        ],
+        "faq": [
+          {
+            "q": "What are transits in astrology?",
+            "a": "Transits in astrology are the real-time positions of planets in the sky measured against the fixed positions in your natal birth chart. When a moving planet forms a significant angle (such as a conjunction, square, or trine) to a natal planet or point, that transit is said to be active. Astrologers interpret these angles as windows of time during which specific themes become emphasized in a person's life."
+          },
+          {
+            "q": "What is a Saturn return?",
+            "a": "A Saturn return happens when the planet Saturn completes its roughly 29.5-year orbit and returns to the exact degree it occupied at the moment of your birth. The first Saturn return occurs around ages 28 to 30 and is associated with a period of increased responsibility, structural reassessment, and maturation. Most people experience two Saturn returns in their lifetime, with a possible third near age 87."
+          },
+          {
+            "q": "Is Mercury retrograde real?",
+            "a": "Mercury retrograde is a real, measurable astronomical phenomenon. It refers to periods when Mercury appears to move backward through the sky from Earth's perspective, caused by the geometry of Mercury's faster orbit overtaking Earth's. It happens three to four times per year for about three weeks each time. It does not represent an actual reversal but an optical effect that prolongs Mercury's transit over the same zodiac degrees."
+          },
+          {
+            "q": "How long do transits last?",
+            "a": "Transit duration depends on the planet's orbital speed. Moon transits last hours. Mercury and Venus transits pass in days to a week. Jupiter transits to a natal point typically last a few months when accounting for a standard two to three degree orb. Saturn transits can last several months to over a year. Uranus, Neptune, and Pluto transits, the slowest movers, can stay within orb for one to three years, especially when retrograde cycles cause multiple passes."
+          }
+        ],
+        "sources": [
+          {
+            "title": "Astrological transit (Wikipedia)",
+            "url": "https://en.wikipedia.org/wiki/Astrological_transit"
+          },
+          {
+            "title": "Saturn return (Wikipedia)",
+            "url": "https://en.wikipedia.org/wiki/Saturn_return"
+          },
+          {
+            "title": "Apparent retrograde motion (Wikipedia)",
+            "url": "https://en.wikipedia.org/wiki/Apparent_retrograde_motion"
+          },
+          {
+            "title": "Retrograde motion (Encyclopaedia Britannica)",
+            "url": "https://www.britannica.com/science/retrograde-motion"
+          }
+        ],
+        "labels": {
+          "faq": "Frequently asked questions",
+          "sources": "Sources"
+        }
+      },
+  },
 };
 
 /** Helper for Astro pages to pull their editorial block with graceful fallback. */

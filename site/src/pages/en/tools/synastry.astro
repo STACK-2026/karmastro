@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ToolEditorial from "../../../components/ToolEditorial.astro";
+import { getToolEditorial } from "../../../data/tool-editorials";
+const editorial_synastry = getToolEditorial("synastry", "en");
 
 const title = "Free Synastry Calculator - Relationship Astrology Chart | Karmastro";
 const description =
@@ -176,5 +179,15 @@ const jsonLd = [
       <a href="/en/tools/compatibility/" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Zodiac compatibility</a>
       <a href="/en/tools/birth-chart/" class="px-3 py-1.5 rounded-full border border-white/10 hover:border-amber-300/40 hover:text-amber-300 transition-colors">Birth chart</a>
     </nav>
+      {editorial_synastry && (
+      <ToolEditorial
+        intro={editorial_synastry.intro}
+        sections={editorial_synastry.sections}
+        faq={editorial_synastry.faq}
+        sources={editorial_synastry.sources}
+        labels={editorial_synastry.labels}
+        dir="ltr"
+      />
+    )}
   </article>
 </BaseLayout>
