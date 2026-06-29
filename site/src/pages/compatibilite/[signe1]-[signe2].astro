@@ -75,7 +75,7 @@ const faq = [
   },
 ];
 
-const canonical = `https://karmastro.com/compatibilite/${signe1}-${signe2}`;
+const canonical = `https://karmastro.com/compatibilite/${signe1}-${signe2}/`;
 
 const jsonLd = [
   {
@@ -94,7 +94,7 @@ const jsonLd = [
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://karmastro.com/compatibilite/${signe1}-${signe2}`,
+      "@id": `https://karmastro.com/compatibilite/${signe1}-${signe2}/`,
     },
     keywords: `compatibilité ${sign1.name}, compatibilité ${sign2.name}, ${sign1.name} ${sign2.name} amour, synastrie, astrologie`,
     about: [
@@ -108,7 +108,7 @@ const jsonLd = [
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Karmastro", item: "https://karmastro.com" },
       { "@type": "ListItem", position: 2, name: "Compatibilités", item: "https://karmastro.com/compatibilite" },
-      { "@type": "ListItem", position: 3, name: `${sign1.name} × ${sign2.name}`, item: `https://karmastro.com/compatibilite/${signe1}-${signe2}` },
+      { "@type": "ListItem", position: 3, name: `${sign1.name} × ${sign2.name}`, item: `https://karmastro.com/compatibilite/${signe1}-${signe2}/` },
     ],
   },
   {
@@ -233,11 +233,17 @@ const jsonLd = [
         La compatibilité entre signes solaires ne couvre que 30% de votre dynamique réelle. Pour une synastrie complète qui croise les 10 planètes, les ascendants et les aspects majeurs, pose ta question à l'Oracle ou essaie notre calculateur de synastrie gratuit.
       </p>
       <div class="flex gap-3 flex-wrap justify-center">
-        <a href="https://app.karmastro.com/compatibility" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
-          Synastrie complète
+        <a
+          href={`/oracle/?q=${encodeURIComponent(`Analyse la compatibilité entre ${sign1.name} et ${sign2.name} : amour, amitié et karma. Qu'est-ce que ça révèle de notre couple ?`)}`}
+          class="km-oracle inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity"
+        >
+          Demander à l'Oracle ✦
         </a>
         <a href="/outils/synastrie/" class="inline-block px-5 py-2.5 rounded-xl border border-white/20 text-white/70 hover:border-amber-300/40 hover:text-amber-300 transition-colors">
           Calculateur gratuit
+        </a>
+        <a href="https://app.karmastro.com/compatibility" class="inline-block px-5 py-2.5 rounded-xl border border-white/20 text-white/70 hover:border-amber-300/40 hover:text-amber-300 transition-colors">
+          Synastrie complète
         </a>
       </div>
     </div>
@@ -259,7 +265,7 @@ const jsonLd = [
       <div class="grid grid-cols-3 md:grid-cols-4 gap-2">
         {ZODIAC_SIGNS.filter((s) => s.slug !== sign1.slug).map((s) => (
           <a
-            href={`/compatibilite/${sign1.slug}-${s.slug}`}
+            href={`/compatibilite/${sign1.slug}-${s.slug}/`}
             class="p-3 rounded-lg border border-white/10 bg-white/[0.02] hover:border-amber-300/40 transition-colors text-center"
           >
             <div class="flex justify-center mb-1">

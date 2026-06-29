@@ -1,8 +1,9 @@
 ---
 // CTA contextuel "passe à la pratique" injecté en fin d'article de blog.
 // Choisit l'outil le plus pertinent selon le slug et renvoie au calculateur gratuit
-// (qui porte l'upsell lecture 4,90€). Ne s'affiche QUE vers des outils monétisés
-// dans la langue courante (FR : 9 outils ; EN : 3 outils numérologie pour l'instant). [2026-06-01]
+// (qui porte l'upsell lecture + le pont vers l'Oracle/app). Si aucun outil précis
+// ne matche, un fallback renvoie vers le hub d'outils de la langue : ainsi chaque
+// article d'une langue supportée a TOUJOURS une insertion vers la pratique. [2026-06-30]
 interface Props {
   slug: string;
   lang?: string;
@@ -10,13 +11,16 @@ interface Props {
 const { slug, lang = "fr" } = Astro.props;
 
 type Tool = { url: string; name: string; hook: string };
-type Cfg = { eyebrow: string; verb: string; cta: string; tools: Record<string, Tool>; rules: [RegExp, string][] };
+type Cfg = {
+  eyebrow: string; verb: string; free: string; cta: string;
+  tools: Record<string, Tool>;
+  rules: [RegExp, string][];
+  fallback: Tool;
+};
 
 const CONFIG: Record<string, Cfg> = {
   fr: {
-    eyebrow: "Passe à la pratique",
-    verb: "Calcule",
-    cta: "Calculer ✦",
+    eyebrow: "Passe à la pratique", verb: "Calcule", free: "gratuitement", cta: "Calculer",
     tools: {
       "chemin-de-vie": { url: "/outils/chemin-de-vie/", name: "ton chemin de vie", hook: "Le nombre qui guide toute ta vie, calculé en 30 secondes." },
       "nombre-expression": { url: "/outils/nombre-expression/", name: "ton nombre d'expression", hook: "Ce que la vibration de ton nom révèle de tes talents." },
@@ -31,9 +35,9 @@ const CONFIG: Record<string, Cfg> = {
     rules: [
       [/synastr/, "synastrie"],
       [/ascendant/, "ascendant"],
-      [/(theme-natal|maisons?|carte-ciel|carte-du-ciel|chakras)/, "theme-natal"],
-      [/(retrograd|transit|mercure|saturne|pluton|jupiter|neptune|uranus|\bmars\b|venus|lune|pleine-lune|eclipse|cycles-planetaires)/, "transits"],
-      [/(compatibilit|amoureuse|\bcouple|attir|sattir|signes-zodiaque|incompat)/, "compatibilite"],
+      [/(theme-natal|maisons?|carte-ciel|carte-du-ciel|chakras|lune|monde-emotionnel|signe-lunaire)/, "theme-natal"],
+      [/(retrograd|transit|mercure|saturne|pluton|jupiter|neptune|uranus|\bmars\b|venus|pleine-lune|eclipse|cycles-planetaires|retour-de-saturne)/, "transits"],
+      [/(compatibilit|amoureuse|\bcouple|attir|sattir|signes-zodiaque|incompat|belier|taureau|gemeaux|cancer|lion|vierge|balance|scorpion|sagittaire|capricorne|verseau|poissons)/, "compatibilite"],
       [/(annee-personnelle|cycle-9|fin-cycle)/, "annee-personnelle"],
       [/(dette|karmiqu|\bkarma|noeud|nud|vies-anterieures)/, "dette-karmique"],
       [/(expression|prenom|nom-identite|nombre-personnel)/, "nombre-expression"],
@@ -41,50 +45,149 @@ const CONFIG: Record<string, Cfg> = {
       [/(numerolog|maitres?-nombres?|maitre-nombre)/, "chemin-de-vie"],
       [/(signe-ascendant|horoscope|signe-)/, "theme-natal"],
     ],
+    fallback: { url: "/outils/", name: "ton profil complet", hook: "Tous tes calculateurs gratuits réunis : thème, chemin de vie, compatibilité." },
   },
-  // EN : seuls les 3 outils numérologie portent l'upsell pour l'instant.
   en: {
-    eyebrow: "Try it yourself",
-    verb: "Calculate",
-    cta: "Calculate ✦",
+    eyebrow: "Try it yourself", verb: "Calculate", free: "free", cta: "Calculate",
     tools: {
-      "chemin-de-vie": { url: "/en/tools/life-path-number/", name: "your life path number", hook: "The number that guides your whole life, in 30 seconds." },
-      "nombre-expression": { url: "/en/tools/expression-number/", name: "your expression number", hook: "What the vibration of your name reveals about your talents." },
-      "annee-personnelle": { url: "/en/tools/personal-year/", name: "your personal year", hook: "The energy of your yearly cycle, right now." },
-      "ascendant": { url: "/en/tools/rising-sign/", name: "your rising sign", hook: "The sign rising at your birth, precise to the minute (Swiss Ephemeris)." },
+      "life-path": { url: "/en/tools/life-path-number/", name: "your life path number", hook: "The number that guides your whole life, in 30 seconds." },
+      "expression": { url: "/en/tools/expression-number/", name: "your expression number", hook: "What the vibration of your name reveals about your talents." },
+      "personal-year": { url: "/en/tools/personal-year/", name: "your personal year", hook: "The energy of your yearly cycle, right now." },
+      "rising": { url: "/en/tools/rising-sign/", name: "your rising sign", hook: "The sign rising at your birth, precise to the minute (Swiss Ephemeris)." },
+      "birth-chart": { url: "/en/tools/birth-chart/", name: "your birth chart", hook: "The full map of the sky at your birth (Swiss Ephemeris)." },
+      "synastry": { url: "/en/tools/synastry/", name: "your synastry", hook: "Your two charts overlaid, aspect by aspect." },
+      "compatibility": { url: "/en/tools/compatibility/", name: "your compatibility", hook: "The harmony between your two profiles, in 30 seconds." },
+      "karmic-debt": { url: "/en/tools/karmic-debt/", name: "your karmic debt", hook: "Find out if your soul carries a karmic memory to release." },
+      "transits": { url: "/en/tools/transits/", name: "your transits", hook: "What the sky is activating in your life right now." },
     },
     rules: [
-      [/(rising-sign|rising|ascendant)/, "ascendant"],
-      [/(personal-year)/, "annee-personnelle"],
-      [/(expression-number|expression)/, "nombre-expression"],
-      [/(life-path|numerology|number-)/, "chemin-de-vie"],
+      [/synastr/, "synastry"],
+      [/(rising-sign|rising|ascendant)/, "rising"],
+      [/(birth-chart|natal-chart|natal|houses?|chakras|moon-sign|lunar)/, "birth-chart"],
+      [/(retrograde|transit|mercury|saturn|pluto|jupiter|neptune|uranus|\bmars\b|venus|full-moon|eclipse|saturn-return)/, "transits"],
+      [/(compatibilit|compatible|attract|couple|zodiac-signs?|aries|taurus|gemini|cancer|\bleo\b|virgo|libra|scorpio|sagittarius|capricorn|aquarius|pisces)/, "compatibility"],
+      [/(personal-year)/, "personal-year"],
+      [/(karmic|\bkarma|past-lives?)/, "karmic-debt"],
+      [/(expression-number|expression)/, "expression"],
+      [/(life-path|number-)/, "life-path"],
+      [/(numerolog|master-number)/, "life-path"],
     ],
+    fallback: { url: "/en/tools/", name: "your full chart", hook: "All our free calculators in one place: chart, life path, compatibility." },
+  },
+  it: {
+    eyebrow: "Passa alla pratica", verb: "Calcola", free: "gratis", cta: "Calcola",
+    tools: {
+      "cammino-vita": { url: "/it/strumenti/numero-del-cammino-di-vita/", name: "il tuo cammino di vita", hook: "Il numero che guida tutta la tua vita, in 30 secondi." },
+      "espressione": { url: "/it/strumenti/numero-espressione/", name: "il tuo numero di espressione", hook: "Ciò che la vibrazione del tuo nome rivela dei tuoi talenti." },
+      "anno-personale": { url: "/it/strumenti/anno-personale/", name: "il tuo anno personale", hook: "L'energia del tuo ciclo annuale, adesso." },
+      "ascendente": { url: "/it/strumenti/ascendente/", name: "il tuo ascendente", hook: "Il segno che sorgeva alla tua nascita, preciso al minuto." },
+      "tema-natale": { url: "/it/strumenti/tema-natale/", name: "il tuo tema natale", hook: "La mappa completa del cielo alla tua nascita (Swiss Ephemeris)." },
+      "compatibilita": { url: "/it/strumenti/compatibilita/", name: "la vostra compatibilità", hook: "L'armonia tra i vostri due profili, in 30 secondi." },
+    },
+    rules: [
+      [/(ascendente)/, "ascendente"],
+      [/(tema-natale|case-astrologiche|chakras|segno-lunare|luna-natale|karma|vite-passate|aspetti-astrologici)/, "tema-natale"],
+      [/(mercurio-retrogrado|saturno|plutone|retrogrado|pianeti|mutazione)/, "tema-natale"],
+      [/(compatibilita|si-attraggono|coppia|ariete|toro|gemelli|cancro|leone|vergine|bilancia|scorpione|sagittario|capricorno|acquario|pesci)/, "compatibilita"],
+      [/(anno-personale|ciclo-9)/, "anno-personale"],
+      [/(espressione)/, "espressione"],
+      [/(cammino-di-vita)/, "cammino-vita"],
+      [/(numerolog|maestri-numeri)/, "cammino-vita"],
+    ],
+    fallback: { url: "/it/strumenti/", name: "il tuo profilo completo", hook: "Tutti i calcolatori gratuiti in un posto: tema, cammino di vita, compatibilità." },
+  },
+  es: {
+    eyebrow: "Pasa a la práctica", verb: "Calcula", free: "gratis", cta: "Calcular",
+    tools: {
+      "camino-vida": { url: "/es/herramientas/camino-de-vida/", name: "tu camino de vida", hook: "El número que guía toda tu vida, en 30 segundos." },
+      "expresion": { url: "/es/herramientas/numero-expresion/", name: "tu número de expresión", hook: "Lo que la vibración de tu nombre revela de tus talentos." },
+      "ano-personal": { url: "/es/herramientas/ano-personal/", name: "tu año personal", hook: "La energía de tu ciclo anual, ahora mismo." },
+      "ascendente": { url: "/es/herramientas/ascendente/", name: "tu ascendente", hook: "El signo que ascendía en tu nacimiento, preciso al minuto." },
+      "carta-natal": { url: "/es/herramientas/carta-natal/", name: "tu carta natal", hook: "El mapa completo del cielo en tu nacimiento (Swiss Ephemeris)." },
+      "compatibilidad": { url: "/es/herramientas/compatibilidad/", name: "vuestra compatibilidad", hook: "La armonía entre vuestros dos perfiles, en 30 segundos." },
+    },
+    rules: [
+      [/(ascendente)/, "ascendente"],
+      [/(carta-natal|tema-natal|casas-astrologicas|chakras|signo-lunar|luna-natal|karma|vidas-pasadas|aspectos-astrologicos)/, "carta-natal"],
+      [/(mercurio-retrogrado|saturno|pluton|retrogrado|planetas|mutacion)/, "carta-natal"],
+      [/(compatibilidad|se-atraen|pareja|aries|tauro|geminis|cancer|\bleo\b|virgo|libra|escorpio|sagitario|capricornio|acuario|piscis)/, "compatibilidad"],
+      [/(ano-personal|ciclo-9)/, "ano-personal"],
+      [/(expresion)/, "expresion"],
+      [/(camino-de-vida)/, "camino-vida"],
+      [/(numerolog|numeros-maestros)/, "camino-vida"],
+    ],
+    fallback: { url: "/es/herramientas/", name: "tu perfil completo", hook: "Todas las calculadoras gratis en un solo lugar: carta, camino de vida, compatibilidad." },
+  },
+  de: {
+    eyebrow: "Jetzt ausprobieren", verb: "Berechne", free: "kostenlos", cta: "Berechnen",
+    tools: {
+      "lebenszahl": { url: "/de/werkzeuge/lebenszahl/", name: "deine Lebenszahl", hook: "Die Zahl, die dein ganzes Leben leitet, in 30 Sekunden." },
+      "ausdruckszahl": { url: "/de/werkzeuge/ausdruckszahl/", name: "deine Ausdruckszahl", hook: "Was die Schwingung deines Namens über deine Talente verrät." },
+      "jahr": { url: "/de/werkzeuge/personliches-jahr/", name: "dein persönliches Jahr", hook: "Die Energie deines Jahreszyklus, genau jetzt." },
+      "aszendent": { url: "/de/werkzeuge/aszendent/", name: "deinen Aszendenten", hook: "Das Zeichen, das bei deiner Geburt aufstieg, minutengenau." },
+      "geburtshoroskop": { url: "/de/werkzeuge/geburtshoroskop/", name: "dein Geburtshoroskop", hook: "Die vollständige Himmelskarte deiner Geburt (Swiss Ephemeris)." },
+      "partner": { url: "/de/werkzeuge/partnerhoroskop/", name: "euer Partnerhoroskop", hook: "Die Harmonie zwischen euren beiden Profilen, in 30 Sekunden." },
+    },
+    rules: [
+      [/(aszendent)/, "aszendent"],
+      [/(geburtshoroskop|natalchart|haeuser|chakras|mondzeichen|natalmond|karma|vergangene-leben|aspekte)/, "geburtshoroskop"],
+      [/(merkur|saturn|pluto|rueck|planeten|mutation)/, "geburtshoroskop"],
+      [/(kompatibilitaet|partner|ziehen-sich-an|sternzeichen|widder|stier|zwillinge|krebs|loewe|jungfrau|waage|skorpion|schuetze|steinbock|wassermann|fische)/, "partner"],
+      [/(persoenliches-jahr|jahr)/, "jahr"],
+      [/(ausdruckszahl)/, "ausdruckszahl"],
+      [/(lebenszahl)/, "lebenszahl"],
+      [/(numerolog)/, "lebenszahl"],
+    ],
+    fallback: { url: "/de/werkzeuge/", name: "dein vollständiges Profil", hook: "Alle kostenlosen Rechner an einem Ort: Horoskop, Lebenszahl, Partner." },
+  },
+  pt: {
+    eyebrow: "Passa à prática", verb: "Calcula", free: "grátis", cta: "Calcular",
+    tools: {
+      "caminho-vida": { url: "/pt/ferramentas/numero-do-caminho-de-vida/", name: "o teu caminho de vida", hook: "O número que guia toda a tua vida, em 30 segundos." },
+      "expressao": { url: "/pt/ferramentas/numero-expressao/", name: "o teu número de expressão", hook: "O que a vibração do teu nome revela dos teus talentos." },
+      "ano-pessoal": { url: "/pt/ferramentas/ano-pessoal/", name: "o teu ano pessoal", hook: "A energia do teu ciclo anual, agora mesmo." },
+      "ascendente": { url: "/pt/ferramentas/ascendente/", name: "o teu ascendente", hook: "O signo que ascendia no teu nascimento, preciso ao minuto." },
+      "mapa-natal": { url: "/pt/ferramentas/mapa-natal/", name: "o teu mapa astral", hook: "O mapa completo do céu no teu nascimento (Swiss Ephemeris)." },
+      "compatibilidade": { url: "/pt/ferramentas/compatibilidade/", name: "a vossa compatibilidade", hook: "A harmonia entre os vossos dois perfis, em 30 segundos." },
+    },
+    rules: [
+      [/(ascendente)/, "ascendente"],
+      [/(mapa-natal|mapa-astral|carta-natal|casas-astrologicas|chakras|signo-lunar|lua-natal|karma|vidas-passadas|aspetos-astrologicos)/, "mapa-natal"],
+      [/(mercurio-retrogrado|saturno|plutao|retrogrado|planetas|mutacao)/, "mapa-natal"],
+      [/(compatibilidade|se-atraem|casal|carneiro|touro|gemeos|caranguejo|leao|virgem|balanca|escorpiao|sagitario|capricornio|aquario|peixes)/, "compatibilidade"],
+      [/(ano-pessoal|ciclo-9)/, "ano-pessoal"],
+      [/(expressao)/, "expressao"],
+      [/(caminho-de-vida)/, "caminho-vida"],
+      [/(numerolog|numeros-mestres)/, "caminho-vida"],
+    ],
+    fallback: { url: "/pt/ferramentas/", name: "o teu perfil completo", hook: "Todas as calculadoras grátis num só lugar: mapa, caminho de vida, compatibilidade." },
   },
 };
 
 const cfg = CONFIG[lang];
-function pickTool(s: string, c: Cfg): string | null {
+function pickTool(s: string, c: Cfg): Tool {
   const low = s.toLowerCase();
-  for (const [re, t] of c.rules) if (re.test(low)) return t;
-  return null;
+  for (const [re, t] of c.rules) if (re.test(low)) return c.tools[t];
+  return c.fallback; // jamais null pour une langue supportée
 }
-const tool = cfg ? pickTool(slug, cfg) : null;
-const data = tool ? cfg.tools[tool] : null;
+const data = cfg ? pickTool(slug, cfg) : null;
 ---
-{data && (
-  <aside class="not-prose my-10 p-6 rounded-2xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30">
-    <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
-      <div class="flex-1">
-        <p class="text-xs uppercase tracking-widest text-amber-300/80 mb-1">{cfg.eyebrow}</p>
-        <p class="font-serif text-lg text-white mb-1">{cfg.verb} {data.name} {lang === "fr" ? "gratuitement" : "free"}</p>
+{cfg && data && (
+  <aside class="not-prose my-12">
+    <a
+      href={data.url}
+      class="group relative flex items-center gap-5 p-6 rounded-2xl bg-gradient-to-br from-purple-400/[0.12] to-amber-300/[0.10] border border-amber-300/30 hover:border-amber-300/60 hover:from-purple-400/[0.18] hover:to-amber-300/[0.16] transition-all no-underline"
+    >
+      <div class="hidden sm:flex shrink-0 h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-purple-400/30 to-amber-300/30 text-2xl">✦</div>
+      <div class="flex-1 min-w-0">
+        <p class="text-[11px] uppercase tracking-widest text-amber-300/80 mb-1">{cfg.eyebrow}</p>
+        <p class="font-serif text-lg text-white leading-snug mb-1">{cfg.verb} {data.name} <span class="text-amber-300/90">{cfg.free}</span></p>
         <p class="text-sm text-white/65 leading-relaxed">{data.hook}</p>
       </div>
-      <a
-        href={data.url}
-        class="shrink-0 inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity"
-      >
+      <span class="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm group-hover:gap-2.5 transition-all">
         {cfg.cta}
-      </a>
-    </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </a>
   </aside>
 )}
