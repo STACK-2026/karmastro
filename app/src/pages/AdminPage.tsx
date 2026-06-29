@@ -57,6 +57,7 @@ import {
   type AdminConversation,
   type AdminMessage,
   type AdminFeedback,
+  type AdminReadingReview,
   type AdminCreditTx,
   type AdminStripeEvent,
   type AdminEmailLog,
@@ -748,6 +749,7 @@ const OracleTab = () => {
   const [selectedConvo, setSelectedConvo] = useState<string | null>(null);
   const [messages, setMessages] = useState<AdminMessage[]>([]);
   const [feedbacks, setFeedbacks] = useState<AdminFeedback[]>([]);
+  const [reviews, setReviews] = useState<AdminReadingReview[]>([]);
   const [filterGuide, setFilterGuide] = useState<string>("all");
   const [filterRating, setFilterRating] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
@@ -764,6 +766,10 @@ const OracleTab = () => {
       })
       .finally(() => setLoading(false));
   }, [filterGuide, filterRating]);
+
+  useEffect(() => {
+    adminApi.readingReviews(100).then(setReviews).catch(() => {});
+  }, []);
 
   const openConvo = async (id: string) => {
     if (selectedConvo === id) {
@@ -902,6 +908,30 @@ const OracleTab = () => {
           </div>
         </SectionCard>
       </div>
+
+      <SectionCard title={`Avis lectures (${reviews.length})`}>
+        <div className="space-y-1.5 max-h-[600px] overflow-y-auto">
+          {reviews.length === 0 && (
+            <p className="text-xs text-muted-foreground text-center py-6">Aucun avis sur une lecture pour l'instant.</p>
+          )}
+          {reviews.map((rv) => {
+            const n = rv.rating || 0;
+            const stars = n > 0 ? "★".repeat(n) + "☆".repeat(5 - n) : (rv.feedback === "good" ? "👍" : rv.feedback === "meh" ? "👎" : "—");
+            return (
+              <div key={rv.token} className="p-2 rounded-lg bg-background/40 border border-border/30">
+                <div className="flex items-center gap-1.5 text-[10px] mb-0.5">
+                  <span className="text-amber-400">{stars}</span>
+                  {rv.tool_type && <span className="text-muted-foreground capitalize">{rv.tool_type.replace(/-/g, " ")}</span>}
+                  {rv.feedback_public && <span className="text-[8px] px-1 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400">public OK</span>}
+                  <span className="text-muted-foreground ml-auto truncate">{rv.email || "anon"}</span>
+                </div>
+                {rv.feedback_text && <p className="text-[10px] mt-1 bg-primary/5 rounded px-1.5 py-1">{rv.feedback_text}</p>}
+                <p className="text-[8px] text-muted-foreground/60 mt-0.5">{new Date(rv.feedback_at || rv.created_at).toLocaleString("fr-FR")}</p>
+              </div>
+            );
+          })}
+        </div>
+      </SectionCard>
     </div>
   );
 };

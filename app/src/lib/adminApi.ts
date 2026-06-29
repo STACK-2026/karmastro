@@ -83,6 +83,18 @@ export type AdminFeedback = {
   created_at: string;
 };
 
+export type AdminReadingReview = {
+  token: string;
+  email: string | null;
+  tool_type: string | null;
+  rating: number | null;
+  feedback: string | null;
+  feedback_text: string | null;
+  feedback_public: boolean;
+  feedback_at: string | null;
+  created_at: string;
+};
+
 export type AdminCreditTx = {
   id: string;
   user_id: string;
@@ -295,6 +307,8 @@ export const adminApi = {
     rpc<AdminMessage[]>("admin_get_conversation_messages", { p_conversation_id: conversationId }),
   feedbacks: (limit = 100, guide: string | null = null, rating: number | null = null) =>
     rpc<AdminFeedback[]>("admin_get_feedbacks", { p_limit: limit, p_guide: guide, p_rating: rating }),
+  readingReviews: (limit = 100) =>
+    rpc<AdminReadingReview[]>("admin_get_reading_reviews", { p_limit: limit }),
   creditTransactions: (limit = 100) =>
     rpc<AdminCreditTx[]>("admin_get_credit_transactions", { p_limit: limit }),
   stripeEvents: (limit = 100) => rpc<AdminStripeEvent[]>("admin_get_stripe_events", { p_limit: limit }),
