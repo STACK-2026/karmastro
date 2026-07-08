@@ -26,8 +26,16 @@ export function getStaticPaths() {
     day: "2-digit",
   }).format(new Date());
 
-  // Generate pages for every file except "today" : past (archives) + future (preview)
-  const eligible = files.filter((f) => f.replace(".json", "") !== realToday);
+  // Generate pages for every file except "today" : past (archives) + future (preview).
+  // Cap future previews to a rolling week so the daily data buffer does not multiply
+  // into thousands of pages and blow Cloudflare's 20k-files-per-deployment limit.
+  const cutoff = new Date(`${realToday}T12:00:00Z`);
+  cutoff.setUTCDate(cutoff.getUTCDate() + 7);
+  const futureCutoff = cutoff.toISOString().slice(0, 10);
+  const eligible = files.filter((f) => {
+    const d = f.replace(".json", "");
+    return d !== realToday && d <= futureCutoff;
+  });
 
   for (const file of eligible) {
     const date = file.replace(".json", "");
