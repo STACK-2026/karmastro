@@ -63,6 +63,7 @@ const jsonLd = [
 <script>
   const CHAT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/oracle-chat";
   const NEWSLETTER_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/newsletter-subscribe";
+  const READING_CHECKOUT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/reading-checkout";
   const thread = document.getElementById("oracle-thread")!;
   const empty = document.getElementById("oracle-empty");
   const input = document.getElementById("oracle-input") as HTMLInputElement;
@@ -108,11 +109,13 @@ const jsonLd = [
     if (!wrap) return;
     wrap.className = "text-left";
     const isAnon = !!(pw && pw.is_anon);
+    const isFr = (document.documentElement.lang || "fr").startsWith("fr");
     const msg = (pw && pw.message) || "Tu as atteint ta limite de messages cosmiques du jour.";
-    const ctaHref = isAnon ? "https://app.karmastro.com" : "/abonnement/";
-    const ctaLabel = isAnon ? "Créer mon compte gratuit" : "Passer en Étoile";
+    // Connecte : on pousse Etoile (Oracle illimite). Anonyme : on VEND une lecture perso (porte).
+    const ctaHref = "/abonnement/";
+    const ctaLabel = "Passer en Étoile";
     const reassure = isAnon
-      ? "Gratuit · tu gardes ton historique et ta carte natale"
+      ? (isFr ? "Paiement sécurisé · lecture livrée par email" : "Secure payment · reading delivered by email")
       : "Sans engagement · résiliable en un clic";
     const benefits = isAnon
       ? ""
@@ -121,8 +124,27 @@ const jsonLd = [
         + "<li>✦ Lectures complètes et approfondies</li>"
         + "<li>✦ Ta guidance personnalisée chaque mois</li>"
         + "</ul>";
-    // Pour les anonymes : capter l'email au mur de limite (horoscope quotidien),
-    // avant meme la creation de compte. Reduit la fuite vers le 0 retenu.
+    // Anonyme : lecture perso Chemin de Vie comme porte d'entree (checkout invite, sans compte).
+    // La lecture est le FIXE (ta structure), Etoile est le MOUVANT (transits, continu) -> complementaires.
+    const offer = isAnon
+      ? '<div class="mt-1 mb-4 p-4 rounded-xl bg-white/5 border border-amber-300/20 text-center">'
+        + '<p class="font-serif text-base text-white mb-1">' + (isFr ? "Ta lecture personnelle du Chemin de Vie" : "Your personal Life Path reading") + "</p>"
+        + '<p class="text-xs text-white/60 mb-3">' + (isFr ? "Ce que ta date de naissance dit de ta structure profonde. Livrée à l'écran et par email." : "What your birth date reveals about your core structure. Delivered on screen and by email.") + "</p>"
+        + '<input id="km-pw-birth" type="date" required class="w-full max-w-xs mx-auto block mb-3 px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-white text-sm" />'
+        + '<button id="km-pw-buy" type="button" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">' + (isFr ? "Recevoir ma lecture - 4,90 €" : "Get my reading - 4,90 €") + "</button>"
+        + '<p id="km-pw-buy-err" class="text-[11px] text-red-300 mt-2" hidden></p>'
+        + "</div>"
+      : "";
+    // Etoile en lien secondaire pour l'anonyme : la porte reste la lecture, l'abo est propose a cote.
+    const etoileSecondary = isAnon
+      ? '<a href="/abonnement/" id="km-pw-etoile" class="block text-[12px] text-amber-300/80 hover:text-amber-300 underline mb-1">' + (isFr ? "Ou l'Oracle en illimité, chaque jour, avec Étoile" : "Or the Oracle unlimited, every day, with Etoile") + "</a>"
+      : "";
+    // Le gros CTA Etoile n'apparait que pour les connectes (l'anonyme a l'offre + le lien secondaire).
+    const mainCta = isAnon
+      ? ""
+      : '<a href="' + ctaHref + '" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">' + ctaLabel + "</a>";
+    // Pour les anonymes : capter l'email au mur de limite (horoscope quotidien).
+    // Reduit la fuite vers le 0 retenu, cree le contact a nourrir vers Etoile.
     const capture = isAnon
       ? '<form id="km-pw-email" class="mb-4">'
         + '<p class="text-xs text-white/70 mb-2">Reçois ton horoscope personnalisé chaque matin ✨</p>'
@@ -137,9 +159,11 @@ const jsonLd = [
       '<div class="inline-block w-full max-w-md p-5 rounded-2xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30 text-center">'
       + '<p class="text-2xl mb-1">✦</p>'
       + '<p class="text-sm text-white/90 mb-4 leading-relaxed">' + msg + "</p>"
+      + offer
       + capture
       + benefits
-      + '<a href="' + ctaHref + '" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">' + ctaLabel + "</a>"
+      + mainCta
+      + etoileSecondary
       + '<p class="text-[11px] text-white/40 mt-3">' + reassure + "</p>"
       + "</div>";
     const pwForm = wrap.querySelector("#km-pw-email") as HTMLFormElement | null;
@@ -173,6 +197,38 @@ const jsonLd = [
         }
       });
     }
+    // Offre lecture (anonyme) : checkout invite Chemin de Vie, sans compte requis.
+    const buyBtn = wrap.querySelector("#km-pw-buy") as HTMLButtonElement | null;
+    const birthInput = wrap.querySelector("#km-pw-birth") as HTMLInputElement | null;
+    if (buyBtn && birthInput) {
+      birthInput.addEventListener("change", () => {
+        if (birthInput.value) { try { (window as any).km?.trackEvent("paywall_offer_date_entered", {}); } catch {} }
+      });
+      buyBtn.addEventListener("click", async () => {
+        const birthDate = birthInput.value;
+        const err = wrap.querySelector("#km-pw-buy-err") as HTMLElement | null;
+        if (!birthDate) { birthInput.classList.add("ring-2", "ring-amber-300"); return; }
+        const original = buyBtn.textContent;
+        buyBtn.disabled = true; buyBtn.textContent = "…";
+        if (err) err.hidden = true;
+        try { (window as any).km?.trackEvent("paywall_offer_checkout_click", { tool: "chemin-de-vie" }); } catch {}
+        try {
+          const r = await fetch(READING_CHECKOUT_URL, {
+            method: "POST", headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ tool: "chemin-de-vie", birthDate, locale: document.documentElement.lang || "fr" }),
+          });
+          const d = await r.json().catch(() => ({}));
+          if (d && d.url) { window.location.href = d.url; return; }
+          throw new Error((d && d.error) || "no url");
+        } catch {
+          buyBtn.disabled = false; buyBtn.textContent = original;
+          if (err) { err.hidden = false; err.textContent = "Une erreur est survenue, réessaie."; }
+        }
+      });
+    }
+    const etoileLink = wrap.querySelector("#km-pw-etoile");
+    if (etoileLink) etoileLink.addEventListener("click", () => { try { (window as any).km?.trackEvent("paywall_etoile_click", {}); } catch {} });
+    if (isAnon) { try { (window as any).km?.trackEvent("paywall_offer_view", { tool: "chemin-de-vie" }); } catch {} }
   }
 
   async function send(text: string) {
