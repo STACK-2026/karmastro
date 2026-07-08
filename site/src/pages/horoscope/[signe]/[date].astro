@@ -32,9 +32,15 @@ export function getStaticPaths() {
   const cutoff = new Date(`${realToday}T12:00:00Z`);
   cutoff.setUTCDate(cutoff.getUTCDate() + 7);
   const futureCutoff = cutoff.toISOString().slice(0, 10);
+  // Bound FR archives to a rolling 120-day window so the horoscope date pages stay
+  // well under Cloudflare's 20k-files-per-deployment limit as the archive grows
+  // daily. The sign index only links the last 14 archives, so nothing dead-links.
+  const past = new Date(`${realToday}T12:00:00Z`);
+  past.setUTCDate(past.getUTCDate() - 120);
+  const pastCutoff = past.toISOString().slice(0, 10);
   const eligible = files.filter((f) => {
     const d = f.replace(".json", "");
-    return d !== realToday && d <= futureCutoff;
+    return d !== realToday && d >= pastCutoff && d <= futureCutoff;
   });
 
   for (const file of eligible) {

@@ -32,9 +32,16 @@ export function getStaticPaths() {
   const cutoff = new Date(`${realToday}T12:00:00Z`);
   cutoff.setUTCDate(cutoff.getUTCDate() + 7);
   const futureCutoff = cutoff.toISOString().slice(0, 10);
+  // Localized date-archives are FR-fallback near-duplicates (low SEO value) and,
+  // multiplied by 10 locales x 12 signs, are the bulk of the deployment. Bound
+  // them to a rolling 30-day window to stay safely under Cloudflare's 20k-files
+  // limit permanently. The localized sign index only links the last 14 archives.
+  const past = new Date(`${realToday}T12:00:00Z`);
+  past.setUTCDate(past.getUTCDate() - 30);
+  const pastCutoff = past.toISOString().slice(0, 10);
   const eligibleDates = files
     .map((f) => f.replace(".json", ""))
-    .filter((date) => date !== realToday && date <= futureCutoff);
+    .filter((date) => date !== realToday && date >= pastCutoff && date <= futureCutoff);
 
   for (const lang of LOCALES) {
     if (lang === DEFAULT_LOCALE) continue;
