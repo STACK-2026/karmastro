@@ -1,6 +1,6 @@
 ---
 title: "Chemin de vie 22 : le Maître Bâtisseur en numérologie karmiq"
-description: "Le chemin de vie 22, ou "Maître Bâtisseur", est le plus puissant en numérologie. Découvre sa mission karmique, ses talents, défis et comment activer son potenti"
+description: "Le chemin de vie 22, ou «Maître Bâtisseur», est le plus puissant en numérologie. Découvre sa mission karmique, ses talents, défis et comment activer son potenti"
 date: 2026-07-10
 author: "Pythia"
 lang: "fr"
