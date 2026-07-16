@@ -143,14 +143,14 @@ export function useUserProfile(): UserProfileData {
       // karmastro.com share the apex via cookies; for localStorage we write
       // on both by setting a cookie with SameSite=Lax, Domain=.karmastro.com.
       try {
-        const tier = (profile as any).subscription_tier || "eveil";
-        const status = (profile as any).subscription_status;
+        const tier = profile.subscription_tier || "eveil";
+        const status = profile.subscription_status;
         const isActive = status === "active" || tier === "cosmos";
         const effectiveTier = tier === "etoile" && !isActive ? "eveil" : tier;
         // Write to both localStorage (same-domain) and cookie (cross-subdomain)
         localStorage.setItem("km_user_tier", effectiveTier);
         document.cookie = `km_user_tier=${effectiveTier}; Path=/; Domain=.karmastro.com; Max-Age=${60 * 60 * 24 * 30}; SameSite=Lax`;
-      } catch (e) {
+      } catch {
         /* silent */
       }
 

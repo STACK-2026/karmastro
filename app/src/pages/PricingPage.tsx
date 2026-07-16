@@ -32,12 +32,12 @@ const PricingPage = () => {
 
   useEffect(() => {
     if (!user?.id) return;
-    (supabase as any)
+    supabase
       .from("profiles")
       .select("subscription_tier, subscription_status, credits, subscription_period_end")
       .eq("user_id", user.id)
       .maybeSingle()
-      .then(({ data }: any) => {
+      .then(({ data }) => {
         if (data) {
           setCurrentPlan({
             tier: data.subscription_tier || "eveil",
@@ -81,8 +81,12 @@ const PricingPage = () => {
       }
 
       window.location.href = data.url;
-    } catch (e: any) {
-      toast({ title: t("pricing.toast_checkout_error_title"), description: e.message, variant: "destructive" });
+    } catch (error: unknown) {
+      toast({
+        title: t("pricing.toast_checkout_error_title"),
+        description: error instanceof Error ? error.message : t("pricing.checkout_create_failed"),
+        variant: "destructive",
+      });
       setLoading(null);
     }
   };
@@ -94,7 +98,7 @@ const PricingPage = () => {
       <StarField />
       <AppHeader title={t("pricing.header_title")} subtitle={t("pricing.header_subtitle")} showBack />
 
-      <div className="relative z-10 px-5 space-y-5 max-w-2xl mx-auto">
+      <main className="relative z-10 px-5 space-y-5 max-w-2xl mx-auto">
         {/* Current plan indicator */}
         {currentPlan && currentPlan.tier !== "eveil" && (
           <div className="p-3 rounded-xl bg-primary/10 border border-primary/30 text-center">
@@ -118,7 +122,7 @@ const PricingPage = () => {
             <button
               onClick={() => setBillingPeriod("monthly")}
               className={`px-4 py-1.5 text-sm rounded-lg transition-colors ${
-                billingPeriod === "monthly" ? "bg-primary text-primary-foreground" : "text-muted-foreground"
+                billingPeriod === "monthly" ? "bg-primary text-[#140b20]" : "text-muted-foreground"
               }`}
             >
               {t("pricing.period_monthly")}
@@ -126,7 +130,7 @@ const PricingPage = () => {
             <button
               onClick={() => setBillingPeriod("annual")}
               className={`px-4 py-1.5 text-sm rounded-lg transition-colors ${
-                billingPeriod === "annual" ? "bg-primary text-primary-foreground" : "text-muted-foreground"
+                billingPeriod === "annual" ? "bg-primary text-[#140b20]" : "text-muted-foreground"
               }`}
             >
               {t("pricing.period_annual")} <span className="text-[10px] text-amber-300">{t("pricing.period_annual_badge")}</span>
@@ -239,7 +243,7 @@ const PricingPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </main>
 
       <BottomNav />
     </div>

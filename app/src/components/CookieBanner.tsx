@@ -53,7 +53,7 @@ const CookieBanner = () => {
       <div className="flex items-center gap-2">
         <button
           onClick={() => saveConsent("all")}
-          className="flex-1 min-w-0 text-xs font-semibold text-white py-2 px-3 rounded-xl bg-primary hover:opacity-90 transition-all"
+          className="flex-1 min-w-0 text-xs font-semibold text-[#140b20] py-2 px-3 rounded-xl bg-primary hover:opacity-90 transition-all"
           style={{ boxShadow: "0 4px 15px rgba(139, 92, 246, 0.25)" }}
         >
           {t("cookie.accept_all")}

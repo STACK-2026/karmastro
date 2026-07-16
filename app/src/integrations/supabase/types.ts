@@ -100,6 +100,7 @@ export type Database = {
           birth_name: string | null
           birth_place: string | null
           birth_time: string | null
+          credits: number
           created_at: string
           current_name: string | null
           first_name: string | null
@@ -111,6 +112,11 @@ export type Database = {
           last_name: string | null
           level: string | null
           oracle_tone: string | null
+          stripe_customer_id: string | null
+          stripe_subscription_id: string | null
+          subscription_period_end: string | null
+          subscription_status: string | null
+          subscription_tier: string
           theme: string | null
           updated_at: string
           user_id: string
@@ -120,6 +126,7 @@ export type Database = {
           birth_name?: string | null
           birth_place?: string | null
           birth_time?: string | null
+          credits?: number
           created_at?: string
           current_name?: string | null
           first_name?: string | null
@@ -131,6 +138,11 @@ export type Database = {
           last_name?: string | null
           level?: string | null
           oracle_tone?: string | null
+          stripe_customer_id?: string | null
+          stripe_subscription_id?: string | null
+          subscription_period_end?: string | null
+          subscription_status?: string | null
+          subscription_tier?: string
           theme?: string | null
           updated_at?: string
           user_id: string
@@ -140,6 +152,7 @@ export type Database = {
           birth_name?: string | null
           birth_place?: string | null
           birth_time?: string | null
+          credits?: number
           created_at?: string
           current_name?: string | null
           first_name?: string | null
@@ -151,6 +164,11 @@ export type Database = {
           last_name?: string | null
           level?: string | null
           oracle_tone?: string | null
+          stripe_customer_id?: string | null
+          stripe_subscription_id?: string | null
+          subscription_period_end?: string | null
+          subscription_status?: string | null
+          subscription_tier?: string
           theme?: string | null
           updated_at?: string
           user_id?: string
