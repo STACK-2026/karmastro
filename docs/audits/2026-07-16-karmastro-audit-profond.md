@@ -103,6 +103,7 @@ Le webhook activait bien le droit Oracle illimité côté profil, mais le dashbo
 - Les redirections success/cancel du checkout étaient fournies par le client.
 - Un rejeu de webhook pack de crédits pouvait théoriquement recréditer un compte.
 - Les webhooks de lecture ne vérifiaient pas explicitement `payment_status = paid`.
+- Un ancien script de configuration DNS contenait deux jetons de secours en clair dans Git. Ils ne correspondent plus aux jetons actifs, mais leur présence restait une mauvaise pratique et une fuite historique.
 
 ## Correctifs réalisés
 
@@ -124,6 +125,7 @@ Le webhook activait bien le droit Oracle illimité côté profil, mais le dashbo
 - Validation des messages, tailles, rôles, UUID et identifiants de session.
 - L'historique refuse désormais un bearer invalide au lieu de retomber en anonyme.
 - Messages du paywall échappés avant insertion HTML.
+- Jetons de secours retirés du script DNS ; le script exige désormais les secrets d'environnement et le dépôt courant ne contient plus ces motifs de jetons.
 
 ### Conversion
 
@@ -176,6 +178,7 @@ Le webhook activait bien le droit Oracle illimité côté profil, mais le dashbo
 - Sept Edge Functions déployées : Oracle, historique, claim, portail Stripe, checkout et deux webhooks.
 - Smoke tests production négatifs verts : payload Oracle invalide `400`, token invalide `401`, endpoints privés sans auth `401`, webhooks sans signature `400`.
 - Aucun événement Stripe non traité après déploiement.
+- Les deux jetons retrouvés dans l'historique ont été comparés sans afficher leur valeur : aucun ne correspond aux accès actifs actuels.
 - Aucun paiement, email ou effacement réel déclenché par les tests.
 
 ## Ce qu'il reste à faire après stabilisation
