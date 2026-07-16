@@ -12,6 +12,7 @@ import {
   getZodiacSign,
 } from "@/lib/numerology";
 import { demoProfile } from "@/lib/demoData";
+import { hasPremiumAccess, parseIsoDateAsLocal } from "@/lib/subscription";
 
 export type UserProfileData = {
   // Identity
@@ -26,6 +27,10 @@ export type UserProfileData = {
   level: string;
   isDemo: boolean; // true if user has no profile yet → fallback demoProfile
   isLoading: boolean;
+  subscriptionTier: string;
+  subscriptionStatus: string | null;
+  subscriptionPeriodEnd: string | null;
+  isPremium: boolean;
 
   // Astrology (sun sign computed locally, moon/asc/planets/aspects/houses from Engine)
   astrology: {
@@ -107,6 +112,10 @@ export function useUserProfile(): UserProfileData {
     ...demoProfile,
     isDemo: true,
     isLoading: true,
+    subscriptionTier: "eveil",
+    subscriptionStatus: null,
+    subscriptionPeriodEnd: null,
+    isPremium: false,
   });
 
   useEffect(() => {
@@ -146,7 +155,11 @@ export function useUserProfile(): UserProfileData {
       }
 
       // Parse birth_date (stored as ISO date string)
-      const birthDate = profile.birth_date ? new Date(profile.birth_date) : null;
+      const birthDate = parseIsoDateAsLocal(profile.birth_date);
+      const subscriptionTier = profile.subscription_tier || "eveil";
+      const subscriptionStatus = profile.subscription_status || null;
+      const subscriptionPeriodEnd = profile.subscription_period_end || null;
+      const isPremium = hasPremiumAccess(subscriptionTier, subscriptionStatus, subscriptionPeriodEnd);
 
       if (!birthDate || !profile.first_name) {
         // Incomplete profile : keep demo values but mark as demo
@@ -155,6 +168,10 @@ export function useUserProfile(): UserProfileData {
           firstName: profile.first_name || demoProfile.firstName,
           isDemo: true,
           isLoading: false,
+          subscriptionTier,
+          subscriptionStatus,
+          subscriptionPeriodEnd,
+          isPremium,
         });
         return;
       }
@@ -181,6 +198,10 @@ export function useUserProfile(): UserProfileData {
         level: profile.level || "débutant",
         isDemo: false,
         isLoading: false,
+        subscriptionTier,
+        subscriptionStatus,
+        subscriptionPeriodEnd,
+        isPremium,
         astrology: {
           sunSign: { ...sunSign, degrees: "-" },
           moonSign: { sign: "-", symbol: "", element: "", degrees: "" },

@@ -5,6 +5,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import { trackEvent } from "@/lib/tracker";
 import StarField from "@/components/StarField";
+import { getPostAuthPath } from "@/lib/postAuth";
 
 const REFERRAL_STORAGE_KEY = "karmastro_referral_code";
 
@@ -48,7 +49,7 @@ const AuthCallback = () => {
 
       // Check if onboarding is needed (no birth date/time in profile)
       // If yes, OnboardingGate will handle redirection automatically.
-      navigate("/dashboard", { replace: true });
+      navigate(getPostAuthPath(), { replace: true });
     })();
   }, [user, loading, navigate, attaching]);
 

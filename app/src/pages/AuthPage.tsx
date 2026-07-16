@@ -9,6 +9,11 @@ import { useToast } from "@/hooks/use-toast";
 import StarField from "@/components/StarField";
 import { trackEvent } from "@/lib/tracker";
 import { useT } from "@/i18n/ui";
+import {
+  ORACLE_HANDOFF_SESSION_KEY,
+  getPostAuthPath,
+  storePostAuthPath,
+} from "@/lib/postAuth";
 
 const REFERRAL_STORAGE_KEY = "karmastro_referral_code";
 
@@ -27,6 +32,19 @@ const AuthPage = () => {
   // Capture ?ref= from URL and look up the referrer name
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
+    const postAuthPath = storePostAuthPath(params.get("next"));
+    const oracleSession = params.get("oracle_session")?.trim();
+    if (oracleSession && /^[A-Za-z0-9._:-]{8,128}$/.test(oracleSession)) {
+      localStorage.setItem(ORACLE_HANDOFF_SESSION_KEY, oracleSession);
+      setIsLogin(false);
+    }
+
+    // Returning visitors coming from karmastro.com may already have a valid
+    // app session. Skip a redundant login screen and preserve the handoff.
+    supabase.auth.getSession().then(({ data }) => {
+      if (data.session) navigate(postAuthPath, { replace: true });
+    });
+
     let code = params.get("ref")?.toUpperCase().trim() || null;
     if (!code) {
       // Fallback to stored code (persistence across pages)
@@ -47,7 +65,7 @@ const AuthPage = () => {
           if (data?.first_name) setReferrerName(data.first_name);
         });
     }
-  }, []);
+  }, [navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -58,13 +76,13 @@ const AuthPage = () => {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
         trackEvent("login", { method: "email" });
-        navigate("/dashboard");
+        navigate(getPostAuthPath());
       } else {
         const { data, error } = await supabase.auth.signUp({
           email,
           password,
           options: {
-            emailRedirectTo: window.location.origin,
+            emailRedirectTo: `${window.location.origin}/auth/callback`,
             data: referralCode ? { referred_by_code: referralCode } : undefined,
           },
         });
@@ -90,6 +108,7 @@ const AuthPage = () => {
             ? t("auth.toast_welcome_invited", { name: referrerName })
             : t("auth.toast_verify_email"),
         });
+        if (data.session) navigate(getPostAuthPath());
       }
     } catch (error: any) {
       toast({

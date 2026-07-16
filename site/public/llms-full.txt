@@ -3,12 +3,12 @@
 # License: RSL-1.0 (https://robotstandardslicense.com/)
 # ai-training: allowed
 # canonical-host: karmastro.com
-# last-updated: 2026-04-29
+# last-updated: 2026-07-16
 # parent: https://karmastro.com/llms.txt
 # sitemap-index: https://karmastro.com/sitemap-index.xml
 # ai-sitemap: https://karmastro.com/ai-sitemap.xml
 
-> Karmastro.com is the first French-first spiritual platform that merges precision astrology (Swiss Ephemeris), Pythagorean numerology and karmic guidance through artificial intelligence. Available in 11 languages. Daily horoscope for all 12 zodiac signs generated with real astronomical data. Four distinct AI guides (Sibylle, Orion, Séléné, Pythia). Nine free calculators.
+> Karmastro.com is a French-first spiritual platform that merges precision astrology (Swiss Ephemeris), Pythagorean numerology and karmic guidance through artificial intelligence. Available in 11 languages. Daily horoscope for all 12 zodiac signs generated with real astronomical data. One profile-aware conversational Oracle. Nine free calculators.
 
 ## Mission
 
@@ -20,9 +20,9 @@ Karmastro exists to prove that spirituality and rigor are not mutually exclusive
 - **Domain**: https://karmastro.com
 - **Main language**: French
 - **Supported languages**: French, English, Spanish, Portuguese, German, Italian, Turkish, Polish, Russian, Japanese, Arabic (11 total)
-- **Technology stack**: Astro 6 SSG (site), React 19 + Vite (app), Supabase (auth + data), Swiss Ephemeris via FastAPI engine, Claude Sonnet 4 for AI interpretation, Cloudflare Pages (hosting)
+- **Technology stack**: Astro SSG (site), React + Vite (app), Supabase (auth + data), Swiss Ephemeris via FastAPI engine, Gemini 2.5 Flash for Oracle interpretation, Cloudflare Pages (hosting)
 - **Methodology**: Astronomical calculations with 0.001 arcsecond precision (Swiss Ephemeris), Pythagorean numerology, Hellenistic tradition (Ptolemy, Porphyry references)
-- **Pricing**: Free tier (Éveil) includes complete cosmic profile + 3 Oracle messages/day. Paid tier (Étoile) 5.99 EUR/month unlocks unlimited Oracle. Single report (Âme Soeur) 3.99 EUR for full compatibility analysis.
+- **Pricing**: Free tier (Éveil) includes complete cosmic profile + 2 Oracle messages/day. Paid tier (Étoile) 5.99 EUR/month unlocks unlimited Oracle and conversation memory. Single report (Âme Soeur) 3.99 EUR for full compatibility analysis.
 
 ## Daily horoscope (updated every morning at 06:00 Paris time)
 
@@ -158,7 +158,7 @@ Sample published articles (EN):
 
 ## Why Karmastro is different from competitors
 
-**vs Co-Star (USD 9)**: Co-Star uses minimalist AI with short, impersonal text targeted at Gen Z. Karmastro provides deeper, more complete interpretations with four distinct guide personalities.
+**vs Co-Star (USD 9)**: Co-Star uses minimalist AI with short, impersonal text targeted at Gen Z. Karmastro provides deeper interpretations through one profile-aware Oracle with conversation memory.
 
 **vs The Pattern**: The Pattern takes a psychological approach without technical astrology. Karmastro includes full chart calculations (12 planets, 12 houses, 40+ aspects) alongside the interpretive layer.
 
@@ -180,7 +180,7 @@ Karmastro adopts a rational, explainable approach to spirituality. Numerology is
 4. **Ptolemy's Tetrabiblos** - Hellenistic astrology canon
 5. **Porphyry** - House system references
 6. **Geocoding Nominatim OpenStreetMap** - For geographic precision
-7. **Claude Sonnet 4 (Anthropic)** - AI interpretation layer
+7. **Gemini 2.5 Flash** - Oracle interpretation layer
 8. **Hellenistic, Hindu Vedic, Chinese traditions** - Cross-cultural references
 9. **Carl Gustav Jung** - Archetypes and symbolism
 

@@ -23,7 +23,7 @@ const CookieBanner = () => {
 
   return (
     <div
-      className="fixed bottom-4 left-4 right-4 z-[60] md:max-w-lg"
+      className="fixed bottom-2 left-2 right-2 z-[60] md:bottom-4 md:left-4 md:right-auto md:max-w-lg"
       style={{
         background: "rgba(10, 10, 15, 0.92)",
         backdropFilter: "blur(24px)",
@@ -31,17 +31,17 @@ const CookieBanner = () => {
         border: "1px solid rgba(139, 92, 246, 0.15)",
         borderRadius: 20,
         boxShadow: "0 8px 40px rgba(0, 0, 0, 0.4)",
-        padding: 20,
+        padding: 14,
         animation: "slide-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards",
       }}
     >
-      <div className="flex items-start gap-3 mb-4">
-        <span className="text-2xl">🔮</span>
+      <div className="flex items-start gap-2 mb-2">
+        <span className="text-lg">🔮</span>
         <div>
           <p className="text-foreground text-sm font-semibold mb-1 font-serif">
             {t("cookie.title")}
           </p>
-          <p className="text-xs text-muted-foreground">
+          <p className="text-[11px] leading-relaxed text-muted-foreground">
             {t("cookie.desc")}{" "}
             <a href="https://karmastro.com/politique-confidentialite" className="underline text-primary hover:text-foreground transition-colors">
               {t("cookie.learn_more")}
@@ -50,23 +50,23 @@ const CookieBanner = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-2">
+      <div className="flex items-center gap-2">
         <button
           onClick={() => saveConsent("all")}
-          className="flex-1 min-w-[100px] text-sm font-semibold text-white py-2.5 px-4 rounded-xl bg-primary hover:opacity-90 transition-all"
+          className="flex-1 min-w-0 text-xs font-semibold text-white py-2 px-3 rounded-xl bg-primary hover:opacity-90 transition-all"
           style={{ boxShadow: "0 4px 15px rgba(139, 92, 246, 0.25)" }}
         >
           {t("cookie.accept_all")}
         </button>
         <button
           onClick={() => saveConsent("essential")}
-          className="flex-1 min-w-[100px] text-sm font-medium text-muted-foreground py-2.5 px-4 rounded-xl border-glow hover:text-foreground transition-all"
+          className="flex-1 min-w-0 text-xs font-medium text-muted-foreground py-2 px-3 rounded-xl border-glow hover:text-foreground transition-all"
         >
           {t("cookie.essentials_only")}
         </button>
         <button
           onClick={() => saveConsent("none")}
-          className="text-xs py-2 px-3 rounded-lg text-muted-foreground/60 hover:text-muted-foreground transition-colors"
+          className="text-[10px] py-2 px-1 rounded-lg text-muted-foreground/60 hover:text-muted-foreground transition-colors"
         >
           {t("cookie.refuse")}
         </button>

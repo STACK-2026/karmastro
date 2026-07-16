@@ -1,19 +1,9 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/contexts/AuthContext";
-// Eager imports : pages we expect to hit on cold entry (SEO landings,
-// deeplinks from marketing, auth hand-offs, error fallback). Everything
-// else is lazy-loaded to shrink the initial bundle (~1.5 MB before this
-// change, most of it never needed for an anon landing on /oracle).
-import Index from "./pages/Index.tsx";
-import AuthPage from "./pages/AuthPage.tsx";
-import AuthCallback from "./pages/AuthCallback.tsx";
-import ResetPassword from "./pages/ResetPassword.tsx";
-import OraclePage from "./pages/OraclePage.tsx";
-import NotFound from "./pages/NotFound.tsx";
 import CookieBanner from "./components/CookieBanner.tsx";
 import GoogleOneTap from "./components/GoogleOneTap.tsx";
 import SparkleCursorTrail from "./components/SparkleCursorTrail.tsx";
@@ -24,9 +14,15 @@ import StarField from "./components/StarField";
 import { Suspense, lazy, useEffect } from "react";
 import { detectLocale, applyLocaleToDocument } from "./lib/locale";
 
-// Lazy-loaded routes : authenticated-only pages, heavy feature pages, and
-// the admin surface. Each lands in its own chunk and is fetched on demand.
+// Every route is lazy-loaded. Marketing and app deeplinks should not download
+// one another's pages before rendering their own conversion surface.
+const Index = lazy(() => import("./pages/Index.tsx"));
+const AuthPage = lazy(() => import("./pages/AuthPage.tsx"));
+const AuthCallback = lazy(() => import("./pages/AuthCallback.tsx"));
+const ResetPassword = lazy(() => import("./pages/ResetPassword.tsx"));
+const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 const Dashboard = lazy(() => import("./pages/Dashboard.tsx"));
+const OraclePage = lazy(() => import("./pages/OraclePage.tsx"));
 const AstralProfile = lazy(() => import("./pages/AstralProfile.tsx"));
 const NumerologyPage = lazy(() => import("./pages/NumerologyPage.tsx"));
 const CompatibilityPage = lazy(() => import("./pages/CompatibilityPage.tsx"));
@@ -67,6 +63,13 @@ const RouteFallback = () => (
   </div>
 );
 
+const ExternalRedirect = ({ to }: { to: string }) => {
+  useEffect(() => {
+    window.location.replace(to);
+  }, [to]);
+  return <RouteFallback />;
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <AuthProvider>
@@ -97,6 +100,16 @@ const App = () => (
                 <Route path="/settings" element={<SettingsPage />} />
                 <Route path="/admin" element={<AdminPage />} />
                 <Route path="/pricing" element={<PricingPage />} />
+                {/* Legacy URLs still linked by older indexed articles. Keep
+                    them useful instead of sending SEO visitors to a 404. */}
+                <Route path="/numerologie" element={<Navigate to="/numerology" replace />} />
+                <Route path="/theme-natal" element={<Navigate to="/astral" replace />} />
+                <Route path="/calendrier-lunaire" element={<Navigate to="/calendar" replace />} />
+                <Route path="/promo-2026" element={<Navigate to="/pricing" replace />} />
+                <Route path="/calcul-chemin-de-vie" element={<ExternalRedirect to="https://karmastro.com/outils/chemin-de-vie/" />} />
+                <Route path="/calcul-nombre-expression" element={<ExternalRedirect to="https://karmastro.com/outils/nombre-expression/" />} />
+                <Route path="/calcul-ascendant" element={<ExternalRedirect to="https://karmastro.com/outils/ascendant/" />} />
+                <Route path="/transits" element={<ExternalRedirect to="https://karmastro.com/outils/transits/" />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>

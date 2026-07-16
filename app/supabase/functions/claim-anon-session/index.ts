@@ -9,6 +9,7 @@ const corsHeaders = {
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "https://nkjbmbdrvejemzrggxvr.supabase.co";
 const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
 const ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY") || "";
+const SESSION_ID_RE = /^[A-Za-z0-9._:-]{8,128}$/;
 
 // ============================================================================
 // Claim an anonymous oracle session on behalf of a freshly-authenticated user.
@@ -61,12 +62,13 @@ serve(async (req) => {
     const userId = userData.user.id;
 
     const { sessionId } = await req.json().catch(() => ({ sessionId: null }));
-    if (!sessionId || typeof sessionId !== "string" || sessionId.length > 128) {
+    if (typeof sessionId !== "string" || !SESSION_ID_RE.test(sessionId.trim())) {
       return new Response(JSON.stringify({ error: "invalid_session_id" }), {
         status: 400,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
+    const normalizedSessionId = sessionId.trim();
 
     const sb = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
 
@@ -75,7 +77,7 @@ serve(async (req) => {
     const { data: movedConvs, error: convErr } = await sb
       .from("oracle_conversations")
       .update({ user_id: userId, session_id: null })
-      .eq("session_id", sessionId)
+      .eq("session_id", normalizedSessionId)
       .is("user_id", null)
       .select("id");
     if (convErr) throw convErr;
@@ -83,7 +85,7 @@ serve(async (req) => {
     const { data: movedMsgs, error: msgErr } = await sb
       .from("oracle_messages")
       .update({ user_id: userId, session_id: null })
-      .eq("session_id", sessionId)
+      .eq("session_id", normalizedSessionId)
       .is("user_id", null)
       .select("id");
     if (msgErr) throw msgErr;
@@ -95,7 +97,7 @@ serve(async (req) => {
       const { data: anonUsage } = await sb
         .from("oracle_daily_usage")
         .select("message_count")
-        .eq("session_id", sessionId)
+        .eq("session_id", normalizedSessionId)
         .eq("usage_date", today)
         .maybeSingle();
       if (anonUsage?.message_count) {
@@ -123,7 +125,7 @@ serve(async (req) => {
     const { data: hints } = await sb
       .from("oracle_anon_profile_hints")
       .select("first_name,last_name,birth_date,birth_time,birth_place,gender")
-      .eq("session_id", sessionId)
+      .eq("session_id", normalizedSessionId)
       .maybeSingle();
 
     if (hints) {
@@ -155,7 +157,7 @@ serve(async (req) => {
       await sb
         .from("oracle_anon_profile_hints")
         .update({ claimed_at: new Date().toISOString(), claimed_by: userId })
-        .eq("session_id", sessionId);
+        .eq("session_id", normalizedSessionId);
     }
 
     return new Response(

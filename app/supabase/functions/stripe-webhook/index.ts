@@ -105,25 +105,40 @@ serve(async (req) => {
         payload: event.data.object,
       });
 
-    if (logError && !logError.message?.includes("duplicate key")) {
+    if (logError?.code === "23505" || logError?.message?.includes("duplicate key")) {
+      const { data: existingEvent } = await supabase
+        .from("stripe_events")
+        .select("processed")
+        .eq("stripe_event_id", event.id)
+        .maybeSingle();
+      if (existingEvent?.processed) {
+        return new Response(JSON.stringify({ received: true, duplicate: true }), {
+          status: 200,
+          headers: { "Content-Type": "application/json" },
+        });
+      }
+    } else if (logError) {
       console.error("Failed to log stripe event:", logError);
     }
 
     // Handle events
     switch (event.type) {
-      case "checkout.session.completed": {
+      case "checkout.session.completed":
+      case "checkout.session.async_payment_succeeded": {
         const session = event.data.object as Stripe.Checkout.Session;
         const userId = session.metadata?.supabase_user_id;
         const priceKey = session.metadata?.price_key;
 
         if (!userId || !priceKey) break;
+        if (session.mode === "payment" && session.payment_status !== "paid") break;
 
         // Fetch profile for email data + birth data (Âme Sœur reading needs it)
-        const { data: profile } = await supabase
+        const { data: profile, error: profileError } = await supabase
           .from("profiles")
           .select("credits, first_name, birth_date, language")
           .eq("user_id", userId)
           .maybeSingle();
+        if (profileError) throw profileError;
 
         // Get user email from auth
         const { data: userData } = await supabase.auth.admin.getUserById(userId);
@@ -132,23 +147,14 @@ serve(async (req) => {
         // Credit pack
         if (CREDITS_BY_PRICE[priceKey]) {
           const credits = CREDITS_BY_PRICE[priceKey];
-          const newBalance = (profile?.credits || 0) + credits;
-
-          await supabase
-            .from("profiles")
-            .update({ credits: newBalance })
-            .eq("user_id", userId);
-
-          await supabase
-            .from("credit_transactions")
-            .insert({
-              user_id: userId,
-              amount: credits,
-              balance_after: newBalance,
-              type: "purchase",
-              description: `Achat ${priceKey}`,
-              stripe_session_id: session.id,
-            });
+          const { data: fulfilled, error: fulfillError } = await supabase.rpc("fulfill_credit_purchase", {
+            p_user_id: userId,
+            p_credits: credits,
+            p_session_id: session.id,
+            p_description: `Achat ${priceKey}`,
+          });
+          if (fulfillError) throw fulfillError;
+          if (!fulfilled) break;
 
           // Email: payment success with credits
           if (userEmail) {
@@ -166,36 +172,37 @@ serve(async (req) => {
         // invite l'acheteur à la renseigner (page /ame-soeur token-gated). Idempotent sur la
         // session Stripe (le webhook peut être rejoué, on ne recrée pas de lecture).
         else if (priceKey === "ame_soeur") {
-          const { data: existingReading } = await supabase
+          const { data: existingReading, error: readingLookupError } = await supabase
             .from("readings")
             .select("token")
             .eq("stripe_session_id", session.id)
             .maybeSingle();
-          if (!existingReading) {
-            const token = crypto.randomUUID();
-            const locale = String(profile?.language || session.metadata?.locale || "fr").slice(0, 5);
-            await supabase.from("readings").insert({
-              token,
-              email: userEmail,
-              tool_type: "ame-soeur",
-              status: "awaiting_partner",
+          if (readingLookupError) throw readingLookupError;
+          if (existingReading) break;
+          const token = crypto.randomUUID();
+          const locale = String(profile?.language || session.metadata?.locale || "fr").slice(0, 5);
+          const { error: readingInsertError } = await supabase.from("readings").insert({
+            token,
+            email: userEmail,
+            tool_type: "ame-soeur",
+            status: "awaiting_partner",
+            locale,
+            stripe_session_id: session.id,
+            user_id: userId,
+            inputs_json: {
+              tool: "ame-soeur",
+              fullName: profile?.first_name || "",
+              birthDate: profile?.birth_date || "",
               locale,
-              stripe_session_id: session.id,
-              user_id: userId,
-              inputs_json: {
-                tool: "ame-soeur",
-                fullName: profile?.first_name || "",
-                birthDate: profile?.birth_date || "",
-                locale,
-              },
+            },
+          });
+          if (readingInsertError) throw readingInsertError;
+          if (userEmail) {
+            await triggerEmail("ame_soeur_collect", userEmail, {
+              firstName: profile?.first_name,
+              token,
+              locale,
             });
-            if (userEmail) {
-              await triggerEmail("ame_soeur_collect", userEmail, {
-                firstName: profile?.first_name,
-                token,
-                locale,
-              });
-            }
           }
         }
         // Subscriptions handled by customer.subscription.created/updated
@@ -226,13 +233,13 @@ serve(async (req) => {
         // Check if this is a new subscription (status transition to active)
         const { data: profileBefore } = await supabase
           .from("profiles")
-          .select("subscription_status, first_name")
+          .select("subscription_status, first_name, birth_date, language")
           .eq("user_id", userId)
           .maybeSingle();
 
         const wasInactive = profileBefore?.subscription_status !== "active";
 
-        await supabase
+        const { error: subscriptionUpdateError } = await supabase
           .from("profiles")
           .update({
             subscription_tier: tier,
@@ -241,11 +248,32 @@ serve(async (req) => {
             stripe_subscription_id: sub.id,
           })
           .eq("user_id", userId);
+        if (subscriptionUpdateError) throw subscriptionUpdateError;
+
+        // The monthly guidance worker reads the dedicated subscriptions table.
+        // Keep it in sync with app subscriptions so the benefit sold on the
+        // pricing page is actually delivered to Star customers.
+        const { data: subscriberUser } = await supabase.auth.admin.getUserById(userId);
+        const subscriberEmail = subscriberUser?.user?.email;
+        if (subscriberEmail) {
+          const { error: guidanceSubscriptionError } = await supabase
+            .from("subscriptions")
+            .upsert({
+              email: subscriberEmail,
+              birth_date: profileBefore?.birth_date || null,
+              full_name: profileBefore?.first_name || null,
+              locale: profileBefore?.language || "fr",
+              stripe_customer_id: typeof sub.customer === "string" ? sub.customer : sub.customer?.id || null,
+              stripe_subscription_id: sub.id,
+              status: sub.status,
+              canceled_at: null,
+            }, { onConflict: "stripe_subscription_id", ignoreDuplicates: false });
+          if (guidanceSubscriptionError) throw guidanceSubscriptionError;
+        }
 
         // Email: payment success for new subscription activation
         if (event.type === "customer.subscription.created" || (wasInactive && sub.status === "active")) {
-          const { data: userData } = await supabase.auth.admin.getUserById(userId);
-          const userEmail = userData?.user?.email;
+          const userEmail = subscriberEmail;
           if (userEmail && priceKey) {
             await triggerEmail("payment_success", userEmail, {
               firstName: profileBefore?.first_name,
@@ -263,7 +291,7 @@ serve(async (req) => {
         const userId = sub.metadata?.supabase_user_id;
         if (!userId) break;
 
-        await supabase
+        const { error: subscriptionDeleteError } = await supabase
           .from("profiles")
           .update({
             subscription_tier: "eveil",
@@ -272,25 +300,43 @@ serve(async (req) => {
             stripe_subscription_id: null,
           })
           .eq("user_id", userId);
+        if (subscriptionDeleteError) throw subscriptionDeleteError;
+        const { error: guidanceDeleteError } = await supabase
+          .from("subscriptions")
+          .update({ status: "canceled", canceled_at: new Date().toISOString() })
+          .eq("stripe_subscription_id", sub.id);
+        if (guidanceDeleteError) throw guidanceDeleteError;
         break;
       }
 
       case "invoice.payment_failed": {
         const invoice = event.data.object as Stripe.Invoice;
         const customerId = invoice.customer as string;
-        await supabase
+        const { error: paymentFailedUpdateError } = await supabase
           .from("profiles")
           .update({ subscription_status: "past_due" })
           .eq("stripe_customer_id", customerId);
+        if (paymentFailedUpdateError) throw paymentFailedUpdateError;
+        if (invoice.subscription) {
+          const subscriptionId = typeof invoice.subscription === "string"
+            ? invoice.subscription
+            : invoice.subscription.id;
+          const { error: guidancePastDueError } = await supabase
+            .from("subscriptions")
+            .update({ status: "past_due" })
+            .eq("stripe_subscription_id", subscriptionId);
+          if (guidancePastDueError) throw guidancePastDueError;
+        }
         break;
       }
     }
 
     // Mark event as processed
-    await supabase
+    const { error: processedUpdateError } = await supabase
       .from("stripe_events")
       .update({ processed: true })
       .eq("stripe_event_id", event.id);
+    if (processedUpdateError) throw processedUpdateError;
 
     return new Response(JSON.stringify({ received: true }), {
       status: 200,

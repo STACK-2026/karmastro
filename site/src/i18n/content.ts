@@ -61,7 +61,7 @@ export type LocaleContent = {
 const fr: LocaleContent = {
   heroRotatingWords: ["ton thème natal", "ta numérologie", "ton karma", "tes transits", "ta compatibilité", "ton chemin de vie"],
   heroBadge: "Astrologie + Numérologie + Karma",
-  heroFreeTeaser: "Offert par les astres · Thème natal + 3 messages Oracle/jour",
+  heroFreeTeaser: "Offert par les astres · Thème natal + 2 messages Oracle/jour",
   nasaBadge: "Calculs astronomiques précision NASA",
   exploreCosmosLabel: "Explorer Le Cosmos",
   features: [
@@ -76,8 +76,8 @@ const fr: LocaleContent = {
   featuresSubtitle: "Un écosystème spirituel qui croise 3 disciplines pour une guidance complète",
   faq: [
     { question: "Qu'est-ce que Karmastro ?", answer: "Karmastro est un écosystème spirituel intelligent qui fusionne astrologie, numérologie et guidance karmique. Tu obtiens un profil cosmique complet basé sur ta date, heure et lieu de naissance, avec l'Oracle disponible 24/7." },
-    { question: "Comment fonctionne L'Oracle ?", answer: "L'Oracle analyse ton thème natal, ton chemin de vie numérologique et tes nœuds lunaires karmiques pour te donner des réponses personnalisées. Tu peux choisir parmi 4 guides : Sibylle, Orion, Séléné ou Pythia." },
-    { question: "Est-ce que Karmastro est gratuit ?", answer: "Oui, la voie Éveil est offerte par les astres : profil cosmique complet, horoscope quotidien et 3 messages Oracle par jour. La voie Étoile à 5,99€/mois débloque l'Oracle illimité et bien plus." },
+    { question: "Comment fonctionne L'Oracle ?", answer: "L'Oracle croise ton thème natal, ton chemin de vie numérologique et tes nœuds lunaires karmiques pour te répondre avec une seule voix cohérente et personnalisée." },
+    { question: "Est-ce que Karmastro est gratuit ?", answer: "Oui, la voie Éveil est offerte par les astres : profil cosmique complet, horoscope quotidien et 2 messages Oracle par jour. La voie Étoile à 5,99€/mois débloque l'Oracle illimité et bien plus." },
     { question: "Quelle est la différence avec un horoscope classique ?", answer: "Un horoscope classique se base uniquement sur ton signe solaire. Karmastro croise 3 disciplines : astrologie (12 planètes, aspects, maisons), numérologie (chemin de vie, expression, âme) et guidance karmique (nœuds lunaires, dettes, cycles)." },
     { question: "Mes données sont-elles protégées ?", answer: "Oui. Tes données personnelles et ton profil cosmique sont chiffrés et stockés de manière sécurisée. Karmastro est conforme au RGPD. Aucune donnée n'est partagée avec des tiers." },
   ],
@@ -95,7 +95,7 @@ const fr: LocaleContent = {
     years: "Depuis les Mésopotamiens jusqu'à Kepler et Swiss Ephemeris",
     precision: "Niveau NASA Jet Propulsion Laboratory",
     tools: "Chemin de vie, thème natal, ascendant, compatibilité et plus",
-    guides: "Sibylle, Orion, Séléné, Pythia - choisis celui qui te parle",
+    guides: "Un Oracle unique qui se souvient de tes échanges",
   },
   footerLegalTitle: "Informations légales",
   footerExploreTitle: "Explorer",
@@ -127,7 +127,7 @@ const fr: LocaleContent = {
 const en: LocaleContent = {
   heroRotatingWords: ["your birth chart", "your numerology", "your karma", "your transits", "your compatibility", "your life path"],
   heroBadge: "Astrology + Numerology + Karma",
-  heroFreeTeaser: "Gifted by the stars · Birth chart + 3 Oracle messages/day",
+  heroFreeTeaser: "Gifted by the stars · Birth chart + 2 Oracle messages/day",
   nasaBadge: "NASA-grade astronomical calculations",
   exploreCosmosLabel: "Explore The Cosmos",
   features: [
@@ -142,8 +142,8 @@ const en: LocaleContent = {
   featuresSubtitle: "A spiritual ecosystem crossing 3 disciplines for complete guidance",
   faq: [
     { question: "What is Karmastro?", answer: "Karmastro is an intelligent spiritual ecosystem that fuses astrology, numerology and karmic guidance. You get a complete cosmic profile based on your birth date, time and location, with the Oracle available 24/7." },
-    { question: "How does The Oracle work?", answer: "The Oracle analyzes your birth chart, numerological life path and karmic lunar nodes to give you personalized answers. You can choose from 4 guides: Sibylle, Orion, Séléné or Pythia." },
-    { question: "Is Karmastro free?", answer: "Yes, the Awakening tier is gifted by the stars: complete cosmic profile, daily horoscope and 3 Oracle messages per day. The Star tier at €5.99/month unlocks unlimited Oracle and much more." },
+    { question: "How does The Oracle work?", answer: "The Oracle combines your birth chart, numerological life path and karmic lunar nodes in one coherent, personalised voice." },
+    { question: "Is Karmastro free?", answer: "Yes, the Awakening tier is gifted by the stars: complete cosmic profile, daily horoscope and 2 Oracle messages per day. The Star tier at €5.99/month unlocks unlimited Oracle and much more." },
     { question: "How is it different from a classic horoscope?", answer: "A classic horoscope is based only on your sun sign. Karmastro crosses 3 disciplines: astrology (12 planets, aspects, houses), numerology (life path, expression, soul) and karmic guidance (lunar nodes, debts, cycles)." },
     { question: "Is my data protected?", answer: "Yes. Your personal data and cosmic profile are encrypted and securely stored. Karmastro is GDPR compliant. No data is shared with third parties." },
   ],
@@ -161,7 +161,7 @@ const en: LocaleContent = {
     years: "From the Mesopotamians to Kepler and Swiss Ephemeris",
     precision: "NASA Jet Propulsion Laboratory level",
     tools: "Life path, birth chart, ascendant, compatibility and more",
-    guides: "Sibylle, Orion, Séléné, Pythia - choose the one who speaks to you",
+    guides: "One Oracle that remembers your conversations",
   },
   footerLegalTitle: "Legal information",
   footerExploreTitle: "Explore",
@@ -193,7 +193,7 @@ const en: LocaleContent = {
 const es: LocaleContent = {
   heroRotatingWords: ["tu carta natal", "tu numerología", "tu karma", "tus tránsitos", "tu compatibilidad", "tu camino de vida"],
   heroBadge: "Astrología + Numerología + Karma",
-  heroFreeTeaser: "Regalado por los astros · Carta natal + 3 mensajes Oráculo/día",
+  heroFreeTeaser: "Regalado por los astros · Carta natal + 2 mensajes Oráculo/día",
   nasaBadge: "Cálculos astronómicos precisión NASA",
   exploreCosmosLabel: "Explorar El Cosmos",
   features: [
@@ -208,8 +208,8 @@ const es: LocaleContent = {
   featuresSubtitle: "Un ecosistema espiritual que cruza 3 disciplinas para una guía completa",
   faq: [
     { question: "¿Qué es Karmastro?", answer: "Karmastro es un ecosistema espiritual inteligente que fusiona astrología, numerología y guía kármica. Obtienes un perfil cósmico completo basado en tu fecha, hora y lugar de nacimiento, con el Oráculo disponible 24/7." },
-    { question: "¿Cómo funciona El Oráculo?", answer: "El Oráculo analiza tu carta natal, tu camino de vida numerológico y tus nodos lunares kármicos para darte respuestas personalizadas. Puedes elegir entre 4 guías: Sibila, Orión, Selene o Pitia." },
-    { question: "¿Karmastro es gratis?", answer: "Sí, la vía Despertar es un regalo de los astros: perfil cósmico completo, horóscopo diario y 3 mensajes Oráculo al día. La vía Estrella a 5,99€/mes desbloquea el Oráculo ilimitado y mucho más." },
+    { question: "¿Cómo funciona El Oráculo?", answer: "El Oráculo combina tu carta natal, tu camino de vida numerológico y tus nodos lunares kármicos en una sola voz coherente y personalizada." },
+    { question: "¿Karmastro es gratis?", answer: "Sí, la vía Despertar es un regalo de los astros: perfil cósmico completo, horóscopo diario y 2 mensajes Oráculo al día. La vía Estrella a 5,99€/mes desbloquea el Oráculo ilimitado y mucho más." },
     { question: "¿Cuál es la diferencia con un horóscopo clásico?", answer: "Un horóscopo clásico se basa solo en tu signo solar. Karmastro cruza 3 disciplinas: astrología (12 planetas, aspectos, casas), numerología (camino de vida, expresión, alma) y guía kármica (nodos lunares, deudas, ciclos)." },
     { question: "¿Mis datos están protegidos?", answer: "Sí. Tus datos personales y perfil cósmico están cifrados y almacenados de forma segura. Karmastro cumple con el RGPD. Ningún dato se comparte con terceros." },
   ],
@@ -227,7 +227,7 @@ const es: LocaleContent = {
     years: "Desde los mesopotámicos hasta Kepler y Swiss Ephemeris",
     precision: "Nivel NASA Jet Propulsion Laboratory",
     tools: "Camino de vida, carta natal, ascendente, compatibilidad y más",
-    guides: "Sibila, Orión, Selene, Pitia - elige el que te habla",
+    guides: "Un Oráculo único que recuerda tus conversaciones",
   },
   footerLegalTitle: "Información legal",
   footerExploreTitle: "Explorar",
@@ -259,7 +259,7 @@ const es: LocaleContent = {
 const pt: LocaleContent = {
   heroRotatingWords: ["o teu mapa natal", "a tua numerologia", "o teu karma", "os teus trânsitos", "a tua compatibilidade", "o teu caminho de vida"],
   heroBadge: "Astrologia + Numerologia + Karma",
-  heroFreeTeaser: "Oferecido pelos astros · Mapa natal + 3 mensagens Oráculo/dia",
+  heroFreeTeaser: "Oferecido pelos astros · Mapa natal + 2 mensagens Oráculo/dia",
   nasaBadge: "Cálculos astronómicos precisão NASA",
   exploreCosmosLabel: "Explorar O Cosmos",
   features: [
@@ -274,8 +274,8 @@ const pt: LocaleContent = {
   featuresSubtitle: "Um ecossistema espiritual que cruza 3 disciplinas para uma orientação completa",
   faq: [
     { question: "O que é Karmastro?", answer: "Karmastro é um ecossistema espiritual inteligente que funde astrologia, numerologia e orientação kármica. Obténs um perfil cósmico completo baseado na tua data, hora e local de nascimento, com o Oráculo disponível 24/7." },
-    { question: "Como funciona O Oráculo?", answer: "O Oráculo analisa o teu mapa natal, caminho de vida numerológico e nodos lunares kármicos para te dar respostas personalizadas. Podes escolher entre 4 guias: Sibila, Órion, Selene ou Pítia." },
-    { question: "Karmastro é gratuito?", answer: "Sim, a via Despertar é oferecida pelos astros: perfil cósmico completo, horóscopo diário e 3 mensagens Oráculo por dia. A via Estrela a 5,99€/mês desbloqueia o Oráculo ilimitado e muito mais." },
+    { question: "Como funciona O Oráculo?", answer: "O Oráculo cruza o teu mapa natal, caminho de vida numerológico e nodos lunares kármicos numa única voz coerente e personalizada." },
+    { question: "Karmastro é gratuito?", answer: "Sim, a via Despertar é oferecida pelos astros: perfil cósmico completo, horóscopo diário e 2 mensagens Oráculo por dia. A via Estrela a 5,99€/mês desbloqueia o Oráculo ilimitado e muito mais." },
     { question: "Qual a diferença de um horóscopo clássico?", answer: "Um horóscopo clássico baseia-se apenas no teu signo solar. Karmastro cruza 3 disciplinas: astrologia (12 planetas, aspetos, casas), numerologia (caminho de vida, expressão, alma) e orientação kármica (nodos lunares, dívidas, ciclos)." },
     { question: "Os meus dados estão protegidos?", answer: "Sim. Os teus dados pessoais e perfil cósmico são encriptados e armazenados de forma segura. Karmastro cumpre o RGPD. Nenhum dado é partilhado com terceiros." },
   ],
@@ -293,7 +293,7 @@ const pt: LocaleContent = {
     years: "Desde os mesopotâmios até Kepler e Swiss Ephemeris",
     precision: "Nível NASA Jet Propulsion Laboratory",
     tools: "Caminho de vida, mapa natal, ascendente, compatibilidade e mais",
-    guides: "Sibila, Órion, Selene, Pítia - escolhe o que te fala",
+    guides: "Um Oráculo único que se lembra das tuas conversas",
   },
   footerLegalTitle: "Informações legais",
   footerExploreTitle: "Explorar",
@@ -325,7 +325,7 @@ const pt: LocaleContent = {
 const de: LocaleContent = {
   heroRotatingWords: ["dein Geburtshoroskop", "deine Numerologie", "dein Karma", "deine Transite", "deine Kompatibilität", "deinen Lebensweg"],
   heroBadge: "Astrologie + Numerologie + Karma",
-  heroFreeTeaser: "Von den Sternen geschenkt · Geburtshoroskop + 3 Orakelnachrichten/Tag",
+  heroFreeTeaser: "Von den Sternen geschenkt · Geburtshoroskop + 2 Orakelnachrichten/Tag",
   nasaBadge: "Astronomische Berechnungen NASA-Präzision",
   exploreCosmosLabel: "Den Kosmos erkunden",
   features: [
@@ -340,8 +340,8 @@ const de: LocaleContent = {
   featuresSubtitle: "Ein spirituelles Ökosystem, das 3 Disziplinen für eine vollständige Führung kreuzt",
   faq: [
     { question: "Was ist Karmastro?", answer: "Karmastro ist ein intelligentes spirituelles Ökosystem, das Astrologie, Numerologie und karmische Führung verschmilzt. Du erhältst ein vollständiges kosmisches Profil basierend auf deinem Geburtsdatum, deiner Geburtszeit und deinem Geburtsort, mit dem Orakel rund um die Uhr verfügbar." },
-    { question: "Wie funktioniert Das Orakel?", answer: "Das Orakel analysiert dein Geburtshoroskop, deinen numerologischen Lebensweg und deine karmischen Mondknoten, um dir personalisierte Antworten zu geben. Du kannst zwischen 4 Führern wählen: Sibylle, Orion, Selene oder Pythia." },
-    { question: "Ist Karmastro kostenlos?", answer: "Ja, der Erwachen-Pfad wird von den Sternen geschenkt: vollständiges kosmisches Profil, tägliches Horoskop und 3 Orakelnachrichten pro Tag. Der Stern-Pfad für 5,99€/Monat schaltet das unbegrenzte Orakel und vieles mehr frei." },
+    { question: "Wie funktioniert Das Orakel?", answer: "Das Orakel verbindet dein Geburtshoroskop, deinen numerologischen Lebensweg und deine karmischen Mondknoten in einer kohärenten, persönlichen Stimme." },
+    { question: "Ist Karmastro kostenlos?", answer: "Ja, der Erwachen-Pfad wird von den Sternen geschenkt: vollständiges kosmisches Profil, tägliches Horoskop und 2 Orakelnachrichten pro Tag. Der Stern-Pfad für 5,99€/Monat schaltet das unbegrenzte Orakel und vieles mehr frei." },
     { question: "Was ist der Unterschied zu einem klassischen Horoskop?", answer: "Ein klassisches Horoskop basiert nur auf deinem Sonnenzeichen. Karmastro kreuzt 3 Disziplinen: Astrologie (12 Planeten, Aspekte, Häuser), Numerologie (Lebensweg, Ausdruck, Seele) und karmische Führung (Mondknoten, Schulden, Zyklen)." },
     { question: "Sind meine Daten geschützt?", answer: "Ja. Deine persönlichen Daten und dein kosmisches Profil werden verschlüsselt und sicher gespeichert. Karmastro ist DSGVO-konform. Keine Daten werden mit Dritten geteilt." },
   ],
@@ -359,7 +359,7 @@ const de: LocaleContent = {
     years: "Von den Mesopotamiern bis Kepler und Swiss Ephemeris",
     precision: "NASA Jet Propulsion Laboratory Niveau",
     tools: "Lebensweg, Geburtshoroskop, Aszendent, Kompatibilität und mehr",
-    guides: "Sibylle, Orion, Selene, Pythia - wähle die, die zu dir spricht",
+    guides: "Ein Orakel, das sich an deine Gespräche erinnert",
   },
   footerLegalTitle: "Rechtliche Informationen",
   footerExploreTitle: "Entdecken",
@@ -391,7 +391,7 @@ const de: LocaleContent = {
 const it: LocaleContent = {
   heroRotatingWords: ["il tuo tema natale", "la tua numerologia", "il tuo karma", "i tuoi transiti", "la tua compatibilità", "il tuo cammino di vita"],
   heroBadge: "Astrologia + Numerologia + Karma",
-  heroFreeTeaser: "Regalato dagli astri · Tema natale + 3 messaggi Oracolo/giorno",
+  heroFreeTeaser: "Regalato dagli astri · Tema natale + 2 messaggi Oracolo/giorno",
   nasaBadge: "Calcoli astronomici precisione NASA",
   exploreCosmosLabel: "Esplora Il Cosmo",
   features: [
@@ -406,8 +406,8 @@ const it: LocaleContent = {
   featuresSubtitle: "Un ecosistema spirituale che incrocia 3 discipline per una guida completa",
   faq: [
     { question: "Cos'è Karmastro?", answer: "Karmastro è un ecosistema spirituale intelligente che fonde astrologia, numerologia e guida karmica. Ottieni un profilo cosmico completo basato sulla tua data, ora e luogo di nascita, con l'Oracolo disponibile 24/7." },
-    { question: "Come funziona L'Oracolo?", answer: "L'Oracolo analizza il tuo tema natale, il tuo cammino di vita numerologico e i tuoi nodi lunari karmici per darti risposte personalizzate. Puoi scegliere tra 4 guide: Sibilla, Orione, Selene o Pizia." },
-    { question: "Karmastro è gratuito?", answer: "Sì, la via del Risveglio è regalata dagli astri: profilo cosmico completo, oroscopo quotidiano e 3 messaggi Oracolo al giorno. La via della Stella a 5,99€/mese sblocca l'Oracolo illimitato e molto altro." },
+    { question: "Come funziona L'Oracolo?", answer: "L'Oracolo unisce il tuo tema natale, il tuo cammino di vita numerologico e i tuoi nodi lunari karmici in un'unica voce coerente e personalizzata." },
+    { question: "Karmastro è gratuito?", answer: "Sì, la via del Risveglio è regalata dagli astri: profilo cosmico completo, oroscopo quotidiano e 2 messaggi Oracolo al giorno. La via della Stella a 5,99€/mese sblocca l'Oracolo illimitato e molto altro." },
     { question: "Qual è la differenza con un oroscopo classico?", answer: "Un oroscopo classico si basa solo sul tuo segno solare. Karmastro incrocia 3 discipline: astrologia (12 pianeti, aspetti, case), numerologia (cammino di vita, espressione, anima) e guida karmica (nodi lunari, debiti, cicli)." },
     { question: "I miei dati sono protetti?", answer: "Sì. I tuoi dati personali e profilo cosmico sono crittografati e archiviati in modo sicuro. Karmastro è conforme al GDPR. Nessun dato viene condiviso con terze parti." },
   ],
@@ -425,7 +425,7 @@ const it: LocaleContent = {
     years: "Dai mesopotamici a Keplero e Swiss Ephemeris",
     precision: "Livello NASA Jet Propulsion Laboratory",
     tools: "Cammino di vita, tema natale, ascendente, compatibilità e altro",
-    guides: "Sibilla, Orione, Selene, Pizia - scegli quella che ti parla",
+    guides: "Un unico Oracolo che ricorda le tue conversazioni",
   },
   footerLegalTitle: "Informazioni legali",
   footerExploreTitle: "Esplorare",
@@ -457,7 +457,7 @@ const it: LocaleContent = {
 const tr: LocaleContent = {
   heroRotatingWords: ["doğum haritanı", "numerolojini", "karmanı", "transitlerini", "uyumunu", "hayat yolunu"],
   heroBadge: "Astroloji + Numeroloji + Karma",
-  heroFreeTeaser: "Yıldızların hediyesi · Doğum haritası + günlük 3 Kahin mesajı",
+  heroFreeTeaser: "Yıldızların hediyesi · Doğum haritası + günlük 2 Kahin mesajı",
   nasaBadge: "NASA hassasiyetinde astronomik hesaplamalar",
   exploreCosmosLabel: "Kozmosu Keşfet",
   features: [
@@ -472,8 +472,8 @@ const tr: LocaleContent = {
   featuresSubtitle: "Eksiksiz bir rehberlik için 3 disiplini birleştiren ruhani bir ekosistem",
   faq: [
     { question: "Karmastro nedir?", answer: "Karmastro, astroloji, numeroloji ve karmik rehberliği birleştiren akıllı bir ruhani ekosistemdir. Doğum tarihin, saatin ve yerine dayalı eksiksiz bir kozmik profil ve 7/24 Kahin erişimi sunar." },
-    { question: "Kahin nasıl çalışır?", answer: "Kahin doğum haritanı, numerolojik hayat yolunu ve karmik ay düğümlerini analiz ederek sana kişiselleştirilmiş yanıtlar verir. 4 rehber arasından seçim yapabilirsin: Sibylle, Orion, Séléné veya Pythia." },
-    { question: "Karmastro ücretsiz mi?", answer: "Evet, Uyanış yolu yıldızların hediyesidir: eksiksiz kozmik profil, günlük burç ve günde 3 Kahin mesajı. Aylık 5,99€ Yıldız yolu sınırsız Kahin'i ve çok daha fazlasını açar." },
+    { question: "Kahin nasıl çalışır?", answer: "Kahin doğum haritanı, numerolojik hayat yolunu ve karmik ay düğümlerini tek ve tutarlı bir kişisel seste birleştirir." },
+    { question: "Karmastro ücretsiz mi?", answer: "Evet, Uyanış yolu yıldızların hediyesidir: eksiksiz kozmik profil, günlük burç ve günde 2 Kahin mesajı. Aylık 5,99€ Yıldız yolu sınırsız Kahin'i ve çok daha fazlasını açar." },
     { question: "Klasik burçtan farkı ne?", answer: "Klasik burç sadece güneş burcuna dayanır. Karmastro 3 disiplini birleştirir: astroloji (12 gezegen, açılar, evler), numeroloji (hayat yolu, ifade, ruh) ve karmik rehberlik (ay düğümleri, borçlar, döngüler)." },
     { question: "Verilerim korunuyor mu?", answer: "Evet. Kişisel verilerin ve kozmik profilin şifrelenerek güvenli şekilde saklanır. Karmastro GDPR uyumludur. Hiçbir veri üçüncü taraflarla paylaşılmaz." },
   ],
@@ -491,7 +491,7 @@ const tr: LocaleContent = {
     years: "Mezopotamyalılardan Kepler'e ve Swiss Ephemeris'e",
     precision: "NASA Jet Propulsion Laboratory seviyesi",
     tools: "Hayat yolu, doğum haritası, yükselen, uyumluluk ve daha fazlası",
-    guides: "Sibylle, Orion, Séléné, Pythia · sana hitap edeni seç",
+    guides: "Konuşmalarını hatırlayan tek bir Kahin",
   },
   footerLegalTitle: "Yasal bilgiler",
   footerExploreTitle: "Keşfet",
@@ -523,7 +523,7 @@ const tr: LocaleContent = {
 const pl: LocaleContent = {
   heroRotatingWords: ["twój horoskop urodzeniowy", "twoja numerologia", "twoja karma", "twoje tranzyty", "twoja kompatybilność", "twoja droga życia"],
   heroBadge: "Astrologia + Numerologia + Karma",
-  heroFreeTeaser: "Dar gwiazd · Horoskop urodzeniowy + 3 wiadomości Wyroczni dziennie",
+  heroFreeTeaser: "Dar gwiazd · Horoskop urodzeniowy + 2 wiadomości Wyroczni dziennie",
   nasaBadge: "Obliczenia astronomiczne precyzji NASA",
   exploreCosmosLabel: "Odkryj Kosmos",
   features: [
@@ -538,8 +538,8 @@ const pl: LocaleContent = {
   featuresSubtitle: "Duchowy ekosystem łączący 3 dyscypliny dla pełnego przewodnictwa",
   faq: [
     { question: "Czym jest Karmastro?", answer: "Karmastro to inteligentny ekosystem duchowy łączący astrologię, numerologię i przewodnictwo karmiczne. Otrzymujesz pełny profil kosmiczny oparty na dacie, godzinie i miejscu urodzenia, z Wyrocznią dostępną 24/7." },
-    { question: "Jak działa Wyrocznia?", answer: "Wyrocznia analizuje twój horoskop urodzeniowy, numerologiczną drogę życia i karmiczne węzły księżycowe, aby dać ci spersonalizowane odpowiedzi. Możesz wybierać spośród 4 przewodników: Sibylle, Orion, Séléné lub Pythia." },
-    { question: "Czy Karmastro jest darmowe?", answer: "Tak, ścieżka Przebudzenia jest darem gwiazd: pełny profil kosmiczny, codzienny horoskop i 3 wiadomości Wyroczni dziennie. Ścieżka Gwiazdy za 5,99€/miesiąc odblokowuje nieograniczoną Wyrocznię i wiele więcej." },
+    { question: "Jak działa Wyrocznia?", answer: "Wyrocznia łączy twój horoskop urodzeniowy, numerologiczną drogę życia i karmiczne węzły księżycowe w jeden spójny, osobisty głos." },
+    { question: "Czy Karmastro jest darmowe?", answer: "Tak, ścieżka Przebudzenia jest darem gwiazd: pełny profil kosmiczny, codzienny horoskop i 2 wiadomości Wyroczni dziennie. Ścieżka Gwiazdy za 5,99€/miesiąc odblokowuje nieograniczoną Wyrocznię i wiele więcej." },
     { question: "Czym różni się od klasycznego horoskopu?", answer: "Klasyczny horoskop opiera się tylko na znaku słonecznym. Karmastro łączy 3 dyscypliny: astrologię (12 planet, aspekty, domy), numerologię (droga życia, ekspresja, dusza) i przewodnictwo karmiczne (węzły księżycowe, długi, cykle)." },
     { question: "Czy moje dane są chronione?", answer: "Tak. Twoje dane osobowe i profil kosmiczny są szyfrowane i bezpiecznie przechowywane. Karmastro jest zgodne z RODO. Żadne dane nie są udostępniane stronom trzecim." },
   ],
@@ -557,7 +557,7 @@ const pl: LocaleContent = {
     years: "Od Mezopotamczyków przez Keplera do Swiss Ephemeris",
     precision: "Poziom NASA Jet Propulsion Laboratory",
     tools: "Droga życia, horoskop urodzeniowy, ascendent, kompatybilność i więcej",
-    guides: "Sibylle, Orion, Séléné, Pythia · wybierz tego, który do ciebie przemawia",
+    guides: "Jedna Wyrocznia, która pamięta twoje rozmowy",
   },
   footerLegalTitle: "Informacje prawne",
   footerExploreTitle: "Odkrywaj",
@@ -589,7 +589,7 @@ const pl: LocaleContent = {
 const ru: LocaleContent = {
   heroRotatingWords: ["твою натальную карту", "твою нумерологию", "твою карму", "твои транзиты", "твою совместимость", "твой путь жизни"],
   heroBadge: "Астрология + Нумерология + Карма",
-  heroFreeTeaser: "Дар звёзд · Натальная карта + 3 сообщения Оракула в день",
+  heroFreeTeaser: "Дар звёзд · Натальная карта + 2 сообщения Оракула в день",
   nasaBadge: "Астрономические расчёты точности NASA",
   exploreCosmosLabel: "Исследовать Космос",
   features: [
@@ -604,8 +604,8 @@ const ru: LocaleContent = {
   featuresSubtitle: "Духовная экосистема, объединяющая 3 дисциплины для полного руководства",
   faq: [
     { question: "Что такое Karmastro?", answer: "Karmastro - это умная духовная экосистема, объединяющая астрологию, нумерологию и кармическое руководство. Ты получаешь полный космический профиль на основе твоей даты, времени и места рождения, с Оракулом 24/7." },
-    { question: "Как работает Оракул?", answer: "Оракул анализирует твою натальную карту, нумерологический путь жизни и кармические лунные узлы, чтобы дать персонализированные ответы. Можно выбрать из 4 гидов: Сибилла, Орион, Селена или Пифия." },
-    { question: "Karmastro бесплатный?", answer: "Да, путь Пробуждения - дар звёзд: полный космический профиль, ежедневный гороскоп и 3 сообщения Оракула в день. Путь Звезды за 5,99€/месяц открывает безлимитного Оракула и многое другое." },
+    { question: "Как работает Оракул?", answer: "Оракул объединяет твою натальную карту, нумерологический путь жизни и кармические лунные узлы в одном цельном и личном голосе." },
+    { question: "Karmastro бесплатный?", answer: "Да, путь Пробуждения - дар звёзд: полный космический профиль, ежедневный гороскоп и 2 сообщения Оракула в день. Путь Звезды за 5,99€/месяц открывает безлимитного Оракула и многое другое." },
     { question: "Чем отличается от классического гороскопа?", answer: "Классический гороскоп опирается только на солнечный знак. Karmastro объединяет 3 дисциплины: астрологию (12 планет, аспекты, дома), нумерологию (путь жизни, выражение, душа) и кармическое руководство (лунные узлы, долги, циклы)." },
     { question: "Мои данные защищены?", answer: "Да. Твои личные данные и космический профиль зашифрованы и безопасно хранятся. Karmastro соответствует GDPR. Никакие данные не передаются третьим лицам." },
   ],
@@ -623,7 +623,7 @@ const ru: LocaleContent = {
     years: "От месопотамцев до Кеплера и Swiss Ephemeris",
     precision: "Уровень NASA Jet Propulsion Laboratory",
     tools: "Путь жизни, натальная карта, асцендент, совместимость и ещё",
-    guides: "Сибилла, Орион, Селена, Пифия · выбери того, кто говорит с тобой",
+    guides: "Единый Оракул, который помнит ваши разговоры",
   },
   footerLegalTitle: "Правовая информация",
   footerExploreTitle: "Исследовать",
@@ -655,7 +655,7 @@ const ru: LocaleContent = {
 const ja: LocaleContent = {
   heroRotatingWords: ["あなたの出生図", "あなたの数秘術", "あなたのカルマ", "あなたのトランジット", "あなたの相性", "あなたの人生の道"],
   heroBadge: "占星術 + 数秘術 + カルマ",
-  heroFreeTeaser: "星々からの贈り物 · 出生図 + 1日3つのオラクルメッセージ",
+  heroFreeTeaser: "星々からの贈り物 · 出生図 + 1日2つのオラクルメッセージ",
   nasaBadge: "NASA精度の天文計算",
   exploreCosmosLabel: "コスモスを探索",
   features: [
@@ -670,8 +670,8 @@ const ja: LocaleContent = {
   featuresSubtitle: "3つの分野を組み合わせた完全なガイダンスのためのスピリチュアルなエコシステム",
   faq: [
     { question: "Karmastroとは?", answer: "Karmastroは、占星術、数秘術、カルマ的ガイダンスを融合したインテリジェントなスピリチュアルエコシステムです。生年月日、時刻、場所に基づいた完全なコスミックプロファイルと、24時間利用可能なオラクルを提供します。" },
-    { question: "オラクルはどう動く?", answer: "オラクルはあなたの出生図、数秘術の人生の道、カルマ的な月のノードを分析し、パーソナライズされた回答を提供します。4人のガイドから選べます: Sibylle、Orion、Séléné、Pythia。" },
-    { question: "Karmastroは無料?", answer: "はい、目覚めの道は星々からの贈り物です: 完全なコスミックプロファイル、毎日の星占い、1日3つのオラクルメッセージ。月額5,99€の星の道では無制限のオラクルなどがアンロックされます。" },
+    { question: "オラクルはどう動く?", answer: "オラクルは出生図、数秘術の人生の道、カルマ的な月のノードを一つの一貫した個人的な声に統合します。" },
+    { question: "Karmastroは無料?", answer: "はい、目覚めの道は星々からの贈り物です: 完全なコスミックプロファイル、毎日の星占い、1日2つのオラクルメッセージ。月額5,99€の星の道では無制限のオラクルなどがアンロックされます。" },
     { question: "一般的な星占いとの違いは?", answer: "一般的な星占いは太陽星座のみに基づきます。Karmastroは3つの分野を融合します: 占星術(12惑星、アスペクト、ハウス)、数秘術(人生の道、表現、魂)、カルマ的ガイダンス(月のノード、負債、サイクル)。" },
     { question: "データは保護されていますか?", answer: "はい。個人データとコスミックプロファイルは暗号化され安全に保管されます。KarmastroはGDPR準拠です。第三者とデータが共有されることはありません。" },
   ],
@@ -689,7 +689,7 @@ const ja: LocaleContent = {
     years: "メソポタミア人からケプラー、Swiss Ephemerisへ",
     precision: "NASAジェット推進研究所レベル",
     tools: "人生の道、出生図、アセンダント、相性など",
-    guides: "Sibylle、Orion、Séléné、Pythia · あなたに語りかける者を選んで",
+    guides: "会話を覚えている一つのオラクル",
   },
   footerLegalTitle: "法的情報",
   footerExploreTitle: "探索",
@@ -721,7 +721,7 @@ const ja: LocaleContent = {
 const ar: LocaleContent = {
   heroRotatingWords: ["خريطة ولادتك", "علم أعدادك", "كارماك", "عبوراتك", "توافقك", "مسار حياتك"],
   heroBadge: "التنجيم + علم الأعداد + الكارما",
-  heroFreeTeaser: "هدية من النجوم · خريطة ولادة + 3 رسائل من العراف يومياً",
+  heroFreeTeaser: "هدية من النجوم · خريطة ولادة + رسالتان من العراف يومياً",
   nasaBadge: "حسابات فلكية بدقة ناسا",
   exploreCosmosLabel: "استكشف الكون",
   features: [
@@ -736,8 +736,8 @@ const ar: LocaleContent = {
   featuresSubtitle: "منظومة روحية تدمج 3 علوم لإرشاد متكامل",
   faq: [
     { question: "ما هو Karmastro؟", answer: "Karmastro هي منظومة روحية ذكية تدمج التنجيم وعلم الأعداد والإرشاد الكرمي. تحصل على ملف شخصي كوني كامل بناءً على تاريخ وساعة ومكان ولادتك، مع عراف متاح على مدار الساعة." },
-    { question: "كيف يعمل العراف؟", answer: "العراف يحلل خريطة ولادتك، مسار حياتك العددي والعقد القمرية الكرمية ليعطيك إجابات شخصية. يمكنك الاختيار من 4 مرشدين: Sibylle، Orion، Séléné أو Pythia." },
-    { question: "هل Karmastro مجاني؟", answer: "نعم، طريق الصحوة هدية من النجوم: ملف كوني كامل، برج يومي و3 رسائل من العراف يومياً. طريق النجمة بـ 5,99€/شهرياً يفتح العراف اللامحدود والكثير غير ذلك." },
+    { question: "كيف يعمل العراف؟", answer: "يجمع العراف خريطة ولادتك ومسار حياتك العددي والعقد القمرية الكرمية في صوت واحد متماسك وشخصي." },
+    { question: "هل Karmastro مجاني؟", answer: "نعم، طريق الصحوة هدية من النجوم: ملف كوني كامل، برج يومي ورسالتان من العراف يومياً. طريق النجمة بـ 5,99€/شهرياً يفتح العراف اللامحدود والكثير غير ذلك." },
     { question: "ما الفرق عن برج تقليدي؟", answer: "البرج التقليدي يعتمد على البرج الشمسي فقط. Karmastro يدمج 3 علوم: التنجيم (12 كوكباً، جوانب، بيوت)، علم الأعداد (مسار حياة، تعبير، روح) والإرشاد الكرمي (عقد قمرية، ديون، دورات)." },
     { question: "هل بياناتي محمية؟", answer: "نعم. بياناتك الشخصية وملفك الكوني مشفرة ومخزنة بأمان. Karmastro متوافق مع GDPR. لا تتم مشاركة أي بيانات مع أطراف ثالثة." },
   ],
@@ -755,7 +755,7 @@ const ar: LocaleContent = {
     years: "من بلاد ما بين النهرين إلى كبلر و Swiss Ephemeris",
     precision: "مستوى مختبر الدفع النفاث التابع لناسا",
     tools: "مسار الحياة، خريطة ولادة، الطالع، التوافق والمزيد",
-    guides: "Sibylle، Orion، Séléné، Pythia · اختر من يخاطبك",
+    guides: "عرّاف واحد يتذكر محادثاتك",
   },
   footerLegalTitle: "معلومات قانونية",
   footerExploreTitle: "استكشف",

@@ -5,7 +5,7 @@
 # Génère un token frais sur https://supabase.com/dashboard/account/tokens
 # Déploie :
 #   - Migration SQL (les 3 tables analytics + save_natal_chart)
-#   - Edge functions get-natal-chart + oracle-chat (recharge pour mise à jour)
+#   - Edge functions de calcul, Oracle, facturation et fulfillment Stripe
 
 set -e
 
@@ -54,8 +54,10 @@ echo "▶ Deploy edge function : get-natal-chart"
 $SUPABASE functions deploy get-natal-chart --no-verify-jwt 2>&1 | tail -5
 echo
 
-echo "▶ Deploy edge function : oracle-chat (update)"
-$SUPABASE functions deploy oracle-chat --no-verify-jwt 2>&1 | tail -5
+echo "▶ Deploy edge functions : oracle + billing + fulfillment"
+for fn in oracle-chat oracle-history claim-anon-session billing-portal stripe-checkout stripe-webhook reading-webhook; do
+  $SUPABASE functions deploy "$fn" --no-verify-jwt 2>&1 | tail -5
+done
 echo
 
 # ─── 3. Audit final ────────────────────────────────────

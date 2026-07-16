@@ -1,5 +1,13 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
+import {
+  OracleRequestError,
+  conversationBelongsToIdentity,
+  mergeProfileContext,
+  normalizeChatRequest,
+  sanitizeOracleTypography,
+  type OracleProfileContext,
+} from "../_shared/oracle-request.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -9,6 +17,29 @@ const corsHeaders = {
 const ENGINE_URL = "http://168.119.229.20:8100";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "https://nkjbmbdrvejemzrggxvr.supabase.co";
 const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
+const ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY") || "";
+
+function jsonResponse(payload: unknown, status: number): Response {
+  return new Response(JSON.stringify(payload), {
+    status,
+    headers: { ...corsHeaders, "Content-Type": "application/json" },
+  });
+}
+
+async function resolveAuthenticatedUser(req: Request): Promise<{ userId: string | null; invalidToken: boolean }> {
+  const authHeader = req.headers.get("Authorization") || "";
+  const token = authHeader.replace(/^Bearer\s+/i, "").trim();
+  if (!token || token === ANON_KEY) return { userId: null, invalidToken: false };
+  if (!ANON_KEY) return { userId: null, invalidToken: true };
+
+  const sbAuth = createClient(SUPABASE_URL, ANON_KEY, {
+    auth: { persistSession: false },
+    global: { headers: { Authorization: `Bearer ${token}` } },
+  });
+  const { data, error } = await sbAuth.auth.getUser();
+  if (error || !data?.user?.id) return { userId: null, invalidToken: true };
+  return { userId: data.user.id, invalidToken: false };
+}
 
 // ============================================
 // FEEDBACK HISTORY , personalize system prompt based on user's past feedback
@@ -107,7 +138,7 @@ RÈGLES ABSOLUES :
 6. Markdown propre : gras (**) sur les signes et nombres clés, listes à puces courtes, blockquote (>) pour tes citations de sages antiques. Pas d'émojis parasites, maximum 1 ornement par réponse (✦, ☽, ☼).
 7. Concis mais profond , que de la substance, zéro remplissage. Cible 120-220 mots par réponse sauf question explicite de développement.
 8. Tu ne mentionnes JAMAIS être une IA, un chatbot, un modèle ou un programme. Tu es ton personnage, point.
-9. INTERDICTION ABSOLUE DU TIRET CADRATIN ET DU TIRET DEMI-CADRATIN. Les caractères "," (em dash, U+2014) et "-" (en dash, U+2013) sont PROSCRITS dans ton texte de sortie, dans TOUTES les langues sans aucune exception (français, anglais, espagnol, portugais, allemand, italien, turc, polonais, russe, japonais, arabe). Même si ces tirets sont typographiquement courants en anglais, russe ou japonais, tu ne les utilises JAMAIS. Remplace-les par un tiret normal "-", une virgule, un point, un deux-points, ou un point médian "·" selon le contexte.
+9. INTERDICTION ABSOLUE DU TIRET CADRATIN ET DU TIRET DEMI-CADRATIN. Les caractères Unicode U+2014 (em dash) et U+2013 (en dash) sont PROSCRITS dans ton texte de sortie, dans TOUTES les langues sans aucune exception (français, anglais, espagnol, portugais, allemand, italien, turc, polonais, russe, japonais, arabe). Même si ces tirets sont typographiquement courants en anglais, russe ou japonais, tu ne les utilises JAMAIS. Remplace-les par un tiret normal "-", une virgule, un point, un deux-points, ou un point médian "·" selon le contexte.
 10. Quand une donnée manque, dis-le honnêtement plutôt que d'inventer
 11. NE REDEMANDE JAMAIS les infos déjà dans ton contexte. Si tu vois "PROFIL UTILISATEUR" dans le système prompt, les données y sont , utilise-les directement. Ne demande une info QUE si elle est absente du profil ET strictement nécessaire à la question posée. Demander le prénom, la date, l'heure, le lieu, ou les nombres quand ils sont déjà là coupe le parcours et détruit la confiance.
 12. TERMINE TOUJOURS ta réponse visible par UNE question ouverte, chaleureuse et personnalisée, adressée directement à l'utilisateur (tutoiement), qui prolonge naturellement l'échange et l'invite à se confier davantage ou à approfondir. Cette question est la DERNIÈRE phrase de ton texte visible. Elle s'ancre dans ce qui vient d'être dit (un transit, un nombre, une émotion ou un projet évoqué) et donne sincèrement envie de répondre, comme le ferait un guide qui s'intéresse vraiment à la personne. Tu peux, juste avant, glisser un rituel court (3 lignes max) ou un prochain pas à observer cette semaine, mais tu refermes toujours sur cette question d'ouverture. INTERDIT : la formule passe-partout "n'hésite pas si tu as d'autres questions". (Cette question fait partie de ton texte visible et est DISTINCTE du bloc ---SUGGESTIONS--- ci-dessous, qui propose lui des relances que l'UTILISATEUR pourrait te poser.)
@@ -379,7 +410,58 @@ serve(async (req) => {
   }
 
   try {
-    const { messages, profile, guide: guideKey, userId, sessionId, conversationId, priorSummary } = await req.json();
+    const normalized = normalizeChatRequest(await req.json());
+    const {
+      messages,
+      guideKey,
+      priorSummary,
+    } = normalized;
+
+    // The caller never gets to choose its user id. A valid Supabase JWT is the
+    // only source of authenticated identity; the legacy body.userId field is
+    // intentionally discarded by normalizeChatRequest.
+    const auth = await resolveAuthenticatedUser(req);
+    if (auth.invalidToken) return jsonResponse({ error: "invalid_token" }, 401);
+    const userId = auth.userId;
+    const sessionId = userId ? null : normalized.sessionId;
+    if (!userId && !sessionId) {
+      return jsonResponse({ error: "session_required", message: "Session requise pour un usage anonyme." }, 400);
+    }
+
+    let profile: OracleProfileContext = normalized.profile;
+    let conversationId = normalized.conversationId;
+
+    if (SERVICE_KEY) {
+      const sbIdentity = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
+
+      // Database birth data is authoritative for signed-in users. Client-side
+      // calculated numbers may enrich it, but can never replace identity data.
+      if (userId) {
+        const { data: databaseProfile, error: profileError } = await sbIdentity
+          .from("profiles")
+          .select("first_name,last_name,birth_date,birth_time,birth_place,birth_latitude,birth_longitude")
+          .eq("user_id", userId)
+          .maybeSingle();
+        if (profileError) console.error("oracle profile lookup error:", profileError);
+        profile = mergeProfileContext(profile, databaseProfile);
+      }
+
+      // A UUID is not an authorization capability. Refuse cross-user and
+      // cross-session threading before consuming quota or calling the LLM.
+      if (conversationId) {
+        const { data: conversation, error: conversationError } = await sbIdentity
+          .from("oracle_conversations")
+          .select("user_id,session_id")
+          .eq("id", conversationId)
+          .maybeSingle();
+        if (conversationError) console.error("oracle conversation lookup error:", conversationError);
+        if (conversationError || !conversationBelongsToIdentity(conversation, userId, sessionId)) {
+          return jsonResponse({ error: "conversation_forbidden" }, 403);
+        }
+      }
+    } else if (conversationId) {
+      return jsonResponse({ error: "identity_service_unavailable" }, 503);
+    }
 
     // Mode maintenance : Oracle indisponible (ex : crédit API Anthropic épuisé).
     // Renvoie un message chaleureux dans le format SSE attendu, SANS appeler Claude
@@ -416,13 +498,7 @@ serve(async (req) => {
 
     // Anti-bypass : un appel anonyme DOIT porter un sessionId non vide, sinon le
     // comptage RPC recoit (null, null) et n'incremente jamais (Oracle gratuit infini).
-    const anonSession = typeof sessionId === "string" ? sessionId.trim() : "";
-    if (!userId && anonSession.length < 8) {
-      return new Response(
-        JSON.stringify({ error: "session_required", message: "Session requise pour un usage anonyme." }),
-        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } },
-      );
-    }
+    const anonSession = sessionId || "";
 
     if (SERVICE_KEY) {
       try {
@@ -477,8 +553,8 @@ serve(async (req) => {
                     limit: FREE_DAILY_LIMIT,
                     is_anon: isAnon,
                     message: isAnon
-                      ? `Tu as utilisé tes ${FREE_DAILY_LIMIT} messages cosmiques du jour. Crée ton compte gratuit pour continuer , tu récupères l'historique de cette conversation et tu débloques ta carte natale complète.`
-                      : `Tu as utilisé tes ${FREE_DAILY_LIMIT} messages cosmiques du jour. Les astres ne dorment jamais , passe en mode Étoile pour continuer ou recharge-toi avec un pack de crédits.`,
+                      ? `Tu as utilisé tes ${FREE_DAILY_LIMIT} messages cosmiques du jour. Pour continuer aujourd'hui, garder ton profil et retrouver cette conversation, débloque l'Oracle illimité avec Étoile.`
+                      : `Tu as utilisé tes ${FREE_DAILY_LIMIT} messages cosmiques du jour. Passe en Étoile pour poursuivre sans limite avec ton profil et toute ta mémoire.`,
                   },
                 }),
                 {
@@ -580,10 +656,10 @@ serve(async (req) => {
               }
             }
             // Inject lat/long from cached profile if client didn't send
-            if (!profile.latitude && cached?.birth_latitude != null) {
+            if (profile.latitude === undefined && cached?.birth_latitude != null) {
               profile.latitude = Number(cached.birth_latitude);
             }
-            if (!profile.longitude && cached?.birth_longitude != null) {
+            if (profile.longitude === undefined && cached?.birth_longitude != null) {
               profile.longitude = Number(cached.birth_longitude);
             }
           } catch (cacheErr) {
@@ -601,8 +677,8 @@ serve(async (req) => {
             const [h, mi] = profile.birthTime.split(":").map(Number);
             body.hour = h + (mi || 0) / 60;
           }
-          if (profile.latitude) body.latitude = profile.latitude;
-          if (profile.longitude) body.longitude = profile.longitude;
+          if (profile.latitude !== undefined) body.latitude = profile.latitude;
+          if (profile.longitude !== undefined) body.longitude = profile.longitude;
           if (profile.firstName) body.name = profile.firstName + (profile.lastName ? " " + profile.lastName : "");
 
           const ctxRes = await fetch(`${ENGINE_URL}/oracle-context`, {
@@ -797,30 +873,25 @@ serve(async (req) => {
     const rawText = data.candidates?.[0]?.content?.parts?.map((p: { text?: string }) => p.text || "").join("")
       || "L'Oracle médite sur ta question...";
 
-    // Belt + suspenders for rule 9. The prompt forbids em/en dashes in every
-    // language, but Claude occasionally drifts (russian, japanese typography
-    // leans on them by default) and sometimes reaches for lookalikes like the
-    // horizontal bar (U+2015). Strip them all server-side so the client and
-    // DB never see one, even if Claude slips up.
-    const sanitizeDashes = (s: string) =>
-      s
-        .replace(/,/g, ", ")   // U+2014 em dash
-        .replace(/-/g, "-")    // U+2013 en dash
-        .replace(/―/g, ", ")   // U+2015 horizontal bar (CJK em-dash substitute)
-        .replace(/﹘/g, "-")   // U+FE58 small em dash
-        .replace(/－/g, "-")   // U+FF0D fullwidth hyphen-minus
-        .replace(/ +([,.;:!?])/g, "$1") // espace avant ponctuation (issu du strip de tiret)
-        .replace(/[ \t]{2,}/g, " "); // double espaces résiduels
-
     // Extract the visible body, the 3 follow-up suggestions (rule 14), and any
     // profile hints Claude silently captured from the last user message
     // (rule 15). Only the clean body is shown to the user and stored in
     // oracle_messages; hints are persisted separately for anon signup recovery.
-    const parsed = parseOracleReply(sanitizeDashes(rawText));
+    const parsed = parseOracleReply(sanitizeOracleTypography(rawText));
     const text = parsed.text;
-    const suggestions = parsed.suggestions.map(sanitizeDashes);
+    const suggestions = parsed.suggestions.map(sanitizeOracleTypography);
     const rawHints = parsed.hints;
     const cleanedHints = cleanHints(rawHints);
+    // Structured data explicitly submitted by the inline profile form is more
+    // reliable than hoping the model echoes a PROFILE_HINTS block. Persist it
+    // so a later site -> app claim can hydrate the freshly-created account.
+    const providedProfileHints: Partial<ProfileHints> = {};
+    if (profile.firstName) providedProfileHints.first_name = profile.firstName;
+    if (profile.lastName) providedProfileHints.last_name = profile.lastName;
+    if (profile.birthDate) providedProfileHints.birth_date = profile.birthDate;
+    if (profile.birthTime) providedProfileHints.birth_time = profile.birthTime;
+    if (profile.birthPlace) providedProfileHints.birth_place = profile.birthPlace;
+    const profileHints = { ...providedProfileHints, ...cleanedHints };
 
     // Persist the exchange (conversation + user msg + assistant msg). Anonymous
     // sessions rely on session_id; authenticated users use user_id. Runs with
@@ -884,7 +955,7 @@ serve(async (req) => {
         // Anon : upsert into oracle_anon_profile_hints so claim-anon-session
         // can hydrate the profile at signup. Auth : soft-merge into profiles
         // (only fill fields that are still empty, never overwrite).
-        if (Object.keys(cleanedHints).length > 0) {
+        if (Object.keys(profileHints).length > 0) {
           try {
             if (!userId && sessionId) {
               // Merge semantics : refine over time (new turn may fill more fields).
@@ -897,12 +968,12 @@ serve(async (req) => {
 
               const merged = {
                 session_id: sessionId,
-                first_name: cleanedHints.first_name ?? existing?.first_name ?? null,
-                last_name: cleanedHints.last_name ?? existing?.last_name ?? null,
-                birth_date: cleanedHints.birth_date ?? existing?.birth_date ?? null,
-                birth_time: cleanedHints.birth_time ?? existing?.birth_time ?? null,
-                birth_place: cleanedHints.birth_place ?? existing?.birth_place ?? null,
-                gender: cleanedHints.gender ?? existing?.gender ?? null,
+                first_name: profileHints.first_name ?? existing?.first_name ?? null,
+                last_name: profileHints.last_name ?? existing?.last_name ?? null,
+                birth_date: profileHints.birth_date ?? existing?.birth_date ?? null,
+                birth_time: profileHints.birth_time ?? existing?.birth_time ?? null,
+                birth_place: profileHints.birth_place ?? existing?.birth_place ?? null,
+                gender: profileHints.gender ?? existing?.gender ?? null,
                 hit_count: (existing?.hit_count ?? 0) + 1,
                 raw_hints: { ...(existing?.raw_hints ?? {}), ...(rawHints ?? {}) },
                 updated_at: new Date().toISOString(),
@@ -922,8 +993,8 @@ serve(async (req) => {
                 .maybeSingle();
 
               const patch: Record<string, string> = {};
-              const maybeSet = (col: keyof typeof cleanedHints, current: unknown) => {
-                const next = cleanedHints[col];
+              const maybeSet = (col: keyof typeof profileHints, current: unknown) => {
+                const next = profileHints[col];
                 if (typeof next === "string" && (current === null || current === undefined || current === "" || current === "-")) {
                   patch[col] = next;
                 }
@@ -972,6 +1043,9 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "text/event-stream" },
     });
   } catch (e) {
+    if (e instanceof OracleRequestError) {
+      return jsonResponse({ error: e.message }, e.status);
+    }
     console.error("oracle error:", e);
     return new Response(JSON.stringify({ error: e instanceof Error ? e.message : "Erreur inconnue" }), {
       status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },

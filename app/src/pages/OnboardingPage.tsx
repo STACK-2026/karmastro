@@ -14,6 +14,7 @@ import { trackEvent } from "@/lib/tracker";
 import StarField from "@/components/StarField";
 import { ZodiacSymbol } from "@/components/ZodiacSymbol";
 import { useT, type UiKey } from "@/i18n/ui";
+import { clearPostAuthPath, getPostAuthPath } from "@/lib/postAuth";
 
 const ONBOARDING_STORAGE_KEY = "km_onboarding";
 
@@ -69,7 +70,8 @@ const OnboardingPage = () => {
   const [gender, setGender] = useState("");
   const [interests, setInterests] = useState<string[]>([]);
   const [level, setLevel] = useState("débutant");
-  const [dailyOptIn, setDailyOptIn] = useState(true);
+  // Marketing email consent must be an explicit action, never pre-selected.
+  const [dailyOptIn, setDailyOptIn] = useState(false);
 
   // Step 4: Reveal
   const [revealPhase, setRevealPhase] = useState(0);
@@ -263,7 +265,9 @@ const OnboardingPage = () => {
       }
       // Clean up session storage now that data is in DB
       try { sessionStorage.removeItem(ONBOARDING_STORAGE_KEY); } catch {}
-      navigate("/dashboard");
+      const destination = getPostAuthPath();
+      clearPostAuthPath();
+      navigate(destination);
     } catch (e: any) {
       toast({ title: t("onboarding.toast_error_title"), description: e.message, variant: "destructive" });
     } finally {

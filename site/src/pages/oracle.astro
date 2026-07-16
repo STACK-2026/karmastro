@@ -27,16 +27,31 @@ const jsonLd = [
       <p class="text-lg text-white/70 max-w-xl mx-auto leading-relaxed">
         Pose ta question. L'Oracle lit le ciel et les nombres pour te répondre, à l'instant. Gratuit, sans inscription.
       </p>
+      <a data-oracle-handoff data-next="/oracle" href="https://app.karmastro.com/auth?next=%2Foracle" class="inline-block mt-4 text-sm text-amber-300/80 hover:text-amber-300 underline underline-offset-4">
+        Tu as déjà un profil ? Ouvre ton Oracle personnalisé
+      </a>
     </header>
 
     <div id="oracle-box" class="rounded-3xl border border-amber-300/20 bg-[#0f0a1e]/40 overflow-hidden">
       <div id="oracle-thread" class="px-4 md:px-6 py-6 space-y-4 min-h-[280px] max-h-[60vh] overflow-y-auto">
         <div id="oracle-empty" class="text-center py-8">
           <p class="text-4xl mb-4">✦</p>
-          <p class="text-white/70 mb-5 text-sm">Par quoi commencer ? Essaie une de ces questions :</p>
+          <div class="max-w-lg mx-auto mb-6 rounded-2xl border border-amber-300/25 bg-gradient-to-br from-amber-300/[0.07] to-purple-400/[0.06] p-4 text-left">
+            <p class="font-serif text-lg text-white text-center mb-1">Pour que l'Oracle parle vraiment de toi</p>
+            <p class="text-xs text-white/60 text-center mb-4">Prénom et date suffisent. L'heure et la ville rendent le thème natal plus précis.</p>
+            <form id="oracle-profile-form" class="grid sm:grid-cols-2 gap-2">
+              <input id="oracle-first-name" type="text" maxlength="60" required autocomplete="given-name" placeholder="Ton prénom" class="px-3 py-2.5 rounded-xl bg-white/[0.06] border border-white/15 text-white placeholder:text-white/40 focus:border-amber-300/60 focus:outline-none text-sm" />
+              <input id="oracle-birth-date" type="date" required autocomplete="bday" aria-label="Date de naissance" class="px-3 py-2.5 rounded-xl bg-white/[0.06] border border-white/15 text-white focus:border-amber-300/60 focus:outline-none text-sm" />
+              <input id="oracle-birth-time" type="time" autocomplete="off" aria-label="Heure de naissance facultative" class="px-3 py-2.5 rounded-xl bg-white/[0.06] border border-white/15 text-white focus:border-amber-300/60 focus:outline-none text-sm" />
+              <input id="oracle-birth-place" type="text" maxlength="120" autocomplete="address-level2" placeholder="Ville de naissance (facultatif)" class="px-3 py-2.5 rounded-xl bg-white/[0.06] border border-white/15 text-white placeholder:text-white/40 focus:border-amber-300/60 focus:outline-none text-sm" />
+              <button type="submit" class="sm:col-span-2 mt-1 px-5 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">Lire mon ciel maintenant ✦</button>
+            </form>
+            <p id="oracle-profile-status" class="text-[11px] text-amber-100/65 text-center mt-2">Enregistrées pour personnaliser cet échange et ton profil si tu crées un compte.</p>
+          </div>
+          <p class="text-white/70 mb-5 text-sm">Ou commence avec une question :</p>
           <div class="flex flex-wrap gap-2 justify-center" id="oracle-starters">
-            <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-q="Que disent les astres pour moi en ce moment ?">Que disent les astres pour moi ?</button>
-            <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-q="Je suis né(e) le 14 mars 1990, que révèle mon chemin de vie ?">Mon chemin de vie ?</button>
+            <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-personal="true" data-q="Que disent les astres pour moi en ce moment ?">Que disent les astres pour moi ?</button>
+            <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-personal="true" data-q="Que révèle mon chemin de vie ?">Mon chemin de vie ?</button>
             <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-q="Un conseil pour ma semaine ?">Un conseil pour ma semaine ?</button>
           </div>
         </div>
@@ -50,11 +65,11 @@ const jsonLd = [
     <div id="oracle-suggestions" class="flex flex-wrap gap-2 justify-center mt-4"></div>
 
     <div class="mt-10 p-5 rounded-2xl border border-amber-300/30 bg-gradient-to-r from-purple-400/10 to-amber-300/10 text-center">
-      <p class="font-serif text-base text-white mb-1">Envie d'aller plus loin que quelques messages ?</p>
-      <p class="text-xs text-white/60 mb-4 max-w-md mx-auto leading-relaxed">L'Oracle te donne un aperçu. Pour une lecture complète, écrite et personnalisée de ton profil, calcule-le gratuitement, puis débloque ta lecture.</p>
+      <p class="font-serif text-base text-white mb-1">Garde ton profil et cette conversation</p>
+      <p class="text-xs text-white/60 mb-4 max-w-md mx-auto leading-relaxed">Retrouve tes échanges, ton thème natal et tes nombres dans ton espace personnel.</p>
       <div class="flex flex-wrap gap-2 justify-center">
-        <a href="/outils/" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm">Mes outils gratuits</a>
-        <a href="/abonnement/" class="px-5 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors">Une guidance chaque mois</a>
+        <a data-oracle-handoff data-next="/oracle" href="https://app.karmastro.com/auth?next=%2Foracle" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm">Retrouver mon Oracle personnalisé</a>
+        <a href="/abonnement/" class="px-5 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors">Découvrir Étoile</a>
       </div>
     </div>
   </article>
@@ -62,20 +77,62 @@ const jsonLd = [
 
 <script>
   const CHAT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/oracle-chat";
-  const NEWSLETTER_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/newsletter-subscribe";
   const READING_CHECKOUT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/reading-checkout";
+  const PROFILE_KEY = "km_oracle_profile";
   const thread = document.getElementById("oracle-thread")!;
   const empty = document.getElementById("oracle-empty");
   const input = document.getElementById("oracle-input") as HTMLInputElement;
   const sendBtn = document.getElementById("oracle-send") as HTMLButtonElement;
   const sugWrap = document.getElementById("oracle-suggestions")!;
+  const profileForm = document.getElementById("oracle-profile-form") as HTMLFormElement;
+  const firstNameInput = document.getElementById("oracle-first-name") as HTMLInputElement;
+  const birthDateInput = document.getElementById("oracle-birth-date") as HTMLInputElement;
+  const birthTimeInput = document.getElementById("oracle-birth-time") as HTMLInputElement;
+  const birthPlaceInput = document.getElementById("oracle-birth-place") as HTMLInputElement;
+  const profileStatus = document.getElementById("oracle-profile-status")!;
 
   function sessionId(): string {
     let s = localStorage.getItem("km_oracle_session");
     if (!s) { s = "site-" + Math.random().toString(36).slice(2) + Date.now().toString(36); localStorage.setItem("km_oracle_session", s); }
     return s;
   }
+  type SiteOracleProfile = {
+    firstName: string;
+    birthDate: string;
+    birthTime?: string;
+    birthPlace?: string;
+  };
+  function savedProfile(): SiteOracleProfile | null {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(PROFILE_KEY) || "null");
+      if (!parsed || typeof parsed.firstName !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(parsed.birthDate || "")) return null;
+      return parsed;
+    } catch { return null; }
+  }
+  function handoffUrl(next: string): string {
+    const url = new URL("https://app.karmastro.com/auth");
+    url.searchParams.set("oracle_session", sessionId());
+    url.searchParams.set("next", next === "/pricing" ? "/pricing" : "/oracle");
+    return url.toString();
+  }
+  document.querySelectorAll<HTMLElement>("[data-oracle-handoff]").forEach((link) => {
+    const next = link.dataset.next || "/oracle";
+    if (link instanceof HTMLAnchorElement) link.href = handoffUrl(next);
+    link.addEventListener("click", () => {
+      try { (window as any).km?.trackEvent("oracle_handoff_click", { next }); } catch {}
+    });
+  });
+
+  const initialProfile = savedProfile();
+  if (initialProfile) {
+    firstNameInput.value = initialProfile.firstName;
+    birthDateInput.value = initialProfile.birthDate;
+    birthTimeInput.value = initialProfile.birthTime || "";
+    birthPlaceInput.value = initialProfile.birthPlace || "";
+    profileStatus.textContent = `Profil prêt pour ${initialProfile.firstName}. Tu peux lancer une question personnelle.`;
+  }
   const history: { role: string; content: string }[] = [];
+  let conversationId: string | null = null;
   let busy = false;
 
   function bubble(role: string, text: string): HTMLElement {
@@ -111,96 +168,44 @@ const jsonLd = [
     const isAnon = !!(pw && pw.is_anon);
     const isFr = (document.documentElement.lang || "fr").startsWith("fr");
     const msg = (pw && pw.message) || "Tu as atteint ta limite de messages cosmiques du jour.";
-    // Connecte : on pousse Etoile (Oracle illimite). Anonyme : on VEND une lecture perso (porte).
-    const ctaHref = "/abonnement/";
-    const ctaLabel = "Passer en Étoile";
-    const reassure = isAnon
-      ? (isFr ? "Paiement sécurisé · lecture livrée par email" : "Secure payment · reading delivered by email")
-      : "Sans engagement · résiliable en un clic";
-    const benefits = isAnon
-      ? ""
-      : '<ul class="text-xs text-white/70 text-left max-w-xs mx-auto space-y-1 mb-4">'
-        + "<li>✦ Oracle illimité, jour et nuit</li>"
-        + "<li>✦ Lectures complètes et approfondies</li>"
-        + "<li>✦ Ta guidance personnalisée chaque mois</li>"
-        + "</ul>";
-    // Anonyme : lecture perso Chemin de Vie comme porte d'entree (checkout invite, sans compte).
-    // La lecture est le FIXE (ta structure), Etoile est le MOUVANT (transits, continu) -> complementaires.
-    const offer = isAnon
-      ? '<div class="mt-1 mb-4 p-4 rounded-xl bg-white/5 border border-amber-300/20 text-center">'
-        + '<p class="font-serif text-base text-white mb-1">' + (isFr ? "Ta lecture personnelle du Chemin de Vie" : "Your personal Life Path reading") + "</p>"
-        + '<p class="text-xs text-white/60 mb-3">' + (isFr ? "Ce que ta date de naissance dit de ta structure profonde. Livrée à l'écran et par email." : "What your birth date reveals about your core structure. Delivered on screen and by email.") + "</p>"
-        + '<input id="km-pw-birth" type="date" required class="w-full max-w-xs mx-auto block mb-3 px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-white text-sm" />'
-        + '<button id="km-pw-buy" type="button" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">' + (isFr ? "Recevoir ma lecture - 4,90 €" : "Get my reading - 4,90 €") + "</button>"
-        + '<p id="km-pw-buy-err" class="text-[11px] text-red-300 mt-2" hidden></p>'
-        + "</div>"
-      : "";
-    // Etoile en lien secondaire pour l'anonyme : la porte reste la lecture, l'abo est propose a cote.
-    const etoileSecondary = isAnon
-      ? '<a href="/abonnement/" id="km-pw-etoile" class="block text-[12px] text-amber-300/80 hover:text-amber-300 underline mb-1">' + (isFr ? "Ou l'Oracle en illimité, chaque jour, avec Étoile" : "Or the Oracle unlimited, every day, with Etoile") + "</a>"
-      : "";
-    // Le gros CTA Etoile n'apparait que pour les connectes (l'anonyme a l'offre + le lien secondaire).
-    const mainCta = isAnon
-      ? ""
-      : '<a href="' + ctaHref + '" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">' + ctaLabel + "</a>";
-    // Pour les anonymes : capter l'email au mur de limite (horoscope quotidien).
-    // Reduit la fuite vers le 0 retenu, cree le contact a nourrir vers Etoile.
-    const capture = isAnon
-      ? '<form id="km-pw-email" class="mb-4">'
-        + '<p class="text-xs text-white/70 mb-2">Reçois ton horoscope personnalisé chaque matin ✨</p>'
-        + '<div class="flex gap-2 max-w-xs mx-auto">'
-        + '<input type="email" required placeholder="ton@email.fr" class="flex-1 px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-white text-sm placeholder-white/40" />'
-        + '<button type="submit" class="px-3 py-2 rounded-lg bg-amber-300/90 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">OK</button>'
-        + "</div>"
-        + '<p class="km-pw-status text-[11px] text-white/60 mt-2" hidden></p>'
-        + "</form>"
-      : "";
+    const esc = (value: string) => value.replace(/[<>&"]/g, (char) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;" }[char] || char));
+    const etoileHref = isAnon ? handoffUrl("/pricing") : "/abonnement/";
+    const profile = savedProfile();
     wrap.innerHTML =
       '<div class="inline-block w-full max-w-md p-5 rounded-2xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30 text-center">'
       + '<p class="text-2xl mb-1">✦</p>'
-      + '<p class="text-sm text-white/90 mb-4 leading-relaxed">' + msg + "</p>"
-      + offer
-      + capture
-      + benefits
-      + mainCta
-      + etoileSecondary
-      + '<p class="text-[11px] text-white/40 mt-3">' + reassure + "</p>"
+      + '<p class="text-sm text-white/90 mb-4 leading-relaxed">' + esc(msg) + "</p>"
+      + '<ul class="text-xs text-white/70 text-left max-w-xs mx-auto space-y-1 mb-4">'
+      + "<li>✦ Oracle illimité, jour et nuit</li>"
+      + "<li>✦ Profil et historique conservés</li>"
+      + "<li>✦ Guidance personnalisée chaque mois</li>"
+      + "</ul>"
+      + '<a href="' + etoileHref + '" id="km-pw-etoile" class="inline-block w-full max-w-xs px-5 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">'
+      + (isFr ? "Débloquer l'Oracle illimité - 5,99 €/mois" : "Unlock unlimited Oracle - €5.99/month")
+      + "</a>"
+      + (isAnon
+        ? '<details id="km-pw-one-shot" class="mt-4 text-left max-w-xs mx-auto rounded-xl border border-white/10 bg-white/[0.03]">'
+          + '<summary class="cursor-pointer px-3 py-2.5 text-xs text-white/65 text-center">' + (isFr ? "Je préfère une lecture unique à 4,90 €" : "I prefer a one-time €4.90 reading") + "</summary>"
+          + '<div class="px-3 pb-3 text-center">'
+          + '<p class="text-xs text-white/55 mb-2">' + (isFr ? "Une lecture écrite de ton Chemin de Vie, sans abonnement." : "A written Life Path reading, with no subscription.") + "</p>"
+          + '<input id="km-pw-birth" type="date" required class="w-full block mb-2 px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-white text-sm" />'
+          + '<button id="km-pw-buy" type="button" class="w-full px-4 py-2 rounded-lg border border-amber-300/40 text-amber-300 font-semibold text-sm hover:bg-amber-300/10 transition-colors">' + (isFr ? "Recevoir ma lecture - 4,90 €" : "Get my reading - €4.90") + "</button>"
+          + '<p id="km-pw-buy-err" class="text-[11px] text-red-300 mt-2" hidden></p>'
+          + "</div></details>"
+        : "")
+      + '<p class="text-[11px] text-white/40 mt-3">Paiement sécurisé Stripe · sans engagement</p>'
       + "</div>";
-    const pwForm = wrap.querySelector("#km-pw-email") as HTMLFormElement | null;
-    if (pwForm) {
-      pwForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const emailInput = pwForm.querySelector("input") as HTMLInputElement;
-        const status = pwForm.querySelector(".km-pw-status") as HTMLElement;
-        const btn = pwForm.querySelector("button") as HTMLButtonElement;
-        const email = emailInput.value.trim();
-        if (!email) return;
-        btn.disabled = true;
-        try {
-          const r = await fetch(NEWSLETTER_URL, {
-            method: "POST", headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, locale: document.documentElement.lang || "fr", source: "oracle_limit" }),
-          });
-          const d = await r.json().catch(() => ({}));
-          status.hidden = false;
-          if (d && d.success) {
-            status.textContent = "Parfait ✨ Vérifie ta boîte mail pour confirmer.";
-            try { (window as any).km?.trackEvent("paywall_email_captured", { source: "oracle_limit" }); } catch {}
-          } else {
-            status.textContent = "Une erreur est survenue, réessaie.";
-            btn.disabled = false;
-          }
-        } catch {
-          status.hidden = false;
-          status.textContent = "Une erreur est survenue, réessaie.";
-          btn.disabled = false;
-        }
-      });
-    }
+    const etoileLink = wrap.querySelector("#km-pw-etoile");
+    if (etoileLink) etoileLink.addEventListener("click", () => { try { (window as any).km?.trackEvent("paywall_etoile_click", { source: "oracle_limit" }); } catch {} });
+    const oneShot = wrap.querySelector("#km-pw-one-shot") as HTMLDetailsElement | null;
+    if (oneShot) oneShot.addEventListener("toggle", () => {
+      if (oneShot.open) { try { (window as any).km?.trackEvent("paywall_offer_view", { tool: "chemin-de-vie" }); } catch {} }
+    }, { once: true });
     // Offre lecture (anonyme) : checkout invite Chemin de Vie, sans compte requis.
     const buyBtn = wrap.querySelector("#km-pw-buy") as HTMLButtonElement | null;
     const birthInput = wrap.querySelector("#km-pw-birth") as HTMLInputElement | null;
     if (buyBtn && birthInput) {
+      if (profile?.birthDate) birthInput.value = profile.birthDate;
       birthInput.addEventListener("change", () => {
         if (birthInput.value) { try { (window as any).km?.trackEvent("paywall_offer_date_entered", {}); } catch {} }
       });
@@ -226,9 +231,6 @@ const jsonLd = [
         }
       });
     }
-    const etoileLink = wrap.querySelector("#km-pw-etoile");
-    if (etoileLink) etoileLink.addEventListener("click", () => { try { (window as any).km?.trackEvent("paywall_etoile_click", {}); } catch {} });
-    if (isAnon) { try { (window as any).km?.trackEvent("paywall_offer_view", { tool: "chemin-de-vie" }); } catch {} }
   }
 
   async function send(text: string) {
@@ -245,7 +247,13 @@ const jsonLd = [
     try {
       const resp = await fetch(CHAT_URL, {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: history, guide: "oracle", sessionId: sessionId() }),
+        body: JSON.stringify({
+          messages: history,
+          profile: savedProfile() || {},
+          guide: "oracle",
+          sessionId: sessionId(),
+          conversationId,
+        }),
       });
       // Limite quotidienne atteinte : l'edge function renvoie un 402 + objet paywall.
       if (resp.status === 402) {
@@ -282,6 +290,7 @@ const jsonLd = [
             const delta = d.choices?.[0]?.delta?.content;
             if (delta) { full += delta; out.textContent = full; thread.scrollTop = thread.scrollHeight; }
             if (d.suggestions) suggestions = d.suggestions;
+            if (d.conversation_id) conversationId = d.conversation_id;
           } catch {}
         }
       }
@@ -295,10 +304,41 @@ const jsonLd = [
     }
   }
 
+  profileForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const profile: SiteOracleProfile = {
+      firstName: firstNameInput.value.trim(),
+      birthDate: birthDateInput.value,
+      birthTime: birthTimeInput.value || undefined,
+      birthPlace: birthPlaceInput.value.trim() || undefined,
+    };
+    if (!profile.firstName || !profile.birthDate) return;
+    localStorage.setItem(PROFILE_KEY, JSON.stringify(profile));
+    profileStatus.textContent = `Profil prêt pour ${profile.firstName}. L'Oracle croise maintenant ton ciel et tes nombres.`;
+    try {
+      (window as any).km?.trackEvent("oracle_profile_submitted", {
+        has_time: Boolean(profile.birthTime),
+        has_place: Boolean(profile.birthPlace),
+        surface: "site_oracle",
+      });
+    } catch {}
+    send("Que disent les astres pour moi en ce moment ?");
+  });
+
   sendBtn.addEventListener("click", () => send(input.value));
   input.addEventListener("keydown", (e) => { if (e.key === "Enter") send(input.value); });
   document.querySelectorAll(".oracle-chip").forEach((c) => {
-    c.addEventListener("click", () => send((c as HTMLElement).dataset.q || ""));
+    c.addEventListener("click", () => {
+      const chip = c as HTMLElement;
+      if (chip.dataset.personal === "true" && !savedProfile()) {
+        profileStatus.textContent = "Ajoute ton prénom et ta date pour éviter une réponse générique.";
+        profileForm.scrollIntoView({ behavior: "smooth", block: "center" });
+        firstNameInput.focus();
+        try { (window as any).km?.trackEvent("oracle_profile_started", { source: "personal_starter" }); } catch {}
+        return;
+      }
+      send(chip.dataset.q || "");
+    });
   });
 
   // Question pré-remplie via ?q= (depuis le glossaire, un article…) : auto-envoi.

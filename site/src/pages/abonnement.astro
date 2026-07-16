@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const title = "Étoile - l'abonnement Karmastro : Oracle illimité + ta guidance mensuelle";
 const description =
-  "Passe en Étoile : l'Oracle en illimité avec 4 guides au choix, la compatibilité astro-numérologique illimitée, le calendrier cosmique détaillé et les notifications de transits. 5,99€/mois, sans engagement, résiliable en un clic.";
+  "Passe en Étoile : l'Oracle unique en illimité avec ton profil cosmique, la mémoire de tes échanges et ta guidance mensuelle. 5,99€/mois, sans engagement.";
 
 // Le checkout authentifié (compte + entitlement Oracle illimité) vit dans l'app.
 const APP_PRICING = "https://app.karmastro.com/pricing";
@@ -20,15 +20,15 @@ const jsonLd = [
 
 const eveil = [
   "Profil cosmique complet (thème natal + numérologie)",
-  "3 messages avec l'Oracle par jour",
+  "2 messages avec l'Oracle par jour",
   "Horoscope quotidien détaillé",
   "Calendrier cosmique basique",
 ];
 const etoile = [
-  "L'Oracle en illimité (4 guides au choix)",
-  "Compatibilité astro-numérologique illimitée",
-  "Calendrier cosmique détaillé (transits, rétrogrades)",
-  "Notifications de transits en temps réel",
+  "L'Oracle unique en illimité, jour et nuit",
+  "Ton profil utilisé automatiquement dans chaque réponse",
+  "Mémoire et continuité de tes conversations",
+  "Guidance personnalisée chaque mois",
 ];
 ---
 
@@ -38,7 +38,7 @@ const etoile = [
       <p class="text-sm uppercase tracking-widest text-amber-300/80 mb-3">Abonnement Étoile</p>
       <h1 class="text-4xl md:text-5xl font-serif mb-4">Passe en Étoile</h1>
       <p class="text-lg text-white/70 max-w-xl mx-auto leading-relaxed">
-        L'Oracle sans limite avec tes 4 guides, la compatibilité illimitée, et tout le ciel en détail : transits, rétrogrades, notifications en temps réel. Tout ce que les astres ont à te dire, quand tu en as besoin.
+        Une seule voix qui connaît ton ciel, se souvient de tes échanges et t'accompagne sans limite. Tout ce que l'Oracle a à te dire, quand tu en as besoin.
       </p>
     </header>
 
@@ -74,7 +74,7 @@ const etoile = [
     <!-- Carte d'abonnement : le checkout se fait dans l'app (compte requis pour débloquer l'Oracle) -->
     <div id="subscribe" class="p-6 md:p-8 rounded-3xl border border-amber-300/30 bg-gradient-to-br from-amber-300/[0.06] to-purple-400/[0.04] text-center">
       <p class="font-serif text-2xl text-white mb-1">Rejoins Étoile</p>
-      <p class="text-sm text-white/60 mb-1">5,99 € / mois, ou 49,99 € / an (2 mois offerts).</p>
+      <p class="text-sm text-white/60 mb-1">5,99 € / mois, ou 49,99 € / an (21,89 € économisés).</p>
       <p class="text-sm text-white/60 mb-5">Sans engagement, résiliable en un clic.</p>
       <a id="sub-go" href={APP_PRICING} class="inline-block w-full max-w-sm px-6 py-3.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity">
         Passer en Étoile

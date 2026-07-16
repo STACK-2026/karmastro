@@ -10,6 +10,12 @@ const corsHeaders = {
 const STRIPE_SECRET_KEY = Deno.env.get("STRIPE_SECRET_KEY") || "";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "";
 const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
+const ALLOWED_APP_ORIGINS = new Set([
+  "https://app.karmastro.com",
+  "http://localhost:5173",
+  "http://127.0.0.1:5173",
+  "http://127.0.0.1:4174",
+]);
 
 // Price ID mapping (LIVE mode , activated 10/04/2026)
 // TEST IDs kept in comments for rollback:
@@ -67,7 +73,7 @@ serve(async (req) => {
     });
 
     // Parse request
-    const { priceKey, successUrl, cancelUrl, locale } = await req.json();
+    const { priceKey, locale } = await req.json();
 
     if (!priceKey || !PRICE_IDS[priceKey]) {
       return new Response(JSON.stringify({ error: "Produit inconnu" }), {
@@ -75,6 +81,7 @@ serve(async (req) => {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
+    const isSub = IS_SUBSCRIPTION[priceKey];
 
     // Determine currency from locale (default EUR)
     const currency = LOCALE_CURRENCY[locale || "fr"] || "eur";
@@ -100,13 +107,26 @@ serve(async (req) => {
     }
 
     // Fetch or create stripe_customer_id
-    const { data: profile } = await supabase
+    const { data: profile, error: profileError } = await supabase
       .from("profiles")
-      .select("stripe_customer_id, first_name")
+      .select("stripe_customer_id, first_name, subscription_tier, subscription_status")
       .eq("user_id", user.id)
       .maybeSingle();
+    if (profileError) throw profileError;
 
     let customerId = profile?.stripe_customer_id;
+
+    const existingSubscriptionStatuses = new Set(["active", "trialing", "past_due", "unpaid", "incomplete"]);
+    if (
+      isSub
+      && profile?.subscription_tier === "etoile"
+      && existingSubscriptionStatuses.has(profile?.subscription_status || "")
+    ) {
+      return new Response(JSON.stringify({ error: "Un abonnement existe déjà. Gère-le depuis les réglages." }), {
+        status: 409,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
 
     if (!customerId) {
       const customer = await stripe.customers.create({
@@ -116,15 +136,16 @@ serve(async (req) => {
       });
       customerId = customer.id;
 
-      await supabase
+      const { error: customerUpdateError } = await supabase
         .from("profiles")
         .update({ stripe_customer_id: customerId })
         .eq("user_id", user.id);
+      if (customerUpdateError) throw customerUpdateError;
     }
 
     // Build checkout session
-    const isSub = IS_SUBSCRIPTION[priceKey];
-    const origin = req.headers.get("origin") || "https://app.karmastro.com";
+    const requestOrigin = req.headers.get("origin") || "https://app.karmastro.com";
+    const origin = ALLOWED_APP_ORIGINS.has(requestOrigin) ? requestOrigin : "https://app.karmastro.com";
 
     // Stripe Checkout locale (2-letter code, supports all karmastro locales except ar)
     const stripeLocale = ["fr", "en", "es", "pt", "de", "it", "tr", "pl", "ja"].includes(locale)
@@ -141,8 +162,8 @@ serve(async (req) => {
           quantity: 1,
         },
       ],
-      success_url: successUrl || `${origin}/dashboard?checkout=success`,
-      cancel_url: cancelUrl || `${origin}/pricing?checkout=canceled`,
+      success_url: `${origin}/dashboard?checkout=success`,
+      cancel_url: `${origin}/pricing?checkout=canceled`,
       locale: stripeLocale,
       allow_promotion_codes: true,
       billing_address_collection: "auto",

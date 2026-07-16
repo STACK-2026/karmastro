@@ -1,8 +1,9 @@
 import { useEffect, useRef } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { ORACLE_HANDOFF_SESSION_KEY } from "@/lib/postAuth";
 
-const ORACLE_SESSION_KEY = "karmastro_oracle_session";
 const ALREADY_CLAIMED_KEY = "karmastro_oracle_session_claimed_at";
+const SAFE_SESSION_RE = /^[A-Za-z0-9._:-]{8,128}$/;
 
 // Listens for the SIGNED_IN event and, when it fires, asks the edge function
 // to attach any anonymous oracle session (conversations + profile hints) to
@@ -12,11 +13,15 @@ export function useClaimAnonSession() {
   const running = useRef(false);
 
   useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
-      if (event !== "SIGNED_IN") return;
+    const handoffSession = new URLSearchParams(window.location.search).get("oracle_session")?.trim();
+    if (handoffSession && SAFE_SESSION_RE.test(handoffSession)) {
+      localStorage.setItem(ORACLE_HANDOFF_SESSION_KEY, handoffSession);
+    }
+
+    const claim = async (session: { access_token?: string } | null) => {
       if (running.current) return;
 
-      const anonSessionId = localStorage.getItem(ORACLE_SESSION_KEY);
+      const anonSessionId = localStorage.getItem(ORACLE_HANDOFF_SESSION_KEY);
       if (!anonSessionId) return;
 
       // Don't reclaim if we already did for this session id.
@@ -42,6 +47,7 @@ export function useClaimAnonSession() {
           // the existing conversation thread can still be rehydrated by
           // oracle mount logic, but next sign-in won't re-run the claim.
           localStorage.setItem(ALREADY_CLAIMED_KEY, anonSessionId);
+          window.dispatchEvent(new CustomEvent("karmastro:oracle-claimed"));
         } else {
           console.warn("[claim-anon-session] non-ok response", resp.status);
         }
@@ -50,6 +56,14 @@ export function useClaimAnonSession() {
       } finally {
         running.current = false;
       }
+    };
+
+    // A handoff can land in a browser that is already authenticated. Supabase
+    // won't emit SIGNED_IN again in that case, so claim once on mount too.
+    supabase.auth.getSession().then(({ data }) => claim(data.session));
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
+      if (event === "SIGNED_IN" || event === "TOKEN_REFRESHED") await claim(session);
     });
 
     return () => subscription.unsubscribe();

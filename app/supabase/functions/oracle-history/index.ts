@@ -9,6 +9,14 @@ const corsHeaders = {
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "https://nkjbmbdrvejemzrggxvr.supabase.co";
 const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
 const ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY") || "";
+const SESSION_ID_RE = /^[A-Za-z0-9._:-]{8,128}$/;
+
+function jsonResponse(payload: unknown, status = 200): Response {
+  return new Response(JSON.stringify(payload), {
+    status,
+    headers: { ...corsHeaders, "Content-Type": "application/json" },
+  });
+}
 
 // ============================================================================
 // Return the latest oracle conversation of the caller so the UI can rehydrate
@@ -40,31 +48,25 @@ serve(async (req) => {
 
     const { sessionId, guide } = await req.json().catch(() => ({}));
 
-    // Resolve user_id from bearer token if provided. For anon we just rely
-    // on the sessionId (caller proves possession by sending the uuid it
-    // stored in localStorage , not a security boundary, matches what
-    // oracle-chat itself already trusts).
+    // Resolve user_id from bearer token if provided. An invalid bearer must
+    // never silently fall back to anonymous access: otherwise a stale or
+    // forged token plus a guessed session id could read someone else's chat.
     let userId: string | null = null;
     const authHeader = req.headers.get("Authorization") || "";
-    const token = authHeader.replace(/^Bearer\s+/i, "");
+    const token = authHeader.replace(/^Bearer\s+/i, "").trim();
     if (token && token !== ANON_KEY) {
-      try {
-        const sbAuth = createClient(SUPABASE_URL, ANON_KEY, {
-          auth: { persistSession: false },
-          global: { headers: { Authorization: `Bearer ${token}` } },
-        });
-        const { data: userData } = await sbAuth.auth.getUser();
-        userId = userData?.user?.id ?? null;
-      } catch {
-        /* fall through as anon */
-      }
+      if (!ANON_KEY) return jsonResponse({ error: "identity_service_unavailable" }, 503);
+      const sbAuth = createClient(SUPABASE_URL, ANON_KEY, {
+        auth: { persistSession: false },
+        global: { headers: { Authorization: `Bearer ${token}` } },
+      });
+      const { data: userData, error: userError } = await sbAuth.auth.getUser();
+      if (userError || !userData?.user?.id) return jsonResponse({ error: "invalid_token" }, 401);
+      userId = userData.user.id;
     }
 
-    if (!userId && (!sessionId || typeof sessionId !== "string" || sessionId.length > 128)) {
-      return new Response(
-        JSON.stringify({ conversation: null, messages: [], summary: null, prior_conversations: 0 }),
-        { headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
+    if (!userId && (typeof sessionId !== "string" || !SESSION_ID_RE.test(sessionId.trim()))) {
+      return jsonResponse({ error: "invalid_session_id" }, 400);
     }
 
     const sb = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
@@ -73,7 +75,7 @@ serve(async (req) => {
     // from the same guide , otherwise we fall back to the latest overall so
     // a user who switches guides mid-journey still gets a thread.
     const col = userId ? "user_id" : "session_id";
-    const val = userId ?? sessionId;
+    const val = userId ?? sessionId.trim();
 
     let q = sb
       .from("oracle_conversations")

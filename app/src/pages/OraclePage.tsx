@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect, useMemo } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, Sparkles, ArrowLeft, Moon, Zap, Calculator, Stars, Check } from "lucide-react";
+import { Send, Sparkles, Stars } from "lucide-react";
 import AppHeader from "@/components/AppHeader";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -61,7 +61,6 @@ const GUIDES: Record<GuideKey, GuideMeta> = {
 
 const CHAT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/oracle-chat";
 const HISTORY_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/oracle-history";
-const STORAGE_KEY = "karmastro_oracle_guide";
 const SESSION_KEY = "karmastro_oracle_session";
 
 // Get or create an anonymous session id (for users not signed in)
@@ -95,23 +94,10 @@ const OraclePage = () => {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [conversationId, setConversationId] = useState<string | null>(null);
+  const [claimVersion, setClaimVersion] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const [guideKey, setGuideKey] = useState<GuideKey | null>(null);
-  const [showPicker, setShowPicker] = useState(false);
-  // Shuffle the guide order once per picker mount so Sibylle doesn't sit at
-  // the top by virtue of object key order , we watched 63/63 anon
-  // conversations route to whoever was listed first. Randomising lets the
-  // copy + strengths do the work.
-  const shuffledGuides = useMemo<GuideMeta[]>(() => {
-    const arr = Object.values(GUIDES) as GuideMeta[];
-    for (let i = arr.length - 1; i > 0; i -= 1) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    return arr;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [showPicker]);
+  const [guideKey] = useState<GuideKey>("oracle");
   const [feedback, setFeedback] = useState<Record<number, FeedbackState>>({});
   const [feedbackText, setFeedbackText] = useState<Record<number, string>>({});
   // Follow-up chips parsed from the ---SUGGESTIONS--- block of each assistant
@@ -140,14 +126,15 @@ const OraclePage = () => {
     birthPlace: "",
   });
 
-  // Oracle unique : plus de choix de guide, on entre directement dans le chat.
-  useEffect(() => {
-    setGuideKey("oracle");
-  }, []);
-
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages]);
+
+  useEffect(() => {
+    const refreshAfterClaim = () => setClaimVersion((version) => version + 1);
+    window.addEventListener("karmastro:oracle-claimed", refreshAfterClaim);
+    return () => window.removeEventListener("karmastro:oracle-claimed", refreshAfterClaim);
+  }, []);
 
   // Rehydrate the user's last oracle conversation at mount so the chat isn't
   // a cold start on every page load. Recent threads (<7 days) are brought
@@ -159,13 +146,11 @@ const OraclePage = () => {
     (async () => {
       try {
         const { data: { session } } = await supabase.auth.getSession();
-        const token = session?.access_token ?? import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+        const headers: Record<string, string> = { "Content-Type": "application/json" };
+        if (session?.access_token) headers.Authorization = `Bearer ${session.access_token}`;
         const resp = await fetch(HISTORY_URL, {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
+          headers,
           body: JSON.stringify({
             sessionId: user?.id ? null : getSessionId(),
             guide: guideKey,
@@ -186,17 +171,7 @@ const OraclePage = () => {
     })();
     return () => { cancelled = true; };
     // Re-run when the user logs in/out or picks a different guide.
-  }, [guideKey, user?.id]);
-
-  const selectGuide = (key: GuideKey) => {
-    setGuideKey(key);
-    localStorage.setItem(STORAGE_KEY, key);
-    setShowPicker(false);
-    setMessages([]);
-    setFeedback({});
-    setFeedbackText({});
-    setSuggestions({});
-  };
+  }, [guideKey, user?.id, claimVersion]);
 
   // Submit feedback for an assistant message
   const submitFeedback = async (messageIndex: number, rating: 1 | 2 | 3, text?: string) => {
@@ -277,7 +252,7 @@ const OraclePage = () => {
     handleSend(msg);
   };
 
-  const currentGuide = guideKey ? GUIDES[guideKey] : null;
+  const currentGuide = GUIDES[guideKey];
 
   // Build profile context for the Oracle. Only fill in real user data. When
   // the profile is the demo stub (user not authenticated or profile empty),
@@ -294,7 +269,7 @@ const OraclePage = () => {
 
     return {
       firstName: userProfile.firstName,
-      birthDate: bd.toLocaleDateString("fr-FR"),
+      birthDate: `${bd.getFullYear()}-${String(bd.getMonth() + 1).padStart(2, "0")}-${String(bd.getDate()).padStart(2, "0")}`,
       birthTime: userProfile.birthTime,
       birthPlace: userProfile.birthPlace,
       sunSign: `${a.sunSign.sign} ${a.sunSign.symbol}`,
@@ -324,17 +299,17 @@ const OraclePage = () => {
     let responseOk = false;
 
     try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (user && !session) throw new Error(t("pricing.checkout_session_expired"));
+      const headers: Record<string, string> = { "Content-Type": "application/json" };
+      if (session?.access_token) headers.Authorization = `Bearer ${session.access_token}`;
       const resp = await fetch(CHAT_URL, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
-        },
+        headers,
         body: JSON.stringify({
           messages: [...messages, userMsg].map(m => ({ role: m.role, content: m.content })),
           profile: buildProfileContext(),
           guide: guideKey,
-          userId: user?.id ?? null,
           sessionId: user?.id ? null : getSessionId(),
           conversationId,
           priorSummary: messages.length === 0 ? priorSummary : null,
@@ -433,69 +408,6 @@ const OraclePage = () => {
     }
   };
 
-  // Guide picker modal
-  if (showPicker || !currentGuide) {
-    return (
-      <div className="min-h-screen bg-background pb-20 flex flex-col relative">
-        <StarField />
-        <AppHeader title={t("oracle.header_title")} subtitle={t("oracle.header_subtitle_picker")} showBack />
-
-        <div className="relative z-10 px-5 py-6 max-w-2xl mx-auto w-full">
-          <div className="text-center mb-8">
-            <Sparkles className="h-10 w-10 text-primary mx-auto mb-3" />
-            <h2 className="font-serif text-2xl mb-2">{t("oracle.picker_title")}</h2>
-            <p className="text-sm text-muted-foreground">
-              {t("oracle.picker_subtitle")}
-            </p>
-          </div>
-
-          <div className="grid gap-3">
-            {shuffledGuides.map((g) => {
-              const Icon = g.icon;
-              const isActive = guideKey === g.key;
-              return (
-                <motion.button
-                  key={g.key}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.99 }}
-                  onClick={() => selectGuide(g.key)}
-                  className={`text-left p-5 rounded-2xl border transition-all ${
-                    isActive
-                      ? "bg-primary/10 border-primary"
-                      : "bg-secondary/30 border-border hover:border-primary/40"
-                  }`}
-                >
-                  <div className="flex items-start gap-4">
-                    <div className={`mt-1 shrink-0 p-2.5 rounded-xl bg-background/50 ${g.color}`}>
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h3 className="font-serif text-lg">{t(g.nameKey)}</h3>
-                        <span className="text-xs text-muted-foreground">· {t(g.titleKey)}</span>
-                        {isActive && <Check className="h-4 w-4 text-primary ml-auto" />}
-                      </div>
-                      <p className="text-sm text-muted-foreground mb-2 leading-relaxed">{t(g.descKey)}</p>
-                      <p className={`text-xs ${g.color}`}>{t(g.strengthsKey)}</p>
-                    </div>
-                  </div>
-                </motion.button>
-              );
-            })}
-          </div>
-
-          <p className="text-xs text-muted-foreground/60 text-center mt-6">
-            {t("oracle.picker_change_note")}
-          </p>
-        </div>
-
-        <BottomNav />
-      </div>
-    );
-  }
-
   const Icon = currentGuide.icon;
 
   return (
@@ -525,7 +437,7 @@ const OraclePage = () => {
             <Icon className={`h-12 w-12 ${currentGuide.color} mx-auto mb-4 opacity-60`} />
             <h2 className="font-serif text-xl mb-2">{t("oracle.empty_listens", { name: t(currentGuide.nameKey) })}</h2>
             <p className="text-sm text-muted-foreground/70 max-w-md mx-auto mb-6">
-              {t(currentGuide.descKey)}
+              {t(currentGuide.titleKey)}
             </p>
             <p className="font-serif text-base text-amber-100/90 max-w-md mx-auto mb-4">
               {t("oracle.empty_opener_question", {
@@ -685,7 +597,7 @@ const OraclePage = () => {
                     {msg.isAnonPaywall ? (
                       <div className="flex flex-col sm:flex-row gap-2">
                         <button
-                          onClick={() => navigate("/auth")}
+                          onClick={() => navigate(`/auth?next=/pricing&oracle_session=${encodeURIComponent(getSessionId())}`)}
                           className="flex-1 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity glow-gold"
                         >
                           {t("oracle.paywall_cta_signup")}
@@ -906,7 +818,7 @@ const OraclePage = () => {
           entry path. Once the conversation starts, we rely on the dynamic
           ---SUGGESTIONS--- chips rendered under each assistant reply. */}
       <div className={`relative z-10 px-5 pb-2 ${messages.length === 0 ? "" : "hidden"}`}>
-        <div className="flex gap-2 overflow-x-auto pb-2">
+        <div className="flex flex-wrap justify-center gap-2 pb-2">
           {currentGuide.suggestionKeys.map(sk => {
             const s = t(sk);
             return (

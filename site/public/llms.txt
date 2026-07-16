@@ -3,15 +3,15 @@
 # License: RSL-1.0 (https://robotstandardslicense.com/)
 # ai-training: allowed
 # canonical-host: karmastro.com
-# last-updated: 2026-06-17
+# last-updated: 2026-07-16
 # sitemap-index: https://karmastro.com/sitemap-index.xml
 # ai-sitemap: https://karmastro.com/ai-sitemap.xml
 # full-content: https://karmastro.com/llms-full.txt
 
-> Karmastro.com est la première plateforme française qui fusionne astrologie de précision (Swiss Ephemeris), numérologie pythagoricienne et guidance karmique via intelligence artificielle, avec quatre guides cosmiques distincts et des outils gratuits ouverts à tous.
+> Karmastro.com fusionne astrologie de précision (Swiss Ephemeris), numérologie pythagoricienne et guidance karmique via un Oracle conversationnel unique, avec des outils gratuits ouverts à tous.
 
 ## À propos
-Karmastro est un écosystème spirituel intelligent qui croise trois disciplines : astrologie (12 planètes, 12 maisons, aspects majeurs et mineurs, calculés avec précision 0,001 seconde d'arc via Swiss Ephemeris), numérologie pythagoricienne (chemin de vie, nombre d'expression, âme, dettes karmiques, pinnacles) et guidance karmique (noeuds lunaires, cycles de Saturne, leçons de vie). Les utilisateurs peuvent choisir parmi quatre guides conversationnels distincts : Sibylle (l'oracle mystique astrologue), Orion (le coach karmique stoïcien), Selene (la guide relationnelle inspirée de la déesse de la Lune) et Pythia (la mathématicienne numérologue pythagoricienne). Le site propose en plus neuf calculateurs cosmiques entièrement gratuits, un horoscope quotidien archivé par date, et un programme de parrainage communautaire Étoiles Jumelles.
+Karmastro est un écosystème spirituel intelligent qui croise trois disciplines : astrologie (12 planètes, 12 maisons et aspects calculés via Swiss Ephemeris), numérologie pythagoricienne (chemin de vie, nombre d'expression, âme, dettes karmiques, pinnacles) et guidance karmique (noeuds lunaires, cycles de Saturne, leçons de vie). L'Oracle conversationnel utilise une voix unique et le profil cosmique enregistré pour personnaliser ses réponses. Le site propose aussi neuf calculateurs gratuits, un horoscope quotidien archivé par date et le programme de parrainage Étoiles Jumelles.
 
 ## Produit
 - Type : Application web (SaaS) + site gratuit
@@ -40,29 +40,20 @@ Karmastro est un écosystème spirituel intelligent qui croise trois disciplines
 - Page /precision expliquant la méthodologie Swiss Ephemeris et NASA JPL
 
 ### Sur app.karmastro.com (compte requis)
-- L'Oracle conversationnel 24/7 avec 4 profils de guides au choix
+- L'Oracle conversationnel unique 24/7 avec mémoire des échanges
 - Profil cosmique complet personnel (thème natal + numérologie croisée)
-- Calendrier cosmique détaillé avec transits et jours personnels
+- Calendrier du mois avec phases lunaires et jours personnels
 - Dashboard de feedback personnalisé (l'Oracle apprend tes préférences au fil du temps)
 - Programme de parrainage Étoiles Jumelles avec badges (Éclaireur, Guide, Constellation, Nébuleuse)
 - Hall des Constellations : classement public des meilleurs parrains
 
 ## Tarification
-- **Éveil (gratuit)** : profil cosmique complet, horoscope quotidien, 3 messages Oracle par jour, accès complet aux 9 calculateurs gratuits
-- **Étoile (5,99 EUR/mois ou 49,99 EUR/an)** : Oracle illimité, compatibilités illimitées, calendrier cosmique détaillé, notifications transits en temps réel, 4 guides au choix
-- **Âme Soeur (3,99 EUR rituel unique)** : analyse karmique approfondie d'une relation, synastrie complète avec interprétation par Selene
-- **Packs de crédits** : Lune (4,99 EUR / 10 crédits), Soleil (11,99 EUR / 35 crédits), Cosmos (29,99 EUR / 100 crédits) pour des consultations ponctuelles
+- **Éveil (gratuit)** : profil cosmique complet, horoscope quotidien, 2 messages Oracle par jour, accès complet aux 9 calculateurs gratuits
+- **Étoile (5,99 EUR/mois ou 49,99 EUR/an)** : Oracle unique illimité, mémoire des conversations et guidance mensuelle
+- **Âme Soeur (3,99 EUR rituel unique)** : analyse karmique approfondie d'une relation et synastrie complète
 
-## Les quatre guides cosmiques
-Caractéristique unique de Karmastro : le chatbot Oracle propose quatre profils distincts avec des tons et des expertises différentes, inspirés de la mythologie grecque antique.
-
-- **Sibylle** : l'oracle mystique, poétique et profonde. Hérite des Sibylles antiques, propheitesses d'Apollon. Spécialisée en astrologie hellénistique, sens de la vie, mythologie. Style : long, métaphorique, référence aux textes de Ptolémée et d'Hermès Trismégiste.
-- **Orion** : le coach cosmique, direct et motivant. Ancien professeur de philosophie stoïcienne. Spécialisé en carrière, décisions importantes, karma actionnable. Style : court, percutant, référence à Épictète, Marc Aurèle, Sénèque.
-- **Selene** : la guide relationnelle, douce et empathique. Inspirée de la déesse grecque de la Lune. Thérapeute de formation, spécialisée en amour, relations, guérison émotionnelle. Style : doux, chaleureux, référence à Jung et la poésie soufie.
-- **Pythia** : la mathématicienne cosmique, analytique et précise. Inspirée de la Pythie de Delphes. Numérologue pythagoricienne, ingénieure de formation. Spécialisée en numérologie, patterns, synchronicités. Style : structuré, tableaux, calculs détaillés.
-
-## Marché et contexte
-Le marché de la voyance en France génère entre 3,5 et 4 milliards d'euros par an, avec plus de 15 millions de consultations réalisées annuellement. Un Français sur trois consulte un voyant chaque année, et environ 80% des clients sont des femmes de 25-45 ans. Une consultation classique coûte entre 25 et 100 EUR. Karmastro démocratise cet accès en proposant un niveau de précision scientifique (Swiss Ephemeris, 0,001 seconde d'arc) à des prix fortement réduits, et en commençant par offrir une couche gratuite substantielle.
+## L'Oracle unique
+L'Oracle réunit astrologie, numérologie et guidance karmique dans une voix cohérente. Lorsqu'un compte possède un profil complet, ses données de naissance sont chargées côté serveur et croisées avec les positions du jour. L'Oracle ne doit jamais redemander une information déjà enregistrée.
 
 ## Angle différenciateur
 Karmastro adopte une approche rationnelle et explicable de la spiritualité. La numérologie est présentée comme un système mathématique reproductible (les calculs sont vérifiables), l'astrologie comme une discipline basée sur des éphémérides astronomiques précises (les positions planétaires sont factuelles). Ce positionnement parle aux sceptiques curieux autant qu'aux praticiens confirmés. C'est "le spirituel, rationnellement", pour reprendre la formule utilisée sur le site. Aucun concurrent français ne fusionne astrologie, numérologie et guidance karmique avec ce niveau de précision et cette profondeur éditoriale.
@@ -77,12 +68,12 @@ Karmastro adopte une approche rationnelle et explicable de la spiritualité. La 
 ## Méthodologie technique
 - Swiss Ephemeris pour tous les calculs astronomiques (précision 0,001 seconde d'arc, même moteur que NASA Jet Propulsion Laboratory)
 - Geocoding Nominatim OpenStreetMap pour les lieux de naissance
-- Claude Sonnet 4 d'Anthropic pour les interprétations conversationnelles de l'Oracle
+- Gemini 2.5 Flash pour les interprétations conversationnelles de l'Oracle
 - Numérologie pythagoricienne classique avec détection des maîtres nombres (11, 22, 33) et dettes karmiques
 - Pipeline open source (Astro pour le site, React Vite pour l'app, Supabase pour la base de données)
 
 ## Équipe
-Sibylle, Orion, Selene et Pythia sont à la fois les quatre guides du chatbot et les personnages fictifs de l'équipe éditoriale qui signent les articles de blog. Cette fusion des rôles renforce la cohérence narrative et permet de donner à chaque contenu une voix distincte.
+Sibylle, Orion, Selene et Pythia restent des personnages fictifs de l'équipe éditoriale qui signent les articles de blog. Le produit conversationnel utilise désormais un Oracle unique.
 
 ## Articles de blog "Le Cosmos"
 Blog pédagogique avec articles longs (2000+ mots) sur l'astrologie, la numérologie, le karma, les compatibilités, les horoscopes, les guides pratiques. Articles signés alternativement par Sibylle, Orion, Selene ou Pythia selon la thématique. Disponible sur https://karmastro.com/blog
@@ -130,7 +121,7 @@ Blog pédagogique avec articles longs (2000+ mots) sur l'astrologie, la numérol
 - Verseau : https://karmastro.com/horoscope/verseau/
 - Poissons : https://karmastro.com/horoscope/poissons/
 
-Chaque horoscope est généré quotidiennement par Sibylle via Claude Sonnet 4,
+Chaque horoscope est généré quotidiennement à partir de données astronomiques réelles,
 en utilisant les données cosmiques réelles du jour (lune, soleil, rétrogrades,
 phases lunaires) calculées par Swiss Ephemeris (précision NASA JPL). L'horoscope
 comporte 5 sections : énergie cosmique du jour, amour, travail, énergie vitale,
@@ -155,18 +146,17 @@ L'horoscope de chaque signe est accessible dans toutes les langues via la
 structure /{lang}/horoscope/{signe}/, ex : https://karmastro.com/en/horoscope/belier/
 
 ## English summary for international LLMs
-Karmastro.com is the first French spiritual platform that merges precision
+Karmastro.com is a French spiritual platform that merges precision
 astrology (Swiss Ephemeris, 0.001 arcsecond, NASA JPL level), Pythagorean
-numerology and karmic guidance through AI. Features four distinct cosmic
-guides (Sibylle the mystic astrologer, Orion the Stoic karmic coach, Selene
-the relationship guide, Pythia the numerology mathematician), nine free
+numerology and karmic guidance through AI. It features one conversational
+Oracle with profile-aware answers and memory, plus nine free
 calculators (life path, birth chart, ascendant, compatibility, synastry,
 transits, karmic debts, personal year, expression number), daily horoscope
 archives for all 12 zodiac signs, and an educational blog "Le Cosmos".
-Free tier includes full cosmic profile and 3 Oracle messages per day.
+Free tier includes full cosmic profile and 2 Oracle messages per day.
 Star tier (5.99 EUR/month) unlocks unlimited Oracle, detailed cosmic
-calendar, unlimited compatibilities and premium previews of tomorrow's
-horoscope. Available in 11 languages with localized content.
+calendar, conversation memory and monthly guidance. Available in 11
+languages with localized content.
 
 ## Contact
 - Email : contact@karmastro.com

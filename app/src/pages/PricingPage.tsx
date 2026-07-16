@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { Sparkles, Check, Star, Heart, Package, Zap } from "lucide-react";
+import { Sparkles, Check, Star, Heart, Zap } from "lucide-react";
 import AppHeader from "@/components/AppHeader";
 import BottomNav from "@/components/BottomNav";
-import AppFooter from "@/components/AppFooter";
 import StarField from "@/components/StarField";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
@@ -54,7 +53,7 @@ const PricingPage = () => {
     if (!user) {
       trackEvent("checkout_blocked_no_auth", { price_key: priceKey });
       toast({ title: t("pricing.toast_auth_required_title"), description: t("pricing.toast_auth_required_desc"), variant: "destructive" });
-      navigate("/auth");
+      navigate("/auth?next=/pricing");
       return;
     }
 
@@ -73,8 +72,6 @@ const PricingPage = () => {
         body: JSON.stringify({
           priceKey,
           locale,
-          successUrl: `${window.location.origin}/dashboard?checkout=success`,
-          cancelUrl: `${window.location.origin}/pricing?checkout=canceled`,
         }),
       });
 
@@ -137,30 +134,6 @@ const PricingPage = () => {
           </div>
         </div>
 
-        {/* Éveil (free) */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="p-5 rounded-2xl border border-border bg-card/40"
-        >
-          <div className="flex items-center gap-2 mb-2">
-            <Sparkles className="h-5 w-5 text-muted-foreground" />
-            <h3 className="font-serif text-xl">{t("pricing.tier_eveil")}</h3>
-            <span className="text-xs text-muted-foreground ml-auto">
-              {isCurrentTier("eveil") || !currentPlan?.tier || currentPlan.tier === "eveil" ? t("pricing.tier_eveil_current") : ""}
-            </span>
-          </div>
-          <p className="text-2xl font-serif mb-3">
-            {t("pricing.tier_eveil_price")} <span className="text-xs text-muted-foreground">{t("pricing.tier_eveil_price_hint")}</span>
-          </p>
-          <ul className="space-y-1.5 text-sm text-muted-foreground mb-4">
-            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" /> {t("pricing.tier_eveil_f1")}</li>
-            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" /> {t("pricing.tier_eveil_f2")}</li>
-            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" /> {t("pricing.tier_eveil_f3")}</li>
-            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" /> {t("pricing.tier_eveil_f4")}</li>
-          </ul>
-        </motion.div>
-
         {/* Étoile (subscription) - HIGHLIGHTED */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -194,7 +167,6 @@ const PricingPage = () => {
             <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-amber-300 mt-0.5 shrink-0" /> {t("pricing.tier_etoile_f1")}</li>
             <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-amber-300 mt-0.5 shrink-0" /> {t("pricing.tier_etoile_f2")}</li>
             <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-amber-300 mt-0.5 shrink-0" /> {t("pricing.tier_etoile_f3")}</li>
-            <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-amber-300 mt-0.5 shrink-0" /> {t("pricing.tier_etoile_f4")}</li>
             <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-amber-300 mt-0.5 shrink-0" /> {t("pricing.tier_etoile_f5")}</li>
             <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-amber-300 mt-0.5 shrink-0" /> {t("pricing.tier_etoile_f6")}</li>
           </ul>
@@ -243,40 +215,6 @@ const PricingPage = () => {
           </button>
         </motion.div>
 
-        {/* Credit packs */}
-        <div className="space-y-3">
-          <div className="flex items-center gap-2 pt-2">
-            <Package className="h-4 w-4 text-muted-foreground" />
-            <h3 className="text-sm font-medium text-muted-foreground">{t("pricing.credit_packs_title")}</h3>
-          </div>
-          <p className="text-xs text-muted-foreground">{t("pricing.credit_intro")}</p>
-
-          <div className="grid grid-cols-3 gap-2">
-            {[
-              { key: "pack_lune", name: t("pricing.pack_lune"), credits: 10, price: formatPrice(4.99, locale), highlight: false },
-              { key: "pack_soleil", name: t("pricing.pack_soleil"), credits: 35, price: formatPrice(11.99, locale), highlight: true },
-              { key: "pack_cosmos", name: t("pricing.pack_cosmos"), credits: 100, price: formatPrice(29.99, locale), highlight: false },
-            ].map((pack) => (
-              <button
-                key={pack.key}
-                onClick={() => handleCheckout(pack.key)}
-                disabled={loading !== null}
-                className={`p-3 rounded-xl border transition-all text-center disabled:opacity-50 ${
-                  pack.highlight
-                    ? "border-amber-300/60 bg-amber-300/10 hover:bg-amber-300/15"
-                    : "border-border bg-card/40 hover:bg-card/60"
-                }`}
-              >
-                {pack.highlight && <p className="text-[9px] text-amber-300 mb-1">{t("pricing.pack_best_value")}</p>}
-                <p className="font-serif text-base mb-0.5">{pack.name}</p>
-                <p className="text-lg font-mono text-primary">{pack.credits}</p>
-                <p className="text-[10px] text-muted-foreground">{t("pricing.pack_credits")}</p>
-                <p className="text-xs font-medium mt-1">{pack.price}</p>
-              </button>
-            ))}
-          </div>
-        </div>
-
         {/* FAQ mini */}
         <div className="p-5 rounded-2xl bg-card/40 border border-border space-y-3 text-sm">
           <div className="flex items-start gap-2">
@@ -303,7 +241,6 @@ const PricingPage = () => {
         </div>
       </div>
 
-      <AppFooter />
       <BottomNav />
     </div>
   );

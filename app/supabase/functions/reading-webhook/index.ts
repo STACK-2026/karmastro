@@ -33,7 +33,7 @@ serve(async (req) => {
     return new Response(`Bad signature: ${String(e).slice(0, 200)}`, { status: 400 });
   }
 
-  if (event.type !== "checkout.session.completed") {
+  if (event.type !== "checkout.session.completed" && event.type !== "checkout.session.async_payment_succeeded") {
     return new Response("ignored", { status: 200 });
   }
 
@@ -43,7 +43,10 @@ serve(async (req) => {
   const sb = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
 
   // Abonnement « Guide mensuel » : enregistre l'abonné à la création du checkout.
-  if (md.kind === "guide_mensuel" || session.mode === "subscription") {
+  if (md.kind === "guide_mensuel") {
+    if (session.payment_status !== "paid") {
+      return new Response("awaiting payment", { status: 200 });
+    }
     const email = session.customer_details?.email ?? session.customer_email ?? null;
     if (email && session.subscription) {
       await sb.from("subscriptions").upsert({
@@ -65,6 +68,9 @@ serve(async (req) => {
   ]);
   if (!READING_TOOLS.has(md.tool) || !md.token) {
     return new Response("not a reading", { status: 200 });
+  }
+  if (session.payment_status !== "paid") {
+    return new Response("awaiting payment", { status: 200 });
   }
 
   const numOrUndef = (v: string) => (v && v.trim() !== "" ? Number(v) : undefined);

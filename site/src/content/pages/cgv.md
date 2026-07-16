@@ -1,7 +1,7 @@
 ---
 title: "Conditions générales de vente"
 description: "Conditions générales de vente et d'utilisation du service Karmastro."
-lastUpdated: 2026-04-09
+lastUpdated: 2026-07-16
 ---
 
 ## Article 1 - Objet
@@ -10,13 +10,13 @@ Les présentes conditions générales de vente (CGV) régissent l'utilisation du
 
 ## Article 2 - Accès au service
 
-L'utilisateur peut créer un compte pour accéder à la voie Éveil (profil cosmique, horoscope quotidien, 3 messages Oracle/jour).
+L'utilisateur peut créer un compte pour accéder à la voie Éveil (profil cosmique, horoscope quotidien, 2 messages Oracle/jour).
 
 ## Article 3 - Tarification
 
-- **Éveil** (offert) : profil cosmique complet, horoscope quotidien, 3 messages Oracle/jour
-- **Étoile** : 5,99 EUR/mois (ou 49,99 EUR/an) - Oracle illimité, calendrier cosmique, compatibilités illimitées
-- **Âme Soeur** : 2,99 EUR (rituel unique) - rapport de compatibilité complet
+- **Éveil** (offert) : profil cosmique complet, horoscope quotidien, 2 messages Oracle/jour
+- **Étoile** : 5,99 EUR/mois (ou 49,99 EUR/an) - Oracle illimité, mémoire des conversations et guidance mensuelle
+- **Âme Soeur** : 3,99 EUR (rituel unique) - rapport de compatibilité complet
 
 Tous les prix sont indiqués en euros TTC.
 

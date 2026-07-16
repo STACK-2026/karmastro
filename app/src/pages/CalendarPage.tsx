@@ -2,26 +2,24 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
 import { personalYear, personalDay as calcPD, getNumberKeyword, getNumberColor, getMoonPhase } from "@/lib/numerology";
 import BottomNav from "@/components/BottomNav";
-import AppFooter from "@/components/AppFooter";
 import StarField from "@/components/StarField";
 import AppHeader from "@/components/AppHeader";
 import { useUserProfile } from "@/hooks/useUserProfile";
 import { useT } from "@/i18n/ui";
 
 const CalendarPage = () => {
-  const navigate = useNavigate();
   const { t, locale } = useT();
-  const [selectedDay, setSelectedDay] = useState<number | null>(8);
+  const today = new Date();
+  const [cursor, setCursor] = useState(() => new Date(today.getFullYear(), today.getMonth(), 1));
+  const [selectedDay, setSelectedDay] = useState<number | null>(today.getDate());
   const { birthDate: bd } = useUserProfile();
-  const py = personalYear(bd.getDate(), bd.getMonth() + 1, 2026);
-
-  const daysInMonth = 30; // April 2026
-  const startDay = 2; // April 1, 2026 = Wednesday (0=Mon)
-  const year = 2026;
-  const monthIndex = 3; // April (0-based)
+  const year = cursor.getFullYear();
+  const monthIndex = cursor.getMonth();
+  const py = personalYear(bd.getDate(), bd.getMonth() + 1, year);
+  const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
+  const startDay = (new Date(year, monthIndex, 1).getDay() + 6) % 7;
 
   const monthLabel = new Intl.DateTimeFormat(locale, { month: "long", year: "numeric" }).format(new Date(year, monthIndex, 1));
   const monthLabelCap = monthLabel.charAt(0).toUpperCase() + monthLabel.slice(1);
@@ -29,14 +27,14 @@ const CalendarPage = () => {
   // Build weekday short labels starting Monday
   const weekdayFmt = new Intl.DateTimeFormat(locale, { weekday: "short" });
   const weekdayLabels = Array.from({ length: 7 }, (_, i) => {
-    // 2026-01-05 is a Monday
-    const d = new Date(2026, 0, 5 + i);
+    // 2024-01-01 was a Monday.
+    const d = new Date(2024, 0, 1 + i);
     const label = weekdayFmt.format(d).replace(".", "");
     return label.charAt(0).toUpperCase() + label.slice(1);
   });
 
   const getDayData = (d: number) => {
-    const pd = calcPD(py, 4, d);
+    const pd = calcPD(py, monthIndex + 1, d);
     const moon = getMoonPhase(new Date(year, monthIndex, d));
     return { pd, moon };
   };
@@ -56,9 +54,23 @@ const CalendarPage = () => {
       <div className="relative z-10 px-5 space-y-5">
         {/* Month nav */}
         <div className="flex items-center justify-between">
-          <Button variant="ghost" size="icon"><ChevronLeft className="h-5 w-5" /></Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => {
+              setCursor(new Date(year, monthIndex - 1, 1));
+              setSelectedDay(1);
+            }}
+          ><ChevronLeft className="h-5 w-5" /></Button>
           <h2 className="font-serif text-xl">{monthLabelCap}</h2>
-          <Button variant="ghost" size="icon"><ChevronRight className="h-5 w-5" /></Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => {
+              setCursor(new Date(year, monthIndex + 1, 1));
+              setSelectedDay(1);
+            }}
+          ><ChevronRight className="h-5 w-5" /></Button>
         </div>
 
         {/* Legend */}
@@ -77,7 +89,7 @@ const CalendarPage = () => {
           {Array.from({ length: daysInMonth }, (_, i) => {
             const d = i + 1;
             const { pd, moon } = getDayData(d);
-            const isToday = d === 8;
+            const isToday = d === today.getDate() && monthIndex === today.getMonth() && year === today.getFullYear();
             const isSelected = d === selectedDay;
 
             return (
@@ -126,7 +138,6 @@ const CalendarPage = () => {
         )}
       </div>
 
-      <AppFooter />
       <BottomNav />
     </div>
   );
