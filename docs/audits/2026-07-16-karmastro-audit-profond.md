@@ -163,7 +163,8 @@ Le webhook activait bien le droit Oracle illimité côté profil, mais le dashbo
 
 - Toutes les routes app sont chargées à la demande.
 - Bundle principal : environ 436 Ko gzip → 273 Ko gzip, soit -37 %.
-- Lighthouse mobile pricing local : performance 69, accessibilité 94, bonnes pratiques 96, LCP 6,0 s, CLS 0.
+- Lighthouse mobile live Oracle public : performance 97, accessibilité 100, bonnes pratiques 100, SEO 100, LCP 2,5 s, TBT 0 ms, CLS 0.
+- Lighthouse mobile live pricing app : performance 70, accessibilité 100, bonnes pratiques 96, SEO 100, LCP 5,3 s, TBT 0 ms, CLS 0.
 - Les textes publics, CGV, `llms.txt` et 11 langues ont été alignés sur l'offre réelle.
 
 ## Preuves de vérification
@@ -179,6 +180,8 @@ Le webhook activait bien le droit Oracle illimité côté profil, mais le dashbo
 - Smoke tests production négatifs verts : payload Oracle invalide `400`, token invalide `401`, endpoints privés sans auth `401`, webhooks sans signature `400`.
 - Aucun événement Stripe non traité après déploiement.
 - Les deux jetons retrouvés dans l'historique ont été comparés sans afficher leur valeur : aucun ne correspond aux accès actifs actuels.
+- Fronts Cloudflare vérifiés sur les domaines finaux : formulaire profil, offre Étoile, nouvel asset app, navigation, contenu du jour et déconnexion réelle.
+- Commits de livraison : `899e581` (produit/Oracle/Stripe), `2bd356c` (secrets legacy), `21e2599` (accessibilité conversion).
 - Aucun paiement, email ou effacement réel déclenché par les tests.
 
 ## Ce qu'il reste à faire après stabilisation
@@ -214,7 +217,7 @@ Le prix 5,99 € ne doit pas être baissé sur un échantillon d'un paiement. Il
 
 ### P3 — performance
 
-Le principal coût restant est le dictionnaire UI multilingue chargé globalement. Le découper par locale devrait améliorer FCP/LCP mobile davantage qu'une nouvelle micro-optimisation CSS.
+Le principal coût restant est le dictionnaire UI multilingue chargé globalement. Le découper par locale devrait améliorer le LCP mobile de la page tarifaire, encore à 5,3 s, davantage qu'une nouvelle micro-optimisation CSS. Les erreurs console Lighthouse restantes correspondent à l'absence normale de session sur la page tarifaire auditée ; les source maps du gros bundle restent aussi à publier.
 
 ### P4 — SEO orienté revenu
 
