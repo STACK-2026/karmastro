@@ -109,6 +109,15 @@ const jsonLd = [
       return parsed;
     } catch { return null; }
   }
+  function currentProfile(): SiteOracleProfile | null {
+    const profile: SiteOracleProfile = {
+      firstName: firstNameInput.value.trim(),
+      birthDate: birthDateInput.value,
+      birthTime: birthTimeInput.value || undefined,
+      birthPlace: birthPlaceInput.value.trim() || undefined,
+    };
+    return profile.firstName && /^\d{4}-\d{2}-\d{2}$/.test(profile.birthDate) ? profile : null;
+  }
   function handoffUrl(next: string): string {
     const url = new URL("https://app.karmastro.com/auth");
     url.searchParams.set("oracle_session", sessionId());
@@ -123,6 +132,19 @@ const jsonLd = [
     });
   });
 
+  type OracleHandoff = {
+    source: string;
+    question?: string;
+    profile?: { birthDate?: string; birthTime?: string; birthPlace?: string };
+  };
+  const handoffApi = (window as any).kmOracleHandoff;
+  const incomingHandoff = (handoffApi?.consume?.() || null) as OracleHandoff | null;
+  const urlSource = new URLSearchParams(location.search).get("src") || "";
+  const oracleSource = incomingHandoff?.source
+    || (/^[a-z0-9][a-z0-9-]{1,39}$/.test(urlSource) ? urlSource : "direct");
+  const legacyQuestion = handoffApi?.consumeLegacyQuestion?.() || "";
+  let pendingQuestion = incomingHandoff?.question || legacyQuestion;
+
   const initialProfile = savedProfile();
   if (initialProfile) {
     firstNameInput.value = initialProfile.firstName;
@@ -131,9 +153,33 @@ const jsonLd = [
     birthPlaceInput.value = initialProfile.birthPlace || "";
     profileStatus.textContent = `Profil prêt pour ${initialProfile.firstName}. Tu peux lancer une question personnelle.`;
   }
+  if (incomingHandoff?.profile) {
+    if (incomingHandoff.profile.birthDate) birthDateInput.value = incomingHandoff.profile.birthDate;
+    if (incomingHandoff.profile.birthTime) birthTimeInput.value = incomingHandoff.profile.birthTime;
+    if (incomingHandoff.profile.birthPlace) birthPlaceInput.value = incomingHandoff.profile.birthPlace;
+    profileStatus.textContent = firstNameInput.value
+      ? `Tes données de ${oracleSource.replace(/-/g, " ")} sont prêtes. Tu peux continuer.`
+      : "Ajoute seulement ton prénom pour que l'Oracle relie ce résultat à toi.";
+  }
   const history: { role: string; content: string }[] = [];
   let conversationId: string | null = null;
   let busy = false;
+  let firstResponseTracked = false;
+
+  try {
+    (window as any).km?.trackEvent("oracle_entry_viewed", {
+      source: oracleSource,
+      locale: document.documentElement.lang || "fr",
+      has_handoff: Boolean(incomingHandoff),
+    });
+  } catch {}
+
+  let profileStartedTracked = false;
+  profileForm.addEventListener("focusin", () => {
+    if (profileStartedTracked) return;
+    profileStartedTracked = true;
+    try { (window as any).km?.trackEvent("oracle_profile_started", { source: oracleSource, stage: "profile_form" }); } catch {}
+  });
 
   function bubble(role: string, text: string): HTMLElement {
     const wrap = document.createElement("div");
@@ -196,7 +242,7 @@ const jsonLd = [
       + '<p class="text-[11px] text-white/40 mt-3">Paiement sécurisé Stripe · sans engagement</p>'
       + "</div>";
     const etoileLink = wrap.querySelector("#km-pw-etoile");
-    if (etoileLink) etoileLink.addEventListener("click", () => { try { (window as any).km?.trackEvent("paywall_etoile_click", { source: "oracle_limit" }); } catch {} });
+    if (etoileLink) etoileLink.addEventListener("click", () => { try { (window as any).km?.trackEvent("paywall_etoile_click", { source: oracleSource, billing_cycle: "monthly" }); } catch {} });
     const oneShot = wrap.querySelector("#km-pw-one-shot") as HTMLDetailsElement | null;
     if (oneShot) oneShot.addEventListener("toggle", () => {
       if (oneShot.open) { try { (window as any).km?.trackEvent("paywall_offer_view", { tool: "chemin-de-vie" }); } catch {} }
@@ -234,14 +280,20 @@ const jsonLd = [
   }
 
   async function send(text: string) {
-    if (busy || !text.trim()) return;
+    const cleanText = text.trim().slice(0, 500);
+    if (busy || !cleanText) return;
     busy = true; sendBtn.disabled = true;
+    const startedAt = performance.now();
+    const turn = history.filter((m) => m.role === "user").length + 1;
     if (empty) empty.remove();
     sugWrap.innerHTML = "";
-    history.push({ role: "user", content: text });
-    bubble("user", text);
+    history.push({ role: "user", content: cleanText });
+    bubble("user", cleanText);
     input.value = "";
-    try { (window as any).km?.trackEvent("oracle_message_sent", { n: history.filter((m) => m.role === "user").length }); } catch {}
+    try {
+      (window as any).km?.trackEvent("oracle_message_sent", { source: oracleSource, turn });
+      if (turn === 2) (window as any).km?.trackEvent("oracle_second_turn", { source: oracleSource });
+    } catch {}
     const out = bubble("assistant", "…");
     let full = "";
     try {
@@ -249,7 +301,7 @@ const jsonLd = [
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           messages: history,
-          profile: savedProfile() || {},
+          profile: currentProfile() || savedProfile() || {},
           guide: "oracle",
           sessionId: sessionId(),
           conversationId,
@@ -261,8 +313,8 @@ const jsonLd = [
         const pw = (data && data.paywall) || {};
         renderPaywall(out, pw);
         try {
-          (window as any).km?.trackEvent("oracle_limit_hit", { is_anon: !!pw.is_anon, limit: pw.limit || null });
-          (window as any).km?.trackEvent("paywall_viewed", { surface: "oracle", is_anon: !!pw.is_anon });
+          (window as any).km?.trackEvent("oracle_limit_hit", { source: oracleSource, turn, is_anon: !!pw.is_anon });
+          (window as any).km?.trackEvent("paywall_viewed", { source: oracleSource, surface: "oracle", is_anon: !!pw.is_anon });
         } catch {}
         return;
       }
@@ -288,7 +340,15 @@ const jsonLd = [
           try {
             const d = JSON.parse(p);
             const delta = d.choices?.[0]?.delta?.content;
-            if (delta) { full += delta; out.textContent = full; thread.scrollTop = thread.scrollHeight; }
+            if (delta) {
+              full += delta; out.textContent = full; thread.scrollTop = thread.scrollHeight;
+              if (!firstResponseTracked && turn === 1) {
+                firstResponseTracked = true;
+                const latency = performance.now() - startedAt;
+                const latencyBucket = latency < 1000 ? "under_1s" : latency < 3000 ? "1_3s" : latency < 6000 ? "3_6s" : "over_6s";
+                try { (window as any).km?.trackEvent("oracle_first_response", { source: oracleSource, latency_bucket: latencyBucket }); } catch {}
+              }
+            }
             if (d.suggestions) suggestions = d.suggestions;
             if (d.conversation_id) conversationId = d.conversation_id;
           } catch {}
@@ -306,23 +366,20 @@ const jsonLd = [
 
   profileForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    const profile: SiteOracleProfile = {
-      firstName: firstNameInput.value.trim(),
-      birthDate: birthDateInput.value,
-      birthTime: birthTimeInput.value || undefined,
-      birthPlace: birthPlaceInput.value.trim() || undefined,
-    };
-    if (!profile.firstName || !profile.birthDate) return;
+    const profile = currentProfile();
+    if (!profile) return;
     localStorage.setItem(PROFILE_KEY, JSON.stringify(profile));
     profileStatus.textContent = `Profil prêt pour ${profile.firstName}. L'Oracle croise maintenant ton ciel et tes nombres.`;
     try {
       (window as any).km?.trackEvent("oracle_profile_submitted", {
-        has_time: Boolean(profile.birthTime),
-        has_place: Boolean(profile.birthPlace),
+        source: oracleSource,
+        profile_completeness: profile.birthTime && profile.birthPlace ? "complete" : profile.birthTime ? "date_time" : profile.birthPlace ? "date_place" : "date_only",
         surface: "site_oracle",
       });
     } catch {}
-    send("Que disent les astres pour moi en ce moment ?");
+    const question = pendingQuestion || "Que disent les astres pour moi en ce moment ?";
+    pendingQuestion = "";
+    send(question);
   });
 
   sendBtn.addEventListener("click", () => send(input.value));
@@ -330,18 +387,24 @@ const jsonLd = [
   document.querySelectorAll(".oracle-chip").forEach((c) => {
     c.addEventListener("click", () => {
       const chip = c as HTMLElement;
-      if (chip.dataset.personal === "true" && !savedProfile()) {
+      if (chip.dataset.personal === "true" && !currentProfile()) {
         profileStatus.textContent = "Ajoute ton prénom et ta date pour éviter une réponse générique.";
         profileForm.scrollIntoView({ behavior: "smooth", block: "center" });
         firstNameInput.focus();
-        try { (window as any).km?.trackEvent("oracle_profile_started", { source: "personal_starter" }); } catch {}
         return;
       }
       send(chip.dataset.q || "");
     });
   });
 
-  // Question pré-remplie via ?q= (depuis le glossaire, un article…) : auto-envoi.
-  const preQ = new URLSearchParams(location.search).get("q");
-  if (preQ) { send(preQ); }
+  if (pendingQuestion) {
+    if (incomingHandoff?.profile && !currentProfile()) {
+      profileForm.scrollIntoView({ behavior: "smooth", block: "center" });
+      firstNameInput.focus();
+    } else {
+      const question = pendingQuestion;
+      pendingQuestion = "";
+      send(question);
+    }
+  }
 </script>

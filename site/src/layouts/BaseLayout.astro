@@ -112,6 +112,22 @@ const GA4_ID = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID;
 <!-- 48f4989869035a99 -->
 <html lang={bcp47(currentLocale)} dir={isRightToLeft ? "rtl" : "ltr"}>
   <head>
+    <!-- Remove private legacy Oracle query data before trackers or referrers can observe it. -->
+    <script is:inline>
+      try {
+        var kmOracleUrl = new URL(window.location.href);
+        if (/\/oracle\/?$/.test(kmOracleUrl.pathname)) {
+          var kmLegacyQuestion = kmOracleUrl.searchParams.get("q");
+          if (kmLegacyQuestion && kmLegacyQuestion.length <= 500) {
+            sessionStorage.setItem("km_oracle_legacy_question", kmLegacyQuestion);
+          }
+          var kmSource = kmOracleUrl.searchParams.get("src");
+          kmOracleUrl.search = "";
+          if (kmSource && /^[a-z0-9][a-z0-9-]{1,39}$/.test(kmSource)) kmOracleUrl.searchParams.set("src", kmSource);
+          history.replaceState(history.state, "", kmOracleUrl.toString());
+        }
+      } catch (e) {}
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -164,6 +180,7 @@ const GA4_ID = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID;
     <link rel="alternate" type="application/rss+xml" title="Karmastro · Le Cosmos & Horoscope" href="/rss.xml" />
 
     <!-- Analytics tracker -->
+    <script src="/oracle-handoff.js" defer is:inline></script>
     <script src="/tracker.js" defer is:inline></script>
 
     <!-- Scroll-reveal wiring (karma-reveal-scroll). Progressive enhancement. -->

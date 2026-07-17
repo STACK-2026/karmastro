@@ -190,7 +190,7 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
               <p class="text-xs text-white/60 mb-4 max-w-sm mx-auto leading-relaxed">
                 Pose ta question à l'Oracle : il lit ton chemin de vie et te répond à l'instant, gratuitement et sans inscription.
               </p>
-              <a id="km-oracle" href="/oracle/?q=Que%20r%C3%A9v%C3%A8le%20mon%20chemin%20de%20vie%20en%20num%C3%A9rologie%20sur%20mes%20dons%2C%20mon%20ombre%20et%20ma%20direction%20%3F" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">
+              <a id="km-oracle" href="/oracle/?src=chemin-de-vie" data-oracle-source="chemin-de-vie" data-oracle-question="Que révèle mon chemin de vie en numérologie sur mes dons, mon ombre et ma direction ?" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">
                 Interroger l'Oracle sur mon chemin de vie
               </a>
               <div class="mt-4 pt-3 border-t border-white/10">
@@ -373,6 +373,9 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
     challengesList.innerHTML = meaning.challenges.map((c) => `<li>◆ ${c}</li>`).join("");
 
     (document.getElementById("result-mission") as HTMLElement).textContent = meaning.mission;
+
+    const oracleLink = document.getElementById("km-oracle") as HTMLAnchorElement | null;
+    if (oracleLink) oracleLink.dataset.oracleProfile = JSON.stringify({ birthDate: value });
 
     // Wire share button
     const shareBtn = document.getElementById("share-result-btn") as HTMLButtonElement | null;

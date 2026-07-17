@@ -10,6 +10,7 @@
     "build": "astro build && node scripts/gen-ai-sitemap.mjs",
     "preview": "astro preview",
     "astro": "astro",
+    "test:oracle-handoff": "node --test scripts/test-oracle-handoff.mjs",
     "guard:content": "bash scripts/guard-content.sh",
     "prebuild": "npm run guard:content"
   },

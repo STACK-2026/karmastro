@@ -177,7 +177,9 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
       <p class="mt-3 text-center text-xs text-white/50">
         Tu n'as pas toutes les infos de naissance des deux personnes ?
         <a
-          href={`/oracle/?q=${encodeURIComponent("Je n'ai pas toutes les infos de naissance des deux personnes. Que peut-on déjà dire de notre compatibilité de couple ?")}`}
+          href="/oracle/?src=synastrie"
+          data-oracle-source="synastrie"
+          data-oracle-question="Je n'ai pas toutes les infos de naissance des deux personnes. Que peut-on déjà dire de notre compatibilité de couple ?"
           class="km-oracle text-amber-300 hover:underline"
         >Demande à l'Oracle</a>, c'est gratuit et sans inscription.
       </p>
@@ -228,10 +230,10 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
             <p class="text-2xl mb-1">✦</p>
             <p class="font-serif text-base text-white mb-1">Et entre vous deux, qu'est-ce que ça donne ?</p>
             <p class="text-xs text-white/60 mb-4 max-w-sm mx-auto leading-relaxed">
-              Pose ta question à Séléné, notre guide relationnelle : elle lit vos aspects croisés et te répond à l'instant, gratuitement et sans inscription.
+              Pose ta question à l'Oracle : il lit vos aspects croisés et te répond à l'instant, gratuitement et sans inscription.
             </p>
-            <a id="km-oracle" href="/oracle/" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">
-              Interroger Séléné sur notre relation
+            <a id="km-oracle" href="/oracle/?src=synastrie" data-oracle-source="synastrie" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">
+              Interroger l'Oracle sur notre relation
             </a>
             <div class="mt-4 pt-3 border-t border-white/10">
               <button type="button" id="km-buy" class="text-xs text-amber-300/80 hover:text-amber-300 underline underline-offset-2 transition-colors">
@@ -309,7 +311,7 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
         <li>Les <strong>années personnelles</strong> de chacun : un couple peut vivre des désynchronisations cycliques</li>
       </ul>
       <p class="text-white/80 leading-relaxed mb-4">
-        C'est exactement le type d'analyse croisée que fait l'Oracle de Karmastro. En particulier <strong>Séléné</strong>, notre guide relationnelle (thérapeute de formation, inspirée de la déesse lunaire), est spécialisée dans ce genre de lecture qui croise astro, numérologie et psychologie.
+        C'est exactement le type d'analyse croisée que fait l'Oracle de Karmastro : il relie astrologie, numérologie et dynamique relationnelle dans une même conversation.
       </p>
 
       <h2 class="font-serif text-3xl mb-4 mt-10">Questions fréquentes</h2>
@@ -336,17 +338,17 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
 
       <h3 class="font-serif text-xl mb-2">Karmastro propose-t-il une synastrie complète avec interprétation ?</h3>
       <p class="text-white/80 leading-relaxed mb-4">
-        Le calcul et la liste des aspects sont gratuits, comme tous nos outils. Pour une interprétation personnalisée qui analyse aspect par aspect et te propose des pistes concrètes pour faire vivre la relation, consulte <a href="https://karmastro.com/oracle/" class="text-amber-300 hover:underline">l'Oracle</a> et choisis Séléné, notre guide relationnelle.
+        Le calcul et la liste des aspects sont gratuits, comme tous nos outils. Pour une interprétation personnalisée qui analyse les aspects et propose des pistes concrètes pour faire vivre la relation, consulte <a href="https://karmastro.com/oracle/" class="text-amber-300 hover:underline">l'Oracle</a>.
       </p>
     </section>
 
     <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
       <h3 class="font-serif text-xl mb-2">Analyse de couple complète</h3>
       <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
-        La liste des aspects est un début. Pour une interprétation qui croise synastrie astrologique, compatibilité numérologique et dimension karmique, parle à Séléné, notre guide relationnelle.
+        La liste des aspects est un début. Pour une interprétation qui croise synastrie astrologique, compatibilité numérologique et dimension karmique, parle à l'Oracle.
       </p>
       <a href="https://karmastro.com/oracle/" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity">
-        Parler à Séléné
+        Parler à l'Oracle
       </a>
     </div>
 
@@ -467,11 +469,12 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
       (document.getElementById("p2-venus") as HTMLElement).textContent = `♀ Vénus ${format(natal2.planets.Venus)}`;
       (document.getElementById("p2-mars") as HTMLElement).textContent = `♂ Mars ${format(natal2.planets.Mars)}`;
 
-      // Re-route vers l'Oracle gratuit (Séléné) avec le contexte réel des deux thèmes.
+      // Prépare un transfert local vers l'Oracle avec le contexte calculé.
       const oracleLink = document.getElementById("km-oracle") as HTMLAnchorElement | null;
       if (oracleLink) {
         const q = `Analyse notre compatibilité en synastrie : Personne 1 a son Soleil en ${natal1.planets.Soleil.sign} et sa Lune en ${natal1.planets.Lune.sign} ; Personne 2 a son Soleil en ${natal2.planets.Soleil.sign} et sa Lune en ${natal2.planets.Lune.sign}. Qu'est-ce que nos aspects croisés révèlent de notre relation ?`;
-        oracleLink.href = `/oracle/?q=${encodeURIComponent(q)}`;
+        oracleLink.dataset.oracleQuestion = q;
+        oracleLink.dataset.oracleProfile = JSON.stringify({ birthDate: p1Data.date, birthTime: p1Data.time, birthPlace: p1Data.place });
       }
 
       // Aspects

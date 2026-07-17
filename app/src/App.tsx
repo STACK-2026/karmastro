@@ -12,7 +12,7 @@ import { useClaimAnonSession } from "./hooks/useClaimAnonSession";
 import { OnboardingGate } from "./components/OnboardingGate";
 import StarField from "./components/StarField";
 import { Suspense, lazy, useEffect } from "react";
-import { detectLocale, applyLocaleToDocument } from "./lib/locale";
+import { I18nProvider } from "./i18n/ui";
 
 // Every route is lazy-loaded. Marketing and app deeplinks should not download
 // one another's pages before rendering their own conversion surface.
@@ -42,15 +42,6 @@ const TrackingProvider = ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>;
 };
 
-// Apply detected locale to <html lang> on mount so screen readers + SEO
-// pick up the correct language when the user arrives from a non-FR site URL.
-const LocaleInit = ({ children }: { children: React.ReactNode }) => {
-  useEffect(() => {
-    applyLocaleToDocument(detectLocale());
-  }, []);
-  return <>{children}</>;
-};
-
 // Minimal brand-consistent fallback for lazy route loads. Starfield in the
 // background + a breathing glyph. No blocking spinner, the transition is
 // quick enough that a full overlay feels janky.
@@ -71,13 +62,13 @@ const ExternalRedirect = ({ to }: { to: string }) => {
 };
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <AuthProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <LocaleInit>
+  <I18nProvider fallback={<RouteFallback />}>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
           <TrackingProvider>
             <OnboardingGate>
             <GoogleOneTap />
@@ -115,12 +106,12 @@ const App = () => (
             </Suspense>
             </OnboardingGate>
           </TrackingProvider>
-          </LocaleInit>
-        </BrowserRouter>
-        <CookieBanner />
-      </TooltipProvider>
-    </AuthProvider>
-  </QueryClientProvider>
+          </BrowserRouter>
+          <CookieBanner />
+        </TooltipProvider>
+      </AuthProvider>
+    </QueryClientProvider>
+  </I18nProvider>
 );
 
 export default App;

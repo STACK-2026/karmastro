@@ -229,6 +229,30 @@
     var c = document.getElementById("reading-cta");
     return (c && c.getAttribute("data-locale")) || (document.documentElement.lang || "fr");
   }
+  function pathTool(path) {
+    var match = (path || "").match(/\/outils\/([a-z0-9-]+)\/?/);
+    return match ? match[1] : "";
+  }
+  function prepareOracleLink(link, path) {
+    var source = link.getAttribute("data-oracle-source") || pathTool(path);
+    var question = link.getAttribute("data-oracle-question") || "";
+    var profile;
+    try {
+      var rawProfile = link.getAttribute("data-oracle-profile");
+      profile = rawProfile ? JSON.parse(rawProfile) : undefined;
+    } catch (e) {
+      profile = undefined;
+    }
+    try {
+      var currentUrl = new URL(link.getAttribute("href") || "/oracle/", location.href);
+      if (!question) question = currentUrl.searchParams.get("q") || "";
+    } catch (e) {}
+    if (window.kmOracleHandoff) {
+      window.kmOracleHandoff.store({ source: source, question: question, profile: profile });
+      link.setAttribute("href", window.kmOracleHandoff.cleanHref(link.getAttribute("href") || "/oracle/", source, location.href));
+    }
+    return source;
+  }
   function setupFunnel() {
     var path = location.pathname;
     // Activation : le bloc résultat passe de hidden à visible.
@@ -238,7 +262,8 @@
       var mo = new MutationObserver(function () {
         if (!fired && !result.classList.contains("hidden")) {
           fired = true;
-          trackEvent("tool_calculated", { path: path });
+          var tool = ctaTool() || pathTool(path);
+          trackEvent("tool_calculated", { tool: tool, locale: ctaLocale(), path: path });
         }
       });
       mo.observe(result, { attributes: true, attributeFilter: ["class"] });
@@ -273,7 +298,8 @@
       var t = ev.target;
       var link = t && t.closest ? t.closest("#km-oracle, .km-oracle") : null;
       if (!link) return;
-      trackEvent("oracle_cta_click", { tool: ctaTool(), locale: ctaLocale(), path: path });
+      var source = prepareOracleLink(link, path);
+      trackEvent("oracle_cta_click", { tool: source, source: source, locale: ctaLocale(), path: path });
     }, true);
   }
   if (document.readyState === "loading") {

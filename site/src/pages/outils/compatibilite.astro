@@ -190,10 +190,10 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
               <p class="text-2xl mb-1">✦</p>
               <p class="font-serif text-base text-white mb-1">Et entre vous deux, qu'est-ce que ça donne ?</p>
               <p class="text-xs text-white/60 mb-4 max-w-sm mx-auto leading-relaxed">
-                Pose ta question à Séléné, notre guide relationnelle : il lit votre compatibilité et te répond à l'instant, gratuitement et sans inscription.
+                Pose ta question à l'Oracle : il lit votre compatibilité et te répond à l'instant, gratuitement et sans inscription.
               </p>
-              <a id="km-oracle" href="/oracle/?q=Analyse%20notre%20compatibilit%C3%A9%20num%C3%A9rologique%20%3A%20nos%20forces%2C%20nos%20frictions%20et%20comment%20grandir%20ensemble." class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">
-                Interroger Séléné sur notre compatibilité
+              <a id="km-oracle" href="/oracle/?src=compatibilite" data-oracle-source="compatibilite" data-oracle-question="Analyse notre compatibilité numérologique : nos forces, nos frictions et comment grandir ensemble." class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">
+                Interroger l'Oracle sur notre compatibilité
               </a>
               <div class="mt-4 pt-3 border-t border-white/10">
                 <button type="button" id="km-buy" class="text-xs text-amber-300/80 hover:text-amber-300 underline underline-offset-2 transition-colors">
@@ -286,7 +286,7 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
         La numérologie donne une vision d'ensemble. Pour aller plus loin, les astrologues utilisent la <strong>synastrie</strong> : le croisement complet des deux thèmes natals. Ils regardent comment le Soleil de l'un aspecte la Lune de l'autre, comment Vénus et Mars s'alignent (attraction physique), comment Saturne stabilise ou bloque, comment Pluton transforme. C'est le niveau de précision le plus avancé en compatibilité.
       </p>
       <p class="text-white/80 leading-relaxed mb-4">
-        Karmastro propose cette analyse complète dans son <a href="https://app.karmastro.com" class="text-amber-300 hover:underline">application</a>, où les guides (<a href="/notre-histoire/" class="text-amber-300 hover:underline">Sibylle pour l'astro profonde, Séléné pour les relations, Pythia pour les nombres</a>) croisent numérologie et astrologie pour te donner une lecture complète de ta relation. L'Oracle peut répondre à des questions précises sur ton couple.
+        Karmastro propose cette analyse complète dans son <a href="https://app.karmastro.com" class="text-amber-300 hover:underline">application</a>. L'Oracle croise numérologie et astrologie pour répondre à des questions précises sur ton couple et conserver le fil de l'échange.
       </p>
 
       <h2 class="font-serif text-3xl mb-4 mt-10">Compatibilité et karma</h2>
@@ -316,7 +316,7 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
 
       <h3 class="font-serif text-xl mb-2">Cette calculatrice peut-elle me dire si je dois rompre ?</h3>
       <p class="text-white/80 leading-relaxed mb-4">
-        Non. Aucun outil, aussi précis soit-il, ne peut répondre à cette question à ta place. La numérologie éclaire, elle ne décide pas. Si tu cherches de la clarté sur une relation complexe, parle-en à <a href="https://karmastro.com/oracle/" class="text-amber-300 hover:underline">Séléné</a>, notre guide relationnelle : elle croisera la compatibilité numérologique avec ta synastrie astrologique et tes questions précises pour t'aider à y voir plus clair.
+        Non. Aucun outil, aussi précis soit-il, ne peut répondre à cette question à ta place. La numérologie éclaire, elle ne décide pas. Si tu cherches de la clarté sur une relation complexe, parle-en à <a href="https://karmastro.com/oracle/" class="text-amber-300 hover:underline">l'Oracle</a> : il croisera la compatibilité numérologique avec ta synastrie astrologique et tes questions précises pour t'aider à y voir plus clair.
       </p>
 
       <h3 class="font-serif text-xl mb-2">Puis-je utiliser ce calcul pour l'amitié ou le travail ?</h3>
@@ -439,6 +439,9 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
     (document.getElementById("score-label") as HTMLElement).textContent = scoreLabel(compat.score);
     (document.getElementById("dynamic-text") as HTMLElement).textContent = compat.dynamic;
     (document.getElementById("lesson-text") as HTMLElement).textContent = compat.lesson;
+
+    const oracleLink = document.getElementById("km-oracle") as HTMLAnchorElement | null;
+    if (oracleLink) oracleLink.dataset.oracleProfile = JSON.stringify({ birthDate: dateA });
 
     // Wire PDF export
     const pdfBtn = document.getElementById("download-pdf-btn") as HTMLButtonElement | null;

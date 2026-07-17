@@ -100,37 +100,38 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-      - name: Check app/src/i18n/ui.ts FR baseline completeness
+          node-version: '22'
+      - name: Check app UI dictionary parity
         run: |
           set -e
           # Extract all UiKey values from type union
-          KEYS=$(grep -oE '\| "[a-z.]+_*[a-z0-9.]+"' app/src/i18n/ui.ts | sed 's/| "//; s/"$//' | sort -u)
+          KEYS=$(grep -oE '\| "[^"]+"' app/src/i18n/ui-types.ts | sed 's/| "//; s/"$//' | sort -u)
           KEYCOUNT=$(echo "$KEYS" | wc -l | tr -d ' ')
-          FRKEYS=$(awk '/^export const fr: UiStrings = \{/,/^\};/' app/src/i18n/ui.ts | grep -oE '^  "[^"]+"' | sed 's/^  "//; s/"$//' | sort -u | wc -l | tr -d ' ')
+          FRKEYS=$(grep -oE '^  "[^"]+"' app/src/i18n/locales/fr.ts | sed 's/^  "//; s/"$//' | sort -u)
+          FRCOUNT=$(echo "$FRKEYS" | wc -l | tr -d ' ')
           echo "Type UiKey union : $KEYCOUNT keys"
-          echo "FR baseline entries : $FRKEYS"
-          if [ "$FRKEYS" -lt "$KEYCOUNT" ]; then
-            echo "::error::FR baseline has $FRKEYS entries but UiKey type expects $KEYCOUNT. Fill the missing ones."
-            MISSING=$(comm -23 <(echo "$KEYS") <(awk '/^export const fr: UiStrings = \{/,/^\};/' app/src/i18n/ui.ts | grep -oE '^  "[^"]+"' | sed 's/^  "//; s/"$//' | sort -u))
+          echo "FR baseline entries : $FRCOUNT"
+          if [ "$FRCOUNT" -ne "$KEYCOUNT" ]; then
+            echo "::error::FR baseline has $FRCOUNT entries but UiKey type expects $KEYCOUNT."
+            MISSING=$(comm -23 <(echo "$KEYS") <(echo "$FRKEYS"))
             echo "Missing keys:"; echo "$MISSING" | head -20
             exit 1
           fi
           echo "OK: FR baseline complete."
-      - name: Check non-FR locales don't regress below 95% coverage
+      - name: Check all non-FR locales have exact key parity
         run: |
           set -e
-          FRKEYS=$(awk '/^export const fr: UiStrings = \{/,/^\};/' app/src/i18n/ui.ts | grep -oE '^  "[^"]+"' | wc -l | tr -d ' ')
+          FRKEYS=$(grep -oE '^  "[^"]+"' app/src/i18n/locales/fr.ts | sed 's/^  "//; s/"$//' | sort -u)
+          FRCOUNT=$(echo "$FRKEYS" | wc -l | tr -d ' ')
           FAIL=0
           for lang in en es pt de it tr pl ru ja ar; do
-            COUNT=$(awk "/^export const $lang: Partial<UiStrings> = \{/,/^\};/" app/src/i18n/ui.ts | grep -oE '^  "[^"]+"' | wc -l | tr -d ' ')
-            # 95% threshold
-            THRESHOLD=$((FRKEYS * 95 / 100))
-            if [ "$COUNT" -lt "$THRESHOLD" ]; then
-              echo "::error::Locale $lang has $COUNT/$FRKEYS keys (< 95% threshold $THRESHOLD). Falling back to FR on live UI."
+            LANGKEYS=$(grep -oE '^  "[^"]+"' "app/src/i18n/locales/$lang.ts" | sed 's/^  "//; s/"$//' | sort -u)
+            COUNT=$(echo "$LANGKEYS" | wc -l | tr -d ' ')
+            if [ "$COUNT" -ne "$FRCOUNT" ] || [ -n "$(comm -3 <(echo "$FRKEYS") <(echo "$LANGKEYS"))" ]; then
+              echo "::error::Locale $lang has $COUNT/$FRCOUNT keys and does not match the FR registry."
               FAIL=1
             else
-              echo "OK: $lang has $COUNT/$FRKEYS keys"
+              echo "OK: $lang has exact parity ($COUNT keys)"
             fi
           done
           exit $FAIL
@@ -150,7 +151,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: npm
           cache-dependency-path: app/package-lock.json
       - name: Install

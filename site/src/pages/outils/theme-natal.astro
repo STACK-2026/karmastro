@@ -226,7 +226,7 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
             <p class="text-xs text-white/60 mb-4 max-w-sm mx-auto leading-relaxed">
               Pose ta question à l'Oracle : il lit ton thème (Soleil, Lune, Ascendant) et te répond à l'instant, gratuitement et sans inscription.
             </p>
-            <a id="km-oracle" href="/oracle/" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">
+            <a id="km-oracle" href="/oracle/?src=theme-natal" data-oracle-source="theme-natal" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">
               Interroger l'Oracle sur mon thème
             </a>
             <div class="mt-4 pt-3 border-t border-white/10">
@@ -364,13 +364,13 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
     <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
       <h3 class="font-serif text-xl mb-2">Interprétation personnalisée</h3>
       <p class="text-white/70 mb-4 text-sm leading-relaxed max-w-xl mx-auto">
-        Calculer ton thème est un point de départ. Pour une interprétation qui croise ton thème natal avec ta numérologie, ton année personnelle et tes transits actuels, parle à Sibylle, notre Oracle astrologue.
+        Calculer ton thème est un point de départ. Pour une interprétation qui croise ton thème natal avec ta numérologie, ton année personnelle et tes transits actuels, parle à l'Oracle.
       </p>
       <a
         href="https://karmastro.com/oracle/"
         class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium hover:opacity-90 transition-opacity"
       >
-        Parler à Sibylle
+        Parler à l'Oracle
       </a>
     </div>
 
@@ -602,7 +602,12 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
     const oracleLink = document.getElementById("km-oracle") as HTMLAnchorElement | null;
     if (oracleLink) {
       const q = `Interprète mon thème natal : Soleil en ${sun.sign}${moon ? `, Lune en ${moon.sign}` : ""}, Ascendant en ${asc.sign}. Qu'est-ce que ça révèle de ma personnalité et de mon chemin de vie ?`;
-      oracleLink.href = `/oracle/?q=${encodeURIComponent(q)}`;
+      oracleLink.dataset.oracleQuestion = q;
+      oracleLink.dataset.oracleProfile = JSON.stringify({
+        birthDate: (document.getElementById("birth-date") as HTMLInputElement).value,
+        birthTime: (document.getElementById("birth-time") as HTMLInputElement).value,
+        birthPlace: (document.getElementById("birth-place") as HTMLInputElement).value,
+      });
     }
 
     // Planets list
