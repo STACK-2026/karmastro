@@ -24,7 +24,7 @@
 
 ## Priorités
 
-1. Conversion outil vers Oracle : suivre `tool_calculated`, `oracle_cta_click`, `oracle_entry_viewed`, `oracle_first_response`, `oracle_second_turn`, `oracle_limit_hit`, `paywall_viewed` et `paywall_etoile_click`. Les CTA contextualisés après résultat sont livrés sur cinq outils.
+1. Conversion outil vers Oracle : suivre `tool_calculated`, `oracle_cta_click`, `oracle_entry_viewed`, `oracle_profile_started`, `oracle_profile_submitted`, `oracle_first_response`, `oracle_second_turn`, `oracle_limit_hit`, `paywall_viewed` et `paywall_etoile_click`. Les CTA contextualisés après résultat sont livrés sur cinq outils et la complétion du profil reste mesurable avant la première réponse.
 2. FR top 3 : synastrie, dette karmique, thème natal.
 3. Striking distance : EN birth-chart, puis EN transits/karmic-debt.
 4. Qualité italienne sur les pages qui performent déjà.
