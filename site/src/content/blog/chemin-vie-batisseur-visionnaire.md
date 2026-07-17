@@ -88,7 +88,7 @@ Le **chemin de vie** se calcule en additionnant tous les chiffres de ta date de 
 
 **Outils pour calculer** :
 - [Calculateur de chemin de vie Karmastro](https://app.karmastro.com/calculateur) (précision Swiss Ephemeris).
-- [Numerology Calculator](https://www.numerology.com/numerology-calculator) (pour vérification).
+- Numerology Calculator (pour vérification).
 
 **À retenir** :
 - Si le résultat final est **22**, tu es un Maître Bâtisseur.
@@ -303,7 +303,7 @@ Le **chemin de vie 22** n’est pas une malédiction ni une bénédiction : c’
 - [Wikipedia - Numerology](https://fr.wikipedia.org/wiki/Num%C3%A9rologie) - Wikipedia, dernière mise à jour 2024.
 - [Forbes - Billionaires by Life Path Number](https://www.forbes.com) - Forbes, 2024.
 - [Astrodienst - Swiss Ephemeris](https://www.astro.com/swisseph/) - Astrodienst, 2024.
-- [Karmastro - Analyse de 5 000 profils numérologiques](https://karmastro.com/etudes) - Karmastro, 2025.
+- Karmastro - Analyse de 5 000 profils numérologiques - Karmastro, 2025.
 - [NASA JPL - Planetary Ephemerides](https://ssd.jpl.nasa.gov/) - NASA, 2024.
 - [IFOP - Les Français et l’astrologie](https://www.ifop.com) - IFOP, 2024.
 
