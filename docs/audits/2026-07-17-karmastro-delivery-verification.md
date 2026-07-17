@@ -1,8 +1,8 @@
 # Karmastro - Vérification de livraison adoption Oracle
 
 > Date : 2026-07-17
-> État : pré-live validé, prêt au déploiement contrôlé
-> Risque : élevé et borné
+> État : déployé et vérifié en production
+> Risque : maîtrisé, deux alertes basses acceptées et documentées
 > Références : [[2026-07-16-karmastro-audit-profond]], [[2026-07-17-oracle-adoption-observability-design]], [[2026-07-17-oracle-adoption-observability]]
 
 ## Résultat
@@ -32,6 +32,7 @@ Le bundle app principal passe de 872,34 Ko et 273,12 Ko gzip à 521,85 Ko et 156
 | Performance app | dictionnaires dynamiques, Vite 8 | 521,85 Ko / 156,62 Ko gzip | PASS |
 | Money-path inchangé | aucun fichier checkout, Stripe, webhook ou prix modifié | revue du diff Claude + scan fichiers | PASS |
 | Build global | app, site, contenu, types | 18 tests app, ESLint, TypeScript, 8 050 pages | PASS |
+| Artefacts live | site et app servent le commit `20c2349` | contrôle HTTP, Chromium live et Lighthouse | PASS |
 
 ## Vérifications exécutées
 
@@ -55,7 +56,7 @@ Le bundle app principal passe de 872,34 Ko et 273,12 Ko gzip à 521,85 Ko et 156
 
 Deux alertes basses restent dans l'esbuild interne d'Astro pour un serveur de développement Windows. Karmastro construit sur Node 22 et déploie un artefact statique sur Cloudflare Pages ; ce serveur n'est pas exposé en production et l'environnement de travail vérifié est macOS. La correction imposerait Astro 7.1, changement majeur non nécessaire pour ce risque non exposé. Décision : risque bas accepté, réévaluation lors de la migration Astro 7.
 
-### Navigateur
+### Navigateur local
 
 Les appels Supabase ont été interceptés localement. Aucune donnée, aucun message et aucun événement réel n'a été écrit.
 
@@ -67,6 +68,21 @@ Les appels Supabase ont été interceptés localement. Aucune donnée, aucun mes
 6. Ancien lien `?q=` nettoyé avant analytics tout en restant fonctionnel.
 
 Résultat Playwright : 2 scénarios, 2 PASS.
+
+### Production
+
+Le commit produit `20c2349f9a92b8357884c5ea1675e9618345f3d0` a été poussé sur `main` puis vérifié sur les artefacts réellement servis.
+
+- Quality Gates : [run 29545483594](https://github.com/STACK-2026/karmastro/actions/runs/29545483594), SUCCESS.
+- Garde anti-fuite inter-projets : [run 29545483587](https://github.com/STACK-2026/karmastro/actions/runs/29545483587), SUCCESS.
+- Déploiement site Cloudflare Pages : [run 29545483614](https://github.com/STACK-2026/karmastro/actions/runs/29545483614), SUCCESS, purge et IndexNow inclus.
+- `karmastro.com` sert `oracle-handoff.js` et les cinq CTA avec une URL limitée à `/oracle/?src=slug`.
+- `app.karmastro.com` sert le bundle attendu `assets/index-B8wMxf6E.js`, 521 853 octets bruts et 155 061 octets gzip mesurés.
+- Recette Chromium live, appels Supabase et Oracle interceptés : parcours complet et nettoyage de `q`, 2 sur 2 PASS.
+- Contrat des cinq CTA live sur viewport mobile 390 x 844 et desktop 1 440 x 900 : 2 sur 2 PASS.
+- Aucun paiement, message Oracle, événement analytics ou donnée de test n'a été écrit pendant cette recette.
+
+Lighthouse mobile live sur `/pricing` après déploiement : performance 71, accessibilité 100, bonnes pratiques 96, SEO 100, LCP 4,7 s, TBT 0 ms, CLS 0 et transfert total 389 KiB. La baseline était 70 en performance et 5,3 s de LCP. Le LCP progresse, mais reste le principal budget de performance à travailler. La réduction du bundle est la preuve stable ; un score Lighthouse isolé reste sensible au réseau et à la charge.
 
 ## Revue indépendante
 

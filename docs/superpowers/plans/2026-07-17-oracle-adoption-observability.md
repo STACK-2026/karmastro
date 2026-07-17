@@ -52,9 +52,9 @@
 
 ## Lot 6 - Livraison et contrôle live
 
-- [ ] Synchroniser avec `origin/main`, résoudre les divergences sans écraser les changements tiers.
-- [ ] Committer par surface cohérente et pousser `main`.
-- [ ] Observer les déploiements app et site jusqu'au vert.
-- [ ] Vérifier les cinq CTA et l'Oracle sur mobile et desktop.
-- [ ] Rejouer Lighthouse pricing et contrôler l'absence d'erreurs client.
-- [ ] Envoyer à Claude et au propriétaire le bilan, les preuves, le rollback et les métriques à surveiller sur 14 jours.
+- [x] Synchroniser avec `origin/main`, résoudre les divergences sans écraser les changements tiers.
+- [x] Committer par surface cohérente et pousser `main`.
+- [x] Observer les déploiements app et site jusqu'au vert.
+- [x] Vérifier les cinq CTA et l'Oracle sur mobile et desktop.
+- [x] Rejouer Lighthouse pricing et contrôler l'absence d'erreurs client.
+- [x] Envoyer à Claude et au propriétaire le bilan, les preuves, le rollback et les métriques à surveiller sur 14 jours.
