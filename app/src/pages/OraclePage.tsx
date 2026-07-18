@@ -11,6 +11,16 @@ import { personalYear, personalMonth, personalDay } from "@/lib/numerology";
 import { useToast } from "@/hooks/use-toast";
 import { useUserProfile } from "@/hooks/useUserProfile";
 import { trackEvent } from "@/lib/tracker";
+import {
+  oracleEntryViewedEvent,
+  oracleHandoffClickEvent,
+  oraclePaywallEvents,
+  oracleProfileStartedEvent,
+  oracleProfileSubmittedEvent,
+  oracleResponseEvents,
+  paywallEtoileClickEvent,
+  type OracleTrackingEvent,
+} from "@/lib/oracle-analytics";
 import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
 import ReactMarkdown from "react-markdown";
@@ -84,6 +94,10 @@ const FEEDBACK_OPTIONS: Array<{ rating: 1 | 2 | 3; emoji: string; labelKey: UiKe
   { rating: 1, emoji: "🌑", labelKey: "oracle.feedback_not_now", color: "border-pink-400/40 hover:bg-pink-400/10 text-pink-300" },
 ];
 
+function trackOracleEvents(events: OracleTrackingEvent[]) {
+  events.forEach((event) => { void trackEvent(event.name, event.properties); });
+}
+
 const OraclePage = () => {
   const userProfile = useUserProfile();
   const navigate = useNavigate();
@@ -125,6 +139,11 @@ const OraclePage = () => {
     birthTime: "",
     birthPlace: "",
   });
+
+  useEffect(() => {
+    const event = oracleEntryViewedEvent();
+    void trackEvent(event.name, event.properties);
+  }, []);
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
@@ -245,10 +264,11 @@ const OraclePage = () => {
       .replace(/\s+/g, " ")
       .trim();
 
-    trackEvent("oracle_profile_form_submitted", {
-      has_time: Boolean(profileForm.birthTime.trim()),
-      has_place: Boolean(profileForm.birthPlace.trim()),
+    const event = oracleProfileSubmittedEvent({
+      hasTime: Boolean(profileForm.birthTime.trim()),
+      hasPlace: Boolean(profileForm.birthPlace.trim()),
     });
+    void trackEvent(event.name, event.properties);
     handleSend(msg);
   };
 
@@ -291,12 +311,14 @@ const OraclePage = () => {
     if (!msgText.trim() || isLoading || !guideKey) return;
 
     const userMsg: Msg = { role: "user", content: msgText };
+    const priorUserTurns = messages.filter((message) => message.role === "user").length;
     setMessages(prev => [...prev, userMsg]);
     setInput("");
     setIsLoading(true);
 
     let assistantSoFar = "";
     let responseOk = false;
+    let resolvedConversationId = conversationId;
 
     try {
       const { data: { session } } = await supabase.auth.getSession();
@@ -321,6 +343,10 @@ const OraclePage = () => {
 
         // Paywall (402) : show inline CTA instead of toast error
         if (resp.status === 402 && errData.paywall) {
+          trackOracleEvents(oraclePaywallEvents({
+            isAnon: Boolean(errData.paywall.is_anon),
+            turn: priorUserTurns + 1,
+          }));
           setMessages((prev) => [
             ...prev,
             {
@@ -361,6 +387,7 @@ const OraclePage = () => {
             const parsed = JSON.parse(jsonStr);
             if (parsed.conversation_id && !conversationId) {
               setConversationId(parsed.conversation_id);
+              resolvedConversationId = parsed.conversation_id;
             }
             if (parsed.engine_status && parsed.engine_status !== engineStatus) {
               setEngineStatus(parsed.engine_status);
@@ -398,12 +425,12 @@ const OraclePage = () => {
     } finally {
       setIsLoading(false);
       if (responseOk) {
-        trackEvent("oracle_message_sent", {
+        trackOracleEvents(oracleResponseEvents({
           guide: guideKey,
-          message_length: msgText.length,
-          conversation_depth: messages.length,
-          conversation_id: conversationId,
-        });
+          messageLength: msgText.length,
+          priorUserTurns,
+          conversationId: resolvedConversationId,
+        }));
       }
     }
   };
@@ -453,7 +480,8 @@ const OraclePage = () => {
                   <button
                     onClick={() => {
                       setShowProfileForm(true);
-                      trackEvent("oracle_profile_form_opened", {});
+                      const event = oracleProfileStartedEvent();
+                      void trackEvent(event.name, event.properties);
                     }}
                     className="w-full text-sm text-left rounded-xl border border-amber-300/40 bg-gradient-to-r from-amber-300/10 to-purple-400/10 hover:from-amber-300/15 hover:to-purple-400/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/60 text-amber-100 px-4 py-3 transition-colors"
                   >
@@ -597,13 +625,21 @@ const OraclePage = () => {
                     {msg.isAnonPaywall ? (
                       <div className="flex flex-col sm:flex-row gap-2">
                         <button
-                          onClick={() => navigate(`/auth?next=/pricing&oracle_session=${encodeURIComponent(getSessionId())}`)}
+                          onClick={() => {
+                            const event = oracleHandoffClickEvent("signup");
+                            void trackEvent(event.name, event.properties);
+                            navigate(`/auth?next=/pricing&oracle_session=${encodeURIComponent(getSessionId())}`);
+                          }}
                           className="flex-1 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity glow-gold"
                         >
                           {t("oracle.paywall_cta_signup")}
                         </button>
                         <button
-                          onClick={() => navigate("/pricing")}
+                          onClick={() => {
+                            const event = oracleHandoffClickEvent("pricing");
+                            void trackEvent(event.name, event.properties);
+                            navigate("/pricing");
+                          }}
                           className="flex-1 px-4 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 font-medium text-sm hover:bg-amber-300/10 transition-colors"
                         >
                           {t("oracle.paywall_cta_plans")}
@@ -612,13 +648,20 @@ const OraclePage = () => {
                     ) : (
                       <div className="flex flex-col sm:flex-row gap-2">
                         <button
-                          onClick={() => navigate("/pricing")}
+                          onClick={() => {
+                            trackOracleEvents([paywallEtoileClickEvent(), oracleHandoffClickEvent("pricing")]);
+                            navigate("/pricing");
+                          }}
                           className="flex-1 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity glow-gold"
                         >
                           {t("oracle.paywall_cta_etoile")}
                         </button>
                         <button
-                          onClick={() => navigate("/pricing")}
+                          onClick={() => {
+                            const event = oracleHandoffClickEvent("pricing");
+                            void trackEvent(event.name, event.properties);
+                            navigate("/pricing");
+                          }}
                           className="flex-1 px-4 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 font-medium text-sm hover:bg-amber-300/10 transition-colors"
                         >
                           {t("oracle.paywall_cta_credits")}

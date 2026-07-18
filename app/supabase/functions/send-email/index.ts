@@ -12,6 +12,11 @@ import {
   ameSoeurCollectEmail,
   adminSaleEmail,
 } from "../_shared/email-templates.ts";
+import {
+  completeEmailLogEntry,
+  createEmailLogEntry,
+  type EmailLogDatabase,
+} from "../_shared/email-delivery-log.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -66,6 +71,9 @@ serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
+
+  let emailLogId: string | null = null;
+  let emailLogDb: EmailLogDatabase | null = null;
 
   try {
     const { type, to, data } = await req.json() as {
@@ -134,8 +142,8 @@ serve(async (req) => {
     // Log the email attempt to DB for audit trail (non-blocking)
     if (SERVICE_KEY) {
       try {
-        const sb = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
-        await sb.from("email_log").insert({
+        emailLogDb = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } }) as unknown as EmailLogDatabase;
+        emailLogId = await createEmailLogEntry(emailLogDb, {
           recipient: to,
           type,
           subject: template.subject,
@@ -160,12 +168,14 @@ serve(async (req) => {
     }
 
     await sendViaResend(to, template.subject, template.html, template.text);
+    if (emailLogDb) await completeEmailLogEntry(emailLogDb, emailLogId, "sent");
 
     return new Response(JSON.stringify({ status: "sent", subject: template.subject }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (e: any) {
+    if (emailLogDb) await completeEmailLogEntry(emailLogDb, emailLogId, "failed", e?.message || e);
     console.error("send-email error:", e);
     return new Response(JSON.stringify({ error: e.message || "Erreur inconnue" }), {
       status: 500,
