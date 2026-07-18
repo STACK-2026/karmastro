@@ -9,8 +9,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
 import { generateReading, buildFallbackReading } from "../_shared/reading-generator.ts";
 
 // EdgeRuntime fourni par le runtime Supabase (background tasks).
-// deno-lint-ignore no-explicit-any
-declare const EdgeRuntime: any;
+declare const EdgeRuntime: { waitUntil(promise: Promise<unknown>): void };
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

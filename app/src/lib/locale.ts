@@ -23,7 +23,7 @@ export function detectLocale(): AppLocale {
       setLocaleCookie(urlLang as AppLocale);
       return urlLang as AppLocale;
     }
-  } catch {}
+  } catch { /* URL access can be unavailable in restricted browser contexts. */ }
 
   // 2. Cookie
   try {
@@ -31,7 +31,7 @@ export function detectLocale(): AppLocale {
     if (m && (SUPPORTED as readonly string[]).includes(m[1])) {
       return m[1] as AppLocale;
     }
-  } catch {}
+  } catch { /* Cookie access can be unavailable in restricted browser contexts. */ }
 
   // 3. navigator.language
   try {
@@ -39,7 +39,7 @@ export function detectLocale(): AppLocale {
     if (nav && (SUPPORTED as readonly string[]).includes(nav)) {
       return nav as AppLocale;
     }
-  } catch {}
+  } catch { /* Navigator access can be unavailable during browser teardown. */ }
 
   return "fr";
 }
@@ -50,7 +50,7 @@ export function setLocaleCookie(locale: AppLocale): void {
     document.cookie = `karmastro_lang=${locale}; Path=/; Domain=.karmastro.com; Max-Age=${60 * 60 * 24 * 365}; SameSite=Lax`;
     // Also mirror in localStorage for faster access
     localStorage.setItem("km_lang", locale);
-  } catch {}
+  } catch { /* Storage/cookie writes are best-effort in privacy mode. */ }
 }
 
 /**

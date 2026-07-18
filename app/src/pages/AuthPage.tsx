@@ -9,6 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 import StarField from "@/components/StarField";
 import { trackEvent } from "@/lib/tracker";
 import { useT } from "@/i18n/ui";
+import { getErrorMessage } from "@/lib/errors";
 import {
   ORACLE_HANDOFF_SESSION_KEY,
   getPostAuthPath,
@@ -57,11 +58,11 @@ const AuthPage = () => {
       setIsLogin(false);
       // Look up referrer name
       supabase
-        .from("referral_lookup" as any)
+        .from("referral_lookup")
         .select("first_name")
         .eq("referral_code", code)
         .maybeSingle()
-        .then(({ data }: any) => {
+        .then(({ data }) => {
           if (data?.first_name) setReferrerName(data.first_name);
         });
     }
@@ -97,7 +98,7 @@ const AuthPage = () => {
         if (referralCode && data?.user?.id) {
           await supabase
             .from("profiles")
-            .update({ referred_by_code: referralCode } as any)
+            .update({ referred_by_code: referralCode })
             .eq("user_id", data.user.id);
           localStorage.removeItem(REFERRAL_STORAGE_KEY);
         }
@@ -110,10 +111,10 @@ const AuthPage = () => {
         });
         if (data.session) navigate(getPostAuthPath());
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       toast({
         title: t("auth.toast_error_title"),
-        description: error.message,
+        description: getErrorMessage(error),
         variant: "destructive",
       });
     } finally {
@@ -132,10 +133,10 @@ const AuthPage = () => {
       });
       if (error) throw error;
       // Redirect happens externally, nothing else to do here
-    } catch (error: any) {
+    } catch (error: unknown) {
       toast({
         title: t("auth.toast_google_error_title"),
-        description: error.message || t("auth.toast_google_error_desc"),
+        description: getErrorMessage(error, t("auth.toast_google_error_desc")),
         variant: "destructive",
       });
       setLoading(false);

@@ -48,9 +48,9 @@ export async function geocodePlace(query: string): Promise<GeocodeResult | null>
  *   const debounced = useDebounced((q) => geocodePlace(q).then(setGeoResult), 500);
  *   <Input onChange={e => debounced(e.target.value)} />
  */
-export function createDebouncer<T extends (...args: any[]) => void>(fn: T, delayMs: number) {
+export function createDebouncer<TArgs extends unknown[]>(fn: (...args: TArgs) => void, delayMs: number) {
   let timer: ReturnType<typeof setTimeout> | null = null;
-  return (...args: Parameters<T>) => {
+  return (...args: TArgs) => {
     if (timer) clearTimeout(timer);
     timer = setTimeout(() => fn(...args), delayMs);
   };

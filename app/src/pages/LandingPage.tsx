@@ -319,7 +319,7 @@ const LandingPage = () => {
     // Persist to sessionStorage so OnboardingPage can pre-fill
     try {
       sessionStorage.setItem("km_onboarding", JSON.stringify({ birthDate, firstName }));
-    } catch {}
+    } catch { /* Session storage is best-effort in privacy mode. */ }
   };
 
   const features: { icon: typeof Hash; labelKey: UiKey; descKey: UiKey; backKey: UiKey }[] = [

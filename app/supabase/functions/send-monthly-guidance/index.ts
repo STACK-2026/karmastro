@@ -67,8 +67,7 @@ serve(async (req) => {
       const content = await generateReading({
         tool: "guidance-mensuelle", fullName: s.full_name || "", birthDate: s.birth_date,
         locale: s.locale || "fr", currentYear: yr, currentMonth: mo,
-        // deno-lint-ignore no-explicit-any
-      } as any);
+      });
       const loc = s.locale === "en" ? "en" : "fr";
       const html = `<div style="background:#0f0a1e;padding:32px 20px;font-family:system-ui,sans-serif;"><div style="max-width:560px;margin:0 auto;background:rgba(26,15,46,0.9);border:1px solid rgba(212,160,23,0.25);border-radius:16px;padding:32px 28px;"><p style="font-size:11px;letter-spacing:4px;color:rgba(251,191,36,0.5);text-align:center;margin:0 0 18px;">✦ ✧ · ✦ · ✧ ✦</p>${mdToHtml(content)}<p style="font-size:11px;color:rgba(196,184,219,0.4);text-align:center;margin-top:24px;border-top:1px solid rgba(255,255,255,0.08);padding-top:16px;">Guide mensuel Karmastro · <a href="https://karmastro.com" style="color:rgba(251,191,36,0.6);">karmastro.com</a></p></div></div>`;
       const resp = await fetch("https://api.resend.com/emails", {

@@ -154,17 +154,14 @@ export function getZodiacSign(day: number, month: number): { sign: string; symbo
 
 // Get moon phase for a given date (simplified)
 export function getMoonPhase(date: Date): { phase: string; emoji: string; illumination: number } {
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
-  
-  // Simplified moon phase calculation
-  let c = 0, e = 0, jd = 0, b = 0;
-  if (month < 3) { year; c = year - 1; e = month + 12; } else { c = year; e = month; }
-  jd = Math.floor(365.25 * (c + 4716)) + Math.floor(30.6001 * (e + 1)) + day - 1524.5;
-  const daysSinceNew = (jd - 2451550.1) % 29.530588853;
-  const normalised = daysSinceNew / 29.530588853;
-  const phaseIndex = Math.floor(normalised * 8) % 8;
+  // 2000-01-06 18:14 UTC is a known new moon. Measuring elapsed time from
+  // this instant avoids calendar conversion errors around January/February.
+  const knownNewMoonUtc = Date.UTC(2000, 0, 6, 18, 14);
+  const synodicMonthMs = 29.530588853 * 24 * 60 * 60 * 1000;
+  const elapsedCycles = (date.getTime() - knownNewMoonUtc) / synodicMonthMs;
+  const normalised = ((elapsedCycles % 1) + 1) % 1;
+  // Offset by half a segment so each named phase is centred on its event.
+  const phaseIndex = Math.floor((normalised + 1 / 16) * 8) % 8;
   
   const phases = [
     { phase: "Nouvelle Lune", emoji: "🌑", illumination: 0 },

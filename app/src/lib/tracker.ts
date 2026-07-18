@@ -74,7 +74,7 @@ const state: PageViewState = {
 };
 
 function newUuid(): string {
-  if (typeof crypto !== "undefined" && "randomUUID" in crypto) return (crypto as any).randomUUID();
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") return crypto.randomUUID();
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
     const r = (Math.random() * 16) | 0;
     return (c === "x" ? r : (r & 0x3) | 0x8).toString(16);
@@ -90,7 +90,7 @@ export async function trackPageView(path: string, title?: string): Promise<void>
     const timeMs = Date.now() - state.timerStart;
     // SECURITY DEFINER RPC: anon/authenticated have no SELECT grant, so a direct
     // .update().eq("id") is denied (42501). The RPC updates the row server-side.
-    (supabase as any)
+    supabase
       .rpc("track_page_metrics", { p_id: state.lastInsertId, p_time_on_page_ms: timeMs })
       .then(() => {});
   }
@@ -104,7 +104,7 @@ export async function trackPageView(path: string, title?: string): Promise<void>
   // Generate client-side UUID (no SELECT grant needed for update later)
   const newId = newUuid();
 
-  (supabase as any)
+  supabase
     .from("page_views")
     .insert({
       id: newId,
@@ -145,7 +145,7 @@ export async function trackEvent(
   const { data: { user } } = await supabase.auth.getUser();
 
   try {
-    await (supabase as any).from("analytics_events").insert({
+    await supabase.from("analytics_events").insert({
       user_id: user?.id || null,
       session_id: getSessionId(),
       surface: "app",
@@ -166,7 +166,7 @@ export async function captureAttribution(userId: string): Promise<void> {
   if (typeof window === "undefined") return;
   const utm = getStoredUtm();
   try {
-    await (supabase as any).from("user_attribution").insert({
+    await supabase.from("user_attribution").insert({
       user_id: userId,
       utm_source: utm.utm_source || null,
       utm_medium: utm.utm_medium || null,
@@ -197,7 +197,7 @@ export async function backfillSessionPageViews(userId: string): Promise<void> {
     // SECURITY DEFINER RPC: claims this session's anonymous page_views for the
     // caller via auth.uid() server-side (no SELECT grant needed, and the client
     // cannot spoof another user_id). Only null-user rows of the session are taken.
-    await (supabase as any)
+    await supabase
       .rpc("claim_session_pageviews", { p_session_id: getSessionId() });
     sessionStorage.setItem(BACKFILL_KEY, userId);
   } catch (e) {
@@ -213,8 +213,8 @@ if (typeof window !== "undefined") {
   window.addEventListener("beforeunload", () => {
     if (state.lastInsertId && state.timerStart) {
       const timeMs = Date.now() - state.timerStart;
-      const url = `${(supabase as any).supabaseUrl || ""}/rest/v1/rpc/track_page_metrics`;
-      const key = (supabase as any).supabaseKey || "";
+      const url = `${supabase.supabaseUrl}/rest/v1/rpc/track_page_metrics`;
+      const key = supabase.supabaseKey;
       try {
         const blob = new Blob([JSON.stringify({ p_id: state.lastInsertId, p_time_on_page_ms: timeMs })], {
           type: "application/json",

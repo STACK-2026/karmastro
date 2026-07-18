@@ -11,7 +11,6 @@ export default tseslint.config(
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
     },
     plugins: {
       "react-hooks": reactHooks,
@@ -19,8 +18,32 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
+      "react-refresh/only-export-components": ["warn", {
+        allowConstantExport: true,
+        allowExportNames: [
+          "badgeVariants",
+          "buttonVariants",
+          "useFormField",
+          "navigationMenuTriggerStyle",
+          "useSidebar",
+          "toast",
+          "toggleVariants",
+          "useAuth",
+        ],
+      }],
       "@typescript-eslint/no-unused-vars": "off",
     },
+  },
+  {
+    files: ["src/**/*.{ts,tsx}"],
+    languageOptions: { globals: globals.browser },
+  },
+  {
+    files: ["supabase/functions/**/*.ts"],
+    languageOptions: { globals: globals.worker },
+  },
+  {
+    files: ["tailwind.config.ts", "vite.config.ts", "vitest.config.ts"],
+    languageOptions: { globals: globals.node },
   },
 );

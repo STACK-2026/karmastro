@@ -37,6 +37,7 @@ import {
   User,
 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import { getErrorMessage } from "@/lib/errors";
 import AppHeader from "@/components/AppHeader";
 import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
@@ -345,9 +346,9 @@ const UsersTab = () => {
     try {
       const d = await adminApi.userDetail(userId);
       setDetail(d);
-    } catch (e: any) {
+    } catch (e: unknown) {
       console.error("[admin] userDetail error:", e);
-      setDetailError(e?.message || String(e));
+      setDetailError(getErrorMessage(e));
     } finally {
       setDetailLoading(false);
     }
@@ -362,8 +363,8 @@ const UsersTab = () => {
       const res = await adminApi.grantCredits(userId, amount);
       alert(`Nouveau solde : ${res.new_balance} crédits`);
       load();
-    } catch (e: any) {
-      alert(`Erreur : ${e.message}`);
+    } catch (e: unknown) {
+      alert(`Erreur : ${getErrorMessage(e)}`);
     }
   };
 
@@ -373,8 +374,8 @@ const UsersTab = () => {
       const newState = await adminApi.toggleAdmin(userId);
       alert(`Admin : ${newState ? "oui" : "non"}`);
       load();
-    } catch (e: any) {
-      alert(`Erreur : ${e.message}`);
+    } catch (e: unknown) {
+      alert(`Erreur : ${getErrorMessage(e)}`);
     }
   };
 
@@ -458,8 +459,8 @@ const UsersTab = () => {
                       const stats = detail.stats;
                       const sessions = detail.sessions || [];
                       const visibleSessions = showAllSessions ? sessions : sessions.slice(0, 3);
-                      const profile = detail.profile as Record<string, any> | null;
-                      const natal = profile?.natal_chart_json as Record<string, any> | null;
+                      const profile = detail.profile;
+                      const natal = profile?.natal_chart_json;
                       const formatDuration = (s: number) => {
                         if (s < 60) return `${s}s`;
                         if (s < 3600) return `${Math.floor(s / 60)}min ${s % 60}s`;

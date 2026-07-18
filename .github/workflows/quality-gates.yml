@@ -156,6 +156,28 @@ jobs:
           cache-dependency-path: app/package-lock.json
       - name: Install
         run: cd app && (npm install --prefer-offline --no-audit --no-fund || (echo "lockfile drift, retry clean" && rm -rf node_modules && npm install --no-audit --no-fund))
+      - name: Lint (zero warnings)
+        run: cd app && npm run lint -- --max-warnings=0
+      - name: Typecheck
+        run: cd app && npx tsc --noEmit
+      - name: Unit tests
+        run: cd app && npm test
+      - name: Edge functions typecheck (locked Deno image)
+        run: >-
+          docker run --rm
+          -e DENO_DIR=/tmp/deno-dir
+          -v "${{ github.workspace }}/app:/workspace"
+          -w /workspace
+          denoland/deno@sha256:3ea71953ff50e3ff15c377ead1a8521f624e2f43d27713675a8bed7b33f166aa
+          deno check --frozen supabase/functions/*/index.ts
+      - name: Edge unit tests
+        run: >-
+          docker run --rm
+          -e DENO_DIR=/tmp/deno-dir
+          -v "${{ github.workspace }}/app:/workspace"
+          -w /workspace
+          denoland/deno@sha256:3ea71953ff50e3ff15c377ead1a8521f624e2f43d27713675a8bed7b33f166aa
+          deno test --frozen supabase/functions/_shared/*.test.ts
       - name: Build
         run: cd app && npm run build
 

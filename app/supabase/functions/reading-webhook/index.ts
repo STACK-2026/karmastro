@@ -10,8 +10,7 @@ import Stripe from "https://esm.sh/stripe@17.3.0?target=deno";
 import { generateReading, buildFallbackReading } from "../_shared/reading-generator.ts";
 
 // EdgeRuntime est fourni par le runtime Supabase (background tasks).
-// deno-lint-ignore no-explicit-any
-declare const EdgeRuntime: any;
+declare const EdgeRuntime: { waitUntil(promise: Promise<unknown>): void };
 
 const STRIPE_SECRET_KEY = Deno.env.get("STRIPE_SECRET_KEY") || "";
 const WEBHOOK_SECRET = Deno.env.get("STRIPE_READING_WEBHOOK_SECRET") || "";
@@ -37,8 +36,7 @@ serve(async (req) => {
     return new Response("ignored", { status: 200 });
   }
 
-  // deno-lint-ignore no-explicit-any
-  const session = event.data.object as any;
+  const session = event.data.object as Stripe.Checkout.Session;
   const md = session.metadata || {};
   const sb = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
 

@@ -43,8 +43,22 @@ function sunSign(month: number, day: number, en: boolean): string {
 // ── Phase 2 : outils astro (dépendent du moteur Swiss Ephemeris) ──────────────
 const ENGINE_URL = "http://168.119.229.20:8100";
 
-// deno-lint-ignore no-explicit-any
-function summarizeChart(chart: any): string {
+type EngineChartPoint = {
+  sign?: string;
+  degree?: number;
+  minute?: number;
+  retrograde?: boolean;
+  house?: number;
+};
+
+type EngineChart = {
+  error?: unknown;
+  ascendant?: EngineChartPoint;
+  midheaven?: EngineChartPoint;
+  planets?: Record<string, EngineChartPoint>;
+};
+
+function summarizeChart(chart: EngineChart | null | undefined): string {
   if (!chart || chart.error) return "";
   const lines: string[] = [];
   if (chart.ascendant?.sign) {

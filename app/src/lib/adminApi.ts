@@ -3,6 +3,7 @@
 // (enforced server-side via SECURITY DEFINER RPCs).
 
 import { supabase } from "@/integrations/supabase/client";
+import type { Database } from "@/integrations/supabase/types";
 
 export type Kpis = {
   total_users: number;
@@ -172,12 +173,24 @@ export type UserAttribution = {
   referrer_domain: string | null;
 };
 
+export type AdminNatalChart = Partial<Record<
+  "sun" | "moon" | "ascendant" | "mercury" | "venus" | "mars" | "jupiter" | "saturn" | "north_node",
+  string
+>>;
+
+export type AdminProfileDetail = {
+  interests?: string[];
+  level?: string;
+  oracle_tone?: string;
+  natal_chart_json?: AdminNatalChart | null;
+};
+
 export type UserDetail = {
   email: string | null;
   auth_provider: string;
   first_sign_in: string | null;
   last_sign_in: string | null;
-  profile: Record<string, unknown> | null;
+  profile: AdminProfileDetail | null;
   attribution: UserAttribution | null;
   sessions: UserSession[];
   stats: UserStats;
@@ -207,8 +220,11 @@ export type UserDetail = {
 };
 
 // Generic RPC caller
-async function rpc<T>(fn: string, args: Record<string, unknown> = {}): Promise<T> {
-  const { data, error } = await (supabase as any).rpc(fn, args);
+type AdminRpcName = Extract<keyof Database["public"]["Functions"], `admin_${string}`>
+  | "is_current_user_admin";
+
+async function rpc<T>(fn: AdminRpcName, args: Record<string, unknown> = {}): Promise<T> {
+  const { data, error } = await supabase.rpc(fn, args);
   if (error) {
     console.error(`[admin] rpc ${fn} failed:`, error);
     throw error;

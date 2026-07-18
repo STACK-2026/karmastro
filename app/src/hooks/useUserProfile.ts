@@ -232,7 +232,7 @@ export function useUserProfile(): UserProfileData {
           }
 
           const resp = await fetch(
-            `${(supabase as any).supabaseUrl || "https://nkjbmbdrvejemzrggxvr.supabase.co"}/functions/v1/get-natal-chart`,
+            `${supabase.supabaseUrl}/functions/v1/get-natal-chart`,
             {
               method: "POST",
               headers: {
@@ -292,6 +292,38 @@ const SIGN_SYMBOLS: Record<string, { symbol: string; element: string }> = {
   "Poissons": { symbol: "♓", element: "Eau" },
 };
 
+type EnginePoint = {
+  sign?: string;
+  degree?: number;
+  minute?: number;
+};
+
+type EnginePlanet = EnginePoint & {
+  symbol?: string;
+  house?: number;
+  interpretation?: string;
+};
+
+type EngineHouse = { sign?: string; description?: string };
+type EngineAspect = {
+  planet1?: string;
+  planet2?: string;
+  p1?: string;
+  p2?: string;
+  type?: string;
+  aspect?: string;
+  orb?: number;
+  nature?: string;
+  interpretation?: string;
+};
+
+type EngineNatalChart = {
+  planets?: Record<string, EnginePlanet>;
+  ascendant?: EnginePoint;
+  houses?: EngineHouse[];
+  aspects?: EngineAspect[];
+};
+
 function signInfo(sign: string | undefined | null, degree?: number, minute?: number) {
   if (!sign) return { sign: "-", symbol: "", element: "", degrees: "" };
   const info = SIGN_SYMBOLS[sign] || { symbol: "", element: "" };
@@ -301,7 +333,7 @@ function signInfo(sign: string | undefined | null, degree?: number, minute?: num
 
 function enrichAstrologyFromEngine(
   base: UserProfileData["astrology"],
-  natalChart: any
+  natalChart: EngineNatalChart
 ): UserProfileData["astrology"] {
   const planets = natalChart.planets || {};
 
@@ -324,7 +356,7 @@ function enrichAstrologyFromEngine(
     : base.ascendant;
 
   // Planets array (unified shape)
-  const planetsList = Object.entries(planets).map(([name, p]: [string, any]) => ({
+  const planetsList = Object.entries(planets).map(([name, p]) => ({
     name,
     symbol: p.symbol || "",
     sign: p.sign || "-",
@@ -335,7 +367,7 @@ function enrichAstrologyFromEngine(
 
   // Houses
   const housesList = Array.isArray(natalChart.houses)
-    ? natalChart.houses.map((h: any, i: number) => ({
+    ? natalChart.houses.map((h, i) => ({
         house: i + 1,
         sign: h.sign || "-",
         description: h.description || "",
@@ -344,7 +376,7 @@ function enrichAstrologyFromEngine(
 
   // Aspects
   const aspectsList = Array.isArray(natalChart.aspects)
-    ? natalChart.aspects.map((a: any) => ({
+    ? natalChart.aspects.map((a) => ({
         planet1: a.planet1 || a.p1 || "",
         planet2: a.planet2 || a.p2 || "",
         type: a.type || a.aspect || "",
@@ -358,8 +390,8 @@ function enrichAstrologyFromEngine(
     sunSign,
     moonSign,
     ascendant,
-    planets: planetsList as any,
-    aspects: aspectsList as any,
-    houses: housesList as any,
+    planets: planetsList,
+    aspects: aspectsList,
+    houses: housesList,
   };
 }

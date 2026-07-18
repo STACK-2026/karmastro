@@ -1,0 +1,13 @@
+{
+  "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
+  "compilerOptions": {
+    "lib": ["deno.window", "dom", "dom.iterable", "es2022"],
+    "strict": true
+  },
+  "lint": {
+    "include": ["supabase/functions/**/*.ts"]
+  },
+  "test": {
+    "include": ["supabase/functions/**/*.test.ts"]
+  }
+}

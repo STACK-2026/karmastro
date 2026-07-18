@@ -42,7 +42,7 @@ const PRICE_AMOUNTS: Record<string, string> = {
 async function triggerEmail(
   type: string,
   to: string,
-  data: Record<string, any>
+  data: Record<string, unknown>
 ): Promise<void> {
   try {
     const res = await fetch(`${SUPABASE_URL}/functions/v1/send-email`, {
@@ -83,17 +83,22 @@ serve(async (req) => {
     let event: Stripe.Event;
     try {
       event = await stripe.webhooks.constructEventAsync(body, signature, STRIPE_WEBHOOK_SECRET);
-    } catch (err: any) {
-      console.error("Webhook signature verification failed:", err.message);
-      return new Response(`Webhook Error: ${err.message}`, { status: 400 });
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Invalid signature";
+      console.error("Webhook signature verification failed:", message);
+      return new Response(`Webhook Error: ${message}`, { status: 400 });
     }
 
     const supabase = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
 
     // Log event (idempotent via unique constraint)
+    const eventObject = event.data.object as unknown as {
+      metadata?: { supabase_user_id?: string } | null;
+      subscription?: { metadata?: { supabase_user_id?: string } | null } | null;
+    };
     const userIdMeta =
-      (event.data.object as any).metadata?.supabase_user_id ||
-      (event.data.object as any).subscription?.metadata?.supabase_user_id ||
+      eventObject.metadata?.supabase_user_id ||
+      eventObject.subscription?.metadata?.supabase_user_id ||
       null;
 
     const { error: logError } = await supabase
@@ -342,9 +347,10 @@ serve(async (req) => {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });
-  } catch (e: any) {
+  } catch (e: unknown) {
+    const message = e instanceof Error ? e.message : "Erreur interne";
     console.error("stripe-webhook error:", e);
-    return new Response(JSON.stringify({ error: e.message }), {
+    return new Response(JSON.stringify({ error: message }), {
       status: 500,
       headers: { "Content-Type": "application/json" },
     });

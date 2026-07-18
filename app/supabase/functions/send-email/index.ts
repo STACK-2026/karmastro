@@ -40,6 +40,23 @@ type TemplateType =
   | "ame_soeur_collect"
   | "admin_sale";
 
+type TemplateData = {
+  firstName?: string | null;
+  referrerName?: string | null;
+  productName?: string;
+  amount?: string;
+  isSubscription?: boolean;
+  credits?: number;
+  badgeName?: string;
+  badgeIcon?: string;
+  filleulsCount?: number;
+  filleulName?: string | null;
+  guideName?: string;
+  token?: string;
+  locale?: string;
+  customerEmail?: string;
+};
+
 async function sendViaResend(to: string, subject: string, html: string, text: string): Promise<void> {
   if (!RESEND_API_KEY) {
     console.warn("RESEND_API_KEY not set, email not sent to", to);
@@ -79,7 +96,7 @@ serve(async (req) => {
     const { type, to, data } = await req.json() as {
       type: TemplateType;
       to: string;
-      data?: Record<string, any>;
+      data?: TemplateData;
     };
 
     if (!to || !type) {
@@ -174,10 +191,11 @@ serve(async (req) => {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
-  } catch (e: any) {
-    if (emailLogDb) await completeEmailLogEntry(emailLogDb, emailLogId, "failed", e?.message || e);
+  } catch (e: unknown) {
+    const message = e instanceof Error ? e.message : "Erreur inconnue";
+    if (emailLogDb) await completeEmailLogEntry(emailLogDb, emailLogId, "failed", message);
     console.error("send-email error:", e);
-    return new Response(JSON.stringify({ error: e.message || "Erreur inconnue" }), {
+    return new Response(JSON.stringify({ error: message }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });

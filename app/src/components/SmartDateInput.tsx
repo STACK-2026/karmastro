@@ -22,7 +22,7 @@ function parseDate(input: string): string | null {
   if (/^\d{4}-\d{2}-\d{2}$/.test(cleaned)) return cleaned;
 
   // DD/MM/YYYY or DD-MM-YYYY or DD.MM.YYYY
-  let match = cleaned.match(/^(\d{1,2})[\/\-\.](\d{1,2})[\/\-\.](\d{4})$/);
+  let match = cleaned.match(/^(\d{1,2})[-/.](\d{1,2})[-/.](\d{4})$/);
   if (match) {
     const [, d, m, y] = match;
     return `${y}-${m.padStart(2, "0")}-${d.padStart(2, "0")}`;
@@ -68,10 +68,10 @@ const SmartDateInput = ({ value, onChange, placeholder, className = "" }: SmartD
 
   // Sync displayValue when value prop changes externally (e.g. pre-fill from DB/sessionStorage)
   useEffect(() => {
-    if (value && formatDisplay(value) !== displayValue) {
-      setDisplayValue(formatDisplay(value));
-      setError(false);
-    }
+    if (!value) return;
+    const formatted = formatDisplay(value);
+    setDisplayValue((current) => current === formatted ? current : formatted);
+    setError(false);
   }, [value]);
 
   const handleTextChange = (text: string) => {

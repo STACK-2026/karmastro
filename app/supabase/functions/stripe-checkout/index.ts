@@ -148,8 +148,8 @@ serve(async (req) => {
     const origin = ALLOWED_APP_ORIGINS.has(requestOrigin) ? requestOrigin : "https://app.karmastro.com";
 
     // Stripe Checkout locale (2-letter code, supports all karmastro locales except ar)
-    const stripeLocale = ["fr", "en", "es", "pt", "de", "it", "tr", "pl", "ja"].includes(locale)
-      ? (locale as any)
+    const stripeLocale: Stripe.Checkout.SessionCreateParams.Locale = ["fr", "en", "es", "pt", "de", "it", "tr", "pl", "ja"].includes(locale)
+      ? locale as Stripe.Checkout.SessionCreateParams.Locale
       : "auto";
 
     const session = await stripe.checkout.sessions.create({
@@ -188,9 +188,10 @@ serve(async (req) => {
     return new Response(JSON.stringify({ url: session.url, sessionId: session.id }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
-  } catch (e: any) {
+  } catch (e: unknown) {
+    const message = e instanceof Error ? e.message : "Erreur interne";
     console.error("stripe-checkout error:", e);
-    return new Response(JSON.stringify({ error: e.message || "Erreur interne" }), {
+    return new Response(JSON.stringify({ error: message }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });

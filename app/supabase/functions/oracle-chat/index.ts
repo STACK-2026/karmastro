@@ -19,6 +19,43 @@ const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "https://nkjbmbdrvejemzrggx
 const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
 const ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY") || "";
 
+type FeedbackRow = { guide: string; rating: number; text: string | null; created_at: string };
+type EnginePoint = { sign: string; degree: number; minute: number; retrograde?: boolean; house?: number };
+type CosmicSnapshot = {
+  date?: string;
+  moon?: { name?: string; illumination?: number; moon_sign?: EnginePoint };
+  sun_position?: EnginePoint;
+  retrogrades?: Array<{ planet: string; sign: string }>;
+};
+type OracleEngineContext = {
+  age?: number;
+  active_transits?: Array<{
+    transit_planet: string;
+    transit_retrograde?: boolean;
+    aspect: string;
+    natal_planet: string;
+    orb: number;
+    nature: string;
+  }>;
+  numerology?: {
+    life_path?: { number?: number; is_master?: boolean; calculation?: string };
+    personal_year?: number;
+    personal_month?: number;
+    personal_day?: number;
+    expression?: { number?: number; calculation?: string };
+    soul_urge?: { number?: number };
+    karmic_debts?: Array<{ number: number; source: string; meaning: string }>;
+    inclusion?: { missing_numbers?: number[] };
+    pinnacles?: Array<{ pinnacle: number; ages: string; number: number }>;
+  };
+  natal_chart?: {
+    planets?: Record<string, EnginePoint>;
+    ascendant?: EnginePoint;
+    midheaven?: EnginePoint;
+    aspects?: Array<{ planet_1: string; planet_2: string; aspect: string; orb: number; nature: string; exact?: boolean }>;
+  };
+};
+
 function jsonResponse(payload: unknown, status: number): Response {
   return new Response(JSON.stringify(payload), {
     status,
@@ -65,24 +102,25 @@ async function buildFeedbackContext(userId: string | null, sessionId: string | n
 
     if (error || !data || data.length === 0) return "";
 
-    const totalCount = data.length;
-    const avgRating = data.reduce((a: number, b: any) => a + b.rating, 0) / totalCount;
-    const positive = data.filter((f: any) => f.rating === 3).length;
-    const negative = data.filter((f: any) => f.rating === 1).length;
+    const feedback = data as FeedbackRow[];
+    const totalCount = feedback.length;
+    const avgRating = feedback.reduce((a, b) => a + b.rating, 0) / totalCount;
+    const positive = feedback.filter((f) => f.rating === 3).length;
+    const negative = feedback.filter((f) => f.rating === 1).length;
 
     // Per-guide stats
     const guideStats: Record<string, { total: number; sum: number }> = {};
-    for (const fb of data) {
+    for (const fb of feedback) {
       if (!guideStats[fb.guide]) guideStats[fb.guide] = { total: 0, sum: 0 };
       guideStats[fb.guide].total += 1;
       guideStats[fb.guide].sum += fb.rating;
     }
 
     // Extract user text comments (up to 5 most recent)
-    const recentComments = data
-      .filter((f: any) => f.text && f.text.trim())
+    const recentComments = feedback
+      .filter((f) => f.text && f.text.trim())
       .slice(0, 5)
-      .map((f: any) => `[${f.guide} - ${f.rating}/3] "${f.text}"`);
+      .map((f) => `[${f.guide} - ${f.rating}/3] "${f.text}"`);
 
     let ctx = `\n\nHISTORIQUE DE FEEDBACK DE CET UTILISATEUR :
 - Il/elle t'a donné ${totalCount} feedbacks récents (moyenne : ${avgRating.toFixed(1)}/3)
@@ -429,7 +467,7 @@ serve(async (req) => {
     }
 
     let profile: OracleProfileContext = normalized.profile;
-    let conversationId = normalized.conversationId;
+    const conversationId = normalized.conversationId;
 
     if (SERVICE_KEY) {
       const sbIdentity = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
@@ -622,13 +660,13 @@ serve(async (req) => {
       const cosmicRes = await fetchCosmic().catch(() => null);
       if (cosmicRes?.ok) {
         cosmicOk = true;
-        const cosmic = await cosmicRes.json();
+        const cosmic = await cosmicRes.json() as CosmicSnapshot;
         engineContext += `\n\nDONNÉES COSMIQUES EN TEMPS RÉEL (Swiss Ephemeris) :
 - Date : ${cosmic.date}
 - Phase lunaire : ${cosmic.moon?.name} (${cosmic.moon?.illumination}% illumination)
 - Lune en : ${cosmic.moon?.moon_sign?.sign} ${cosmic.moon?.moon_sign?.degree}°${cosmic.moon?.moon_sign?.minute}'
 - Soleil en : ${cosmic.sun_position?.sign} ${cosmic.sun_position?.degree}°${cosmic.sun_position?.minute}'
-- Rétrogrades : ${cosmic.retrogrades?.length > 0 ? cosmic.retrogrades.map((r: any) => `${r.planet} en ${r.sign}`).join(", ") : "Aucune planète rétrograde"}`;
+- Rétrogrades : ${cosmic.retrogrades && cosmic.retrogrades.length > 0 ? cosmic.retrogrades.map((r) => `${r.planet} en ${r.sign}`).join(", ") : "Aucune planète rétrograde"}`;
       }
 
       // Full profile context if birth data available
@@ -636,7 +674,7 @@ serve(async (req) => {
         // ─────────────────────────────────────────────────────────
         // Cache read : try profiles.natal_chart_json first (24h TTL)
         // ─────────────────────────────────────────────────────────
-        let ctx: any = null;
+        let ctx: OracleEngineContext | null = null;
         let cacheHit = false;
 
         if (userId && SERVICE_KEY) {
@@ -651,7 +689,7 @@ serve(async (req) => {
             if (cached?.natal_chart_json && cached?.natal_chart_computed_at) {
               const ageMs = Date.now() - new Date(cached.natal_chart_computed_at).getTime();
               if (ageMs < 24 * 60 * 60 * 1000) {
-                ctx = cached.natal_chart_json;
+                ctx = cached.natal_chart_json as unknown as OracleEngineContext;
                 cacheHit = true;
               }
             }
@@ -672,7 +710,7 @@ serve(async (req) => {
         // ─────────────────────────────────────────────────────────
         if (!ctx) {
           const [y, m, d] = profile.birthDate.split("-").map(Number);
-          const body: any = { year: y, month: m, day: d };
+          const body: { year: number; month: number; day: number; hour?: number; latitude?: number; longitude?: number; name?: string } = { year: y, month: m, day: d };
           if (profile.birthTime) {
             const [h, mi] = profile.birthTime.split(":").map(Number);
             body.hour = h + (mi || 0) / 60;
@@ -688,7 +726,7 @@ serve(async (req) => {
           });
 
           if (ctxRes.ok) {
-            ctx = await ctxRes.json();
+            ctx = await ctxRes.json() as OracleEngineContext;
             profileOk = true;
 
             // Persist fresh result to cache (fire-and-forget)
@@ -726,19 +764,21 @@ serve(async (req) => {
 
           if (n?.expression) engineContext += `\n- Expression : ${n.expression.number} - ${n.expression.calculation}`;
           if (n?.soul_urge) engineContext += `\n- Nombre intime : ${n.soul_urge.number}`;
-          if (n?.karmic_debts?.length > 0) {
-            engineContext += `\n- Dettes karmiques : ${n.karmic_debts.map((d: any) => `${d.number} (${d.source} - ${d.meaning})`).join("; ")}`;
+          const karmicDebts = n?.karmic_debts ?? [];
+          if (karmicDebts.length > 0) {
+            engineContext += `\n- Dettes karmiques : ${karmicDebts.map((d) => `${d.number} (${d.source} - ${d.meaning})`).join("; ")}`;
           }
-          if (n?.inclusion?.missing_numbers?.length > 0) {
-            engineContext += `\n- Nombres manquants (leçons karmiques) : ${n.inclusion.missing_numbers.join(", ")}`;
+          const missingNumbers = n?.inclusion?.missing_numbers ?? [];
+          if (missingNumbers.length > 0) {
+            engineContext += `\n- Nombres manquants (leçons karmiques) : ${missingNumbers.join(", ")}`;
           }
           if (n?.pinnacles) {
-            engineContext += `\n- Pinnacles : ${n.pinnacles.map((p: any) => `${p.pinnacle}e (${p.ages}) = ${p.number}`).join(", ")}`;
+            engineContext += `\n- Pinnacles : ${n.pinnacles.map((p) => `${p.pinnacle}e (${p.ages}) = ${p.number}`).join(", ")}`;
           }
 
           if (chart?.planets) {
             engineContext += `\n\nTHÈME NATAL (Swiss Ephemeris, précision 0.001") :`;
-            for (const [pname, pdata] of Object.entries(chart.planets) as any) {
+            for (const [pname, pdata] of Object.entries(chart.planets)) {
               const retro = pdata.retrograde ? " ℞" : "";
               const house = pdata.house ? ` (maison ${pdata.house})` : "";
               engineContext += `\n- ${pname} : ${pdata.sign} ${pdata.degree}°${pdata.minute}'${retro}${house}`;
@@ -747,22 +787,24 @@ serve(async (req) => {
             if (chart.midheaven) engineContext += `\n- Milieu du Ciel : ${chart.midheaven.sign} ${chart.midheaven.degree}°${chart.midheaven.minute}'`;
           }
 
-          if (chart?.aspects?.length > 0) {
+          const aspects = chart?.aspects ?? [];
+          if (aspects.length > 0) {
             engineContext += `\n\nASPECTS NATAUX :`;
-            for (const a of chart.aspects.slice(0, 10)) {
+            for (const a of aspects.slice(0, 10)) {
               engineContext += `\n- ${a.planet_1} ${a.aspect} ${a.planet_2} (orbe ${a.orb}°, ${a.nature})${a.exact ? " - EXACT" : ""}`;
             }
           }
 
-          if (ctx.active_transits?.length > 0) {
+          const activeTransits = ctx.active_transits ?? [];
+          if (activeTransits.length > 0) {
             engineContext += `\n\nTRANSITS ACTIFS AUJOURD'HUI :`;
-            for (const t of ctx.active_transits.slice(0, 8)) {
+            for (const t of activeTransits.slice(0, 8)) {
               const retro = t.transit_retrograde ? " ℞" : "";
               engineContext += `\n- ${t.transit_planet}${retro} ${t.aspect} ${t.natal_planet} natal (orbe ${t.orb}°, ${t.nature})`;
             }
           }
 
-          engineContext += `\n- Âge : ${ctx.age} ans`;
+          if (ctx.age !== undefined) engineContext += `\n- Âge : ${ctx.age} ans`;
         }
       }
     } catch (engineErr) {

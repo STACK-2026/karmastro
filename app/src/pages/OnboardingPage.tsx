@@ -16,6 +16,7 @@ import { ZodiacSymbol } from "@/components/ZodiacSymbol";
 import { useT, type UiKey } from "@/i18n/ui";
 import { clearPostAuthPath, getPostAuthPath } from "@/lib/postAuth";
 import { profileUpdatedProperties, resolveProfileSaveMode } from "@/lib/profile-save-mode";
+import { getErrorMessage } from "@/lib/errors";
 
 const ONBOARDING_STORAGE_KEY = "km_onboarding";
 
@@ -113,7 +114,7 @@ const OnboardingPage = () => {
         if (saved.gender) setGender(saved.gender);
         if (Array.isArray(saved.interests)) setInterests(saved.interests);
         if (saved.level) setLevel(saved.level);
-      } catch {}
+      } catch { /* Invalid or unavailable session data falls back to an empty form. */ }
     };
 
     if (user) {
@@ -181,7 +182,7 @@ const OnboardingPage = () => {
         firstName, lastName, birthName, currentName,
         gender, interests, level,
       }));
-    } catch {}
+    } catch { /* Session persistence is best-effort in privacy mode. */ }
   }, [birthDate, birthTime, knowsBirthTime, birthPlace, geoResult, firstName, lastName, birthName, currentName, gender, interests, level]);
 
   const toggleInterest = (id: string) => {
@@ -247,7 +248,7 @@ const OnboardingPage = () => {
 
     setSaving(true);
     try {
-      const { error } = await (supabase as any)
+      const { error } = await supabase
         .from("profiles")
         .update({
           first_name: firstName,
@@ -290,18 +291,18 @@ const OnboardingPage = () => {
             body: JSON.stringify({ email: user.email, locale, sign_slug: signSlug, source: "onboarding_optin" }),
           });
           trackEvent("daily_optin_subscribed", { sign: signSlug });
-        } catch { /* non-blocking */ }
+        } catch { /* Daily opt-in must not block profile completion. */ }
       }
       // Clean up session storage now that data is in DB
-      try { sessionStorage.removeItem(ONBOARDING_STORAGE_KEY); } catch {}
+      try { sessionStorage.removeItem(ONBOARDING_STORAGE_KEY); } catch { /* Storage cleanup is best-effort. */ }
       const destination = saveMode.destination || getPostAuthPath();
       if (!saveMode.destination) clearPostAuthPath();
       if (isEditMode) {
         toast({ title: t("profile.updated_title"), description: t("profile.updated_desc") });
       }
       navigate(destination, { replace: isEditMode });
-    } catch (e: any) {
-      toast({ title: t("onboarding.toast_error_title"), description: e.message, variant: "destructive" });
+    } catch (e: unknown) {
+      toast({ title: t("onboarding.toast_error_title"), description: getErrorMessage(e), variant: "destructive" });
     } finally {
       setSaving(false);
     }

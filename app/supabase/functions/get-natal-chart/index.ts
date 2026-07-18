@@ -89,7 +89,15 @@ serve(async (req) => {
 
     // Parse birth date
     const [y, m, d] = (profile.birth_date as string).split("-").map(Number);
-    const body: any = { year: y, month: m, day: d };
+    const body: {
+      year: number;
+      month: number;
+      day: number;
+      hour?: number;
+      latitude?: number;
+      longitude?: number;
+      name?: string;
+    } = { year: y, month: m, day: d };
 
     if (profile.birth_time) {
       const [h, mi] = (profile.birth_time as string).split(":").map(Number);

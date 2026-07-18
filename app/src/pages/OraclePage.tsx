@@ -25,6 +25,7 @@ import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
 import ReactMarkdown from "react-markdown";
 import { useT, type UiKey } from "@/i18n/ui";
+import { getErrorMessage } from "@/lib/errors";
 
 type Msg = {
   role: "user" | "assistant" | "paywall";
@@ -182,7 +183,10 @@ const OraclePage = () => {
         if (data.summary) setPriorSummary(data.summary);
         if (data.conversation?.id && Array.isArray(data.messages) && data.messages.length > 0) {
           setConversationId(data.conversation.id);
-          setMessages(data.messages.map((m: any) => ({ role: m.role, content: m.content })));
+          setMessages(data.messages.map((m: { role: "user" | "assistant"; content: string }) => ({
+            role: m.role,
+            content: m.content,
+          })));
         }
       } catch (e) {
         console.warn("[oracle-history] hydrate failed", e);
@@ -209,7 +213,7 @@ const OraclePage = () => {
         user_message: userMsg?.content?.slice(0, 500) ?? null,
         assistant_message: assistantMsg.content.slice(0, 2000),
       };
-      const { error } = await supabase.from("oracle_feedback" as any).insert(payload);
+      const { error } = await supabase.from("oracle_feedback").insert(payload);
       if (error) throw error;
 
       trackEvent("oracle_feedback_submitted", { guide: guideKey, rating, has_text: Boolean(text?.trim()) });
@@ -218,7 +222,7 @@ const OraclePage = () => {
         const guideName = currentGuide ? t(currentGuide.nameKey) : t("oracle.header_title");
         toast({ title: t("oracle.feedback_toast_title"), description: t("oracle.feedback_toast_desc", { name: guideName }) });
       }
-    } catch (e: any) {
+    } catch (e: unknown) {
       console.error("Feedback submit error:", e);
       toast({ title: t("oracle.feedback_error_title"), description: t("oracle.feedback_error_desc"), variant: "destructive" });
     }
@@ -416,9 +420,9 @@ const OraclePage = () => {
           }
         }
       }
-    } catch (e: any) {
+    } catch (e: unknown) {
       const guideName = currentGuide ? t(currentGuide.nameKey) : t("oracle.header_title");
-      toast({ title: t("oracle.error_unreachable", { name: guideName }), description: e.message, variant: "destructive" });
+      toast({ title: t("oracle.error_unreachable", { name: guideName }), description: getErrorMessage(e), variant: "destructive" });
       if (!assistantSoFar) {
         setMessages(prev => [...prev, { role: "assistant", content: t("oracle.error_fallback_msg") }]);
       }

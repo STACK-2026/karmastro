@@ -29,20 +29,20 @@ const ProfilePage = () => {
   useEffect(() => {
     if (!user?.id) return;
     // Fetch referral code + badges
-    (supabase as any)
+    supabase
       .from("profiles")
       .select("referral_code, badges")
       .eq("user_id", user.id)
       .maybeSingle()
-      .then(({ data }: any) => {
+      .then(({ data }) => {
         if (data?.referral_code) setReferralCode(data.referral_code);
         if (Array.isArray(data?.badges)) setBadges(data.badges);
       });
 
     // Fetch referral stats via RPC
-    (supabase as any)
+    supabase
       .rpc("get_referral_stats", { p_user_id: user.id })
-      .then(({ data }: any) => {
+      .then(({ data }) => {
         if (Array.isArray(data) && data[0]) {
           setValidatedCount(Number(data[0].validated_count) || 0);
           setPendingCount(Number(data[0].pending_count) || 0);
@@ -59,7 +59,7 @@ const ProfilePage = () => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
       toast({ title: t("profile.toast_link_copied_title"), description: t("profile.toast_link_copied_desc") });
-    } catch {}
+    } catch { /* Clipboard access can be denied; sharing remains available. */ }
   };
 
   const handleShare = async () => {
@@ -67,7 +67,7 @@ const ProfilePage = () => {
       try {
         await navigator.share({ title: t("profile.share_title"), text: shareText, url: shareUrl });
         return;
-      } catch {}
+      } catch { /* A cancelled native share falls back to copying the link. */ }
     }
     handleCopy();
   };

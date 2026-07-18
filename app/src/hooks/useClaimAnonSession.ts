@@ -33,7 +33,7 @@ export function useClaimAnonSession() {
 
       running.current = true;
       try {
-        const url = `${(supabase as any).supabaseUrl || "https://nkjbmbdrvejemzrggxvr.supabase.co"}/functions/v1/claim-anon-session`;
+        const url = `${supabase.supabaseUrl}/functions/v1/claim-anon-session`;
         const resp = await fetch(url, {
           method: "POST",
           headers: {

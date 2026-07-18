@@ -11,6 +11,12 @@ const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
 const ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY") || "";
 const SESSION_ID_RE = /^[A-Za-z0-9._:-]{8,128}$/;
 
+type OracleHistoryMessage = {
+  role: string;
+  content: string;
+  created_at: string;
+};
+
 function jsonResponse(payload: unknown, status = 200): Response {
   return new Response(JSON.stringify(payload), {
     status,
@@ -126,7 +132,7 @@ serve(async (req) => {
       .order("created_at", { ascending: true })
       .limit(40);
 
-    const messages = (msgs ?? []).map((m: any) => ({
+    const messages: OracleHistoryMessage[] = (msgs ?? []).map((m) => ({
       role: m.role,
       content: m.content,
       created_at: m.created_at,
@@ -135,7 +141,7 @@ serve(async (req) => {
     // Lightweight local summary : first user message + number of turns +
     // guide. Safe to inject into the next system prompt without a second
     // LLM call. The oracle-chat prompt can use this as "HISTORIQUE RÉCENT".
-    const firstUserMsg = messages.find((m: any) => m.role === "user");
+    const firstUserMsg = messages.find((m) => m.role === "user");
     const summary = conv
       ? `Dernière conversation avec ${conv.guide ?? "le guide"} (${new Date(conv.updated_at).toISOString().slice(0, 10)}), ${messages.length} échanges. L'utilisateur avait ouvert avec : "${(firstUserMsg?.content || conv.title || "").slice(0, 160)}".`
       : null;
