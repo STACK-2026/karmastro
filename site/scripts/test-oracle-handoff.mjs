@@ -11,6 +11,10 @@ const toolFiles = {
   synastrie: new URL("../src/pages/outils/synastrie.astro", import.meta.url),
 };
 
+const enBirthChartFile = new URL("../src/pages/en/tools/birth-chart.astro", import.meta.url);
+const headerFile = new URL("../src/components/Header.astro", import.meta.url);
+const trackerFile = new URL("../public/tracker.js", import.meta.url);
+
 async function loadModule(storage) {
   const source = await readFile(new URL("../public/oracle-handoff.js", import.meta.url), "utf8");
   const context = {
@@ -150,4 +154,26 @@ test("garde les cinq CTA sur la même origine et ne promeut jamais le partenaire
   const synastry = await readFile(toolFiles.synastrie, "utf8");
   assert.match(synastry, /oracleProfile = JSON\.stringify\(\{ birthDate: p1Data\.date, birthTime: p1Data\.time, birthPlace: p1Data\.place \}\)/);
   assert.doesNotMatch(synastry, /oracleProfile = JSON\.stringify\([^\n]*p2Data/);
+});
+
+test("connecte le birth chart EN au profil astral de l'app sans détour francophone", async () => {
+  const page = await readFile(enBirthChartFile, "utf8");
+  assert.doesNotMatch(page, /href="(?:https:\/\/karmastro\.com)?\/oracle\/?"/);
+  assert.match(page, /https:\/\/app\.karmastro\.com\/auth\?next=%2Fastral(?:&|&amp;)lang=en/);
+  assert.match(page, /utm_campaign=tool_handoff/);
+  assert.match(page, /utm_content=birth-chart-en/);
+  assert.match(page, /data-app-cta/);
+});
+
+test("connecte directement la navigation EN et instrumente les CTA app", async () => {
+  const header = await readFile(headerFile, "utf8");
+  const tracker = await readFile(trackerFile, "utf8");
+  assert.match(header, /tools:\s*locale === "en" \? "tools" : "outils"/);
+  assert.doesNotMatch(header, /localizedPath\("\/outils"\)/);
+  assert.match(header, /data-app-cta/);
+  assert.match(tracker, /app_cta_view/);
+  assert.match(tracker, /app_cta_click/);
+  assert.match(tracker, /handoff_id/);
+  assert.match(tracker, /keepalive: true/);
+  assert.match(tracker, /\[data-app-cta\]/);
 });

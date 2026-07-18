@@ -6,6 +6,12 @@ import { supabase } from "@/integrations/supabase/client";
 const SESSION_KEY = "km_session_id";
 const UTM_KEY = "km_utm";
 const BACKFILL_KEY = "km_user_backfilled";
+const HANDOFF_ARRIVED_KEY = "km_app_handoff_arrived";
+const HANDOFF_ID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+
+export function sanitizeHandoffId(value: string | null | undefined): string | null {
+  return value && HANDOFF_ID_RE.test(value) ? value.toLowerCase() : null;
+}
 
 // ───────────────────────────────────────────────────────────────
 // Session helpers
@@ -97,6 +103,20 @@ export async function trackPageView(path: string, title?: string): Promise<void>
 
   captureUtmFromUrl();
   const utm = getStoredUtm();
+  const url = new URL(window.location.href);
+  const handoffId = sanitizeHandoffId(url.searchParams.get("handoff_id"));
+  if (url.searchParams.has("handoff_id")) {
+    url.searchParams.delete("handoff_id");
+    window.history.replaceState(window.history.state, "", url.toString());
+  }
+  if (handoffId && sessionStorage.getItem(HANDOFF_ARRIVED_KEY) !== handoffId) {
+    sessionStorage.setItem(HANDOFF_ARRIVED_KEY, handoffId);
+    trackEvent("app_handoff_arrived", {
+      handoff_id: handoffId,
+      utm_campaign: utm.utm_campaign || null,
+      utm_content: utm.utm_content || null,
+    }).catch(() => {});
+  }
   const referrer = document.referrer || null;
 
   const { data: { user } } = await supabase.auth.getUser();

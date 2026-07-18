@@ -12,14 +12,31 @@ const localizedPath = (path: string) => {
   return locale === DEFAULT_LOCALE ? p : `/${locale}${p}`;
 };
 
+const localizedSections = {
+  tools: locale === "en" ? "tools" : "outils",
+};
+const appLink = (next: "/dashboard" | "/oracle", content: string) => {
+  const params = new URLSearchParams({
+    next,
+    lang: locale,
+    utm_source: "karmastro.com",
+    utm_medium: "internal",
+    utm_campaign: "site_app_handoff",
+    utm_content: content,
+  });
+  return `${siteConfig.appUrl}/auth?${params.toString()}`;
+};
+const profileHref = appLink("/dashboard", `header-${locale}`);
+const oracleHref = locale === DEFAULT_LOCALE ? "/oracle/" : appLink("/oracle", `nav-oracle-${locale}`);
+
 const navLinks = [
   { label: t("nav.home", locale), href: localizedPath("/") },
   { label: t("nav.horoscope", locale), href: localizedPath("/horoscope") },
-  { label: t("nav.tools", locale), href: localizedPath("/outils") },
+  { label: t("nav.tools", locale), href: localizedPath(`/${localizedSections.tools}`) },
   { label: t("nav.learn", locale), href: "/apprendre/" },
   { label: t("nav.blog", locale), href: localizedPath("/blog") },
   { label: t("nav.referral", locale), href: localizedPath("/parrainage") },
-  { label: t("nav.oracle", locale), href: "/oracle/" },
+  { label: t("nav.oracle", locale), href: oracleHref, appCta: locale !== DEFAULT_LOCALE, destination: "oracle" },
 ];
 ---
 
@@ -54,6 +71,9 @@ const navLinks = [
         href={link.href}
         class="nav-link text-sm font-medium no-underline relative"
         style="color: rgba(255, 255, 255, 0.85);"
+        data-app-cta={(link as any).appCta ? true : undefined}
+        data-cta-source={(link as any).appCta ? `nav-oracle-${locale}` : undefined}
+        data-cta-destination={(link as any).destination}
         {...((link as any).external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
         {link.label}
@@ -66,7 +86,10 @@ const navLinks = [
     <LanguageSwitcher />
     {siteConfig.appUrl && (
       <a
-        href={siteConfig.appUrl}
+        href={profileHref}
+        data-app-cta
+        data-cta-source={`header-${locale}`}
+        data-cta-destination="dashboard"
         class="inline-flex items-center gap-2 text-sm font-semibold text-white no-underline transition-all"
         style="
           background: hsl(271 91% 65%);
@@ -136,6 +159,9 @@ const navLinks = [
         href={link.href}
         class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium no-underline transition-colors"
         style="color: white;"
+        data-app-cta={(link as any).appCta ? true : undefined}
+        data-cta-source={(link as any).appCta ? `mobile-nav-oracle-${locale}` : undefined}
+        data-cta-destination={(link as any).destination}
         {...((link as any).external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
         {link.label}
@@ -148,7 +174,10 @@ const navLinks = [
   {siteConfig.appUrl && (
     <div class="p-4 pt-0">
       <a
-        href={siteConfig.appUrl}
+        href={profileHref}
+        data-app-cta
+        data-cta-source={`mobile-header-${locale}`}
+        data-cta-destination="dashboard"
         class="flex items-center justify-center gap-2 text-white font-semibold py-3 rounded-xl no-underline"
         style="background: hsl(271 91% 65%);"
       >

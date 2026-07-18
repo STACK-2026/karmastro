@@ -27,6 +27,19 @@ const FR_ONLY_PAGES = new Set([
 const safePath = (path: string) => FR_ONLY_PAGES.has(path) ? path : localizedPath(path);
 const isFrFallback = (path: string) => locale !== DEFAULT_LOCALE && FR_ONLY_PAGES.has(path);
 
+const oracleHref = (() => {
+  if (locale === DEFAULT_LOCALE) return "/oracle/";
+  const params = new URLSearchParams({
+    next: "/oracle",
+    lang: locale,
+    utm_source: "karmastro.com",
+    utm_medium: "internal",
+    utm_campaign: "site_app_handoff",
+    utm_content: `footer-oracle-${locale}`,
+  });
+  return `${siteConfig.appUrl}/auth?${params.toString()}`;
+})();
+
 type FooterLink = { href: string; label: string; hreflang?: string };
 
 const RECENT_ARTICLES_FR: FooterLink[] = [
@@ -104,7 +117,7 @@ const seeAllPairs = isEn ? "All pairs" : (isFr ? "Toutes les paires" : "Toutes l
         <p class="text-white font-semibold text-sm mb-3">{content.footerExploreTitle}</p>
         <ul class="space-y-2 text-sm" style="color: rgba(255, 255, 255, 0.7);">
           <li><a href={localizedPath("/blog")} class="hover:text-white transition-colors">{t("nav.blog", locale)}</a></li>
-          <li><a href="/oracle/" class="hover:text-white transition-colors">{t("nav.oracle", locale)}</a></li>
+          <li><a href={oracleHref} data-app-cta={locale !== DEFAULT_LOCALE ? true : undefined} data-cta-source={`footer-oracle-${locale}`} data-cta-destination="oracle" class="hover:text-white transition-colors">{t("nav.oracle", locale)}</a></li>
           <li><a href={safePath("/glossaire")} hreflang={isFrFallback("/glossaire") ? "fr" : undefined} class="hover:text-white transition-colors">{t("nav.glossary", locale)}</a></li>
           <li><a href={safePath("/notre-histoire")} hreflang={isFrFallback("/notre-histoire") ? "fr" : undefined} class="hover:text-white transition-colors">{t("nav.about", locale)}</a></li>
           <li><a href={safePath("/precision")} hreflang={isFrFallback("/precision") ? "fr" : undefined} class="hover:text-white transition-colors">{t("nav.precision", locale)}</a></li>

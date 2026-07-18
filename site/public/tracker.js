@@ -101,6 +101,7 @@
         Prefer: "return=minimal",
       },
       body: JSON.stringify(body),
+      keepalive: true,
     });
   }
 
@@ -230,7 +231,7 @@
     return (c && c.getAttribute("data-locale")) || (document.documentElement.lang || "fr");
   }
   function pathTool(path) {
-    var match = (path || "").match(/\/outils\/([a-z0-9-]+)\/?/);
+    var match = (path || "").match(/\/(?:outils|tools)\/([a-z0-9-]+)\/?/);
     return match ? match[1] : "";
   }
   function prepareOracleLink(link, path) {
@@ -291,6 +292,46 @@
       var tool = btn.getAttribute("data-code") || ctaTool() ||
         (btn.id === "km-buy-lifepath" ? "chemin-de-vie" : "");
       trackEvent("reading_cta_click", { tool: tool, locale: ctaLocale(), path: path });
+    }, true);
+
+    // Generic site -> app funnel. Only non-sensitive routing metadata is sent;
+    // birth/profile inputs never enter URLs or analytics.
+    var appCtas = document.querySelectorAll("[data-app-cta]");
+    function appCtaProps(link) {
+      return {
+        source: link.getAttribute("data-cta-source") || "unknown",
+        destination: link.getAttribute("data-cta-destination") || "app",
+        locale: ctaLocale(),
+        path: path,
+      };
+    }
+    if ("IntersectionObserver" in window) {
+      var appIo = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          var entry = entries[i];
+          if (!entry.isIntersecting || entry.target.getAttribute("data-cta-viewed") === "1") continue;
+          entry.target.setAttribute("data-cta-viewed", "1");
+          trackEvent("app_cta_view", appCtaProps(entry.target));
+          appIo.unobserve(entry.target);
+        }
+      }, { threshold: 0.4 });
+      for (var i = 0; i < appCtas.length; i++) appIo.observe(appCtas[i]);
+    }
+    document.addEventListener("click", function (ev) {
+      var t = ev.target;
+      var link = t && t.closest ? t.closest("[data-app-cta]") : null;
+      if (!link) return;
+      var props = appCtaProps(link);
+      try {
+        var targetUrl = new URL(link.getAttribute("href") || "", location.href);
+        if (targetUrl.hostname === "app.karmastro.com") {
+          var handoffId = uuid();
+          targetUrl.searchParams.set("handoff_id", handoffId);
+          link.setAttribute("href", targetUrl.toString());
+          props.handoff_id = handoffId;
+        }
+      } catch (e) {}
+      trackEvent("app_cta_click", props);
     }, true);
     // Activation Oracle : clic sur le CTA primaire « interroger l'Oracle » (reroute
     // fin d'outil → /oracle/). Mesure le levier #1 du plan MRR. [2026-06-17]
