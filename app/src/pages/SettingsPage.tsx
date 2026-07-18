@@ -91,7 +91,7 @@ const SettingsPage = () => {
 
       <div className="relative z-10 px-5 space-y-3">
         <button
-          onClick={() => navigate("/onboarding")}
+          onClick={() => navigate("/onboarding?mode=edit")}
           className="w-full flex items-center gap-3 border-glow rounded-lg bg-card/40 p-4 hover:bg-card/60 transition-colors"
         >
           <UserCog className="h-5 w-5 text-primary" />

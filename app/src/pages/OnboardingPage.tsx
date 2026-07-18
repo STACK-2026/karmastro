@@ -4,7 +4,7 @@ import { Calendar, Clock, MapPin, User, Sparkles, ChevronRight, ChevronLeft, Hea
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import SmartDateInput from "@/components/SmartDateInput";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -15,6 +15,7 @@ import StarField from "@/components/StarField";
 import { ZodiacSymbol } from "@/components/ZodiacSymbol";
 import { useT, type UiKey } from "@/i18n/ui";
 import { clearPostAuthPath, getPostAuthPath } from "@/lib/postAuth";
+import { profileUpdatedProperties, resolveProfileSaveMode } from "@/lib/profile-save-mode";
 
 const ONBOARDING_STORAGE_KEY = "km_onboarding";
 
@@ -46,6 +47,7 @@ const GENDERS: GenderDef[] = [
 
 const OnboardingPage = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { user } = useAuth();
   const { toast } = useToast();
   const { t, locale } = useT();
@@ -72,6 +74,16 @@ const OnboardingPage = () => {
   const [level, setLevel] = useState("débutant");
   // Marketing email consent must be an explicit action, never pre-selected.
   const [dailyOptIn, setDailyOptIn] = useState(false);
+  const [profileComplete, setProfileComplete] = useState(false);
+  const [profileLoaded, setProfileLoaded] = useState(false);
+
+  // The query selects the user-facing flow, but only an existing complete
+  // profile can turn it into an edit. Query parameters are never authority.
+  const saveMode = resolveProfileSaveMode({
+    editRequested: searchParams.get("mode") === "edit",
+    profileComplete,
+  });
+  const isEditMode = saveMode.mode === "edit";
 
   // Step 4: Reveal
   const [revealPhase, setRevealPhase] = useState(0);
@@ -105,6 +117,8 @@ const OnboardingPage = () => {
     };
 
     if (user) {
+      setProfileLoaded(false);
+      setProfileComplete(false);
       // Try to pre-fill from existing profile in DB
       supabase
         .from("profiles")
@@ -113,6 +127,8 @@ const OnboardingPage = () => {
         .maybeSingle()
         .then(({ data: p }) => {
           if (cancelled) return;
+          setProfileComplete(Boolean(p?.first_name && p?.birth_date));
+          setProfileLoaded(true);
           if (p?.birth_date) {
             setBirthDate(p.birth_date);
             if (p.birth_time) setBirthTime(p.birth_time);
@@ -138,13 +154,23 @@ const OnboardingPage = () => {
             // No DB data yet, fallback to sessionStorage
             restoreFromSession();
           }
+        })
+        .catch(() => {
+          if (!cancelled) setProfileLoaded(true);
         });
     } else {
+      setProfileComplete(false);
+      setProfileLoaded(true);
       restoreFromSession();
     }
 
     return () => { cancelled = true; };
   }, [user]);
+
+  // Editing profile data must never opt the user into marketing by accident.
+  useEffect(() => {
+    if (!saveMode.allowDailyOptIn) setDailyOptIn(false);
+  }, [saveMode.allowDailyOptIn]);
 
   // Persist form state to sessionStorage on every meaningful change
   // so data survives auth redirect
@@ -217,6 +243,8 @@ const OnboardingPage = () => {
       return;
     }
 
+    if (!profileLoaded) return;
+
     setSaving(true);
     try {
       const { error } = await (supabase as any)
@@ -242,15 +270,16 @@ const OnboardingPage = () => {
         .eq("user_id", user.id);
 
       if (error) throw error;
-      trackEvent("onboarding_completed", {
-        has_birth_time: knowsBirthTime,
-        has_geolocation: Boolean(geoResult),
-        interests_count: interests.length,
+      const eventProperties = profileUpdatedProperties({
+        hasBirthTime: knowsBirthTime,
+        hasGeolocation: Boolean(geoResult),
+        interestsCount: interests.length,
         level,
       });
+      void trackEvent(saveMode.eventName, eventProperties);
       // Opt-in horoscope quotidien (retention) : inscrit le compte a la newsletter
       // (double opt-in via email de confirmation). Non-bloquant pour l'onboarding.
-      if (dailyOptIn && user.email && birthDate) {
+      if (saveMode.allowDailyOptIn && dailyOptIn && user.email && birthDate) {
         try {
           const [, mm, dd] = birthDate.split("-").map((n) => parseInt(n, 10));
           const signName = getZodiacSign(dd, mm).sign;
@@ -265,9 +294,12 @@ const OnboardingPage = () => {
       }
       // Clean up session storage now that data is in DB
       try { sessionStorage.removeItem(ONBOARDING_STORAGE_KEY); } catch {}
-      const destination = getPostAuthPath();
-      clearPostAuthPath();
-      navigate(destination);
+      const destination = saveMode.destination || getPostAuthPath();
+      if (!saveMode.destination) clearPostAuthPath();
+      if (isEditMode) {
+        toast({ title: t("profile.updated_title"), description: t("profile.updated_desc") });
+      }
+      navigate(destination, { replace: isEditMode });
     } catch (e: any) {
       toast({ title: t("onboarding.toast_error_title"), description: e.message, variant: "destructive" });
     } finally {
@@ -338,6 +370,11 @@ const OnboardingPage = () => {
       </div>
 
       <div className="relative z-10 w-full max-w-md px-6">
+        {isEditMode && (
+          <p className="mb-4 text-center text-sm font-medium text-primary">
+            {t("profile.edit_mode_title")}
+          </p>
+        )}
         <AnimatePresence mode="wait">
           {/* ===== STEP 0: Birth Data ===== */}
           {step === 0 && (
@@ -501,15 +538,17 @@ const OnboardingPage = () => {
                 </div>
               </div>
 
-              <label className="flex items-start gap-3 mt-2 p-3 rounded-lg border border-border bg-secondary/50 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={dailyOptIn}
-                  onChange={(e) => setDailyOptIn(e.target.checked)}
-                  className="mt-0.5 accent-primary"
-                />
-                <span className="text-sm text-muted-foreground">{t("onboarding.daily_optin")}</span>
-              </label>
+              {saveMode.allowDailyOptIn && (
+                <label className="flex items-start gap-3 mt-2 p-3 rounded-lg border border-border bg-secondary/50 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={dailyOptIn}
+                    onChange={(e) => setDailyOptIn(e.target.checked)}
+                    className="mt-0.5 accent-primary"
+                  />
+                  <span className="text-sm text-muted-foreground">{t("onboarding.daily_optin")}</span>
+                </label>
+              )}
             </motion.div>
           )}
 
@@ -609,7 +648,9 @@ const OnboardingPage = () => {
                 >
                   <Sparkles className="h-12 w-12 text-primary mx-auto mb-3" />
                 </motion.div>
-                <h1 className="font-serif text-2xl font-bold">{t("onboarding.reveal_title")}</h1>
+                <h1 className="font-serif text-2xl font-bold">
+                  {isEditMode ? t("profile.edit_mode_title") : t("onboarding.reveal_title")}
+                </h1>
                 <p className="text-sm text-muted-foreground mt-1">{t("onboarding.reveal_subtitle", { name: firstName })}</p>
               </div>
 
@@ -711,8 +752,8 @@ const OnboardingPage = () => {
               animate={revealPhase >= 4 ? { opacity: 1 } : {}}
               className="w-full"
             >
-              <Button onClick={handleFinish} disabled={saving} className="w-full bg-primary hover:bg-primary/90">
-                {saving ? t("onboarding.cta_saving") : t("onboarding.cta_finish")}
+              <Button onClick={handleFinish} disabled={saving || (Boolean(user) && !profileLoaded)} className="w-full bg-primary hover:bg-primary/90">
+                {saving ? t("onboarding.cta_saving") : (isEditMode ? t("profile.save_changes") : t("onboarding.cta_finish"))}
               </Button>
             </motion.div>
           )}

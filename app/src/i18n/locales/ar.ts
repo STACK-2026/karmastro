@@ -384,6 +384,10 @@ const ar: Partial<UiStrings> = {
 
   "profile.header_title": "ملفي الشخصي",
   "profile.edit_info": "تعديل معلوماتي",
+  "profile.edit_mode_title": "تعديل ملفي الشخصي",
+  "profile.save_changes": "حفظ التغييرات",
+  "profile.updated_title": "تم تحديث الملف الشخصي",
+  "profile.updated_desc": "تم حفظ معلوماتك.",
   "profile.year_label": "سنة {year}",
   "profile.karmic_debt": "دين كارمي: {list}",
   "profile.north_node": "☊ العقدة الشمالية: {sign} ب{house} - {lesson}",

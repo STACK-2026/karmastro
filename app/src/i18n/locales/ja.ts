@@ -384,6 +384,10 @@ const ja: Partial<UiStrings> = {
 
   "profile.header_title": "マイプロフィール",
   "profile.edit_info": "情報を編集する",
+  "profile.edit_mode_title": "プロフィールを編集",
+  "profile.save_changes": "変更を保存",
+  "profile.updated_title": "プロフィールを更新しました",
+  "profile.updated_desc": "情報が保存されました。",
   "profile.year_label": "{year}年",
   "profile.karmic_debt": "カルマの負債: {list}",
   "profile.north_node": "☊ ノースノード: {sign} H{house} - {lesson}",

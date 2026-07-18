@@ -384,6 +384,10 @@ const tr: Partial<UiStrings> = {
 
   "profile.header_title": "Profilim",
   "profile.edit_info": "Bilgilerimi düzenle",
+  "profile.edit_mode_title": "Profilimi düzenle",
+  "profile.save_changes": "Değişiklikleri kaydet",
+  "profile.updated_title": "Profil güncellendi",
+  "profile.updated_desc": "Bilgilerin kaydedildi.",
   "profile.year_label": "Yıl {year}",
   "profile.karmic_debt": "Karmik borç: {list}",
   "profile.north_node": "☊ Kuzey Düğümü: {sign} E{house} - {lesson}",

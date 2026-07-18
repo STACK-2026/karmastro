@@ -396,6 +396,10 @@ export type UiKey =
   // profile
   | "profile.header_title"
   | "profile.edit_info"
+  | "profile.edit_mode_title"
+  | "profile.save_changes"
+  | "profile.updated_title"
+  | "profile.updated_desc"
   | "profile.year_label"
   | "profile.karmic_debt"
   | "profile.north_node"

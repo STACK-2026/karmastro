@@ -383,6 +383,10 @@ const fr: UiStrings = {
 
   "profile.header_title": "Mon profil",
   "profile.edit_info": "Modifier mes informations",
+  "profile.edit_mode_title": "Modification de mon profil",
+  "profile.save_changes": "Enregistrer mes modifications",
+  "profile.updated_title": "Profil mis à jour",
+  "profile.updated_desc": "Tes informations sont bien enregistrées.",
   "profile.year_label": "Année {year}",
   "profile.karmic_debt": "Dette karmique : {list}",
   "profile.north_node": "☊ Noeud Nord : {sign} M{house} - {lesson}",

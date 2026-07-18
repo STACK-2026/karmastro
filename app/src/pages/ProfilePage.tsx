@@ -101,7 +101,7 @@ const ProfilePage = () => {
             {birthDate.toLocaleDateString(locale)} · {birthTime} · {birthPlace}
           </p>
           <button
-            onClick={() => navigate("/onboarding")}
+            onClick={() => navigate("/onboarding?mode=edit")}
             className="mt-2 text-xs text-primary/80 hover:text-primary underline underline-offset-2 transition-colors"
           >
             {t("profile.edit_info")}

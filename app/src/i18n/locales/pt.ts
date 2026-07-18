@@ -384,6 +384,10 @@ const pt: Partial<UiStrings> = {
 
   "profile.header_title": "O meu perfil",
   "profile.edit_info": "Editar as minhas informações",
+  "profile.edit_mode_title": "Editar o meu perfil",
+  "profile.save_changes": "Guardar alterações",
+  "profile.updated_title": "Perfil atualizado",
+  "profile.updated_desc": "As tuas informações foram guardadas.",
   "profile.year_label": "Ano {year}",
   "profile.karmic_debt": "Dívida kármica: {list}",
   "profile.north_node": "☊ Nodo Norte: {sign} C{house} - {lesson}",

@@ -384,6 +384,10 @@ const ru: Partial<UiStrings> = {
 
   "profile.header_title": "Мой профиль",
   "profile.edit_info": "Изменить мои данные",
+  "profile.edit_mode_title": "Редактировать мой профиль",
+  "profile.save_changes": "Сохранить изменения",
+  "profile.updated_title": "Профиль обновлён",
+  "profile.updated_desc": "Ваши данные сохранены.",
   "profile.year_label": "Год {year}",
   "profile.karmic_debt": "Кармический долг: {list}",
   "profile.north_node": "☊ Северный узел: {sign} Д{house} - {lesson}",
