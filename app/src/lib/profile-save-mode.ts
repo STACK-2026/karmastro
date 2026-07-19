@@ -1,16 +1,32 @@
-export type ProfileSaveMode = "onboarding" | "edit";
+export type ProfileSaveMode = "onboarding" | "edit" | "redirect";
 
 type ProfileSaveModeInput = {
   editRequested: boolean;
   profileComplete: boolean;
 };
 
-type ProfileSaveModeResult = {
-  mode: ProfileSaveMode;
-  eventName: "onboarding_completed" | "profile_updated";
-  destination: "/profile" | null;
-  allowDailyOptIn: boolean;
-};
+type ProfileSaveModeResult =
+  | {
+      mode: "onboarding";
+      eventName: "onboarding_completed";
+      destination: null;
+      allowDailyOptIn: true;
+      replaceHistory: true;
+    }
+  | {
+      mode: "edit";
+      eventName: "profile_updated";
+      destination: "/profile";
+      allowDailyOptIn: false;
+      replaceHistory: true;
+    }
+  | {
+      mode: "redirect";
+      eventName: null;
+      destination: "/dashboard";
+      allowDailyOptIn: false;
+      replaceHistory: true;
+    };
 
 type ProfileUpdatedPropertiesInput = {
   hasBirthTime: boolean;
@@ -35,6 +51,17 @@ export function resolveProfileSaveMode({
       eventName: "profile_updated",
       destination: "/profile",
       allowDailyOptIn: false,
+      replaceHistory: true,
+    };
+  }
+
+  if (profileComplete) {
+    return {
+      mode: "redirect",
+      eventName: null,
+      destination: "/dashboard",
+      allowDailyOptIn: false,
+      replaceHistory: true,
     };
   }
 
@@ -43,6 +70,7 @@ export function resolveProfileSaveMode({
     eventName: "onboarding_completed",
     destination: null,
     allowDailyOptIn: true,
+    replaceHistory: true,
   };
 }
 

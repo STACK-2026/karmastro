@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { profileUpdatedProperties, resolveProfileSaveMode } from "@/lib/profile-save-mode";
+import {
+  profileUpdatedProperties,
+  resolveProfileSaveMode,
+} from "@/lib/profile-save-mode";
 
 describe("profile save mode", () => {
   it("treats an edit request for a complete profile as a profile update", () => {
@@ -8,6 +11,7 @@ describe("profile save mode", () => {
       eventName: "profile_updated",
       destination: "/profile",
       allowDailyOptIn: false,
+      replaceHistory: true,
     });
   });
 
@@ -17,15 +21,27 @@ describe("profile save mode", () => {
       eventName: "onboarding_completed",
       destination: null,
       allowDailyOptIn: true,
+      replaceHistory: true,
     });
   });
 
-  it("keeps the standard onboarding outcome when edit mode is not requested", () => {
+  it("redirects a complete profile away from a stale onboarding history entry", () => {
     expect(resolveProfileSaveMode({ editRequested: false, profileComplete: true })).toEqual({
+      mode: "redirect",
+      eventName: null,
+      destination: "/dashboard",
+      allowDailyOptIn: false,
+      replaceHistory: true,
+    });
+  });
+
+  it("keeps the standard onboarding outcome for an incomplete profile", () => {
+    expect(resolveProfileSaveMode({ editRequested: false, profileComplete: false })).toEqual({
       mode: "onboarding",
       eventName: "onboarding_completed",
       destination: null,
       allowDailyOptIn: true,
+      replaceHistory: true,
     });
   });
 

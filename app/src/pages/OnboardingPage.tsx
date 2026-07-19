@@ -77,6 +77,8 @@ const OnboardingPage = () => {
   const [dailyOptIn, setDailyOptIn] = useState(false);
   const [profileComplete, setProfileComplete] = useState(false);
   const [profileLoaded, setProfileLoaded] = useState(false);
+  const [profileLoadError, setProfileLoadError] = useState(false);
+  const [profileLoadAttempt, setProfileLoadAttempt] = useState(0);
 
   // The query selects the user-facing flow, but only an existing complete
   // profile can turn it into an edit. Query parameters are never authority.
@@ -85,6 +87,7 @@ const OnboardingPage = () => {
     profileComplete,
   });
   const isEditMode = saveMode.mode === "edit";
+  const trackedAccessRef = useRef<string | null>(null);
 
   // Step 4: Reveal
   const [revealPhase, setRevealPhase] = useState(0);
@@ -119,6 +122,7 @@ const OnboardingPage = () => {
 
     if (user) {
       setProfileLoaded(false);
+      setProfileLoadError(false);
       setProfileComplete(false);
       // Try to pre-fill from existing profile in DB
       supabase
@@ -126,8 +130,13 @@ const OnboardingPage = () => {
         .select("first_name, last_name, birth_name, current_name, birth_date, birth_time, knows_birth_time, birth_place, birth_latitude, birth_longitude, gender, interests, level")
         .eq("user_id", user.id)
         .maybeSingle()
-        .then(({ data: p }) => {
+        .then(({ data: p, error }) => {
           if (cancelled) return;
+          if (error) {
+            setProfileLoadError(true);
+            setProfileLoaded(true);
+            return;
+          }
           setProfileComplete(Boolean(p?.first_name && p?.birth_date));
           setProfileLoaded(true);
           if (p?.birth_date) {
@@ -157,7 +166,10 @@ const OnboardingPage = () => {
           }
         })
         .catch(() => {
-          if (!cancelled) setProfileLoaded(true);
+          if (!cancelled) {
+            setProfileLoadError(true);
+            setProfileLoaded(true);
+          }
         });
     } else {
       setProfileComplete(false);
@@ -166,12 +178,43 @@ const OnboardingPage = () => {
     }
 
     return () => { cancelled = true; };
-  }, [user]);
+  }, [profileLoadAttempt, user]);
 
   // Editing profile data must never opt the user into marketing by accident.
   useEffect(() => {
     if (!saveMode.allowDailyOptIn) setDailyOptIn(false);
   }, [saveMode.allowDailyOptIn]);
+
+  // A completed profile may reach a stale /onboarding history entry or an old
+  // landing CTA. Record the decision without profile values, then replace that
+  // history entry so Back cannot replay the acquisition funnel.
+  useEffect(() => {
+    if (!profileLoaded || profileLoadError) return;
+
+    const accessKey = `${user?.id || "anonymous"}:${saveMode.mode}`;
+    if (trackedAccessRef.current !== accessKey) {
+      trackedAccessRef.current = accessKey;
+      void trackEvent("onboarding_accessed", {
+        decision: saveMode.mode,
+        edit_requested: searchParams.get("mode") === "edit",
+        profile_complete: profileComplete,
+      });
+    }
+
+    if (saveMode.mode === "redirect") {
+      navigate(saveMode.destination, { replace: saveMode.replaceHistory });
+    }
+  }, [
+    navigate,
+    profileComplete,
+    profileLoadError,
+    profileLoaded,
+    saveMode.destination,
+    saveMode.mode,
+    saveMode.replaceHistory,
+    searchParams,
+    user?.id,
+  ]);
 
   // Persist form state to sessionStorage on every meaningful change
   // so data survives auth redirect
@@ -244,13 +287,18 @@ const OnboardingPage = () => {
       return;
     }
 
-    if (!profileLoaded) return;
+    if (!profileLoaded || profileLoadError) return;
+    if (saveMode.mode === "redirect") {
+      navigate(saveMode.destination, { replace: saveMode.replaceHistory });
+      return;
+    }
 
     setSaving(true);
     try {
       const { error } = await supabase
         .from("profiles")
-        .update({
+        .upsert({
+          user_id: user.id,
           first_name: firstName,
           last_name: lastName,
           birth_name: birthName || null,
@@ -267,8 +315,7 @@ const OnboardingPage = () => {
           // Clear cached chart - will be recomputed with new coords on next fetch
           natal_chart_json: null,
           natal_chart_computed_at: null,
-        })
-        .eq("user_id", user.id);
+        }, { onConflict: "user_id" });
 
       if (error) throw error;
       const eventProperties = profileUpdatedProperties({
@@ -300,7 +347,7 @@ const OnboardingPage = () => {
       if (isEditMode) {
         toast({ title: t("profile.updated_title"), description: t("profile.updated_desc") });
       }
-      navigate(destination, { replace: isEditMode });
+      navigate(destination, { replace: saveMode.replaceHistory });
     } catch (e: unknown) {
       toast({ title: t("onboarding.toast_error_title"), description: getErrorMessage(e), variant: "destructive" });
     } finally {
@@ -344,6 +391,29 @@ const OnboardingPage = () => {
     center: { x: 0, opacity: 1 },
     exit: { x: -80, opacity: 0 },
   };
+
+  // Do not flash the acquisition form while the existing profile decision is
+  // still loading. Complete profiles keep this neutral screen until replace.
+  if (profileLoadError) {
+    return (
+      <div className="min-h-screen bg-background flex flex-col gap-4 items-center justify-center relative">
+        <StarField />
+        <p className="relative z-10 text-sm text-muted-foreground">{t("common.error_generic")}</p>
+        <Button className="relative z-10" variant="outline" onClick={() => setProfileLoadAttempt((attempt) => attempt + 1)}>
+          {t("common.retry")}
+        </Button>
+      </div>
+    );
+  }
+
+  if (!profileLoaded || saveMode.mode === "redirect") {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center relative">
+        <StarField />
+        <p className="relative z-10 text-sm text-muted-foreground">{t("common.onboarding_loading")}</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center relative">

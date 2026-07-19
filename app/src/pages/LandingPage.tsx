@@ -15,6 +15,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import { useT, type UiKey } from "@/i18n/ui";
+import { getLandingCtaPath } from "@/lib/landing-cta-path";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -322,6 +323,18 @@ const LandingPage = () => {
     } catch { /* Session storage is best-effort in privacy mode. */ }
   };
 
+  const openProfileFlow = () => {
+    navigate(getLandingCtaPath("profile"));
+  };
+
+  const openOracleFlow = () => {
+    navigate(getLandingCtaPath("oracle"));
+  };
+
+  const openPricingFlow = () => {
+    navigate(getLandingCtaPath("pricing"));
+  };
+
   const features: { icon: typeof Hash; labelKey: UiKey; descKey: UiKey; backKey: UiKey }[] = [
     { icon: Hash,          labelKey: "landing.feat_lifepath_label",    descKey: "landing.feat_lifepath_desc",    backKey: "landing.feat_lifepath_back" },
     { icon: Star,          labelKey: "landing.feat_theme_label",       descKey: "landing.feat_theme_desc",       backKey: "landing.feat_theme_back" },
@@ -436,7 +449,7 @@ const LandingPage = () => {
                 <span className="text-2xl font-mono text-primary">{quickResult.lifePath}</span>
                 <p className="text-muted-foreground">{quickResult.keyword}</p>
               </div>
-              <Button size="sm" variant="outline" onClick={() => navigate("/onboarding")} className="border-primary text-primary">
+              <Button size="sm" variant="outline" onClick={openProfileFlow} className="border-primary text-primary">
                 {t("landing.calc_full_profile")} <ChevronRight className="h-3 w-3" />
               </Button>
             </motion.div>
@@ -542,7 +555,7 @@ const LandingPage = () => {
               </span>
             ))}
           </div>
-          <Button className="w-full bg-primary hover:bg-primary/90" onClick={() => navigate("/onboarding")}>
+          <Button className="w-full bg-primary hover:bg-primary/90" onClick={openOracleFlow}>
             <MessageCircle className="h-4 w-4 mr-2" /> {t("landing.oracle_cta")}
           </Button>
         <p className="text-center mt-4">
@@ -625,7 +638,7 @@ const LandingPage = () => {
                 <li key={k} className="flex items-center gap-2"><Check className="h-4 w-4 text-karmique-earth" /> {t(k)}</li>
               ))}
             </ul>
-            <Button variant="outline" className="w-full border-primary text-primary" onClick={() => navigate("/onboarding")}>
+            <Button variant="outline" className="w-full border-primary text-primary" onClick={openProfileFlow}>
               {t("landing.pricing_eveil_cta")}
             </Button>
           </div>
@@ -642,7 +655,7 @@ const LandingPage = () => {
                 <li key={k} className="flex items-center gap-2"><Check className="h-4 w-4 text-primary" /> {t(k)}</li>
               ))}
             </ul>
-            <Button className="w-full bg-primary hover:bg-primary/90" onClick={() => navigate("/onboarding")}>
+            <Button className="w-full bg-primary hover:bg-primary/90" onClick={openPricingFlow}>
               {t("landing.pricing_etoile_cta")}
             </Button>
           </div>
@@ -655,7 +668,7 @@ const LandingPage = () => {
                 <li key={k} className="flex items-center gap-2"><Check className="h-4 w-4 text-accent" /> {t(k)}</li>
               ))}
             </ul>
-            <Button variant="outline" className="w-full border-accent text-accent" onClick={() => navigate("/onboarding")}>
+            <Button variant="outline" className="w-full border-accent text-accent" onClick={openPricingFlow}>
               {t("landing.pricing_ame_cta")}
             </Button>
           </div>

@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Send, Sparkles, Stars } from "lucide-react";
 import AppHeader from "@/components/AppHeader";
 import { Button } from "@/components/ui/button";
@@ -26,6 +25,7 @@ import StarField from "@/components/StarField";
 import ReactMarkdown from "react-markdown";
 import { useT, type UiKey } from "@/i18n/ui";
 import { getErrorMessage } from "@/lib/errors";
+import { shouldAutoScrollOracle } from "@/lib/oracle-scroll";
 
 type Msg = {
   role: "user" | "assistant" | "paywall";
@@ -111,6 +111,7 @@ const OraclePage = () => {
   const [conversationId, setConversationId] = useState<string | null>(null);
   const [claimVersion, setClaimVersion] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const previousMessageCountRef = useRef(0);
 
   const [guideKey] = useState<GuideKey>("oracle");
   const [feedback, setFeedback] = useState<Record<number, FeedbackState>>({});
@@ -147,8 +148,14 @@ const OraclePage = () => {
   }, []);
 
   useEffect(() => {
-    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
-  }, [messages]);
+    const previousCount = previousMessageCountRef.current;
+    const nextCount = messages.length;
+    previousMessageCountRef.current = nextCount;
+
+    if (shouldAutoScrollOracle(previousCount, nextCount)) {
+      scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "auto" });
+    }
+  }, [messages.length]);
 
   useEffect(() => {
     const refreshAfterClaim = () => setClaimVersion((version) => version + 1);
@@ -589,33 +596,27 @@ const OraclePage = () => {
         )}
 
         {messages.map((msg, i) => {
-          // Paywall "portail cosmique" : rotating conic halo behind a calm
-          // central card. The halo only animates outside of reduced-motion.
+          // The paywall is part of the conversation, so it remains static like
+          // every other message. Decorative light must not move the text.
           if (msg.role === "paywall") {
             return (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 10, scale: 0.97 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.7, ease: [0.2, 0.65, 0.3, 1] }}
                 className="flex justify-center my-2"
               >
                 <div className="relative w-full max-w-md">
-                  {/* Conic halo layer, motion-safe only */}
+                  {/* Static conic halo layer. */}
                   <div
                     aria-hidden="true"
-                    className="absolute -inset-4 rounded-[2rem] opacity-60 blur-2xl motion-safe:animate-[oracle-portal-spin_22s_linear_infinite]"
+                    className="absolute -inset-4 rounded-[2rem] opacity-60 blur-2xl"
                     style={{
                       background:
                         "conic-gradient(from 0deg, rgba(212,160,23,0.25), rgba(139,92,246,0.22), rgba(212,160,23,0.06), rgba(139,92,246,0.22), rgba(212,160,23,0.25))",
                     }}
                   />
-                  {/* Inner card : parchment + gold rim + soft aura */}
-                  <div className="relative oracle-parchment oracle-aura rounded-2xl p-6 text-center overflow-hidden">
-                    <motion.div
-                      initial={{ scale: 0.5, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ delay: 0.25, duration: 0.6, ease: "backOut" }}
+                  {/* Inner card : static parchment + gold rim. */}
+                  <div className="relative oracle-parchment rounded-2xl p-6 text-center overflow-hidden">
+                    <div
                       className="inline-flex items-center justify-center h-12 w-12 rounded-full mb-3"
                       style={{
                         background:
@@ -623,7 +624,7 @@ const OraclePage = () => {
                       }}
                     >
                       <Sparkles className="h-6 w-6 text-amber-300" />
-                    </motion.div>
+                    </div>
                     <h3 className="font-serif text-xl mb-2 text-gradient-gold">{t("oracle.paywall_title")}</h3>
                     <p className="text-sm text-white/70 mb-5 leading-relaxed">{msg.content}</p>
                     {msg.isAnonPaywall ? (
@@ -674,7 +675,7 @@ const OraclePage = () => {
                     )}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             );
           }
 
@@ -685,17 +686,12 @@ const OraclePage = () => {
             !(isLoading && i === messages.length - 1);
 
           const isUser = msg.role === "user";
-          // Only "complete" assistant bubbles breathe. The currently streaming
-          // one stays still so the text delta isn't blurred by the animation.
           const isStreamingAssistant =
             msg.role === "assistant" && isLoading && i === messages.length - 1;
 
           return (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, ease: [0.2, 0.65, 0.3, 1] }}
               className={isUser ? "flex justify-end" : "flex justify-start flex-col items-start"}
             >
               {isUser ? (
@@ -703,14 +699,7 @@ const OraclePage = () => {
                   <p className="text-sm text-white/90">{msg.content}</p>
                 </div>
               ) : (
-                <div
-                  className={
-                    "relative oracle-parchment rounded-2xl rounded-bl-sm px-4 py-3 max-w-[85%] overflow-hidden " +
-                    (isStreamingAssistant ? "" : "oracle-breathing")
-                  }
-                >
-                  {/* Gold sweep on first mount, decorative only */}
-                  <span aria-hidden="true" className="oracle-shimmer-sweep" />
+                <div className="relative oracle-parchment rounded-2xl rounded-bl-sm px-4 py-3 max-w-[85%] overflow-hidden">
                   <p className={`relative text-xs mb-1.5 font-medium flex items-center gap-1.5 ${currentGuide.color}`}>
                     <Icon className="h-3 w-3" />
                     <span className="tracking-wide uppercase text-[10px]">{t(currentGuide.nameKey)}</span>
@@ -832,17 +821,12 @@ const OraclePage = () => {
                   )}
                 </div>
               )}
-            </motion.div>
+            </div>
           );
         })}
 
         {isLoading && messages[messages.length - 1]?.role !== "assistant" && (
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="flex justify-start"
-          >
+          <div className="flex justify-start">
             <div className="oracle-parchment rounded-2xl rounded-bl-sm px-4 py-3 min-w-[200px]">
               <p className={`text-xs mb-1.5 font-medium flex items-center gap-1.5 ${currentGuide.color}`}>
                 <Icon className="h-3 w-3" />
@@ -857,7 +841,7 @@ const OraclePage = () => {
                 <p className="text-xs text-amber-100/70 italic">{t(currentGuide.openerKey)}</p>
               </div>
             </div>
-          </motion.div>
+          </div>
         )}
       </div>
 

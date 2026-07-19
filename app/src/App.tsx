@@ -13,6 +13,7 @@ import { OnboardingGate } from "./components/OnboardingGate";
 import StarField from "./components/StarField";
 import { Suspense, lazy, useEffect } from "react";
 import { I18nProvider } from "./i18n/ui";
+import { EXTERNAL_LEGACY_ROUTES, INTERNAL_LEGACY_ROUTES } from "@/lib/legacy-routes";
 
 // Every route is lazy-loaded. Marketing and app deeplinks should not download
 // one another's pages before rendering their own conversion surface.
@@ -93,14 +94,12 @@ const App = () => (
                 <Route path="/pricing" element={<PricingPage />} />
                 {/* Legacy URLs still linked by older indexed articles. Keep
                     them useful instead of sending SEO visitors to a 404. */}
-                <Route path="/numerologie" element={<Navigate to="/numerology" replace />} />
-                <Route path="/theme-natal" element={<Navigate to="/astral" replace />} />
-                <Route path="/calendrier-lunaire" element={<Navigate to="/calendar" replace />} />
-                <Route path="/promo-2026" element={<Navigate to="/pricing" replace />} />
-                <Route path="/calcul-chemin-de-vie" element={<ExternalRedirect to="https://karmastro.com/outils/chemin-de-vie/" />} />
-                <Route path="/calcul-nombre-expression" element={<ExternalRedirect to="https://karmastro.com/outils/nombre-expression/" />} />
-                <Route path="/calcul-ascendant" element={<ExternalRedirect to="https://karmastro.com/outils/ascendant/" />} />
-                <Route path="/transits" element={<ExternalRedirect to="https://karmastro.com/outils/transits/" />} />
+                {Object.entries(INTERNAL_LEGACY_ROUTES).map(([path, to]) => (
+                  <Route key={path} path={path} element={<Navigate to={to} replace />} />
+                ))}
+                {Object.entries(EXTERNAL_LEGACY_ROUTES).map(([path, to]) => (
+                  <Route key={path} path={path} element={<ExternalRedirect to={to} />} />
+                ))}
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
