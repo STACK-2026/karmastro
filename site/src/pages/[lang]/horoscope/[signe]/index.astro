@@ -216,6 +216,20 @@ if (profile?.faq?.length) {
     })),
   });
 }
+
+const profileCtaTemplates: Partial<Record<Locale, string>> = {
+  en: "Discover the full {sign} profile",
+  es: "Descubre el perfil completo de {sign}",
+  it: "Scopri il profilo completo di {sign}",
+  pt: "Descobre o perfil completo de {sign}",
+  de: "Entdecke das vollständige Profil von {sign}",
+  tr: "{sign} burcunun tam profilini keşfet",
+  pl: "Odkryj pełny profil znaku {sign}",
+  ru: "Открой полный профиль знака {sign}",
+  ja: "{sign}の詳しいプロフィールを見る",
+  ar: "اكتشف الملف الكامل لبرج {sign}",
+};
+const profileCtaLabel = (profileCtaTemplates[lang] || t("tools.full_profile", lang)).replace("{sign}", localSignName);
 ---
 
 <BaseLayout
@@ -330,9 +344,51 @@ if (profile?.faq?.length) {
             label={t("horoscope.share_this", lang)}
           />
         </div>
+      </>
+    )}
+
+    {/* Primary action, also available while today's reading is still being prepared. */}
+    <div data-horoscope-action="oracle" class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-6">
+      <h3 class="font-serif text-xl mb-2">{t("horoscope.personalised_cta_title", lang)}</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed">
+        {t("horoscope.personalised_cta_desc", lang)}
+      </p>
+      <a
+        href={`/oracle/?lang=${lang}&q=${encodeURIComponent(t("horoscope.oracle_q", lang))}`}
+        class="km-oracle inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity mb-2"
+      >
+        {t("horoscope.personalised_cta_button", lang)}
+      </a>
+      {toolsHub && (
+        <p class="text-xs text-white/50 mt-2">
+          <a href={toolsHub} class="text-amber-300 hover:underline">
+            {t("hero.cta_secondary", lang)}
+          </a>
+        </p>
+      )}
+    </div>
+
+    {entry && (
+      <>
+        <div id="newsletter-capture" data-horoscope-action="newsletter" class="mb-2">
+          <NewsletterCapture sign={sign.slug} variant="card" source={`${lang}-horoscope-${sign.slug}`} />
+        </div>
+
+        {profile && (
+          <div class="text-center mb-10">
+            <a
+              href="#profil-signe"
+              data-horoscope-action="profile"
+              class="inline-flex items-center gap-2 text-sm font-medium text-amber-300 hover:text-amber-200 hover:underline underline-offset-4"
+            >
+              {profileCtaLabel}
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        )}
 
         {/* ═══ Tomorrow preview (premium) ═══ */}
-        <section class="mb-10">
+        <section data-horoscope-section="tomorrow" class="mb-10">
           <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
             <h2 class="font-serif text-2xl">{t("horoscope.tomorrow", lang)}, {tomorrowFormatted}</h2>
             <span class="text-xs px-3 py-1 rounded-full bg-gradient-to-r from-amber-300/20 to-purple-400/20 border border-amber-300/40 text-amber-300">
@@ -421,11 +477,6 @@ if (profile?.faq?.length) {
           </div>
         </section>
 
-        {/* Newsletter fallback (moved below tomorrow teaser per SXO) */}
-        <div id="newsletter-capture" class="mb-10">
-          <NewsletterCapture sign={sign.slug} variant="card" source={`${lang}-horoscope-${sign.slug}`} />
-        </div>
-
         <script is:inline>
           (function () {
             function updateCountdown() {
@@ -468,26 +519,6 @@ if (profile?.faq?.length) {
         </script>
       </>
     )}
-
-    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
-      <h3 class="font-serif text-xl mb-2">{t("horoscope.personalised_cta_title", lang)}</h3>
-      <p class="text-white/70 mb-4 text-sm leading-relaxed">
-        {t("horoscope.personalised_cta_desc", lang)}
-      </p>
-      <a
-        href={`/oracle/?lang=${lang}&q=${encodeURIComponent(t("horoscope.oracle_q", lang))}`}
-        class="km-oracle inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity mb-2"
-      >
-        {t("horoscope.personalised_cta_button", lang)}
-      </a>
-      {toolsHub && (
-        <p class="text-xs text-white/50 mt-2">
-          <a href={toolsHub} class="text-amber-300 hover:underline">
-            {t("hero.cta_secondary", lang)}
-          </a>
-        </p>
-      )}
-    </div>
 
     {profile && (
       <SignProfile

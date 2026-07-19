@@ -8,12 +8,15 @@
 # python is never blocked.
 #
 # This is intentionally a thin wrapper so package.json stays portable.
-set -u
+set -euo pipefail
 
 # repo-root-relative; this script lives in <npm-cwd>/scripts/
 HERE="$(cd "$(dirname "$0")" && pwd)"
 GUARD="$HERE/content_guard.py"
+FRAGMENT_GUARD="$HERE/check-blog-fragments.mjs"
+APP_LINK_GUARD="$HERE/check-app-content-links.mjs"
 ROOT="$(cd "$HERE/.." && pwd)"
+APP_ROOT="$(cd "$ROOT/../app" && pwd)"
 
 # content dir for THIS repo (commandeici: only the blog collection has the
 
@@ -70,3 +73,15 @@ else
   reaccent_low "$CONTENT_DIR"
   python3 "$GUARD" --check "$CONTENT_DIR"
 fi
+
+# Same-page links in generated tables of contents must match Astro's rendered
+# heading ids exactly. Scan the whole published blog on every build: a stale
+# broken article is still a broken public page even when it was not in the last
+# commit.
+node "$FRAGMENT_GUARD" "$CONTENT_DIR/blog"
+node "$APP_LINK_GUARD" "$CONTENT_DIR/blog" "$APP_ROOT/src/App.tsx" "$APP_ROOT/src/lib/legacy-routes.ts"
+
+# Product-funnel contracts are cheap, deterministic source tests. Running them
+# in prebuild prevents a CTA label/destination regression from reaching the
+# public site.
+node --test "$HERE/test-blog-fragments.mjs" "$HERE/test-blog-contrast.mjs" "$HERE/test-app-content-links.mjs" "$HERE/test-cta-funnel.mjs" "$HERE/test-guard-fail-closed.mjs"

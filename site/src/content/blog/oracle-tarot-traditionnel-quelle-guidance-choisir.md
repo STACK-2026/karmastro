@@ -27,9 +27,7 @@ draft: false
 - [Votre tirage oracle IA gratuit et personnalisé avec Karmastro](#votre-tirage-oracle-ia-gratuit-et-personnalisé-avec-karmastro)
 - [Comment interpréter les messages de votre oracle IA ?](#comment-interpréter-les-messages-de-votre-oracle-ia-)
 - [Les limites et dangers des oracles IA](#les-limites-et-dangers-des-oracles-ia)
-- [Au-delà de l'oracle : comment l'IA révolutionne l'astrologie et la numérologie](#au-delà-de-loracle--comment-lia-révolutionne-lastrologie-et-la-numérologie)
-- [FAQ : Oracle IA et tarot](#faq--oracle-ia-et-tarot)
-- [Sources](#sources)
+- [FAQ : Oracle IA et tarot](#questions-fréquentes)
 
 ---
 

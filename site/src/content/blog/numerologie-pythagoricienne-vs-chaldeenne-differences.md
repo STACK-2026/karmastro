@@ -15,14 +15,14 @@ reviewedBy: "Pythia, numerologue certifiee ecole pythagoricienne"
 
 ## Sommaire
 
-1. [Les deux grandes écoles de numérologie](#les-deux-grandes-ecoles-de-numerologie)
-2. [L'origine chaldéenne : 4000 ans d'histoire](#lorigine-chaldeenne-4000-ans-dhistoire)
-3. [L'école pythagoricienne : la systématisation grecque](#lecole-pythagoricienne-la-systematisation-grecque)
-4. [Les différences de calcul concrètes](#les-differences-de-calcul-concretes)
-5. [Exemple comparé : calculer avec les deux méthodes](#exemple-compare-calculer-avec-les-deux-methodes)
+1. [Les deux grandes écoles de numérologie](#les-deux-grandes-écoles-de-numérologie)
+2. [L'origine chaldéenne : 4000 ans d'histoire](#lorigine-chaldéenne--4000-ans-dhistoire)
+3. [L'école pythagoricienne : la systématisation grecque](#lécole-pythagoricienne--la-systématisation-grecque)
+4. [Les différences de calcul concrètes](#les-différences-de-calcul-concrètes)
+5. [Exemple comparé : calculer avec les deux méthodes](#exemple-comparé--calculer-avec-les-deux-méthodes)
 6. [Laquelle choisir et pourquoi](#laquelle-choisir-et-pourquoi)
 7. [La position de Karmastro](#la-position-de-karmastro)
-8. [Questions fréquentes](#questions-frequentes)
+8. [Questions fréquentes](#questions-fréquentes)
 
 ## Les deux grandes écoles de numérologie
 

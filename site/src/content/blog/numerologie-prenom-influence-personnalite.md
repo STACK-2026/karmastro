@@ -310,7 +310,7 @@ La numérologie n’est pas une fatalité, mais un **outil d’éveil** - à toi
 - [Guide des dettes karmiques](https://karmastro.com/blog/numerologie-karmique-decoder-dettes-spirituelles)
 - [Blog : Astrologie et numérologie](https://karmastro.com/blog/guidance-spirituelle-choisir-entre-astrologie-numerologie)
 - [Blog : Prénom et personnalité](https://karmastro.com/blog/numerologie-prenom-nombre-expression-decrypter-identite)
-- [Créer mon profil cosmique](https://app.karmastro.com)
+- [Créer mon profil cosmique](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile)
 
 **Maillage externe** (5+ liens) :
 - [Wikipedia - Numérologie](https://fr.wikipedia.org/wiki/Num%C3%A9rologie)

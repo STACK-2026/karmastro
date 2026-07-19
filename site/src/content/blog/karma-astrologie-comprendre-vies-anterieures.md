@@ -41,17 +41,8 @@ imageAlt: "A blue ball of light in the middle of a black background"
     - [Planètes en maison 12 : quels messages ?](#planètes-en-maison-12--quels-messages-)
     - [Comment travailler ta maison 12 pour libérer ton karma](#comment-travailler-ta-maison-12-pour-libérer-ton-karma)
 - [Numérologie karmique : tes dettes à transformer](#numérologie-karmique--tes-dettes-à-transformer)
-  - [Les 4 nombres karmiques et leurs défis](#les-4-nombres-karmique-et-leurs-défis)
-  - [Comment calculer ton nombre karmique](#comment-calculer-ton-nombre-karmique)
-  - [Solutions pour transformer chaque dette karmique](#solutions-pour-transformer-chaque-dette-karmique)
-- [Comment améliorer son karma ? 5 méthodes validées](#comment-améliorer-son-karma--5-méthodes-validées)
-  - [1. Pratiquer la gratitude quotidienne](#1-pratiquer-la-gratitude-quotidienne)
-  - [2. Méditer pour libérer les mémoires karmiques](#2-méditer-pour-libérer-les-mémoires-karmique)
-  - [3. Agir avec altruisme (sans attente)](#3-agir-avec-altruisme-sans-attente)
-  - [4. Travailler sur le pardon (envers soi et les autres)](#4-travailler-sur-le-pardon-envers-soi-et-les-autres)
-  - [5. Explorer tes ombres (maison 12 en astrologie)](#5-explorer-tes-ombres-maison-12-en-astrologie)
-- [FAQ : Karma et vies antérieures](#faq--karma-et-vies-antérieures)
-- [Sources](#sources)
+  - [Les 4 nombres karmiques et leurs défis](#les-4-nombres-karmiques-et-leurs-défis)
+- [Questions fréquentes](#questions-fréquentes)
 
 ---
 

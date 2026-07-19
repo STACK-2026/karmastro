@@ -12,14 +12,14 @@ draft: false
 ---
 
 ## Sommaire
-- [Mars en Capricorne : La Force Tranquille du Bâtisseur](#mars-en-capricorne-la-force-tranquille-du-batisseur)
-- [Pourquoi Mars en Capricorne est-il en Exaltation](#pourquoi-mars-en-capricorne-est-il-en-exaltation)
-- [L'Alliance Mars-Saturne : Discipline et Ambition](#lalliance-mars-saturne-discipline-et-ambition)
-- [Mars en Capricorne Maison par Maison](#mars-en-capricorne-maison-par-maison)
-- [La Signature Numérologique de Mars en Capricorne](#la-signature-numerologique-de-mars-en-capricorne)
-- [Célébrités avec Mars en Capricorne](#celebrites-avec-mars-en-capricorne)
-- [Comment Maîtriser l'Énergie de Mars en Capricorne](#comment-maitriser-lenergie-de-mars-en-capricorne)
-- [Questions Fréquentes](#questions-frequentes)
+- [Mars en Capricorne : La Force Tranquille du Bâtisseur](#mars-en-capricorne--la-force-tranquille-du-bâtisseur-cosmique)
+- [Pourquoi Mars en Capricorne est-il en Exaltation](#pourquoi-mars-en-capricorne-est-il-en-exaltation--la-science-de-lambition-structurée)
+- [L'Alliance Mars-Saturne : Discipline et Ambition](#lalliance-mars-saturne--quand-la-volonté-rencontre-la-structure-cosmique)
+- [Mars en Capricorne Maison par Maison](#mars-en-capricorne-maison-par-maison--décrypte-ton-plan-daction-personnalisé)
+- [La Signature Numérologique de Mars en Capricorne](#la-signature-numérologique-de-mars-en-capricorne--révèle-les-nombres-de-ta-puissance)
+- [Célébrités avec Mars en Capricorne](#célébrités-avec-mars-en-capricorne--leçons-de-stratégie-et-de-persévérance-cosmique)
+- [Comment Maîtriser l'Énergie de Mars en Capricorne](#comment-maîtriser-lénergie-de-mars-en-capricorne-en-5-étapes-concrètes)
+- [Questions Fréquentes](#questions-fréquentes-sur-mars-en-capricorne)
 
 <aside data-speakable="true" class="tldr" style="background:#f5f5f5;padding:16px;border-left:4px solid #6b46c1;margin:20px 0;"><strong>En bref :</strong>
 <strong>Mars en Capricorne</strong> combine l'énergie martienne de l'action avec la discipline saturnienne pour créer une ambition méthodique. Cette position d'exaltation se traduit par une capacité unique à transformer des projets long terme en réalisations concrètes. L'énergie se renforce par des nombres clés (4, 8, 22) en numérologie et trouve son expression optimale selon la maison astrologique occupée.
@@ -673,4 +673,3 @@ Comme le rappelle la sagesse capricornienne : *"Les cathédrales ne se construis
 - [Thème natal gratuit : interpréter sa carte du ciel](https://karmastro.com/blog/theme-natal-gratuit-interpreter-carte-ciel)
 - [Lune en Scorpion : émotions intenses et transformation](https://karmastro.com/blog/lune-scorpion-emotions-intenses-transformation)
 - [Venus en Taureau : amour et sensualité](https://karmastro.com/blog/venus-taureau-amour-sensualite)
-

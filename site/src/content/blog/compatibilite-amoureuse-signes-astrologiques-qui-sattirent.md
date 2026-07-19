@@ -15,14 +15,14 @@ reviewedBy: "Orion, astronome et astrologue senior"
 
 ## Sommaire
 
-1. [La compatibilité astrologique, c'est quoi exactement](#la-compatibilite-astrologique-cest-quoi-exactement)
-2. [Les 4 éléments et leurs attirances naturelles](#les-4-elements-et-leurs-attirances-naturelles)
-3. [Au-delà des signes solaires : la vraie compatibilité](#au-dela-des-signes-solaires-la-vraie-compatibilite)
+1. [La compatibilité astrologique, c'est quoi exactement](#la-compatibilité-astrologique-cest-quoi-exactement)
+2. [Les 4 éléments et leurs attirances naturelles](#les-4-éléments-et-leurs-attirances-naturelles)
+3. [Au-delà des signes solaires : la vraie compatibilité](#au-delà-des-signes-solaires--la-vraie-compatibilité)
 4. [Les 5 aspects qui comptent vraiment en couple](#les-5-aspects-qui-comptent-vraiment-en-couple)
-5. [Les 12 signes et leurs meilleures compatibilités](#les-12-signes-et-leurs-meilleures-compatibilites)
+5. [Les 12 signes et leurs meilleures compatibilités](#les-12-signes-et-leurs-meilleures-compatibilités)
 6. [Les couples improbables qui marchent](#les-couples-improbables-qui-marchent)
-7. [Comment calculer la compatibilité avec Karmastro](#comment-calculer-la-compatibilite-avec-karmastro)
-8. [Questions fréquentes](#questions-frequentes)
+7. [Comment calculer la compatibilité avec Karmastro](#comment-calculer-la-compatibilité-avec-karmastro)
+8. [Questions fréquentes](#questions-fréquentes)
 
 ## La compatibilité astrologique, c'est quoi exactement
 

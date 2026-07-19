@@ -390,7 +390,7 @@ L'amélioration de la compatibilité passe par 5 leviers d'action concrets, bas�
 
 *Résultat attendu* : +15 à +25 points de compatibilité sur l'échelle Karmastro.
 
-Pour un suivi personnalisé, [crée ton profil complet](https://app.karmastro.com/profil-complet).
+Pour un suivi personnalisé, [crée ton profil complet](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile).
 
 ### Peut-on être compatibles en numérologie mais incompatibles en astrologie ?
 

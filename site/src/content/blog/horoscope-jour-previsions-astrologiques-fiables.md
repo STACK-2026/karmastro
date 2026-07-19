@@ -15,14 +15,14 @@ imageAlt: "white and black round lights"
 
 ## Sommaire
 
-- [Qu'est-ce qu'un horoscope quotidien fiable ?](#quest-ce-quun-horoscope-quotidien-fiable)
+- [Qu'est-ce qu'un horoscope quotidien fiable ?](#quest-ce-quun-horoscope-quotidien-fiable-)
 - [Les fondements astronomiques de l'horoscope](#les-fondements-astronomiques-de-lhoroscope)
-- [Comment interpréter votre horoscope du jour](#comment-interpreter-votre-horoscope-du-jour)
-- [Transits planétaires et prévisions quotidiennes](#transits-planetaires-et-previsions-quotidiennes)
-- [L'importance de votre thème natal dans l'horoscope](#limportance-de-votre-theme-natal-dans-lhoroscope)
-- [Horoscope généraliste vs personnalisé](#horoscope-generaliste-vs-personnalise)
+- [Comment interpréter votre horoscope du jour](#comment-interpréter-votre-horoscope-du-jour)
+- [Transits planétaires et prévisions quotidiennes](#transits-planétaires-et-prévisions-quotidiennes)
+- [L'importance de votre thème natal dans l'horoscope](#limportance-de-votre-thème-natal-dans-lhoroscope)
+- [Horoscope généraliste vs personnalisé](#horoscope-généraliste-vs-personnalisé)
 - [Les limites de l'horoscope quotidien](#les-limites-de-lhoroscope-quotidien)
-- [Questions fréquentes](#questions-frequentes)
+- [Questions fréquentes](#questions-fréquentes)
 - [Conclusion](#conclusion)
 
 ## Qu'est-ce qu'un horoscope quotidien fiable ?
@@ -241,7 +241,7 @@ Un **horoscope du jour** fiable combine rigueur astronomique et interprétation 
 
 Que vous soyez novice curieux ou passionné d'astrologie, comprendre les mécanismes de l'horoscope enrichit votre relation aux cycles cosmiques. L'important reste de garder un esprit ouvert tout en conservant votre libre arbitre face aux influences planétaires.
 
-Découvrez votre horoscope personnalisé et créez votre [profil cosmique complet sur Karmastro](https://app.karmastro.com) pour des prévisions astrologiques vraiment adaptées à votre thème natal unique.
+Découvrez votre horoscope personnalisé et créez votre [profil cosmique complet sur Karmastro](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile) pour des prévisions astrologiques vraiment adaptées à votre thème natal unique.
 
 ---
 

@@ -15,15 +15,15 @@ reviewedBy: "Orion, astronome et astrologue senior"
 
 ## Sommaire
 
-1. [Le Bélier en bref : fiche astrologique](#le-belier-en-bref-fiche-astrologique)
-2. [Personnalité : feu cardinal par excellence](#personnalite-feu-cardinal-par-excellence)
-3. [Forces du Bélier](#forces-du-belier)
+1. [Le Bélier en bref : fiche astrologique](#le-bélier-en-bref--fiche-astrologique)
+2. [Personnalité : feu cardinal par excellence](#personnalité--feu-cardinal-par-excellence)
+3. [Forces du Bélier](#forces-du-bélier)
 4. [Faiblesses et zones d'ombre](#faiblesses-et-zones-dombre)
-5. [Compatibilité amoureuse du Bélier](#compatibilite-amoureuse-du-belier)
-6. [Le Bélier au travail](#le-belier-au-travail)
-7. [L'ascendant Bélier](#lascendant-belier)
-8. [Célébrités Bélier](#celebrites-belier)
-9. [Calculer ton thème natal complet](#calculer-ton-theme-natal-complet)
+5. [Compatibilité amoureuse du Bélier](#compatibilité-amoureuse-du-bélier)
+6. [Le Bélier au travail](#le-bélier-au-travail)
+7. [L'ascendant Bélier](#lascendant-bélier)
+8. [Célébrités Bélier](#célébrités-bélier)
+9. [Calculer ton thème natal complet](#calculer-ton-thème-natal-complet)
 
 ## Le Bélier en bref : fiche astrologique
 

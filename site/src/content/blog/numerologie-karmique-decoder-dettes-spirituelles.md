@@ -549,7 +549,7 @@ Les chiffres parlent d'eux-mêmes : 91% de satisfaction après 6 mois, 84% de tr
 
 Tu as maintenant tous les outils pour transformer tes dettes spirituelles en superpouvoir. L'univers t'a donné ces défis parce qu'il sait que tu as la force de les surmonter. Il ne reste qu'un pas à franchir : passer de la connaissance à l'action.
 
-👉 **[Découvre ton profil karmique complet et commence ta transformation dès maintenant](https://app.karmastro.com)**
+👉 **[Découvre ton profil karmique complet et commence ta transformation dès maintenant](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile)**
 
 ## Sources
 

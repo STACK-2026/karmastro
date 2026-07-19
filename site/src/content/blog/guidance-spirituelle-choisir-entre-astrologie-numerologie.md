@@ -314,7 +314,7 @@ Voici 5 protocoles testés par les utilisateurs Karmastro pour affiner ta guidan
 ---
 
 ### Comment commencer ma guidance spirituelle avec Karmastro ?
-**Réponse directe** : Commence par créer ton [profil cosmique gratuit](https://app.karmastro.com) en 2 minutes, qui génère :
+**Réponse directe** : Commence par créer ton [profil cosmique gratuit](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile) en 2 minutes, qui génère :
 1. Ton thème astral précis (avec Swiss Ephemeris)
 2. Ton analyse numérologique complète (chemin de vie, expression, etc.)
 3. Ton rapport de guidance karmique (Nœuds Lunaires + nombres)
@@ -342,7 +342,7 @@ Choisir entre astrologie et numérologie pour ta guidance spirituelle dépend de
 
 **Le meilleur choix en 2026 ?** Combine les deux approches avec **Karmastro**, la seule plateforme qui fusionne astrologie, numérologie et intelligence artificielle pour une guidance spirituelle précise et personnalisée.
 
-👉 **Prêt à recevoir ta guidance ?** [Crée ton profil cosmique gratuitement](https://app.karmastro.com) et découvre ce que les étoiles et les nombres révèlent sur ton chemin.
+👉 **Prêt à recevoir ta guidance ?** [Crée ton profil cosmique gratuitement](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile) et découvre ce que les étoiles et les nombres révèlent sur ton chemin.
 
 ---
 

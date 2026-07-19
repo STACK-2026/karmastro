@@ -24,16 +24,15 @@ imageAlt: "stars in the sky during night time"
 ![Compatibilité Lion-Bélier - deux signes de feu sous un soleil éclatant](IMAGE_1)
 
 ## Sommaire
-- [Pourquoi la compatibilité Lion-Bélier est-elle si intense ?](#pourquoi-la-compatibilite-lion-belier-est-elle-si-intense)
+- [Pourquoi la compatibilité Lion-Bélier est-elle si intense ?](#pourquoi-la-compatibilité-lion-bélier-est-elle-si-intense-)
 - [Les 3 piliers de leur alchimie amoureuse](#les-3-piliers-de-leur-alchimie-amoureuse)
-- [Décans et nuances : votre feu est-il compatible ?](#decans-et-nuances-votre-feu-est-il-compatible)
-- [Sexualité Lion-Bélier : une passion qui consume](#sexualite-lion-belier-une-passion-qui-consume)
-- [Les 5 défis à surmonter pour durer](#les-5-defis-a-surmonter-pour-durer)
-- [Numérologie : vos chiffres révèlent votre compatibilité](#numerologie-vos-chiffres-revelent-votre-compatibilite)
-- [Karma et leçons de vie : ce que cette union vous apprend](#karma-et-lecons-de-vie-ce-que-cette-union-vous-apprend)
-- [Carrière et projets communs : comment briller ensemble](#carriere-et-projets-communs-comment-briller-ensemble)
-- [FAQ : vos questions sur la compatibilité Lion-Bélier](#faq-vos-questions-sur-la-compatibilite-lion-belier)
-- [Sources](#sources)
+- [Décans et nuances : votre feu est-il compatible ?](#décans-et-nuances--votre-feu-est-il-compatible-)
+- [Sexualité Lion-Bélier : une passion qui consume](#sexualité-lion-bélier--une-passion-qui-consume)
+- [Les 5 défis à surmonter pour durer](#les-5-défis-à-surmonter-pour-durer)
+- [Numérologie : vos chiffres révèlent votre compatibilité](#numérologie--vos-chiffres-révèlent-votre-compatibilité)
+- [Karma et leçons de vie : ce que cette union vous apprend](#karma-et-leçons-de-vie--ce-que-cette-union-vous-apprend)
+- [Carrière et projets communs : comment briller ensemble](#carrière-et-projets-communs--comment-briller-ensemble)
+- [FAQ : vos questions sur la compatibilité Lion-Bélier](#faq--vos-questions-sur-la-compatibilité-lion-bélier)
 
 ---
 
@@ -562,4 +561,3 @@ Les Bélier adorent les cadeaux qui **stimulent leur énergie** et qui leur perm
 - [Compatibilité amoureuse : signes astrologiques qui s'attirent](https://karmastro.com/blog/compatibilite-amoureuse-signes-astrologiques-attirent)
 - [Compatibilité numérologique : calculer l'harmonie de couple](https://karmastro.com/blog/compatibilite-numerologique-calculer-harmonie-couple)
 - [Compatibilité Verseau-Gémeaux : air et innovation](https://karmastro.com/blog/compatibilite-verseau-gemeaux-air-innovation)
-

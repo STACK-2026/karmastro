@@ -67,7 +67,7 @@ Cette capacité de **stockage émotionnel** te donne une compréhension unique d
 
 En [numérologie](/blog/numerologie-pythagoricienne-chaldeenne-differences/), le Scorpion résonne avec le **nombre 4** (stabilité cachée sous l'intensité) et le **nombre 9** (transformation, fin de cycle). Si ton [chemin de vie](/blog/comment-calculer-chemin-de-vie-numerologie/) est 4 ou 9, cette combinaison amplifie ton potentiel de guérison personnelle et collective.
 
-La méthode de calcul Karmastro croise ton signe lunaire avec tes nombres personnels pour révéler tes **schémas karmiques émotionnels** - [teste ton profil complet](https://app.karmastro.com).
+La méthode de calcul Karmastro croise ton signe lunaire avec tes nombres personnels pour révéler tes **schémas karmiques émotionnels** - [teste ton profil complet](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile).
 
 ## Ta personnalité secrète : forces et défis de la Lune Scorpion
 
@@ -249,7 +249,7 @@ Cette synthèse révèle tes **périodes optimales** pour :
 - Transformer tes schémas relationnels
 - Exprimer ta créativité profonde
 
-[Découvre ton profil numérolo-astrologique complet](https://app.karmastro.com/profil-complet) pour une guidance personnalisée.
+[Découvre ton profil numérolo-astrologique complet](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile) pour une guidance personnalisée.
 
 ## Transformer le plomb en or : comment maîtriser l'énergie de ta Lune en Scorpion
 

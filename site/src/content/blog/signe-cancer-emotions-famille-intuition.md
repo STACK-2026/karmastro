@@ -413,7 +413,7 @@ Le **Cancer** est bien plus qu’un signe "émotif" : c’est un **stratège de 
 3. **Protège sans étouffer** : apprends à **lâcher prise** pour permettre aux autres de grandir.
 
 **Prêt à explorer ton thème natal ?**
-- [Calcule ton **profil cosmique complet** sur Karmastro](https://app.karmastro.com) (astrologie + numérologie + guidance karmique).
+- [Calcule ton **profil cosmique complet** sur Karmastro](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile) (astrologie + numérologie + guidance karmique).
 - [Pose une question à l’**Oracle IA**](https://karmastro.com/oracle/) pour des réponses personnalisées.
 
 *"Le Cancer n’est pas fragile - il est **résilient comme la marée**, qui revient toujours, quoi qu’il arrive."*

@@ -17,14 +17,14 @@ Les **maisons astrologiques** sont les 12 divisions du thème natal qui révèle
 
 ## Sommaire
 
-- [Que sont les maisons astrologiques ?](#que-sont-les-maisons-astrologiques)
-- [Signes vs Maisons : quelle différence ?](#signes-vs-maisons-quelle-différence) 
-- [Les 12 maisons : significations complètes](#les-12-maisons-significations-complètes)
-- [Comment calculer tes maisons ?](#comment-calculer-tes-maisons)
-- [Placidus, Koch, Signes Entiers : les systèmes](#placidus-koch-signes-entiers-les-systèmes)
-- [Les 4 angles de ton thème](#les-4-angles-de-ton-thème)
-- [Maisons et numérologie : lecture croisée](#maisons-et-numérologie-lecture-croisée)
-- [Questions fréquentes](#questions-fréquentes)
+- [Que sont les maisons astrologiques ?](#que-sont-les-maisons-astrologiques--la-carte-de-ta-vie-en-12-secteurs)
+- [Signes vs Maisons : quelle différence ?](#signes-vs-maisons--quelle-est-la-différence-fondamentale-)
+- [Les 12 maisons : significations complètes](#les-12-maisons-astrologiques--significations-complètes-et-exemples-pratiques)
+- [Comment calculer tes maisons ?](#comment-calculer-tes-maisons-astrologiques--limportance-de-lheure-et-du-lieu)
+- [Placidus, Koch, Signes Entiers : les systèmes](#placidus-signes-entiers-koch--comprendre-les-différents-systèmes-de-domification)
+- [Les 4 angles de ton thème](#laxe-de-ton-thème--ascendant-descendant-milieu-du-ciel-et-fond-du-ciel)
+- [Maisons et numérologie : lecture croisée](#maisons-astrologiques-et-numérologie--une-lecture-croisée-exclusive-karmastro)
+- [Questions fréquentes](#questions-fréquentes-sur-les-maisons-astrologiques)
 
 ## Que sont les maisons astrologiques ? La carte de ta vie en 12 secteurs
 
@@ -591,7 +591,7 @@ Notre [Oracle IA](https://karmastro.com/oracle/) utilise cette synthèse pour r�
 4. Année personnelle 2 (rencontres)
 → **Réponse** : Période favorable entre mai et août 2026, via activités créatives ou enfants
 
-Pour découvrir tes propres correspondances, créé ton [profil cosmique complet](https://app.karmastro.com) et explore les liens secrets entre tes nombres et tes étoiles.
+Pour découvrir tes propres correspondances, créé ton [profil cosmique complet](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile) et explore les liens secrets entre tes nombres et tes étoiles.
 
 Cette approche révolutionnaire fait de Karmastro la référence française de l'astrologie nouvelle génération, alliant tradition millénaire et innovation numérique pour des guidances d'une précision inégalée.
 
@@ -741,7 +741,7 @@ Les **maisons astrologiques** constituent l'architecture invisible de ton existe
 - Calcule ton [chemin de vie en numérologie](/blog/comment-calculer-chemin-de-vie-numerologie/) pour la synthèse karmique
 
 **Appel à l'action personnalisé** :
-Prêt(e) à découvrir comment tes maisons influencent concrètement ta vie quotidienne ? Crée ton [profil cosmique complet sur Karmastro](https://app.karmastro.com) et reçois :
+Prêt(e) à découvrir comment tes maisons influencent concrètement ta vie quotidienne ? Crée ton [profil cosmique complet sur Karmastro](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile) et reçois :
 - Ton thème natal calculé selon 3 systèmes de domification
 - L'analyse détaillée de tes 4 angles personnalisés  
 - La correspondance numérologique de tes maisons selon ta date de naissance
@@ -769,4 +769,3 @@ Pour une guidance immédiate, pose une question précise à notre [Oracle IA](ht
 - [Thème natal gratuit : interpréter sa carte du ciel](https://karmastro.com/blog/theme-natal-gratuit-interpreter-carte-ciel)
 - [Lune en Scorpion : émotions intenses et transformation](https://karmastro.com/blog/lune-scorpion-emotions-intenses-transformation)
 - [Venus en Taureau : amour et sensualité](https://karmastro.com/blog/venus-taureau-amour-sensualite)
-

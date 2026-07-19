@@ -15,15 +15,15 @@ reviewedBy: "Pythia, numerologue certifiee ecole pythagoricienne"
 
 ## Sommaire
 
-1. [Chemin de vie 1 : la vibration du commencement](#chemin-de-vie-1-la-vibration-du-commencement)
+1. [Chemin de vie 1 : la vibration du commencement](#chemin-de-vie-1--la-vibration-du-commencement)
 2. [Comment savoir si ton chemin de vie est un 1](#comment-savoir-si-ton-chemin-de-vie-est-un-1)
-3. [Personnalité type du 1](#personnalite-type-du-1)
+3. [Personnalité type du 1](#personnalité-type-du-1)
 4. [Forces du chemin de vie 1](#forces-du-chemin-de-vie-1)
-5. [Défis et pièges à éviter](#defis-et-pieges-a-eviter)
+5. [Défis et pièges à éviter](#défis-et-pièges-à-éviter)
 6. [Mission d'incarnation](#mission-dincarnation)
-7. [Amour et compatibilité](#amour-et-compatibilite)
-8. [Carrière et vocation](#carriere-et-vocation)
-9. [Célébrités chemin de vie 1](#celebrites-chemin-de-vie-1)
+7. [Amour et compatibilité](#amour-et-compatibilité)
+8. [Carrière et vocation](#carrière-et-vocation)
+9. [Célébrités chemin de vie 1](#célébrités-chemin-de-vie-1)
 10. [Aller plus loin avec Karmastro](#aller-plus-loin-avec-karmastro)
 
 ## Chemin de vie 1 : la vibration du commencement

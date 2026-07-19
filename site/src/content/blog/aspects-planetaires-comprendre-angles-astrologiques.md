@@ -408,7 +408,7 @@ Ton [chemin de vie](https://karmastro.com/blog/chemin-de-vie-numerologie) révè
 | 22            | Configurations planétaires (Grand Trigone, Carré en T)                              | Mission de vie, réalisation concrète         |
 | 33            | Aspects Neptune, Poissons, 12e maison                                               | Guidance spirituelle, amour inconditionnel   |
 
-**Outil Karmastro** : Dans ton [profil cosmique](https://app.karmastro.com), notre IA génère automatiquement une hiérarchie de tes aspects en fonction de ton chemin de vie. Par exemple :
+**Outil Karmastro** : Dans ton [profil cosmique](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile), notre IA génère automatiquement une hiérarchie de tes aspects en fonction de ton chemin de vie. Par exemple :
 > *"Avec un chemin de vie 7, tes aspects Neptune et Pluton sont prioritaires. Ton quinconce Neptune-Saturne en maisons 9-3 révèle une quête de sagesse à travers l'écriture ou l'enseignement."*
 
 ---
@@ -472,7 +472,7 @@ Les aspects planétaires sont les fils invisibles qui tissent la toile de ton de
 5. Pour interpréter ton thème, il faut hiérarchiser les aspects selon leur orbe, les planètes impliquées et ton chemin de vie
 
 **Prochaine étape** :
-Pour aller plus loin, crée ton [profil cosmique sur Karmastro](https://app.karmastro.com) et découvre :
+Pour aller plus loin, crée ton [profil cosmique sur Karmastro](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile) et découvre :
 - Ta carte des aspects planétaires personnalisée avec interprétation karmique
 - Les transits actuels qui activent tes aspects natals
 - Des conseils concrets pour transformer tes défis en forces

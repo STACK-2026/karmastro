@@ -13,15 +13,15 @@ imageAlt: "silver paper clip on persons hand"
 
 ## Sommaire
 
-- [Qu'est-ce qu'un thème natal ?](#quest-ce-quun-theme-natal)
-- [Comment obtenir son thème natal gratuitement ?](#comment-obtenir-son-theme-natal-gratuitement)
-- [Les éléments essentiels de votre carte du ciel](#les-elements-essentiels-de-votre-carte-du-ciel)
-- [Interpréter les planètes dans les signes](#interpreter-les-planetes-dans-les-signes)
+- [Qu'est-ce qu'un thème natal ?](#quest-ce-quun-thème-natal-)
+- [Comment obtenir son thème natal gratuitement ?](#comment-obtenir-son-thème-natal-gratuitement-)
+- [Les éléments essentiels de votre carte du ciel](#les-éléments-essentiels-de-votre-carte-du-ciel)
+- [Interpréter les planètes dans les signes](#interpréter-les-planètes-dans-les-signes)
 - [Comprendre les maisons astrologiques](#comprendre-les-maisons-astrologiques)
-- [Décrypter les aspects planétaires](#decrypter-les-aspects-planetaires)
-- [Les points sensibles : ascendant et milieu du ciel](#les-points-sensibles-ascendant-et-milieu-du-ciel)
-- [Erreurs d'interprétation à éviter](#erreurs-dinterpretation-a-eviter)
-- [Questions fréquentes](#questions-frequentes)
+- [Décrypter les aspects planétaires](#décrypter-les-aspects-planétaires)
+- [Les points sensibles : ascendant et milieu du ciel](#les-points-sensibles--ascendant-et-milieu-du-ciel)
+- [Erreurs d'interprétation à éviter](#erreurs-dinterprétation-à-éviter)
+- [Questions fréquentes](#questions-fréquentes)
 - [Conclusion](#conclusion)
 
 ## Qu'est-ce qu'un thème natal ?

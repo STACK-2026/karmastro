@@ -15,14 +15,14 @@ reviewedBy: "Orion, astronome et astrologue senior"
 
 ## Sommaire
 
-1. [Qu'est-ce qu'un thème natal en astrologie](#quest-ce-quun-theme-natal-en-astrologie)
+1. [Qu'est-ce qu'un thème natal en astrologie](#quest-ce-quun-thème-natal-en-astrologie)
 2. [Les trois axes de lecture fondamentaux](#les-trois-axes-de-lecture-fondamentaux)
-3. [Les 10 planètes et leur signification](#les-10-planetes-et-leur-signification)
-4. [Les 12 maisons astrologiques expliquées](#les-12-maisons-astrologiques-expliquees)
-5. [L'art des aspects : comment lire les lignes](#lart-des-aspects-comment-lire-les-lignes)
-6. [Obtenir son thème natal gratuitement](#obtenir-son-theme-natal-gratuitement)
-7. [L'ordre d'interprétation recommandé](#lordre-dinterpretation-recommande)
-8. [Questions fréquentes](#questions-frequentes)
+3. [Les 10 planètes et leur signification](#les-10-planètes-et-leur-signification)
+4. [Les 12 maisons astrologiques expliquées](#les-12-maisons-astrologiques-expliquées)
+5. [L'art des aspects : comment lire les lignes](#lart-des-aspects--comment-lire-les-lignes)
+6. [Obtenir son thème natal gratuitement](#obtenir-son-thème-natal-gratuitement)
+7. [L'ordre d'interprétation recommandé](#lordre-dinterprétation-recommandé)
+8. [Questions fréquentes](#questions-fréquentes)
 
 ## Qu'est-ce qu'un thème natal en astrologie
 

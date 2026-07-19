@@ -24,15 +24,15 @@ imageAlt: "a tarot card surrounded by string lights"
 ---
 
 ## Sommaire
-- [Qu’est-ce que le tarot numérologique ? Définition et principes](#quest-ce-que-le-tarot-numerologique--definition-et-principes)
-- [Origines du tarot : des jeux italiens du XVe siècle à la divination moderne](#origines-du-tarot--des-jeux-italiens-du-xve-siecle-a-la-divination-moderne)
+- [Qu’est-ce que le tarot numérologique ? Définition et principes](#quest-ce-que-le-tarot-numérologique--définition-et-principes)
+- [Origines du tarot : des jeux italiens du XVe siècle à la divination moderne](#origines-du-tarot--des-jeux-italiens-du-xve-siècle-à-la-divination-moderne)
 - [Guide complet des 78 cartes du tarot : arcanes majeurs et mineurs](#guide-complet-des-78-cartes-du-tarot--arcanes-majeurs-et-mineurs)
-- [Correspondances entre tarot et numérologie : la clé de la fusion](#correspondances-entre-tarot-et-numerologie--la-cle-de-la-fusion)
-- [Comment tirer le tarot numérologique ? Méthode pas à pas](#comment-tirer-le-tarot-numerologique--methode-pas-a-pas)
-- [Le tarot numérologique comme outil de développement personnel](#le-tarot-numerologique-comme-outil-de-developpement-personnel)
-- [Exemples concrets : interpréter un tirage avec la numérologie](#exemples-concrets--interpreter-un-tirage-avec-la-numerologie)
+- [Correspondances entre tarot et numérologie : la clé de la fusion](#correspondances-entre-tarot-et-numérologie--la-clé-de-la-fusion)
+- [Comment tirer le tarot numérologique ? Méthode pas à pas](#comment-tirer-le-tarot-numérologique--méthode-pas-à-pas)
+- [Le tarot numérologique comme outil de développement personnel](#le-tarot-numérologique-comme-outil-de-développement-personnel)
+- [Exemples concrets : interpréter un tirage avec la numérologie](#exemples-concrets--interpréter-un-tirage-avec-la-numérologie)
 - [FAQ](#faq)
-- [Conclusion : pourquoi adopter le tarot numérologique ?](#conclusion--pourquoi-adopter-le-tarot-numerologique-)
+- [Conclusion : pourquoi adopter le tarot numérologique ?](#conclusion--pourquoi-adopter-le-tarot-numérologique-)
 - [Sources](#sources)
 
 ---

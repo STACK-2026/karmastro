@@ -15,14 +15,14 @@ reviewedBy: "Pythia, numerologue certifiee ecole pythagoricienne"
 
 ## Sommaire
 
-1. [Qu'est-ce que le chemin de vie en numérologie](#quest-ce-que-le-chemin-de-vie-en-numerologie)
-2. [La méthode de calcul pythagoricienne officielle](#la-methode-de-calcul-pythagoricienne-officielle)
-3. [Exemple complet étape par étape](#exemple-complet-etape-par-etape)
-4. [Les maîtres nombres 11, 22 et 33](#les-maitres-nombres-11-22-et-33)
-5. [Méthode alternative : jour, mois, année séparés](#methode-alternative-jour-mois-annee-separes)
-6. [Les erreurs de calcul à éviter absolument](#les-erreurs-de-calcul-a-eviter-absolument)
-7. [Vérifier son chemin de vie avec Karmastro](#verifier-son-chemin-de-vie-avec-karmastro)
-8. [Questions fréquentes](#questions-frequentes)
+1. [Qu'est-ce que le chemin de vie en numérologie](#quest-ce-que-le-chemin-de-vie-en-numérologie)
+2. [La méthode de calcul pythagoricienne officielle](#la-méthode-de-calcul-pythagoricienne-officielle)
+3. [Exemple complet étape par étape](#exemple-complet-étape-par-étape)
+4. [Les maîtres nombres 11, 22 et 33](#les-maîtres-nombres-11-22-et-33)
+5. [Méthode alternative : jour, mois, année séparés](#méthode-alternative--jour-mois-année-séparés)
+6. [Les erreurs de calcul à éviter absolument](#les-erreurs-de-calcul-à-éviter-absolument)
+7. [Vérifier son chemin de vie avec Karmastro](#vérifier-son-chemin-de-vie-avec-karmastro)
+8. [Questions fréquentes](#questions-fréquentes)
 
 ## Qu'est-ce que le chemin de vie en numérologie
 

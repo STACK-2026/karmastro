@@ -36,7 +36,8 @@ imageAlt: "a black rectangle with a white circle and a white circle on it"
 
 ---
 
-## Comment calculer ton année personnelle pour 2026 ? <a name="calculer-annee-personnelle-2026"></a>
+<a id="calculer-annee-personnelle-2026"></a>
+## Comment calculer ton année personnelle pour 2026 ?
 
 Ton **année personnelle 9** en 2026 se calcule en additionnant **ton jour de naissance + ton mois de naissance + l’année en cours (2026)**, puis en réduisant le résultat à un chiffre entre 1 et 9 (ou 11, 22, 33 pour les maîtres nombres).
 
@@ -54,7 +55,8 @@ Ton **année personnelle 9** en 2026 se calcule en additionnant **ton jour de na
 
 ---
 
-## Année personnelle 9 : signification karmique et symbolique <a name="signification-annee-9"></a>
+<a id="signification-annee-9"></a>
+## Année personnelle 9 : signification karmique et symbolique
 
 L’**année personnelle 9** est la **dernière étape d’un cycle de 9 ans** en numérologie, un concept hérité de **Pythagore** (VIe siècle av. J.-C.) et des traditions chaldéennes. Elle symbolise :
 - **La fin d’un chapitre** : Comme le chiffre 9 est le dernier avant le retour à 1 (nouveau cycle), cette année est marquée par des **clôtures** (projets, relations, habitudes).
@@ -72,7 +74,8 @@ L’**année personnelle 9** est la **dernière étape d’un cycle de 9 ans** e
 
 ---
 
-## Rétrospective karmique : quelles leçons des 8 dernières années ? <a name="retrospective-karmique"></a>
+<a id="retrospective-karmique"></a>
+## Rétrospective karmique : quelles leçons des 8 dernières années ?
 
 L’année 9 est une **opportunité unique** pour **faire le point** sur les 8 années écoulées depuis ton dernier cycle. Voici comment structurer ta rétrospective, domaine par domaine :
 
@@ -113,7 +116,8 @@ L’année 9 est une **opportunité unique** pour **faire le point** sur les 8 a
 
 ---
 
-## Année 9 par domaine : amour, carrière, finances <a name="annee-9-domaines"></a>
+<a id="annee-9-domaines"></a>
+## Année 9 par domaine : amour, carrière, finances
 
 ### 💖 **Amour et relations**
 | Situation | Défis | Opportunités | À éviter |
@@ -150,7 +154,8 @@ L’année 9 est une **opportunité unique** pour **faire le point** sur les 8 a
 
 ---
 
-## Ton plan d’action mois par mois en 2026 <a name="plan-mois-par-mois"></a>
+<a id="plan-mois-par-mois"></a>
+## Ton plan d’action mois par mois en 2026
 
 Voici un **guide pratique** pour naviguer chaque mois de ton année 9, en tenant compte des **transits planétaires** (ex: Mercure rétrograde, pleine lune en Cancer).
 
@@ -177,7 +182,8 @@ Voici un **guide pratique** pour naviguer chaque mois de ton année 9, en tenant
 
 ---
 
-## Préparer l’année 1 : poser les fondations du nouveau cycle <a name="preparer-annee-1"></a>
+<a id="preparer-annee-1"></a>
+## Préparer l’année 1 : poser les fondations du nouveau cycle
 
 L’année 9 n’est pas une fin en soi, mais une **transition** vers un nouveau cycle. Voici comment **préparer ton année 1** (2027) pour démarrer sur de bonnes bases :
 
@@ -216,7 +222,8 @@ L’année 9 n’est pas une fin en soi, mais une **transition** vers un nouveau
 
 ---
 
-## FAQ : Réponses aux questions fréquentes sur l’année 9 <a name="faq"></a>
+<a id="faq"></a>
+## FAQ : Réponses aux questions fréquentes sur l’année 9
 
 ### 1. **Est-ce que l’année 9 est toujours difficile ?**
 Non, mais elle est **intense**. C’est une année de **transformation**, pas forcément de souffrance. Tout dépend de ta capacité à **lâcher prise** et à accepter les changements. *Exemple* : Une personne qui a préparé sa reconversion pendant 8 ans vivra une année 9 **libératrice**, tandis qu’une personne en déni risque de subir des **crises**.
@@ -270,13 +277,13 @@ L’**année personnelle 9** est bien plus qu’une simple étape en numérologi
 
 **Prochaine étape** :
 - 🔮 **Pose une question à l’Oracle IA de Karmastro** pour recevoir une guidance personnalisée sur ton année 9 : [Accéder à l’Oracle](https://karmastro.com/oracle/).
-- 📊 **Découvre ton profil cosmique complet** (thème natal + numérologie + karma) : [Créer mon profil](https://app.karmastro.com).
+- 📊 **Découvre ton profil cosmique complet** (thème natal + numérologie + karma) : [Créer mon profil](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile).
 
 *"L’année 9 n’est pas une fin, mais un passage. Comme le phénix, tu renaîtras de tes cendres en année 1."*
 
 ---
 
-## Sources <a name="sources"></a>
+## Sources
 - [Wikipedia - Numérologie](https://fr.wikipedia.org/wiki/Num%C3%A9rologie) - Définition et origines historiques.
 - [IFOP - Les Français et l’astrologie (2024)](https://www.ifop.com/) - Statistiques sur les croyances astrologiques en France.
 - [Pôle Emploi - Chiffres clés des reconversions (2025)](https://www.pole-emploi.fr/) - Données sur les changements de carrière.
@@ -295,4 +302,3 @@ L’**année personnelle 9** est bien plus qu’une simple étape en numérologi
 - [Qu'est-ce que la numérologie ? Guide complet pour débuter](https://karmastro.com/blog/qu-numerologie-guide-complet-debuter)
 - [Comment calculer son chemin de vie en numérologie](https://karmastro.com/blog/comment-calculer-chemin-vie-numerologie)
 - [Numérologie pythagoricienne vs chaldéenne : différences](https://karmastro.com/blog/numerologie-pythagoricienne-chaldeenne-differences)
-

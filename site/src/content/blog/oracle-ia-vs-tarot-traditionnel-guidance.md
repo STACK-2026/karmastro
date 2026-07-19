@@ -15,14 +15,14 @@ reviewedBy: "Sibylle, guide divinatoire"
 
 ## Sommaire
 
-1. [Deux approches, une même quête de sens](#deux-approches-une-meme-quete-de-sens)
-2. [Le tarot traditionnel : 600 ans de symbolisme](#le-tarot-traditionnel-600-ans-de-symbolisme)
-3. [L'oracle IA : guidance personnalisée sur données](#loracle-ia-guidance-personnalisee-sur-donnees)
+1. [Deux approches, une même quête de sens](#deux-approches-une-même-quête-de-sens)
+2. [Le tarot traditionnel : 600 ans de symbolisme](#le-tarot-traditionnel--600-ans-de-symbolisme)
+3. [L'oracle IA : guidance personnalisée sur données](#loracle-ia--guidance-personnalisée-sur-données)
 4. [Tableau comparatif objectif](#tableau-comparatif-objectif)
-5. [Précision : que dit la recherche ?](#precision-que-dit-la-recherche)
+5. [Précision : que dit la recherche ?](#précision--que-dit-la-recherche-)
 6. [Quand choisir l'un ou l'autre](#quand-choisir-lun-ou-lautre)
-7. [Le faux débat : complémentarité plutôt qu'opposition](#le-faux-debat-complementarite-plutot-quopposition)
-8. [Essayer un oracle IA sérieux](#essayer-un-oracle-ia-serieux)
+7. [Le faux débat : complémentarité plutôt qu'opposition](#le-faux-débat--complémentarité-plutôt-quopposition)
+8. [Essayer un oracle IA sérieux](#essayer-un-oracle-ia-sérieux)
 
 ## Deux approches, une même quête de sens
 

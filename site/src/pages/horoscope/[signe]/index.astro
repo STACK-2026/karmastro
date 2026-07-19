@@ -268,9 +268,46 @@ const oracleHref = `/oracle/?q=${encodeURIComponent(horoscopeQ)}`;
             label="Partager cet horoscope"
           />
         </div>
+      </>
+    )}
+
+    {/* Action primaire, conservée même si la lecture du jour n'est pas encore publiée. */}
+    <div data-horoscope-action="oracle" class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-6">
+      <h3 class="font-serif text-xl mb-2">Et toi, qu'est-ce que ça change pour ta journée ?</h3>
+      <p class="text-white/70 mb-4 text-sm leading-relaxed">
+        L'horoscope est une lecture générale, valable pour tous les {sign.name}. Pose ta question à l'Oracle : il part de ton énergie du jour et te répond à l'instant, gratuitement et sans inscription.
+      </p>
+      <a href={oracleHref} class="km-oracle inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity mb-4">
+        Interroger l'Oracle sur ma journée
+      </a>
+      <div class="flex flex-wrap gap-2 justify-center pt-4 border-t border-white/10">
+        <a href="/outils/theme-natal/" class="inline-block px-4 py-2 rounded-xl border border-amber-300/40 text-amber-300 text-sm font-medium hover:bg-amber-300/10 transition-colors">Calcule ton thème natal</a>
+        <a href="/outils/ascendant/" class="inline-block px-4 py-2 rounded-xl border border-amber-300/40 text-amber-300 text-sm font-medium hover:bg-amber-300/10 transition-colors">Ton ascendant</a>
+        <a href="/outils/compatibilite/" class="inline-block px-4 py-2 rounded-xl border border-amber-300/40 text-amber-300 text-sm font-medium hover:bg-amber-300/10 transition-colors">Votre compatibilité</a>
+      </div>
+    </div>
+
+    {entry && (
+      <>
+        <div id="newsletter-capture" data-horoscope-action="newsletter" class="mb-2">
+          <NewsletterCapture sign={sign.slug} variant="card" source={`horoscope-${sign.slug}`} />
+        </div>
+
+        {profile && (
+          <div class="text-center mb-10">
+            <a
+              href="#profil-signe"
+              data-horoscope-action="profile"
+              class="inline-flex items-center gap-2 text-sm font-medium text-amber-300 hover:text-amber-200 hover:underline underline-offset-4"
+            >
+              Découvrir le profil complet du {sign.name}
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        )}
 
         {/* ═══ TOMORROW PREVIEW (Premium only) ═══ */}
-        <section class="mb-10">
+        <section data-horoscope-section="tomorrow" class="mb-10">
           <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
             <h2 class="font-serif text-2xl">Demain, {tomorrowFormatted}</h2>
             <span class="text-xs px-3 py-1 rounded-full bg-gradient-to-r from-amber-300/20 to-purple-400/20 border border-amber-300/40 text-amber-300">
@@ -362,11 +399,6 @@ const oracleHref = `/oracle/?q=${encodeURIComponent(horoscopeQ)}`;
           </div>
         </section>
 
-        {/* Newsletter fallback (moved below tomorrow teaser per SXO: paywall wins attention first, newsletter is the graceful fallback) */}
-        <div id="newsletter-capture" class="mb-10">
-          <NewsletterCapture sign={sign.slug} variant="card" source={`horoscope-${sign.slug}`} />
-        </div>
-
         {/* ═══ Premium unlock script ═══ */}
         <script is:inline>
           (function () {
@@ -410,21 +442,6 @@ const oracleHref = `/oracle/?q=${encodeURIComponent(horoscopeQ)}`;
         </script>
       </>
     )}
-
-    <div class="p-6 rounded-2xl border border-purple-400/30 bg-purple-400/5 text-center mb-10">
-      <h3 class="font-serif text-xl mb-2">Et toi, qu'est-ce que ça change pour ta journée ?</h3>
-      <p class="text-white/70 mb-4 text-sm leading-relaxed">
-        L'horoscope est une lecture générale, valable pour tous les {sign.name}. Pose ta question à l'Oracle : il part de ton énergie du jour et te répond à l'instant, gratuitement et sans inscription.
-      </p>
-      <a href={oracleHref} class="km-oracle inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold hover:opacity-90 transition-opacity mb-4">
-        Interroger l'Oracle sur ma journée
-      </a>
-      <div class="flex flex-wrap gap-2 justify-center pt-4 border-t border-white/10">
-        <a href="/outils/theme-natal/" class="inline-block px-4 py-2 rounded-xl border border-amber-300/40 text-amber-300 text-sm font-medium hover:bg-amber-300/10 transition-colors">Calcule ton thème natal</a>
-        <a href="/outils/ascendant/" class="inline-block px-4 py-2 rounded-xl border border-amber-300/40 text-amber-300 text-sm font-medium hover:bg-amber-300/10 transition-colors">Ton ascendant</a>
-        <a href="/outils/compatibilite/" class="inline-block px-4 py-2 rounded-xl border border-amber-300/40 text-amber-300 text-sm font-medium hover:bg-amber-300/10 transition-colors">Votre compatibilité</a>
-      </div>
-    </div>
 
     {profile && (
       <SignProfile

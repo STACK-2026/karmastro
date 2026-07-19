@@ -172,6 +172,17 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
   font-weight: 600;
 }
 
+/* "En bref" TL;DR blocks (aside.tldr) set a light background inline but no
+   text color, so on this dark-only theme they inherited near-white body text
+   (#f0ecf7) -> white-on-white / illisible. Force a dark readable color; the
+   #f5f5f5 background stays from the inline style. Covers all articles. */
+.tldr {
+  color: #1a1333;
+}
+.tldr strong {
+  color: #4c1d95;
+}
+
 /* === Tailwind custom colors === */
 @theme {
   --color-primary: #8b5cf6;

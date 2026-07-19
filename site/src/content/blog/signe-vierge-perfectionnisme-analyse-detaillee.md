@@ -30,7 +30,7 @@ draft: false
 - [Psychologie de la Vierge : l'esprit méthodique décrypté](#psychologie-de-la-vierge--lesprit-méthodique-décrypté)
 - [La Vierge en amour : compatibilité et défis relationnels](#la-vierge-en-amour--compatibilité-et-défis-relationnels)
 - [Chemin de vie numérologique des Vierges : stabilité ou adaptabilité ?](#chemin-de-vie-numérologique-des-vierges--stabilité-ou-adaptabilité-)
-- [Défis karmiques de la Vierge : leçons pour l'âme](#défis-karmique-de-la-vierge--leçons-pour-lâme)
+- [Défis karmiques de la Vierge : leçons pour l'âme](#défis-karmiques-de-la-vierge--leçons-pour-lâme)
 - [Vierges célèbres : analyse astro-numérologique](#vierges-célèbres--analyse-astro-numérologique)
 - [FAQ](#faq)
 - [Sources](#sources)

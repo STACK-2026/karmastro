@@ -15,14 +15,14 @@ reviewedBy: "Pythia, numerologue certifiee ecole pythagoricienne"
 
 ## Sommaire
 
-1. [Qu'est-ce que la numérologie ? Définition et origines](#quest-ce-que-la-numerologie-definition-et-origines)
-2. [Comment fonctionne la numérologie ? Les bases mathématiques](#comment-fonctionne-la-numerologie-les-bases-mathematiques)
-3. [Les nombres fondamentaux en numérologie](#les-nombres-fondamentaux-en-numerologie)
-4. [Comment calculer ton chemin de vie ? Méthode simple](#comment-calculer-ton-chemin-de-vie-methode-simple)
-5. [La signification des nombres de 1 à 9](#la-signification-des-nombres-de-1-a-9)
-6. [Les maîtres nombres : 11, 22 et 33](#les-maitres-nombres-11-22-et-33)
-7. [Numérologie et spiritualité : approche rationnelle](#numerologie-et-spiritualite-approche-rationnelle)
-8. [Comment débuter en numérologie ? Étapes pratiques](#comment-debuter-en-numerologie-etapes-pratiques)
+1. [Qu'est-ce que la numérologie ? Définition et origines](#quest-ce-que-la-numérologie--définition-et-origines)
+2. [Comment fonctionne la numérologie ? Les bases mathématiques](#comment-fonctionne-la-numérologie--les-bases-mathématiques)
+3. [Les nombres fondamentaux en numérologie](#les-nombres-fondamentaux-en-numérologie)
+4. [Comment calculer ton chemin de vie ? Méthode simple](#comment-calculer-ton-chemin-de-vie--méthode-simple)
+5. [La signification des nombres de 1 à 9](#la-signification-des-nombres-de-1-à-9)
+6. [Les maîtres nombres : 11, 22 et 33](#les-maîtres-nombres--11-22-et-33)
+7. [Numérologie et spiritualité : approche rationnelle](#numérologie-et-spiritualité--approche-rationnelle)
+8. [Comment débuter en numérologie ? Étapes pratiques](#comment-débuter-en-numérologie--étapes-pratiques)
 
 ## Qu'est-ce que la numérologie ? Définition et origines
 

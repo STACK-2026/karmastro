@@ -16,13 +16,13 @@ reviewedBy: "Orion, astronome et astrologue senior"
 ## Sommaire
 
 1. [Qu'est-ce que le karma en astrologie](#quest-ce-que-le-karma-en-astrologie)
-2. [Les noeuds lunaires : mémoire et mission de l'âme](#les-noeuds-lunaires-memoire-et-mission-de-lame)
-3. [Saturne et Pluton, les grands maîtres karmiques](#saturne-et-pluton-les-grands-maitres-karmiques)
-4. [La maison XII : le sac à dos karmique](#la-maison-xii-le-sac-a-dos-karmique)
-5. [Les signes karmiques et leurs leçons](#les-signes-karmiques-et-leurs-lecons)
-6. [Croiser astro et numérologie karmique](#croiser-astro-et-numerologie-karmique)
-7. [Libre arbitre et karma : le vrai message stoïcien](#libre-arbitre-et-karma-le-vrai-message-stoicien)
-8. [Questions fréquentes](#questions-frequentes)
+2. [Les noeuds lunaires : mémoire et mission de l'âme](#les-noeuds-lunaires--mémoire-et-mission-de-lâme)
+3. [Saturne et Pluton, les grands maîtres karmiques](#saturne-et-pluton-les-grands-maîtres-karmiques)
+4. [La maison XII : le sac à dos karmique](#la-maison-xii--le-sac-à-dos-karmique)
+5. [Les signes karmiques et leurs leçons](#les-signes-karmiques-et-leurs-leçons)
+6. [Croiser astro et numérologie karmique](#croiser-astro-et-numérologie-karmique)
+7. [Libre arbitre et karma : le vrai message stoïcien](#libre-arbitre-et-karma--le-vrai-message-stoïcien)
+8. [Questions fréquentes](#questions-fréquentes)
 
 ## Qu'est-ce que le karma en astrologie
 

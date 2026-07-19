@@ -16,14 +16,14 @@ L'<strong>ascendant Lion</strong> révèle un charisme naturel et une présence 
 </aside>
 
 ## Sommaire
-- [Comment calculer ton ascendant Lion ? La méthode Karmastro](#calculer-ascendant-lion-methode-karmastro)
-- [Ascendant Lion : signification et origines en astrologie traditionnelle](#ascendant-lion-signification-origines)
-- [L'influence du Soleil sur ton ascendant Lion : personnalité et traits clés](#influence-soleil-ascendant-lion)
-- [Axe Ascendant Lion / Descendant Verseau : la clé de tes relations](#axe-ascendant-descendant-verseau)
-- [Ascendant Lion et numérologie : comment ton chemin de vie affine ton thème astral](#ascendant-lion-numerologie-chemin-vie)
-- [Les 12 combinaisons : ton signe solaire avec un ascendant Lion](#12-combinaisons-signe-solaire-ascendant-lion)
-- [Ascendant Lion au quotidien : travail, amour et équilibre énergétique](#ascendant-lion-quotidien)
-- [Questions fréquentes sur l'ascendant Lion](#questions-frequentes)
+- [Comment calculer ton ascendant Lion ? La méthode Karmastro](#comment-calculer-ton-ascendant-lion--la-méthode-karmastro)
+- [Ascendant Lion : signification et origines en astrologie traditionnelle](#ascendant-lion--signification-et-origines-en-astrologie-traditionnelle)
+- [L'influence du Soleil sur ton ascendant Lion : personnalité et traits clés](#linfluence-du-soleil-sur-ton-ascendant-lion--personnalité-et-traits-clés)
+- [Axe Ascendant Lion / Descendant Verseau : la clé de tes relations](#axe-ascendant-lion--descendant-verseau--la-clé-de-tes-relations)
+- [Ascendant Lion et numérologie : comment ton chemin de vie affine ton thème astral](#ascendant-lion-et-numérologie--comment-ton-chemin-de-vie-affine-ton-thème-astral)
+- [Les 12 combinaisons : ton signe solaire avec un ascendant Lion](#les-12-combinaisons--ton-signe-solaire-avec-un-ascendant-lion)
+- [Ascendant Lion au quotidien : travail, amour et équilibre énergétique](#ascendant-lion-au-quotidien--travail-amour-et-équilibre-énergétique)
+- [Questions fréquentes sur l'ascendant Lion](#questions-fréquentes-sur-lascendant-lion)
 - [Sources](#sources)
 
 ---

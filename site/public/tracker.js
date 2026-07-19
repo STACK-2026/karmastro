@@ -296,11 +296,18 @@
 
     // Generic site -> app funnel. Only non-sensitive routing metadata is sent;
     // birth/profile inputs never enter URLs or analytics.
-    var appCtas = document.querySelectorAll("[data-app-cta]");
+    var appCtas = document.querySelectorAll('[data-app-cta], a[href^="https://app.karmastro.com"]');
     function appCtaProps(link) {
+      var destination = link.getAttribute("data-cta-destination") || "app";
+      try {
+        var href = new URL(link.getAttribute("href") || "", location.href);
+        if (destination === "app" && href.hostname === "app.karmastro.com") {
+          destination = href.pathname.replace(/^\//, "") || "app";
+        }
+      } catch (e) {}
       return {
-        source: link.getAttribute("data-cta-source") || "unknown",
-        destination: link.getAttribute("data-cta-destination") || "app",
+        source: link.getAttribute("data-cta-source") || (link.closest("article") ? "article-link" : "site-link"),
+        destination: destination,
         locale: ctaLocale(),
         path: path,
       };
@@ -319,7 +326,7 @@
     }
     document.addEventListener("click", function (ev) {
       var t = ev.target;
-      var link = t && t.closest ? t.closest("[data-app-cta]") : null;
+      var link = t && t.closest ? t.closest('[data-app-cta], a[href^="https://app.karmastro.com"]') : null;
       if (!link) return;
       var props = appCtaProps(link);
       try {
@@ -332,6 +339,57 @@
         }
       } catch (e) {}
       trackEvent("app_cta_click", props);
+    }, true);
+    // Measure whether the user could actually see the two post-reading actions,
+    // not only whether they converted. No profile or email value is recorded.
+    if ("IntersectionObserver" in window) {
+      var oracleCtas = document.querySelectorAll("#km-oracle, .km-oracle");
+      var oracleIo = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          var entry = entries[i];
+          if (!entry.isIntersecting || entry.target.getAttribute("data-oracle-viewed") === "1") continue;
+          entry.target.setAttribute("data-oracle-viewed", "1");
+          var source = entry.target.getAttribute("data-oracle-source") || pathTool(path) || path;
+          trackEvent("oracle_cta_view", { source: source, locale: ctaLocale(), path: path });
+          oracleIo.unobserve(entry.target);
+        }
+      }, { threshold: 0.4 });
+      for (var j = 0; j < oracleCtas.length; j++) oracleIo.observe(oracleCtas[j]);
+
+      var newsletterCtas = document.querySelectorAll("[data-newsletter-source]");
+      var newsletterIo = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          var entry = entries[i];
+          if (!entry.isIntersecting || entry.target.getAttribute("data-newsletter-viewed") === "1") continue;
+          entry.target.setAttribute("data-newsletter-viewed", "1");
+          trackEvent("newsletter_cta_view", {
+            source: entry.target.getAttribute("data-newsletter-source") || "unknown",
+            locale: ctaLocale(),
+            path: path,
+          });
+          newsletterIo.unobserve(entry.target);
+        }
+      }, { threshold: 0.4 });
+      for (var k = 0; k < newsletterCtas.length; k++) newsletterIo.observe(newsletterCtas[k]);
+
+      var signProfileCtas = document.querySelectorAll('[data-horoscope-action="profile"]');
+      var signProfileIo = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          var entry = entries[i];
+          if (!entry.isIntersecting || entry.target.getAttribute("data-profile-viewed") === "1") continue;
+          entry.target.setAttribute("data-profile-viewed", "1");
+          trackEvent("sign_profile_cta_view", { locale: ctaLocale(), path: path });
+          signProfileIo.unobserve(entry.target);
+        }
+      }, { threshold: 0.4 });
+      for (var m = 0; m < signProfileCtas.length; m++) signProfileIo.observe(signProfileCtas[m]);
+    }
+
+    document.addEventListener("click", function (ev) {
+      var t = ev.target;
+      var link = t && t.closest ? t.closest('[data-horoscope-action="profile"]') : null;
+      if (!link) return;
+      trackEvent("sign_profile_cta_click", { locale: ctaLocale(), path: path });
     }, true);
     // Activation Oracle : clic sur le CTA primaire « interroger l'Oracle » (reroute
     // fin d'outil → /oracle/). Mesure le levier #1 du plan MRR. [2026-06-17]

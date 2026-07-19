@@ -26,15 +26,15 @@ imageAlt: "A picture of a green and yellow swirl on a black background"
 ---
 
 ## Sommaire
-- [Comment calculer ton chemin de vie 5 ? Méthode et outil](#calcul-chemin-de-vie-5)
-- [Chemin de vie 5 : signification profonde et symbolisme](#signification-chemin-de-vie-5)
-- [Mission karmique du 5 : guérir la peur de l’enfermement](#mission-karmique-5)
-- [Amour et compatibilité : qui comprend vraiment le 5 ?](#amour-compatibilite-5)
-- [Carrière et abondance : les métiers où le 5 brille](#carriere-abondance-5)
-- [Défis du chemin de vie 5 : transformer l’instabilité en force](#defis-5)
-- [Le 5 à travers les âges : enfance, adolescence, maturité](#5-a-travers-ages)
-- [Chemin de vie 5 et astrologie : correspondances planétaires](#5-et-astrologie)
-- [Célébrités chemin de vie 5 : exemples inspirants](#celebrites-5)
+- [Comment calculer ton chemin de vie 5 ? Méthode et outil](#comment-calculer-ton-chemin-de-vie-5--méthode-et-outil)
+- [Chemin de vie 5 : signification profonde et symbolisme](#chemin-de-vie-5--signification-profonde-et-symbolisme)
+- [Mission karmique du 5 : guérir la peur de l’enfermement](#mission-karmique-du-5--guérir-la-peur-de-lenfermement)
+- [Amour et compatibilité : qui comprend vraiment le 5 ?](#amour-et-compatibilité--qui-comprend-vraiment-le-5-)
+- [Carrière et abondance : les métiers où le 5 brille](#carrière-et-abondance--les-métiers-où-le-5-brille)
+- [Défis du chemin de vie 5 : transformer l’instabilité en force](#défis-du-chemin-de-vie-5--transformer-linstabilité-en-force)
+- [Le 5 à travers les âges : enfance, adolescence, maturité](#le-5-à-travers-les-âges--enfance-adolescence-maturité)
+- [Chemin de vie 5 et astrologie : correspondances planétaires](#chemin-de-vie-5-et-astrologie--correspondances-planétaires)
+- [Célébrités chemin de vie 5 : exemples inspirants](#célébrités-chemin-de-vie-5--exemples-inspirants)
 - [FAQ : réponses aux questions fréquentes](#faq)
 - [Sources](#sources)
 
@@ -211,7 +211,7 @@ Le **chemin de vie 5** résonne avec plusieurs **archétypes astrologiques** :
 - **Saturne en transit** (tous les 29 ans) : Moment pour **structurer ta liberté** (ex: créer une entreprise nomade).
 
 📌 **Lien avec le thème astral** :
-Ton **chemin de vie 5** peut être amplifié ou tempéré par ton **signe solaire** ou ta **Lune**. Pour une analyse complète, crée ton [profil cosmique Karmastro](https://app.karmastro.com).
+Ton **chemin de vie 5** peut être amplifié ou tempéré par ton **signe solaire** ou ta **Lune**. Pour une analyse complète, crée ton [profil cosmique Karmastro](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile).
 
 ---
 

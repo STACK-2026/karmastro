@@ -24,13 +24,13 @@ imageAlt: "time lapse photography of assorted moon illustration"
 ---
 
 ## Sommaire
-- [Qu’est-ce que la Nouvelle Lune en Capricorne ? Définition astronomique et astrologique](#qu-est-ce-que-la-nouvelle-lune-en-capricorne)
-- [Nouvelle Lune en Capricorne 2026 : date, heure et signe précis](#nouvelle-lune-en-capricorne-2026-date-heure-et-signe)
-- [Pourquoi la Nouvelle Lune en Capricorne booste tes ambitions ?](#pourquoi-la-nouvelle-lune-en-capricorne-booste-tes-ambitions)
-- [Rituels de Nouvelle Lune en Capricorne : 5 étapes pour manifester tes objectifs](#rituels-de-nouvelle-lune-en-capricorne-5-étapes)
-- [Nouvelle Lune en Capricorne et karma : comment elle révèle tes leçons de vie](#nouvelle-lune-en-capricorne-et-karma)
-- [Numérologie et Nouvelle Lune : quel impact sur ton chemin de vie ?](#numérologie-et-nouvelle-lune)
-- [Thème astral et Nouvelle Lune : analyse des maisons astrologiques](#thème-astral-et-nouvelle-lune)
+- [Qu’est-ce que la Nouvelle Lune en Capricorne ? Définition astronomique et astrologique](#quest-ce-que-la-nouvelle-lune-en-capricorne--définition-astronomique-et-astrologique)
+- [Nouvelle Lune en Capricorne 2026 : date, heure et signe précis](#nouvelle-lune-en-capricorne-2026--date-heure-et-signe-précis)
+- [Pourquoi la Nouvelle Lune en Capricorne booste tes ambitions ?](#pourquoi-la-nouvelle-lune-en-capricorne-booste-tes-ambitions-)
+- [Rituels de Nouvelle Lune en Capricorne : 5 étapes pour manifester tes objectifs](#rituels-de-nouvelle-lune-en-capricorne--5-étapes-pour-manifester-tes-objectifs)
+- [Nouvelle Lune en Capricorne et karma : comment elle révèle tes leçons de vie](#nouvelle-lune-en-capricorne-et-karma--comment-elle-révèle-tes-leçons-de-vie)
+- [Numérologie et Nouvelle Lune : quel impact sur ton chemin de vie ?](#numérologie-et-nouvelle-lune--quel-impact-sur-ton-chemin-de-vie-)
+- [Thème astral et Nouvelle Lune : analyse des maisons astrologiques](#thème-astral-et-nouvelle-lune--analyse-des-maisons-astrologiques)
 - [FAQ : Questions fréquentes sur la Nouvelle Lune en Capricorne](#faq)
 - [Sources](#sources)
 

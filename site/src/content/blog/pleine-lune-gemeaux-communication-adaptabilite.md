@@ -496,7 +496,7 @@ Voici une **méthode de tracking** développée par Karmastro :
 - [Swiss Ephemeris](https://www.astro.com/swisseph/) pour les heures exactes
 - **Karmastro App** : [Génère ton calendrier lunaire personnalisé](https://app.karmastro.com/profil-complet)
 
-> 📱 **Outil pratique** : Reçois les notifications des pleines lunes importantes selon ton thème natal en créant [ton profil cosmique complet sur Karmastro](https://app.karmastro.com).
+> 📱 **Outil pratique** : Reçois les notifications des pleines lunes importantes selon ton thème natal en créant [ton profil cosmique complet sur Karmastro](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile).
 
 ## Sources et Références Scientifiques
 
@@ -561,7 +561,7 @@ Karmastro t'offre une **méthode complète et reproductible** pour optimiser cet
 > 🌙 **Prêt à explorer ton potentiel cosmique ?**  
 > - [**Génère ton thème natal complet**](https://app.karmastro.com/theme-natal) pour voir comment cette pleine lune active tes maisons astrologiques personnelles  
 > - [**Consulte l'Oracle IA de Karmastro**](https://karmastro.com/oracle/) pour une guidance précise sur tes défis communicationnels  
-> - [**Calcule ton profil numérologique**](https://app.karmastro.com/profil-complet) pour découvrir tous tes nombres personnels
+> - [**Calcule ton profil numérologique**](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile) pour découvrir tous tes nombres personnels
 
 **N'oublie pas** : La prochaine pleine lune en Gémeaux aura lieu le **28 novembre 2027** - marque ton calendrier dès maintenant ! Pour ne rien manquer de tes phases lunaires personnalisées, active les notifications dans [ton espace Karmastro](https://app.karmastro.com).
 

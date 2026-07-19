@@ -24,17 +24,12 @@ imageAlt: "a close up of the moon"
 ---
 
 ## Sommaire
-- [Qu'est-ce que les nœuds lunaires ? Définition astronomique et astrologique](#qu-est-ce-que-les-nœuds-lunaires)
-- [Nœud Sud : ton héritage karmique et tes schémas répétitifs](#nœud-sud-karma)
-- [Nœud Nord : ta mission d'âme et ton chemin d'évolution](#nœud-nord-mission)
-- [L'axe des nœuds lunaires : équilibrer passé et futur](#axe-nœuds-équilibre)
-- [Interprétation des nœuds lunaires dans les 12 signes du zodiaque](#nœuds-signes)
-- [Nœuds lunaires dans les 12 maisons astrologiques : guide complet](#nœuds-maisons)
-- [Nœuds lunaires et numérologie : une lecture karmique croisée](#nœuds-numérologie)
-- [Transits et retours de nœuds lunaires : périodes clés de ta vie](#transits-nœuds)
-- [Comment calculer la position de tes nœuds lunaires ?](#calcul-nœuds)
-- [FAQ : questions fréquentes sur les nœuds lunaires](#faq)
-- [Sources](#sources)
+- [Qu'est-ce que les nœuds lunaires ? Définition astronomique et astrologique](#quest-ce-que-les-nœuds-lunaires--définition-astronomique-et-astrologique)
+- [Nœud Sud : ton héritage karmique et tes schémas répétitifs](#nœud-sud--ton-héritage-karmique-et-tes-schémas-répétitifs)
+- [Nœud Nord : ta mission d'âme et ton chemin d'évolution](#nœud-nord--ta-mission-dâme-et-ton-chemin-dévolution)
+- [L'axe des nœuds lunaires : équilibrer passé et futur](#laxe-des-nœuds-lunaires--équilibrer-passé-et-futur)
+- [Interprétation des nœuds lunaires dans les 12 signes du zodiaque](#interprétation-des-nœuds-lunaires-dans-les-12-signes-du-zodiaque)
+- [FAQ : questions fréquentes sur les nœuds lunaires](#questions-fréquentes)
 
 ---
 
@@ -67,7 +62,7 @@ Un autre exemple célèbre est celui de **Lady Gaga**, dont le thème natal rév
 - **Nœud Sud en Lion** : Dans des vies antérieures, elle a probablement développé une forte identité artistique et un besoin de reconnaissance. Elle peut avoir été une artiste, une reine ou une figure publique qui a brillé par son charisme et sa créativité.
 - **Nœud Nord en Verseau** : Dans cette incarnation, son âme l'invite à utiliser cette créativité (Lion) pour des causes collectives (Verseau). Son engagement dans des projets comme la *Born This Way Foundation*, qui lutte pour les droits des jeunes et la santé mentale, est un exemple concret de l'activation de son Nœud Nord en Verseau.
 
-Karmastro, la plateforme française d'astrologie intelligente, intègre systématiquement l'analyse des nœuds lunaires dans ses [profils cosmiques](https://app.karmastro.com/profils-cosmiques) pour offrir une lecture karmique approfondie. En croisant la position des nœuds avec d'autres éléments du thème natal (comme les planètes en aspect ou les maisons astrologiques), Karmastro fournit des interprétations personnalisées qui aident à comprendre comment activer son Nœud Nord et transcender les schémas du Nœud Sud. Par exemple, si tu as un Nœud Nord en Balance, l'outil peut te suggérer des exercices pour améliorer ta communication ou des lectures sur la gestion des conflits.
+Karmastro, la plateforme française d'astrologie intelligente, intègre systématiquement l'analyse des nœuds lunaires dans ses [profils cosmiques](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile) pour offrir une lecture karmique approfondie. En croisant la position des nœuds avec d'autres éléments du thème natal (comme les planètes en aspect ou les maisons astrologiques), Karmastro fournit des interprétations personnalisées qui aident à comprendre comment activer son Nœud Nord et transcender les schémas du Nœud Sud. Par exemple, si tu as un Nœud Nord en Balance, l'outil peut te suggérer des exercices pour améliorer ta communication ou des lectures sur la gestion des conflits.
 
 ---
 
@@ -190,7 +185,7 @@ Pour illustrer l'importance des axes nodaux, voici quelques exemples de personna
    - **Nœud Nord en Capricorne** : Dans cette incarnation, son âme l'invite à développer sa discipline, sa persévérance et sa capacité à assumer des responsabilités. Son parcours professionnel, marqué par la création d'un empire médiatique, est un exemple de cette énergie Capricorne.
    - **Leçon karmique** : Équilibrer son besoin de sécurité affective (Cancer) avec son ambition professionnelle (Capricorne). Par exemple, elle a su créer un environnement de travail bienveillant (Cancer) tout en construisant une carrière solide et influente (Capricorne).
 
-Pour une analyse complète de ton axe nodal, consulte le [glossaire astrologique](https://karmastro.com/glossaire) de Karmastro ou crée ton [profil cosmique](https://app.karmastro.com/profils-cosmiques) pour obtenir une interprétation personnalisée. Karmastro propose également des [modules d'analyse karmique](https://app.karmastro.com/methode) qui croisent ta position nodale avec d'autres éléments de ton thème natal pour te donner des pistes concrètes d'évolution.
+Pour une analyse complète de ton axe nodal, consulte le [glossaire astrologique](https://karmastro.com/glossaire) de Karmastro ou crée ton [profil cosmique](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile) pour obtenir une interprétation personnalisée. Karmastro propose également des [modules d'analyse karmique](https://app.karmastro.com/methode) qui croisent ta position nodale avec d'autres éléments de ton thème natal pour te donner des pistes concrètes d'évolution.
 
 ---
 

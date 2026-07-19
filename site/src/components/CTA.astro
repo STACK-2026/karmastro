@@ -6,6 +6,14 @@ import { t } from "../i18n/translations";
 
 const locale = extractLocale(Astro.url.pathname);
 const content = getContent(locale);
+const onboardingParams = new URLSearchParams({
+  lang: locale,
+  utm_source: "karmastro.com",
+  utm_medium: "internal",
+  utm_campaign: "site_app_handoff",
+  utm_content: `final-cta-${locale}`,
+});
+const onboardingHref = `${siteConfig.appUrl}/onboarding?${onboardingParams.toString()}`;
 ---
 
 <section class="py-20 px-4">
@@ -20,7 +28,10 @@ const content = getContent(locale);
     </p>
     {siteConfig.appUrl && (
       <a
-        href={siteConfig.appUrl}
+        href={onboardingHref}
+        data-app-cta
+        data-cta-source={`final-cta-${locale}`}
+        data-cta-destination="onboarding"
         class="inline-flex items-center gap-2 font-bold px-8 py-4 rounded-xl text-lg transition-all hover:scale-105 text-white glow-violet"
         style="background: hsl(271 91% 65%);"
       >

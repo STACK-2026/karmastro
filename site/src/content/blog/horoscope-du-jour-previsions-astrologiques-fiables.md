@@ -16,13 +16,13 @@ reviewedBy: "Orion, astronome et astrologue senior"
 ## Sommaire
 
 1. [Pourquoi les horoscopes de magazine ne marchent pas](#pourquoi-les-horoscopes-de-magazine-ne-marchent-pas)
-2. [Qu'est-ce qu'un horoscope quotidien réellement personnalisé](#quest-ce-quun-horoscope-quotidien-reellement-personnalise)
-3. [Les transits, clé des prévisions astrologiques fiables](#les-transits-cle-des-previsions-astrologiques-fiables)
-4. [Les événements cosmiques majeurs à suivre](#les-evenements-cosmiques-majeurs-a-suivre)
+2. [Qu'est-ce qu'un horoscope quotidien réellement personnalisé](#quest-ce-quun-horoscope-quotidien-réellement-personnalisé)
+3. [Les transits, clé des prévisions astrologiques fiables](#les-transits-clé-des-prévisions-astrologiques-fiables)
+4. [Les événements cosmiques majeurs à suivre](#les-événements-cosmiques-majeurs-à-suivre)
 5. [Comment lire un horoscope comme un astrologue](#comment-lire-un-horoscope-comme-un-astrologue)
-6. [L'horoscope quotidien Karmastro : notre méthode](#lhoroscope-quotidien-karmastro-notre-methode)
-7. [Fréquence de lecture recommandée](#frequence-de-lecture-recommandee)
-8. [Questions fréquentes](#questions-frequentes)
+6. [L'horoscope quotidien Karmastro : notre méthode](#lhoroscope-quotidien-karmastro--notre-méthode)
+7. [Fréquence de lecture recommandée](#fréquence-de-lecture-recommandée)
+8. [Questions fréquentes](#questions-fréquentes)
 
 ## Pourquoi les horoscopes de magazine ne marchent pas
 

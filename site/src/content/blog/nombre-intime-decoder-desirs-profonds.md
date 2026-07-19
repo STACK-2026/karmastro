@@ -25,14 +25,14 @@ imageAlt: "A blurry image of a bar code in the water"
 ---
 
 ## Sommaire
-- [Qu’est-ce que le nombre intime en numérologie ?](#quest-ce-que-le-nombre-intime-en-numérologie)
-- [Comment calculer son nombre intime ? (Méthode + tableau de Pythagore)](#comment-calculer-son-nombre-intime)
+- [Qu’est-ce que le nombre intime en numérologie ?](#quest-ce-que-le-nombre-intime-en-numérologie-)
+- [Comment calculer son nombre intime ? (Méthode + tableau de Pythagore)](#comment-calculer-son-nombre-intime--méthode--tableau-de-pythagore)
 - [Calculateur instantané de nombre intime](#calculateur-instantané-de-nombre-intime)
 - [Signification des nombres intimes de 1 à 9](#signification-des-nombres-intimes-de-1-à-9)
-- [Maîtres nombres intimes : 11, 22 et 33 (vibrations puissantes)](#maîtres-nombres-intimes-11-22-et-33)
-- [Nombre intime et chemin de vie : une combinaison clé](#nombre-intime-et-chemin-de-vie-une-combinaison-clé)
+- [Maîtres nombres intimes : 11, 22 et 33 (vibrations puissantes)](#maîtres-nombres-intimes--11-22-et-33-vibrations-puissantes)
+- [Nombre intime et chemin de vie : une combinaison clé](#nombre-intime-et-chemin-de-vie--une-combinaison-clé)
 - [Compatibilité amoureuse selon ton nombre intime](#compatibilité-amoureuse-selon-ton-nombre-intime)
-- [Exemples concrets : nombres intimes de célébrités](#exemples-concrets-nombres-intimes-de-célébrités)
+- [Exemples concrets : nombres intimes de célébrités](#exemples-concrets--nombres-intimes-de-célébrités)
 - [FAQ](#faq)
 - [Sources](#sources)
 
@@ -83,7 +83,7 @@ Pour calculer ton nombre intime, suis ces **3 étapes précises** basées sur la
 → *Nombre intime de Marie Dupont* : **6**
 
 **Cas particuliers** :
-- Si le total est **11, 22 ou 33**, ne le réduis pas (ce sont des [maîtres nombres](#maîtres-nombres-intimes-11-22-et-33)).
+- Si le total est **11, 22 ou 33**, ne le réduis pas (ce sont des [maîtres nombres](#maîtres-nombres-intimes--11-22-et-33-vibrations-puissantes)).
 - Si ton nom contient un **trait d’union** (ex : Jean-Luc), calcule chaque partie séparément puis additionne.
 
 ---
@@ -285,7 +285,7 @@ Non, ton nombre intime reste **stable** tant que ton nom officiel ne change pas.
 ### Pourquoi mon nombre intime est-il différent de mon chemin de vie ?
 Le **chemin de vie** (calculé via ta date de naissance) représente ta **mission karmique**, tandis que le nombre intime révèle tes **désirs profonds**. Une différence entre les deux est normale et riche d’enseignements :
 - *Exemple* : Chemin de vie 4 (stabilité) + nombre intime 5 (liberté) → tu dois trouver un équilibre entre sécurité et aventure.
-Pour une analyse croisée, crée ton [profil cosmique sur Karmastro](https://app.karmastro.com).
+Pour une analyse croisée, crée ton [profil cosmique sur Karmastro](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile).
 
 ---
 
@@ -318,4 +318,3 @@ La numérologie n’est pas une science exacte, mais un **langage symbolique** p
 - [Nombre personnel : trouver sa vibration numérologique](https://karmastro.com/blog/nombre-personnel-trouver-vibration-numerologique)
 - [Nombre d'expression : révéler son potentiel caché](https://karmastro.com/blog/nombre-expression-reveler-potentiel-cache)
 - [Qu'est-ce que la numérologie ? Guide complet pour débuter](https://karmastro.com/blog/qu-numerologie-guide-complet-debuter)
-
