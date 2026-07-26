@@ -8,6 +8,7 @@ describe("sanitizePostAuthPath", () => {
     expect(sanitizePostAuthPath("/pricing")).toBe("/pricing");
     expect(sanitizePostAuthPath("/dashboard")).toBe("/dashboard");
     expect(sanitizePostAuthPath("/astral")).toBe("/astral");
+    expect(sanitizePostAuthPath("/onboarding")).toBe("/onboarding");
   });
 
   it("rejects open redirects, protocol-relative URLs and unknown routes", () => {

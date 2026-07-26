@@ -1,7 +1,13 @@
 export const POST_AUTH_PATH_KEY = "karmastro_post_auth_path";
 export const ORACLE_HANDOFF_SESSION_KEY = "karmastro_oracle_session";
 
-const ALLOWED_POST_AUTH_PATHS = new Set(["/dashboard", "/oracle", "/astral", "/pricing"]);
+const ALLOWED_POST_AUTH_PATHS = new Set([
+  "/dashboard",
+  "/oracle",
+  "/astral",
+  "/pricing",
+  "/onboarding",
+]);
 
 export function sanitizePostAuthPath(value: string | null | undefined): string {
   if (!value || !ALLOWED_POST_AUTH_PATHS.has(value)) return "/dashboard";

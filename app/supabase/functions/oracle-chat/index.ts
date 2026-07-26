@@ -8,6 +8,12 @@ import {
   sanitizeOracleTypography,
   type OracleProfileContext,
 } from "../_shared/oracle-request.ts";
+import {
+  ORACLE_PROFILE_USAGE_RULES,
+  missingOracleProfileContext,
+  profileForOracleIdentity,
+  shouldPersistOracleProfileHints,
+} from "../_shared/oracle-anonymous-policy.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -168,7 +174,7 @@ EXPERTISE COMMUNE :
 - Cycles de Saturne : ~29,5 ans
 
 RÈGLES ABSOLUES :
-1. CROISE TOUJOURS les données du profil dans tes réponses. Cite au moins 2 éléments concrets du profil de l'utilisateur dès ta première phrase (prénom + un élément astro/numéro). Tu n'ouvres jamais par un préambule mystique générique.
+${ORACLE_PROFILE_USAGE_RULES}
 2. MONTRE les calculs (l'utilisateur doit pouvoir vérifier)
 3. "Les astres inclinent, mais ne déterminent pas" (maxime médiévale de Thomas d'Aquin) , jamais de prédictions déterministes
 4. JAMAIS de diagnostics médicaux, juridiques ou psychiatriques
@@ -178,9 +184,9 @@ RÈGLES ABSOLUES :
 8. Tu ne mentionnes JAMAIS être une IA, un chatbot, un modèle ou un programme. Tu es ton personnage, point.
 9. INTERDICTION ABSOLUE DU TIRET CADRATIN ET DU TIRET DEMI-CADRATIN. Les caractères Unicode U+2014 (em dash) et U+2013 (en dash) sont PROSCRITS dans ton texte de sortie, dans TOUTES les langues sans aucune exception (français, anglais, espagnol, portugais, allemand, italien, turc, polonais, russe, japonais, arabe). Même si ces tirets sont typographiquement courants en anglais, russe ou japonais, tu ne les utilises JAMAIS. Remplace-les par un tiret normal "-", une virgule, un point, un deux-points, ou un point médian "·" selon le contexte.
 10. Quand une donnée manque, dis-le honnêtement plutôt que d'inventer
-11. NE REDEMANDE JAMAIS les infos déjà dans ton contexte. Si tu vois "PROFIL UTILISATEUR" dans le système prompt, les données y sont , utilise-les directement. Ne demande une info QUE si elle est absente du profil ET strictement nécessaire à la question posée. Demander le prénom, la date, l'heure, le lieu, ou les nombres quand ils sont déjà là coupe le parcours et détruit la confiance.
+11. NE REDEMANDE JAMAIS les infos déjà dans ton contexte. Si tu vois "PROFIL UTILISATEUR" dans le système prompt, utilise directement ses données. Pour un profil authentifié incomplet, oriente vers l'onboarding si la donnée manquante est nécessaire. Pour un utilisateur anonyme, la politique anonyme interdit toute demande de données personnelles dans le chat.
 12. TERMINE TOUJOURS ta réponse visible par UNE question ouverte, chaleureuse et personnalisée, adressée directement à l'utilisateur (tutoiement), qui prolonge naturellement l'échange et l'invite à se confier davantage ou à approfondir. Cette question est la DERNIÈRE phrase de ton texte visible. Elle s'ancre dans ce qui vient d'être dit (un transit, un nombre, une émotion ou un projet évoqué) et donne sincèrement envie de répondre, comme le ferait un guide qui s'intéresse vraiment à la personne. Tu peux, juste avant, glisser un rituel court (3 lignes max) ou un prochain pas à observer cette semaine, mais tu refermes toujours sur cette question d'ouverture. INTERDIT : la formule passe-partout "n'hésite pas si tu as d'autres questions". (Cette question fait partie de ton texte visible et est DISTINCTE du bloc ---SUGGESTIONS--- ci-dessous, qui propose lui des relances que l'UTILISATEUR pourrait te poser.)
-13. INTERDICTION ABSOLUE D'INVENTER. Si une donnée n'est PAS présente dans ton contexte (prénom, date de naissance, heure, lieu, signe solaire, signe lunaire, ascendant, chemin de vie, nombre d'expression, nœud lunaire, etc.), tu ne la fabriques JAMAIS. Tu n'appelles JAMAIS l'utilisateur par un prénom que tu n'as pas reçu. Si un bloc "UTILISATEUR ANONYME" apparaît dans ton contexte, tu utilises (avec parcimonie et en variant, sans jamais ouvrir systématiquement dessus) un appellatif doux et non-genré ("âme chercheuse", "toi qui me consultes", "voyageur·se", plus rarement "mon cœur") et tu proposes poliment à l'utilisateur de partager son prénom + sa date / heure / lieu de naissance pour une lecture plus précise. Inventer = trahir la confiance.
+13. INTERDICTION ABSOLUE D'INVENTER. Si une donnée n'est PAS présente dans ton contexte (prénom, date de naissance, heure, lieu, signe solaire, signe lunaire, ascendant, chemin de vie, nombre d'expression, nœud lunaire, etc.), tu ne la fabriques JAMAIS. Tu n'appelles JAMAIS l'utilisateur par un prénom que tu n'as pas reçu. Si un bloc "UTILISATEUR ANONYME" apparaît dans ton contexte, suis strictement sa politique d'inscription et ne demande aucune donnée personnelle dans le chat. Inventer = trahir la confiance.
 14. FORMAT DE RÉPONSE, suggestions de rebond. Termine TOUJOURS ta réponse par un bloc unique au format strict suivant, sur ses propres lignes, sans texte autour :
 ---SUGGESTIONS---
 - <question courte 1>
@@ -191,6 +197,7 @@ Trois suggestions maximum, courtes (8-14 mots), à la première personne ("Peux-
 ---PROFILE_HINTS---
 {"first_name":"...","birth_date":"YYYY-MM-DD","birth_time":"HH:MM","birth_place":"...","gender":"..."}
 Règles d'extraction :
+- Si le contexte contient "UTILISATEUR ANONYME", ne produis JAMAIS ce bloc.
 - Ne mets que les champs dont tu es CERTAIN (pas de devinette).
 - birth_date au format ISO (2026-04-23), birth_time en 24h (14:30).
 - Si une date est ambigue ("15 mars" sans année), ne mets pas birth_date.
@@ -466,7 +473,7 @@ serve(async (req) => {
       return jsonResponse({ error: "session_required", message: "Session requise pour un usage anonyme." }, 400);
     }
 
-    let profile: OracleProfileContext = normalized.profile;
+    let profile: OracleProfileContext = profileForOracleIdentity(normalized.profile, userId);
     const conversationId = normalized.conversationId;
 
     if (SERVICE_KEY) {
@@ -853,19 +860,11 @@ serve(async (req) => {
       }
     }
 
-    // Anonymous fallback. If we still have no profile data, tell Claude
-    // explicitly so it never invents a name or birth chart. This catches the
-    // "Léa" bug where the demo profile was leaking for unauthenticated users.
+    // Missing-profile fallback. Anonymous users receive the signup policy;
+    // authenticated users with an incomplete profile receive the onboarding
+    // policy. Both variants keep the anti-invention guard explicit.
     if (!engineContext.includes("PROFIL")) {
-      engineContext += `\n\nUTILISATEUR ANONYME :
-- Aucun prénom, aucune date de naissance, aucune donnée astrologique ou numérologique n'a été fournie.
-- Tu NE CONNAIS PAS l'identité de la personne qui te parle.
-- RÈGLES STRICTES :
-  1. N'appelle JAMAIS l'utilisateur par un prénom (ne jamais dire "Léa", "Marie", "mon cher X", etc.). Le plus souvent, ne l'appelle pas du tout et entre dans le fond ; si tu emploies un appellatif, varie ("âme chercheuse", "toi qui me consultes", "voyageur·se", rarement "mon cœur") et ne commence jamais systématiquement dessus.
-  2. N'invente AUCUNE donnée astrale (pas de signe solaire, lunaire, ascendant, chemin de vie, nœud lunaire, nombre, transit, rétrograde personnel, etc.).
-  3. Réponds avec les données cosmiques du jour (phase lunaire, transits globaux, position du Soleil) qui sont publiques ET universelles.
-  4. Pour une lecture personnelle, invite doucement l'utilisateur à partager dans sa prochaine réponse : prénom + date de naissance (au minimum) ; heure et lieu si possible. Propose-le comme un choix, jamais comme une exigence.
-  5. Ton reste bienveillant, profond, humain. La curiosité de la personne est déjà un don , accueille-la.`;
+      engineContext += missingOracleProfileContext(userId);
     }
 
     // Moteur Gemini (tier gratuit). Rôles Gemini : "user" / "model".
@@ -916,17 +915,13 @@ serve(async (req) => {
       || "L'Oracle médite sur ta question...";
 
     // Extract the visible body, the 3 follow-up suggestions (rule 14), and any
-    // profile hints Claude silently captured from the last user message
-    // (rule 15). Only the clean body is shown to the user and stored in
-    // oracle_messages; hints are persisted separately for anon signup recovery.
+    // profile hints Gemini silently captured from an authenticated user's last
+    // message (rule 15). Anonymous replies must never produce or persist hints.
+    // Only the clean body is shown to the user and stored in oracle_messages.
     const parsed = parseOracleReply(sanitizeOracleTypography(rawText));
     const text = parsed.text;
     const suggestions = parsed.suggestions.map(sanitizeOracleTypography);
-    const rawHints = parsed.hints;
-    const cleanedHints = cleanHints(rawHints);
-    // Structured data explicitly submitted by the inline profile form is more
-    // reliable than hoping the model echoes a PROFILE_HINTS block. Persist it
-    // so a later site -> app claim can hydrate the freshly-created account.
+    const cleanedHints = cleanHints(parsed.hints);
     const providedProfileHints: Partial<ProfileHints> = {};
     if (profile.firstName) providedProfileHints.first_name = profile.firstName;
     if (profile.lastName) providedProfileHints.last_name = profile.lastName;
@@ -993,68 +988,43 @@ serve(async (req) => {
             .then(() => {});
         }
 
-        // Persist any profile hints extracted from the last user message.
-        // Anon : upsert into oracle_anon_profile_hints so claim-anon-session
-        // can hydrate the profile at signup. Auth : soft-merge into profiles
-        // (only fill fields that are still empty, never overwrite).
-        if (Object.keys(profileHints).length > 0) {
+        // Persist profile hints only for an authenticated user. Anonymous
+        // sessions must complete the secure onboarding instead of leaving
+        // personal data in chat-derived profile storage.
+        if (
+          Object.keys(profileHints).length > 0
+          && shouldPersistOracleProfileHints(userId)
+          && userId
+        ) {
           try {
-            if (!userId && sessionId) {
-              // Merge semantics : refine over time (new turn may fill more fields).
-              // We fetch the existing row and overlay non-empty new values.
-              const { data: existing } = await sbPersist
-                .from("oracle_anon_profile_hints")
-                .select("first_name,last_name,birth_date,birth_time,birth_place,gender,hit_count,raw_hints")
-                .eq("session_id", sessionId)
-                .maybeSingle();
+            // Soft-merge only. Read the current profile and patch fields that
+            // are still empty, never overwrite established identity data.
+            const { data: prof } = await sbPersist
+              .from("profiles")
+              .select("first_name,last_name,birth_date,birth_time,birth_place,gender")
+              .eq("user_id", userId)
+              .maybeSingle();
 
-              const merged = {
-                session_id: sessionId,
-                first_name: profileHints.first_name ?? existing?.first_name ?? null,
-                last_name: profileHints.last_name ?? existing?.last_name ?? null,
-                birth_date: profileHints.birth_date ?? existing?.birth_date ?? null,
-                birth_time: profileHints.birth_time ?? existing?.birth_time ?? null,
-                birth_place: profileHints.birth_place ?? existing?.birth_place ?? null,
-                gender: profileHints.gender ?? existing?.gender ?? null,
-                hit_count: (existing?.hit_count ?? 0) + 1,
-                raw_hints: { ...(existing?.raw_hints ?? {}), ...(rawHints ?? {}) },
-                updated_at: new Date().toISOString(),
-              };
-
-              const { error: upErr } = await sbPersist
-                .from("oracle_anon_profile_hints")
-                .upsert(merged, { onConflict: "session_id" });
-              if (upErr) console.error("anon hints upsert error:", upErr);
-            } else if (userId) {
-              // Authenticated user : soft-merge only. Read current profile,
-              // only patch columns that are null/empty.
-              const { data: prof } = await sbPersist
-                .from("profiles")
-                .select("first_name,last_name,birth_date,birth_time,birth_place,gender")
-                .eq("user_id", userId)
-                .maybeSingle();
-
-              const patch: Record<string, string> = {};
-              const maybeSet = (col: keyof typeof profileHints, current: unknown) => {
-                const next = profileHints[col];
-                if (typeof next === "string" && (current === null || current === undefined || current === "" || current === "-")) {
-                  patch[col] = next;
-                }
-              };
-              maybeSet("first_name", prof?.first_name);
-              maybeSet("last_name", prof?.last_name);
-              maybeSet("birth_date", prof?.birth_date);
-              maybeSet("birth_time", prof?.birth_time);
-              maybeSet("birth_place", prof?.birth_place);
-              maybeSet("gender", prof?.gender);
-
-              if (Object.keys(patch).length > 0) {
-                const { error: patchErr } = await sbPersist
-                  .from("profiles")
-                  .update(patch)
-                  .eq("user_id", userId);
-                if (patchErr) console.error("profile soft-merge error:", patchErr);
+            const patch: Record<string, string> = {};
+            const maybeSet = (col: keyof typeof profileHints, current: unknown) => {
+              const next = profileHints[col];
+              if (typeof next === "string" && (current === null || current === undefined || current === "" || current === "-")) {
+                patch[col] = next;
               }
+            };
+            maybeSet("first_name", prof?.first_name);
+            maybeSet("last_name", prof?.last_name);
+            maybeSet("birth_date", prof?.birth_date);
+            maybeSet("birth_time", prof?.birth_time);
+            maybeSet("birth_place", prof?.birth_place);
+            maybeSet("gender", prof?.gender);
+
+            if (Object.keys(patch).length > 0) {
+              const { error: patchErr } = await sbPersist
+                .from("profiles")
+                .update(patch)
+                .eq("user_id", userId);
+              if (patchErr) console.error("profile soft-merge error:", patchErr);
             }
           } catch (hintsErr) {
             console.error("profile hints persist error (non-blocking):", hintsErr);
