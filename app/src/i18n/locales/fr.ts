@@ -179,6 +179,12 @@ const fr: UiStrings = {
   "pricing.toast_checkout_error_title": "Erreur checkout",
   "pricing.checkout_session_expired": "Session expirée",
   "pricing.checkout_create_failed": "Impossible de créer la session",
+  "pricing.checkout_canceled_title": "Paiement annulé",
+  "pricing.checkout_canceled_desc": "Aucun paiement n'a été effectué.",
+  "pricing.checkout_success_title": "Paiement reçu ✦",
+  "pricing.checkout_success_pending": "Ton achat est confirmé. L'activation peut prendre quelques instants.",
+  "pricing.checkout_success_active": "Tes avantages Étoile sont maintenant actifs.",
+  "pricing.checkout_success_purchase": "Ton achat est confirmé. Ta lecture est en cours de préparation.",
 
   "oracle.guide_sibylle_name": "Sibylle",
   "oracle.guide_sibylle_title": "L'Oracle mystique",

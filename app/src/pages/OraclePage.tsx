@@ -651,7 +651,7 @@ const OraclePage = () => {
                         </button>
                       </div>
                     ) : (
-                      <div className="flex flex-col sm:flex-row gap-2">
+                      <div>
                         <button
                           onClick={() => {
                             trackOracleEvents([paywallEtoileClickEvent(), oracleHandoffClickEvent("pricing")]);
@@ -660,16 +660,6 @@ const OraclePage = () => {
                           className="flex-1 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity glow-gold"
                         >
                           {t("oracle.paywall_cta_etoile")}
-                        </button>
-                        <button
-                          onClick={() => {
-                            const event = oracleHandoffClickEvent("pricing");
-                            void trackEvent(event.name, event.properties);
-                            navigate("/pricing");
-                          }}
-                          className="flex-1 px-4 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 font-medium text-sm hover:bg-amber-300/10 transition-colors"
-                        >
-                          {t("oracle.paywall_cta_credits")}
                         </button>
                       </div>
                     )}

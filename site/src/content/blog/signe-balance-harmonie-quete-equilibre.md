@@ -68,7 +68,7 @@ Chaque décan (période de 10 jours) est influencé par une planète différente
 
 **Focus sur le 3e décan** : Les Balances nées sous l’influence de Mercure (3e décan) sont souvent plus décidées que les autres, car Mercure apporte une touche de rationalité à leur processus de réflexion. Cependant, elles peuvent aussi être perçues comme superficielles en raison de leur facilité à s’adapter à leur environnement.
 
-**Exercice pratique** : Pour identifier ton décan, utilise [notre calculateur astrologique](https://app.karmastro.com/outils/decan) et découvre comment il influence ta personnalité. Par exemple, une Balance du 1er décan aura un besoin plus marqué d’harmonie esthétique, tandis qu’une Balance du 3e décan sera plus à l’aise dans les débats intellectuels.
+**Exercice pratique** : Repère ton décan à partir de ta date de naissance et observe comment sa symbolique résonne avec ton expérience. Par exemple, une Balance du 1er décan aura un besoin plus marqué d’harmonie esthétique, tandis qu’une Balance du 3e décan sera plus à l’aise dans les débats intellectuels.
 
 ---
 
@@ -141,7 +141,7 @@ La Balance recherche un partenaire qui partage son amour de l’harmonie et stim
 **Cas particulier : la relation Balance-Balance**
 Cette combinaison peut être idyllique ou catastrophique. Tout dépend de la capacité des deux partenaires à prendre des décisions ensemble. Une étude de Karmastro montre que **68% des couples Balance-Balance** déclarent avoir du mal à planifier des vacances ensemble, en raison de leur tendance à vouloir contenter l’autre au détriment de leurs propres désirs.
 
-**Conseil** : Pour éviter la stagnation, les couples Balance-Balance peuvent instaurer des "règles de décision" (ex : alterner les choix de restaurant, prendre une décision par jour sans en discuter). Ils peuvent aussi consulter [notre guide des relations astrologiques](https://app.karmastro.com/outils/compatibilite) pour mieux comprendre leurs dynamiques.
+**Conseil** : Pour éviter la stagnation, les couples Balance-Balance peuvent instaurer des "règles de décision" (ex : alterner les choix de restaurant, prendre une décision par jour sans en discuter). Ils peuvent aussi explorer notre [outil de compatibilité](https://karmastro.com/outils/compatibilite/) pour nourrir leur réflexion.
 
 ---
 
@@ -163,7 +163,7 @@ Selon la tradition astrologique karmique, popularisée par des auteurs comme [Li
 
 **Exemple karmique** : Une cliente Balance de Karmastro, avocate spécialisée dans les droits humains, a découvert que sa mission de vie était de réparer une dette karmique de partialité. En intégrant systématiquement les deux côtés d’un dossier avant de plaider, elle a non seulement amélioré ses résultats professionnels, mais aussi trouvé un équilibre intérieur. Son engagement pour des causes comme la défense des minorités illustre cette quête d’équité.
 
-**Exercice pratique** : Pour identifier tes dettes et missions karmiques, explore [ton rapport karmique personnalisé](https://app.karmastro.com/rapport-karmique). Tu peux aussi tenir un journal pour noter les situations où tu sens que tu sacrifies tes besoins pour les autres, et réfléchir à des moyens de rétablir l’équilibre.
+**Exercice pratique** : Pour explorer les nombres traditionnellement associés aux dettes karmiques, utilise notre [calculateur dédié](https://karmastro.com/outils/dette-karmique/). Tu peux aussi tenir un journal pour noter les situations où tu sens que tu sacrifies tes besoins pour les autres, et réfléchir à des moyens de rétablir l’équilibre.
 
 ---
 
@@ -193,7 +193,7 @@ Le nombre d’expression, calculé à partir des lettres du nom complet, révèl
 - **6** : Responsabilité, amour des autres, besoin d’harmonie. Peut être trop protecteur. Exemple : Serena Williams, dont le nom complet donne un nombre d’expression 6, illustrant son sens des responsabilités et son engagement familial.
 - **7** : Analyse, perfectionnisme, recherche de sens. Peut paraître distant. Exemple : Eminem, dont le nom complet "Marshall Bruce Mathers III" donne un nombre d’expression 7, reflétant son introspection et son besoin de comprendre les mécanismes de l’âme humaine.
 
-**Exercice pratique** : Calcule ton nombre d’expression avec [notre outil gratuit](https://app.karmastro.com/outils/numerologie) et découvre comment il influence ta personnalité Balance. Par exemple, si ton nombre d’expression est 3, tu pourrais avoir un talent naturel pour la communication, mais aussi une tendance à éviter les sujets profonds.
+**Exercice pratique** : Calcule ton nombre d’expression avec [notre outil gratuit](https://karmastro.com/outils/nombre-expression/) et découvre comment il influence ta personnalité Balance. Par exemple, si ton nombre d’expression est 3, tu pourrais avoir un talent naturel pour la communication, mais aussi une tendance à éviter les sujets profonds.
 
 ---
 
@@ -316,7 +316,7 @@ Les métiers qui allient créativité, relationnel et équité sont idéaux pour
 2. **Architecte d’intérieur** (88% de satisfaction) : Ce métier allie créativité et sens pratique. Les Balances peuvent exprimer leur amour de l’esthétique tout en répondant aux besoins de leurs clients.
 3. **Responsable RSE** (85% de satisfaction) : Ce métier permet de concilier valeurs éthiques et carrière. Les responsables RSE (Responsabilité Sociétale des Entreprises) travaillent à rendre les entreprises plus durables et équitables.
 
-**Pour aller plus loin** : Découvre [notre guide des métiers par signe astrologique](https://app.karmastro.com/outils/metiers) pour explorer d’autres options adaptées à ta personnalité.
+**Pour aller plus loin** : Compare ces pistes à tes compétences, tes contraintes et tes envies réelles avant de choisir une orientation professionnelle.
 
 ### 3. La Balance est-elle compatible avec le Scorpion ?
 C’est une relation complexe mais potentiellement transformatrice. Seulement **40% des couples Balance-Scorpion** durent plus de 5 ans (source : [Astrotheme](https://www.astrotheme.fr/)), mais ceux qui réussissent décrivent une connexion "magnétique" et profonde.
@@ -331,9 +331,9 @@ C’est une relation complexe mais potentiellement transformatrice. Seulement **
 ### 4. Comment savoir si je suis vraiment Balance ?
 Pour être sûr de ton signe, vérifie les éléments suivants :
 
-1. **Ta date de naissance** : Entre le 23 septembre et le 22 octobre. Vérifie avec [notre calculateur de signe](https://app.karmastro.com/outils/signe-astrologique) pour une confirmation précise.
-2. **Ton ascendant** : Si tu es né en début de période Balance (23-29 septembre), ton ascendant peut modifier ton signe apparent. Calcule-le [ici](https://app.karmastro.com/outils/ascendant) pour affiner ton profil.
-3. **Tes traits de personnalité** : Utilise [notre test de personnalité astro](https://app.karmastro.com/outils/test-personnalite) pour confirmer que tes traits correspondent bien à ceux d’une Balance.
+1. **Ta date de naissance** : Le Soleil traverse généralement la Balance entre le 23 septembre et le 22 octobre, avec une limite qui peut varier selon l'année et l'heure.
+2. **Ton ascendant** : Si tu es né en début de période Balance (23-29 septembre), ton ascendant peut modifier la façon dont tu te présentes. Calcule-le avec notre [outil ascendant](https://karmastro.com/outils/ascendant/) pour affiner ton profil.
+3. **Tes traits de personnalité** : Compare les descriptions astrologiques à ton expérience sans les traiter comme un diagnostic.
 
 **Cas particulier** : Si tu es né un 23 septembre, vérifie l’heure exacte de ta naissance. Tu pourrais être Vierge avec un ascendant Balance ! Par exemple, une personne née à 10h le 23 septembre pourrait avoir le Soleil en Vierge et l’ascendant en Balance, ce qui modifierait son profil astrologique.
 
@@ -361,8 +361,8 @@ Le signe Balance incarne bien plus qu’un simple symbole de justice - c’est u
 
 **Pour aller plus loin** :
 - [Ton thème astral complet](https://app.karmastro.com/theme-natal) : Découvre ton ascendant, ta Lune et tes aspects planétaires pour une analyse personnalisée de ta personnalité et de tes défis.
-- [Ton rapport karmique](https://app.karmastro.com/rapport-karmique) : Explore tes vies passées et tes missions de vie pour comprendre les leçons que tu es venu apprendre dans cette incarnation.
-- [Ton chemin de vie en numérologie](https://app.karmastro.com/outils/numerologie) : Affine ta compréhension de toi-même grâce aux nombres et découvre comment ils influencent ta personnalité et tes choix.
+- [Ton calcul de dette karmique](https://karmastro.com/outils/dette-karmique/) : Explore la symbolique numérologique associée aux nombres karmiques.
+- [Ton chemin de vie en numérologie](https://karmastro.com/outils/chemin-de-vie/) : Affine ta réflexion personnelle grâce aux nombres et à leur symbolique.
 
 **Question pour toi** : Quel est le plus grand défi que tu rencontres en tant que Balance (ou avec une Balance dans ta vie) ? Partage ton expérience en commentaire ou pose ta question à [notre Oracle IA](https://app.karmastro.com/oracle) pour une réponse personnalisée et des conseils adaptés à ta situation.
 
@@ -392,4 +392,3 @@ Le signe Balance incarne bien plus qu’un simple symbole de justice - c’est u
 - [Signe astrologique Bélier : personnalité et compatibilité](https://karmastro.com/blog/signe-astrologique-belier-personnalite-compatibilite)
 - [Signe Cancer : émotions, famille et intuition](https://karmastro.com/blog/signe-cancer-emotions-famille-intuition)
 - [Signe Vierge : perfectionnisme et analyse détaillée](https://karmastro.com/blog/signe-vierge-perfectionnisme-analyse-detaillee)
-

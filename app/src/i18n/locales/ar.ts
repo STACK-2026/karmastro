@@ -179,6 +179,12 @@ const ar: Partial<UiStrings> = {
   "pricing.toast_checkout_error_title": "خطأ في الدفع",
   "pricing.checkout_session_expired": "انتهت صلاحية الجلسة",
   "pricing.checkout_create_failed": "تعذّر إنشاء الجلسة",
+  "pricing.checkout_canceled_title": "تم إلغاء الدفع",
+  "pricing.checkout_canceled_desc": "لم يتم إجراء أي دفعة.",
+  "pricing.checkout_success_title": "تم استلام الدفع ✦",
+  "pricing.checkout_success_pending": "تم تأكيد عملية الشراء. قد يستغرق التفعيل بضع لحظات.",
+  "pricing.checkout_success_active": "مزايا النجمة الخاصة بك مفعّلة الآن.",
+  "pricing.checkout_success_purchase": "تم تأكيد عملية الشراء. جاري إعداد قراءتك.",
 
   "oracle.name_unique": "العرّاف",
   "oracle.title_unique": "التنجيم · علم الأرقام · الإرشاد",

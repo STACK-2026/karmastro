@@ -10,7 +10,6 @@ const PROFILE_GATE_WHITELIST = new Set([
   "/auth",
   "/reset-password",
   "/onboarding",
-  "/pricing",
   ...Object.keys(EXTERNAL_LEGACY_ROUTES),
 ]);
 

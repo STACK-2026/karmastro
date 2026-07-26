@@ -179,6 +179,12 @@ const de: Partial<UiStrings> = {
   "pricing.toast_checkout_error_title": "Checkout-Fehler",
   "pricing.checkout_session_expired": "Sitzung abgelaufen",
   "pricing.checkout_create_failed": "Sitzung konnte nicht erstellt werden",
+  "pricing.checkout_canceled_title": "Zahlung abgebrochen",
+  "pricing.checkout_canceled_desc": "Es wurde keine Zahlung vorgenommen.",
+  "pricing.checkout_success_title": "Zahlung erhalten ✦",
+  "pricing.checkout_success_pending": "Dein Kauf ist bestätigt. Die Aktivierung kann einen Moment dauern.",
+  "pricing.checkout_success_active": "Deine Stern-Vorteile sind jetzt aktiv.",
+  "pricing.checkout_success_purchase": "Dein Kauf ist bestätigt. Deine Lesung wird vorbereitet.",
 
   "oracle.name_unique": "Das Orakel",
   "oracle.title_unique": "Astrologie · Numerologie · Beratung",

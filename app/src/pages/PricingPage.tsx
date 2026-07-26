@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Sparkles, Check, Star, Heart, Zap } from "lucide-react";
 import AppHeader from "@/components/AppHeader";
 import BottomNav from "@/components/BottomNav";
@@ -11,6 +11,8 @@ import { useToast } from "@/hooks/use-toast";
 import { trackEvent } from "@/lib/tracker";
 import { formatPrice } from "@/lib/locale";
 import { useT } from "@/i18n/ui";
+import { OFFER_CATALOG } from "@/lib/offer-catalog";
+import { checkoutReturnAnalytics, consumeCheckoutReturn, parseCheckoutReturn } from "@/lib/checkout-return";
 
 const CHECKOUT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/stripe-checkout";
 
@@ -23,12 +25,31 @@ type CurrentPlan = {
 
 const PricingPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { user } = useAuth();
   const { toast } = useToast();
   const { t, locale } = useT();
   const [loading, setLoading] = useState<string | null>(null);
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annual">("monthly");
   const [currentPlan, setCurrentPlan] = useState<CurrentPlan | null>(null);
+  const checkoutReturnHandled = useRef(false);
+
+  useEffect(() => {
+    if (checkoutReturnHandled.current) return;
+    const checkoutReturn = parseCheckoutReturn(new URLSearchParams(location.search));
+    if (checkoutReturn !== "canceled") return;
+    checkoutReturnHandled.current = true;
+    toast({
+      title: t("pricing.checkout_canceled_title"),
+      description: t("pricing.checkout_canceled_desc"),
+    });
+    void trackEvent("checkout_returned", checkoutReturnAnalytics("canceled", false, null));
+    window.history.replaceState(
+      window.history.state,
+      "",
+      consumeCheckoutReturn(location.pathname, new URLSearchParams(location.search)),
+    );
+  }, [location.pathname, location.search, t, toast]);
 
   useEffect(() => {
     if (!user?.id) return;
@@ -76,6 +97,12 @@ const PricingPage = () => {
       });
 
       const data = await res.json();
+      if (res.status === 409 && data.code === "profile_required") {
+        void trackEvent("checkout_profile_required", { price_key: priceKey });
+        setLoading(null);
+        navigate("/onboarding");
+        return;
+      }
       if (!res.ok || !data.url) {
         throw new Error(data.error || t("pricing.checkout_create_failed"));
       }
@@ -156,12 +183,12 @@ const PricingPage = () => {
           <div className="mb-3">
             {billingPeriod === "monthly" ? (
               <p className="text-3xl font-serif">
-                {formatPrice(5.99, locale)} <span className="text-xs text-muted-foreground">{t("pricing.per_month")}</span>
+                {formatPrice(OFFER_CATALOG.etoile_monthly.amount, locale)} <span className="text-xs text-muted-foreground">{t("pricing.per_month")}</span>
               </p>
             ) : (
               <>
                 <p className="text-3xl font-serif">
-                  {formatPrice(49.99, locale)} <span className="text-xs text-muted-foreground">{t("pricing.per_year")}</span>
+                  {formatPrice(OFFER_CATALOG.etoile_annual.amount, locale)} <span className="text-xs text-muted-foreground">{t("pricing.per_year")}</span>
                 </p>
                 <p className="text-xs text-amber-300/80">{t("pricing.annual_saves", { price: formatPrice(4.16, locale) })}</p>
               </>
@@ -202,7 +229,7 @@ const PricingPage = () => {
             <span className="text-xs text-muted-foreground ml-auto">{t("pricing.tier_ame_soeur_kind")}</span>
           </div>
           <p className="text-2xl font-serif mb-3">
-            {formatPrice(3.99, locale)} <span className="text-xs text-muted-foreground">{t("pricing.once_only")}</span>
+            {formatPrice(OFFER_CATALOG.ame_soeur.amount, locale)} <span className="text-xs text-muted-foreground">{t("pricing.once_only")}</span>
           </p>
           <ul className="space-y-1.5 text-sm text-muted-foreground mb-4">
             <li className="flex items-start gap-2"><Check className="h-3.5 w-3.5 text-pink-300 mt-0.5 shrink-0" /> {t("pricing.tier_ame_soeur_f1")}</li>

@@ -37,4 +37,8 @@ describe("profile gate cache", () => {
       expect(isProfileGateWhitelisted(path)).toBe(true);
     }
   });
+
+  it("requires an authenticated pricing visitor to complete their profile", () => {
+    expect(isProfileGateWhitelisted("/pricing")).toBe(false);
+  });
 });

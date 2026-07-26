@@ -88,7 +88,7 @@ const fr: LocaleContent = {
   ctaNoCard: "Aucune carte bancaire requise",
   statsTitle: "Une guidance de précision",
   statsSubtitle: "Des données astronomiques réelles, une tradition millénaire, des outils modernes. Tout ce qu'il faut pour comprendre ton ciel intérieur.",
-  statsLabels: { planets: "Planètes analysées", houses: "Maisons astrologiques", years: "Années de tradition", precision: "Seconde d'arc de précision", tools: "Calculateurs gratuits", guides: "Guides cosmiques" },
+  statsLabels: { planets: "Planètes analysées", houses: "Maisons astrologiques", years: "Années de tradition", precision: "Seconde d'arc de précision", tools: "Calculateurs gratuits", guides: "Oracle personnel" },
   statsDescriptions: {
     planets: "Du Soleil à Pluton, chaque planète du zodiaque entre dans ton profil",
     houses: "Les 12 domaines de vie cartographiés dans ton thème natal",
@@ -154,7 +154,7 @@ const en: LocaleContent = {
   ctaNoCard: "No credit card required",
   statsTitle: "Precision guidance",
   statsSubtitle: "Real astronomical data, a millennia-old tradition, modern tools. Everything you need to understand your inner sky.",
-  statsLabels: { planets: "Planets analyzed", houses: "Astrological houses", years: "Years of tradition", precision: "Arc second precision", tools: "Free calculators", guides: "Cosmic guides" },
+  statsLabels: { planets: "Planets analyzed", houses: "Astrological houses", years: "Years of tradition", precision: "Arc second precision", tools: "Free calculators", guides: "Personal Oracle" },
   statsDescriptions: {
     planets: "From Sun to Pluto, every zodiac planet enters your profile",
     houses: "The 12 life domains mapped in your birth chart",
@@ -220,7 +220,7 @@ const es: LocaleContent = {
   ctaNoCard: "No se requiere tarjeta bancaria",
   statsTitle: "Una guía de precisión",
   statsSubtitle: "Datos astronómicos reales, una tradición milenaria, herramientas modernas. Todo lo necesario para entender tu cielo interior.",
-  statsLabels: { planets: "Planetas analizados", houses: "Casas astrológicas", years: "Años de tradición", precision: "Segundo de arco de precisión", tools: "Calculadoras gratuitas", guides: "Guías cósmicos" },
+  statsLabels: { planets: "Planetas analizados", houses: "Casas astrológicas", years: "Años de tradición", precision: "Segundo de arco de precisión", tools: "Calculadoras gratuitas", guides: "Oráculo personal" },
   statsDescriptions: {
     planets: "Del Sol a Plutón, cada planeta del zodíaco entra en tu perfil",
     houses: "Los 12 dominios de vida mapeados en tu carta natal",
@@ -286,7 +286,7 @@ const pt: LocaleContent = {
   ctaNoCard: "Não é necessário cartão bancário",
   statsTitle: "Uma orientação de precisão",
   statsSubtitle: "Dados astronómicos reais, uma tradição milenar, ferramentas modernas. Tudo o que precisas para compreender o teu céu interior.",
-  statsLabels: { planets: "Planetas analisados", houses: "Casas astrológicas", years: "Anos de tradição", precision: "Segundo de arco de precisão", tools: "Calculadoras gratuitas", guides: "Guias cósmicos" },
+  statsLabels: { planets: "Planetas analisados", houses: "Casas astrológicas", years: "Anos de tradição", precision: "Segundo de arco de precisão", tools: "Calculadoras gratuitas", guides: "Oráculo pessoal" },
   statsDescriptions: {
     planets: "Do Sol a Plutão, cada planeta do zodíaco entra no teu perfil",
     houses: "Os 12 domínios da vida mapeados no teu mapa natal",
@@ -352,7 +352,7 @@ const de: LocaleContent = {
   ctaNoCard: "Keine Kreditkarte erforderlich",
   statsTitle: "Präzisionsführung",
   statsSubtitle: "Echte astronomische Daten, eine jahrtausendealte Tradition, moderne Werkzeuge. Alles, was du brauchst, um deinen inneren Himmel zu verstehen.",
-  statsLabels: { planets: "Analysierte Planeten", houses: "Astrologische Häuser", years: "Jahre Tradition", precision: "Bogensekunden Genauigkeit", tools: "Kostenlose Rechner", guides: "Kosmische Führer" },
+  statsLabels: { planets: "Analysierte Planeten", houses: "Astrologische Häuser", years: "Jahre Tradition", precision: "Bogensekunden Genauigkeit", tools: "Kostenlose Rechner", guides: "Persönliches Orakel" },
   statsDescriptions: {
     planets: "Von der Sonne bis Pluto, jeder Planet des Tierkreises fließt in dein Profil ein",
     houses: "Die 12 Lebensbereiche in deinem Geburtshoroskop kartiert",
@@ -418,7 +418,7 @@ const it: LocaleContent = {
   ctaNoCard: "Nessuna carta di credito richiesta",
   statsTitle: "Una guida di precisione",
   statsSubtitle: "Dati astronomici reali, una tradizione millenaria, strumenti moderni. Tutto quello che serve per capire il tuo cielo interiore.",
-  statsLabels: { planets: "Pianeti analizzati", houses: "Case astrologiche", years: "Anni di tradizione", precision: "Secondo d'arco di precisione", tools: "Calcolatori gratuiti", guides: "Guide cosmiche" },
+  statsLabels: { planets: "Pianeti analizzati", houses: "Case astrologiche", years: "Anni di tradizione", precision: "Secondo d'arco di precisione", tools: "Calcolatori gratuiti", guides: "Oracolo personale" },
   statsDescriptions: {
     planets: "Dal Sole a Plutone, ogni pianeta dello zodiaco entra nel tuo profilo",
     houses: "I 12 domini della vita mappati nel tuo tema natale",
@@ -484,7 +484,7 @@ const tr: LocaleContent = {
   ctaNoCard: "Kredi kartı gerekmez",
   statsTitle: "Hassas bir rehberlik",
   statsSubtitle: "Gerçek astronomik veriler, binlerce yıllık gelenek, modern araçlar. İç göğünü anlamak için ihtiyacın olan her şey.",
-  statsLabels: { planets: "Analiz edilen gezegen", houses: "Astrolojik ev", years: "Yıllık gelenek", precision: "Yay saniyesi hassasiyet", tools: "Ücretsiz hesaplayıcı", guides: "Kozmik rehber" },
+  statsLabels: { planets: "Analiz edilen gezegen", houses: "Astrolojik ev", years: "Yıllık gelenek", precision: "Yay saniyesi hassasiyet", tools: "Ücretsiz hesaplayıcı", guides: "Kişisel Kahin" },
   statsDescriptions: {
     planets: "Güneş'ten Plüton'a, zodyağın her gezegeni profiline giriyor",
     houses: "Doğum haritanda haritalanan 12 yaşam alanı",
@@ -550,7 +550,7 @@ const pl: LocaleContent = {
   ctaNoCard: "Karta kredytowa niewymagana",
   statsTitle: "Przewodnictwo z precyzją",
   statsSubtitle: "Prawdziwe dane astronomiczne, tysiącletnia tradycja, nowoczesne narzędzia. Wszystko, czego potrzebujesz, aby zrozumieć swoje wewnętrzne niebo.",
-  statsLabels: { planets: "Analizowane planety", houses: "Domy astrologiczne", years: "Lat tradycji", precision: "Sekund kątowych precyzji", tools: "Darmowe kalkulatory", guides: "Kosmiczni przewodnicy" },
+  statsLabels: { planets: "Analizowane planety", houses: "Domy astrologiczne", years: "Lat tradycji", precision: "Sekund kątowych precyzji", tools: "Darmowe kalkulatory", guides: "Osobista Wyrocznia" },
   statsDescriptions: {
     planets: "Od Słońca do Plutona, każda planeta zodiaku wchodzi do twojego profilu",
     houses: "12 obszarów życia zmapowanych w twoim horoskopie urodzeniowym",
@@ -616,7 +616,7 @@ const ru: LocaleContent = {
   ctaNoCard: "Банковская карта не требуется",
   statsTitle: "Руководство с точностью",
   statsSubtitle: "Реальные астрономические данные, тысячелетняя традиция, современные инструменты. Всё, что нужно, чтобы понять твоё внутреннее небо.",
-  statsLabels: { planets: "Планет проанализировано", houses: "Астрологических домов", years: "Лет традиции", precision: "Угловая секунда точности", tools: "Бесплатных калькуляторов", guides: "Космических гидов" },
+  statsLabels: { planets: "Планет проанализировано", houses: "Астрологических домов", years: "Лет традиции", precision: "Угловая секунда точности", tools: "Бесплатных калькуляторов", guides: "Личный Оракул" },
   statsDescriptions: {
     planets: "От Солнца до Плутона, каждая планета зодиака входит в твой профиль",
     houses: "12 сфер жизни нанесены на твою натальную карту",
@@ -682,7 +682,7 @@ const ja: LocaleContent = {
   ctaNoCard: "クレジットカード不要",
   statsTitle: "精度の高いガイダンス",
   statsSubtitle: "実際の天文データ、千年を超える伝統、モダンなツール。あなたの内なる空を理解するために必要なすべて。",
-  statsLabels: { planets: "分析された惑星", houses: "占星術のハウス", years: "伝統の年月", precision: "弧秒の精度", tools: "無料計算機", guides: "コスミックガイド" },
+  statsLabels: { planets: "分析された惑星", houses: "占星術のハウス", years: "伝統の年月", precision: "弧秒の精度", tools: "無料計算機", guides: "パーソナルオラクル" },
   statsDescriptions: {
     planets: "太陽から冥王星まで、黄道のすべての惑星があなたのプロファイルに",
     houses: "あなたの出生図にマッピングされた12の人生領域",
@@ -748,7 +748,7 @@ const ar: LocaleContent = {
   ctaNoCard: "لا حاجة لبطاقة بنكية",
   statsTitle: "إرشاد بدقة",
   statsSubtitle: "بيانات فلكية حقيقية، تقليد يمتد لآلاف السنين، أدوات حديثة. كل ما تحتاجه لفهم سماءك الداخلية.",
-  statsLabels: { planets: "كواكب محللة", houses: "بيوت فلكية", years: "سنوات تقليد", precision: "دقة بثانية قوسية", tools: "حاسبات مجانية", guides: "مرشدون كونيون" },
+  statsLabels: { planets: "كواكب محللة", houses: "بيوت فلكية", years: "سنوات تقليد", precision: "دقة بثانية قوسية", tools: "حاسبات مجانية", guides: "عرّاف شخصي" },
   statsDescriptions: {
     planets: "من الشمس إلى بلوتو، كل كواكب البروج تدخل ملفك الشخصي",
     houses: "الـ 12 مجالاً من الحياة مُرسَّمة في خريطة ولادتك",

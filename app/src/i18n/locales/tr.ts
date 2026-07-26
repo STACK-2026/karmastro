@@ -179,6 +179,12 @@ const tr: Partial<UiStrings> = {
   "pricing.toast_checkout_error_title": "Ödeme hatası",
   "pricing.checkout_session_expired": "Oturum süresi doldu",
   "pricing.checkout_create_failed": "Oturum oluşturulamadı",
+  "pricing.checkout_canceled_title": "Ödeme iptal edildi",
+  "pricing.checkout_canceled_desc": "Herhangi bir ödeme yapılmadı.",
+  "pricing.checkout_success_title": "Ödeme alındı ✦",
+  "pricing.checkout_success_pending": "Satın alımın onaylandı. Etkinleştirme birkaç dakika sürebilir.",
+  "pricing.checkout_success_active": "Yıldız avantajların artık aktif.",
+  "pricing.checkout_success_purchase": "Satın alımın onaylandı. Okuman hazırlanıyor.",
 
   "oracle.name_unique": "Kahin",
   "oracle.title_unique": "Astroloji · Numeroloji · Rehberlik",
