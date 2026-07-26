@@ -84,21 +84,21 @@ Karmastro, la première plateforme française d’astrologie et de numérologie 
    - Un **Saturne en Capricorne** (maison 10) révèle des pressions familiales autour de la réussite professionnelle.
    - Un **Pluton en maison 8** suggère des traumatismes liés à l’argent, à la sexualité ou à la mort.
 
-   Notre outil [Thème Astral Karmique](https://app.karmastro.com/outils/theme-karmique) génère une analyse automatisée de ces éléments, avec des conseils pour transformer tes schémas.
+   Commence par établir ton [thème natal](https://karmastro.com/outils/theme-natal/) pour repérer ces éléments dans ta carte du ciel.
 
 2. **La numérologie karmique**
    La numérologie karmique révèle les dettes et les leçons que ta famille doit apprendre collectivement. En calculant ton **nombre de dette karmique familiale**, tu peux identifier les schémas récurrents dans ta lignée et découvrir comment les transformer. Par exemple :
    - Une dette karmique **7** indique des secrets familiaux à élucider.
    - Une dette karmique **6** révèle des schémas de sacrifice excessif (un membre porte le fardeau des autres).
 
-   Notre [calculateur de dette karmique](https://app.karmastro.com/outils/numerologie-karmique) te propose un plan d’action personnalisé pour chaque dette.
+   Notre [calculateur de dette karmique](https://karmastro.com/outils/dette-karmique/) t'aide à identifier les nombres traditionnellement associés à ces apprentissages.
 
 3. **La psychogénéalogie et le génosociogramme**
    Le génosociogramme est un arbre généalogique enrichi d’informations psychologiques (métiers, maladies, dates clés, secrets). Il permet d’identifier les répétitions, les traumatismes et les loyautés invisibles qui influencent ta vie. Par exemple :
    - Si tous les aînés de ta famille divorcent à 35 ans, le génosociogramme peut révéler un secret autour d’un enfant illégitime ou d’un traumatisme historique.
    - Si plusieurs générations souffrent de dépression, le génosociogramme peut mettre en lumière un deuil non résolu ou un abandon.
 
-   Notre [génosociogramme automatisé](https://app.karmastro.com/outils/genosociogramme) génère une version interactive de ton arbre karmique, avec des analyses détaillées.
+   Tu peux construire un génosociogramme sur papier ou avec un professionnel pour visualiser ces répétitions familiales.
 
 4. **Les rituels de libération**
    Les rituels énergétiques permettent de te libérer des schémas familiaux en agissant sur le plan symbolique. Voici quelques exemples :
@@ -133,7 +133,7 @@ Les schémas karmiques familiaux se manifestent souvent de manière subtile, mai
 **Comment agir ?**
 - **Identifie les dates clés** : Note les dates de naissance, décès, mariages, divorces et événements marquants (faillites, maladies, déménagements) sur 4 générations. Repère les répétitions.
 - **Crée un rituel de libération** : Par exemple, écris une lettre à l’ancêtre concerné par l’événement et brûle-la pour symboliser ta libération. Tu peux aussi organiser une cérémonie familiale pour "clore" le chapitre (ex : planter un arbre, allumer une bougie).
-- **Utilise notre outil** : Le [génosociogramme Karmastro](https://app.karmastro.com/outils/genosociogramme) automatise cette analyse et met en lumière les dates clés de ton arbre familial.
+- **Construis ton génosociogramme** : Place les dates et événements clés sur un arbre familial pour rendre les répétitions plus visibles.
 
 ---
 
@@ -173,7 +173,7 @@ Les schémas karmiques familiaux se manifestent souvent de manière subtile, mai
 - **Identifie les maladies récurrentes** : Note les maladies, symptômes ou causes de décès sur 4 générations. Repère les répétitions (ex : cancers, dépressions, maladies cardiaques).
 - **Travaille sur les traumatismes familiaux** : Si une maladie semble liée à un traumatisme historique (guerre, famine, abus), explore ce traumatisme à travers des recherches généalogiques ou des thérapies spécialisées (constellations familiales, EMDR).
 - **Adopte un mode de vie préventif** : Si ta famille a une prédisposition à une maladie (ex : diabète, maladies cardiaques), adopte une hygiène de vie adaptée (alimentation, sport, gestion du stress) pour réduire les risques.
-- **Utilise notre outil** : Le [génosociogramme Karmastro](https://app.karmastro.com/outils/genosociogramme) peut t’aider à identifier les liens entre les maladies et les traumatismes familiaux.
+- **Cartographie les événements** : Un génosociogramme peut t'aider à visualiser les liens possibles entre les maladies et les événements familiaux, sans remplacer un avis médical.
 
 ---
 
@@ -217,7 +217,7 @@ Les schémas karmiques familiaux se manifestent souvent de manière subtile, mai
 - **Remplace-les par des affirmations positives** : Crée des phrases qui contredisent les croyances limitantes et répète-les quotidiennement. Par exemple :
   - *"Dans notre famille, on est tous nuls en amour"* → *"Je mérite une relation épanouissante et aimante."*
   - *"L’argent, c’est sale"* → *"L’argent est un outil qui me permet de réaliser mes rêves."*
-- **Utilise notre générateur d’affirmations** : Notre [outil Karmastro](https://app.karmastro.com/outils/affirmations) génère des affirmations personnalisées pour remplacer tes croyances limitantes.
+- **Écris tes propres affirmations** : Formule des phrases courtes, concrètes et crédibles pour remplacer progressivement tes croyances limitantes.
 
 ---
 
@@ -238,7 +238,7 @@ Les schémas karmiques familiaux se manifestent souvent de manière subtile, mai
 - **Identifie les scénarios familiaux** : Note les échecs répétés dans ta famille (divorces, faillites, abandons d’études) et cherche les points communs (âges, domaines, circonstances).
 - **Interroge-toi sur ta loyauté** : Demande-toi si tu reproduis un échec pour rester fidèle à ta famille. Par exemple : *"Est-ce que je sabote mes relations parce que mes parents ont divorcé ?"*
 - **Réécris le scénario** : Crée un nouveau récit pour ta vie, en te libérant des attentes familiales. Par exemple, si le scénario familial est *"On est tous des ratés"*, invente un nouveau scénario comme *"Je réussis là où mes ancêtres ont échoué."*
-- **Utilise notre outil de réécriture** : Notre [générateur de scénarios](https://app.karmastro.com/outils/scenarios-familiaux) t’aide à identifier et à transformer tes scénarios familiaux.
+- **Réécris ton scénario** : Note l'ancien récit familial, puis écris une version qui décrit précisément le comportement que tu veux adopter.
 
 ---
 
@@ -259,7 +259,7 @@ Les schémas karmiques familiaux se manifestent souvent de manière subtile, mai
 - **Identifie les prénoms répétés** : Note les prénoms qui reviennent sur plusieurs générations et cherche les événements liés à ces prénoms (décès précoces, traumatismes, réussites).
 - **Interroge-toi sur le message** : Demande-toi quel message ta famille a voulu transmettre en répétant ce prénom. Par exemple : *"Est-ce que je porte le prénom d’un ancêtre pour honorer sa mémoire ou pour réparer son destin ?"*
 - **Crée un nouveau prénom symbolique** : Si tu sens que ton prénom porte un poids familial, invente un surnom ou un prénom spirituel qui te représente vraiment. Par exemple, si tu t’appelles "Marie" comme ton arrière-grand-mère morte en couches, tu peux choisir un surnom comme "Luna" pour symboliser une nouvelle énergie.
-- **Utilise notre outil de libération** : Notre [rituel des prénoms](https://app.karmastro.com/outils/rituels-prenoms) t’aide à te libérer du poids des prénoms familiaux.
+- **Crée ton rituel personnel** : Choisis un geste symbolique simple qui marque la place que tu souhaites donner à ton prénom et à ton histoire.
 
 ---
 
@@ -277,7 +277,7 @@ Les schémas karmiques familiaux se manifestent souvent de manière subtile, mai
 - Le concept de **transmission intergénérationnelle du stress**, développé par des chercheurs comme Isabelle Mansuy, montre que les traumatismes peuvent se transmettre via des modifications épigénétiques dans les spermatozoïdes et les ovules. Par exemple, une souris mâle exposée à un stress chronique transmet des comportements anxieux à sa descendance, même en l’absence de contact avec les petits.
 
 **Comment agir ?**
-- **Explore ton arbre généalogique** : Note les traumatismes, accidents ou décès liés à ta phobie (ex : noyades, crashes aériens, morsures d’animaux). Utilise notre [génosociogramme Karmastro](https://app.karmastro.com/outils/genosociogramme) pour identifier ces liens.
+- **Explore ton arbre généalogique** : Note les traumatismes, accidents ou décès liés à ta phobie (ex : noyades, crashes aériens, morsures d’animaux) dans un génosociogramme.
 - **Travaille sur les mémoires cellulaires** : Des thérapies comme l’EMDR, les constellations familiales ou l’hypnose peuvent t’aider à libérer ces mémoires. Par exemple, une séance d’EMDR peut te permettre de "reprogrammer" ta réaction de peur face à un stimulus (ex : une araignée).
 - **Crée un rituel de libération** : Écris une lettre à l’ancêtre concerné par le traumatisme, exprime ta peur et ta volonté de t’en libérer, puis brûle la lettre. Tu peux aussi créer un symbole de sécurité (ex : un talisman, une pierre) pour te protéger.
 - **Utilise notre outil de libération** : Notre [guide des phobies familiales](https://karmastro.com/guides/phobies-familiales) propose des protocoles détaillés pour chaque type de phobie.
@@ -301,7 +301,7 @@ Les schémas karmiques familiaux se manifestent souvent de manière subtile, mai
 - **Identifie les schémas relationnels** : Note les dynamiques répétitives dans ta famille (divorces, trahisons, dépendances affectives) et cherche les points communs avec tes propres relations.
 - **Travaille sur ton attachement** : Des thérapies comme l’analyse transactionnelle, la thérapie des schémas ou les constellations familiales peuvent t’aider à comprendre et à transformer tes schémas relationnels. Par exemple, une séance de constellation familiale peut révéler une loyauté invisible envers un ancêtre exclu.
 - **Choisis des partenaires différents** : Si tu reproduis toujours le même type de relation, fais un effort conscient pour choisir des partenaires qui ne correspondent pas à ce schéma. Par exemple, si tu as toujours été attiré par des hommes indisponibles, cherche un partenaire stable et présent.
-- **Utilise notre outil de diagnostic** : Notre [test des schémas relationnels](https://app.karmastro.com/outils/schemas-relationnels) t’aide à identifier tes dynamiques répétitives et à trouver des solutions pour les transformer.
+- **Tiens un journal relationnel** : Note les situations, déclencheurs et réactions qui se répètent pour identifier plus clairement tes dynamiques.
 
 ---
 
@@ -368,7 +368,7 @@ Pour vérifier si ces signes te concernent et commencer à transformer tes sché
 - Métier lié à la terre (agriculteur, commerçant, entrepreneur), comme si la famille était "enracinée" dans un schéma de sacrifice.
 
 **Outil Karmastro** :
-Notre [génosociogramme automatisé](https://app.karmastro.com/outils/genosociogramme) génère une version interactive de ton arbre généalogique, avec des analyses détaillées des répétitions et des secrets.
+Construis un génosociogramme sur papier ou avec un professionnel pour visualiser ton arbre généalogique, ses répétitions et ses zones de silence.
 
 ---
 
@@ -406,7 +406,7 @@ Notre [génosociogramme automatisé](https://app.karmastro.com/outils/genosociog
 - En remplaçant ces croyances par des affirmations positives (*"Je réussis sans me sacrifier"*, *"Je peux parler de mes problèmes"*), il peut commencer à transformer ses schémas.
 
 **Outil Karmastro** :
-Notre [générateur d’affirmations](https://app.karmastro.com/outils/affirmations) crée des affirmations personnalisées pour remplacer tes croyances limitantes.
+Écris des affirmations personnelles, courtes et réalistes, pour travailler progressivement sur tes croyances limitantes.
 
 ---
 
@@ -416,12 +416,12 @@ Une fois que tu as identifié les répétitions et les croyances familiales, uti
 1. **Le thème astral karmique** :
    - Analyse les planètes karmiques (Nœud Sud, Saturne, Pluton, Lilith) pour identifier les schémas familiaux inscrits dans ton thème astral.
    - Exemple : Un **Nœud Sud en Cancer** (maison 4) révèle des schémas d’abandon ou de secrets familiaux.
-   - Outil : [Thème Astral Karmique Karmastro](https://app.karmastro.com/outils/theme-karmique).
+   - Outil : [Thème natal Karmastro](https://karmastro.com/outils/theme-natal/).
 
 2. **La numérologie karmique** :
    - Calcule ton **nombre de dette karmique familiale** pour identifier les leçons que ta lignée doit apprendre.
    - Exemple : Une dette karmique **7** indique des secrets familiaux à élucider.
-   - Outil : [Calculateur de Dette Karmique](https://app.karmastro.com/outils/numerologie-karmique).
+   - Outil : [Calculateur de dette karmique](https://karmastro.com/outils/dette-karmique/).
 
 3. **L’Oracle IA** :
    - Pose une question précise sur ton karma familial et reçois une réponse personnalisée.
@@ -456,4 +456,3 @@ Le karma familial et la psychogénéalogie sont deux approches qui explorent les
 - [Karma et astrologie : comprendre ses vies antérieures](https://karmastro.com/blog/karma-astrologie-comprendre-vies-anterieures)
 - [Numérologie karmique : décoder ses dettes spirituelles](https://karmastro.com/blog/numerologie-karmique-decoder-dettes-spirituelles)
 - [Nœuds lunaires : karma et mission de vie](https://karmastro.com/blog/nuds-lunaires-karma-mission-vie)
-
