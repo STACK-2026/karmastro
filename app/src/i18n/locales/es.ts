@@ -179,6 +179,12 @@ const es: Partial<UiStrings> = {
   "pricing.toast_checkout_error_title": "Error de pago",
   "pricing.checkout_session_expired": "Sesión expirada",
   "pricing.checkout_create_failed": "No se pudo crear la sesión",
+  "pricing.checkout_canceled_title": "Pago cancelado",
+  "pricing.checkout_canceled_desc": "No se ha realizado ningún pago.",
+  "pricing.checkout_success_title": "Pago recibido ✦",
+  "pricing.checkout_success_pending": "Tu compra está confirmada. La activación puede tardar unos instantes.",
+  "pricing.checkout_success_active": "Tus ventajas Estrella ya están activas.",
+  "pricing.checkout_success_purchase": "Tu compra está confirmada. Tu lectura se está preparando.",
 
   "oracle.name_unique": "El Oráculo",
   "oracle.title_unique": "Astrología · Numerología · Guía",

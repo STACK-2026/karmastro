@@ -185,6 +185,12 @@ export type UiKey =
   | "pricing.toast_checkout_error_title"
   | "pricing.checkout_session_expired"
   | "pricing.checkout_create_failed"
+  | "pricing.checkout_canceled_title"
+  | "pricing.checkout_canceled_desc"
+  | "pricing.checkout_success_title"
+  | "pricing.checkout_success_pending"
+  | "pricing.checkout_success_active"
+  | "pricing.checkout_success_purchase"
 
   // oracle (guides + UI)
   | "oracle.guide_sibylle_name"

@@ -179,6 +179,12 @@ const ru: Partial<UiStrings> = {
   "pricing.toast_checkout_error_title": "Ошибка оплаты",
   "pricing.checkout_session_expired": "Сессия истекла",
   "pricing.checkout_create_failed": "Не удалось создать сессию",
+  "pricing.checkout_canceled_title": "Платёж отменён",
+  "pricing.checkout_canceled_desc": "Оплата не была произведена.",
+  "pricing.checkout_success_title": "Платёж получен ✦",
+  "pricing.checkout_success_pending": "Покупка подтверждена. Активация может занять несколько минут.",
+  "pricing.checkout_success_active": "Ваши преимущества уровня Звезда уже активны.",
+  "pricing.checkout_success_purchase": "Покупка подтверждена. Ваше чтение готовится.",
 
   "oracle.name_unique": "Оракул",
   "oracle.title_unique": "Астрология · Нумерология · Наставничество",

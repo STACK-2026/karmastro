@@ -16,6 +16,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import { useT, type UiKey } from "@/i18n/ui";
 import { getLandingCtaPath } from "@/lib/landing-cta-path";
+import { formatPrice } from "@/lib/locale";
+import { OFFER_CATALOG } from "@/lib/offer-catalog";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -84,7 +86,7 @@ const OracleLiveChat = () => {
 
 const LandingPage = () => {
   const navigate = useNavigate();
-  const { t } = useT();
+  const { t, locale } = useT();
   const [birthDate, setBirthDate] = useState("");
   const [firstName, setFirstName] = useState("");
   const [quickResult, setQuickResult] = useState<{ sign: string; symbol: string; lifePath: number; keyword: string } | null>(null);
@@ -106,8 +108,6 @@ const LandingPage = () => {
   const oracleChatRef = useRef<HTMLDivElement>(null);
   const featuresRef = useRef<HTMLDivElement>(null);
   const featureCardsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const testimonialsRef = useRef<HTMLDivElement>(null);
-  const testimonialCardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const pricingRef = useRef<HTMLDivElement>(null);
   const pricingCardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -246,35 +246,6 @@ const LandingPage = () => {
         },
       });
 
-      // Testimonials title
-      if (testimonialsRef.current) {
-        gsap.from(testimonialsRef.current.querySelector("h2"), {
-          y: 60,
-          opacity: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: testimonialsRef.current,
-            start: "top 85%",
-            toggleActions: "play none none none",
-          },
-        });
-      }
-
-      // Testimonial cards
-      gsap.from(testimonialCardsRef.current.filter(Boolean), {
-        y: 60,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power3.out",
-        stagger: 0.12,
-        scrollTrigger: {
-          trigger: testimonialsRef.current,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      });
-
       // Pricing title
       if (pricingRef.current) {
         gsap.from(pricingRef.current.querySelector("h2"), {
@@ -344,12 +315,6 @@ const LandingPage = () => {
     { icon: Sparkles,      labelKey: "landing.feat_karma_label",       descKey: "landing.feat_karma_desc",       backKey: "landing.feat_karma_back" },
     { icon: MessageCircle, labelKey: "landing.feat_oracle_label",      descKey: "landing.feat_oracle_desc",      backKey: "landing.feat_oracle_back" },
     { icon: BookOpen,      labelKey: "landing.feat_learn_label",       descKey: "landing.feat_learn_desc",       backKey: "landing.feat_learn_back" },
-  ];
-
-  const testimonials: { nameKey: UiKey; textKey: UiKey; stars: number }[] = [
-    { nameKey: "landing.testi_1_name", textKey: "landing.testi_1_text", stars: 5 },
-    { nameKey: "landing.testi_2_name", textKey: "landing.testi_2_text", stars: 5 },
-    { nameKey: "landing.testi_3_name", textKey: "landing.testi_3_text", stars: 5 },
   ];
 
   return (
@@ -601,28 +566,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section ref={testimonialsRef} className="relative z-10 px-6 py-16">
-        <h2 className="font-serif text-3xl text-center mb-10">{t("landing.testi_title_1")} <span className="text-gradient-gold">{t("landing.testi_title_2")}</span></h2>
-        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          {testimonials.map((testi, i) => (
-            <div
-              key={testi.nameKey}
-              ref={(el) => { testimonialCardsRef.current[i] = el; }}
-              className="border-glow rounded-xl bg-card/40 p-6"
-            >
-              <div className="flex gap-0.5 mb-3">
-                {Array(testi.stars).fill(0).map((_, j) => (
-                  <Star key={j} className="h-4 w-4 fill-accent text-accent" />
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground mb-3">"{t(testi.textKey)}"</p>
-              <p className="text-sm font-medium">{t(testi.nameKey)}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Pricing */}
       <section ref={pricingRef} className="relative z-10 px-6 py-16" id="pricing">
         <h2 className="font-serif text-3xl md:text-4xl text-center mb-12">
@@ -648,7 +591,7 @@ const LandingPage = () => {
               {t("landing.pricing_etoile_badge")}
             </span>
             <h3 className="font-serif text-xl mb-1">{t("landing.pricing_etoile_title")} <Star className="h-4 w-4 inline text-accent" /></h3>
-            <p className="text-3xl font-bold mb-1">5,99€<span className="text-sm font-normal text-muted-foreground">{t("landing.pricing_etoile_per_month")}</span></p>
+            <p className="text-3xl font-bold mb-1">{formatPrice(OFFER_CATALOG.etoile_monthly.amount, locale)}<span className="text-sm font-normal text-muted-foreground">{t("landing.pricing_etoile_per_month")}</span></p>
             <p className="text-xs text-muted-foreground mb-4">{t("landing.pricing_etoile_annual_hint")}</p>
             <ul className="space-y-2 text-sm text-muted-foreground mb-6">
               {(["landing.pricing_etoile_f1","landing.pricing_etoile_f2","landing.pricing_etoile_f3","landing.pricing_etoile_f4","landing.pricing_etoile_f5","landing.pricing_etoile_f6","landing.pricing_etoile_f7"] as UiKey[]).map(k => (
@@ -662,7 +605,7 @@ const LandingPage = () => {
           {/* Âme Sœur */}
           <div ref={(el) => { pricingCardsRef.current[2] = el; }} className="border-glow rounded-xl bg-card/40 p-6">
             <h3 className="font-serif text-xl mb-1">{t("landing.pricing_ame_title")} <Heart className="h-4 w-4 inline text-karmique-fire" /></h3>
-            <p className="text-3xl font-bold mb-4">2,99€<span className="text-sm font-normal text-muted-foreground"> {t("landing.pricing_ame_unit")}</span></p>
+            <p className="text-3xl font-bold mb-4">{formatPrice(OFFER_CATALOG.ame_soeur.amount, locale)}<span className="text-sm font-normal text-muted-foreground"> {t("landing.pricing_ame_unit")}</span></p>
             <ul className="space-y-2 text-sm text-muted-foreground mb-6">
               {(["landing.pricing_ame_f1","landing.pricing_ame_f2","landing.pricing_ame_f3","landing.pricing_ame_f4"] as UiKey[]).map(k => (
                 <li key={k} className="flex items-center gap-2"><Check className="h-4 w-4 text-accent" /> {t(k)}</li>

@@ -179,6 +179,12 @@ const ja: Partial<UiStrings> = {
   "pricing.toast_checkout_error_title": "決済エラー",
   "pricing.checkout_session_expired": "セッションの有効期限が切れました",
   "pricing.checkout_create_failed": "セッションを作成できません",
+  "pricing.checkout_canceled_title": "支払いをキャンセルしました",
+  "pricing.checkout_canceled_desc": "支払いは行われていません。",
+  "pricing.checkout_success_title": "支払いを受け付けました ✦",
+  "pricing.checkout_success_pending": "購入が確認されました。有効化には少し時間がかかる場合があります。",
+  "pricing.checkout_success_active": "スター特典が有効になりました。",
+  "pricing.checkout_success_purchase": "購入が確認されました。リーディングを準備しています。",
 
   "oracle.name_unique": "オラクル",
   "oracle.title_unique": "占星術 · 数秘術 · ガイダンス",

@@ -179,6 +179,12 @@ const en: Partial<UiStrings> = {
   "pricing.toast_checkout_error_title": "Checkout error",
   "pricing.checkout_session_expired": "Session expired",
   "pricing.checkout_create_failed": "Could not create the session",
+  "pricing.checkout_canceled_title": "Payment canceled",
+  "pricing.checkout_canceled_desc": "No payment was made.",
+  "pricing.checkout_success_title": "Payment received ✦",
+  "pricing.checkout_success_pending": "Your purchase is confirmed. Activation may take a few moments.",
+  "pricing.checkout_success_active": "Your Star benefits are now active.",
+  "pricing.checkout_success_purchase": "Your purchase is confirmed. Your reading is being prepared.",
 
   "oracle.guide_sibylle_name": "Sibylle",
   "oracle.guide_sibylle_title": "The mystic oracle",

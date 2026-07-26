@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
 import Stripe from "https://esm.sh/stripe@17.3.0?target=deno";
+import { decideCheckout } from "../_shared/checkout-policy.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -109,24 +110,36 @@ serve(async (req) => {
     // Fetch or create stripe_customer_id
     const { data: profile, error: profileError } = await supabase
       .from("profiles")
-      .select("stripe_customer_id, first_name, subscription_tier, subscription_status")
+      .select("stripe_customer_id, first_name, birth_date, subscription_tier, subscription_status")
       .eq("user_id", user.id)
       .maybeSingle();
     if (profileError) throw profileError;
 
-    let customerId = profile?.stripe_customer_id;
-
-    const existingSubscriptionStatuses = new Set(["active", "trialing", "past_due", "unpaid", "incomplete"]);
-    if (
-      isSub
-      && profile?.subscription_tier === "etoile"
-      && existingSubscriptionStatuses.has(profile?.subscription_status || "")
-    ) {
+    const checkoutDecision = decideCheckout(priceKey, {
+      exists: Boolean(profile),
+      firstName: profile?.first_name || null,
+      birthDate: profile?.birth_date || null,
+      tier: profile?.subscription_tier || null,
+      status: profile?.subscription_status || null,
+    });
+    if (checkoutDecision.reason === "subscription_exists") {
       return new Response(JSON.stringify({ error: "Un abonnement existe déjà. Gère-le depuis les réglages." }), {
         status: 409,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
+    if (checkoutDecision.reason === "profile_required") {
+      return new Response(JSON.stringify({
+        error: "Complète ton profil avant de continuer.",
+        code: "profile_required",
+        next: "/onboarding",
+      }), {
+        status: 409,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    let customerId = profile?.stripe_customer_id;
 
     if (!customerId) {
       const customer = await stripe.customers.create({
@@ -162,7 +175,7 @@ serve(async (req) => {
           quantity: 1,
         },
       ],
-      success_url: `${origin}/dashboard?checkout=success`,
+      success_url: `${origin}/dashboard?checkout=success&kind=${isSub ? "subscription" : "one_time"}`,
       cancel_url: `${origin}/pricing?checkout=canceled`,
       locale: stripeLocale,
       allow_promotion_codes: true,

@@ -179,6 +179,12 @@ const it: Partial<UiStrings> = {
   "pricing.toast_checkout_error_title": "Errore checkout",
   "pricing.checkout_session_expired": "Sessione scaduta",
   "pricing.checkout_create_failed": "Impossibile creare la sessione",
+  "pricing.checkout_canceled_title": "Pagamento annullato",
+  "pricing.checkout_canceled_desc": "Non è stato effettuato alcun pagamento.",
+  "pricing.checkout_success_title": "Pagamento ricevuto ✦",
+  "pricing.checkout_success_pending": "Il tuo acquisto è confermato. L'attivazione può richiedere qualche istante.",
+  "pricing.checkout_success_active": "I tuoi vantaggi Stella sono ora attivi.",
+  "pricing.checkout_success_purchase": "Il tuo acquisto è confermato. La tua lettura è in preparazione.",
 
   "oracle.name_unique": "L'Oracolo",
   "oracle.title_unique": "Astrologia · Numerologia · Guida",

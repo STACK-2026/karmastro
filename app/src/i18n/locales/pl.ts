@@ -179,6 +179,12 @@ const pl: Partial<UiStrings> = {
   "pricing.toast_checkout_error_title": "Błąd płatności",
   "pricing.checkout_session_expired": "Sesja wygasła",
   "pricing.checkout_create_failed": "Nie można utworzyć sesji",
+  "pricing.checkout_canceled_title": "Płatność anulowana",
+  "pricing.checkout_canceled_desc": "Nie dokonano żadnej płatności.",
+  "pricing.checkout_success_title": "Płatność otrzymana ✦",
+  "pricing.checkout_success_pending": "Zakup został potwierdzony. Aktywacja może potrwać chwilę.",
+  "pricing.checkout_success_active": "Twoje korzyści Gwiazdy są już aktywne.",
+  "pricing.checkout_success_purchase": "Zakup został potwierdzony. Twój odczyt jest przygotowywany.",
 
   "oracle.name_unique": "Wyrocznia",
   "oracle.title_unique": "Astrologia · Numerologia · Wskazówki",

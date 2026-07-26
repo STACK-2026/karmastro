@@ -88,10 +88,10 @@ ${referrerLine}
 <p>Voici ce que tu peux faire dès maintenant :</p>
 <ul style="padding-left:20px;color:#E5E7EB;">
 <li><strong>Découvrir ton thème natal</strong> complet (10 planètes, 12 maisons, aspects)</li>
-<li><strong>Poser une question à l'Oracle</strong> - tu as le choix entre 4 guides : Sibylle, Orion, Séléné ou Pythia</li>
+<li><strong>Poser une question à ton Oracle personnel</strong> et construire un échange qui garde le fil</li>
 <li><strong>Calculer ton chemin de vie</strong> et tes autres nombres numérologiques</li>
 </ul>
-<p>Tu as droit à 3 consultations gratuites par jour avec l'Oracle. C'est parti.</p>
+<p>Tu as droit à 2 messages gratuits par jour avec l'Oracle. C'est parti.</p>
     `,
     "Découvrir mon profil cosmique",
     "https://app.karmastro.com/dashboard"
@@ -103,10 +103,10 @@ Les étoiles t'attendaient. Karmastro croise astrologie, numérologie et guidanc
 
 ${referrerName ? `Tu arrives avec ${referrerName} qui t'a invité(e).\n\n` : ""}Voici ce que tu peux faire dès maintenant :
 - Découvrir ton thème natal complet
-- Poser une question à l'Oracle (4 guides au choix : Sibylle, Orion, Séléné, Pythia)
+- Poser une question à ton Oracle personnel
 - Calculer ton chemin de vie
 
-Tu as 3 consultations gratuites par jour avec l'Oracle.
+Tu as 2 messages gratuits par jour avec l'Oracle.
 
 Ton profil : https://app.karmastro.com/dashboard
 
@@ -137,8 +137,12 @@ export function paymentSuccessEmail(
   const detail = credits
     ? `<p><strong>${credits} crédits cosmiques</strong> viennent d'être ajoutés à ton compte. Ils ne s'expirent jamais.</p>`
     : isSubscription
-      ? `<p>Ton abonnement <strong>${productName}</strong> est actif. Tu bénéficies maintenant de l'Oracle illimité, des compatibilités illimitées et du calendrier cosmique détaillé.</p>`
+      ? `<p>Ton abonnement <strong>${productName}</strong> est actif. Tu bénéficies maintenant de l'Oracle illimité, de la mémoire de tes échanges et d'une guidance mensuelle personnalisée.</p>`
       : `<p>Ton achat <strong>${productName}</strong> est confirmé.</p>`;
+  const destination = isSubscription
+    ? "https://app.karmastro.com/settings"
+    : "https://app.karmastro.com/dashboard";
+  const ctaText = isSubscription ? "Gérer mon abonnement" : "Accéder à Karmastro";
 
   const html = wrapHtml(
     "Paiement confirmé",
@@ -146,19 +150,19 @@ export function paymentSuccessEmail(
 <h1 style="color:#fff;font-family:Georgia,serif;font-size:26px;margin:0 0 16px;">Paiement confirmé ✦</h1>
 <p>Merci ${name}. Ta transaction de <strong>${amount}</strong> a bien été enregistrée.</p>
 ${detail}
-<p style="color:#9CA3AF;font-size:13px;margin-top:24px;">Tu peux consulter ton historique et gérer ton abonnement directement depuis ton profil.</p>
+<p style="color:#9CA3AF;font-size:13px;margin-top:24px;">${isSubscription ? "Tu peux gérer ton abonnement à tout moment depuis les réglages." : "Tu peux retrouver ton achat depuis ton espace Karmastro."}</p>
     `,
-    "Accéder à mon profil",
-    "https://app.karmastro.com/profile"
+    ctaText,
+    destination
   );
 
   const text = `Paiement confirmé ✦
 
 Merci ${name}. Ta transaction de ${amount} pour ${productName} a bien été enregistrée.
 
-${credits ? `${credits} crédits cosmiques ont été ajoutés à ton compte. Ils n'expirent jamais.` : ""}${isSubscription ? `Ton abonnement est actif : Oracle illimité, compatibilités illimitées, calendrier cosmique détaillé.` : ""}
+${credits ? `${credits} crédits cosmiques ont été ajoutés à ton compte. Ils n'expirent jamais.` : ""}${isSubscription ? `Ton abonnement est actif : Oracle illimité, mémoire de tes échanges et guidance mensuelle personnalisée.` : ""}
 
-Ton profil : https://app.karmastro.com/profile
+Ton espace : ${destination}
 
 « Les astres inclinent, mais ne déterminent pas » - Thomas d'Aquin
 `;
@@ -246,32 +250,32 @@ Ma constellation : https://app.karmastro.com/profile
 // 5. First Oracle consultation
 // ============================================================
 
-export function firstOracleEmail(firstName: string | null, guideName: string): EmailTemplate {
+export function firstOracleEmail(firstName: string | null, _guideName: string): EmailTemplate {
   const name = firstName || "cher voyageur";
   const html = wrapHtml(
     "Ta première consultation avec l'Oracle",
     `
-<h1 style="color:#fff;font-family:Georgia,serif;font-size:26px;margin:0 0 16px;">Ta première rencontre avec ${guideName}</h1>
-<p>${name}, tu viens d'avoir ta première consultation avec l'un de nos quatre guides cosmiques. On espère que ça a résonné.</p>
+<h1 style="color:#fff;font-family:Georgia,serif;font-size:26px;margin:0 0 16px;">Ta première rencontre avec l'Oracle</h1>
+<p>${name}, tu viens d'avoir ton premier échange avec ton Oracle personnel. On espère que ça a résonné.</p>
 <p>Quelques conseils pour aller plus loin :</p>
 <ul style="padding-left:20px;color:#E5E7EB;">
-<li><strong>Reviens demain</strong> : tu as 3 consultations gratuites par jour, ça permet d'installer un dialogue au fil du temps</li>
-<li><strong>Essaie un autre guide</strong> : chacun a son style (Sibylle mystique, Orion direct, Séléné relationnelle, Pythia analytique)</li>
-<li><strong>Donne du feedback</strong> : après chaque réponse, les boutons ✨⭐🌑 aident ton guide à affiner son ton au fil du temps</li>
+<li><strong>Reviens demain</strong> : tu as 2 messages gratuits par jour pour installer un dialogue au fil du temps</li>
+<li><strong>Garde le fil</strong> : ton Oracle peut s'appuyer sur vos échanges précédents</li>
+<li><strong>Donne du feedback</strong> : après chaque réponse, les boutons ✨⭐🌑 l'aident à affiner son ton</li>
 </ul>
-<p>Si tu veux débloquer l'Oracle illimité (sans la limite de 3/jour), tu peux passer en Étoile pour 5,99€/mois - sans engagement.</p>
+<p>Si tu veux débloquer l'Oracle illimité, tu peux passer en Étoile pour 5,99€/mois, sans engagement.</p>
     `,
     "Retourner à l'Oracle",
     "https://app.karmastro.com/oracle"
   );
 
-  const text = `Ta première rencontre avec ${guideName}
+  const text = `Ta première rencontre avec l'Oracle
 
-${name}, tu viens d'avoir ta première consultation. On espère que ça a résonné.
+${name}, tu viens d'avoir ton premier échange avec ton Oracle personnel. On espère que ça a résonné.
 
 Conseils :
-- Reviens demain (3 consultations gratuites par jour)
-- Essaie un autre guide : Sibylle, Orion, Séléné, Pythia
+- Reviens demain (2 messages gratuits par jour)
+- Garde le fil de votre dialogue
 - Donne du feedback après chaque réponse
 
 Pour l'Oracle illimité : 5,99€/mois sans engagement.
@@ -282,7 +286,7 @@ https://app.karmastro.com/oracle
 `;
 
   return {
-    subject: `✦ Ta première rencontre avec ${guideName}`,
+    subject: "✦ Ta première rencontre avec l'Oracle",
     html,
     text,
   };

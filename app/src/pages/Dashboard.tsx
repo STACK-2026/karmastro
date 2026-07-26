@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
@@ -14,7 +14,7 @@ import {
   User,
   Zap,
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import AppHeader from "@/components/AppHeader";
 import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
@@ -26,6 +26,14 @@ import { personalDay } from "@/lib/numerology";
 import { getPersonalizedHooks, type OracleHook } from "@/lib/oracleHooks";
 import { supabase } from "@/integrations/supabase/client";
 import { ZodiacSymbol } from "@/components/ZodiacSymbol";
+import { useToast } from "@/hooks/use-toast";
+import {
+  checkoutReturnAnalytics,
+  consumeCheckoutReturn,
+  parseCheckoutReturn,
+  parseCheckoutReturnKind,
+} from "@/lib/checkout-return";
+import { trackEvent } from "@/lib/tracker";
 
 type DailyHoroscope = {
   intro: string;
@@ -79,7 +87,9 @@ function signSlug(value: string): string {
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { t, locale } = useT();
+  const { toast } = useToast();
   const { user } = useAuth();
   const profile = useUserProfile();
   const { firstName, astrology, numerology, isPremium } = profile;
@@ -87,9 +97,56 @@ const Dashboard = () => {
   const [dailyUnavailable, setDailyUnavailable] = useState(false);
   const [hooks, setHooks] = useState<OracleHook[]>(() => getPersonalizedHooks([], 5));
   const [currentHookIndex, setCurrentHookIndex] = useState(0);
+  const checkoutReturnHandled = useRef(false);
   const now = useMemo(() => new Date(), []);
   const labels = SECTION_LABELS[locale] || SECTION_LABELS.en;
   const todayPersonalDay = personalDay(numerology.personalYear2026, now.getMonth() + 1, now.getDate());
+
+  useEffect(() => {
+    if (checkoutReturnHandled.current) return;
+    const checkoutReturn = parseCheckoutReturn(new URLSearchParams(location.search));
+    if (checkoutReturn !== "success") return;
+    const checkoutKind = parseCheckoutReturnKind(new URLSearchParams(location.search));
+    checkoutReturnHandled.current = true;
+
+    toast({
+      title: t("pricing.checkout_success_title"),
+      description: checkoutKind === "subscription"
+        ? (isPremium
+          ? t("pricing.checkout_success_active")
+          : t("pricing.checkout_success_pending"))
+        : t("pricing.checkout_success_purchase"),
+    });
+    void trackEvent("checkout_returned", checkoutReturnAnalytics("success", isPremium, checkoutKind));
+    window.history.replaceState(
+      window.history.state,
+      "",
+      consumeCheckoutReturn(location.pathname, new URLSearchParams(location.search)),
+    );
+
+    if (checkoutKind !== "subscription" || isPremium || !user?.id) return;
+    let cancelled = false;
+    let attempts = 0;
+    const checkActivation = async () => {
+      attempts += 1;
+      const { data } = await supabase
+        .from("profiles")
+        .select("subscription_status")
+        .eq("user_id", user.id)
+        .maybeSingle();
+      if (cancelled) return;
+      if (data?.subscription_status === "active") {
+        toast({
+          title: t("pricing.checkout_success_title"),
+          description: t("pricing.checkout_success_active"),
+        });
+        return;
+      }
+      if (attempts < 4) window.setTimeout(checkActivation, 1500);
+    };
+    void checkActivation();
+    return () => { cancelled = true; };
+  }, [isPremium, location.pathname, location.search, t, toast, user?.id]);
 
   useEffect(() => {
     if (profile.isLoading || profile.isDemo) return;
