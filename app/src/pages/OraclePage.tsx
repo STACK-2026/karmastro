@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { Send, Sparkles, Stars } from "lucide-react";
 import AppHeader from "@/components/AppHeader";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
@@ -14,8 +13,6 @@ import {
   oracleEntryViewedEvent,
   oracleHandoffClickEvent,
   oraclePaywallEvents,
-  oracleProfileStartedEvent,
-  oracleProfileSubmittedEvent,
   oracleResponseEvents,
   paywallEtoileClickEvent,
   type OracleTrackingEvent,
@@ -26,6 +23,10 @@ import ReactMarkdown from "react-markdown";
 import { useT, type UiKey } from "@/i18n/ui";
 import { getErrorMessage } from "@/lib/errors";
 import { shouldAutoScrollOracle } from "@/lib/oracle-scroll";
+import {
+  oracleSignupPath,
+  shouldShowOracleSignupHandoff,
+} from "@/lib/oracle-signup-handoff";
 
 type Msg = {
   role: "user" | "assistant" | "paywall";
@@ -102,7 +103,7 @@ function trackOracleEvents(events: OracleTrackingEvent[]) {
 const OraclePage = () => {
   const userProfile = useUserProfile();
   const navigate = useNavigate();
-  const { user } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const { toast } = useToast();
   const { t } = useT();
   const [messages, setMessages] = useState<Msg[]>([]);
@@ -129,19 +130,6 @@ const OraclePage = () => {
   // we surface a subtle banner so the user knows their reading is partial
   // and we don't silently pretend everything is fine.
   const [engineStatus, setEngineStatus] = useState<"ok" | "degraded" | "offline">("ok");
-  // Inline "share your chart" form on the empty state. Out of 59 anon
-  // conversations on day 1 only 1 dropped a first name / birth date in free
-  // text, so we give them an explicit 4-field entry point. Submitting folds
-  // the values into a natural-language first turn so rule 15 still extracts
-  // them into oracle_anon_profile_hints.
-  const [showProfileForm, setShowProfileForm] = useState(false);
-  const [profileForm, setProfileForm] = useState({
-    firstName: "",
-    birthDate: "",
-    birthTime: "",
-    birthPlace: "",
-  });
-
   useEffect(() => {
     const event = oracleEntryViewedEvent();
     void trackEvent(event.name, event.properties);
@@ -252,38 +240,13 @@ const OraclePage = () => {
     submitFeedback(messageIndex, state.rating);
   };
 
-  // Submit the inline profile form as a natural-language first turn. The
-  // template is translated per-locale so Claude answers in the right
-  // language; the {…} tokens we drop when their value is empty (birth time
-  // and birth place are optional).
-  const submitProfileForm = () => {
-    const first = profileForm.firstName.trim();
-    const date = profileForm.birthDate.trim();
-    if (!first || !date) return;
-
-    const template = t("oracle.profile_form_auto_msg", {
-      name: first,
-      date,
-      time: profileForm.birthTime.trim(),
-      place: profileForm.birthPlace.trim(),
-    });
-
-    // Drop the empty optional segments the template leaves bracketed.
-    const msg = template
-      .replace(/\[time:[^\]]*\]/g, (m) => (profileForm.birthTime.trim() ? m.replace(/^\[time:|\]$/g, "") : ""))
-      .replace(/\[place:[^\]]*\]/g, (m) => (profileForm.birthPlace.trim() ? m.replace(/^\[place:|\]$/g, "") : ""))
-      .replace(/\s+/g, " ")
-      .trim();
-
-    const event = oracleProfileSubmittedEvent({
-      hasTime: Boolean(profileForm.birthTime.trim()),
-      hasPlace: Boolean(profileForm.birthPlace.trim()),
-    });
-    void trackEvent(event.name, event.properties);
-    handleSend(msg);
-  };
-
   const currentGuide = GUIDES[guideKey];
+
+  const handleOracleSignup = () => {
+    const event = oracleHandoffClickEvent("signup");
+    void trackEvent(event.name, event.properties);
+    navigate(oracleSignupPath(getSessionId()));
+  };
 
   // Build profile context for the Oracle. Only fill in real user data. When
   // the profile is the demo stub (user not authenticated or profile empty),
@@ -483,84 +446,19 @@ const OraclePage = () => {
               })}
             </p>
 
-            {/* Primary lane : share-your-chart form. Lets the user hand over
-                the 4 fields we really need before the oracle has to ask. */}
-            {userProfile.isDemo && (
+            {/* Anonymous personalisation starts with a free account. Birth
+                data belongs in onboarding, never in the public chat flow. */}
+            {!authLoading && !user && (
               <div className="max-w-md mx-auto mb-4">
-                {!showProfileForm ? (
-                  <button
-                    onClick={() => {
-                      setShowProfileForm(true);
-                      const event = oracleProfileStartedEvent();
-                      void trackEvent(event.name, event.properties);
-                    }}
-                    className="w-full text-sm text-left rounded-xl border border-amber-300/40 bg-gradient-to-r from-amber-300/10 to-purple-400/10 hover:from-amber-300/15 hover:to-purple-400/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/60 text-amber-100 px-4 py-3 transition-colors"
-                  >
-                    <span className="font-medium">✦ {t("oracle.profile_form_cta")}</span>
-                    <span className="block text-[11px] text-amber-100/60 mt-0.5">
-                      {t("oracle.profile_form_cta_sub")}
-                    </span>
-                  </button>
-                ) : (
-                  <div className="rounded-xl border border-amber-300/30 bg-amber-300/5 p-4 text-left space-y-2">
-                    <p className="text-[11px] text-amber-100/70 mb-2">
-                      {t("oracle.profile_form_intro")}
-                    </p>
-                    <Input
-                      value={profileForm.firstName}
-                      onChange={(e) => setProfileForm((f) => ({ ...f, firstName: e.target.value }))}
-                      placeholder={t("oracle.profile_form_first_name")}
-                      aria-label={t("oracle.profile_form_first_name")}
-                      className="bg-background/50 border-amber-300/20"
-                      maxLength={40}
-                    />
-                    <Input
-                      type="date"
-                      value={profileForm.birthDate}
-                      onChange={(e) => setProfileForm((f) => ({ ...f, birthDate: e.target.value }))}
-                      aria-label={t("oracle.profile_form_birth_date")}
-                      className="bg-background/50 border-amber-300/20"
-                    />
-                    <div className="flex gap-2">
-                      <Input
-                        type="time"
-                        value={profileForm.birthTime}
-                        onChange={(e) => setProfileForm((f) => ({ ...f, birthTime: e.target.value }))}
-                        aria-label={t("oracle.profile_form_birth_time")}
-                        placeholder={t("oracle.profile_form_birth_time")}
-                        className="flex-1 bg-background/50 border-amber-300/20"
-                      />
-                      <Input
-                        value={profileForm.birthPlace}
-                        onChange={(e) => setProfileForm((f) => ({ ...f, birthPlace: e.target.value }))}
-                        placeholder={t("oracle.profile_form_birth_place")}
-                        aria-label={t("oracle.profile_form_birth_place")}
-                        className="flex-1 bg-background/50 border-amber-300/20"
-                        maxLength={80}
-                      />
-                    </div>
-                    <div className="flex gap-2 pt-1">
-                      <button
-                        onClick={() => setShowProfileForm(false)}
-                        className="text-[11px] text-muted-foreground hover:text-foreground px-3 py-1.5"
-                      >
-                        {t("oracle.profile_form_skip")}
-                      </button>
-                      <button
-                        onClick={submitProfileForm}
-                        disabled={!profileForm.firstName.trim() || !profileForm.birthDate.trim() || isLoading}
-                        className="ml-auto text-sm bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold rounded-lg px-4 py-2 hover:opacity-90 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
-                      >
-                        {t("oracle.profile_form_submit")}
-                      </button>
-                    </div>
-                  </div>
-                )}
-                {!showProfileForm && (
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground/40 text-center my-3">
-                    {t("oracle.profile_form_or")}
-                  </p>
-                )}
+                <button
+                  onClick={handleOracleSignup}
+                  className="w-full rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 px-4 py-3 text-sm font-semibold text-[#0f0a1e] transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/60"
+                >
+                  {t("oracle.paywall_cta_signup")}
+                </button>
+                <p className="mt-3 text-[10px] uppercase tracking-[0.2em] text-muted-foreground/40 text-center">
+                  {t("oracle.profile_form_or")}
+                </p>
               </div>
             )}
 
@@ -630,11 +528,7 @@ const OraclePage = () => {
                     {msg.isAnonPaywall ? (
                       <div className="flex flex-col sm:flex-row gap-2">
                         <button
-                          onClick={() => {
-                            const event = oracleHandoffClickEvent("signup");
-                            void trackEvent(event.name, event.properties);
-                            navigate(`/auth?next=/pricing&oracle_session=${encodeURIComponent(getSessionId())}`);
-                          }}
+                          onClick={handleOracleSignup}
                           className="flex-1 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity glow-gold"
                         >
                           {t("oracle.paywall_cta_signup")}
@@ -749,6 +643,20 @@ const OraclePage = () => {
                     </button>
                   ))}
                 </div>
+              )}
+
+              {shouldShowOracleSignupHandoff({
+                isAuthenticated: Boolean(user),
+                role: msg.role,
+                isLatest: i === messages.length - 1,
+                isLoading: isLoading || authLoading,
+              }) && (
+                <button
+                  onClick={handleOracleSignup}
+                  className="mt-2 max-w-[85%] w-full rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 px-4 py-2.5 text-sm font-semibold text-[#0f0a1e] transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/60"
+                >
+                  {t("oracle.paywall_cta_signup")}
+                </button>
               )}
 
               {showFeedback && (
