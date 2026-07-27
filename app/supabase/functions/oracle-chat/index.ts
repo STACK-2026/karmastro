@@ -505,7 +505,7 @@ async function storePendingTurn({
 }): Promise<{ id: string; nextAvailableAt: string }> {
   if (!SERVICE_KEY) throw new Error("identity_service_unavailable");
   const sb = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
-  if (text.length > 500) throw new OracleRequestError("pending_turn_too_long", 413);
+  if (text.length > 4_000) throw new OracleRequestError("pending_turn_too_long", 413);
   const hmacKey = Deno.env.get("PENDING_TURN_SESSION_HMAC_KEY") || "";
   if (!userId && (!sessionId || !hmacKey)) throw new Error("pending_turn_hmac_key_missing");
   const version = pendingTurnKeyVersion();
@@ -518,6 +518,17 @@ async function storePendingTurn({
   const now = new Date();
   const expiresAt = new Date(now.getTime() + 72 * 60 * 60 * 1000).toISOString();
   const nextAvailableAt = nextOracleAvailability(now);
+
+  let expiredQuery = sb
+    .from("oracle_pending_turns")
+    .update({ status: "expired", updated_at: now.toISOString() })
+    .in("status", ["pending", "claimed"])
+    .lte("expires_at", now.toISOString());
+  expiredQuery = userId
+    ? expiredQuery.eq("user_id", userId)
+    : expiredQuery.eq("session_hmac", sessionHash || "");
+  const { error: expiredError } = await expiredQuery;
+  if (expiredError) throw expiredError;
 
   let existingQuery = sb
     .from("oracle_pending_turns")

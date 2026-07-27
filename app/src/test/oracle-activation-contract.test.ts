@@ -59,6 +59,31 @@ describe("Oracle activation journey contract", () => {
     expect(insertBlock).toContain("expires_at: expiresAt");
   });
 
+  it("reuses an already-rendered pending question without duplicating it", () => {
+    expect(appOracle).toContain("const reusesQueuedMessage = Boolean(");
+    expect(appOracle).toContain(
+      "const requestMessages = reusesQueuedMessage ? messages : [...messages, userMsg]",
+    );
+    expect(appOracle).toContain(
+      "if (!reusesQueuedMessage) setMessages(prev => [...prev, userMsg])",
+    );
+  });
+
+  it("preserves every chat question length accepted by the server", () => {
+    expect(chatFunction).toContain("if (text.length > 4_000)");
+    expect(pendingFunction).toContain("text.length <= 4_000");
+    expect(appOracle).toContain("maxLength={4000}");
+  });
+
+  it("marks expired active rows inactive before inserting a replacement", () => {
+    const expiration = chatFunction.indexOf('.update({ status: "expired"');
+    const lookup = chatFunction.indexOf("let existingQuery", expiration);
+    const insert = chatFunction.indexOf(".insert({", lookup);
+    expect(expiration).toBeGreaterThan(-1);
+    expect(lookup).toBeGreaterThan(expiration);
+    expect(insert).toBeGreaterThan(lookup);
+  });
+
   it("requires ownership and encrypted content for continuation", () => {
     expect(pendingFunction).toContain('.eq("user_id", userId)');
     expect(pendingFunction).toContain("decryptPendingTurn");

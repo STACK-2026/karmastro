@@ -332,7 +332,18 @@ const OraclePage = () => {
     if (!msgText.trim() || isLoading || !guideKey) return;
 
     const userMsg: Msg = { role: "user", content: msgText };
-    const priorUserTurns = messages.filter((message) => message.role === "user").length;
+    const lastMessage = messages[messages.length - 1];
+    const reusesQueuedMessage = Boolean(
+      options.pendingTurnId
+      && lastMessage?.role === "user"
+      && lastMessage.content.replace(/\s+/g, " ").trim()
+        === msgText.replace(/\s+/g, " ").trim(),
+    );
+    const requestMessages = reusesQueuedMessage ? messages : [...messages, userMsg];
+    const priorUserTurns = Math.max(
+      0,
+      requestMessages.filter((message) => message.role === "user").length - 1,
+    );
     const continuationDeliveredAt = continuationDeliveredAtRef.current;
     if (
       !options.automatic
@@ -347,7 +358,7 @@ const OraclePage = () => {
       const event = oracleFirstQuestionSubmittedEvent({ source: "app", category: selectedCategory });
       void trackEvent(event.name, event.properties);
     }
-    setMessages(prev => [...prev, userMsg]);
+    if (!reusesQueuedMessage) setMessages(prev => [...prev, userMsg]);
     setInput("");
     setIsLoading(true);
 
@@ -364,12 +375,12 @@ const OraclePage = () => {
         method: "POST",
         headers,
         body: JSON.stringify({
-          messages: [...messages, userMsg].map(m => ({ role: m.role, content: m.content })),
+          messages: requestMessages.map(m => ({ role: m.role, content: m.content })),
           profile: buildProfileContext(),
           guide: guideKey,
           sessionId: user?.id ? null : getSessionId(),
           conversationId,
-          priorSummary: messages.length === 0 ? priorSummary : null,
+          priorSummary: requestMessages.length === 1 ? priorSummary : null,
           category: selectedCategory,
           pendingTurnId: options.pendingTurnId,
           requestId: crypto.randomUUID(),
@@ -1018,7 +1029,7 @@ const OraclePage = () => {
                   <textarea
                     value={pendingDraft}
                     onChange={(event) => setPendingDraft(event.target.value)}
-                    maxLength={500}
+                    maxLength={4000}
                     rows={3}
                     className="w-full rounded-xl border border-white/15 bg-black/20 px-3 py-2 text-sm text-white focus:border-amber-300/60 focus:outline-none"
                   />
@@ -1093,6 +1104,7 @@ const OraclePage = () => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
+            maxLength={4000}
             placeholder={t("oracle.input_placeholder", { name: t(currentGuide.nameKey) })}
             className="bg-secondary border-border"
             disabled={isLoading}

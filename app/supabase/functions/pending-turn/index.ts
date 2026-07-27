@@ -63,7 +63,7 @@ async function resolveUser(req: Request): Promise<string | null> {
 function normalizeText(value: unknown): string | null {
   if (typeof value !== "string") return null;
   const text = value.replace(/\s+/g, " ").trim();
-  return text && text.length <= 500 ? text : null;
+  return text && text.length <= 4_000 ? text : null;
 }
 
 serve(async (req) => {
