@@ -4,6 +4,7 @@ import {
 } from "https://deno.land/std@0.224.0/assert/mod.ts";
 import {
   buildOracleConversationInstructions,
+  FIRST_TURN_ORACLE_PROMPT,
   normalizeOracleCategory,
 } from "./oracle-conversation-policy.ts";
 
@@ -26,14 +27,23 @@ Deno.test("the first turn overrides the verbose mystical checklist", () => {
     category: "clarity_decision",
   });
 
-  assertStringIncludes(instructions, "70 à 120 mots");
+  assertStringIncludes(instructions, "70 à 110 mots");
   assertStringIncludes(instructions, "une seule prise utile");
   assertStringIncludes(instructions, "une seule question");
   assertStringIncludes(instructions, "AUCUNE citation");
-  assertStringIncludes(instructions, "AUCUNE liste de transits");
+  assertStringIncludes(instructions, "AUCUN transit");
   assertStringIncludes(instructions, "AUCUN appellatif mystique");
   assertStringIncludes(instructions, "clarification et décision");
   assertStringIncludes(instructions, "n'est pas un message écrit par l'utilisateur");
+});
+
+Deno.test("the first-turn prompt is autonomous and forbids generic sky commentary", () => {
+  assertStringIncludes(FIRST_TURN_ORACLE_PROMPT, "70 à 110 mots");
+  assertStringIncludes(FIRST_TURN_ORACLE_PROMPT, "UNE seule question ouverte");
+  assertStringIncludes(FIRST_TURN_ORACLE_PROMPT, "AUCUNE position du ciel du jour");
+  assertStringIncludes(FIRST_TURN_ORACLE_PROMPT, "AUCUNE citation");
+  assertStringIncludes(FIRST_TURN_ORACLE_PROMPT, "---SUGGESTIONS---");
+  assertEquals(FIRST_TURN_ORACLE_PROMPT.includes("croise numérologie"), false);
 });
 
 Deno.test("later turns keep category context without the first-turn override", () => {

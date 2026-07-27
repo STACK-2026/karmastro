@@ -14,7 +14,10 @@ import {
   profileForOracleIdentity,
   shouldPersistOracleProfileHints,
 } from "../_shared/oracle-anonymous-policy.ts";
-import { buildOracleConversationInstructions } from "../_shared/oracle-conversation-policy.ts";
+import {
+  buildOracleConversationInstructions,
+  FIRST_TURN_ORACLE_PROMPT,
+} from "../_shared/oracle-conversation-policy.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -462,6 +465,7 @@ serve(async (req) => {
       guideKey,
       priorSummary,
     } = normalized;
+    const isFirstTurn = messages.filter((message) => message.role === "user").length === 1;
 
     // The caller never gets to choose its user id. A valid Supabase JWT is the
     // only source of authenticated identity; the legacy body.userId field is
@@ -626,13 +630,16 @@ serve(async (req) => {
     // Select guide (fallback to default if invalid)
     const selectedGuide = GUIDES[guideKey] || GUIDES[DEFAULT_GUIDE];
     // Oracle unique sans nom : on ignore le guide choisi, une seule voix.
-    let systemPrompt = ORACLE_PROMPT;
+    let systemPrompt = isFirstTurn ? FIRST_TURN_ORACLE_PROMPT : ORACLE_PROMPT;
 
-    // Enrich with personalized feedback history (non-blocking)
-    const feedbackContext = await buildFeedbackContext(userId ?? null, sessionId ?? null, guideKey || DEFAULT_GUIDE);
-    systemPrompt += feedbackContext;
+    // Feedback can tune later turns. The first-turn prompt stays autonomous so
+    // no historical preference can restore the verbose astrological checklist.
+    if (!isFirstTurn) {
+      const feedbackContext = await buildFeedbackContext(userId ?? null, sessionId ?? null, guideKey || DEFAULT_GUIDE);
+      systemPrompt += feedbackContext;
+    }
     systemPrompt += buildOracleConversationInstructions({
-      firstTurn: messages.filter((message) => message.role === "user").length === 1,
+      firstTurn: isFirstTurn,
       category: normalized.category,
     });
 
@@ -650,7 +657,7 @@ serve(async (req) => {
     // 'offline' = neither responded. Surfaced to the client so the UI can
     // show a subtle warning instead of silently serving cold answers.
     let engineStatus: "ok" | "degraded" | "offline" = "ok";
-    let cosmicOk = false;
+    let cosmicOk = isFirstTurn;
     let profileOk = !profile?.birthDate; // only required when we expect it
     try {
       // Cosmic snapshot (always available). One retry on transient failure.
@@ -669,7 +676,7 @@ serve(async (req) => {
         }
         return null;
       };
-      const cosmicRes = await fetchCosmic().catch(() => null);
+      const cosmicRes = isFirstTurn ? null : await fetchCosmic().catch(() => null);
       if (cosmicRes?.ok) {
         cosmicOk = true;
         const cosmic = await cosmicRes.json() as CosmicSnapshot;
@@ -808,7 +815,7 @@ serve(async (req) => {
           }
 
           const activeTransits = ctx.active_transits ?? [];
-          if (activeTransits.length > 0) {
+          if (!isFirstTurn && activeTransits.length > 0) {
             engineContext += `\n\nTRANSITS ACTIFS AUJOURD'HUI :`;
             for (const t of activeTransits.slice(0, 8)) {
               const retro = t.transit_retrograde ? " ℞" : "";
