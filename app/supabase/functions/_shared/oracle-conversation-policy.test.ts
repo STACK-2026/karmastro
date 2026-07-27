@@ -42,6 +42,7 @@ Deno.test("the first-turn prompt is autonomous and forbids generic sky commentar
   assertStringIncludes(FIRST_TURN_ORACLE_PROMPT, "UNE seule question ouverte");
   assertStringIncludes(FIRST_TURN_ORACLE_PROMPT, "AUCUNE position du ciel du jour");
   assertStringIncludes(FIRST_TURN_ORACLE_PROMPT, "AUCUNE citation");
+  assertStringIncludes(FIRST_TURN_ORACLE_PROMPT, "En français, tutoie toujours");
   assertStringIncludes(FIRST_TURN_ORACLE_PROMPT, "---SUGGESTIONS---");
   assertEquals(FIRST_TURN_ORACLE_PROMPT.includes("croise numérologie"), false);
 });
