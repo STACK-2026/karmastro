@@ -7,6 +7,28 @@ export const ORACLE_CATEGORIES = [
 
 export type OracleCategory = typeof ORACLE_CATEGORIES[number];
 
+export const PRIMARY_GEMINI_MODEL = "gemini-2.5-flash";
+export const FALLBACK_GEMINI_MODEL = "gemini-3.5-flash-lite";
+
+export function geminiGenerationConfig(model: string): {
+  maxOutputTokens: number;
+  temperature: number;
+  thinkingConfig?: { thinkingBudget: number };
+} {
+  const config: {
+    maxOutputTokens: number;
+    temperature: number;
+    thinkingConfig?: { thinkingBudget: number };
+  } = {
+    maxOutputTokens: 3072,
+    temperature: 0.9,
+  };
+  if (model === PRIMARY_GEMINI_MODEL) {
+    config.thinkingConfig = { thinkingBudget: 512 };
+  }
+  return config;
+}
+
 const CATEGORY_CONTEXT: Record<OracleCategory, string> = {
   clarity_decision: "clarification et décision",
   relationship: "relations",

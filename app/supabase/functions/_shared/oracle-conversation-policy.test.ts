@@ -4,8 +4,11 @@ import {
 } from "https://deno.land/std@0.224.0/assert/mod.ts";
 import {
   buildOracleConversationInstructions,
+  FALLBACK_GEMINI_MODEL,
   FIRST_TURN_ORACLE_PROMPT,
+  geminiGenerationConfig,
   normalizeOracleCategory,
+  PRIMARY_GEMINI_MODEL,
 } from "./oracle-conversation-policy.ts";
 
 Deno.test("accepts only the four server-owned Oracle categories", () => {
@@ -55,4 +58,11 @@ Deno.test("later turns keep category context without the first-turn override", (
 
   assertStringIncludes(instructions, "relations");
   assertEquals(instructions.includes("70 à 120 mots"), false);
+});
+
+Deno.test("Gemini quota fallback uses a stable model with compatible config", () => {
+  assertEquals(PRIMARY_GEMINI_MODEL, "gemini-2.5-flash");
+  assertEquals(FALLBACK_GEMINI_MODEL, "gemini-3.5-flash-lite");
+  assertEquals(geminiGenerationConfig(PRIMARY_GEMINI_MODEL).thinkingConfig, { thinkingBudget: 512 });
+  assertEquals(geminiGenerationConfig(FALLBACK_GEMINI_MODEL).thinkingConfig, undefined);
 });

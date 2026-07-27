@@ -16,7 +16,10 @@ import {
 } from "../_shared/oracle-anonymous-policy.ts";
 import {
   buildOracleConversationInstructions,
+  FALLBACK_GEMINI_MODEL,
   FIRST_TURN_ORACLE_PROMPT,
+  geminiGenerationConfig,
+  PRIMARY_GEMINI_MODEL,
 } from "../_shared/oracle-conversation-policy.ts";
 
 const corsHeaders = {
@@ -885,33 +888,38 @@ serve(async (req) => {
       parts: [{ text: m.content }],
     }));
 
-    const GEMINI_MODEL = "gemini-2.5-flash";
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GOOGLE_API_KEY}`,
-      {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          system_instruction: { parts: [{ text: systemPrompt + engineContext }] },
-          contents: geminiContents,
-          // gemini-2.5-flash is a "thinking" model. With no thinkingConfig its
-          // (dynamic, unbounded) reasoning tokens are billed against
-          // maxOutputTokens, so on high-thinking draws the visible answer is
-          // truncated mid-sentence and the ---SUGGESTIONS--- block never
-          // appears (root cause of the "réponses nulles" reported 31/05).
-          // Cap thinking at 512 and raise the output ceiling so the answer
-          // always has >=2560 tokens of headroom. [2026-05-31]
-          generationConfig: {
-            maxOutputTokens: 3072,
-            temperature: 0.9,
-            thinkingConfig: { thinkingBudget: 512 },
-          },
-        }),
-      },
-    );
+    const callGemini = (model: string) =>
+      fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GOOGLE_API_KEY}`,
+        {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            system_instruction: { parts: [{ text: systemPrompt + engineContext }] },
+            contents: geminiContents,
+            // gemini-2.5-flash is a "thinking" model. With no thinkingConfig its
+            // (dynamic, unbounded) reasoning tokens are billed against
+            // maxOutputTokens, so on high-thinking draws the visible answer is
+            // truncated mid-sentence and the ---SUGGESTIONS--- block never
+            // appears (root cause of the "réponses nulles" reported 31/05).
+            // Cap thinking at 512 and raise the output ceiling so the answer
+            // always has >=2560 tokens of headroom. [2026-05-31]
+            generationConfig: geminiGenerationConfig(model),
+          }),
+        },
+      );
+
+    let activeGeminiModel = PRIMARY_GEMINI_MODEL;
+    let response = await callGemini(activeGeminiModel);
+    if (response.status === 429) {
+      const primaryError = await response.text();
+      console.warn("Gemini primary quota exhausted, using stable fallback:", primaryError.slice(0, 500));
+      activeGeminiModel = FALLBACK_GEMINI_MODEL;
+      response = await callGemini(activeGeminiModel);
+    }
 
     if (!response.ok) {
-      console.error("Gemini error:", response.status, (await response.text()).slice(0, 200));
+      console.error(`Gemini error (${activeGeminiModel}):`, response.status, (await response.text()).slice(0, 500));
       if (response.status === 429) {
         return new Response(JSON.stringify({ error: "Les astres sont très sollicités. Réessaie dans un instant." }), {
           status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" },
