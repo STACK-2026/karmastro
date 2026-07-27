@@ -101,18 +101,61 @@ Observed on 2026-07-27:
   starter buttons, and absent conversation persistence.
 - Four optional categories are normalized as server-owned enums and rejected
   when arbitrary text is supplied.
-- First-turn system override requires 70 to 120 words, reflection, one useful
-  foothold and one question; it forbids citations, transit lists, mystical
-  appellatives, and automatic birth-date requests.
+- First-turn system prompt is autonomous from the legacy verbose checklist. It
+  requires 70 to 110 words, reflection, one useful foothold and one question;
+  it forbids sky-of-the-day commentary, citations, mystical appellatives, and
+  automatic birth-date requests.
 - Site and app category buttons set metadata without creating a user message.
 - Shared event registry records `introduced_at`, allowed properties and
   `oracle_conversation_v1`.
 - Anonymous conversation UUID persists without storing question text.
-- Edge shared suite: 46 passed, 0 failed.
+- Edge shared suite: 48 passed, 0 failed.
 - App suite: 72 passed, 0 failed.
 - App lint, repository typecheck command and Vite build passed.
 - Oracle Edge Function typecheck passed.
 - Site conversation and privacy contracts passed; Astro generated 8,053 pages.
 
-Lot A remains local until separate review, PR, Edge Function deployment, and
-first-turn canary.
+## Lot A production evidence
+
+- PR 48: <https://github.com/STACK-2026/karmastro/pull/48>
+- Merge SHA: `fd58dc92e3be2b09dbe4f21572c81217317fb756`.
+- Every required PR check passed on the final head, including the locked Deno
+  Edge suite, app build, site build, translation parity, typography guard,
+  cross-project guard, and both Cloudflare previews.
+- `oracle-chat` production baseline was version 43. The final server revision
+  is version 47 and is `ACTIVE`.
+- The first live canary exposed a real prompt conflict: the legacy checklist
+  restored Moon-in-Capricorn commentary. Clients were not merged. The first
+  turn was isolated into its own system prompt and current-sky data was removed
+  from that turn before proceeding.
+- The next live canary returned 77 visible words, one practical foothold, one
+  question, no citation, no transit and no personal-data request. It exposed
+  French vouvoiement, which was then fixed and covered by a test.
+- Repeated canaries then exposed the primary provider's exact production
+  constraint: Gemini 2.5 Flash free tier allows 20 requests per day, per
+  project and model. The logged Google error was
+  `GenerateRequestsPerDayPerProjectPerModel-FreeTier`.
+- A quota-only fallback to the current stable
+  `gemini-3.5-flash-lite` model was added. It uses the existing Google key and
+  does not silently reactivate the configured paid Anthropic provider.
+- The fallback configuration is model-specific because the current model
+  rejects the legacy `thinkingConfig`. Provider and policy tests pass.
+- The anti-bypass IP cap correctly blocked further full-function canaries after
+  six attempts. It was not bypassed. An exact-prompt direct fallback canary
+  returned HTTP 200 with 105 visible words, tutoiement, one practical foothold,
+  one question, three suggestions, no citation and no sky-of-the-day content.
+- Cloudflare site production run `30269136280` passed, including build, deploy,
+  cache purge, and IndexNow.
+- Public live smoke: `https://karmastro.com/oracle/` returned HTTP 200; all four
+  optional categories and free-text input were present. The referenced Oracle
+  asset returned HTTP 200 after normal propagation and contained
+  `km_oracle_conversation`, `oracle_conversation_v1`, and
+  `oracle_first_question_submitted`.
+- App live smoke: `https://app.karmastro.com/oracle` returned HTTP 200. Its
+  deployed Oracle chunk returned HTTP 200 and contained all four category enums,
+  `oracle_conversation_v1`, and `oracle_first_question_submitted`.
+
+Residual operational risk: a model-specific free fallback restores availability
+but does not make a free-tier quota production-grade. Paid Gemini capacity or an
+explicitly costed provider policy must be decided before acquisition materially
+increases Oracle traffic.

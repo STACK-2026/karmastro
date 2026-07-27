@@ -4,9 +4,14 @@ export type OracleTrackingEvent = {
 };
 
 export const ORACLE_JOURNEY_VERSION = "oracle_conversation_v1";
+export const ORACLE_ACTIVATION_JOURNEY_VERSION = "oracle_activation_v1";
 
 function versioned(properties: Record<string, unknown>): Record<string, unknown> {
   return { ...properties, journey_version: ORACLE_JOURNEY_VERSION };
+}
+
+function activationVersioned(properties: Record<string, unknown>): Record<string, unknown> {
+  return { ...properties, journey_version: ORACLE_ACTIVATION_JOURNEY_VERSION };
 }
 
 type OracleResponseInput = {
@@ -98,4 +103,33 @@ export const oracleFeedbackSubmittedEvent = ({
 }): OracleTrackingEvent => ({
   name: "oracle_feedback_submitted",
   properties: versioned({ guide, rating, has_text: hasText }),
+});
+
+export const oraclePendingTurnCreatedEvent = ({
+  surface,
+}: {
+  surface: "anonymous_signup_wall_v1" | "authenticated_interim_limit_v1";
+}): OracleTrackingEvent => ({
+  name: "oracle_pending_turn_created",
+  properties: activationVersioned({ source: "app", surface }),
+});
+
+export const oracleSignupWallViewedEvent = (): OracleTrackingEvent => ({
+  name: "oracle_signup_wall_viewed",
+  properties: activationVersioned({ source: "app" }),
+});
+
+export const oracleSignupWallCtaClickedEvent = (): OracleTrackingEvent => ({
+  name: "oracle_signup_wall_cta_clicked",
+  properties: activationVersioned({ source: "app" }),
+});
+
+export const oracleActivationContinuationDeliveredEvent = (): OracleTrackingEvent => ({
+  name: "oracle_activation_continuation_delivered",
+  properties: activationVersioned({ source: "app" }),
+});
+
+export const oraclePostContinuationMessageEvent = (): OracleTrackingEvent => ({
+  name: "oracle_post_continuation_message",
+  properties: activationVersioned({ source: "app", window: "30m" }),
 });

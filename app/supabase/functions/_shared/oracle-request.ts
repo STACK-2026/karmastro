@@ -47,6 +47,8 @@ export type NormalizedChatRequest = {
   conversationId: string | null;
   priorSummary: string | null;
   category: OracleCategory | null;
+  pendingTurnId: string | null;
+  requestId: string | null;
 };
 
 export class OracleRequestError extends Error {
@@ -211,6 +213,22 @@ export function normalizeChatRequest(value: unknown): NormalizedChatRequest {
     conversationId = body.conversationId.trim();
   }
 
+  let pendingTurnId: string | null = null;
+  if (body.pendingTurnId !== undefined && body.pendingTurnId !== null && body.pendingTurnId !== "") {
+    if (typeof body.pendingTurnId !== "string" || !UUID_RE.test(body.pendingTurnId.trim())) {
+      throw new OracleRequestError("invalid_pending_turn_id");
+    }
+    pendingTurnId = body.pendingTurnId.trim();
+  }
+
+  let requestId: string | null = null;
+  if (body.requestId !== undefined && body.requestId !== null && body.requestId !== "") {
+    if (typeof body.requestId !== "string" || !UUID_RE.test(body.requestId.trim())) {
+      throw new OracleRequestError("invalid_request_id");
+    }
+    requestId = body.requestId.trim();
+  }
+
   const guideKey = asTrimmedString(body.guide, 32) || "oracle";
   const priorSummary = asTrimmedString(body.priorSummary, 4_000) || null;
   const category = normalizeOracleCategory(body.category);
@@ -226,6 +244,8 @@ export function normalizeChatRequest(value: unknown): NormalizedChatRequest {
     conversationId,
     priorSummary,
     category,
+    pendingTurnId,
+    requestId,
   };
 }
 

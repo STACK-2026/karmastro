@@ -7,7 +7,7 @@ type OracleSignupHandoffState = {
 
 export function oracleSignupPath(sessionId: string): string {
   const params = new URLSearchParams({
-    next: "/onboarding",
+    next: "/oracle",
     oracle_session: sessionId,
   });
   return `/auth?${params.toString()}`;

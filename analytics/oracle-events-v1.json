@@ -193,6 +193,66 @@
       "journey_version": "oracle_conversation_v1",
       "owner": "product",
       "deprecated_at": null
+    },
+    {
+      "name": "oracle_signup_wall_viewed",
+      "definition": "The free-profile continuation wall became visible.",
+      "surface": ["site", "app"],
+      "unit": "impression",
+      "trigger": "After an anonymous pending turn is stored.",
+      "allowed_properties": ["source", "journey_version"],
+      "introduced_at": "2026-07-27",
+      "journey_version": "oracle_activation_v1",
+      "owner": "product",
+      "deprecated_at": null
+    },
+    {
+      "name": "oracle_signup_wall_cta_clicked",
+      "definition": "The free-profile continuation action was clicked.",
+      "surface": ["site", "app"],
+      "unit": "click",
+      "trigger": "On explicit free-profile continuation click.",
+      "allowed_properties": ["source", "journey_version"],
+      "introduced_at": "2026-07-27",
+      "journey_version": "oracle_activation_v1",
+      "owner": "product",
+      "deprecated_at": null
+    },
+    {
+      "name": "oracle_pending_turn_created",
+      "definition": "A voluntary question was encrypted as a pending turn.",
+      "surface": ["app"],
+      "unit": "turn",
+      "trigger": "After the server confirms pending-turn persistence.",
+      "allowed_properties": ["source", "surface", "journey_version"],
+      "introduced_at": "2026-07-27",
+      "journey_version": "oracle_activation_v1",
+      "owner": "product",
+      "deprecated_at": null
+    },
+    {
+      "name": "oracle_activation_continuation_delivered",
+      "definition": "The one-time personalized post-onboarding continuation was delivered.",
+      "surface": ["app"],
+      "unit": "continuation",
+      "trigger": "After successful streamed delivery and grant consumption.",
+      "allowed_properties": ["source", "journey_version"],
+      "introduced_at": "2026-07-27",
+      "journey_version": "oracle_activation_v1",
+      "owner": "product",
+      "deprecated_at": null
+    },
+    {
+      "name": "oracle_post_continuation_message",
+      "definition": "A voluntary message followed a personalized continuation within 30 minutes.",
+      "surface": ["app"],
+      "unit": "session",
+      "trigger": "Before the first voluntary post-continuation request.",
+      "allowed_properties": ["source", "window", "journey_version"],
+      "introduced_at": "2026-07-27",
+      "journey_version": "oracle_activation_v1",
+      "owner": "product",
+      "deprecated_at": null
     }
   ]
 }
