@@ -69,6 +69,36 @@ test("normalise un transfert valide sans accepter de champs arbitraires", async 
   assert.equal(JSON.stringify(payload).includes("1992-04-03"), false);
 });
 
+test("conserve uniquement les métadonnées acquisition allowlistées", async () => {
+  const handoff = await loadModule(memoryStorage());
+  const payload = handoff.create({
+    source: "theme-natal",
+    acquisition: {
+      journeyVersion: "oracle_acquisition_v1",
+      tool: "theme-natal",
+      locale: "fr",
+      primaryOffer: "oracle",
+      question: "ne doit pas passer",
+    },
+  });
+
+  assert.deepEqual(JSON.parse(JSON.stringify(payload.acquisition)), {
+    journeyVersion: "oracle_acquisition_v1",
+    tool: "theme-natal",
+    locale: "fr",
+    primaryOffer: "oracle",
+  });
+  assert.equal(handoff.create({
+    source: "theme-natal",
+    acquisition: {
+      journeyVersion: "oracle_acquisition_v1",
+      tool: "ascendant",
+      locale: "fr",
+      primaryOffer: "oracle",
+    },
+  }), null);
+});
+
 test("rejette les dates impossibles, sources suspectes et questions trop longues", async () => {
   const handoff = await loadModule(memoryStorage());
   assert.equal(handoff.create({ source: "theme-natal", profile: { birthDate: "2026-02-31" } }), null);

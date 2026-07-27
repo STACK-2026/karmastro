@@ -238,6 +238,7 @@
     var source = link.getAttribute("data-oracle-source") || pathTool(path);
     var question = link.getAttribute("data-oracle-question") || "";
     var profile;
+    var acquisition;
     try {
       var rawProfile = link.getAttribute("data-oracle-profile");
       profile = rawProfile ? JSON.parse(rawProfile) : undefined;
@@ -248,14 +249,39 @@
       var currentUrl = new URL(link.getAttribute("href") || "/oracle/", location.href);
       if (!question) question = currentUrl.searchParams.get("q") || "";
     } catch (e) {}
+    var acquisitionCta = link.closest("[data-oracle-acquisition-cta]");
+    if (acquisitionCta) {
+      acquisition = {
+        journeyVersion: acquisitionCta.getAttribute("data-journey-version") || "",
+        tool: acquisitionCta.getAttribute("data-tool") || "",
+        locale: acquisitionCta.getAttribute("data-locale") || "",
+        primaryOffer: acquisitionCta.getAttribute("data-primary-offer") || "",
+      };
+      // A result CTA transfers context, never a sentence presented as if the
+      // person had written it. The Oracle opens with free text still empty.
+      question = "";
+    }
     if (window.kmOracleHandoff) {
-      window.kmOracleHandoff.store({ source: source, question: question, profile: profile });
+      window.kmOracleHandoff.store({
+        source: source,
+        question: question,
+        profile: profile,
+        acquisition: acquisition,
+      });
       link.setAttribute("href", window.kmOracleHandoff.cleanHref(link.getAttribute("href") || "/oracle/", source, location.href));
     }
     return source;
   }
   function setupFunnel() {
     var path = location.pathname;
+    function acquisitionProps(cta) {
+      return {
+        tool: cta.getAttribute("data-tool") || pathTool(path),
+        locale: cta.getAttribute("data-locale") || ctaLocale(),
+        primary_offer: cta.getAttribute("data-primary-offer") || "oracle",
+        journey_version: cta.getAttribute("data-journey-version") || "oracle_acquisition_v1",
+      };
+    }
     // Activation : le bloc résultat passe de hidden à visible.
     var result = document.getElementById("result");
     if (result && "MutationObserver" in window) {
@@ -292,6 +318,30 @@
       var tool = btn.getAttribute("data-code") || ctaTool() ||
         (btn.id === "km-buy-lifepath" ? "chemin-de-vie" : "");
       trackEvent("reading_cta_click", { tool: tool, locale: ctaLocale(), path: path });
+    }, true);
+
+    // Clean Lot C result funnel. Unlike the legacy .km-oracle observer, this
+    // only sees the explicitly marked post-result decision surface.
+    var acquisitionCta = document.querySelector("[data-oracle-acquisition-cta]");
+    if (acquisitionCta && "IntersectionObserver" in window) {
+      var acquisitionViewed = false;
+      var acquisitionIo = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (!entries[i].isIntersecting || entries[i].intersectionRatio < 0.4 || acquisitionViewed) continue;
+          acquisitionViewed = true;
+          trackEvent("oracle_acquisition_cta_viewed_v1", acquisitionProps(acquisitionCta));
+          acquisitionIo.disconnect();
+        }
+      }, { threshold: 0.4 });
+      acquisitionIo.observe(acquisitionCta);
+    }
+    document.addEventListener("click", function (ev) {
+      var t = ev.target;
+      var link = t && t.closest ? t.closest("[data-oracle-acquisition-link]") : null;
+      if (!link) return;
+      var cta = link.closest("[data-oracle-acquisition-cta]");
+      if (!cta) return;
+      trackEvent("oracle_acquisition_cta_clicked_v1", acquisitionProps(cta));
     }, true);
 
     // Generic site -> app funnel. Only non-sensitive routing metadata is sent;

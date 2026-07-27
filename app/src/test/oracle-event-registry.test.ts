@@ -32,6 +32,7 @@ describe("Oracle event registry", () => {
       expect([
         "oracle_conversation_v1",
         "oracle_activation_v1",
+        "oracle_acquisition_v1",
       ]).toContain(event.journey_version);
       expect(event.allowed_properties).toContain("journey_version");
     }

@@ -156,7 +156,7 @@ const jsonLd = [
             <p class="text-xs text-white/60 mb-4 max-w-sm mx-auto leading-relaxed">
               Une lecture personnalisée d'Orion (1100-1400 mots) sur ton chemin de vie : ton don, ton ombre, ta mission, ton rituel de la semaine et la question à te poser. Livrée à l'écran à l'instant + par email.
             </p>
-            <button type="button" id="km-buy-lifepath" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">
+            <button type="button" id="km-buy-lifepath" data-code="chemin-de-vie" class="text-xs text-amber-300/80 hover:text-amber-300 underline underline-offset-2 transition-colors">
               Débloquer ma lecture de chemin de vie - 4,90 €
             </button>
             <p class="text-[11px] text-white/40 my-2">ou, pour le portrait complet</p>
@@ -168,15 +168,21 @@ const jsonLd = [
           <p class="text-sm text-white/60 mb-4">
             Pour une analyse karmique complète qui inclut les nœuds lunaires astrologiques et d'autres patterns subtils, consulte l'Oracle.
           </p>
-          <a
-            href="https://karmastro.com/oracle/"
-            class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-medium text-sm hover:opacity-90 transition-opacity"
-          >
-            Consulter l'Oracle karmique
-          </a>
         </div>
 
         <div id="result-list" class="space-y-4"></div>
+        <div id="reading-cta" data-oracle-acquisition-cta data-tool="dette-karmique" data-locale="fr" data-primary-offer="oracle" data-journey-version="oracle_acquisition_v1" class="mt-6 pt-5 border-t border-white/10">
+          <div class="relative p-5 rounded-xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30 text-center overflow-hidden">
+            <p class="text-2xl mb-1">✦</p>
+            <p class="font-serif text-base text-white mb-1">Tu veux aller au-delà de ce résultat ?</p>
+            <p class="text-xs text-white/60 mb-4 max-w-sm mx-auto leading-relaxed">
+              Ton résultat reste privé. Pose ta question avec tes propres mots : l'Oracle te répond gratuitement, sans inscription.
+            </p>
+            <a id="km-oracle" href="/oracle/?src=dette-karmique" data-oracle-source="dette-karmique" data-oracle-question="Qu'est-ce que ce résultat m'aide à comprendre de mon chemin actuel ?" data-oracle-acquisition-link data-acquisition-primary="true" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">
+              Interroger l'Oracle sur mon résultat
+            </a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -321,7 +327,7 @@ const jsonLd = [
       for (const debt of debts) {
         const card = document.createElement("div");
         card.className = "p-6 rounded-2xl bg-[#0f0a1e]/60 border border-amber-300/30";
-        const lockedStyle = 'style="filter: blur(7px); opacity: 0.55; user-select: none; pointer-events: none;" aria-hidden="true"';
+        const lockedStyle = "";
         const paywallHtml = `
           <div class="mt-5 p-5 rounded-xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30 text-center">
             <p class="text-2xl mb-1">✦</p>
@@ -331,7 +337,7 @@ const jsonLd = [
             </p>
             <button
               type="button"
-              class="km-buy inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity"
+              class="km-buy text-xs text-amber-300/80 hover:text-amber-300 underline underline-offset-2 transition-colors"
               data-code="${debt.code}"
             >Débloquer ma lecture complète : 4,90 €</button>
           </div>
