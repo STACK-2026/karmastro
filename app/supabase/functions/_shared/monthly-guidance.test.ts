@@ -1,6 +1,8 @@
 import { assertEquals } from "https://deno.land/std@0.224.0/assert/mod.ts";
 import {
+  canExecuteGuidanceSend,
   classifyStripeSubscription,
+  guidanceRunHttpStatus,
   hydrateGuidanceSubscriber,
   shouldPersistGuidanceChanges,
 } from "./monthly-guidance.ts";
@@ -73,4 +75,29 @@ Deno.test("Stripe status classification fails closed", () => {
   assertEquals(classifyStripeSubscription("trialing"), "eligible");
   assertEquals(classifyStripeSubscription("canceled"), "inactive");
   assertEquals(classifyStripeSubscription(null), "verification_failed");
+});
+
+Deno.test("real monthly-guidance sends require the explicit kill switch", () => {
+  assertEquals(canExecuteGuidanceSend({ dry: false, sendEnabled: null }), false);
+  assertEquals(canExecuteGuidanceSend({ dry: false, sendEnabled: "" }), false);
+  assertEquals(canExecuteGuidanceSend({ dry: false, sendEnabled: "false" }), false);
+  assertEquals(canExecuteGuidanceSend({ dry: false, sendEnabled: "TRUE" }), false);
+  assertEquals(canExecuteGuidanceSend({ dry: false, sendEnabled: "true" }), true);
+  assertEquals(canExecuteGuidanceSend({ dry: true, sendEnabled: null }), true);
+});
+
+Deno.test("an incomplete paid-benefit run fails the scheduler visibly", () => {
+  const healthy = {
+    blocked_missing_profile: 0,
+    blocked_missing_email: 0,
+    blocked_stripe_error: 0,
+    failed_generation: 0,
+    failed_resend: 0,
+    failed_state_update: 0,
+  };
+  assertEquals(guidanceRunHttpStatus(healthy), 200);
+
+  for (const key of Object.keys(healthy) as Array<keyof typeof healthy>) {
+    assertEquals(guidanceRunHttpStatus({ ...healthy, [key]: 1 }), 503);
+  }
 });

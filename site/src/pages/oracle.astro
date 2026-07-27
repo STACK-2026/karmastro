@@ -37,22 +37,15 @@ const jsonLd = [
         <div id="oracle-empty" class="text-center py-8">
           <p class="text-4xl mb-4">✦</p>
           <div class="max-w-lg mx-auto mb-6 rounded-2xl border border-amber-300/25 bg-gradient-to-br from-amber-300/[0.07] to-purple-400/[0.06] p-4 text-left">
-            <p class="font-serif text-lg text-white text-center mb-1">Pour que l'Oracle parle vraiment de toi</p>
-            <p class="text-xs text-white/60 text-center mb-4">Prénom et date suffisent. L'heure et la ville rendent le thème natal plus précis.</p>
-            <form id="oracle-profile-form" class="grid sm:grid-cols-2 gap-2">
-              <input id="oracle-first-name" type="text" maxlength="60" required autocomplete="given-name" placeholder="Ton prénom" class="px-3 py-2.5 rounded-xl bg-white/[0.06] border border-white/15 text-white placeholder:text-white/40 focus:border-amber-300/60 focus:outline-none text-sm" />
-              <input id="oracle-birth-date" type="date" required autocomplete="bday" aria-label="Date de naissance" class="px-3 py-2.5 rounded-xl bg-white/[0.06] border border-white/15 text-white focus:border-amber-300/60 focus:outline-none text-sm" />
-              <input id="oracle-birth-time" type="time" autocomplete="off" aria-label="Heure de naissance facultative" class="px-3 py-2.5 rounded-xl bg-white/[0.06] border border-white/15 text-white focus:border-amber-300/60 focus:outline-none text-sm" />
-              <input id="oracle-birth-place" type="text" maxlength="120" autocomplete="address-level2" placeholder="Ville de naissance (facultatif)" class="px-3 py-2.5 rounded-xl bg-white/[0.06] border border-white/15 text-white placeholder:text-white/40 focus:border-amber-300/60 focus:outline-none text-sm" />
-              <button type="submit" class="sm:col-span-2 mt-1 px-5 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">Lire mon ciel maintenant ✦</button>
-            </form>
-            <p id="oracle-profile-status" class="text-[11px] text-amber-100/65 text-center mt-2">Enregistrées pour personnaliser cet échange et ton profil si tu crées un compte.</p>
+            <p class="font-serif text-lg text-white text-center mb-1">Tu veux une réponse liée à ton histoire ?</p>
+            <p class="text-xs text-white/60 text-center mb-4">Crée gratuitement ton profil dans ton espace personnel. Tu pourras y saisir tes informations de naissance et retrouver cette conversation.</p>
+            <a data-oracle-handoff data-next="/oracle" href="https://app.karmastro.com/auth?next=%2Foracle" class="block w-full px-5 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm text-center hover:opacity-90 transition-opacity">Créer mon profil gratuit ✦</a>
           </div>
-          <p class="text-white/70 mb-5 text-sm">Ou commence avec une question :</p>
+          <p class="text-white/70 mb-5 text-sm">Tu peux aussi commencer sans inscription :</p>
           <div class="flex flex-wrap gap-2 justify-center" id="oracle-starters">
-            <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-personal="true" data-q="Que disent les astres pour moi en ce moment ?">Que disent les astres pour moi ?</button>
-            <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-personal="true" data-q="Que révèle mon chemin de vie ?">Mon chemin de vie ?</button>
-            <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-q="Un conseil pour ma semaine ?">Un conseil pour ma semaine ?</button>
+            <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-q="Je me sens perdu·e, j'ai besoin de clarté">J'ai besoin de clarté</button>
+            <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-q="Une relation me questionne">Une relation me questionne</button>
+            <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-q="J'hésite face à une décision importante">J'hésite face à une décision</button>
           </div>
         </div>
       </div>
@@ -65,12 +58,9 @@ const jsonLd = [
     <div id="oracle-suggestions" class="flex flex-wrap gap-2 justify-center mt-4"></div>
 
     <div class="mt-10 p-5 rounded-2xl border border-amber-300/30 bg-gradient-to-r from-purple-400/10 to-amber-300/10 text-center">
-      <p class="font-serif text-base text-white mb-1">Garde ton profil et cette conversation</p>
-      <p class="text-xs text-white/60 mb-4 max-w-md mx-auto leading-relaxed">Retrouve tes échanges, ton thème natal et tes nombres dans ton espace personnel.</p>
-      <div class="flex flex-wrap gap-2 justify-center">
-        <a data-oracle-handoff data-next="/oracle" href="https://app.karmastro.com/auth?next=%2Foracle" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm">Retrouver mon Oracle personnalisé</a>
-        <a href="/abonnement/" class="px-5 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors">Découvrir Étoile</a>
-      </div>
+      <p class="font-serif text-base text-white mb-1">Garde cette conversation et personnalise la suite</p>
+      <p class="text-xs text-white/60 mb-4 max-w-md mx-auto leading-relaxed">Ajoute tes informations de naissance dans ton espace personnel pour recevoir des réponses liées à ton profil.</p>
+      <a data-oracle-handoff data-next="/oracle" href="https://app.karmastro.com/auth?next=%2Foracle" class="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm">Créer mon profil gratuit</a>
     </div>
   </article>
 </BaseLayout>
@@ -78,45 +68,20 @@ const jsonLd = [
 <script>
   const CHAT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/oracle-chat";
   const READING_CHECKOUT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/reading-checkout";
-  const PROFILE_KEY = "km_oracle_profile";
   const thread = document.getElementById("oracle-thread")!;
   const empty = document.getElementById("oracle-empty");
   const input = document.getElementById("oracle-input") as HTMLInputElement;
   const sendBtn = document.getElementById("oracle-send") as HTMLButtonElement;
   const sugWrap = document.getElementById("oracle-suggestions")!;
-  const profileForm = document.getElementById("oracle-profile-form") as HTMLFormElement;
-  const firstNameInput = document.getElementById("oracle-first-name") as HTMLInputElement;
-  const birthDateInput = document.getElementById("oracle-birth-date") as HTMLInputElement;
-  const birthTimeInput = document.getElementById("oracle-birth-time") as HTMLInputElement;
-  const birthPlaceInput = document.getElementById("oracle-birth-place") as HTMLInputElement;
-  const profileStatus = document.getElementById("oracle-profile-status")!;
+
+  try {
+    localStorage.removeItem("km_oracle_profile");
+  } catch {}
 
   function sessionId(): string {
     let s = localStorage.getItem("km_oracle_session");
     if (!s) { s = "site-" + Math.random().toString(36).slice(2) + Date.now().toString(36); localStorage.setItem("km_oracle_session", s); }
     return s;
-  }
-  type SiteOracleProfile = {
-    firstName: string;
-    birthDate: string;
-    birthTime?: string;
-    birthPlace?: string;
-  };
-  function savedProfile(): SiteOracleProfile | null {
-    try {
-      const parsed = JSON.parse(localStorage.getItem(PROFILE_KEY) || "null");
-      if (!parsed || typeof parsed.firstName !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(parsed.birthDate || "")) return null;
-      return parsed;
-    } catch { return null; }
-  }
-  function currentProfile(): SiteOracleProfile | null {
-    const profile: SiteOracleProfile = {
-      firstName: firstNameInput.value.trim(),
-      birthDate: birthDateInput.value,
-      birthTime: birthTimeInput.value || undefined,
-      birthPlace: birthPlaceInput.value.trim() || undefined,
-    };
-    return profile.firstName && /^\d{4}-\d{2}-\d{2}$/.test(profile.birthDate) ? profile : null;
   }
   function handoffUrl(next: string): string {
     const url = new URL("https://app.karmastro.com/auth");
@@ -135,7 +100,6 @@ const jsonLd = [
   type OracleHandoff = {
     source: string;
     question?: string;
-    profile?: { birthDate?: string; birthTime?: string; birthPlace?: string };
   };
   const handoffApi = (window as any).kmOracleHandoff;
   const incomingHandoff = (handoffApi?.consume?.() || null) as OracleHandoff | null;
@@ -144,23 +108,6 @@ const jsonLd = [
     || (/^[a-z0-9][a-z0-9-]{1,39}$/.test(urlSource) ? urlSource : "direct");
   const legacyQuestion = handoffApi?.consumeLegacyQuestion?.() || "";
   let pendingQuestion = incomingHandoff?.question || legacyQuestion;
-
-  const initialProfile = savedProfile();
-  if (initialProfile) {
-    firstNameInput.value = initialProfile.firstName;
-    birthDateInput.value = initialProfile.birthDate;
-    birthTimeInput.value = initialProfile.birthTime || "";
-    birthPlaceInput.value = initialProfile.birthPlace || "";
-    profileStatus.textContent = `Profil prêt pour ${initialProfile.firstName}. Tu peux lancer une question personnelle.`;
-  }
-  if (incomingHandoff?.profile) {
-    if (incomingHandoff.profile.birthDate) birthDateInput.value = incomingHandoff.profile.birthDate;
-    if (incomingHandoff.profile.birthTime) birthTimeInput.value = incomingHandoff.profile.birthTime;
-    if (incomingHandoff.profile.birthPlace) birthPlaceInput.value = incomingHandoff.profile.birthPlace;
-    profileStatus.textContent = firstNameInput.value
-      ? `Tes données de ${oracleSource.replace(/-/g, " ")} sont prêtes. Tu peux continuer.`
-      : "Ajoute seulement ton prénom pour que l'Oracle relie ce résultat à toi.";
-  }
   const history: { role: string; content: string }[] = [];
   let conversationId: string | null = null;
   let busy = false;
@@ -173,13 +120,6 @@ const jsonLd = [
       has_handoff: Boolean(incomingHandoff),
     });
   } catch {}
-
-  let profileStartedTracked = false;
-  profileForm.addEventListener("focusin", () => {
-    if (profileStartedTracked) return;
-    profileStartedTracked = true;
-    try { (window as any).km?.trackEvent("oracle_profile_started", { source: oracleSource, stage: "profile_form" }); } catch {}
-  });
 
   function bubble(role: string, text: string): HTMLElement {
     const wrap = document.createElement("div");
@@ -216,7 +156,6 @@ const jsonLd = [
     const msg = (pw && pw.message) || "Tu as atteint ta limite de messages cosmiques du jour.";
     const esc = (value: string) => value.replace(/[<>&"]/g, (char) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;" }[char] || char));
     const etoileHref = isAnon ? handoffUrl("/pricing") : "/abonnement/";
-    const profile = savedProfile();
     wrap.innerHTML =
       '<div class="inline-block w-full max-w-md p-5 rounded-2xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30 text-center">'
       + '<p class="text-2xl mb-1">✦</p>'
@@ -251,7 +190,6 @@ const jsonLd = [
     const buyBtn = wrap.querySelector("#km-pw-buy") as HTMLButtonElement | null;
     const birthInput = wrap.querySelector("#km-pw-birth") as HTMLInputElement | null;
     if (buyBtn && birthInput) {
-      if (profile?.birthDate) birthInput.value = profile.birthDate;
       birthInput.addEventListener("change", () => {
         if (birthInput.value) { try { (window as any).km?.trackEvent("paywall_offer_date_entered", {}); } catch {} }
       });
@@ -301,7 +239,6 @@ const jsonLd = [
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           messages: history,
-          profile: currentProfile() || savedProfile() || {},
           guide: "oracle",
           sessionId: sessionId(),
           conversationId,
@@ -364,47 +301,18 @@ const jsonLd = [
     }
   }
 
-  profileForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const profile = currentProfile();
-    if (!profile) return;
-    localStorage.setItem(PROFILE_KEY, JSON.stringify(profile));
-    profileStatus.textContent = `Profil prêt pour ${profile.firstName}. L'Oracle croise maintenant ton ciel et tes nombres.`;
-    try {
-      (window as any).km?.trackEvent("oracle_profile_submitted", {
-        source: oracleSource,
-        profile_completeness: profile.birthTime && profile.birthPlace ? "complete" : profile.birthTime ? "date_time" : profile.birthPlace ? "date_place" : "date_only",
-        surface: "site_oracle",
-      });
-    } catch {}
-    const question = pendingQuestion || "Que disent les astres pour moi en ce moment ?";
-    pendingQuestion = "";
-    send(question);
-  });
-
   sendBtn.addEventListener("click", () => send(input.value));
   input.addEventListener("keydown", (e) => { if (e.key === "Enter") send(input.value); });
   document.querySelectorAll(".oracle-chip").forEach((c) => {
     c.addEventListener("click", () => {
       const chip = c as HTMLElement;
-      if (chip.dataset.personal === "true" && !currentProfile()) {
-        profileStatus.textContent = "Ajoute ton prénom et ta date pour éviter une réponse générique.";
-        profileForm.scrollIntoView({ behavior: "smooth", block: "center" });
-        firstNameInput.focus();
-        return;
-      }
       send(chip.dataset.q || "");
     });
   });
 
   if (pendingQuestion) {
-    if (incomingHandoff?.profile && !currentProfile()) {
-      profileForm.scrollIntoView({ behavior: "smooth", block: "center" });
-      firstNameInput.focus();
-    } else {
-      const question = pendingQuestion;
-      pendingQuestion = "";
-      send(question);
-    }
+    const question = pendingQuestion;
+    pendingQuestion = "";
+    send(question);
   }
 </script>

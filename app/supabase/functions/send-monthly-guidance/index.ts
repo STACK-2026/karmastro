@@ -7,7 +7,9 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
 import Stripe from "https://esm.sh/stripe@17.3.0?target=deno";
 import { generateReading } from "../_shared/reading-generator.ts";
 import {
+  canExecuteGuidanceSend,
   classifyStripeSubscription,
+  guidanceRunHttpStatus,
   hydrateGuidanceSubscriber,
   shouldPersistGuidanceChanges,
   type GuidanceSubscriber,
@@ -19,6 +21,7 @@ const CRON_SECRET = Deno.env.get("CRON_SECRET") || "";
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY") || "";
 const FROM = Deno.env.get("RESEND_FROM_EMAIL") || "Karmastro <contact@karmastro.com>";
 const STRIPE_SECRET_KEY = Deno.env.get("STRIPE_SECRET_KEY") || "";
+const SEND_ENABLED = Deno.env.get("MONTHLY_GUIDANCE_SEND_ENABLED");
 
 const SUBJECT: Record<string, string> = {
   fr: "✦ Ta guidance du mois est arrivée", en: "✦ Your guidance for the month is here",
@@ -76,6 +79,9 @@ serve(async (req) => {
   }
   if (!dry && !RESEND_API_KEY) {
     return new Response(JSON.stringify({ error: "email_not_configured" }), { status: 503, headers: jsonHeaders });
+  }
+  if (!canExecuteGuidanceSend({ dry, sendEnabled: SEND_ENABLED })) {
+    return new Response(JSON.stringify({ error: "sending_disabled", dry }), { status: 503, headers: jsonHeaders });
   }
 
   const sb = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
@@ -257,13 +263,15 @@ serve(async (req) => {
     if (sentStateError) counters.failed_state_update++;
   }
 
+  const status = guidanceRunHttpStatus(counters);
   return new Response(JSON.stringify({
     ...counters,
     skipped: counters.candidates - counters.sent,
     month_key: monthKey,
     dry,
+    run_complete: status === 200,
   }), {
-    status: 200,
+    status,
     headers: jsonHeaders,
   });
 });

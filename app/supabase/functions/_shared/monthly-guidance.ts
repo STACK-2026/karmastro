@@ -41,6 +41,31 @@ export function shouldPersistGuidanceChanges(dry: boolean): boolean {
   return !dry;
 }
 
+export function canExecuteGuidanceSend({
+  dry,
+  sendEnabled,
+}: {
+  dry: boolean;
+  sendEnabled: string | null | undefined;
+}): boolean {
+  return dry || sendEnabled === "true";
+}
+
+export type GuidanceRunHealthCounters = {
+  blocked_missing_profile: number;
+  blocked_missing_email: number;
+  blocked_stripe_error: number;
+  failed_generation: number;
+  failed_resend: number;
+  failed_state_update: number;
+};
+
+export function guidanceRunHttpStatus(
+  counters: GuidanceRunHealthCounters,
+): 200 | 503 {
+  return Object.values(counters).some((count) => count > 0) ? 503 : 200;
+}
+
 export type StripeSubscriptionClassification =
   | "eligible"
   | "inactive"
