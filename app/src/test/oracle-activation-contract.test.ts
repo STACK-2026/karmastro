@@ -67,8 +67,9 @@ describe("Oracle activation journey contract", () => {
     expect(appOracle).toContain(
       "if (!reusesQueuedMessage) setMessages(prev => [...prev, userMsg])",
     );
-    expect(appOracle).toContain("const previousText = pendingTurn.text");
-    expect(appOracle).toContain("? { ...item, content: savedText }");
+    expect(appOracle).toContain("pendingTurnId: limit.pendingTurnId");
+    expect(appOracle).toContain("message.pendingTurnId === pendingTurn.id");
+    expect(appOracle).not.toContain("const previousText = pendingTurn.text");
   });
 
   it("preserves every chat question length accepted by the server", () => {

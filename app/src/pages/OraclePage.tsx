@@ -44,6 +44,7 @@ import {
 type Msg = {
   role: "user" | "assistant" | "paywall";
   content: string;
+  pendingTurnId?: string;
   // Only set on role === "paywall". True means the hit came from an anon
   // session , we surface a "create an account" CTA first instead of pricing.
   isAnonPaywall?: boolean;
@@ -336,8 +337,7 @@ const OraclePage = () => {
     const reusesQueuedMessage = Boolean(
       options.pendingTurnId
       && lastMessage?.role === "user"
-      && lastMessage.content.replace(/\s+/g, " ").trim()
-        === msgText.replace(/\s+/g, " ").trim(),
+      && lastMessage.pendingTurnId === options.pendingTurnId,
     );
     const requestMessages = reusesQueuedMessage ? messages : [...messages, userMsg];
     const priorUserTurns = Math.max(
@@ -398,6 +398,20 @@ const OraclePage = () => {
             turn: priorUserTurns + 1,
           }));
           if (limit) {
+            setMessages((current) => {
+              const lastIndex = current.length - 1;
+              const last = current[lastIndex];
+              if (
+                last?.role !== "user"
+                || last.content.replace(/\s+/g, " ").trim()
+                  !== msgText.replace(/\s+/g, " ").trim()
+              ) {
+                return current;
+              }
+              return current.map((message, index) => index === lastIndex
+                ? { ...message, pendingTurnId: limit.pendingTurnId }
+                : message);
+            });
             setPendingTurn({
               id: limit.pendingTurnId,
               text: msgText.trim(),
@@ -500,6 +514,11 @@ const OraclePage = () => {
           conversationId: resolvedConversationId,
         }));
         if (options.pendingTurnId) {
+          setMessages((current) => current.map((message) =>
+            message.pendingTurnId === options.pendingTurnId
+              ? { role: message.role, content: message.content }
+              : message
+          ));
           setPendingTurn(null);
           setPendingDraft("");
           setPendingEditing(false);
@@ -559,7 +578,6 @@ const OraclePage = () => {
   const savePendingTurn = async () => {
     if (!pendingTurn || !pendingDraft.trim()) return;
     try {
-      const previousText = pendingTurn.text;
       const response = await fetch(PENDING_TURN_URL, {
         method: "PATCH",
         headers: await pendingAuth(),
@@ -571,21 +589,11 @@ const OraclePage = () => {
       setPendingTurn((current) => current
         ? { ...current, text: savedText }
         : current);
-      setMessages((current) => {
-        for (let messageIndex = current.length - 1; messageIndex >= 0; messageIndex -= 1) {
-          const message = current[messageIndex];
-          if (
-            message.role === "user"
-            && message.content.replace(/\s+/g, " ").trim()
-              === previousText.replace(/\s+/g, " ").trim()
-          ) {
-            return current.map((item, index) => index === messageIndex
-              ? { ...item, content: savedText }
-              : item);
-          }
-        }
-        return current;
-      });
+      setMessages((current) => current.map((message) =>
+        message.pendingTurnId === pendingTurn.id
+          ? { ...message, content: savedText }
+          : message
+      ));
       setPendingEditing(false);
     } catch (error) {
       console.warn("[pending-turn] update failed", getErrorMessage(error));
@@ -601,21 +609,12 @@ const OraclePage = () => {
         body: JSON.stringify({ id: pendingTurn.id }),
       });
       if (!response.ok) return;
-      const deletedText = pendingTurn.text;
       setPendingTurn(null);
       setPendingDraft("");
       setPendingEditing(false);
-      setMessages((current) => {
-        let index = -1;
-        for (let messageIndex = current.length - 1; messageIndex >= 0; messageIndex -= 1) {
-          const message = current[messageIndex];
-          if (message.role === "user" && message.content.trim() === deletedText.trim()) {
-            index = messageIndex;
-            break;
-          }
-        }
-        return index < 0 ? current : current.filter((_, messageIndex) => messageIndex !== index);
-      });
+      setMessages((current) =>
+        current.filter((message) => message.pendingTurnId !== pendingTurn.id)
+      );
     } catch (error) {
       console.warn("[pending-turn] delete failed", getErrorMessage(error));
     }
