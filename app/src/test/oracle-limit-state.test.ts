@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  assignPendingTurnId,
   formatOracleAvailability,
   normalizeOracleLimitResponse,
 } from "@/lib/oracle-limit-state";
@@ -40,5 +41,17 @@ describe("Oracle limit state", () => {
       "fr-FR",
       now,
     )).toEqual({ relation: "tomorrow", time: "02:00" });
+  });
+
+  it("keeps a reused pending-turn id on only the latest blocked message", () => {
+    const messages = [
+      { role: "user", content: "ancienne question", pendingTurnId: "turn-1" },
+      { role: "user", content: "nouvelle question" },
+    ];
+
+    expect(assignPendingTurnId(messages, "turn-1", 1)).toEqual([
+      { role: "user", content: "ancienne question" },
+      { role: "user", content: "nouvelle question", pendingTurnId: "turn-1" },
+    ]);
   });
 });

@@ -67,7 +67,9 @@ describe("Oracle activation journey contract", () => {
     expect(appOracle).toContain(
       "if (!reusesQueuedMessage) setMessages(prev => [...prev, userMsg])",
     );
-    expect(appOracle).toContain("pendingTurnId: limit.pendingTurnId");
+    expect(appOracle).toContain(
+      "assignPendingTurnId(current, limit.pendingTurnId, lastIndex)",
+    );
     expect(appOracle).toContain("message.pendingTurnId === pendingTurn.id");
     expect(appOracle).not.toContain("const previousText = pendingTurn.text");
   });

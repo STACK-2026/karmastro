@@ -36,6 +36,7 @@ import {
   shouldShowOracleSignupHandoff,
 } from "@/lib/oracle-signup-handoff";
 import {
+  assignPendingTurnId,
   formatOracleAvailability,
   normalizeOracleLimitResponse,
   type OracleLimitSurface,
@@ -408,9 +409,7 @@ const OraclePage = () => {
               ) {
                 return current;
               }
-              return current.map((message, index) => index === lastIndex
-                ? { ...message, pendingTurnId: limit.pendingTurnId }
-                : message);
+              return assignPendingTurnId(current, limit.pendingTurnId, lastIndex);
             });
             setPendingTurn({
               id: limit.pendingTurnId,

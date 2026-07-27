@@ -16,6 +16,19 @@ const LIMIT_SURFACES = new Set<OracleLimitSurface>([
 ]);
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
+export function assignPendingTurnId<T extends { pendingTurnId?: string }>(
+  items: readonly T[],
+  pendingTurnId: string,
+  targetIndex: number,
+): T[] {
+  return items.map((item, index) => {
+    if (index === targetIndex) return { ...item, pendingTurnId };
+    if (item.pendingTurnId !== pendingTurnId) return item;
+    const { pendingTurnId: _removed, ...withoutPendingTurnId } = item;
+    return withoutPendingTurnId as T;
+  });
+}
+
 export function normalizeOracleLimitResponse(value: unknown): OracleLimitState | null {
   if (!value || typeof value !== "object" || Array.isArray(value)) return null;
   const data = value as Record<string, unknown>;
