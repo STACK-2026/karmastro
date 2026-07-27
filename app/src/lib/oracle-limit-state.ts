@@ -50,11 +50,12 @@ export function normalizeOracleLimitResponse(value: unknown): OracleLimitState |
   };
 }
 
-function localDateKey(date: Date, locale: string): string {
+function localDateKey(date: Date, locale: string, timeZone?: string): string {
   return new Intl.DateTimeFormat(locale, {
     year: "numeric",
     month: "2-digit",
     day: "2-digit",
+    timeZone,
   }).format(date);
 }
 
@@ -62,15 +63,21 @@ export function formatOracleAvailability(
   nextAvailableAt: string,
   locale: string,
   now = new Date(),
+  timeZone?: string,
 ): { relation: "today" | "tomorrow" | "later"; time: string } {
   const next = new Date(nextAvailableAt);
-  const today = localDateKey(now, locale);
-  const tomorrow = localDateKey(new Date(now.getTime() + 24 * 60 * 60 * 1000), locale);
-  const target = localDateKey(next, locale);
+  const today = localDateKey(now, locale, timeZone);
+  const tomorrow = localDateKey(
+    new Date(now.getTime() + 24 * 60 * 60 * 1000),
+    locale,
+    timeZone,
+  );
+  const target = localDateKey(next, locale, timeZone);
   const time = new Intl.DateTimeFormat(locale, {
     hour: "2-digit",
     minute: "2-digit",
     hourCycle: "h23",
+    timeZone,
   }).format(next);
   return {
     relation: target === today ? "today" : target === tomorrow ? "tomorrow" : "later",

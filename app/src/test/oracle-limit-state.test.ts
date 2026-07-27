@@ -34,12 +34,14 @@ describe("Oracle limit state", () => {
       "2026-07-27T18:00:00.000Z",
       "fr-FR",
       now,
+      "Europe/Paris",
     )).toEqual({ relation: "today", time: "20:00" });
 
     expect(formatOracleAvailability(
       "2026-07-28T00:00:00.000Z",
       "fr-FR",
       now,
+      "Europe/Paris",
     )).toEqual({ relation: "tomorrow", time: "02:00" });
   });
 
