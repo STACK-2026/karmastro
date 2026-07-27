@@ -159,3 +159,46 @@ Residual operational risk: a model-specific free fallback restores availability
 but does not make a free-tier quota production-grade. Paid Gemini capacity or an
 explicitly costed provider policy must be decided before acquisition materially
 increases Oracle traffic.
+
+## Lot B production evidence
+
+- PR 49: <https://github.com/STACK-2026/karmastro/pull/49>
+- Merge SHA: `2f712450c0ea5a61196879974e71fe1b6b8308cf`.
+- Production Edge Functions are active at `pending-turn` version 1,
+  `claim-anon-session` version 17, and `oracle-chat` version 49.
+- The additive database contract is live: both confidential tables have RLS,
+  `anon` and `authenticated` have no direct read access, activation RPCs are
+  service-role only, and the physical purge runs daily at `03:17 UTC`.
+- Questions are encrypted with AES-256-GCM; anonymous session identifiers are
+  represented by a 43-character HMAC rather than the client session UUID.
+- The first secret canary detected an encoding mismatch before any row was
+  created. Both unused keys were immediately rotated to independent 32-byte
+  base64 values, then the canary was repeated successfully.
+- The successful server-first canary stopped at the IP cap before any model
+  call, returned the free-signup wall, persisted ciphertext with a random IV,
+  enforced an exact 72-hour TTL, and was deleted afterward. Both new tables
+  returned to zero synthetic rows.
+- The anonymous wall is free and preserves the blocked question through signup.
+  The authenticated interim wall exposes server-owned availability plus edit,
+  delete, profile, and send controls without a price or legacy paywall.
+- Reused pending-turn identifiers are bound to one rendered bubble only; replay,
+  edit, and delete no longer depend on matching user text.
+- Local validation passed under both the workstation timezone and `TZ=UTC`:
+  25 Vitest files, 89 tests, lint with zero warnings, typecheck, and production
+  Vite build. Independent review reported no remaining finding.
+- All PR and post-merge checks passed. Main Quality Gates run:
+  `30278853901`; cross-project guard: `30278853928`; Cloudflare site deployment:
+  `30278854070`.
+- Live public smoke returned HTTP 200. The loaded Oracle module contains the
+  free continuation CTA and `oracle_activation_v1`, and contains no Étoile,
+  one-shot, `4,90 €`, or `5,99 €` wall.
+- Live app smoke returned HTTP 200. Oracle chunk
+  `OraclePage-BzCWztTe.js` contains both versioned wall surfaces, the pending
+  endpoint, and the activation journey version. The unauthenticated pending
+  endpoint still returns HTTP 401 with the complete browser CORS method set.
+
+Operational follow-up: the implementation is live, but the Gate B reliability
+denominator is currently one controlled end-to-end persistence canary out of
+ten required paths. Accumulate the next nine real or controlled paths without
+weakening the IP cap or using customer data, and publish the exact denominator
+before declaring the operational gate closed.
