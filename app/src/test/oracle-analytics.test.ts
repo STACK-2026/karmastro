@@ -1,8 +1,12 @@
 import { describe, expect, it } from "vitest";
 import {
+  ORACLE_ACTIVATION_JOURNEY_VERSION,
   ORACLE_JOURNEY_VERSION,
+  oracleActivationContinuationDeliveredEvent,
   oracleFirstQuestionSubmittedEvent,
   oraclePaywallEvents,
+  oraclePendingTurnCreatedEvent,
+  oraclePostContinuationMessageEvent,
   oracleResponseEvents,
 } from "@/lib/oracle-analytics";
 
@@ -76,6 +80,28 @@ describe("Oracle analytics", () => {
         category: "relationship",
         journey_version: ORACLE_JOURNEY_VERSION,
       },
+    });
+  });
+
+  it("measures pending activation and continuation without question text", () => {
+    expect(oraclePendingTurnCreatedEvent({
+      surface: "anonymous_signup_wall_v1",
+    })).toEqual({
+      name: "oracle_pending_turn_created",
+      properties: {
+        source: "app",
+        surface: "anonymous_signup_wall_v1",
+        journey_version: ORACLE_ACTIVATION_JOURNEY_VERSION,
+      },
+    });
+    expect(oracleActivationContinuationDeliveredEvent().properties).toEqual({
+      source: "app",
+      journey_version: ORACLE_ACTIVATION_JOURNEY_VERSION,
+    });
+    expect(oraclePostContinuationMessageEvent().properties).toEqual({
+      source: "app",
+      window: "30m",
+      journey_version: ORACLE_ACTIVATION_JOURNEY_VERSION,
     });
   });
 });

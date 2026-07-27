@@ -11,13 +11,17 @@ import { useUserProfile } from "@/hooks/useUserProfile";
 import { trackEvent } from "@/lib/tracker";
 import {
   oracleEntryViewedEvent,
+  oracleActivationContinuationDeliveredEvent,
   oracleCategorySelectedEvent,
   oracleFirstQuestionSubmittedEvent,
   oracleFeedbackSubmittedEvent,
   oracleHandoffClickEvent,
+  oraclePendingTurnCreatedEvent,
+  oraclePostContinuationMessageEvent,
   oraclePaywallEvents,
   oracleResponseEvents,
-  paywallEtoileClickEvent,
+  oracleSignupWallCtaClickedEvent,
+  oracleSignupWallViewedEvent,
   type OracleTrackingEvent,
 } from "@/lib/oracle-analytics";
 import BottomNav from "@/components/BottomNav";
@@ -30,6 +34,11 @@ import {
   oracleSignupPath,
   shouldShowOracleSignupHandoff,
 } from "@/lib/oracle-signup-handoff";
+import {
+  formatOracleAvailability,
+  normalizeOracleLimitResponse,
+  type OracleLimitSurface,
+} from "@/lib/oracle-limit-state";
 
 type Msg = {
   role: "user" | "assistant" | "paywall";
@@ -77,6 +86,7 @@ const GUIDES: Record<GuideKey, GuideMeta> = {
 
 const CHAT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/oracle-chat";
 const HISTORY_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/oracle-history";
+const PENDING_TURN_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/pending-turn";
 const SESSION_KEY = "karmastro_oracle_session";
 
 // Get or create an anonymous session id (for users not signed in)
@@ -116,8 +126,23 @@ const OraclePage = () => {
   const [conversationId, setConversationId] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<OracleCategory | null>(null);
   const [claimVersion, setClaimVersion] = useState(0);
+  const [historyHydrated, setHistoryHydrated] = useState(false);
+  const [pendingTurn, setPendingTurn] = useState<{
+    id: string;
+    text: string;
+    wallType: OracleLimitSurface;
+    nextAvailableAt: string;
+  } | null>(null);
+  const [pendingDraft, setPendingDraft] = useState("");
+  const [pendingEditing, setPendingEditing] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const previousMessageCountRef = useRef(0);
+  const pendingAutoRef = useRef<string | null>(null);
+  const continuationDeliveredAtRef = useRef<number | null>(null);
+  const confirmPendingTurnRef = useRef<(
+    turn: NonNullable<typeof pendingTurn>,
+    automatic?: boolean,
+  ) => Promise<void>>(async () => {});
 
   const [guideKey] = useState<GuideKey>("oracle");
   const [feedback, setFeedback] = useState<Record<number, FeedbackState>>({});
@@ -163,6 +188,7 @@ const OraclePage = () => {
   useEffect(() => {
     if (!guideKey) return;
     let cancelled = false;
+    setHistoryHydrated(false);
     (async () => {
       try {
         const { data: { session } } = await supabase.auth.getSession();
@@ -190,6 +216,8 @@ const OraclePage = () => {
         }
       } catch (e) {
         console.warn("[oracle-history] hydrate failed", e);
+      } finally {
+        if (!cancelled) setHistoryHydrated(true);
       }
     })();
     return () => { cancelled = true; };
@@ -290,12 +318,29 @@ const OraclePage = () => {
     };
   };
 
-  const handleSend = async (text?: string) => {
+  const handleSend = async (
+    text?: string,
+    options: {
+      pendingTurnId?: string;
+      activationContinuation?: boolean;
+      automatic?: boolean;
+    } = {},
+  ) => {
     const msgText = text || input;
     if (!msgText.trim() || isLoading || !guideKey) return;
 
     const userMsg: Msg = { role: "user", content: msgText };
     const priorUserTurns = messages.filter((message) => message.role === "user").length;
+    const continuationDeliveredAt = continuationDeliveredAtRef.current;
+    if (
+      !options.automatic
+      && continuationDeliveredAt
+      && Date.now() - continuationDeliveredAt <= 30 * 60 * 1000
+    ) {
+      const event = oraclePostContinuationMessageEvent();
+      void trackEvent(event.name, event.properties);
+      continuationDeliveredAtRef.current = null;
+    }
     if (priorUserTurns === 0) {
       const event = oracleFirstQuestionSubmittedEvent({ source: "app", category: selectedCategory });
       void trackEvent(event.name, event.properties);
@@ -324,6 +369,8 @@ const OraclePage = () => {
           conversationId,
           priorSummary: messages.length === 0 ? priorSummary : null,
           category: selectedCategory,
+          pendingTurnId: options.pendingTurnId,
+          requestId: crypto.randomUUID(),
         }),
       });
 
@@ -332,10 +379,29 @@ const OraclePage = () => {
 
         // Paywall (402) : show inline CTA instead of toast error
         if (resp.status === 402 && errData.paywall) {
+          const limit = normalizeOracleLimitResponse(errData.paywall);
           trackOracleEvents(oraclePaywallEvents({
             isAnon: Boolean(errData.paywall.is_anon),
             turn: priorUserTurns + 1,
           }));
+          if (limit) {
+            setPendingTurn({
+              id: limit.pendingTurnId,
+              text: msgText.trim(),
+              wallType: limit.surface,
+              nextAvailableAt: limit.nextAvailableAt,
+            });
+            setPendingDraft(msgText.trim());
+            const pendingEvent = oraclePendingTurnCreatedEvent({
+              surface: limit.surface,
+            });
+            void trackEvent(pendingEvent.name, pendingEvent.properties);
+            if (limit.surface === "anonymous_signup_wall_v1") {
+              const wallEvent = oracleSignupWallViewedEvent();
+              void trackEvent(wallEvent.name, wallEvent.properties);
+            }
+            return;
+          }
           setMessages((prev) => [
             ...prev,
             {
@@ -420,11 +486,170 @@ const OraclePage = () => {
           priorUserTurns,
           conversationId: resolvedConversationId,
         }));
+        if (options.pendingTurnId) {
+          setPendingTurn(null);
+          setPendingDraft("");
+          setPendingEditing(false);
+        }
+        if (options.activationContinuation) {
+          continuationDeliveredAtRef.current = Date.now();
+          const event = oracleActivationContinuationDeliveredEvent();
+          void trackEvent(event.name, event.properties);
+        }
       }
     }
   };
 
+  const pendingAuth = async () => {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session?.access_token) throw new Error(t("pricing.checkout_session_expired"));
+    return {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${session.access_token}`,
+    };
+  };
+
+  const confirmPendingTurn = async (
+    turn: NonNullable<typeof pendingTurn>,
+    automatic = false,
+  ) => {
+    if (isLoading) return;
+    try {
+      const response = await fetch(`${PENDING_TURN_URL}/confirm`, {
+        method: "POST",
+        headers: await pendingAuth(),
+        body: JSON.stringify({ id: turn.id }),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        if (data.next_available_at) {
+          setPendingTurn((current) => current
+            ? { ...current, nextAvailableAt: data.next_available_at }
+            : current);
+        }
+        return;
+      }
+      const confirmedText = typeof data.pending_turn?.text === "string"
+        ? data.pending_turn.text
+        : turn.text;
+      await handleSend(confirmedText, {
+        pendingTurnId: turn.id,
+        activationContinuation: turn.wallType === "anonymous_signup_wall_v1",
+        automatic,
+      });
+    } catch (error) {
+      console.warn("[pending-turn] confirm failed", getErrorMessage(error));
+    }
+  };
+  confirmPendingTurnRef.current = confirmPendingTurn;
+
+  const savePendingTurn = async () => {
+    if (!pendingTurn || !pendingDraft.trim()) return;
+    try {
+      const response = await fetch(PENDING_TURN_URL, {
+        method: "PATCH",
+        headers: await pendingAuth(),
+        body: JSON.stringify({ id: pendingTurn.id, text: pendingDraft.trim() }),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok || typeof data.pending_turn?.text !== "string") return;
+      setPendingTurn((current) => current
+        ? { ...current, text: data.pending_turn.text }
+        : current);
+      setPendingEditing(false);
+    } catch (error) {
+      console.warn("[pending-turn] update failed", getErrorMessage(error));
+    }
+  };
+
+  const deletePendingTurn = async () => {
+    if (!pendingTurn) return;
+    try {
+      const response = await fetch(PENDING_TURN_URL, {
+        method: "DELETE",
+        headers: await pendingAuth(),
+        body: JSON.stringify({ id: pendingTurn.id }),
+      });
+      if (!response.ok) return;
+      const deletedText = pendingTurn.text;
+      setPendingTurn(null);
+      setPendingDraft("");
+      setPendingEditing(false);
+      setMessages((current) => {
+        const index = current.findLastIndex((message) =>
+          message.role === "user" && message.content.trim() === deletedText.trim()
+        );
+        return index < 0 ? current : current.filter((_, messageIndex) => messageIndex !== index);
+      });
+    } catch (error) {
+      console.warn("[pending-turn] delete failed", getErrorMessage(error));
+    }
+  };
+
+  useEffect(() => {
+    if (!user || !historyHydrated || userProfile.isLoading || isLoading) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session?.access_token) return;
+        const response = await fetch(PENDING_TURN_URL, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${session.access_token}`,
+          },
+        });
+        if (!response.ok || cancelled) return;
+        const data = await response.json();
+        const turn = data.pending_turn;
+        if (
+          !turn
+          || typeof turn.id !== "string"
+          || typeof turn.text !== "string"
+          || (turn.wall_type !== "anonymous_signup_wall_v1"
+            && turn.wall_type !== "authenticated_interim_limit_v1")
+          || typeof turn.next_available_at !== "string"
+        ) {
+          return;
+        }
+        const normalized = {
+          id: turn.id,
+          text: turn.text,
+          wallType: turn.wall_type as OracleLimitSurface,
+          nextAvailableAt: turn.next_available_at,
+        };
+        setPendingTurn(normalized);
+        setPendingDraft(turn.text);
+        if (
+          normalized.wallType === "anonymous_signup_wall_v1"
+          && pendingAutoRef.current !== normalized.id
+        ) {
+          pendingAutoRef.current = normalized.id;
+          await confirmPendingTurnRef.current(normalized, true);
+        }
+      } catch (error) {
+        console.warn("[pending-turn] hydrate failed", getErrorMessage(error));
+      }
+    })();
+    return () => { cancelled = true; };
+  }, [historyHydrated, isLoading, user, userProfile.isLoading]);
+
   const Icon = currentGuide.icon;
+  const pendingAvailability = pendingTurn
+    ? formatOracleAvailability(pendingTurn.nextAvailableAt, navigator.language)
+    : null;
+  const pendingIsAvailable = pendingTurn
+    ? Date.parse(pendingTurn.nextAvailableAt) <= Date.now()
+    : false;
+  const pendingAvailabilityText = pendingAvailability
+    ? t(
+      pendingAvailability.relation === "today"
+        ? "oracle.pending_available_today"
+        : "oracle.pending_available_tomorrow",
+      { time: pendingAvailability.time },
+    )
+    : "";
 
   return (
     <div className="min-h-screen bg-background pb-20 flex flex-col relative">
@@ -549,39 +774,24 @@ const OraclePage = () => {
                     >
                       <Sparkles className="h-6 w-6 text-amber-300" />
                     </div>
-                    <h3 className="font-serif text-xl mb-2 text-gradient-gold">{t("oracle.paywall_title")}</h3>
+                    <h3 className="font-serif text-xl mb-2 text-gradient-gold">
+                      {msg.isAnonPaywall ? t("oracle.signup_wall_title") : t("oracle.pending_title")}
+                    </h3>
                     <p className="text-sm text-white/70 mb-5 leading-relaxed">{msg.content}</p>
                     {msg.isAnonPaywall ? (
-                      <div className="flex flex-col sm:flex-row gap-2">
-                        <button
-                          onClick={handleOracleSignup}
-                          className="flex-1 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity glow-gold"
-                        >
-                          {t("oracle.paywall_cta_signup")}
-                        </button>
-                        <button
-                          onClick={() => {
-                            const event = oracleHandoffClickEvent("pricing");
-                            void trackEvent(event.name, event.properties);
-                            navigate("/pricing");
-                          }}
-                          className="flex-1 px-4 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 font-medium text-sm hover:bg-amber-300/10 transition-colors"
-                        >
-                          {t("oracle.paywall_cta_plans")}
-                        </button>
-                      </div>
+                      <button
+                        onClick={handleOracleSignup}
+                        className="w-full px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity glow-gold"
+                      >
+                        {t("oracle.signup_wall_cta")}
+                      </button>
                     ) : (
-                      <div>
-                        <button
-                          onClick={() => {
-                            trackOracleEvents([paywallEtoileClickEvent(), oracleHandoffClickEvent("pricing")]);
-                            navigate("/pricing");
-                          }}
-                          className="flex-1 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity glow-gold"
-                        >
-                          {t("oracle.paywall_cta_etoile")}
-                        </button>
-                      </div>
+                      <button
+                        onClick={() => navigate("/profile")}
+                        className="w-full px-4 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 font-medium text-sm hover:bg-amber-300/10 transition-colors"
+                      >
+                        {t("oracle.pending_explore_profile")}
+                      </button>
                     )}
                   </div>
                 </div>
@@ -748,6 +958,90 @@ const OraclePage = () => {
             </div>
           );
         })}
+
+        {pendingTurn && (
+          <div className="flex justify-center my-2">
+            <div className="relative w-full max-w-md oracle-parchment rounded-2xl p-5 text-center overflow-hidden">
+              <Sparkles className="h-6 w-6 text-amber-300 mx-auto mb-2" />
+              <h3 className="font-serif text-lg text-gradient-gold mb-2">
+                {pendingTurn.wallType === "anonymous_signup_wall_v1"
+                  ? t("oracle.signup_wall_title")
+                  : t("oracle.pending_title")}
+              </h3>
+              <p className="text-sm text-white/70 mb-3 leading-relaxed">
+                {pendingTurn.wallType === "anonymous_signup_wall_v1"
+                  ? t("oracle.signup_wall_text")
+                  : t("oracle.pending_text")}
+              </p>
+              {pendingTurn.wallType === "authenticated_interim_limit_v1" && pendingAvailabilityText && (
+                <p className="text-xs text-amber-200/80 mb-3">{pendingAvailabilityText}</p>
+              )}
+              {pendingTurn.wallType === "anonymous_signup_wall_v1" && !user ? (
+                <div className="space-y-3">
+                  <p className="rounded-xl border border-white/10 bg-black/15 px-3 py-2 text-left text-sm text-white/85">
+                    {pendingTurn.text}
+                  </p>
+                  <Button type="button" className="w-full" onClick={() => {
+                    const event = oracleSignupWallCtaClickedEvent();
+                    void trackEvent(event.name, event.properties);
+                    handleOracleSignup();
+                  }}>
+                    {t("oracle.signup_wall_cta")}
+                  </Button>
+                </div>
+              ) : pendingEditing ? (
+                <div className="space-y-2">
+                  <textarea
+                    value={pendingDraft}
+                    onChange={(event) => setPendingDraft(event.target.value)}
+                    maxLength={500}
+                    rows={3}
+                    className="w-full rounded-xl border border-white/15 bg-black/20 px-3 py-2 text-sm text-white focus:border-amber-300/60 focus:outline-none"
+                  />
+                  <div className="flex gap-2">
+                    <Button type="button" variant="outline" className="flex-1" onClick={() => {
+                      setPendingDraft(pendingTurn.text);
+                      setPendingEditing(false);
+                    }}>
+                      {t("common.cancel")}
+                    </Button>
+                    <Button type="button" className="flex-1" onClick={savePendingTurn}>
+                      {t("common.save")}
+                    </Button>
+                  </div>
+                </div>
+              ) : (
+                <div className="space-y-2">
+                  <p className="rounded-xl border border-white/10 bg-black/15 px-3 py-2 text-left text-sm text-white/85">
+                    {pendingTurn.text}
+                  </p>
+                  <div className="grid grid-cols-2 gap-2">
+                    <Button type="button" variant="outline" onClick={() => setPendingEditing(true)}>
+                      {t("oracle.pending_modify")}
+                    </Button>
+                    <Button type="button" variant="outline" onClick={() => navigate("/profile")}>
+                      {t("oracle.pending_explore_profile")}
+                    </Button>
+                    <Button type="button" variant="ghost" onClick={deletePendingTurn}>
+                      {t("oracle.pending_delete")}
+                    </Button>
+                    <Button
+                      type="button"
+                      onClick={() => confirmPendingTurn(pendingTurn)}
+                      disabled={
+                        isLoading
+                        || (pendingTurn.wallType === "authenticated_interim_limit_v1"
+                          && !pendingIsAvailable)
+                      }
+                    >
+                      {t("oracle.pending_send")}
+                    </Button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
 
         {isLoading && messages[messages.length - 1]?.role !== "assistant" && (
           <div className="flex justify-start">

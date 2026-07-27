@@ -38,12 +38,16 @@ test("every Oracle event is dated and versioned in the shared registry", async (
     assert.equal(names.has(event.name), false);
     names.add(event.name);
     assert.match(event.introduced_at, /^\d{4}-\d{2}-\d{2}$/);
-    assert.equal(event.journey_version, "oracle_conversation_v1");
+    assert.equal(
+      ["oracle_conversation_v1", "oracle_activation_v1"].includes(event.journey_version),
+      true,
+    );
     assert.equal(event.allowed_properties.includes("journey_version"), true);
   }
 
   assert.equal(names.has("oracle_category_selected"), true);
   assert.equal(names.has("oracle_first_question_submitted"), true);
+  assert.match(page, /ACTIVATION_JOURNEY_VERSION\s*=\s*"oracle_activation_v1"/);
   for (const match of page.matchAll(/trackOracleEvent\("([a-z_]+)"/g)) {
     assert.equal(names.has(match[1]), true, `${match[1]} is missing from the registry`);
   }

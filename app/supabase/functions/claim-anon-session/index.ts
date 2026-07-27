@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
+import { sessionHmac } from "../_shared/pending-turn-crypto.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -9,6 +10,7 @@ const corsHeaders = {
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "https://nkjbmbdrvejemzrggxvr.supabase.co";
 const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
 const ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY") || "";
+const PENDING_TURN_HMAC_KEY = Deno.env.get("PENDING_TURN_SESSION_HMAC_KEY") || "";
 const SESSION_ID_RE = /^[A-Za-z0-9._:-]{8,128}$/;
 
 // ============================================================================
@@ -36,6 +38,12 @@ serve(async (req) => {
 
   try {
     if (!SERVICE_KEY) throw new Error("SUPABASE_SERVICE_ROLE_KEY missing");
+    if (!PENDING_TURN_HMAC_KEY) {
+      return new Response(JSON.stringify({ error: "pending_turn_hmac_key_missing" }), {
+        status: 503,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
 
     // Resolve the caller's user_id from their JWT. We use the anon key client
     // only to introspect the token (auth.getUser does an authenticated RPC).
@@ -71,6 +79,7 @@ serve(async (req) => {
     const normalizedSessionId = sessionId.trim();
 
     const sb = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
+    const pendingSessionHmac = await sessionHmac(normalizedSessionId, PENDING_TURN_HMAC_KEY);
 
     // 1. Move conversations. We only move rows that are still anonymous to
     //    avoid clobbering someone else's user_id if two users shared a browser.
@@ -90,7 +99,18 @@ serve(async (req) => {
       .select("id");
     if (msgErr) throw msgErr;
 
-    // 2. Usage counter : merge today's anon usage into the user counter so
+    // 2. Attach the encrypted pending turn without ever querying by the raw
+    // anonymous session id. The SQL function is row-locked and idempotent.
+    const { data: claimedPending, error: pendingClaimError } = await sb.rpc(
+      "claim_oracle_pending_turn",
+      {
+        p_session_hmac: pendingSessionHmac,
+        p_user_id: userId,
+      },
+    );
+    if (pendingClaimError) throw pendingClaimError;
+
+    // 3. Usage counter : merge today's anon usage into the user counter so
     //    the fresh signup doesn't get a second free quota today.
     try {
       const today = new Date().toISOString().slice(0, 10);
@@ -119,7 +139,7 @@ serve(async (req) => {
       console.warn("usage merge non-fatal:", usageErr);
     }
 
-    // 3. Profile soft-merge. Only fill profile columns that are currently
+    // 4. Profile soft-merge. Only fill profile columns that are currently
     //    empty , never overwrite a user's own edits.
     let hintsApplied = 0;
     const { data: hints } = await sb
@@ -166,6 +186,7 @@ serve(async (req) => {
           conversations: movedConvs?.length ?? 0,
           messages: movedMsgs?.length ?? 0,
           hints_applied: hintsApplied,
+          pending_turns: Array.isArray(claimedPending) ? claimedPending.length : 0,
         },
       }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }

@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const oracleFile = new URL("../src/pages/oracle.astro", import.meta.url);
+const soulMateFile = new URL("../src/pages/ame-soeur.astro", import.meta.url);
 
 test("the public Oracle never pretends to personalise an anonymous exchange", async () => {
   const page = await readFile(oracleFile, "utf8");
@@ -23,9 +24,12 @@ test("the public Oracle never pretends to personalise an anonymous exchange", as
   assert.match(page, /Écris ensuite ta question avec tes propres mots/);
 });
 
-test("the one-time paid reading may still request the birth date it needs", async () => {
-  const page = await readFile(oracleFile, "utf8");
+test("the one-time paid reading keeps its birth input in its own context", async () => {
+  const oraclePage = await readFile(oracleFile, "utf8");
+  const soulMatePage = await readFile(soulMateFile, "utf8");
 
-  assert.match(page, /id="km-pw-birth"/);
-  assert.match(page, /tool:\s*"chemin-de-vie",\s*birthDate/);
+  assert.doesNotMatch(oraclePage, /id="km-pw-birth"/);
+  assert.doesNotMatch(oraclePage, /tool:\s*"chemin-de-vie",\s*birthDate/);
+  assert.match(soulMatePage, /id="as-date"/);
+  assert.match(soulMatePage, /Sa date de naissance/);
 });

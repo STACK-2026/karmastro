@@ -1,5 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
+import {
+  createClient,
+} from "https://esm.sh/@supabase/supabase-js@2.45.0";
 import {
   OracleRequestError,
   conversationBelongsToIdentity,
@@ -14,6 +16,11 @@ import {
   profileForOracleIdentity,
   shouldPersistOracleProfileHints,
 } from "../_shared/oracle-anonymous-policy.ts";
+import {
+  decryptPendingTurn,
+  encryptPendingTurn,
+  sessionHmac,
+} from "../_shared/pending-turn-crypto.ts";
 import {
   buildOracleConversationInstructions,
   FALLBACK_GEMINI_MODEL,
@@ -456,7 +463,125 @@ function cleanHints(h: ProfileHints | null): Partial<ProfileHints> {
   return out;
 }
 
+type PendingTurnWall = "anonymous_signup_wall_v1" | "authenticated_interim_limit_v1";
+
+function pendingTurnKeyVersion(): number {
+  const parsed = Number(Deno.env.get("PENDING_TURN_KEY_VERSION") || "1");
+  if (!Number.isInteger(parsed) || parsed < 1) throw new Error("pending_turn_key_version_invalid");
+  return parsed;
+}
+
+function pendingTurnEncryptionSecret(version: number): string {
+  const current = pendingTurnKeyVersion();
+  const secret = version === current
+    ? Deno.env.get("PENDING_TURN_ENCRYPTION_KEY")
+    : Deno.env.get(`PENDING_TURN_ENCRYPTION_KEY_V${version}`);
+  if (!secret) throw new Error("pending_turn_encryption_key_missing");
+  return secret;
+}
+
+function nextOracleAvailability(now = new Date()): string {
+  return new Date(Date.UTC(
+    now.getUTCFullYear(),
+    now.getUTCMonth(),
+    now.getUTCDate() + 1,
+  )).toISOString();
+}
+
+async function storePendingTurn({
+  userId,
+  sessionId,
+  conversationId,
+  text,
+  wallType,
+  requestId,
+}: {
+  userId: string | null;
+  sessionId: string | null;
+  conversationId: string | null;
+  text: string;
+  wallType: PendingTurnWall;
+  requestId: string | null;
+}): Promise<{ id: string; nextAvailableAt: string }> {
+  if (!SERVICE_KEY) throw new Error("identity_service_unavailable");
+  const sb = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
+  if (text.length > 500) throw new OracleRequestError("pending_turn_too_long", 413);
+  const hmacKey = Deno.env.get("PENDING_TURN_SESSION_HMAC_KEY") || "";
+  if (!userId && (!sessionId || !hmacKey)) throw new Error("pending_turn_hmac_key_missing");
+  const version = pendingTurnKeyVersion();
+  const encrypted = await encryptPendingTurn(
+    text,
+    pendingTurnEncryptionSecret(version),
+    version,
+  );
+  const sessionHash = userId ? null : await sessionHmac(sessionId || "", hmacKey);
+  const now = new Date();
+  const expiresAt = new Date(now.getTime() + 72 * 60 * 60 * 1000).toISOString();
+  const nextAvailableAt = nextOracleAvailability(now);
+
+  let existingQuery = sb
+    .from("oracle_pending_turns")
+    .select("id")
+    .in("status", ["pending", "claimed"])
+    .gt("expires_at", now.toISOString())
+    .limit(1);
+  existingQuery = userId
+    ? existingQuery.eq("user_id", userId)
+    : existingQuery.eq("session_hmac", sessionHash || "");
+  const { data: existing, error: existingError } = await existingQuery.maybeSingle();
+  if (existingError) throw existingError;
+
+  const values = {
+    session_hmac: sessionHash,
+    user_id: userId,
+    conversation_id: conversationId,
+    ciphertext: encrypted.ciphertext,
+    iv: encrypted.iv,
+    key_version: encrypted.keyVersion,
+    wall_type: wallType,
+    idempotency_key: requestId || crypto.randomUUID(),
+    next_available_at: nextAvailableAt,
+    updated_at: now.toISOString(),
+  };
+  if (existing?.id) {
+    const { error } = await sb
+      .from("oracle_pending_turns")
+      .update(values)
+      .eq("id", existing.id);
+    if (error) throw error;
+    return { id: String(existing.id), nextAvailableAt };
+  }
+
+  const { data, error } = await sb
+    .from("oracle_pending_turns")
+    .insert({
+      ...values,
+      expires_at: expiresAt,
+      status: userId ? "claimed" : "pending",
+    })
+    .select("id")
+    .single();
+  if (error || !data?.id) throw error || new Error("pending_turn_insert_failed");
+  return { id: String(data.id), nextAvailableAt };
+}
+
+async function releaseActivationReservation(
+  reservation: { pendingTurnId: string; userId: string } | null,
+): Promise<void> {
+  if (!reservation || !SERVICE_KEY) return;
+  try {
+    const sb = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
+    await sb.rpc("release_oracle_activation_grant", {
+      p_pending_turn_id: reservation.pendingTurnId,
+      p_user_id: reservation.userId,
+    });
+  } catch {
+    // The SQL reservation expires after five minutes and remains retryable.
+  }
+}
+
 serve(async (req) => {
+  let activationReservation: { pendingTurnId: string; userId: string } | null = null;
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
@@ -543,6 +668,51 @@ serve(async (req) => {
     const GOOGLE_API_KEY = Deno.env.get("GOOGLE_API_KEY") || "";
     if (!GOOGLE_API_KEY) throw new Error("GOOGLE_API_KEY non configurée");
 
+    let pendingTurnWall: PendingTurnWall | null = null;
+    if (normalized.pendingTurnId) {
+      if (!userId) return jsonResponse({ error: "pending_turn_auth_required" }, 401);
+      if (!SERVICE_KEY) return jsonResponse({ error: "identity_service_unavailable" }, 503);
+      const sbPending = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
+      const { data: pending, error: pendingError } = await sbPending
+        .from("oracle_pending_turns")
+        .select("id,user_id,ciphertext,iv,key_version,wall_type,status,expires_at")
+        .eq("id", normalized.pendingTurnId)
+        .eq("user_id", userId)
+        .in("status", ["pending", "claimed"])
+        .gt("expires_at", new Date().toISOString())
+        .maybeSingle();
+      if (pendingError || !pending) return jsonResponse({ error: "pending_turn_not_found" }, 404);
+      const pendingText = await decryptPendingTurn(
+        {
+          ciphertext: pending.ciphertext,
+          iv: pending.iv,
+          keyVersion: pending.key_version,
+        },
+        pendingTurnEncryptionSecret(pending.key_version),
+      );
+      const lastMessage = messages[messages.length - 1]?.content.replace(/\s+/g, " ").trim();
+      if (lastMessage !== pendingText.replace(/\s+/g, " ").trim()) {
+        return jsonResponse({ error: "pending_turn_content_mismatch" }, 409);
+      }
+      pendingTurnWall = pending.wall_type as PendingTurnWall;
+      if (pendingTurnWall === "anonymous_signup_wall_v1") {
+        const { data: reserved, error: reserveError } = await sbPending.rpc(
+          "reserve_oracle_activation_grant",
+          {
+            p_pending_turn_id: normalized.pendingTurnId,
+            p_user_id: userId,
+          },
+        );
+        if (reserveError || !reserved) {
+          return jsonResponse({ error: "activation_grant_unavailable" }, 409);
+        }
+        activationReservation = {
+          pendingTurnId: normalized.pendingTurnId,
+          userId,
+        };
+      }
+    }
+
     // ============================================
     // USAGE CHECK : limit to 2 messages/day for free tier
     // ============================================
@@ -553,7 +723,56 @@ serve(async (req) => {
     // comptage RPC recoit (null, null) et n'incremente jamais (Oracle gratuit infini).
     const anonSession = sessionId || "";
 
-    if (SERVICE_KEY) {
+    const pendingLimitResponse = async (
+      reason: "ip_cap" | "daily_limit",
+      messageCount?: number,
+    ): Promise<Response> => {
+      try {
+        const isAnon = !userId;
+        const wallType: PendingTurnWall = isAnon
+          ? "anonymous_signup_wall_v1"
+          : "authenticated_interim_limit_v1";
+        const lastMessage = messages[messages.length - 1]?.content || "";
+        const pending = await storePendingTurn({
+          userId,
+          sessionId,
+          conversationId,
+          text: lastMessage,
+          wallType,
+          requestId: normalized.requestId,
+        });
+        const message = isAnon
+          ? "Crée gratuitement ton profil pour retrouver cette conversation et recevoir la suite personnalisée à ta question."
+          : "Ta question est gardée. Tu pourras la modifier ou l'envoyer quand elle sera disponible.";
+        const limit = {
+          reason,
+          message_count: messageCount,
+          limit: FREE_DAILY_LIMIT,
+          is_anon: isAnon,
+          message,
+          surface: wallType,
+          next_available_at: pending.nextAvailableAt,
+          pending_turn: true,
+          pending_turn_id: pending.id,
+        };
+        return new Response(
+          JSON.stringify({
+            error: "daily_limit",
+            ...limit,
+            paywall: limit,
+          }),
+          {
+            status: 402,
+            headers: { ...corsHeaders, "Content-Type": "application/json" },
+          },
+        );
+      } catch (error) {
+        console.error("pending turn persistence error:", error instanceof Error ? error.message : "unknown");
+        return jsonResponse({ error: "pending_turn_unavailable" }, 503);
+      }
+    };
+
+    if (SERVICE_KEY && !activationReservation) {
       try {
         const sbCheck = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
 
@@ -564,13 +783,7 @@ serve(async (req) => {
           if (ip) {
             const { data: ipCount } = await sbCheck.rpc("bump_oracle_ip", { p_ip: ip });
             if (typeof ipCount === "number" && ipCount > IP_DAILY_CAP) {
-              return new Response(
-                JSON.stringify({
-                  error: "paywall",
-                  paywall: { reason: "ip_cap", is_anon: true, message: "Tu as atteint la limite quotidienne. Crée ton compte gratuit pour continuer ✨" },
-                }),
-                { status: 402, headers: { ...corsHeaders, "Content-Type": "application/json" } },
-              );
+              return await pendingLimitResponse("ip_cap");
             }
           }
         }
@@ -596,25 +809,7 @@ serve(async (req) => {
             }
 
             if (!creditConsumed) {
-              const isAnon = !userId;
-              return new Response(
-                JSON.stringify({
-                  error: "paywall",
-                  paywall: {
-                    reason: "daily_limit",
-                    message_count,
-                    limit: FREE_DAILY_LIMIT,
-                    is_anon: isAnon,
-                    message: isAnon
-                      ? `Tu as utilisé tes ${FREE_DAILY_LIMIT} messages cosmiques du jour. Pour continuer aujourd'hui, garder ton profil et retrouver cette conversation, débloque l'Oracle illimité avec Étoile.`
-                      : `Tu as utilisé tes ${FREE_DAILY_LIMIT} messages cosmiques du jour. Passe en Étoile pour poursuivre sans limite avec ton profil et toute ta mémoire.`,
-                  },
-                }),
-                {
-                  status: 402, // Payment Required
-                  headers: { ...corsHeaders, "Content-Type": "application/json" },
-                }
-              );
+              return await pendingLimitResponse("daily_limit", message_count);
             }
           }
         }
@@ -920,6 +1115,8 @@ serve(async (req) => {
 
     if (!response.ok) {
       console.error(`Gemini error (${activeGeminiModel}):`, response.status, (await response.text()).slice(0, 500));
+      await releaseActivationReservation(activationReservation);
+      activationReservation = null;
       if (response.status === 429) {
         return new Response(JSON.stringify({ error: "Les astres sont très sollicités. Réessaie dans un instant." }), {
           status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -956,6 +1153,7 @@ serve(async (req) => {
     // conversation INSERT, whose id we echo back to the client so it can
     // thread subsequent turns.
     let savedConvId: string | null = (typeof conversationId === "string" && conversationId) ? conversationId : null;
+    let exchangePersisted = false;
     if (SERVICE_KEY && (userId || sessionId)) {
       try {
         const sbPersist = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
@@ -980,7 +1178,7 @@ serve(async (req) => {
         }
         if (savedConvId) {
           const lastUserMsg = messages[messages.length - 1];
-          sbPersist
+          const { error: messageInsertError } = await sbPersist
             .from("oracle_messages")
             .insert([
               {
@@ -997,15 +1195,14 @@ serve(async (req) => {
                 role: "assistant",
                 content: text,
               },
-            ])
-            .then(({ error }: { error: unknown }) => {
-              if (error) console.error("oracle messages insert error:", error);
-            });
-          sbPersist
+            ]);
+          if (messageInsertError) throw messageInsertError;
+          const { error: conversationUpdateError } = await sbPersist
             .from("oracle_conversations")
             .update({ updated_at: new Date().toISOString() })
-            .eq("id", savedConvId)
-            .then(() => {});
+            .eq("id", savedConvId);
+          if (conversationUpdateError) throw conversationUpdateError;
+          exchangePersisted = true;
         }
 
         // Persist profile hints only for an authenticated user. Anonymous
@@ -1055,6 +1252,44 @@ serve(async (req) => {
       }
     }
 
+    if (activationReservation) {
+      if (!exchangePersisted) {
+        await releaseActivationReservation(activationReservation);
+        activationReservation = null;
+        return jsonResponse({ error: "activation_delivery_unavailable" }, 503);
+      }
+      const sbGrant = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
+      const { data: consumed, error: consumeError } = await sbGrant.rpc(
+        "consume_oracle_activation_grant",
+        {
+          p_pending_turn_id: activationReservation.pendingTurnId,
+          p_user_id: activationReservation.userId,
+        },
+      );
+      if (consumeError || !consumed) {
+        await releaseActivationReservation(activationReservation);
+        activationReservation = null;
+        return jsonResponse({ error: "activation_delivery_unavailable" }, 503);
+      }
+      activationReservation = null;
+    } else if (
+      normalized.pendingTurnId
+      && pendingTurnWall === "authenticated_interim_limit_v1"
+    ) {
+      if (!exchangePersisted) {
+        return jsonResponse({ error: "pending_delivery_unavailable" }, 503);
+      }
+      const sbPending = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
+      const { error: pendingDeleteError } = await sbPending
+        .from("oracle_pending_turns")
+        .delete()
+        .eq("id", normalized.pendingTurnId)
+        .eq("user_id", userId);
+      if (pendingDeleteError) {
+        return jsonResponse({ error: "pending_delivery_unavailable" }, 503);
+      }
+    }
+
     const sseData = JSON.stringify({
       choices: [{ delta: { content: text }, finish_reason: "stop" }],
       guide: guideKey || DEFAULT_GUIDE,
@@ -1075,6 +1310,8 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "text/event-stream" },
     });
   } catch (e) {
+    await releaseActivationReservation(activationReservation);
+    activationReservation = null;
     if (e instanceof OracleRequestError) {
       return jsonResponse({ error: e.message }, e.status);
     }

@@ -29,7 +29,10 @@ describe("Oracle event registry", () => {
 
     for (const event of registry.events) {
       expect(event.introduced_at).toMatch(/^\d{4}-\d{2}-\d{2}$/);
-      expect(event.journey_version).toBe("oracle_conversation_v1");
+      expect([
+        "oracle_conversation_v1",
+        "oracle_activation_v1",
+      ]).toContain(event.journey_version);
       expect(event.allowed_properties).toContain("journey_version");
     }
   });

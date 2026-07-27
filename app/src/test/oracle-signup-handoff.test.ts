@@ -5,9 +5,9 @@ import {
 } from "@/lib/oracle-signup-handoff";
 
 describe("Oracle anonymous signup handoff", () => {
-  it("keeps the anonymous session while sending signup to onboarding", () => {
+  it("keeps the anonymous session while preserving Oracle as the post-onboarding destination", () => {
     expect(oracleSignupPath("anon-session-123"))
-      .toBe("/auth?next=%2Fonboarding&oracle_session=anon-session-123");
+      .toBe("/auth?next=%2Foracle&oracle_session=anon-session-123");
   });
 
   it("shows signup after the latest completed anonymous Oracle reply", () => {
