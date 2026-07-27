@@ -49,9 +49,9 @@ Observed on 2026-07-27:
 - [x] RED tests for worker controls
 - [x] Worker implementation
 - [x] Local verification and review
-- [ ] Worker production canary
-- [ ] RED contract for public Oracle
-- [ ] Public hotfix implementation
+- [x] Worker production canary
+- [x] RED contract for public Oracle
+- [x] Public hotfix implementation
 - [ ] Build, review, deployment, and live smoke
 
 ## Rollback records
@@ -70,3 +70,21 @@ Observed on 2026-07-27:
 - Diff hygiene: `git diff --check` passed.
 - Production default after deployment: live sends disabled until the exact
   `MONTHLY_GUIDANCE_SEND_ENABLED=true` secret is deliberately configured.
+- Production canary: dry-run returned HTTP 200 with 0 candidates and
+  `run_complete=true`; non-dry returned HTTP 503 `sending_disabled` before any
+  database query or email.
+
+## Lot U2 evidence
+
+- RED: public Oracle contract detected the anonymous profile form and false
+  personalization flow.
+- Implementation removes the anonymous birth-data form, local profile reads and
+  writes, profile injection into `oracle-chat`, and personal starter questions.
+- Legacy `km_oracle_profile` data is actively deleted from returning browsers.
+- The paid one-time Life Path reading keeps its own birth-date field because the
+  purchased calculation genuinely requires it.
+- Focused contract: 2 passed, 0 failed.
+- Handoff regression suite: 10 passed, 0 failed.
+- Cross-surface regression suite: 33 passed, 0 failed.
+- Full static build: 8,053 pages generated; content, fragment, and app-link
+  guards passed.
