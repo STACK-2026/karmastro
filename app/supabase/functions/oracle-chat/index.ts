@@ -14,6 +14,13 @@ import {
   profileForOracleIdentity,
   shouldPersistOracleProfileHints,
 } from "../_shared/oracle-anonymous-policy.ts";
+import {
+  buildOracleConversationInstructions,
+  FALLBACK_GEMINI_MODEL,
+  FIRST_TURN_ORACLE_PROMPT,
+  geminiGenerationConfig,
+  PRIMARY_GEMINI_MODEL,
+} from "../_shared/oracle-conversation-policy.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -461,6 +468,7 @@ serve(async (req) => {
       guideKey,
       priorSummary,
     } = normalized;
+    const isFirstTurn = messages.filter((message) => message.role === "user").length === 1;
 
     // The caller never gets to choose its user id. A valid Supabase JWT is the
     // only source of authenticated identity; the legacy body.userId field is
@@ -625,11 +633,18 @@ serve(async (req) => {
     // Select guide (fallback to default if invalid)
     const selectedGuide = GUIDES[guideKey] || GUIDES[DEFAULT_GUIDE];
     // Oracle unique sans nom : on ignore le guide choisi, une seule voix.
-    let systemPrompt = ORACLE_PROMPT;
+    let systemPrompt = isFirstTurn ? FIRST_TURN_ORACLE_PROMPT : ORACLE_PROMPT;
 
-    // Enrich with personalized feedback history (non-blocking)
-    const feedbackContext = await buildFeedbackContext(userId ?? null, sessionId ?? null, guideKey || DEFAULT_GUIDE);
-    systemPrompt += feedbackContext;
+    // Feedback can tune later turns. The first-turn prompt stays autonomous so
+    // no historical preference can restore the verbose astrological checklist.
+    if (!isFirstTurn) {
+      const feedbackContext = await buildFeedbackContext(userId ?? null, sessionId ?? null, guideKey || DEFAULT_GUIDE);
+      systemPrompt += feedbackContext;
+    }
+    systemPrompt += buildOracleConversationInstructions({
+      firstTurn: isFirstTurn,
+      category: normalized.category,
+    });
 
     // Inject a recap of the user's prior conversation(s) when the client
     // asks us to. This is what makes the oracle feel like a returning friend
@@ -645,7 +660,7 @@ serve(async (req) => {
     // 'offline' = neither responded. Surfaced to the client so the UI can
     // show a subtle warning instead of silently serving cold answers.
     let engineStatus: "ok" | "degraded" | "offline" = "ok";
-    let cosmicOk = false;
+    let cosmicOk = isFirstTurn;
     let profileOk = !profile?.birthDate; // only required when we expect it
     try {
       // Cosmic snapshot (always available). One retry on transient failure.
@@ -664,7 +679,7 @@ serve(async (req) => {
         }
         return null;
       };
-      const cosmicRes = await fetchCosmic().catch(() => null);
+      const cosmicRes = isFirstTurn ? null : await fetchCosmic().catch(() => null);
       if (cosmicRes?.ok) {
         cosmicOk = true;
         const cosmic = await cosmicRes.json() as CosmicSnapshot;
@@ -803,7 +818,7 @@ serve(async (req) => {
           }
 
           const activeTransits = ctx.active_transits ?? [];
-          if (activeTransits.length > 0) {
+          if (!isFirstTurn && activeTransits.length > 0) {
             engineContext += `\n\nTRANSITS ACTIFS AUJOURD'HUI :`;
             for (const t of activeTransits.slice(0, 8)) {
               const retro = t.transit_retrograde ? " ℞" : "";
@@ -873,33 +888,38 @@ serve(async (req) => {
       parts: [{ text: m.content }],
     }));
 
-    const GEMINI_MODEL = "gemini-2.5-flash";
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GOOGLE_API_KEY}`,
-      {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          system_instruction: { parts: [{ text: systemPrompt + engineContext }] },
-          contents: geminiContents,
-          // gemini-2.5-flash is a "thinking" model. With no thinkingConfig its
-          // (dynamic, unbounded) reasoning tokens are billed against
-          // maxOutputTokens, so on high-thinking draws the visible answer is
-          // truncated mid-sentence and the ---SUGGESTIONS--- block never
-          // appears (root cause of the "réponses nulles" reported 31/05).
-          // Cap thinking at 512 and raise the output ceiling so the answer
-          // always has >=2560 tokens of headroom. [2026-05-31]
-          generationConfig: {
-            maxOutputTokens: 3072,
-            temperature: 0.9,
-            thinkingConfig: { thinkingBudget: 512 },
-          },
-        }),
-      },
-    );
+    const callGemini = (model: string) =>
+      fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GOOGLE_API_KEY}`,
+        {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            system_instruction: { parts: [{ text: systemPrompt + engineContext }] },
+            contents: geminiContents,
+            // gemini-2.5-flash is a "thinking" model. With no thinkingConfig its
+            // (dynamic, unbounded) reasoning tokens are billed against
+            // maxOutputTokens, so on high-thinking draws the visible answer is
+            // truncated mid-sentence and the ---SUGGESTIONS--- block never
+            // appears (root cause of the "réponses nulles" reported 31/05).
+            // Cap thinking at 512 and raise the output ceiling so the answer
+            // always has >=2560 tokens of headroom. [2026-05-31]
+            generationConfig: geminiGenerationConfig(model),
+          }),
+        },
+      );
+
+    let activeGeminiModel = PRIMARY_GEMINI_MODEL;
+    let response = await callGemini(activeGeminiModel);
+    if (response.status === 429) {
+      const primaryError = await response.text();
+      console.warn("Gemini primary quota exhausted, using stable fallback:", primaryError.slice(0, 500));
+      activeGeminiModel = FALLBACK_GEMINI_MODEL;
+      response = await callGemini(activeGeminiModel);
+    }
 
     if (!response.ok) {
-      console.error("Gemini error:", response.status, (await response.text()).slice(0, 200));
+      console.error(`Gemini error (${activeGeminiModel}):`, response.status, (await response.text()).slice(0, 500));
       if (response.status === 429) {
         return new Response(JSON.stringify({ error: "Les astres sont très sollicités. Réessaie dans un instant." }), {
           status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" },
