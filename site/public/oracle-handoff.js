@@ -11,6 +11,8 @@
   var SOURCE_RE = /^[a-z0-9][a-z0-9-]{1,39}$/;
   var DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
   var TIME_RE = /^(?:[01]\d|2[0-3]):[0-5]\d$/;
+  var LOCALE_RE = /^[a-z]{2}$/;
+  var ACQUISITION_JOURNEY_VERSION = "oracle_acquisition_v1";
 
   function cleanText(value, maxLength) {
     if (typeof value !== "string") return "";
@@ -47,6 +49,21 @@
     return Object.keys(profile).length ? profile : undefined;
   }
 
+  function normalizeAcquisition(input, source) {
+    if (input == null) return undefined;
+    if (typeof input !== "object" || Array.isArray(input)) return null;
+    if (input.journeyVersion !== ACQUISITION_JOURNEY_VERSION) return null;
+    if (input.tool !== source || !SOURCE_RE.test(input.tool)) return null;
+    if (input.primaryOffer !== "oracle" && input.primaryOffer !== "reading") return null;
+    if (typeof input.locale !== "string" || !LOCALE_RE.test(input.locale)) return null;
+    return {
+      journeyVersion: ACQUISITION_JOURNEY_VERSION,
+      tool: input.tool,
+      locale: input.locale,
+      primaryOffer: input.primaryOffer,
+    };
+  }
+
   function create(input, now) {
     if (!input || typeof input !== "object" || Array.isArray(input)) return null;
     if (typeof input.source !== "string" || !SOURCE_RE.test(input.source)) return null;
@@ -67,6 +84,9 @@
     var profile = normalizeProfile(input.profile);
     if (profile === null) return null;
     if (profile) payload.profile = profile;
+    var acquisition = normalizeAcquisition(input.acquisition, payload.source);
+    if (acquisition === null) return null;
+    if (acquisition) payload.acquisition = acquisition;
     return payload;
   }
 
@@ -131,6 +151,7 @@
     LEGACY_KEY: LEGACY_KEY,
     VERSION: VERSION,
     TTL_MS: TTL_MS,
+    ACQUISITION_JOURNEY_VERSION: ACQUISITION_JOURNEY_VERSION,
     cleanHref: cleanHref,
     create: create,
     consume: consume,

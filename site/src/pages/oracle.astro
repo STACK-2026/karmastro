@@ -41,6 +41,7 @@ const jsonLd = [
             <p class="text-xs text-white/60 text-center mb-4">Crée gratuitement ton profil dans ton espace personnel. Tu pourras y saisir tes informations de naissance et retrouver cette conversation.</p>
             <a data-oracle-handoff data-next="/oracle" href="https://app.karmastro.com/auth?next=%2Foracle" class="block w-full px-5 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm text-center hover:opacity-90 transition-opacity">Créer mon profil gratuit ✦</a>
           </div>
+          <p id="oracle-acquisition-context" class="hidden max-w-lg mx-auto mb-4 text-sm text-white/70"></p>
           <p class="text-white/70 mb-2 text-sm">Si tu veux, choisis d'abord un angle :</p>
           <p class="text-white/45 mb-4 text-xs">Facultatif. Écris ensuite ta question avec tes propres mots.</p>
           <div class="flex flex-wrap gap-2 justify-center" id="oracle-starters">
@@ -72,9 +73,15 @@ const jsonLd = [
   const CONVERSATION_KEY = "km_oracle_conversation";
   const JOURNEY_VERSION = "oracle_conversation_v1";
   const ACTIVATION_JOURNEY_VERSION = "oracle_activation_v1";
+  const ACQUISITION_JOURNEY_VERSION = "oracle_acquisition_v1";
   const ACTIVATION_EVENTS = new Set([
     "oracle_signup_wall_viewed",
     "oracle_signup_wall_cta_clicked",
+  ]);
+  const ACQUISITION_EVENTS = new Set([
+    "oracle_entry_viewed_v2",
+    "oracle_first_question_submitted_v1",
+    "oracle_first_response_delivered_v1",
   ]);
   const thread = document.getElementById("oracle-thread")!;
   const empty = document.getElementById("oracle-empty");
@@ -95,7 +102,9 @@ const jsonLd = [
     try {
       const journeyVersion = ACTIVATION_EVENTS.has(name)
         ? ACTIVATION_JOURNEY_VERSION
-        : JOURNEY_VERSION;
+        : ACQUISITION_EVENTS.has(name)
+          ? ACQUISITION_JOURNEY_VERSION
+          : JOURNEY_VERSION;
       (window as any).km?.trackEvent(name, { ...properties, journey_version: journeyVersion });
     } catch {}
   }
@@ -116,12 +125,39 @@ const jsonLd = [
   type OracleHandoff = {
     source: string;
     question?: string;
+    acquisition?: {
+      journeyVersion: "oracle_acquisition_v1";
+      tool: string;
+      locale: string;
+      primaryOffer: "oracle" | "reading";
+    };
   };
   const handoffApi = (window as any).kmOracleHandoff;
   const incomingHandoff = (handoffApi?.consume?.() || null) as OracleHandoff | null;
   const urlSource = new URLSearchParams(location.search).get("src") || "";
   const oracleSource = incomingHandoff?.source
     || (/^[a-z0-9][a-z0-9-]{1,39}$/.test(urlSource) ? urlSource : "direct");
+  const acquisitionContext = incomingHandoff?.acquisition || null;
+  const acquisitionContextLabel = document.getElementById("oracle-acquisition-context");
+  if (acquisitionContext && acquisitionContextLabel) {
+    const toolLabels: Record<string, string> = {
+      "annee-personnelle": "ton année personnelle",
+      ascendant: "ton ascendant",
+      "chemin-de-vie": "ton chemin de vie",
+      compatibilite: "ta compatibilité numérologique",
+      "dette-karmique": "tes dettes karmiques",
+      "nombre-expression": "ton nombre d'expression",
+      synastrie: "ta synastrie",
+      "theme-natal": "ton thème natal",
+      transits: "tes transits",
+    };
+    const label = toolLabels[acquisitionContext.tool];
+    if (label) {
+      acquisitionContextLabel.textContent =
+        `Tu viens de calculer ${label}. Ton résultat n'est pas transmis : écris ici ce que tu veux éclaircir.`;
+      acquisitionContextLabel.classList.remove("hidden");
+    }
+  }
   const legacyQuestion = handoffApi?.consumeLegacyQuestion?.() || "";
   let pendingQuestion = incomingHandoff?.question || legacyQuestion;
   const history: { role: string; content: string }[] = [];
@@ -139,6 +175,14 @@ const jsonLd = [
     locale: document.documentElement.lang || "fr",
     has_handoff: Boolean(incomingHandoff),
   });
+  if (acquisitionContext) {
+    trackOracleEvent("oracle_entry_viewed_v2", {
+      source: oracleSource,
+      locale: acquisitionContext.locale,
+      has_handoff: true,
+      primary_offer: acquisitionContext.primaryOffer,
+    });
+  }
 
   function bubble(role: string, text: string): HTMLElement {
     const wrap = document.createElement("div");
@@ -208,6 +252,13 @@ const jsonLd = [
         source: oracleSource,
         category: selectedCategory,
       });
+      if (acquisitionContext) {
+        trackOracleEvent("oracle_first_question_submitted_v1", {
+          source: oracleSource,
+          category: selectedCategory,
+          primary_offer: acquisitionContext.primaryOffer,
+        });
+      }
     }
     if (turn === 2) trackOracleEvent("oracle_second_turn", { source: oracleSource });
     const out = bubble("assistant", "…");
@@ -261,11 +312,20 @@ const jsonLd = [
             const delta = d.choices?.[0]?.delta?.content;
             if (delta) {
               full += delta; out.textContent = full; thread.scrollTop = thread.scrollHeight;
-              if (!firstResponseTracked && turn === 1) {
+              if (!firstResponseTracked && (turn === 1 || acquisitionContext)) {
                 firstResponseTracked = true;
                 const latency = performance.now() - startedAt;
                 const latencyBucket = latency < 1000 ? "under_1s" : latency < 3000 ? "1_3s" : latency < 6000 ? "3_6s" : "over_6s";
-                trackOracleEvent("oracle_first_response", { source: oracleSource, latency_bucket: latencyBucket });
+                if (turn === 1) {
+                  trackOracleEvent("oracle_first_response", { source: oracleSource, latency_bucket: latencyBucket });
+                }
+                if (acquisitionContext) {
+                  trackOracleEvent("oracle_first_response_delivered_v1", {
+                    source: oracleSource,
+                    latency_bucket: latencyBucket,
+                    primary_offer: acquisitionContext.primaryOffer,
+                  });
+                }
               }
             }
             if (d.suggestions) suggestions = d.suggestions;

@@ -253,6 +253,66 @@
       "journey_version": "oracle_activation_v1",
       "owner": "product",
       "deprecated_at": null
+    },
+    {
+      "name": "oracle_acquisition_cta_viewed_v1",
+      "definition": "A marked post-result acquisition surface reached the viewport.",
+      "surface": ["site"],
+      "unit": "impression",
+      "trigger": "Once when 40 percent of the explicit result CTA is visible.",
+      "allowed_properties": ["tool", "locale", "primary_offer", "journey_version"],
+      "introduced_at": "2026-07-27",
+      "journey_version": "oracle_acquisition_v1",
+      "owner": "product",
+      "deprecated_at": null
+    },
+    {
+      "name": "oracle_acquisition_cta_clicked_v1",
+      "definition": "The Oracle link on a marked post-result acquisition surface was clicked.",
+      "surface": ["site"],
+      "unit": "click",
+      "trigger": "Before storing the same-origin Oracle handoff.",
+      "allowed_properties": ["tool", "locale", "primary_offer", "journey_version"],
+      "introduced_at": "2026-07-27",
+      "journey_version": "oracle_acquisition_v1",
+      "owner": "product",
+      "deprecated_at": null
+    },
+    {
+      "name": "oracle_entry_viewed_v2",
+      "definition": "The public Oracle loaded from a valid Lot C acquisition handoff.",
+      "surface": ["site"],
+      "unit": "session",
+      "trigger": "Once after consuming a marked same-origin acquisition handoff.",
+      "allowed_properties": ["source", "locale", "has_handoff", "primary_offer", "journey_version"],
+      "introduced_at": "2026-07-27",
+      "journey_version": "oracle_acquisition_v1",
+      "owner": "product",
+      "deprecated_at": null
+    },
+    {
+      "name": "oracle_first_question_submitted_v1",
+      "definition": "The first user-authored question followed a valid Lot C acquisition handoff.",
+      "surface": ["site"],
+      "unit": "session",
+      "trigger": "Immediately before the first Oracle request in an acquisition session.",
+      "allowed_properties": ["source", "category", "primary_offer", "journey_version"],
+      "introduced_at": "2026-07-27",
+      "journey_version": "oracle_acquisition_v1",
+      "owner": "product",
+      "deprecated_at": null
+    },
+    {
+      "name": "oracle_first_response_delivered_v1",
+      "definition": "The first Oracle response began rendering after a valid Lot C acquisition handoff.",
+      "surface": ["site"],
+      "unit": "session",
+      "trigger": "On the first delivered assistant content in an acquisition session.",
+      "allowed_properties": ["source", "latency_bucket", "primary_offer", "journey_version"],
+      "introduced_at": "2026-07-27",
+      "journey_version": "oracle_acquisition_v1",
+      "owner": "product",
+      "deprecated_at": null
     }
   ]
 }
