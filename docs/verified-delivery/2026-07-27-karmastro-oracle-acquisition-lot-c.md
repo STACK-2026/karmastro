@@ -147,6 +147,10 @@ suite (89 tests), lint, typecheck, app build, site guards (19 tests), and
 - Cloudflare's Git integration published the merge while the shared
   self-hosted runners were occupied. Direct production probes confirmed the
   new tracker and pages before the queued deploy workflow started.
+- Cloudflare Pages deployment
+  `1c52b080-0a08-403c-a274-3f883bc642a1` completed successfully for production
+  branch `main` and exact commit
+  `8c2611ddf6c5bc5e758d0efe03e0b6e3ea77da7e`.
 - All nine French tool URLs returned HTTP 200. Each rendered exactly one
   `data-oracle-acquisition-cta`, exactly one
   `data-acquisition-primary="true"`, and no `/oracle/?q` URL.
