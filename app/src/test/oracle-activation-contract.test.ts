@@ -69,6 +69,17 @@ describe("Oracle activation journey contract", () => {
     );
   });
 
+  it("allows every browser method used by pending-turn and refreshes at availability", () => {
+    expect(pendingFunction).toContain(
+      '"Access-Control-Allow-Methods": "GET, POST, PATCH, DELETE, OPTIONS"',
+    );
+    expect(appOracle).toContain("window.setTimeout(");
+    expect(appOracle).toContain("setPendingAvailabilityNow(Date.now())");
+    expect(appOracle).toContain(
+      "Date.parse(pendingTurn.nextAvailableAt) <= pendingAvailabilityNow",
+    );
+  });
+
   it("consumes the activation grant only after the exchange is persisted", () => {
     const persistedGuard = chatFunction.indexOf("if (!exchangePersisted)");
     const consume = chatFunction.indexOf('"consume_oracle_activation_grant"', persistedGuard);

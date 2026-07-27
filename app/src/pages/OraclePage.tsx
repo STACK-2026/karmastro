@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Send, Sparkles, Stars } from "lucide-react";
 import AppHeader from "@/components/AppHeader";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
@@ -135,6 +136,7 @@ const OraclePage = () => {
   } | null>(null);
   const [pendingDraft, setPendingDraft] = useState("");
   const [pendingEditing, setPendingEditing] = useState(false);
+  const [pendingAvailabilityNow, setPendingAvailabilityNow] = useState(() => Date.now());
   const scrollRef = useRef<HTMLDivElement>(null);
   const previousMessageCountRef = useRef(0);
   const pendingAutoRef = useRef<string | null>(null);
@@ -576,9 +578,14 @@ const OraclePage = () => {
       setPendingDraft("");
       setPendingEditing(false);
       setMessages((current) => {
-        const index = current.findLastIndex((message) =>
-          message.role === "user" && message.content.trim() === deletedText.trim()
-        );
+        let index = -1;
+        for (let messageIndex = current.length - 1; messageIndex >= 0; messageIndex -= 1) {
+          const message = current[messageIndex];
+          if (message.role === "user" && message.content.trim() === deletedText.trim()) {
+            index = messageIndex;
+            break;
+          }
+        }
         return index < 0 ? current : current.filter((_, messageIndex) => messageIndex !== index);
       });
     } catch (error) {
@@ -635,12 +642,29 @@ const OraclePage = () => {
     return () => { cancelled = true; };
   }, [historyHydrated, isLoading, user, userProfile.isLoading]);
 
+  useEffect(() => {
+    if (!pendingTurn || pendingTurn.wallType !== "authenticated_interim_limit_v1") return;
+    const availableAt = Date.parse(pendingTurn.nextAvailableAt);
+    if (!Number.isFinite(availableAt)) return;
+
+    const now = Date.now();
+    setPendingAvailabilityNow(now);
+    const delay = availableAt - now;
+    if (delay <= 0) return;
+
+    const timer = window.setTimeout(
+      () => setPendingAvailabilityNow(Date.now()),
+      Math.min(delay + 50, 2_147_483_647),
+    );
+    return () => window.clearTimeout(timer);
+  }, [pendingTurn]);
+
   const Icon = currentGuide.icon;
   const pendingAvailability = pendingTurn
     ? formatOracleAvailability(pendingTurn.nextAvailableAt, navigator.language)
     : null;
   const pendingIsAvailable = pendingTurn
-    ? Date.parse(pendingTurn.nextAvailableAt) <= Date.now()
+    ? Date.parse(pendingTurn.nextAvailableAt) <= pendingAvailabilityNow
     : false;
   const pendingAvailabilityText = pendingAvailability
     ? t(
