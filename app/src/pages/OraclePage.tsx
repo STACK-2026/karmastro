@@ -559,6 +559,7 @@ const OraclePage = () => {
   const savePendingTurn = async () => {
     if (!pendingTurn || !pendingDraft.trim()) return;
     try {
+      const previousText = pendingTurn.text;
       const response = await fetch(PENDING_TURN_URL, {
         method: "PATCH",
         headers: await pendingAuth(),
@@ -566,9 +567,25 @@ const OraclePage = () => {
       });
       const data = await response.json().catch(() => ({}));
       if (!response.ok || typeof data.pending_turn?.text !== "string") return;
+      const savedText = data.pending_turn.text;
       setPendingTurn((current) => current
-        ? { ...current, text: data.pending_turn.text }
+        ? { ...current, text: savedText }
         : current);
+      setMessages((current) => {
+        for (let messageIndex = current.length - 1; messageIndex >= 0; messageIndex -= 1) {
+          const message = current[messageIndex];
+          if (
+            message.role === "user"
+            && message.content.replace(/\s+/g, " ").trim()
+              === previousText.replace(/\s+/g, " ").trim()
+          ) {
+            return current.map((item, index) => index === messageIndex
+              ? { ...item, content: savedText }
+              : item);
+          }
+        }
+        return current;
+      });
       setPendingEditing(false);
     } catch (error) {
       console.warn("[pending-turn] update failed", getErrorMessage(error));
