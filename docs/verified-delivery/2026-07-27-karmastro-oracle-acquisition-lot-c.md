@@ -132,3 +132,40 @@ attribution. The final static review found the app event-registry test still
 rejected the new journey version; its allowlist is now aligned. The full app
 suite (89 tests), lint, typecheck, app build, site guards (19 tests), and
 8,053-page Astro build all pass after the fix.
+
+## Production evidence
+
+- Product pull request:
+  [#51](https://github.com/STACK-2026/karmastro/pull/51).
+- Reviewed head:
+  `153abd81ebf27a3ea1e801346852e59671705bcb`.
+- Merge commit on `main`:
+  `8c2611ddf6c5bc5e758d0efe03e0b6e3ea77da7e`.
+- Every pull-request check passed before merge: Astro and Vite builds, i18n,
+  content standards, dash guard, cross-project scan, blog smoke, and both
+  Cloudflare project checks.
+- Cloudflare's Git integration published the merge while the shared
+  self-hosted runners were occupied. Direct production probes confirmed the
+  new tracker and pages before the queued deploy workflow started.
+- Cloudflare Pages deployment
+  `1c52b080-0a08-403c-a274-3f883bc642a1` completed successfully for production
+  branch `main` and exact commit
+  `8c2611ddf6c5bc5e758d0efe03e0b6e3ea77da7e`.
+- All nine French tool URLs returned HTTP 200. Each rendered exactly one
+  `data-oracle-acquisition-cta`, exactly one
+  `data-acquisition-primary="true"`, and no `/oracle/?q` URL.
+- `/oracle/` returned HTTP 200. Its deployed bundle contained all three
+  downstream clean-funnel events and the explicit sentence
+  `Ton résultat n'est pas transmis`.
+- The deployed tracker contained both
+  `oracle_acquisition_cta_viewed_v1` and the explicit
+  `intersectionRatio < 0.4` guard.
+- The two `blur-*` occurrences on the karmic-debt page belong only to the
+  language menu's `backdrop-blur-xl`; no free result field remains blurred.
+- The first aggregate read after deployment returned an empty clean Lot C
+  funnel, which is the expected zero state before a real post-deploy
+  impression. It must not be combined with legacy events.
+
+This evidence proves publication and measurement readiness. It does not prove
+a conversion uplift. Product evaluation starts with real impressions dated on
+or after 2026-07-27.
