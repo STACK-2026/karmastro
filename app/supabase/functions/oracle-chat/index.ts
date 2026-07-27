@@ -14,6 +14,7 @@ import {
   profileForOracleIdentity,
   shouldPersistOracleProfileHints,
 } from "../_shared/oracle-anonymous-policy.ts";
+import { buildOracleConversationInstructions } from "../_shared/oracle-conversation-policy.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -630,6 +631,10 @@ serve(async (req) => {
     // Enrich with personalized feedback history (non-blocking)
     const feedbackContext = await buildFeedbackContext(userId ?? null, sessionId ?? null, guideKey || DEFAULT_GUIDE);
     systemPrompt += feedbackContext;
+    systemPrompt += buildOracleConversationInstructions({
+      firstTurn: messages.filter((message) => message.role === "user").length === 1,
+      category: normalized.category,
+    });
 
     // Inject a recap of the user's prior conversation(s) when the client
     // asks us to. This is what makes the oracle feel like a returning friend

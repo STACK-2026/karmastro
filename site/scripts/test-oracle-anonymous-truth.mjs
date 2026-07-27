@@ -20,6 +20,7 @@ test("the public Oracle never pretends to personalise an anonymous exchange", as
 
   assert.match(page, /Créer mon profil gratuit/);
   assert.match(page, /dans ton espace personnel/);
+  assert.match(page, /Écris ensuite ta question avec tes propres mots/);
 });
 
 test("the one-time paid reading may still request the birth date it needs", async () => {

@@ -52,7 +52,7 @@ Observed on 2026-07-27:
 - [x] Worker production canary
 - [x] RED contract for public Oracle
 - [x] Public hotfix implementation
-- [ ] Build, review, deployment, and live smoke
+- [x] Build, review, deployment, and live smoke
 
 ## Rollback records
 
@@ -88,3 +88,31 @@ Observed on 2026-07-27:
 - Cross-surface regression suite: 33 passed, 0 failed.
 - Full static build: 8,053 pages generated; content, fragment, and app-link
   guards passed.
+- PR 47 checks passed; merge SHA:
+  `6df6a92805b8c621f62cedb1d9e9c5121e25c4bf`.
+- Cloudflare production run `30263891027` passed.
+- Live smoke: HTTP 200, free-profile CTA present, anonymous profile form and
+  false promises absent; the deployed bundle only references the legacy profile
+  key to delete it.
+
+## Lot A local evidence
+
+- RED: missing conversation policy module, unregistered events, message-sending
+  starter buttons, and absent conversation persistence.
+- Four optional categories are normalized as server-owned enums and rejected
+  when arbitrary text is supplied.
+- First-turn system override requires 70 to 120 words, reflection, one useful
+  foothold and one question; it forbids citations, transit lists, mystical
+  appellatives, and automatic birth-date requests.
+- Site and app category buttons set metadata without creating a user message.
+- Shared event registry records `introduced_at`, allowed properties and
+  `oracle_conversation_v1`.
+- Anonymous conversation UUID persists without storing question text.
+- Edge shared suite: 46 passed, 0 failed.
+- App suite: 72 passed, 0 failed.
+- App lint, repository typecheck command and Vite build passed.
+- Oracle Edge Function typecheck passed.
+- Site conversation and privacy contracts passed; Astro generated 8,053 pages.
+
+Lot A remains local until separate review, PR, Edge Function deployment, and
+first-turn canary.

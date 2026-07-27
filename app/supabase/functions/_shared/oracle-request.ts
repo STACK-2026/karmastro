@@ -1,3 +1,8 @@
+import {
+  normalizeOracleCategory,
+  type OracleCategory,
+} from "./oracle-conversation-policy.ts";
+
 export type OracleMessage = {
   role: "user" | "assistant";
   content: string;
@@ -41,6 +46,7 @@ export type NormalizedChatRequest = {
   sessionId: string | null;
   conversationId: string | null;
   priorSummary: string | null;
+  category: OracleCategory | null;
 };
 
 export class OracleRequestError extends Error {
@@ -207,6 +213,10 @@ export function normalizeChatRequest(value: unknown): NormalizedChatRequest {
 
   const guideKey = asTrimmedString(body.guide, 32) || "oracle";
   const priorSummary = asTrimmedString(body.priorSummary, 4_000) || null;
+  const category = normalizeOracleCategory(body.category);
+  if (body.category !== undefined && body.category !== null && !category) {
+    throw new OracleRequestError("invalid_category");
+  }
 
   return {
     messages,
@@ -215,6 +225,7 @@ export function normalizeChatRequest(value: unknown): NormalizedChatRequest {
     sessionId,
     conversationId,
     priorSummary,
+    category,
   };
 }
 

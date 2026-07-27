@@ -11,6 +11,9 @@ import { useUserProfile } from "@/hooks/useUserProfile";
 import { trackEvent } from "@/lib/tracker";
 import {
   oracleEntryViewedEvent,
+  oracleCategorySelectedEvent,
+  oracleFirstQuestionSubmittedEvent,
+  oracleFeedbackSubmittedEvent,
   oracleHandoffClickEvent,
   oraclePaywallEvents,
   oracleResponseEvents,
@@ -37,6 +40,7 @@ type Msg = {
 };
 
 type GuideKey = "oracle";
+type OracleCategory = "clarity_decision" | "relationship" | "work_direction" | "self_understanding";
 
 type GuideMeta = {
   key: GuideKey;
@@ -110,6 +114,7 @@ const OraclePage = () => {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [conversationId, setConversationId] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<OracleCategory | null>(null);
   const [claimVersion, setClaimVersion] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
   const previousMessageCountRef = useRef(0);
@@ -211,7 +216,12 @@ const OraclePage = () => {
       const { error } = await supabase.from("oracle_feedback").insert(payload);
       if (error) throw error;
 
-      trackEvent("oracle_feedback_submitted", { guide: guideKey, rating, has_text: Boolean(text?.trim()) });
+      const feedbackEvent = oracleFeedbackSubmittedEvent({
+        guide: guideKey,
+        rating,
+        hasText: Boolean(text?.trim()),
+      });
+      void trackEvent(feedbackEvent.name, feedbackEvent.properties);
       setFeedback((prev) => ({ ...prev, [messageIndex]: { status: "submitted", rating } }));
       if (text?.trim()) {
         const guideName = currentGuide ? t(currentGuide.nameKey) : t("oracle.header_title");
@@ -286,6 +296,10 @@ const OraclePage = () => {
 
     const userMsg: Msg = { role: "user", content: msgText };
     const priorUserTurns = messages.filter((message) => message.role === "user").length;
+    if (priorUserTurns === 0) {
+      const event = oracleFirstQuestionSubmittedEvent({ source: "app", category: selectedCategory });
+      void trackEvent(event.name, event.properties);
+    }
     setMessages(prev => [...prev, userMsg]);
     setInput("");
     setIsLoading(true);
@@ -309,6 +323,7 @@ const OraclePage = () => {
           sessionId: user?.id ? null : getSessionId(),
           conversationId,
           priorSummary: messages.length === 0 ? priorSummary : null,
+          category: selectedCategory,
         }),
       });
 
@@ -470,17 +485,28 @@ const OraclePage = () => {
               className="flex flex-col gap-2 max-w-md mx-auto"
             >
               {([
-                "oracle.empty_choice_lost",
-                "oracle.empty_choice_precise",
-                "oracle.empty_choice_explore",
-              ] as UiKey[]).map((k) => {
-                const label = t(k);
+                ["clarity_decision", "oracle.empty_choice_lost"],
+                ["relationship", "oracle.empty_choice_precise"],
+                ["work_direction", "oracle.empty_choice_explore"],
+                ["self_understanding", "oracle.guide_sibylle_sugg4"],
+              ] as Array<[OracleCategory, UiKey]>).map(([category, labelKey]) => {
+                const label = t(labelKey);
+                const selected = selectedCategory === category;
                 return (
                   <button
-                    key={k}
-                    onClick={() => handleSend(label)}
+                    key={category}
+                    type="button"
+                    aria-pressed={selected}
+                    onClick={() => {
+                      const next = selected ? null : category;
+                      setSelectedCategory(next);
+                      if (next) {
+                        const event = oracleCategorySelectedEvent({ source: "app", category: next });
+                        void trackEvent(event.name, event.properties);
+                      }
+                    }}
                     aria-label={label}
-                    className="text-sm text-left rounded-xl border border-amber-300/30 bg-amber-300/5 hover:bg-amber-300/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/60 text-amber-100/90 px-4 py-3 transition-colors"
+                    className={`text-sm text-left rounded-xl border hover:bg-amber-300/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/60 text-amber-100/90 px-4 py-3 transition-colors ${selected ? "border-amber-300/70 bg-amber-300/20" : "border-amber-300/30 bg-amber-300/5"}`}
                   >
                     {label}
                   </button>
@@ -741,26 +767,6 @@ const OraclePage = () => {
             </div>
           </div>
         )}
-      </div>
-
-      {/* Fixed guide suggestions : visible only on empty state as a secondary
-          entry path. Once the conversation starts, we rely on the dynamic
-          ---SUGGESTIONS--- chips rendered under each assistant reply. */}
-      <div className={`relative z-10 px-5 pb-2 ${messages.length === 0 ? "" : "hidden"}`}>
-        <div className="flex flex-wrap justify-center gap-2 pb-2">
-          {currentGuide.suggestionKeys.map(sk => {
-            const s = t(sk);
-            return (
-              <button
-                key={sk}
-                onClick={() => handleSend(s)}
-                className="text-xs border border-primary/30 text-primary rounded-full px-3 py-1.5 whitespace-nowrap hover:bg-primary/10 transition-colors shrink-0"
-              >
-                {s}
-              </button>
-            );
-          })}
-        </div>
       </div>
 
       <div className="relative z-10 px-5 pb-4">

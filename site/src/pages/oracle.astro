@@ -41,11 +41,13 @@ const jsonLd = [
             <p class="text-xs text-white/60 text-center mb-4">Crée gratuitement ton profil dans ton espace personnel. Tu pourras y saisir tes informations de naissance et retrouver cette conversation.</p>
             <a data-oracle-handoff data-next="/oracle" href="https://app.karmastro.com/auth?next=%2Foracle" class="block w-full px-5 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm text-center hover:opacity-90 transition-opacity">Créer mon profil gratuit ✦</a>
           </div>
-          <p class="text-white/70 mb-5 text-sm">Tu peux aussi commencer sans inscription :</p>
+          <p class="text-white/70 mb-2 text-sm">Si tu veux, choisis d'abord un angle :</p>
+          <p class="text-white/45 mb-4 text-xs">Facultatif. Écris ensuite ta question avec tes propres mots.</p>
           <div class="flex flex-wrap gap-2 justify-center" id="oracle-starters">
-            <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-q="Je me sens perdu·e, j'ai besoin de clarté">J'ai besoin de clarté</button>
-            <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-q="Une relation me questionne">Une relation me questionne</button>
-            <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-q="J'hésite face à une décision importante">J'hésite face à une décision</button>
+            <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-category="clarity_decision" aria-pressed="false">Clarté et décision</button>
+            <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-category="relationship" aria-pressed="false">Une relation</button>
+            <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-category="work_direction" aria-pressed="false">Travail et direction</button>
+            <button class="oracle-chip px-4 py-2 rounded-full border border-amber-300/30 text-amber-300 text-sm hover:bg-amber-300/10 transition-colors" data-category="self_understanding" aria-pressed="false">Mieux me comprendre</button>
           </div>
         </div>
       </div>
@@ -68,6 +70,8 @@ const jsonLd = [
 <script>
   const CHAT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/oracle-chat";
   const READING_CHECKOUT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/reading-checkout";
+  const CONVERSATION_KEY = "km_oracle_conversation";
+  const JOURNEY_VERSION = "oracle_conversation_v1";
   const thread = document.getElementById("oracle-thread")!;
   const empty = document.getElementById("oracle-empty");
   const input = document.getElementById("oracle-input") as HTMLInputElement;
@@ -83,6 +87,11 @@ const jsonLd = [
     if (!s) { s = "site-" + Math.random().toString(36).slice(2) + Date.now().toString(36); localStorage.setItem("km_oracle_session", s); }
     return s;
   }
+  function trackOracleEvent(name: string, properties: Record<string, unknown> = {}) {
+    try {
+      (window as any).km?.trackEvent(name, { ...properties, journey_version: JOURNEY_VERSION });
+    } catch {}
+  }
   function handoffUrl(next: string): string {
     const url = new URL("https://app.karmastro.com/auth");
     url.searchParams.set("oracle_session", sessionId());
@@ -93,7 +102,7 @@ const jsonLd = [
     const next = link.dataset.next || "/oracle";
     if (link instanceof HTMLAnchorElement) link.href = handoffUrl(next);
     link.addEventListener("click", () => {
-      try { (window as any).km?.trackEvent("oracle_handoff_click", { next }); } catch {}
+      trackOracleEvent("oracle_handoff_click", { source: "site", next });
     });
   });
 
@@ -110,16 +119,19 @@ const jsonLd = [
   let pendingQuestion = incomingHandoff?.question || legacyQuestion;
   const history: { role: string; content: string }[] = [];
   let conversationId: string | null = null;
+  try {
+    const storedConversation = localStorage.getItem(CONVERSATION_KEY);
+    if (/^[0-9a-f-]{36}$/i.test(storedConversation || "")) conversationId = storedConversation;
+  } catch {}
+  let selectedCategory: "clarity_decision" | "relationship" | "work_direction" | "self_understanding" | null = null;
   let busy = false;
   let firstResponseTracked = false;
 
-  try {
-    (window as any).km?.trackEvent("oracle_entry_viewed", {
-      source: oracleSource,
-      locale: document.documentElement.lang || "fr",
-      has_handoff: Boolean(incomingHandoff),
-    });
-  } catch {}
+  trackOracleEvent("oracle_entry_viewed", {
+    source: oracleSource,
+    locale: document.documentElement.lang || "fr",
+    has_handoff: Boolean(incomingHandoff),
+  });
 
   function bubble(role: string, text: string): HTMLElement {
     const wrap = document.createElement("div");
@@ -181,17 +193,17 @@ const jsonLd = [
       + '<p class="text-[11px] text-white/40 mt-3">Paiement sécurisé Stripe · sans engagement</p>'
       + "</div>";
     const etoileLink = wrap.querySelector("#km-pw-etoile");
-    if (etoileLink) etoileLink.addEventListener("click", () => { try { (window as any).km?.trackEvent("paywall_etoile_click", { source: oracleSource, billing_cycle: "monthly" }); } catch {} });
+    if (etoileLink) etoileLink.addEventListener("click", () => trackOracleEvent("paywall_etoile_click", { source: oracleSource, billing_cycle: "monthly" }));
     const oneShot = wrap.querySelector("#km-pw-one-shot") as HTMLDetailsElement | null;
     if (oneShot) oneShot.addEventListener("toggle", () => {
-      if (oneShot.open) { try { (window as any).km?.trackEvent("paywall_offer_view", { tool: "chemin-de-vie" }); } catch {} }
+      if (oneShot.open) trackOracleEvent("paywall_offer_view", { tool: "chemin-de-vie" });
     }, { once: true });
     // Offre lecture (anonyme) : checkout invite Chemin de Vie, sans compte requis.
     const buyBtn = wrap.querySelector("#km-pw-buy") as HTMLButtonElement | null;
     const birthInput = wrap.querySelector("#km-pw-birth") as HTMLInputElement | null;
     if (buyBtn && birthInput) {
       birthInput.addEventListener("change", () => {
-        if (birthInput.value) { try { (window as any).km?.trackEvent("paywall_offer_date_entered", {}); } catch {} }
+        if (birthInput.value) trackOracleEvent("paywall_offer_date_entered");
       });
       buyBtn.addEventListener("click", async () => {
         const birthDate = birthInput.value;
@@ -200,7 +212,7 @@ const jsonLd = [
         const original = buyBtn.textContent;
         buyBtn.disabled = true; buyBtn.textContent = "…";
         if (err) err.hidden = true;
-        try { (window as any).km?.trackEvent("paywall_offer_checkout_click", { tool: "chemin-de-vie" }); } catch {}
+        trackOracleEvent("paywall_offer_checkout_click", { tool: "chemin-de-vie" });
         try {
           const r = await fetch(READING_CHECKOUT_URL, {
             method: "POST", headers: { "Content-Type": "application/json" },
@@ -228,10 +240,14 @@ const jsonLd = [
     history.push({ role: "user", content: cleanText });
     bubble("user", cleanText);
     input.value = "";
-    try {
-      (window as any).km?.trackEvent("oracle_message_sent", { source: oracleSource, turn });
-      if (turn === 2) (window as any).km?.trackEvent("oracle_second_turn", { source: oracleSource });
-    } catch {}
+    trackOracleEvent("oracle_message_sent", { source: oracleSource, turn });
+    if (turn === 1) {
+      trackOracleEvent("oracle_first_question_submitted", {
+        source: oracleSource,
+        category: selectedCategory,
+      });
+    }
+    if (turn === 2) trackOracleEvent("oracle_second_turn", { source: oracleSource });
     const out = bubble("assistant", "…");
     let full = "";
     try {
@@ -239,6 +255,7 @@ const jsonLd = [
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           messages: history,
+          category: selectedCategory,
           guide: "oracle",
           sessionId: sessionId(),
           conversationId,
@@ -249,11 +266,13 @@ const jsonLd = [
         const data = await resp.json().catch(() => null);
         const pw = (data && data.paywall) || {};
         renderPaywall(out, pw);
-        try {
-          (window as any).km?.trackEvent("oracle_limit_hit", { source: oracleSource, turn, is_anon: !!pw.is_anon });
-          (window as any).km?.trackEvent("paywall_viewed", { source: oracleSource, surface: "oracle", is_anon: !!pw.is_anon });
-        } catch {}
+        trackOracleEvent("oracle_limit_hit", { source: oracleSource, turn, is_anon: !!pw.is_anon });
+        trackOracleEvent("paywall_viewed", { source: oracleSource, surface: "oracle", is_anon: !!pw.is_anon });
         return;
+      }
+      if (resp.status === 403 && conversationId) {
+        conversationId = null;
+        try { localStorage.removeItem(CONVERSATION_KEY); } catch {}
       }
       if (!resp.ok || !resp.body) {
         out.textContent = "Une brume cosmique passe. Réessaie dans un instant.";
@@ -283,11 +302,14 @@ const jsonLd = [
                 firstResponseTracked = true;
                 const latency = performance.now() - startedAt;
                 const latencyBucket = latency < 1000 ? "under_1s" : latency < 3000 ? "1_3s" : latency < 6000 ? "3_6s" : "over_6s";
-                try { (window as any).km?.trackEvent("oracle_first_response", { source: oracleSource, latency_bucket: latencyBucket }); } catch {}
+                trackOracleEvent("oracle_first_response", { source: oracleSource, latency_bucket: latencyBucket });
               }
             }
             if (d.suggestions) suggestions = d.suggestions;
-            if (d.conversation_id) conversationId = d.conversation_id;
+            if (d.conversation_id) {
+              conversationId = d.conversation_id;
+              try { localStorage.setItem(CONVERSATION_KEY, conversationId); } catch {}
+            }
           } catch {}
         }
       }
@@ -306,7 +328,21 @@ const jsonLd = [
   document.querySelectorAll(".oracle-chip").forEach((c) => {
     c.addEventListener("click", () => {
       const chip = c as HTMLElement;
-      send(chip.dataset.q || "");
+      const category = chip.dataset.category as typeof selectedCategory;
+      selectedCategory = selectedCategory === category ? null : category;
+      document.querySelectorAll<HTMLElement>(".oracle-chip").forEach((item) => {
+        const selected = item.dataset.category === selectedCategory;
+        item.setAttribute("aria-pressed", String(selected));
+        item.classList.toggle("bg-amber-300/20", selected);
+        item.classList.toggle("border-amber-300/70", selected);
+      });
+      if (selectedCategory) {
+        trackOracleEvent("oracle_category_selected", {
+          source: oracleSource,
+          category: selectedCategory,
+        });
+      }
+      input.focus();
     });
   });
 
