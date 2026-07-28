@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { SUPABASE_URL, supabase } from "@/integrations/supabase/client";
 import { ORACLE_HANDOFF_SESSION_KEY } from "@/lib/postAuth";
 
 const ALREADY_CLAIMED_KEY = "karmastro_oracle_session_claimed_at";
@@ -33,7 +33,7 @@ export function useClaimAnonSession() {
 
       running.current = true;
       try {
-        const url = `${supabase.supabaseUrl}/functions/v1/claim-anon-session`;
+        const url = `${SUPABASE_URL}/functions/v1/claim-anon-session`;
         const resp = await fetch(url, {
           method: "POST",
           headers: {

@@ -1,7 +1,12 @@
 // Tracker analytics universel pour l'app React Karmastro
 // Log : page_views (avec time_on_page) + analytics_events (custom)
 
-import { supabase } from "@/integrations/supabase/client";
+import {
+  SUPABASE_PUBLISHABLE_KEY,
+  SUPABASE_URL,
+  supabase,
+} from "@/integrations/supabase/client";
+import type { Json } from "@/integrations/supabase/types";
 
 const SESSION_KEY = "km_session_id";
 const UTM_KEY = "km_utm";
@@ -170,7 +175,7 @@ export async function trackEvent(
       session_id: getSessionId(),
       surface: "app",
       event_name: eventName,
-      properties,
+      properties: properties as Json,
       path: window.location.pathname,
     });
   } catch (e) {
@@ -233,8 +238,8 @@ if (typeof window !== "undefined") {
   window.addEventListener("beforeunload", () => {
     if (state.lastInsertId && state.timerStart) {
       const timeMs = Date.now() - state.timerStart;
-      const url = `${supabase.supabaseUrl}/rest/v1/rpc/track_page_metrics`;
-      const key = supabase.supabaseKey;
+      const url = `${SUPABASE_URL}/rest/v1/rpc/track_page_metrics`;
+      const key = SUPABASE_PUBLISHABLE_KEY;
       try {
         const blob = new Blob([JSON.stringify({ p_id: state.lastInsertId, p_time_on_page_ms: timeMs })], {
           type: "application/json",

@@ -27,6 +27,7 @@ import {
 } from "@/lib/oracle-analytics";
 import BottomNav from "@/components/BottomNav";
 import StarField from "@/components/StarField";
+import { EtoilePassCard } from "@/components/EtoilePassCard";
 import ReactMarkdown from "react-markdown";
 import { useT, type UiKey } from "@/i18n/ui";
 import { getErrorMessage } from "@/lib/errors";
@@ -138,6 +139,7 @@ const OraclePage = () => {
   } | null>(null);
   const [pendingDraft, setPendingDraft] = useState("");
   const [pendingEditing, setPendingEditing] = useState(false);
+  const [pendingProfileRequired, setPendingProfileRequired] = useState(false);
   const [pendingAvailabilityNow, setPendingAvailabilityNow] = useState(() => Date.now());
   const scrollRef = useRef<HTMLDivElement>(null);
   const previousMessageCountRef = useRef(0);
@@ -393,6 +395,7 @@ const OraclePage = () => {
 
         // Paywall (402) : show inline CTA instead of toast error
         if (resp.status === 402 && errData.paywall) {
+          setPendingProfileRequired(false);
           const limit = normalizeOracleLimitResponse(errData.paywall);
           trackOracleEvents(oraclePaywallEvents({
             isAnon: Boolean(errData.paywall.is_anon),
@@ -435,6 +438,17 @@ const OraclePage = () => {
               content: errData.paywall.message || t("oracle.paywall_default_msg"),
               isAnonPaywall: Boolean(errData.paywall.is_anon),
             },
+          ]);
+          return;
+        }
+
+        if (
+          resp.status === 429
+          && (errData.error === "promo_hourly_cap" || errData.error === "promo_total_cap")
+        ) {
+          setMessages((prev) => [
+            ...prev,
+            { role: "assistant", content: t("oracle.pass_fair_use_reached") },
           ]);
           return;
         }
@@ -553,6 +567,9 @@ const OraclePage = () => {
       });
       const data = await response.json().catch(() => ({}));
       if (!response.ok) {
+        if (data.error === "profile_incomplete") {
+          setPendingProfileRequired(true);
+        }
         if (data.next_available_at) {
           setPendingTurn((current) => current
             ? { ...current, nextAvailableAt: data.next_available_at }
@@ -560,6 +577,7 @@ const OraclePage = () => {
         }
         return;
       }
+      setPendingProfileRequired(false);
       const confirmedText = typeof data.pending_turn?.text === "string"
         ? data.pending_turn.text
         : turn.text;
@@ -609,6 +627,7 @@ const OraclePage = () => {
       });
       if (!response.ok) return;
       setPendingTurn(null);
+      setPendingProfileRequired(false);
       setPendingDraft("");
       setPendingEditing(false);
       setMessages((current) =>
@@ -652,6 +671,7 @@ const OraclePage = () => {
           wallType: turn.wall_type as OracleLimitSurface,
           nextAvailableAt: turn.next_available_at,
         };
+        setPendingProfileRequired(false);
         setPendingTurn(normalized);
         setPendingDraft(turn.text);
         if (
@@ -706,6 +726,10 @@ const OraclePage = () => {
       <StarField />
 
       <AppHeader title={t(currentGuide.nameKey)} subtitle={t(currentGuide.titleKey)} showBack />
+
+      <div className="relative z-10 px-5 pt-2">
+        <EtoilePassCard />
+      </div>
 
       {/* Subtle banner when the astral engine is partial. We prefer informing
           the user over pretending everything is fine. */}
@@ -1065,6 +1089,20 @@ const OraclePage = () => {
                   <p className="rounded-xl border border-white/10 bg-black/15 px-3 py-2 text-left text-sm text-white/85">
                     {pendingTurn.text}
                   </p>
+                  {pendingProfileRequired && (
+                    <div className="rounded-xl border border-amber-300/30 bg-amber-300/5 p-3">
+                      <p className="mb-2 text-xs leading-relaxed text-amber-100/80">
+                        {t("profile_boundary.description")}
+                      </p>
+                      <Button
+                        type="button"
+                        className="w-full"
+                        onClick={() => navigate("/onboarding?next=/oracle&reason=oracle_pending")}
+                      >
+                        {t("profile_boundary.complete")}
+                      </Button>
+                    </div>
+                  )}
                   <div className="grid grid-cols-2 gap-2">
                     <Button type="button" variant="outline" onClick={() => setPendingEditing(true)}>
                       {t("oracle.pending_modify")}
@@ -1080,6 +1118,7 @@ const OraclePage = () => {
                       onClick={() => confirmPendingTurn(pendingTurn)}
                       disabled={
                         isLoading
+                        || pendingProfileRequired
                         || (pendingTurn.wallType === "authenticated_interim_limit_v1"
                           && !pendingIsAvailable)
                       }

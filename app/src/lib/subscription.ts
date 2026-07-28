@@ -11,6 +11,30 @@ export function hasPremiumAccess(
   return Number.isFinite(expiry.getTime()) && expiry.getTime() > now.getTime();
 }
 
+export interface EffectiveSubscriptionState {
+  tier: string | null | undefined;
+  status: string | null | undefined;
+  periodEnd: string | null | undefined;
+  appleStatus: string | null | undefined;
+  applePeriodEnd: string | null | undefined;
+}
+
+export function hasEffectivePremiumAccess(
+  state: EffectiveSubscriptionState,
+  now = new Date(),
+): boolean {
+  return hasPremiumAccess(state.tier, state.status, state.periodEnd, now)
+    || hasPremiumAccess("etoile", state.appleStatus, state.applePeriodEnd, now);
+}
+
+export function resolveBillingDestination(
+  provider: "apple" | "stripe" | null,
+  hasBillingRelationship: boolean,
+): "apple" | "stripe" | "pricing" {
+  if (!hasBillingRelationship) return "pricing";
+  return provider === "apple" ? "apple" : "stripe";
+}
+
 export function parseIsoDateAsLocal(value: string | null | undefined): Date | null {
   if (!value) return null;
   const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);

@@ -92,7 +92,13 @@ const Dashboard = () => {
   const { toast } = useToast();
   const { user } = useAuth();
   const profile = useUserProfile();
-  const { firstName, astrology, numerology, isPremium } = profile;
+  const {
+    firstName,
+    astrology,
+    numerology,
+    isPremium,
+    isSubscriptionPremium,
+  } = profile;
   const [daily, setDaily] = useState<DailyHoroscope | null>(null);
   const [dailyUnavailable, setDailyUnavailable] = useState(false);
   const [hooks, setHooks] = useState<OracleHook[]>(() => getPersonalizedHooks([], 5));
@@ -112,19 +118,19 @@ const Dashboard = () => {
     toast({
       title: t("pricing.checkout_success_title"),
       description: checkoutKind === "subscription"
-        ? (isPremium
+        ? (isSubscriptionPremium
           ? t("pricing.checkout_success_active")
           : t("pricing.checkout_success_pending"))
         : t("pricing.checkout_success_purchase"),
     });
-    void trackEvent("checkout_returned", checkoutReturnAnalytics("success", isPremium, checkoutKind));
+    void trackEvent("checkout_returned", checkoutReturnAnalytics("success", isSubscriptionPremium, checkoutKind));
     window.history.replaceState(
       window.history.state,
       "",
       consumeCheckoutReturn(location.pathname, new URLSearchParams(location.search)),
     );
 
-    if (checkoutKind !== "subscription" || isPremium || !user?.id) return;
+    if (checkoutKind !== "subscription" || isSubscriptionPremium || !user?.id) return;
     let cancelled = false;
     let attempts = 0;
     const checkActivation = async () => {
@@ -146,7 +152,7 @@ const Dashboard = () => {
     };
     void checkActivation();
     return () => { cancelled = true; };
-  }, [isPremium, location.pathname, location.search, t, toast, user?.id]);
+  }, [isSubscriptionPremium, location.pathname, location.search, t, toast, user?.id]);
 
   useEffect(() => {
     if (profile.isLoading || profile.isDemo) return;
@@ -197,6 +203,55 @@ const Dashboard = () => {
     { icon: Sparkles, label: labels[2], content: daily.energy, color: "text-purple-300" },
     { icon: Moon, label: labels[3], content: daily.intuition, color: "text-blue-300" },
   ] : [];
+
+  if (profile.isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center relative">
+        <StarField />
+        <p className="relative z-10 text-sm text-muted-foreground">{t("common.loading")}</p>
+      </div>
+    );
+  }
+
+  if (profile.isDemo) {
+    return (
+      <div className="min-h-screen bg-background pb-20 relative">
+        <StarField />
+        <AppHeader title={t("dashboard.greeting_generic")} />
+        <main className="relative z-10 mx-auto max-w-3xl space-y-5 px-5 pt-4">
+          <section className="rounded-2xl border border-primary/25 bg-card/80 p-6 text-center backdrop-blur-sm">
+            <Sparkles className="mx-auto mb-3 h-9 w-9 text-primary" />
+            <h1 className="font-serif text-xl">{t("dashboard.profile_prompt_title")}</h1>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              {t("dashboard.profile_prompt_desc")}
+            </p>
+            <Button className="mt-5 w-full" onClick={() => navigate("/onboarding?next=/dashboard&reason=direct")}>
+              {t("profile_boundary.complete")}
+            </Button>
+            <Button className="mt-2 w-full" variant="ghost" onClick={() => navigate("/oracle")}>
+              {t("profile_boundary.use_oracle")}
+            </Button>
+          </section>
+
+          {currentHook && (
+            <section className="rounded-2xl border border-primary/25 bg-primary/[0.06] p-5">
+              <div className="mb-3 flex items-center gap-2">
+                <MessageCircle className="h-4 w-4 text-primary" />
+                <h2 className="font-serif text-lg">{t("dashboard.quick_oracle")}</h2>
+              </div>
+              <p className="mb-4 text-sm leading-relaxed">
+                <span className="mr-2">{currentHook.emoji}</span>{currentHook.text}
+              </p>
+              <Button className="w-full" onClick={() => navigate("/oracle")}>
+                {currentHook.cta} <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </section>
+          )}
+        </main>
+        <BottomNav />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background pb-20 relative">

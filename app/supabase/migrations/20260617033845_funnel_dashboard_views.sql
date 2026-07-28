@@ -1,5 +1,5 @@
 -- Funnel & débotage karmastro (Phase 0, plan 2026-06-17-monetisation-mrr-growth)
--- Vues read-only : isolent le trafic HUMAIN (is_bot=false) et exposent le funnel quotidien.
+-- Vues read-only : isolent le trafic HUMAIN via le user-agent et exposent le funnel quotidien.
 
 create or replace view public.v_sessions_clean as
 select session_id,
@@ -8,11 +8,11 @@ select session_id,
        max(locale)                as locale,
        bool_or(path ilike '%/oracle%') as reached_oracle_page
 from public.page_views
-where is_bot = false          -- débotage : flag déjà calculé, ~88% du trafic brut est bot
+where not public.is_bot_ua(user_agent)
 group by session_id;
 
 comment on view public.v_sessions_clean is
-  'Sessions humaines (is_bot=false). 1 ligne/session. Source de vérité trafic vs page_views brut.';
+  'Sessions humaines (user-agent débotté). 1 ligne/session. Source de vérité trafic vs page_views brut.';
 
 create or replace view public.v_funnel_daily as
 with days as (
@@ -36,8 +36,14 @@ limits as (
   from public.oracle_daily_usage where message_count > 3 group by 1
 ),
 subs as (
-  select created_at::date as d, count(*) as new_subs
-  from public.subscriptions group by 1
+  select created_at::date as d,
+         count(*) filter (
+           where type in ('checkout.session.completed', 'checkout.session.async_payment_succeeded')
+             and payload->>'payment_status' = 'paid'
+             and payload->>'mode' = 'subscription'
+         ) as new_subs
+  from public.stripe_events
+  group by 1
 )
 select days.d,
        coalesce(sess.clean_sessions, 0) as clean_sessions,

@@ -313,6 +313,54 @@
       "journey_version": "oracle_acquisition_v1",
       "owner": "product",
       "deprecated_at": null
+    },
+    {
+      "name": "etoile_pass_offer_viewed",
+      "definition": "A preassigned 48-hour Star Pass offer became visible in the app.",
+      "surface": ["app"],
+      "unit": "impression",
+      "trigger": "Once when an offered Pass card mounts.",
+      "allowed_properties": ["source", "offer_code", "journey_version"],
+      "introduced_at": "2026-07-28",
+      "journey_version": "etoile_pass_48h_v1",
+      "owner": "product",
+      "deprecated_at": null
+    },
+    {
+      "name": "etoile_pass_activation_requested",
+      "definition": "The user explicitly requested activation of the preassigned Pass.",
+      "surface": ["app"],
+      "unit": "attempt",
+      "trigger": "Immediately before the activation request.",
+      "allowed_properties": ["source", "offer_code", "journey_version"],
+      "introduced_at": "2026-07-28",
+      "journey_version": "etoile_pass_48h_v1",
+      "owner": "product",
+      "deprecated_at": null
+    },
+    {
+      "name": "etoile_pass_activation_succeeded",
+      "definition": "The server confirmed effective Pass access.",
+      "surface": ["app"],
+      "unit": "activation",
+      "trigger": "After a successful activation response.",
+      "allowed_properties": ["source", "offer_code", "result", "access_source", "journey_version"],
+      "introduced_at": "2026-07-28",
+      "journey_version": "etoile_pass_48h_v1",
+      "owner": "product",
+      "deprecated_at": null
+    },
+    {
+      "name": "etoile_pass_activation_failed",
+      "definition": "A requested Pass activation did not produce effective access.",
+      "surface": ["app"],
+      "unit": "attempt",
+      "trigger": "After a rejected or unavailable activation response.",
+      "allowed_properties": ["source", "offer_code", "result", "journey_version"],
+      "introduced_at": "2026-07-28",
+      "journey_version": "etoile_pass_48h_v1",
+      "owner": "product",
+      "deprecated_at": null
     }
   ]
 }

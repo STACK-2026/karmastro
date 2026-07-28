@@ -26,7 +26,7 @@ const KNOWN_PRODUCTS = new Set([
 ]);
 
 const SUBSCRIPTIONS = new Set(["etoile_monthly", "etoile_annual"]);
-const PROFILE_REQUIRED = new Set(["etoile_monthly", "etoile_annual", "ame_soeur"]);
+const PROFILE_REQUIRED = new Set(["ame_soeur"]);
 const EXISTING_SUBSCRIPTION_STATUSES = new Set([
   "active",
   "trialing",

@@ -4,7 +4,7 @@ CREATE OR REPLACE FUNCTION public.admin_get_reading_reviews(
   p_limit INTEGER DEFAULT 100
 )
 RETURNS TABLE (
-  token UUID,
+  token TEXT,
   email TEXT,
   tool_type TEXT,
   rating SMALLINT,

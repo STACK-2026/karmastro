@@ -8,6 +8,7 @@ interface SmartDateInputProps {
   onChange: (value: string) => void;
   placeholder?: string;
   className?: string;
+  ariaLabelledBy?: string;
 }
 
 /**
@@ -59,11 +60,12 @@ function isValidDate(isoDate: string): boolean {
   return date.getFullYear() === y && date.getMonth() === m - 1 && date.getDate() === d;
 }
 
-const SmartDateInput = ({ value, onChange, placeholder, className = "" }: SmartDateInputProps) => {
+const SmartDateInput = ({ value, onChange, placeholder, className = "", ariaLabelledBy }: SmartDateInputProps) => {
   const { t } = useT();
   const [displayValue, setDisplayValue] = useState(value ? formatDisplay(value) : "");
   const [error, setError] = useState(false);
   const nativeDateRef = useRef<HTMLInputElement>(null);
+  const errorId = useRef(`date-error-${crypto.randomUUID()}`).current;
   const resolvedPlaceholder = placeholder ?? t("common.date_placeholder");
 
   // Sync displayValue when value prop changes externally (e.g. pre-fill from DB/sessionStorage)
@@ -126,12 +128,16 @@ const SmartDateInput = ({ value, onChange, placeholder, className = "" }: SmartD
         onBlur={handleBlur}
         placeholder={resolvedPlaceholder}
         className={`bg-secondary border-border pr-10 ${error ? "border-red-500/50" : ""}`}
+        aria-labelledby={ariaLabelledBy}
+        aria-invalid={error}
+        aria-describedby={error ? errorId : undefined}
       />
       {/* Calendar icon → native date picker fallback */}
       <button
         type="button"
         onClick={() => nativeDateRef.current?.showPicker?.()}
         className="absolute right-2 top-1/2 -translate-y-1/2 p-1 rounded text-muted-foreground/40 hover:text-muted-foreground transition-colors"
+        aria-label={t("common.date_placeholder")}
       >
         <Calendar className="h-4 w-4" />
       </button>
@@ -146,7 +152,7 @@ const SmartDateInput = ({ value, onChange, placeholder, className = "" }: SmartD
           setError(false);
         }}
       />
-      {error && <p className="text-[10px] text-red-400 mt-1">{t("common.date_error_format")}</p>}
+      {error && <p id={errorId} className="text-[10px] text-red-400 mt-1">{t("common.date_error_format")}</p>}
     </div>
   );
 };

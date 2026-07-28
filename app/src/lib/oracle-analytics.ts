@@ -5,6 +5,7 @@ export type OracleTrackingEvent = {
 
 export const ORACLE_JOURNEY_VERSION = "oracle_conversation_v1";
 export const ORACLE_ACTIVATION_JOURNEY_VERSION = "oracle_activation_v1";
+export const ETOILE_PASS_JOURNEY_VERSION = "etoile_pass_48h_v1";
 
 function versioned(properties: Record<string, unknown>): Record<string, unknown> {
   return { ...properties, journey_version: ORACLE_JOURNEY_VERSION };
@@ -12,6 +13,10 @@ function versioned(properties: Record<string, unknown>): Record<string, unknown>
 
 function activationVersioned(properties: Record<string, unknown>): Record<string, unknown> {
   return { ...properties, journey_version: ORACLE_ACTIVATION_JOURNEY_VERSION };
+}
+
+function etoilePassVersioned(properties: Record<string, unknown>): Record<string, unknown> {
+  return { ...properties, journey_version: ETOILE_PASS_JOURNEY_VERSION };
 }
 
 type OracleResponseInput = {
@@ -132,4 +137,43 @@ export const oracleActivationContinuationDeliveredEvent = (): OracleTrackingEven
 export const oraclePostContinuationMessageEvent = (): OracleTrackingEvent => ({
   name: "oracle_post_continuation_message",
   properties: activationVersioned({ source: "app", window: "30m" }),
+});
+
+export const etoilePassOfferViewedEvent = (): OracleTrackingEvent => ({
+  name: "etoile_pass_offer_viewed",
+  properties: etoilePassVersioned({
+    source: "app",
+    offer_code: "etoile_pass_48h_v1",
+  }),
+});
+
+export const etoilePassActivationRequestedEvent = (): OracleTrackingEvent => ({
+  name: "etoile_pass_activation_requested",
+  properties: etoilePassVersioned({
+    source: "app",
+    offer_code: "etoile_pass_48h_v1",
+  }),
+});
+
+export const etoilePassActivationSucceededEvent = (
+  accessSource: "subscription" | "promo_pass" | "none",
+): OracleTrackingEvent => ({
+  name: "etoile_pass_activation_succeeded",
+  properties: etoilePassVersioned({
+    source: "app",
+    offer_code: "etoile_pass_48h_v1",
+    result: "activated",
+    access_source: accessSource,
+  }),
+});
+
+export const etoilePassActivationFailedEvent = (
+  result: "unavailable" | "ineligible" | "already_used",
+): OracleTrackingEvent => ({
+  name: "etoile_pass_activation_failed",
+  properties: etoilePassVersioned({
+    source: "app",
+    offer_code: "etoile_pass_48h_v1",
+    result,
+  }),
 });
