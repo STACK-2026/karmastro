@@ -92,6 +92,7 @@ const fr: UiStrings = {
   "onboarding.step1_subtitle": "Chaque lettre porte une fréquence numérologique",
   "onboarding.first_name_label": "Prénom *",
   "onboarding.first_name_placeholder": "Léa",
+  "onboarding.privacy_reassurance": "Vos informations servent uniquement à personnaliser votre expérience. Elles ne sont ni vendues ni utilisées à des fins publicitaires. Vous pouvez les modifier ou les supprimer à tout moment.",
   "onboarding.last_name_label": "Nom de famille",
   "onboarding.last_name_placeholder": "Moreau",
   "onboarding.birth_name_label": "Nom de naissance (si différent)",

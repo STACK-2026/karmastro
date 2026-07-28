@@ -92,6 +92,7 @@ const ar: Partial<UiStrings> = {
   "onboarding.step1_subtitle": "كل حرف يحمل ترددًا في علم الأرقام",
   "onboarding.first_name_label": "الاسم *",
   "onboarding.first_name_placeholder": "فاطمة",
+  "onboarding.privacy_reassurance": "تُستخدم معلوماتك فقط لتخصيص تجربتك. لا يتم بيعها أو استخدامها لأغراض إعلانية. يمكنك تعديلها أو حذفها في أي وقت.",
   "onboarding.last_name_label": "اسم العائلة",
   "onboarding.last_name_placeholder": "الحسيني",
   "onboarding.birth_name_label": "اسم الميلاد (إن كان مختلفاً)",

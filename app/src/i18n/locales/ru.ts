@@ -92,6 +92,7 @@ const ru: Partial<UiStrings> = {
   "onboarding.step1_subtitle": "Каждая буква несёт нумерологическую частоту",
   "onboarding.first_name_label": "Имя *",
   "onboarding.first_name_placeholder": "Анна",
+  "onboarding.privacy_reassurance": "Твои данные используются только для персонализации опыта. Мы не продаём их и не используем для рекламы. Ты можешь изменить или удалить их в любой момент.",
   "onboarding.last_name_label": "Фамилия",
   "onboarding.last_name_placeholder": "Иванова",
   "onboarding.birth_name_label": "Девичья фамилия (если отличается)",

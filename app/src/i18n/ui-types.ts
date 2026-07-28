@@ -74,6 +74,7 @@ export type UiKey =
   | "onboarding.progressive_save"
   | "onboarding.progressive_skip"
   | "onboarding.progressive_skip_explanation"
+  | "onboarding.privacy_reassurance"
   | "onboarding.step0_title"
   | "onboarding.step0_subtitle"
   | "onboarding.birth_date_label"

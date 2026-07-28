@@ -5,6 +5,7 @@ import {
   ChevronUp,
   Clock,
   Loader2,
+  Lock,
   MapPin,
   Sparkles,
 } from "lucide-react";
@@ -539,6 +540,11 @@ const OnboardingPage = () => {
                 <SmartDateInput value={birthDate} onChange={setBirthDate} ariaLabelledBy="onboarding-birth-date-label" />
               </div>
             </div>
+          </div>
+
+          <div className="mt-3 flex items-start gap-2 px-1 text-xs leading-relaxed text-muted-foreground">
+            <Lock aria-hidden="true" className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary/70" />
+            <p>{t("onboarding.privacy_reassurance")}</p>
           </div>
 
           <button

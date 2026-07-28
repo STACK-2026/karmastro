@@ -92,6 +92,7 @@ const ja: Partial<UiStrings> = {
   "onboarding.step1_subtitle": "すべての文字が数秘術の周波数を持ちます",
   "onboarding.first_name_label": "名 *",
   "onboarding.first_name_placeholder": "花子",
+  "onboarding.privacy_reassurance": "入力した情報は、あなたの体験をパーソナライズする目的にのみ使用されます。販売したり、広告に使用したりすることはありません。いつでも変更・削除できます。",
   "onboarding.last_name_label": "姓",
   "onboarding.last_name_placeholder": "山田",
   "onboarding.birth_name_label": "出生名 (異なる場合)",

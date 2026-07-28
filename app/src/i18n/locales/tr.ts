@@ -92,6 +92,7 @@ const tr: Partial<UiStrings> = {
   "onboarding.step1_subtitle": "Her harf bir numerolojik frekans taşır",
   "onboarding.first_name_label": "Ad *",
   "onboarding.first_name_placeholder": "Ayşe",
+  "onboarding.privacy_reassurance": "Bilgilerin yalnızca deneyimini kişiselleştirmek için kullanılır. Satılmaz ve reklam amacıyla kullanılmaz. İstediğin zaman değiştirebilir veya silebilirsin.",
   "onboarding.last_name_label": "Soyad",
   "onboarding.last_name_placeholder": "Yılmaz",
   "onboarding.birth_name_label": "Doğum adı (farklıysa)",
