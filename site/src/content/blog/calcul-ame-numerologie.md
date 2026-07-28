@@ -24,16 +24,10 @@ imageAlt: "Onne sein sparkling sponge box"
 </aside>
 
 [Sommaire]
-- [Qu'est-ce qu'une âme sœur ? Définition karmique et spirituelle](#quest-ce-quune-ame-soeur--definition-karmique-et-spirituelle)
-- [Les 7 types de connexions d'âmes (et comment les distinguer)](#les-7-types-de-connexions-dames-et-comment-les-distinguer)
-- [Calcul de l'âme sœur en numérologie : la méthode complète](#calcul-de-lame-soeur-en-numerologie--la-methode-complete)
-- [15 signes que vous avez rencontré votre âme sœur](#15-signes-que-vous-avez-rencontre-votre-ame-soeur)
-- [Compatibilité numérologique : quels nombres s'attirent ?](#compatibilite-numerologique--quels-nombres-sattirent-)
-- [Âme sœur et karma : le rôle des nœuds lunaires en astrologie](#ame-soeur-et-karma--le-role-des-noeuds-lunaires-en-astrologie)
-- [Préparer la rencontre : 5 étapes pour aligner votre énergie](#preparer-la-rencontre--5-etapes-pour-aligner-votre-energie)
-- [FAQ](#faq)
-- [Conclusion : Trouver son âme sœur avec Karmastro](#conclusion--trouver-son-ame-soeur-avec-karmastro)
-- [Sources](#sources)
+- [Qu'est-ce qu'une âme sœur ? Définition karmique et spirituelle](#quest-ce-quune-âme-sœur--définition-karmique-et-spirituelle)
+- [Les 7 types de connexions d'âmes (et comment les distinguer)](#les-7-types-de-connexions-dâmes-et-comment-les-distinguer)
+- [Calcul de l'âme sœur en numérologie : la méthode complète](#calcul-de-lâme-sœur-en-numérologie--la-méthode-complète)
+- [15 signes que vous avez rencontré votre âme sœur](#15-signes-que-vous-avez-rencontré-votre-âme-sœur)
 
 ---
 
@@ -725,4 +719,3 @@ Cet alignement est souvent lié à des nombres complémentaires. Par exemple, un
 - [Compatibilité numérologique : calculer l'harmonie de couple](https://karmastro.com/blog/compatibilite-numerologique-calculer-harmonie-couple)
 - [Compatibilité amoureuse : signes astrologiques qui s'attirent](https://karmastro.com/blog/compatibilite-amoureuse-signes-astrologiques-attirent)
 - [Compatibilité Verseau-Gémeaux : air et innovation](https://karmastro.com/blog/compatibilite-verseau-gemeaux-air-innovation)
-
