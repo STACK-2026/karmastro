@@ -92,6 +92,7 @@ const en: Partial<UiStrings> = {
   "onboarding.step1_subtitle": "Every letter carries a numerological frequency",
   "onboarding.first_name_label": "First name *",
   "onboarding.first_name_placeholder": "Lea",
+  "onboarding.privacy_reassurance": "Your information is used only to personalise your experience. It is never sold or used for advertising. You can edit or delete it at any time.",
   "onboarding.last_name_label": "Last name",
   "onboarding.last_name_placeholder": "Moreau",
   "onboarding.birth_name_label": "Birth name (if different)",

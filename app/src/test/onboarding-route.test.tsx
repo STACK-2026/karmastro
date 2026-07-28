@@ -145,6 +145,22 @@ describe("onboarding route protection", () => {
     expect(mocks.navigate).not.toHaveBeenCalled();
   });
 
+  it("reassures users about essential data before offering advanced fields", async () => {
+    mocks.profile.first_name = null;
+
+    render(<OnboardingPage />);
+
+    const reassurance = await screen.findByText("onboarding.privacy_reassurance");
+    const advancedFields = screen.getByRole("button", {
+      name: /onboarding\.progressive_advanced_title/,
+    });
+
+    expect(
+      reassurance.compareDocumentPosition(advancedFields)
+      & Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+  });
+
   it("allows explicit edit mode only for a complete profile", async () => {
     mocks.search = "mode=edit";
 

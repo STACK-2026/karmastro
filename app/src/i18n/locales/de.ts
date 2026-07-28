@@ -92,6 +92,7 @@ const de: Partial<UiStrings> = {
   "onboarding.step1_subtitle": "Jeder Buchstabe trägt eine numerologische Frequenz",
   "onboarding.first_name_label": "Vorname *",
   "onboarding.first_name_placeholder": "Lea",
+  "onboarding.privacy_reassurance": "Deine Angaben werden nur verwendet, um dein Erlebnis zu personalisieren. Sie werden weder verkauft noch für Werbung genutzt. Du kannst sie jederzeit ändern oder löschen.",
   "onboarding.last_name_label": "Nachname",
   "onboarding.last_name_placeholder": "Moreau",
   "onboarding.birth_name_label": "Geburtsname (falls abweichend)",
