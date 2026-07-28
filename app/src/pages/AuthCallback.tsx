@@ -47,8 +47,8 @@ const AuthCallback = () => {
         }
       }
 
-      // Check if onboarding is needed (no birth date/time in profile)
-      // If yes, OnboardingGate will handle redirection automatically.
+      // The stored destination decides whether this returns to the progressive
+      // onboarding form or continues directly into the app.
       navigate(getPostAuthPath(), { replace: true });
     })();
   }, [user, loading, navigate, attaching]);

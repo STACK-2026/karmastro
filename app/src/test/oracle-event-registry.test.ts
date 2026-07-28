@@ -33,6 +33,7 @@ describe("Oracle event registry", () => {
         "oracle_conversation_v1",
         "oracle_activation_v1",
         "oracle_acquisition_v1",
+        "etoile_pass_48h_v1",
       ]).toContain(event.journey_version);
       expect(event.allowed_properties).toContain("journey_version");
     }

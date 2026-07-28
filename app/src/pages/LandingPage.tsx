@@ -288,10 +288,6 @@ const LandingPage = () => {
     const lp = lifePathNumber(d, m, y);
     setQuickResult({ sign: sign.sign, symbol: sign.symbol, lifePath: lp.number, keyword: getNumberKeyword(lp.number) });
 
-    // Persist to sessionStorage so OnboardingPage can pre-fill
-    try {
-      sessionStorage.setItem("km_onboarding", JSON.stringify({ birthDate, firstName }));
-    } catch { /* Session storage is best-effort in privacy mode. */ }
   };
 
   const openProfileFlow = () => {

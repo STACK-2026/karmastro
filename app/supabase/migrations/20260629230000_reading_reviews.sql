@@ -2,6 +2,7 @@
 -- La colonne historique `feedback` (good|meh, capturée au 1-clic) reste pour compat.
 -- `feedback_public` = consentement explicite à afficher l'avis en preuve sociale.
 alter table readings
+  add column if not exists feedback text,
   add column if not exists rating smallint check (rating between 1 and 5),
   add column if not exists feedback_text text,
   add column if not exists feedback_public boolean not null default false,

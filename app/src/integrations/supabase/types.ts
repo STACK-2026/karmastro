@@ -483,6 +483,10 @@ export type Database = {
       }
       profiles: {
         Row: {
+          apple_subscription_expires_at: string | null
+          apple_subscription_product_id: string | null
+          apple_subscription_status: string | null
+          apple_subscription_synced_at: string | null
           badges: string[] | null
           birth_date: string | null
           birth_latitude: number | null
@@ -518,6 +522,10 @@ export type Database = {
           user_id: string
         }
         Insert: {
+          apple_subscription_expires_at?: string | null
+          apple_subscription_product_id?: string | null
+          apple_subscription_status?: string | null
+          apple_subscription_synced_at?: string | null
           badges?: string[] | null
           birth_date?: string | null
           birth_latitude?: number | null
@@ -553,6 +561,10 @@ export type Database = {
           user_id: string
         }
         Update: {
+          apple_subscription_expires_at?: string | null
+          apple_subscription_product_id?: string | null
+          apple_subscription_status?: string | null
+          apple_subscription_synced_at?: string | null
           badges?: string[] | null
           birth_date?: string | null
           birth_latitude?: number | null

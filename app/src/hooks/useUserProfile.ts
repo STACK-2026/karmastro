@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { SUPABASE_URL, supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/contexts/AuthContext";
 import {
   lifePathNumber,
@@ -12,7 +12,12 @@ import {
   getZodiacSign,
 } from "@/lib/numerology";
 import { demoProfile } from "@/lib/demoData";
-import { hasPremiumAccess, parseIsoDateAsLocal } from "@/lib/subscription";
+import {
+  hasEffectivePremiumAccess,
+  hasPremiumAccess,
+  parseIsoDateAsLocal,
+} from "@/lib/subscription";
+import { usePromotionPass } from "@/hooks/usePromotionPass";
 
 export type UserProfileData = {
   // Identity
@@ -30,7 +35,9 @@ export type UserProfileData = {
   subscriptionTier: string;
   subscriptionStatus: string | null;
   subscriptionPeriodEnd: string | null;
+  subscriptionProvider: "apple" | "stripe" | null;
   isPremium: boolean;
+  isSubscriptionPremium: boolean;
 
   // Astrology (sun sign computed locally, moon/asc/planets/aspects/houses from Engine)
   astrology: {
@@ -108,6 +115,7 @@ function computeNumerologyFromProfile(
 
 export function useUserProfile(): UserProfileData {
   const { user, loading: authLoading } = useAuth();
+  const promotionPass = usePromotionPass();
   const [data, setData] = useState<UserProfileData>({
     ...demoProfile,
     isDemo: true,
@@ -115,7 +123,9 @@ export function useUserProfile(): UserProfileData {
     subscriptionTier: "eveil",
     subscriptionStatus: null,
     subscriptionPeriodEnd: null,
+    subscriptionProvider: null,
     isPremium: false,
+    isSubscriptionPremium: false,
   });
 
   useEffect(() => {
@@ -144,9 +154,16 @@ export function useUserProfile(): UserProfileData {
       // on both by setting a cookie with SameSite=Lax, Domain=.karmastro.com.
       try {
         const tier = profile.subscription_tier || "eveil";
-        const status = profile.subscription_status;
-        const isActive = status === "active" || tier === "cosmos";
-        const effectiveTier = tier === "etoile" && !isActive ? "eveil" : tier;
+        const isActive = hasEffectivePremiumAccess({
+          tier,
+          status: profile.subscription_status,
+          periodEnd: profile.subscription_period_end,
+          appleStatus: profile.apple_subscription_status,
+          applePeriodEnd: profile.apple_subscription_expires_at,
+        });
+        const effectiveTier = isActive
+          ? tier === "eveil" ? "etoile" : tier
+          : tier === "etoile" ? "eveil" : tier;
         // Write to both localStorage (same-domain) and cookie (cross-subdomain)
         localStorage.setItem("km_user_tier", effectiveTier);
         document.cookie = `km_user_tier=${effectiveTier}; Path=/; Domain=.karmastro.com; Max-Age=${60 * 60 * 24 * 30}; SameSite=Lax`;
@@ -156,10 +173,31 @@ export function useUserProfile(): UserProfileData {
 
       // Parse birth_date (stored as ISO date string)
       const birthDate = parseIsoDateAsLocal(profile.birth_date);
-      const subscriptionTier = profile.subscription_tier || "eveil";
-      const subscriptionStatus = profile.subscription_status || null;
-      const subscriptionPeriodEnd = profile.subscription_period_end || null;
-      const isPremium = hasPremiumAccess(subscriptionTier, subscriptionStatus, subscriptionPeriodEnd);
+      const stripeTier = profile.subscription_tier || "eveil";
+      const stripeStatus = profile.subscription_status || null;
+      const stripePeriodEnd = profile.subscription_period_end || null;
+      const applePremium = hasPremiumAccess(
+        "etoile",
+        profile.apple_subscription_status,
+        profile.apple_subscription_expires_at,
+      );
+      const isPremium = hasEffectivePremiumAccess({
+        tier: stripeTier,
+        status: stripeStatus,
+        periodEnd: stripePeriodEnd,
+        appleStatus: profile.apple_subscription_status,
+        applePeriodEnd: profile.apple_subscription_expires_at,
+      });
+      const subscriptionTier = applePremium && stripeTier === "eveil" ? "etoile" : stripeTier;
+      const subscriptionStatus = applePremium ? "active" : stripeStatus;
+      const subscriptionPeriodEnd = applePremium
+        ? profile.apple_subscription_expires_at
+        : stripePeriodEnd;
+      const subscriptionProvider = applePremium
+        ? "apple"
+        : hasPremiumAccess(stripeTier, stripeStatus, stripePeriodEnd)
+          ? "stripe"
+          : null;
 
       if (!birthDate || !profile.first_name) {
         // Incomplete profile : keep demo values but mark as demo
@@ -171,7 +209,9 @@ export function useUserProfile(): UserProfileData {
           subscriptionTier,
           subscriptionStatus,
           subscriptionPeriodEnd,
+          subscriptionProvider,
           isPremium,
+          isSubscriptionPremium: isPremium,
         });
         return;
       }
@@ -201,7 +241,9 @@ export function useUserProfile(): UserProfileData {
         subscriptionTier,
         subscriptionStatus,
         subscriptionPeriodEnd,
+        subscriptionProvider,
         isPremium,
+        isSubscriptionPremium: isPremium,
         astrology: {
           sunSign: { ...sunSign, degrees: "-" },
           moonSign: { sign: "-", symbol: "", element: "", degrees: "" },
@@ -219,6 +261,17 @@ export function useUserProfile(): UserProfileData {
 
       // Lazy-load full natal chart from Engine via edge function
       // (moon sign, ascendant, planets, houses, aspects)
+      // A precise enriched chart requires both an explicit birth time and
+      // geocoded coordinates. Never manufacture an ascendant from defaults.
+      if (
+        !profile.knows_birth_time
+        || !profile.birth_time
+        || profile.birth_latitude == null
+        || profile.birth_longitude == null
+      ) {
+        return;
+      }
+
       // Retry once after 3s if first attempt fails (session may not be ready)
       const fetchNatalChart = async (attempt = 1): Promise<void> => {
         try {
@@ -232,7 +285,7 @@ export function useUserProfile(): UserProfileData {
           }
 
           const resp = await fetch(
-            `${supabase.supabaseUrl}/functions/v1/get-natal-chart`,
+            `${SUPABASE_URL}/functions/v1/get-natal-chart`,
             {
               method: "POST",
               headers: {
@@ -270,7 +323,13 @@ export function useUserProfile(): UserProfileData {
     });
   }, [user, authLoading]);
 
-  return data;
+  return {
+    ...data,
+    // Promotional access unlocks the same app surfaces without ever mutating
+    // the Stripe-backed profile tier, status, cookie, or billing controls.
+    isPremium: data.isPremium || promotionPass.isPremium,
+    isSubscriptionPremium: data.isPremium,
+  };
 }
 
 // ───────────────────────────────────────────────────────────────

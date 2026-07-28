@@ -90,13 +90,21 @@ describe("onboarding route protection", () => {
 
     expect(screen.getByText("common.onboarding_loading")).toBeInTheDocument();
     await waitFor(() => {
-      expect(mocks.navigate).toHaveBeenCalledWith("/dashboard", { replace: true });
+      expect(mocks.navigate).toHaveBeenCalledWith(
+        "/dashboard",
+        expect.objectContaining({ replace: true }),
+      );
     });
-    expect(mocks.trackEvent).toHaveBeenCalledWith("onboarding_accessed", {
-      decision: "redirect",
-      edit_requested: false,
-      profile_complete: true,
+    expect(mocks.trackEvent).toHaveBeenCalledWith("onboarding_viewed_v2", {
+      journey_version: "progressive_onboarding_v1",
+      flow: "acquisition",
+      reason: "direct",
+      destination: "/dashboard",
+      completion_level: "essential",
+      has_birth_time: false,
+      has_birth_place: false,
     });
+    expect(mocks.trackEvent).not.toHaveBeenCalledWith("onboarding_destination_reached_v1", expect.any(Object));
   });
 
   it("keeps an authenticated incomplete profile in onboarding", async () => {
@@ -105,10 +113,14 @@ describe("onboarding route protection", () => {
     render(<OnboardingPage />);
 
     await waitFor(() => {
-      expect(mocks.trackEvent).toHaveBeenCalledWith("onboarding_accessed", {
-        decision: "onboarding",
-        edit_requested: false,
-        profile_complete: false,
+      expect(mocks.trackEvent).toHaveBeenCalledWith("onboarding_viewed_v2", {
+        journey_version: "progressive_onboarding_v1",
+        flow: "acquisition",
+        reason: "direct",
+        destination: "/dashboard",
+        completion_level: "none",
+        has_birth_time: false,
+        has_birth_place: false,
       });
     });
     expect(mocks.navigate).not.toHaveBeenCalled();
@@ -120,10 +132,14 @@ describe("onboarding route protection", () => {
     render(<OnboardingPage />);
 
     await waitFor(() => {
-      expect(mocks.trackEvent).toHaveBeenCalledWith("onboarding_accessed", {
-        decision: "onboarding",
-        edit_requested: false,
-        profile_complete: false,
+      expect(mocks.trackEvent).toHaveBeenCalledWith("onboarding_viewed_v2", {
+        journey_version: "progressive_onboarding_v1",
+        flow: "acquisition",
+        reason: "direct",
+        destination: "/dashboard",
+        completion_level: "none",
+        has_birth_time: false,
+        has_birth_place: false,
       });
     });
     expect(mocks.navigate).not.toHaveBeenCalled();
@@ -135,10 +151,14 @@ describe("onboarding route protection", () => {
     render(<OnboardingPage />);
 
     await waitFor(() => {
-      expect(mocks.trackEvent).toHaveBeenCalledWith("onboarding_accessed", {
-        decision: "edit",
-        edit_requested: true,
-        profile_complete: true,
+      expect(mocks.trackEvent).toHaveBeenCalledWith("onboarding_viewed_v2", {
+        journey_version: "progressive_onboarding_v1",
+        flow: "edit",
+        reason: "profile_edit",
+        destination: "/profile",
+        completion_level: "essential",
+        has_birth_time: false,
+        has_birth_place: false,
       });
     });
     expect(mocks.navigate).not.toHaveBeenCalled();

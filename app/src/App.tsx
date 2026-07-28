@@ -4,16 +4,19 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { PromotionPassProvider } from "@/contexts/PromotionPassContext";
 import CookieBanner from "./components/CookieBanner.tsx";
 import GoogleOneTap from "./components/GoogleOneTap.tsx";
 import SparkleCursorTrail from "./components/SparkleCursorTrail.tsx";
 import { usePageTracking } from "./hooks/usePageTracking";
 import { useClaimAnonSession } from "./hooks/useClaimAnonSession";
-import { OnboardingGate } from "./components/OnboardingGate";
+import { ProfileBoundary } from "./components/ProfileBoundary";
+import { OnboardingArrivalTracker } from "./components/OnboardingArrivalTracker";
 import StarField from "./components/StarField";
 import { Suspense, lazy, useEffect } from "react";
 import { I18nProvider } from "./i18n/ui";
 import { EXTERNAL_LEGACY_ROUTES, INTERNAL_LEGACY_ROUTES } from "@/lib/legacy-routes";
+import { purgeExpiredOnboardingDrafts } from "@/lib/onboarding-draft";
 
 // Every route is lazy-loaded. Marketing and app deeplinks should not download
 // one another's pages before rendering their own conversion surface.
@@ -40,6 +43,9 @@ const queryClient = new QueryClient();
 const TrackingProvider = ({ children }: { children: React.ReactNode }) => {
   usePageTracking();
   useClaimAnonSession();
+  useEffect(() => {
+    purgeExpiredOnboardingDrafts();
+  }, []);
   return <>{children}</>;
 };
 
@@ -66,15 +72,16 @@ const App = () => (
   <I18nProvider fallback={<RouteFallback />}>
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
+        <PromotionPassProvider>
         <TooltipProvider>
           <Toaster />
           <Sonner />
           <BrowserRouter>
           <TrackingProvider>
-            <OnboardingGate>
             <GoogleOneTap />
             <SparkleCursorTrail />
             <Suspense fallback={<RouteFallback />}>
+              <OnboardingArrivalTracker />
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/onboarding" element={<OnboardingPage />} />
@@ -83,11 +90,11 @@ const App = () => (
                 <Route path="/reset-password" element={<ResetPassword />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/oracle" element={<OraclePage />} />
-                <Route path="/astral" element={<AstralProfile />} />
-                <Route path="/numerology" element={<NumerologyPage />} />
-                <Route path="/compatibility" element={<CompatibilityPage />} />
-                <Route path="/calendar" element={<CalendarPage />} />
-                <Route path="/profile" element={<ProfilePage />} />
+                <Route path="/astral" element={<ProfileBoundary><AstralProfile /></ProfileBoundary>} />
+                <Route path="/numerology" element={<ProfileBoundary><NumerologyPage /></ProfileBoundary>} />
+                <Route path="/compatibility" element={<ProfileBoundary><CompatibilityPage /></ProfileBoundary>} />
+                <Route path="/calendar" element={<ProfileBoundary><CalendarPage /></ProfileBoundary>} />
+                <Route path="/profile" element={<ProfileBoundary><ProfilePage /></ProfileBoundary>} />
                 <Route path="/learn" element={<LearnPage />} />
                 <Route path="/settings" element={<SettingsPage />} />
                 <Route path="/admin" element={<AdminPage />} />
@@ -103,11 +110,11 @@ const App = () => (
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
-            </OnboardingGate>
           </TrackingProvider>
           </BrowserRouter>
           <CookieBanner />
         </TooltipProvider>
+        </PromotionPassProvider>
       </AuthProvider>
     </QueryClientProvider>
   </I18nProvider>

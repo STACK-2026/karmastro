@@ -11,8 +11,10 @@ import { useUserProfile } from "@/hooks/useUserProfile";
 import { supabase } from "@/integrations/supabase/client";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { resolveBillingDestination } from "@/lib/subscription";
 
 const BILLING_PORTAL_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/billing-portal";
+const APPLE_SUBSCRIPTIONS_URL = "https://apps.apple.com/account/subscriptions";
 
 const BILLING_LABELS: Record<string, string> = {
   fr: "Gérer mon abonnement",
@@ -50,8 +52,16 @@ const SettingsPage = () => {
     && profile.subscriptionStatus !== "canceled";
 
   const handleBilling = async () => {
-    if (!hasBillingRelationship) {
+    const destination = resolveBillingDestination(
+      profile.subscriptionProvider,
+      hasBillingRelationship,
+    );
+    if (destination === "pricing") {
       navigate("/pricing");
+      return;
+    }
+    if (destination === "apple") {
+      window.location.assign(APPLE_SUBSCRIPTIONS_URL);
       return;
     }
     setBillingLoading(true);

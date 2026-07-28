@@ -13,6 +13,7 @@ import { formatPrice } from "@/lib/locale";
 import { useT } from "@/i18n/ui";
 import { OFFER_CATALOG } from "@/lib/offer-catalog";
 import { checkoutReturnAnalytics, consumeCheckoutReturn, parseCheckoutReturn } from "@/lib/checkout-return";
+import { hasEffectivePremiumAccess, hasPremiumAccess } from "@/lib/subscription";
 
 const CHECKOUT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/stripe-checkout";
 
@@ -55,16 +56,31 @@ const PricingPage = () => {
     if (!user?.id) return;
     supabase
       .from("profiles")
-      .select("subscription_tier, subscription_status, credits, subscription_period_end")
+      .select("subscription_tier, subscription_status, credits, subscription_period_end, apple_subscription_status, apple_subscription_expires_at")
       .eq("user_id", user.id)
       .maybeSingle()
       .then(({ data }) => {
         if (data) {
-          setCurrentPlan({
-            tier: data.subscription_tier || "eveil",
+          const stripeTier = data.subscription_tier || "eveil";
+          const applePremium = hasPremiumAccess(
+            "etoile",
+            data.apple_subscription_status,
+            data.apple_subscription_expires_at,
+          );
+          const premium = hasEffectivePremiumAccess({
+            tier: stripeTier,
             status: data.subscription_status,
+            periodEnd: data.subscription_period_end,
+            appleStatus: data.apple_subscription_status,
+            applePeriodEnd: data.apple_subscription_expires_at,
+          });
+          setCurrentPlan({
+            tier: applePremium && stripeTier === "eveil" ? "etoile" : stripeTier,
+            status: premium ? "active" : data.subscription_status,
             credits: data.credits || 0,
-            period_end: data.subscription_period_end,
+            period_end: applePremium
+              ? data.apple_subscription_expires_at
+              : data.subscription_period_end,
           });
         }
       });
@@ -100,7 +116,7 @@ const PricingPage = () => {
       if (res.status === 409 && data.code === "profile_required") {
         void trackEvent("checkout_profile_required", { price_key: priceKey });
         setLoading(null);
-        navigate("/onboarding");
+        navigate("/onboarding?next=/pricing&reason=personalized_checkout");
         return;
       }
       if (!res.ok || !data.url) {

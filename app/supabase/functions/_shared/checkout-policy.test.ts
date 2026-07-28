@@ -9,11 +9,15 @@ const completeProfile = {
   status: null,
 };
 
-Deno.test("paid readings and subscriptions require a complete profile", () => {
-  for (const priceKey of ["etoile_monthly", "etoile_annual", "ame_soeur"]) {
+Deno.test("only a personalized reading requires a complete profile", () => {
+  assertEquals(decideCheckout("ame_soeur", { ...completeProfile, birthDate: null }), {
+    allowed: false,
+    reason: "profile_required",
+  });
+  for (const priceKey of ["etoile_monthly", "etoile_annual"]) {
     assertEquals(decideCheckout(priceKey, { ...completeProfile, birthDate: null }), {
-      allowed: false,
-      reason: "profile_required",
+      allowed: true,
+      reason: null,
     });
   }
 });

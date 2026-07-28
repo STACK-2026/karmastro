@@ -613,6 +613,7 @@ serve(async (req) => {
     if (auth.invalidToken) return jsonResponse({ error: "invalid_token" }, 401);
     const userId = auth.userId;
     const sessionId = userId ? null : normalized.sessionId;
+    if (!SERVICE_KEY) return jsonResponse({ error: "identity_service_unavailable" }, 503);
     if (!userId && !sessionId) {
       return jsonResponse({ error: "session_required", message: "Session requise pour un usage anonyme." }, 400);
     }
@@ -729,6 +730,11 @@ serve(async (req) => {
     // ============================================
     const FREE_DAILY_LIMIT = 2;
     const IP_DAILY_CAP = 6;
+    let promotionAccess: {
+      source: "promo_pass";
+      offer_code: "etoile_pass_48h_v1";
+      expires_at: string;
+    } | null = null;
 
     // Anti-bypass : un appel anonyme DOIT porter un sessionId non vide, sinon le
     // comptage RPC recoit (null, null) et n'incremente jamais (Oracle gratuit infini).
@@ -799,13 +805,50 @@ serve(async (req) => {
           }
         }
 
-        // Increment + check via RPC
-        const { data: usageData, error: usageErr } = await sbCheck.rpc("increment_oracle_usage", {
-          p_user_id: userId ?? null,
-          p_session_id: userId ? null : (anonSession || null),
-        });
+        let promotionHandled = false;
+        if (userId) {
+          const promotionRequestId = normalized.requestId || crypto.randomUUID();
+          const { data: promotionData, error: promotionError } = await sbCheck.rpc(
+            "authorize_promotion_oracle_turn",
+            {
+              p_user_id: userId,
+              p_campaign_code: "etoile_pass_48h_v1",
+              p_request_id: promotionRequestId,
+            },
+          );
+          if (promotionError || !Array.isArray(promotionData) || !promotionData[0]) {
+            throw promotionError || new Error("promotion_authorization_unavailable");
+          }
+          const promotion = promotionData[0];
+          if (promotion.handled) {
+            promotionHandled = true;
+            if (!promotion.allowed) {
+              return jsonResponse({
+                error: promotion.reason || "promotion_fair_use",
+                retry_at: promotion.retry_at || promotion.expires_at || null,
+              }, 429);
+            }
+            if (promotion.access_source === "promo_pass" && promotion.expires_at) {
+              promotionAccess = {
+                source: "promo_pass",
+                offer_code: "etoile_pass_48h_v1",
+                expires_at: String(promotion.expires_at),
+              };
+            }
+          }
+        }
 
-        if (!usageErr && usageData && usageData[0]) {
+        // Standard free, credit and paid-subscription accounting remains the
+        // fallback whenever no active promotional Pass handled this request.
+        if (!promotionHandled) {
+          const { data: usageData, error: usageErr } = await sbCheck.rpc("increment_oracle_usage", {
+            p_user_id: userId ?? null,
+            p_session_id: userId ? null : (anonSession || null),
+          });
+          if (usageErr || !usageData || !usageData[0]) {
+            throw usageErr || new Error("usage_counter_unavailable");
+          }
+
           const { message_count, unlimited } = usageData[0];
 
           if (!unlimited && message_count > FREE_DAILY_LIMIT) {
@@ -826,13 +869,12 @@ serve(async (req) => {
         }
       } catch (usageCheckErr) {
         console.error("Usage check error:", usageCheckErr);
-        // Fail-secure pour les anonymes : pas de comptage fiable => pas de message gratuit.
-        if (!userId) {
-          return new Response(
-            JSON.stringify({ error: "usage_unavailable", message: "Service momentanément indisponible, réessaie dans un instant." }),
-            { status: 503, headers: { ...corsHeaders, "Content-Type": "application/json" } },
-          );
-        }
+        // Fail-secure for every identity: no reliable authorization means no
+        // model call, paid credit mutation, or promotional consumption.
+        return new Response(
+          JSON.stringify({ error: "usage_unavailable", message: "Service momentanément indisponible, réessaie dans un instant." }),
+          { status: 503, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+        );
       }
     }
 
@@ -1307,6 +1349,7 @@ serve(async (req) => {
       conversation_id: savedConvId,
       suggestions,
       engine_status: engineStatus,
+      access: promotionAccess,
     });
     const encoder = new TextEncoder();
     const stream = new ReadableStream({

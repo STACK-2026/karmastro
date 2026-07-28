@@ -12,6 +12,7 @@ import { useT } from "@/i18n/ui";
 import { getErrorMessage } from "@/lib/errors";
 import {
   ORACLE_HANDOFF_SESSION_KEY,
+  clearPostAuthPath,
   getPostAuthPath,
   storePostAuthPath,
 } from "@/lib/postAuth";
@@ -43,7 +44,10 @@ const AuthPage = () => {
     // Returning visitors coming from karmastro.com may already have a valid
     // app session. Skip a redundant login screen and preserve the handoff.
     supabase.auth.getSession().then(({ data }) => {
-      if (data.session) navigate(postAuthPath, { replace: true });
+      if (data.session) {
+        clearPostAuthPath();
+        navigate(postAuthPath, { replace: true });
+      }
     });
 
     let code = params.get("ref")?.toUpperCase().trim() || null;
@@ -58,12 +62,10 @@ const AuthPage = () => {
       setIsLogin(false);
       // Look up referrer name
       supabase
-        .from("referral_lookup")
-        .select("first_name")
-        .eq("referral_code", code)
-        .maybeSingle()
+        .rpc("lookup_referral_code" as never, { p_code: code } as never)
         .then(({ data }) => {
-          if (data?.first_name) setReferrerName(data.first_name);
+          const row = data && Array.isArray(data) ? data[0] as { first_name?: string | null } : null;
+          if (row?.first_name) setReferrerName(row.first_name);
         });
     }
   }, [navigate]);

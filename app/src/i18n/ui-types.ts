@@ -13,6 +13,14 @@ export type UiKey =
   | "common.date_error_format"
   | "common.onboarding_loading"
 
+  // contextual profile boundary
+  | "profile_boundary.title"
+  | "profile_boundary.description"
+  | "profile_boundary.complete"
+  | "profile_boundary.use_oracle"
+  | "profile_boundary.error_title"
+  | "profile_boundary.error_desc"
+
   // cookie banner
   | "cookie.title"
   | "cookie.desc"
@@ -59,6 +67,13 @@ export type UiKey =
   | "auth.toast_email_sent_desc"
 
   // onboarding
+  | "onboarding.progressive_title"
+  | "onboarding.progressive_subtitle"
+  | "onboarding.progressive_advanced_title"
+  | "onboarding.progressive_advanced_desc"
+  | "onboarding.progressive_save"
+  | "onboarding.progressive_skip"
+  | "onboarding.progressive_skip_explanation"
   | "onboarding.step0_title"
   | "onboarding.step0_subtitle"
   | "onboarding.birth_date_label"
@@ -193,6 +208,14 @@ export type UiKey =
   | "pricing.checkout_success_purchase"
 
   // oracle (guides + UI)
+  | "oracle.pass_offer_title"
+  | "oracle.pass_offer_desc"
+  | "oracle.pass_activate"
+  | "oracle.pass_no_card"
+  | "oracle.pass_active_title"
+  | "oracle.pass_active_desc"
+  | "oracle.pass_remaining"
+  | "oracle.pass_fair_use_reached"
   | "oracle.guide_sibylle_name"
   | "oracle.guide_sibylle_title"
   | "oracle.guide_sibylle_desc"
@@ -300,6 +323,9 @@ export type UiKey =
   | "oracle.error_generic"
 
   // dashboard
+  | "dashboard.greeting_generic"
+  | "dashboard.profile_prompt_title"
+  | "dashboard.profile_prompt_desc"
   | "dashboard.greeting"
   | "dashboard.badge_cv"
   | "dashboard.badge_py"

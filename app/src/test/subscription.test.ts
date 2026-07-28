@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { hasPremiumAccess, parseIsoDateAsLocal } from "../lib/subscription";
+import {
+  hasEffectivePremiumAccess,
+  hasPremiumAccess,
+  parseIsoDateAsLocal,
+  resolveBillingDestination,
+} from "../lib/subscription";
 
 describe("hasPremiumAccess", () => {
   const now = new Date("2026-07-16T12:00:00Z");
@@ -12,6 +17,28 @@ describe("hasPremiumAccess", () => {
     expect(hasPremiumAccess("etoile", "past_due", "2026-08-16T12:00:00Z", now)).toBe(false);
     expect(hasPremiumAccess("etoile", "active", "2026-06-16T12:00:00Z", now)).toBe(false);
     expect(hasPremiumAccess("eveil", "active", null, now)).toBe(false);
+  });
+});
+
+describe("hasEffectivePremiumAccess", () => {
+  const now = new Date("2026-07-16T12:00:00Z");
+
+  it("recognizes an active Apple entitlement independently from Stripe", () => {
+    expect(hasEffectivePremiumAccess({
+      tier: "eveil",
+      status: null,
+      periodEnd: null,
+      appleStatus: "active",
+      applePeriodEnd: "2026-08-16T12:00:00Z",
+    }, now)).toBe(true);
+  });
+});
+
+describe("resolveBillingDestination", () => {
+  it("routes Apple subscriptions to Apple and never to Stripe", () => {
+    expect(resolveBillingDestination("apple", true)).toBe("apple");
+    expect(resolveBillingDestination("stripe", true)).toBe("stripe");
+    expect(resolveBillingDestination("apple", false)).toBe("pricing");
   });
 });
 
