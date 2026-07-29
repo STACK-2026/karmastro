@@ -47,7 +47,7 @@ test("transfers a calculator profile without leaking it and waits for the missin
   expect(analytics).not.toContain("Que révèle mon chemin de vie");
 });
 
-test("scrubs a legacy private question before analytics observes the page", async ({ page }) => {
+test("scrubs a legacy private question, prefills it, and waits for a real submit", async ({ page }) => {
   const analyticsBodies: string[] = [];
   let chatQuestion = "";
 
@@ -67,6 +67,10 @@ test("scrubs a legacy private question before analytics observes the page", asyn
 
   await page.goto("/oracle/?q=Question%20tr%C3%A8s%20priv%C3%A9e%20sur%20Alice&birthDate=1990-02-14");
   await expect(page).toHaveURL(/\/oracle\/$/);
+  await expect(page.locator("#oracle-input")).toHaveValue("Question très privée sur Alice");
+  expect(chatQuestion).toBe("");
+
+  await page.locator("#oracle-send").click();
   await expect(page.getByText("Réponse test.")).toBeVisible();
   expect(chatQuestion).toBe("Question très privée sur Alice");
 

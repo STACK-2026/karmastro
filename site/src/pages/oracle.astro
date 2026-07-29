@@ -159,7 +159,10 @@ const jsonLd = [
     }
   }
   const legacyQuestion = handoffApi?.consumeLegacyQuestion?.() || "";
-  let pendingQuestion = incomingHandoff?.question || legacyQuestion;
+  const pendingQuestion = incomingHandoff?.question || "";
+  // Questions found in a crawlable URL are suggestions, not user actions.
+  // Prefill them but require a real click or keypress before spending quota.
+  if (legacyQuestion) input.value = legacyQuestion;
   const history: { role: string; content: string }[] = [];
   let conversationId: string | null = null;
   try {
@@ -346,8 +349,8 @@ const jsonLd = [
     }
   }
 
-  sendBtn.addEventListener("click", () => send(input.value));
-  input.addEventListener("keydown", (e) => { if (e.key === "Enter") send(input.value); });
+  sendBtn.addEventListener("click", (event) => { if (event.isTrusted) send(input.value); });
+  input.addEventListener("keydown", (e) => { if (e.key === "Enter" && e.isTrusted) send(input.value); });
   document.querySelectorAll(".oracle-chip").forEach((c) => {
     c.addEventListener("click", () => {
       const chip = c as HTMLElement;
@@ -371,7 +374,6 @@ const jsonLd = [
 
   if (pendingQuestion) {
     const question = pendingQuestion;
-    pendingQuestion = "";
     send(question);
   }
 </script>

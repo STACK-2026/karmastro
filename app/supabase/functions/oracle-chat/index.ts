@@ -28,6 +28,9 @@ import {
   geminiGenerationConfig,
   PRIMARY_GEMINI_MODEL,
 } from "../_shared/oracle-conversation-policy.ts";
+import {
+  isOracleAutomatedUserAgent,
+} from "../_shared/oracle-bot-policy.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -595,6 +598,10 @@ serve(async (req) => {
   let activationReservation: { pendingTurnId: string; userId: string } | null = null;
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
+  }
+  if (isOracleAutomatedUserAgent(req.headers.get("user-agent"))) {
+    console.info("[oracle-chat] request rejected by automation policy");
+    return jsonResponse({ error: "request_unavailable" }, 403);
   }
 
   try {
