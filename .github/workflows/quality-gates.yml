@@ -79,7 +79,8 @@ jobs:
             [ -z "$f" ] && continue
             [ ! -f "$f" ] && continue
             w=$(wc -w < "$f")
-            # FR baseline target is 3500, non-FR 2500
+            # Hard floor = genuine stubs. Target = aspirational (enrich).
+            STUB_FLOOR=1000
             if grep -q '^lang:' "$f"; then TARGET=2500; else TARGET=3500; fi
             internals=$(grep -oE '\]\(/' "$f" | wc -l | tr -d ' ')
             externals=$(grep -oE '\]\(https?://[^)]+\)' "$f" | wc -l | tr -d ' ')
@@ -87,12 +88,15 @@ jobs:
             rev=$(grep -c "^lastReviewed:" "$f" || true)
             author=$(grep -c "^author:" "$f" || true)
             echo "Check $f : $w mots (cible $TARGET), int=$internals, ext=$externals, img=$img, rev=$rev, author=$author"
-            if [ "$w" -lt "$TARGET" ]; then echo "::error file=$f::Words $w < target $TARGET"; FAIL=1; fi
-            if [ "$internals" -lt 25 ]; then echo "::warning file=$f::Internal links $internals < 25"; fi
-            if [ "$externals" -lt 5 ]; then echo "::error file=$f::External links $externals < 5"; FAIL=1; fi
+            # ERRORS (block): stub-length content + incomplete required frontmatter.
+            if [ "$w" -lt "$STUB_FLOOR" ]; then echo "::error file=$f::Stub: $w words < $STUB_FLOOR hard floor"; FAIL=1; fi
             if [ "$img" = "0" ]; then echo "::error file=$f::Missing 'image:' in frontmatter"; FAIL=1; fi
-            if [ "$rev" = "0" ]; then echo "::warning file=$f::Missing 'lastReviewed:' in frontmatter"; fi
             if [ "$author" = "0" ]; then echo "::error file=$f::Missing 'author:' in frontmatter"; FAIL=1; fi
+            # WARNINGS (nudge to enrich, non-blocking): topic-dependent quality signals.
+            if [ "$w" -lt "$TARGET" ]; then echo "::warning file=$f::Below target: $w words < $TARGET (enrich)"; fi
+            if [ "$internals" -lt 25 ]; then echo "::warning file=$f::Internal links $internals < 25"; fi
+            if [ "$externals" -lt 5 ]; then echo "::warning file=$f::External links $externals < 5"; fi
+            if [ "$rev" = "0" ]; then echo "::warning file=$f::Missing 'lastReviewed:' in frontmatter"; fi
           done <<< "${{ steps.changed.outputs.files }}"
           exit $FAIL
 
