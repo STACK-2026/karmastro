@@ -1,5 +1,5 @@
 ---
-title: "Compatibilité amoureuse : quels signes astrologiques s'attir"
+title: "Compatibilité amoureuse : quels signes s'attirent"
 description: "Découvrez les compatibilités amoureuses entre signes astrologiques : couples qui fonctionnent, éléments qui s'attirent et calculs précis pour l'amour."
 date: 2026-04-15
 author: "Séléné"
@@ -8,7 +8,7 @@ tags: ["compatibilité astrologique", "amour", "signes", "couple"]
 keywords: "compatibilité astrologique, amour, signes, couple"
 draft: false
 image: "https://images.unsplash.com/photo-1737317313279-1d09a49b9f29?ixid=M3w4Nzg4MzB8MHwxfHNlYXJjaHw1fHxjb21wYXRpYmlsaXQlQzMlQTklMjBhc3Ryb2xvZ2lxdWV8ZW58MHwwfHx8MTc3NjIzNDQ3Nnww&ixlib=rb-4.1.0&w=1200&h=630&fit=crop&crop=center&q=80"
-imageAlt: "Vintage celestial map of serpens and ophiuchus constellations"
+imageAlt: "Carte céleste ancienne illustrant les constellations du zodiaque"
 ---
 
 ## Sommaire

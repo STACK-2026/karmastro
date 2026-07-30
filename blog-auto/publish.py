@@ -144,6 +144,50 @@ def slug_exists_in_blog(slug: str) -> bool:
 
 
 # ============================================
+# TITLE TAG TRUNCATION
+# ============================================
+
+TITLE_TAG_MAX_LEN = 60
+
+
+def truncate_title_tag(title: str, max_len: int = TITLE_TAG_MAX_LEN) -> str:
+    """Trim a title tag to max_len characters WITHOUT ever cutting mid-word.
+
+    STACK-2026 fix (30/07/2026): a blind `title_tag[:60]` produced titles cut
+    mid-word and unclosed suffixes like " [Guide 202" or " [Gui" whenever the
+    LLM appended a trailing " [Guide 2026]"-style tag that pushed the title
+    past 60 chars (ex: "... compatibilite [Guide 202"). This trims on the
+    last whole word boundary within the limit, and drops a dangling opening
+    bracket/parenthesis that would otherwise be left unclosed at the end.
+    If the title already fits, it is returned unchanged (no ellipsis added).
+    """
+    title = title.strip()
+    if len(title) <= max_len:
+        return title
+
+    # Cut at the last word boundary at or before max_len (never mid-word).
+    truncated = title[:max_len]
+    last_space = truncated.rfind(" ")
+    if last_space > 0:
+        truncated = truncated[:last_space]
+    truncated = truncated.rstrip()
+
+    # Drop a trailing dangling bracket/parenthesis opener with no content
+    # after it (e.g. a cut " [Guide" or " (guide" fragment), or a stray
+    # unmatched opening bracket left over from the word-boundary trim.
+    truncated = re.sub(r"[\[(][^\[\]()]*$", "", truncated).rstrip()
+    if truncated.count("[") > truncated.count("]"):
+        truncated = truncated.rsplit("[", 1)[0].rstrip()
+    if truncated.count("(") > truncated.count(")"):
+        truncated = truncated.rsplit("(", 1)[0].rstrip()
+
+    # Strip a trailing dangling punctuation left after trimming (": ", " -", etc.)
+    truncated = re.sub(r"[\s:,\-–—]+$", "", truncated)
+
+    return truncated or title[:max_len]
+
+
+# ============================================
 # ARTICLES PLANNING
 # ============================================
 
@@ -596,7 +640,7 @@ def parse_claude_response(text: str, article: dict) -> dict:
     content = "\n".join(lines[content_start:]).strip()
 
     return {
-        "title_tag": title_tag[:60],
+        "title_tag": truncate_title_tag(title_tag),
         "meta_description": meta_description[:160],
         "content": content,
     }
@@ -935,7 +979,7 @@ def load_queue_article(article: dict) -> dict:
     title_tag = article.get("title_tag") or article["title"]
     meta_description = article.get("meta_description") or ""
     return {
-        "title_tag": title_tag[:60],
+        "title_tag": truncate_title_tag(title_tag),
         "meta_description": meta_description[:160],
         "content": content,
     }
