@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
+  AlertCircle,
   ArrowRight,
   BookOpen,
   Calendar,
@@ -209,6 +210,22 @@ const Dashboard = () => {
       <div className="min-h-screen bg-background flex items-center justify-center relative">
         <StarField />
         <p className="relative z-10 text-sm text-muted-foreground">{t("common.loading")}</p>
+      </div>
+    );
+  }
+
+  if (profile.loadError) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center relative px-5">
+        <StarField />
+        <section className="relative z-10 w-full max-w-md rounded-2xl border border-primary/25 bg-card/90 p-6 text-center shadow-xl">
+          <AlertCircle className="mx-auto mb-3 h-8 w-8 text-amber-300" />
+          <h1 className="font-serif text-xl">{t("profile_boundary.error_title")}</h1>
+          <p className="mt-2 text-sm text-muted-foreground">{t("profile_boundary.error_desc")}</p>
+          <Button className="mt-5 w-full" variant="outline" onClick={() => profile.reload()}>
+            {t("common.retry")}
+          </Button>
+        </section>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 ---
-title: "Nombre intime : calcul et signification en numérologie (1-9,"
+title: "Nombre intime : calcul et signification en numérologie"
 description: "Découvre ton nombre intime en numérologie : calcul précis avec la table de Pythagore, signification des nombres 1-9 et maîtres nombres 11, 22, 33. Exemples conc"
 date: 2026-07-03
 author: "Pythia"
@@ -9,7 +9,7 @@ tags: ["nombre intime", "désirs", "numérologie", "profond"]
 keywords: "nombre intime, désirs, numérologie, profond"
 draft: false
 image: "https://images.unsplash.com/photo-1726156434751-66aba12affab?ixid=M3w4Nzg4MzB8MHwxfHNlYXJjaHw0NHx8bm9tYnJlJTIwaW50aW1lJTIwbnVtYmVycyUyMHNwaXJpdHVhbCUyMGFic3RyYWN0fGVufDB8MHx8fDE3ODMwNjUzMTh8MA&ixlib=rb-4.1.0&w=1200&h=630&fit=crop&crop=center&q=80"
-imageAlt: "A blurry image of a bar code in the water"
+imageAlt: "Chiffres lumineux flottants, symbole du nombre intime en numérologie"
 ---
 
 ---

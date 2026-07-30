@@ -1,5 +1,5 @@
 ---
-title: "Chemin de vie 11 : maître nombre, intuition et mission karmi"
+title: "Chemin de vie 11 : maître nombre et intuition"
 description: "Le chemin de vie 11 est un maître nombre en numérologie, symbole d'intuition et d'éveil spirituel. Découvre sa mission karmique, ses défis et comment l'incarner"
 date: 2026-05-29
 author: "Pythia"
@@ -9,7 +9,7 @@ tags: ["chemin de vie 11", "maître nombre", "intuition"]
 keywords: "chemin de vie 11, maître nombre, intuition"
 draft: false
 image: "https://images.unsplash.com/photo-1765445665911-de7564a6e994?ixid=M3w4Nzg4MzB8MHwxfHNlYXJjaHwzNHx8Y2hlbWluJTIwZGUlMjB2aWUlMjAxMSUyMG51bWJlcnMlMjBzcGlyaXR1YWwlMjBhYnN0cmFjdHxlbnwwfDB8fHwxNzgwMDQ0MTUyfDA&ixlib=rb-4.1.0&w=1200&h=630&fit=crop&crop=center&q=80"
-imageAlt: "Abstract pattern of symbols and glyphs on black background."
+imageAlt: "Motifs symboliques évoquant l'intuition du chemin de vie 11"
 ---
 
 ---

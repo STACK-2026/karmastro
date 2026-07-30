@@ -1,5 +1,5 @@
 ---
-title: "Guidance spirituelle : astrologie ou numérologie ? Guide com"
+title: "Guidance spirituelle : astrologie ou numérologie ?"
 description: "Découvre comment choisir entre astrologie et numérologie pour ta guidance spirituelle. 7 méthodes concrètes, comparatif détaillé et exercices pratiques pour 202"
 date: 2026-05-08
 author: "Orion"
@@ -8,7 +8,7 @@ tags: ["guidance spirituelle", "astrologie", "numérologie", "choix"]
 keywords: "guidance spirituelle, astrologie, numérologie, choix"
 draft: false
 image: "https://images.unsplash.com/photo-1685739336523-975c964682e2?ixid=M3w4Nzg4MzB8MHwxfHNlYXJjaHwyMnx8Z3VpZGFuY2UlMjBzcGlyaXR1ZWxsZXxlbnwwfDB8fHwxNzc4MjM1NTgyfDA&ixlib=rb-4.1.0&w=1200&h=630&fit=crop&crop=center&q=80"
-imageAlt: "a person's hand reaching up towards the sun"
+imageAlt: "Une main tendue vers la lumière, symbole de guidance spirituelle"
 ---
 
 ```

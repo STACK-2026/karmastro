@@ -1,5 +1,5 @@
 ---
-title: "Chemin de vie 5 : liberté, aventure et mission karmique [Gui"
+title: "Chemin de vie 5 : liberté, aventure et mission karmique"
 description: "Découvre le chemin de vie 5 en numérologie : calcul précis, signification karmique, compatibilités amoureuses et métiers idéaux pour ces âmes libres. Guide comp"
 date: 2026-06-26
 author: "Pythia"
@@ -9,7 +9,7 @@ tags: ["chemin de vie 5", "liberté", "aventure", "numérologie"]
 keywords: "chemin de vie 5, liberté, aventure, numérologie"
 draft: false
 image: "https://images.unsplash.com/photo-1735776077233-25a1d751eeec?ixid=M3w4Nzg4MzB8MHwxfHNlYXJjaHw0Mnx8Y2hlbWluJTIwZGUlMjB2aWUlMjA1JTIwbnVtYmVycyUyMHNwaXJpdHVhbCUyMGFic3RyYWN0fGVufDB8MHx8fDE3ODI0NjIzNTN8MA&ixlib=rb-4.1.0&w=1200&h=630&fit=crop&crop=center&q=80"
-imageAlt: "A picture of a green and yellow swirl on a black background"
+imageAlt: "Spirale dorée sur fond sombre, symbole du chemin de vie 5"
 ---
 
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Tarot numérologique : fusion des 2 arts divinatoires [Guide "
+title: "Tarot numérologique : fusion des 2 arts divinatoires"
 description: "Découvre comment fusionner tarot et numérologie pour une divination précise. Guide complet des 78 cartes + méthode karmique avec exemples concrets. 58% des Fran"
 date: 2026-05-23
 author: "Orion"
@@ -9,7 +9,7 @@ tags: ["tarot", "numérologie", "divination", "fusion"]
 keywords: "tarot, numérologie, divination, fusion"
 draft: false
 image: "https://images.unsplash.com/photo-1699701053436-030823f0fa6e?ixid=M3w4Nzg4MzB8MHwxfHNlYXJjaHwzMnx8dGFyb3QlMjBlc290ZXJpYyUyMG15c3RpY2FsJTIwYWJzdHJhY3R8ZW58MHwwfHx8MTc3OTY5OTEwMnww&ixlib=rb-4.1.0&w=1200&h=630&fit=crop&crop=center&q=80"
-imageAlt: "a tarot card surrounded by string lights"
+imageAlt: "Carte de tarot entourée de guirlandes lumineuses mystiques"
 ---
 
 ---

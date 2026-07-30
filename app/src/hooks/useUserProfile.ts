@@ -32,6 +32,7 @@ export type UserProfileData = {
   level: string;
   isDemo: boolean; // true if user has no profile yet → fallback demoProfile
   isLoading: boolean;
+  loadError: boolean; // true if the profile fetch itself failed (transient/network) → distinct from "no profile yet"
   subscriptionTier: string;
   subscriptionStatus: string | null;
   subscriptionPeriodEnd: string | null;
@@ -113,13 +114,15 @@ function computeNumerologyFromProfile(
   };
 }
 
-export function useUserProfile(): UserProfileData {
+export function useUserProfile(): UserProfileData & { reload: () => void } {
   const { user, loading: authLoading } = useAuth();
   const promotionPass = usePromotionPass();
+  const [reloadKey, setReloadKey] = useState(0);
   const [data, setData] = useState<UserProfileData>({
     ...demoProfile,
     isDemo: true,
     isLoading: true,
+    loadError: false,
     subscriptionTier: "eveil",
     subscriptionStatus: null,
     subscriptionPeriodEnd: null,
@@ -127,6 +130,11 @@ export function useUserProfile(): UserProfileData {
     isPremium: false,
     isSubscriptionPremium: false,
   });
+
+  const reload = () => {
+    setData((d) => ({ ...d, loadError: false, isLoading: true }));
+    setReloadKey((k) => k + 1);
+  };
 
   useEffect(() => {
     if (authLoading) return;
@@ -142,7 +150,16 @@ export function useUserProfile(): UserProfileData {
         .eq("user_id", user.id)
         .maybeSingle();
 
-      if (error || !profile) {
+      if (error) {
+        // Transient/network/DB error: do NOT fall back to demo mode, or a
+        // paying subscriber with a hiccup would get bounced into onboarding.
+        // Surface a distinct error state so the UI can offer a retry instead.
+        setData((d) => ({ ...d, loadError: true, isLoading: false }));
+        return;
+      }
+
+      if (!profile) {
+        // No error, but genuinely no row yet: keep the existing demo/onboarding fallback.
         setData((d) => ({ ...d, isLoading: false }));
         return;
       }
@@ -206,6 +223,7 @@ export function useUserProfile(): UserProfileData {
           firstName: profile.first_name || demoProfile.firstName,
           isDemo: true,
           isLoading: false,
+          loadError: false,
           subscriptionTier,
           subscriptionStatus,
           subscriptionPeriodEnd,
@@ -238,6 +256,7 @@ export function useUserProfile(): UserProfileData {
         level: profile.level || "débutant",
         isDemo: false,
         isLoading: false,
+        loadError: false,
         subscriptionTier,
         subscriptionStatus,
         subscriptionPeriodEnd,
@@ -319,12 +338,15 @@ export function useUserProfile(): UserProfileData {
 
       fetchNatalChart();
     })().catch(() => {
-      setData((d) => ({ ...d, isLoading: false }));
+      // Unexpected exception while loading the profile: same rule as a DB
+      // error above, never silently fall back to demo/onboarding.
+      setData((d) => ({ ...d, loadError: true, isLoading: false }));
     });
-  }, [user, authLoading]);
+  }, [user, authLoading, reloadKey]);
 
   return {
     ...data,
+    reload,
     // Promotional access unlocks the same app surfaces without ever mutating
     // the Stripe-backed profile tier, status, cookie, or billing controls.
     isPremium: data.isPremium || promotionPass.isPremium,

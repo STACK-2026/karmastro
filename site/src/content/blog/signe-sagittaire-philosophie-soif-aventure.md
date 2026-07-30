@@ -1,5 +1,5 @@
 ---
-title: "Sagittaire : philosophie, aventure et mission karmique (guid"
+title: "Sagittaire : philosophie, aventure et mission karmique"
 description: "Découvre le signe Sagittaire : dates (22 nov-21 déc), caractère optimiste, compatibilité amoureuse, mission karmique et lien avec la numérologie. Guide complet "
 date: 2026-06-30
 author: "Sibylle"
@@ -9,7 +9,7 @@ tags: ["Sagittaire", "philosophie", "aventure", "signe"]
 keywords: "Sagittaire, philosophie, aventure, signe"
 draft: false
 image: "https://images.unsplash.com/photo-1531956801324-df716337e0b9?ixid=M3w4Nzg4MzB8MHwxfHNlYXJjaHw0M3x8U2FnaXR0YWlyZSUyMHpvZGlhYyUyMHN0YXJzJTIwbmlnaHQlMjBza3klMjBteXN0aWNhbHxlbnwwfDB8fHwxNzgyODA3ODk5fDA&ixlib=rb-4.1.0&w=1200&h=630&fit=crop&crop=center&q=80"
-imageAlt: "Milky Way galaxy at night"
+imageAlt: "Voie lactée étoilée évoquant l'esprit aventurier du Sagittaire"
 ---
 
 ![Illustration du signe Sagittaire avec son symbole astrologique et Jupiter](IMAGE_1)

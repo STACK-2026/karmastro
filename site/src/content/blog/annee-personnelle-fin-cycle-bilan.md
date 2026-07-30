@@ -1,5 +1,5 @@
 ---
-title: "Année personnelle 9 : fin de cycle karmique - Guide complet "
+title: "Année personnelle 9 : fin de cycle karmique"
 description: "Découvre la signification profonde de ton année personnelle 9 en numérologie : bilan karmique, leçons des 8 dernières années et plan d'action mois par mois pour"
 date: 2026-05-20
 author: "Pythia"
@@ -9,7 +9,7 @@ tags: ["année personnelle 9", "cycle", "numérologie", "bilan"]
 keywords: "année personnelle 9, cycle, numérologie, bilan"
 draft: false
 image: "https://images.unsplash.com/photo-1669219801545-3c73b2aa23cc?ixid=M3w4Nzg4MzB8MHwxfHNlYXJjaHwzMHx8YW5uJUMzJUE5ZSUyMHBlcnNvbm5lbGxlJTIwOSUyMG51bWJlcnMlMjBzcGlyaXR1YWwlMjBhYnN0cmFjdHxlbnwwfDB8fHwxNzc5Mjc2OTYyfDA&ixlib=rb-4.1.0&w=1200&h=630&fit=crop&crop=center&q=80"
-imageAlt: "a black rectangle with a white circle and a white circle on it"
+imageAlt: "Cercle lumineux symbolisant la fin d'un cycle numérologique"
 ---
 
 ---

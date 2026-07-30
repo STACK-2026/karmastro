@@ -1,5 +1,5 @@
 ---
-title: "Âme sœur en numérologie : calcul et compatibilité [Guide 202"
+title: "Âme sœur en numérologie : calcul et compatibilité"
 description: "Découvre comment calculer ton âme sœur en numérologie avec des méthodes précises (chemin de vie, expression, cœur). 7 types d'âmes, 15 signes de reconnaissance "
 date: 2026-07-28
 author: "Séléné"
@@ -9,7 +9,7 @@ tags: ["âme sœur", "numérologie", "calcul", "compatibilité"]
 keywords: "âme sœur, numérologie, calcul, compatibilité"
 draft: false
 image: "https://images.unsplash.com/photo-1575257932559-dc14392d7656?ixid=M3w4Nzg4MzB8MHwxfHNlYXJjaHw1MXx8JUMzJUEybWUlMjBzJUM1JTkzdXJ8ZW58MHwwfHx8MTc4NTIzNDUwMXww&ixlib=rb-4.1.0&w=1200&h=630&fit=crop&crop=center&q=80"
-imageAlt: "Onne sein sparkling sponge box"
+imageAlt: "Deux mains formant un cœur sous un ciel étoilé, symbole de l'âme sœur"
 ---
 
 <aside data-speakable="true" class="tldr">

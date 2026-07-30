@@ -1,5 +1,5 @@
 ---
-title: "Compatibilité Taureau-Scorpion : attraction magnétique et dé"
+title: "Compatibilité Taureau-Scorpion : attraction magnétique"
 description: "Découvre pourquoi l'attraction Taureau-Scorpion est si puissante : 7 clés de compatibilité, 3 défis à surmonter et des conseils concrets pour une relation durab"
 date: 2026-06-16
 author: "Séléné"

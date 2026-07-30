@@ -1,5 +1,5 @@
 ---
-title: "Nouvelle Lune en Capricorne 2026 : ambitions, rituels et kar"
+title: "Nouvelle Lune en Capricorne 2026 : ambitions et rituels"
 description: "Découvre la signification de la Nouvelle Lune en Capricorne 2026 : dates précises, rituels pour manifester tes ambitions, et son impact sur ton thème astral et "
 date: 2026-06-12
 author: "Sibylle"
@@ -9,7 +9,7 @@ tags: ["nouvelle lune", "Capricorne", "ambitions", "astrologie"]
 keywords: "nouvelle lune, Capricorne, ambitions, astrologie"
 draft: false
 image: "https://images.unsplash.com/photo-1548222606-6c4f581fd09d?ixid=M3w4Nzg4MzB8MHwxfHNlYXJjaHwzOHx8bm91dmVsbGUlMjBsdW5lJTIwem9kaWFjJTIwc3RhcnMlMjBza3l8ZW58MHwwfHx8MTc4MTI1NDQ1M3ww&ixlib=rb-4.1.0&w=1200&h=630&fit=crop&crop=center&q=80"
-imageAlt: "time lapse photography of assorted moon illustration"
+imageAlt: "Phases de la Lune photographiées en pose longue dans le ciel nocturne"
 ---
 
 ---

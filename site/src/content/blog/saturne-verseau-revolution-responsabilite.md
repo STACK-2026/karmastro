@@ -1,5 +1,5 @@
 ---
-title: "Saturne en Verseau 2026 : Révolution, Responsabilité et Karm"
+title: "Saturne en Verseau 2026 : révolution et responsabilité"
 description: "Saturne en Verseau allie structure et innovation. Découvre sa signification karmique, son impact sur ton thème natal et tes transits 2026 avec Karmastro - 5 exe"
 date: 2026-05-26
 author: "Sibylle"

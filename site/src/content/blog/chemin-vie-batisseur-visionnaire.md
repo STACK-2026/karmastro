@@ -1,5 +1,5 @@
 ---
-title: "Chemin de vie 22 : le Maître Bâtisseur en numérologie karmiq"
+title: "Chemin de vie 22 : le Maître Bâtisseur en numérologie"
 description: "Le chemin de vie 22, ou «Maître Bâtisseur», est le plus puissant en numérologie. Découvre sa mission karmique, ses talents, défis et comment activer son potenti"
 date: 2026-07-10
 author: "Pythia"
@@ -9,7 +9,7 @@ tags: ["chemin de vie 22", "bâtisseur", "visionnaire"]
 keywords: "chemin de vie 22, bâtisseur, visionnaire"
 draft: false
 image: "https://images.unsplash.com/photo-1762901989329-1e7d0d811dc7?ixid=M3w4Nzg4MzB8MHwxfHNlYXJjaHw0Nnx8Y2hlbWluJTIwZGUlMjB2aWUlMjAyMiUyMG51bWJlcnMlMjBzcGlyaXR1YWwlMjBhYnN0cmFjdHxlbnwwfDB8fHwxNzgzNjcxMzY5fDA&ixlib=rb-4.1.0&w=1200&h=630&fit=crop&crop=center&q=80"
-imageAlt: "Close-up of the number 12 on a white surface."
+imageAlt: "Le nombre 22 gravé en gros plan, symbole du Maître Bâtisseur"
 ---
 
 ```
