@@ -72,7 +72,10 @@ jobs:
         run: |
           set -e
           FAIL=0
-          echo "${{ steps.changed.outputs.files }}" | while read -r f; do
+          # NB: feed the loop via a here-string, NOT `echo ... | while`.
+          # A piped while runs in a subshell, so FAIL=1 is lost and `exit $FAIL`
+          # always saw 0 -> this gate could never fail (silent guardrail).
+          while read -r f; do
             [ -z "$f" ] && continue
             [ ! -f "$f" ] && continue
             w=$(wc -w < "$f")
@@ -90,7 +93,7 @@ jobs:
             if [ "$img" = "0" ]; then echo "::error file=$f::Missing 'image:' in frontmatter"; FAIL=1; fi
             if [ "$rev" = "0" ]; then echo "::warning file=$f::Missing 'lastReviewed:' in frontmatter"; fi
             if [ "$author" = "0" ]; then echo "::error file=$f::Missing 'author:' in frontmatter"; FAIL=1; fi
-          done
+          done <<< "${{ steps.changed.outputs.files }}"
           exit $FAIL
 
   i18n-coverage:
