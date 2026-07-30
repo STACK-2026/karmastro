@@ -23,7 +23,6 @@ import {
 } from "../_shared/pending-turn-crypto.ts";
 import {
   buildOracleConversationInstructions,
-  FALLBACK_GEMINI_MODEL,
   FIRST_TURN_ORACLE_PROMPT,
   geminiGenerationConfig,
   PRIMARY_GEMINI_MODEL,
@@ -31,6 +30,9 @@ import {
 import {
   isOracleAutomatedUserAgent,
 } from "../_shared/oracle-bot-policy.ts";
+import {
+  generateOracleReply,
+} from "../_shared/oracle-llm.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -683,7 +685,10 @@ serve(async (req) => {
       });
     }
 
-    // Moteur LLM : Gemini (tier gratuit) au lieu de Claude payant (29/05).
+    // Moteur LLM : Gemini (tier gratuit) reste primaire (29/05). Bascule
+    // automatique sur Anthropic en cas d'échec récupérable, voir oracle-llm.ts
+    // (indépendance fournisseur, 30/07). GOOGLE_API_KEY reste requise ici :
+    // Gemini doit être configuré pour tenter le tour primaire.
     const GOOGLE_API_KEY = Deno.env.get("GOOGLE_API_KEY") || "";
     if (!GOOGLE_API_KEY) throw new Error("GOOGLE_API_KEY non configurée");
 
@@ -1137,47 +1142,24 @@ serve(async (req) => {
       engineContext += missingOracleProfileContext(userId);
     }
 
-    // Moteur Gemini (tier gratuit). Rôles Gemini : "user" / "model".
-    const geminiContents = messages.map((m: { role: string; content: string }) => ({
-      role: m.role === "assistant" ? "model" : "user",
-      parts: [{ text: m.content }],
-    }));
-
-    const callGemini = (model: string) =>
-      fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GOOGLE_API_KEY}`,
-        {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({
-            system_instruction: { parts: [{ text: systemPrompt + engineContext }] },
-            contents: geminiContents,
-            // gemini-2.5-flash is a "thinking" model. With no thinkingConfig its
-            // (dynamic, unbounded) reasoning tokens are billed against
-            // maxOutputTokens, so on high-thinking draws the visible answer is
-            // truncated mid-sentence and the ---SUGGESTIONS--- block never
-            // appears (root cause of the "réponses nulles" reported 31/05).
-            // Cap thinking at 512 and raise the output ceiling so the answer
-            // always has >=2560 tokens of headroom. [2026-05-31]
-            generationConfig: geminiGenerationConfig(model),
-          }),
-        },
-      );
-
-    let activeGeminiModel = PRIMARY_GEMINI_MODEL;
-    let response = await callGemini(activeGeminiModel);
-    if (response.status === 429) {
-      const primaryError = await response.text();
-      console.warn("Gemini primary quota exhausted, using stable fallback:", primaryError.slice(0, 500));
-      activeGeminiModel = FALLBACK_GEMINI_MODEL;
-      response = await callGemini(activeGeminiModel);
-    }
-
-    if (!response.ok) {
-      console.error(`Gemini error (${activeGeminiModel}):`, response.status, (await response.text()).slice(0, 500));
+    // Moteur LLM : Gemini (tier gratuit) reste PRIMAIRE. Si Gemini échoue de
+    // façon récupérable (quota/429/5xx/timeout/réponse vide), oracle-llm.ts
+    // bascule automatiquement sur Anthropic (claude-haiku-4-5) pour que
+    // l'Oracle ne tombe jamais à cause d'un seul fournisseur. [2026-07-30]
+    let rawText: string;
+    try {
+      const reply = await generateOracleReply({
+        systemPrompt: systemPrompt + engineContext,
+        messages,
+        generationConfig: geminiGenerationConfig(PRIMARY_GEMINI_MODEL),
+      });
+      rawText = reply.text;
+    } catch (llmError) {
+      const llmFailureMessage = llmError instanceof Error ? llmError.message : String(llmError);
+      console.error("oracle-llm failed on every provider:", llmFailureMessage.slice(0, 500));
       await releaseActivationReservation(activationReservation);
       activationReservation = null;
-      if (response.status === 429) {
+      if (/\b(429|RESOURCE_EXHAUSTED)\b/.test(llmFailureMessage)) {
         return new Response(JSON.stringify({ error: "Les astres sont très sollicités. Réessaie dans un instant." }), {
           status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
@@ -1186,10 +1168,7 @@ serve(async (req) => {
         status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
-
-    const data = await response.json();
-    const rawText = data.candidates?.[0]?.content?.parts?.map((p: { text?: string }) => p.text || "").join("")
-      || "L'Oracle médite sur ta question...";
+    if (!rawText) rawText = "L'Oracle médite sur ta question...";
 
     // Extract the visible body, the 3 follow-up suggestions (rule 14), and any
     // profile hints Gemini silently captured from an authenticated user's last
