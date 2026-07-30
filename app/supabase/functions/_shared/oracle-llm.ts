@@ -209,7 +209,7 @@ async function callAnthropic(
     );
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
-    throw new Error(`anthropic fetch failed: ${message}`);
+    throw new Error(`anthropic fetch failed: ${message}`, { cause: err });
   }
 
   if (!response.ok) {
