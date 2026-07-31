@@ -1,1 +1,10 @@
 project_id = "nkjbmbdrvejemzrggxvr"
+
+# Both functions authenticate in code. `send-email` accepts only service-role
+# or the dedicated internal secret. `send-welcome` verifies the caller's user
+# access token with Supabase Auth and resolves the recipient server-side.
+[functions.send-email]
+verify_jwt = false
+
+[functions.send-welcome]
+verify_jwt = false

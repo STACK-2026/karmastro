@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { User, Session } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
+import { detectWelcomeLocale, requestWelcomeEmail } from "@/lib/welcome-email";
 
 interface AuthContextType {
   user: User | null;
@@ -24,10 +25,16 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       setSession(session);
       setUser(session?.user ?? null);
       setLoading(false);
+
+      if (event === "SIGNED_IN" && session?.access_token) {
+        void requestWelcomeEmail(session.access_token, detectWelcomeLocale()).catch(() => {
+          console.warn("Welcome email request failed");
+        });
+      }
     });
 
     supabase.auth.getSession().then(({ data: { session } }) => {

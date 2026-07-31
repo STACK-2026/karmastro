@@ -6,6 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { trackEvent } from "@/lib/tracker";
 import StarField from "@/components/StarField";
 import { getPostAuthPath } from "@/lib/postAuth";
+import { detectWelcomeLocale, requestWelcomeEmail } from "@/lib/welcome-email";
 
 const REFERRAL_STORAGE_KEY = "karmastro_referral_code";
 
@@ -14,7 +15,7 @@ const REFERRAL_STORAGE_KEY = "karmastro_referral_code";
 // to appear in useAuth(), then attach any stored referral code to the profile.
 const AuthCallback = () => {
   const navigate = useNavigate();
-  const { user, loading } = useAuth();
+  const { user, session, loading } = useAuth();
   const [attaching, setAttaching] = useState(false);
 
   useEffect(() => {
@@ -47,11 +48,19 @@ const AuthCallback = () => {
         }
       }
 
+      if (session?.access_token) {
+        try {
+          await requestWelcomeEmail(session.access_token, detectWelcomeLocale());
+        } catch {
+          console.warn("Welcome email request failed");
+        }
+      }
+
       // The stored destination decides whether this returns to the progressive
       // onboarding form or continues directly into the app.
       navigate(getPostAuthPath(), { replace: true });
     })();
-  }, [user, loading, navigate, attaching]);
+  }, [user, session, loading, navigate, attaching]);
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center relative">

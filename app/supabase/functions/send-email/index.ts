@@ -17,6 +17,8 @@ import {
   createEmailLogEntry,
   type EmailLogDatabase,
 } from "../_shared/email-delivery-log.ts";
+import { isAuthorizedServiceRequest } from "../_shared/internal-auth.ts";
+import { normalizeEmailIdempotencyKey } from "../_shared/email-idempotency.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -27,6 +29,7 @@ const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY") || "";
 const FROM_EMAIL = Deno.env.get("RESEND_FROM_EMAIL") || "Karmastro <contact@karmastro.com>";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "";
 const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
+const INTERNAL_SECRET = Deno.env.get("SEND_EMAIL_INTERNAL_SECRET") || "";
 
 type TemplateType =
   | "welcome"
@@ -57,7 +60,13 @@ type TemplateData = {
   customerEmail?: string;
 };
 
-async function sendViaResend(to: string, subject: string, html: string, text: string): Promise<void> {
+async function sendViaResend(
+  to: string,
+  subject: string,
+  html: string,
+  text: string,
+  idempotencyKey: string | null,
+): Promise<void> {
   if (!RESEND_API_KEY) {
     console.warn("RESEND_API_KEY not set, email not sent to", to);
     return;
@@ -68,6 +77,7 @@ async function sendViaResend(to: string, subject: string, html: string, text: st
     headers: {
       Authorization: `Bearer ${RESEND_API_KEY}`,
       "Content-Type": "application/json",
+      ...(idempotencyKey ? { "Idempotency-Key": idempotencyKey } : {}),
     },
     body: JSON.stringify({
       from: FROM_EMAIL,
@@ -89,14 +99,26 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  const authorizationHeader = req.headers.get("Authorization");
+  const authorized =
+    isAuthorizedServiceRequest(authorizationHeader, SERVICE_KEY) ||
+    isAuthorizedServiceRequest(authorizationHeader, INTERNAL_SECRET);
+  if (!authorized) {
+    return new Response(JSON.stringify({ error: "unauthorized" }), {
+      status: 401,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
+
   let emailLogId: string | null = null;
   let emailLogDb: EmailLogDatabase | null = null;
 
   try {
-    const { type, to, data } = await req.json() as {
+    const { type, to, data, idempotencyKey } = await req.json() as {
       type: TemplateType;
       to: string;
       data?: TemplateData;
+      idempotencyKey?: string;
     };
 
     if (!to || !type) {
@@ -109,7 +131,11 @@ serve(async (req) => {
     let template;
     switch (type) {
       case "welcome":
-        template = welcomeEmail(data?.firstName ?? null, data?.referrerName ?? null);
+        template = welcomeEmail(
+          data?.firstName ?? null,
+          data?.referrerName ?? null,
+          data?.locale ?? "fr",
+        );
         break;
       case "payment_success":
         template = paymentSuccessEmail(
@@ -184,7 +210,13 @@ serve(async (req) => {
       });
     }
 
-    await sendViaResend(to, template.subject, template.html, template.text);
+    await sendViaResend(
+      to,
+      template.subject,
+      template.html,
+      template.text,
+      normalizeEmailIdempotencyKey(idempotencyKey),
+    );
     if (emailLogDb) await completeEmailLogEntry(emailLogDb, emailLogId, "sent");
 
     return new Response(JSON.stringify({ status: "sent", subject: template.subject }), {
