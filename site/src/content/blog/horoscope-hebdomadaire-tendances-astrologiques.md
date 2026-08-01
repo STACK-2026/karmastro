@@ -52,21 +52,6 @@ imageAlt: "blue sky with white clouds during daytime"
   - [Comment combiner numérologie et astrologie ?](#comment-combiner-numérologie-et-astrologie-)
 - [Conseils pratiques pour naviguer les énergies de la semaine](#conseils-pratiques-pour-naviguer-les-energies-de-la-semaine)
   - [Gérer Mercure rétrograde en Vierge](#gerer-mercure-retrograde-en-vierge)
-  - [Profiter de la Nouvelle Lune en Lion](#profiter-de-la-nouvelle-lune-en-lion)
-  - [Équilibrer le carré Lune-Pluton](#equilibrer-le-carre-lune-pluton)
-  - [Optimiser le sextile Soleil-Jupiter](#optimiser-le-sextile-soleil-jupiter)
-  - [Conseils par élément (Feu, Terre, Air, Eau)](#conseils-par-element-feu-terre-air-eau)
-- [Aperçu de l'horoscope de la semaine prochaine (7-13 août 2026)](#aperçu-de-lhoroscope-de-la-semaine-prochaine-7-13-aout-2026)
-  - [Transits clés à surveiller](#transits-clés-à-surveiller)
-  - [Tendances par signe (aperçu)](#tendances-par-signe-aperçu)
-- [FAQ](#faq)
-  - [Pourquoi faire confiance à l’horoscope de Karmastro ?](#pourquoi-faire-confiance-a-lhoroscope-de-karmastro-)
-  - [Comment savoir si mon signe est vraiment impacté par un transit ?](#comment-savoir-si-mon-signe-est-vraiment-impacte-par-un-transit-)
-  - [Peut-on vraiment prédire l’avenir avec l’astrologie ?](#peut-on-vraiment-predire-lavenir-avec-lastrologie-)
-  - [Pourquoi mon horoscope ne correspond pas à ma réalité ?](#pourquoi-mon-horoscope-ne-correspond-pas-a-ma-realite-)
-  - [Comment utiliser l’horoscope pour améliorer ma vie ?](#comment-utiliser-lhoroscope-pour-ameliorer-ma-vie-)
-  - [L’horoscope hebdomadaire est-il compatible avec la numérologie ?](#lhoroscope-hebdomadaire-est-il-compatible-avec-la-numerologie-)
-- [Sources](#sources)
 
 ---
 

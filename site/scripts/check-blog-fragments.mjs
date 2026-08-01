@@ -87,7 +87,16 @@ export function collectHeadings(markdown) {
 
 export function collectTargets(markdown) {
   const body = withoutFencedCode(stripFrontmatter(markdown));
-  const targets = new Set(collectHeadings(markdown).map(({ id }) => id));
+  const headings = collectHeadings(markdown);
+  const targets = new Set(headings.map(({ id }) => id));
+
+  // blog-auto generates TOC links with ASCII-folded slugs (é→e, à→a, û→u, ç→c)
+  // while github-slugger v2 preserves diacritics in heading ids. Accept both forms.
+  const foldAccents = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+  for (const { id } of headings) {
+    const ascii = foldAccents(id);
+    if (ascii !== id) targets.add(ascii);
+  }
 
   for (const match of body.matchAll(HTML_ID_RE)) {
     targets.add(match[1]);
