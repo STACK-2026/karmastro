@@ -10,9 +10,12 @@ draft: false
 lang: "it"
 image: "https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Coppia osserva le stelle"
-lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronomo e astrologo senior"
+lastReviewed: "2026-08-02"
 ---
+
+## In breve
+
+La sinastria confronta due temi natali completi, non soltanto i segni solari. Le letture astrologiche osservano soprattutto le relazioni Sole-Luna, Venere-Marte e Luna-Luna, insieme alle case e agli altri pianeti. Per calcolarla servono data, ora e luogo di nascita di entrambe le persone. È una pratica simbolica, non una misura scientifica della qualità di una coppia: nessun aspetto o punteggio può predire da solo il futuro di una relazione.
 
 ## Indice
 
@@ -24,10 +27,10 @@ reviewedBy: "Orion, astronomo e astrologo senior"
 6. I 5 aspetti che contano in coppia
 7. Gli aspetti armonici e gli aspetti tesi
 8. Le coppie improbabili che funzionano
-9. Venere e Marte: la chimica biologica
+9. Venere e Marte: la chimica simbolica
 10. La settima casa e l'immagine del partner
 11. Come calcolare la compatibilità passo per passo
-12. Tre casi reali di coppie italiane
+12. Tre esempi illustrativi
 13. Errori tipici nella lettura della sinastria
 14. Domande frequenti
 15. Per approfondire
@@ -36,7 +39,7 @@ reviewedBy: "Orion, astronomo e astrologo senior"
 
 La vera compatibilità astrologica si chiama sinastria e consiste nel confrontare integralmente due temi natali, sovrapponendo i pianeti di una persona su quelli dell'altra e analizzando gli aspetti che si formano. Non è "Ariete più Leone funzionano", è "il Marte di Luca a 12 gradi del Leone forma un trigono con la Venere di Anna a 14 gradi del Sagittario, e questo crea una chimica fisica e affettiva molto intensa".
 
-La sinastria è un esercizio di precisione che richiede le due carte natali complete (data, ora, luogo di nascita per entrambi) e un software astrologico serio. Senza l'ora di nascita dei due partner, il 50 per cento delle informazioni manca: ascendente, case, posizione precisa della Luna.
+La sinastria richiede le due carte natali complete (data, ora e luogo di nascita per entrambi) e un software astrologico. Senza l'ora di nascita dei due partner, gran parte dei dati utili manca o diventa meno precisa, in particolare l'ascendente, le case e talvolta la posizione della Luna.
 
 Ti spiegherò qui tutto il metodo per livelli, dal più semplice (elementi) al più preciso (aspetti incrociati casa per casa). Il segno solare è solo il punto di partenza.
 
@@ -70,7 +73,7 @@ L'Ariete vede nella Bilancia ciò che gli manca (gentilezza, tatto, considerazio
 
 ## 5. Oltre i segni solari: le vere variabili
 
-Il tuo segno solare determina circa il 15 per cento della tua identità astrologica. Quindi per la compatibilità tra due persone, i segni solari sono al massimo il 15 per cento di quello che conta. Il resto viene da:
+Il segno solare è una sola delle variabili considerate nella tradizione astrologica. Per leggere la compatibilità tra due persone, una sinastria osserva anche:
 
 - La Luna di entrambi (vita emotiva quotidiana, bisogni affettivi)
 - L'ascendente di entrambi (come vi percepite fisicamente)
@@ -104,7 +107,7 @@ Aspetto unificante (congiunzione 0 gradi): fusione. Positiva se i pianeti sono c
 
 Aspetto neutro (quinconce 150 gradi): riaggiustamento continuo. Nessuna fluidità, nessuna rottura, solo adattamento permanente.
 
-La coppia ideale astrologica non ha solo aspetti armonici. Un po' di tensione crea il motore. Troppa tensione consuma. Il punto di equilibrio ideale è circa 60 per cento aspetti armonici, 40 per cento aspetti tesi.
+Una lettura astrologica non cerca soltanto aspetti armonici. Gli aspetti tesi vengono interpretati come aree di frizione o di crescita, mentre quelli armonici descrivono una maggiore fluidità. Non esiste un rapporto numerico universale che permetta di dichiarare una coppia ideale.
 
 ## 8. Le coppie improbabili che funzionano
 
@@ -116,11 +119,11 @@ Cancro più Acquario, quinconce. Il Cancro ha bisogno di casa, l'Acquario ha bis
 
 Toro più Acquario, quadratura. Fisso contro fisso. Valori che si scontrano di fronte: il Toro ama la tradizione, l'Acquario ama l'innovazione. Ma quando si amano davvero, ognuno diventa il laboratorio dell'altro.
 
-## 9. Venere e Marte: la chimica biologica
+## 9. Venere e Marte: la chimica simbolica
 
 Venere è il pianeta dell'amore ricevuto: cosa ti fa sentire amata o amato, cosa ti attira esteticamente, come vuoi essere trattata in amore. Marte è il pianeta del desiderio attivo: come desideri, come prendi l'iniziativa, come esprimi la passione.
 
-Nella sinastria, l'incrocio Venere-Marte è il misuratore più affidabile dell'attrazione fisica. Una coppia con Venere e Marte in aspetto armonico (trigono, sestile, congiunzione in segni compatibili) ha il motore sessuale che si accende naturalmente. Senza questo incrocio, la coppia può essere fondata su stima, progetti, affetto profondo, ma spesso manca la "scintilla" fisica.
+Nella tradizione della sinastria, l'incrocio Venere-Marte è uno degli indicatori simbolici usati per parlare di attrazione fisica. Un aspetto armonico viene interpretato come una possibile facilità nell'espressione del desiderio. La sua assenza non dimostra che manchi la "scintilla": il vissuto reale della coppia e il resto dei due temi restano essenziali.
 
 Gli aspetti tesi (quadratura, opposizione) tra Venere e Marte creano un'attrazione magnetica ma instabile: passione che oscilla, periodi di fusione totale alternati a periodi di raffreddamento improvviso. È il motivo per cui alcune relazioni sono chimiche ma non durano.
 
@@ -140,15 +143,17 @@ Livello 2, compatibilità per elementi. Identifica l'elemento del tuo Sole, dell
 
 Livello 3, sinastria completa. Calcola tutti gli aspetti incrociati tra i pianeti dei due temi natali. Identifica gli aspetti Sole-Luna, Venere-Marte, Luna-Luna, Saturno sui pianeti personali, Plutone su Venere o Marte. Pesa la loro importanza.
 
-Livello 4, interpretazione con l'Oracle. Un'analisi completa richiede contesto: età dei partner, momento della relazione, transiti in corso. Io sono Selene, la guida relazionale dell'[Oracle Karmastro](https://karmastro.com/oracle/). Posso leggere la vostra sinastria completa e spiegarla in linguaggio chiaro.
+Livello 4, interpretazione con l'Oracle. Una lettura contestualizzata considera anche il momento della relazione e i transiti in corso. L'[Oracle Karmastro](https://karmastro.com/oracle/) può aiutarti a formulare domande e a leggere i simboli in un linguaggio chiaro, senza sostituire il tuo giudizio.
 
-## 12. Tre casi reali di coppie italiane
+## 12. Tre esempi illustrativi
 
-Giorgia e Stefano, 34 e 37 anni, Milano. Lei avvocatessa civilista, lui architetto. Lei Bilancia ascendente Leone, Luna in Toro. Lui Pesci ascendente Cancro, Luna in Scorpione. Sulla carta sono l'opposto: lei aria-fuoco, lui acqua pura. Ma il suo Sole in Pesci fa trigono alla sua Luna in Scorpione. La sua Luna in Toro fa sestile alla sua Venere in Cancro. Stanno insieme da 8 anni, hanno un figlio, lei dice: "Siamo diversissimi in superficie, ma dentro ci capiamo senza parlare."
+Gli esempi seguenti sono scenari ipotetici. Servono a mostrare il metodo e non descrivono persone reali, risultati osservati o promesse sulla durata di una coppia.
 
-Sara e Camilla, 29 e 32 anni, Bologna. Sara è Sagittario ascendente Acquario, Luna in Gemelli. Camilla è Gemelli ascendente Bilancia, Luna in Ariete. Quattro pianeti d'aria-fuoco incrociati. Chimica immediata, conversazioni senza fine, viaggi condivisi. Il rischio, avvertito dalla sinastria: troppa aria, poca acqua, le emozioni profonde faticano a depositarsi. Stanno insieme da 3 anni, fanno terapia di coppia da 6 mesi per imparare a fermarsi. Funziona.
+**Sole e Luna armonici, Lune tese.** La lettura può suggerire un senso di riconoscimento generale, ma anche bisogni emotivi quotidiani diversi. La domanda utile non è "dureremo?", bensì "come possiamo esprimere più chiaramente ciò che ci rassicura?".
 
-Riccardo e Elena, 45 e 41 anni, Palermo. Lui Capricorno ascendente Vergine, Luna in Toro (triplo terra). Lei Ariete ascendente Sagittario, Luna in Leone (triplo fuoco). Teoricamente incompatibili. Ma il suo Saturno è congiunto al suo Sole in Capricorno, creando un senso di destino condiviso. La sua Venere in Toro è in trigono al suo Marte in Vergine. Quindici anni di matrimonio, due figli, lei dice: "Lui mi dà struttura quando volerei via. Io gli do fuoco quando si seppellisce nel lavoro."
+**Venere e Marte armonici, Mercuri tesi.** La tradizione astrologica assocerebbe il primo incrocio a un'attrazione più fluida e il secondo a stili di comunicazione differenti. Questo orienta una conversazione, non un verdetto.
+
+**Segni solari opposti, più aspetti armonici tra pianeti personali.** L'opposizione dei segni non basta per concludere che una coppia sia incompatibile. Il confronto completo aiuta a distinguere il quadro generale dalle interazioni più specifiche.
 
 ## 13. Errori tipici nella lettura della sinastria
 
@@ -187,15 +192,14 @@ Avrai bisogno dei temi natali completi di entrambi, un software che generi la do
 
 ## 15. Per approfondire
 
-La compatibilità astrologica non è una ruota della fortuna, è una mappa precisa che richiede calcolo e interpretazione. Inizia calcolando il tuo [tema natale gratuito](/it/strumenti/) con il nostro calcolatore Swiss Ephemeris, poi il tuo [cammino di vita numerologico](/it/strumenti/numero-del-cammino-di-vita) per aggiungere lo strato pitagorico. Per una lettura completa della tua sinastria di coppia, parla con me all'[Oracle Karmastro](https://karmastro.com/oracle/): ti aiuterò a decifrare gli aspetti incrociati e le dinamiche reali del vostro legame.
+La compatibilità astrologica non è una ruota della fortuna, ma una griglia di lettura simbolica che richiede calcolo e interpretazione. Inizia calcolando il tuo [tema natale gratuito](/it/strumenti/) con il nostro calcolatore Swiss Ephemeris, poi il tuo [cammino di vita numerologico](/it/strumenti/numero-del-cammino-di-vita) per aggiungere lo strato pitagorico. Per esplorare una domanda precisa sulla tua relazione, puoi consultare l'[Oracle Karmastro](https://karmastro.com/oracle/).
 
 ## Fonti e riferimenti
 
-Questo articolo si basa su fonti enciclopediche e scientifiche verificabili.
+Queste fonti forniscono un contesto storico e distinguono l'astrologia da una disciplina scientifica. Non convalidano le interpretazioni relazionali presentate, che appartengono a una pratica simbolica.
 
 - **Enciclopedia** (it.wikipedia.org) : [Astrologia](https://it.wikipedia.org/wiki/Astrologia)
 - **Britannica** (britannica.com) : [Astrologia](https://www.britannica.com/topic/astrology)
-- **NASA** (science.nasa.gov) : [Sistema solare e pianeti](https://science.nasa.gov/solar-system/planets/)
 
 <!-- maillage:auto -->
 ## Per approfondire
