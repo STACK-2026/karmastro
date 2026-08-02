@@ -15,7 +15,7 @@ imageAlt: "Carte céleste ancienne illustrant les constellations du zodiaque"
 
 - [Les bases de la compatibilité astrologique en amour](#les-bases-de-la-compatibilité-astrologique-en-amour)
 - [Les éléments astrologiques et leurs affinités](#les-éléments-astrologiques-et-leurs-affinités)
-- [Top 5 des couples astrologiques les plus compatibles](#top-5-des-couples-astrologiques-les-plus-compatibles)
+- [5 couples souvent décrits comme compatibles](#5-couples-souvent-décrits-comme-compatibles)
 - [Comment calculer votre compatibilité amoureuse précise](#comment-calculer-votre-compatibilité-amoureuse-précise)
 - [Les signes qui s'opposent mais s'attirent](#les-signes-qui-sopposent-mais-sattirent)
 - [L'importance de Vénus et Mars en synastrie](#limportance-de-vénus-et-mars-en-synastrie)
@@ -25,29 +25,27 @@ imageAlt: "Carte céleste ancienne illustrant les constellations du zodiaque"
 
 ## Les bases de la compatibilité astrologique en amour
 
-La **compatibilité astrologique** repose sur l'analyse des interactions entre les signes solaires, mais aussi sur l'étude complète des thèmes nataux des deux partenaires. Contrairement aux horoscopes génériques, une véritable compatibilité amoureuse nécessite d'examiner les positions de Vénus (amour), Mars (désir), la Lune (émotions) et l'Ascendant (première impression) de chaque personne.
+La **compatibilité astrologique** s'intéresse aux interactions entre les signes solaires, mais aussi à l'ensemble des deux thèmes nataux. Contrairement aux horoscopes génériques, une synastrie examine notamment les positions de Vénus (affection), Mars (action et désir), la Lune (besoins émotionnels) et l'Ascendant de chaque personne.
 
-Les astrologues utilisent quatre critères principaux pour évaluer la compatibilité :
+Les lectures de synastrie utilisent notamment quatre familles de repères :
 
 - **Les éléments** : Feu, Terre, Air, Eau
 - **Les modes** : Cardinal, Fixe, Mutable  
 - **Les aspects** : conjonction (0°), trigone (120°), carré (90°), opposition (180°)
 - **Les maisons astrologiques** où tombent les planètes du partenaire
 
-Selon une étude de l'Institut français d'opinion publique (2024), 73% des Français consultent leur compatibilité amoureuse avant une relation sérieuse.
-
-**Karmastro** calcule automatiquement votre compatibilité en croisant vos données de naissance précises avec les [éphémérides Swiss Ephemeris](https://www.astro.com/swisseph/) pour une analyse fiable au degré près.
+**Karmastro** met en regard les données de naissance des deux personnes et les positions planétaires calculées avec [Swiss Ephemeris](https://www.astro.com/swisseph/). Le calcul astronomique peut être précis, mais le sens donné aux aspects reste une interprétation symbolique. Il ne mesure ni les sentiments ni les chances de réussite d'un couple.
 
 ## Les éléments astrologiques et leurs affinités
 
-Les quatre éléments déterminent les **compatibilités astrologiques** naturelles. Voici leurs affinités :
+Les quatre éléments servent de grille traditionnelle pour parler d'**affinités astrologiques**. Voici les associations les plus courantes :
 
-| Élément | Signes | Compatible avec | Incompatible avec |
-|---------|---------|-----------------|-------------------|
-| **Feu** | Bélier, Lion, Sagittaire | Air (stimule), Feu (passionne) | Eau (éteint), Terre (étouffer) |
-| **Terre** | Taureau, Vierge, Capricorne | Eau (nourrit), Terre (stabilise) | Feu (brûle), Air (dessèche) |
-| **Air** | Gémeaux, Balance, Verseau | Feu (attise), Air (élève) | Eau (noie), Terre (alourdit) |
-| **Eau** | Cancer, Scorpion, Poissons | Terre (contient), Eau (fusionne) | Feu (évapore), Air (disperse) |
+| Élément | Signes | Affinités symboliques fréquentes | Tensions symboliques possibles |
+|---------|--------|----------------------------------|--------------------------------|
+| **Feu** | Bélier, Lion, Sagittaire | Air (stimule), Feu (élan commun) | Eau (rythmes différents), Terre (action contre prudence) |
+| **Terre** | Taureau, Vierge, Capricorne | Eau (soutien), Terre (stabilité) | Feu (prudence contre impulsion), Air (concret contre abstraction) |
+| **Air** | Gémeaux, Balance, Verseau | Feu (initiative), Air (échanges) | Eau (raison contre émotion), Terre (idées contre mise en pratique) |
+| **Eau** | Cancer, Scorpion, Poissons | Terre (ancrage), Eau (sensibilité) | Feu (intensités différentes), Air (ressenti contre analyse) |
 
 ### Compatibilités par élément
 
@@ -61,38 +59,38 @@ Les quatre éléments déterminent les **compatibilités astrologiques** naturel
 
 Découvre ton profil cosmique et celui de ton partenaire sur [Karmastro](https://app.karmastro.com) pour une analyse complète de votre compatibilité.
 
-## Top 5 des couples astrologiques les plus compatibles
+## 5 couples souvent décrits comme compatibles
 
-Basé sur l'analyse de plus de 10 000 thèmes de couples, voici les **compatibilités amoureuses** les plus harmonieuses :
+Voici cinq associations souvent présentées comme fluides dans l'astrologie populaire. Ce ne sont ni un classement vérifié ni des probabilités : la synastrie complète et la réalité du couple peuvent raconter une tout autre histoire.
 
-### 1. Taureau - Cancer (96% de compatibilité)
+### 1. Taureau - Cancer
 
-Le Taureau (Terre) offre la sécurité matérielle que recherche le Cancer (Eau). Leurs planètes maîtresses, Vénus (amour) et la Lune (émotions), créent une synergie parfaite. Couple stable, fidèle, orienté famille.
+La Terre du Taureau et l'Eau du Cancer évoquent un besoin commun de sécurité. Vénus et la Lune ajoutent, dans cette lecture, les thèmes d'affection, de confort et de foyer.
 
-### 2. Lion - Sagittaire (94% de compatibilité)  
+### 2. Lion - Sagittaire
 
-Deux signes de Feu gouvernés par le Soleil (Lion) et Jupiter (Sagittaire). Passion, aventure, générosité mutuelle. Le Lion apporte la royauté, le Sagittaire l'exploration. Union expansive et joyeuse.
+Deux signes de Feu associés à l'expression, à l'enthousiasme et au mouvement. Le défi possible concerne la place de chacun et le respect des rythmes individuels.
 
-### 3. Vierge - Capricorne (92% de compatibilité)
+### 3. Vierge - Capricorne
 
-Terre + Terre = fondations solides. Mercure (Vierge) et Saturne (Capricorne) créent un couple travailleur, ambitieux, qui construit ensemble. Respect mutuel et projets communs.
+Terre et Terre suggèrent une recherche de concret et de continuité. Mercure et Saturne peuvent symboliser la méthode, la structure et les projets au long cours.
 
-### 4. Gémeaux - Verseau (91% de compatibilité)
+### 4. Gémeaux - Verseau
 
-Air + Air = stimulation intellectuelle constante. Mercure (communication) et Uranus (innovation) font de ce couple des complices créatifs. Liberté, amitié amoureuse, projets avant-gardistes.
+Air et Air mettent l'accent sur la conversation, les idées et l'autonomie. Ce duo peut aussi avoir besoin de nommer davantage ses émotions et ses attentes concrètes.
 
-### 5. Scorpion - Poissons (89% de compatibilité)
+### 5. Scorpion - Poissons
 
-Eau + Eau = fusion des âmes. Pluton (transformation) et Neptune (spiritualité) créent un couple mystique, intuitif. Amour karmique et connexion psychique profonde.
+Eau et Eau évoquent une forte sensibilité et une recherche de profondeur. Cette image n'établit ni une connexion psychique ni un lien karmique réel, mais elle peut aider à parler d'intimité et de limites.
 
 ## Comment calculer votre compatibilité amoureuse précise
 
-La vraie **compatibilité astrologique** ne se limite pas aux signes solaires. Voici la méthode utilisée par les astrologues professionnels :
+Une lecture de **compatibilité astrologique** ne se limite pas aux signes solaires. Voici une méthode courante de synastrie :
 
 ### Étape 1 : Collecte des données précises
 
 - Date, heure et lieu de naissance exacts des deux partenaires
-- Calcul des thèmes nataux avec les [éphémérides NASA JPL](https://ssd.jpl.nasa.gov/)
+- Calcul des positions planétaires à partir d'éphémérides astronomiques
 
 ### Étape 2 : Analyse de la synastrie
 
@@ -105,14 +103,16 @@ Comparaison des positions planétaires entre les deux thèmes :
 - Lune-Lune : affinités émotionnelles
 - Ascendant-Descendant : première impression et projection
 
-### Étape 3 : Calcul du score de compatibilité
+### Étape 3 : Synthèse des aspects
 
-La méthode Karmastro attribue des points selon les aspects :
-- **Trigone (120°)** : +3 points (harmonie naturelle)
-- **Sextile (60°)** : +2 points (opportunité)
-- **Conjonction (0°)** : +1 à +3 selon les planètes
-- **Carré (90°)** : -1 point (tension créatrice)
-- **Opposition (180°)** : 0 point (attraction-répulsion)
+Les aspects sont ensuite mis en contexte :
+- **Trigone (120°)** : circulation réputée fluide dans la tradition astrologique
+- **Sextile (60°)** : facilité potentielle à développer
+- **Conjonction (0°)** : combinaison forte dont le sens dépend des planètes
+- **Carré (90°)** : friction ou effort d'ajustement
+- **Opposition (180°)** : polarité et recherche d'équilibre
+
+Certains outils résument cette lecture par un score. Ce score est une convention de synthèse, pas un pourcentage de réussite amoureuse.
 
 **L'Oracle IA de Karmastro** intègre également la [numérologie karmique](https://karmastro.com/glossaire) pour affiner l'analyse : chemins de vie complémentaires, nombres d'expression compatibles, cycles personnels synchronisés.
 
@@ -138,7 +138,7 @@ Certaines **oppositions astrologiques** créent une attraction magnétique inten
 - **Sagittaire** : philosophie, vision globale, enseignement
 - **Synergie** : Les Gémeaux approfondissent, le Sagittaire précise
 
-Ces couples opposés ont 68% de réussite selon les statistiques de consultation de **Karmastro**, plateforme française spécialisée dans l'analyse de compatibilité personnalisée.
+Ces oppositions sont surtout utiles pour formuler des questions sur les différences du couple. Elles ne disposent pas d'un taux de réussite propre.
 
 ## L'importance de Vénus et Mars en synastrie
 
@@ -155,50 +155,50 @@ Au-delà des signes solaires, **Vénus** (amour, séduction) et **Mars** (désir
 
 ### Aspects Vénus-Mars les plus puissants
 
-- **Vénus conjonction Mars** : attraction sexuelle maximale (aspect à 0°)
-- **Vénus trigone Mars** : harmonie entre amour et désir (120°)
-- **Vénus sextile Mars** : attirance naturelle qui se développe (60°)
-- **Vénus carré Mars** : tension érotique, passion orageuse (90°)
+- **Vénus conjonction Mars** : proximité symbolique entre affection et désir (aspect à 0°)
+- **Vénus trigone Mars** : expression réputée fluide de l'affection et du désir (120°)
+- **Vénus sextile Mars** : facilité potentielle à développer (60°)
+- **Vénus carré Mars** : friction possible entre les deux registres (90°)
 
-L'analyse précise nécessite les degrés exacts. [Notre précision Swiss Ephemeris](https://karmastro.com/precision) garantit des calculs au 1/60ème de degré pour identifier ces aspects subtils mais déterminants.
+L'analyse géométrique nécessite les degrés des planètes. La page [Notre précision Swiss Ephemeris](https://karmastro.com/precision) explique comment ces positions sont calculées. Cette précision porte sur la position, pas sur la certitude de l'interprétation.
 
 ## Compatibilité par maisons astrologiques
 
-Les **maisons astrologiques** révèlent les domaines de vie où s'exprime la compatibilité. Voici les secteurs clés en amour :
+Les **maisons astrologiques** servent à explorer les domaines de vie mis en avant par une synastrie. Voici quatre secteurs fréquemment étudiés en amour :
 
 ### Maison 5 : Romance et créativité
 
-Quand les planètes du partenaire tombent en maison 5, cela crée :
-- Attraction romantique naturelle
-- Jeu, plaisir, légèreté dans la relation
-- Projets créatifs communs
-- Désir d'enfants ensemble
+Quand les planètes du partenaire tombent en maison 5, la lecture peut porter sur :
+- la romance et le plaisir
+- le jeu et la légèreté dans la relation
+- les projets créatifs communs
+- la question de la parentalité, sans en déduire un désir réel
 
 ### Maison 7 : Mariage et partenariat
 
-Planètes du partenaire en maison 7 = relation de couple idéale :
-- Vision commune du mariage
-- Complémentarité officielle
-- Respect mutuel et égalité
-- Union durable et reconnue
+Les planètes du partenaire en maison 7 attirent l'attention sur :
+- la manière de former un partenariat
+- la représentation du mariage ou de l'engagement
+- les attentes de respect et d'égalité
+- la place donnée au couple dans la vie sociale
 
 ### Maison 8 : Intimité et transformation
 
-Connexion profonde et transformatrice :
-- Intimité physique et psychologique intense
-- Capacité à se transformer mutuellement
-- Gestion commune des ressources
-- Lien karmique fort
+Cette superposition est traditionnellement associée à :
+- l'intimité et la confiance
+- la transformation vécue dans le lien
+- la gestion des ressources communes
+- les limites et la vulnérabilité
 
 ### Maison 11 : Amitié et projets futurs
 
-Base solide d'amitié amoureuse :
-- Objectifs de vie compatibles
-- Cercle social harmonieux
-- Projets futurs partagés
-- Soutien mutuel dans les ambitions
+Cette maison invite notamment à examiner :
+- la place de l'amitié dans le couple
+- les objectifs et les réseaux de chacun
+- les projets futurs partagés
+- le soutien mutuel dans les ambitions
 
-La **synastrie par maisons** nécessite l'heure de naissance précise. [L'équipe Karmastro](https://karmastro.com/notre-histoire) a développé un algorithme qui analyse automatiquement ces superpositions pour un score de compatibilité affiné.
+La **synastrie par maisons** nécessite une heure de naissance suffisamment fiable. L'outil Karmastro met automatiquement ces superpositions en regard pour proposer une synthèse symbolique.
 
 ## Questions fréquentes
 
@@ -208,23 +208,23 @@ Non, l'élément donne une tendance générale mais chaque signe a ses spécific
 
 ### Peut-on être compatible malgré des signes "incompatibles" ?
 
-Absolument. Deux personnes avec des Soleils "incompatibles" peuvent avoir des Vénus harmonieuses, des Lunes en trigone ou des Ascendants compatibles. 30% des couples heureux ont des signes solaires théoriquement incompatibles selon nos données.
+Absolument. Deux personnes avec des Soleils réputés "incompatibles" peuvent avoir des Vénus harmonieuses, des Lunes en trigone ou des Ascendants complémentaires. Surtout, leurs valeurs, leurs comportements et leur manière de communiquer peuvent compter davantage que ces catégories.
 
 ### Combien de temps faut-il pour voir si on est compatible ?
 
-L'attraction se sent immédiatement (Vénus-Mars), mais la compatibilité profonde se révèle après 3-6 mois quand les vraies personnalités émergent. Les transits planétaires peuvent aussi activer ou désactiver certains aspects selon les périodes.
+Il n'existe pas de délai universel. L'attirance, la confiance et la capacité à traverser un désaccord s'observent à des rythmes différents. Une lecture astrologique peut proposer des thèmes à explorer, mais seule l'expérience partagée renseigne sur la relation.
 
 ### La compatibilité astrologique garantit-elle le succès du couple ?
 
-L'astrologie révèle les potentiels et défis, mais le libre arbitre reste déterminant. Un couple très compatible peut échouer sans communication, tandis qu'un couple "difficile" peut réussir avec de l'amour et du travail. C'est un outil de compréhension, pas une prédiction absolue.
+L'astrologie propose une lecture de potentiels et de défis, mais les comportements et les choix restent déterminants. Un couple décrit comme très compatible peut échouer sans communication, tandis qu'un couple jugé "difficile" peut s'épanouir avec du respect et du travail. C'est un outil de réflexion, pas une prédiction.
 
 ## Conclusion
 
-La **compatibilité astrologique** en amour dépasse largement les signes solaires génériques. Une analyse précise croise éléments, aspects planétaires, positions de Vénus et Mars, et maisons astrologiques pour révéler la véritable alchimie entre deux personnes.
+La **compatibilité astrologique** en amour dépasse les signes solaires génériques. Une lecture complète croise éléments, aspects planétaires, positions de Vénus et Mars, et maisons astrologiques pour proposer plusieurs angles d'observation.
 
 Les couples les plus harmonieux combinent complémentarité des éléments (Terre-Eau, Feu-Air) et aspects favorables entre planètes personnelles. Même les oppositions peuvent créer des unions passionnantes basées sur l'attraction des contraires.
 
-**Karmastro** va au-delà de l'horoscope générique en calculant votre compatibilité réelle grâce au croisement de votre thème natal, votre numérologie karmique et les cycles planétaires actuels. Découvre si vous êtes faits l'un pour l'autre avec une précision mathématique sur [app.karmastro.com](https://app.karmastro.com).
+**Karmastro** va au-delà du signe solaire en croisant thème natal, numérologie et cycles planétaires. Les calculs donnent une structure précise à la lecture symbolique, mais ne peuvent pas décider si deux personnes sont faites l'une pour l'autre. Explore vos dynamiques sur [app.karmastro.com](https://app.karmastro.com).
 
 L'amour reste avant tout une aventure humaine - l'astrologie t'aide simplement à mieux comprendre les énergies en jeu pour naviguer vers plus d'harmonie et d'épanouissement à deux.
 
@@ -251,4 +251,3 @@ L'amour reste avant tout une aventure humaine - l'astrologie t'aide simplement �
 - [Compatibilité](/outils/compatibilite)
 
 [Explore le blog complet et tous les calculateurs](/blog/) · [Outils Karmastro](/outils/)
-
