@@ -1,5 +1,5 @@
 ---
-title: "Aspects astrologiques: Maîtrisez Conjonction, Carré, Trigone"
+title: "Aspectos astrológicos: conjunción, cuadratura y trígono"
 description: "Los planetas nunca actúan aisladamente. Dialogan, se oponen, se armonizan o se bloquean por los aspectos. La guía completa para leerlos."
 date: 2026-06-04T07:30:00+02:00
 author: "Orion"

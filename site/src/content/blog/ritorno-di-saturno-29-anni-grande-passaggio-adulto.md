@@ -1,5 +1,5 @@
 ---
-title: "Retour de Saturne : Le passage à 29 ans qui vous transforme"
+title: "Ritorno di Saturno: il passaggio a 29 anni che ti trasforma"
 description: "A 29 anni Saturno torna alla sua posizione natale e fa pulizia. Carriera, amore, identità: come attraversare questa iniziazione."
 date: 2026-05-25T07:30:00+02:00
 author: "Orion"

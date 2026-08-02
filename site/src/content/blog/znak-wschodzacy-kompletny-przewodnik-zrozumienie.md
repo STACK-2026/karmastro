@@ -1,5 +1,5 @@
 ---
-title: "Ascendant : Comprenez votre vrai moi, calculez-le !"
+title: "Ascendent: poznaj swoje prawdziwe ja i oblicz go"
 description: "Twój wschodzący to znacznie więcej niż drugorzędny znak. Co mówi o tobie, jak go obliczyć i dlaczego zmienia wszystko w twoim horoskopie."
 date: 2026-05-11T07:30:00+02:00
 author: "Orion"

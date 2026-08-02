@@ -1,5 +1,5 @@
 ---
-title: "Ascendant : Calculez et comprenez votre signe astrologique"
+title: "Yükselen Burç: Hesaplama ve Anlamını Keşfetme Rehberi"
 description: "Yükselen burcun ikincil bir işaretten çok daha fazlasıdır. Senin hakkında ne açıklıyor, nasıl hesaplanır ve neden doğum haritanda her şeyi değiştirir."
 date: 2026-05-11T07:30:00+02:00
 author: "Orion"

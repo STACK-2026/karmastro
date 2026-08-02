@@ -1,5 +1,5 @@
 ---
-title: "Nombre d'expression : ce que votre nom révèle de vous"
+title: "Numero di espressione: cosa rivela il tuo nome"
 description: "Il numero di espressione, calcolato dalle lettere del tuo nome, rivela la tua personalità pubblica, i tuoi talenti e la tua missione."
 date: 2026-06-08T07:30:00+02:00
 author: "Pythia"

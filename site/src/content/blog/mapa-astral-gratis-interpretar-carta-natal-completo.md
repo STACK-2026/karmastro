@@ -1,5 +1,5 @@
 ---
-title: "Thème astral gratuit : interprétez votre thème natal complet"
+title: "Mapa astral grátis: aprende a interpretar o teu mapa natal"
 description: "Interpreta o teu mapa astral grátis: planetas, 12 casas, aspetos e ascendente explicados como linguagem simbólica."
 date: 2026-04-13T07:48:00+02:00
 author: "Sibylle"
