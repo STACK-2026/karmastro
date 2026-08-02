@@ -1,5 +1,5 @@
 ---
-title: "Horoscope natal gratuit : votre guide d'interprétation"
+title: "Darmowy horoskop natalny: przewodnik po interpretacji"
 description: "Pełny przewodnik czytania horoskopu natalnego za darmo : 7 kroków, 12 domów, 10 planet, 4 aspekty, przykład Chopina i odpowiedzi na częste pytania."
 date: 2026-04-13T07:48:00+02:00
 author: "Orion"

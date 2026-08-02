@@ -1,5 +1,5 @@
 ---
-title: "Numérologie Pitagor vs Chaldéenne : Comparaison et choix"
+title: "Pisagor ve Keldani Numerolojisi: Farkları ve Hangisini Seçmeli?"
 description: "İki büyük numeroloji okulu: Pitagor ve Kaldeli. Yöntemler, kökenler, hesaplama farkları ve hangisini seçmeli."
 date: 2026-04-23T08:37:00+02:00
 author: "Pythia"

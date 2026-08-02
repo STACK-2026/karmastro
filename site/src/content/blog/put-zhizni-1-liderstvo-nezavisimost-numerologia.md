@@ -1,5 +1,5 @@
 ---
-title: "Chemin de Vie 1 : Signification, Personnalité & Mission"
+title: "Число жизненного пути 1: характер и предназначение"
 description: "Всё о пути жизни 1 в пифагорейской нумерологии: личность, миссия, сильные стороны, ловушки."
 date: 2026-05-07T08:29:00+02:00
 author: "Pythia"

@@ -1,5 +1,5 @@
 ---
-title: "Chemin de Vie 1 : Personnalité, Mission, Amour, Carrière"
+title: "Lebenszahl 1: Persönlichkeit, Berufung, Liebe und Karriere"
 description: "Alles über die Lebenszahl 1 in pythagoreischer Numerologie: Persönlichkeit, Mission, Stärken, Fallen und Kompatibilitäten. Vollständiger Pionier-Leitfaden."
 date: 2026-05-07T08:29:00+02:00
 author: "Pythia"
