@@ -158,7 +158,7 @@ export function countWords(body: string | undefined): number {
   return stripped.split(" ").length;
 }
 
-/** JSON-LD for Article with E-E-A-T signals (author Person, reviewedBy, dateModified) */
+/** JSON-LD for Article with organizational authorship and editorial credit. */
 export function jsonLdArticle(article: {
   title: string;
   description: string;
@@ -178,31 +178,15 @@ export function jsonLdArticle(article: {
   wordCount?: number;
   citations?: Array<{ title: string; url: string }>;
 }) {
-  // Prefer the rich Person entity from src/data/authors when the byline
-  // matches a known persona. Unknown authors still get a bare Person with
-  // the name Google sees in the article (legacy posts without a tagged
-  // author fall through to Organization-as-author).
+  // The named guides are disclosed editorial personas, not individual
+  // practitioners. Karmastro owns the article; the persona remains a visible
+  // editorial credit without being represented as a real professional.
   const slug = authorSlugFor(article.author);
-  const authorEntity = slug
-    ? (() => {
-        const a = AUTHORS[slug];
-        return {
-          "@type": "Person",
-          "@id": `${siteConfig.url}/guides/${a.slug}#person`,
-          name: a.name,
-          url: `${siteConfig.url}/guides/${a.slug}`,
-          jobTitle: a.jobTitle,
-          knowsAbout: a.knowsAbout,
-          worksFor: { "@id": `${siteConfig.url}/#organization` },
-        };
-      })()
+  const editorialCredit = slug
+    ? `Voix éditoriale : ${AUTHORS[slug].name}`
     : article.author
-      ? {
-          "@type": "Person",
-          name: article.author,
-          url: `${siteConfig.url}/guides`,
-        }
-      : { "@id": `${siteConfig.url}/#organization` };
+      ? `Signature éditoriale : ${article.author}`
+      : undefined;
 
   const wordCount = article.wordCount ?? countWords(article.body);
   const citations = article.citations ?? extractCitations(article.body);
@@ -220,8 +204,9 @@ export function jsonLdArticle(article: {
         ? article.image
         : fullUrl(article.image)
       : undefined,
-    author: authorEntity,
+    author: { "@id": `${siteConfig.url}/#organization` },
     publisher: { "@id": `${siteConfig.url}/#organization` },
+    ...(editorialCredit && { creditText: editorialCredit }),
     mainEntityOfPage: { "@type": "WebPage", "@id": article.url },
     keywords: article.keywords?.join(", "),
     inLanguage: article.inLanguage || siteConfig.locale,

@@ -7,6 +7,7 @@ import CookieBanner from "../components/CookieBanner.astro";
 import { LOCALES, DEFAULT_LOCALE, extractLocale, stripLocalePrefix, isRTL, bcp47, ogLocale } from "../i18n/config";
 import { getLocalizedSlug, getCanonicalSlugFromLocalized } from "../data/zodiac";
 import { detectToolKey, toolPathFor } from "../data/tool-paths";
+import { mergeJsonLdWithDefaultOrganization } from "../utils/structured-data.mjs";
 import "../styles/global.css";
 
 interface Props {
@@ -38,13 +39,13 @@ const imageUrl = ogImage?.startsWith("http") ? ogImage : `${siteConfig.url}${ogI
 const defaultOrgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${siteConfig.url}/#organization`,
   name: siteConfig.name,
   url: siteConfig.url,
   description: siteConfig.description,
 };
 
-const pageJsonLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
-const jsonLdArray = [defaultOrgJsonLd, ...pageJsonLd];
+const jsonLdArray = mergeJsonLdWithDefaultOrganization(defaultOrgJsonLd, jsonLd);
 
 // i18n
 const currentLocale = extractLocale(Astro.url.pathname);
