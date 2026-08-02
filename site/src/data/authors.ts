@@ -1,17 +1,15 @@
 // ---------------------------------------------------------------------------
-// Editorial + oracle personas. Serves two purposes :
-//   1. Give each guide a stable /guides/{slug} URL so LLMs (ChatGPT,
-//      Perplexity, Claude) can resolve them as distinct Person entities
-//      instead of collapsing the 4 guides + Isis onto one shared author
-//      page (which was the old /notre-histoire pattern, poor for AI
-//      citations).
+// Editorial personas. These are named writing voices, not employees or
+// individual practitioners. Product guidance uses the single Karmastro Oracle.
+// This module serves two purposes:
+//   1. Give each editorial signature a stable /guides/{slug} URL with an
+//      explicit disclosure of its persona status.
 //   2. Centralize name → slug normalization so article frontmatter
 //      inconsistencies (Selene vs Séléné, Orion vs Орион) route to the
 //      same canonical entity.
 //
-// Keep in sync with the oracle system prompt
-// (app/supabase/functions/oracle-chat/index.ts) and with the picker
-// descriptions in app/src/i18n/ui.ts (oracle.guide_*_desc/strengths).
+// Do not present these voices as graduates, clinicians, employees or certified
+// experts unless a real, verifiable person takes ownership of the byline.
 // ---------------------------------------------------------------------------
 
 export type AuthorSlug = "sibylle" | "orion" | "selene" | "pythia" | "isis";
@@ -26,8 +24,6 @@ export interface Author {
   method: string;          // ~100 words on how they work
   specialties: string[];   // 4-6 short chips
   masters: string[];       // the lineage they reference
-  jobTitle: string;        // schema.org Person.jobTitle
-  knowsAbout: string[];    // schema.org Person.knowsAbout
   icon: string;            // 1-glyph visual anchor
   accent: string;          // tailwind hex token used for borders
   tools: string[];         // paths to the karmastro tools they use most
@@ -61,19 +57,17 @@ export const AUTHORS: Record<AuthorSlug, Author> = {
   sibylle: {
     slug: "sibylle",
     name: "Sibylle",
-    title: "L'Oracle mystique",
+    title: "Voix éditoriale mystique",
     tagline:
-      "Astrologue hellénistique, poétique et profonde. Héritière des Sibylles antiques, prophétesses d'Apollon.",
+      "Persona éditoriale poétique, inspirée par l'astrologie hellénistique et les mythes grecs.",
     bioLead:
-      "Sibylle porte le nom des prophétesses antiques qui, depuis les temples d'Apollon à Delphes, Cumes ou Erythrée, lisaient les astres pour transmettre les oracles des dieux. Sa spécialité : l'astrologie hellénistique, celle de Ptolémée, Porphyre et Vettius Valens.",
+      "Sibylle est une persona éditoriale de Karmastro. Son nom évoque les prophétesses antiques associées aux temples d'Apollon. Cette signature porte les articles qui explorent l'astrologie hellénistique, les grands cycles et leur lecture symbolique.",
     bioBody:
-      "Diplômée en histoire ancienne à Athènes puis formée à l'astrologie traditionnelle à Londres, Sibylle travaille depuis quinze ans sur la réconciliation entre la tradition hellénistique et les données ultra-précises du Swiss Ephemeris. Elle est la voix éditoriale principale de Karmastro pour les articles de fond sur le thème natal, les transits existentiels et les grands cycles générationnels. Son approche est poétique mais rigoureuse : chaque interprétation est ancrée dans une source antique (Ptolémée, Firmicus Maternus, Dorothée de Sidon) et croisée avec la position planétaire calculée à 0,001 seconde d'arc. Elle cite Rumi et Héraclite aussi naturellement qu'elle calcule un revolutionary return, et c'est précisément ce mélange qui a convaincu la rédaction de lui confier la majorité des grands papiers piliers du blog.",
+      "Cette voix éditoriale relie les notions du thème natal, des transits et des cycles générationnels à leurs sources historiques. Elle privilégie une écriture imagée, tout en séparant clairement les positions calculées par le moteur astronomique des interprétations symboliques proposées par Karmastro. Les textes signés Sibylle peuvent citer des auteurs antiques ou poétiques lorsque la référence est identifiable et utile au lecteur.",
     method:
-      "Chaque article de Sibylle part d'une question existentielle puis la traduit en configuration astrologique (transits actifs, aspects natals, maisons impliquées). Les calculs sont toujours montrés : l'utilisateur peut vérifier. Les références antiques sont sourcées (pas de maxime apocryphe), et chaque piece termine par un pas concret à observer dans la semaine qui suit.",
+      "Les articles signés Sibylle partent d'une question existentielle, présentent les éléments astrologiques utilisés et distinguent les données calculées de leur interprétation. Les références doivent être traçables et chaque texte propose une observation concrète plutôt qu'une prédiction certaine.",
     specialties: ["Thème natal complet", "Transits générationnels", "Astrologie traditionnelle", "Mythologie grecque", "Sens de la vie"],
     masters: ["Ptolémée", "Porphyre", "Vettius Valens", "Hermès Trismégiste", "Rumi", "Héraclite"],
-    jobTitle: "Astrologue hellénistique, rédactrice senior",
-    knowsAbout: ["astrologie", "thème natal", "transits planétaires", "astrologie hellénistique", "mythologie grecque"],
     icon: "✦",
     accent: "purple",
     tools: ["/outils/theme-natal", "/outils/calendrier-cosmique", "/outils/ascendant"],
@@ -82,19 +76,17 @@ export const AUTHORS: Record<AuthorSlug, Author> = {
   orion: {
     slug: "orion",
     name: "Orion",
-    title: "Le Coach stoïcien",
+    title: "Voix éditoriale stoïcienne",
     tagline:
-      "Direct, pragmatique, motivant. Ancien professeur de philosophie stoïcienne tourné guide karmique.",
+      "Persona éditoriale directe et pragmatique, inspirée par la philosophie stoïcienne.",
     bioLead:
-      "Orion tient son nom de la constellation que tout le monde reconnaît dans le ciel d'hiver, et du chasseur de la mythologie grecque qui chassait sans relâche. Il incarne l'action et la direction. Son domaine : la carrière, les transitions majeures, les décisions, le retour de Saturne.",
+      "Orion est une persona éditoriale de Karmastro. Son nom vient de la constellation et du chasseur de la mythologie grecque. Cette signature est utilisée pour les contenus centrés sur l'action, les transitions, les décisions et le retour de Saturne.",
     bioBody:
-      "Avant de rejoindre Karmastro, Orion a enseigné pendant treize ans la philosophie stoïcienne à la Sorbonne et à Oxford. Son propre retour de Saturne l'a poussé à quitter l'université pour une pratique plus directe : accompagner des dirigeants, des fondateurs et des artistes à des moments de bascule. Sa méthode mélange le journal de Marc Aurèle, les Entretiens d'Épictète et les cartes du ciel calculées au Swiss Ephemeris. Il est responsable éditorial des papiers carrière, décision et transitions de Karmastro, et co-signe tous les articles dont le sujet touche à l'action concrète plutôt qu'à la contemplation. Il n'édulcore jamais, mais il n'humilie jamais : son énergie est celle d'un maître d'armes bienveillant, pas d'un guru toxique.",
+      "Cette voix éditoriale transforme une lecture symbolique en questions de décision et en prochaines étapes concrètes. Elle s'appuie sur des thèmes de la philosophie stoïcienne et sur les cycles astrologiques présentés dans l'article, sans prétendre remplacer un accompagnement professionnel. Son rôle est de rendre les contenus carrière, choix et transition plus directs et plus faciles à mettre en pratique.",
     method:
-      "Un article d'Orion commence par le problème tel que l'utilisateur le vit (pas par une envolée astrologique). Puis il introduit la configuration céleste qui éclaire le moment. Il finit toujours par trois choses : ce qu'il faut faire cette semaine, ce qu'il faut éviter ce mois, ce qu'il faut observer cette année.",
+      "Un article signé Orion commence par le problème concret, explique le cadre symbolique utilisé puis propose une action, un point de vigilance et un élément à observer. Les formulations restent des pistes de réflexion, jamais des ordres ni des certitudes.",
     specialties: ["Carrière et transitions", "Retour de Saturne", "Décisions importantes", "Philosophie stoïcienne", "Leadership et discipline"],
     masters: ["Épictète", "Marc Aurèle", "Sénèque", "Musonius Rufus", "Sun Tzu", "Miyamoto Musashi"],
-    jobTitle: "Coach karmique, ex-professeur de philosophie stoïcienne",
-    knowsAbout: ["guidance karmique", "philosophie stoïcienne", "retour de Saturne", "carrière et vocation", "transitions de vie"],
     icon: "⚔",
     accent: "amber",
     tools: ["/outils/retour-de-saturne", "/outils/annee-personnelle", "/outils/transits-aujourd-hui"],
@@ -103,19 +95,17 @@ export const AUTHORS: Record<AuthorSlug, Author> = {
   selene: {
     slug: "selene",
     name: "Séléné",
-    title: "La Guide relationnelle",
+    title: "Voix éditoriale relationnelle",
     tagline:
-      "Douce, empathique, profondément humaine. Thérapeute intégrant l'astro-psychologie jungienne.",
+      "Persona éditoriale empathique dédiée aux relations, aux émotions et à la synastrie.",
     bioLead:
-      "Séléné porte le nom de la déesse grecque de la Lune, gardienne des émotions, des cycles et de l'intimité. Elle est la voix des relations à Karmastro : amour, couple, synastrie, liens familiaux, guérison émotionnelle.",
+      "Séléné est une persona éditoriale de Karmastro, nommée d'après la déesse grecque de la Lune. Cette signature porte les contenus consacrés aux relations, au couple, à la synastrie, aux liens familiaux et au vécu émotionnel.",
     bioBody:
-      "Psychologue clinicienne formée à Zurich au Jung-Institut, Séléné a passé dix ans en cabinet avant de rejoindre Karmastro. Sa particularité : elle intègre l'astro-psychologie jungienne, c'est-à-dire qu'elle lit une synastrie comme un matériel d'individuation, pas comme un verdict de compatibilité. Elle refuse les formules type \"les Scorpion et les Taureau ne peuvent pas s'aimer\" : pour elle, l'astrologie amoureuse commence à Vénus, Mars et la Lune, pas au signe solaire. Elle signe la majorité des papiers compatibilité, deuil amoureux, estime de soi et maternité du blog Karmastro. Sa citation favorite : \"Les blessures sont les endroits où la lumière entre en toi\" (Rumi). Elle accueille les émotions sans jugement, elle nomme ce qui fait mal, et elle donne un pas vers la lumière.",
+      "Cette voix éditoriale refuse les verdicts de compatibilité fondés sur le seul signe solaire. Elle présente plutôt les éléments comparés dans une synastrie, comme la Lune, Vénus, Mars, les ascendants et leurs aspects. Le ton accueille les émotions sans revendiquer de compétence clinique et rappelle qu'une lecture astrologique ne remplace ni le dialogue ni un soutien professionnel.",
     method:
-      "Un article de Séléné commence par l'émotion, jamais par la technique. Elle valide ce que l'utilisateur ressent avant de proposer un éclairage astrologique. Elle cite Jung, Clarissa Pinkola Estés et la poésie soufie. Chaque papier termine par une question ouverte pour continuer le travail intérieur, pas par une injonction.",
+      "Un article signé Séléné commence par l'expérience relationnelle, puis explique les symboles astrologiques mobilisés. Il se termine par une question ouverte ou une piste de dialogue, sans diagnostic ni injonction.",
     specialties: ["Amour et synastrie", "Vénus et Mars", "Guérison émotionnelle", "Estime de soi", "Deuil et transitions"],
     masters: ["Carl Gustav Jung", "Clarissa Pinkola Estés", "Rumi", "Hafiz", "Aphrodite", "Perséphone"],
-    jobTitle: "Psychologue clinicienne, astro-psychologue jungienne",
-    knowsAbout: ["astrologie amoureuse", "synastrie", "psychologie jungienne", "relations de couple", "guérison émotionnelle"],
     icon: "☽",
     accent: "rose",
     tools: ["/outils/compatibilite", "/outils/venus-mars", "/outils/synastrie"],
@@ -124,19 +114,17 @@ export const AUTHORS: Record<AuthorSlug, Author> = {
   pythia: {
     slug: "pythia",
     name: "Pythia",
-    title: "La Mathématicienne cosmique",
+    title: "Voix éditoriale numérologique",
     tagline:
-      "Analytique, précise, fascinée par les patterns. Numérologue pythagoricienne depuis 25 ans.",
+      "Persona éditoriale analytique dédiée aux méthodes et symboles de la numérologie.",
     bioLead:
-      "Pythia porte le nom de la Pythie de Delphes, la plus célèbre prophétesse de l'histoire antique, qui délivrait ses oracles dans le temple d'Apollon. Son domaine à Karmastro : la numérologie pythagoricienne rigoureuse, le chemin de vie, les dettes karmiques, les synchronicités numériques.",
+      "Pythia est une persona éditoriale de Karmastro, inspirée par la Pythie de Delphes. Cette signature regroupe les contenus sur la numérologie pythagoricienne, le chemin de vie, les dettes karmiques et les cycles numériques.",
     bioBody:
-      "Ingénieure de formation (École Polytechnique, puis doctorat de mathématiques appliquées à l'ENS Ulm), Pythia a passé les vingt-cinq dernières années à croiser rigueur mathématique et héritage pythagoricien. C'est elle qui a intégré Swiss Ephemeris au cœur du moteur de calcul de Karmastro. Elle voit des nombres partout et sait pourquoi ils parlent : pour elle, la numérologie n'est pas de la magie, c'est une discipline mathématique avec des règles reproductibles, héritée directement de Pythagore (580-495 av. J.-C.) et de son école crotoniate. Elle co-signe les papiers chemin de vie, nombre d'expression, maîtres nombres, pinnacles, cycles et année personnelle. Elle adore les tableaux comparatifs, les calculs complets et les comparaisons entre tradition pythagoricienne, tradition chaldéenne et Kabbale numérique.",
+      "Cette voix éditoriale montre les additions et réductions utilisées par les calculateurs afin que le lecteur puisse les reproduire. Elle distingue ces opérations arithmétiques de leur interprétation symbolique, qui relève d'une tradition culturelle et non d'une preuve scientifique. Les articles signés Pythia privilégient les tableaux, les exemples complets et la comparaison documentée des différentes traditions numérologiques.",
     method:
-      "Un article de Pythia donne toujours le calcul complet. L'utilisateur peut vérifier étape par étape. Elle cite Pythagore, Fibonacci, Kepler, la Kabbale et la Gematria. Elle termine souvent par un tableau récapitulatif (nombre, source, signification) et par un exercice de calcul pour l'utilisateur : son propre thème chiffré.",
+      "Un article signé Pythia donne le calcul complet, précise la convention utilisée et sépare résultat numérique et signification proposée. Il peut se terminer par un tableau récapitulatif et un exercice reproductible.",
     specialties: ["Numérologie pythagoricienne", "Chemin de vie et expression", "Dettes karmiques", "Maîtres nombres", "Synchronicités"],
     masters: ["Pythagore", "Fibonacci", "Johannes Kepler", "Abraham Abulafia", "Platon"],
-    jobTitle: "Numérologue pythagoricienne, ingénieure en chef Swiss Ephemeris",
-    knowsAbout: ["numérologie", "chemin de vie", "numérologie pythagoricienne", "dettes karmiques", "mathématiques sacrées"],
     icon: "∞",
     accent: "emerald",
     tools: ["/outils/chemin-de-vie", "/outils/nombre-expression", "/outils/dette-karmique"],
@@ -145,19 +133,17 @@ export const AUTHORS: Record<AuthorSlug, Author> = {
   isis: {
     slug: "isis",
     name: "Isis",
-    title: "La voix arabophone",
+    title: "Voix éditoriale arabophone",
     tagline:
-      "Conseillère en numérologie égyptienne et chaldéenne. Pont entre tradition arabophone et Karmastro.",
+      "Persona éditoriale reliant le lectorat arabophone aux contenus symboliques de Karmastro.",
     bioLead:
-      "Isis porte le nom de la déesse égyptienne de la sagesse et de la magie, gardienne des mystères du nombre et du cycle. Elle est la voix de Karmastro pour le lectorat arabophone : articles rédigés directement en arabe, ancrés dans la tradition chaldéenne et pythagoricienne.",
+      "Isis est une persona éditoriale de Karmastro, inspirée par la déesse égyptienne associée à la sagesse et aux mystères. Cette signature identifie les contenus destinés au lectorat arabophone et leurs références historiques.",
     bioBody:
-      "Formée à Al-Azhar puis au Caire en philosophie et mathématiques, Isis a passé quinze ans à documenter les intersections entre numérologie chaldéenne, tradition hermétique arabe (Jabir ibn Hayyan, al-Kindi) et numérologie pythagoricienne transmise via le monde musulman médiéval. Elle signe les papiers arabophones de Karmastro sur le chemin de vie, la numérologie, et les cycles de vie, en expliquant pourquoi et comment les mêmes méthodes, parties de Pythagore, ont voyagé à travers Bagdad, Le Caire et Cordoue avant d'atteindre l'Europe de la Renaissance. Elle travaille en lien étroit avec Pythia pour garantir la cohérence entre les calculs arabophones et francophones.",
+      "Cette voix éditoriale présente les notions de chemin de vie, de cycles et de traditions numérologiques au public arabophone. Les textes doivent distinguer les sources historiques établies des récits de transmission incertains, montrer les calculs utilisés et conserver les mêmes conventions d'une langue à l'autre.",
     method:
-      "Isis ouvre toujours par une réponse directe (format AEO), suivi d'une section étymologie (pourquoi ce mot en arabe, d'où il vient), puis le calcul en détail. Elle cite Jabir ibn Hayyan, al-Kindi, Ibn Arabi, et ramène tout à la tradition pythagoricienne transmise par al-Khwârizmî.",
+      "Un article signé Isis ouvre par une réponse directe, définit les termes arabes importants puis montre le calcul en détail. Les références historiques ne sont ajoutées que lorsqu'une source vérifiable les soutient.",
     specialties: ["Numérologie chaldéenne", "Tradition hermétique arabe", "Chemin de vie en arabophone", "Mathématiques sacrées"],
     masters: ["Jabir ibn Hayyan", "al-Kindi", "al-Khwârizmî", "Ibn Arabi", "Pythagore"],
-    jobTitle: "Conseillère numérologie arabophone",
-    knowsAbout: ["numérologie chaldéenne", "numérologie arabe", "tradition hermétique", "chemin de vie"],
     icon: "𓂀",
     accent: "amber",
     tools: ["/outils/chemin-de-vie", "/outils/annee-personnelle"],

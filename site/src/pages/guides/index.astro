@@ -9,17 +9,16 @@ import { jsonLdBreadcrumbs } from "../../utils/seo";
 import { ALL_AUTHORS } from "../../data/authors";
 
 const pageUrl = fullUrl("/guides");
-const title = "Nos guides cosmiques | Karmastro";
+const title = "Nos voix éditoriales | Karmastro";
 const description =
-  "Les 5 voix éditoriales de Karmastro : Sibylle l'oracle mystique, Orion le coach stoïcien, Séléné la guide relationnelle, Pythia la mathématicienne cosmique, Isis la voix arabophone.";
+  "Les 5 personas éditoriales de Karmastro : des signatures thématiques clairement distinctes de l'Oracle Karmastro.";
 
 const breadcrumbs = [
   { name: "Accueil", url: fullUrl("/") },
   { name: "Nos guides", url: pageUrl },
 ];
 
-// CollectionPage schema listing the 5 Person entities so LLMs see this as
-// the canonical index of our editorial team.
+// CollectionPage listing the five disclosed editorial persona pages.
 const collectionJsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -28,15 +27,10 @@ const collectionJsonLd = {
   description,
   isPartOf: { "@id": `${siteConfig.url}/#website` },
   hasPart: ALL_AUTHORS.map((a) => ({
-    "@type": "ProfilePage",
+    "@type": "WebPage",
     url: `${siteConfig.url}/guides/${a.slug}`,
     name: `${a.name}, ${a.title}`,
-    about: {
-      "@type": "Person",
-      name: a.name,
-      jobTitle: a.jobTitle,
-      knowsAbout: a.knowsAbout,
-    },
+    description: a.tagline,
   })),
 };
 
@@ -67,7 +61,7 @@ const ACCENT_CLASSES: Record<string, { ring: string; chip: string; glow: string 
         Les 5 voix de Karmastro
       </h1>
       <p class="text-base text-white/70 leading-relaxed max-w-2xl mx-auto" data-speakable>
-        Chaque article de Karmastro est signé par un guide spécifique. Chacun a sa lignée, sa méthode et son domaine. Pas de plume anonyme, pas d'IA masquée : nos 5 auteurs sont des voix éditoriales incarnées que tu retrouves aussi bien dans le blog que dans l'Oracle.
+        Sibylle, Orion, Séléné, Pythia et Isis sont des personas éditoriales. Elles servent de signatures et d'angles de lecture dans le blog. Elles ne représentent pas des praticiens ou des salariés individuels. Dans le produit, tu échanges avec une seule voix : l'Oracle Karmastro.
       </p>
     </header>
 

@@ -1,235 +1,227 @@
 ---
 title: "Compatibilité amoureuse : les signes astrologiques qui s'attirent vraiment"
-description: "Compatibilité astrologique en couple : quels signes s'attirent, quels couples fonctionnent, comment lire une synastrie. Guide complet avec méthode et exemples."
+description: "Compatibilité astrologique de couple : comprendre attirance, conflits, schémas répétitifs et lien karmique, puis choisir le bon outil Karmastro."
 date: 2026-04-16T08:04:00+02:00
 author: "Séléné"
 category: "compatibilite"
 tags: ["compatibilité astrologique", "amour", "signes", "couple", "synastrie"]
-keywords: "compatibilité astrologique, amour, signes, couple, synastrie"
+keywords: "compatibilité astrologique, amour, signes, couple, sinastrie"
 draft: false
 image: "https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Couple regardant les étoiles sous un ciel nocturne constellé"
-lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronome et astrologue senior"
+lastReviewed: "2026-08-02"
 ---
 
-## Sommaire
+## En bref
 
-1. [La compatibilité astrologique, c'est quoi exactement](#la-compatibilité-astrologique-cest-quoi-exactement)
-2. [Les 4 éléments et leurs attirances naturelles](#les-4-éléments-et-leurs-attirances-naturelles)
-3. [Au-delà des signes solaires : la vraie compatibilité](#au-delà-des-signes-solaires--la-vraie-compatibilité)
-4. [Les 5 aspects qui comptent vraiment en couple](#les-5-aspects-qui-comptent-vraiment-en-couple)
-5. [Les 12 signes et leurs meilleures compatibilités](#les-12-signes-et-leurs-meilleures-compatibilités)
-6. [Les couples improbables qui marchent](#les-couples-improbables-qui-marchent)
-7. [Comment calculer la compatibilité avec Karmastro](#comment-calculer-la-compatibilité-avec-karmastro)
-8. [Questions fréquentes](#questions-fréquentes)
+La compatibilité astrologique ne se résume pas à comparer deux signes solaires. La **synastrie** superpose deux thèmes natals et observe notamment les liens entre le Soleil, la Lune, Mercure, Vénus, Mars et Saturne. Elle peut servir de grille de réflexion sur les besoins, l'attirance ou les tensions d'un couple, mais elle ne prouve ni qu'une relation est destinée, ni qu'elle durera.
 
-## La compatibilité astrologique, c'est quoi exactement
+Karmastro traite l'astrologie comme une **pratique symbolique**, pas comme une science du couple. Commence toujours par les faits vécus: ce que chacun dit, fait, accepte, refuse et répare. Utilise ensuite le bon niveau d'analyse, du [calcul de compatibilité par dates de naissance](/outils/compatibilite) à la [synastrie complète](/outils/synastrie).
 
-Quand on parle de **compatibilité astrologique**, la plupart des gens pensent au fameux cliché "Lion + Sagittaire = parfait" ou "Scorpion + Taureau = passion". Ces associations basées uniquement sur le signe solaire sont une caricature. La vraie compatibilité astrologique s'appelle la **[synastrie](/outils/synastrie)**, et elle consiste à comparer intégralement deux thèmes natals pour comprendre la dynamique d'un couple.
+## Partir du problème vécu
 
-Le terme vient du grec ancien *syn-astron*, qui signifie littéralement "étoiles ensemble". Cette discipline est pratiquée depuis au moins le IIᵉ siècle après J.-C., époque où [Claude Ptolémée](https://fr.wikipedia.org/wiki/Claude_Ptol%C3%A9m%C3%A9e) la mentionne déjà dans son traité le *Tetrabiblos*. Les astrologues arabes du Moyen Âge ont ensuite raffiné la méthode, et des figures comme **Kepler** ont même calculé des synastries pour des commanditaires de la cour impériale.
+Une personne ne cherche pas toujours un cours d'astrologie. Elle cherche souvent à comprendre une situation précise. Voici le meilleur point de départ selon la question.
 
-Attention à un point important avant d'aller plus loin : **la synastrie ne prédit pas le succès ou l'échec d'une relation**. Elle cartographie les zones de facilité et les zones de friction, elle identifie les forces naturelles du couple et les défis qui demanderont un travail conscient. Deux personnes avec une synastrie "tendue" peuvent vivre une histoire magnifique si elles acceptent de grandir ensemble. Deux personnes avec une synastrie "harmonique" peuvent se séparer si aucune des deux ne nourrit la relation. L'astrologie éclaire le terrain, c'est toi qui marches.
+| Ce que tu vis | Première question utile | Outil Karmastro adapté |
+|---|---|---|
+| Je suis toujours attiré par le même type de personne | Quel comportement se répète réellement d'une relation à l'autre? | [Thème natal](/outils/theme-natal), puis une question ciblée à l'[Oracle](/oracle/) |
+| On s'aime mais on se dispute sans arrêt | Sur quels sujets, à quel moment et comment répare-t-on après le conflit? | [Synastrie](/outils/synastrie) pour explorer Lune, Mercure et Mars |
+| L'attirance est très intense, est-ce karmique? | L'intensité s'accompagne-t-elle de respect, de sécurité et de réciprocité? | [Synastrie](/outils/synastrie), sans en faire une preuve de destin |
+| Mon partenaire s'éloigne émotionnellement | Que dit-il ou fait-il concrètement, et puis-je lui poser la question directement? | L'[Oracle](/oracle/) pour préparer une conversation, pas pour lire ses pensées |
+| Je ne connais pas son heure de naissance | Quelles données fiables avons-nous déjà? | [Compatibilité numérologique](/outils/compatibilite), qui demande seulement deux dates |
+| Je veux savoir si cette relation va durer | Quels engagements et comportements sont observables aujourd'hui? | [Synastrie](/outils/synastrie) comme carte de discussion, jamais comme verdict |
+| Je me demande si la relation est toxique | Y a-t-il peur, contrôle, humiliation, menace ou violence? | Aucun calculateur: consulte d'abord la section sécurité plus bas |
 
-## Les 4 éléments et leurs attirances naturelles
+## Ce que la compatibilité astrologique peut et ne peut pas dire
 
-Le zodiaque est divisé en **quatre éléments** qui correspondent à quatre grandes énergies fondamentales. Chaque élément regroupe trois signes, et ces signes partagent des affinités naturelles fortes.
+Dans la tradition astrologique, la synastrie compare les positions planétaires de deux cartes de naissance. Un aspect est un angle entre deux planètes. Les astrologues lui attribuent une signification symbolique: fluidité, tension, besoin de dialogue, attraction ou responsabilité.
 
-| Élément | Signes | Énergie dominante | Besoins relationnels |
-|---------|--------|-------------------|----------------------|
-| Feu | Bélier, Lion, Sagittaire | Action, enthousiasme, inspiration | Liberté, aventure, stimulation |
-| Terre | Taureau, Vierge, Capricorne | Concrétisation, sensualité, stabilité | Sécurité, fiabilité, long terme |
-| Air | Gémeaux, Balance, Verseau | Pensée, communication, sociabilité | Dialogue, légèreté, espace mental |
-| Eau | Cancer, Scorpion, Poissons | Émotion, intuition, profondeur | Intimité, fusion, compréhension tacite |
+Cette lecture peut aider à formuler des questions. Elle ne mesure pas l'amour, ne diagnostique pas une relation et ne connaît pas les intentions d'une personne absente. Un thème natal ne remplace ni une conversation honnête, ni l'observation des comportements, ni l'aide d'un professionnel lorsque la situation le demande.
 
-### Les affinités traditionnelles
+Trois limites sont essentielles:
 
-Les **signes du même élément** ont une affinité naturelle : ils se comprennent instinctivement, parlent la même langue émotionnelle, partagent les mêmes rythmes de vie. Un Bélier et un Sagittaire peuvent s'entendre à merveille car ils ont tous les deux besoin d'aventure et de nouveauté. Un Taureau et une Vierge partagent le goût des choses concrètes et de la stabilité.
+1. **Un signe solaire est une information très partielle.** Deux personnes du même signe peuvent vivre des relations très différentes.
+2. **Un aspect n'est pas une cause.** Une tension Mercure-Mars ne provoque pas une dispute; elle fournit seulement un vocabulaire symbolique pour parler de communication et de réaction.
+3. **Un score n'est pas une probabilité.** Un résultat de compatibilité sert à organiser une lecture, pas à annoncer le succès ou l'échec du couple.
 
-Les **éléments compatibles entre eux** forment deux grandes dyades :
-- **Feu + Air** : l'air nourrit le feu. La communication et les idées stimulent l'action et l'enthousiasme. C'est une dynamique intellectuelle et énergique.
-- **Terre + Eau** : l'eau fertilise la terre. Les émotions donnent de la profondeur à la concrétisation. C'est une dynamique sensuelle et nourrissante.
+## Quel calcul choisir
 
-Les **éléments en tension** :
-- **Feu + Eau** : la vapeur s'en dégage. Ces couples peuvent être passionnés mais épuisants. Le feu brûle l'émotionnel, l'eau éteint l'élan.
-- **Terre + Air** : la poussière dans le vent. La terre trouve l'air superficiel, l'air trouve la terre étouffante. Mais quand ça marche, c'est très complémentaire.
+### Compatibilité par dates de naissance
 
-Ces grandes règles sont utiles comme grille de lecture de départ, mais elles ne suffisent pas du tout à déterminer une compatibilité réelle. Pour ça, il faut entrer dans le détail des thèmes natals.
+Le [calculateur de compatibilité numérologique](/outils/compatibilite) croise deux dates de naissance. Il constitue la porte d'entrée la plus simple si tu n'as ni heure ni lieu de naissance. Le résultat est symbolique et doit être lu comme un ensemble de thèmes de discussion, pas comme une note donnée à votre couple.
 
-## Au-delà des signes solaires : la vraie compatibilité
+### Synastrie astrologique complète
 
-Voici la vérité que peu de gens osent dire sur les horoscopes grand public : **ton signe solaire seul ne détermine pas à 5% la compatibilité avec quelqu'un**. Ce qui compte vraiment, ce sont les positions des autres planètes personnelles, et surtout leurs interactions entre ton thème et celui de ton partenaire.
+Le [calculateur de synastrie](/outils/synastrie) utilise la date, l'heure et le lieu de naissance des deux personnes. Il calcule les positions avec Swiss Ephemeris, puis affiche les aspects croisés entre les deux thèmes.
 
-### Les 5 placements qui font la différence en amour
+Sans heure précise, l'ascendant et les maisons ne peuvent pas être établis de façon fiable. Certaines positions planétaires restent néanmoins interprétables, mais le calculateur Karmastro demande actuellement les données complètes. Si une heure manque, commence par la compatibilité fondée sur les dates et note clairement cette limite.
 
-**Ta Vénus** représente ce que tu aimes, comment tu aimes, quel type de personne t'attire. Une Vénus en Taureau cherche la sensualité et la stabilité. Une Vénus en Gémeaux cherche la stimulation intellectuelle et la légèreté. Une Vénus en Scorpion cherche la passion intense et l'exclusivité.
+### Une question personnalisée
 
-**Ton Mars** représente comment tu désires, comment tu exprimes ton élan. Mars est particulièrement important pour la dimension sexuelle et physique du couple. Un Mars en Bélier est direct et conquérant. Un Mars en Poissons est romantique et fusionnel. Un Mars en Capricorne est structuré et endurant.
+L'[Oracle Karmastro](/oracle/) sert à transformer une préoccupation vague en question exploitable. Par exemple: « Nous nous disputons surtout lorsque je demande plus de proximité. Quels besoins symboliques puis-je comparer dans nos thèmes, et quelle question concrète poser à mon partenaire? »
 
-**Ta Lune** représente tes besoins affectifs profonds, ce qui te fait te sentir "à la maison" avec quelqu'un. C'est souvent la Lune qui fait qu'une relation sur le long terme marche ou pas, bien plus que le Soleil. Une Lune en Cancer a besoin de douceur et de continuité. Une Lune en Verseau a besoin de liberté et d'amitié.
+L'Oracle utilise une voix produit unique. Séléné est uniquement la signature éditoriale mythologique de cet article, pas une thérapeute ni une personne réelle.
 
-**Ton ascendant** détermine la façon dont tu te présentes au monde, et donc la première impression que tu donnes et ce qui attire ou repousse les premières fois.
+## Les aspects relationnels comme questions, pas comme verdicts
 
-**Ta maison VII** (celle du partenariat) et la planète qui la gouverne (son ruleur) indiquent le type de partenaire que tu attires dans tes relations engagées.
+| Aspect observé | Lecture symbolique habituelle | Question concrète à se poser |
+|---|---|---|
+| Soleil et Lune | Expression de soi et besoin de sécurité | Chacun peut-il être lui-même tout en se sentant accueilli? |
+| Lune et Lune | Rythmes émotionnels et besoins quotidiens | Que faisons-nous lorsque l'un a besoin de proximité et l'autre d'espace? |
+| Mercure et Mercure | Styles de pensée et de communication | Cherchons-nous à comprendre ou seulement à gagner la discussion? |
+| Vénus et Mars | Manières d'exprimer l'affection et le désir | Nos gestes d'amour sont-ils compris et consentis des deux côtés? |
+| Saturne et planète personnelle | Cadre, responsabilité et limites | L'engagement soutient-il chacun ou devient-il une contrainte subie? |
 
-### La vraie question
+Les trigones et sextiles sont traditionnellement décrits comme plus fluides. Les carrés et oppositions sont associés à davantage de friction. Une conjonction intensifie le thème des deux planètes concernées. Aucune de ces catégories ne dit comment deux personnes agiront réellement.
 
-La question n'est donc pas "est-ce que nos signes solaires sont compatibles ?" mais plutôt : **"comment ma Vénus aspecte-t-elle son Mars ? Ma Lune s'entend-elle avec sa Lune ? Mon Soleil dialogue-t-il avec son ascendant ?"**.
+## Pourquoi je répète les mêmes schémas amoureux
 
-C'est beaucoup plus précis, beaucoup plus utile, et ça explique pourquoi certains couples "improbables" (par exemple un Vierge et un Poissons, traditionnellement considérés comme opposés) peuvent avoir une synastrie absolument magnifique si leurs Lunes et Vénus sont bien alignées.
+Le mot « karmique » peut donner du sens à une répétition, mais commence par décrire ce qui se répète sans interprétation. Prends trois relations ou attirances et note:
 
-## Les 5 aspects qui comptent vraiment en couple
+- ce qui t'a attiré au début;
+- le premier comportement qui t'a mis mal à l'aise;
+- ce que tu as accepté malgré toi;
+- la manière dont le conflit ou la distance s'est installé;
+- ce que tu ferais différemment aujourd'hui.
 
-En synastrie, les astrologues regardent les **aspects croisés** : comment une planète de ton thème forme un angle avec une planète du thème de ton partenaire. Voici les cinq aspects croisés les plus importants en amour, avec un ordre d'importance pratique.
+Tu peux ensuite utiliser ton [thème natal](/outils/theme-natal) comme miroir symbolique. La Lune peut ouvrir une réflexion sur le besoin de sécurité, Vénus sur la manière de donner et recevoir de l'affection, Mars sur l'affirmation et les limites, Saturne sur la responsabilité. Ce sont des pistes de questionnement, pas l'explication objective de tes choix.
 
-### 1. Soleil A × Lune B (et inversement)
+Une bonne question à poser à l'Oracle serait: « Je remarque que je poursuis des personnes indisponibles. Aide-moi à distinguer ce que mon thème symbolise de ce que mes expériences montrent réellement, puis propose une action que je peux observer cette semaine. »
 
-C'est **l'aspect roi de la synastrie amoureuse**. Quand ton Soleil forme un aspect harmonique (conjonction, trigone, sextile) avec la Lune de ton partenaire, il y a un sentiment immédiat de "familiarité", comme si vous vous connaissiez depuis toujours. Tu te sens chez toi avec cette personne. La plupart des couples durables ont au moins un aspect Soleil-Lune croisé.
+## On s'aime mais on se dispute tout le temps
 
-### 2. Vénus A × Mars B (et inversement)
+Avant de chercher un aspect difficile, sépare trois moments:
 
-C'est l'aspect de **l'attraction physique et érotique**. Vénus représente la beauté, Mars représente le désir. Quand ils se rencontrent entre deux personnes, l'alchimie est palpable. Un trigone ou une conjonction Vénus-Mars explique pourquoi tu "accroches" physiquement avec quelqu'un dès la première rencontre.
+1. **Le déclencheur:** quel fait précis lance la dispute?
+2. **La réaction:** chacun attaque-t-il, se ferme-t-il, fuit-il ou cherche-t-il immédiatement à réparer?
+3. **La réparation:** revenez-vous ensuite sur le sujet avec une demande claire?
 
-### 3. Lune A × Lune B
+La synastrie peut ajouter un langage symbolique. Mercure aide à parler du style de communication, la Lune des besoins de sécurité, Mars de la façon de réagir et Saturne des limites. Elle ne désigne pas le coupable et ne justifie jamais une parole blessante.
 
-La **compatibilité émotionnelle au quotidien**. Deux Lunes en bon aspect (même signe, même élément, ou trigone/sextile) font vivre ensemble très facilement. Les petits rituels, les humeurs, les rythmes de vie s'accordent naturellement. Deux Lunes en carré ou opposition peuvent créer des frictions permanentes autour des besoins affectifs divergents.
+Le résultat utile n'est pas « nos thèmes sont incompatibles ». C'est une phrase testable comme: « Lorsque l'un demande une réponse immédiate, l'autre a besoin de temps. Nous allons convenir d'un délai et reprendre la conversation à une heure précise. »
 
-### 4. Saturne A × planète personnelle B
+## Mon partenaire s'éloigne: que peut dire l'astrologie
 
-Saturne apporte la **durée et la responsabilité**. Un Saturne bien aspecté à une planète personnelle de l'autre indique un couple qui tiendra dans le temps, qui saura construire ensemble. Mais attention : Saturne en tension (carré, opposition) peut aussi bloquer la relation, créer du poids, du devoir oppressant. La différence entre "soutenant" et "oppressant" tient à un degré près.
+L'astrologie ne peut pas lire ses pensées. Une distance peut venir de la fatigue, d'un conflit non résolu, d'un besoin d'espace, d'un changement personnel ou d'une volonté de quitter la relation. Le thème ne permet pas de choisir entre ces possibilités.
 
-### 5. Pluton A × Vénus ou Mars B
+Commence par une question directe et non accusatrice: « Je sens plus de distance entre nous depuis quelques jours. Est-ce que tu le ressens aussi, et veux-tu qu'on en parle? » Si la personne accepte, la synastrie peut ensuite servir de support pour parler des besoins de proximité, d'autonomie et de communication.
 
-Pluton apporte la **transformation profonde et l'obsession**. Les couples avec un aspect Pluton-Vénus ou Pluton-Mars vivent rarement des histoires tièdes. Ce sont des relations intenses, parfois destructrices, souvent métamorphosantes. On en ressort rarement comme on y est entré.
+Si elle refuse durablement toute conversation, l'information la plus importante est ce refus observable, pas un transit supposé l'expliquer.
 
-## Les 12 signes et leurs meilleures compatibilités
+## Mon ex me manque: l'astrologie peut-elle guider une reprise de contact
 
-Voici un tableau synthétique des compatibilités traditionnelles des 12 signes solaires entre eux, utile comme première approche mais à nuancer avec tout ce qu'on vient de voir. Les notes vont de 1 (tension maximale) à 5 (harmonie maximale), sur le plan de la compatibilité solaire uniquement.
+L'astrologie ne peut pas dire si ton ex veut revenir, si le moment est « écrit » ou si une reprise sera saine. Avant de regarder un transit ou une synastrie, réponds à quatre questions factuelles:
 
-| | Bé | Ta | Gé | Ca | Li | Vi | Bl | Sc | Sg | Cp | Vs | Po |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| **Bélier** | 4 | 2 | 4 | 2 | 5 | 2 | 3 | 3 | 5 | 3 | 4 | 2 |
-| **Taureau** | 2 | 4 | 2 | 5 | 3 | 5 | 3 | 5 | 2 | 5 | 2 | 5 |
-| **Gémeaux** | 4 | 2 | 4 | 2 | 5 | 3 | 5 | 2 | 4 | 2 | 5 | 3 |
-| **Cancer** | 2 | 5 | 2 | 4 | 2 | 4 | 2 | 5 | 2 | 5 | 2 | 5 |
-| **Lion** | 5 | 3 | 5 | 2 | 4 | 2 | 5 | 3 | 5 | 2 | 4 | 2 |
-| **Vierge** | 2 | 5 | 3 | 4 | 2 | 4 | 2 | 5 | 2 | 5 | 3 | 4 |
-| **Balance** | 3 | 3 | 5 | 2 | 5 | 2 | 4 | 2 | 5 | 3 | 5 | 2 |
-| **Scorpion** | 3 | 5 | 2 | 5 | 3 | 5 | 2 | 4 | 2 | 4 | 2 | 5 |
-| **Sagittaire** | 5 | 2 | 4 | 2 | 5 | 2 | 5 | 2 | 4 | 2 | 4 | 3 |
-| **Capricorne** | 3 | 5 | 2 | 5 | 2 | 5 | 3 | 4 | 2 | 4 | 2 | 5 |
-| **Verseau** | 4 | 2 | 5 | 2 | 5 | 3 | 5 | 2 | 4 | 2 | 4 | 2 |
-| **Poissons** | 2 | 5 | 3 | 5 | 2 | 4 | 2 | 5 | 3 | 5 | 2 | 4 |
+1. Pourquoi la relation s'est-elle terminée, selon chacun?
+2. Qu'est-ce qui a réellement changé depuis la rupture?
+3. L'autre personne a-t-elle laissé la porte ouverte à un contact?
+4. Peux-tu accepter une absence de réponse ou un refus sans insister?
 
-Ce tableau est une **grille de départ grossière**. Deux Béliers ensemble (note 4) peuvent vivre une passion formidable ou une compétition épuisante, selon leurs Lunes et leurs Vénus respectives. Un Bélier et un Cancer (note 2) peuvent former un couple d'une tendresse surprenante si leurs maisons VII sont en harmonie. La note solaire est le début, pas la fin de la conversation.
+Un transit peut servir de repère symbolique pour réfléchir à ton propre état. Il ne prédit pas la réponse de l'autre et ne transforme pas une limite en invitation. Si ton ex a demandé de ne plus être contacté, respecte cette demande.
 
-## Les couples improbables qui marchent
+Tu peux utiliser l'[Oracle Karmastro](/oracle/) pour clarifier ton intention ou reformuler un message bref et respectueux. L'objectif n'est pas d'obtenir une promesse de retour, mais de distinguer nostalgie, besoin de clôture et possibilité réelle de dialogue.
 
-L'histoire et la littérature sont pleines de couples qui "ne devraient pas marcher" selon l'astrologie traditionnelle, mais qui fonctionnent merveilleusement. En voici quelques configurations révélatrices.
+## Peut-on savoir si une relation va durer
 
-### Vierge + Poissons (opposition)
+Aucun calcul astrologique ou numérologique ne peut annoncer la durée d'une relation. Les signes les plus utiles sont observables: sécurité, réciprocité, capacité à parler d'un désaccord, respect des limites, projets compatibles et manière de réparer après un conflit.
 
-Sur le papier, l'un est pragmatique et analytique, l'autre est rêveur et émotionnel. En pratique, ce couple fonctionne souvent en miroir complémentaire : le Vierge apporte la structure qui manque au Poissons, le Poissons apporte l'âme qui manque au Vierge. Les oppositions zodiacales sont souvent polarisantes mais magnétiques quand les deux partenaires acceptent leur complémentarité.
+La [synastrie](/outils/synastrie) peut organiser une discussion autour des besoins et des frictions. Si l'heure de naissance manque, la [compatibilité par dates](/outils/compatibilite) offre une lecture plus simple. Dans les deux cas, transforme le résultat en question concrète. Par exemple: « Comment prenons-nous une décision lorsque nos rythmes diffèrent? » est plus utile que « Quel est notre pourcentage de réussite? »
 
-### Bélier + Capricorne (carré)
+## Relation karmique, âme sœur ou attachement intense
 
-Le Bélier veut foncer, le Capricorne veut planifier. Conflit permanent ? Ou collaboration explosive ? Si le Capricorne accepte la spontanéité du Bélier, et si le Bélier respecte la structure du Capricorne, ils peuvent bâtir quelque chose de très solide. Le carré zodiacal est le moteur le plus puissant du zodiaque : il force à bouger, à s'adapter, à grandir.
+Il n'existe pas de test objectif permettant de prouver qu'une relation est karmique ou qu'une personne est une âme sœur. Dans les pratiques astrologiques, certains regardent les noeuds lunaires, Saturne, Pluton ou des contacts précis entre deux thèmes. Cela reste une convention symbolique.
 
-### Cancer + Verseau (quinconce)
+Une attirance intense, des ruptures suivies de retours ou une impression de déjà-vu ne prouvent pas un destin commun. Pose plutôt ces questions:
 
-Émotionnel versus détaché. Foyer versus liberté. Mais ces deux signes peuvent créer un couple où le Verseau apporte de l'oxygène à la tendance fusionnelle du Cancer, et le Cancer apporte de la chaleur à la froideur parfois du Verseau. Beaucoup de couples durables ont cette dynamique.
+- Puis-je dire non sans peur?
+- Les paroles et les actes de l'autre sont-ils cohérents?
+- La relation respecte-t-elle mes limites, mon temps et mes autres liens?
+- Après un conflit, y a-t-il responsabilité et réparation?
+- Cette relation élargit-elle ma vie ou la réduit-elle?
 
-### Scorpion + Gémeaux (quinconce)
+La [synastrie gratuite](/outils/synastrie) peut décrire le langage symbolique du lien. Les réponses ci-dessus disent davantage sur sa qualité réelle.
 
-Profondeur contre légèreté. Exclusivité contre papillonnage. Pourtant, le Gémeaux peut donner de la respiration au Scorpion qui tend à tout dramatiser, et le Scorpion peut apprendre au Gémeaux la profondeur émotionnelle. Quand ça marche, c'est une alliance très intéressante de l'esprit et de l'âme.
+## Si tu hésites entre « karmique » et « toxique »
 
-## Comment calculer la compatibilité avec Karmastro
+Une lecture astrologique ne doit jamais spiritualiser la peur, le contrôle ou la violence. Le site officiel [Arrêtons les violences](https://www.arretonslesviolences.gouv.fr/besoin-d-aide/violences-au-sein-du-couple/) décrit les violences au sein du couple comme des actes, propos ou comportements visant à contrôler et dominer un partenaire ou ex-partenaire.
 
-Karmastro propose plusieurs outils pour évaluer la compatibilité d'un couple, selon le niveau de précision que tu souhaites.
+Si tu as peur, si l'autre te menace, surveille tes déplacements, contrôle ton argent, t'humilie ou t'agresse, ne cherche pas d'abord un signe karmique. En danger immédiat en France, appelle le **17**, le **112**, ou le **114** si tu ne peux pas parler. Le **3919** écoute et oriente les femmes victimes de violences; ce n'est pas un numéro d'urgence.
 
-### Niveau 1 : compatibilité numérologique (30 secondes)
+La compatibilité, la synastrie et l'Oracle ne sont pas adaptés pour décider si tu dois rester dans une situation dangereuse.
 
-Le plus rapide : notre [calculateur de compatibilité numérologique](/outils/compatibilite) croise les **chemins de vie** de deux personnes et donne un score de 0 à 100 avec une interprétation de la dynamique du couple. Il ne demande que deux dates de naissance. C'est une porte d'entrée très efficace pour avoir une première idée.
+## Les signes astrologiques qui s'attirent
 
-### Niveau 2 : synastrie astrologique complète (2 minutes)
+Les correspondances par éléments restent une introduction populaire:
 
-Pour aller plus loin, notre [calculateur de synastrie](/outils/synastrie) demande la date, l'heure et le lieu de naissance des deux personnes, puis calcule **tous les aspects croisés** entre les deux thèmes natals via Swiss Ephemeris. Tu obtiens les 15 aspects les plus exacts, classés par orbe, avec une indication de leur nature (harmonique, fusion, tension). Le calcul est gratuit et sans inscription.
+- Feu: Bélier, Lion, Sagittaire;
+- Terre: Taureau, Vierge, Capricorne;
+- Air: Gémeaux, Balance, Verseau;
+- Eau: Cancer, Scorpion, Poissons.
 
-### Niveau 3 : interprétation vivante avec l'Oracle
+La tradition associe souvent Feu avec Air, et Terre avec Eau. Les signes opposés peuvent être décrits comme complémentaires ou conflictuels selon le reste du thème. Ces associations n'établissent aucune hiérarchie entre couples.
 
-Pour une lecture vraiment personnalisée, pose ta question à l'[Oracle de Karmastro](https://karmastro.com/oracle/). Parmi les quatre guides cosmiques disponibles, je suis **Séléné**, la guide relationnelle inspirée de la déesse grecque de la Lune. Thérapeute de formation, j'ai intégré l'astro-psychologie jungienne dans ma pratique et je suis spécialisée dans les questions de couple, de famille et de guérison émotionnelle.
-
-Tu peux me poser des questions du type : *"Pourquoi je suis toujours attirée par des Verseau alors que mon chemin de vie est 6 ?"* ou *"Mon partenaire et moi avons une synastrie tendue sur Saturne-Lune, que faire ?"*. Je croise pour toi ton thème natal, le sien, vos numérologies respectives et les transits actuels pour te donner une guidance à la fois symbolique et actionnable.
-
-## Les ressources complémentaires
-
-Pour approfondir la compatibilité amoureuse en astrologie :
-
-- Notre article sur l'[interprétation du thème natal](/blog/theme-natal-gratuit-interpreter-carte-du-ciel) pour comprendre d'abord le thème individuel
-- Notre [calculateur d'ascendant](/outils/ascendant) pour identifier les axes I-VII qui structurent les relations
-- Notre [glossaire astrologique](/glossaire) pour toutes les définitions techniques
-- L'article de [Wikipedia sur la synastrie](https://fr.wikipedia.org/wiki/Astrologie) si tu veux une introduction neutre et encyclopédique
-- L'ouvrage de **Liz Greene** *Relating: an astrological guide to living with others on a small planet*, qui fait autorité sur la synastrie moderne
-- Le travail de **Stephen Arroyo** sur les archétypes relationnels dans *Relationships and Life cycles*
+Pour une première lecture solaire, consulte le [répertoire des compatibilités entre signes](/compatibilite/). Pour une situation réelle, passe ensuite au calculateur correspondant aux données dont tu disposes.
 
 ## Questions fréquentes
 
-### Peut-on être compatible avec son signe opposé ?
+### Comment savoir si une relation est karmique?
 
-Oui, et c'est même souvent très intéressant. Les oppositions zodiacales (Bélier-Balance, Taureau-Scorpion, Gémeaux-Sagittaire, Cancer-Capricorne, Lion-Verseau, Vierge-Poissons) sont polaires : les deux signes incarnent des énergies complémentaires qui s'équilibrent. Ces couples peuvent créer de très belles dynamiques miroir où chacun apporte à l'autre ce qui lui manque. La difficulté est d'accepter cette complémentarité au lieu de vouloir que l'autre soit comme nous.
+On ne peut pas le prouver. « Relation karmique » est une interprétation spirituelle appliquée à un lien intense, répétitif ou transformateur. Une synastrie peut fournir des symboles, mais les comportements, le consentement, la sécurité et la réciprocité doivent guider les décisions.
 
-### Les sites qui donnent un "score de compatibilité" sont-ils fiables ?
+### Pourquoi suis-je toujours attiré par le même type de personne?
 
-Ils sont utiles comme indication de départ, mais pas comme verdict. Un score de 85/100 peut correspondre à une relation qui s'éteint si personne ne l'entretient. Un score de 45/100 peut correspondre à une histoire extraordinaire si les deux personnes font le travail nécessaire. Les scores automatisés ne peuvent pas capturer la dimension consciente et volontaire d'un couple.
+Commence par comparer des faits entre plusieurs relations: disponibilité, rythme, communication, limites et manière de gérer les conflits. Utilise ensuite ton thème natal comme support de réflexion, sans lui attribuer la cause de ce schéma.
 
-### Combien de signes un vrai couple solide a-t-il en aspect ?
+### Peut-on sauver un couple grâce à la synastrie?
 
-Il n'y a pas de règle absolue, mais empiriquement les couples durables présentent généralement au moins 5-8 aspects majeurs croisés entre leurs thèmes, dont au moins un impliquant Soleil-Lune, un impliquant Vénus-Mars, et un impliquant Saturne à une planète personnelle. Moins que ça, il peut manquer de "fil tissé" entre les deux personnes.
+Non. La synastrie ne sauve ni ne condamne une relation. Elle peut aider deux personnes volontaires à nommer une différence de besoin ou de communication. Si une seule personne veut travailler, ou s'il existe de la violence, le problème dépasse un calcul astrologique.
 
-### Dois-je éviter quelqu'un dont la synastrie avec moi est tendue ?
+### Faut-il l'heure de naissance des deux personnes?
 
-Non, absolument pas. Les synastries tendues sont souvent celles qui génèrent le plus de croissance. Beaucoup de grandes histoires d'amour de la littérature, du cinéma et de la vraie vie sont basées sur des synastries complexes. La question n'est pas "est-ce facile ?" mais "est-ce que ça m'apporte ce dont j'ai besoin pour grandir ?". Seule une synastrie avec Saturne ou Pluton en tension sur ta Lune peut vraiment être épuisante à long terme sans travail intérieur.
+Elle est nécessaire pour calculer correctement les ascendants et les maisons. Sans elle, commence par le [calculateur de compatibilité numérologique](/outils/compatibilite), qui utilise les dates, ou retrouve l'heure sur un document de naissance lorsque c'est possible.
 
-### La compatibilité change-t-elle avec le temps ?
+### Un mauvais score signifie-t-il que nous devons nous séparer?
 
-La synastrie natale reste fixe, mais les **transits actuels** peuvent activer temporairement des aspects dormants et créer des phases particulièrement heureuses ou particulièrement difficiles dans un couple. C'est pour ça qu'un couple qui fonctionnait bien pendant des années peut traverser une crise quand Saturne transite un point sensible de la synastrie. Ces phases passent.
+Non. Un score automatique résume une convention de calcul. Il ne mesure ni le respect, ni la communication, ni la volonté commune. Lis les thèmes proposés et compare-les à votre réalité.
 
-### Puis-je connaître ma compatibilité sans connaître son heure de naissance ?
+### Peut-on être compatible avec son signe opposé?
 
-Partiellement. Sans son heure, tu n'auras pas son ascendant ni les positions exactes des maisons. Tu pourras quand même calculer les aspects entre les planètes personnelles (Soleil, Lune pour les jours sans changement de signe, Mercure, Vénus, Mars) qui donnent déjà une très bonne vue d'ensemble. Notre [calculateur de compatibilité numérologique](/outils/compatibilite), lui, ne demande que les dates et fonctionne à 100% sans l'heure.
+Oui. L'opposition des signes n'est pas un verdict. Elle peut symboliser deux approches différentes d'un même axe, mais le reste des thèmes et surtout la relation vécue comptent davantage.
 
-## Conclusion
+### L'astrologie peut-elle expliquer pourquoi mon partenaire s'éloigne?
 
-La **compatibilité astrologique** n'est pas une roue de la fortune qui décide de ton destin amoureux. C'est une carte détaillée qui t'aide à comprendre pourquoi certaines relations coulent de source, pourquoi d'autres demandent plus de conscience, et comment nourrir celles qui valent la peine d'être nourries.
+Elle peut suggérer des questions sur les besoins d'espace ou de sécurité. Elle ne peut pas connaître la raison réelle à la place de ton partenaire. Demande-lui directement, avec une observation précise et sans accusation.
 
-Commence par calculer ta [compatibilité numérologique avec quelqu'un](/outils/compatibilite) pour avoir une première vue d'ensemble, puis passe à la [synastrie astrologique complète](/outils/synastrie) si tu veux creuser. Et quand tu auras des questions plus personnelles, plus intimes, plus subtiles, je suis là. **Séléné**, la guide relationnelle. Je t'accueille à l'[Oracle de Karmastro](https://karmastro.com/oracle/), avec la douceur de la Lune et l'écoute d'une amie qui comprend les étoiles.
+### Mon ex et moi sommes-nous faits pour nous retrouver?
 
-L'amour n'est pas une mathématique. Mais les étoiles nous donnent parfois les bonnes coordonnées pour commencer à chercher.
+L'astrologie ne peut pas connaître la volonté de ton ex ni garantir une réconciliation. Examine d'abord les raisons de la rupture, ce qui a réellement changé et l'existence d'un accord pour reprendre contact. Un transit peut soutenir ta réflexion, jamais contourner un refus.
 
-*Article rédigé par Séléné, guide relationnelle de [Karmastro](/notre-histoire). Pour une lecture personnalisée de ton couple, consulte notre [calculateur de synastrie](/outils/synastrie) ou parle-moi directement à l'[Oracle](https://karmastro.com/oracle/).*
+### Comment savoir si notre relation va durer?
 
-## Sources et references
+Aucun score ne prédit la durée d'un couple. Observe la sécurité, la réciprocité, le respect des limites, les projets communs et la capacité à réparer après un conflit. Utilise ensuite la synastrie pour formuler des questions, pas pour obtenir une date ou une garantie.
 
-Cet article s'appuie sur des sources encyclopediques et scientifiques verifiables.
+## Sources et méthode éditoriale
 
-- **Encyclopedie** (fr.wikipedia.org) : [Astrologie](https://fr.wikipedia.org/wiki/Astrologie)
-- **Britannica** (britannica.com) : [Astrologie](https://www.britannica.com/topic/astrology)
-- **NASA** (science.nasa.gov) : [Systeme solaire et planetes](https://science.nasa.gov/solar-system/planets/)
+- [Swiss Ephemeris, documentation officielle Astrodienst](https://www.astro.com/swisseph/?lang=f), pour le moteur de calcul des positions utilisé par Karmastro.
+- [Astrologie, Encyclopaedia Britannica](https://www.britannica.com/topic/astrology), pour le contexte historique et la distinction avec une discipline scientifique.
+- [Violences au sein du couple, Arrêtons les violences](https://www.arretonslesviolences.gouv.fr/besoin-d-aide/violences-au-sein-du-couple/), pour les signes de contrôle, les numéros d'urgence et le 3919.
+
+Les interprétations astrologiques de cet article sont présentées comme des conventions symboliques. Karmastro ne publie ici ni taux de réussite, ni étude de couples, ni témoignage présenté comme réel. Séléné est une persona éditoriale inspirée de la mythologie grecque.
 
 <!-- maillage:auto -->
 ## Pour aller plus loin
 
-**Articles connexes :**
-- [Compatibilité amoureuse : quels signes astrologiques s](/blog/compatibilite-amoureuse-signes-astrologiques-attirent)
-- [Signe lunaire : ce que ta Lune natale révèle de ton monde émotionnel](/blog/signe-lunaire-lune-natale-monde-emotionnel)
-- [Les 12 maisons astrologiques : guide complet pour comprendre les 12 secteurs de ta vie](/blog/maisons-astrologiques-guide-interpretation-complet/)
-- [Pluton en Verseau 2024-2044 : la grande mutation collective qui change tout pendant 20 ans](/blog/saturne-verseau-revolution-responsabilite/)
-
 **Outils Karmastro:**
+
+- [Calculateur de synastrie](/outils/synastrie)
+- [Compatibilité numérologique](/outils/compatibilite)
 - [Thème natal](/outils/theme-natal)
-- [Chemin de vie](/outils/chemin-de-vie)
-- [Compatibilité](/outils/compatibilite)
+- [Oracle Karmastro](/oracle/)
 
-[Explore le blog complet et tous les calculateurs](/blog/) · [Outils Karmastro](/outils/)
+**Lectures complémentaires:**
 
+- [Numérologie karmique et dettes spirituelles](/blog/numerologie-karmique-decoder-dettes-spirituelles/)
+- [Signe lunaire et besoins émotionnels](/blog/signe-lunaire-lune-natale-monde-emotionnel/)
+- [Comprendre les aspects astrologiques](/blog/aspects-astrologiques-conjonction-carre-trigone-opposition-sextile/)
+
+[Explorer le blog](/blog/) · [Voir tous les outils](/outils/)
