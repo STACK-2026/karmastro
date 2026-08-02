@@ -18,7 +18,7 @@ imageAlt: "blue sky with white clouds during daytime"
 - **Nombre de la semaine** : 3 (créativité, expression) → idéal pour les signes de Feu et d’Air, mais évite la dispersion. Exprime-toi à travers l’art, l’écriture ou les collaborations.
 - **Défis karmiques** : Bélier (travailler sur l’ego), Cancer (gérer les émotions refoulées), Capricorne (lâcher prise sur le contrôle) → utilise les affirmations et outils proposés pour équilibrer ces énergies.
 - **Conseil universel** : "Cette semaine, ton intuition est ton meilleur guide - écoute-la avant de signer ou t’engager, surtout pendant Mercure rétrograde. Combine astrologie et numérologie pour des insights plus précis."
-- **Outils** : [Calcule ton nombre personnel](https://app.karmastro.com/numerologie?utm_source=karmastro.com) + [Oracle IA pour des réponses précises](https://app.karmastro.com/oracle) + [Crée ton thème natal](https://app.karmastro.com/theme-natal) + [Participe à nos ateliers](https://app.karmastro.com/ateliers).
+- **Outils** : [Calcule ton nombre personnel](https://app.karmastro.com/numerologie?utm_source=karmastro.com) + [Oracle IA pour des réponses précises](https://app.karmastro.com/oracle) + [Crée ton thème natal](https://app.karmastro.com/theme-natal) + [Découvre nos outils](/outils/).
 
 ---
 
@@ -140,10 +140,10 @@ Les signes d’**Air** (Gémeaux, Balance, Verseau) et de **Feu** (Bélier, Lion
 | Planète/Aspect       | Date               | Signe impacté          | Effet principal                          | Conseil Karmastro                     | Outil recommandé                                                                                     |
 |----------------------|--------------------|------------------------|------------------------------------------|---------------------------------------|------------------------------------------------------------------------------------------------------|
 | Nouvelle Lune carré Pluton | 4 août 2026      | Lion, Bélier, Scorpion | Tensions créatives, conflits de pouvoir | Médite sur tes motivations profondes  | [Rituel de Nouvelle Lune](https://karmastro.com/blog/rituels-nouvelle-lune)                         |
-| Mercure rétrograde   | 29/07 - 19/08     | Vierge, Gémeaux, Poissons | Malentendus, retards, problèmes tech    | Double-vérifie tout document          | [Checklist Mercure rétrograde](https://app.karmastro.com/checklist-mercure-retrograde)              |
+| Mercure rétrograde   | 29/07 - 19/08     | Vierge, Gémeaux, Poissons | Malentendus, retards, problèmes tech    | Double-vérifie tout document          | [Guide Mercure rétrograde](/blog/mercure-retrograde-guide-comprendre-survivre/)              |
 | Soleil sextile Jupiter | 2 août            | Balance, Lion, Sagittaire | Opportunités sociales, optimisme       | Saisis les occasions qui se présentent| [Oracle IA "Opportunités"](https://app.karmastro.com/oracle)                                        |
-| Vénus en Cancer      | Jusqu’au 5 août    | Cancer, Taureau, Poissons | Romance, harmonie familiale             | Exprime tes besoins affectifs         | [Journal des émotions](https://app.karmastro.com/journal)                                           |
-| Mars en Cancer       | 1er - 18 août      | Cancer, Scorpion, Poissons | Énergie protectrice, projets domestiques | Canalise ton énergie à la maison       | [Atelier "Énergie Mars"](https://app.karmastro.com/ateliers)                                        |
+| Vénus en Cancer      | Jusqu’au 5 août    | Cancer, Taureau, Poissons | Romance, harmonie familiale             | Exprime tes besoins affectifs         | [Pose une question à l’Oracle](/oracle/)                                           |
+| Mars en Cancer       | 1er - 18 août      | Cancer, Scorpion, Poissons | Énergie protectrice, projets domestiques | Canalise ton énergie à la maison       | [Explore les outils Karmastro](/outils/)                                        |
 
 *Pour une analyse personnalisée de ces transits dans ton thème natal, [crée ton profil cosmique sur Karmastro](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile).*
 
@@ -247,7 +247,7 @@ Ton énergie est puissante - profite-en pour te lancer dans un nouveau sport, un
 
 **Nombre de la semaine** : **8** (pouvoir) - Idéal pour négocier ou prendre des responsabilités, mais reste humble.
 
-*Pour aller plus loin* : [Participe à notre atelier "Leadership conscient"](https://app.karmastro.com/ateliers?utm_source=karmastro.com).
+*Pour aller plus loin* : [Explore les outils Karmastro](/outils/).
 
 ---
 
@@ -327,7 +327,7 @@ Ton optimisme est contagieux - partage-le avec ton entourage. Pour te ressourcer
 
 **Nombre de la semaine** : **3** (expansion) - Idéal pour les projets créatifs ou les voyages.
 
-*Pour aller plus loin* : [Planifie un voyage astrologique](https://app.karmastro.com/voyages?utm_source=karmastro.com).
+*Pour aller plus loin* : [Calcule tes transits](/outils/transits/).
 
 ---
 
@@ -367,7 +367,7 @@ Ton mental est en ébullition. Pour te recentrer, pratique la méditation ou une
 
 **Nombre de la semaine** : **7** (intuition) - Idéal pour la méditation ou les recherches spirituelles.
 
-*Pour aller plus loin* : [Fais notre test "Intuition vs Raison"](https://app.karmastro.com/tests?utm_source=karmastro.com).
+*Pour aller plus loin* : [Pose ta question à l’Oracle](/oracle/).
 
 ---
 
@@ -387,7 +387,7 @@ Ton énergie est dispersée. Pour te recentrer, pratique une activité artistiqu
 
 **Nombre de la semaine** : **2** (réceptivité) - Parfait pour les collaborations ou les soins énergétiques.
 
-*Pour aller plus loin* : [Participe à notre atelier "Créativité sacrée"](https://app.karmastro.com/ateliers?utm_source=karmastro.com).
+*Pour aller plus loin* : [Explore les outils Karmastro](/outils/).
 
 ---
 
@@ -411,17 +411,17 @@ Les défis karmiques sont déterminés par plusieurs facteurs :
 | Signe          | Défi Karmique (31/07 - 06/08)                                                                 | Affirmation à répéter                                                                 | Outil Karmastro                                                                                     | Action concrète                                                                                     |
 |----------------|-----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
 | **Bélier**     | Gérer ton ego pour éviter les conflits inutiles.                                              | *"Je dirige mon énergie avec sagesse, pas avec impulsivité."*                        | [Méditation "Feu intérieur"](https://app.karmastro.com/meditations?utm_source=karmastro.com)       | Écris une liste de tes qualités et de tes défauts. Relis-la chaque matin pour rester humble.       |
-| **Taureau**    | Lâcher prise sur les possessions matérielles pour trouver la vraie sécurité.                 | *"Ma valeur ne dépend pas de ce que je possède."*                                    | [Journal des gratitudes](https://app.karmastro.com/journal?utm_source=karmastro.com)               | Fais un don (vêtements, argent) à une association pour te libérer de l’attachement aux objets.     |
+| **Taureau**    | Lâcher prise sur les possessions matérielles pour trouver la vraie sécurité.                 | *"Ma valeur ne dépend pas de ce que je possède."*                                    | [Pose une question à l’Oracle](/oracle/)               | Fais un don (vêtements, argent) à une association pour te libérer de l’attachement aux objets.     |
 | **Gémeaux**    | Écouter avant de parler pour éviter les malentendus.                                         | *"Je choisis mes mots avec intention et écoute avec compassion."*                    | [Oracle IA "Communication"](https://app.karmastro.com/oracle?utm_source=karmastro.com)             | Pendant une conversation, compte jusqu’à 3 avant de répondre pour t’assurer d’avoir bien écouté.   |
 | **Cancer**     | Ne pas porter le poids émotionnel des autres.                                                 | *"Je prends soin de mes émotions sans absorber celles des autres."*                  | [Rituel de protection lunaire](https://karmastro.com/blog/rituels-lune-protection)                 | Visualise une bulle de lumière blanche autour de toi pour te protéger des énergies négatives.      |
-| **Lion**       | Utiliser ton charisme pour inspirer, pas pour dominer.                                        | *"Je brille sans éclipser les autres."*                                               | [Atelier "Leadership conscient"](https://app.karmastro.com/ateliers?utm_source=karmastro.com)      | Complimente une personne de ton entourage chaque jour pour partager ta lumière.                    |
+| **Lion**       | Utiliser ton charisme pour inspirer, pas pour dominer.                                        | *"Je brille sans éclipser les autres."*                                               | [Explore les outils Karmastro](/outils/)      | Complimente une personne de ton entourage chaque jour pour partager ta lumière.                    |
 | **Vierge**     | Accepter l’imperfection pour avancer.                                                         | *"Je célèbre mes progrès, pas seulement mes résultats."*                             | [Calculateur de perfectionnisme](https://app.karmastro.com/numerologie?utm_source=karmastro.com)   | Fais une tâche "parfaitement imparfaite" (ex : envoie un email sans le relire 10 fois).            |
 | **Balance**    | Prendre des décisions sans chercher l’approbation des autres.                                 | *"J’équilibre mes besoins avec ceux des autres, sans me perdre."*                    | [Oracle IA "Choix difficiles"](https://app.karmastro.com/oracle?utm_source=karmastro.com)          | Prends une décision seul(e) cette semaine (ex : choisis un restaurant sans demander l’avis de personne). |
 | **Scorpion**   | Transformer la colère en action constructive.                                                 | *"Je canalise ma passion vers la création, pas vers la destruction."*                | [Rituel de transformation](https://karmastro.com/blog/rituels-scorpion-transformation)             | Écris une lettre de colère (sans l’envoyer) puis brûle-la pour libérer cette énergie.               |
-| **Sagittaire** | Assumer ses choix sans fuir les responsabilités.                                              | *"Je vis ma liberté avec engagement."*                                               | [Voyage astrologique](https://app.karmastro.com/voyages?utm_source=karmastro.com)                 | Termine un projet que tu as abandonné par peur de l’échec.                                         |
+| **Sagittaire** | Assumer ses choix sans fuir les responsabilités.                                              | *"Je vis ma liberté avec engagement."*                                               | [Calcule tes transits](/outils/transits/)                 | Termine un projet que tu as abandonné par peur de l’échec.                                         |
 | **Capricorne** | Lâcher prise sur le besoin de tout contrôler.                                                  | *"Je fais confiance au processus de la vie."*                                        | [Méditation "Montagne"](https://app.karmastro.com/meditations?utm_source=karmastro.com)            | Délègue une tâche à un collègue ou un proche sans vérifier chaque détail.                          |
-| **Verseau**    | Équilibrer raison et émotion pour prendre des décisions alignées.                             | *"Je suis à la fois logique et intuitif."*                                           | [Test "Intuition vs Raison"](https://app.karmastro.com/tests?utm_source=karmastro.com)             | Prends une décision en écoutant ton intuition (ex : choisis un livre au feeling).                  |
-| **Poissons**   | Distinguer l’inspiration créative de l’évasion émotionnelle.                                  | *"Je crée à partir de ma lumière, pas de mes peurs."*                                | [Atelier "Créativité sacrée"](https://app.karmastro.com/ateliers?utm_source=karmastro.com)         | Crée quelque chose (dessin, poème) sans jugement, juste pour le plaisir.                           |
+| **Verseau**    | Équilibrer raison et émotion pour prendre des décisions alignées.                             | *"Je suis à la fois logique et intuitif."*                                           | [Pose une question à l’Oracle](/oracle/)             | Prends une décision en écoutant ton intuition (ex : choisis un livre au feeling).                  |
+| **Poissons**   | Distinguer l’inspiration créative de l’évasion émotionnelle.                                  | *"Je crée à partir de ma lumière, pas de mes peurs."*                                | [Explore les outils Karmastro](/outils/)         | Crée quelque chose (dessin, poème) sans jugement, juste pour le plaisir.                           |
 
 ---
 
@@ -488,18 +488,18 @@ Voici comment ton nombre personnel influence ta semaine, en combinaison avec le 
 
 | Nombre Personnel | Signe Astro le plus compatible | Conseil clé pour la semaine                          | Outil Karmastro                                                                                     | Exemple concret                                                                                     |
 |------------------|-------------------------------|------------------------------------------------------|----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| **1**            | Bélier, Lion                  | Lance un projet solo, mais attends la fin de Mercure rétrograde pour les partenariats. | [Atelier "Nouveaux départs"](https://app.karmastro.com/ateliers?utm_source=karmastro.com)          | Écris une liste de 3 projets que tu veux lancer cette année et choisis-en un à commencer cette semaine. |
+| **1**            | Bélier, Lion                  | Lance un projet solo, mais attends la fin de Mercure rétrograde pour les partenariats. | [Explore les outils Karmastro](/outils/)          | Écris une liste de 3 projets que tu veux lancer cette année et choisis-en un à commencer cette semaine. |
 | **2**            | Cancer, Balance               | Travaille en équipe et écoute ton intuition.         | [Oracle IA "Collaboration"](https://app.karmastro.com/oracle?utm_source=karmastro.com)             | Propose une collaboration à un collègue ou un ami pour un projet commun.                          |
-| **3**            | Gémeaux, Sagittaire           | Exprime ta créativité sans filtre.                   | [Journal créatif](https://app.karmastro.com/journal?utm_source=karmastro.com)                      | Crée quelque chose (dessin, poème, recette) sans jugement, juste pour le plaisir.                  |
+| **3**            | Gémeaux, Sagittaire           | Exprime ta créativité sans filtre.                   | [Pose une question à l’Oracle](/oracle/)                      | Crée quelque chose (dessin, poème, recette) sans jugement, juste pour le plaisir.                  |
 | **4**            | Taureau, Vierge               | Organise ton espace et tes finances.                 | [Calculateur de stabilité](https://app.karmastro.com/numerologie?utm_source=karmastro.com)        | Trie tes dossiers ou ton bureau pour te sentir plus organisé.                                      |
-| **5**            | Gémeaux, Verseau              | Sors de ta routine et explore de nouvelles idées.    | [Voyage astrologique](https://app.karmastro.com/voyages?utm_source=karmastro.com)                 | Essaie une nouvelle activité (cours de cuisine, randonnée) pour stimuler ta créativité.             |
+| **5**            | Gémeaux, Verseau              | Sors de ta routine et explore de nouvelles idées.    | [Calcule tes transits](/outils/transits/)                 | Essaie une nouvelle activité (cours de cuisine, randonnée) pour stimuler ta créativité.             |
 | **6**            | Cancer, Balance               | Prends soin de ton foyer ou de ta famille.           | [Rituel "Harmonie familiale"](https://karmastro.com/blog/rituels-harmonie-famille)                 | Organise un dîner en famille ou appelle un proche que tu n’as pas vu depuis longtemps.             |
 | **7**            | Scorpion, Poissons            | Médite et écoute ton intuition.                      | [Méditation "Intuition"](https://app.karmastro.com/meditations?utm_source=karmastro.com)           | Prends 10 minutes par jour pour méditer et écouter ton ressenti.                                   |
-| **8**            | Capricorne, Scorpion          | Négocie ou investis, mais reste humble.              | [Atelier "Abondance"](https://app.karmastro.com/ateliers?utm_source=karmastro.com)                | Prépare une négociation salariale ou un investissement en listant tes arguments.                    |
+| **8**            | Capricorne, Scorpion          | Négocie ou investis, mais reste humble.              | [Explore les outils Karmastro](/outils/)                | Prépare une négociation salariale ou un investissement en listant tes arguments.                    |
 | **9**            | Sagittaire, Poissons          | Termine un cycle et prépare-toi à un nouveau départ. | [Rituel de clôture](https://karmastro.com/blog/rituels-cloture-cycle)                              | Écris une lettre pour tourner la page sur une situation passée et brûle-la symboliquement.          |
 | **11**           | Verseau, Poissons             | Utilise ton intuition pour guider les autres.        | [Oracle IA "Guidance spirituelle"](https://app.karmastro.com/oracle?utm_source=karmastro.com)      | Partage un conseil intuitif avec un proche qui en a besoin.                                        |
-| **22**           | Capricorne, Verseau           | Réalise un projet ambitieux avec pragmatisme.        | [Atelier "Maîtres bâtisseurs"](https://app.karmastro.com/ateliers?utm_source=karmastro.com)        | Lance un projet à long terme (ex : créer une entreprise) en définissant des étapes claires.        |
-| **33**           | Cancer, Poissons              | Enseigne ou partage ton savoir avec compassion.      | [Programme "Mentorat spirituel"](https://app.karmastro.com/mentorat?utm_source=karmastro.com)     | Propose un atelier ou une conférence pour partager tes connaissances.                              |
+| **22**           | Capricorne, Verseau           | Réalise un projet ambitieux avec pragmatisme.        | [Explore les outils Karmastro](/outils/)        | Lance un projet à long terme (ex : créer une entreprise) en définissant des étapes claires.        |
+| **33**           | Cancer, Poissons              | Enseigne ou partage ton savoir avec compassion.      | [Pose une question à l’Oracle](/oracle/)     | Propose un atelier ou une conférence pour partager tes connaissances.                              |
 
 ---
 
@@ -542,4 +542,3 @@ Mercure rétrograde en Vierge peut causer des malentendus, des retards et des pr
 - [Horoscope du jour : prévisions astrologiques fiables](https://karmastro.com/blog/horoscope-jour-previsions-astrologiques-fiables)
 - [Horoscope chinois vs occidental : quelle différence](https://karmastro.com/blog/horoscope-chinois-occidental-quelle-difference)
 - [Pleine lune en Gémeaux : communication et adaptabilité](https://karmastro.com/blog/pleine-lune-gemeaux-communication-adaptabilite)
-
