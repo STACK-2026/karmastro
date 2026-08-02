@@ -1,5 +1,5 @@
 ---
-title: "Karma i astrologia: czytanie twoich poprzednich żyć przez mapę natalną"
+title: "Karma i astrologia: poprzednie życia w karcie natalnej"
 description: "Czytaj karmę i poprzednie żywoty w mapie natalnej: węzły księżycowe, długi karmiczne, Saturn i Pluton."
 date: 2026-04-27T07:55:00+02:00
 author: "Orion"

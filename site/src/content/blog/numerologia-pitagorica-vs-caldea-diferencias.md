@@ -1,5 +1,5 @@
 ---
-title: "Numérologie : Pythagoricienne ou Chaldéenne ? Comparatif"
+title: "Numerología pitagórica o caldea: comparativa"
 description: "Comparación de las dos grandes escuelas de numerología: pitagórica y caldea. Métodos, orígenes, diferencias de cálculo y cuál elegir."
 date: 2026-04-23T08:37:00+02:00
 author: "Pythia"

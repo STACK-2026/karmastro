@@ -1,5 +1,5 @@
 ---
-title: "Chemin de Vie 1 Numérologie : Leader, Mission, Caractère"
+title: "Yaşam Yolu Sayısı 1: Liderlik, Bağımsızlık ve Karakter"
 description: "Pitagor numerolojisinde yaşam yolu 1 hakkında her şey: kişilik, misyon, güçler, tuzaklar ve uyumluluklar."
 date: 2026-05-07T08:29:00+02:00
 author: "Pythia"

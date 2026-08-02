@@ -1,5 +1,5 @@
 ---
-title: "Thème astral gratuit : interprétez votre carte natale"
+title: "Kostenloses Geburtshoroskop: dein Natalchart deuten"
 description: "Interpretiere dein Geburtshoroskop kostenlos: 12 Planeten, 12 Häuser, Aspekte, Aszendent. Swiss-Ephemeris-Methode, NASA-Präzision."
 date: 2026-04-13T07:48:00+02:00
 author: "Sibylle"

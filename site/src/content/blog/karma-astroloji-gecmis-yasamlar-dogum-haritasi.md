@@ -1,5 +1,5 @@
 ---
-title: "Karma Astrologie : Votre thème révèle vos vies passées"
+title: "Karmik Astroloji: Doğum Haritasında Geçmiş Yaşam Sembolleri"
 description: "Doğum haritanda karma ve geçmiş yaşamları oku: Ay düğümleri, karmik borçlar, Satürn ve Plüton. Ruhun yörüngesine bir rehber."
 date: 2026-04-27T07:55:00+02:00
 author: "Orion"

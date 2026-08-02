@@ -1,5 +1,5 @@
 ---
-title: "Numérologie : Pythagoricienne ou Chaldéenne ? Choisir"
+title: "Numerologie: pythagoreisch oder chaldäisch? Die Unterschiede"
 description: "Vergleich der zwei großen Schulen der Numerologie: pythagoreisch und chaldäisch. Methoden, Ursprünge, Berechnungsunterschiede und welche wählen."
 date: 2026-04-23T08:37:00+02:00
 author: "Pythia"

@@ -1,5 +1,5 @@
 ---
-title: "Aspetti astrologici: guida ai cinque aspetti maggiori"
+title: "Aspetti astrologici: guida ai 5 principali"
 description: "I pianeti non agiscono mai isolatamente. Dialogano, si oppongono, si armonizzano tramite gli aspetti. La guida completa per leggerli."
 date: 2026-06-04T07:30:00+02:00
 author: "Orion"

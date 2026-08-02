@@ -1,5 +1,5 @@
 ---
-title: "Karma & vies passées : lisez votre carte natale astrologique"
+title: "Karma y vidas pasadas en tu carta natal"
 description: "Leer el karma y las vidas pasadas en tu carta natal: nodos lunares, deudas kármicas, Saturno y Plutón. Una guía para la trayectoria de tu alma."
 date: 2026-04-27T07:55:00+02:00
 author: "Orion"
@@ -195,4 +195,3 @@ Este articulo se basa en fuentes enciclopedicas y cientificas verificables.
 - [Compatibilidad](/es/herramientas/compatibilidad)
 
 [Explora el blog completo y todas las herramientas](/es/blog/) · [Herramientas Karmastro](/es/herramientas/)
-
