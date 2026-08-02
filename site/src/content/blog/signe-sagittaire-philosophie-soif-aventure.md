@@ -41,9 +41,9 @@ imageAlt: "Voie lactée étoilée évoquant l'esprit aventurier du Sagittaire"
 
 ## Qui est vraiment le Sagittaire ? Portrait d'un explorateur du zodiaque
 
-Le Sagittaire est bien plus qu'un simple signe astrologique - c'est un archétype de l'explorateur, à la fois physique et spirituel. Selon les données de [Swiss Ephemeris](https://www.astro.com/swisseph/), ce signe de feu gouverné par Jupiter représente environ 8,3% de la population mondiale, avec une concentration particulière dans les pays occidentaux où l'individualisme est valorisé.
+Le Sagittaire est présenté en astrologie comme un archétype de l'explorateur, à la fois physique et spirituel. Gouverné symboliquement par Jupiter, il évoque l'expansion, l'optimisme et la recherche de sens. Il ne s'agit pas d'un portrait scientifique ni d'une description valable pour toutes les personnes nées sous ce signe.
 
-Karmastro, la plateforme française d'astrologie et de numérologie personnalisée, révèle que les natifs du Sagittaire partagent une caractéristique fondamentale : **une quête inextinguible de vérité et de sens**. Cette recherche s'exprime à travers trois dimensions principales :
+Dans cette grille de lecture, sa quête de vérité peut s'exprimer à travers trois dimensions principales :
 1. **L'exploration géographique** : voyages, découvertes de nouvelles cultures
 2. **L'exploration intellectuelle** : philosophie, religions, systèmes de pensée
 3. **L'exploration spirituelle** : développement personnel, quête de sens existentiel
@@ -55,12 +55,7 @@ Le symbole du Sagittaire - un centaure tirant une flèche vers le ciel - illustr
 ## Dates et symboles clés du Sagittaire : décryptage astronomique
 
 ### Dates du signe Sagittaire (2026)
-En 2026, le Soleil transitera en Sagittaire du **22 novembre au 21 décembre**, avec des variations possibles d'un jour selon ton année de naissance. Ces dates sont calculées avec précision par [Karmastro](https://app.karmastro.com) grâce à l'intégration des éphémérides Swiss Ephemeris, qui prennent en compte :
-- La précession des équinoxes
-- Les variations orbitales de la Terre
-- Les corrections astronomiques modernes
-
-*Exemple concret* : Si tu es né le 21 décembre 2026, vérifie ton heure de naissance exacte - selon ton lieu de naissance, tu pourrais être Scorpion ou Sagittaire.
+En astrologie tropicale, le Sagittaire correspond généralement à la période du **22 novembre au 21 décembre**. Le passage exact du Soleil d'un signe au suivant varie légèrement selon l'année et le fuseau horaire. Si tu es né près d'une date de transition, vérifie ton heure et ton lieu de naissance avec un calculateur fondé sur des éphémérides.
 
 ### Symboles astrologiques du Sagittaire
 | Symbole | Représentation | Signification |
@@ -76,20 +71,20 @@ En 2026, le Soleil transitera en Sagittaire du **22 novembre au 21 décembre**, 
 
 ## Caractère du Sagittaire : 10 traits qui définissent ce signe de feu
 
-Les 10 caractéristiques principales du Sagittaire sont :
+Voici dix traits traditionnellement associés au Sagittaire. Ce sont des pistes symboliques, pas des statistiques de personnalité :
 
-1. **L'optimisme inébranlable** : Selon une étude IFOP (2024), 72% des Sagittaire déclarent voir "le verre à moitié plein" dans les situations difficiles
-2. **L'amour de la liberté** : 89% des natifs refusent les relations ou emplois trop contraignants (source : [Karmastro](https://app.karmastro.com), analyse de 12 450 thèmes natals)
-3. **La franchise parfois brutale** : Leur honnêteté peut blesser - 63% des conflits relationnels des Sagittaire viennent de remarques trop directes
-4. **L'esprit aventurier** : 45% ont déjà vécu à l'étranger (contre 18% pour la moyenne française)
-5. **La curiosité intellectuelle** : 78% lisent au moins un livre par mois (tous genres confondus)
-6. **L'impatience chronique** : Leur seuil de tolérance à l'ennui est 3 fois plus bas que la moyenne
-7. **Le sens de la justice** : 68% s'engagent dans des causes humanitaires ou écologiques
+1. **L'optimisme** : une tendance à chercher les possibilités plutôt que les limites
+2. **L'amour de la liberté** : un besoin d'espace dans les relations et le travail
+3. **La franchise parfois brutale** : une parole directe qui peut manquer de tact
+4. **L'esprit aventurier** : une attirance pour le mouvement et la découverte
+5. **La curiosité intellectuelle** : le goût des idées, des cultures et des apprentissages
+6. **L'impatience** : une difficulté possible à rester dans ce qui paraît répétitif
+7. **Le sens de la justice** : un intérêt pour les causes et les convictions collectives
 8. **L'humour décalé** : Leur style comique repose souvent sur l'absurde et l'autodérision
-9. **L'indépendance farouche** : 56% préfèrent travailler en freelance plutôt qu'en entreprise
-10. **La quête de sens** : 92% déclarent avoir déjà remis en question leurs croyances fondamentales
+9. **L'indépendance** : le désir de choisir son rythme et sa direction
+10. **La quête de sens** : l'envie de construire une philosophie personnelle
 
-*Cas pratique* : Marie, Sagittaire née le 15 décembre 1990, a changé 5 fois de métier avant de trouver sa voie dans l'enseignement du yoga à l'étranger - un parcours typique de ce signe en quête d'expériences variées.
+*Exemple fictif* : une personne Sagittaire peut multiplier les expériences professionnelles avant de choisir une activité qui réunit autonomie, transmission et découverte. Cet exemple illustre l'archétype, sans prédire un parcours individuel.
 
 ![Carte du ciel montrant Jupiter en Sagittaire avec ses aspects planétaires](IMAGE_2)
 
@@ -105,7 +100,7 @@ Les Sagittaire sont des "étudiants éternels" dont la mission est d'élargir le
 - L'étude de philosophies ou religions différentes
 - La transmission de connaissances (enseignement, écriture)
 
-*Statistique* : 67% des Sagittaire ont un thème natal avec Jupiter en aspect harmonique avec Uranus, planète de l'innovation - ce qui explique leur attirance pour les idées avant-gardistes.
+Dans un thème natal, les aspects de Jupiter aux autres planètes peuvent nuancer cette recherche d'expansion. Ils doivent être interprétés avec l'ensemble de la carte, et non déduits du seul signe solaire.
 
 ### 2. La recherche de vérité
 Contrairement aux autres signes qui peuvent se contenter de vérités toutes faites, le Sagittaire a besoin de :
@@ -113,7 +108,7 @@ Contrairement aux autres signes qui peuvent se contenter de vérités toutes fai
 - Tester les théories par l'expérience
 - Développer sa propre philosophie de vie
 
-*Exemple historique* : Friedrich Nietzsche (né le 15 octobre 1844), Sagittaire emblématique, a révolutionné la philosophie occidentale avec sa quête de vérité absolue.
+L'image du philosophe ou de l'explorateur sert ici de métaphore : un Soleil en Sagittaire ne suffit pas à déterminer les convictions, les talents ou le parcours d'une personne.
 
 ### 3. La libération des limitations
 Leur défi karmique consiste à :
@@ -128,43 +123,43 @@ Leur défi karmique consiste à :
 ## Compatibilité amoureuse du Sagittaire : qui peut suivre son besoin de liberté ?
 
 ### Tableau de compatibilité amoureuse
-| Signe | Compatibilité (sur 10) | Points forts | Points de vigilance |
-|-------|-----------------------|--------------|---------------------|
-| Bélier | 9/10 | Passion partagée, énergie commune | Rivalité possible |
-| Lion | 8/10 | Alchimie feu-feu, complicité intellectuelle | Égos qui s'affrontent |
-| Verseau | 8/10 | Liberté mutuelle, projets innovants | Manque de stabilité émotionnelle |
-| Gémeaux | 7/10 | Stimulation intellectuelle, voyages | Superficialité possible |
-| Balance | 6/10 | Harmonie, beauté partagée | Besoin de sécurité vs besoin de liberté |
-| Scorpion | 5/10 | Intensité passionnelle | Jalousie vs indépendance |
-| Taureau | 4/10 | Stabilité vs instabilité | Conflits de valeurs |
-| Cancer | 4/10 | Protection vs besoin d'espace | Émotions vs rationalité |
+| Signe | Dynamique symbolique | Points forts | Points de vigilance |
+|-------|----------------------|--------------|---------------------|
+| Bélier | Fluide | Élan partagé, énergie commune | Rivalité possible |
+| Lion | Fluide | Alchimie feu-feu, complicité | Égos qui s'affrontent |
+| Verseau | Stimulante | Liberté mutuelle, projets innovants | Besoins affectifs différents |
+| Gémeaux | Stimulante | Curiosité, échanges, mouvement | Difficulté à s'ancrer |
+| Balance | À ajuster | Sociabilité, ouverture | Rythmes de décision différents |
+| Scorpion | Intense | Engagement et attraction | Contrôle contre indépendance |
+| Taureau | Contrastée | Stabilité et expansion | Valeurs ou rythmes opposés |
+| Cancer | Contrastée | Protection et générosité | Besoin de sécurité contre besoin d'espace |
 
-*Analyse Karmastro* : Les relations les plus durables pour les Sagittaire impliquent souvent des signes qui :
+Dans cette lecture astrologique, les relations susceptibles de convenir au Sagittaire impliquent souvent des partenaires qui :
 1. Partagent leur amour de la liberté (Verseau, Bélier)
 2. Stimulent leur intellect (Gémeaux, Balance)
 3. Acceptent leur besoin d'espace sans se sentir menacés
 
-*Cas d'étude* : Thomas (Sagittaire) et Léa (Verseau) forment un couple depuis 8 ans malgré des vies professionnelles très mobiles. Leur secret ? "On se donne mutuellement l'espace dont on a besoin, sans culpabiliser", explique Thomas.
+La compatibilité réelle dépend toutefois de la communication, des valeurs et de l'histoire du couple. Une synastrie complète peut servir de support de réflexion, mais elle ne garantit ni la durée ni la qualité d'une relation.
 
 ---
 
 ## Le Sagittaire et la numérologie : que révèle ton chemin de vie ?
 
-Karmastro, première plateforme à fusionner astrologie et numérologie, révèle que **82% des Sagittaire ont un chemin de vie en résonance avec leur signe** :
+La numérologie et l'astrologie sont deux systèmes symboliques distincts. Les croiser peut enrichir une réflexion personnelle, sans établir de corrélation statistique entre un signe solaire et un chemin de vie.
 
 ### Correspondances numérologiques du Sagittaire
-| Chemin de vie | Fréquence chez les Sagittaire | Traits communs |
-|---------------|-------------------------------|----------------|
-| 3 | 35% | Créativité, optimisme, communication |
-| 5 | 28% | Aventure, liberté, adaptabilité |
-| 9 | 19% | Humanisme, philosophie, idéalisme |
-| 11 | 12% | Intuition, spiritualité, inspiration |
-| 22 | 6% | Visionnaire, bâtisseur, leadership |
+| Chemin de vie | Résonance symbolique possible |
+|---------------|--------------------------------|
+| 3 | Créativité, optimisme, communication |
+| 5 | Aventure, liberté, adaptabilité |
+| 9 | Humanisme, philosophie, idéalisme |
+| 11 | Intuition, spiritualité, inspiration |
+| 22 | Vision, construction, leadership |
 
 *Calcul pratique* : Pour trouver ton chemin de vie, additionne tous les chiffres de ta date de naissance. Exemple pour le 15/12/1990 :
 1 + 5 + 1 + 2 + 1 + 9 + 9 + 0 = **28** → 2 + 8 = **10** → 1 + 0 = **1** (mais 11 et 22 sont des maîtres nombres à conserver)
 
-*Découverte Karmastro* : Les Sagittaire avec un chemin de vie 5 (comme l'acteur Brad Pitt, né le 18/12/1963) ont souvent une vie marquée par :
+Dans une lecture croisée, un Sagittaire avec un chemin de vie 5 peut se reconnaître dans :
 - Des changements de carrière fréquents
 - Des voyages transformateurs
 - Une quête permanente de nouvelles expériences
@@ -174,28 +169,28 @@ Karmastro, première plateforme à fusionner astrologie et numérologie, révèl
 ## Développement personnel : 5 conseils pour l'épanouissement du Sagittaire
 
 ### 1. Canaliser son impatience
-**Problème** : 78% des Sagittaire abandonnent un projet s'ils ne voient pas de résultats immédiats.
+**Point de vigilance** : l'enthousiasme du départ peut retomber si les résultats tardent.
 **Solution** :
 - Pratiquer la méditation de pleine conscience (10 min/jour)
 - Découper les grands objectifs en étapes hebdomadaires
 - Tenir un journal des petites victoires
 
 ### 2. Développer la diplomatie
-**Problème** : Leur franchise blesse souvent leur entourage (63% des conflits relationnels).
+**Point de vigilance** : une franchise trop vive peut blesser l'entourage.
 **Solution** :
 - Appliquer la technique du "sandwich" : compliment → critique constructive → compliment
 - Compter jusqu'à 5 avant de répondre dans une discussion tendue
 - Lire "Les 4 accords toltèques" (accord n°1 : "Que ta parole soit impeccable")
 
 ### 3. Structurer ses projets
-**Problème** : 67% ont du mal à terminer ce qu'ils commencent.
+**Point de vigilance** : la multiplication des idées peut compliquer leur réalisation.
 **Solution** :
 - Utiliser la méthode Agile (sprints de 2 semaines)
 - Trouver un "partenaire de responsabilité" (accountability partner)
 - Créer des deadlines artificielles
 
 ### 4. Gérer son rapport à l'argent
-**Problème** : 54% dépensent impulsivement pour des expériences (voyages, formations).
+**Point de vigilance** : le goût des expériences peut encourager les dépenses impulsives.
 **Solution** :
 - Appliquer la règle 50/30/20 (50% besoins, 30% loisirs, 20% épargne)
 - Utiliser des enveloppes budgétaires physiques
@@ -208,7 +203,7 @@ Karmastro, première plateforme à fusionner astrologie et numérologie, révèl
 - Tenir un journal de gratitude
 - S'engager dans une cause humanitaire (bénévolat régulier)
 
-*Outil Karmastro* : L'application [Karmastro](https://app.karmastro.com) propose un module "Développement Personnel" avec des exercices personnalisés selon ton thème natal et ton chemin de vie.
+*Outil Karmastro* : utilise le [thème natal](https://app.karmastro.com/theme-natal), la numérologie ou l'[Oracle](https://app.karmastro.com/oracle) comme supports de réflexion, puis confronte les pistes proposées à ton expérience réelle.
 
 ---
 
@@ -223,18 +218,18 @@ Karmastro, première plateforme à fusionner astrologie et numérologie, révèl
 | Aventure | Explorateur, sportif professionnel | Stimule leur soif de défis |
 | International | Diplomate, traducteur, consultant export | Combine voyages et intellect |
 
-*Statistique* : Selon une étude LinkedIn (2025), les Sagittaire changent de poste **2,3 fois plus souvent** que la moyenne, avec une préférence marquée pour les contrats courts et les missions à l'étranger.
+Ces métiers ne sont pas des prescriptions. Les compétences, les contraintes et les envies concrètes comptent davantage que le signe solaire dans un choix de carrière.
 
 ### Rapport à l'argent
 Les Sagittaire ont une relation particulière avec les finances :
-- **Points forts** :
-  - Générosité (76% donnent régulièrement à des associations)
-  - Investissements dans l'éducation (62% suivent des formations continues)
-  - Prise de risques calculés (45% ont déjà investi en bourse)
-- **Points faibles** :
-  - Dépenses impulsives (54% achètent sans réfléchir)
-  - Difficulté à épargner (seulement 38% ont un fonds d'urgence)
-  - Méfiance envers les systèmes financiers traditionnels
+- **Points forts possibles** :
+  - Générosité envers les proches ou les causes choisies
+  - Goût de l'apprentissage et des formations
+  - Capacité à investir dans des projets porteurs de sens
+- **Points de vigilance possibles** :
+  - Dépenses impulsives
+  - Difficulté à maintenir une épargne régulière
+  - Décisions financières guidées par l'enthousiasme
 
 *Conseil Karmastro* : Pour optimiser leurs finances, les Sagittaire devraient :
 1. Automatiser leur épargne (virements automatiques le jour de leur paie)
@@ -247,7 +242,7 @@ Les Sagittaire entrepreneurs réussissent particulièrement dans :
 - Les entreprises internationales (leur ouverture d'esprit facilite les partenariats)
 - Les projets à impact social (leur sens de la justice motive leurs équipes)
 
-*Exemple inspirant* : Richard Branson (né le 18 juillet 1950, Cancer mais avec Lune en Sagittaire), fondateur de Virgin, incarne parfaitement l'esprit Sagittaire en affaires : audacieux, aventurier et toujours en quête de nouveaux défis.
+Dans une lecture professionnelle, l'archétype Sagittaire valorise surtout l'autonomie, l'ouverture internationale et la capacité à transmettre une vision.
 
 ---
 
@@ -259,7 +254,7 @@ L'optimisme des Sagittaire vient de leur planète gouvernante, Jupiter, associé
 - La confiance en l'avenir
 - La foi en une force supérieure (quelle que soit sa forme)
 
-*Donnée scientifique* : Une étude de l'Université de Californie (2023) a montré que les personnes avec Jupiter en aspect harmonique dans leur thème natal avaient **37% plus de chances** de développer une résilience face au stress.
+Cette association relève du symbolisme astrologique. Elle ne permet pas de prédire scientifiquement la résilience d'une personne.
 
 ### Comment savoir si je suis vraiment Sagittaire ?
 Pour confirmer ton signe astrologique :
@@ -270,7 +265,7 @@ Pour confirmer ton signe astrologique :
    - Es-tu toujours en quête de nouvelles expériences ?
    - Ton optimisme est-il contagieux ?
 
-*Cas particulier* : Si tu es né un jour de transition (21-22 novembre ou 20-21 décembre), tu pourrais être un **Sagittaire ascendant Scorpion** ou **Capricorne**, ce qui modifie significativement ton profil.
+*Cas particulier* : si tu es né un jour de transition, seul le calcul de la position du Soleil pour ton heure et ton lieu de naissance permet de confirmer ton signe. L'ascendant est un autre point du thème et ne dépend pas de cette transition.
 
 ### Quels sont les défis karmiques typiques des Sagittaire ?
 Les principaux défis karmiques des Sagittaire incluent :
@@ -294,8 +289,8 @@ Le meilleur métier pour un Sagittaire est celui qui combine :
 3. **Journaliste voyage** (aventure + transmission)
 
 ### Comment les Sagittaire gèrent-ils les relations à distance ?
-Les Sagittaire excellent dans les relations à distance car :
-- Ils ont besoin d'espace même en couple (72% déclarent que la distance renforce leur relation)
+Certains Sagittaire peuvent apprécier les relations à distance car :
+- Ils valorisent l'autonomie et l'espace personnel
 - Leur optimisme les aide à voir le positif dans la séparation
 - Leur curiosité les pousse à explorer de nouvelles façons de communiquer
 
@@ -325,11 +320,6 @@ Pour aller plus loin, découvre ton profil cosmique complet sur [Karmastro](http
 
 ## Sources
 - [Swiss Ephemeris - Calculs astronomiques précis](https://www.astro.com/swisseph/) - Astrodienst, 2026
-- [Étude IFOP sur les croyances astrologiques en France](https://www.ifop.com) - IFOP, 2024
-- [Analyse de 12 450 thèmes natals Sagittaire](https://app.karmastro.com) - Karmastro, 2025
-- [Université de Californie - Étude sur Jupiter et la résilience](https://www.ucla.edu) - UCLA, 2023
-- [LinkedIn - Statistiques sur les changements de carrière](https://www.linkedin.com) - LinkedIn, 2025
-- [Wikipedia - Friedrich Nietzsche](https://fr.wikipedia.org/wiki/Friedrich_Nietzsche) - Wikipedia, 2026
 - [NASA JPL - Éphémérides planétaires](https://ssd.jpl.nasa.gov/) - NASA, 2026
 - [Tradition védique - Nakshatra Mula](https://www.astro.com/astrowiki/fr/Nakshatra) - Astro.com, 2026
 
@@ -340,4 +330,3 @@ Pour aller plus loin, découvre ton profil cosmique complet sur [Karmastro](http
 - [Signe astrologique Bélier : personnalité et compatibilité](https://karmastro.com/blog/signe-astrologique-belier-personnalite-compatibilite)
 - [Signe Cancer : émotions, famille et intuition](https://karmastro.com/blog/signe-cancer-emotions-famille-intuition)
 - [Signe Vierge : perfectionnisme et analyse détaillée](https://karmastro.com/blog/signe-vierge-perfectionnisme-analyse-detaillee)
-

@@ -18,8 +18,8 @@ imageAlt: "black and white stars during night time"
 - Le **Scorpion** (23 octobre - 22 novembre) est le 8ᵉ signe du zodiaque, gouverné par **Pluton** (transformation) et **Mars** (action).
 - **Traits clés** : passion, intuition, loyauté, mais aussi jalousie et rancune. Son élément **Eau** en fait un signe profond et émotionnel.
 - **Mission karmique** : transformer ses épreuves en force, comme l’alchimiste transmute le plomb en or.
-- **Compatibilité** : meilleure avec **Cancer**, **Poisson**, **Taureau** et **Vierge** ; tensions avec **Lion** et **Verseau**.
-- **Numérologie** : les Scorpions ont souvent un **chemin de vie 4, 8 ou 11**, reflétant leur besoin de structure et de pouvoir.
+- **Compatibilité** : affinités symboliques avec **Cancer**, **Poissons**, **Taureau** et **Vierge** ; ajustements possibles avec **Lion** et **Verseau**.
+- **Numérologie** : les chemins de vie 4, 8 ou 11 peuvent offrir des résonances intéressantes avec cet archétype, sans être plus fréquents chez les Scorpions.
 - **Conseils** : apprendre à lâcher prise, canaliser son intensité et utiliser son intuition pour guider ses choix.
 
 ---
@@ -31,7 +31,7 @@ imageAlt: "black and white stars during night time"
 - [Personnalité du Scorpion : l’âme alchimiste du zodiaque](#personnalité-du-scorpion--lâme-alchimiste-du-zodiaque)
 - [La mission karmique du Scorpion : transformer l’ombre en lumière](#la-mission-karmique-du-scorpion--transformer-lombre-en-lumière)
 - [Scorpion en amour : passion, loyauté et défis relationnels](#scorpion-en-amour--passion-loyauté-et-défis-relationnels)
-- [Compatibilité du Scorpion : quels signes pour une harmonie parfaite ?](#compatibilité-du-scorpion--quels-signes-pour-une-harmonie-parfaite-)
+- [Compatibilité du Scorpion : affinités et points de vigilance](#compatibilité-du-scorpion--affinités-et-points-de-vigilance)
 - [Scorpion au travail : stratégie, pouvoir et leadership](#scorpion-au-travail--stratégie-pouvoir-et-leadership)
 - [Numérologie du Scorpion : les nombres qui révèlent ton destin](#numérologie-du-scorpion--les-nombres-qui-révèlent-ton-destin)
 - [Conseils pour un Scorpion épanoui : canaliser son intensité](#conseils-pour-un-scorpion-épanoui--canaliser-son-intensité)
@@ -42,7 +42,7 @@ imageAlt: "black and white stars during night time"
 
 ## Le Scorpion : dates, symbole et origines
 
-Le **Scorpion** est le huitième signe du zodiaque, associé aux personnes nées entre le **23 octobre et le 22 novembre** (dates variables selon les années). En 2026, les Scorpions naîtront entre le **23 octobre et le 21 novembre**, car le Soleil entre en Sagittaire le **22 novembre à 10h42** (heure de Paris, selon les éphémérides [Swiss Ephemeris](https://www.astro.com/swisseph/)).
+Le **Scorpion** est le huitième signe du zodiaque, associé en astrologie tropicale aux personnes nées généralement entre le **23 octobre et le 22 novembre**. Les heures de transition varient selon l'année et le fuseau horaire. Pour une naissance à la frontière de deux signes, un calcul fondé sur l'heure et le lieu de naissance est préférable.
 
 ### Symbole et mythologie
 Le symbole du Scorpion (♏) représente un **scorpion**, animal venimeux mais aussi symbole de **renaissance** dans de nombreuses cultures. Dans la mythologie grecque, il est lié au mythe d’**Orion** : le Scorpion fut envoyé par la déesse **Gaïa** pour tuer Orion, devenu arrogant. Les deux furent placés dans le ciel comme constellations opposées - quand l’une se lève, l’autre se couche, illustrant leur rivalité éternelle.
@@ -71,11 +71,11 @@ Le symbole du Scorpion (♏) représente un **scorpion**, animal venimeux mais a
 Le Scorpion est souvent décrit comme **mystérieux, passionné et intense** - mais ces clichés ne rendent pas justice à sa complexité. Derrière sa carapace se cache une âme **alchimiste**, capable de transformer les épreuves en force, comme le plomb en or.
 
 ### Forces du Scorpion
-1. **Intuition développée** : Le Scorpion perçoit ce que les autres ignorent. Son élément Eau lui donne une **sensibilité extralucide**, presque psychique.
-2. **Loyauté inébranlable** : Une fois qu’il accorde sa confiance, c’est pour la vie. Il défend ses proches avec une **fidélité sans faille**.
+1. **Intuition développée** : Dans le symbolisme astrologique, le Scorpion observe volontiers ce qui se joue sous la surface.
+2. **Loyauté** : Une fois la confiance installée, il peut défendre ses proches avec constance.
 3. **Résilience** : Les épreuves ne l’abattent pas - elles le **renforcent**. Il a une capacité unique à se relever, plus fort qu’avant.
 4. **Stratège né** : Son esprit analytique et sa patience en font un **maître du jeu d’échecs** (littéral et métaphorique).
-5. **Passion dévorante** : Que ce soit en amour, au travail ou dans ses hobbies, le Scorpion s’investit **à 200%**.
+5. **Passion** : Que ce soit en amour, au travail ou dans ses loisirs, le Scorpion est réputé pour s'investir intensément.
 
 ### Défis du Scorpion
 1. **Jalousie et possessivité** : Son besoin de contrôle peut le rendre **étouffant** en amour ou en amitié.
@@ -143,7 +143,7 @@ En amour, le Scorpion est **tout ou rien**. Il ne fait pas dans la demi-mesure :
 
 ---
 
-## Compatibilité du Scorpion : quels signes pour une harmonie parfaite ?
+## Compatibilité du Scorpion : affinités et points de vigilance
 
 Le Scorpion cherche un partenaire qui **comprend sa profondeur** et partage son intensité. Voici ses meilleures et pires compatibilités :
 
@@ -153,13 +153,13 @@ Le Scorpion cherche un partenaire qui **comprend sa profondeur** et partage son 
 | **Cancer**  | Même élément (Eau) = **compréhension intuitive**. Le Cancer apporte douceur et sécurité. | Le Scorpion peut être trop intense pour le Cancer sensible. |
 | **Poissons** | **Connexion spirituelle** et émotionnelle. Les Poissons acceptent le mystère du Scorpion. | Risque de fusion toxique si les deux fuient la réalité. |
 | **Taureau** | **Stabilité et sensualité**. Le Taureau apaise le Scorpion, qui le stimule intellectuellement. | Le Taureau peut être trop têtu pour le Scorpion dominant. |
-| **Vierge**  | **Complémentarité parfaite** : la Vierge organise, le Scorpion inspire.              | La Vierge peut être trop critique pour le Scorpion susceptible. |
+| **Vierge**  | Complémentarité possible : la Vierge organise, le Scorpion approfondit.              | La Vierge peut être trop critique pour le Scorpion susceptible. |
 
 ### Matches difficiles
 | Signe       | Pourquoi c’est compliqué ?                                                          | Comment améliorer la relation ?           |
 |-------------|-------------------------------------------------------------------------------------|-------------------------------------------|
 | **Lion**    | **Guerre d’ego** : deux signes dominants qui veulent briller.                      | Accepter de partager la lumière.          |
-| **Verseau** | **Incompatibilité totale** : le Verseau est détaché, le Scorpion passionné.        | Trouver un terrain neutre (projets communs). |
+| **Verseau** | Besoins contrastés : le Verseau valorise le recul, le Scorpion l'intensité.        | Trouver un terrain neutre (projets communs). |
 | **Gémeaux** | **Manque de profondeur** : le Gémeaux fuit les émotions, le Scorpion les cherche.  | Le Scorpion doit accepter la légèreté du Gémeaux. |
 
 *Pour une analyse personnalisée, calcule ta [compatibilité astrologique](https://app.karmastro.com/compatibilite) avec ton partenaire.*
@@ -200,7 +200,7 @@ Le Scorpion excelle dans les métiers qui demandent **stratégie, intuition et r
 La numérologie offre un éclairage supplémentaire sur le Scorpion. Voici les **nombres clés** associés à ce signe :
 
 ### Chemin de vie des Scorpions
-Le **chemin de vie** (calculé à partir de la date de naissance) révèle la mission d’âme. Les Scorpions ont souvent un chemin de vie **4, 8 ou 11** :
+Le **chemin de vie** est calculé à partir de la date de naissance. Il ne dépend pas du signe solaire. Les nombres **4, 8 ou 11** peuvent néanmoins offrir les résonances symboliques suivantes avec l'archétype du Scorpion :
 
 | Chemin de vie | Signification pour le Scorpion                                                                 |
 |---------------|-----------------------------------------------------------------------------------------------|
@@ -211,7 +211,7 @@ Le **chemin de vie** (calculé à partir de la date de naissance) révèle la mi
 *Calcule ton [chemin de vie](https://karmastro.com/blog/comment-calculer-chemin-vie-numerologie) en 2 minutes.*
 
 ### Nombre d’expression
-Le **nombre d’expression** (calculé à partir du nom complet) révèle tes talents naturels. Les Scorpions ont souvent un nombre d’expression **7, 8 ou 9** :
+Le **nombre d’expression** est calculé à partir du nom complet. Les nombres **7, 8 ou 9** peuvent notamment faire écho à certains thèmes attribués au Scorpion :
 - **7** : **Analytique et mystérieux** - Tu es fait pour les métiers d’investigation ou de recherche.
 - **8** : **Leader né** - Tu as un sens aigu des affaires et du pouvoir.
 - **9** : **Humaniste** - Tu es attiré par les causes qui aident les autres.
@@ -248,17 +248,17 @@ Le Scorpion a un potentiel énorme, mais il doit apprendre à **maîtriser son o
 
 ## FAQ : tout savoir sur le signe Scorpion
 
-### Quelles sont les dates exactes du signe Scorpion en 2026 ?
-En 2026, le Scorpion s’étend du **23 octobre au 21 novembre**. Le Soleil entre en Sagittaire le **22 novembre à 10h42** (heure de Paris), selon les éphémérides [Swiss Ephemeris](https://www.astro.com/swisseph/).
+### Quelles sont les dates habituelles du signe Scorpion ?
+En astrologie tropicale, le Scorpion correspond généralement à la période du **23 octobre au 22 novembre**. La transition exacte dépend de l'année, de l'heure et du lieu de naissance.
 
 ### Quel est le signe le plus compatible avec le Scorpion ?
-Les meilleurs matches pour le Scorpion sont le **Cancer** (compréhension intuitive), les **Poissons** (connexion spirituelle), le **Taureau** (stabilité) et la **Vierge** (complémentarité). Les pires sont le **Lion** (guerre d’ego) et le **Verseau** (incompatibilité totale).
+Les affinités traditionnellement citées associent le Scorpion au **Cancer** (compréhension intuitive), aux **Poissons** (connexion émotionnelle), au **Taureau** (stabilité) et à la **Vierge** (complémentarité). Avec le **Lion** ou le **Verseau**, les besoins peuvent être plus contrastés. Aucun signe ne garantit à lui seul la réussite ou l'échec d'un couple.
 
 ### Pourquoi le Scorpion est-il associé à la mort ?
 Le Scorpion est lié à la mort **symbolique** : il représente la **transformation**, comme la mue d’un serpent. Sa planète maîtresse, **Pluton**, gouverne les cycles de mort et renaissance. En astrologie karmique, le Scorpion doit apprendre à "mourir" à ses anciennes versions pour évoluer.
 
 ### Comment savoir si je suis un vrai Scorpion ?
-Pour être un **Scorpion pur**, le Soleil doit être dans ce signe à ta naissance (entre 23° et 30° du Scorpion). Cependant, d’autres planètes dans ton thème natal (comme la Lune ou l’Ascendant) peuvent aussi t’influencer. Calcule ton [thème natal](https://app.karmastro.com) pour le savoir.
+Ton signe solaire est Scorpion si le Soleil se trouvait dans ce signe à ta naissance. La Lune, l'Ascendant et les autres placements ajoutent ensuite des nuances. Calcule ton [thème natal](https://app.karmastro.com) avec une heure et un lieu fiables pour obtenir la carte complète.
 
 ### Le Scorpion est-il vraiment manipulateur ?
 Le Scorpion a un **charisme naturel** et une intelligence stratégique qui peuvent le pousser à influencer les autres. Cependant, cela dépend de son évolution :
@@ -297,11 +297,9 @@ Prêt à explorer ton potentiel ? **Découvre ton profil cosmique** avec l’[Or
 
 ## Sources
 - [Swiss Ephemeris - Éphémérides astrologiques](https://www.astro.com/swisseph/) - Astrodienst, 2026.
-- [Wikipedia - Scorpion (astrologie)](https://fr.wikipedia.org/wiki/Scorpion_(astrologie)) - Mise à jour 2025.
-- [Wikipedia - Pluton (planète)](https://fr.wikipedia.org/wiki/Pluton_(plan%C3%A8te)) - NASA/JPL, 2024.
-- [IFOP - Les Français et l’astrologie](https://www.ifop.com/) - Enquête 2024 (58% des Français consultent leur horoscope).
+- [Wikipedia - Scorpion (astrologie)](https://fr.wikipedia.org/wiki/Scorpion_(astrologie)) - Repères historiques et symboliques.
+- [Wikipedia - Pluton (planète)](https://fr.wikipedia.org/wiki/Pluton_(plan%C3%A8te)) - Repères astronomiques.
 - [Karmastro - Glossaire astrologie et numérologie](https://karmastro.com/glossaire) - Définitions des termes astrologiques.
-- [NASA JPL - Constellation du Scorpion](https://ssd.jpl.nasa.gov/) - Données astronomiques.
 - [Larousse - Mythologie grecque : Orion et le Scorpion](https://www.larousse.fr/) - Origines mythologiques.
 
 ---
@@ -311,4 +309,3 @@ Prêt à explorer ton potentiel ? **Découvre ton profil cosmique** avec l’[Or
 - [Signe astrologique Bélier : personnalité et compatibilité](https://karmastro.com/blog/signe-astrologique-belier-personnalite-compatibilite)
 - [Lune en Scorpion : émotions intenses et transformation](https://karmastro.com/blog/lune-scorpion-emotions-intenses-transformation)
 - [Signe Cancer : émotions, famille et intuition](https://karmastro.com/blog/signe-cancer-emotions-famille-intuition)
-

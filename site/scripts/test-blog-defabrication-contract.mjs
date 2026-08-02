@@ -68,6 +68,71 @@ const contracts = {
     /même moteur de calcul que le Jet Propulsion Laboratory/i,
     /précision de 0,001 seconde d'arc/i,
   ],
+  "signe-scorpion-mysteres-passion-transformation.md": [
+    /58% des Français consultent leur horoscope/i,
+    /IFOP - Les Français et l’astrologie/i,
+  ],
+  "compatibilite-taureau-scorpion-attraction-magnetique.md": [
+    /\d+% des couples Taureau-Scorpion/i,
+    /étude Astrodienst 2025/i,
+    /enquête Karmastro 2025/i,
+    /INSEE 2024/i,
+    /compatibilité physique de 95%/i,
+    /astro-thérapeute/i,
+  ],
+  "widder-sternzeichen-persoenlichkeit-kompatibilitaet.md": [
+    /Leidenschaft garantiert/i,
+    /Lena, 29, Grafikdesignerin/i,
+  ],
+  "signe-ascendant-guide-complet-comprendre-ascendant.md": [
+    /Pas d'approximation, pas de marge d'erreur/i,
+    /garantit la qualité de ce qu'elle produit/i,
+    /Clara, 29 ans, ascendant Capricorne/i,
+    /Thomas, 42 ans, ascendant Sagittaire/i,
+    /Nora, 55 ans, ascendant Balance/i,
+  ],
+  "tarot-numerologique-fusion-deux-arts-divinatoires.md": [
+    /58% des Français/i,
+    /IFOP, 2025/i,
+    /Marie, \*\*34 ans\*\*/i,
+    /IFOP - Les Français et la divination/i,
+  ],
+  "compatibilite-amoureuse-signes-astrologiques-attirent.md": [
+    /73% des Français/i,
+    /plus de 10 000 thèmes de couples/i,
+    /\d+% de compatibilité/i,
+    /68% de réussite/i,
+    /30% des couples heureux/i,
+    /garantit des calculs au 1\/60ème de degré/i,
+  ],
+  "cammino-di-vita-1-leadership-indipendenza-numerologia.md": [
+    /tre casi reali/i,
+    /tre casi di cammino 1 puro veri/i,
+    /Irene, 29 anni/i,
+  ],
+  "comment-calculer-chemin-de-vie-numerologie.md": [
+    /Selon une étude IFOP publiée en 2023/i,
+    /34% des Français/i,
+    /40 000 recherches mensuelles/i,
+    /moins de 1% de la population/i,
+    /Plus de 10 000 personnes/i,
+  ],
+  "mapa-astral-gratis-interpretar-carta-natal-completo.md": [
+    /precisão nível NASA/i,
+    /precisão NASA/i,
+    /0,001 segundo de arco/i,
+    /Perdes 90% da informação/i,
+    /garantir a exatidão/i,
+  ],
+  "signe-sagittaire-philosophie-soif-aventure.md": [
+    /12 450 thèmes natals/i,
+    /Selon une étude IFOP \(2024\)/i,
+    /étude LinkedIn \(2025\)/i,
+    /Université de Californie \(2023\)/i,
+    /Thomas \(Sagittaire\) et Léa/i,
+    /82% des Sagittaire/i,
+    /37% plus de chances/i,
+  ],
 };
 
 for (const [filename, forbidden] of Object.entries(contracts)) {
