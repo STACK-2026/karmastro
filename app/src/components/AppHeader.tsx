@@ -123,9 +123,9 @@ const AppHeader = ({ title, subtitle, showBack = false, rightContent }: AppHeade
           )}
           {showBack && title && (
             <div className="min-w-0">
-              <span className="font-serif text-lg font-bold text-white leading-tight block truncate">{title}</span>
+              <span data-ph-mask className="font-serif text-lg font-bold text-white leading-tight block truncate">{title}</span>
               {subtitle && (
-                <span className="text-[11px] text-white/60 leading-tight block truncate">{subtitle}</span>
+                <span data-ph-mask className="text-[11px] text-white/60 leading-tight block truncate">{subtitle}</span>
               )}
             </div>
           )}
@@ -156,7 +156,7 @@ const AppHeader = ({ title, subtitle, showBack = false, rightContent }: AppHeade
             </div>
           )}
 
-          {rightContent && <div className="flex items-center gap-2">{rightContent}</div>}
+          {rightContent && <div data-ph-mask className="flex items-center gap-2">{rightContent}</div>}
 
           {!rightContent && !showBack && (
             <>
@@ -170,7 +170,7 @@ const AppHeader = ({ title, subtitle, showBack = false, rightContent }: AppHeade
                   }}
                   aria-label="Mon profil"
                 >
-                  <span className="text-amber-300 text-sm font-bold">{userInitial}</span>
+                  <span data-ph-mask className="text-amber-300 text-sm font-bold">{userInitial}</span>
                 </button>
               ) : (
                 <button

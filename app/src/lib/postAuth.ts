@@ -3,6 +3,7 @@ import {
   isOnboardingReason,
 } from "@/lib/onboarding-flow";
 import { sanitizeOnboardingResumeToken } from "@/lib/onboarding-draft";
+import { pricingSourceFromSearch } from "@/lib/pricing-attribution";
 
 export const POST_AUTH_PATH_KEY = "karmastro_post_auth_path";
 export const ORACLE_HANDOFF_SESSION_KEY = "karmastro_oracle_session";
@@ -20,6 +21,10 @@ export function sanitizePostAuthPath(value: string | null | undefined): string {
   try {
     const parsed = new URL(value, "https://app.karmastro.com");
     if (parsed.origin !== "https://app.karmastro.com") return "/dashboard";
+    if (parsed.pathname === "/pricing") {
+      const source = pricingSourceFromSearch(parsed.search);
+      return source === "direct" ? "/pricing" : `/pricing?source=${source}`;
+    }
     if (ALLOWED_POST_AUTH_PATHS.has(parsed.pathname) && !parsed.search) return parsed.pathname;
     if (parsed.pathname !== "/onboarding") return "/dashboard";
     const clean = new URLSearchParams();

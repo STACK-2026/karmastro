@@ -86,7 +86,7 @@ const ProfilePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background pb-20 relative">
+    <div data-ph-sensitive="profile" className="min-h-screen bg-background pb-20 relative">
       <StarField />
       <AppHeader title={t("profile.header_title")} showBack />
 

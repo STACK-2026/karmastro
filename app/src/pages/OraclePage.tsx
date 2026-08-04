@@ -15,11 +15,11 @@ import {
   oracleActivationContinuationDeliveredEvent,
   oracleCategorySelectedEvent,
   oracleFirstQuestionSubmittedEvent,
-  oracleFeedbackSubmittedEvent,
   oracleHandoffClickEvent,
   oraclePendingTurnCreatedEvent,
   oraclePostContinuationMessageEvent,
   oraclePaywallEvents,
+  paywallEtoileClickEvent,
   oracleResponseEvents,
   oracleSignupWallCtaClickedEvent,
   oracleSignupWallViewedEvent,
@@ -33,6 +33,13 @@ import { useT, type UiKey } from "@/i18n/ui";
 import { getErrorMessage } from "@/lib/errors";
 import { shouldAutoScrollOracle } from "@/lib/oracle-scroll";
 import {
+  buildOracleFeedbackInsert,
+  ORACLE_FEEDBACK_CONTRACT_VERSION,
+  ORACLE_FEEDBACK_INTRODUCED_AT,
+  oracleFeedbackRatingLabel,
+  type OracleFeedbackRating,
+} from "@/lib/oracle-feedback";
+import {
   oracleSignupPath,
   shouldShowOracleSignupHandoff,
 } from "@/lib/oracle-signup-handoff";
@@ -42,10 +49,12 @@ import {
   normalizeOracleLimitResponse,
   type OracleLimitSurface,
 } from "@/lib/oracle-limit-state";
+import { shouldShowOracleEtoileLimitCta } from "@/lib/oracle-commerce-rollout";
 
 type Msg = {
   role: "user" | "assistant" | "paywall";
   content: string;
+  feedbackEligible?: boolean;
   pendingTurnId?: string;
   // Only set on role === "paywall". True means the hit came from an anon
   // session , we surface a "create an account" CTA first instead of pricing.
@@ -104,11 +113,11 @@ function getSessionId(): string {
 }
 
 type FeedbackState = {
-  status: "idle" | "expanded" | "submitted";
-  rating?: 1 | 2 | 3;
+  status: "idle" | "submitting" | "submitted";
+  rating?: OracleFeedbackRating;
 };
 
-const FEEDBACK_OPTIONS: Array<{ rating: 1 | 2 | 3; emoji: string; labelKey: UiKey; color: string }> = [
+const FEEDBACK_OPTIONS: Array<{ rating: OracleFeedbackRating; emoji: string; labelKey: UiKey; color: string }> = [
   { rating: 3, emoji: "✨", labelKey: "oracle.feedback_resonates", color: "border-emerald-400/40 hover:bg-emerald-400/10 text-emerald-300" },
   { rating: 2, emoji: "⭐", labelKey: "oracle.feedback_interesting", color: "border-amber-300/40 hover:bg-amber-300/10 text-amber-300" },
   { rating: 1, emoji: "🌑", labelKey: "oracle.feedback_not_now", color: "border-pink-400/40 hover:bg-pink-400/10 text-pink-300" },
@@ -123,7 +132,7 @@ const OraclePage = () => {
   const navigate = useNavigate();
   const { user, loading: authLoading } = useAuth();
   const { toast } = useToast();
-  const { t } = useT();
+  const { locale, t } = useT();
   const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -143,6 +152,7 @@ const OraclePage = () => {
   const [pendingAvailabilityNow, setPendingAvailabilityNow] = useState(() => Date.now());
   const scrollRef = useRef<HTMLDivElement>(null);
   const previousMessageCountRef = useRef(0);
+  const feedbackViewedRef = useRef(false);
   const pendingAutoRef = useRef<string | null>(null);
   const continuationDeliveredAtRef = useRef<number | null>(null);
   const confirmPendingTurnRef = useRef<(
@@ -152,7 +162,6 @@ const OraclePage = () => {
 
   const [guideKey] = useState<GuideKey>("oracle");
   const [feedback, setFeedback] = useState<Record<number, FeedbackState>>({});
-  const [feedbackText, setFeedbackText] = useState<Record<number, string>>({});
   // Follow-up chips parsed from the ---SUGGESTIONS--- block of each assistant
   // reply. Keyed by the assistant message index. Cleared when that suggestion
   // has been clicked (we don't want stale chips lingering).
@@ -180,6 +189,25 @@ const OraclePage = () => {
       scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "auto" });
     }
   }, [messages.length]);
+
+  useEffect(() => {
+    if (feedbackViewedRef.current || isLoading) return;
+    const firstAssistantMessageIndex = messages.findIndex(
+      (message) => message.role === "assistant" && message.feedbackEligible !== false,
+    );
+    if (firstAssistantMessageIndex === -1) return;
+
+    feedbackViewedRef.current = true;
+    void trackEvent("oracle_feedback_viewed", {
+      schema_version: ORACLE_FEEDBACK_CONTRACT_VERSION,
+      surface: "app",
+      locale,
+      is_anon: !user,
+      introduced_at: ORACLE_FEEDBACK_INTRODUCED_AT,
+      turn_index: 1,
+      journey_version: "oracle_conversation_v1",
+    });
+  }, [isLoading, locale, messages, user]);
 
   useEffect(() => {
     const refreshAfterClaim = () => setClaimVersion((version) => version + 1);
@@ -218,6 +246,7 @@ const OraclePage = () => {
           setMessages(data.messages.map((m: { role: "user" | "assistant"; content: string }) => ({
             role: m.role,
             content: m.content,
+            feedbackEligible: m.role === "assistant" ? true : undefined,
           })));
         }
       } catch (e) {
@@ -231,57 +260,68 @@ const OraclePage = () => {
   }, [guideKey, user?.id, claimVersion]);
 
   // Submit feedback for an assistant message
-  const submitFeedback = async (messageIndex: number, rating: 1 | 2 | 3, text?: string) => {
-    if (!guideKey) return;
+  const submitFeedback = async (
+    messageIndex: number,
+    rating: OracleFeedbackRating,
+    turnIndex: number,
+  ) => {
+    if (!guideKey || !conversationId) {
+      toast({ title: t("oracle.feedback_error_title"), description: t("oracle.feedback_error_desc"), variant: "destructive" });
+      return;
+    }
     const assistantMsg = messages[messageIndex];
-    const userMsg = messages[messageIndex - 1];
-    if (!assistantMsg || assistantMsg.role !== "assistant") return;
+    if (!assistantMsg || assistantMsg.role !== "assistant" || assistantMsg.feedbackEligible === false) return;
 
+    setFeedback((prev) => ({ ...prev, [messageIndex]: { status: "submitting", rating } }));
     try {
-      const payload = {
-        user_id: user?.id ?? null,
-        session_id: user?.id ? null : getSessionId(),
-        guide: guideKey,
+      const payload = buildOracleFeedbackInsert({
+        userId: user?.id ?? null,
+        sessionId: user?.id ? null : getSessionId(),
+        conversationId,
         rating,
-        text: text?.trim() || null,
-        user_message: userMsg?.content?.slice(0, 500) ?? null,
-        assistant_message: assistantMsg.content.slice(0, 2000),
-      };
+        turnIndex,
+        locale,
+      });
       const { error } = await supabase.from("oracle_feedback").insert(payload);
       if (error) throw error;
 
-      const feedbackEvent = oracleFeedbackSubmittedEvent({
-        guide: guideKey,
-        rating,
-        hasText: Boolean(text?.trim()),
-      });
-      void trackEvent(feedbackEvent.name, feedbackEvent.properties);
       setFeedback((prev) => ({ ...prev, [messageIndex]: { status: "submitted", rating } }));
-      if (text?.trim()) {
-        const guideName = currentGuide ? t(currentGuide.nameKey) : t("oracle.header_title");
-        toast({ title: t("oracle.feedback_toast_title"), description: t("oracle.feedback_toast_desc", { name: guideName }) });
-      }
+      void trackEvent("oracle_feedback", {
+        schema_version: ORACLE_FEEDBACK_CONTRACT_VERSION,
+        surface: "app",
+        locale,
+        is_anon: !user,
+        introduced_at: ORACLE_FEEDBACK_INTRODUCED_AT,
+        rating: oracleFeedbackRatingLabel(rating),
+        turn_index: turnIndex,
+        journey_version: "oracle_conversation_v1",
+      });
     } catch (e: unknown) {
+      if (typeof e === "object" && e !== null && "code" in e && e.code === "23505") {
+        setFeedback((prev) => ({ ...prev, [messageIndex]: { status: "submitted", rating } }));
+        return;
+      }
+      const failureType = typeof e === "object" && e !== null && "code" in e && e.code === "42501"
+        ? "authorization"
+        : "persistence";
+      void trackEvent("oracle_feedback_submit_failed", {
+        schema_version: ORACLE_FEEDBACK_CONTRACT_VERSION,
+        surface: "app",
+        locale,
+        is_anon: !user,
+        introduced_at: ORACLE_FEEDBACK_INTRODUCED_AT,
+        turn_index: turnIndex,
+        failure_type: failureType,
+        journey_version: "oracle_conversation_v1",
+      });
       console.error("Feedback submit error:", e);
+      setFeedback((prev) => ({ ...prev, [messageIndex]: { status: "idle" } }));
       toast({ title: t("oracle.feedback_error_title"), description: t("oracle.feedback_error_desc"), variant: "destructive" });
     }
   };
 
-  const handleFeedbackClick = (messageIndex: number, rating: 1 | 2 | 3) => {
-    // Expand the textarea first if user clicked a rating
-    setFeedback((prev) => ({ ...prev, [messageIndex]: { status: "expanded", rating } }));
-  };
-
-  const handleFeedbackSubmit = (messageIndex: number) => {
-    const state = feedback[messageIndex];
-    if (!state || !state.rating) return;
-    submitFeedback(messageIndex, state.rating, feedbackText[messageIndex]);
-  };
-
-  const handleFeedbackSkip = (messageIndex: number) => {
-    const state = feedback[messageIndex];
-    if (!state || !state.rating) return;
-    submitFeedback(messageIndex, state.rating);
+  const handleFeedbackClick = (messageIndex: number, rating: OracleFeedbackRating) => {
+    void submitFeedback(messageIndex, rating, 1);
   };
 
   const currentGuide = GUIDES[guideKey];
@@ -290,6 +330,12 @@ const OraclePage = () => {
     const event = oracleHandoffClickEvent("signup");
     void trackEvent(event.name, event.properties);
     navigate(oracleSignupPath(getSessionId()));
+  };
+
+  const handleEtoileLimitCta = () => {
+    const event = paywallEtoileClickEvent();
+    void trackEvent(event.name, event.properties);
+    navigate("/pricing?source=oracle_app_limit");
   };
 
   // Build profile context for the Oracle. Only fill in real user data. When
@@ -379,6 +425,7 @@ const OraclePage = () => {
         headers,
         body: JSON.stringify({
           messages: requestMessages.map(m => ({ role: m.role, content: m.content })),
+          locale,
           profile: buildProfileContext(),
           guide: guideKey,
           sessionId: user?.id ? null : getSessionId(),
@@ -448,7 +495,7 @@ const OraclePage = () => {
         ) {
           setMessages((prev) => [
             ...prev,
-            { role: "assistant", content: t("oracle.pass_fair_use_reached") },
+            { role: "assistant", content: t("oracle.pass_fair_use_reached"), feedbackEligible: false },
           ]);
           return;
         }
@@ -515,11 +562,19 @@ const OraclePage = () => {
       const guideName = currentGuide ? t(currentGuide.nameKey) : t("oracle.header_title");
       toast({ title: t("oracle.error_unreachable", { name: guideName }), description: getErrorMessage(e), variant: "destructive" });
       if (!assistantSoFar) {
-        setMessages(prev => [...prev, { role: "assistant", content: t("oracle.error_fallback_msg") }]);
+        setMessages(prev => [...prev, { role: "assistant", content: t("oracle.error_fallback_msg"), feedbackEligible: false }]);
       }
     } finally {
       setIsLoading(false);
       if (responseOk) {
+        setMessages((prev) => {
+          const lastAssistantIndex = prev.length - 1;
+          return prev[lastAssistantIndex]?.role !== "assistant"
+            ? prev
+            : prev.map((message, index) => index === lastAssistantIndex
+              ? { ...message, feedbackEligible: true }
+              : message);
+        });
         trackOracleEvents(oracleResponseEvents({
           guide: guideKey,
           messageLength: msgText.length,
@@ -720,9 +775,15 @@ const OraclePage = () => {
       { time: pendingAvailability.time },
     )
     : "";
+  const showEtoileLimitCta = pendingTurn
+    ? shouldShowOracleEtoileLimitCta({
+      wallType: pendingTurn.wallType,
+      isAuthenticated: Boolean(user),
+    })
+    : false;
 
   return (
-    <div className="min-h-screen bg-background pb-20 flex flex-col relative">
+    <div className="h-[100dvh] min-h-0 overflow-hidden bg-background pb-20 flex flex-col relative">
       <StarField />
 
       <AppHeader title={t(currentGuide.nameKey)} subtitle={t(currentGuide.titleKey)} showBack />
@@ -746,7 +807,7 @@ const OraclePage = () => {
         </div>
       )}
 
-      <div ref={scrollRef} className="relative z-10 flex-1 overflow-y-auto px-5 py-4 space-y-4">
+      <div ref={scrollRef} className="relative z-10 min-h-0 flex-1 overflow-y-auto px-5 py-4 space-y-4">
         {messages.length === 0 && (
           <div className="text-center pt-10 pb-2">
             <Icon className={`h-12 w-12 ${currentGuide.color} mx-auto mb-4 opacity-60`} />
@@ -754,7 +815,7 @@ const OraclePage = () => {
             <p className="text-sm text-muted-foreground/70 max-w-md mx-auto mb-6">
               {t(currentGuide.titleKey)}
             </p>
-            <p className="font-serif text-base text-amber-100/90 max-w-md mx-auto mb-4">
+            <p data-ph-sensitive className="font-serif text-base text-amber-100/90 max-w-md mx-auto mb-4">
               {t("oracle.empty_opener_question", {
                 name: userProfile.isDemo ? t("oracle.anon_appellation") : userProfile.firstName,
               })}
@@ -778,9 +839,7 @@ const OraclePage = () => {
 
             <div
               role="group"
-              aria-label={t("oracle.empty_opener_question", {
-                name: userProfile.isDemo ? t("oracle.anon_appellation") : userProfile.firstName,
-              })}
+              aria-label={t("oracle.empty_choice_hint")}
               className="flex flex-col gap-2 max-w-md mx-auto"
             >
               {([
@@ -860,12 +919,25 @@ const OraclePage = () => {
                         {t("oracle.signup_wall_cta")}
                       </button>
                     ) : (
-                      <button
-                        onClick={() => navigate("/profile")}
-                        className="w-full px-4 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 font-medium text-sm hover:bg-amber-300/10 transition-colors"
-                      >
-                        {t("oracle.pending_explore_profile")}
-                      </button>
+                      <div className="space-y-2">
+                        {shouldShowOracleEtoileLimitCta({
+                          wallType: "authenticated_interim_limit_v1",
+                          isAuthenticated: Boolean(user),
+                        }) && (
+                          <button
+                            onClick={handleEtoileLimitCta}
+                            className="w-full px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity"
+                          >
+                            {t("oracle.paywall_cta_etoile")}
+                          </button>
+                        )}
+                        <button
+                          onClick={() => navigate("/profile")}
+                          className="w-full px-4 py-2.5 rounded-xl border border-amber-300/40 text-amber-300 font-medium text-sm hover:bg-amber-300/10 transition-colors"
+                        >
+                          {t("oracle.pending_explore_profile")}
+                        </button>
+                      </div>
                     )}
                   </div>
                 </div>
@@ -873,9 +945,14 @@ const OraclePage = () => {
             );
           }
 
+          const assistantTurnIndex = messages
+            .slice(0, i + 1)
+            .filter((message) => message.role === "assistant" && message.feedbackEligible !== false).length;
           const fb = feedback[i];
           const showFeedback =
             msg.role === "assistant" &&
+            assistantTurnIndex === 1 &&
+            msg.feedbackEligible !== false &&
             // Only show feedback for completed messages (not the currently streaming one if loading)
             !(isLoading && i === messages.length - 1);
 
@@ -889,11 +966,11 @@ const OraclePage = () => {
               className={isUser ? "flex justify-end" : "flex justify-start flex-col items-start"}
             >
               {isUser ? (
-                <div className="bg-secondary/70 backdrop-blur-sm rounded-2xl rounded-br-sm px-4 py-3 max-w-[85%] border border-white/5">
+                <div data-ph-sensitive="oracle-question" className="bg-secondary/70 backdrop-blur-sm rounded-2xl rounded-br-sm px-4 py-3 max-w-[85%] border border-white/5">
                   <p className="text-sm text-white/90">{msg.content}</p>
                 </div>
               ) : (
-                <div className="relative oracle-parchment rounded-2xl rounded-bl-sm px-4 py-3 max-w-[85%] overflow-hidden">
+                <div data-ph-sensitive="oracle-answer" className="relative oracle-parchment rounded-2xl rounded-bl-sm px-4 py-3 max-w-[85%] overflow-hidden">
                   <p className={`relative text-xs mb-1.5 font-medium flex items-center gap-1.5 ${currentGuide.color}`}>
                     <Icon className="h-3 w-3" />
                     <span className="tracking-wide uppercase text-[10px]">{t(currentGuide.nameKey)}</span>
@@ -930,6 +1007,7 @@ const OraclePage = () => {
                   or ignore and type your own in the input below. */}
               {!isUser && !isStreamingAssistant && suggestions[i]?.length > 0 && (
                 <div
+                  data-ph-mask="oracle-suggestions"
                   role="group"
                   aria-label={t("oracle.chips_group_label")}
                   className="mt-2 max-w-[85%] w-full flex flex-wrap gap-1.5"
@@ -971,7 +1049,7 @@ const OraclePage = () => {
 
               {showFeedback && (
                 <div className="mt-2 max-w-[85%] w-full">
-                  {(!fb || fb.status === "idle") && (
+                  {(!fb || fb.status === "idle" || fb.status === "submitting") && (
                     <div className="flex flex-wrap gap-1.5">
                       <span className="text-[10px] text-muted-foreground/60 self-center mr-1">
                         {t("oracle.feedback_prompt")}
@@ -980,45 +1058,12 @@ const OraclePage = () => {
                         <button
                           key={opt.rating}
                           onClick={() => handleFeedbackClick(i, opt.rating)}
+                          disabled={fb?.status === "submitting"}
                           className={`text-[11px] border rounded-full px-2.5 py-1 transition-colors ${opt.color}`}
                         >
                           {opt.emoji} {t(opt.labelKey)}
                         </button>
                       ))}
-                    </div>
-                  )}
-
-                  {fb?.status === "expanded" && (
-                    <div className="p-3 rounded-xl border border-primary/20 bg-primary/5 space-y-2">
-                      <p className="text-xs text-muted-foreground">
-                        {fb.rating === 3 && t("oracle.feedback_expanded_r3")}
-                        {fb.rating === 2 && t("oracle.feedback_expanded_r2")}
-                        {fb.rating === 1 && t("oracle.feedback_expanded_r1")}
-                        <span className="text-muted-foreground/50"> {t("oracle.feedback_optional")}</span>
-                      </p>
-                      <textarea
-                        value={feedbackText[i] || ""}
-                        onChange={(e) => setFeedbackText((prev) => ({ ...prev, [i]: e.target.value }))}
-                        placeholder={t("oracle.feedback_placeholder")}
-                        aria-label={t("oracle.feedback_placeholder")}
-                        rows={2}
-                        maxLength={500}
-                        className="w-full text-sm bg-background/50 border border-border rounded-lg px-3 py-2 focus:outline-none focus:border-primary/50 resize-none"
-                      />
-                      <div className="flex gap-2 justify-end">
-                        <button
-                          onClick={() => handleFeedbackSkip(i)}
-                          className="text-xs text-muted-foreground hover:text-foreground px-3 py-1.5"
-                        >
-                          {t("oracle.feedback_skip")}
-                        </button>
-                        <button
-                          onClick={() => handleFeedbackSubmit(i)}
-                          className="text-xs bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg px-3 py-1.5 font-medium"
-                        >
-                          {t("oracle.feedback_send")}
-                        </button>
-                      </div>
                     </div>
                   )}
 
@@ -1103,6 +1148,11 @@ const OraclePage = () => {
                       </Button>
                     </div>
                   )}
+                  {showEtoileLimitCta && (
+                    <Button type="button" className="w-full" onClick={handleEtoileLimitCta}>
+                      {t("oracle.paywall_cta_etoile")}
+                    </Button>
+                  )}
                   <div className="grid grid-cols-2 gap-2">
                     <Button type="button" variant="outline" onClick={() => setPendingEditing(true)}>
                       {t("oracle.pending_modify")}
@@ -1152,7 +1202,7 @@ const OraclePage = () => {
         )}
       </div>
 
-      <div className="relative z-10 px-5 pb-4">
+      <div className="relative z-10 shrink-0 px-5 pb-4">
         <div className="flex gap-2">
           <Input
             value={input}

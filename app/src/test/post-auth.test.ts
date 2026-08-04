@@ -10,6 +10,10 @@ describe("sanitizePostAuthPath", () => {
   it("keeps only supported same-origin product destinations", () => {
     expect(sanitizePostAuthPath("/oracle")).toBe("/oracle");
     expect(sanitizePostAuthPath("/pricing")).toBe("/pricing");
+    expect(sanitizePostAuthPath("/pricing?source=oracle_app_limit"))
+      .toBe("/pricing?source=oracle_app_limit");
+    expect(sanitizePostAuthPath("/pricing?source=oracle_site_limit"))
+      .toBe("/pricing?source=oracle_site_limit");
     expect(sanitizePostAuthPath("/dashboard")).toBe("/dashboard");
     expect(sanitizePostAuthPath("/astral")).toBe("/astral");
     expect(sanitizePostAuthPath("/onboarding")).toBe("/onboarding");
@@ -24,6 +28,8 @@ describe("sanitizePostAuthPath", () => {
     expect(sanitizePostAuthPath("https://evil.example")).toBe("/dashboard");
     expect(sanitizePostAuthPath("//evil.example")).toBe("/dashboard");
     expect(sanitizePostAuthPath("/admin")).toBe("/dashboard");
+    expect(sanitizePostAuthPath("/pricing?source=unknown")).toBe("/pricing");
+    expect(sanitizePostAuthPath("/pricing?redirect=https://evil.example")).toBe("/pricing");
     expect(sanitizePostAuthPath("/onboarding?next=https://evil.example")).toBe("/onboarding");
     expect(sanitizePostAuthPath(null)).toBe("/dashboard");
   });

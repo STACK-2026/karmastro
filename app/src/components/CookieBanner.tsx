@@ -16,6 +16,7 @@ const CookieBanner = () => {
   const saveConsent = (level: string) => {
     const expires = new Date(Date.now() + 365 * 86400000).toUTCString();
     document.cookie = `cookie-consent=${level};expires=${expires};path=/;domain=.karmastro.com;SameSite=Lax`;
+    document.dispatchEvent(new CustomEvent("kh:consent", { detail: level }));
     setVisible(false);
   };
 

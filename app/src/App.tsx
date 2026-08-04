@@ -1,9 +1,9 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { AuthProvider } from "@/contexts/AuthContext";
+import { AuthProvider, useAuth } from "@/contexts/AuthContext";
 import { PromotionPassProvider } from "@/contexts/PromotionPassContext";
 import CookieBanner from "./components/CookieBanner.tsx";
 import GoogleOneTap from "./components/GoogleOneTap.tsx";
@@ -17,6 +17,7 @@ import { Suspense, lazy, useEffect } from "react";
 import { I18nProvider } from "./i18n/ui";
 import { EXTERNAL_LEGACY_ROUTES, INTERNAL_LEGACY_ROUTES } from "@/lib/legacy-routes";
 import { purgeExpiredOnboardingDrafts } from "@/lib/onboarding-draft";
+import { initPosthog, syncPosthogIdentity, syncPosthogRoute } from "@/lib/posthog";
 
 // Every route is lazy-loaded. Marketing and app deeplinks should not download
 // one another's pages before rendering their own conversion surface.
@@ -41,8 +42,27 @@ const PricingPage = lazy(() => import("./pages/PricingPage.tsx"));
 const queryClient = new QueryClient();
 
 const TrackingProvider = ({ children }: { children: React.ReactNode }) => {
+  const { loading, user } = useAuth();
+  const location = useLocation();
+
+  useEffect(() => {
+    initPosthog();
+  }, []);
+
+  // Register the page-view effect after PostHog initialization so the very
+  // first route is observable, not only subsequent navigations.
   usePageTracking();
   useClaimAnonSession();
+
+  useEffect(() => {
+    if (loading) return;
+    syncPosthogIdentity(user?.id ?? null);
+  }, [loading, user?.id]);
+
+  useEffect(() => {
+    syncPosthogRoute(location.pathname);
+  }, [location.pathname]);
+
   useEffect(() => {
     purgeExpiredOnboardingDrafts();
   }, []);

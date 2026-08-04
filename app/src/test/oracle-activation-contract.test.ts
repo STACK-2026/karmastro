@@ -10,6 +10,10 @@ const siteOracle = readFileSync(
   path.join(process.cwd(), "../site/src/pages/oracle.astro"),
   "utf8",
 );
+const siteOracleLocale = readFileSync(
+  path.join(process.cwd(), "../site/src/utils/oracle-locale.mjs"),
+  "utf8",
+);
 const chatFunction = readFileSync(
   path.join(process.cwd(), "supabase/functions/oracle-chat/index.ts"),
   "utf8",
@@ -24,14 +28,15 @@ const claimFunction = readFileSync(
 );
 
 describe("Oracle activation journey contract", () => {
-  it("keeps the anonymous wall free and separate from paid products", () => {
-    expect(siteOracle).toContain("Créer mon profil gratuit et continuer");
-    expect(siteOracle).not.toContain('id="km-pw-etoile"');
-    expect(siteOracle).not.toContain('id="km-pw-one-shot"');
-    expect(siteOracle).not.toContain("4,90 €");
-    expect(siteOracle).not.toContain("5,99 €");
-    expect(appOracle).not.toContain('navigate("/pricing")');
-    expect(appOracle).not.toContain("oraclePaywallEtoileClickEvent");
+  it("keeps signup for anonymous App users and exposes attributed Étoile CTAs at quota", () => {
+    expect(siteOracle).toContain('id="km-pw-etoile"');
+    expect(siteOracle).toContain("/pricing?source=oracle_site_limit");
+    expect(siteOracle).toContain("oraclePaywallCopy(oracleLocale)");
+    expect(siteOracleLocale).toContain("5,99 €");
+    expect(appOracle).toContain('pendingTurn.wallType === "anonymous_signup_wall_v1" && !user');
+    expect(appOracle).toContain('navigate("/pricing?source=oracle_app_limit")');
+    expect(appOracle).toContain("paywallEtoileClickEvent");
+    expect(appOracle).toContain("shouldShowOracleEtoileLimitCta");
   });
 
   it("does not show a delayed quota reset on the immediate signup continuation wall", () => {

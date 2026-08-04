@@ -1,7 +1,7 @@
 ---
 title: "Politique de confidentialité"
 description: "Politique de confidentialité et protection des données personnelles (RGPD) de Karmastro."
-lastUpdated: 2026-04-09
+lastUpdated: 2026-07-21
 ---
 
 ## Introduction
@@ -13,6 +13,7 @@ Karmastro s'engage à protéger la vie privée de ses utilisateurs. La présente
 - **Données de compte** : adresse email
 - **Données de profil cosmique** : date, heure et lieu de naissance (nécessaires aux calculs astrologiques et numérologiques)
 - **Données d'utilisation** : pages visitées, interactions avec L'Oracle
+- **Données d'abonnement** : produit, statut et date d'expiration, sans donnée bancaire
 - **Données techniques** : adresse IP, type de navigateur
 
 ## Finalités du traitement
@@ -28,18 +29,24 @@ Le traitement est fondé sur le consentement de l'utilisateur et l'exécution du
 
 ## Durée de conservation
 
-Les données personnelles sont conservées pendant la durée de ton compte, puis supprimées dans un délai de 30 jours après la clôture.
+Les données personnelles sont conservées pendant la durée de ton compte. Une demande de suppression initiée dans l'application est traitée sous 7 jours. Les justificatifs strictement nécessaires aux obligations comptables peuvent être conservés séparément pendant la durée légale applicable.
 
-## Cookies
+## Cookies et mesure d'audience
 
-Ce site utilise uniquement des cookies techniques nécessaires au fonctionnement du service. Aucun cookie publicitaire ou de tracking n'est utilisé.
+Les cookies techniques nécessaires au fonctionnement du service sont toujours actifs. Aucun cookie publicitaire n'est utilisé.
+
+Avec ton consentement explicite (bouton « Accepter tout » de la bannière), nous utilisons une solution de mesure d'audience et d'analyse d'usage afin de comprendre comment le service est utilisé et de l'améliorer. Cette mesure inclut un enregistrement anonyme de la navigation (clics, défilement, parcours) sur certaines pages. **Le contenu de tes échanges avec l'Oracle et tes données de naissance ne sont jamais enregistrés** : ils sont masqués et exclus de tout enregistrement. Tu peux refuser cette mesure à tout moment via la bannière de cookies (« Essentiels uniquement » ou « Refuser »), sans que cela n'affecte le service.
 
 ## Sous-traitants
 
 - **Cloudflare** (hébergement)
 - **Supabase** (base de données)
 - **Stripe** (paiements)
+- **Apple** (authentification et achats intégrés sur iOS)
+- **RevenueCat** (validation et synchronisation des abonnements iOS)
+- **Google** (authentification et génération des réponses de L'Oracle)
 - **Resend** (emails)
+- **PostHog** (mesure d'audience et analyse d'usage, hébergement dans l'Union européenne, activée uniquement après consentement)
 
 ## Tes droits
 

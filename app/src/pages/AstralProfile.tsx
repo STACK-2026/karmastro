@@ -14,7 +14,7 @@ const AstralProfile = () => {
   const { t } = useT();
 
   return (
-    <div className="min-h-screen bg-background pb-20 relative">
+    <div data-ph-sensitive="astral-profile" className="min-h-screen bg-background pb-20 relative">
       <StarField />
       <AppHeader title={t("astral.header_title")} showBack />
 

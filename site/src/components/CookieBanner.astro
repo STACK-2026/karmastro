@@ -179,6 +179,8 @@ const dir = locale === "ar" ? "rtl" : "ltr";
     const expires = new Date(Date.now() + 365 * 86400000).toUTCString();
     document.cookie = `cookie-consent=${level};expires=${expires};path=/;domain=.karmastro.com;SameSite=Lax`;
     banner?.classList.add("hidden");
+    // Notify analytics (PostHog) so it opts in/out immediately without a reload.
+    document.dispatchEvent(new CustomEvent("kh:consent", { detail: level }));
   }
 
   acceptBtn?.addEventListener("click", () => saveConsent("all"));

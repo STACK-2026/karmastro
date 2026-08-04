@@ -105,6 +105,9 @@ const xDefaultUrl = hreflangUrls.find((h) => h.locale === DEFAULT_LOCALE)?.url
   ?? hreflangUrls.find((h) => h.locale === currentLocale)?.url;
 
 const GA4_ID = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID;
+const POSTHOG_KEY = import.meta.env.PUBLIC_POSTHOG_KEY;
+const SUPABASE_URL = import.meta.env.PUBLIC_SUPABASE_URL;
+const SUPABASE_ANON_KEY = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
 ---
 
 <!doctype html>
@@ -122,8 +125,10 @@ const GA4_ID = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID;
             sessionStorage.setItem("km_oracle_legacy_question", kmLegacyQuestion);
           }
           var kmSource = kmOracleUrl.searchParams.get("src");
+          var kmLang = kmOracleUrl.searchParams.get("lang");
           kmOracleUrl.search = "";
           if (kmSource && /^[a-z0-9][a-z0-9-]{1,39}$/.test(kmSource)) kmOracleUrl.searchParams.set("src", kmSource);
+          if (kmLang && /^(fr|en|es|it|pt|de|ar|ja|pl|ru|tr)$/.test(kmLang)) kmOracleUrl.searchParams.set("lang", kmLang);
           history.replaceState(history.state, "", kmOracleUrl.toString());
         }
       } catch (e) {}
@@ -183,9 +188,15 @@ const GA4_ID = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID;
     <script src="/oracle-handoff.js" defer is:inline></script>
     <script src="/tracker.js" defer is:inline></script>
 
+    {POSTHOG_KEY && <meta name="posthog-key" content={POSTHOG_KEY} />}
+    {SUPABASE_URL && <meta name="sb-url" content={SUPABASE_URL} />}
+    {SUPABASE_ANON_KEY && <meta name="sb-anon" content={SUPABASE_ANON_KEY} />}
+
     <!-- Scroll-reveal wiring (karma-reveal-scroll). Progressive enhancement. -->
     <script>
       import "../scripts/karma-reveal-scroll";
+      import { initPosthog } from "../scripts/posthog";
+      initPosthog();
     </script>
 
     <!-- JSON-LD -->
@@ -220,6 +231,16 @@ const GA4_ID = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID;
     </main>
     <Footer />
     <CookieBanner />
+
+    <script>
+      import { localizeOracleHref } from "../utils/oracle-locale.mjs";
+
+      const documentLocale = document.documentElement.lang || "fr";
+      document.querySelectorAll<HTMLAnchorElement>('a[href]').forEach((link) => {
+        const localizedHref = localizeOracleHref(link.href, documentLocale, window.location.origin);
+        if (localizedHref !== link.href) link.href = localizedHref;
+      });
+    </script>
 
     <script>
       // Seeded RNG (same positions every load, matching app)
