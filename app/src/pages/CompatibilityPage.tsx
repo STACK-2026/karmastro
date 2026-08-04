@@ -37,7 +37,7 @@ const CompatibilityPage = () => {
       <AppHeader title={t("compat.header_title")} showBack />
 
       <main className="relative z-10 px-5 space-y-5 max-w-2xl mx-auto">
-        <section className="border-glow rounded-2xl bg-card/60 p-5">
+        <section data-ph-mask className="border-glow rounded-2xl bg-card/60 p-5">
           <div className="flex items-center gap-3 mb-3">
             <div className="w-11 h-11 rounded-full bg-primary/15 flex items-center justify-center">
               <ZodiacSymbol sign={profile.astrology.sunSign.sign} size={24} color="#D4A017" />

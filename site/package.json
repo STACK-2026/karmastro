@@ -15,6 +15,8 @@
     "test:oracle-anonymous-truth": "node --test scripts/test-oracle-anonymous-truth.mjs",
     "test:oracle-conversation-v1": "node --test scripts/test-oracle-conversation-v1.mjs",
     "test:oracle-acquisition-v1": "node --test scripts/test-oracle-acquisition-v1.mjs",
+    "test:oracle-locale": "node --test scripts/test-oracle-locale.mjs",
+    "test:oracle-feedback-v1": "node --test scripts/test-oracle-feedback-contract-v1.mjs",
     "test:commercial-contract": "node --test scripts/test-commercial-contract.mjs",
     "guard:content": "bash scripts/guard-content.sh",
     "prebuild": "npm run guard:content && npm run test:oracle-antibot"

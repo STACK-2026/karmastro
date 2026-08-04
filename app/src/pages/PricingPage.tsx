@@ -14,6 +14,10 @@ import { useT } from "@/i18n/ui";
 import { OFFER_CATALOG } from "@/lib/offer-catalog";
 import { checkoutReturnAnalytics, consumeCheckoutReturn, parseCheckoutReturn } from "@/lib/checkout-return";
 import { hasEffectivePremiumAccess, hasPremiumAccess } from "@/lib/subscription";
+import {
+  pricingAttributionProperties,
+  pricingSourceFromSearch,
+} from "@/lib/pricing-attribution";
 
 const CHECKOUT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/stripe-checkout";
 
@@ -27,13 +31,15 @@ type CurrentPlan = {
 const PricingPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { user } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const { toast } = useToast();
   const { t, locale } = useT();
   const [loading, setLoading] = useState<string | null>(null);
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annual">("monthly");
   const [currentPlan, setCurrentPlan] = useState<CurrentPlan | null>(null);
   const checkoutReturnHandled = useRef(false);
+  const pricingViewed = useRef(false);
+  const pricingSource = pricingSourceFromSearch(location.search);
 
   useEffect(() => {
     if (checkoutReturnHandled.current) return;
@@ -51,6 +57,16 @@ const PricingPage = () => {
       consumeCheckoutReturn(location.pathname, new URLSearchParams(location.search)),
     );
   }, [location.pathname, location.search, t, toast]);
+
+  useEffect(() => {
+    if (authLoading || pricingViewed.current) return;
+    pricingViewed.current = true;
+    void trackEvent("pricing_viewed", pricingAttributionProperties({
+      source: pricingSource,
+      locale,
+      isAuthenticated: Boolean(user),
+    }));
+  }, [authLoading, locale, pricingSource, user]);
 
   useEffect(() => {
     if (!user?.id) return;
@@ -88,13 +104,19 @@ const PricingPage = () => {
 
   const handleCheckout = async (priceKey: string) => {
     if (!user) {
-      trackEvent("checkout_blocked_no_auth", { price_key: priceKey });
+      trackEvent("checkout_blocked_no_auth", { price_key: priceKey, source: pricingSource });
       toast({ title: t("pricing.toast_auth_required_title"), description: t("pricing.toast_auth_required_desc"), variant: "destructive" });
       navigate("/auth?next=/pricing");
       return;
     }
 
-    trackEvent("checkout_started", { price_key: priceKey, locale });
+    trackEvent("checkout_started", {
+      price_key: priceKey,
+      locale,
+      source: pricingSource,
+      is_authenticated: true,
+      journey_version: "oracle_conversation_v1",
+    });
     setLoading(priceKey);
     try {
       const { data: { session } } = await supabase.auth.getSession();
@@ -114,7 +136,7 @@ const PricingPage = () => {
 
       const data = await res.json();
       if (res.status === 409 && data.code === "profile_required") {
-        void trackEvent("checkout_profile_required", { price_key: priceKey });
+        void trackEvent("checkout_profile_required", { price_key: priceKey, source: pricingSource });
         setLoading(null);
         navigate("/onboarding?next=/pricing&reason=personalized_checkout");
         return;

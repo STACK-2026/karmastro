@@ -308,41 +308,67 @@ export type Database = {
       oracle_feedback: {
         Row: {
           assistant_message: string | null
+          contract_version: number | null
+          conversation_id: string | null
           created_at: string
           guide: string
           id: string
+          introduced_at: string | null
+          locale: string | null
           rating: number
           session_id: string | null
+          surface: string | null
           tags: Json | null
           text: string | null
+          turn_index: number | null
           user_id: string | null
           user_message: string | null
         }
         Insert: {
           assistant_message?: string | null
+          contract_version?: number | null
+          conversation_id?: string | null
           created_at?: string
           guide: string
           id?: string
+          introduced_at?: string | null
+          locale?: string | null
           rating: number
           session_id?: string | null
+          surface?: string | null
           tags?: Json | null
           text?: string | null
+          turn_index?: number | null
           user_id?: string | null
           user_message?: string | null
         }
         Update: {
           assistant_message?: string | null
+          contract_version?: number | null
+          conversation_id?: string | null
           created_at?: string
           guide?: string
           id?: string
+          introduced_at?: string | null
+          locale?: string | null
           rating?: number
           session_id?: string | null
+          surface?: string | null
           tags?: Json | null
           text?: string | null
+          turn_index?: number | null
           user_id?: string | null
           user_message?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "oracle_feedback_conversation_id_fkey"
+            columns: ["conversation_id"]
+            isOneToOne: false
+            referencedRelation: "oracle_conversations"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       oracle_ip_usage: {
         Row: {

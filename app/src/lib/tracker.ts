@@ -7,6 +7,7 @@ import {
   supabase,
 } from "@/integrations/supabase/client";
 import type { Json } from "@/integrations/supabase/types";
+import { capturePosthogEvent, capturePosthogPageView } from "@/lib/posthog";
 
 const SESSION_KEY = "km_session_id";
 const UTM_KEY = "km_utm";
@@ -124,6 +125,8 @@ export async function trackPageView(path: string, title?: string): Promise<void>
   }
   const referrer = document.referrer || null;
 
+  capturePosthogPageView(path);
+
   const { data: { user } } = await supabase.auth.getUser();
 
   // Generate client-side UUID (no SELECT grant needed for update later)
@@ -166,6 +169,8 @@ export async function trackEvent(
   properties: Record<string, unknown> = {}
 ): Promise<void> {
   if (typeof window === "undefined") return;
+
+  capturePosthogEvent(eventName, properties);
 
   const { data: { user } } = await supabase.auth.getUser();
 

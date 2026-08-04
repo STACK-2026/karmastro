@@ -290,6 +290,7 @@ const Dashboard = () => {
 
       <main className="relative z-10 px-5 space-y-5 pt-2 max-w-3xl mx-auto">
         <motion.section
+          data-ph-mask
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           className="border-glow glow-violet rounded-2xl bg-card/80 backdrop-blur-sm p-5"
@@ -358,6 +359,7 @@ const Dashboard = () => {
             </div>
             <AnimatePresence mode="wait">
               <motion.p
+                data-ph-mask
                 key={currentHookIndex}
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}

@@ -315,6 +315,54 @@
       "deprecated_at": null
     },
     {
+      "name": "oracle_feedback_viewed",
+      "definition": "The minimal feedback choices became visible after the first successful Oracle response.",
+      "surface": ["site", "app"],
+      "unit": "impression",
+      "trigger": "Once after the first successful response is complete.",
+      "allowed_properties": ["source", "surface", "locale", "is_anon", "introduced_at", "turn_index", "schema_version", "journey_version"],
+      "introduced_at": "2026-08-02",
+      "journey_version": "oracle_conversation_v1",
+      "owner": "product",
+      "deprecated_at": null
+    },
+    {
+      "name": "oracle_feedback",
+      "definition": "A content-free satisfaction choice was submitted for the first successful Oracle response.",
+      "surface": ["site", "app"],
+      "unit": "response",
+      "trigger": "On the first click of one of the three feedback choices.",
+      "allowed_properties": ["source", "surface", "locale", "is_anon", "introduced_at", "rating", "turn_index", "schema_version", "journey_version"],
+      "introduced_at": "2026-08-02",
+      "journey_version": "oracle_conversation_v1",
+      "owner": "product",
+      "deprecated_at": null
+    },
+    {
+      "name": "oracle_feedback_submit_failed",
+      "definition": "A content-free Oracle feedback persistence attempt failed before user confirmation.",
+      "surface": ["site", "app"],
+      "unit": "attempt",
+      "trigger": "After a rejected, unavailable or unconfigured durable feedback insert.",
+      "allowed_properties": ["source", "surface", "locale", "is_anon", "introduced_at", "turn_index", "schema_version", "failure_type", "journey_version"],
+      "introduced_at": "2026-08-04",
+      "journey_version": "oracle_conversation_v1",
+      "owner": "product",
+      "deprecated_at": null
+    },
+    {
+      "name": "pricing_viewed",
+      "definition": "The App pricing surface became visible after authentication state resolved.",
+      "surface": ["app"],
+      "unit": "impression",
+      "trigger": "Once when Pricing mounts and auth loading completes.",
+      "allowed_properties": ["source", "locale", "is_authenticated", "journey_version"],
+      "introduced_at": "2026-08-04",
+      "journey_version": "oracle_conversation_v1",
+      "owner": "product",
+      "deprecated_at": null
+    },
+    {
       "name": "etoile_pass_offer_viewed",
       "definition": "A preassigned 48-hour Star Pass offer became visible in the app.",
       "surface": ["app"],

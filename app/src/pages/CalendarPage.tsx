@@ -51,7 +51,7 @@ const CalendarPage = () => {
       <StarField />
       <AppHeader title={t("calendar.header_title")} showBack />
 
-      <div className="relative z-10 px-5 space-y-5">
+      <div data-ph-mask className="relative z-10 px-5 space-y-5">
         {/* Month nav */}
         <div className="flex items-center justify-between">
           <Button

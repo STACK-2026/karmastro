@@ -45,7 +45,7 @@ const NumerologyPage = () => {
       <StarField />
       <AppHeader title={t("numerology.header_title")} showBack />
 
-      <div className="relative z-10 px-5 space-y-5">
+      <div data-ph-mask className="relative z-10 px-5 space-y-5">
         {/* Core numbers */}
         <div>
           <h3 className="font-serif text-lg mb-3">{t("numerology.core_title")}</h3>

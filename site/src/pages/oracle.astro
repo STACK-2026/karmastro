@@ -69,11 +69,15 @@ const jsonLd = [
 </BaseLayout>
 
 <script>
+  import { oraclePaywallCopy, resolveOracleLocale } from "../utils/oracle-locale.mjs";
+
   const CHAT_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/oracle-chat";
   const CONVERSATION_KEY = "km_oracle_conversation";
   const JOURNEY_VERSION = "oracle_conversation_v1";
   const ACTIVATION_JOURNEY_VERSION = "oracle_activation_v1";
   const ACQUISITION_JOURNEY_VERSION = "oracle_acquisition_v1";
+  const ORACLE_FEEDBACK_CONTRACT_VERSION = 1;
+  const ORACLE_FEEDBACK_INTRODUCED_AT = "2026-08-02T13:34:17.000Z";
   const ACTIVATION_EVENTS = new Set([
     "oracle_signup_wall_viewed",
     "oracle_signup_wall_cta_clicked",
@@ -88,6 +92,13 @@ const jsonLd = [
   const input = document.getElementById("oracle-input") as HTMLInputElement;
   const sendBtn = document.getElementById("oracle-send") as HTMLButtonElement;
   const sugWrap = document.getElementById("oracle-suggestions")!;
+  const oracleLocale = resolveOracleLocale({
+    currentUrl: window.location.href,
+    referrer: document.referrer,
+    documentLang: document.documentElement.lang,
+  });
+  const SB_URL = document.querySelector('meta[name="sb-url"]')?.getAttribute("content") || "";
+  const SB_ANON = document.querySelector('meta[name="sb-anon"]')?.getAttribute("content") || "";
 
   try {
     localStorage.removeItem("km_oracle_profile");
@@ -111,7 +122,7 @@ const jsonLd = [
   function handoffUrl(next: string): string {
     const url = new URL("https://app.karmastro.com/auth");
     url.searchParams.set("oracle_session", sessionId());
-    url.searchParams.set("next", next === "/pricing" ? "/pricing" : "/oracle");
+    url.searchParams.set("next", next === "/pricing" ? "/pricing?source=oracle_site_limit" : "/oracle");
     return url.toString();
   }
   document.querySelectorAll<HTMLElement>("[data-oracle-handoff]").forEach((link) => {
@@ -175,7 +186,7 @@ const jsonLd = [
 
   trackOracleEvent("oracle_entry_viewed", {
     source: oracleSource,
-    locale: document.documentElement.lang || "fr",
+    locale: oracleLocale,
     has_handoff: Boolean(incomingHandoff),
   });
   if (acquisitionContext) {
@@ -212,28 +223,157 @@ const jsonLd = [
     });
   }
 
-  // Mur 1 : inscription gratuite et continuation personnelle. Aucun prix ni
-  // produit payant ne partage ce moment.
+  let feedbackShown = false;
+
+  const feedbackCopy = ({
+    fr: { prompt: "Cette réponse t'aide ?", useful: "Ça résonne", unsure: "Intéressant", negative: "Pas cette fois", thanks: "Merci, c'est noté ✦", error: "Le feedback n'a pas été enregistré. Réessaie." },
+    en: { prompt: "Did this answer help?", useful: "It resonates", unsure: "Interesting", negative: "Not this time", thanks: "Thank you, noted ✦", error: "Feedback was not saved. Please try again." },
+    es: { prompt: "¿Te ayuda esta respuesta?", useful: "Me resuena", unsure: "Interesante", negative: "Esta vez no", thanks: "Gracias, queda anotado ✦", error: "No se guardó tu opinión. Inténtalo de nuevo." },
+    it: { prompt: "Questa risposta ti aiuta?", useful: "Mi risuona", unsure: "Interessante", negative: "Non questa volta", thanks: "Grazie, annotato ✦", error: "Il feedback non è stato salvato. Riprova." },
+    pt: { prompt: "Esta resposta ajuda-te?", useful: "Faz sentido", unsure: "Interessante", negative: "Desta vez não", thanks: "Obrigado, ficou registado ✦", error: "A opinião não foi guardada. Tenta novamente." },
+    de: { prompt: "Hilft dir diese Antwort?", useful: "Das passt", unsure: "Interessant", negative: "Diesmal nicht", thanks: "Danke, ist notiert ✦", error: "Das Feedback wurde nicht gespeichert. Versuche es erneut." },
+  } as Record<string, { prompt: string; useful: string; unsure: string; negative: string; thanks: string; error: string }>)[oracleLocale]
+    || { prompt: "Did this answer help?", useful: "It resonates", unsure: "Interesting", negative: "Not this time", thanks: "Thank you, noted ✦", error: "Feedback was not saved. Please try again." };
+
+  function feedbackEventProperties(extra: Record<string, unknown> = {}) {
+    return {
+      source: oracleSource,
+      schema_version: ORACLE_FEEDBACK_CONTRACT_VERSION,
+      surface: "site",
+      locale: oracleLocale,
+      is_anon: true,
+      introduced_at: ORACLE_FEEDBACK_INTRODUCED_AT,
+      turn_index: 1,
+      ...extra,
+    };
+  }
+
+  function showFeedbackError(wrap: HTMLElement) {
+    let status = wrap.querySelector<HTMLElement>('[data-feedback-status="error"]');
+    if (!status) {
+      status = document.createElement("p");
+      status.dataset.feedbackStatus = "error";
+      status.setAttribute("role", "status");
+      status.className = "basis-full text-xs text-red-300";
+      wrap.appendChild(status);
+    }
+    status.textContent = feedbackCopy.error;
+  }
+
+  function trackFeedbackFailure(failureType: "configuration" | "authorization" | "rate_limited" | "client" | "server" | "network") {
+    const properties = feedbackEventProperties({ failure_type: failureType });
+    trackOracleEvent("oracle_feedback_submit_failed", properties);
+    try { (window as any).khTrack?.("oracle_feedback_submit_failed", properties); } catch {}
+  }
+
+  async function submitFeedback(rating: number, label: "useful" | "unsure" | "not_useful", wrap: HTMLElement) {
+    wrap.querySelectorAll("button").forEach((button) => ((button as HTMLButtonElement).disabled = true));
+    if (!SB_URL || !SB_ANON || !conversationId) {
+      trackFeedbackFailure("configuration");
+      showFeedbackError(wrap);
+      wrap.querySelectorAll("button").forEach((button) => ((button as HTMLButtonElement).disabled = false));
+      return;
+    }
+
+    try {
+      const resp = await fetch(`${SB_URL}/rest/v1/oracle_feedback`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          apikey: SB_ANON,
+          Authorization: `Bearer ${SB_ANON}`,
+          Prefer: "return=minimal",
+        },
+        body: JSON.stringify({
+          session_id: sessionId(),
+          guide: "oracle",
+          rating,
+          conversation_id: conversationId,
+          turn_index: 1,
+          surface: "site",
+          locale: oracleLocale,
+          contract_version: ORACLE_FEEDBACK_CONTRACT_VERSION,
+          introduced_at: ORACLE_FEEDBACK_INTRODUCED_AT,
+        }),
+      });
+
+      if (resp.ok || resp.status === 409) {
+        const properties = feedbackEventProperties({ rating: label });
+        trackOracleEvent("oracle_feedback", properties);
+        try { (window as any).khTrack?.("oracle_feedback", properties); } catch {}
+        wrap.innerHTML = `<p role="status" class="text-xs text-amber-100/70">${feedbackCopy.thanks}</p>`;
+        return;
+      }
+
+      const failureType = resp.status === 401 || resp.status === 403
+        ? "authorization"
+        : resp.status === 429
+          ? "rate_limited"
+          : resp.status >= 500
+            ? "server"
+            : "client";
+      trackFeedbackFailure(failureType);
+      showFeedbackError(wrap);
+      wrap.querySelectorAll("button").forEach((button) => ((button as HTMLButtonElement).disabled = false));
+    } catch {
+      trackFeedbackFailure("network");
+      showFeedbackError(wrap);
+      wrap.querySelectorAll("button").forEach((button) => ((button as HTMLButtonElement).disabled = false));
+    }
+  }
+
+  function renderFeedback() {
+    if (feedbackShown || !conversationId) return;
+    feedbackShown = true;
+    const wrap = document.createElement("div");
+    wrap.className = "flex flex-wrap items-center gap-2 mt-3 pl-1";
+    const prompt = document.createElement("span");
+    prompt.className = "text-[11px] text-white/40";
+    prompt.textContent = feedbackCopy.prompt;
+    wrap.appendChild(prompt);
+    ([
+      [feedbackCopy.useful, 3, "useful"],
+      [feedbackCopy.unsure, 2, "unsure"],
+      [feedbackCopy.negative, 1, "not_useful"],
+    ] as [string, number, "useful" | "unsure" | "not_useful"][]).forEach(([text, rating, label]) => {
+      const button = document.createElement("button");
+      button.className = "text-xs px-3 py-1.5 rounded-full border border-white/15 text-white/70 hover:border-amber-300/50 hover:text-amber-300 transition-colors";
+      button.textContent = text;
+      button.onclick = () => { void submitFeedback(rating, label, wrap); };
+      wrap.appendChild(button);
+    });
+    thread.appendChild(wrap);
+    thread.scrollTop = thread.scrollHeight;
+    const properties = feedbackEventProperties();
+    trackOracleEvent("oracle_feedback_viewed", properties);
+    try { (window as any).khTrack?.("oracle_feedback_viewed", properties); } catch {}
+  }
+
+  // Le quota public garde l'inscription disponible ailleurs sur la page et
+  // présente ici l'offre commerciale déjà active sur le Site live.
   function renderPaywall(out: HTMLElement, pw: any) {
     const wrap = out.parentElement;
     if (!wrap) return;
     wrap.className = "text-left";
-    const msg = (pw && pw.message)
-      || "Crée gratuitement ton profil pour retrouver cette conversation et recevoir la suite personnalisée à ta question.";
+    const copy = oraclePaywallCopy(oracleLocale);
+    const msg = (pw && pw.message) || copy.message;
     const esc = (value: string) => value.replace(/[<>&"]/g, (char) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;" }[char] || char));
     wrap.innerHTML =
       '<div class="inline-block w-full max-w-md p-5 rounded-2xl bg-gradient-to-r from-purple-400/10 to-amber-300/10 border border-amber-300/30 text-center">'
       + '<p class="text-2xl mb-1">✦</p>'
-      + '<p class="font-serif text-lg text-white mb-2">Continue avec une réponse vraiment personnelle</p>'
       + '<p class="text-sm text-white/90 mb-4 leading-relaxed">' + esc(msg) + "</p>"
-      + '<a href="' + handoffUrl("/oracle") + '" id="km-pw-signup" class="inline-block w-full max-w-xs px-5 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">'
-      + "Créer mon profil gratuit et continuer"
+      + '<ul class="text-xs text-white/70 text-left max-w-xs mx-auto space-y-1 mb-4">'
+      + copy.features.map((feature) => "<li>✦ " + esc(feature) + "</li>").join("")
+      + "</ul>"
+      + '<a href="' + handoffUrl("/pricing") + '" id="km-pw-etoile" class="inline-block w-full max-w-xs px-5 py-3 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm hover:opacity-90 transition-opacity">'
+      + esc(copy.cta)
       + "</a>"
+      + '<p class="text-[11px] text-white/40 mt-3">' + esc(copy.security) + "</p>"
       + "</div>";
-    trackOracleEvent("oracle_signup_wall_viewed", { source: oracleSource });
-    const signup = wrap.querySelector("#km-pw-signup");
-    if (signup) signup.addEventListener("click", () => {
-      trackOracleEvent("oracle_signup_wall_cta_clicked", { source: oracleSource });
+
+    const etoileLink = wrap.querySelector("#km-pw-etoile");
+    if (etoileLink) etoileLink.addEventListener("click", () => {
+      trackOracleEvent("paywall_etoile_click", { source: oracleSource, billing_cycle: "monthly" });
     });
   }
 
@@ -250,6 +390,10 @@ const jsonLd = [
     bubble("user", cleanText);
     input.value = "";
     trackOracleEvent("oracle_message_sent", { source: oracleSource, turn });
+    try {
+      if (turn === 1) (window as any).khTrack?.("oracle_conversation_started");
+      (window as any).khTrack?.("oracle_message_sent", { turn_index: turn });
+    } catch {}
     if (turn === 1) {
       trackOracleEvent("oracle_first_question_submitted", {
         source: oracleSource,
@@ -273,6 +417,7 @@ const jsonLd = [
           messages: history,
           category: selectedCategory,
           guide: "oracle",
+          locale: oracleLocale,
           sessionId: sessionId(),
           conversationId,
           requestId,
@@ -285,6 +430,7 @@ const jsonLd = [
         renderPaywall(out, pw);
         trackOracleEvent("oracle_limit_hit", { source: oracleSource, turn, is_anon: !!pw.is_anon });
         trackOracleEvent("paywall_viewed", { source: oracleSource, surface: "oracle", is_anon: !!pw.is_anon });
+        try { (window as any).khTrack?.("paywall_viewed", { type: pw.is_anon ? "anon" : "quota", turn_index: turn }); } catch {}
         return;
       }
       if (resp.status === 403 && conversationId) {
@@ -341,9 +487,26 @@ const jsonLd = [
       }
       if (full) history.push({ role: "assistant", content: full });
       else out.textContent = "L'Oracle médite… réessaie dans un instant.";
+      try {
+        (window as any).khTrack?.("oracle_response_received", {
+          turn_index: turn,
+          ok: Boolean(full),
+          error_type: full ? null : "empty_stream",
+          latency_ms: Math.round(performance.now() - startedAt),
+        });
+      } catch {}
       renderSuggestions(suggestions);
+      if (full && turn === 1) renderFeedback();
     } catch {
       out.textContent = "Une brume cosmique passe. Réessaie dans un instant.";
+      try {
+        (window as any).khTrack?.("oracle_response_received", {
+          turn_index: turn,
+          ok: false,
+          error_type: "network",
+          latency_ms: Math.round(performance.now() - startedAt),
+        });
+      } catch {}
     } finally {
       busy = false; sendBtn.disabled = false; input.focus();
     }
