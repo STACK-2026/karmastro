@@ -11,7 +11,6 @@ lang: "ar"
 image: "https://images.unsplash.com/photo-1501418611786-e29f9929fe03?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "شمس مشرقة على الأفق"
 lastReviewed: "2026-04-11"
-reviewedBy: "أوريون، عالم فلك ومنجم كبير"
 ---
 
 ## المحتويات

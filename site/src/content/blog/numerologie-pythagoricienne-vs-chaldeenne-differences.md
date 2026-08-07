@@ -10,7 +10,6 @@ draft: false
 image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Anciennes tablettes babyloniennes et grecques avec symboles numériques"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, numerologue certifiee ecole pythagoricienne"
 ---
 
 ## Sommaire

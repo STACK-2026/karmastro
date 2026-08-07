@@ -11,7 +11,6 @@ lang: "ja"
 image: "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "静かな海の上の満月"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion、シニア天文学者兼占星術師"
 ---
 
 ## 目次

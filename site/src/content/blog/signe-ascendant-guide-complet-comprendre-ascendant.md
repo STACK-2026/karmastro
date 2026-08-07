@@ -10,7 +10,6 @@ draft: false
 image: "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Horizon à l'aube avec les premiers rayons solaires, symbole de l'ascendant en astrologie"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, voix éditoriale Karmastro"
 ---
 
 ## Sommaire

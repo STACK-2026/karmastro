@@ -11,7 +11,6 @@ lang: "ar"
 image: "https://images.unsplash.com/photo-1519638831568-d9897f54ed69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "حساب رقم مسار الحياة على ورقة بخط اليد"
 lastReviewed: "2026-04-14"
-reviewedBy: "إيزيس، مستشارة علم الأعداد"
 ---
 
 ## الإجابة المباشرة

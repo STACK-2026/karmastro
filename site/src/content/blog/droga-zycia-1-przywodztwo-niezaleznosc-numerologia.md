@@ -11,7 +11,6 @@ lang: "pl"
 image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Świetlista jedynka"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, certyfikowana numerolog szkoly pitagorejskiej"
 ---
 
 ## Spis treści

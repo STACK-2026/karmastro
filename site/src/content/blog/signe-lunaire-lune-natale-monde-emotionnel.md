@@ -10,7 +10,6 @@ draft: false
 image: "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Pleine Lune argentée dans un ciel étoilé, représentant la Lune natale en astrologie"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 ## Sommaire

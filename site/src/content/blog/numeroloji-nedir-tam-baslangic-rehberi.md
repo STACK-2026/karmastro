@@ -11,7 +11,6 @@ lang: "tr"
 image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Numeroloji icin Pitagor denklemleri ve antik kagit"
 lastReviewed: "2026-04-14"
-reviewedBy: "Orion 15 yillik deneyimli sertifikali numerolog"
 ---
 
 Numeroloji sayilara sembolik anlamlar atayan bir yorumlama sistemidir kokeni MO 6. yuzyilda Pitagor okuluna ve Orta Cag Yahudi mistisizmi olan Kabala gelenegine kadar uzanir gunumuzde kisilik analizi uyumluluk ve hayat planlamasi icin dunyanin her yerinde kullanilir. Turkiye manevi pazar arastirmalarina gore okultizm ilgisi olan kullanicilarin yaklasik 42 yuzdesi numeroloji ile ilgilenmekte bu oran her yil artmaktadir.

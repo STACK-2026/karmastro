@@ -11,7 +11,6 @@ lang: "ja"
 image: "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "牡羊座の星座"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion、シニア天文学者兼占星術師"
 ---
 
 ## 目次
