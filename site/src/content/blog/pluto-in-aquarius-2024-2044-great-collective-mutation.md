@@ -11,7 +11,6 @@ lang: "en"
 image: "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Cosmic view of Pluto and a nebula, illustration of the Pluto in Aquarius transit"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, senior astronomer and astrologer"
 ---
 
 ## Table of contents

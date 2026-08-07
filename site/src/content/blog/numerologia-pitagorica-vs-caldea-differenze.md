@@ -11,7 +11,6 @@ lang: "it"
 image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Antiche tavole babilonesi e greche"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, numerologa certificata scuola pitagorica"
 ---
 
 ## Indice

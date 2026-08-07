@@ -11,7 +11,6 @@ lang: "es"
 image: "https://images.unsplash.com/photo-1519638831568-d9897f54ed69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Cálculo numerológico con cifras y ecuaciones"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, numerologa certificada escuela pitagorica"
 ---
 
 ## Índice

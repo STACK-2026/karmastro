@@ -11,7 +11,6 @@ lang: "en"
 image: "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Sunrise on the horizon, symbolic of the rising sign in astrology"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, senior astronomer and astrologer"
 ---
 
 ## Table of contents

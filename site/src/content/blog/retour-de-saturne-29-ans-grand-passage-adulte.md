@@ -10,7 +10,6 @@ draft: false
 image: "https://images.unsplash.com/photo-1614642264762-d0a3b8bf3700?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "La planète Saturne et ses anneaux dans l'espace, symbole du retour de Saturne et du passage à l'âge adulte"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 ## Sommaire

@@ -10,7 +10,6 @@ draft: false
 image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Carte astrologique avec lignes géométriques reliant les planètes pour illustrer les aspects astrologiques"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 ## Sommaire

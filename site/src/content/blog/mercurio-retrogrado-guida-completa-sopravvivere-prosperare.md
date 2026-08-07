@@ -11,7 +11,6 @@ lang: "it"
 image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Cielo stellato con pianeta luminoso"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronomo e astrologo senior"
 ---
 
 ## Indice

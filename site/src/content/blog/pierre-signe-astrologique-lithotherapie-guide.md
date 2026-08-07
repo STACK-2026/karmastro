@@ -11,7 +11,6 @@ image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&h=63
 imageAlt: "Cristaux et pierres naturelles colorés évoquant la lithothérapie et les douze signes du zodiaque"
 draft: false
 lastReviewed: "2026-06-15"
-reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 Depuis la nuit des temps, le ciel et la Terre se répondent. Les civilisations anciennes associaient déjà les mouvements des planètes aux trésors cachés au cœur des montagnes. Aujourd'hui, cette belle complicité se prolonge naturellement à travers la lithothérapie.

@@ -11,7 +11,6 @@ lang: "ar"
 image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "لوح حجري قديم بنقوش عددية بابلية"
 lastReviewed: "2026-04-14"
-reviewedBy: "إيزيس، مستشارة علم الأعداد"
 ---
 
 ## الإجابة المباشرة

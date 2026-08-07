@@ -9,7 +9,6 @@ author: "Orion"
 category: "numerologia"
 tags: ["droga życia", "obliczenie", "numerologia", "Pitagoras", "liczby mistrzowskie"]
 lastReviewed: "2026-04-14"
-reviewedBy: "Orion, certyfikowany numerolog szkoły pitagorejskiej"
 draft: false
 keywords: "droga życia, obliczenie drogi życia, numerologia pitagorejska, liczby mistrzowskie, wzór"
 ---

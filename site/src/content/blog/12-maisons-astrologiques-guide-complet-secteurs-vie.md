@@ -10,7 +10,6 @@ draft: false
 image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Roue zodiacale et carte du ciel illustrant les 12 maisons astrologiques d'un thème natal"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 ## Sommaire

@@ -11,7 +11,6 @@ lang: "es"
 image: "https://images.unsplash.com/photo-1532680678473-a16f2cda8e43?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Calendario abierto con cifras luminosas"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, numerologa certificada escuela pitagorica"
 ---
 
 ## Índice

@@ -11,7 +11,6 @@ lang: "es"
 image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Ecuaciones numerológicas pitagóricas sobre fondo cósmico"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, numerologa certificada escuela pitagorica"
 ---
 
 ## Índice

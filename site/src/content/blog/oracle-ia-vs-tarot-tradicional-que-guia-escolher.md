@@ -11,7 +11,6 @@ lang: "pt"
 image: "https://images.unsplash.com/photo-1528353518104-dbd48bee7bc4?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Cartas de tarot e interface de oráculo IA"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronomo e astrologo senior"
 ---
 
 ## Índice

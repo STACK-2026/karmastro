@@ -11,7 +11,6 @@ lang: "pl"
 image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&h=630&fit=crop&q=80"
 imageAlt: "Rownania pitagorejskie i symbolika liczb"
 lastReviewed: "2026-04-14"
-reviewedBy: "Orion, starszy astronom i certyfikowany numerolog szkoly pitagorejskiej"
 ---
 
 Numerologia, to symboliczny system przypisujacy znaczenie liczbom, ich kombinacjom oraz odpowiednikom literowo-liczbowym. Jej korzenie siegaja Pitagorasa z Samos (VI wiek p.n.e.) oraz sredniowiecznej zydowskiej Kabaly. Wedlug badania CBOS z 2022 roku okolo 31% Polakow przyznaje, ze kiedys korzystalo z form dywinacji, a zainteresowanie numerologia w polskim Internecie wzroslo o 38% w ciagu ostatnich piec lat wedlug Google Trends. Dyscyplina nie jest nauka, ale pozostaje popularnym narzedziem samopoznania.

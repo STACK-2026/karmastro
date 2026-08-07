@@ -11,7 +11,6 @@ lang: "en"
 image: "https://images.unsplash.com/photo-1532680678473-a16f2cda8e43?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Open calendar and luminous numbers symbolizing the calculation of the personal year in numerology"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, certified Pythagorean numerologist"
 ---
 
 ## Table of contents

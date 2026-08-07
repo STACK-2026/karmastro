@@ -9,7 +9,6 @@ author: "Sibylle"
 category: "numerologie"
 tags: ["chemin de vie", "calcul", "numérologie", "pythagore", "maîtres nombres"]
 lastReviewed: "2026-04-14"
-reviewedBy: "Sibylle, numérologue certifiée École Française de Numérologie Pythagoricienne"
 draft: false
 keywords: "chemin de vie, calcul chemin de vie, numérologie pythagoricienne, formule, maîtres nombres"
 ---

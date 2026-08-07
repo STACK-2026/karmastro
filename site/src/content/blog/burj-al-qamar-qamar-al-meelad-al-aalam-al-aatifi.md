@@ -11,7 +11,6 @@ lang: "ar"
 image: "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "بدر كامل فوق بحر هادئ"
 lastReviewed: "2026-04-11"
-reviewedBy: "أوريون، عالم فلك ومنجم كبير"
 ---
 
 ## المحتويات

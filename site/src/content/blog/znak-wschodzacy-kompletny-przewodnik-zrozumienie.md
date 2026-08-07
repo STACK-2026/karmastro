@@ -11,7 +11,6 @@ lang: "pl"
 image: "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Wschód słońca nad horyzontem"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, starszy astronom i astrolog"
 ---
 
 ## Spis treści

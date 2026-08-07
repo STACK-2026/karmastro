@@ -11,7 +11,6 @@ lang: "es"
 image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Rueda zodiacal ilustrando las 12 casas astrológicas"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronomo y astrologo senior"
 ---
 
 ## Índice

@@ -11,7 +11,6 @@ lang: "ar"
 image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "دورة كونية"
 lastReviewed: "2026-04-11"
-reviewedBy: "أوريون، عالم فلك ومنجم كبير"
 ---
 
 ## المحتويات

@@ -11,7 +11,6 @@ lang: "ja"
 image: "https://images.unsplash.com/photo-1507034589631-9433cc6bc453?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "毎日の星座占い"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion、シニア天文学者兼占星術師"
 ---
 
 ## 目次

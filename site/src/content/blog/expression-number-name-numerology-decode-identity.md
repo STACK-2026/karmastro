@@ -11,7 +11,6 @@ lang: "en"
 image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Quill and old letters symbolizing name numerology and the expression number"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, certified Pythagorean numerologist"
 ---
 
 ## Table of contents

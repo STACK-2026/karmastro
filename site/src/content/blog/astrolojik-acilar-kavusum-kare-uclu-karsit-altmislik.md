@@ -11,7 +11,6 @@ lang: "tr"
 image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Astrolojik harita geometrik çizgilerle"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, kidemli astronom ve astrolog"
 ---
 
 ## İçindekiler

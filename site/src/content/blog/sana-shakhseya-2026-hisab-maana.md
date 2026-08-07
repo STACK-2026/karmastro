@@ -11,7 +11,6 @@ lang: "ar"
 image: "https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "تقويم وأرقام"
 lastReviewed: "2026-04-11"
-reviewedBy: "بيثيا، عالمة أعداد معتمدة من المدرسة الفيثاغورية"
 ---
 
 ## المحتويات
