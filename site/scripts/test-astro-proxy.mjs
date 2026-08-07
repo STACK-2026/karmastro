@@ -70,6 +70,12 @@ test("les quatre calculateurs utilisent uniquement la fonction HTTPS autorisée"
   assert.match(supabaseConfig, /\[functions\.astro-calculate\]\s+verify_jwt\s*=\s*false/);
 });
 
+test("le script inline Ascendant reste du JavaScript exécutable par le navigateur", async () => {
+  const source = await readFile(path.join(siteRoot, "src/pages/outils/ascendant.astro"), "utf8");
+  const inlineScript = source.slice(source.indexOf("<script define:vars"));
+  assert.doesNotMatch(inlineScript, /\sas\s+[A-Z][A-Za-z]*(?:<[^>]+>)?(?:\s*\|\s*null)?/);
+});
+
 test("natal-chart transmet un payload validé à l'unique route amont autorisée", async () => {
   const { response, calls } = await invoke({ operation: "natal-chart", body: birthData });
 

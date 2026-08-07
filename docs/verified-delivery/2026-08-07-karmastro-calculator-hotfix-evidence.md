@@ -23,7 +23,7 @@ Rétablir Ascendant, Synastrie, Thème natal et Transits sans exposer le moteur 
 
 | Vérification | Résultat frais |
 |---|---|
-| `npm run test:astro-proxy` | 9 pass, 0 fail |
+| `npm run test:astro-proxy` | 10 pass, 0 fail |
 | `npm run test:oracle-acquisition-v1` | 4 pass, 0 fail |
 | `deno check app/supabase/functions/astro-calculate/index.ts` | exit 0 |
 | `deno fmt --check ...` | 2 fichiers conformes |
@@ -37,7 +37,7 @@ Empreintes avant déploiement :
 
 - `index.ts` : `1481341e911be57674f2e12d68df12729a0f8b1cdb5f6db7babd44761a270b32`
 - `handler.mjs` : `0106770858d667bb6abc3e59195195eb1c1eabccb354d6a9e5fb873001852689`
-- Ascendant : `f241eb130c9a2a8bb6c401faeed8fb442f648f515b10f5181e2ae8fbe7da5e71`
+- Ascendant : `bb8c07d8c09aeb0cdaf0673006c998dd1b838b5d0f256fa6b94cd9d81f65747e`
 - Synastrie : `3c741f526aca2a34bd303f1849cd5a546f193f273190cce45e6ce6009fee47f2`
 - Thème natal : `f2c037762f1eeee4565653172f3e9a55a129c23455ab55d40c3af413112a06e9`
 - Transits : `12357e48450a0633d748ef24b4642fe8c0f47776ca98fd1096c7a82e8fe5b437`

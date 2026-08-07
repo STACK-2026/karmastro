@@ -471,7 +471,7 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
       const geo = await geocode(place);
       placeStatus.textContent = `Localisation : ${geo.display}`;
       kmReadingData = { birthDate: date, birthTime: time, latitude: geo.lat, longitude: geo.lng };
-      const oracleLink = document.getElementById("km-oracle") as HTMLAnchorElement | null;
+      const oracleLink = document.getElementById("km-oracle");
       if (oracleLink) oracleLink.dataset.oracleProfile = JSON.stringify({ birthDate: date, birthTime: time, birthPlace: place });
 
       const [y, m, d] = date.split("-").map(Number);
