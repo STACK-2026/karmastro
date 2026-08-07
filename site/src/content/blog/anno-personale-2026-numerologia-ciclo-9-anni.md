@@ -1,5 +1,5 @@
 ---
-title: "Année personnelle 2026 : Calculez votre nombre et sens"
+title: "Anno personale 2026: calcola il tuo numero e scoprine il significato"
 description: "Ogni anno il tuo anno personale cambia e porta un'energia specifica. Come calcolare il tuo numero 2026 e allinearti con il ciclo di 9 anni."
 date: 2026-05-28T07:30:00+02:00
 author: "Pythia"
@@ -11,7 +11,6 @@ lang: "it"
 image: "https://images.unsplash.com/photo-1532680678473-a16f2cda8e43?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Calendario aperto con numeri luminosi"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, numerologa certificata scuola pitagorica"
 ---
 
 ## Indice

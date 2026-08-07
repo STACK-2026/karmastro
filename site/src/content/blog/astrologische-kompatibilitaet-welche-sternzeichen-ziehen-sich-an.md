@@ -1,5 +1,5 @@
 ---
-title: "Compatibilité astrologique : quels signes s'attirent ?"
+title: "Astrologische Kompatibilität: Welche Sternzeichen passen zusammen?"
 description: "Astrologische Kompatibilität in der Partnerschaft: welche Zeichen ziehen sich an, welche Paare funktionieren, wie liest man eine Synastrie."
 date: 2026-04-16T08:04:00+02:00
 author: "Selene"
@@ -11,7 +11,6 @@ lang: "de"
 image: "https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Paar betrachtet die Sterne"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, Senior-Astronom und Astrologe"
 ---
 
 ## Inhaltsverzeichnis

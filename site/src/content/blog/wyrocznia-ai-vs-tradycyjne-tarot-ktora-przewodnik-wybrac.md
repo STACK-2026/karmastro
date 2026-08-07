@@ -1,5 +1,5 @@
 ---
-title: "Oracle IA vs tarot traditionnel : lequel choisir en 2026 ?"
+title: "Wyrocznia AI czy tradycyjny tarot: co wybrać w 2026?"
 description: "Szczere porównanie między nowoczesną wyrocznią AI a klasycznym tarotem. Precyzja, personalizacja, dostępność."
 date: 2026-04-30T08:12:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "pl"
 image: "https://images.unsplash.com/photo-1528353518104-dbd48bee7bc4?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Karty tarota i interfejs wyroczni AI"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, starszy astronom i astrolog"
 ---
 
 ## Spis treści

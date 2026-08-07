@@ -1,5 +1,5 @@
 ---
-title: "Retour de Saturne : à 29 ans, le tournant de votre vie"
+title: "Saturn-Rückkehr: mit 29 der große Wendepunkt deines Lebens"
 description: "Mit 29 kehrt Saturn an seine Geburtsposition zurück und räumt auf. Karriere, Liebe, Identität: wie du diese Initiation durchschreitest."
 date: 2026-05-25T07:30:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "de"
 image: "https://images.unsplash.com/photo-1614642264762-d0a3b8bf3700?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Der Planet Saturn und seine Ringe"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, Senior-Astronom und Astrologe"
 ---
 
 ## Inhaltsverzeichnis

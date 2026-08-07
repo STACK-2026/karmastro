@@ -1,5 +1,5 @@
 ---
-title: "Numérologie : Pythagoricienne vs Chaldéenne, les différences"
+title: "Pythagorean vs Chaldean Numerology: Key Differences"
 description: "Comparison of the two great numerology schools: Pythagorean and Chaldean. Methods, origins, calculation differences, and which to choose."
 date: 2026-04-23T08:37:00+02:00
 author: "Pythia"
@@ -11,7 +11,6 @@ lang: "en"
 image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Ancient Babylonian and Greek tablets with numerical symbols"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, certified Pythagorean numerologist"
 ---
 
 ## Table of contents

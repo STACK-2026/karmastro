@@ -1,5 +1,5 @@
 ---
-title: "Rétrograde de Mercure : guide pour gérer sans paniquer"
+title: "Merkür Retrosu: Panik Yapmadan Atlatma Rehberi"
 description: "Yılda üç kez Merkür geri gidiyor gibi görünür ve herkes panik olur. Retronun gerçekten ne anlama geldiğini ve nasıl dost yapacağını öğren."
 date: 2026-05-21T07:30:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "tr"
 image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Parlak gezegenli yıldızlı gökyüzü"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, kidemli astronom ve astrolog"
 ---
 
 ## İçindekiler

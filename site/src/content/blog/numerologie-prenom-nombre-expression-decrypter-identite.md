@@ -10,7 +10,6 @@ draft: false
 image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Plume et lettres anciennes symbolisant la numérologie du prénom et le calcul du nombre d'expression"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, numerologue certifiee ecole pythagoricienne"
 ---
 
 ## Sommaire

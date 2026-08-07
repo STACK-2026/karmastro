@@ -1,5 +1,5 @@
 ---
-title: "Horoscope : comment avoir des prévisions fiables en 2026"
+title: "Oroscopo: come avere previsioni affidabili nel 2026"
 description: "Perché gli oroscopi classici deludono e come ottenere previsioni astrologiche affidabili basate sui veri transiti planetari."
 date: 2026-04-20T07:21:00+02:00
 author: "Sibylle"
@@ -11,7 +11,6 @@ lang: "it"
 image: "https://images.unsplash.com/photo-1507034589631-9433cc6bc453?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Oroscopo giornaliero con carte del cielo"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronomo e astrologo senior"
 ---
 
 ## Indice

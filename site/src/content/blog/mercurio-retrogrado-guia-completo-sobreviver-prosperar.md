@@ -1,5 +1,5 @@
 ---
-title: "Mercure rétrograde : Guide pratique pour gérer ses effets"
+title: "Mercúrio retrógrado: guia prático para lidar com os efeitos"
 description: "Três vezes por ano, Mercúrio parece recuar e toda a gente entra em pânico. O que significa verdadeiramente e como transformá-lo num aliado."
 date: 2026-05-21T07:30:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "pt"
 image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Céu estrelado com planeta brilhante, ilustração de Mercúrio retrógrado"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronomo e astrologo senior"
 ---
 
 ## Índice

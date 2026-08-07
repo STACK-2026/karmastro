@@ -1,5 +1,5 @@
 ---
-title: "Aspects astrologiques : Guide pour comprendre les 5 majeurs"
+title: "Aspekty astrologiczne: przewodnik po pięciu głównych aspektach"
 description: "Planety nigdy nie działają w izolacji. Dialogują, przeciwstawiają się, harmonizują przez aspekty. Kompletny przewodnik."
 date: 2026-06-04T07:30:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "pl"
 image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Mapa astrologiczna"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, starszy astronom i astrolog"
 ---
 
 ## Spis treści

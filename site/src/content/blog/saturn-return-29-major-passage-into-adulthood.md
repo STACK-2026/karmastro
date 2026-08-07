@@ -1,5 +1,5 @@
 ---
-title: "Retour de Saturne : gérez ce bouleversement à 29 ans"
+title: "Saturn Return: Navigating Your Big Shift at 29"
 description: "Around 29, Saturn returns to its natal position and clears the deck. Career, love, identity, values: how to walk through this initiation."
 date: 2026-05-25T07:30:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "en"
 image: "https://images.unsplash.com/photo-1614642264762-d0a3b8bf3700?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "The planet Saturn and its rings, symbol of the Saturn return and the passage into adulthood"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, senior astronomer and astrologer"
 ---
 
 ## Table of contents

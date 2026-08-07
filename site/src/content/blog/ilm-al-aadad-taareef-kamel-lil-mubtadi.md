@@ -11,7 +11,6 @@ lang: "ar"
 image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "أرقام قديمة"
 lastReviewed: "2026-04-11"
-reviewedBy: "بيثيا، عالمة أعداد معتمدة من المدرسة الفيثاغورية"
 ---
 
 ## المحتويات

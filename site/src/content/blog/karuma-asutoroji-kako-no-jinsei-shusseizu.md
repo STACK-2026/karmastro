@@ -11,7 +11,6 @@ lang: "ja"
 image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "神秘的な宇宙"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion、シニア天文学者兼占星術師"
 ---
 
 ## 目次

@@ -1,5 +1,5 @@
 ---
-title: "Karma and astrology: reading your past lives through your birth chart"
+title: "Karmic Astrology: Read Past Lives in Your Birth Chart"
 description: "Read karma and past lives in your birth chart: lunar nodes, karmic debts, Saturn and Pluto. A guide to your soul's trajectory."
 date: 2026-04-27T07:55:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "en"
 image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Mystical cosmos with nebulae and ancient karmic symbols"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, senior astronomer and astrologer"
 ---
 
 ## Table of contents

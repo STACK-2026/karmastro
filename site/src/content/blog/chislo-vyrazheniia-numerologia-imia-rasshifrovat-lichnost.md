@@ -1,5 +1,5 @@
 ---
-title: "Nombre d'expression : décryptez votre nom, votre destin"
+title: "Число выражения: что имя говорит о вашей личности"
 description: "Число выражения, рассчитанное из букв твоего имени, раскрывает твою публичную личность, таланты и миссию."
 date: 2026-06-08T07:30:00+02:00
 author: "Pythia"
@@ -11,7 +11,6 @@ lang: "ru"
 image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Перо и старые буквы"
 lastReviewed: "2026-04-11"
-reviewedBy: "Пифия, сертифицированный пифагорейский нумеролог"
 ---
 
 ## Оглавление

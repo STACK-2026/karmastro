@@ -1,5 +1,5 @@
 ---
-title: "Signe lunaire : votre moi émotionnel révélé"
+title: "Signo lunar: o que simboliza no teu mundo emocional"
 description: "O teu signo lunar é o guardião da tua vida interior. O que diz das tuas necessidades afetivas, da tua forma de amar e da segurança que precisas."
 date: 2026-05-14T08:00:00+02:00
 author: "Selene"
@@ -11,7 +11,6 @@ lang: "pt"
 image: "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Lua cheia sobre um mar calmo, símbolo da lua natal"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronomo e astrologo senior"
 ---
 
 ## Índice

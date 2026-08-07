@@ -1,5 +1,5 @@
 ---
-title: "Calculez votre chemin de vie : méthode pythagoricienne"
+title: "Calcula tu camino de vida: método pitagórico"
 description: "Calcula tu camino de vida en numerología pitagórica. Método paso a paso, ejemplos, números maestros 11/22/33 e interpretación."
 date: 2026-04-10T08:15:00+02:00
 author: "Pythia"
@@ -11,7 +11,6 @@ lang: "es"
 image: "https://images.unsplash.com/photo-1519638831568-d9897f54ed69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Cálculo numerológico con cifras y ecuaciones"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, numerologa certificada escuela pitagorica"
 ---
 
 ## Índice

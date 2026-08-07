@@ -11,7 +11,6 @@ lang: "ar"
 image: "https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "خريطة فلكية قديمة"
 lastReviewed: "2026-04-11"
-reviewedBy: "أوريون، عالم فلك ومنجم كبير"
 ---
 
 ## المحتويات

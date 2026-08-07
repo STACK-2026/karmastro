@@ -11,7 +11,6 @@ lang: "ar"
 image: "https://images.unsplash.com/photo-1601024445121-e5b82f020549?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "بطاقات تاروت قديمة وضوء رقمي أزرق يتفاعل"
 lastReviewed: "2026-04-14"
-reviewedBy: "إيزيس، مستشارة في علم الأعداد والتوجيه الروحي"
 ---
 
 ## الإجابة المباشرة

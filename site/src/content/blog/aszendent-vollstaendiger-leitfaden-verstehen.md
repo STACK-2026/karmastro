@@ -1,5 +1,5 @@
 ---
-title: "Ascendant : comprendre, calculer, révéler votre personnalité"
+title: "Aszendent verstehen, berechnen und deuten"
 description: "Dein Aszendent ist viel mehr als ein Nebenzeichen. Was er über dich verrät, wie du ihn berechnest und warum er alles in deinem Geburtshoroskop verändert."
 date: 2026-05-11T07:30:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "de"
 image: "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Sonnenaufgang am Horizont, Symbol des Aszendenten"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, Senior-Astronom und Astrologe"
 ---
 
 ## Inhaltsverzeichnis

@@ -11,7 +11,6 @@ lang: "ar"
 image: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "قلبان ضوئيان"
 lastReviewed: "2026-04-11"
-reviewedBy: "أوريون، عالم فلك ومنجم كبير"
 ---
 
 ## المحتويات

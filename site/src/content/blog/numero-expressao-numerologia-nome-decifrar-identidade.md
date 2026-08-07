@@ -1,5 +1,5 @@
 ---
-title: "Numéro d'expression : calculez et découvrez votre identité"
+title: "Número de expressão: calcula e interpreta o número do teu nome"
 description: "O número de expressão, calculado a partir das letras do teu nome, revela a tua personalidade pública, os teus talentos e a tua missão."
 date: 2026-06-08T07:30:00+02:00
 author: "Pythia"
@@ -11,7 +11,6 @@ lang: "pt"
 image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Pena e letras antigas simbolizando a numerologia do nome"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, numerologa certificada escola pitagorica"
 ---
 
 ## Índice

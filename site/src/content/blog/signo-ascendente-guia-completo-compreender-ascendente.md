@@ -1,5 +1,5 @@
 ---
-title: "Ascendant : Ce qu'il révèle, comment le calculer"
+title: "Ascendente: o que simboliza e como calculá-lo"
 description: "O teu ascendente é muito mais do que um signo secundário. O que revela de ti, como calculá-lo e porque muda tudo no teu mapa astral."
 date: 2026-05-11T07:30:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "pt"
 image: "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Amanhecer no horizonte, símbolo do signo ascendente em astrologia"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronomo e astrologo senior"
 ---
 
 ## Índice

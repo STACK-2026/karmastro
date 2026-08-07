@@ -1,5 +1,5 @@
 ---
-title: "Pluton en Verseau : tout change pour 20 ans"
+title: "Plutón en Acuario: 20 años que lo cambian todo"
 description: "Por primera vez desde 1798, Plutón entra en Acuario por 20 años. Lo que se juega a escala planetaria y cómo alinearte con la gran mutación."
 date: 2026-06-11T07:30:00+02:00
 author: "Sibylle"
@@ -11,7 +11,6 @@ lang: "es"
 image: "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Vista cósmica de Plutón y una nebulosa"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronomo y astrologo senior"
 ---
 
 ## Índice

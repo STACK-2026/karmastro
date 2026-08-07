@@ -1,5 +1,5 @@
 ---
-title: "Retour de Saturne : Le grand virage de vos 29 ans"
+title: "Возвращение Сатурна: большой поворот в 29 лет"
 description: "В 29 Сатурн возвращается на свою натальную позицию и делает уборку. Карьера, любовь, идентичность: как пройти эту инициацию."
 date: 2026-05-25T07:30:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "ru"
 image: "https://images.unsplash.com/photo-1614642264762-d0a3b8bf3700?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Планета Сатурн"
 lastReviewed: "2026-04-11"
-reviewedBy: "Орион, старший астроном и астролог"
 ---
 
 ## Оглавление

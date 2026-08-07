@@ -1,5 +1,5 @@
 ---
-title: "Horoscope fiable : Prévisions astrales personnalisées"
+title: "Ежедневный гороскоп: персональный астрологический прогноз"
 description: "Почему классические гороскопы разочаровывают и как получить надёжные астрологические прогнозы на основе реальных планетарных транзитов."
 date: 2026-04-20T07:21:00+02:00
 author: "Sibylle"
@@ -11,7 +11,6 @@ lang: "ru"
 image: "https://images.unsplash.com/photo-1507034589631-9433cc6bc453?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Ежедневный гороскоп"
 lastReviewed: "2026-04-11"
-reviewedBy: "Орион, старший астроном и астролог"
 ---
 
 ## Оглавление

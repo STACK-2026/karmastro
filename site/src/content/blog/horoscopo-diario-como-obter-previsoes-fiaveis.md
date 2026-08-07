@@ -1,5 +1,5 @@
 ---
-title: "Prévisions astrologiques fiables : stop aux faux horoscopes"
+title: "Horóscopo diário: como avaliar previsões astrológicas"
 description: "Porque os horóscopos clássicos desiludem e como obter previsões astrológicas fiáveis baseadas nos verdadeiros trânsitos planetários."
 date: 2026-04-20T07:21:00+02:00
 author: "Sibylle"
@@ -11,7 +11,6 @@ lang: "pt"
 image: "https://images.unsplash.com/photo-1507034589631-9433cc6bc453?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Horóscopo diário com cartas do céu"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronomo e astrologo senior"
 ---
 
 ## Índice

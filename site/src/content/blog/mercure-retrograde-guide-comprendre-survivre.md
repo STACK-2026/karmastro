@@ -10,7 +10,6 @@ draft: false
 image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Ciel étoilé avec planète lumineuse, illustration de Mercure rétrograde et de ses effets sur la communication"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 ## Sommaire

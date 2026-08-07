@@ -1,5 +1,5 @@
 ---
-title: "Aspects astrologiques : Décryptez leur signification"
+title: "Astrolojik Açılar: Anlamlarını Çözmenin Yolu"
 description: "Gezegenler asla izole olarak hareket etmez. Açılarla diyalog kurar, çatışır, uyum sağlar. Okumak için tam rehber."
 date: 2026-06-04T07:30:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "tr"
 image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Astrolojik harita geometrik çizgilerle"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, kidemli astronom ve astrolog"
 ---
 
 ## İçindekiler

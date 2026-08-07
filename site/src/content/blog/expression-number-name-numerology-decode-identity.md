@@ -1,5 +1,5 @@
 ---
-title: "Numéro d'expression : calculez et révélez votre identité"
+title: "Expression Number: Calculate and Reveal Your Identity"
 description: "Your first and last name are not random in numerology. The expression number, from the letters, reveals your public personality, talents, and mission."
 date: 2026-06-08T07:30:00+02:00
 author: "Pythia"
@@ -11,7 +11,6 @@ lang: "en"
 image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Quill and old letters symbolizing name numerology and the expression number"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, certified Pythagorean numerologist"
 ---
 
 ## Table of contents

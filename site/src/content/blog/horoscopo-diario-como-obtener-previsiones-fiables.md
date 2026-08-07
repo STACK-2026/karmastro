@@ -1,5 +1,5 @@
 ---
-title: "Horoscope fiable : vos prévisions astro personnalisées"
+title: "Horóscopo fiable: previsiones astrales personalizadas"
 description: "Por qué los horóscopos clásicos decepcionan y cómo obtener previsiones astrológicas fiables basadas en los verdaderos tránsitos planetarios."
 date: 2026-04-20T07:21:00+02:00
 author: "Sibylle"
@@ -11,7 +11,6 @@ lang: "es"
 image: "https://images.unsplash.com/photo-1507034589631-9433cc6bc453?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Horóscopo diario con cartas del cielo y símbolos zodiacales"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronomo y astrologo senior"
 ---
 
 ## Índice

@@ -1,5 +1,5 @@
 ---
-title: "12 maisons astrologiques : le guide complet de votre vie"
+title: "12 case astrologiche: la guida completa alla tua vita"
 description: "I pianeti dicono come funzioni, i segni in quale stile, e le case dove nella tua vita tutto questo si gioca. La guida per addomesticarle."
 date: 2026-06-01T07:30:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "it"
 image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Ruota zodiacale con le 12 case astrologiche"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronomo e astrologo senior"
 ---
 
 ## Indice

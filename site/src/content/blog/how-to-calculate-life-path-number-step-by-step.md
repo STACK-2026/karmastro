@@ -1,5 +1,5 @@
 ---
-title: "Chemin de vie : calcul pythagoricien étape par étape"
+title: "Life Path Number: How to Calculate It Step by Step"
 description: "Calculate your life path in Pythagorean numerology. Step-by-step method, examples, master numbers 11/22/33 and interpretation."
 date: 2026-04-10T08:15:00+02:00
 author: "Pythia"
@@ -11,7 +11,6 @@ lang: "en"
 image: "https://images.unsplash.com/photo-1519638831568-d9897f54ed69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Numerology calculation with numbers and equations on cosmic background"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, certified Pythagorean numerologist"
 ---
 
 ## Table of contents

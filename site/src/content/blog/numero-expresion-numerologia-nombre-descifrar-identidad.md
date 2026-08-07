@@ -1,5 +1,5 @@
 ---
-title: "Nombre d'expression : décryptez votre identité cachée"
+title: "Número de expresión: descifra tu identidad oculta"
 description: "El número de expresión, calculado a partir de las letras de tu nombre, revela tu personalidad pública, tus talentos y tu misión. La guía completa."
 date: 2026-06-08T07:30:00+02:00
 author: "Pythia"
@@ -11,7 +11,6 @@ lang: "es"
 image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Pluma y letras antiguas simbolizando la numerología del nombre"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, numerologa certificada escuela pitagorica"
 ---
 
 ## Índice

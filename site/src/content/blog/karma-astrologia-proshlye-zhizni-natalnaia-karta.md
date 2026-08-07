@@ -1,5 +1,5 @@
 ---
-title: "Karma Astrologie: Découvrez vos vies passées en carte natale"
+title: "Кармическая астрология: прошлые жизни в натальной карте"
 description: "Читай карму и прошлые жизни в натальной карте: лунные узлы, кармические долги, Сатурн и Плутон."
 date: 2026-04-27T07:55:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "ru"
 image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Мистический космос"
 lastReviewed: "2026-04-11"
-reviewedBy: "Орион, старший астроном и астролог"
 ---
 
 ## Оглавление

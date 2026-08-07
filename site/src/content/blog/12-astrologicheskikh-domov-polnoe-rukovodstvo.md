@@ -1,5 +1,5 @@
 ---
-title: "12 Maisons astrologiques : Guide des secteurs de vie"
+title: "12 астрологических домов: путеводитель по сферам жизни"
 description: "Планеты говорят как ты функционируешь, знаки в каком стиле, а дома где в твоей жизни всё это разыгрывается."
 date: 2026-06-01T07:30:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "ru"
 image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Зодиакальное колесо"
 lastReviewed: "2026-04-11"
-reviewedBy: "Орион, старший астроном и астролог"
 ---
 
 ## Оглавление

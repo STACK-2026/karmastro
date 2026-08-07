@@ -1,5 +1,5 @@
 ---
-title: "12 maisons astrologiques : Guide des 12 secteurs de vie"
+title: "12 casas astrológicas: guia dos 12 setores da vida"
 description: "Os planetas dizem como funcionas, os signos em que estilo, e as casas onde na tua vida tudo isso se joga. O guia para as domesticar uma a uma."
 date: 2026-06-01T07:30:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "pt"
 image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Roda zodiacal com as 12 casas astrológicas"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronomo e astrologo senior"
 ---
 
 ## Índice

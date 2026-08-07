@@ -1,5 +1,5 @@
 ---
-title: "Chemin de Vie 1 numérologie : Tout savoir sur votre profil"
+title: "Droga życia 1 w numerologii: wszystko o twoim profilu"
 description: "Wszystko o drodze życia 1 w numerologii pitagorejskiej: osobowość, misja, mocne strony, pułapki i kompatybilność."
 date: 2026-05-07T08:29:00+02:00
 author: "Pythia"
@@ -11,7 +11,6 @@ lang: "pl"
 image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Świetlista jedynka"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, certyfikowana numerolog szkoly pitagorejskiej"
 ---
 
 ## Spis treści

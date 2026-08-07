@@ -11,7 +11,6 @@ lang: "ru"
 image: "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Космический вид Плутона"
 lastReviewed: "2026-04-11"
-reviewedBy: "Орион, старший астроном и астролог"
 ---
 
 ## Оглавление

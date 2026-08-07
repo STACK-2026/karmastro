@@ -84,4 +84,4 @@ node "$APP_LINK_GUARD" "$CONTENT_DIR/blog" "$APP_ROOT/src/App.tsx" "$APP_ROOT/sr
 # Product-funnel contracts are cheap, deterministic source tests. Running them
 # in prebuild prevents a CTA label/destination regression from reaching the
 # public site.
-node --test "$HERE/test-blog-fragments.mjs" "$HERE/test-blog-contrast.mjs" "$HERE/test-app-content-links.mjs" "$HERE/test-cta-funnel.mjs" "$HERE/test-guard-fail-closed.mjs" "$HERE/test-oracle-acquisition-v1.mjs"
+node --test "$HERE/test-blog-fragments.mjs" "$HERE/test-blog-contrast.mjs" "$HERE/test-app-content-links.mjs" "$HERE/test-cta-funnel.mjs" "$HERE/test-guard-fail-closed.mjs" "$HERE/test-oracle-acquisition-v1.mjs" "$HERE/test-blog-defabrication-contract.mjs" "$HERE/test-seo-technical-contract.mjs" "$HERE/test-seo-geo-content-contract.mjs" "$HERE/test-title-language.mjs"

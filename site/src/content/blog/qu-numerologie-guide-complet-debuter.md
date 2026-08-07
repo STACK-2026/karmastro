@@ -10,7 +10,6 @@ draft: false
 image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Équations numérologiques pythagoriciennes sur fond cosmique violet"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, numerologue certifiee ecole pythagoricienne"
 ---
 
 ## Sommaire

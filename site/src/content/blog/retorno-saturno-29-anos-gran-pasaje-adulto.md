@@ -1,5 +1,5 @@
 ---
-title: "Retour de Saturne à 29 ans : comprendre et transformer"
+title: "Retorno de Saturno a los 29: entender y transformar"
 description: "A los 29, Saturno regresa a su posición natal y hace limpieza. Carrera, amor, identidad, valores: cómo atravesar esta iniciación."
 date: 2026-05-25T07:30:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "es"
 image: "https://images.unsplash.com/photo-1614642264762-d0a3b8bf3700?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "El planeta Saturno y sus anillos, símbolo del retorno de Saturno"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronomo y astrologo senior"
 ---
 
 ## Índice

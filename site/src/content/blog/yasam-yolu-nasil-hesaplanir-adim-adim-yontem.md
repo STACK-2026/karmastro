@@ -9,7 +9,6 @@ author: "Orion"
 category: "numeroloji"
 tags: ["yaşam yolu", "hesaplama", "numeroloji", "Pisagor", "master sayılar"]
 lastReviewed: "2026-04-14"
-reviewedBy: "Orion, sertifikalı Pisagor okulu numerologu"
 draft: false
 keywords: "yaşam yolu, yaşam yolu hesaplama, Pisagor numerolojisi, master sayılar, formül"
 ---

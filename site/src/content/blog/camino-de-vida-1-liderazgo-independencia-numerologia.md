@@ -1,5 +1,5 @@
 ---
-title: "Chemin de Vie 1 Numérologie : L'Essence du Leader Pionnier"
+title: "Camino de Vida 1 en numerología: el líder pionero"
 description: "Todo sobre el camino de vida 1 en numerología pitagórica: personalidad, misión, fortalezas, trampas y compatibilidades. Guía completa del pionero."
 date: 2026-05-07T08:29:00+02:00
 author: "Pythia"
@@ -11,7 +11,6 @@ lang: "es"
 image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Un número 1 luminoso sobre fondo cósmico"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, numerologa certificada escuela pitagorica"
 ---
 
 ## Índice

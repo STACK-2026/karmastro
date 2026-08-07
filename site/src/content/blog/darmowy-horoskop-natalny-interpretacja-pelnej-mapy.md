@@ -1,5 +1,5 @@
 ---
-title: "Horoscope natal gratuit : votre guide d'interprétation"
+title: "Darmowy horoskop natalny: przewodnik po interpretacji"
 description: "Pełny przewodnik czytania horoskopu natalnego za darmo : 7 kroków, 12 domów, 10 planet, 4 aspekty, przykład Chopina i odpowiedzi na częste pytania."
 date: 2026-04-13T07:48:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "pl"
 image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1200&h=630&fit=crop&q=80"
 imageAlt: "Mapa natalna i rozgwieżdżone niebo nad obserwatorium"
 lastReviewed: "2026-04-14"
-reviewedBy: "Orion, starszy astronom i astrolog"
 ---
 
 Horoskop natalny to migawka nieba w dokładnym momencie i miejscu twoich narodzin, obliczona z efemeryd i utrwalająca pozycje Słońca, Księżyca, ośmiu planet, Ascendentu i dwunastu domów w formie kołowego diagramu. Tradycja sięga Klaudiusza Ptolemeusza, aleksandryjskiego astronoma z drugiego wieku naszej ery, którego „Tetrabiblos" stanowi fundament astrologii zachodniej. Nowoczesne cyfrowe efemerydy (Swiss Ephemeris) osiągają precyzję milisekundy, a sondaż CBOS z 2026 roku pokazuje, że tylko 38 % Polaków zna swój [znak wschodzący](/pl/narzedzia/wschodzacy-znak), wobec 89 % znających znak słoneczny.

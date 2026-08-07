@@ -9,9 +9,7 @@ import { fullUrl } from "../../utils/config";
 import { jsonLdBreadcrumbs } from "../../utils/seo";
 import { AUTHORS, ALL_AUTHORS, authorSlugFor, type Author, type AuthorSlug } from "../../data/authors";
 
-// Generate the 5 persona pages at build time. One URL each, so every
-// article's author.url resolves to a real entity page that an LLM can
-// follow and cite ("according to Sibylle, astrologue hellénistique…").
+// Generate the five disclosed editorial persona pages at build time.
 export async function getStaticPaths() {
   return ALL_AUTHORS.map((a) => ({
     params: { slug: a.slug },
@@ -33,32 +31,15 @@ const articleCount = allPosts.filter(
 ).length;
 
 const pageUrl = fullUrl(`/guides/${author.slug}`);
-const personId = `${siteConfig.url}/guides/${author.slug}#person`;
 
-// Person + ProfilePage JSON-LD. ProfilePage is the schema Google
-// introduced in 2023 to promote author pages as first-class profiles, so
-// AI Overviews can attach article attributions to a real author entity.
-const personJsonLd = {
+const personaPageJsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfilePage",
+  "@type": "WebPage",
   "@id": pageUrl,
   url: pageUrl,
   name: `${author.name}, ${author.title}`,
   description: author.bioLead,
-  mainEntity: {
-    "@type": "Person",
-    "@id": personId,
-    name: author.name,
-    url: pageUrl,
-    description: author.bioLead,
-    jobTitle: author.jobTitle,
-    knowsAbout: author.knowsAbout,
-    worksFor: { "@id": `${siteConfig.url}/#organization` },
-    alumniOf: author.masters.slice(0, 3).map((m) => ({
-      "@type": "Organization",
-      name: `Tradition de ${m}`,
-    })),
-  },
+  isPartOf: { "@id": `${siteConfig.url}/#website` },
   breadcrumb: { "@id": `${pageUrl}#breadcrumbs` },
 };
 
@@ -68,7 +49,7 @@ const breadcrumbs = [
   { name: author.name, url: pageUrl },
 ];
 
-const jsonLd = [personJsonLd, jsonLdBreadcrumbs(breadcrumbs)];
+const jsonLd = [personaPageJsonLd, jsonLdBreadcrumbs(breadcrumbs)];
 
 const title = `${author.name}, ${author.title} | Karmastro`;
 const description = author.tagline;
@@ -109,6 +90,9 @@ const ac = ACCENT_CLASSES[author.accent] ?? ACCENT_CLASSES.amber;
         <p class="text-base text-white/80 leading-relaxed max-w-2xl" data-speakable>
           {author.tagline}
         </p>
+        <p class="mt-4 text-xs text-white/60 max-w-2xl">
+          Persona éditoriale de Karmastro. Cette signature ne représente pas une personne, une praticienne ou une salariée individuelle.
+        </p>
         <div class="flex flex-wrap gap-2 mt-5">
           {author.specialties.map((s) => (
             <span class={`text-[11px] uppercase tracking-wider rounded-full border px-3 py-1 ${ac.chip}`}>{s}</span>
@@ -116,18 +100,18 @@ const ac = ACCENT_CLASSES[author.accent] ?? ACCENT_CLASSES.amber;
         </div>
       </header>
 
-      {/* Biography : speakable for AI Overviews */}
+      {/* Editorial line disclosed for readers and search systems. */}
       <section class="mt-10 prose prose-invert max-w-none">
         <aside data-speakable class="not-prose rounded-xl border border-amber-300/20 bg-amber-300/5 p-4 mb-6 text-sm text-amber-100/90">
           <strong class="text-amber-200">En bref.</strong> {author.bioLead}
         </aside>
-        <h2>Parcours</h2>
+        <h2>Ligne éditoriale</h2>
         <p>{author.bioBody}</p>
 
         <h2>Méthode</h2>
         <p>{author.method}</p>
 
-        <h2>Maîtres et lignée</h2>
+        <h2>Références et inspirations</h2>
         <ul>
           {author.masters.map((m) => (
             <li>{m}</li>
@@ -135,10 +119,10 @@ const ac = ACCENT_CLASSES[author.accent] ?? ACCENT_CLASSES.amber;
         </ul>
       </section>
 
-      {/* Tools the author relies on , internal linking pattern for SEO */}
+      {/* Related tools for internal discovery. */}
       {author.tools.length > 0 && (
         <section class="mt-12">
-          <h2 class="text-xl font-serif mb-4">Outils que {author.name} utilise</h2>
+          <h2 class="text-xl font-serif mb-4">Outils associés à cette ligne éditoriale</h2>
           <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
             {author.tools.map((t) => (
               <a
@@ -180,16 +164,16 @@ const ac = ACCENT_CLASSES[author.accent] ?? ACCENT_CLASSES.amber;
         </section>
       )}
 
-      {/* Pont vers l'Oracle gratuit */}
+      {/* Bridge to the single Karmastro Oracle. */}
       <aside class="mt-12 not-prose">
         <a
-          href={`/oracle/?q=${encodeURIComponent(`J'aimerais une guidance personnalisée avec ${author.name}. Par où commencer ?`)}`}
+          href="/oracle/"
           class="km-oracle group flex items-center gap-5 p-6 rounded-2xl bg-gradient-to-br from-purple-400/[0.12] to-amber-300/[0.10] border border-amber-300/30 hover:border-amber-300/60 transition-all no-underline"
         >
           <div class="hidden sm:flex shrink-0 h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-purple-400/30 to-amber-300/30 text-2xl">✦</div>
           <div class="flex-1 min-w-0">
-            <p class="text-[11px] uppercase tracking-widest text-amber-300/80 mb-1">Une question pour {author.name} ?</p>
-            <p class="font-serif text-lg text-white leading-snug mb-1">Pose-la à l'Oracle, <span class="text-amber-300/90">gratuitement</span></p>
+            <p class="text-[11px] uppercase tracking-widest text-amber-300/80 mb-1">Une question personnelle ?</p>
+            <p class="font-serif text-lg text-white leading-snug mb-1">Pose-la à l'Oracle Karmastro, <span class="text-amber-300/90">gratuitement</span></p>
             <p class="text-sm text-white/65 leading-relaxed">Une guidance personnalisée en quelques secondes, 2 questions offertes par jour.</p>
           </div>
           <span class="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-400 to-amber-300 text-[#0f0a1e] font-semibold text-sm group-hover:gap-2.5 transition-all">

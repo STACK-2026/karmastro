@@ -1,5 +1,5 @@
 ---
-title: "Nombre d'expression : ce que votre nom révèle de vous"
+title: "Numero di espressione: cosa rivela il tuo nome"
 description: "Il numero di espressione, calcolato dalle lettere del tuo nome, rivela la tua personalità pubblica, i tuoi talenti e la tua missione."
 date: 2026-06-08T07:30:00+02:00
 author: "Pythia"
@@ -11,7 +11,6 @@ lang: "it"
 image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Piuma e lettere antiche"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, numerologa certificata scuola pitagorica"
 ---
 
 ## Indice

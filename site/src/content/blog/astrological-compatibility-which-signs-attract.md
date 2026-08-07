@@ -1,5 +1,5 @@
 ---
-title: "Compatibilité amoureuse : vos meilleurs signes"
+title: "Love Compatibility: Your Best Zodiac Matches"
 description: "Astrological compatibility in couples: which signs attract, which couples work, how to read a synastry. Complete guide with method and examples."
 date: 2026-04-16T08:04:00+02:00
 author: "Selene"
@@ -11,7 +11,6 @@ lang: "en"
 image: "https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Couple watching the stars under a starry night sky"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, senior astronomer and astrologer"
 ---
 
 ## Table of contents
@@ -233,4 +232,3 @@ This article draws on verifiable encyclopedic and scientific sources.
 - [Compatibility](/en/tools/compatibility)
 
 [Explore the full blog and all calculators](/en/blog/) · [Karmastro tools](/en/tools/)
-

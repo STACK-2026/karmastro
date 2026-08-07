@@ -1,5 +1,5 @@
 ---
-title: "Ascendant : Calculez et comprenez votre signe astrologique"
+title: "Yükselen Burç: Hesaplama ve Anlamını Keşfetme Rehberi"
 description: "Yükselen burcun ikincil bir işaretten çok daha fazlasıdır. Senin hakkında ne açıklıyor, nasıl hesaplanır ve neden doğum haritanda her şeyi değiştirir."
 date: 2026-05-11T07:30:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "tr"
 image: "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Ufukta gün doğumu"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, kidemli astronom ve astrolog"
 ---
 
 ## İçindekiler

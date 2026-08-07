@@ -1,5 +1,5 @@
 ---
-title: "Vrai horoscope : prévisions astro fiables et personnalisées"
+title: "Günlük Burç Yorumu: Kişiselleştirilmiş Astrolojik Tahminler"
 description: "Klasik burçların neden hayal kırıklığı yarattığını ve gerçek gezegen transitlerine dayalı güvenilir astrolojik tahminlerin nasıl alınacağını öğren."
 date: 2026-04-20T07:21:00+02:00
 author: "Sibylle"
@@ -11,7 +11,6 @@ lang: "tr"
 image: "https://images.unsplash.com/photo-1507034589631-9433cc6bc453?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Günlük burç"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, kidemli astronom ve astrolog"
 ---
 
 ## İçindekiler

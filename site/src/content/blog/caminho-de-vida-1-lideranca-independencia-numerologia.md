@@ -1,5 +1,5 @@
 ---
-title: "Chemin de vie 1 numérologie : Signification complète"
+title: "Caminho de vida 1 na numerologia: significado completo"
 description: "Tudo sobre o caminho de vida 1 em numerologia pitagórica: personalidade, missão, forças, armadilhas e compatibilidades. Guia completo do pioneiro."
 date: 2026-05-07T08:29:00+02:00
 author: "Pythia"
@@ -11,7 +11,6 @@ lang: "pt"
 image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Um número 1 luminoso sobre fundo cósmico"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, numerologa certificada escola pitagorica"
 ---
 
 ## Índice

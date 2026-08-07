@@ -1,5 +1,5 @@
 ---
-title: "Numérologie : Pythagoricienne ou Chaldéenne ? Comparatif"
+title: "Numerología pitagórica o caldea: comparativa"
 description: "Comparación de las dos grandes escuelas de numerología: pitagórica y caldea. Métodos, orígenes, diferencias de cálculo y cuál elegir."
 date: 2026-04-23T08:37:00+02:00
 author: "Pythia"
@@ -11,7 +11,6 @@ lang: "es"
 image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Antiguas tablillas babilónicas y griegas con símbolos numéricos"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, numerologa certificada escuela pitagorica"
 ---
 
 ## Índice

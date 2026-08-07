@@ -24,7 +24,6 @@ keywords: ["chemin de vie 7", "spiritualité", "numérologie", "recherche intér
 slug: "chemin-vie-spiritualite-recherche-interieure"
 draft: false
 lastReviewed: "2026-05-06"
-reviewedBy: "Expert numérologie Karmastro"
 image: "chemin-vie-7-spiritualite"
 imageAlt: "Symboles spirituels et chiffre 7 doré entouré d'étoiles représentant le chemin de vie numérologique"
 ---

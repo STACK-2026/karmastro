@@ -9,7 +9,6 @@ author: "Orion"
 category: "suumitsu"
 tags: ["ライフパス", "計算", "数秘術", "ピタゴラス", "マスターナンバー"]
 lastReviewed: "2026-04-14"
-reviewedBy: "オリオン、認定ピタゴラス数秘術師"
 draft: false
 keywords: "ライフパス, ライフパスナンバー 計算, ピタゴラス数秘術, マスターナンバー, 数秘術 公式"
 ---

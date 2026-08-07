@@ -1,5 +1,5 @@
 ---
-title: "Maisons astrologiques : guide complet des 12 domaines"
+title: "Die 12 astrologischen Häuser: der komplette Leitfaden"
 description: "Planeten sagen wie du funktionierst, Zeichen in welchem Stil, und Häuser wo in deinem Leben sich das alles abspielt. Der Leitfaden, sie zu zähmen."
 date: 2026-06-01T07:30:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "de"
 image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Tierkreisrad mit den 12 astrologischen Häusern"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, Senior-Astronom und Astrologe"
 ---
 
 ## Inhaltsverzeichnis

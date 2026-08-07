@@ -1,5 +1,5 @@
 ---
-title: "Numérologie : Définition, calcul et sens de vie 2026"
+title: "Numerologia: definicja, obliczenia i droga życia 2026"
 description: "Numerologia to symboliczny system przypisujacy znaczenie liczbom. Korzenie u Pitagorasa VI w p.n.e., obliczenie drogi zycia, 3 szkoly, granice i zastosowania."
 date: 2026-04-09T07:32:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "pl"
 image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&h=630&fit=crop&q=80"
 imageAlt: "Rownania pitagorejskie i symbolika liczb"
 lastReviewed: "2026-04-14"
-reviewedBy: "Orion, starszy astronom i certyfikowany numerolog szkoly pitagorejskiej"
 ---
 
 Numerologia, to symboliczny system przypisujacy znaczenie liczbom, ich kombinacjom oraz odpowiednikom literowo-liczbowym. Jej korzenie siegaja Pitagorasa z Samos (VI wiek p.n.e.) oraz sredniowiecznej zydowskiej Kabaly. Wedlug badania CBOS z 2022 roku okolo 31% Polakow przyznaje, ze kiedys korzystalo z form dywinacji, a zainteresowanie numerologia w polskim Internecie wzroslo o 38% w ciagu ostatnich piec lat wedlug Google Trends. Dyscyplina nie jest nauka, ale pozostaje popularnym narzedziem samopoznania.

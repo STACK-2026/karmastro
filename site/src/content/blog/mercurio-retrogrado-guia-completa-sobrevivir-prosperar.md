@@ -1,5 +1,5 @@
 ---
-title: "Mercure rétrograde : Signification, effets et comment gérer"
+title: "Mercurio retrógrado: significado, efectos y cómo gestionarlo"
 description: "Tres veces al año, Mercurio parece retroceder y todo el mundo entra en pánico. Qué significa realmente y cómo convertirlo en un aliado."
 date: 2026-05-21T07:30:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "es"
 image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Cielo estrellado con planeta brillante, ilustración de Mercurio retrógrado"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronomo y astrologo senior"
 ---
 
 ## Índice

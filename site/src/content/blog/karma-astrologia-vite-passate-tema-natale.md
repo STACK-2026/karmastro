@@ -1,5 +1,5 @@
 ---
-title: "Karma astrologie : lisez vos vies passées, thème natal"
+title: "Karma in astrologia: leggi le vite passate nel tema natale"
 description: "Leggi il karma e le vite passate nel tuo tema natale: nodi lunari, debiti karmici, Saturno e Plutone. Una guida alla traiettoria dell'anima."
 date: 2026-04-27T07:55:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "it"
 image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Cosmo mistico"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronomo e astrologo senior"
 ---
 
 ## Indice

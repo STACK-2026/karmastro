@@ -1,5 +1,5 @@
 ---
-title: "Chemin de vie 1 numérologie : Sens, défis, personnalité"
+title: "Life Path 1: Meaning, Traits and Challenges"
 description: "Everything about life path 1 in Pythagorean numerology: personality, mission, strengths, traps, and compatibilities. Complete pioneer guide."
 date: 2026-05-07T08:29:00+02:00
 author: "Pythia"
@@ -11,7 +11,6 @@ lang: "en"
 image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "A luminous number 1 on a starry cosmic background"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, certified Pythagorean numerologist"
 ---
 
 ## Table of contents

@@ -11,7 +11,6 @@ lang: "ar"
 image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "شبكة من الخطوط النجمية"
 lastReviewed: "2026-04-11"
-reviewedBy: "أوريون، عالم فلك ومنجم كبير"
 ---
 
 ## المحتويات

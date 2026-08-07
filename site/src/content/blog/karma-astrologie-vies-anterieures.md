@@ -10,7 +10,6 @@ draft: false
 image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Cosmos mystique avec nébuleuses et symboles karmiques anciens"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 ## Sommaire

@@ -13,14 +13,14 @@ imageAlt: "blue and black crab on brown rock"
 
 <aside data-speakable="true" class="tldr" style="background:#f5f5f5;padding:16px;border-left:4px solid #6b46c1;margin:20px 0;">
 <strong>En bref :</strong>
-La <strong>Lune en Scorpion</strong> en astrologie révèle une personnalité émotionnelle intense, secrète et transformatrice. Ce placement lunaire - considéré comme une "chute" en astrologie traditionnelle - amplifie tes peurs inconscientes mais aussi ton pouvoir de régénération. Découvre comment canaliser cette énergie pour une transformation karmique, avec des correspondances en numérologie et des conseils pratiques pour les hommes et femmes concernés.
+La <strong>Lune en Scorpion</strong> symbolise en astrologie une vie émotionnelle intense, secrète et transformatrice. Ce placement lunaire, considéré comme une "chute" dans la tradition, invite à réfléchir au rapport à la confiance, au contrôle et au changement. Découvre ses correspondances symboliques et des conseils pratiques, sans lecture déterministe.
 </aside>
 
-La **Lune en Scorpion** en astrologie indique une nature émotionnelle d'une profondeur exceptionnelle, caractérisée par des cycles de mort et de renaissance intérieure. Ce placement lunaire, présent chez environ 8% de la population mondiale, transforme radicalement la manière dont tu ressens, exprimes et gères tes émotions.
+La **Lune en Scorpion** est associée en astrologie à une vie émotionnelle intense, secrète et tournée vers la transformation. C'est une grille symbolique : ce placement ne détermine ni ta personnalité ni ta manière de gérer les émotions.
 
 ## Qu'est-ce que la Lune en Scorpion ? Définition et dignités astrologiques
 
-La **Lune en Scorpion** se forme quand notre satellite naturel transite dans le signe du Scorpion au moment de ta naissance. En astrologie traditionnelle héritée de [Ptolémée](https://fr.wikipedia.org/wiki/Claude_Ptol%C3%A9m%C3%A9e), ce positionnement constitue une **"chute"** de la Lune - une dignité planétaire défavorable où l'astre peine à exprimer harmonieusement son énergie.
+La **Lune en Scorpion** se forme quand notre satellite naturel transite dans le signe du Scorpion au moment de ta naissance. Dans le système traditionnel des dignités, ce positionnement constitue une **"chute"** de la Lune, terme astrologique qui ne doit pas être compris comme un jugement sur la personne.
 
 **Caractéristiques techniques précises :**
 
@@ -30,13 +30,12 @@ La **Lune en Scorpion** se forme quand notre satellite naturel transite dans le 
 | **Maîtrise traditionnelle** | Mars | Agressivité contrôlée, colère rentrée |
 | **Maîtrise moderne** | Pluton | Transformation, pouvoir, régénération |
 | **Durée du transit** | 2,5 jours/mois | Moments d'intensité émotionnelle cyclique |
-| **Degrés critiques** | 3°, 15°, 27° | Zones de tension maximale |
 
-**Pourquoi cette "chute" ?** Selon le *Tetrabiblos*, la Lune gouverne naturellement la nourriture, le réconfort et la sécurité émotionnelle. Le Scorpion, signe de destruction créatrice, crée un conflit fondamental : comment nourrir quand il faut détruire ? Cette tension génère l'intensité caractéristique des natifs Lune Scorpion.
+**Pourquoi cette "chute" ?** Dans la tradition des dignités astrologiques, la Lune est dite en chute en Scorpion, signe opposé au Taureau où elle est exaltée. Les astrologues interprètent cette position comme une tension symbolique entre besoin de sécurité et transformation, pas comme un diagnostic émotionnel.
 
-Karmastro utilise les [éphémérides Swiss Ephemeris](https://www.astro.com/swisseph/) pour calculer avec une précision d'arc-seconde ta position lunaire - [découvre ton placement exact](https://app.karmastro.com).
+Karmastro utilise les [éphémérides Swiss Ephemeris](https://www.astro.com/swisseph/) pour établir ta position lunaire à partir de tes données de naissance. Tu peux [découvrir ton placement](https://app.karmastro.com).
 
-L'astrologie hellénistique enseigne que cette chute n'est pas une malédiction, mais une **mission karmique** : apprendre à transformer la douleur en sagesse. Les natifs excellent souvent dans les métiers de **transformation et guérison**.
+Dans une lecture contemporaine, cette chute peut devenir une invitation à transformer une émotion difficile en compréhension. Elle ne définit pas une mission karmique obligatoire ni une aptitude professionnelle.
 
 ## Signification de la Lune en Scorpion : plongée dans les eaux de l'âme
 
@@ -46,26 +45,26 @@ Ta **Lune en Scorpion** crée un océan émotionnel à deux niveaux :
 - **Surface visible** : Calme olympien, contrôle apparent des situations
 - **Profondeurs cachées** : Tempêtes intérieures, investigations psychologiques permanentes
 
-Cette dualité explique pourquoi tu peux paraître détaché tout en ressentant des émotions d'une intensité volcanique. Une recherche de l'Université de Californie (2023) sur 1200 sujets révèle que les Lunes en Scorpion présentent 67% plus d'activité dans l'amygdale (centre des émotions) que la moyenne, tout en développant des mécanismes de contrôle supérieurs.
+Cette dualité décrit un archétype astrologique : paraître réservé tout en vivant les émotions avec intensité. Aucune étude neuroscientifique reconnue ne permet de relier l'activité de l'amygdale au signe lunaire.
 
 ### La mémoire émotionnelle sélective
 
 Ton système émotionnel fonctionne comme un **archiviste karmique** :
-- **Enregistrement total** : Chaque blessure, trahison ou déception reste gravée
-- **Oubli impossible** : Tu peux pardonner intellectuellement, jamais émotionnellement
-- **Réactivation cyclique** : Les blessures ressurgissent lors des transits de **Pluton**
+- **Mémoire des blessures** : tendance symbolique à retenir les trahisons ou déceptions
+- **Pardon progressif** : besoin possible de temps pour retrouver la confiance
+- **Réactivation** : certaines situations peuvent rappeler une blessure ancienne
 
-**Exemple concret** : Un ami oublie ton anniversaire. Réaction typique Lune Scorpion :
+**Scénario hypothétique** : un ami oublie ton anniversaire. Une réaction correspondant à l'archétype Lune Scorpion pourrait être :
 1. Pas de reproche immédiat (contrôle)
 2. Analyse obsessionnelle de tous les "signaux" de désamour
 3. Accumulation en "dossier noir" pour référence future
 4. Transformation de la déception en **pouvoir relationnel**
 
-Cette capacité de **stockage émotionnel** te donne une compréhension unique des motivations humaines, expliquant pourquoi beaucoup de psychologues ont ce placement.
+Ce scénario peut aider à repérer une tendance à ruminer ou à chercher des intentions cachées. Il ne permet pas de déduire une aptitude à la psychologie.
 
 ### Correspondances avec la numérologie chaldéenne
 
-En [numérologie](/blog/numerologie-pythagoricienne-chaldeenne-differences/), le Scorpion résonne avec le **nombre 4** (stabilité cachée sous l'intensité) et le **nombre 9** (transformation, fin de cycle). Si ton [chemin de vie](/blog/comment-calculer-chemin-de-vie-numerologie/) est 4 ou 9, cette combinaison amplifie ton potentiel de guérison personnelle et collective.
+Dans la grille éditoriale de Karmastro, le Scorpion résonne avec le **nombre 4** (stabilité sous l'intensité) et le **nombre 9** (transformation, fin de cycle). Si ton [chemin de vie](/blog/comment-calculer-chemin-de-vie-numerologie/) est 4 ou 9, tu peux utiliser ces thèmes comme pistes de réflexion, sans y voir un pouvoir de guérison garanti.
 
 La méthode de calcul Karmastro croise ton signe lunaire avec tes nombres personnels pour révéler tes **schémas karmiques émotionnels** - [teste ton profil complet](https://app.karmastro.com/onboarding?utm_source=karmastro.com&utm_medium=internal&utm_campaign=article_profile).
 
@@ -84,56 +83,56 @@ La méthode de calcul Karmastro croise ton signe lunaire avec tes nombres person
 
 ### Les trois défis majeurs à transformer
 
-**1. La jalousie pathologique**
-- **Origine karmique** : Blessures de trahison dans des vies antérieures (selon l'astrologie karmique)
+**1. La jalousie et le contrôle**
+- **Lecture symbolique** : peur de la trahison ou de la perte du lien
 - **Manifestation** : Besoin compulsif de vérifier téléphones, emails, réseaux sociaux
 - **Transformation** : Développer la **confiance en son magnétisme personnel** plutôt qu'en le contrôle d'autrui
 
 **2. L'auto-sabotage relationnel**
 - **Mécanisme** : Rupture préventive des relations par peur de souffrir
 - **Exemple** : Provoquer des disputes quand l'intimité devient "dangereuse"
-- **Solution** : Analyse des **nœuds lunaires** pour comprendre tes schémas répétitifs
+- **Piste** : observer les déclencheurs, dialoguer et, si la souffrance persiste, demander l'aide d'un professionnel qualifié
 
 **3. L'obsession du contrôle**
 - **Manifestation** : Manipulation subtile de l'environnement émotionnel
 - **Piège** : Épuisement par hyper-vigilance constante
-- **Guérison** : Apprentissage du lâcher-prise via les **transits de Neptune**
+- **Piste** : apprendre progressivement à tolérer l'incertitude et à poser des limites claires
 
 Ces défis ne sont pas des fatalités, mais des **invitations à l'évolution**. Karmastro propose des [exercices personnalisés](https://karmastro.com/oracle/) basés sur ton thème natal complet.
 
-Découvrons maintenant comment cette énergie se manifeste différemment selon ton genre...
+Découvrons maintenant comment cet archétype peut être lu dans différents contextes. Le genre ne détermine pas l'expression d'un placement astrologique.
 
 ## La Lune en Scorpion chez la femme : puissance, intuition et mystère
 
 ### L'archétype de la prêtresse moderne
 
-Les femmes avec une **Lune en Scorpion** incarnent naturellement l'archétype de la **Grande Prêtresse** du tarot : détentrices de secrets, initiatrices aux mystères de la psyché humaine. Cette position lunaire confère :
+Dans une lecture archétypale, une femme avec une **Lune en Scorpion** peut se reconnaître dans l'image de la **Grande Prêtresse** du tarot : intériorité, secret et attention aux non-dits. Ces traits ne sont ni naturels chez toutes les femmes concernées ni exclusifs à ce placement :
 
 - **Magnétisme naturel** : Attraction/répulsion simultanée qui fascine l'entourage
 - **Intuition aiguisée** : Capacité à "scanner" les motivations cachées en quelques minutes
-- **Résilience exceptionnelle** : Faculté de renaître après les pires épreuves
+- **Résilience** : capacité possible à tirer du sens d'une période difficile
 
-Une étude de l'INSEE (2024) révèle que 23% des femmes thérapeutes en France ont la Lune en Scorpion, contre 8% dans la population générale. Cette surreprésentation s'explique par leur compréhension instinctive des mécanismes psychologiques de défense.
+Ces qualités sont des associations astrologiques, pas des statistiques professionnelles. Aucune donnée de l'INSEE ne relie le métier de thérapeute au signe lunaire.
 
 ### Relations amoureuses : entre extase et possession
 
-**Patterns relationnels typiques :**
+**Dynamiques relationnelles possibles :**
 - **Attraction magnétique** initiale basée sur l'intensité plutôt que la compatibilité
 - **Fusion émotionnelle** recherchée au point de perdre ses limites personnelles  
 - **Tests de loyauté** constants pour vérifier l'engagement du partenaire
 - **Cycles de rapprochement/éloignement** selon les peurs d'abandon
 
-**Compatibilité optimale selon les Lunes :**
+**Affinités symboliques selon les Lunes :**
 
 | **Signe lunaire du partenaire** | **Compatibilité** | **Dynamique** |
 |--------------------------------|------------------|---------------|
-| **Taureau** | 95% | Opposition créatrice : stabilité vs intensité |
-| **Cancer** | 85% | Complicité émotionnelle, nourricière mutuelle |
-| **Poissons** | 80% | Fusion spirituelle, compréhension intuitive |
-| **Vierge** | 70% | Terre/Eau fertile, structure vs émotion |
-| **Capricorne** | 65% | Respect mutuel, ambitions partagées |
+| **Taureau** | Complémentaire | Opposition symbolique : stabilité et intensité |
+| **Cancer** | Fluide | Recherche de sécurité et profondeur émotionnelle |
+| **Poissons** | Intuitive | Sensibilité partagée, limites à préserver |
+| **Vierge** | Structurante | Organisation et expression émotionnelle à concilier |
+| **Capricorne** | Réservée | Respect possible, besoins affectifs à expliciter |
 
-**Conseil numérologique** : Si ton **nombre d'expression** est 8 (pouvoir) combiné à la Lune Scorpion, tu as un potentiel exceptionnel pour transformer tes relations en partenariats équilibrés et puissants.
+**Conseil numérologique** : si ton **nombre d'expression** est 8, tu peux explorer la manière dont tu partages le pouvoir et poses des limites dans tes relations.
 
 ### Maternité et transmission
 
@@ -142,7 +141,7 @@ La maternité avec une Lune en Scorpion suit des patterns spécifiques :
 - **Éducation protectrice** : Tendance à surprotéger les enfants des "dangers" du monde
 - **Transmission karmique** : Inconsciente répétition ou guérison consciente de ses propres blessures d'enfance
 
-Cette position favorise l'éducation d'enfants **psychiquement doués** ou particulièrement sensibles aux énergies. L'analyse de la [Maison 5](/blog/karma-astrologie-comprendre-vies-anterieures/) dans ton thème révèle comment optimiser cette transmission.
+Ce placement ne permet pas de déduire les aptitudes d'un enfant. La [Maison 5](/blog/karma-astrologie-comprendre-vies-anterieures/) peut néanmoins servir de support symbolique pour réfléchir à la créativité, à la parentalité et à la transmission.
 
 ## La Lune en Scorpion chez l'homme : intensité, loyauté et zones d'ombre
 
@@ -152,60 +151,58 @@ Les hommes porteurs de cette Lune vivent un **conflit intérieur permanent** ent
 - **L'injonction sociale masculine** : force, contrôle, invulnérabilité
 - **La nature scorpionienne** : hypersensibilité, besoin de fusion, peur de l'abandon
 
-Cette tension génère souvent des **mécanismes de compensation** :
-- **Surcontrôle professionnel** : Excellence dans des domaines exigeant pouvoir et précision
+Cette tension peut s'exprimer par des **mécanismes de compensation** :
+- **Surcontrôle professionnel** : recherche de maîtrise dans des domaines exigeant précision et responsabilité
 - **Sexualité intense** : Voie privilégiée d'expression émotionnelle
 - **Loyauté absolue** : Une fois la confiance accordée, dévouement sans limite
 
-Une recherche de l'Université de Paris (2025) sur 800 hommes révèle que 71% de ceux ayant une Lune en Scorpion ont vécu un traumatisme émotionnel avant 15 ans, souvent lié à une **figure féminine** (mère, sœur, première amoureuse).
+Il n'existe pas de donnée universitaire établie reliant ce placement à un traumatisme avant 15 ans ou à une figure féminine. Un vécu traumatique se comprend à partir de l'histoire de la personne, pas de son thème natal.
 
 ### Carrière et argent : le pouvoir comme protection
 
-**Secteurs d'excellence naturelle :**
+**Secteurs parfois associés à cet archétype :**
 - **Finance/Investissement** : Instinct pour détecter les opportunités cachées
 - **Psychologie/Thérapie** : Compréhension intuitive des mécanismes de défense
 - **Investigation** : Police, journalisme, recherche scientifique
 - **Gestion de crise** : Capacité à rester lucide dans l'urgence
 - **Secteur médical** : Chirurgie, urgences, soins palliatifs
 
-**Pattern financier typique** : Alternance entre périodes d'accumulation intense et de dépenses impulsives liées aux émotions. La **Maison 8** de ton thème natal révèle tes talents naturels pour gérer les ressources d'autrui.
+**Piste de lecture financière** : observer une éventuelle alternance entre besoin de contrôle et dépenses émotionnelles. La **Maison 8** peut compléter cette lecture symbolique, sans révéler un talent financier certain.
 
 ### Paternité transformatrice
 
-La paternité représente souvent un **tournant karmique majeur** pour les hommes Lune Scorpion :
+La paternité peut représenter un **tournant personnel important**, quel que soit le placement lunaire :
 - **Révélation de la vulnérabilité** : Amour inconditionnel qui brise leurs défenses
 - **Transmission consciente** : Volonté de donner ce qu'ils n'ont pas reçu
 - **Protection féroce** : Instinct paternel développé au maximum
 
-L'analyse des **transits de Saturne** lors de la naissance des enfants révèle souvent des prises de conscience profondes sur leurs propres schémas émotionnels.
+Les **transits de Saturne** peuvent être utilisés comme repères symboliques pour réfléchir aux responsabilités et aux schémas émotionnels, sans établir de causalité.
 
 ## Compatibilité amoureuse : avec quels signes lunaires créer une alchimie ?
 
-### Tableau de compatibilité détaillé (en pourcentages)
+### Tableau de compatibilité symbolique
 
-| **Ton partenaire** | **% Harmonie** | **Forces de l'union** | **Défis à surmonter** |
+| **Ton partenaire** | **Dynamique possible** | **Forces de l'union** | **Défis à surmonter** |
 |-------------------|----------------|----------------------|----------------------|
-| **Lune Scorpion** | 85% | Compréhension mutuelle totale, intensité partagée | Risque de fusion toxique, guerres de pouvoir |
-| **Lune Taureau** | 92% | Complémentarité parfaite : stabilité vs transformation | Rythmes différents (Taureau lent, Scorpion intense) |
-| **Lune Cancer** | 88% | Nourriture émotionnelle mutuelle, protection | Susceptibilité excessive, cycles de bouderies |
-| **Lune Poissons** | 78% | Alchimie spirituelle, créativité partagée | Réalité fuyante, absence de structure |
-| **Lune Vierge** | 72% | Terre fertile pour projets concrets | Critique vs intensité, mental vs émotionnel |
-| **Lune Capricorne** | 70% | Ambitions communes, respect mutuel | Froideur apparente vs besoin de fusion |
-| **Lune Lion** | 35% | Passion physique, magnétisme mutuel | Conflit de pouvoir, ego surdimensionnés |
-| **Lune Verseau** | 25% | Fascination intellectuelle initiale | Incompréhension fondamentale, rythmes opposés |
+| **Lune Scorpion** | Très intense | Compréhension des besoins de profondeur | Risque de fusion et rapports de pouvoir |
+| **Lune Taureau** | Complémentaire | Stabilité et capacité de transformation | Rythmes émotionnels différents |
+| **Lune Cancer** | Protectrice | Soutien et sensibilité partagés | Susceptibilité et repli |
+| **Lune Poissons** | Intuitive | Créativité et écoute émotionnelle | Limites à clarifier |
+| **Lune Vierge** | Structurante | Projets concrets et sens du détail | Critique et expression émotionnelle à concilier |
+| **Lune Capricorne** | Réservée | Ambitions communes et loyauté | Besoins affectifs à verbaliser |
+| **Lune Lion** | Passionnée | Chaleur et intensité | Reconnaissance et contrôle à équilibrer |
+| **Lune Verseau** | Contrastée | Curiosité mutuelle | Besoin d'espace et besoin de fusion à négocier |
 
 ### Cas spéciaux : les relations karmiques
 
-**Double Lune Scorpion** : Cette configuration peut créer soit :
-- **L'union sacrée** : Compréhension totale, croissance spirituelle mutuelle
-- **L'enfer émotionnel** : Projections mutuelles, spirale de jalousie destructrice
+**Double Lune Scorpion** : Cette configuration peut symboliser une intensité partagée. Selon les personnes, elle peut soutenir une compréhension profonde ou accentuer les projections et les rapports de pouvoir.
 
 Le facteur déterminant réside dans les **aspects entre vos Lunes** :
 - **Conjonction** (0°) : Fusion intense, risque de perte d'identité
 - **Trigone** (120°) : Harmonie naturelle, soutien mutuel
 - **Carré** (90°) : Tension créatrice ou destructrice selon la maturité
 
-Karmastro propose une [analyse de synastrie complète](https://app.karmastro.com/synastrie) croisant positions astrologiques et compatibilités numérologiques pour une vision 360° de votre relation.
+Karmastro propose une [analyse de synastrie](https://app.karmastro.com/synastrie) croisant positions astrologiques et correspondances numérologiques. Cette lecture ne remplace pas la connaissance réelle du couple.
 
 ## Lune en Scorpion & Numérologie : révèle ton contrat d'âme
 
@@ -215,7 +212,7 @@ La **Lune en Scorpion** résonne avec plusieurs nombres selon les traditions :
 
 | **Système** | **Nombre** | **Signification** | **Application** |
 |------------|------------|-------------------|----------------|
-| **Pythagoricien** | 9 | Transformation, sagesse universelle | Chemin de vie 9 : mission de guérison collective |
+| **Pythagoricien** | 9 | Transformation, sagesse universelle | Chemin de vie 9 : thème du service collectif |
 | **Chaldéen** | 4 | Fondations cachées, structure interne | Nombre du nom 4 : stabilité sous l'intensité |
 | **Kabbalistique** | 18/9 | Épreuve initiatique, pouvoir spirituel | Nombre de destinée 18 : maîtrise des énergies |
 | **Tarot** | XIII (Mort) | Transformation nécessaire, renaissance | Arcane de naissance 13 : cycles de mort/renaissance |
@@ -232,9 +229,9 @@ La **Lune en Scorpion** résonne avec plusieurs nombres selon les traditions :
 - Née le 15/11/1992
 - Nombre de naissance : 15 → 1+5 = 6 (nourricière)
 - Chemin de vie : 1+5+1+1+1+9+9+2 = 29 → 2+9 = 11 (maîtresse spirituelle)
-- **Interprétation** : Lune Scorpion + Chemin 11 = Mission de thérapeute ou guide spirituel
+- **Interprétation symbolique** : Lune Scorpion + Chemin 11 peut inviter à explorer l'écoute, la transmission ou l'accompagnement
 
-Cette combinaison révèle un **contrat d'âme** axé sur la guérison des blessures émotionnelles collectives. Les nombres 6 et 11 avec la Lune Scorpion indiquent souvent des dons de [magnétisme thérapeutique](/blog/comment-calculer-chemin-vie-numerologie/).
+Cette combinaison peut être lue comme un **thème d'âme** tourné vers l'écoute et la transformation. Elle ne révèle ni profession, ni don thérapeutique, ni capacité de guérison.
 
 ### Integration numérologie-astrologie
 
@@ -243,7 +240,7 @@ Karmastro a développé une méthode unique croisant :
 - **Tes placements astrologiques** (Lune, mais aussi Soleil, Ascendant)  
 - **Tes cycles actuels** (année personnelle numérologique + transits astrologiques)
 
-Cette synthèse révèle tes **périodes optimales** pour :
+Cette synthèse propose des **périodes de réflexion** pour :
 - Entamer une thérapie personnelle
 - Développer tes dons intuitifs
 - Transformer tes schémas relationnels
@@ -279,7 +276,7 @@ Technique spécifique aux Lunes Scorpion, basée sur l'énergie de Pluton :
 2. **Minutes 4-7** : Imagination de cette lumière dissolvant tes peurs couche par couche
 3. **Minutes 8-11** : Affirmation répétée : "Je transforme ma douleur en sagesse"
 
-**Périodes optimales** : Pendant les **transits de Pluton** ou lors de la Nouvelle Lune en Scorpion (octobre-novembre).
+**Repère symbolique** : tu peux pratiquer pendant un transit de Pluton ou une Nouvelle Lune en Scorpion si ce calendrier t'aide à maintenir une routine.
 
 **3. Rituel de Transmutation des Émotions**
 
@@ -319,13 +316,13 @@ Technique spécifique aux Lunes Scorpion, basée sur l'énergie de Pluton :
 - Lecture recommandée : "L'Homme et ses Symboles" de Carl Jung
 
 **Phase 2 (mois 4-6) : Transformation**
-- Thérapie analytique ou EMDR (excellente pour les Lunes Scorpion)
+- Thérapie analytique ou EMDR si un professionnel de santé formé l'indique pour ta situation, indépendamment de ton signe lunaire
 - Rituels mensuels de transmutation
 - **Analyse de tes nœuds lunaires** avec Karmastro
 
 **Phase 3 (mois 7-9) : Intégration**
 - Pratique d'une discipline corporelle intense (arts martiaux, danse, yoga tantrique)
-- Développement de tes **dons psychiques naturels**
+- Développement de ton écoute et de ton intuition, avec vérification des faits
 - Service aux autres : bénévolat dans l'accompagnement
 
 **Phase 4 (mois 10-12) : Rayonnement**
@@ -339,13 +336,13 @@ Ce programme s'adapte à tes [cycles personnels numérologiques](https://app.kar
 
 ### La Lune en Scorpion est-elle vraiment un placement difficile ?
 
-La **Lune en Scorpion** n'est pas "difficile" mais **exigeante**. En astrologie hellénistique, la notion de "chute" indique simplement que l'énergie lunaire (douceur, réconfort) s'exprime différemment dans ce signe d'intensité. Cette position offre des **dons exceptionnels** :
+La **Lune en Scorpion** n'est pas nécessairement "difficile". Dans la tradition astrologique, la notion de "chute" indique que l'énergie lunaire s'exprime autrement dans ce signe d'intensité. Cette position est associée à des ressources possibles :
 
-- **Résilience hors norme** : Capacité à surmonter des épreuves qui briseraient d'autres
+- **Résilience** : capacité à traverser et mettre en sens certaines épreuves
 - **Intuition développée** : Perception subtile des motivations cachées
-- **Pouvoir de guérison** : Don naturel pour accompagner les transformations d'autrui
+- **Écoute des transformations** : intérêt possible pour les périodes de changement d'autrui
 
-*Karmastro* considère ce placement comme une **opportunité d'évolution accélérée** - [découvre tes atouts cachés](https://app.karmastro.com/forces-cachees).
+*Karmastro* considère ce placement comme un support d'introspection. Il ne promet pas une évolution plus rapide que pour un autre placement.
 
 ### Comment calculer précisément ma position lunaire ?
 
@@ -356,7 +353,7 @@ Pour connaître avec certitude ta **Lune en Scorpion** :
 2. **Heure précise** (l'idéal : certificat de naissance)
 3. **Lieu de naissance** (ville et pays)
 
-**Pourquoi cette précision ?** La Lune se déplace de 12-15° par jour. Une différence de quelques heures peut changer ton signe lunaire. Par exemple, né le 15 novembre à 2h du matin = Lune Scorpion, mais à 23h = Lune Sagittaire.
+**Pourquoi cette précision ?** La Lune parcourt environ 12 à 15 degrés par jour. Lorsqu'elle change de signe le jour de ta naissance, une différence de quelques heures peut donc modifier le résultat.
 
 **Calculateur recommandé :** [Thème natal Karmastro](https://app.karmastro.com/theme-natal) utilise les éphémérides Swiss Ephemeris, référence des astronomes professionnels.
 
@@ -382,11 +379,11 @@ Les métiers qui permettent d'exprimer positivement l'intensité de ta **Lune en
 - Chirurgien, urgentiste
 - **Astrologue-numérologue** (comme chez Karmastro !)
 
-Une étude de l'APEC (2025) révèle une surreprésentation de 34% des Lunes Scorpion dans les métiers "d'aide à la transformation".
+Cette liste est une correspondance astrologique, pas une orientation professionnelle validée. L'APEC ne publie pas de statistiques sur les signes lunaires dans ces métiers.
 
 ### Comment gérer ma jalousie avec cette Lune ?
 
-La **jalousie** est le défi #1 des Lunes Scorpion. Voici une méthode en 4 étapes testée par nos utilisateurs :
+La **jalousie** fait partie des défis traditionnellement associés à la Lune en Scorpion. Voici une méthode générale en 4 étapes :
 
 **1. Reconnaissance sans jugement**
 - "Je ressens de la jalousie" (pas "je suis jaloux/se")
@@ -397,7 +394,7 @@ La **jalousie** est le défi #1 des Lunes Scorpion. Voici une méthode en 4 éta
 - Est-ce un fait réel ou une interprétation de ma part ?
 
 **3. Identification de la peur racine**
-- La jalousie cache toujours une peur : abandon, trahison, dévalorisation
+- La jalousie peut cacher une peur d'abandon, de trahison ou de dévalorisation
 - Question clé : "De quoi ai-je peur exactement ?"
 
 **4. Transformation en action constructive**
@@ -422,11 +419,11 @@ Tu ne peux pas **changer** ta position lunaire (fixée à la naissance), mais tu
 - **Psychothérapie** : Guérir les blessures d'enfance qui alimentent les peurs
 - **Pratiques spirituelles** : Méditation, rituels, développement de l'intuition
 
-**Témoignage** : Sarah, 34 ans, Lune Scorpion - "Avant Karmastro, ma jalousie détruisait mes relations. Maintenant, elle me sert d'alerte précoce pour communiquer mes besoins. J'en ai fait ma force !"
+**Scénario hypothétique** : une personne peut apprendre à traiter sa jalousie comme un signal à examiner, puis communiquer ses besoins sans présenter son interprétation comme un fait.
 
 ### Dans quelles conditions la Lune Scorpion devient-elle un atout ?
 
-Ta **Lune en Scorpion** devient un **super-pouvoir** quand tu apprends à :
+Ta **Lune en Scorpion** peut devenir un repère utile quand tu apprends à :
 
 **1. Canaliser l'intensité vers un but constructif**
 - Art, création : Expression de tes profondeurs émotionnelles
@@ -438,25 +435,25 @@ Ta **Lune en Scorpion** devient un **super-pouvoir** quand tu apprends à :
 - Moments de transformation intense : Occasions d'évolution
 - Phases de renaissance : Émergence d'une version améliorée de toi
 
-**3. Développer tes dons psychiques**
-- **Clairvoyance émotionnelle** : Tu "sens" les motivations d'autrui
-- **Magnétisme naturel** : Capacité d'attraction/guérison
-- **Résistance aux manipulations** : Détection des faux-semblants
+**3. Développer ton attention relationnelle**
+- **Perception émotionnelle** : écouter ton intuition puis la confronter aux faits
+- **Présence** : cultiver une écoute stable sans prétendre guérir l'autre
+- **Esprit critique** : repérer les incohérences sans supposer connaître les motivations d'autrui
 
-La **combinaison optimale** : Lune Scorpion + développement spirituel + service aux autres = Guérisseur/se d'exception.
+Une combinaison possible consiste à relier introspection, développement spirituel et service aux autres, sans s'attribuer une capacité thérapeutique non qualifiée.
 
 *Karmastro* t'accompagne dans cette transformation avec des [outils personnalisés](https://app.karmastro.com/transformation-lunaire) selon ton thème natal complet.*
 
 ## Conclusion : embrasse ta mission de transformation
 
-Ta **Lune en Scorpion** n'est pas une malédiction astrologique, mais une **invitation cosmique** à devenir un agent de transformation dans ce monde. Cette position lunaire, présente chez les plus grands thérapeutes, artistes et visionnaires de l'histoire, te confère des dons uniques :
+Ta **Lune en Scorpion** n'est pas une malédiction astrologique, mais une **invitation symbolique** à explorer le changement et la profondeur émotionnelle. Elle peut être associée aux ressources suivantes :
 
 - **Compréhension profonde** de la psyché humaine
-- **Résilience exceptionnelle** face aux épreuves  
-- **Pouvoir de régénération** personnel et collectif
-- **Magnétisme naturel** pour attirer ce dont tu as besoin
+- **Résilience** face aux épreuves
+- **Capacité de renouvellement** personnel
+- **Présence intense** dans les relations
 
-**Ton défi karmique** : Transformer tes blessures en sagesse, tes peurs en forces, ton intensité en service d'amour. Chaque émotion difficile que tu transcendes éclaire le chemin pour d'autres âmes en quête de guérison.
+**Ton défi symbolique** : transformer tes blessures en compréhension, tes peurs en actions plus justes et ton intensité en présence relationnelle.
 
 **Tes prochaines étapes :**
 
@@ -465,7 +462,7 @@ Ta **Lune en Scorpion** n'est pas une malédiction astrologique, mais une **invi
 3. **[Consulte l'Oracle Karmastro](https://karmastro.com/oracle/)** pour des conseils personnalisés sur ta transformation émotionnelle
 4. ****Rejoins notre communauté**** d'âmes en évolution pour partager tes expériences
 
-Rappelle-toi : en astrologie karmique, la "chute" de la Lune n'indique pas un échec, mais une **descente volontaire dans la matière** pour mieux servir l'évolution collective. Comme l'enseigne la tradition hermétique : "Ce qui est en bas est comme ce qui est en haut" - tes profondeurs émotionnelles sont ton accès aux hauteurs spirituelles.
+Rappelle-toi : dans une lecture karmique, la "chute" de la Lune n'indique pas un échec. Elle sert de métaphore pour explorer les émotions profondes, sans raconter comme un fait une origine spirituelle ou une mission collective.
 
 **Ta Lune en Scorpion fait de toi un alchimiste des temps modernes : celui qui transforme le plomb de la souffrance en or de la sagesse.**
 
@@ -482,20 +479,8 @@ Rappelle-toi : en astrologie karmique, la "chute" de la Lune n'indique pas un é
 3. Jung, Carl Gustav. *L'Homme et ses symboles* (1964). Théorie de l'ombre et du processus d'individuation, particulièrement applicable aux Lunes Scorpion.
    → [Édition française (Gallimard)](https://www.gallimard.fr/Catalogue/GALLIMARD/Folio/Folio-essais/L-Homme-et-ses-symboles)
 
-4. Université de Californie, Département de Psychologie. "Astrological Placements and Emotional Processing Patterns" (2023). Étude sur 1200 sujets corrélant positions lunaires et activité de l'amygdale.
-   → [Publication (Journal of Consciousness Studies)](https://www.ingentaconnect.com/content/imp/jcs)
-
-5. INSEE. "Enquête sur les professions de la relation d'aide en France" (2024). Statistiques révélant la surreprésentation des Lunes Scorpion chez les thérapeutes.
-   → [Données complètes (INSEE.fr)](https://www.insee.fr/)
-
-6. Swiss Ephemeris - Astrodienst. Base de données astronomique utilisée par les astrologues professionnels pour le calcul précis des positions planétaires.
+4. Swiss Ephemeris - Astrodienst. Éphémérides utilisées pour calculer les positions planétaires.
    → [Documentation technique](https://www.astro.com/swisseph/)
-
-7. APEC (Association pour l'emploi des cadres). "Les métiers de l'accompagnement psychologique" (2025). Analyse sectorielle des professions thérapeutiques en France.
-   → [Rapport complet](https://www.apec.fr/)
-
-8. Université de Paris, Faculté de Psychologie. "Corrélations entre traumatismes précoces et configurations astrologiques" (2025). Recherche sur 800 hommes analysant liens entre Lune en Scorpion et vécu infantile.
-   → [Prépublication (HAL Archives)](https://hal.science/)
 
 ---
 
@@ -504,4 +489,3 @@ Rappelle-toi : en astrologie karmique, la "chute" de la Lune n'indique pas un é
 - [Thème natal gratuit : interpréter sa carte du ciel](https://karmastro.com/blog/theme-natal-gratuit-interpreter-carte-ciel)
 - [Signe astrologique Bélier : personnalité et compatibilité](https://karmastro.com/blog/signe-astrologique-belier-personnalite-compatibilite)
 - [Horoscope du jour : prévisions astrologiques fiables](https://karmastro.com/blog/horoscope-jour-previsions-astrologiques-fiables)
-

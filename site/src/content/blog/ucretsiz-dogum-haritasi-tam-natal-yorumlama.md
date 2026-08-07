@@ -11,7 +11,6 @@ lang: "tr"
 image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1200&h=630&fit=crop&q=80"
 imageAlt: "Doğum haritası ve gözlemevinin üzerindeki yıldızlı gökyüzü"
 lastReviewed: "2026-04-14"
-reviewedBy: "Orion, kıdemli astronom ve astrolog"
 ---
 
 Doğum haritası, doğduğun anın ve yerin gökyüzünün anlık bir fotoğrafıdır; efemerislerden hesaplanır ve Güneş, Ay, sekiz gezegen, Yükselen ve on iki evin konumlarını dairesel bir diyagramda sabitler. Gelenek, milattan sonra ikinci yüzyılın İskenderiyeli astronomu Klaudios Ptolemaios'a kadar uzanır ; „Tetrabiblos" batı astrolojisinin temelini atmıştır. Modern dijital efemerisler (Swiss Ephemeris) milisaniye hassasiyetine ulaşır ve 2026 YouGov Türkiye anketi, Türklerin yalnızca % 36'sının [yükselen burcunu](/tr/araclar/yukselen-burc) bildiğini, buna karşın % 87'sinin güneş burcunu bildiğini göstermektedir.

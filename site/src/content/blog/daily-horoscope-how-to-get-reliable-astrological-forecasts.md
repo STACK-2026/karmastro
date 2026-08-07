@@ -1,5 +1,5 @@
 ---
-title: "Horoscope fiable : comment avoir des prévisions précises ?"
+title: "Daily Horoscope: A Guide to Personalized Astrological Forecasts"
 description: "Why classic horoscopes disappoint and how to get reliable astrological forecasts based on real planetary transits."
 date: 2026-04-20T07:21:00+02:00
 author: "Sibylle"
@@ -11,7 +11,6 @@ lang: "en"
 image: "https://images.unsplash.com/photo-1507034589631-9433cc6bc453?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Daily horoscope with celestial charts and zodiac symbols"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, senior astronomer and astrologer"
 ---
 
 ## Table of contents
@@ -269,4 +268,3 @@ This article draws on verifiable encyclopedic and scientific sources.
 - [Compatibility](/en/tools/compatibility)
 
 [Explore the full blog and all calculators](/en/blog/) · [Karmastro tools](/en/tools/)
-

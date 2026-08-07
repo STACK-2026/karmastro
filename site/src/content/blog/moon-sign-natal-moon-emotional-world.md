@@ -1,5 +1,5 @@
 ---
-title: "Signe lunaire : votre Lune natale révèle vos émotions"
+title: "Moon Sign: What Your Natal Moon Reveals About Emotions"
 description: "Your moon sign is the keeper of your inner life. What it says about your emotional needs, the way you love, and the kind of safety you actually need."
 date: 2026-05-14T08:00:00+02:00
 author: "Selene"
@@ -11,7 +11,6 @@ lang: "en"
 image: "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Full moon over a calm sea, symbol of the natal moon and the inner emotional world"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, senior astronomer and astrologer"
 ---
 
 ## Table of contents

@@ -1,5 +1,5 @@
 ---
-title: "Année personnelle 2026 : Calcul, signification, cycle"
+title: "Personal Year 2026: Meaning and How to Calculate It"
 description: "Each year, your personal year changes and brings a specific energy. How to calculate your 2026 number, what it means, and how to align with the 9-year cycle."
 date: 2026-05-28T07:30:00+02:00
 author: "Pythia"
@@ -11,7 +11,6 @@ lang: "en"
 image: "https://images.unsplash.com/photo-1532680678473-a16f2cda8e43?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Open calendar and luminous numbers symbolizing the calculation of the personal year in numerology"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, certified Pythagorean numerologist"
 ---
 
 ## Table of contents

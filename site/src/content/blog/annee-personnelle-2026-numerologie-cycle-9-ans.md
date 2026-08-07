@@ -10,7 +10,6 @@ draft: false
 image: "https://images.unsplash.com/photo-1532680678473-a16f2cda8e43?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Calendrier ouvert et chiffres lumineux symbolisant le calcul de l'année personnelle en numérologie"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, astronome et astrologue senior"
 ---
 
 ## Sommaire

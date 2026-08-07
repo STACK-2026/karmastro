@@ -1,5 +1,5 @@
 ---
-title: "Aspects astrologiques : Comprendre & interpréter"
+title: "Аспекты в астрологии: как понять и толковать"
 description: "Планеты никогда не действуют изолированно. Они диалогируют, противопоставляются, гармонизируются через аспекты."
 date: 2026-06-04T07:30:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "ru"
 image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Астрологическая карта"
 lastReviewed: "2026-04-11"
-reviewedBy: "Орион, старший астроном и астролог"
 ---
 
 ## Оглавление

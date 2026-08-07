@@ -1,5 +1,5 @@
 ---
-title: "Année personnelle 2026 : Calcul, signification & cycle"
+title: "Persönliches Jahr 2026: Berechnung, Bedeutung und Zyklus"
 description: "Jedes Jahr ändert sich dein persönliches Jahr und bringt eine spezifische Energie. Wie du deine Zahl 2026 berechnest und dich ausrichtest."
 date: 2026-05-28T07:30:00+02:00
 author: "Pythia"
@@ -11,7 +11,6 @@ lang: "de"
 image: "https://images.unsplash.com/photo-1532680678473-a16f2cda8e43?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Geöffneter Kalender mit leuchtenden Zahlen"
 lastReviewed: "2026-04-11"
-reviewedBy: "Pythia, zertifizierte pythagoreische Numerologin"
 ---
 
 ## Inhaltsverzeichnis

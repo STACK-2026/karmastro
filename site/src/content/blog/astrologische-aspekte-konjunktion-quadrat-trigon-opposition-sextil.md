@@ -1,5 +1,5 @@
 ---
-title: "Aspects astrologiques majeurs : Comprendre et interpréter"
+title: "Astrologische Aspekte verstehen und richtig deuten"
 description: "Die Planeten handeln nie isoliert. Sie dialogieren, widersprechen sich, harmonieren durch Aspekte. Der vollständige Leitfaden zum Lesen."
 date: 2026-06-04T07:30:00+02:00
 author: "Orion"
@@ -11,7 +11,6 @@ lang: "de"
 image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=1200&h=630&fit=crop&crop=center&q=80"
 imageAlt: "Astrologische Karte mit geometrischen Linien zwischen Planeten"
 lastReviewed: "2026-04-11"
-reviewedBy: "Orion, Senior-Astronom und Astrologe"
 ---
 
 ## Inhaltsverzeichnis
