@@ -1,6 +1,6 @@
 # Preuves de livraison du correctif calculateurs
 
-Dernière mise à jour : 2026-08-07 22:29 CEST
+Dernière mise à jour : 2026-08-07 22:43 CEST
 
 Propriétaire : Codex
 
@@ -63,7 +63,20 @@ En-têtes vérifiés sur le canari autorisé : origine exacte Karmastro, `Cache-
 
 ## Livraison du site
 
-À compléter après publication : commit, PR, prévisualisation, déploiement production et quatre parcours navigateur.
+- Commit fonctionnel prévisualisé : `bf400df`.
+- PR draft : `#70`, vers `main`.
+- Prévisualisation : `https://calculator-hotfix-20260807.karmastro-site.pages.dev`.
+- Le premier test navigateur a détecté une assertion TypeScript historique dans le script inline Ascendant (`Unexpected identifier 'as'`). La fusion a été retenue, le script corrigé et un test de régression ajouté.
+- Second test navigateur après correction : quatre parcours verts, aucune erreur de page et aucun appel astro échoué.
+
+| Parcours preview | Appels astro | Marqueur utilisateur |
+|---|---:|---|
+| Ascendant | 1 × 200 | `Ascendant Taureau` |
+| Thème natal | 1 × 200 | ascendant calculé `Taureau 13°1'` |
+| Transits | 1 × 200 | résumé Lune / Soleil / rétrogrades |
+| Synastrie | 3 × 200 | 15 aspects rendus |
+
+À compléter après publication : commit fusionné, déploiement production et quatre parcours navigateur publics.
 
 ## Sécurité, risque et rollback
 
