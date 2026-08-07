@@ -34,32 +34,6 @@ imageAlt: "Abstract watercolor with gray, green, and blue shapes."
 - [La mission karmique du chemin de vie 6 : service et équilibre](#la-mission-karmique-du-chemin-de-vie-6--service-et-equilibre)
   - [Le piège du sacrifice : quand le service devient une prison](#le-piege-du-sacrifice--quand-le-service-devient-une-prison)
   - [Études de cas : des chemins de vie 6 inspirants](#etudes-de-cas--des-chemins-de-vie-6-inspirants)
-- [Talents et dons uniques du chemin de vie 6](#talents-et-dons-uniques-du-chemin-de-vie-6)
-  - [L’art de la médiation : résoudre les conflits avec grâce](#lart-de-la-mediation--resoudre-les-conflits-avec-grace)
-  - [Créativité et esthétique : l’influence de Vénus](#creativite-et-esthetique--linfluence-de-venus)
-- [Défis et leçons karmiques du chemin de vie 6](#defis-et-lecons-karmiques-du-chemin-de-vie-6)
-  - [Le perfectionnisme : quand l’excellence devient un fardeau](#le-perfectionnisme--quand-lexcellence-devient-un-fardeau)
-  - [Gérer la culpabilité : apprendre à dire "non" sans se sentir égoïste](#gerer-la-culpabilite--apprendre-a-dire-non-sans-se-sentir-egoiste)
-- [Chemin de vie 6 en amour : compatibilités et relations](#chemin-de-vie-6-en-amour--compatibilites-et-relations)
-  - [Relations idéales : les chemins 2, 4 et 9](#relations-ideales--les-chemins-2-4-et-9)
-  - [Dynamiques difficiles : les chemins 1 et 8](#dynamiques-difficiles--les-chemins-1-et-8)
-  - [Conseils pour une relation harmonieuse](#conseils-pour-une-relation-harmonieuse)
-- [Carrière et abondance pour le chemin de vie 6](#carriere-et-abondance-pour-le-chemin-de-vie-6)
-  - [Secteurs d’activité alignés avec le chemin 6](#secteurs-dactivite-alignes-avec-le-chemin-6)
-  - [Créer l’abondance sans sacrifier son bien-être](#creer-labondance-sans-sacrifier-son-bien-etre)
-  - [Témoignages : des parcours professionnels inspirants](#temoignages--des-parcours-professionnels-inspirants)
-- [Santé et bien-être spirituel du chemin de vie 6](#sante-et-bien-etre-spirituel-du-chemin-de-vie-6)
-  - [Zones de vulnérabilité physique](#zones-de-vulnerabilite-physique)
-  - [Pratiques spirituelles pour équilibrer le chemin 6](#pratiques-spirituelles-pour-equilibrer-le-chemin-6)
-  - [Alimentation et mode de vie](#alimentation-et-mode-de-vie)
-- [Célébrités avec un chemin de vie 6 : leurs leçons](#celebrites-avec-un-chemin-de-vie-6--leurs-lecons)
-  - [Mère Teresa : l’amour inconditionnel en action](#mere-teresa--lamour-inconditionnel-en-action)
-  - [Martin Luther King Jr. : le service comme moteur de changement](#martin-luther-king-jr--le-service-comme-moteur-de-changement)
-  - [Florence Nightingale : soigner avec compassion](#florence-nightingale--soigner-avec-compassion)
-- [Rapport Karmastro : analyse approfondie de ton thème numérologique](#rapport-karmastro--analyse-approfondie-de-ton-theme-numerologique)
-- [FAQ](#faq)
-- [Conclusion : activer ton potentiel supérieur](#conclusion--activer-ton-potentiel-superieur)
-- [Sources](#sources)
 
 ## Qu'est-ce que le chemin de vie 6 en numérologie karmique ?
 
@@ -208,7 +182,7 @@ Si tu préfères ne pas faire le calcul manuellement, voici quelques outils fiab
 **Exercice pratique** :
 1. Prends ta date de naissance et calcule ton chemin de vie en suivant les étapes ci-dessus.
 2. Vérifie ton résultat avec l’un des outils en ligne mentionnés.
-3. Si tu obtiens un maître-nombre (11, 22, 33), explore sa signification spécifique. Tu peux consulter la section [Rapport Karmastro](#rapport-karmastro--analyse-approfondie-de-ton-theme-numerologique) pour une analyse approfondie de ton thème numérologique.
+3. Si tu obtiens un maître-nombre (11, 22, 33), explore sa signification spécifique. Tu peux consulter le rapport Karmastro pour une analyse approfondie de ton thème numérologique.
 4. Compare ton chemin de vie avec ton [nombre d’expression](https://www.karmastro.fr/blog/nombre-expression) et ton [nombre de personnalité](https://www.karmastro.fr/blog/nombre-personnalite) pour identifier d’éventuels déséquilibres ou synergies.
 
 ## La mission karmique du chemin de vie 6 : service et équilibre
@@ -286,4 +260,3 @@ Pour illustrer la mission karmique du chemin 6, voici quelques études de cas in
 - [Comment calculer son chemin de vie en numérologie](https://karmastro.com/blog/comment-calculer-chemin-vie-numerologie)
 - [Chemin de vie 1 : leadership et indépendance](https://karmastro.com/blog/chemin-vie-leadership-independance)
 - [Chemin de vie 7 : spiritualité et recherche intérieure](https://karmastro.com/blog/chemin-vie-spiritualite-recherche-interieure)
-
