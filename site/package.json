@@ -18,6 +18,7 @@
     "test:oracle-locale": "node --test scripts/test-oracle-locale.mjs",
     "test:oracle-feedback-v1": "node --test scripts/test-oracle-feedback-contract-v1.mjs",
     "test:commercial-contract": "node --test scripts/test-commercial-contract.mjs",
+    "test:astro-proxy": "node --test scripts/test-astro-proxy.mjs",
     "guard:content": "bash scripts/guard-content.sh",
     "prebuild": "npm run guard:content && npm run test:oracle-antibot"
   },

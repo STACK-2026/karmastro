@@ -421,7 +421,7 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
   const submitBtn = document.getElementById("submit-btn");
   const placeStatus = document.getElementById("place-status");
 
-  const ENGINE_URL = "http://168.119.229.20:8100";
+  const ASTRO_CALCULATE_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/astro-calculate";
   let kmReadingData = null; // {birthDate, birthTime, latitude, longitude} capté au calcul
 
   // Normalize sign name (Engine returns "Belier" without accent)
@@ -478,16 +478,19 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
       const [h, mi] = time.split(":").map(Number);
       const hour = h + mi / 60;
 
-      const res = await fetch(`${ENGINE_URL}/natal-chart`, {
+      const res = await fetch(ASTRO_CALCULATE_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          year: y,
-          month: m,
-          day: d,
-          hour,
-          latitude: geo.lat,
-          longitude: geo.lng,
+          operation: "natal-chart",
+          payload: {
+            year: y,
+            month: m,
+            day: d,
+            hour,
+            latitude: geo.lat,
+            longitude: geo.lng,
+          },
         }),
       });
 

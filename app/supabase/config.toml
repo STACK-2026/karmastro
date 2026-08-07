@@ -8,3 +8,6 @@ verify_jwt = false
 
 [functions.send-welcome]
 verify_jwt = false
+
+[functions.astro-calculate]
+verify_jwt = false
