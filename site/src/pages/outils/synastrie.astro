@@ -362,7 +362,7 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
 </BaseLayout>
 
 <script>
-  const ENGINE_URL = "http://168.119.229.20:8100";
+  const ASTRO_CALCULATE_URL = "https://nkjbmbdrvejemzrggxvr.supabase.co/functions/v1/astro-calculate";
   let kmReadingData: Record<string, string | number> | null = null;
 
   const PLANET_GLYPHS: Record<string, string> = {
@@ -392,20 +392,23 @@ import NewsletterCapture from "../../components/NewsletterCapture.astro";
   }
 
   async function fetchNatal(y: number, m: number, d: number, hour: number, lat: number, lng: number) {
-    const res = await fetch(`${ENGINE_URL}/natal-chart`, {
+    const res = await fetch(ASTRO_CALCULATE_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ year: y, month: m, day: d, hour, latitude: lat, longitude: lng }),
+      body: JSON.stringify({
+        operation: "natal-chart",
+        payload: { year: y, month: m, day: d, hour, latitude: lat, longitude: lng },
+      }),
     });
     if (!res.ok) throw new Error("Erreur moteur de calcul");
     return res.json();
   }
 
   async function fetchSynastry(p1: any, p2: any) {
-    const res = await fetch(`${ENGINE_URL}/compatibility`, {
+    const res = await fetch(ASTRO_CALCULATE_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ person1: p1, person2: p2 }),
+      body: JSON.stringify({ operation: "compatibility", payload: { person1: p1, person2: p2 } }),
     });
     if (!res.ok) throw new Error("Erreur calcul synastrie");
     return res.json();

@@ -1,16 +1,17 @@
 {
-  "captured_from": "77a1c0d07fec70ed9c66f7ae3b21fc3d1447cf5f",
-  "captured_at": "2026-07-27",
+  "captured_from": "codex/karmastro-calculator-hotfix-20260807",
+  "captured_at": "2026-08-07",
+  "change_reason": "Route four HTTPS-blocked calculators through the validated Supabase astro proxy.",
   "scope": "French calculator source from the first script tag to EOF",
   "sha256": {
     "annee-personnelle": "db953c8195ae9c23cb104db008cd278464ab1f497bb0ad2013c0ae3007fc3e16",
-    "ascendant": "6309be85d680bda015471726ce61f3497aaca774c8cffd27889ae8d52c12edbd",
+    "ascendant": "a47bc3d240af0535191e0bf839dbccd0ec2a7c58ec26b029f7fe4b053b1c1f84",
     "chemin-de-vie": "48021f58dc01940009fc389146d65c029603c1ae06f9a45e320dc34a3326ff4b",
     "compatibilite": "27919e6fab8d7ac1e84b591118405bbdf335e23a12e00f25ce32573d21e7afc6",
     "dette-karmique": "6f25caa0cee480e58568bc537d09422ae921705aaf680e693e6201d94e104312",
     "nombre-expression": "a2212b02aea720760a6f9b5cd4dea011e96ca9b5cf64213ae74f52e3720951e2",
-    "synastrie": "ba73b6013523fd46791913a42d4c76e0e7339ab4f05fb5c0d1d06a9c0ac4a6bc",
-    "theme-natal": "e43758de184aa79da19bc2bef72c241610c754f9cb672a843a8e50f848bed71e",
-    "transits": "79a35c2493da9788600609fabd0f44d5b1e6994cb899f2764784b46818ed4770"
+    "synastrie": "77af3515dfd2c497b4cf12c19df4eef9772feaf2337a814bee972e3229b38e21",
+    "theme-natal": "2fe025974863c135871e5b97ef7571ab87614a38234ba82b52803c0f042b0a50",
+    "transits": "e023bee944ebae00801fd47b7df3cb48ecb26477f36b5e552240328c37e4d68d"
   }
 }
